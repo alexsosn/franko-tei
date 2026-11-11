@@ -52,7 +52,7 @@ class PairedCRNNTests(unittest.TestCase):
             syms.write_text("ѣ\n", encoding="utf8")
             self.models[name] = {
                 "checkpoint": str(weights), "symbols": str(syms),
-                "repo": f"achimrabus/model-{name}", "revision": "c" * 40 + "0" * 24,
+                "repo": f"achimrabus/model-{name}", "revision": "c" * 40,
             }
 
     def save(self):
