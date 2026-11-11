@@ -58,3 +58,22 @@ Examples copied from the run's stdout (the models contain the superscript markup
 The two left-page examples preserve some recognizable words and superscript character sequences, but the right-page examples are visibly corrupted; **neither model is adequate to accept the page as diplomatic text**. The 16px margin can include material from adjacent compact lines, so a follow-up 8px-versus-16px paired sample is necessary to separate a line-segmentation failure from a model-domain failure. No CER can be computed without independent gold. Do not select a model based on these four examples alone.
 
 The closest training-domain candidate is the open **Prosta Mova CRNN model itself**, which was initially mislabeled an out-of-domain control in the first workflow draft. The user-visible unverified outputs demonstrated its relevance to the first four headline rows, but not a full page.
+
+
+## Reproducible 8px-versus-16px source-crop comparison (2026-11-11)
+
+[Actual real-image run 43071769750](https://github.com/alexsosn/franko-tei/actions/runs/43071769750) passed. Its 7-day full raw source-checksummed artifact is recorded by ZIP SHA256 `72900fd83caf30709bafe405fafa9084dd454d93e221fdf6463cd152916f8f9f`; model predictions from stdout are **permanently** preserved without correction as [32 unverified candidates](../pilot/ocr/vol5_scan00010_two_column_probe_20261111.json). Each of eight physical line candidates has Church Slavonic-manuscript and Prosta-Mova-print OCR under 16px and 8px vertical margins; the images and weights themselves were not committed.
+
+**Actual overlapping native-pixel crops, even after narrowing.** The first two right-column 16px crops cover y=53–129 and y=85–161, a **44px vertical overlap**. At 8px they cover y=61–121 and y=93–153, still a **28px overlap**. The first two left crops overlap by **48px** (16px) or **32px** (8px). Thus the source geometry cannot be treated as well-isolated single lines. Reducing margin improves the OCR output but is **not sufficient** to produce source-faithful or correctly segmented transcriptions.
+
+Examples, **same source line + same model**, but different margins:
+
+| Region / OCR model | 16px margin | 8px margin |
+| --- | --- | --- |
+| Left title line #3 / print | `мны. Житїѐ и҆ жи́зны проⷱ҇` | `дн҃ь. Житїѐ и҆ жи́знь, проⷱ` |
+| Right line #40 / manuscript | `лелнѧше исъ. всетьрѧ. и николине ѿ` | `холнѧше. и се все творѧ. и николиже ѿ` |
+| Right line #41 / manuscript | `аїинїѧ стыхъ слексъ оекⸯбадно илела.` | `оученїѧ с҃тыхъ слобесъ ославѧ дн҃о илежа` |
+
+These are **machine hypotheses**, not correct verified readings. Even the narrow outputs visibly contain misrecognized letters. No source-gold comparison/CER or corrected Romanization was produced. The next source-specific intervention should be to use **non-overlapping manual or polygon-informed crops covering every titlo and supralinear glyph**, then try the print-domain CRNN again and compare with a truly independent HTR/printed OCR architecture if available. **Do not add arbitrary margins or concatenate model outputs as a patchwork edition.**
+
+Source medium is still described as early print by Franko's caption despite the manuscript-like appearance; no unrelated full-volume workflow should depend on the pilot's V/10 OCR choices.
