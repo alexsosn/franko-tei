@@ -27,7 +27,7 @@ burg 1891, s. 93—95). Та про те треба тямити, що всі т
 відворіт.
 ```
 
-## Stichometry of Nikephoros and Greek list (19 printed lines)
+## Stichometry of Nikephoros and Greek list (16 printed lines)
 ```text
 Із початку IX. віку лишив ся нам інтересний памятник візан-
 тийської вчености — Стихометрия Никифора (умер 828) — рід вір-
@@ -73,4 +73,4 @@ V. Секта Богомилів і її вплив на розширенє ап
 1. Greek `ἐπ' ὀνόμασι`, `φθοροποιά`, `Ἐλδὰδ`, `Μωδὰδ`, `Ἀμβακούμ`, `Ἐζεκιὴλ` and all other Greek accents: first-pass reading only, photograph must govern even if standard editions print differently.
 2. Verify exact physical text in the line `Сї словянський переклад` (the grammar may imply an image reading error), and `власне такі твори`.
 3. Check whether the original prints `Пипинъ` or `Пыпинъ`, `Порфірєва`, `бібліоґрафії`, `крїфів` and the first three characters of the continued title.
-4. The explicit 12+19+10+3 line grouping is an intended physical-line coverage inventory, not a quality score. No OCR-based “corrections,” CER claims, or independent review are recorded here.
+4. The explicit 12+16+10+3 line grouping is an intended physical-line coverage inventory, not a quality score. No OCR-based “corrections,” CER claims, or independent review are recorded here.
