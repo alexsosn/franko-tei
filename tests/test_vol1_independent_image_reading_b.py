@@ -35,7 +35,7 @@ class TestVol1IndependentReadingB(unittest.TestCase):
         self.assertIn("Καὶ", reading["raw_response"])
         self.assertIn("Jagić", reading["raw_response"])
         self.assertIn("Богомилів", reading["raw_response"])
-        self.assertIn("Книг", reading["raw_response"].replace("книг","Книг"))  # ensure book discussion exists
+        self.assertIn("книг неправдивих не були", reading["raw_response"])
         self.assertEqual(reading["raw_response"], chr(10).join(l["text"] for l in lines))
         self.assertGreaterEqual(len(reading["uncertainty_notes"]), 8)
         self.assertNotIn("review", doc)
