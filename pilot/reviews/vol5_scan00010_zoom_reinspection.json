@@ -308,7 +308,7 @@
       },
       {
         "line_id": "L11",
-        "literal_observed_hypothesis": "нѣкꙋю",
+        "literal_observed_hypothesis": "кры",
         "provisional": true,
         "image_bbox_xywh": [
           177,
@@ -318,7 +318,7 @@
         ],
         "geometry_estimated": true,
         "line_fully_read": false,
-        "source_note": "A local fragment only. Adjacent words and line continuation are UNREAD."
+        "source_note": "Only a small beginning of this physically printed line can be proposed; it remains unread beyond these three candidate letters. Previous draft also suggests this run but is NOT independent corroboration."
       }
     ],
     "right_fragments": [
@@ -407,32 +407,32 @@
         "source_note": "Word hypothesis from original printed line, other words unread."
       },
       {
-        "line_id": "R31",
+        "line_id": "R-lower-unknown-index-a",
         "literal_observed_hypothesis": "игꙋменꙋ",
         "provisional": true,
         "image_bbox_xywh": [
           636,
-          1015,
+          1006,
           410,
-          32
+          48
         ],
         "geometry_estimated": true,
         "line_fully_read": false,
-        "source_note": "Right lower section enlarged; context and precise right-line index uncertain."
+        "source_note": "Near upper edge of enlarged right-bottom crop; physical row number not securely reconciled with Kraken or the previous draft."
       },
       {
-        "line_id": "R32",
-        "literal_observed_hypothesis": "поклонѧса",
+        "line_id": "R-lower-unknown-index-b",
+        "literal_observed_hypothesis": "послуша",
         "provisional": true,
         "image_bbox_xywh": [
           636,
-          1052,
+          1042,
           410,
-          32
+          46
         ],
         "geometry_estimated": true,
         "line_fully_read": false,
-        "source_note": "Nearby word hypothesis; verify placement and titlo/inflection."
+        "source_note": "Candidate word on next right-bottom printed row; not an exact full-line reading or reliable row index."
       }
     ],
     "caption": [
@@ -485,6 +485,7 @@
     "Exact literal physical lines are not claimed outside the explicitly line_fully_read=true entries. Quoted fragments must not be concatenated into fabricated text.",
     "The first reproduction is a seventeenth-century printed source as shown by Franko, not automatically a manuscript witness. The Ukrainian caption is Franko's separate voice.",
     "None of the 71 previously unresolved slots was silently resolved by borrowing a parallel Life of Mary of Egypt. This record is strictly a reading-aid pending complete line-by-line native-image text.",
-    "Enlargement was pixel repetition, not ML-enhanced super-resolution. Small titla and diacritics can remain unresolvable at source-image resolution."
+    "Enlargement was pixel repetition, not ML-enhanced super-resolution. Small titla and diacritics can remain unresolvable at source-image resolution.",
+    "Failure-oriented internal source recheck corrected two unsupported over-specific assertions: an L11 fragment and exact right-column line indices. The preserved earlier data commit bff23b6 records the pre-review working hypothesis."
   ]
 }
