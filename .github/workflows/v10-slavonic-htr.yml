@@ -78,7 +78,7 @@ jobs:
           curl --fail --location --retry 2 --silent --show-error "$SRC/htr_engine_base.py" -o upstream/htr_engine_base.py
           test -s upstream/inference_pylaia_native.py
           test -s upstream/htr_engine_base.py
-      - name: Fetch immutable Church Slavonic specialist and mismatched-language control models
+      - name: Fetch immutable manuscript and early-print comparison models
         run: |
           python - <<'PY'
           import json
