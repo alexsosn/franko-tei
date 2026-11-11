@@ -166,9 +166,11 @@ class PairedCRNNTests(unittest.TestCase):
 
     def test_cli_exposes_titlo_safe_vertical_margin(self):
         from franko_tei.crnn_probe import main
+        specs_path = self.root / "specs.json"
+        specs_path.write_text(json.dumps(self.models), encoding="utf8")
         with patch("franko_tei.crnn_probe.probe", return_value=[]) as run:
             main(["--images", "images", "--volume", "5",
-                  "--layout", "layout.json", "--model-specs", "models.json",
+                  "--layout", "layout.json", "--model-specs", str(specs_path),
                   "--inference-script", "infer.py", "--output", "out.json",
                   "--start-line", "39", "--max-lines", "4", "--margin-y", "16"])
         self.assertEqual(run.call_args.kwargs["margin_y"], 16)
