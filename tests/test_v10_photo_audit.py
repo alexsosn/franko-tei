@@ -35,7 +35,10 @@ class PhotoAuditTests(unittest.TestCase):
         d=json.loads(AUDIT.read_text(encoding="utf8"))
         original=json.loads(OCR.read_text(encoding="utf8"))
         ids={r["candidate_line_id"] for r in original["candidates"]}
-        self.assertGreaterEqual(len(d["comparisons"]),14)
+        self.assertEqual(len(d["comparisons"]),24)
+        self.assertEqual(len(d["pending_candidate_line_ids"]),52)
+        self.assertEqual(d["coverage"]["actually_accepted_diplomatic_lines"],0)
+        self.assertEqual(d["coverage"]["excluded_layout_candidates_not_yet_collated"],9)
         self.assertEqual({x["column"] for x in d["comparisons"]},{"left","right"})
         bad_ids=[]
         for x in d["comparisons"]:
