@@ -26,7 +26,17 @@ jobs:
       - name: Download open-weight historical multilingual model
         run: |
           mkdir -p local/models
-          hf download small-models-for-glam/kraken-ppocrv6-medium medium.safetensors --local-dir local/models
+          python - <<'PY'
+          from pathlib import Path
+          from huggingface_hub import hf_hub_download
+          path = hf_hub_download(
+              repo_id='small-models-for-glam/kraken-ppocrv6-medium',
+              filename='medium.safetensors',
+              local_dir='local/models',
+          )
+          assert Path(path).is_file() and Path(path).stat().st_size > 1000
+          print('Downloaded model:', path)
+          PY
           sha256sum local/models/medium.safetensors | tee local/model.sha256
       - name: Run on four actual source-verified pages
         run: |
