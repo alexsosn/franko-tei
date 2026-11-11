@@ -1,0 +1,64 @@
+name: Kraken physical-line segmentation on pinned scans (experimental)
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/kraken_layout.py
+      - tests/test_kraken_layout.py
+      - .github/workflows/kraken-real-layout.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  kraken-lines:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Kraken 7 segmentation backend
+        run: |
+          python -m pip install -e .
+          python -m pip install 'kraken==7.1.1'
+          franko-kraken-layout --help > /dev/null
+      - name: Obtain only pinned sample images and checksummed manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images
+          for spec in 2:100 3:130 5:100; do
+            vol="${spec%:*}"
+            page="${spec#*:}"
+            dir="scan-assets/vol$vol"
+            mkdir -p "$dir"
+            printf -v img 'page-%05d.jpg' "$page"
+            curl --fail --location --retry 2 --silent --show-error "$BASE/vol$vol/manifest.json" -o "$dir/manifest.json"
+            curl --fail --location --retry 2 --silent --show-error "$BASE/vol$vol/$img" -o "$dir/$img"
+          done
+      - name: Run unverified image-only segmentation
+        run: |
+          franko-kraken-layout --images scan-assets --volume 2 --pages 100 --output geometry/vol2
+          franko-kraken-layout --images scan-assets --volume 3 --pages 130 --output geometry/vol3
+          franko-kraken-layout --images scan-assets --volume 5 --pages 100 --output geometry/vol5
+      - name: Verify geometry coverage and bounds, not text accuracy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          files=list(Path('geometry').rglob('*.json'))
+          assert len(files)==3, files
+          for file in files:
+              d=json.loads(file.read_text(encoding='utf8'))
+              assert d['status']=='segmentation_unchecked'
+              assert d['line_count']==len(d['lines'])
+              assert d['line_count']>0, f"No line candidates on {file}"
+              assert len(d['source_image_sha256'])==64
+              print(f"Volume {d['volume']} scan {d['scan_page']}: {d['line_count']} Kraken candidate physical lines")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: franko-kraken-unverified-layout
+          path: geometry/**/*.json
+          retention-days: 7
+          if-no-files-found: error
