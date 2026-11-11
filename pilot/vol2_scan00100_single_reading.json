@@ -1,0 +1,981 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 100,
+  "printed_page_observed": "18",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00100.jpg",
+  "source_image_sha256": "2095de26447b9ce0d7ae5371a73424c4416326b35668931b02e63eb051586df2",
+  "reading": {
+    "reader_id": "gpt6-single-20261111-v2s00100",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "First-pass visual reading of native image only (1190x2003 JPEG, pinned blob), no original PDF OCR or peer outputs. Capture every physical text line including page label, two named source headings, Church Slavonic passages, Franko prose, Latin/German bibliographic insertions; mark questionable historical glyphs in uncertainty notes; no silent correction. Unverified single context, not two blinded agents.",
+    "raw_response": "18\nдитяна“, хоча тут допішано дещо і з иньших жерел, а дещо ма-\nбуть треба покласти на карб поетичної творчости самого Т. Попо-\nвича. Західно-европейський, латинський вплив видно в тім, що\nз євангельських волхвів, що в „Слові Афродитіяна“ являють ся\nпо просту слугами і висланцями перського царя, тут зроблено\nтрьох царів — ідея розвита широко в популярній, та на скрізь\nфантастичній повісти Івана Гільдесгаймського (Johannes Hil-\ndesheimensis, Historia de translatione trium regum), що вмер\n1375 р. Его книжечка була ще в XV віці друкована по латині і\nто кілька разів, і по нїмецьки (перший друк вийшов 1480 р.)\nі в наших часах передрукована Зімроком (K. Simrock, Die deut-\nschen Volksbücher, Bd. IV, стор. 421—474).\nЕ. Рукопис о. Яремецького Білахевича, стор. 392.\n(О трѣхъ Перскихъ како прїйдоша со дары).\nВолсви персидстїи прїйдоша поклонити сѧ Х҃съ на рождество:\nАвимелихъ принесе злато ꙗко црю, Иелусѳъ принесе ливанъ ꙗко\nБ҃гу, а Елиавъ принесе змирну ꙗко мертв҃цю. И поклониша сѧ\nемѹ [н] рѣша: „тебѣ твоѧ принесохом, нѣнихъ сна҃ Ісе, никто\nже бо имъ исправилъ [вн] неисправленнаѧ, аще не бы ти пришелъ\nи смѣснѧ дополнѧ со вышними. Акто [sic! зам. Акѳо] твоей\nвсепремѫдростной хитрости сопротивника снце побѣдити и низ-\nложити“. И индѣ же пишетъ: пришедше волсви глагѫ: „се єсть\nперстъ бжій“.\nОта статейка зложена очевидно на підставі Слова Афроди-\nтіяна, хоча автор мав під рукою ще якесь иньше жерело, з якого\nвзяв остатній цитат, а також назви волхвів відмінні від тих, які\nподає звичайна церковна традиция (Каспар, Мельхіор і Валтасар).\nЖ. Рукопис віденської надв. бібліотеки ч. 88, XVII в.\nстор. 44—48.\n(Сказаніе ѡ двѣнадесѧтихъ Сивиллахъ, сирѣчь\nпророчицахъ, иже пророчествовахѹ ѡ пришествїи Дѣвы\nМарїи и ѡ воплощеніи С҃на Б҃жїѧ). Сїи пророчество-\nвахѹ в разныя времена до Х҃ртва рж҃тва. аще сѹть и невѣрни,\nно чистаго ради житїѧ ихъ ѡкрывахѹ сѧ имъ; земныхъ ради\nг҃лаша преди бѫдѹщаѧ.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          112,
+          75,
+          83,
+          65
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "18",
+            "bbox_xywh": [
+              121,
+              89,
+              65,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "franko-context-a",
+        "kind": "body",
+        "bbox_xywh": [
+          110,
+          152,
+          1065,
+          493
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "franko-context-a-line-01",
+            "text": "дитяна“, хоча тут допішано дещо і з иньших жерел, а дещо ма-",
+            "bbox_xywh": [
+              119,
+              165,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-02",
+            "text": "буть треба покласти на карб поетичної творчости самого Т. Попо-",
+            "bbox_xywh": [
+              119,
+              205,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-03",
+            "text": "вича. Західно-европейський, латинський вплив видно в тім, що",
+            "bbox_xywh": [
+              119,
+              245,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-04",
+            "text": "з євангельських волхвів, що в „Слові Афродитіяна“ являють ся",
+            "bbox_xywh": [
+              119,
+              285,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-05",
+            "text": "по просту слугами і висланцями перського царя, тут зроблено",
+            "bbox_xywh": [
+              119,
+              325,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-06",
+            "text": "трьох царів — ідея розвита широко в популярній, та на скрізь",
+            "bbox_xywh": [
+              119,
+              365,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-07",
+            "text": "фантастичній повісти Івана Гільдесгаймського (Johannes Hil-",
+            "bbox_xywh": [
+              119,
+              405,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 45,
+                "end": 59,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-08",
+            "text": "desheimensis, Historia de translatione trium regum), що вмер",
+            "bbox_xywh": [
+              119,
+              445,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 51,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 51,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-09",
+            "text": "1375 р. Его книжечка була ще в XV віці друкована по латині і",
+            "bbox_xywh": [
+              119,
+              485,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-10",
+            "text": "то кілька разів, і по нїмецьки (перший друк вийшов 1480 р.)",
+            "bbox_xywh": [
+              119,
+              525,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-11",
+            "text": "і в наших часах передрукована Зімроком (K. Simrock, Die deut-",
+            "bbox_xywh": [
+              119,
+              565,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 39,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "franko-context-a-line-12",
+            "text": "schen Volksbücher, Bd. IV, стор. 421—474).",
+            "bbox_xywh": [
+              119,
+              605,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 25,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 25,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "heading-e",
+        "kind": "heading",
+        "bbox_xywh": [
+          200,
+          694,
+          920,
+          69
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-e-line-01",
+            "text": "Е. Рукопис о. Яремецького Білахевича, стор. 392.",
+            "bbox_xywh": [
+              209,
+              712,
+              902,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-e-excerpt",
+        "kind": "body",
+        "bbox_xywh": [
+          112,
+          775,
+          1065,
+          425
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-e-excerpt-line-01",
+            "text": "(О трѣхъ Перскихъ како прїйдоша со дары).",
+            "bbox_xywh": [
+              121,
+              787,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 41,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-02",
+            "text": "Волсви персидстїи прїйдоша поклонити сѧ Х҃съ на рождество:",
+            "bbox_xywh": [
+              121,
+              827,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-03",
+            "text": "Авимелихъ принесе злато ꙗко црю, Иелусѳъ принесе ливанъ ꙗко",
+            "bbox_xywh": [
+              121,
+              867,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-04",
+            "text": "Б҃гу, а Елиавъ принесе змирну ꙗко мертв҃цю. И поклониша сѧ",
+            "bbox_xywh": [
+              121,
+              907,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-05",
+            "text": "емѹ [н] рѣша: „тебѣ твоѧ принесохом, нѣнихъ сна҃ Ісе, никто",
+            "bbox_xywh": [
+              121,
+              947,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-06",
+            "text": "же бо имъ исправилъ [вн] неисправленнаѧ, аще не бы ти пришелъ",
+            "bbox_xywh": [
+              121,
+              987,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-07",
+            "text": "и смѣснѧ дополнѧ со вышними. Акто [sic! зам. Акѳо] твоей",
+            "bbox_xywh": [
+              121,
+              1027,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-08",
+            "text": "всепремѫдростной хитрости сопротивника снце побѣдити и низ-",
+            "bbox_xywh": [
+              121,
+              1067,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-09",
+            "text": "ложити“. И индѣ же пишетъ: пришедше волсви глагѫ: „се єсть",
+            "bbox_xywh": [
+              121,
+              1107,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-e-excerpt-line-10",
+            "text": "перстъ бжій“.",
+            "bbox_xywh": [
+              121,
+              1147,
+              1047,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 13,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "franko-context-b",
+        "kind": "body",
+        "bbox_xywh": [
+          113,
+          1203,
+          1064,
+          173
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "franko-context-b-line-01",
+            "text": "Ота статейка зложена очевидно на підставі Слова Афроди-",
+            "bbox_xywh": [
+              122,
+              1213,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-b-line-02",
+            "text": "тіяна, хоча автор мав під рукою ще якесь иньше жерело, з якого",
+            "bbox_xywh": [
+              122,
+              1254,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-b-line-03",
+            "text": "взяв остатній цитат, а також назви волхвів відмінні від тих, які",
+            "bbox_xywh": [
+              122,
+              1295,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "franko-context-b-line-04",
+            "text": "подає звичайна церковна традиция (Каспар, Мельхіор і Валтасар).",
+            "bbox_xywh": [
+              122,
+              1336,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "heading-zh",
+        "kind": "heading",
+        "bbox_xywh": [
+          165,
+          1429,
+          980,
+          103
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-zh-line-01",
+            "text": "Ж. Рукопис віденської надв. бібліотеки ч. 88, XVII в.",
+            "bbox_xywh": [
+              174,
+              1441,
+              962,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "heading-zh-line-02",
+            "text": "стор. 44—48.",
+            "bbox_xywh": [
+              174,
+              1481,
+              962,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-zh-excerpt",
+        "kind": "body",
+        "bbox_xywh": [
+          113,
+          1558,
+          1064,
+          270
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-zh-excerpt-line-01",
+            "text": "(Сказаніе ѡ двѣнадесѧтихъ Сивиллахъ, сирѣчь",
+            "bbox_xywh": [
+              122,
+              1573,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-zh-excerpt-line-02",
+            "text": "пророчицахъ, иже пророчествовахѹ ѡ пришествїи Дѣвы",
+            "bbox_xywh": [
+              122,
+              1614,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 50,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-zh-excerpt-line-03",
+            "text": "Марїи и ѡ воплощеніи С҃на Б҃жїѧ). Сїи пророчество-",
+            "bbox_xywh": [
+              122,
+              1655,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 50,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-zh-excerpt-line-04",
+            "text": "вахѹ в разныя времена до Х҃ртва рж҃тва. аще сѹть и невѣрни,",
+            "bbox_xywh": [
+              122,
+              1696,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-zh-excerpt-line-05",
+            "text": "но чистаго ради житїѧ ихъ ѡкрывахѹ сѧ имъ; земныхъ ради",
+            "bbox_xywh": [
+              122,
+              1737,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "witness-zh-excerpt-line-06",
+            "text": "г҃лаша преди бѫдѹщаѧ.",
+            "bbox_xywh": [
+              122,
+              1778,
+              1046,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v2s00100",
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "franko-context-a-line-01",
+        "reading": "дитяна",
+        "reason": "First line continues quotation from previous page; reading uncertain."
+      },
+      {
+        "line_id": "franko-context-a-line-09",
+        "reading": "Его",
+        "reason": "Potential historic glyph/letter ambiguity; needs independent scan reinspection."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-01",
+        "reading": "прїйдоша",
+        "reason": "Historic i and accents uncertain at image scale."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-02",
+        "reading": "Х҃съ",
+        "reason": "Titlo/suspended glyph uncertain; inspect enlarged original."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-03",
+        "reading": "Иелусѳъ",
+        "reason": "Name and ѳ shape uncertain."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-04",
+        "reading": "мертв҃цю",
+        "reason": "Superscript/ending uncertain."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-05",
+        "reading": "нѣнихъ сна҃ Ісе",
+        "reason": "Titled string and abbreviation uncertain."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-06",
+        "reading": "неисправленнаѧ",
+        "reason": "Letter/abbreviation uncertain."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-07",
+        "reading": "смѣснѧ дополнѧ",
+        "reason": "Whole phrase highly uncertain; no linguistic emendation."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-08",
+        "reading": "всепремѫдростной",
+        "reason": "Dense historic glyphs/word division uncertain."
+      },
+      {
+        "line_id": "witness-e-excerpt-line-09",
+        "reading": "глагѫ",
+        "reason": "Abbreviation uncertain."
+      },
+      {
+        "line_id": "witness-zh-excerpt-line-01",
+        "reading": "двѣнадесѧтихъ",
+        "reason": "Diacritics/old glyph forms uncertain."
+      },
+      {
+        "line_id": "witness-zh-excerpt-line-03",
+        "reading": "воплощеніи",
+        "reason": "Abbreviations and ѧ need magnified check."
+      },
+      {
+        "line_id": "witness-zh-excerpt-line-04",
+        "reading": "Х҃ртва рж҃тва",
+        "reason": "Abbreviated sacred term uncertain."
+      },
+      {
+        "line_id": "witness-zh-excerpt-line-05",
+        "reading": "ѡкрывахѹ",
+        "reason": "Old-letter shape uncertain."
+      },
+      {
+        "line_id": "witness-zh-excerpt-line-06",
+        "reading": "г҃лаша",
+        "reason": "First letter/suspension highly uncertain."
+      }
+    ],
+    "context_id": "chat-single-context-2026-11-11-II100",
+    "run_id": null
+  }
+}
