@@ -83,6 +83,38 @@ class TFTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'duplicate'):
             build_tf_graph(ET.tostring(root,encoding='unicode'))
 
+    def test_rejects_page_level_unanchored_text_and_element_tails(self):
+        for location in ('page', 'pb_tail', 'ab_tail'):
+            with self.subTest(location=location):
+                root=ET.fromstring(TEI_FILE.read_text(encoding='utf8'))
+                page=root.find(f'.//{{{TEI}}}body/{{{TEI}}}div')
+                if location=='page':
+                    page.text='unanchored printed text'
+                elif location=='pb_tail':
+                    page.find(f'{{{TEI}}}pb').tail='unanchored printed text'
+                else:
+                    page.find(f'{{{TEI}}}ab').tail='unanchored printed text'
+                with self.assertRaisesRegex(ValueError,'unanchored'):
+                    build_tf_graph(ET.tostring(root,encoding='unicode'))
+
+    def test_rejects_invalid_and_out_of_surface_facs_zones(self):
+        for case in ('unknown_type', 'outside_surface', 'wrong_parent'):
+            with self.subTest(case=case):
+                root=ET.fromstring(TEI_FILE.read_text(encoding='utf8'))
+                surface=root.find(f'.//{{{TEI}}}surface')
+                region_zones=surface.findall(f'{{{TEI}}}zone')
+                if case=='unknown_type':
+                    region_zones[0].set('type','arbitrary')
+                elif case=='outside_surface':
+                    region_zones[0].set('lrx','2000')
+                else:
+                    ab=root.find(f'.//{{{TEI}}}ab[@type="body"]')
+                    line=ab.find(f'{{{TEI}}}lb')
+                    other_zone=region_zones[0].find(f'{{{TEI}}}zone')
+                    line.set('facs','#'+other_zone.get(f'{{{XML}}}id'))
+                with self.assertRaisesRegex(ValueError,'zone|bounds|parent|facsimile'):
+                    build_tf_graph(ET.tostring(root,encoding='unicode'))
+
     def test_rejects_raw_unanchored_text(self):
         root=ET.fromstring(TEI_FILE.read_text(encoding='utf8'))
         ab=root.find(f'.//{{{TEI}}}ab[@type="body"]')

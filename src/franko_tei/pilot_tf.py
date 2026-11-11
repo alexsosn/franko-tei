@@ -33,18 +33,42 @@ def _required_id(element, label, seen):
     return identifier
 
 
-def _zones(root):
+def _zones(surface):
+    """Validate native image bounds and explicit region→line zone nesting."""
     seen=set(); zones={}
-    for zone in root.findall(f'.//{tag("surface")}//{tag("zone")}'):
+    try:
+        sx0,sy0,sx1,sy1=[int(surface.get(k)) for k in ('ulx','uly','lrx','lry')]
+    except (ValueError,TypeError) as exc:
+        raise ValueError('malformed facsimile surface bounds') from exc
+    if sx0<0 or sy0<0 or sx1<=sx0 or sy1<=sy0:
+        raise ValueError('invalid facsimile surface bounds')
+    def collect(zone,parent_id,parent_bounds):
         ident=_required_id(zone,'zone',seen)
         try:
             x0,y0,x1,y1=[int(zone.get(k)) for k in ('ulx','uly','lrx','lry')]
         except (ValueError,TypeError) as exc:
             raise ValueError('malformed facsimile zone coordinates') from exc
-        if x0<0 or y0<0 or x1<=x0 or y1<=y0:
-            raise ValueError('invalid facsimile zone bounds')
+        if (x0<parent_bounds[0] or y0<parent_bounds[1]
+                or x1>parent_bounds[2] or y1>parent_bounds[3]
+                or x1<=x0 or y1<=y0):
+            raise ValueError('facsimile zone outside parent bounds')
+        if zone.get('type') not in ('estimated','measured'):
+            raise ValueError('facsimile zone type must be estimated or measured')
         zones[ident]={'x':x0,'y':y0,'w':x1-x0,'h':y1-y0,
-                      'estimated':zone.get('type')=='estimated'}
+                      'estimated':zone.get('type')=='estimated',
+                      'parent':parent_id}
+        if parent_id is not None and zone.findall(tag('zone')):
+            raise ValueError('facsimile zone nesting deeper than region/line')
+        for nested in zone:
+            if nested.tag != tag('zone'):
+                raise ValueError('unsupported facsimile zone child')
+            collect(nested,ident,(x0,y0,x1,y1))
+    for region_zone in surface:
+        if region_zone.tag==tag('graphic'):
+            continue
+        if region_zone.tag!=tag('zone'):
+            raise ValueError('unsupported facsimile surface child')
+        collect(region_zone,None,(sx0,sy0,sx1,sy1))
     return zones
 
 
@@ -132,7 +156,14 @@ def build_tf_graph(xml):
     images=surf.findall(tag('graphic'))
     if len(images)!=1 or not images[0].get('url','').startswith('https://raw.githubusercontent.com/alexsosn/franko-tei/'):
         raise ValueError('missing pinned image URL')
-    zones=_zones(root)
+    zones=_zones(surf)
+    if page.text and page.text.strip():
+        raise ValueError('unanchored page transcription text')
+    for child in page:
+        if child.tail and child.tail.strip():
+            raise ValueError('unanchored transcription text after a page element')
+        if child.tag==tag('pb') and (child.text or len(child)):
+            raise ValueError('physical page break must not contain transcription text')
     children=[ch for ch in page if ch.tag==tag('ab')]
     if not children or any(ch.tag not in (tag('ab'),tag('pb'),tag('note')) for ch in page):
         raise ValueError('unsupported page structure')
@@ -145,13 +176,13 @@ def build_tf_graph(xml):
         if not kind or not ab.get('facs','').startswith('#'):
             raise ValueError('region type/facsimile reference required')
         zone_id=ab.get('facs')[1:]
-        if zone_id not in zones:
-            raise ValueError('region facsimile zone does not exist')
+        if zone_id not in zones or zones[zone_id]['parent'] is not None:
+            raise ValueError('region facsimile zone must be a top-level zone')
         region_slots=[]
         for line in _get_text_lines(ab,seen):
             line_zone=line['facs'][1:] if line['facs'] and line['facs'].startswith('#') else None
-            if line_zone not in zones:
-                raise ValueError('physical line facsimile zone does not exist')
+            if line_zone not in zones or zones[line_zone]['parent'] != zone_id:
+                raise ValueError('physical line facsimile zone must belong to its region parent')
             begin=len(glyph)+1
             for part in line['parts']:
                 start=len(glyph)+1
