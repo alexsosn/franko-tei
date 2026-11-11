@@ -1,0 +1,701 @@
+{
+  "schema_version": "v10-htr-adversarial-triage-v0",
+  "status": "triage_unverified",
+  "source_raw_file": "pilot/ocr/vol5_scan00010_broad_raw_20261111.json",
+  "source_run_id": 43080063244,
+  "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+  "original_candidate_count": 85,
+  "paired_candidate_lines": 76,
+  "high_ink_seam_count": 21,
+  "cer_measured": false,
+  "text_reviewed": false,
+  "no_reference_text": true,
+  "metric_definition": "Levenshtein edit distance between *two model outputs* over Unicode code points, normalized by the maximum of their lengths. Diacritics and titla count; this is model disagreement, NOT accuracy or OCR CER.",
+  "priority_rule": "High-ink source seams are listed first, then descending inter-model codepoint disagreement. This orders human source-image review; do not select a model automatically.",
+  "rows": [
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00022",
+      "column": "left",
+      "ink_risk": true,
+      "codepoint_edit_distance": 15,
+      "normalized_disagreement": 0.4286,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 34
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00078",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 15,
+      "normalized_disagreement": 0.4054,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00037",
+      "column": "left",
+      "ink_risk": true,
+      "codepoint_edit_distance": 15,
+      "normalized_disagreement": 0.3659,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00064",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 14,
+      "normalized_disagreement": 0.359,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00076",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 14,
+      "normalized_disagreement": 0.359,
+      "church_slavonic_length": 38,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00060",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 13,
+      "normalized_disagreement": 0.3514,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00069",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.3235,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 30
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00027",
+      "column": "left",
+      "ink_risk": true,
+      "codepoint_edit_distance": 14,
+      "normalized_disagreement": 0.3182,
+      "church_slavonic_length": 39,
+      "prosta_mova_length": 44
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00052",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.3143,
+      "church_slavonic_length": 33,
+      "prosta_mova_length": 35
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00044",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 14,
+      "normalized_disagreement": 0.2979,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 47
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00070",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2895,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 38
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00029",
+      "column": "left",
+      "ink_risk": true,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2857,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 35
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00068",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.2857,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 42
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00075",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.2791,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 43
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00073",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2778,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00065",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2683,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00067",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.2667,
+      "church_slavonic_length": 38,
+      "prosta_mova_length": 45
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00072",
+      "column": "right",
+      "ink_risk": true,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2632,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 38
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00031",
+      "column": "left",
+      "ink_risk": true,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2558,
+      "church_slavonic_length": 38,
+      "prosta_mova_length": 43
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00002",
+      "column": "left",
+      "ink_risk": true,
+      "codepoint_edit_distance": 6,
+      "normalized_disagreement": 0.24,
+      "church_slavonic_length": 23,
+      "prosta_mova_length": 25
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00036",
+      "column": "left",
+      "ink_risk": true,
+      "codepoint_edit_distance": 8,
+      "normalized_disagreement": 0.2105,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 38
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00007",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 5,
+      "normalized_disagreement": 1,
+      "church_slavonic_length": 3,
+      "prosta_mova_length": 5
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00055",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 21,
+      "normalized_disagreement": 0.5676,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00009",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 6,
+      "normalized_disagreement": 0.4615,
+      "church_slavonic_length": 13,
+      "prosta_mova_length": 12
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00061",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 15,
+      "normalized_disagreement": 0.3947,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 38
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00023",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 17,
+      "normalized_disagreement": 0.3778,
+      "church_slavonic_length": 42,
+      "prosta_mova_length": 45
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00074",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 15,
+      "normalized_disagreement": 0.3571,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 42
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00054",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.3529,
+      "church_slavonic_length": 31,
+      "prosta_mova_length": 34
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00008",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 8,
+      "normalized_disagreement": 0.3478,
+      "church_slavonic_length": 22,
+      "prosta_mova_length": 23
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00014",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 13,
+      "normalized_disagreement": 0.3421,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 38
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00026",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 14,
+      "normalized_disagreement": 0.3415,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00005",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 8,
+      "normalized_disagreement": 0.3333,
+      "church_slavonic_length": 23,
+      "prosta_mova_length": 24
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00051",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.3333,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00041",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 15,
+      "normalized_disagreement": 0.3125,
+      "church_slavonic_length": 40,
+      "prosta_mova_length": 48
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00032",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.3077,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00025",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2973,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00046",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2973,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00063",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.2927,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00049",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.2857,
+      "church_slavonic_length": 38,
+      "prosta_mova_length": 42
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00053",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.2813,
+      "church_slavonic_length": 28,
+      "prosta_mova_length": 32
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00015",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 12,
+      "normalized_disagreement": 0.2791,
+      "church_slavonic_length": 40,
+      "prosta_mova_length": 43
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00010",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2778,
+      "church_slavonic_length": 32,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00050",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.275,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 40
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00020",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2703,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00048",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2703,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00012",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2683,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00062",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2564,
+      "church_slavonic_length": 32,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00059",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2558,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 43
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00013",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2439,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00019",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 10,
+      "normalized_disagreement": 0.2439,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00040",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 11,
+      "normalized_disagreement": 0.2391,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 46
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00035",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.2368,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 38
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00045",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.2368,
+      "church_slavonic_length": 32,
+      "prosta_mova_length": 38
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00003",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 6,
+      "normalized_disagreement": 0.2308,
+      "church_slavonic_length": 25,
+      "prosta_mova_length": 26
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00017",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.2308,
+      "church_slavonic_length": 31,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00018",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.225,
+      "church_slavonic_length": 33,
+      "prosta_mova_length": 40
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00057",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 8,
+      "normalized_disagreement": 0.2222,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00016",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.2195,
+      "church_slavonic_length": 37,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00004",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 5,
+      "normalized_disagreement": 0.2174,
+      "church_slavonic_length": 20,
+      "prosta_mova_length": 23
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00021",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 8,
+      "normalized_disagreement": 0.2162,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00039",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.2143,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 42
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00042",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 9,
+      "normalized_disagreement": 0.2093,
+      "church_slavonic_length": 38,
+      "prosta_mova_length": 43
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00033",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 7,
+      "normalized_disagreement": 0.2059,
+      "church_slavonic_length": 31,
+      "prosta_mova_length": 34
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00006",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 5,
+      "normalized_disagreement": 0.2,
+      "church_slavonic_length": 22,
+      "prosta_mova_length": 25
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00043",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 7,
+      "normalized_disagreement": 0.1944,
+      "church_slavonic_length": 31,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00034",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 7,
+      "normalized_disagreement": 0.1892,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 37
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00024",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 7,
+      "normalized_disagreement": 0.1795,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00056",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 7,
+      "normalized_disagreement": 0.175,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 40
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00071",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 7,
+      "normalized_disagreement": 0.1707,
+      "church_slavonic_length": 36,
+      "prosta_mova_length": 41
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00030",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 6,
+      "normalized_disagreement": 0.1667,
+      "church_slavonic_length": 33,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00066",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 6,
+      "normalized_disagreement": 0.1538,
+      "church_slavonic_length": 35,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00077",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 6,
+      "normalized_disagreement": 0.1538,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 39
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00047",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 5,
+      "normalized_disagreement": 0.1515,
+      "church_slavonic_length": 33,
+      "prosta_mova_length": 32
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00058",
+      "column": "right",
+      "ink_risk": false,
+      "codepoint_edit_distance": 5,
+      "normalized_disagreement": 0.1389,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00028",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 4,
+      "normalized_disagreement": 0.1111,
+      "church_slavonic_length": 34,
+      "prosta_mova_length": 36
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00011",
+      "column": "left",
+      "ink_risk": false,
+      "codepoint_edit_distance": 3,
+      "normalized_disagreement": 0.0857,
+      "church_slavonic_length": 32,
+      "prosta_mova_length": 35
+    }
+  ]
+}
