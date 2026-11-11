@@ -36,5 +36,28 @@ class TestI34(unittest.TestCase):
         self.assertGreaterEqual(len(r["uncertainty_notes"]),30)
         self.assertEqual(r["coverage"]["occlusions"],[])
 
+
+    def test_high_risk_old_script_glyphs_and_review_are_explicit(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        r=d["reading"]
+        self.assertGreaterEqual(r["raw_response"].count("҃"),10)
+        self.assertIn("Ἰωάννου τοῦ",r["raw_response"])
+        self.assertIn("ѵ",r["raw_response"])
+        self.assertIn("ѣ",r["raw_response"])
+        self.assertIn("ѡ",r["raw_response"])
+        audit=json.loads((PATH.parent/"reviews/vol1_scan00034_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["high_risk_omissions"]),1)
+        self.assertGreaterEqual(len(audit["unresolved"]),5)
+        self.assertIn("main-line-23",{x["line_id"] for x in audit["high_risk_omissions"]})
+        original={l["id"]:l["text"] for reg in r["regions"] for l in reg["lines"]}
+        for item in audit["high_risk_omissions"]:
+            self.assertIn(item["frozen_substring"],original[item["line_id"]])
+            self.assertNotEqual(item["disposition"],"verified")
+
 if __name__=="__main__":
     unittest.main()
