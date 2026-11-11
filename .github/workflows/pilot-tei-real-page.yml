@@ -1,0 +1,54 @@
+name: "One real-page unverified pilot TEI: image and P5 checks"
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/pilot_tei.py
+      - pilot/vol4_scan00100_single_reading.json
+      - pilot/vol4_scan00100_single_reading.xml
+      - tests/test_pilot_tei.py
+      - .github/workflows/pilot-tei-real-page.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  draft-tei:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install development package and XML validator
+        run: |
+          python -m pip install -e . lxml
+      - name: Fetch only the pinned native image and source manifest
+        run: |
+          set -euo pipefail
+          mkdir -p native-assets/vol4
+          SRC=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol4
+          curl --fail --silent --show-error --location --retry 2 "$SRC/manifest.json" -o native-assets/vol4/manifest.json
+          curl --fail --silent --show-error --location --retry 2 "$SRC/page-00100.jpg" -o native-assets/vol4/page-00100.jpg
+      - name: Generate source-checked single-reader unverified TEI
+        run: |
+          franko-pilot-tei --images native-assets --input pilot/vol4_scan00100_single_reading.json --output build/pilot.xml
+          diff -u pilot/vol4_scan00100_single_reading.xml build/pilot.xml
+      - name: Validate TEI P5 4.12.0 Relax NG
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --retry 2 \
+            'https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/custom/schema/relaxng/tei_all.rng' -o build/tei_all_4.12.0.rng
+          python - <<'PY'
+          from lxml import etree
+          schema=etree.RelaxNG(etree.parse('build/tei_all_4.12.0.rng'))
+          document=etree.parse('build/pilot.xml')
+          assert schema.validate(document), schema.error_log
+          print('TEI P5 4.12.0 Relax NG: PASS. Text remains unverified.')
+          PY
+      - name: Preserve text-only pilot diagnostics, never scan assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-single-reader-unverified-pilot-tei
+          path: build/pilot.xml
+          retention-days: 7
+          if-no-files-found: error
