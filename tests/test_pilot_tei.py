@@ -194,5 +194,43 @@ class PilotTeiTests(unittest.TestCase):
                     render_pilot_tei(data,1190,1794)
 
 
+
+    def test_source_occlusion_suffix_uses_real_tei_gap_and_fails_closed(self):
+        data=self.sample()
+        r=data['reading']
+        line=r['regions'][1]['lines'][0]
+        line['text']='printed visible word…'
+        line['language_spans']=[]
+        line['unreadable_suffix']=True
+        r['uncertainty_notes']=[]
+        r['coverage']['occlusions']=[{
+            'kind':'library_stamp','bbox_xywh':[900,150,100,45],
+            'description':'source-image ink hides trailing printed glyphs',
+            'obscures_source_letters':True,
+            'reconstructed_from_neighbor_page':False,
+            'affected_line_ids':['text-line'],
+        }]
+        r['raw_response']=chr(10).join(['48','printed visible word…'])
+        validate_single_draft(data,self.root)
+        xml=render_pilot_tei(data,1190,1794)
+        doc=ET.fromstring(xml)
+        gaps=doc.findall(f'.//{{{TEI}}}gap')
+        self.assertEqual(len(gaps),1)
+        self.assertEqual(gaps[0].get('reason'),'illegible')
+        self.assertNotIn('word…',xml)
+        self.assertEqual(extract_transcribed_lines(xml),['48','printed visible word…'])
+        bad=copy.deepcopy(data)
+        bad['reading']['coverage']['occlusions']=[]
+        with self.assertRaisesRegex(ValueError,'occlusion'):
+            validate_single_draft(bad,self.root)
+        bad=copy.deepcopy(data)
+        del bad['reading']['regions'][1]['lines'][0]['unreadable_suffix']
+        with self.assertRaisesRegex(ValueError,'occlusion'):
+            validate_single_draft(bad,self.root)
+        bad=copy.deepcopy(data)
+        bad['reading']['regions'][1]['lines'][0]['text']='printed visible word'
+        with self.assertRaisesRegex(ValueError,'ellipsis'):
+            validate_single_draft(bad,self.root)
+
 if __name__=='__main__':
     unittest.main()

@@ -101,6 +101,24 @@ def validate_single_draft(payload, images_root):
     for area in nontext:
         _box(area.get('bbox_xywh'), width, height, 'nontext area')
         _required_text(area, 'description')
+    # Source-visible obstructions are not diplomatic ellipsis glyphs.
+    # Current single-draft support covers only an illegible line SUFFIX.
+    occlusions = coverage.get('occlusions', [])
+    if not isinstance(occlusions, list):
+        raise ValueError('occlusions must be a list')
+    occluded_ids = []
+    for obstruction in occlusions:
+        if not isinstance(obstruction, dict) or obstruction.get('kind') != 'library_stamp':
+            raise ValueError('unknown source occlusion type')
+        _box(obstruction.get('bbox_xywh'), width, height, 'source occlusion')
+        _required_text(obstruction, 'description')
+        if (obstruction.get('obscures_source_letters') is not True or
+                obstruction.get('reconstructed_from_neighbor_page') is not False):
+            raise ValueError('occlusions must be source-observed, never reconstructed')
+        affected = obstruction.get('affected_line_ids')
+        if not isinstance(affected, list) or not affected or not all(isinstance(x, str) for x in affected):
+            raise ValueError('invalid occlusion line references')
+        occluded_ids.extend(affected)
     regions = reading.get('regions')
     if not isinstance(regions, list) or not regions:
         raise ValueError('first reading must include regions')
@@ -108,6 +126,7 @@ def validate_single_draft(payload, images_root):
     page_number_texts = []
     line_text_by_id = {}
     raw_lines = []
+    illegible_suffix_ids = []
     for region in regions:
         name = _id(_required_text(region, 'id'), 'region')
         if name in region_ids:
@@ -132,11 +151,21 @@ def validate_single_draft(payload, images_root):
                 raise ValueError('line geometry_estimated flag required')
             text = _required_text(line, 'text')
             _valid_xml_text(text)
+            marker = line.get('unreadable_suffix', False)
+            if type(marker) is not bool:
+                raise ValueError('unreadable_suffix must be a boolean')
+            if marker:
+                if not text.endswith('…') or text.count('…') != 1:
+                    raise ValueError('illegible suffix requires exactly one trailing editorial ellipsis')
+                illegible_suffix_ids.append(identifier)
             line_text_by_id[identifier] = text
             raw_lines.append(text)
             validate_language_spans(text, line.get('language_spans'), reading['reader_id'])
             if region['kind'] == 'page_number':
                 page_number_texts.append(text)
+    if (len(illegible_suffix_ids) != len(occluded_ids) or
+            set(illegible_suffix_ids) != set(occluded_ids)):
+        raise ValueError('source occlusion and line-level gap markers must correspond exactly')
     label = payload.get('printed_page_observed')
     if label is not None and (not isinstance(label, str) or not label.strip()):
         raise ValueError('printed_page_observed must be a string or null')
@@ -184,12 +213,22 @@ def _append_line(parent, line, volume, page, reading_id):
     lb = _sub(parent,'lb',attrs={'facs':f"#{_facs_id(volume,page,'line',line['id'])}"})
     xml_id(lb, f"lb-v{volume}-s{page:05d}-{line['id']}")
     raw = line['text']
-    _valid_xml_text(raw)  # direct renderer calls must also fail closed
+    _valid_xml_text(raw)
+    illegible_suffix = line.get('unreadable_suffix', False)
+    if type(illegible_suffix) is not bool:
+        raise ValueError('unreadable_suffix must be boolean')
+    if illegible_suffix and (not raw.endswith('…') or raw.count('…') != 1):
+        raise ValueError('invalid trailing editorial ellipsis')
+    # The frozen first-response character «…» is a workflow gap marker,
+    # never part of the original printed text. Render it as a TEI <gap>.
+    visible = raw[:-1] if illegible_suffix else raw
     spans = line['language_spans']
     previous, current = 0, lb
     for span_index, span in enumerate(spans, 1):
-        start, end = span['start'], span['end']
-        current.tail = (current.tail or '') + raw[previous:start]
+        start, end = span['start'], min(span['end'], len(visible))
+        if start >= len(visible):
+            continue  # an annotation may cover only the editorial marker
+        current.tail = (current.tail or '') + visible[previous:start]
         attrs = {'type': 'language-attribution'}
         if span['language'] is not None:
             attrs[f'{{{XML}}}lang'] = span['language']
@@ -197,11 +236,17 @@ def _append_line(parent, line, volume, page, reading_id):
             attrs['subtype'] = span['script']
         if span['uncertain']:
             attrs['cert'] = 'low'
-        seg = _sub(parent,'seg',raw[start:end],attrs)
+        seg = _sub(parent,'seg',visible[start:end],attrs)
         xml_id(seg, f"seg-v{volume}-s{page:05d}-{line['id']}-{span_index:03d}")
         current = seg
         previous = end
-    current.tail = (current.tail or '') + raw[previous:]
+    current.tail = (current.tail or '') + visible[previous:]
+    if illegible_suffix:
+        gap = _sub(parent, 'gap', attrs={
+            'reason': 'illegible', 'extent': 'unknown', 'unit': 'character',
+            'corresp': f"#lb-v{volume}-s{page:05d}-{line['id']}"
+        })
+        xml_id(gap, f"gap-v{volume}-s{page:05d}-{line['id']}")
 
 
 def render_pilot_tei(payload, image_width, image_height):
@@ -274,6 +319,11 @@ def extract_transcribed_lines(xml):
                 if current is None:
                     raise ValueError('segment without line-break anchor')
                 current += ''.join(child.itertext()) + (child.tail or '')
+            elif child.tag == tag('gap'):
+                if (current is None or child.get('reason') != 'illegible' or
+                        child.get('extent') != 'unknown' or child.get('unit') != 'character'):
+                    raise ValueError('unsupported or invalid text gap')
+                current += '…' + (child.tail or '')
             else:
                 raise ValueError('unexpected transcribed inline element')
         if current is not None:

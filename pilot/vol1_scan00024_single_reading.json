@@ -1,0 +1,1192 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 24,
+  "printed_page_observed": "XV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00024.jpg",
+  "source_image_sha256": "7f7a29a5f037d3c578b58b808efb015115ce3adf8bc75bc97b5a966aee799c9c",
+  "reading": {
+    "reader_id": "gpt6-single-20261111-v1s00024",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-20261111-I24-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct native JPEG source-only first response, 41 printed body lines + printed XV. Purple library stamp blocks ends of last two lines, so append an editorial ellipsis solely as a notice of unreadable glyphs, NOT source punctuation. Preserve physical breaks and archaic Ukrainian and Russian bibliography. Do not consult the embedded OCR nor a subsequent page before freezing; no complete character-level validation.",
+    "raw_response": "XV\nвідання про Соломона і Китовраса, основаного на буддийських пере-\nказах з примішкою маніхейських дуалістичних вірувань. Та в уся-\nкім разі трудно думати, щоби всі звісні у нас апокріфи і апокрі-\nфічні оповіданя прийшли до нас власне за посередництвом Бого-\nмилів. Певна річ, чимала часть тої літератури йшла до нас і безпо-\nсередно з Греції (вище духовенство в домонгольській Руси було\nпереважно грецьке) чи то способом літературної передачі самих\nпамятників, що їх перекладувано на Руси з грецької мови, чи то\nустно. Голубінський і Терновський справедливо звертають увагу на\nбогацтво апокріфічних подробиць в писанях наших старих палом-\nників, особливо Данила Мниха; а що таких паломників у нас тоді\nбуло чимало, то й не диво, що оповіданя принесені ними зі Сходу,\nвсякали в народ. Певна річ, що й зносини Руси з Афоном причи-\nнювали ся не мало до популяризованя апокріфічних оповідань без-\nпосередно з Греції. Тай дороги літературної передачі з давен давна\nбули ріжнородні. Окрім творів занесених до нас богомильськими пропо-\nвідниками чи болгарськими емігрантами багато апокріфів приходило до\nнас в невинній формі вставок у старі візантійські літописи. Ми знаємо,\nщо вже в XII. віці у нас були звісні в старословянських перекла-\nдах літописи Георгія Амартола та Івана Малали. Літописці ті, по-\nчинаючи своє оповіданє від початку сьвіта, вплітали в него богато\nапокріфічних подробиць, а то й цілих апокріфічних творів. І так\nу Малали знаходять ся апокріфічні оповіданя про Авраама, Мель-\nхиседека і Заповіти 12-ти патріархів, у Амартола крім множества\nпоменших оповідань знаходять ся доволі обширні повісти про дис-\nпуту Авраама з єгипетськими мудрецями, про похоронене Адама\nв Єрусалимі, про Мельхиседека, про смерть Мойсея, про Соломона\nі южську царицю і т. д. Ба навіть у книгах призначених для цер-\nковного вжитку, в Прологах і Четях-Минеях уже від XII-віку ми\nзнаходимо апокріфічні оповіданя, між иньшим „Видїніє Ісаї“,\n„Лѣствицю Іакова“, „Паралипоменонъ пророка Іеремії“, „Слово\nМеѳодія Патарскаго“, „Завѣты 12-ти патріарховъ“ і т. і. (Про се гляди\nТерновскій, Изученіе византійской исторіи, т. II, passim; Го-\nлубинскій, Исторія русской церкви, т. I, 757 ід.; Сумцовъ,\nОчерки исторіи Южно-русскихъ апокрифическихъ сказаній и пѣ-\nсенъ, Кіевъ 1888, стор. 1—10).\nОсобливо важне місце в ряді книг того рода займає Палея,\nщо у староруських письменників тішила ся дуже великою поша-\nною і в многих Індексах знаходить ся в числі книг не тільки до-\nзволених до читаня, але по просту канонічних. Під назвою Пале…\nзвісні були в старій Руси два твори, що не маю…",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            1044,
+            859,
+            67,
+            511
+          ],
+          "description": "Pencil marks in right margin are nonprinted annotations, not Franko text."
+        }
+      ],
+      "occlusions": [
+        {
+          "kind": "library_stamp",
+          "bbox_xywh": [
+            790,
+            1460,
+            341,
+            226
+          ],
+          "obscures_source_letters": true,
+          "reconstructed_from_neighbor_page": false,
+          "affected_line_ids": [
+            "palaea-line-04",
+            "palaea-line-05"
+          ],
+          "description": "Purple oval BIBLIOTEKA Іnституту франкознавства stamp overlays final line endings. No reconstruction from context, OCR or adjacent pages."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          968,
+          64,
+          142,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XV",
+            "bbox_xywh": [
+              991,
+              82,
+              63,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "palaea-historical-editorial-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          124,
+          133,
+          984,
+          1248
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "відання про Соломона і Китовраса, основаного на буддийських пере-",
+            "bbox_xywh": [
+              139,
+              146,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "казах з примішкою маніхейських дуалістичних вірувань. Та в уся-",
+            "bbox_xywh": [
+              139,
+              180,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "кім разі трудно думати, щоби всі звісні у нас апокріфи і апокрі-",
+            "bbox_xywh": [
+              139,
+              214,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "фічні оповіданя прийшли до нас власне за посередництвом Бого-",
+            "bbox_xywh": [
+              139,
+              248,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "милів. Певна річ, чимала часть тої літератури йшла до нас і безпо-",
+            "bbox_xywh": [
+              139,
+              282,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "середно з Греції (вище духовенство в домонгольській Руси було",
+            "bbox_xywh": [
+              139,
+              316,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "переважно грецьке) чи то способом літературної передачі самих",
+            "bbox_xywh": [
+              139,
+              350,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "памятників, що їх перекладувано на Руси з грецької мови, чи то",
+            "bbox_xywh": [
+              139,
+              384,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "устно. Голубінський і Терновський справедливо звертають увагу на",
+            "bbox_xywh": [
+              139,
+              418,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "богацтво апокріфічних подробиць в писанях наших старих палом-",
+            "bbox_xywh": [
+              139,
+              452,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-11",
+            "text": "ників, особливо Данила Мниха; а що таких паломників у нас тоді",
+            "bbox_xywh": [
+              139,
+              486,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "було чимало, то й не диво, що оповіданя принесені ними зі Сходу,",
+            "bbox_xywh": [
+              139,
+              520,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "всякали в народ. Певна річ, що й зносини Руси з Афоном причи-",
+            "bbox_xywh": [
+              139,
+              554,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "нювали ся не мало до популяризованя апокріфічних оповідань без-",
+            "bbox_xywh": [
+              139,
+              588,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "посередно з Греції. Тай дороги літературної передачі з давен давна",
+            "bbox_xywh": [
+              139,
+              622,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "були ріжнородні. Окрім творів занесених до нас богомильськими пропо-",
+            "bbox_xywh": [
+              139,
+              656,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "відниками чи болгарськими емігрантами багато апокріфів приходило до",
+            "bbox_xywh": [
+              139,
+              690,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-18",
+            "text": "нас в невинній формі вставок у старі візантійські літописи. Ми знаємо,",
+            "bbox_xywh": [
+              139,
+              724,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 70,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-19",
+            "text": "що вже в XII. віці у нас були звісні в старословянських перекла-",
+            "bbox_xywh": [
+              139,
+              758,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 9,
+                "end": 14,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 14,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-20",
+            "text": "дах літописи Георгія Амартола та Івана Малали. Літописці ті, по-",
+            "bbox_xywh": [
+              139,
+              792,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "чинаючи своє оповіданє від початку сьвіта, вплітали в него богато",
+            "bbox_xywh": [
+              139,
+              826,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "апокріфічних подробиць, а то й цілих апокріфічних творів. І так",
+            "bbox_xywh": [
+              139,
+              860,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "у Малали знаходять ся апокріфічні оповіданя про Авраама, Мель-",
+            "bbox_xywh": [
+              139,
+              894,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-24",
+            "text": "хиседека і Заповіти 12-ти патріархів, у Амартола крім множества",
+            "bbox_xywh": [
+              139,
+              928,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "поменших оповідань знаходять ся доволі обширні повісти про дис-",
+            "bbox_xywh": [
+              139,
+              962,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "путу Авраама з єгипетськими мудрецями, про похоронене Адама",
+            "bbox_xywh": [
+              139,
+              996,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-27",
+            "text": "в Єрусалимі, про Мельхиседека, про смерть Мойсея, про Соломона",
+            "bbox_xywh": [
+              139,
+              1030,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "і южську царицю і т. д. Ба навіть у книгах призначених для цер-",
+            "bbox_xywh": [
+              139,
+              1064,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-29",
+            "text": "ковного вжитку, в Прологах і Четях-Минеях уже від XII-віку ми",
+            "bbox_xywh": [
+              139,
+              1098,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 50,
+                "end": 54,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 54,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "знаходимо апокріфічні оповіданя, між иньшим „Видїніє Ісаї“,",
+            "bbox_xywh": [
+              139,
+              1132,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "„Лѣствицю Іакова“, „Паралипоменонъ пророка Іеремії“, „Слово",
+            "bbox_xywh": [
+              139,
+              1166,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "Меѳодія Патарскаго“, „Завѣты 12-ти патріарховъ“ і т. і. (Про се гляди",
+            "bbox_xywh": [
+              139,
+              1200,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 69,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-33",
+            "text": "Терновскій, Изученіе византійской исторіи, т. II, passim; Го-",
+            "bbox_xywh": [
+              139,
+              1234,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 46,
+                "end": 58,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 58,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-34",
+            "text": "лубинскій, Исторія русской церкви, т. I, 757 ід.; Сумцовъ,",
+            "bbox_xywh": [
+              139,
+              1268,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 38,
+                "end": 45,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 45,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "Очерки исторіи Южно-русскихъ апокрифическихъ сказаній и пѣ-",
+            "bbox_xywh": [
+              139,
+              1302,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-36",
+            "text": "сенъ, Кіевъ 1888, стор. 1—10).",
+            "bbox_xywh": [
+              139,
+              1336,
+              954,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "palaea-description-stamp-obscured",
+        "kind": "body",
+        "bbox_xywh": [
+          124,
+          1372,
+          984,
+          226
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "palaea-line-01",
+            "text": "Особливо важне місце в ряді книг того рода займає Палея,",
+            "bbox_xywh": [
+              139,
+              1385,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "palaea-line-02",
+            "text": "що у староруських письменників тішила ся дуже великою поша-",
+            "bbox_xywh": [
+              139,
+              1420,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "palaea-line-03",
+            "text": "ною і в многих Індексах знаходить ся в числі книг не тільки до-",
+            "bbox_xywh": [
+              139,
+              1455,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "palaea-line-04",
+            "text": "зволених до читаня, але по просту канонічних. Під назвою Пале…",
+            "bbox_xywh": [
+              139,
+              1490,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "unreadable_suffix": true
+          },
+          {
+            "id": "palaea-line-05",
+            "text": "звісні були в старій Руси два твори, що не маю…",
+            "bbox_xywh": [
+              139,
+              1525,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00024",
+                "start": 0,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "unreadable_suffix": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "Китовраса",
+        "reason": "Historical name; page starts mid-sentence."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "маніхейських",
+        "reason": "Old Ukrainian orthography."
+      },
+      {
+        "line_id": "main-line-04",
+        "reading": "посередництвом",
+        "reason": "Print letter type and line break."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "літератури",
+        "reason": "Old vowel letter."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "Голубінський",
+        "reason": "Scholar name and i/ї."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "богацтво",
+        "reason": "Historical Ukrainian word."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Данила Мниха",
+        "reason": "Proper name and title."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "всякали",
+        "reason": "Potential substituted printed word; source should decide."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "ріжнородні",
+        "reason": "Historic Ukrainian word form."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "невинній формі",
+        "reason": "Unexpected phrase needs physical scan checking."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "XII. віці",
+        "reason": "Roman numeral/spacing."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Георгія Амартола",
+        "reason": "Byzantine proper name."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "Малали",
+        "reason": "Name in printed inflection."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "12-ти патріархів",
+        "reason": "Number and hyphen."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "дис-",
+        "reason": "Physical hyphenation, no semantic completion."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "южську царицю",
+        "reason": "Historical Ukrainian should not be modernized."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "Четях-Минеях",
+        "reason": "Historical ecclesiastical title."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "Видїніє Ісаї",
+        "reason": "Quoted old Cyrillic title."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "Лѣствицю Іакова",
+        "reason": "Historical ѣ/і."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "Паралипоменонъ пророка Іеремії",
+        "reason": "Old Cyrillic quotation."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "Меѳодія Патарскаго",
+        "reason": "Historical letter theta."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "Изученіе византійской исторіи",
+        "reason": "Russian historical scholarly title."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "passim",
+        "reason": "Latin insert."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "Сумцовъ",
+        "reason": "Russian name hard sign."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "пѣ-",
+        "reason": "Historical vowel / line split."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "Кіевъ 1888",
+        "reason": "Russian pre-reform publication info."
+      },
+      {
+        "line_id": "palaea-line-01",
+        "reading": "Палея",
+        "reason": "New paragraph."
+      },
+      {
+        "line_id": "palaea-line-02",
+        "reading": "поша-",
+        "reason": "Source split."
+      },
+      {
+        "line_id": "palaea-line-03",
+        "reading": "Індексах",
+        "reason": "Capital and glyph form."
+      },
+      {
+        "line_id": "palaea-line-04",
+        "reading": "Під назвою Пале…",
+        "reason": "Текст закрыт частью фиолетового бібліотечного штампа; editor-supplied ellipsis is not printed. Do not fill from next page."
+      },
+      {
+        "line_id": "palaea-line-05",
+        "reading": "що не маю…",
+        "reason": "Закрыто бібліотечного штампом: final word is unreadable, editorial ellipsis is not part of source. No neighboring page reconstruction."
+      }
+    ]
+  }
+}
