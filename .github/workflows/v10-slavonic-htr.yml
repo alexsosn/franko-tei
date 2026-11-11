@@ -105,13 +105,18 @@ jobs:
           set -euo pipefail
           franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 2 --max-lines 4 --margin-y 16 --output ocr-results/v5s00010-left.json
           franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 39 --max-lines 4 --margin-y 16 --output ocr-results/v5s00010-right.json
+          # A narrow crop can retain a single line better, but may clip titla.
+          # This comparison is diagnostic, not a choice of winning OCR model.
+          franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 2 --max-lines 4 --margin-y 8 --output ocr-results/v5s00010-left-tight.json
+          franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 39 --max-lines 4 --margin-y 8 --output ocr-results/v5s00010-right-tight.json
       - name: Audit source hashes, model pairing, script-critical diagnostic candidates
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          for col in ('left','right'):
+          for col in ('left','right','left-tight','right-tight'):
               f=Path('ocr-results')/f'v5s00010-{col}.json'
+              ymargin=8 if col.endswith('-tight') else 16
               records=json.loads(f.read_text(encoding='utf8'))
               assert len(records)==8
               by_id={}
@@ -120,7 +125,7 @@ jobs:
                   assert r['source_image_sha256']=='3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c'
                   assert len(r['model_checkpoint_sha256'])==64
                   assert len(r['crop_png_sha256'])==64
-                  assert r['margin_px']==[5,16]
+                  assert r['margin_px']==[5,ymargin]
                   by_id.setdefault(r['candidate_line_id'],set()).add(r['crop_png_sha256'])
                   print(f"{col} {r['candidate_line_id']} {r['model_name']}: {r['transcription'][:130]}")
               assert len(by_id)==4 and all(len(hashes)==1 for hashes in by_id.values())
