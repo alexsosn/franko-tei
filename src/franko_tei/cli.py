@@ -7,6 +7,7 @@ from .catalog import get_volume, load_catalog
 from .edition import build_tei, load_pages, validate_tei
 from .ingest import extract_pdf_text
 from .release import release_issues
+from .source_audit import download_source, inspect_pdf
 
 
 def main(argv=None):
@@ -14,6 +15,13 @@ def main(argv=None):
     parser.add_argument("--catalog", default=None, help="Optional separately audited catalogue JSON")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("catalog")
+    fetch = commands.add_parser("fetch-scan", help="Download one museum PDF to an ignored local path")
+    fetch.add_argument("--volume", required=True, choices=[str(i) for i in range(1, 6)])
+    fetch.add_argument("--output", required=True)
+    inspect = commands.add_parser("inspect-scan", help="Audit local PDF byte checksum and page/text-layer counts")
+    inspect.add_argument("--volume", required=True, choices=[str(i) for i in range(1, 6)])
+    inspect.add_argument("--pdf", required=True)
+    inspect.add_argument("--output", required=True)
     extract = commands.add_parser("extract-pdf", help="Stage EXISTING PDF text layer as unverified OCR")
     extract.add_argument("--volume", required=True, choices=[str(i) for i in range(1, 6)])
     extract.add_argument("--pdf", required=True)
@@ -34,6 +42,14 @@ def main(argv=None):
         catalog = load_catalog(args.catalog)
         if args.command == "catalog":
             print(json.dumps(catalog, ensure_ascii=False, indent=2))
+        elif args.command == "fetch-scan":
+            print(json.dumps(download_source(get_volume(catalog, args.volume), args.output), ensure_ascii=False))
+        elif args.command == "inspect-scan":
+            report = inspect_pdf(get_volume(catalog, args.volume), args.pdf)
+            target = Path(args.output)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(f"Wrote metadata audit to {target}; content has NOT been verified")
         elif args.command == "extract-pdf":
             print(json.dumps(extract_pdf_text(args.pdf, args.volume, args.output, args.start, args.end)))
         elif args.command == "build-tei":

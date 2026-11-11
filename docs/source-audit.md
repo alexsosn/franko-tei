@@ -14,3 +14,9 @@ Evidence:
 Next: download all five externally via the declared URLs, obtain `sha256sum`/PDF page counts, record per-page raw OCR availability and typographic strata, inspect images. Check permissions before mirroring scans. Curate line-level diplomatic holdout before picking an OCR engine.
 
 Franko's original editorial practice involved interventions and different manuscript versions. These need structural treatment, not only character-perfect OCR. See TEI critical apparatus guidelines.
+
+## Bounded source reconnaissance
+
+`franko-tei fetch-scan --volume 3 --output scans/vol3.pdf` downloads exactly the declared museum PDF locally, validates PDF magic and allowed final redirect host, limits the transfer to 1 GB, and returns a SHA256. `franko-tei inspect-scan --volume 3 --pdf scans/vol3.pdf --output audit/vol3.json` records physical PDF page count and per-page embedded text length. These measurements **do not verify text correctness**, printed pagination, rights or image completeness.
+
+`.github/workflows/source-recon.yml` allows manually selecting any volume and performs a bounded reconnaissance of volume III when the workflow/code changes in a PR. The runner keeps scan bytes transiently and uploads **only** the JSON audit report; it does not rehost scan images. Site availability, source server response and GitHub Actions egress are not guaranteed. If unavailable, log the explicit failure and evaluate an alternate authorized source; never fabricate hashes.
