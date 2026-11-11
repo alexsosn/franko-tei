@@ -14,12 +14,14 @@ dependencies = []
 
 [project.optional-dependencies]
 pdf = ["pymupdf>=1.24"]
+page-assets = ["pillow>=10"]
 
 [project.scripts]
 franko-tei = "franko_tei.cli:main"
 franko-ocr-candidates = "franko_tei.ocr_candidates:main"
 franko-kraken-layout = "franko_tei.kraken_layout:main"
 franko-agent-evidence = "franko_tei.agent_evidence:main"
+franko-crnn-probe = "franko_tei.crnn_probe:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

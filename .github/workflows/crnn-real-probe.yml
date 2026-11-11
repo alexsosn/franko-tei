@@ -1,0 +1,114 @@
+name: Open Church Slavonic CRNN comparison (unverified Franko lines)
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/crnn_probe.py
+      - tests/test_crnn_probe.py
+      - .github/workflows/crnn-real-probe.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare-specialists:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU engines, dependencies, and CLI
+        run: |
+          python -m pip install -e '.[page-assets]'
+          python -m pip install 'kraken==7.1.1' huggingface_hub torchvision
+          franko-crnn-probe --help > /dev/null
+      - name: Obtain user-supplied pinned scan images (not reuploaded as artifacts)
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images
+          for spec in 3:130 5:100; do
+            vol="${spec%:*}"
+            page="${spec#*:}"
+            dir="real-images/vol$vol"
+            mkdir -p "$dir"
+            printf -v img 'page-%05d.jpg' "$page"
+            curl --fail --location --retry 2 --silent --show-error "$BASE/vol$vol/manifest.json" -o "$dir/manifest.json"
+            curl --fail --location --retry 2 --silent --show-error "$BASE/vol$vol/$img" -o "$dir/$img"
+          done
+      - name: Create same physical line segmentation for both recognizers
+        run: |
+          franko-kraken-layout --images real-images --volume 3 --pages 130 --output geometry/vol3
+          franko-kraken-layout --images real-images --volume 5 --pages 100 --output geometry/vol5
+      - name: Fetch pinned Polyscriptor inference code
+        run: |
+          mkdir -p upstream
+          curl --fail --location --retry 2 --silent --show-error \
+            https://raw.githubusercontent.com/achimrabus/polyscriptor/7994ccadc537c59b0b90eb25b66dfa5d54976d6d/inference_pylaia_native.py \
+            -o upstream/inference_pylaia_native.py
+          test -s upstream/inference_pylaia_native.py
+          curl --fail --location --retry 2 --silent --show-error \
+            https://raw.githubusercontent.com/achimrabus/polyscriptor/7994ccadc537c59b0b90eb25b66dfa5d54976d6d/htr_engine_base.py \
+            -o upstream/htr_engine_base.py
+          test -s upstream/htr_engine_base.py
+      - name: Download source-version-pinned open CRNN weights
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from huggingface_hub import snapshot_download
+          # Revisions frozen from the successful real-scan run 43036416973.
+          # Never silently switch a reference candidate to the newest model.
+          repos = {
+              'prosta-mova': ('achimrabus/crnn-ctc-prosta-mova',
+                             'db88dcb5dfb767ef27066b012271cf4e6eb31a40'),
+              'church-slavonic': ('achimrabus/crnn-ctc-church-slavonic',
+                                 '2b253a83840eba1948e750b246d60991d3a15285'),
+          }
+          models = {}
+          for name, (repo, revision) in repos.items():
+              assert len(revision) == 40
+              output = Path('models') / name
+              snapshot_download(repo_id=repo, revision=revision,
+                                allow_patterns=['best_model.pt', 'symbols.txt'],
+                                local_dir=str(output))
+              weights, vocab = output/'best_model.pt', output/'symbols.txt'
+              assert weights.is_file() and vocab.is_file()
+              models[name] = {'repo': repo, 'revision': revision,
+                              'checkpoint': str(weights), 'symbols': str(vocab)}
+              print(f"{name} pinned at {revision} (SHA256 recorded in OCR report)")
+          Path('models/model-specs.json').write_text(json.dumps(models, indent=2))
+          PY
+      - name: Run identical 2 Church Slavonic source lines through both models
+        run: |
+          export OMP_NUM_THREADS=2
+          export MKL_NUM_THREADS=2
+          franko-crnn-probe --images real-images --volume 3 --layout geometry/vol3/vol3-page-00130-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 2 --max-lines 2 --output ocr-results/vol3.json
+          franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00100-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 2 --max-lines 2 --output ocr-results/vol5.json
+      - name: Check same-crop pairing and record diagnostic output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for file in sorted(Path('ocr-results').glob('*.json')):
+              records=json.loads(file.read_text(encoding='utf8'))
+              assert len(records)==4
+              groups={}
+              for rec in records:
+                  assert rec['status']=='ocr_unchecked'
+                  assert len(rec['model_checkpoint_sha256'])==64
+                  assert len(rec['crop_png_sha256'])==64
+                  groups.setdefault(rec['candidate_line_id'],set()).add(rec['crop_png_sha256'])
+                  print(f"{file.stem}/{rec['candidate_line_id']} {rec['model_name']}: {rec['transcription'][:95]}")
+              assert len(groups)==2 and all(len(digests)==1 for digests in groups.values())
+          PY
+      - name: Upload text-only unverified OCR, not scans or model checkpoints
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-crnn-paired-candidates
+          path: ocr-results/*.json
+          retention-days: 7
+          if-no-files-found: error
