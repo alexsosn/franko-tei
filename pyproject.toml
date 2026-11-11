@@ -14,6 +14,7 @@ dependencies = []
 
 [project.optional-dependencies]
 pdf = ["pymupdf>=1.24"]
+tf = ["text-fabric==13.1.1"]
 page-assets = ["pillow>=10"]
 
 [project.scripts]
@@ -23,6 +24,7 @@ franko-kraken-layout = "franko_tei.kraken_layout:main"
 franko-agent-evidence = "franko_tei.agent_evidence:main"
 franko-crnn-probe = "franko_tei.crnn_probe:main"
 franko-pilot-tei = "franko_tei.pilot_tei:main"
+franko-pilot-tf = "franko_tei.pilot_tf:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
