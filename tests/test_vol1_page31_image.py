@@ -56,5 +56,21 @@ class TestI31(unittest.TestCase):
             self.assertNotEqual(item["disposition"], "verified")
         self.assertGreaterEqual(len(audit["unresolved"]), 3)
 
+
+    def test_embedded_roman_numeral_has_own_script_span(self):
+        d = json.loads(PATH.read_text(encoding="utf-8"))
+        r = d["reading"]
+        line = r["regions"][1]["lines"][2]
+        self.assertEqual(line["id"], "main-line-03")
+        s = line["text"]
+        pos = s.index("XIII")
+        roman = [span for span in line["language_spans"]
+                 if span["start"] <= pos and span["end"] >= pos + 4]
+        self.assertEqual(len(roman), 1)
+        self.assertEqual((roman[0]["start"], roman[0]["end"]), (pos, pos + 4))
+        self.assertEqual(roman[0]["script"], "Latn")
+        self.assertTrue(all(span["text_version"] == r["reader_id"]
+                            for span in line["language_spans"]))
+
 if __name__ == "__main__":
     unittest.main()
