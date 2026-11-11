@@ -34,6 +34,10 @@ class TestV10ZoomReinspection(unittest.TestCase):
                 self.assertFalse("⟦" in line["literal_observed_hypothesis"])
                 self.assertTrue(line["image_bbox_xywh"])
                 self.assertTrue(line["source_note"].strip())
+        # Unreviewed old-print hypotheses are never full diplomatic lines.
+        for name in ("title", "left_body", "right_fragments"):
+            for line in d["regions"][name]:
+                self.assertFalse(line["line_fully_read"], (name, line["line_id"]))
         self.assertTrue(d["cropping"]["nearest_neighbor"])
         self.assertFalse(d["cropping"]["generative"])
 
