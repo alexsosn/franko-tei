@@ -1,0 +1,697 @@
+{
+  "schema_version": "v10-user-photos-visual-audit-v0",
+  "status": "photo_first_partial_visual_audit",
+  "volume": "5",
+  "scan_page": 10,
+  "date": "2026-11-11",
+  "source_primary_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+  "source_ocr_candidates": "pilot/ocr/vol5_scan00010_broad_raw_20261111.json",
+  "source_photo_kind": "Seven overlapping user's photos of a printed-page facsimile, one wide overview, six closeups. These are not a second historical witness or a second independently blind reader.",
+  "photographs": [
+    {
+      "index": 1,
+      "filename": "IMG_5A14C387-37FF-462F-B107-411FA3443988.jpeg",
+      "sha256": "5148224405dc6e1702cb258e205a81a8c9a7d44bbc7a467523f7b6844b694a44",
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "content_region": "left title and first body lines",
+      "photographed_page": "same two-column V/10 early-source reproduction; overlapping camera views",
+      "source_kind": "user_supplied_chat_photo",
+      "committed_to_repo": false
+    },
+    {
+      "index": 2,
+      "filename": "IMG_7EC32CD1-D036-49D7-9E0F-60AF32C24E8E.jpeg",
+      "sha256": "0aeaf56636c30cb46563f00c5176f1a5c24850d86bde4647cd4611cdb4ad4bb4",
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "content_region": "left middle body",
+      "photographed_page": "same two-column V/10 early-source reproduction; overlapping camera views",
+      "source_kind": "user_supplied_chat_photo",
+      "committed_to_repo": false
+    },
+    {
+      "index": 3,
+      "filename": "IMG_E88B4233-1C6F-4B40-A1DA-6F19410A2F34.jpeg",
+      "sha256": "a6e9a8a714aa79b26aaa679c544d50ed0bb0778a16e5ab7ee6669294fe4b0fa9",
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "content_region": "left bottom and Franko editorial caption",
+      "photographed_page": "same two-column V/10 early-source reproduction; overlapping camera views",
+      "source_kind": "user_supplied_chat_photo",
+      "committed_to_repo": false
+    },
+    {
+      "index": 4,
+      "filename": "IMG_449CD6B9-26D0-46FE-ABA5-A746CBB2E7B3.jpeg",
+      "sha256": "13096a472fd99f9cd0d52cfbaa65deb7f61b11d04f635866c1c9010dc6e88a25",
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "content_region": "right upper column",
+      "photographed_page": "same two-column V/10 early-source reproduction; overlapping camera views",
+      "source_kind": "user_supplied_chat_photo",
+      "committed_to_repo": false
+    },
+    {
+      "index": 5,
+      "filename": "IMG_72E1F40C-973F-4D40-9B79-D1CE60518A09.jpeg",
+      "sha256": "7026ceab1f12526c5dbbb97fbc4481ba1b7c62215b3709dcff4784d98e41f9e5",
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "content_region": "right middle column",
+      "photographed_page": "same two-column V/10 early-source reproduction; overlapping camera views",
+      "source_kind": "user_supplied_chat_photo",
+      "committed_to_repo": false
+    },
+    {
+      "index": 6,
+      "filename": "IMG_9E341F9F-6C67-4917-8AC7-DDE98E19E803.jpeg",
+      "sha256": "a8510baadb8d5332c59976c048fcb444de55cc872a576424b9b27679b969bcd6",
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "content_region": "right bottom and Franko editorial caption",
+      "photographed_page": "same two-column V/10 early-source reproduction; overlapping camera views",
+      "source_kind": "user_supplied_chat_photo",
+      "committed_to_repo": false
+    },
+    {
+      "index": 7,
+      "filename": "IMG_AD4B20BD-BD5F-461A-9B7E-0E88B3372FC1.jpeg",
+      "sha256": "acabc3acad59d6fbeeafa87f4d2c5b43d279bae9a390839898407ade5269b1ba",
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "content_region": "complete page overview",
+      "photographed_page": "same two-column V/10 early-source reproduction; overlapping camera views",
+      "source_kind": "user_supplied_chat_photo",
+      "committed_to_repo": false
+    }
+  ],
+  "photographs_rehosted": false,
+  "visual_audit_uses_photographs_not_ocr_as_truth": true,
+  "independent_blind_reader": false,
+  "bibliographic_attribution_independently_verified": false,
+  "source_caption_medium": "старого друку",
+  "source_medium_classification": "caption_reports_early_print",
+  "source_caption_quote": "Подобизна першої сторони старого друку без означеня місця і року, правдоподібно з початку XVII віку",
+  "source_medium_qualification": "Photographed page is a facsimile in Franko's modern book, showing typography and decorative woodcut; author/editor calls early print. The original historical exemplar is not directly inspected.",
+  "photographic_notes": [
+    "Original print source SHA and user photographic SHA hashes refer to distinct images of the same reproduced page. The user's camera closeups are not geometrically registered to the original 1190×1701 JPEG; the boxes stored below are from the pinned prior JPEG, not invented camera-pixel boxes.",
+    "Seven photos overlap, and all show the same two-column page. Do not treat them as independent textual witnesses, multiple reader votes, or an improvement to the bibliographic provenance of the original early print.",
+    "Photographs include a horizontal page fold/shadow and perspective distortions. Titla, ligatures and superscript letters must be inspected at native resolution before certifying any Unicode grapheme.",
+    "Observed readings are cautious lexical anchors. Diacritics are editorial placeholders wherever exact print signs have not been independently identified. Never directly copy observed_reading_or_anchor to a TEI glyph node."
+  ],
+  "diplomatic_reading_complete": false,
+  "titla_and_ligatures_verified": false,
+  "may_feed_tei_tf": false,
+  "cer_measured": false,
+  "source_page_fully_covered": false,
+  "targeted_observations_not_independent_gold": true,
+  "comparisons": [
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00002",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "Мцⷭа / апрїлѧ / въ первыи",
+      "evidence_note": "The old-print top date and first-day phrase are legible; exact titlo and superscript Unicode sequence remain unsettled.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "М҇цⷭ҇а априлѧ, въпорвыи",
+      "prosta_mova_raw": "Мцⷭа҇ а҆при́лѧ, въпо́рвыи",
+      "crop_png_sha256": "cd996f21b0f5f773db003b6cbe188d7a45105ee513452dc313f2acb89b322dac",
+      "original_v10_image_bbox_xyxy": [
+        191,
+        144,
+        594,
+        211
+      ],
+      "source_high_ink_seam": true
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00003",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "днь. Житїе иже … [пре-]",
+      "evidence_note": "Handwriting-domain OCR says «китїе и жизнь», which is not the visible title. The HTR sequence wrongly fused or substituted the relative-expression glyphs; exact small marks still unchecked.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "дн҃ь. китїе и жизнь, про¬",
+      "prosta_mova_raw": "дн҃ь. Житїѐ и҆жи́знь, пре",
+      "crop_png_sha256": "d90d67a122f4a9c89a277e8e28b97cb63b5190a3982263806747ea0239af3ebc",
+      "original_v10_image_bbox_xyxy": [
+        184,
+        211,
+        598,
+        261
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00004",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "подобныѧ мт҃ри нашеѧ",
+      "evidence_note": "The photographed line visibly retains a contraction over мтри; print-domain model's «матри» expands or substitutes the abbreviation. Do not infer the exact superscript codepoints from model output.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "подобныѧ мт҃ри нашеѧ",
+      "prosta_mova_raw": "подо́бныѧ ма́три на́шеѧ",
+      "crop_png_sha256": "9fd05481f27601bfb9d99d5597e486afd3bd8621f93860c78ac0a496126ae071",
+      "original_v10_image_bbox_xyxy": [
+        184,
+        261,
+        597,
+        300
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00005",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "Марїи египетскїѧ … спи-",
+      "evidence_note": "Name Mary and Egyptian epithet are visible. Print-domain model's «стипотыкїѧ» and manuscript model's «египотьскїѧ» differ from clear printed letter sequence; orthographic/digraph details unresolved.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "марїи египотьскїѧ. спи¬",
+      "prosta_mova_raw": "Ма́рїи сти́потыкїѧ. спи́",
+      "crop_png_sha256": "db2f8bfeff8f51c65b1c8394be6207240fbe81b710214e983f7681e7889cbc79",
+      "original_v10_image_bbox_xyxy": [
+        184,
+        300,
+        597,
+        346
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00006",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "сано софронїемъ, патрїа-",
+      "evidence_note": "Continuation of printed «спи- / сано». OCR «вано вофронїемъ» or «рано вофронїемъ» substitutes both word initials; second word names Sophronius.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "вановофронїемъ; патрїа",
+      "prosta_mova_raw": "рано вофро́нїемъ, па́трїа",
+      "crop_png_sha256": "6953719c9563a544d89686f617a7633b73aaace1db7a9dd132ed10e6fbd3cfd3",
+      "original_v10_image_bbox_xyxy": [
+        184,
+        346,
+        601,
+        388
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00007",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "segmentation_error",
+      "observed_reading_or_anchor": "патрїа- / рхомъ [across adjacent photographed lines]",
+      "evidence_note": "Kraken's short 24px candidate, recognized as «ра¬» by one model, is not supported as an independent full printed text line. The title is split across photographic lines; inspect the ornamental superscript/overhang before remapping.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "ра¬",
+      "prosta_mova_raw": "алꙍⷩ҇",
+      "crop_png_sha256": "39cc1dfcc9b1639ab714bc7df9c2642657da2440be9038aa06a0dd81b60f9d12",
+      "original_v10_image_bbox_xyxy": [
+        312,
+        388,
+        375,
+        412
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00008",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "requires_glyph_audit",
+      "observed_reading_or_anchor": "рхомъ їер…лимскимъ",
+      "evidence_note": "Continuation of patrїа-. Both HTR outputs collapse or invent the Jerusalem spelling and contraction; the photographed titlo/upper marks need letter-by-letter review.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "рхомъ їерⷭ҇лимъ вкимво",
+      "prosta_mova_raw": "рхо́мъ і҆ерⷭ҇ли́мвкимъ.",
+      "crop_png_sha256": "926bfc0fa995f62bd64750bcc58a8c32e75b555075b3276502f62b580c119af4",
+      "original_v10_image_bbox_xyxy": [
+        219,
+        412,
+        574,
+        456
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00009",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "requires_glyph_audit",
+      "observed_reading_or_anchor": "бл[supralinear]ви, ѡче.",
+      "evidence_note": "Blessing is a separate centered printed line; both models lose or misplace original superscript abbreviation signs, so no definitive Unicode diplomatic string is asserted.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "блⷭ҇ви; ѡч҃е.",
+      "prosta_mova_raw": "блвѝ, ѡ҆че.",
+      "crop_png_sha256": "0b39d14d7931f2b5f692292425eb223ceba9f69ad19a9fb0593191627a5add03",
+      "original_v10_image_bbox_xyxy": [
+        282,
+        456,
+        493,
+        491
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00010",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "Таинꙋ цр҃евꙋ добро есть таити, а",
+      "evidence_note": "Decorative initial and terminal «а» are on the photograph. Manuscript model ends «таити. л», a punctuation and letter substitution; titlo over цареву requires checking.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "Таинꙋ цр҃евꙋ добро есть таити. л",
+      "prosta_mova_raw": "Та́ннꙋ црецꙋ добро̀ е҆сть тлити, ҂л҃",
+      "crop_png_sha256": "7c85b0bcb88caa7e790773e4f76d045ad463ddd391269413677a01db119066a4",
+      "original_v10_image_bbox_xyxy": [
+        195,
+        491,
+        597,
+        524
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00011",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "дѣла бж҃їа проповѣдати преславно",
+      "evidence_note": "Lexical sequence matches both OCR systems, but their codepoint choices for the divine abbreviation, historical vowels and accents differ. Not a glyph-by-glyph confirmation.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "дѣла бж҃їѧ проповѣдати преславно",
+      "prosta_mova_raw": "дѣ́ла бж҃їѧ проповѣ́дати пресла́вно",
+      "crop_png_sha256": "b594f9b7110edee56487f92878e35b5709780beb1d17dcab037a99174a3924c0",
+      "original_v10_image_bbox_xyxy": [
+        224,
+        524,
+        601,
+        555
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00012",
+      "photo_index": 1,
+      "column": "left",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "есть. тако бо рече аггелъ к Товитꙋ",
+      "evidence_note": "The photographed Tobit name belongs after the preposition «к»; OCR's «кто витꙋ» or «кѿавитꙋ» creates a false word break. Printed angel abbreviation has superscript marks.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "ость. тако бо рече агг҃елъ кто витꙋ;",
+      "prosta_mova_raw": "е҆сть. та́ко бо рече а҆́гг҃елъ кѿави́тꙋ, ",
+      "crop_png_sha256": "af49d908e6bb1e04c73fada019c5f38bc44dad4bf0ed1288d66721bee2b05d02",
+      "original_v10_image_bbox_xyxy": [
+        184,
+        555,
+        598,
+        588
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00017",
+      "photo_index": 2,
+      "column": "left",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "тѣмъже и азъ боюсѧ молчати дѣла",
+      "evidence_note": "A fairly coherent line in both models, but all superscript/diacritic placements remain unchecked; do not treat model agreement as textual truth.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "тѣмъже и азъ боюсѧ молчати дѣла",
+      "prosta_mova_raw": "тѣ́мъ же и҆ а҆́зъ боѡ́сѧ молча́ти дѣ́ла",
+      "crop_png_sha256": "7607831d69096ad01309db7c1e299f5cd1bd44e28da07704d06b3f19a11a7b3a",
+      "original_v10_image_bbox_xyxy": [
+        185,
+        724,
+        602,
+        755
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00018",
+      "photo_index": 2,
+      "column": "left",
+      "assessment": "requires_glyph_audit",
+      "observed_reading_or_anchor": "бж҃їѧ … мꙋкꙋ раба оного",
+      "evidence_note": "Visible printed word for the servant and a sacred contraction; several small diacritics and the split between print lines remain to be audited.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "бж҃їѧ. боспоминаѧ мꙋкꙋ раба оного",
+      "prosta_mova_raw": "бж҃їѧ, воспомина́ѧ м́ꙋ́кꙋ раба̀ о҆́ного,",
+      "crop_png_sha256": "90a952ecb522c0011e5d8298b4deb851623ee0f37ad03a1dda9384733d54ce2b",
+      "original_v10_image_bbox_xyxy": [
+        185,
+        755,
+        597,
+        791
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00022",
+      "photo_index": 2,
+      "column": "left",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "не могꙋ таити …",
+      "evidence_note": "Both models give divergent or broken start («неогꙋ», «не могꙋ»); photo supports a separate negative particle and verb, but the rest of the physical line is not asserted.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "не могꙋ таити. и никтоже іии ѿквасъ",
+      "prosta_mova_raw": "неогꙋ таи҆́ти, и҆ ниито́жей ѿха́съ",
+      "crop_png_sha256": "72d2a676c03e09cc5445e10f8e41713c59b564830febe7bda9bc85483b0d01eb",
+      "original_v10_image_bbox_xyxy": [
+        187,
+        896,
+        601,
+        927
+      ],
+      "source_high_ink_seam": true
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00033",
+      "photo_index": 3,
+      "column": "left",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "в родѣ нашемъ. Бысть нѣкто …",
+      "evidence_note": "Photograph confirms paragraph shift and rubricated-size initial; spelling of the new elder/monastic episode requires further paleographic work.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "в родѣ нашемъ. Бысть нѣкто ста¬",
+      "prosta_mova_raw": "вро́дѣ на́шемъ. Вы́сть нѣ́кто ста҃",
+      "crop_png_sha256": "799af91f88d2569ae391f7d85092739a34665277154adf289595c8efc9f0317a",
+      "original_v10_image_bbox_xyxy": [
+        191,
+        1266,
+        601,
+        1297
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00037",
+      "photo_index": 3,
+      "column": "left",
+      "assessment": "requires_glyph_audit",
+      "observed_reading_or_anchor": "… неческими … [конец строки]",
+      "evidence_note": "Lower left body includes the monk's life narrative; many tall descending letters and the page fold interfere with exact baseline/ligature recovery. Do not certify the candidate.",
+      "lexical_anchor_confidence": "low",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "неческими обычаи и вещьми. зосима же¬",
+      "prosta_mova_raw": "не́ческими ѻ҆бы́чаи и҆ вещвм́и ,Арси́млже",
+      "crop_png_sha256": "402293eff14f36659464650865b46b83ec82ff3370a452b886d7afc27d0c389f",
+      "original_v10_image_bbox_xyxy": [
+        196,
+        1398,
+        605,
+        1430
+      ],
+      "source_high_ink_seam": true
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00039",
+      "photo_index": 4,
+      "column": "right",
+      "assessment": "segmentation_error",
+      "observed_reading_or_anchor": "…щенїѧ и дѣла творѧше, и всѧ преданїѧ",
+      "evidence_note": "The right column begins with a word tail; original text continuity from excluded left terminal candidate #38 must be established. An OCR row on the right alone is not a complete word.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "щенїѧ и дѣла творѧше. и всѧ преданїѧ",
+      "prosta_mova_raw": "щенїѧ и҆ дѣ́ла творѧ́ше, и҆ вѐ ѧпреда́нїѧ",
+      "crop_png_sha256": "d744db8018a56dbf90668a4e89c7e33623934c822617d34b0b0520158962a015",
+      "original_v10_image_bbox_xyxy": [
+        615,
+        61,
+        1039,
+        109
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00040",
+      "photo_index": 4,
+      "column": "right",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "хранѧше. и се все творѧ. и николиже ѿ",
+      "evidence_note": "Both model readings approximate photographed words, but spacing, word divisions and superscript letters differ. This is useful anchoring, not diplomatic acceptance.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "хранѧше. и се все творѧ. и николиже ѿ",
+      "prosta_mova_raw": "хрлнѧ́ше. и҆ сѐ все̑ творѧ̀о҆ и҆ николи́ же ѿ",
+      "crop_png_sha256": "bd74e9210974aeaa00c092b4c9aa4bdacbf6c739cd38a7bdabce4fec063c268d",
+      "original_v10_image_bbox_xyxy": [
+        615,
+        109,
+        1038,
+        137
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00041",
+      "photo_index": 4,
+      "column": "right",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "оученїѧ ст҃ыхъ словесъ …",
+      "evidence_note": "The photo shows a word sequence with contracted «ст҃ыхъ» and a following word unclear in OCR; model endings («ославѧднⷩо», «ѻслабѧ») are not safely accepted.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "оученїѧ с҃тыхъ словесъ ославѧднⷩо и лежа",
+      "prosta_mova_raw": "оу҆че́нїѧ ст҃ы́хъ слове́съ ѻ҆слабѧ, но̑ и҆ лежа̀",
+      "crop_png_sha256": "43f519c1588e9869973b44dd991e90e9572b678ec2d373e07ae5883dc5ab6175",
+      "original_v10_image_bbox_xyxy": [
+        618,
+        137,
+        1039,
+        176
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00042",
+      "photo_index": 4,
+      "column": "right",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "и въставаѧ, и рꙋкама держа дѣло, и пи-",
+      "evidence_note": "Photograph supports the main word sequence; models disagree on «держа» vs «дерѧа», and on final printed line-end letters/abbreviation.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "и въставаѧ, и рꙋкама держа дѣло, и пи¬",
+      "prosta_mova_raw": "и҆ въстава́ѧ, и҆ рꙋка́ма дерѧа̀ дѣло, и҆ ти",
+      "crop_png_sha256": "24fafa5812c642b015c202c9c52274b98296a83f03d74e6523a7a0785ce452c7",
+      "original_v10_image_bbox_xyxy": [
+        616,
+        176,
+        1042,
+        209
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00046",
+      "photo_index": 4,
+      "column": "right",
+      "assessment": "mismatch",
+      "observed_reading_or_anchor": "ѿ самого бо младеньства …",
+      "evidence_note": "Manuscript model «ѿ камого» replaces visible initial consonant in «самого»; subsequent phrase spans this and the next printed row.",
+      "lexical_anchor_confidence": "high",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "ѿ камого бо младеньства вданъ бѣ вмо¬",
+      "prosta_mova_raw": "ѿамогѣо младе́ньства в да́нъ бѣ̑ змо",
+      "crop_png_sha256": "0cd2066830902764f54ed7f5694fc609651d1b7db39e43092163be0452754871",
+      "original_v10_image_bbox_xyxy": [
+        622,
+        312,
+        1044,
+        346
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00061",
+      "photo_index": 5,
+      "column": "right",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "… монастырь сꙋщїи при Іорданѣ …",
+      "evidence_note": "Place-name Jordan and monastery appear on photograph, while OCR adds or conflates neighboring letters; superscripts and ligatures unresolved.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "ц монастырь сꙋщїи приѡрданѣ. дбїе ꙗже",
+      "prosta_mova_raw": " мо насты́рь сꙋ́щїи при іѻрда́нѣѳфїефе",
+      "crop_png_sha256": "d4c3331c135421f8a030a1cd7f5c789ec984ba46113d90472c6d3d13c20c5205",
+      "original_v10_image_bbox_xyxy": [
+        626,
+        829,
+        1047,
+        864
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00066",
+      "photo_index": 6,
+      "column": "right",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "… бысть игꙋменꙋ … поклонисѧ",
+      "evidence_note": "Basic sentence morphology identifiable; visual scan carries many descenders whose exact attribution across rows is not verified.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "но бысть игꙋменꙋ. вшеⷣ же поклонисѧ",
+      "prosta_mova_raw": "но бы́сть и҆гꙋменꙋ. вшеⷨ же проилони́сѧ",
+      "crop_png_sha256": "280f3fc9f7175add0a932348fb29799b16773de884eb131c5df5ccb22caf4fab",
+      "original_v10_image_bbox_xyxy": [
+        624,
+        999,
+        1047,
+        1027
+      ],
+      "source_high_ink_seam": false
+    },
+    {
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00075",
+      "photo_index": 6,
+      "column": "right",
+      "assessment": "requires_glyph_audit",
+      "observed_reading_or_anchor": "брате … чл҃ческїи родъ …",
+      "evidence_note": "Late-right passage includes a contracted human adjective; source image has multiple supralinear/suspension marks not reliably captured by models.",
+      "lexical_anchor_confidence": "medium",
+      "photo_text_is_provisional": true,
+      "glyph_by_glyph_verified": false,
+      "church_slavonic_raw": "брате, исцѣлѧꙗиⷧ҇ ч҃лческїи родъ тои",
+      "prosta_mova_raw": "бра́те и҆сдѣлѧ́ꙗиⷧ҇ чл҃ческїи ро́дъ ,꙽ то́и",
+      "crop_png_sha256": "c83884289431fbd1101eada2cfe59933248d4401d3552fb7ca122bf3832e4e60",
+      "original_v10_image_bbox_xyxy": [
+        621,
+        1301,
+        1040,
+        1335
+      ],
+      "source_high_ink_seam": true
+    }
+  ],
+  "next_gates": [
+    "Adjudicate header physical-line segmentation: short Kraken candidate #7 is probably an overhang, not a separate full printed line; compare native pixels and full photograph.",
+    "Compare title and first left-body with the camera photo at glyph/diacritic level using separate actual-character and editorial-expanded fields.",
+    "Inspect 21 ink-heavy seams and lower left/right joined lines; no automatic crop acceptance.",
+    "Obtain an independent blind diplomatic reading of all content from the images, then third-person adjudication before any TEI/TF release."
+  ],
+  "coverage": {
+    "original_kraken_candidates": 85,
+    "previous_source_bands": 76,
+    "photographically_compared_band_ids": 24,
+    "not_yet_compared_band_ids": 52,
+    "actually_accepted_diplomatic_lines": 0,
+    "excluded_layout_candidates_not_yet_collated": 9
+  },
+  "pending_candidate_line_ids": [
+    "v5-s00010-kf8605fa853c3-l00013",
+    "v5-s00010-kf8605fa853c3-l00014",
+    "v5-s00010-kf8605fa853c3-l00015",
+    "v5-s00010-kf8605fa853c3-l00016",
+    "v5-s00010-kf8605fa853c3-l00019",
+    "v5-s00010-kf8605fa853c3-l00020",
+    "v5-s00010-kf8605fa853c3-l00021",
+    "v5-s00010-kf8605fa853c3-l00023",
+    "v5-s00010-kf8605fa853c3-l00024",
+    "v5-s00010-kf8605fa853c3-l00025",
+    "v5-s00010-kf8605fa853c3-l00026",
+    "v5-s00010-kf8605fa853c3-l00027",
+    "v5-s00010-kf8605fa853c3-l00028",
+    "v5-s00010-kf8605fa853c3-l00029",
+    "v5-s00010-kf8605fa853c3-l00030",
+    "v5-s00010-kf8605fa853c3-l00031",
+    "v5-s00010-kf8605fa853c3-l00032",
+    "v5-s00010-kf8605fa853c3-l00034",
+    "v5-s00010-kf8605fa853c3-l00035",
+    "v5-s00010-kf8605fa853c3-l00036",
+    "v5-s00010-kf8605fa853c3-l00043",
+    "v5-s00010-kf8605fa853c3-l00044",
+    "v5-s00010-kf8605fa853c3-l00045",
+    "v5-s00010-kf8605fa853c3-l00047",
+    "v5-s00010-kf8605fa853c3-l00048",
+    "v5-s00010-kf8605fa853c3-l00049",
+    "v5-s00010-kf8605fa853c3-l00050",
+    "v5-s00010-kf8605fa853c3-l00051",
+    "v5-s00010-kf8605fa853c3-l00052",
+    "v5-s00010-kf8605fa853c3-l00053",
+    "v5-s00010-kf8605fa853c3-l00054",
+    "v5-s00010-kf8605fa853c3-l00055",
+    "v5-s00010-kf8605fa853c3-l00056",
+    "v5-s00010-kf8605fa853c3-l00057",
+    "v5-s00010-kf8605fa853c3-l00058",
+    "v5-s00010-kf8605fa853c3-l00059",
+    "v5-s00010-kf8605fa853c3-l00060",
+    "v5-s00010-kf8605fa853c3-l00062",
+    "v5-s00010-kf8605fa853c3-l00063",
+    "v5-s00010-kf8605fa853c3-l00064",
+    "v5-s00010-kf8605fa853c3-l00065",
+    "v5-s00010-kf8605fa853c3-l00067",
+    "v5-s00010-kf8605fa853c3-l00068",
+    "v5-s00010-kf8605fa853c3-l00069",
+    "v5-s00010-kf8605fa853c3-l00070",
+    "v5-s00010-kf8605fa853c3-l00071",
+    "v5-s00010-kf8605fa853c3-l00072",
+    "v5-s00010-kf8605fa853c3-l00073",
+    "v5-s00010-kf8605fa853c3-l00074",
+    "v5-s00010-kf8605fa853c3-l00076",
+    "v5-s00010-kf8605fa853c3-l00077",
+    "v5-s00010-kf8605fa853c3-l00078"
+  ]
+}
