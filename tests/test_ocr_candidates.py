@@ -61,6 +61,13 @@ class CandidateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "checksum"):
             _get_page_image(self.root, "2", self.entry)
 
+    def test_parent_directory_symlink_rejected(self):
+        real_dir = self.root / "real-vol2"
+        (self.root / "vol2").rename(real_dir)
+        (self.root / "vol2").symlink_to(real_dir, target_is_directory=True)
+        with self.assertRaisesRegex(ValueError, "linked"):
+            _get_page_image(self.root, "2", self.entry)
+
     def test_unsafe_image_path_rejected(self):
         self.entry["artifacts"][0]["path"] = "vol2/../escape.jpg"
         with self.assertRaisesRegex(ValueError, "unsafe"):

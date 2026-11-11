@@ -17,6 +17,27 @@ Mission: produce a **source-verifiable** five-volume diplomatic electronic editi
 
 Work on the highest-priority unblocked issue; prefer getting a small verified section of a real volume through TEI→TF before extending tooling. Iterate research→plan→TDD→implement→review; use short PRs. If backlog is empty or blocked, improve correctness, stability, docs and ergonomic edge cases, not speculative infrastructure. Balance research and actual output. When approaching a usable release, have an autonomous agent perform an E2E smoke test from downloading an actual source through TF queries; verify resulting content visually against scans.
 
+## Available local page source (11 November 2026)
+
+The user uploaded all 2,337 native page images plus untouched OCR/manifests
+to branch codex/page-assets (pinned base commit e871f32537e81f81896f6ce9a6658aba667db9c5).
+Read images/README.md and docs/page-assets-audit.md **on that branch** before
+repeating source acquisition; prior museum HTTP 403 is no longer a blocker to
+image-level development. Source PDF images and their derivatives are not
+automatically covered by the code's MIT license; do not redistribute them
+as a new release without reviewing permissions.
+
+Real page examples: I/20 (Ukrainian/Greek/German), II/100 (Ukrainian,
+Church Slavonic, Latin/German), III/130 (Church Slavonic with Ukrainian and
+Greek notes), IV/100 (Ukrainian; old OCR absent), V/100 (abbreviated Church
+Slavonic). Mixed regions may occur on a single line. Tesseract
+multilingual profiles are only unverified baselines. A first real-image
+experiment is in docs/mixed-script-ocr.md and workflow
+.github/workflows/ocr-real-pages.yml. Do not select OCR results by
+raw confidence or line count, since multilingual runs may change
+segmentation; establish shared line geometry and separate model candidates.
+Specialist CRNN models accept line crops, not full-page images.
+
 ## Source/edition invariants
 
 - **Printed scan page index is not printed folio/page number.** Never infer alignment from a constant offset.

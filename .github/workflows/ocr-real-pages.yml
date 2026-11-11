@@ -45,6 +45,21 @@ jobs:
           franko-ocr-candidates --images real-images --volume 3 --pages 130 --profiles cyrillic,greek,mixed --output ocr-results/vol3
           franko-ocr-candidates --images real-images --volume 4 --pages 100 --profiles cyrillic,mixed --output ocr-results/vol4
           franko-ocr-candidates --images real-images --volume 5 --pages 100 --profiles cyrillic,mixed --output ocr-results/vol5
+      - name: Assert candidate artifact integrity (not transcription accuracy)
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          files = sorted(Path('ocr-results').rglob('*.json'))
+          assert len(files) == 14, f"Expected 14 candidate profiles, got {len(files)}"
+          for file in files:
+              item = json.loads(file.read_text(encoding='utf8'))
+              assert item['status'] == 'ocr_unchecked'
+              assert len(item['source_image_sha256']) == 64
+              assert all(len(h) == 64 for h in item['traineddata_sha256'].values())
+              assert item['text'].strip(), f"No recognized text: {file}"
+              assert item['lines'], f"No geometric lines: {file}"
+          PY
       - name: Summarize outputs without claiming accuracy
         run: |
           python - <<'PY'

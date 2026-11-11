@@ -69,7 +69,7 @@ def _get_page_image(root, volume, entry):
     if relative.name[:10] != f"page-{page:05d}":
         raise ValueError(f"page {page}: image name/index mismatch")
     image_path = root / relative
-    if not image_path.is_file() or image_path.is_symlink():
+    if not image_path.is_file() or image_path.is_symlink() or image_path.parent.is_symlink():
         raise ValueError(f"page {page}: image missing or linked")
     actual = _digest(image_path)
     if actual != asset["sha256"]:
