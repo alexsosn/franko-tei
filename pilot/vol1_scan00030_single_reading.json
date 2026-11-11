@@ -1,0 +1,1206 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 30,
+  "printed_page_observed": "XXI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00030.jpg",
+  "source_image_sha256": "f97568fbaf4ba2f5198a23b4c436171d693e76ae891cca072c88d903d3373474",
+  "reading": {
+    "reader_id": "gpt6-single-20261111-i30",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-2026-11-11-I30-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct native-JPEG image-first full printed XXI initial reading, 41 body lines in three visible paragraphs plus folio. Do not inspect embedded OCR or prior competing I/30 reading before freezing. Preserve source physical lines, split first/last page boundaries, historical Ukrainian, Cyrillic Russian/Church Slavonic quotations, source numerals 1261/911/927, possible typographic letterspacing Leonid; do not normalize або infer past page. Hypotheses only; no independent second reading, verification or CER.",
+    "raw_response": "XXI\nського, що, як звісно, оба відносять ся до X. віку, і що з числа\nкниг старого Завіта, які знаходять ся в Толковій Палеї, останньою\nявляєть ся перша книга Царств, а книги Царств (усї чотири) також\nбули перекладені на словянську мову в Болгариї в X. віцї Григо-\nриєм пресвитером мнихом (про се гляди запис у Збірнику, де міс-\nтить ся переклад Григоріїв хронїки Малали); Збірник той був\nу XV. віцї переписаний із рукопису XIII. віку, власне з 1261 р.\nі знаходить ся в московскім архіві міністерства справ внїшнїх),\nто приходить ся міркувати, що Толковая Палея була перекладена,\nабо радше сказати, скомпонована також у Болгариї в тім таки\nX. віцї. Списав її (скомпонував, чи зложив) правдоподібно той сам\nвище згаданий пресвитер мних Григорий, що переклав дві візан-\nтийські хронїки: Амартола і Малали і надто зладив перший сло-\nвянський Хронограф, користуючи ся при тім хронїкою Малали і тво-\nрами Йосифа Флавія. Ся догадка тим більше правдоподібна, що\nв згаданій збірцї в переклад хронїки Малали повставлювано ті самі\nбіблїйні книги, які є в Толковій Палеї, а також і ті самі староза-\nвітні апокріфи, як ось нпр. Слово про Мелхіседека і Заповіти 12-ти\nпатріархів. А з того, що в Палеї розбираєть ся стихира на свв. Пя-\nтидесятницю, яка звичайно має напис „Твореніе царя Льва премуд-\nраго“, що вмер у 911 роцї, просто виходить, що Палея мусїла бути\nзложена в першій четвертинї X. віку, до 927 року (рік смерти царя\nСимеона).\n„Сей висновок — пише далї архим. Леонід — не суперечить\nздогадови висказаному д. Успенським в его працї про Палею Тол-\nкову (Казань 1876), що прототипом або головним жерелом Толкової\nПалеї міг бути не дохований до наших часів твір свв. Кирила Фі-\nлософа „Преніе съ Іудеями“, написаний ним по грецьки і перекла-\nдений на словянську мову его братом свв. Мефодієм. Сей твір дїлив\nся на 8 Слів, а Толковая Палея, як ми зазначили вище, в своїй\nнайстаршій редакциї дїлила ся також на 8 віддїлів відповідно до числа\nвісьмох старозавітних книг, що входили в її склад, при чім книгу\nРуф злучувано в одно с книгою Суддїв.\n„Завважимо ще, що вичислюючи грецькі жерела Толкової\nПалеї дослїдники не звернули доси уваги на одно з найважнїй-\nших: є се твір звісний під назвою „Бесѣды св. Кесарія“, перекла-\nдений на словянську мову в X. віцї; пізнїйші руські книжники дали\nсему творови назву „Вопросы Сильвестра и отвѣты Антонія“ (Арх.\nЛ е о н и д ъ, op. cit. III, 8—9). А в додатку до сего тому вчений\nархимандрит подає близшу відомість про Хронограф зладжений\nГригориєм і про самого Григория, що вмер епіскопом у Охридї",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            74,
+            1583,
+            990,
+            88
+          ],
+          "description": "Blank lower margin/scan fade below last printed line, no footnote detected."
+        }
+      ],
+      "occlusions": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          927,
+          82,
+          122,
+          61
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XXI",
+            "bbox_xywh": [
+              935,
+              89,
+              102,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "leonid_origin_argument",
+        "kind": "body",
+        "bbox_xywh": [
+          80,
+          148,
+          965,
+          798
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "ського, що, як звісно, оба відносять ся до X. віку, і що з числа",
+            "bbox_xywh": [
+              86,
+              155,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "книг старого Завіта, які знаходять ся в Толковій Палеї, останньою",
+            "bbox_xywh": [
+              86,
+              190,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "являєть ся перша книга Царств, а книги Царств (усї чотири) також",
+            "bbox_xywh": [
+              86,
+              224,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "були перекладені на словянську мову в Болгариї в X. віцї Григо-",
+            "bbox_xywh": [
+              86,
+              259,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "риєм пресвитером мнихом (про се гляди запис у Збірнику, де міс-",
+            "bbox_xywh": [
+              86,
+              293,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "тить ся переклад Григоріїв хронїки Малали); Збірник той був",
+            "bbox_xywh": [
+              86,
+              328,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "у XV. віцї переписаний із рукопису XIII. віку, власне з 1261 р.",
+            "bbox_xywh": [
+              86,
+              363,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "і знаходить ся в московскім архіві міністерства справ внїшнїх),",
+            "bbox_xywh": [
+              86,
+              397,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "то приходить ся міркувати, що Толковая Палея була перекладена,",
+            "bbox_xywh": [
+              86,
+              432,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "або радше сказати, скомпонована також у Болгариї в тім таки",
+            "bbox_xywh": [
+              86,
+              466,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-11",
+            "text": "X. віцї. Списав її (скомпонував, чи зложив) правдоподібно той сам",
+            "bbox_xywh": [
+              86,
+              501,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "вище згаданий пресвитер мних Григорий, що переклав дві візан-",
+            "bbox_xywh": [
+              86,
+              536,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "тийські хронїки: Амартола і Малали і надто зладив перший сло-",
+            "bbox_xywh": [
+              86,
+              570,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "вянський Хронограф, користуючи ся при тім хронїкою Малали і тво-",
+            "bbox_xywh": [
+              86,
+              605,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "рами Йосифа Флавія. Ся догадка тим більше правдоподібна, що",
+            "bbox_xywh": [
+              86,
+              639,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "в згаданій збірцї в переклад хронїки Малали повставлювано ті самі",
+            "bbox_xywh": [
+              86,
+              674,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "біблїйні книги, які є в Толковій Палеї, а також і ті самі староза-",
+            "bbox_xywh": [
+              86,
+              709,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-18",
+            "text": "вітні апокріфи, як ось нпр. Слово про Мелхіседека і Заповіти 12-ти",
+            "bbox_xywh": [
+              86,
+              743,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-19",
+            "text": "патріархів. А з того, що в Палеї розбираєть ся стихира на свв. Пя-",
+            "bbox_xywh": [
+              86,
+              778,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-20",
+            "text": "тидесятницю, яка звичайно має напис „Твореніе царя Льва премуд-",
+            "bbox_xywh": [
+              86,
+              812,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "раго“, що вмер у 911 роцї, просто виходить, що Палея мусїла бути",
+            "bbox_xywh": [
+              86,
+              847,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "зложена в першій четвертинї X. віку, до 927 року (рік смерти царя",
+            "bbox_xywh": [
+              86,
+              882,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "Симеона).",
+            "bbox_xywh": [
+              86,
+              916,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leonid_kyrill_interpretation",
+        "kind": "body",
+        "bbox_xywh": [
+          80,
+          934,
+          965,
+          342
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-24",
+            "text": "„Сей висновок — пише далї архим. Леонід — не суперечить",
+            "bbox_xywh": [
+              86,
+              938,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "здогадови висказаному д. Успенським в его працї про Палею Тол-",
+            "bbox_xywh": [
+              86,
+              973,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "кову (Казань 1876), що прототипом або головним жерелом Толкової",
+            "bbox_xywh": [
+              86,
+              1007,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-27",
+            "text": "Палеї міг бути не дохований до наших часів твір свв. Кирила Фі-",
+            "bbox_xywh": [
+              86,
+              1042,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "лософа „Преніе съ Іудеями“, написаний ним по грецьки і перекла-",
+            "bbox_xywh": [
+              86,
+              1077,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 8,
+                "end": 25,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 25,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-29",
+            "text": "дений на словянську мову его братом свв. Мефодієм. Сей твір дїлив",
+            "bbox_xywh": [
+              86,
+              1112,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "ся на 8 Слів, а Толковая Палея, як ми зазначили вище, в своїй",
+            "bbox_xywh": [
+              86,
+              1146,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "найстаршій редакциї дїлила ся також на 8 віддїлів відповідно до числа",
+            "bbox_xywh": [
+              86,
+              1181,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 69,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "вісьмох старозавітних книг, що входили в її склад, при чім книгу",
+            "bbox_xywh": [
+              86,
+              1216,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-33",
+            "text": "Руф злучувано в одно с книгою Суддїв.",
+            "bbox_xywh": [
+              86,
+              1250,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leonid_caesarius_excerpt",
+        "kind": "body",
+        "bbox_xywh": [
+          80,
+          1277,
+          965,
+          303
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-34",
+            "text": "„Завважимо ще, що вичислюючи грецькі жерела Толкової",
+            "bbox_xywh": [
+              86,
+              1280,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "Палеї дослїдники не звернули доси уваги на одно з найважнїй-",
+            "bbox_xywh": [
+              86,
+              1315,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-36",
+            "text": "ших: є се твір звісний під назвою „Бесѣды св. Кесарія“, перекла-",
+            "bbox_xywh": [
+              86,
+              1350,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 35,
+                "end": 53,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 53,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-37",
+            "text": "дений на словянську мову в X. віцї; пізнїйші руські книжники дали",
+            "bbox_xywh": [
+              86,
+              1385,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "сему творови назву „Вопросы Сильвестра и отвѣты Антонія“ (Арх.",
+            "bbox_xywh": [
+              86,
+              1420,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 20,
+                "end": 55,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 55,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-39",
+            "text": "Л е о н и д ъ, op. cit. III, 8—9). А в додатку до сего тому вчений",
+            "bbox_xywh": [
+              86,
+              1455,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 15,
+                "end": 23,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 23,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-40",
+            "text": "архимандрит подає близшу відомість про Хронограф зладжений",
+            "bbox_xywh": [
+              86,
+              1490,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-41",
+            "text": "Григориєм і про самого Григория, що вмер епіскопом у Охридї",
+            "bbox_xywh": [
+              86,
+              1525,
+              945,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i30",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "ського",
+        "reason": "Remainder of the word cut as болгар- on I/29, kept separate."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "Толковій Палеї",
+        "reason": "Historical spelling of book title and case suffix."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "усї чотири",
+        "reason": "Quantity of books, preserve actual digit/word form."
+      },
+      {
+        "line_id": "main-line-04",
+        "reading": "Григо-",
+        "reason": "Hyphenated proper name at physical line break."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "риєм пресвитером мнихом",
+        "reason": "Highly unusual honorific/declension; vowel after р unresolved."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "Григоріїв хронїки Малали",
+        "reason": "Historical possessive and proper names need glyph verification."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "1261 р.",
+        "reason": "Printed date crucial to paleographic argument."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "внїшнїх",
+        "reason": "Orthography and hard sign/diacritics uncertain."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "Толковая Палея",
+        "reason": "Russian-inflected embedded title, not modernized."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "скомпонував",
+        "reason": "Possible alternative punctuation in parentheses."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "Григорий",
+        "reason": "Proper name's final vowel print dependent."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "Амартола",
+        "reason": "Proper name from Byzantine chronicle."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "Хронограф",
+        "reason": "Capitalization as first-pass image reading."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "Йосифа Флавія",
+        "reason": "Cross-language name fidelity."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "повставлювано",
+        "reason": "Unusual Ukrainian verb, do not emend by grammar."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "12-ти",
+        "reason": "Printed numerical abbreviation must be retained."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "Пя-",
+        "reason": "Split source term at real line boundary."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Твореніе царя Льва премуд-",
+        "reason": "Church Slavonic/Russian quoted incipit, date association."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "911 роцї",
+        "reason": "Year of Leo's death in quoted author argument, source numerals require second look."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "927 року",
+        "reason": "Chronological bound in edition, do not alter."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "архим. Леонід",
+        "reason": "Quoted author/title attribution; abbreviated title."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "его працї",
+        "reason": "Old form *его* must not be silently modernized to його."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "Казань 1876",
+        "reason": "Printed bibliographic reference."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "Кирила Фі-",
+        "reason": "Name split at physical line boundary."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "Преніе съ Іудеями",
+        "reason": "Historical Cyrillic in title, not a verified separate manuscript witness."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "его братом",
+        "reason": "Source's old possessive spelling to check."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "8 Слів",
+        "reason": "Number plus capitalized term, preserve original."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "8 віддїлів",
+        "reason": "Numeral and historical vowel."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "Руф",
+        "reason": "Old form of Ruth, don't replace with Руфь."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "Бесѣды св. Кесарія",
+        "reason": "Historical ѣ essential in Russian book title."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "Вопросы Сильвестра и отвѣты Антонія",
+        "reason": "Old Russian title needs independent letter-level audit."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "Л е о н и д ъ",
+        "reason": "Initial visual letterspacing could be source typographic emphasis or justification; check carefully."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "op. cit. III, 8—9",
+        "reason": "Latin bibliographic citation, different script."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "Хронограф",
+        "reason": "Historical source attribution."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "Охридї",
+        "reason": "Final line ends mid-discussion; don't invent period or next-page words."
+      }
+    ]
+  }
+}
