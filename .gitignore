@@ -19,3 +19,8 @@ scans/
 .env
 models/
 cache/
+# Source PDFs remain local; derived page images are versioned at the user's request.
+/images/source_pdfs/
+/images/.page-assets-*/
+!/images/vol[1-5]/**/*.jpg
+!/images/vol[1-5]/**/*.png

@@ -14,6 +14,7 @@ dependencies = []
 
 [project.optional-dependencies]
 pdf = ["pymupdf>=1.24"]
+page-assets = ["pillow>=10"]
 
 [project.scripts]
 franko-tei = "franko_tei.cli:main"

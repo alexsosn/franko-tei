@@ -27,9 +27,15 @@ franko-tei audit-release  # fails until full audited corpus exists
 
 The extracted JSONL starts with `status=ocr_unchecked`. The TEI exporter refuses it. No CLI command auto-promotes machine OCR to `verified`. Each verified record must identify independent transcriber and reviewer. See [transcription policy](docs/transcription.md).
 
+For native page images and a separate unchanged export of the existing OCR from
+locally supplied PDFs, see [local page assets](images/README.md) and the
+[2026-11-11 local extraction audit](docs/page-assets-audit.md). All 2337 PDF pages
+were extracted locally; volume IV has no embedded OCR. These derivatives are
+versioned at the user's request and are not a released or verified transcription.
+
 ## Source inventory and rights
 
-[Дім Франка](https://dimfranka.lviv.ua/) provides the five volume landing pages (I 1896, II 1899, III 1902, IV 1906, V 1910). See [catalogue](src/franko_tei/sources.json) and [research audit](docs/source-audit.md). The original printed works and the digital scan images are distinct rights questions. The MIT repository license covers this project's code; it does **not** grant rights in museum scans. PDF bytes, checksums and page counts have not yet been audited locally. The [source-recon workflow](.github/workflows/source-recon.yml) can be run manually to try collecting a checksummed page-count report on a GitHub runner without rehosting the PDF. As of 2026-11-11, the museum server returns HTTP 403 to that runner; the workflow cannot currently acquire a scan. An authorized local PDF can be supplied to `inspect-scan` instead. See the [source-access log](docs/source-audit.md).
+[Дім Франка](https://dimfranka.lviv.ua/) provides the five volume landing pages (I 1896, II 1899, III 1902, IV 1906, V 1910). See [catalogue](src/franko_tei/sources.json) and [research audit](docs/source-audit.md). The original printed works and the digital scan images are distinct rights questions. The MIT repository license covers this project's code; it does **not** grant rights in museum scans. The [local PDF audit](docs/page-assets-audit.md) records input checksums and physical page counts; printed pagination, historical text and redistribution permission remain unverified. The [source-recon workflow](.github/workflows/source-recon.yml) can be run manually to try collecting a checksummed page-count report on a GitHub runner without rehosting the PDF. As of 2026-11-11, the museum server returns HTTP 403 to that runner; the workflow cannot currently acquire a scan. An authorized local PDF can be supplied to `inspect-scan` instead. See the [source-access log](docs/source-audit.md).
 
 ## Roadmap and autonomy
 
