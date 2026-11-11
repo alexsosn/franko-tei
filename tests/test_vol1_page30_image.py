@@ -37,5 +37,22 @@ class TestI30(unittest.TestCase):
         self.assertGreaterEqual(len(r["uncertainty_notes"]), 20)
         self.assertEqual(r["coverage"]["occlusions"], [])
 
+
+    def test_postfreeze_source_challenges_not_edition(self):
+        d = json.loads(PATH.read_text(encoding="utf8"))
+        q = PATH.parent / "reviews/vol1_scan00030_post_freeze_challenges.json"
+        audit = json.loads(q.read_text(encoding="utf8"))
+        self.assertEqual(audit["source_image_sha256"], d["source_image_sha256"])
+        self.assertEqual(audit["status"], "provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertEqual(len(audit["corrections"]), 4)
+        original = {l["id"]: l["text"] for reg in d["reading"]["regions"] for l in reg["lines"]}
+        for item in audit["corrections"]:
+            self.assertIn(item["frozen_substring"], original[item["line_id"]])
+            self.assertNotEqual(item["frozen_substring"], item["proposed_substring"])
+            self.assertNotEqual(item["disposition"], "verified")
+
 if __name__ == "__main__":
     unittest.main()
