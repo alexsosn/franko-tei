@@ -31,7 +31,7 @@ class TestI30(unittest.TestCase):
         self.assertIn("927", r["raw_response"])
         self.assertIn("Преніе съ Іудеями", r["raw_response"])
         self.assertIn("Бесѣды", r["raw_response"])
-        self.assertIn("Леонидъ", r["raw_response"])
+        self.assertIn("Л е о н и д ъ", r["raw_response"])
         self.assertEqual(r["raw_response"], "\n".join(l["text"] for l in lines))
         self.assertTrue(all(l["geometry_estimated"] for l in lines))
         self.assertGreaterEqual(len(r["uncertainty_notes"]), 20)
