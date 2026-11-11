@@ -16,6 +16,9 @@ franko-tei fetch-scan --volume 3 --output scans/vol3.pdf
 franko-tei inspect-scan --volume 3 --pdf scans/vol3.pdf --output local/vol3-audit.json
 # Extract existing PDF text layer into unverified OCR; this does NOT recognize images
 franko-tei extract-pdf --volume 3 --pdf /path/to/vol3.pdf --start 1 --end 5 --output local/vol3-raw.jsonl
+# Benchmark a raw OCR candidate against independently reviewed lines of the SAME PDF
+# (candidate must match exact page/line segmentation; mismatches fail)
+franko-tei benchmark-ocr --volume 3 --pdf scans/vol3.pdf --reference local/vol3-verified.jsonl --candidate local/vol3-raw.jsonl --output local/vol3-cer.json
 # After independent scan comparison and explicit manual review of a separate JSONL file:
 franko-tei build-tei --volume 3 --input local/vol3-reviewed.jsonl --output local/vol3-partial.xml
 franko-tei validate-tei --input local/vol3-partial.xml
