@@ -1,0 +1,57 @@
+name: Kraken PP-OCRv6 multilingual historical OCR smoke
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/kraken-smoke.yml'
+      - 'src/franko_tei/kraken_trial.py'
+      - 'tests/test_kraken_trial.py'
+      - 'docs/ocr-kraken.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-image-kraken:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Kraken and the HF CLI
+        run: |
+          python -m pip install -e .
+          python -m pip install 'kraken==7.1.0' 'huggingface_hub>=0.34,<2'
+          kraken --version
+      - name: Download open-weight historical multilingual model
+        run: |
+          mkdir -p local/models
+          hf download small-models-for-glam/kraken-ppocrv6-medium medium.safetensors --local-dir local/models
+          sha256sum local/models/medium.safetensors | tee local/model.sha256
+      - name: Run on four actual source-verified pages
+        run: |
+          python -m franko_tei.kraken_trial --images-root images --pages 5:100,3:130,1:20,4:100 \
+            --model local/models/medium.safetensors \
+            --model-id small-models-for-glam/kraken-ppocrv6-medium \
+            --output-dir local/kraken
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = [json.loads(x) for x in Path('local/kraken/candidates.jsonl').read_text().splitlines()]
+          assert len(rows) == 4
+          assert all(x['status'] == 'ocr_unchecked' and x['model_sha256'] and x['image_sha256'] for x in rows)
+          print('Kraken real-image smoke:', [(r['volume'], r['scan_page'], len(r['lines'])) for r in rows])
+          PY
+      - name: Capture exact engine version without model weights
+        run: kraken --version > local/kraken-version.txt 2>&1
+      - name: Upload ALTO, candidates and checksums only (never scans or model weights)
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-kraken-ppocrv6-medium-trial
+          path: |
+            local/kraken/*.alto.xml
+            local/kraken/candidates.jsonl
+            local/model.sha256
+            local/kraken-version.txt
+          retention-days: 14
+          if-no-files-found: error
