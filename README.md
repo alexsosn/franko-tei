@@ -44,3 +44,7 @@ The `franko-ocr-candidates` CLI operates on native scan images and image checksu
 ## Agent-first development pilot
 
 The user-approved primary workstream is [#11](https://github.com/alexsosn/franko-tei/issues/11): separate blind image-reading contexts, independent image-grounded review, and early *unverified* pilot TEI→Text-Fabric, rather than waiting for a winning OCR engine. The initial `franko-agent-evidence` CLI validates mixed-line Unicode spans, source-image hashes, reader/reviewer provenance, scan coordinates, explicit coverage and discrepancy logs without promoting any text to verified. See [the evidence contract](docs/agent-first-evidence.md).
+
+## One real-page unverified TEI pilot
+
+A first *single-context* image reading of volume IV scan 100 (printed page label 48) and its [facsimile-linked pilot TEI](pilot/vol4_scan00100_single_reading.xml) are checked in alongside [source-anchored JSON](pilot/vol4_scan00100_single_reading.json). Run `franko-pilot-tei` to validate actual image bytes and regenerate it. It explicitly remains **agent_unverified**: the independent blind second reader and reviewer required by [#11](https://github.com/alexsosn/franko-tei/issues/11) have not run. See [pilot provenance and limitations](docs/single-reading-pilot.md). The TEI draft is not a released edition.
