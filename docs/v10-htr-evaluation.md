@@ -77,3 +77,31 @@ Examples, **same source line + same model**, but different margins:
 These are **machine hypotheses**, not correct verified readings. Even the narrow outputs visibly contain misrecognized letters. No source-gold comparison/CER or corrected Romanization was produced. The next source-specific intervention should be to use **non-overlapping manual or polygon-informed crops covering every titlo and supralinear glyph**, then try the print-domain CRNN again and compare with a truly independent HTR/printed OCR architecture if available. **Do not add arbitrary margins or concatenate model outputs as a patchwork edition.**
 
 Source medium is still described as early print by Franko's caption despite the manuscript-like appearance; no unrelated full-volume workflow should depend on the pilot's V/10 OCR choices.
+
+
+## Follow-up: V/10 genuine nonoverlapping OCR bands (11 November 2026)
+
+Source-anchored [real-image run 43075865830](https://github.com/alexsosn/franko-tei/actions/runs/43075865830) completed after [PR #46](https://github.com/alexsosn/franko-tei/pull/46) introduced `franko-v10-bands`, which replaces eight overlapping raw Kraken rectangles by contiguous horizontal band boundaries selected from the **actual JPEG's** darkest/least-ink overlap rows. The original source hash and model checkpoint/symbol/repo revisions are rechecked in the workflow. The image is still low-resolution (1190×1701) and a secondary reproduction.
+
+The new geometry is **exactly disjoint in pixel y ranges**, before model OCR:
+
+| Segment | Four source-native band ranges `[y0,y1)` | Native overlap |
+| --- | --- | --- |
+| Left opening title | `[144,211)`, `[211,261)`, `[261,300)`, `[300,346)` | zero |
+| Right opening column | `[61,109)`, `[109,137)`, `[137,176)`, `[176,209)` | zero |
+
+Pairing check: both CRNN recognizers receive exactly the same crop PNG SHA256 for each physical candidate. The run produced 16 OCR hypotheses (two models × eight rows) with unchanged raw text; they are permanently available in [`pilot/ocr/vol5_scan00010_isolated_baseline_20261111.json`](../pilot/ocr/vol5_scan00010_isolated_baseline_20261111.json), together with each bounding rectangle, full original crop SHA256 and the pinned provenance of the full [raw artifact ZIP](https://github.com/alexsosn/franko-tei/actions/runs/43075865830) (SHA256 `fdb64356b1d34a41acea3ee209d30f83a852185e74a50a7a4e0ae6edb2f61189`). See also newer workflow versions, which preserve diagnostic source geometry as **text-only JSON**, not image rehosting.
+
+Two example lines (Church Slavonic CRNN, **unverified**, exact model output):
+
+- right candidate #40: `хранѧше. и се все творѧ. и николиже ѿ`;
+- right candidate #42: `и въставаѧ, и рꙋкама держа дѣло, и пи¬`.
+
+This is a structural improvement over the previously overlapping crops, but **word accuracy and titla preservation are not proven**. A hard failure discovered by the separate audit: the seam after the first left-title line (y=211) still crosses **6.09% dark sampled pixels**, while the other seven observed seams cross about 0.97%–2.48%. Ink at the seam may belong to diacritics, ascenders, descenders or source artifacts. In particular the split between title lines #2 and #3 requires visual overlay review and may need a non-horizontal polygonal seam. Every band is marked `requires_visual_review`, and the high-ink seam is additionally flagged; **zero geometric crop overlap does not imply zero glyph loss**.
+
+### Decision for subsequent OCR
+
+1. Inspect all eight source-seam rows visually with an overlay, especially left y=211, checking titla, ornamental initial and interline signs. If no blank seam is possible, use a mask/polygon or overlapping source pixels accompanied by explicit attribution, not an arbitrary overwrite.
+2. Apply the validated method only to the two-column facsimile and re-evaluate cropped rows with both frozen OCR models. Keep raw candidates and disagreement metadata; do not stitch apparent words into a diplomatic text.
+3. The printed-page caption still calls the source `старого друку` while the user identifies a manuscript-like photographic page. That is preserved as source-type uncertainty until bibliographic inspection.
+4. The whole V/10 facsimile, particularly the bottom merged Kraken regions, remains **not transcribed** and cannot feed TEI/TF or an empirical CER measurement.
