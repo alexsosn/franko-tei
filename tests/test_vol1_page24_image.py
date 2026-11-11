@@ -40,5 +40,26 @@ class TestVol1Page24(unittest.TestCase):
         self.assertNotIn("review",p)
         self.assertNotIn("readings",p)
 
+
+    def test_nonprinted_ellipsis_is_a_tei_gap_not_a_source_character(self):
+        from xml.etree import ElementTree as ET
+        from franko_tei.pilot_tei import render_pilot_tei, extract_transcribed_lines
+        p=json.loads(PATH.read_text(encoding="utf8"))
+        marked=[l for reg in p["reading"]["regions"] for l in reg["lines"]
+                if l.get("unreadable_suffix")]
+        self.assertEqual([l["id"] for l in marked],["palaea-line-04","palaea-line-05"])
+        xml=render_pilot_tei(p,1190,1709)
+        root=ET.fromstring(xml)
+        ns={"t":"http://www.tei-c.org/ns/1.0"}
+        gaps=root.findall(".//t:body//t:gap",ns)
+        self.assertEqual(len(gaps),2)
+        self.assertTrue(all(g.get("reason")=="illegible" and
+                            g.get("extent")=="unknown" and
+                            g.get("unit")=="character" for g in gaps))
+        self.assertFalse(any("…" in (seg.text or "")
+                             for seg in root.findall(".//t:body//t:ab//t:seg",ns)))
+        raw=[l["text"] for reg in p["reading"]["regions"] for l in reg["lines"]]
+        self.assertEqual(extract_transcribed_lines(xml),raw)
+
 if __name__=="__main__":
     unittest.main()
