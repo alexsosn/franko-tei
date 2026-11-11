@@ -4,6 +4,7 @@ No OCR or manuscript witness values are synthesized. All character slots are
 copied code point for code point from physical lb-anchored lines in the TEI.
 """
 from dataclasses import dataclass
+import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import argparse
@@ -293,13 +294,45 @@ def verify_graph_roundtrip(graph):
     return output
 
 
-def save_pilot_tf(xml_path, output):
+
+def verify_source_gated_pilot(xml_path, evidence_path, images_root):
+    """Verify actual image bytes and immutable one-context TEI before TF graph.
+
+    Independent context review is not part of this pilot; successful checks
+    never change the immutable agent_unverified status.
+    """
+    from .pilot_tei import validate_single_draft, render_pilot_tei
+
+    payload=json.loads(Path(evidence_path).read_text(encoding='utf8'))
+    dimensions=validate_single_draft(payload,Path(images_root))
+    xml=Path(xml_path).read_text(encoding='utf8')
+    regenerated=render_pilot_tei(payload,dimensions['width'],dimensions['height'])
+    if xml!=regenerated:
+        raise ValueError('TEI does not exactly match source-checked single-reader draft')
+    graph=build_tf_graph(xml)
+    if '\n'.join(verify_graph_roundtrip(graph)) != payload['reading']['raw_response']:
+        raise ValueError('TEI physical line order is not the original raw first reading')
+    features=graph.node_features
+    pages=[n for n,kind in features['otype'].items() if kind=='page']
+    if len(pages)!=1:
+        raise ValueError('pilot TF export requires exactly one page')
+    p=pages[0]
+    if (features['imageSha'][p]!=dimensions['image_sha256']
+            or features['pdfShaClaim'][p]!=payload['source_pdf_sha256_claimed_by_manifest']
+            or features['scanPage'][p]!=payload['scan_page']
+            or features['observedPrintedPage'].get(p)!=payload.get('printed_page_observed')
+            or features['status'][p]!='agent_unverified'):
+        raise ValueError('TEI/TF source provenance or status mismatch')
+    return graph
+
+
+def save_pilot_tf(xml_path, output, evidence_path, images_root):
     """Atomically create TF feature files; never overwrite prior content."""
     from tf.fabric import Fabric
     output=Path(output)
     if output.exists():
         raise FileExistsError(f'refusing to overwrite {output}')
-    graph=build_tf_graph(Path(xml_path).read_text(encoding='utf8'))
+    graph=verify_source_gated_pilot(xml_path,evidence_path,images_root)
     output.parent.mkdir(parents=True,exist_ok=True)
     with TemporaryDirectory(prefix='.pilot-tf-',dir=output.parent) as tempdir:
         staging=Path(tempdir)/'tf'
@@ -315,10 +348,14 @@ def save_pilot_tf(xml_path, output):
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--tei',required=True,type=Path)
+    parser.add_argument('--evidence',required=True,type=Path,
+                        help='Original single-reader JSON, never reconstructed from OCR')
+    parser.add_argument('--images',required=True,type=Path,
+                        help='Native source images plus source SHA256 manifest')
     parser.add_argument('--output',required=True,type=Path)
     args=parser.parse_args(argv)
     try:
-        graph=save_pilot_tf(args.tei,args.output)
+        graph=save_pilot_tf(args.tei,args.output,args.evidence,args.images)
     except (ValueError,OSError,RuntimeError,KeyError,ET.ParseError) as exc:
         parser.error(str(exc))
     counts={type_:list(graph.node_features['otype'].values()).count(type_) for type_ in set(graph.node_features['otype'].values())}
