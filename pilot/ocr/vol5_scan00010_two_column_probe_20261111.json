@@ -1,0 +1,315 @@
+{
+  "schema_version": "v10-htr-real-probe-v1",
+  "status": "ocr_unchecked",
+  "image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+  "pinned_image_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_manifest_claim_only": true,
+  "scan_page": 10,
+  "volume": "5",
+  "source_run_url": "https://github.com/alexsosn/franko-tei/actions/runs/43071769750",
+  "source_job_id": 130701267945,
+  "source_artifact_id": 13877194359,
+  "source_artifact_sha256": "72900fd83caf30709bafe405fafa9084dd454d93e221fdf6463cd152916f8f9f",
+  "source_artifact_name": "franko-v10-specialist-ocr-unverified-two-column",
+  "data_origin": "Literal transcription strings parsed from actual GitHub Actions job stdout. Full raw JSON (including crop image SHA256, model checkpoint SHA256, symbol SHA256, inference-code SHA256 and bbox) was emitted as a 7-day workflow artifact with the referenced ZIP digest. Text is not retyped or corrected here.",
+  "source_model_domain": {
+    "church-slavonic": "historic Cyrillic handwritten Church Slavonic QuantiSlav; may mismatch early print",
+    "prosta-mova": "late 16th/early 17th Cyrillic early-print Church Slavonic and Ruthenian/Prosta Mova, Ostroh Printery Continslav"
+  },
+  "crop_margin_comparison_note": "8px vs 16px vertical margin tested on same 4 left+4 right baseline boxes, with identical crop bytes across both models at each setting. Wider crops in this tight typographic layout often include neighboring lines; do not infer model suitability without visual crop audit.",
+  "accepted_as_diplomatic_text": false,
+  "eligible_for_tei_tf": false,
+  "cer_measured": false,
+  "independent_gold_available": false,
+  "known_failure": "Unreliable glyph-level text on the densely printed right column. A substantial apparent improvement at margin 8 suggests crop/row-overlap failure. Not independently adjudicated.",
+  "candidates": [
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00002",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "Мⷭ҇ца априлѧ, въпорвыи",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00003",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "внь. хитїе и жизнь, про¬",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00004",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "подобныѧ мт҃ри нашеѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00005",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "мларїи ег иптьскїѧ. спи¬",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00002",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "Мц҇а а҆прилъ, въпо́рвый",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00003",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "мны. Житїѐ и҆ жи́зны проⷱ҇",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00004",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "подо́бныа мт҃ри на́шеѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00005",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "ма҇рїи е҆ ги́пстыскїѧ. спи́",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00039",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "щенїа и дѣлатворѧшео и бсѧ преданїѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00040",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "лелнѧше исъ. всетьрѧ. и николине ѿ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00041",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "аїинїѧ стыхъ слексъ оекⸯбадно илела.",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00042",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "и лъ таела и рꙋсана мрѧ. дѣло. и пи¬",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00039",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "щонї́ѧ и҆ дѣ́ла творѧ́ше, и҆жапрода́нїѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00040",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "лрнѧ́шнинетыѧ. и҆́никои́меѿ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00041",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "а҆р҆емѧсто́лыслми҆сослїанои҆аи҆ж",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 16,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00042",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "и҆́систанааи҆дꙋна́ммсаⷨа҆съда́мѧ꙽",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00002",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "Мцⷭ҇а априлѧ, въ порвыи",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00003",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "дн҃ь. хитїе и жизнь, про¬",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00004",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "подобныѧ м҃т҃ри нашеѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00005",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "мларїи египетьскїѧ. спи¬",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00002",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "Мц҇а҇ а҆при́лѧ, въпо́рвый",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00003",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "дн҃ь. Житїѐ и҆ жи́знь, проⷱ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00004",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "подо́бныѧ мт҃ри на́шеѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "left",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00005",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "ма́рїи е҆ги́петьскїѧ. спи́",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00039",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "щенїа и дѣла творѧше, и всѧ преданїѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00040",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "холнѧше. и се все творѧ. и николиже ѿ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00041",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "оученїѧ с҃тыхъ слобесъ ославѧ дн҃о илежа",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00042",
+      "model": "church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "text": "и въставаѧ ри̏ рꙋкама дерѧа дѣло. и пи¬",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00039",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "ще́нїѧ и҆ дѣ́ла творѧ́ше, и҆ вѐ ѧ҆преда́нїѧ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00040",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "лранѧ́ше н҆ѐ вїе творѧ̀. и҆ николи́же ѿ",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00041",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "а҆р҆че́нїѧ сты́хъ с лоее́ъ о҆ слабѧ ,но̑ и҆лежа",
+      "status": "ocr_unchecked"
+    },
+    {
+      "column": "right",
+      "margin_y_px": 8,
+      "candidate_line_id": "v5-s00010-kafb5b6b690c0-l00042",
+      "model": "prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "text": "и҆ ъстаса́ѧ и҆рока́ма дерѧⷣ҇а ѻ҆́ѣло, ѿи́",
+      "status": "ocr_unchecked"
+    }
+  ]
+}
