@@ -1,5 +1,6 @@
 """Feature tests: these assert structure, not manuscript-reading accuracy."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -7,7 +8,7 @@ import unittest
 from xml.etree import ElementTree as ET
 
 from franko_tei.pilot_tei import render_pilot_tei, TEI, XML
-from franko_tei.pilot_tf import build_tf_graph, verify_graph_roundtrip
+from franko_tei.pilot_tf import build_tf_graph, verify_graph_roundtrip, verify_source_gated_pilot
 
 BASE=Path(__file__).resolve().parents[1]
 DRAFT=json.loads((BASE/'pilot/vol4_scan00100_single_reading.json').read_text(encoding='utf8'))
@@ -15,6 +16,48 @@ TEI_FILE=BASE/'pilot/vol4_scan00100_single_reading.xml'
 
 
 class TFTests(unittest.TestCase):
+    def test_native_image_and_exact_draft_are_required_for_tf_export(self):
+        # Synthetic bytes, never presented as a historical transcription.
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            image = root / 'vol4' / 'page-00100.jpg'
+            image.parent.mkdir()
+            image.write_bytes(b'synthetic image bytes')
+            digest = hashlib.sha256(image.read_bytes()).hexdigest()
+            draft = copy.deepcopy(DRAFT)
+            draft['source_image_sha256'] = digest
+            manifest = {
+                'volume': '4', 'page_count': 100,
+                'source_sha256': draft['source_pdf_sha256_claimed_by_manifest'],
+                'pages': [{'scan_page': n, 'printed_page': None, 'width': 1190,
+                           'height': 1794, 'artifacts': []} for n in range(1, 100)]
+                         + [{'scan_page': 100, 'printed_page': None, 'width': 1190,
+                             'height': 1794,
+                             'artifacts': [{'role': 'page_image',
+                                            'path': 'vol4/page-00100.jpg',
+                                            'sha256': digest}]}],
+            }
+            (image.parent / 'manifest.json').write_text(json.dumps(manifest))
+            evidence = root / 'draft.json'
+            tei = root / 'pilot.xml'
+            evidence.write_text(json.dumps(draft), encoding='utf8')
+            tei.write_text(render_pilot_tei(draft, 1190, 1794), encoding='utf8')
+            checked = verify_source_gated_pilot(tei, evidence, root)
+            self.assertEqual(verify_graph_roundtrip(checked)[0], '48')
+            with self.assertRaisesRegex(ValueError, 'TEI|match|reproduce'):
+                tei.write_text(tei.read_text('utf8').replace('Бесѣды', 'Беседы'),
+                               encoding='utf8')
+                verify_source_gated_pilot(tei, evidence, root)
+            tei.write_text(render_pilot_tei(draft, 1190, 1794), encoding='utf8')
+            image.write_bytes(b'mutated image bytes')
+            with self.assertRaisesRegex(ValueError, 'checksum'):
+                verify_source_gated_pilot(tei, evidence, root)
+
+    def test_page_roundtrip_explicitly_restores_physical_lb_newlines(self):
+        graph=build_tf_graph(TEI_FILE.read_text('utf8'))
+        reconstructed='\\n'.join(verify_graph_roundtrip(graph))
+        self.assertEqual(reconstructed, DRAFT['reading']['raw_response'])
+
     def test_unicode_slots_and_real_page_roundtrip(self):
         graph=build_tf_graph(TEI_FILE.read_text(encoding='utf8'))
         expected=[line['text'] for region in DRAFT['reading']['regions'] for line in region['lines']]
