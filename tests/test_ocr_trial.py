@@ -85,7 +85,6 @@ class OCRTrialTests(unittest.TestCase):
             run_trial(self.root, [(2, 100)], "ukr", 3, self.output)
         runner.assert_not_called()
 
-    @patch("franko_tei.ocr_trial.subprocess.run", return_value=FakeResult())
     def test_unquoted_tesseract_double_quote_does_not_swallow_following_rows(self):
         # Actual OCR from I/20 contains a literal leading double quote.
         # TSV is not RFC 4180 CSV and text fields are not CSV-quoted.
@@ -97,6 +96,7 @@ class OCRTrialTests(unittest.TestCase):
         self.assertEqual([line["text"] for line in result], ['"Heatov', 'αἱ'])
         self.assertTrue(all("\t" not in line["text"] for line in result))
 
+    @patch("franko_tei.ocr_trial.subprocess.run", return_value=FakeResult())
     def test_refuses_to_overwrite_candidates(self, runner):
         self.output.write_text("keep me", encoding="utf-8")
         with self.assertRaises(FileExistsError):
