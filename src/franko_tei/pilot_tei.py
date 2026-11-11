@@ -75,10 +75,14 @@ def validate_single_draft(payload, images_root):
     if type(width) is not int or type(height) is not int or width <= 0 or height <= 0:
         raise ValueError('invalid image dimensions')
     reading = payload.get('reading')
-    for key in ('reader_id', 'model_id', 'raw_response'):
+    for key in ('reader_id', 'model_id', 'context_id', 'instructions', 'raw_response'):
         _required_text(reading, key)
-    if reading.get('model_version') is not None and not isinstance(reading.get('model_version'), str):
-        raise ValueError('model version must be a string or null')
+    if 'run_id' not in reading or (reading['run_id'] is not None and
+                                    not isinstance(reading['run_id'], str)):
+        raise ValueError('run_id must be explicitly null (unknown) or a string')
+    if 'model_version' not in reading or (reading['model_version'] is not None and
+                                          not isinstance(reading['model_version'], str)):
+        raise ValueError('model_version must be explicitly null (unknown) or a string')
     if reading.get('context_independence') != 'single-working-draft':
         raise ValueError('single-working-draft is not independent review')
     if reading.get('source_original_ocr_visible') is not False or reading.get('peer_readings_visible') is not False:
@@ -97,6 +101,8 @@ def validate_single_draft(payload, images_root):
         raise ValueError('first reading must include regions')
     region_ids, line_ids = set(), set()
     page_number_texts = []
+    line_text_by_id = {}
+    raw_lines = []
     for region in regions:
         name = _id(_required_text(region, 'id'), 'region')
         if name in region_ids:
@@ -121,6 +127,8 @@ def validate_single_draft(payload, images_root):
                 raise ValueError('line geometry_estimated flag required')
             text = _required_text(line, 'text')
             _valid_xml_text(text)
+            line_text_by_id[identifier] = text
+            raw_lines.append(text)
             validate_language_spans(text, line.get('language_spans'), reading['reader_id'])
             if region['kind'] == 'page_number':
                 page_number_texts.append(text)
@@ -129,6 +137,20 @@ def validate_single_draft(payload, images_root):
         raise ValueError('printed_page_observed must be a string or null')
     if label is not None and page_number_texts != [label]:
         raise ValueError('printed page number must match single observed page-number line')
+    if reading['raw_response'] != '\n'.join(raw_lines):
+        raise ValueError('raw_response differs from initial physical lines; preserve any edits as separate derivations')
+    notes = reading.get('uncertainty_notes')
+    if not isinstance(notes, list):
+        raise ValueError('uncertainty_notes must be explicitly listed, even if empty')
+    seen_notes = set()
+    for item in notes:
+        line_id = _required_text(item, 'line_id')
+        source_reading = _required_text(item, 'reading')
+        _required_text(item, 'reason')
+        key = (line_id, source_reading)
+        if key in seen_notes or line_id not in line_text_by_id or source_reading not in line_text_by_id[line_id]:
+            raise ValueError('uncertainty note must link to a unique literal reading on an existing line')
+        seen_notes.add(key)
     return {'width':width,'height':height,'image_sha256':image_sha}
 
 
@@ -197,7 +219,7 @@ def render_pilot_tei(payload, image_width, image_height):
     _sub(bibl,'title','Апокріфи і лєґенди з українських рукописів')
     _sub(bibl,'biblScope',f"Printed volume {volume}; scan index {page}; manuscript witnesses not encoded")
     _sub(bibl,'idno',payload['source_pdf_sha256_claimed_by_manifest'],{'type':'PDF-SHA256-claim'})
-    _sub(bibl,'idno',payload['source_image_sha256'],{'type':'Image-SHA256-verified-by-CLI'})
+    _sub(bibl,'idno',payload['source_image_sha256'],{'type':'Image-SHA256-claim'})
     enc=_sub(header,'encodingDesc')
     _sub(enc,'p','Physical line transcription retains original code points and line endings; page geometry is estimated; printed page labels are image observations. No OCR-based corrections or manuscript variants. Unverified first reading only.')
     rev=_sub(header,'revisionDesc')
@@ -220,6 +242,11 @@ def render_pilot_tei(payload, image_width, image_height):
         xml_id(ab,f"ab-v{volume}-s{page:05d}-{region['id']}")
         for line in region['lines']:
             _append_line(ab,line,volume,page,draft['reader_id'])
+    for index, note in enumerate(draft['uncertainty_notes'], 1):
+        n = _sub(div, 'note', f"{note['reading']}: {note['reason']}",
+                 {'type': 'agent-reading-uncertainty',
+                  'corresp': f"#lb-v{volume}-s{page:05d}-{note['line_id']}"})
+        xml_id(n, f"agent-note-v{volume}-s{page:05d}-{index:03d}")
     return '<?xml version="1.0" encoding="UTF-8"?>\n'+ET.tostring(root,encoding='unicode')+'\n'
 
 

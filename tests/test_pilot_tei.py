@@ -40,6 +40,8 @@ class PilotTeiTests(unittest.TestCase):
             'source_image_path':'vol4/page-00100.jpg','source_image_sha256':self.sha,
             'reading': {
                 'reader_id':'context-1','model_id':'GPT-6','model_version':None,
+                'context_id':'single-real-chat','run_id':None,
+                'instructions':'Read the image directly and preserve visible lines',
                 'context_independence':'single-working-draft',
                 'source_original_ocr_visible':False,
                 'peer_readings_visible':False,
@@ -60,9 +62,24 @@ class PilotTeiTests(unittest.TestCase):
                              'language':'chu','script':'Cyrl','uncertain':True},
                             {'text_version':'context-1','start':14,'end':21,
                              'language':'uk','script':'Cyrl','uncertain':False}]}]}
-                ]
+                ],
+                'uncertainty_notes':[
+                    {'line_id':'text-line','reading':'ѣ́','reason':'Needs second independent visual check'}]
             }
         }
+
+    def test_committed_real_draft_is_a_replayable_single_context_artifact(self):
+        project=Path(__file__).parents[1]
+        draft=json.loads((project/'pilot/vol4_scan00100_single_reading.json').read_text(encoding='utf8'))
+        xml=(project/'pilot/vol4_scan00100_single_reading.xml').read_text(encoding='utf8')
+        first=draft['reading']
+        lines=[line['text'] for region in first['regions'] for line in region['lines']]
+        self.assertEqual(first['raw_response'], '\n'.join(lines))
+        self.assertEqual(len(lines), 13)  # printed page label + twelve text lines
+        self.assertEqual(extract_transcribed_lines(xml), lines)
+        self.assertEqual(draft['status'], 'agent_unverified')
+        self.assertEqual(first['context_independence'], 'single-working-draft')
+        self.assertEqual(render_pilot_tei(draft,1190,1794),xml)
 
     def test_roundtrip_mixed_unicode_and_escaping(self):
         data=self.sample()
@@ -128,13 +145,32 @@ class PilotTeiTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'XML'):
             validate_single_draft(data,self.root)
 
-    def test_raw_response_is_not_presumed_verified_or_equal_to_normalized_output(self):
+    def test_disallows_untracked_changes_from_raw_first_reading(self):
         data=self.sample()
         data['reading']['raw_response']='raw draft with disagreement'
-        validate_single_draft(data,self.root)
+        with self.assertRaisesRegex(ValueError,'raw_response'):
+            validate_single_draft(data,self.root)
+
+    def test_requires_explicit_reader_provenance(self):
+        for key in ('model_version','context_id','run_id','instructions'):
+            data=self.sample()
+            del data['reading'][key]
+            with self.subTest(key=key),self.assertRaisesRegex(ValueError,key):
+                validate_single_draft(data,self.root)
+
+    def test_uncertainty_notes_cannot_claim_unseen_lines_and_are_in_tei(self):
+        data=self.sample()
         xml=render_pilot_tei(data,1190,1794)
-        self.assertNotIn('raw draft with disagreement',xml)
-        self.assertIn('single',xml.lower())
+        self.assertIn('agent-reading-uncertainty',xml)
+        self.assertIn('Needs second independent visual check',xml)
+        data['reading']['uncertainty_notes'][0]['line_id']='missing'
+        with self.assertRaisesRegex(ValueError,'uncertainty'):
+            validate_single_draft(data,self.root)
+        data=self.sample()
+        data['reading']['uncertainty_notes'][0]['reading']='invented text'
+        with self.assertRaisesRegex(ValueError,'uncertainty'):
+            validate_single_draft(data,self.root)
+
 
 
 if __name__=='__main__':
