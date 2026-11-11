@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from franko_tei.pilot_tei import render_pilot_tei
 from franko_tei.pilot_tf import build_tf_graph, verify_graph_roundtrip
@@ -156,16 +157,23 @@ class BatchTests(unittest.TestCase):
             ev1, tei1, img1 = self._write_source_pair(root, self.first, "one")
             ev2, tei2, img2 = self._write_source_pair(root, self.second, "two")
             pairs = [(ev1, tei1), (ev2, tei2)]
-            graph = verify_source_gated_batch(pairs, root / "images")
-            self.assertEqual(
-                sum(t == "page" for t in graph.node_features["otype"].values()), 2)
-            img2.write_bytes(b"corrupted synthetic scan")
-            with self.assertRaisesRegex(ValueError, "checksum"):
+            # Production must reject even mutually consistent forged local
+            # image+manifest bytes: these are not the pinned Git manifests.
+            with self.assertRaisesRegex(ValueError, "manifest.*pinned|pinned.*manifest"):
                 verify_source_gated_batch(pairs, root / "images")
-            img2.write_bytes(b"SYNTHETIC-two")
-            tei2.write_text(tei2.read_text("utf8").replace("ѣ́", "е", 1), encoding="utf8")
-            with self.assertRaisesRegex(ValueError, "TEI|match"):
-                verify_source_gated_batch(pairs, root / "images")
+            # Only in synthetic unit tests, mock the upstream trust anchor to
+            # exercise the *separate* image and deterministic TEI checks.
+            with patch("franko_tei.pilot_tf_batch._verify_pinned_manifest"):
+                graph = verify_source_gated_batch(pairs, root / "images")
+                self.assertEqual(
+                    sum(t == "page" for t in graph.node_features["otype"].values()), 2)
+                img2.write_bytes(b"corrupted synthetic scan")
+                with self.assertRaisesRegex(ValueError, "checksum"):
+                    verify_source_gated_batch(pairs, root / "images")
+                img2.write_bytes(b"SYNTHETIC-two")
+                tei2.write_text(tei2.read_text("utf8").replace("ѣ́", "е", 1), encoding="utf8")
+                with self.assertRaisesRegex(ValueError, "TEI|match"):
+                    verify_source_gated_batch(pairs, root / "images")
 
     def test_refuses_to_overwrite_and_rejects_single_entry(self):
         with self.assertRaisesRegex(ValueError, "two|multiple"):
