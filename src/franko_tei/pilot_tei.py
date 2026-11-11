@@ -181,15 +181,18 @@ def _append_line(parent, line, volume, page, reading_id):
     raw = line['text']
     spans = line['language_spans']
     previous, current = 0, lb
-    for span in spans:
+    for span_index, span in enumerate(spans, 1):
         start, end = span['start'], span['end']
         current.tail = (current.tail or '') + raw[previous:start]
         attrs = {'type': 'language-attribution'}
         if span['language'] is not None:
             attrs[f'{{{XML}}}lang'] = span['language']
+        if span['script'] is not None:
+            attrs['subtype'] = span['script']
         if span['uncertain']:
             attrs['cert'] = 'low'
         seg = _sub(parent,'seg',raw[start:end],attrs)
+        xml_id(seg, f"seg-v{volume}-s{page:05d}-{line['id']}-{span_index:03d}")
         current = seg
         previous = end
     current.tail = (current.tail or '') + raw[previous:]
