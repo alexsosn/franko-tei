@@ -1,0 +1,132 @@
+name: "Multi-page TF: real image trust gate plus synthetic engine smoke"
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/pilot_tf_batch.py
+      - tests/test_pilot_tf_batch.py
+      - pyproject.toml
+      - .github/workflows/tf-batch-source-smoke.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  load-batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Text-Fabric
+        run: python -m pip install -e '.[tf]'
+      - name: Run pure batch invariants and source gate tests
+        run: python -m unittest discover -s tests -p test_pilot_tf_batch.py -v
+      - name: Fetch native IV/100 and manifest from pinned asset SHA
+        run: |
+          set -euo pipefail
+          mkdir -p native-assets/vol4
+          SRC=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol4
+          curl --fail --silent --show-error --location --retry 2 "$SRC/manifest.json" -o native-assets/vol4/manifest.json
+          curl --fail --silent --show-error --location --retry 2 "$SRC/page-00100.jpg" -o native-assets/vol4/page-00100.jpg
+      - name: Prepare SYNTHETIC second volume page (NOT a transcription)
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from franko_tei.pilot_tei import render_pilot_tei
+          original=json.loads(Path('pilot/vol4_scan00100_single_reading.json').read_text('utf8'))
+          fake=original.copy()
+          fake['volume']='5'
+          fake['scan_page']=10
+          fake['source_image_path']='vol5/page-00010.jpg'
+          fake['source_pdf_sha256_claimed_by_manifest']='b'*64
+          image_bytes=b'SYNTHETIC IMAGE FOR TF TEST ONLY'
+          fake['source_image_sha256']=hashlib.sha256(image_bytes).hexdigest()
+          img=Path('native-assets/vol5/page-00010.jpg')
+          img.parent.mkdir(parents=True,exist_ok=True)
+          img.write_bytes(image_bytes)
+          pages=[{'scan_page':n,'printed_page':None,'width':1190,'height':1794,
+                  'artifacts':[]} for n in range(1,10)]
+          pages.append({'scan_page':10,'printed_page':None,'width':1190,'height':1794,
+                        'artifacts':[{'role':'page_image','path':fake['source_image_path'],
+                                      'sha256':fake['source_image_sha256']}]})
+          (img.parent/'manifest.json').write_text(json.dumps({
+              'volume':'5','page_count':10,
+              'source_sha256':fake['source_pdf_sha256_claimed_by_manifest'],
+              'pages':pages
+          }))
+          Path('build').mkdir(exist_ok=True)
+          Path('build/vol5-synthetic.json').write_text(json.dumps(fake),encoding='utf8')
+          Path('build/vol5-synthetic.xml').write_text(
+              render_pilot_tei(fake,1190,1794),encoding='utf8')
+          print('synthetic second page: replay of IV/100 text, not V/10 transcription')
+          PY
+      - name: Production CLI must reject the forged synthetic volume manifest
+        run: |
+          set +e
+          message=$(franko-pilot-tf-batch --images native-assets \
+            --evidence pilot/vol4_scan00100_single_reading.json \
+            --tei pilot/vol4_scan00100_single_reading.xml \
+            --evidence build/vol5-synthetic.json --tei build/vol5-synthetic.xml \
+            --output build/should-not-exist 2>&1)
+          result=$?
+          set -e
+          test "$result" -ne 0
+          echo "$message" | grep -q 'manifest does not match pinned asset commit'
+          test ! -e build/should-not-exist
+      - name: Save genuine TF from real gated IV source and labeled mock graph
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tf.fabric import Fabric
+          from franko_tei.pilot_tf import build_tf_graph,verify_source_gated_pilot
+          from franko_tei.pilot_tf_batch import merge_pilot_graphs,_verify_pinned_manifest
+          _verify_pinned_manifest('4','native-assets')
+          real=verify_source_gated_pilot(
+              'pilot/vol4_scan00100_single_reading.xml',
+              'pilot/vol4_scan00100_single_reading.json','native-assets')
+          # This explicitly synthetic second page bypasses production CLI.
+          fake=build_tf_graph(Path('build/vol5-synthetic.xml').read_text('utf8'))
+          graph=merge_pilot_graphs([('4',100,real),('5',10,fake)])
+          output=Path('build/two-page-tf')
+          output.mkdir()
+          assert Fabric(locations=str(output),silent='deep').save(
+              nodeFeatures=graph.node_features,
+              edgeFeatures=graph.edge_features,
+              metaData=graph.metadata,silent='deep')
+          PY
+      - name: Load genuine Text-Fabric API and query separate page text
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tf.fabric import Fabric
+          from franko_tei.pilot_tei import extract_transcribed_lines
+          api=Fabric(locations='build/two-page-tf',silent='deep').load(
+              'glyph codepoint teiId pageKey volume scanPage imageSha status')
+          assert api, 'TF refused to load the two-page pilot'
+          pages=tuple(api.F.otype.s('page'))
+          assert len(pages)==2
+          assert [(api.F.pageKey.v(p),api.F.volume.v(p),
+                   api.F.status.v(p)) for p in pages]==[
+              ('v4-s00100','4','agent_unverified'),
+              ('v5-s00010','5','agent_unverified')]
+          source=Path('pilot/vol4_scan00100_single_reading.xml').read_text('utf8')
+          expected=extract_transcribed_lines(source)
+          for page in pages:
+              lines=[line for line in api.F.otype.s('line') if
+                     set(api.L.d(line,otype='char')).issubset(
+                         set(api.L.d(page,otype='char')))]
+              seen=[''.join(chr(api.F.codepoint.v(s)) for s in
+                            api.L.d(line,otype='char')) for line in lines]
+              assert seen==expected, (seen,expected)
+              assert api.F.imageSha.v(page) is not None
+          print('PASS: real IV/100 source-gated + synthetic second page; TF loaded')
+          PY
+      - name: Upload only experimental TF features, never source images
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-multipage-synthetic-unverified-tf
+          path: build/two-page-tf/*.tf
+          retention-days: 7
+          if-no-files-found: error
