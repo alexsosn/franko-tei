@@ -1,4 +1,4 @@
-name: Kraken physical-line segmentation on pinned scans (experimental)
+name: Kraken physical-line segmentation incl. V/10 two-column facsimile (experimental)
 on:
   pull_request:
     paths:
@@ -27,7 +27,7 @@ jobs:
         run: |
           set -euo pipefail
           BASE=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images
-          for spec in 2:100 3:130 5:100; do
+          for spec in 2:100 3:130 5:10 5:100; do
             vol="${spec%:*}"
             page="${spec#*:}"
             dir="scan-assets/vol$vol"
@@ -40,20 +40,28 @@ jobs:
         run: |
           franko-kraken-layout --images scan-assets --volume 2 --pages 100 --output geometry/vol2
           franko-kraken-layout --images scan-assets --volume 3 --pages 130 --output geometry/vol3
-          franko-kraken-layout --images scan-assets --volume 5 --pages 100 --output geometry/vol5
+          franko-kraken-layout --images scan-assets --volume 5 --pages 10,100 --output geometry/vol5
       - name: Verify geometry coverage and bounds, not text accuracy
         run: |
           python - <<'PY'
           from pathlib import Path
           import json
           files=list(Path('geometry').rglob('*.json'))
-          assert len(files)==3, files
+          assert len(files)==4, files
           for file in files:
               d=json.loads(file.read_text(encoding='utf8'))
               assert d['status']=='segmentation_unchecked'
               assert d['line_count']==len(d['lines'])
               assert d['line_count']>0, f"No line candidates on {file}"
               assert len(d['source_image_sha256'])==64
+              if d['volume']=='5' and d['scan_page']==10:
+                  # This page has two columns and a cross-column caption.
+                  # Bounding-box x alone is a heuristic; never auto-certify
+                  # the reading order or original visible text from it.
+                  midpoint=d['image_width']/2
+                  left=sum(line['bbox_xywh'][0]+line['bbox_xywh'][2]/2 < midpoint for line in d['lines'])
+                  right=d['line_count']-left
+                  print(f"V/10 candidates: {left} left-center, {right} right-center (UNVERIFIED column assignment)")
               print(f"Volume {d['volume']} scan {d['scan_page']}: {d['line_count']} Kraken candidate physical lines")
           PY
       - uses: actions/upload-artifact@v4
