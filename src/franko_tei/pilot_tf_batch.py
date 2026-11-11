@@ -112,8 +112,16 @@ def merge_pilot_graphs(entries):
         sources_seen.add(source)
         if metadata is None:
             metadata = deepcopy(graph.metadata)
-        elif metadata != graph.metadata:
-            raise ValueError("incompatible TF metadata")
+        else:
+            # Pages need not contain identical OPTIONAL node features.
+            # Keep all definitions and refuse any conflict in a shared feature,
+            # including types, otext/sections and source slot conventions.
+            for name, definition in graph.metadata.items():
+                if name in metadata:
+                    if metadata[name] != definition:
+                        raise ValueError(f"incompatible TF metadata for {name}")
+                else:
+                    metadata[name] = deepcopy(definition)
         for n, typ in graph.node_features["otype"].items():
             if typ != "char":
                 ident = graph.node_features["teiId"][n]
