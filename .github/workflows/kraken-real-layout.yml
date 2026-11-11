@@ -64,6 +64,42 @@ jobs:
                   print(f"V/10 candidates: {left} left-center, {right} right-center (UNVERIFIED column assignment)")
               print(f"Volume {d['volume']} scan {d['scan_page']}: {d['line_count']} Kraken candidate physical lines")
           PY
+      - name: Verify pinned V/10 geometry against independently saved review
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          original=Path('geometry/vol5/vol5-page-00010-kraken-layout.json')
+          record=json.loads(original.read_text(encoding='utf8'))
+          review=json.loads(Path('pilot/geometry/vol5_scan00010_column_layout_review.json').read_text(encoding='utf8'))
+          assert review['status']==record['status']=='segmentation_unchecked'
+          assert review['source_image_sha256']==record['source_image_sha256']
+          assert review['kraken_candidate_count']==len(record['lines'])==85
+          assert review['kraken_native_json_sha256']==record['native_kraken_json_sha256']
+          assert review['kraken_report_sha256']==hashlib.sha256(original.read_bytes()).hexdigest(), 'Kraken run drifted from pinned candidate evidence'
+          all_indices=[]
+          for region in review['regions']:
+              a,b=region['candidate_line_range']
+              all_indices.extend(range(a,b+1))
+              lines=record['lines'][a-1:b]
+              assert all(line['candidate_line_id'].startswith(review['kraken_candidate_id_prefix']) for line in lines)
+              x0=min(line['bbox_xywh'][0] for line in lines)
+              y0=min(line['bbox_xywh'][1] for line in lines)
+              x1=max(line['bbox_xywh'][0]+line['bbox_xywh'][2] for line in lines)
+              y1=max(line['bbox_xywh'][1]+line['bbox_xywh'][3] for line in lines)
+              actual=[x0,y0,x1,y1]
+              expected=region.get('bbox_extent_observed_xyxy')
+              if expected is not None:
+                  assert actual==expected, (region['id'],actual,expected)
+              if region['id']=='stamp-candidate':
+                  assert [x0,y0,x1-x0,y1-y0]==region['bbox_xywh']
+              if region['id']=='merged-column-bottom':
+                  assert region['manual_split_required']
+                  assert all(line['bbox_xywh'][2]>800 for line in lines)
+          assert sorted(all_indices)==list(range(1,86)), 'duplicate or omitted Kraken candidate'
+          assert not review['text_certified'] and review['original_first_transcription_incomplete']
+          print('V/10 original-image Kraken geometry matches pinned review; text remains UNREAD')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: franko-kraken-unverified-layout
