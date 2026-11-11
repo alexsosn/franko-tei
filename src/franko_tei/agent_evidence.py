@@ -4,6 +4,7 @@ This validates provenance/shape, not the *truth* of a reading or independence
 of hosted model contexts. The outcome is always agent_unverified.
 """
 from pathlib import Path
+from math import isfinite
 import re
 
 from .ocr_candidates import _get_page_image, _read_manifest
@@ -22,6 +23,8 @@ def _box(box, width, height, label):
     if (not isinstance(box, list) or len(box) != 4 or
             any(type(n) not in (int, float) for n in box)):
         raise ValueError(f"{label}: invalid bbox_xywh")
+    if not all(isfinite(n) for n in box):
+        raise ValueError(f"{label}: nonfinite coordinate")
     x, y, w, h = box
     if w <= 0 or h <= 0 or min(x, y) < 0 or x + w > width or y + h > height:
         raise ValueError(f"{label}: bounding box outside bounds")

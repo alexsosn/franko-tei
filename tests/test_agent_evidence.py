@@ -125,6 +125,14 @@ class EvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'region'):
             validate_evidence(payload, self.root)
 
+    def test_nonfinite_geometry_rejected(self):
+        for weird in (float('nan'), float('inf'), float('-inf')):
+            with self.subTest(weird=weird):
+                payload = self.sample()
+                payload['review']['agreement_spot_checks'][0]['bbox_xywh'][0] = weird
+                with self.assertRaisesRegex(ValueError, 'finite|bounds'):
+                    validate_evidence(payload, self.root)
+
     def test_review_requires_real_image_audit_of_agreements(self):
         payload = self.sample()
         payload['review']['agreement_spot_checks'] = []
