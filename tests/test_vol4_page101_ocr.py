@@ -42,5 +42,29 @@ class TestVol4Page101OCR(unittest.TestCase):
         self.assertFalse(d["body_read"])
         self.assertFalse(d["eligible_for_tei_tf"])
 
+
+    def test_actual_raw_ocr_sample_is_persistent_and_explicitly_not_diplomatic(self):
+        import json
+        d=json.loads((ROOT/"pilot/ocr/vol4_scan00101_ten_candidates_20261111.json").read_text(encoding="utf8"))
+        self.assertEqual(d["status"],"ocr_unchecked")
+        self.assertEqual(d["source_run_id"],43092933157)
+        self.assertEqual(d["source_image_sha256"],"7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447")
+        self.assertEqual(d["excluded_source_candidate"]["bbox_xywh"],[1008,87,6,63])
+        self.assertFalse(d["body_complete"])
+        self.assertFalse(d["may_feed_tei_tf"])
+        self.assertFalse(d["independent_glyph_review"])
+        self.assertEqual(len(d["candidates"]),20)
+        pairs={}
+        for item in d["candidates"]:
+            self.assertTrue(item["transcription"])
+            self.assertEqual(item["status"],"ocr_unchecked")
+            self.assertEqual(len(item["crop_png_sha256"]),64)
+            pairs.setdefault(item["candidate_line_id"],[]).append(item)
+        self.assertEqual(len(pairs),10)
+        self.assertFalse(any(k.endswith("l00002") for k in pairs))
+        for pair in pairs.values():
+            self.assertEqual({x["model_name"] for x in pair},{"church-slavonic","prosta-mova"})
+            self.assertEqual(len({x["crop_png_sha256"] for x in pair}),1)
+
 if __name__=="__main__":
     unittest.main()
