@@ -8,7 +8,34 @@
 
 **Coverage:** 42 line strings including printed XI in BOTH frozen records. 18 textual line disagreements; 24 line-level exact agreements. Comparable **line positions**, not necessarily identical pixel crop geometries; our source-linked boxes are estimated. No omitted printed line is immediately obvious from the visual full-page survey; this is not a character-by-character coverage attestation.
 
-## Disagreements requiring independent native-image adjudication
+## Primary A (merged PR #35) versus frozen B (this PR #37)
+
+The source-gated first-pass A was merged to `main` by PR #35 **after B's first response was frozen**. A is `pilot/vol1_scan00020_single_reading.json` (context `chat-single-context-2026-11-11-I20`); B is preserved at `pilot/vol1_scan00020_independent_image_reading_b.json` (context `chat-single-context-2026-11-11-I20-new-visual`). Neither record is a verified edition and both retain `run_id=null`. The PR #35 merge forced us to rename B's file to avoid replacing A or introducing a git conflict.
+
+- 42/42 physical text line positions align; 15 differ and 27 are exactly identical *as strings*. These are **reader agreement figures only**, not CER or proof of textual accuracy.
+- The first reading A and separately frozen B remain immutable. The earlier PR #30 comparison below includes a **third available unverified first-pass draft** made in a different reported context; these sources must not be conflated into a consensus witness.
+
+| Line | Merged first pass A (#35) | Independently frozen first pass B (#37) | Image-review target |
+| --- | --- | --- | --- |
+| 2 | стольські конституціи згадують також про фальшиві βιβλία ἐπ’ ὀνόμασι | стольські конституції згадують також про фальшиві βιβλία ἐπ᾽ ὀνόμασι | Orthography (`конституціи/конституції`) and exact Greek apostrophe U+2019/U+1FBD. |
+| 3 | Χριστοῦ, а з старозавітних βιβλία ἀπόκρυφα Μωσέως καὶ Ἐνώχ καὶ Ἀδάμ, | Χριστοῦ, а з старозавітних βιβλία ἀπόκρυφα Μωσέως καὶ Ἐνὼχ καὶ Ἀδὰμ, | Greek Ἐνώχ/Ἐνὼχ and Ἀδάμ/Ἀδὰμ accents. |
+| 4 | Ἠσαΐου τε καὶ Δαβίδ καὶ Ἠλία καὶ τῶν τριῶν πατριαρχῶν, φθοροποιά τε καὶ ἀληθείας | Ἠσαΐου τε καὶ Δαβὶδ καὶ Ἠλία καὶ τῶν τριῶν πατριαρχῶν, φθοροποιὰ τε καὶ ἀληθείας | Greek Δαβίδ/Δαβὶδ and φθοροποιά/φθοροποιὰ. |
+| 16 | шованої бібліоґрафії з поданєм, кілько віршів має кождий твір. Чи- | шованої бібліографії з поданєм, кілько віршів має кождий твір. Чи- | Historic ґ in бібліоґрафії. |
+| 17 | таємо там між иньшим ось який список старозавітних апокріфів: | таємо там між иньшим ось який спис старозавітних апокріфів: | список/спис: word length; image close check critical. |
+| 23 | свою статю „Synopsis sacrae scripturae“, приписану св. Афанасієви | свою статю „Synopsis sacrae scripturae“, приписану св. Афанасьеви | Афанасієви/Афанасьеви historical glyph. |
+| 24 | і опубліковану між его творами (Athanasii Opera omnia II, 154), | і опубліковану між його творами (Athanasii Opera omnia II, 154), | его/його: our B may have normalized into modern Ukrainian; flag as high-priority. |
+| 26 | походить статя „Questiones et responsiones Anastasii Sinaitae“, тільки | походить статя „Quaestiones et responsiones Anastasii Sinaitae“, тільки | Questiones/Quaestiones: B may have silently Latinized a misprint; high-priority. |
+| 27 | вона не Анастасієва. Єї словянський переклад є в Сборнику Свято- | вона не Анастасієва. Єї славянський переклад є в Сборнику Свято- | словянський/славянський: exact historic form uncertain. |
+| 28 | славовім з 1073 р., приписаний Григорию Богослову значить, був же | славовім з 1073 р., приписаний Григорію Богослову значить, був уже | Григорию/Григорію and був же/був уже: possible content-level correction error. |
+| 30 | (Про се крім книг цитованих в тексті гл. Пипинъ, Для объ- | (Про се крім книг цитованих в текстї гл. Пипинъ, Для объ- | в тексті/в текстї: glyph needs close reading. |
+| 39 | енциклопедії Герцога і Плітта та Вецера і Вельте). | енциклопедії Герцога і Плїтта та Вецера і Вельте). | Плітта/Плїтта: historic diaeresis. |
+| 40 | V. Секта Богомилів і її вплив на розширенє апо- | V. Секта Богомилів і єї вплив на розширенє апо- | її/єї: exact archaic spelling. |
+| 41 | кріфів по Словянщині. Розширенє апокріфічних оповідань по | крифів по Словянщинї. Розширенє апокріфічних оповідань по | кріфів ... Словянщині / крифів ... Словянщинї, multiple historic glyphs. |
+| 42 | Словянщині тїсно звязане з повстанєм і розвоєм секти Богомилів | Словянщинї тісно звязане с повстанєм і розвоєм секти Богомилів | Словянщині/Словянщинї, тїсно/тісно, з/с: image grammar is not authority. |
+
+The particularly suspicious B readings are physical lines **24** (`його`), **26** (`Quaestiones`), **28** (`був уже`) and some accent and early-orthography choices: they may reflect silent normalization, not what the scan prints. All remain unresolved until a separate image-inspecting reviewing agent makes decisions on native image crops.
+
+## Secondary comparison against PR #30
 
 | Physical line (folio counted as 1) | PR #37 frozen image reading | PR #30 first-pass reading | Adversarial finding / decision |
 | --- | --- | --- | --- |
