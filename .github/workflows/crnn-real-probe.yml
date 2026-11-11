@@ -54,21 +54,23 @@ jobs:
             https://raw.githubusercontent.com/achimrabus/polyscriptor/7994ccadc537c59b0b90eb25b66dfa5d54976d6d/htr_engine_base.py \
             -o upstream/htr_engine_base.py
           test -s upstream/htr_engine_base.py
-      - name: Resolve model commit revisions and download exact open weights
+      - name: Download source-version-pinned open CRNN weights
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          from huggingface_hub import HfApi, snapshot_download
+          from huggingface_hub import snapshot_download
+          # Revisions frozen from the successful real-scan run 43036416973.
+          # Never silently switch a reference candidate to the newest model.
           repos = {
-              'prosta-mova': 'achimrabus/crnn-ctc-prosta-mova',
-              'church-slavonic': 'achimrabus/crnn-ctc-church-slavonic',
+              'prosta-mova': ('achimrabus/crnn-ctc-prosta-mova',
+                             'db88dcb5dfb767ef27066b012271cf4e6eb31a40'),
+              'church-slavonic': ('achimrabus/crnn-ctc-church-slavonic',
+                                 '2b253a83840eba1948e750b246d60991d3a15285'),
           }
-          api = HfApi()
           models = {}
-          for name, repo in repos.items():
-              revision = api.model_info(repo).sha
-              assert revision and len(revision) == 40
+          for name, (repo, revision) in repos.items():
+              assert len(revision) == 40
               output = Path('models') / name
               snapshot_download(repo_id=repo, revision=revision,
                                 allow_patterns=['best_model.pt', 'symbols.txt'],
@@ -77,7 +79,7 @@ jobs:
               assert weights.is_file() and vocab.is_file()
               models[name] = {'repo': repo, 'revision': revision,
                               'checkpoint': str(weights), 'symbols': str(vocab)}
-              print(f"{name} resolved to {revision} (SHA256 recorded in OCR report)")
+              print(f"{name} pinned at {revision} (SHA256 recorded in OCR report)")
           Path('models/model-specs.json').write_text(json.dumps(models, indent=2))
           PY
       - name: Run identical 2 Church Slavonic source lines through both models
