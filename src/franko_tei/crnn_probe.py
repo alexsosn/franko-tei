@@ -163,7 +163,9 @@ def probe(images_root, volume, layout_path, model_specs, inference_path,
     for name, spec in models.items():
         engine = _load_engine(inference_path, spec["checkpoint"], spec["symbols"])
         for line, crop, bounds, digest in crops:
-            predicted = engine.transcribe(crop)
+            # Third-party recognizers may mutate their PIL input while preprocessing.
+            # Pass an independent copy so the next model sees identical source pixels.
+            predicted = engine.transcribe(crop.copy())
             if (not isinstance(predicted, (tuple, list)) or len(predicted) != 2
                     or not isinstance(predicted[0], str)):
                 raise RuntimeError(f"model {name} returned invalid recognition result")
