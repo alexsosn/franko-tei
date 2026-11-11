@@ -1,0 +1,83 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 30,
+  "printed_page_observed": "XXI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "f97568fbaf4ba2f5198a23b4c436171d693e76ae891cca072c88d903d3373474",
+  "frozen_first_reading": "pilot/vol1_scan00030_single_reading.json",
+  "review_method": "Failure-oriented second visual pass on the actual 1190x1699 native scan, then the original embedded OCR inspected after the first-response JSON was committed as a hostile counterhypothesis. This is same-context review, not a blind independent agent.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-02",
+      "frozen_substring": "останньою",
+      "proposed_substring": "остатньою",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "image_evidence": "The printed word appears to contain т rather than н in its middle; the badly corrupted OCR also has остатньою. Recheck enlarged original before correcting edition text."
+    },
+    {
+      "line_id": "main-line-08",
+      "frozen_substring": "московскім",
+      "proposed_substring": "московськім",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "image_evidence": "Source has ськ cluster (московськім) and first reading seems to omit soft sign."
+    },
+    {
+      "line_id": "main-line-12",
+      "frozen_substring": "вище згаданий",
+      "proposed_substring": "висше згаданий",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "image_evidence": "Source spells висше, a historical form the fluent first pass modernized to вище."
+    },
+    {
+      "line_id": "main-line-32",
+      "frozen_substring": "в її склад",
+      "proposed_substring": "в єї склад",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "image_evidence": "At least one printed є glyph occurs in the possessive єї (also seen on I/29), whereas the first pass regularized to її."
+    }
+  ],
+  "additional_unresolved": [
+    {
+      "line_id": "main-line-05",
+      "reading": "риєм",
+      "reason": "Proper name split Григо- / риєм; vowel placement and letters require glyph review."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "свв. Пя-",
+      "reason": "Possible 'св.' or 'свв.' after стихира, and line-break fidelity."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "Преніе съ Іудеями",
+      "reason": "Exact Russian/Church Slavonic book title and і/и/ѣ require independent source-only review."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "Бесѣды св. Кесарія",
+      "reason": "Historical ѣ, name transcription and quotation marks."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "Л е о н и д ъ",
+      "reason": "Letterspacing and citation punctuation likely true but no measured crop-level audit."
+    }
+  ],
+  "limits": [
+    "No independent blind second reading",
+    "No separate third reviewer",
+    "No verified words/glyphs or CER",
+    "No TEI/TF release",
+    "No manuscript witness reconstructed from cited titles"
+  ],
+  "rights": "Only source citations and text artifacts; source JPEG/PDF not republished in this PR."
+}
