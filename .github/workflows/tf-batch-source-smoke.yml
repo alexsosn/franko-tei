@@ -1,4 +1,4 @@
-name: "Multi-page TF: real IV/100 plus clearly synthetic second page"
+name: "Multi-page TF: real image trust gate plus synthetic engine smoke"
 on:
   pull_request:
     paths:
@@ -62,13 +62,40 @@ jobs:
               render_pilot_tei(fake,1190,1794),encoding='utf8')
           print('synthetic second page: replay of IV/100 text, not V/10 transcription')
           PY
-      - name: Export source-checked two-page TF
+      - name: Production CLI must reject the forged synthetic volume manifest
         run: |
-          franko-pilot-tf-batch --images native-assets \
+          set +e
+          message=$(franko-pilot-tf-batch --images native-assets \
             --evidence pilot/vol4_scan00100_single_reading.json \
             --tei pilot/vol4_scan00100_single_reading.xml \
             --evidence build/vol5-synthetic.json --tei build/vol5-synthetic.xml \
-            --output build/two-page-tf
+            --output build/should-not-exist 2>&1)
+          result=$?
+          set -e
+          test "$result" -ne 0
+          echo "$message" | grep -q 'manifest does not match pinned asset commit'
+          test ! -e build/should-not-exist
+      - name: Save genuine TF from real gated IV source and labeled mock graph
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tf.fabric import Fabric
+          from franko_tei.pilot_tf import build_tf_graph,verify_source_gated_pilot
+          from franko_tei.pilot_tf_batch import merge_pilot_graphs,_verify_pinned_manifest
+          _verify_pinned_manifest('4','native-assets')
+          real=verify_source_gated_pilot(
+              'pilot/vol4_scan00100_single_reading.xml',
+              'pilot/vol4_scan00100_single_reading.json','native-assets')
+          # This explicitly synthetic second page bypasses production CLI.
+          fake=build_tf_graph(Path('build/vol5-synthetic.xml').read_text('utf8'))
+          graph=merge_pilot_graphs([('4',100,real),('5',10,fake)])
+          output=Path('build/two-page-tf')
+          output.mkdir()
+          assert Fabric(locations=str(output),silent='deep').save(
+              nodeFeatures=graph.node_features,
+              edgeFeatures=graph.edge_features,
+              metaData=graph.metadata,silent='deep')
+          PY
       - name: Load genuine Text-Fabric API and query separate page text
         run: |
           python - <<'PY'
