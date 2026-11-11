@@ -23,7 +23,7 @@ class TestI28(unittest.TestCase):
         self.assertEqual(len(all_lines),42)
         self.assertEqual(all_lines[0]["text"],"XIX")
         self.assertTrue(all_lines[1]["text"].startswith("жити, що перший"))
-        self.assertEqual(all_lines[-1]["text"][-18:],"нїж сумнївною.")
+        self.assertTrue(all_lines[-1]["text"].endswith("нїж сумнївною."))
         self.assertIn("с л о в я н с ь к и й",r["raw_response"])
         self.assertIn("Косми Індикоплова",r["raw_response"])
         self.assertEqual(r["raw_response"],"\n".join(l["text"] for l in all_lines))
