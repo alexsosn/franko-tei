@@ -8,10 +8,6 @@ on:
         type: choice
         options: ['1', '2', '3', '4', '5']
         default: '3'
-  pull_request:
-    paths:
-      - 'src/franko_tei/source_audit.py'
-      - '.github/workflows/source-recon.yml'
 permissions:
   contents: read
 concurrency:
