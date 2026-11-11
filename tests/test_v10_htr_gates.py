@@ -37,6 +37,8 @@ class TestV10HTRGates(unittest.TestCase):
         self.assertIn("--start-line 2 --max-lines 4", t)
         self.assertIn("--start-line 39 --max-lines 4", t)
         self.assertIn("--margin-y 16", t)
+        self.assertIn("--margin-y 8 --output ocr-results/v5s00010-left-tight.json", t)
+        self.assertIn("--margin-y 8 --output ocr-results/v5s00010-right-tight.json", t)
         self.assertIn("crop_png_sha256", t)
         self.assertIn("status']=='ocr_unchecked'", t)
         self.assertNotIn("franko-pilot-tei", t)
