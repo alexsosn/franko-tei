@@ -37,5 +37,24 @@ class TestI31(unittest.TestCase):
         self.assertEqual(r["coverage"]["occlusions"], [])
 
 
+
+    def test_postfreeze_glyph_challenge_kept_separate(self):
+        d = json.loads(PATH.read_text(encoding="utf-8"))
+        audit_path = PATH.parent / "reviews/vol1_scan00031_post_freeze_challenges.json"
+        audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"], d["source_image_sha256"])
+        self.assertEqual(audit["status"], "provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]), 2)
+        line_map = {l["id"]: l["text"] for reg in d["reading"]["regions"] for l in reg["lines"]}
+        for item in audit["corrections"]:
+            self.assertIn(item["line_id"], line_map)
+            self.assertIn(item["frozen_substring"], line_map[item["line_id"]])
+            self.assertNotEqual(item["frozen_substring"], item["proposed_substring"])
+            self.assertNotEqual(item["disposition"], "verified")
+        self.assertGreaterEqual(len(audit["unresolved"]), 3)
+
 if __name__ == "__main__":
     unittest.main()
