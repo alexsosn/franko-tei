@@ -16,3 +16,10 @@ One JSON per scan page, ordered by `scan_page`. Required fields:
 `volume` (`"1"`–`"5"`), `scan_page` (1-based), `status` (`ocr_unchecked`|`transcribed`|`verified`), `lines` (list of Unicode strings), `transcribed_by`, `reviewed_by` (required for verified, independent), optionally `printed_page`, `kind` (`unclassified` until annotated), `source_sha256`.
 
 Current export demands all supplied pages be `verified`. This **does not** mean the volume is complete; coverage and TEI scholarly encoding must pass separately before release.
+
+
+## OCR benchmark contract (initial slice)
+
+`franko-tei benchmark-ocr --volume N --reference /path/verified.jsonl --candidate /path/ocr.jsonl --output /path/cer.json` requires exact PDF SHA256, volume, physical scan page numbers, and identical line counts in both JSONL files. Every ground-truth page requires a distinct named transcriber and reviewer; no OCR is marked verified automatically. NFC Unicode normalization only combines canonically equivalent representations; it never folds historic letters (e.g., ѣ→е, ѳ→ф, ѵ→и), expands titla or modernizes spelling. The metric is summed per-line Levenshtein edits / summed ground-truth Unicode code-point count; page-level results retain sample size and error count. Unicode code-point CER should not be described as grapheme-cluster CER.
+
+If an engine produces different segmentation, its result must first be explicitly aligned and audited with the page image and a separately tested alignment module. Do not discard unmatched pages or line fragments to inflate accuracy. Benchmark reports do not include actual book text. The repository does not yet contain a real, independently verified reference set or a measured Franko CER.

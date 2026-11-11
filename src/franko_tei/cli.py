@@ -6,6 +6,7 @@ import sys
 from .catalog import get_volume, load_catalog
 from .edition import build_tei, load_pages, validate_tei
 from .ingest import extract_pdf_text
+from .ocr_benchmark import benchmark
 from .release import release_issues
 from .source_audit import download_source, inspect_pdf
 
@@ -28,6 +29,11 @@ def main(argv=None):
     extract.add_argument("--output", required=True)
     extract.add_argument("--start", type=int, default=1)
     extract.add_argument("--end", type=int)
+    evaluate = commands.add_parser("benchmark-ocr", help="Strict CER against independently verified page/line transcriptions")
+    evaluate.add_argument("--volume", required=True, choices=[str(i) for i in range(1, 6)])
+    evaluate.add_argument("--reference", required=True)
+    evaluate.add_argument("--candidate", required=True)
+    evaluate.add_argument("--output", required=True)
     build = commands.add_parser("build-tei", help="Export independently verified pages only (partial draft)")
     build.add_argument("--volume", required=True, choices=[str(i) for i in range(1, 6)])
     build.add_argument("--input", required=True)
@@ -52,6 +58,12 @@ def main(argv=None):
             print(f"Wrote metadata audit to {target}; content has NOT been verified")
         elif args.command == "extract-pdf":
             print(json.dumps(extract_pdf_text(args.pdf, args.volume, args.output, args.start, args.end)))
+        elif args.command == "benchmark-ocr":
+            report = benchmark(args.reference, args.candidate, args.volume, args.catalog)
+            target = Path(args.output)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(f"Measured CER {report['cer']:.5f} on {report['reference_pages']} checked pages; wrote {target}")
         elif args.command == "build-tei":
             volume = get_volume(catalog, args.volume)
             pages = load_pages(args.input, volume)
