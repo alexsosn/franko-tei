@@ -54,6 +54,18 @@ class PhotoAuditTests(unittest.TestCase):
         self.assertIn("l00007",bad_ids)
         self.assertIn("l00003",{x["candidate_line_id"][-6:] for x in d["comparisons"]})
 
+    def test_title_l3_preserves_printed_life_and_living_not_assumed_izhe(self):
+        d=json.loads(AUDIT.read_text(encoding="utf8"))
+        l3=next(x for x in d["comparisons"] if x["candidate_line_id"].endswith("l00003"))
+        self.assertIn("Житїе и жизнь",l3["observed_reading_or_anchor"])
+        self.assertNotIn("иже",l3["observed_reading_or_anchor"])
+        self.assertEqual(l3["assessment"],"partial_match")
+        self.assertEqual(l3["prosta_mova_raw"],"дн҃ь. Житїѐ и҆жи́знь, пре")
+        self.assertEqual(l3["church_slavonic_raw"],"дн҃ь. китїе и жизнь, про¬")
+        self.assertFalse(l3["glyph_by_glyph_verified"])
+        self.assertEqual(d["corrections"][-1]["reason"],"manual_reviewer_normalization_bias")
+        self.assertEqual(d["corrections"][-1]["photo_sha256"],"aa6240bfe61e28e0bbb38f6b66a1abb77e3683399355a189de10328df7c93a1d")
+
     def test_original_print_caption_is_not_a_manuscript_claim(self):
         d=json.loads(AUDIT.read_text(encoding="utf8"))
         self.assertIn("сторони старого друку", d["source_caption_quote"])
