@@ -4,6 +4,7 @@ on:
     paths:
       - src/franko_tei/pilot_tf.py
       - src/franko_tei/pilot_tei.py
+      - pilot/vol4_scan00100_single_reading.json
       - tests/test_pilot_tf.py
       - pilot/vol4_scan00100_single_reading.xml
       - .github/workflows/tf-pilot-real-load.yml
@@ -25,9 +26,16 @@ jobs:
       - name: Run strict source-anchored feature tests
         run: |
           python -m unittest discover -s tests -p test_pilot_tf.py -v
+      - name: Fetch pinned original image and manifest for provenance check
+        run: |
+          set -euo pipefail
+          mkdir -p native-assets/vol4
+          SRC=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol4
+          curl --fail --silent --show-error --location --retry 2 "$SRC/manifest.json" -o native-assets/vol4/manifest.json
+          curl --fail --silent --show-error --location --retry 2 "$SRC/page-00100.jpg" -o native-assets/vol4/page-00100.jpg
       - name: Export real IV/100 pilot TEI to TF
         run: |
-          franko-pilot-tf --tei pilot/vol4_scan00100_single_reading.xml --output build/vol4-scan00100-tf
+          franko-pilot-tf --images native-assets --evidence pilot/vol4_scan00100_single_reading.json --tei pilot/vol4_scan00100_single_reading.xml --output build/vol4-scan00100-tf
       - name: Load TF API and query exact source text and feature graph
         run: |
           python - <<'PY'
