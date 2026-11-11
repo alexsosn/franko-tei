@@ -45,6 +45,30 @@ jobs:
           assert len(root.xpath('//t:seg[@xml:lang="grc"]',namespaces=ns)) > 0
           print('Source hash/line count/Greek spans: pass; glyphs remain agent_unverified.')
           PY
+      - name: Mutation negative controls must fail closed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import subprocess
+          from tempfile import TemporaryDirectory
+          orig=json.loads(Path('pilot/vol1_scan00020_single_reading.json').read_text(encoding='utf-8'))
+          with TemporaryDirectory() as d:
+              p=Path(d)
+              for kind in ('forged_image_hash','deleted_physical_line'):
+                  doc=json.loads(json.dumps(orig))
+                  if kind == 'forged_image_hash':
+                      doc['source_image_sha256']='0' * 64
+                  else:
+                      doc['reading']['regions'][1]['lines'].pop(0)
+                  candidate=p / (kind + '.json')
+                  output=p / (kind + '.xml')
+                  candidate.write_text(json.dumps(doc,ensure_ascii=False),encoding='utf-8')
+                  result=subprocess.run(['franko-pilot-tei','--images','native-assets','--input',str(candidate),'--output',str(output)],capture_output=True,text=True)
+                  assert result.returncode != 0, f'{kind} incorrectly accepted'
+                  assert not output.exists(), f'{kind} left invalid output'
+                  print(f'{kind}: correctly refused')
+          PY
       - name: TEI P5 4.12.0 Relax NG
         run: |
           curl --fail --silent --show-error --location --retry 2 \
