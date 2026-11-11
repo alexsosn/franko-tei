@@ -145,7 +145,7 @@ def compile_graph(xml, payload, image_width, image_height):
              teiId=line["xmlId"], facs=line["facs"], lineOrdinal=index,
              lineSourceId=line["source"]["id"], readingId=payload["reading"]["reader_id"],
              geometryEstimated="yes" if line["source"]["geometry_estimated"] else "no",
-             ulx=int(x), uly=int(y), lrx=int(x+w), lry=int(y+h),
+             ulx=str(x), uly=str(y), lrx=str(x+w), lry=str(y+h),
              status="agent_unverified")
 
     for region in parsed_regions:
@@ -154,7 +154,7 @@ def compile_graph(xml, payload, image_width, image_height):
              teiId=region["xmlId"], facs=region["facs"],
              regionSourceId=region["source"]["id"], regionKind=region["source"]["kind"],
              geometryEstimated="yes" if region["source"]["geometry_estimated"] else "no",
-             ulx=int(x), uly=int(y), lrx=int(x+w), lry=int(y+h),
+             ulx=str(x), uly=str(y), lrx=str(x+w), lry=str(y+h),
              status="agent_unverified")
 
     # Transcription uncertainty is an audit annotation linked to the affected
@@ -191,9 +191,10 @@ def compile_graph(xml, payload, image_width, image_height):
 
     if max(nf["otype"]) != len(nf["otype"]):
         raise ValueError("TF node IDs must be dense")
-    # Feature metadata is checked by Fabric.save. All feature values are
-    # ordinary int/string; no opaque JSON blobs, no none-valued features.
-    integers = {"ulx", "uly", "lrx", "lry", "volume", "scanPage",
+    # Geometry is written as numeric-string coordinate values: TF supports
+    # int/string, not floats. Never truncate estimated fractional source boxes.
+    # Feature metadata is checked by Fabric.save: no opaque JSON blobs or None.
+    integers = {"volume", "scanPage",
                 "lineOrdinal", "spanOrdinal", "startOffset", "endOffset"}
     meta = {name: {"valueType": "int" if name in integers else "str"} for name in nf}
     meta["oslots"] = {"valueType": "str"}
