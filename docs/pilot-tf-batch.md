@@ -21,7 +21,10 @@ command rejects one page, repeated volume/scan identities, mismatched
 source URLs and repeated TEI identifiers. It never overwrites an output
 directory. Each TEI is regenerated from its original evidence JSON and
 compared byte-for-byte; original native image bytes must match the pinned
-manifest SHA256. Source PDF checksums remain manifest claims.
+manifest SHA256. Before that check, the manifest itself must match the
+exact Git blob SHA-1 of the pinned asset commit, otherwise the exporter
+rejects even a mutually consistent fake manifest and image. Source PDF
+checksums remain manifest claims.
 
 All Unicode code points are numbered sequentially across pages as TF
 character slots, with unchanged glyph/codepoint values. Non-slot nodes
@@ -32,7 +35,10 @@ scanPage; sectionFeatures are pageKey,regionId,lineId. Per-page reading
 order, physical line text and source provenance remain reconstructible.
 
 Every page remains agent_unverified. The tests' second page is synthetic:
-it reuses IV/100 content and does not claim to transcribe V/10. Native
+it reuses IV/100 content and does not claim to transcribe V/10.
+The engine smoke proves the production CLI **rejects** that forged
+second manifest; the separate pure-graph serialization smoke bypasses
+the source gate *only* for its explicitly labeled synthetic fixture. Native
 image-grounded two-reader evidence and independent reviewer remain
 outstanding on all six development pages; do not describe a successful
 format conversion as independent proof of transcription accuracy.
