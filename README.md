@@ -52,3 +52,7 @@ Two open CRNN-CTC models can be compared on **identical** Kraken line crops via 
 ## One real-page unverified TEI pilot
 
 A single GPT-6 image-reading draft of IV/100 (printed page label 48) is saved as [source-anchored JSON](pilot/vol4_scan00100_single_reading.json) and [facsimile-linked TEI](pilot/vol4_scan00100_single_reading.xml). The `franko-pilot-tei` CLI checks actual image bytes and exact Unicode line roundtrips. This remains `agent_unverified`: no separate blind second reader or reviewing agent has run, and it is not released. See [pilot documentation](docs/single-reading-pilot.md) and [issue #11](https://github.com/alexsosn/franko-tei/issues/11).
+
+## Experimental Text-Fabric pilot
+
+The image-anchored **single-reader, unverified** IV/100 TEI draft can be exported to real Text-Fabric character slots (page/region/line/language/uncertainty nodes with source provenance). Install `.[tf]` and run `franko-pilot-tf` with the exact committed TEI + draft JSON + pinned image assets. It refuses modified TEI, image hash mismatches, overwrite and any status promotion, and reloads TF for exact Unicode/line/source roundtrips. See [the TF guide](docs/pilot-text-fabric.md) and [real-image workflow](.github/workflows/pilot-tf-real-page.yml). This is not a verified corpus or a completed #11 six-page evaluation.
