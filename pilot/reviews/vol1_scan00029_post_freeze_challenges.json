@@ -1,0 +1,77 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 29,
+  "printed_page_observed": "XX",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "0e72f427146edb92cfc7c5307f7643fb60c4c7f52274ecea4fce290718910c59",
+  "frozen_first_reading": "pilot/vol1_scan00029_single_reading.json",
+  "reviewer_method": "logically separate, failure-oriented rereading of full native JPEG after first draft was committed, then original embedded OCR inspected only as a counterhypothesis; same ChatGPT context, not blind independence",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "comments": "The initial frozen first reading is intentionally left unchanged to protect provenance. These corrections are candidates for a subsequent versioned editorial revision, not a new primary source or a verified TEI text. OCR hints cannot confirm historic letterforms.",
+  "corrections": [
+    {
+      "line_id": "main-line-19",
+      "frozen_substring": "п а н и к а д ї л о",
+      "proposed_substring": "п а н и к а н ь д ѣ л о",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "disposition": "unresolved",
+      "image_evidence": "The printed letterspaced lexeme appears to include н and ь before д and an archaic vowel (possibly ѣ); frozen draft drops these glyphs. Embedded OCR gives unspaced 'паниканьдбло', which is corrupt but reinforces the consonant sequence; only a close enlarged image check can adjudicate exact vowel and spacing."
+    },
+    {
+      "line_id": "main-line-21",
+      "frozen_substring": "основних її жерел",
+      "proposed_substring": "основних єї жерел",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "prefer_proposal_provisional",
+      "image_evidence": "Print visibly uses a character shaped as є in the possessive 'єї', but first reader silently regularized to 'її'."
+    },
+    {
+      "line_id": "main-line-34",
+      "frozen_substring": "про її зложенє",
+      "proposed_substring": "про єї зложенє",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "prefer_proposal_provisional",
+      "image_evidence": "The source line shows єї; the first pass again normalized to modern-looking її."
+    },
+    {
+      "line_id": "main-line-38",
+      "frozen_substring": "його виводи його",
+      "proposed_substring": "его виводи его",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "prefer_proposal_provisional",
+      "image_evidence": "Both possessive forms on the printed source line read его; the first reader's 'його' is a plausible-language substitution."
+    }
+  ],
+  "additional_unresolved": [
+    {
+      "line_id": "main-line-36",
+      "reading": "описание",
+      "reason": "Russian book title may use archaic іе spelling, not independently resolved from 1190px native image"
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "раґд",
+      "reason": "Final syllable of Greek-derived book name and historic glyph uncertain"
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "г а з о ф у л а к і я",
+      "reason": "Exact typographic letterspacing and vowel i/і remain unchecked"
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "єї складї",
+      "reason": "Possessive likely correct but requires independent blind reading"
+    }
+  ],
+  "limitations": [
+    "No physically separate reader context",
+    "No line-by-line third-source adjudication",
+    "No verified TEI/TF or CER",
+    "Geometry estimated not measured"
+  ]
+}
