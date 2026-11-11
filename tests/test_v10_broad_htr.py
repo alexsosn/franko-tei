@@ -22,6 +22,7 @@ class TestV10BroadHTRGate(unittest.TestCase):
             "'status']=='ocr_unchecked'",
             "run-original-source",
             "no accepted glyphs",
+            "FRANKO_BROAD_RECORD_JSON",
         ):
             self.assertIn(marker,w)
         self.assertNotIn("franko-pilot-tei",w)
