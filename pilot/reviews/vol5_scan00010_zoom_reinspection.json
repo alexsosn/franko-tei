@@ -488,5 +488,18 @@
     "Enlargement was pixel repetition, not ML-enhanced super-resolution. Small titla and diacritics can remain unresolvable at source-image resolution.",
     "Failure-oriented internal source recheck corrected two unsupported over-specific assertions: an L11 fragment and exact right-column line indices. The preserved earlier data commit bff23b6 records the pre-review working hypothesis.",
     "A red-first review gate demonstrated that L01–L03 were falsely labelled entire-line readings while their titla had not been independently checked; changed to `line_fully_read=false` without altering raw hypotheses."
-  ]
+  ],
+  "textual_reliability": {
+    "disposition": "rejected_for_diplomatic_transcription",
+    "cause": "user_reported_glyph_errors",
+    "may_feed_tei_tf": false,
+    "may_be_cer_gold": false,
+    "superscript_and_titlo_loss_reported": true,
+    "review_note": "User directly inspected the previous V/10 visual-reading proposals and reported extensive substituted letters, hallucinated words, loss of titla and ligatures. All literal_observed_hypothesis strings remain available strictly as provenance of an unsuccessful attempt. Treat even items labelled line_fully_read as UNVERIFIED and textually unusable; the legacy flag means only apparent physical span coverage, not accuracy. Do not promote to the edition."
+  },
+  "source_medium": {
+    "status": "source_type_disputed",
+    "franko_caption": "старого друку",
+    "interpretation": "Franko captions the reproduced page as an early print, probably early XVII c. The user describes a photograph of a manuscript; acknowledge disagreement and test models against the visible handwriting-like typography without asserting manuscript provenance."
+  }
 }
