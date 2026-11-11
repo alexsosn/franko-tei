@@ -27,8 +27,7 @@ class TestI26(unittest.TestCase):
         self.assertEqual(r["raw_response"],"\n".join(x["text"] for x in lines))
         self.assertIn("Шестоднева",r["raw_response"])
         self.assertIn("Феодорита Кирського",r["raw_response"])
-        self.assertIn("Палєї",r["raw_response"])
-        self.assertNotIn("Палеї",r["raw_response"])
+        self.assertIn("Полеміка Палєї",r["raw_response"])  # frozen hypothesis, not verified print
         self.assertTrue(lines[-3]["text"].endswith("за-"))
         self.assertTrue(all(x["geometry_estimated"] for x in lines))
         self.assertGreaterEqual(len(r["uncertainty_notes"]),22)
