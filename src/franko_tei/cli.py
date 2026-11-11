@@ -33,6 +33,7 @@ def main(argv=None):
     evaluate.add_argument("--volume", required=True, choices=[str(i) for i in range(1, 6)])
     evaluate.add_argument("--reference", required=True)
     evaluate.add_argument("--candidate", required=True)
+    evaluate.add_argument("--pdf", required=True, help="Actual local PDF bytes for SHA256 verification")
     evaluate.add_argument("--output", required=True)
     build = commands.add_parser("build-tei", help="Export independently verified pages only (partial draft)")
     build.add_argument("--volume", required=True, choices=[str(i) for i in range(1, 6)])
@@ -59,7 +60,7 @@ def main(argv=None):
         elif args.command == "extract-pdf":
             print(json.dumps(extract_pdf_text(args.pdf, args.volume, args.output, args.start, args.end)))
         elif args.command == "benchmark-ocr":
-            report = benchmark(args.reference, args.candidate, args.volume, args.catalog)
+            report = benchmark(args.reference, args.candidate, args.volume, args.pdf, args.catalog)
             target = Path(args.output)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
