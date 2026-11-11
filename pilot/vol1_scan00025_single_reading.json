@@ -1,0 +1,1204 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 25,
+  "printed_page_observed": "XVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00025.jpg",
+  "source_image_sha256": "031424ca01e34d8671603cacc11adf1530d91197f0a71039472907197473dfc0",
+  "reading": {
+    "reader_id": "gpt6-single-20261111-v1s00025",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-20261111-I25-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "First full physical source-only reading of Volume I scan25 (Roman XVI), 1 folio + 24+17 printed text lines about Historical/Explanatory Palaea, Greek historical book title, Latin bibliography and historical Cyrillic. Preserve source hyphenation; no input from original OCR or alternate transcriptions before first reading frozen. All accents, variants and even apparent grammatical surprises are provisional until second independent image collator; do not borrow text from adjacent XV.",
+    "raw_response": "XVI\nспільного: т. зв. Палея Толковая або Палея съ толкомъ і Палея\nИсторическая, що в рукописах має звичайно титул „Книга бытія\nнеба и земли“. Якийсь час, при малій знайомости с текстом тих\nпамятників, думали, що Палея Історична є скороченєм Палєї Тол-\nкової. Близше познайомленє с текстами показало, що ся думка\nхибна. І коли нинї походженє Історичної Палєї можна вважати\nв повнї виясненим, то Палея Толковая ще й доси є твором загад-\nковим. Що до Палєї Історичної, котрої текст видав Попов (Андрей\nПоповъ, Книга бытія небеси и земли (Палея Историческая)\nсъ приложеніемъ сокращенной Палеи русской редакціи. Москва\n1881) ми можемо вважати доказаним, що вона — твір візантійський\nі не пізнїйше XII. віку була перекладена на мову старословянську\nв Болгарії. На Руси, особливо північній, вона розповсюдилась аж\nу XV. віці — давнїйших списків її не маємо, так само як не ма-\nємо списків південно-руських. В північній Руси, правдоподібно в Нов-\nгородї, зроблене було в XV. або XVI. віці скороченє сего твору, що\nінодї в рукописах називає ся Палейныя Очи. Що Історична Палея —\nтвір первісно греко-візантійський, се не підлягає сумнївови, бо між\nрукописами надворної бібліотеки у Віднї віднайдено її грецький\nоріґінал; виписками з него користував ся при своїм виданю Попов,\nа повний текст его, що має титул Ἱστορία παλαιοῦ περιέχων ἀπὸ τοῦ Ἀδάμ,\nнадрукував пок. А. Василєв у своїй збірці памяток візантійської\nлітератури (A. Vassiliev, Anecdota graeco-byzantina, pars prior.\nMosquae 1893, стор. 188—292).\nЗовсім иньше діло — Палея Толковая. Про походженє сего\nтвору йде доси суперечка в науцї. Бо коли давнїйші вчені вважали її пе-\nрекладом із якогось грецького оріґіналу, то пок. Тихонравов мабуть\nу-перве вказав на те, що не тільки грецького оріґіналу сего твору\nдоси не віднайдено, але навіть у старій югославянській літературі\nне маємо нїяких его слїдів. Усї доси звісні списки сеї книги\n(з XIV—XVI. віків) — руські, а перед кількома роками знайдено\nна Афонї записку з XIV. в. в котрій сказано, що автор її довго\nшукав за списком Палєї і тільки по довгих зусилях одержав його\nз Руси. Опираючись на тому, а також на змісті Палєї Тихонравов\nвисказав думку, що твір сей зложений був первісно на Руси. Сам\nзміст Палєї сильно промовляє за тою догадкою. Палея — се бі-\nблійна історія старого завіта від сотвореня сьвіта до смерти Соло-\nмона, оповідана по части після книг Бития, Ісхода, Числ, Второза-\nконня, Руф, Ісуса Навина, Суддів, Самуїла і Царств, а по части сво-\nбідно з значними вкороченями та ще значнїйшими вставками. Вставки\nті двоякого рода: оповідаючі та навчаючі — і полемічно-екзегетичні.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            104,
+            1490,
+            324,
+            198
+          ],
+          "description": "Faint partial oval stamp at bottom left, outside the printed text lines"
+        }
+      ],
+      "occlusions": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          107,
+          57,
+          137,
+          78
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XVI",
+            "bbox_xywh": [
+              128,
+              75,
+              65,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "historical-palaea",
+        "kind": "body",
+        "bbox_xywh": [
+          126,
+          143,
+          982,
+          852
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "historical-line-01",
+            "text": "спільного: т. зв. Палея Толковая або Палея съ толкомъ і Палея",
+            "bbox_xywh": [
+              139,
+              156,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-02",
+            "text": "Историческая, що в рукописах має звичайно титул „Книга бытія",
+            "bbox_xywh": [
+              139,
+              190,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-03",
+            "text": "неба и земли“. Якийсь час, при малій знайомости с текстом тих",
+            "bbox_xywh": [
+              139,
+              224,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-04",
+            "text": "памятників, думали, що Палея Історична є скороченєм Палєї Тол-",
+            "bbox_xywh": [
+              139,
+              258,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-05",
+            "text": "кової. Близше познайомленє с текстами показало, що ся думка",
+            "bbox_xywh": [
+              139,
+              292,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-06",
+            "text": "хибна. І коли нинї походженє Історичної Палєї можна вважати",
+            "bbox_xywh": [
+              139,
+              326,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-07",
+            "text": "в повнї виясненим, то Палея Толковая ще й доси є твором загад-",
+            "bbox_xywh": [
+              139,
+              360,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-08",
+            "text": "ковим. Що до Палєї Історичної, котрої текст видав Попов (Андрей",
+            "bbox_xywh": [
+              139,
+              394,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-09",
+            "text": "Поповъ, Книга бытія небеси и земли (Палея Историческая)",
+            "bbox_xywh": [
+              139,
+              428,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-10",
+            "text": "съ приложеніемъ сокращенной Палеи русской редакціи. Москва",
+            "bbox_xywh": [
+              139,
+              462,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-11",
+            "text": "1881) ми можемо вважати доказаним, що вона — твір візантійський",
+            "bbox_xywh": [
+              139,
+              496,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-12",
+            "text": "і не пізнїйше XII. віку була перекладена на мову старословянську",
+            "bbox_xywh": [
+              139,
+              530,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 14,
+                "end": 19,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 19,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-13",
+            "text": "в Болгарії. На Руси, особливо північній, вона розповсюдилась аж",
+            "bbox_xywh": [
+              139,
+              564,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-14",
+            "text": "у XV. віці — давнїйших списків її не маємо, так само як не ма-",
+            "bbox_xywh": [
+              139,
+              598,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 2,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 2,
+                "end": 6,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 6,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-15",
+            "text": "ємо списків південно-руських. В північній Руси, правдоподібно в Нов-",
+            "bbox_xywh": [
+              139,
+              632,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-16",
+            "text": "городї, зроблене було в XV. або XVI. віці скороченє сего твору, що",
+            "bbox_xywh": [
+              139,
+              666,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 24,
+                "end": 28,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 28,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 32,
+                "end": 37,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 37,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-17",
+            "text": "інодї в рукописах називає ся Палейныя Очи. Що Історична Палея —",
+            "bbox_xywh": [
+              139,
+              700,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-18",
+            "text": "твір первісно греко-візантійський, се не підлягає сумнївови, бо між",
+            "bbox_xywh": [
+              139,
+              734,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-19",
+            "text": "рукописами надворної бібліотеки у Віднї віднайдено її грецький",
+            "bbox_xywh": [
+              139,
+              768,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-20",
+            "text": "оріґінал; виписками з него користував ся при своїм виданю Попов,",
+            "bbox_xywh": [
+              139,
+              802,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-21",
+            "text": "а повний текст его, що має титул Ἱστορία παλαιοῦ περιέχων ἀπὸ τοῦ Ἀδάμ,",
+            "bbox_xywh": [
+              139,
+              836,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 33,
+                "end": 71,
+                "language": "grc",
+                "script": "Grek",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "historical-line-22",
+            "text": "надрукував пок. А. Василєв у своїй збірці памяток візантійської",
+            "bbox_xywh": [
+              139,
+              870,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "historical-line-23",
+            "text": "літератури (A. Vassiliev, Anecdota graeco-byzantina, pars prior.",
+            "bbox_xywh": [
+              139,
+              904,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 12,
+                "end": 64,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "historical-line-24",
+            "text": "Mosquae 1893, стор. 188—292).",
+            "bbox_xywh": [
+              139,
+              938,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 14,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 14,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "interpretive-palaea",
+        "kind": "body",
+        "bbox_xywh": [
+          126,
+          987,
+          982,
+          635
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "interpretive-line-01",
+            "text": "Зовсім иньше діло — Палея Толковая. Про походженє сего",
+            "bbox_xywh": [
+              139,
+              1002,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-02",
+            "text": "твору йде доси суперечка в науцї. Бо коли давнїйші вчені вважали її пе-",
+            "bbox_xywh": [
+              139,
+              1038,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 71,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-03",
+            "text": "рекладом із якогось грецького оріґіналу, то пок. Тихонравов мабуть",
+            "bbox_xywh": [
+              139,
+              1074,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-04",
+            "text": "у-перве вказав на те, що не тільки грецького оріґіналу сего твору",
+            "bbox_xywh": [
+              139,
+              1110,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-05",
+            "text": "доси не віднайдено, але навіть у старій югославянській літературі",
+            "bbox_xywh": [
+              139,
+              1146,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-06",
+            "text": "не маємо нїяких его слїдів. Усї доси звісні списки сеї книги",
+            "bbox_xywh": [
+              139,
+              1182,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-07",
+            "text": "(з XIV—XVI. віків) — руські, а перед кількома роками знайдено",
+            "bbox_xywh": [
+              139,
+              1218,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 3,
+                "end": 12,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 12,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-08",
+            "text": "на Афонї записку з XIV. в. в котрій сказано, що автор її довго",
+            "bbox_xywh": [
+              139,
+              1254,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 19,
+                "end": 24,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 24,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-09",
+            "text": "шукав за списком Палєї і тільки по довгих зусилях одержав його",
+            "bbox_xywh": [
+              139,
+              1290,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-10",
+            "text": "з Руси. Опираючись на тому, а також на змісті Палєї Тихонравов",
+            "bbox_xywh": [
+              139,
+              1326,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-11",
+            "text": "висказав думку, що твір сей зложений був первісно на Руси. Сам",
+            "bbox_xywh": [
+              139,
+              1362,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-12",
+            "text": "зміст Палєї сильно промовляє за тою догадкою. Палея — се бі-",
+            "bbox_xywh": [
+              139,
+              1398,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-13",
+            "text": "блійна історія старого завіта від сотвореня сьвіта до смерти Соло-",
+            "bbox_xywh": [
+              139,
+              1434,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-14",
+            "text": "мона, оповідана по части після книг Бития, Ісхода, Числ, Второза-",
+            "bbox_xywh": [
+              139,
+              1470,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-15",
+            "text": "коння, Руф, Ісуса Навина, Суддів, Самуїла і Царств, а по части сво-",
+            "bbox_xywh": [
+              139,
+              1506,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-16",
+            "text": "бідно з значними вкороченями та ще значнїйшими вставками. Вставки",
+            "bbox_xywh": [
+              139,
+              1542,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "interpretive-line-17",
+            "text": "ті двоякого рода: оповідаючі та навчаючі — і полемічно-екзегетичні.",
+            "bbox_xywh": [
+              139,
+              1578,
+              954,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-v1s00025",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "historical-line-01",
+        "reading": "Палея съ толкомъ",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-02",
+        "reading": "Книга бытія",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-04",
+        "reading": "Палєї Тол-",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-06",
+        "reading": "нинї",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-08",
+        "reading": "Попов (Андрей",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-09",
+        "reading": "небеси и земли",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-10",
+        "reading": "сокращенной Палеи",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-11",
+        "reading": "1881)",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-12",
+        "reading": "XII. віку",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-17",
+        "reading": "Палейныя Очи",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-20",
+        "reading": "оріґінал",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-21",
+        "reading": "Ἱστορία παλαιοῦ περιέχων ἀπὸ τοῦ Ἀδάμ",
+        "reason": "Especially high-risk Greek polytonic word boundaries and accents; do not normalize the first raw hypothesis against expected literary title."
+      },
+      {
+        "line_id": "historical-line-22",
+        "reading": "А. Василєв",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-23",
+        "reading": "Anecdota graeco-byzantina",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "historical-line-24",
+        "reading": "Mosquae 1893",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-01",
+        "reading": "Зовсім иньше",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-02",
+        "reading": "науцї",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-03",
+        "reading": "Тихонравов",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-05",
+        "reading": "югославянській",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-06",
+        "reading": "Усї доси",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-07",
+        "reading": "XIV—XVI.",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-08",
+        "reading": "Афонї",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-12",
+        "reading": "догадкою",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-14",
+        "reading": "Бития, Ісхода",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-16",
+        "reading": "вкороченями",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      },
+      {
+        "line_id": "interpretive-line-17",
+        "reading": "полемічно-екзегетичні",
+        "reason": "Unverified source-image glyphs: historical orthography, diacritics, textual edition typography or named works must be collated to the printed pixels."
+      }
+    ]
+  }
+}
