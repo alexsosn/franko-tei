@@ -37,7 +37,7 @@ jobs:
           p = json.loads(Path('pilot/vol2_scan00100_single_reading.json').read_text())
           lines = [l['text'] for r in p['reading']['regions'] for l in r['lines']]
           assert len(lines) == 36
-          assert p['reading']['raw_response'] == '\\n'.join(lines)
+          assert p['reading']['raw_response'] == chr(10).join(lines)
           tree = etree.parse('build/vol2_scan00100.xml')
           ns = {'t': 'http://www.tei-c.org/ns/1.0'}
           assert len(tree.xpath('//t:lb', namespaces=ns)) == 36
