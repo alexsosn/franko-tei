@@ -23,7 +23,7 @@ class TestVol3IndependentImageReadingB(unittest.TestCase):
         self.assertEqual(len(lines),44)
         self.assertEqual(r["raw_response"],chr(10).join(l["text"] for l in lines))
         self.assertTrue(all(l["geometry_estimated"] for l in lines))
-        self.assertIn("Φεѡкла",r["raw_response"].replace("Феѡкла","Φεѡкла"))
+        self.assertIn("Феѡкла",r["raw_response"])
         self.assertIn("Θεοκλεία",r["raw_response"])
         self.assertGreaterEqual(len(r["uncertainty_notes"]),14)
 if __name__ == "__main__":
