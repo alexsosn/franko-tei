@@ -1,0 +1,52 @@
+name: Multiscript OCR smoke on supplied scan images
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/ocr-smoke.yml'
+      - 'src/franko_tei/ocr_trial.py'
+      - 'tests/test_ocr_trial.py'
+      - 'docs/ocr-experiments.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-image-baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e .
+      - name: Install real OCR language data
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-ukr tesseract-ocr-rus tesseract-ocr-pol tesseract-ocr-deu tesseract-ocr-grc tesseract-ocr-eng
+          tesseract --list-langs
+          tesseract --version
+      - name: Run two competing profiles on five actual images
+        run: |
+          mkdir -p local
+          python -m franko_tei.ocr_trial --images-root images --pages 1:20,2:100,3:130,4:100,5:100 --languages ukr+rus --output local/ocr-cyr.jsonl
+          python -m franko_tei.ocr_trial --images-root images --pages 1:20,2:100,3:130,4:100,5:100 --languages ukr+rus+pol+deu+grc+eng --output local/ocr-mixed.jsonl
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for filename in ('local/ocr-cyr.jsonl', 'local/ocr-mixed.jsonl'):
+              rows = [json.loads(line) for line in Path(filename).read_text().splitlines()]
+              assert len(rows) == 5
+              assert all(r['status'] == 'ocr_unchecked' and r['image_sha256'] for r in rows)
+              assert any(r['volume'] == '4' and len(r['lines']) > 0 for r in rows)
+              print(filename, [(r['volume'], r['scan_page'], len(r['lines'])) for r in rows])
+          PY
+      - name: Record OCR engine version and exact traineddata checksums
+        run: |
+          { tesseract --version 2>&1; tesseract --list-langs 2>&1; find /usr/share/tesseract-ocr -name '*.traineddata' -type f -print0 | sort -z | xargs -0 sha256sum; } > local/tesseract-models.txt
+      - name: Upload predictions only; exclude copyrighted scan images
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-multiscript-ocr-trial
+          path: |\n            local/ocr-*.jsonl\n            local/tesseract-models.txt
+          retention-days: 14
+          if-no-files-found: error
