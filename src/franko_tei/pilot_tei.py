@@ -42,6 +42,11 @@ def _valid_xml_text(text):
         raise ValueError("line is empty or contains an invalid XML character")
     if '\n' in text or '\r' in text:
         raise ValueError("a physical line cannot contain embedded newline")
+    # U+27E6/U+27E7 delimit workflow notes for UNREADABLE scan glyphs.
+    # They are never source characters in the pilot and must not silently
+    # become real Text-Fabric char slots or inflate apparent OCR coverage.
+    if '⟦' in text or '⟧' in text:
+        raise ValueError("unreadable editorial placeholder cannot become source text")
 
 
 def validate_single_draft(payload, images_root):
@@ -179,6 +184,7 @@ def _append_line(parent, line, volume, page, reading_id):
     lb = _sub(parent,'lb',attrs={'facs':f"#{_facs_id(volume,page,'line',line['id'])}"})
     xml_id(lb, f"lb-v{volume}-s{page:05d}-{line['id']}")
     raw = line['text']
+    _valid_xml_text(raw)  # direct renderer calls must also fail closed
     spans = line['language_spans']
     previous, current = 0, lb
     for span_index, span in enumerate(spans, 1):

@@ -15,7 +15,7 @@ Mission: produce a **source-verifiable** five-volume diplomatic electronic editi
 
 ## Development loop
 
-Work on the highest-priority unblocked issue; prefer getting a small verified section of a real volume through TEI→TF before extending tooling. Iterate research→plan→TDD→implement→review; use short PRs. If backlog is empty or blocked, improve correctness, stability, docs and ergonomic edge cases, not speculative infrastructure. Balance research and actual output. When approaching a usable release, have an autonomous agent perform an E2E smoke test from downloading an actual source through TF queries; verify resulting content visually against scans.
+Work on the highest-priority unblocked issue; prioritize complete first-hand readings of actual pages, preservation of uncertainty and independent text review. Infer the volumes' documentary structure from sufficient source material before designing a stable TEI model or TF node/feature scheme. Do not add converter infrastructure while the source text is substantially missing. Iterate research→plan→TDD→implement→review; use short PRs. If backlog is empty or blocked, improve correctness, stability, docs and ergonomic edge cases, not speculative infrastructure. Balance research and actual output. When approaching a usable release, have an autonomous agent perform an E2E smoke test from downloading an actual source through TF queries; verify resulting content visually against scans.
 
 ## Available local page source (11 November 2026)
 
@@ -51,7 +51,9 @@ language spans, comparison decisions and remaining uncertainty.
 Do not infer context independence merely from different metadata strings.
 
 OCR models (Tesseract, Kraken, CRNN) remain optional comparative
-tools and must not delay the agent-reading to pilot TEI to Text-Fabric slice.
+tools and must not delay page-by-page image reading or independent review.
+Pilot TEI/TF converters remain experiments until representative full text and its
+actual scholarly structure are established.
 Proof of image coverage is separate from textual certainty. Preserve
 agent_unverified pilot status; no CER/human-certified gold claim, no
 stable release. See docs/agent-first-evidence.md and #3–#7 for gates.
@@ -66,6 +68,15 @@ stable release. See docs/agent-first-evidence.md and #3–#7 for gates.
 - Source PDFs and digitization rights are not automatically relicensed by this repository's MIT license. Cache them locally; no scan redistribution without confirmed permission. Use URLs/provenance and hashes.
 - Check TEI against TEI P5 Relax NG/Schematron before any release; XML well-formedness alone is insufficient.
 - Each TF feature must be traceable to verified TEI nodes and printed page/scan index.
+
+## Documentation audiences
+
+Keep the root README concise and researcher-facing: purpose, current textual
+coverage/limitations, source access, editorial principles and relevant links.
+Do not append workflow histories, issue-by-issue progress diaries, model
+benchmarks, commands, checksums or experimental TF schemas to the README.
+Place necessary reproducibility details in developer docs, source manifests,
+issues and PRs. A green engineering test never means the text was verified.
 
 ## Run locally
 
