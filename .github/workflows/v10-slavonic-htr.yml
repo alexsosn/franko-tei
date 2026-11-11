@@ -1,0 +1,135 @@
+name: "V/10: specialist Church Slavonic HTR on both native facsimile columns (unverified)"
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/crnn_probe.py
+      - tests/test_crnn_probe.py
+      - tests/test_v10_htr_gates.py
+      - pilot/reviews/vol5_scan00010_zoom_reinspection.json
+      - .github/workflows/v10-slavonic-htr.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  two-column-specialists:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      PYTHONUNBUFFERED: "1"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing source-checked CPU OCR probes
+        run: |
+          python -m pip install -e '.[page-assets]'
+          python -m pip install 'kraken==7.1.1' huggingface_hub torchvision
+          franko-crnn-probe --help >/dev/null
+      - name: Fetch only pinned V/10 original JPEG and unchanged manifest
+        run: |
+          set -euo pipefail
+          mkdir -p real-images/vol5
+          BASE=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol5
+          curl --fail --location --retry 2 --silent --show-error "$BASE/manifest.json" -o real-images/vol5/manifest.json
+          curl --fail --location --retry 2 --silent --show-error "$BASE/page-00010.jpg" -o real-images/vol5/page-00010.jpg
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          image=Path('real-images/vol5/page-00010.jpg')
+          entry=json.loads(Path('real-images/vol5/manifest.json').read_text())['pages'][9]
+          got=hashlib.sha256(image.read_bytes()).hexdigest()
+          assert got=='3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c'
+          assert got==next(x['sha256'] for x in entry['artifacts'] if x['role']=='page_image')
+          assert (entry['width'],entry['height'])==(1190,1701)
+          print('Native V/10 JPEG SHA256 pinned; NOT a validated diplomatic reading.')
+          PY
+      - name: Segment the original two-column facsimile (not text recognition)
+        run: |
+          franko-kraken-layout --images real-images --volume 5 --pages 10 --output geometry/vol5
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          f=Path('geometry/vol5/vol5-page-00010-kraken-layout.json')
+          d=json.loads(f.read_text())
+          lines=d['lines']
+          assert d['status']=='segmentation_unchecked'
+          assert d['source_image_sha256']=='3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c'
+          # From prior V/10 geometry review: candidate 1 is marginal,
+          # 2..38 left, 39..79 right. Fail closed on model drift/merges.
+          assert len(lines)>=42
+          for line in lines[1:5]:
+              x,y,w,h=line['bbox_xywh']
+              assert x+w/2<615 and h>0, ('left crop crossed column',line)
+          for line in lines[38:42]:
+              x,y,w,h=line['bbox_xywh']
+              assert x+w/2>615 and h>0, ('right crop crossed column',line)
+          print('4 left + 4 right Kraken candidates; unverified physical segmentation.')
+          PY
+      - name: Fetch reproducible Polyscriptor CRNN inference implementation
+        run: |
+          set -euo pipefail
+          mkdir -p upstream
+          SRC=https://raw.githubusercontent.com/achimrabus/polyscriptor/7994ccadc537c59b0b90eb25b66dfa5d54976d6d
+          curl --fail --location --retry 2 --silent --show-error "$SRC/inference_pylaia_native.py" -o upstream/inference_pylaia_native.py
+          curl --fail --location --retry 2 --silent --show-error "$SRC/htr_engine_base.py" -o upstream/htr_engine_base.py
+          test -s upstream/inference_pylaia_native.py
+          test -s upstream/htr_engine_base.py
+      - name: Fetch immutable Church Slavonic specialist and mismatched-language control models
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from huggingface_hub import snapshot_download
+          repos={
+            'church-slavonic': ('achimrabus/crnn-ctc-church-slavonic',
+                                '2b253a83840eba1948e750b246d60991d3a15285'),
+            'prosta-mova': ('achimrabus/crnn-ctc-prosta-mova',
+                            'db88dcb5dfb767ef27066b012271cf4e6eb31a40'),
+          }
+          models={}
+          for name,(repo,revision) in repos.items():
+              loc=Path('models')/name
+              snapshot_download(repo_id=repo,revision=revision,
+                                allow_patterns=['best_model.pt','symbols.txt'],local_dir=str(loc))
+              assert (loc/'best_model.pt').is_file() and (loc/'symbols.txt').is_file()
+              models[name]={'repo':repo,'revision':revision,'checkpoint':str(loc/'best_model.pt'),
+                            'symbols':str(loc/'symbols.txt')}
+          Path('models/model-specs.json').write_text(json.dumps(models,indent=2),encoding='utf8')
+          PY
+      - name: Apply same exact native line crops to both OCR models, separately per column
+        run: |
+          set -euo pipefail
+          franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 2 --max-lines 4 --margin-y 16 --output ocr-results/v5s00010-left.json
+          franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 39 --max-lines 4 --margin-y 16 --output ocr-results/v5s00010-right.json
+      - name: Audit source hashes, model pairing, script-critical diagnostic candidates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for col in ('left','right'):
+              f=Path('ocr-results')/f'v5s00010-{col}.json'
+              records=json.loads(f.read_text(encoding='utf8'))
+              assert len(records)==8
+              by_id={}
+              for r in records:
+                  assert r['status']=='ocr_unchecked'
+                  assert r['source_image_sha256']=='3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c'
+                  assert len(r['model_checkpoint_sha256'])==64
+                  assert len(r['crop_png_sha256'])==64
+                  assert r['margin_px']==[5,16]
+                  by_id.setdefault(r['candidate_line_id'],set()).add(r['crop_png_sha256'])
+                  print(f"{col} {r['candidate_line_id']} {r['model_name']}: {r['transcription'][:130]}")
+              assert len(by_id)==4 and all(len(hashes)==1 for hashes in by_id.values())
+          print('No CER or verified transcription; candidates are out-of-domain until independently checked.')
+          PY
+      - name: Publish only short-lived TEXT candidates, no source scans or weights
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-v10-specialist-ocr-unverified-two-column
+          path: ocr-results/*.json
+          retention-days: 7
+          if-no-files-found: error
