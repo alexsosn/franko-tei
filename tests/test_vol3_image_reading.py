@@ -17,9 +17,9 @@ class TestVol3ImageReading(unittest.TestCase):
         self.assertFalse(reading["peer_readings_visible"])
         self.assertEqual(reading["context_independence"],"single-working-draft")
         self.assertEqual([r["kind"] for r in reading["regions"]],["page_number","body","note","note"])
-        self.assertEqual([len(r["lines"]) for r in reading["regions"]],[1,22,19,1])
+        self.assertEqual([len(r["lines"]) for r in reading["regions"]],[1,22,20,1])
         lines=[l for r in reading["regions"] for l in r["lines"]]
-        self.assertEqual(len(lines),43)
+        self.assertEqual(len(lines),44)
         self.assertEqual(lines[0]["text"],"44")
         self.assertEqual(reading["raw_response"],chr(10).join(x["text"] for x in lines))
         self.assertGreaterEqual(len(reading["uncertainty_notes"]),20)
