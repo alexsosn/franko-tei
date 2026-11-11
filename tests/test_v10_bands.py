@@ -4,6 +4,7 @@ These tests use synthetic ink and check source pixel isolation/provenance.
 They never assert that a title or a titlo has been read accurately.
 """
 import unittest
+from copy import deepcopy
 from PIL import Image, ImageDraw
 from franko_tei.v10_bands import isolate_group, make_v10_diagnostic_layout
 
@@ -53,11 +54,15 @@ class IsolatedV10Tests(unittest.TestCase):
         output=isolate_group(img,rows,column="left",take=4,divider=155)
         self.assertTrue(all(r["requires_visual_review"] for r in output))
         self.assertTrue(any(r["seam_black_fraction"]>0 for r in output[:3]))
+        right=deepcopy(output)
+        for k,r in enumerate(right,1):
+            r['candidate_line_id']=f'right-{k}'
+            r['bbox_xywh'][0]=160
         obj=make_v10_diagnostic_layout(
             {"volume":"5","scan_page":10,"status":"segmentation_unchecked",
              "source_image_sha256":"a"*64, "line_count":85,
              "native_kraken_json_sha256":"b"*64,
-             "lines":rows*17}, output, output, "c"*64)
+             "lines":rows*17}, output, right, "c"*64)
         self.assertEqual(obj["status"],"segmentation_unchecked")
         self.assertFalse(obj["transcription_verified"])
         self.assertFalse(obj["titla_preservation_verified"])
