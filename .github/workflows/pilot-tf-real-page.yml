@@ -1,0 +1,79 @@
+name: "Real-image pilot TEI to Text-Fabric (unverified)"
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/pilot_tf.py
+      - tests/test_pilot_tf.py
+      - pyproject.toml
+      - .github/workflows/pilot-tf-real-page.yml
+      - pilot/vol4_scan00100_single_reading.xml
+      - pilot/vol4_scan00100_single_reading.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot-tf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Text-Fabric 13.1.1 and pilot CLI
+        run: |
+          python -m pip install -e '.[tf]'
+          franko-pilot-tf --help > /dev/null
+      - name: Download pinned image and full per-volume checksum manifest
+        run: |
+          set -euo pipefail
+          mkdir -p native-assets/vol4
+          SRC=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol4
+          curl --fail --silent --show-error --location --retry 2 "$SRC/manifest.json" -o native-assets/vol4/manifest.json
+          curl --fail --silent --show-error --location --retry 2 "$SRC/page-00100.jpg" -o native-assets/vol4/page-00100.jpg
+      - name: Export and reload Text-Fabric with SHA and exact text gates
+        run: |
+          franko-pilot-tf --images native-assets \
+            --tei pilot/vol4_scan00100_single_reading.xml \
+            --evidence pilot/vol4_scan00100_single_reading.json \
+            --output build/unverified-tf
+      - name: Real Text-Fabric query checks (not mock)
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tf.fabric import Fabric
+          source=json.loads(Path('pilot/vol4_scan00100_single_reading.json').read_text('utf8'))
+          api=Fabric(locations='build/unverified-tf',silent='deep').load(
+              'otype oslots ch lang script languageUncertain noteText '
+              'sourceImageSha256 sourcePdfSha256Claim scanPage printedPageObserved status',
+              silent='deep')
+          assert api, 'cannot load Text-Fabric output'
+          F,E=api.F,api.E
+          chars=[F.ch.v(i) for i in range(1,F.otype.maxSlot+1)]
+          assert ''.join(chars)==source['reading']['raw_response']
+          assert chars.count('\n')==12
+          line_nodes=F.otype.s('line')
+          expected=[l['text'] for r in source['reading']['regions'] for l in r['lines']]
+          assert [''.join(F.ch.v(s) for s in sorted(E.oslots.s(n)))
+                  for n in line_nodes]==expected
+          assert len(F.otype.s('region'))==2
+          assert len(F.otype.s('uncertainty'))==3
+          assert len(F.otype.s('language_span'))>=13
+          pages=F.otype.s('page')
+          assert len(pages)==1
+          page=pages[0]
+          assert F.scanPage.v(page)==100
+          assert F.printedPageObserved.v(page)=='48'
+          assert F.sourceImageSha256.v(page)==source['source_image_sha256']
+          assert F.sourcePdfSha256Claim.v(page)==source['source_pdf_sha256_claimed_by_manifest']
+          assert F.status.v(page)=='agent_unverified'
+          print('TF saved, loaded and queried with exact Unicode and source provenance. UNVERIFIED.')
+          PY
+      - name: Upload text-only experimental TF features, no images
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-vol4-page100-unverified-text-fabric
+          path: build/unverified-tf/*.tf
+          if-no-files-found: error
+          retention-days: 7
