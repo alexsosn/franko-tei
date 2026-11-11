@@ -64,6 +64,22 @@ class ThirdContextAuditTests(unittest.TestCase):
             else:
                 self.assertIsNone(row["provisional_selected_line"])
 
+    def test_agreed_ab_readings_are_challenged_by_independent_c_draft(self):
+        a,b,c=(physical_lines(p) for p in (A,B,C))
+        challenged={i for i,(x,y,z) in enumerate(zip(a,b,c),1)
+                    if x==y and x!=z}
+        self.assertEqual(challenged,{18,19,25,32,38})
+        audit=json.loads(REVIEW.read_text("utf8"))
+        rows=audit["false_agreement_challenges"]
+        self.assertEqual({r["line_number"] for r in rows},challenged)
+        for row in rows:
+            i=row["line_number"]
+            self.assertEqual(row["agreed_ab"],a[i-1])
+            self.assertEqual(row["reading_c"],c[i-1])
+            self.assertTrue(row["image_evidence"].strip())
+            self.assertIn(row["disposition"],("prefer_ab","prefer_c","unresolved"))
+        self.assertFalse(audit["reviewer"]["formal_third_agent_evidence_gate_met"])
+
     def test_agreement_spots_still_require_image_evidence(self):
         a,b,c=(physical_lines(p) for p in (A,B,C))
         audit=json.loads(REVIEW.read_text("utf8"))
