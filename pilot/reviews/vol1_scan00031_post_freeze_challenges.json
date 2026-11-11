@@ -1,0 +1,94 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 31,
+  "printed_page_observed": "XXII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "b106fd6bf7340de28283ff1d4e33bfdb8e0c30b5a9e1379753dcb63e43c434ef",
+  "frozen_first_reading": "pilot/vol1_scan00031_single_reading.json",
+  "review_method": "Failure-oriented full-page reinspection of native 1190x1738 JPEG after first reading was committed, followed by examination of original embedded PDF OCR only as a corrupt counterhypothesis. Same conversational context; not independent blind reading or complete third review.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-09",
+      "frozen_substring": "складач її міг",
+      "proposed_substring": "складач єї міг",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "disposition": "prefer_proposal_provisional",
+      "image_evidence": "Visible original has early Ukrainian єї, not modern-looking її; the first pass seems to have normalized the possessive. Corrupt embedded OCR also uses єї, but OCR is not authority."
+    },
+    {
+      "line_id": "main-line-14",
+      "frozen_substring": "Іполїта",
+      "proposed_substring": "Іпполїта",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "disposition": "prefer_proposal_provisional",
+      "image_evidence": "Original glyph group between Василия Великого and Феодо- appears to have double п in Іпполїта, while first pass has only one. Historical copy's embedded OCR also has two п but is otherwise corrupt."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-07",
+      "reading": "Григорієвих",
+      "reason": "Historical name spelling/є-ї and letterforms in print not independently checked."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "Северіяна Гавальського",
+      "reason": "Name of an older source can be confounded with Severian of Gabala; preserve actual printed glyphs without normalizing to modern scholarly form."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "Четьї Минеї",
+      "reason": "Uncommon historical title; exact і/ї/є glyphs need enlarged-image review."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "Университетскія Извѣстія, Кіевъ",
+      "reason": "Russian prereform book title includes ѣ and final hard sign, letters require independent visual verification."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "ш а м і р",
+      "reason": "Original source visibly uses letterspacing, but per-letter ink and spacing should be measured; embedded OCR collapses it to шамір and is not source truth."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "В е с е л о в с к і й",
+      "reason": "Name set with letterspacing; do not assume conventional nominative form from bibliography."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "обєм",
+      "reason": "Printed old Ukrainian spelling apparently lacks a modern apostrophe; independent glyph review needed."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "Крехівської Палєї",
+      "reason": "Locative/page-ending name needs source-specific diacritics and ending inspection; no verified text or missing next-line reconstruction."
+    }
+  ],
+  "coverage_review": {
+    "folio": "XXII printed at top left, present",
+    "paragraph_line_counts": [
+      4,
+      6,
+      7,
+      13,
+      11
+    ],
+    "nontext": "Blank bottom margin; no separate footnote or signature detected",
+    "last_line": "Final body line ends 40 without final punctuation, probably continues on following scan, not reconstructed",
+    "negative_control": "Original embedded OCR contains visibly broken mixed-script tokens ('Ámaproza' for Амартола, 'Олав.' for Слав., 'Cozomonb' for Соломонѣ); can't be used as independent reference."
+  },
+  "limits": [
+    "Only one full first reader context",
+    "No third independent reviewer, even though this failure-oriented pass is distinct logically",
+    "No source-certified glyph accuracy or CER",
+    "No verified or release-authorized TEI/TF",
+    "No new scan binaries in source branch"
+  ]
+}
