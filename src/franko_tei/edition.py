@@ -45,9 +45,12 @@ class Page:
             raise ValueError("scan_page is a 1-based integer")
         if self.status not in {"ocr_unchecked", "transcribed", "verified"}:
             raise ValueError(f"Unknown status: {self.status}")
-        if not self.transcribed_by.strip():
-            raise ValueError("transcribed_by is mandatory")
-        if self.status == "verified" and (not self.reviewed_by or self.transcribed_by == self.reviewed_by):
+        if not isinstance(self.transcribed_by, str) or not self.transcribed_by.strip():
+            raise ValueError("transcribed_by must be a nonempty string")
+        if self.status == "verified" and (
+            not isinstance(self.reviewed_by, str) or not self.reviewed_by.strip()
+            or self.transcribed_by.strip() == self.reviewed_by.strip()
+        ):
             raise ValueError("Verified pages require an independent named reviewer")
         if self.status == "verified" and not any(line.strip() for line in self.lines):
             raise ValueError("Verified pages need nonempty line content; blank pages require an explicit later policy")
@@ -87,6 +90,11 @@ def build_tei(catalog, volume, pages):
         raise ValueError("TEI export only accepts independently verified pages")
     for page in pages:
         page.validate(volume)
+    indices = [page.scan_page for page in pages]
+    if len(set(indices)) != len(indices):
+        raise ValueError("Duplicate scan page number")
+    if indices != sorted(indices):
+        raise ValueError("Pages must be in ascending scan order")
     root = ET.Element(tag("TEI"), {f"{{{XML}}}id": f"franko-vol-{volume['id']}"})
     header = ET.SubElement(root, tag("teiHeader"))
     desc = ET.SubElement(header, tag("fileDesc"))

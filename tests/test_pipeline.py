@@ -68,6 +68,25 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(sum("checksum" in item for item in issues), 5)
         self.assertEqual(sum("no page transcription" in item for item in issues), 5)
 
+    def test_review_identity_types_fail_closed(self):
+        for bad in [None, 42, [], "  "]:
+            with self.subTest(transcribed_by=repr(bad)):
+                with self.assertRaises(ValueError):
+                    self.load([{**self.page, "transcribed_by": bad}])
+        for bad in [42, "  ", [], {}]:
+            with self.subTest(reviewed_by=repr(bad)):
+                with self.assertRaises(ValueError):
+                    self.load([{**self.page, "reviewed_by": bad}])
+
+    def test_direct_export_rejects_nonordered_and_duplicate_pages(self):
+        from franko_tei.edition import Page
+        a = Page.from_dict(self.page)
+        b = Page.from_dict({**self.page, "scan_page": 8})
+        with self.assertRaisesRegex(ValueError, "order"):
+            build_tei(self.catalog, self.volume, [b, a])
+        with self.assertRaisesRegex(ValueError, "Duplicate"):
+            build_tei(self.catalog, self.volume, [a, a])
+
     def test_verified_page_rejects_whitespace_only_text(self):
         with self.assertRaisesRegex(ValueError, "nonempty"):
             self.load([{**self.page, "lines": [" ", "\t"]}])
