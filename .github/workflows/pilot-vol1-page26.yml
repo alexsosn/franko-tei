@@ -4,7 +4,7 @@ on:
     paths:
       - pilot/vol1_scan00026_single_reading.json
       - tests/test_vol1_page26_image.py
-      - .github/workflows/pilot-vol1-reading.yml
+      - .github/workflows/pilot-vol1-page26.yml
       - src/franko_tei/pilot_tei.py
   workflow_dispatch:
 permissions:
@@ -42,7 +42,7 @@ jobs:
           ns = {'t': 'http://www.tei-c.org/ns/1.0'}
           assert len(tree.xpath('//t:lb', namespaces=ns)) == 44
           assert len(tree.xpath('//t:pb', namespaces=ns)) == 1
-          print('Source image rehashed; 42 mixed-script text/folio lines encoded. Unverified.')
+          print('Source image rehashed; 44 printed lines incl. folio/footer/signature encoded. Unverified.')
           PY
       - name: TEI P5 4.12.0 Relax NG validation
         run: |
