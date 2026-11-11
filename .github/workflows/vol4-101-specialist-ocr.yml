@@ -57,10 +57,17 @@ jobs:
           assert d['status']=='segmentation_unchecked'
           assert d['source_image_sha256']=='7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447'
           assert d['line_count']==len(d['lines'])
-          assert len(d['lines'])>=10
-          for i,row in enumerate(d['lines']):
-              x,y,w,h=row['bbox_xywh']
-              if i<10: print('Candidate line',i+1,'bbox',x,y,w,h)
+          assert len(d['lines'])>=11
+          # Actual pinned-source first run 43092339418 revealed this as
+          # excluded Kraken candidate #2: a 6px top-right ghost/artifact,
+          # not a valid physical text line for a line OCR recognizer.
+          fx,fy,fw,fh=d['lines'][1]['bbox_xywh']
+          assert fw<=10 and fy<200 and fx>950, ('layout drift',d['lines'][1])
+          assert d['lines'][0]['bbox_xywh'][2]>100
+          assert all(r['bbox_xywh'][2]>100 for r in d['lines'][2:11])
+          for i,row in enumerate(d['lines'][:11]):
+              print('Source candidate',i+1,'bbox',row['bbox_xywh'],
+                    'EXCLUDED FROM TEXT OCR' if i==1 else 'OCR hypothesis only')
           print('Kraken candidate count',d['line_count'], 'not a verified physical-line count.')
           PY
       - name: Fetch pinned Polyscriptor code and manuscript/early-print OCR model revisions
@@ -87,14 +94,22 @@ jobs:
           PY
       - name: Try both OCR domains on same ten original image crops
         run: |
-          franko-crnn-probe --images native-images --volume 4 --layout geometry/vol4/vol4-page-00101-kraken-layout.json --model-specs models/specs.json --inference-script upstream/inference_pylaia_native.py --start-line 1 --max-lines 10 --margin-y 8 --output ocr-output/iv101-ten-lines.json
+          franko-crnn-probe --images native-images --volume 4 --layout geometry/vol4/vol4-page-00101-kraken-layout.json --model-specs models/specs.json --inference-script upstream/inference_pylaia_native.py --start-line 1 --max-lines 1 --margin-y 8 --output ocr-output/iv101-section-heading.json
+          franko-crnn-probe --images native-images --volume 4 --layout geometry/vol4/vol4-page-00101-kraken-layout.json --model-specs models/specs.json --inference-script upstream/inference_pylaia_native.py --start-line 3 --max-lines 9 --margin-y 8 --output ocr-output/iv101-witness-and-body.json
       - name: Fail-closed source provenance and paired-model audit
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          rows=json.loads(Path('ocr-output/iv101-ten-lines.json').read_text(encoding='utf8'))
+          rows=[]
+          for name in ('section-heading','witness-and-body'):
+              rows+=json.loads(Path('ocr-output/iv101-'+name+'.json').read_text(encoding='utf8'))
           assert len(rows)==20
+          # Same frozen source layout as actual first run; excluded false
+          # candidate #2 must never be promoted as an OCR physical line.
+          layout=json.loads(Path('geometry/vol4/vol4-page-00101-kraken-layout.json').read_text(encoding='utf8'))
+          ignored=layout['lines'][1]['candidate_line_id']
+          assert all(r['candidate_line_id']!=ignored for r in rows)
           paired={}
           for r in rows:
               assert r['status']=='ocr_unchecked'
@@ -109,6 +124,7 @@ jobs:
               assert len({x['crop_png_sha256'] for x in pair})==1
               for item in pair:
                   print('RAW_IV101',line_id,item['model_name'],json.dumps(item['transcription'],ensure_ascii=False))
+                  print('FRANKO_IV101_RECORD_JSON '+json.dumps(item,ensure_ascii=False,separators=(',',':')))
           print('Ten unreviewed Kraken candidates, 20 machine hypotheses; original printed line segmentation remains unverified.')
           PY
       - name: Retain text-only diagnostics, not scans or model files
