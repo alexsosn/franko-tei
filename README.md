@@ -40,3 +40,7 @@ Original books are in Ukrainian/Church Slavonic/other historical languages; we d
 ## Mixed-script OCR rerun baseline
 
 The `franko-ocr-candidates` CLI operates on native scan images and image checksums from `codex/page-assets`. It runs independently identified multilingual Tesseract candidate passes, retains image/word coordinates and model fingerprints, and never promotes OCR to verified TEI. See [the guide](docs/mixed-script-ocr.md), [real-page OCR workflow](.github/workflows/ocr-real-pages.yml), and [Issue #13](https://github.com/alexsosn/franko-tei/issues/13).
+
+## Agent-first development pilot
+
+The user-approved primary workstream is [#11](https://github.com/alexsosn/franko-tei/issues/11): separate blind image-reading contexts, independent image-grounded review, and early *unverified* pilot TEI→Text-Fabric, rather than waiting for a winning OCR engine. The initial `franko-agent-evidence` CLI validates mixed-line Unicode spans, source-image hashes, reader/reviewer provenance, scan coordinates, explicit coverage and discrepancy logs without promoting any text to verified. See [the evidence contract](docs/agent-first-evidence.md).
