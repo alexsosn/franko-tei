@@ -24,7 +24,7 @@ class TestVol1Page25(unittest.TestCase):
         self.assertEqual(lines[0]["text"],"XVI")
         self.assertEqual(r["raw_response"],"\n".join(x["text"] for x in lines))
         self.assertIn("Ἱστορία",r["raw_response"])
-        self.assertIn("Palея".replace("a","а") if False else "Палея",r["raw_response"])
+        self.assertIn("Палея",r["raw_response"])
         self.assertIn("Anecdota graeco-byzantina",r["raw_response"])
         self.assertTrue(all(x["geometry_estimated"] for x in lines))
         self.assertGreaterEqual(len(r["uncertainty_notes"]),20)
