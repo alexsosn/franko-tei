@@ -44,5 +44,22 @@ class TestV10HTRGates(unittest.TestCase):
         self.assertNotIn("franko-pilot-tei", t)
         self.assertNotIn("franko-pilot-tf", t)
 
+    def test_real_paired_ocr_candidates_are_preserved_as_unchecked(self):
+        p = ROOT / "pilot/ocr/vol5_scan00010_two_column_probe_20261111.json"
+        d = json.loads(p.read_text(encoding="utf8"))
+        self.assertEqual(d["status"], "ocr_unchecked")
+        self.assertEqual(d["image_sha256"], "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c")
+        self.assertFalse(d["eligible_for_tei_tf"])
+        self.assertFalse(d["cer_measured"])
+        self.assertEqual(len(d["candidates"]), 32)
+        self.assertEqual({r["model"] for r in d["candidates"]},
+                         {"church-slavonic", "prosta-mova"})
+        self.assertEqual({r["margin_y_px"] for r in d["candidates"]}, {8, 16})
+        self.assertEqual({r["column"] for r in d["candidates"]}, {"left", "right"})
+        self.assertEqual(len({r["candidate_line_id"] for r in d["candidates"]}), 8)
+        self.assertTrue(all(r["text"] and r["model_revision"] for r in d["candidates"]))
+        self.assertEqual(d["source_artifact_sha256"],
+                         "72900fd83caf30709bafe405fafa9084dd454d93e221fdf6463cd152916f8f9f")
+
 if __name__ == "__main__":
     unittest.main()
