@@ -14,7 +14,7 @@ The anchor texts below are **provisional lexical readings**, not diplomatic Unic
 
 | Source candidate | Photo observation | Documented machine failure or ambiguity |
 | --- | --- | --- |
-| Left #3 (title) | `днь. Житїе иже …` | Manuscript CRNN emitted `дн҃ь. китїе и жизнь, про¬`: the initial `Ж` was replaced, and the following expression fused into the modern unrelated word `жизнь` |
+| Left #3 (title) | `днь. Житїе и жизнь, пр[е]…` | **Corrected after the user's 1536×1152 close-up:** both CRNNs correctly suggested `жизнь`; the print model also correctly suggested `Житїе`. Handwriting-domain CRNN misread the first letter of `Житїе` as `к`. A previous human review **incorrectly changed** `жизнь` to the familiar formula `иже`; that editorial normalization is retracted. Exact diacritics/spacing remain unverified. |
 | Left #4 (title) | `подобныѧ мт҃ри нашеѧ` | Model disagreement on the **contraction of mother**; print OCR's `матри` must not overwrite the actual titlo |
 | Left #5 (title) | `Марїи египетскїѧ … спи-` | Print model `стипотыкїѧ` is a gross spelling failure; exact original `ѣ/е/і` types must be independently checked |
 | Left #6 (title) | `сано софронїемъ, патрїа-` | Both models suggested `вано/рано вофронїемъ`, losing the continuation of `спи- / сано` and first consonant of Sophronius |
@@ -31,6 +31,10 @@ The anchor texts below are **provisional lexical readings**, not diplomatic Unic
 | Right #61 | `… монастырь сꙋщїи при Іорданѣ …` | Basic names and geographical context are visible; word breaks and upper marks remain unverified |
 
 The JSON contains 24 observations, with specific source-candidate IDs, photograph number, bounding rectangle in the *older pinned source image* (not a fictitious camera-pixel registration), original **unaltered** readings of both CRNN models, visual anchor, reason for rejection/uncertainty and the model-paired crop SHA256.
+
+## Correction to the initial photo review: reject linguistic expectation as evidence
+
+A newer user close-up (`IMG_5801.jpeg`, 1536×1152, SHA256 `aa6240bfe61e28e0bbb38f6b66a1abb77e3683399355a189de10328df7c93a1d`) clearly shows the lexical sequence **«Житїе и жизнь»**. The previous review had written **«Житїе иже»** because that is a familiar hagiographic heading, falsely marking both CRNN outputs' **correct recognition of «жизнь»** as an error. The source image, not formulaic philological expectation, decides. This is an explicit **human-reviewer error** (`manual_reviewer_normalization_bias`) and a useful adversarial finding about the evaluation pipeline. The underlying 152 raw machine predictions are unmodified. All additional accents, spacing, old Cyrillic codepoints and upper characters still require direct glyph collation; this correction is not certification of an entire printed line.
 
 ## Failure modes demonstrated in these new images
 
