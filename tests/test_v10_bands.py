@@ -84,5 +84,35 @@ class IsolatedV10Tests(unittest.TestCase):
             isolate_group(img,rows,column="left",take=4,divider=155)
 
 
+    def test_actual_paired_isolated_ocr_stays_unverified(self):
+        from pathlib import Path
+        import json
+        root=Path(__file__).resolve().parents[1]
+        p=json.loads((root/"pilot/ocr/vol5_scan00010_isolated_baseline_20261111.json").read_text(encoding="utf8"))
+        self.assertEqual(p["status"],"ocr_unchecked")
+        self.assertFalse(p["verified_transcription"])
+        self.assertFalse(p["titla_preservation_verified"])
+        self.assertFalse(p["eligible_for_tei_tf"])
+        self.assertEqual(p["image_sha256"],"3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c")
+        self.assertEqual(p["run_id"],43075865830)
+        self.assertEqual(len(p["candidates"]),16)
+        self.assertEqual(len({r["candidate_line_id"] for r in p["candidates"]}),8)
+        grouped={}
+        for r in p["candidates"]:
+            self.assertTrue(r["text"])
+            self.assertEqual(len(r["crop_png_sha256"]),64)
+            grouped.setdefault(r["candidate_line_id"],[]).append(r)
+        for rows in grouped.values():
+            self.assertEqual({r["model"] for r in rows},{"church-slavonic","prosta-mova"})
+            self.assertEqual(len({r["crop_png_sha256"] for r in rows}),1)
+            self.assertEqual(len({tuple(r["bbox_crop_xyxy"]) for r in rows}),1)
+        for col in ("left","right"):
+            b=[v[0]["bbox_crop_xyxy"] for v in grouped.values() if v[0]["column"]==col]
+            b.sort(key=lambda x:x[1])
+            self.assertEqual(len(b),4)
+            for x,y in zip(b,b[1:]):
+                self.assertEqual(x[3],y[1])
+
+
 if __name__=="__main__":
     unittest.main()
