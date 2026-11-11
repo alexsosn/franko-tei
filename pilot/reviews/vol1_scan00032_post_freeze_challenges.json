@@ -1,0 +1,102 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 32,
+  "printed_page_observed": "XXIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "fe86bfa6a1931b9f1368da1dadc47ff4790bdaee0b228b7feae88f0fb071b266",
+  "frozen_first_reading": "pilot/vol1_scan00032_single_reading.json",
+  "review_method": "Distinct failure-oriented rereading of original native 1190x1701 JPEG after first-response JSON was committed; consulted original embedded PDF OCR only afterwards as a known-corrupt negative control. Same context; not a second blind reader or independent completed glyph review.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-14",
+      "frozen_substring": "в київских",
+      "proposed_substring": "в київських",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "image_evidence": "The source bibliography after Ждановъ appears to print в київських with ь before к, omitted in the first draft; corrupt PDF OCR independently has the soft sign, but it is not trusted ground truth."
+    },
+    {
+      "line_id": "main-line-30",
+      "frozen_substring": "значно збагачують ся",
+      "proposed_substring": "значно збогачують ся",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "image_evidence": "Native source type appears to read збогачують ся (о after б), whereas fluent first pass modernized to збагачують ся. Original PDF OCR also suggests збогачують; needs independent enlarged-source check before editorial acceptance."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-02",
+      "reading": "— 34)",
+      "reason": "Source printed number visually appears 34; PDF OCR reads 85 and cannot be treated as evidence. Check digits on enlarged native crop."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "Н е в о с т р у е в ъ",
+      "reason": "Historical spelling and letterspacing of Nevostruev; avoid normalizing or dropping ъ."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "П о р ф и р ь е в ъ",
+      "reason": "Letterspaced surname with a soft sign; source's precise ь/ъ and number of spaces unconfirmed."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "Книга бытія небеси и земли",
+      "reason": "Historical Russian title and quoted bibliographic origin; no separate text witness."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "В л а д и м і р о в ъ",
+      "reason": "Long letterspaced proper name and historical ъ."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "С л о в я н с ь к о - р у с ь к і",
+      "reason": "New section VII heading in letterspacing, title continues physically onto next line."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "н и х. Певна річ",
+      "reason": "Physical line contains final heading fragment and start of body prose; current region division is a staging compromise and not full structural TEI."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "чутє",
+      "reason": "Historical word form and diacritic(s) need crop check, no modernization."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "Єремією",
+      "reason": "Print's proper name needs exact glyph reading; source statement is about an attribution, not manuscript provenance."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "переложений",
+      "reason": "Original lexical form may be confused with OCR's перекладений; verify source rather than repairing by sense."
+    }
+  ],
+  "coverage_review": {
+    "folio": "XXIII visible top right",
+    "physical_body_lines": 41,
+    "structural_bands": [
+      "20 physical bibliography lines",
+      "1 physical line containing start of long VII rubric",
+      "20 physical lines beginning with rubric tail 'н и х.' and continuing prose"
+    ],
+    "source_page_end": "The last physical line ends in semicolon, not a complete sentence; no text from scan 33 inferred.",
+    "original_ocr_negative_control": "OCR loses XXIII, incorrectly reads 34 as 85, collapses rubric letterspacing, splits names and substitutes Latin characters in Cyrillic titles."
+  },
+  "source_rights": "No new scan/PDF committed or relicensed.",
+  "limitations": [
+    "No second blind source-only reader",
+    "No third independent full textual review",
+    "No glyph by glyph verification / CER",
+    "No stable released TEI or TF corpus"
+  ]
+}
