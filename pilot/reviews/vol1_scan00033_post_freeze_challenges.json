@@ -1,0 +1,97 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 33,
+  "printed_page_observed": "XXIV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "72926d107ff4eb90ca3bb72d8b594ea27815ba1790ae0627c00b1b199c53a8f2",
+  "frozen_first_reading": "pilot/vol1_scan00033_single_reading.json",
+  "review_method": "Failure-seeking second read of complete pinned native JPEG after committing the original image-only first response; then consulted damaged original embedded OCR as negative/counterhypothesis. Same ChatGPT context; not a separate blind agent or fully independent editorial comparison.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-40",
+      "frozen_substring": "пізнїйше прийшла з Грециї",
+      "proposed_substring": "пізнїйше плила з Грециї",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "image_evidence": "Printed line near bottom visibly reads «плила з Грециї»; the first reader substituted semantically expected «прийшла». The damaged PDF OCR independently outputs «плила» but cannot be used as truth."
+    },
+    {
+      "line_id": "main-line-16",
+      "frozen_substring": "такі речи",
+      "proposed_substring": "такі речі",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_plus_ocr_counterhypothesis",
+      "image_evidence": "At the line describing Greek sources the printed ending of «речі» appears to be dotted і, while first pass read и. PDF OCR gives речі, but it is a corrupted comparison, not certified glyph evidence."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-02",
+      "reading": "югославянських",
+      "reason": "Original image seems ambiguous between югославянських and югословянських; old OCR suggests the latter, which is not authoritative. Do not silently change."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "Яґіч",
+      "reason": "Original letter g/ґ and i/і must be resolved by direct enlarged image; OCR Latinizes the name."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "сеї статї",
+      "reason": "Historical spelling and soft diacritics require second independent visual reading."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "Погодинського Номоканона XIV",
+      "reason": "Printed source punctuation around XIV, possible comma or abbreviation, unresolved."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "песси-",
+      "reason": "Historical consonant doubling and i/і in Greek-derived word; do not normalize."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "нїж оптимізм“",
+      "reason": "Greek-origin loanword vowels and quotation boundary require independent check."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "50—80 лїт",
+      "reason": "Numbers/physical typographic dash are visible; confirm against enlarged pixel crop, OCR split incorrectly."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "фантазиї",
+      "reason": "Old Ukrainian vowel diacritics require glyph review."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "супроти того, який ми",
+      "reason": "Actual page ends mid-sentence; do not reconstruct next page."
+    }
+  ],
+  "coverage_review": {
+    "folio": "Printed XXIV upper left, not scan index 33",
+    "body_line_count": 41,
+    "paragraph_line_counts": [
+      23,
+      18
+    ],
+    "first_line": "Continuation from I/32, beginning а на Руси",
+    "last_line": "Ends in який ми without sentence punctuation",
+    "negative_control": "Embedded OCR produces 'ЖХ' instead of XXIV, mixed Latin/Cyrillic text, e.g. 'flriu', and splits 50—80."
+  },
+  "source_rights": "No new scan binary is committed; referenced original rights not assumed under project MIT.",
+  "limitations": [
+    "No blind independently executed second source transcription",
+    "No third independent source adjudicator",
+    "No verified historical glyphs or CER",
+    "No released TEI/TF; source-checked serializer only"
+  ]
+}
