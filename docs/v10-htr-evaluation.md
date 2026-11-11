@@ -105,3 +105,14 @@ This is a structural improvement over the previously overlapping crops, but **wo
 2. Apply the validated method only to the two-column facsimile and re-evaluate cropped rows with both frozen OCR models. Keep raw candidates and disagreement metadata; do not stitch apparent words into a diplomatic text.
 3. The printed-page caption still calls the source `старого друку` while the user identifies a manuscript-like photographic page. That is preserved as source-type uncertainty until bibliographic inspection.
 4. The whole V/10 facsimile, particularly the bottom merged Kraken regions, remains **not transcribed** and cannot feed TEI/TF or an empirical CER measurement.
+
+
+## Broad V/10 source geometry audit: actual 76-band result
+
+[Actual source-run 43078178554](https://github.com/alexsosn/franko-tei/actions/runs/43078178554) passed with pinned original 1190×1701 JPEG SHA256 `3b2ada...`, Kraken segmentation and native pixel bands. It yielded **76 candidate strips** (36 left, 40 right), **zero bands under the 15px minimum height**, and **21 seams at or above the exploratory 4% black-pixel threshold**. Nine original Kraken candidate IDs were excluded **explicitly** rather than dropped: marginal item #1, last left #38, last right #79, three cross-column merged bottom segments #80–82, and the three modern Franko caption rows #83–85. The caption is a separate editorial text, not old print.
+
+The **complete 76-record band coordinates and measured ink fractions**, with original layout and source-artifact provenance, are frozen in [`pilot/geometry/vol5_scan00010_broad_20261111.json`](../pilot/geometry/vol5_scan00010_broad_20261111.json). The full raw geometry (including Kraken polygons/baselines) is the seven-day workflow artifact ZIP, SHA256 `1c63e147ee9870f8856ea373900085a44974ae3dc33e09fc2d24c91cc9ddd183`.
+
+**High-risk example boundaries** requiring source overlay review: left candidate #37, final boundary at y=1430, **24.62%** dark sampled pixels; right candidate #69 at y=1135, **11.22%**; right #78 at y=1437, **9.80%**; left #36 at y=1398, **9.64%**; earlier left title #2 at y=211, **6.09%**. These figures measure a horizontal sample of dark pixels on an algorithmic separator; they **do not directly measure cropped-off glyphs or OCR character error**. They are an experimental prioritization threshold, not a trained classifier or independent human review. Even strips with lower seam darkness are not presumed correct.
+
+The source medium remains disputed: Franko explicitly captions the reproduction as `старого друку`, while the user describes the page as manuscript photography. Neither classification is silently treated as settled. No new TEI XML, TF nodes, or accepted diplomatic glyphs were produced by this geometry audit. The next OCR episode should run models on source-traceable crop samples, while separately resolving the 21 high-ink seams and the merged lower source regions.
