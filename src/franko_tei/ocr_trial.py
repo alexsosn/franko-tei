@@ -94,7 +94,7 @@ def _get_scan(root, volume, page):
 
 def read_lines(tsv):
     """Group Tesseract words by region/line; retain reading order and geometry."""
-    reader = csv.DictReader(io.StringIO(tsv), delimiter="\t")
+    reader = csv.DictReader(io.StringIO(tsv), delimiter="\t", quoting=csv.QUOTE_NONE)
     required = {"level", "page_num", "block_num", "par_num", "line_num",
                 "left", "top", "width", "height", "conf", "text"}
     if not reader.fieldnames or not required.issubset(reader.fieldnames):
