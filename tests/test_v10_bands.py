@@ -54,6 +54,8 @@ class IsolatedV10Tests(unittest.TestCase):
         output=isolate_group(img,rows,column="left",take=4,divider=155)
         self.assertTrue(all(r["requires_visual_review"] for r in output))
         self.assertTrue(any(r["seam_black_fraction"]>0 for r in output[:3]))
+        self.assertTrue(any(r["seam_may_cut_ink"] for r in output))
+        self.assertTrue(all(r["titla_review_required"] for r in output))
         right=deepcopy(output)
         for k,r in enumerate(right,1):
             r['candidate_line_id']=f'right-{k}'
@@ -95,6 +97,8 @@ class IsolatedV10Tests(unittest.TestCase):
         self.assertFalse(p["eligible_for_tei_tf"])
         self.assertEqual(p["image_sha256"],"3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c")
         self.assertEqual(p["run_id"],43075865830)
+        self.assertGreater(p["candidate_seams"]["l00002"]["dark_fraction"],0.05)
+        self.assertTrue(p["candidate_seams"]["l00002"]["requires_manual_glyph_audit"])
         self.assertEqual(len(p["candidates"]),16)
         self.assertEqual(len({r["candidate_line_id"] for r in p["candidates"]}),8)
         grouped={}
