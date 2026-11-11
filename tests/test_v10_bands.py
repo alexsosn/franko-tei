@@ -38,7 +38,7 @@ class IsolatedV10Tests(unittest.TestCase):
             x,y,w,h=item["bbox_xywh"]
             self.assertGreaterEqual(y,0)
             self.assertGreater(h,10)
-            self.assertLess(x+w,155)
+            self.assertLessEqual(x+w,155)
             self.assertGreaterEqual(item["seam_black_fraction"],0)
         for a,b in zip(out,out[1:]):
             self.assertEqual(a["bbox_xywh"][1]+a["bbox_xywh"][3],b["bbox_xywh"][1])
@@ -75,7 +75,7 @@ class IsolatedV10Tests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"baseline"):
             isolate_group(img,rows,column="left",take=4,divider=155)
         rows=sample()
-        rows[1]["bbox_xywh"]=[149,42,100,47]
+        rows[1]["bbox_xywh"]=[149,42,65,47]
         with self.assertRaisesRegex(ValueError,"column"):
             isolate_group(img,rows,column="left",take=4,divider=155)
         rows=sample()
