@@ -146,9 +146,9 @@
       "candidate_line_id": "v5-s00010-kf8605fa853c3-l00003",
       "photo_index": 1,
       "column": "left",
-      "assessment": "mismatch",
-      "observed_reading_or_anchor": "днь. Житїе иже … [пре-]",
-      "evidence_note": "Handwriting-domain OCR says «китїе и жизнь», which is not the visible title. The HTR sequence wrongly fused or substituted the relative-expression glyphs; exact small marks still unchecked.",
+      "assessment": "partial_match",
+      "observed_reading_or_anchor": "днь. Житїе и жизнь, пр[е]…",
+      "evidence_note": "New direct 1536×1152 title photograph resolves the lexical sequence as «Житїе и жизнь» (not «иже»). Both CRNNs actually recovered «жизнь»; the print-domain prosta-mova model also recovered «Житїе». The previous human reviewer imposed the expected hagiographic formula «иже» against the printed image. The handwriting-domain model still misreads the initial letter of «Житїе» as к. Exact superscript signs, spaces and vowel diacritics remain unverified.",
       "lexical_anchor_confidence": "high",
       "photo_text_is_provisional": true,
       "glyph_by_glyph_verified": false,
@@ -693,5 +693,24 @@
     "v5-s00010-kf8605fa853c3-l00076",
     "v5-s00010-kf8605fa853c3-l00077",
     "v5-s00010-kf8605fa853c3-l00078"
+  ],
+  "corrections": [
+    {
+      "date": "2026-11-11",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00003",
+      "photo_filename": "IMG_5801.jpeg",
+      "photo_sha256": "aa6240bfe61e28e0bbb38f6b66a1abb77e3683399355a189de10328df7c93a1d",
+      "photo_dimensions": [
+        1536,
+        1152
+      ],
+      "previous_reviewer_assertion": "днь. Житїе иже … [пре-]",
+      "corrected_lexical_reading": "Житїе и жизнь",
+      "reason": "manual_reviewer_normalization_bias",
+      "details": "The reviewer changed an actually correct recognition of «жизнь» into «иже» based on a familiar hagiographical heading; source glyphs and the user-supplied closer crop show «жизнь». Preserve the two original HTR strings and label correctness separately at glyph level.",
+      "full_diplomatic_verified": false,
+      "raw_htr_changed": false,
+      "photo_rehosted": false
+    }
   ]
 }
