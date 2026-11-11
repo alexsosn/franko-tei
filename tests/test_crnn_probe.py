@@ -119,6 +119,14 @@ class PairedCRNNTests(unittest.TestCase):
             with Image.open(self.img) as image:
                 _crop_from_line(image, {"bbox_xywh": [199, 20, 12, 15]})
 
+    def test_non_finite_crop_geometry_rejected_explicitly(self):
+        from PIL import Image
+        for value in (float("inf"), float("-inf"), float("nan")):
+            with self.subTest(value=value), Image.open(self.img) as image:
+                line = {"bbox_xywh": [value, 20, 30, 15]}
+                with self.assertRaisesRegex(ValueError, "finite"):
+                    _crop_from_line(image, line)
+
     def test_bad_model_revision_rejected_before_inference(self):
         self.models["prosta"]["revision"] = "main"
         with self.assertRaisesRegex(ValueError, "pin"):
