@@ -1,0 +1,42 @@
+{
+  "schema_version": "same-context-reinspection-v1",
+  "status": "agent_unverified",
+  "kind": "same-context-image-reinspection",
+  "volume": "2",
+  "scan_page": 100,
+  "original_file": "pilot/image_first/vol2_scan00100_first.md",
+  "first_reading_commit": "7e5b876879a81664788a266b5b21e233806f3755",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "reader_context": "chat-single-context-2026-11-11-five-page-reading",
+  "method": "Second look at original native page within the SAME conversation context, first Markdown remains unchanged. This is not a second blind reader or a third independent review.",
+  "changes": [
+    {
+      "line_index": 15,
+      "before": "Волсви персиастїи прїйдоша поклонити ся Х⟦р҃/с҃?⟧у на рождество:",
+      "after": "Волсви персиастїи прїйдоша поклонити ся Х҃тв на рождество:",
+      "evidence": "Native image, first Slavonic quote line: abbreviation appears to include Х and superscript; exact expanded reading remains unverified.",
+      "uncertain": true
+    },
+    {
+      "line_index": 20,
+      "before": "и см⟦?⟧ксилъ долнѧѧ со вышними. Л⟦?⟧кто [sic! зам. л⟦?⟧кпо] твоей",
+      "after": "и смѣсилъ долнѧѧ со вышними. Лѣкто [sic! зам. лѣпо] твоей",
+      "evidence": "Native image, middle Magi excerpt near printed editorial sic/зам.; weak letters are provisional, and 'смѣсилъ' is NOT certified by contextual plausibility.",
+      "uncertain": true
+    },
+    {
+      "line_index": 22,
+      "before": "ложити“. І ин⟦?⟧к же пишетъ: пришедше волсви гл҃аху: „се єсть",
+      "after": "ложити“. І инък же пишетъ: пришедше волсви гл҃аху: „се єсть",
+      "evidence": "Native image, penultimate Magi excerpt line: small supralinear glyph remains uncertain.",
+      "uncertain": true
+    },
+    {
+      "line_index": 31,
+      "before": "пророчицахъ, иже пророчествовахꙋ ѡ преч⟦?⟧тѣй Дв҃ѣ",
+      "after": "пророчицахъ, иже пророчествовахꙋ ѡ преч҃тѣй Дв҃ѣ",
+      "evidence": "Native image lower Sibyl text near page bottom: overline and superscript not independently reviewed.",
+      "uncertain": true
+    }
+  ]
+}
