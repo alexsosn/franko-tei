@@ -26,8 +26,8 @@ Workflow: [`v10-slavonic-htr.yml`](../.github/workflows/v10-slavonic-htr.yml).
 
 - Fetch only pinned native V/10 JPEG and manifest; validate *actual* bytes, SHA256 and 1190×1701 dimensions.
 - Apply already implemented Kraken baseline-based segmentation, **do not call its 85 candidates verified lines**. Prior inspection found three merged-column bottom detections and a nontext marginal mark.
-- Select four top **left** and four top **right** line candidates from the same actual source. Fail closed if detected centers cross x=615. Preserve 16px **vertical margin** to reduce accidental titlo clipping; the margin can also bleed neighboring rows and must be checked visually.
-- Compare the frozen Church Slavonic CRNN and prosta-mova CRNN with identical crop PNG hashes per physical candidate. Record individual predictions and checkpoint, symbol, source-image and code hashes. Status remains `ocr_unchecked`; do not choose by raw confidence or inferred language alone.
+- Select four top **left** and four top **right** line candidates from the same actual source. Fail closed if detected centers cross x=615. Compare both **8px and 16px vertical margins**: a narrow crop may clip titla; a wide crop may bleed adjacent rows. These are independent candidate outputs, not an automatic winner.
+- Compare the frozen Church Slavonic manuscript-domain CRNN and the Ostroh-trained early-print prosta-mova CRNN with identical crop PNG hashes per physical candidate. Record individual predictions and checkpoint, symbol, source-image and code hashes. Status remains `ocr_unchecked`; do not choose by raw confidence or inferred language alone.
 - No source image/crop/weights is uploaded. Only seven-day temporary text JSON artifacts are retained. If models fail to produce plausible print glyphs, stop and test the early-print-specific Transkribus models instead of hallucinating emended Church Slavonic text.
 
 ## Adversarial post-run acceptance
@@ -40,3 +40,21 @@ Test at least one left title and one right content line **against the JPEG** and
 - source medium/recension uncertain and separate from Franko's modern printed caption.
 
 Keep the whole V/10 text unreleased until a complete, independently checked image-anchored transcription is available. For the rest of the Franko volumes, prioritize the normal printed-page process; do not scale this experimental HTR pipeline to thousands of modern-printed pages without evidence.
+
+
+## First real-JPEG smoke (source SHA and two-column execution confirmed)
+
+The [actual GitHub Actions run 43070919545](https://github.com/alexsosn/franko-tei/actions/runs/43070919545) completed successfully on the pinned V/10 JPEG. It produced **16 raw OCR candidates**: two models × four top left-column lines and two models × four top right-column lines, with the same pixel-crop hashes for each line between the models. These results are diagnostic, **not** a new reading or a verified edition.
+
+Examples copied from the run's stdout (the models contain the superscript markup in their Unicode vocabularies):
+
+| Physically selected line | Church Slavonic handwritten-domain CRNN | Prosta Mova/Ostroh print-domain CRNN |
+| --- | --- | --- |
+| Left #2 | `Мⷭ҇ца априлѧ, въпорвыи` | `Мц҇а а҆прилъ, въпо́рвый` |
+| Left #4 | `подобныѧ мт҃ри нашеѧ` | `подо́бныа мт҃ри на́шеѧ` |
+| Right #39 | `щенїа и дѣлатворѧшео и бсѧ преданїѧ` | `щонї́ѧ и҆ дѣ́ла творѧ́ше, и҆жапрода́нїѧ` |
+| Right #41 | `аїинїѧ стыхъ слексъ оекⸯбадно илела.` | `а҆р҆емѧсто́лыслми҆сослїанои҆аи҆ж` |
+
+The two left-page examples preserve some recognizable words and superscript character sequences, but the right-page examples are visibly corrupted; **neither model is adequate to accept the page as diplomatic text**. The 16px margin can include material from adjacent compact lines, so a follow-up 8px-versus-16px paired sample is necessary to separate a line-segmentation failure from a model-domain failure. No CER can be computed without independent gold. Do not select a model based on these four examples alone.
+
+The closest training-domain candidate is the open **Prosta Mova CRNN model itself**, which was initially mislabeled an out-of-domain control in the first workflow draft. The user-visible unverified outputs demonstrated its relevance to the first four headline rows, but not a full page.
