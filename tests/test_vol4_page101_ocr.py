@@ -22,6 +22,9 @@ class TestVol4Page101OCR(unittest.TestCase):
             "retention-days: 30"
         ):
             self.assertIn(needle,s)
+        self.assertIn("--start-line 1 --max-lines 1",s)
+        self.assertIn("--start-line 3 --max-lines 9",s)
+        self.assertIn("excluded Kraken candidate #2",s)
         for forbidden in ("franko-pilot-tei","franko-pilot-tf","contents: write"):
             self.assertNotIn(forbidden,s)
 
