@@ -13,8 +13,8 @@ Sources and code are version-addressed:
   achimrabus/polyscriptor at 7994ccadc537c59b0b90eb25b66dfa5d54976d6d.
 - Model repositories: achimrabus/crnn-ctc-prosta-mova and
   achimrabus/crnn-ctc-church-slavonic. The GitHub Actions workflow resolves
-  their complete Hugging Face repository SHA (40 hex chars), downloads
-  best_model.pt and symbols.txt from **that revision**, and records SHA256
+  their frozen Hugging Face repository SHAs from successful scan run 43036416973 (40 hex chars), downloads
+  best_model.pt and symbols.txt from **those revisions**, and records SHA256
   of both artifacts in the output. Outputs include SHA256 for upstream
   inference script, native line JSON, candidate layout report, page image
   and exact PNG crop bytes. The local code executes a trusted, locally
