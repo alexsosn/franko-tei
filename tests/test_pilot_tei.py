@@ -210,7 +210,7 @@ class PilotTeiTests(unittest.TestCase):
             'reconstructed_from_neighbor_page':False,
             'affected_line_ids':['text-line'],
         }]
-        r['raw_response']='48\\nprinted visible word…'
+        r['raw_response']=chr(10).join(['48','printed visible word…'])
         validate_single_draft(data,self.root)
         xml=render_pilot_tei(data,1190,1794)
         doc=ET.fromstring(xml)
