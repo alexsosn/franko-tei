@@ -36,3 +36,7 @@ The extracted JSONL starts with `status=ocr_unchecked`. The TEI exporter refuses
 Issues [#1–#7](https://github.com/alexsosn/franko-tei/issues) track setup, scan audit, OCR benchmark/ground truth, ingest, scholarly TEI, Text-Fabric, and release. Agent rules are in [AGENTS.md](AGENTS.md) and [docs/agent-loop.md](docs/agent-loop.md). Agents must follow research → plan → red TDD → implementation → tests → logically independent adversarial review → merge. Real-page E2E smoke tests are required before releases; automated CI covers baseline package tests only.
 
 Original books are in Ukrainian/Church Slavonic/other historical languages; we do not conflate a 1900s printed font with original manuscript paleography. Keep original spelling and distinguish Franko's editing from source witnesses.
+
+## Mixed-script OCR rerun baseline
+
+The `franko-ocr-candidates` CLI operates on native scan images and image checksums from `codex/page-assets`. It runs independently identified multilingual Tesseract candidate passes, retains image/word coordinates and model fingerprints, and never promotes OCR to verified TEI. See [the guide](docs/mixed-script-ocr.md), [real-page OCR workflow](.github/workflows/ocr-real-pages.yml), and [Issue #13](https://github.com/alexsosn/franko-tei/issues/13).

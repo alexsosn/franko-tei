@@ -1,0 +1,63 @@
+name: OCR candidates on pinned real pages (unverified)
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/ocr_candidates.py
+      - tests/test_ocr_candidates.py
+      - .github/workflows/ocr-real-pages.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sample-ocr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Tesseract language packs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-ukr tesseract-ocr-rus tesseract-ocr-pol tesseract-ocr-deu tesseract-ocr-lat tesseract-ocr-ell tesseract-ocr-grc
+          python -m pip install -e .
+          franko-ocr-candidates --help > /dev/null
+      - name: Fetch only five pinned page images and their manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          ASSET_SHA=e871f32537e81f81896f6ce9a6658aba667db9c5
+          for sample in 1:20 2:100 3:130 4:100 5:100; do
+            vol="${sample%:*}"
+            page="${sample#*:}"
+            dir="real-images/vol${vol}"
+            mkdir -p "$dir"
+            printf -v name 'page-%05d.jpg' "$page"
+            url="https://raw.githubusercontent.com/alexsosn/franko-tei/$ASSET_SHA/images/vol$vol"
+            curl --fail --location --retry 2 --silent --show-error "$url/manifest.json" -o "$dir/manifest.json"
+            curl --fail --location --retry 2 --silent --show-error "$url/$name" -o "$dir/$name"
+          done
+      - name: Real-image OCR candidates (not a CER benchmark)
+        run: |
+          franko-ocr-candidates --images real-images --volume 1 --pages 20 --profiles cyrillic,latin,greek,mixed --output ocr-results/vol1
+          franko-ocr-candidates --images real-images --volume 2 --pages 100 --profiles cyrillic,latin,mixed --output ocr-results/vol2
+          franko-ocr-candidates --images real-images --volume 3 --pages 130 --profiles cyrillic,greek,mixed --output ocr-results/vol3
+          franko-ocr-candidates --images real-images --volume 4 --pages 100 --profiles cyrillic,mixed --output ocr-results/vol4
+          franko-ocr-candidates --images real-images --volume 5 --pages 100 --profiles cyrillic,mixed --output ocr-results/vol5
+      - name: Summarize outputs without claiming accuracy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          for file in sorted(Path('ocr-results').rglob('*.json')):
+              item = json.loads(file.read_text(encoding='utf8'))
+              print(f"Volume {item['volume']} scan {item['scan_page']}, {item['profile']}: {len(item['text'])} chars, {len(item['lines'])} geometric lines; status={item['status']}")
+          PY
+      - name: Upload candidate JSON only, never scan images
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-real-page-unverified-ocr
+          path: ocr-results/**/*.json
+          if-no-files-found: error
+          retention-days: 7
