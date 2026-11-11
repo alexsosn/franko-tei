@@ -6,7 +6,7 @@ All source images are taken from the **immutable** `codex/page-assets` commit `e
 | --- | --- | --- | ---: | --- |
 | I / 20 | XI | [JSON](../pilot/vol1_scan00020_single_reading.json) (PR #35) | 42 | [native-source TEI workflow](../.github/workflows/pilot-vol1-reading.yml) |
 | II / 100 | 18 | [JSON](../pilot/vol2_scan00100_single_reading.json) (merged PR #32) | 36 | [image+TEI run 43060087576](https://github.com/alexsosn/franko-tei/actions/runs/43060087576) |
-| III / 130 | 44 | Pending | — | — |
+| III / 130 | 44 | [JSON](../pilot/vol3_scan00130_single_reading.json) (PR #40) | 44 | [native-source TEI workflow](../.github/workflows/pilot-vol3-reading.yml) |
 | IV / 100 | 48 | [JSON](../pilot/vol4_scan00100_single_reading.json) | 13 | Existing single-page TEI |
 | V / 100 | 88 | [JSON](../pilot/vol5_scan00100_single_reading.json) (merged PR #34) | 42 | [image+TEI run 43061352402](https://github.com/alexsosn/franko-tei/actions/runs/43061352402) |
 | V / 10 | No printed folio | Pending (facsimile text and modern caption must both be read) | — | — |
@@ -22,6 +22,12 @@ The Greek text is vulnerable to acute/grave/circumflex, breathing, diaeresis and
 ## II / 100 first pass — uncertainties for subsequent image-first challenge
 
 The 36 physical lines were captured as: printed folio 1, Ukrainian commentary 12, E rubric 1, excerpt from the Yaremetskyi-Bilakhevych reference 10, Ukrainian commentary 4, Zh rubric 2, excerpt from the Vienna library reference 6. All seven regions have *estimated*, not measured, pixel coordinates. The source screenshot visibly contains the literal intervention `[sic! зам. ...]`; it must not be transcribed as if it originated in the historical quoted manuscript. Superscript signs in `Иелусѳъ`, `смѣснѧ дополнѧ`, `Х҃ртва рж҃тва` and the second excerpt's final line are high-risk. Existing OCR was inspected only after the raw first pass was saved, as an adversarial hypothesis, not as truth.
+
+## III / 130 first pass — the entire Greek comparison apparatus
+
+The pinned image (printed page **44**) is a continuous Church Slavonic Thecla legend followed by dense explanatory apparatus. The saved first pass has **22 body lines, 20 editorial apparatus lines, one subrule manuscript-note line and printed folio**. These are physical printed lines, not reconstructed semantic sentences. The large footnote apparatus contains numbered entries, direct Greek quotations with polytonic accents, Ukrainian commentary, a small Latin abbreviation `vac.` and an internal discussion of textual omission; it must not be treated as Church Slavonic manuscript text or as a single undifferentiated language.
+
+Unresolved image-first hypotheses include Slavonic `гла҃ б҃ы`, `аполмъ`, superscript `⁴⁷`/`⁴⁸`, and the final body numeral/titla; Greek `Σιμμέα καὶ Ζηνοῦν`, `Περὶ ἐγκρατείας`, `ἀπατηλοὺς καὶ ποικίλους`, `φοβούμενος τὴν ἔκπληξιν`, `ἐθαύμασεν`, `συριάρχης`, and two abbreviated source-book footnotes under the horizontal rule. The saved first reading is a **candidate**: source-image matching, all-lines coverage and TEI schema validity do not establish correct accents or printed letterforms. The original OCR was not used to construct this frozen first reading.
 
 ## V / 100 first pass — focused adversarial notes, distinct from raw first response
 
@@ -40,6 +46,6 @@ The PDF's embedded OCR is corrupt across these lines; its ability to suggest a c
 
 ## Next real-text gates
 
-1. Independently complete image-only full-page first readings for III/130 and V/10, with Greek notes and old facsimile text included. I/20 is only a first pass, with unresolved Greek diacritics. Do not use adjacent holdout images.
+1. Independently complete the image-only full-page first reading of V/10, including the **entire old two-column facsimile**, decorative initial and the caption. I/20 and III/130 first passes remain unfinished at character-level collation. Do not use adjacent holdout images.
 2. Obtain a **genuinely separate** second blind image-first reader and a separate image-inspecting reviewer. Inspect both disagreements and agreements, not just flagged confidence.
 3. Preserve first raw responses and adjudication, then update source-pinned TEI; run both TEI P5 Relax NG and Schematron, followed by a full all-six Text-Fabric load/query/roundtrip. Existing real-image TEI RNG checks prove serialization only.
