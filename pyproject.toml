@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "franko-tei"
+version = "0.1.0.dev0"
+description = "Auditable diplomatic transcription pipeline for Ivan Franko's five-volume edition"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "franko-tei contributors"}]
+dependencies = []
+
+[project.optional-dependencies]
+pdf = ["pymupdf>=1.24"]
+
+[project.scripts]
+franko-tei = "franko_tei.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+franko_tei = ["sources.json"]
