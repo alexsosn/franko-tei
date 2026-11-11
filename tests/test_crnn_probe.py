@@ -119,6 +119,21 @@ class PairedCRNNTests(unittest.TestCase):
             with Image.open(self.img) as image:
                 _crop_from_line(image, {"bbox_xywh": [199, 20, 12, 15]})
 
+    def test_model_mutation_cannot_contaminate_other_model_crop(self):
+        observed = {}
+        class Mutating:
+            def __init__(self, name): self.name = name
+            def transcribe(self, crop):
+                observed.setdefault(self.name, []).append(crop.getpixel((0, 0)))
+                crop.paste((0, 0, 0), (0, 0, crop.width, crop.height))
+                return ("ѣ", 0.5)
+        def load(path, checkpoint, symbols):
+            return Mutating(Path(checkpoint).stem)
+        with patch("franko_tei.crnn_probe._load_engine", side_effect=load):
+            probe(self.root, "3", self.layout_path, self.models,
+                  self.inference, self.root / "report.json", start_line=1, max_lines=2)
+        self.assertEqual(observed["prosta"], observed["slavonic"])
+
     def test_non_finite_crop_geometry_rejected_explicitly(self):
         from PIL import Image
         for value in (float("inf"), float("-inf"), float("nan")):
