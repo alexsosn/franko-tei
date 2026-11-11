@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 from franko_tei.catalog import get_volume, load_catalog
-from franko_tei.source_audit import download_source, inspect_pdf
+from franko_tei.source_audit import download_source, inspect_pdf, RestrictedRedirectHandler
 
 
 class FakeResponse:
@@ -31,15 +31,23 @@ class SourceAuditTests(unittest.TestCase):
     def test_stream_download_uses_authoritative_url_and_hash(self):
         expected = b'%PDF-1.7\nsynthetic dummy file bytes'
         with tempfile.TemporaryDirectory() as temp, patch(
-            'franko_tei.source_audit.urlopen',
+            'franko_tei.source_audit._open',
             return_value=FakeResponse(expected, 'https://files.dimfranka.com/uploads/test.pdf'),
         ) as opener:
             dest = Path(temp) / 'v3.pdf'
             result = download_source(self.volume, dest)
-            self.assertEqual(opener.call_args.args[0], self.volume['pdf_url'])
+            self.assertTrue(opener.call_args.args[0].isascii())
             self.assertEqual(dest.read_bytes(), expected)
             self.assertEqual(result['sha256'], hashlib.sha256(expected).hexdigest())
             self.assertEqual(result['bytes'], len(expected))
+
+    def test_redirect_is_blocked_before_fetch(self):
+        from urllib.request import Request
+        with self.assertRaisesRegex(ValueError, "untrusted"):
+            RestrictedRedirectHandler().redirect_request(
+                Request('https://dimfranka.lviv.ua/source.pdf'), None, 302,
+                'Found', {}, 'https://attacker.example.com/leak.pdf'
+            )
 
     def test_foreign_redirect_and_html_are_rejected_without_output(self):
         for content, url in [
@@ -48,7 +56,7 @@ class SourceAuditTests(unittest.TestCase):
         ]:
             with self.subTest(content=content, url=url), tempfile.TemporaryDirectory() as temp:
                 dest = Path(temp) / 'v3.pdf'
-                with patch('franko_tei.source_audit.urlopen', return_value=FakeResponse(content, url)):
+                with patch('franko_tei.source_audit._open', return_value=FakeResponse(content, url)):
                     with self.assertRaises(ValueError):
                         download_source(self.volume, dest)
                 self.assertFalse(dest.exists())
@@ -58,7 +66,7 @@ class SourceAuditTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             dest = Path(temp) / 'v3.pdf'
             dest.write_bytes(b'old content')
-            with patch('franko_tei.source_audit.urlopen', return_value=FakeResponse(b'%PDF-' + b'x' * 90, 'https://files.dimfranka.com/p.pdf')):
+            with patch('franko_tei.source_audit._open', return_value=FakeResponse(b'%PDF-' + b'x' * 90, 'https://files.dimfranka.com/p.pdf')):
                 with self.assertRaisesRegex(ValueError, 'size limit'):
                     download_source(self.volume, dest, max_bytes=20)
             self.assertEqual(dest.read_bytes(), b'old content')

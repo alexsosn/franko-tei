@@ -4,8 +4,8 @@ Never upload the PDF itself: digital-scan redistribution terms are unverified.
 """
 from hashlib import sha256
 from pathlib import Path
-from urllib.parse import urlparse
-from urllib.request import urlopen
+from urllib.parse import urlparse, urlsplit, urlunsplit, quote
+from urllib.request import HTTPRedirectHandler, build_opener
 
 from .ingest import sha256_file
 
@@ -15,6 +15,26 @@ _ALLOWED_HOSTS = {"dimfranka.lviv.ua", "files.dimfranka.com"}
 def _trusted_url(url):
     parsed = urlparse(url)
     return parsed.scheme == "https" and parsed.hostname in _ALLOWED_HOSTS and parsed.username is None and parsed.password is None
+
+
+class RestrictedRedirectHandler(HTTPRedirectHandler):
+    """Reject cross-site redirects before any follow-up network request."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not _trusted_url(newurl):
+            raise ValueError("Download redirected to an untrusted host")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def _ascii_url(url):
+    """urllib's HTTP request paths must be percent-encoded (Ukrainian filenames)."""
+    parts = urlsplit(url)
+    return urlunsplit((parts.scheme, parts.netloc, quote(parts.path, safe="/%:@-._~"),
+                       quote(parts.query, safe="=&%:/?@-._~"), parts.fragment))
+
+
+def _open(url, timeout):
+    return build_opener(RestrictedRedirectHandler()).open(url, timeout=timeout)
 
 
 def download_source(volume, destination, max_bytes=1_000_000_000):
@@ -32,7 +52,7 @@ def download_source(volume, destination, max_bytes=1_000_000_000):
     digest = sha256()
     total = 0
     try:
-        with urlopen(url, timeout=120) as response:
+        with _open(_ascii_url(url), timeout=120) as response:
             if not _trusted_url(response.geturl()):
                 raise ValueError("Download redirected to an untrusted host")
             with temporary.open("wb") as out:
