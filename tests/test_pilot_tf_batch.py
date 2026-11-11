@@ -113,9 +113,17 @@ class BatchTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "duplicate|same"):
             merge_pilot_graphs([
                 ("4", 100, self.first_graph), ("4", 100, self.first_graph)])
+        # A source URL copied from the first page into the second is forged.
+        forged = copy.deepcopy(self.second_graph)
+        p = next(n for n, k in forged.node_features["otype"].items()
+                 if k == "page")
+        first_p = next(n for n, k in self.first_graph.node_features["otype"].items()
+                       if k == "page")
+        forged.node_features["imageUrl"][p] = (
+            self.first_graph.node_features["imageUrl"][first_p])
         with self.assertRaisesRegex(ValueError, "source|image|duplicate"):
             merge_pilot_graphs([
-                ("4", 100, self.first_graph), ("5", 10, self.first_graph)])
+                ("4", 100, self.first_graph), ("5", 10, forged)])
 
     def test_rejects_promoted_graph_and_wrong_scan_dimension(self):
         promoted = copy.deepcopy(self.second_graph)
