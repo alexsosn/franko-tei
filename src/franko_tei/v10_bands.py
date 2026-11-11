@@ -116,6 +116,9 @@ def isolate_group(image, rows, column, take=4, divider=615):
         entry["crop_status"]="unverified_baseline_isolation"
         entry["requires_visual_review"]=True
         entry["seam_black_fraction"]=splits[i][1]
+        entry["seam_may_cut_ink"]=splits[i][1] >= 0.04
+        entry["titla_review_required"]=True
+        entry["incoming_seam_black_fraction"]=splits[i-1][1] if i>0 else None
         entry["seam_y"]=high
         entry["source_bbox_xywh"]=line["bbox_xywh"]
         entry["risk"]="Horizontal cut may lose titla, superscript glyphs or ligatures; inspect actual original."
