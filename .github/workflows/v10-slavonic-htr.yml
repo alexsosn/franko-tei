@@ -181,6 +181,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: franko-v10-specialist-ocr-unverified-two-column
-          path: ocr-results/*.json
+          path: |
+            ocr-results/*.json
+            geometry/v10-isolated-source-bands.json
           retention-days: 7
           if-no-files-found: error
