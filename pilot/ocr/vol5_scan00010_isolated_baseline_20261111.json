@@ -274,5 +274,56 @@
       "seam_black_fraction": 0.009662,
       "text": "и҆ въстава́ѧ, и҆ рꙋка́ма дерѧа̀ дѣло, и҆ ти"
     }
-  ]
+  ],
+  "candidate_seams": {
+    "l00002": {
+      "dark_fraction": 0.060914,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": true,
+      "reason": "At least four percent of sampled x positions are dark on selected seam: a title glyph/supralinear mark may be split, no text certification."
+    },
+    "l00003": {
+      "dark_fraction": 0.019802,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": false,
+      "reason": "Even a low-ink horizontal seam cannot guarantee supralinear mark survival; check original."
+    },
+    "l00004": {
+      "dark_fraction": 0.024752,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": false,
+      "reason": "Even a low-ink horizontal seam cannot guarantee supralinear mark survival; check original."
+    },
+    "l00005": {
+      "dark_fraction": 0.009901,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": false,
+      "reason": "Even a low-ink horizontal seam cannot guarantee supralinear mark survival; check original."
+    },
+    "l00039": {
+      "dark_fraction": 0.009662,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": false,
+      "reason": "Even a low-ink horizontal seam cannot guarantee supralinear mark survival; check original."
+    },
+    "l00040": {
+      "dark_fraction": 0.019512,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": false,
+      "reason": "Even a low-ink horizontal seam cannot guarantee supralinear mark survival; check original."
+    },
+    "l00041": {
+      "dark_fraction": 0.024272,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": false,
+      "reason": "Even a low-ink horizontal seam cannot guarantee supralinear mark survival; check original."
+    },
+    "l00042": {
+      "dark_fraction": 0.009662,
+      "requires_manual_glyph_audit": true,
+      "may_cut_titlo_or_ligature": false,
+      "reason": "Even a low-ink horizontal seam cannot guarantee supralinear mark survival; check original."
+    }
+  },
+  "review_warning": "First left title crop seam L00002 crosses roughly 6.1% ink pixels at y=211, high for sparse text; requires actual image overlay review of both L00002 and L00003 prior to accepting any letters. No claim that nonoverlapping bands preserve all historical signs."
 }
