@@ -7,6 +7,8 @@ on:
       - tests/test_v10_htr_gates.py
       - pilot/reviews/vol5_scan00010_zoom_reinspection.json
       - .github/workflows/v10-slavonic-htr.yml
+      - src/franko_tei/v10_bands.py
+      - tests/test_v10_bands.py
   workflow_dispatch:
 permissions:
   contents: read
@@ -69,6 +71,33 @@ jobs:
               assert x+w/2>615 and h>0, ('right crop crossed column',line)
           print('4 left + 4 right Kraken candidates; unverified physical segmentation.')
           PY
+      - name: Build nonoverlapping, explicitly unverified baseline bands
+        run: |
+          franko-v10-bands --images real-images --layout geometry/vol5/vol5-page-00010-kraken-layout.json --output geometry/v10-isolated-source-bands.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('geometry/v10-isolated-source-bands.json').read_text())
+          assert d['source_image_sha256']=='3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c'
+          assert d['line_count']==8 and len(d['lines'])==8
+          assert not d['transcription_verified'] and not d['titla_preservation_verified']
+          ids=set()
+          for name, group in (('left',d['lines'][:4]),('right',d['lines'][4:])):
+              for r in group:
+                  b=r['bbox_xywh']
+                  assert r['candidate_line_id'] not in ids
+                  ids.add(r['candidate_line_id'])
+                  assert r['crop_status']=='unverified_baseline_isolation'
+                  assert r['requires_visual_review'] is True
+                  assert 0<=r['seam_black_fraction']<=1
+                  assert (b[0]+b[2]<=615 if name=='left' else b[0]>=615)
+              for a,b in zip(group,group[1:]):
+                  ya=a['bbox_xywh'][1]+a['bbox_xywh'][3]
+                  yb=b['bbox_xywh'][1]
+                  assert ya==yb, (name,'overlap or missed row pixels',ya,yb)
+              print(name, [(r['bbox_xywh'],r['seam_black_fraction']) for r in group])
+          print('Eight disjoint source bands only; no claim of correct glyphs or titla.')
+          PY
       - name: Fetch reproducible Polyscriptor CRNN inference implementation
         run: |
           set -euo pipefail
@@ -109,6 +138,11 @@ jobs:
           # This comparison is diagnostic, not a choice of winning OCR model.
           franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 2 --max-lines 4 --margin-y 8 --output ocr-results/v5s00010-left-tight.json
           franko-crnn-probe --images real-images --volume 5 --layout geometry/vol5/vol5-page-00010-kraken-layout.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 39 --max-lines 4 --margin-y 8 --output ocr-results/v5s00010-right-tight.json
+      - name: Run pinned models on eight disjoint rows without crop margins
+        run: |
+          set -euo pipefail
+          franko-crnn-probe --images real-images --volume 5 --layout geometry/v10-isolated-source-bands.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 1 --max-lines 4 --margin-x 0 --margin-y 0 --output ocr-results/v5s00010-left-isolated.json
+          franko-crnn-probe --images real-images --volume 5 --layout geometry/v10-isolated-source-bands.json --model-specs models/model-specs.json --inference-script upstream/inference_pylaia_native.py --start-line 5 --max-lines 4 --margin-x 0 --margin-y 0 --output ocr-results/v5s00010-right-isolated.json
       - name: Audit source hashes, model pairing, script-critical diagnostic candidates
         run: |
           python - <<'PY'
@@ -129,6 +163,18 @@ jobs:
                   by_id.setdefault(r['candidate_line_id'],set()).add(r['crop_png_sha256'])
                   print(f"{col} {r['candidate_line_id']} {r['model_name']}: {r['transcription'][:130]}")
               assert len(by_id)==4 and all(len(hashes)==1 for hashes in by_id.values())
+          for col in ('left','right'):
+              f=Path('ocr-results')/f'v5s00010-{col}-isolated.json'
+              records=json.loads(f.read_text(encoding='utf8'))
+              assert len(records)==8
+              groups={}
+              for r in records:
+                  assert r['status']=='ocr_unchecked'
+                  assert r['margin_px']==[0,0]
+                  assert r['source_image_sha256']=='3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c'
+                  groups.setdefault(r['candidate_line_id'],set()).add(r['crop_png_sha256'])
+                  print('isolated',col,r['candidate_line_id'],r['model_name'],r['transcription'][:140])
+              assert len(groups)==4 and all(len(v)==1 for v in groups.values())
           print('No CER or verified transcription; candidates are out-of-domain until independently checked.')
           PY
       - name: Publish only short-lived TEXT candidates, no source scans or weights
