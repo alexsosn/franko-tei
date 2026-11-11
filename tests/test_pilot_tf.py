@@ -65,8 +65,8 @@ class PilotTextFabricTests(unittest.TestCase):
                     for line in r["lines"] for s in line["language_spans"]]
         self.assertEqual(len(span_nodes), len(expected))
         for node, span in zip(span_nodes, expected):
-            self.assertEqual(nf["lang"][node], span["language"])
-            self.assertEqual(nf["script"][node], span["script"])
+            self.assertEqual(nf.get("lang", {}).get(node), span["language"])
+            self.assertEqual(nf.get("script", {}).get(node), span["script"])
             self.assertEqual(nf["languageUncertain"][node],
                              "yes" if span["uncertain"] else "no")
             self.assertEqual(len(ef["oslots"][node]), span["end"] - span["start"])
@@ -98,7 +98,7 @@ class PilotTextFabricTests(unittest.TestCase):
         first["language_spans"] = [
             {"text_version": data["reading"]["reader_id"], "start": 0, "end": 2,
              "language": "chu", "script": "Cyrl", "uncertain": True},
-            {"text_version": data["reading"]["reader_id"], "start": 10, "end": 11,
+            {"text_version": data["reading"]["reader_id"], "start": 9, "end": 10,
              "language": "grc", "script": "Grek", "uncertain": False},
         ]
         data["reading"]["raw_response"] = "\n".join(
