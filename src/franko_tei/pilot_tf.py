@@ -4,6 +4,7 @@ No OCR or manuscript witness values are synthesized. All character slots are
 copied code point for code point from physical lb-anchored lines in the TEI.
 """
 from dataclasses import dataclass
+from decimal import Decimal, InvalidOperation
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -46,16 +47,19 @@ def _zones(surface):
     def collect(zone,parent_id,parent_bounds):
         ident=_required_id(zone,'zone',seen)
         try:
-            x0,y0,x1,y1=[int(zone.get(k)) for k in ('ulx','uly','lrx','lry')]
-        except (ValueError,TypeError) as exc:
+            raw=[zone.get(k) for k in ('ulx','uly','lrx','lry')]
+            x0,y0,x1,y1=[Decimal(value) for value in raw]
+        except (ValueError,InvalidOperation,TypeError) as exc:
             raise ValueError('malformed facsimile zone coordinates') from exc
+        if not all(value.is_finite() for value in (x0,y0,x1,y1)):
+            raise ValueError('nonfinite facsimile zone coordinates')
         if (x0<parent_bounds[0] or y0<parent_bounds[1]
                 or x1>parent_bounds[2] or y1>parent_bounds[3]
                 or x1<=x0 or y1<=y0):
             raise ValueError('facsimile zone outside parent bounds')
         if zone.get('type') not in ('estimated','measured'):
             raise ValueError('facsimile zone type must be estimated or measured')
-        zones[ident]={'x':x0,'y':y0,'w':x1-x0,'h':y1-y0,
+        zones[ident]={'x':raw[0],'y':raw[1],'w':str(x1-x0),'h':str(y1-y0),
                       'estimated':zone.get('type')=='estimated',
                       'parent':parent_id}
         if parent_id is not None and zone.findall(tag('zone')):
@@ -270,7 +274,7 @@ def build_tf_graph(xml):
         'otype':{'valueType':'str'},
         'oslots':{'valueType':'int'},
     }
-    integer_features={'codepoint','languageUncertain','scanPage','x','y','w','h','geometryEstimated'}
+    integer_features={'codepoint','languageUncertain','scanPage','geometryEstimated'}
     for name in node_features:
         if name not in metadata:
             metadata[name]={'valueType':'int' if name in integer_features else 'str'}
