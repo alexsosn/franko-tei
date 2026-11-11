@@ -1,0 +1,138 @@
+name: "IV/101: source-pinned Church Slavonic printed-page OCR probe"
+on:
+  pull_request:
+    paths:
+      - .github/workflows/vol4-101-specialist-ocr.yml
+      - tests/test_vol4_page101_ocr.py
+      - src/franko_tei/crnn_probe.py
+      - src/franko_tei/kraken_layout.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  printed-page-ocr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      PYTHONUNBUFFERED: "1"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing source-linked CPU OCR pipeline
+        run: |
+          python -m pip install -e '.[page-assets]'
+          python -m pip install 'kraken==7.1.1' huggingface_hub torchvision
+      - name: Fetch and rehash pinned printed V4/101 JPEG and manifest
+        run: |
+          set -euo pipefail
+          mkdir -p native-images/vol4
+          SRC=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol4
+          curl --fail --silent --show-error --location --retry 2 "$SRC/manifest.json" -o native-images/vol4/manifest.json
+          curl --fail --silent --show-error --location --retry 2 "$SRC/page-00101.jpg" -o native-images/vol4/page-00101.jpg
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('native-images/vol4/page-00101.jpg')
+          m=json.loads(Path('native-images/vol4/manifest.json').read_text())
+          expected='7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447'
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==expected
+          assert m['pages'][100]['scan_page']==101
+          assert next(a['sha256'] for a in m['pages'][100]['artifacts'] if a['role']=='page_image')==expected
+          assert (m['pages'][100]['width'],m['pages'][100]['height'])==(1190,1772)
+          print('Verified physical IV/101 image identity; original printed line segmentation remains unverified.')
+          PY
+      - name: Discover native segmentation with source-linked Kraken
+        run: |
+          franko-kraken-layout --images native-images --volume 4 --pages 101 --output geometry/vol4
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('geometry/vol4/vol4-page-00101-kraken-layout.json')
+          d=json.loads(p.read_text(encoding='utf8'))
+          assert d['status']=='segmentation_unchecked'
+          assert d['source_image_sha256']=='7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447'
+          assert d['line_count']==len(d['lines'])
+          assert len(d['lines'])>=11
+          # Actual pinned-source first run 43092339418 revealed this as
+          # excluded Kraken candidate #2: a 6px top-right ghost/artifact,
+          # not a valid physical text line for a line OCR recognizer.
+          fx,fy,fw,fh=d['lines'][1]['bbox_xywh']
+          assert fw<=10 and fy<200 and fx>950, ('layout drift',d['lines'][1])
+          assert d['lines'][0]['bbox_xywh'][2]>100
+          assert all(r['bbox_xywh'][2]>100 for r in d['lines'][2:11])
+          for i,row in enumerate(d['lines'][:11]):
+              print('Source candidate',i+1,'bbox',row['bbox_xywh'],
+                    'EXCLUDED FROM TEXT OCR' if i==1 else 'OCR hypothesis only')
+          print('Kraken candidate count',d['line_count'], 'not a verified physical-line count.')
+          PY
+      - name: Fetch pinned Polyscriptor code and manuscript/early-print OCR model revisions
+        run: |
+          set -euo pipefail
+          mkdir -p upstream
+          SRC=https://raw.githubusercontent.com/achimrabus/polyscriptor/7994ccadc537c59b0b90eb25b66dfa5d54976d6d
+          curl --fail --location --retry 2 --silent --show-error "$SRC/inference_pylaia_native.py" -o upstream/inference_pylaia_native.py
+          curl --fail --location --retry 2 --silent --show-error "$SRC/htr_engine_base.py" -o upstream/htr_engine_base.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from huggingface_hub import snapshot_download
+          specs={}
+          for name,repo,revision in [
+              ('church-slavonic','achimrabus/crnn-ctc-church-slavonic','2b253a83840eba1948e750b246d60991d3a15285'),
+              ('prosta-mova','achimrabus/crnn-ctc-prosta-mova','db88dcb5dfb767ef27066b012271cf4e6eb31a40')]:
+              loc=Path('models')/name
+              snapshot_download(repo_id=repo,revision=revision,allow_patterns=['best_model.pt','symbols.txt'],local_dir=str(loc))
+              assert (loc/'best_model.pt').is_file() and (loc/'symbols.txt').is_file()
+              specs[name]={'repo':repo,'revision':revision,'checkpoint':str(loc/'best_model.pt'),
+                           'symbols':str(loc/'symbols.txt')}
+          Path('models/specs.json').write_text(json.dumps(specs,indent=2),encoding='utf8')
+          PY
+      - name: Try both OCR domains on same ten original image crops
+        run: |
+          franko-crnn-probe --images native-images --volume 4 --layout geometry/vol4/vol4-page-00101-kraken-layout.json --model-specs models/specs.json --inference-script upstream/inference_pylaia_native.py --start-line 1 --max-lines 1 --margin-y 8 --output ocr-output/iv101-section-heading.json
+          franko-crnn-probe --images native-images --volume 4 --layout geometry/vol4/vol4-page-00101-kraken-layout.json --model-specs models/specs.json --inference-script upstream/inference_pylaia_native.py --start-line 3 --max-lines 9 --margin-y 8 --output ocr-output/iv101-witness-and-body.json
+      - name: Fail-closed source provenance and paired-model audit
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows=[]
+          for name in ('section-heading','witness-and-body'):
+              rows+=json.loads(Path('ocr-output/iv101-'+name+'.json').read_text(encoding='utf8'))
+          assert len(rows)==20
+          # Same frozen source layout as actual first run; excluded false
+          # candidate #2 must never be promoted as an OCR physical line.
+          layout=json.loads(Path('geometry/vol4/vol4-page-00101-kraken-layout.json').read_text(encoding='utf8'))
+          ignored=layout['lines'][1]['candidate_line_id']
+          assert all(r['candidate_line_id']!=ignored for r in rows)
+          paired={}
+          for r in rows:
+              assert r['status']=='ocr_unchecked'
+              assert r['source_image_sha256']=='7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447'
+              assert len(r['crop_png_sha256'])==64
+              assert len(r['model_checkpoint_sha256'])==64
+              paired.setdefault(r['candidate_line_id'],[]).append(r)
+          assert len(paired)==10
+          for line_id,pair in paired.items():
+              assert len(pair)==2
+              assert {x['model_name'] for x in pair}=={'church-slavonic','prosta-mova'}
+              assert len({x['crop_png_sha256'] for x in pair})==1
+              for item in pair:
+                  print('RAW_IV101',line_id,item['model_name'],json.dumps(item['transcription'],ensure_ascii=False))
+                  print('FRANKO_IV101_RECORD_JSON '+json.dumps(item,ensure_ascii=False,separators=(',',':')))
+          print('Ten unreviewed Kraken candidates, 20 machine hypotheses; original printed line segmentation remains unverified.')
+          PY
+      - name: Retain text-only diagnostics, not scans or model files
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-IV-101-printed-church-slavonic-ocr-unchecked
+          path: |
+            ocr-output/*.json
+            geometry/vol4/*-kraken-layout.json
+          retention-days: 30
+          if-no-files-found: error
