@@ -1,0 +1,492 @@
+{
+  "schema_version": "v10-zoom-reinspection-research-v0",
+  "status": "incomplete_visual_reinspection",
+  "volume": "5",
+  "scan_page": 10,
+  "printed_page_observed": null,
+  "source_asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_path": "vol5/page-00010.jpg",
+  "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+  "source_image_dimensions": [
+    1190,
+    1701
+  ],
+  "image_sha256_origin": "pinned source manifest, not independently rehashed in this reinspection",
+  "context_id": "chat-gpt6-v10-zoom-reinspection-20261111",
+  "independent_blind_reader": false,
+  "prior_draft_visible": true,
+  "original_pdf_ocr_used_for_readings": false,
+  "cropping": {
+    "nearest_neighbor": true,
+    "generative": false,
+    "decoder": "native source JPEG baseline decode to 8-bit grayscale and 2x nearest-neighbor PNG render; no text enhancement",
+    "original_crop_boxes_xywh": [
+      [
+        150,
+        120,
+        450,
+        500
+      ],
+      [
+        160,
+        430,
+        440,
+        490
+      ],
+      [
+        160,
+        905,
+        440,
+        480
+      ],
+      [
+        630,
+        50,
+        430,
+        480
+      ],
+      [
+        630,
+        1000,
+        430,
+        490
+      ]
+    ]
+  },
+  "coverage": {
+    "full_text_read": false,
+    "left_column_unread": true,
+    "right_column_unread": true,
+    "facsimile_title_provisional": true,
+    "modern_caption_complete_provisional": true,
+    "previous_draft_total_slot_count_approximate": 92,
+    "previous_draft_unread_slot_count_approximate": 71,
+    "geometry_warning": "Kraken produced 85 candidate regions incl. three merged-column boxes and a nontext marginal candidate; counts not physical line gold"
+  },
+  "eligible_for_tei_tf": false,
+  "regions": {
+    "title": [
+      {
+        "line_id": "T01",
+        "literal_observed_hypothesis": "М҃ца апрїлѧ, въ пръвый",
+        "provisional": true,
+        "image_bbox_xywh": [
+          190,
+          167,
+          400,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Opening month/date; ў/ѧ and superscript sign still disputable."
+      },
+      {
+        "line_id": "T02",
+        "literal_observed_hypothesis": "днь. Житїе иже въ пре-",
+        "provisional": true,
+        "image_bbox_xywh": [
+          190,
+          201,
+          400,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Original may contain a separate word near 'Житїе'; requires precise reinspection."
+      },
+      {
+        "line_id": "T03",
+        "literal_observed_hypothesis": "подобныхъ мтри нашеѧ",
+        "provisional": true,
+        "image_bbox_xywh": [
+          190,
+          235,
+          400,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Letter after 'подобн' and m-titlo uncertain."
+      },
+      {
+        "line_id": "T04",
+        "literal_observed_hypothesis": "Марїи египтѧнскиѧ. спї-",
+        "provisional": true,
+        "image_bbox_xywh": [
+          190,
+          270,
+          400,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Egyptian epithet might be spelled differently in visible old print."
+      },
+      {
+        "line_id": "T05",
+        "literal_observed_hypothesis": "сано софронїемъ, патрїа-",
+        "provisional": true,
+        "image_bbox_xywh": [
+          190,
+          304,
+          400,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Historical accent and final line break provisional."
+      },
+      {
+        "line_id": "T06",
+        "literal_observed_hypothesis": "рхомъ ієрл҃мьскимъ.",
+        "provisional": true,
+        "image_bbox_xywh": [
+          190,
+          339,
+          400,
+          34
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Jerusalem contraction and titlo shape unclear."
+      },
+      {
+        "line_id": "T07",
+        "literal_observed_hypothesis": "Бл҃сви, ѡ҃че.",
+        "provisional": true,
+        "image_bbox_xywh": [
+          260,
+          398,
+          275,
+          28
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Blessing printed below the title, punctuation/titla unresolved."
+      }
+    ],
+    "left_body": [
+      {
+        "line_id": "L01",
+        "literal_observed_hypothesis": "Тайнꙋ цр҃евꙋ добро єсть таити, а",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          480,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Large initial is ornamental, letter identities in first words provisional."
+      },
+      {
+        "line_id": "L02",
+        "literal_observed_hypothesis": "дѣла бж҃їа проповѣдати преславно",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          514,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Final suffix and titular glyphs should be checked against enlarged source."
+      },
+      {
+        "line_id": "L03",
+        "literal_observed_hypothesis": "єсть. тако бо рече аг҃глъ к товитꙋ,",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          547,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Apostrophe/titlo and Tobit name uncertain."
+      },
+      {
+        "line_id": "L04",
+        "literal_observed_hypothesis": "его прозрѣнїи",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          579,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Only this central fragment recognized; beginning and ending of physical line unread."
+      },
+      {
+        "line_id": "L05",
+        "literal_observed_hypothesis": "не хранити бо тайны цр҃ѧ",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          612,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Fragment; more letters visible at right of this physical line but not secure."
+      },
+      {
+        "line_id": "L06",
+        "literal_observed_hypothesis": "а еже молчати дѣла",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          643,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Fragment anchored near line end; rest remains unresolved."
+      },
+      {
+        "line_id": "L07",
+        "literal_observed_hypothesis": "бж҃їа преславна",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          675,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Not the entire physical line; script/abbreviation tentative."
+      },
+      {
+        "line_id": "L08",
+        "literal_observed_hypothesis": "тѣмже и азъ боюся молчати дѣла",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          710,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Candidate broad literal line; unresolved superscripts."
+      },
+      {
+        "line_id": "L09",
+        "literal_observed_hypothesis": "бж҃їа, воспоминаѧ мꙋкꙋ раба оного",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          742,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Letter group in 'мꙋкꙋ' and title uncertain; visual hypothesis only."
+      },
+      {
+        "line_id": "L10",
+        "literal_observed_hypothesis": "прїимшаго г҃на талантъ и въ земли со-",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          775,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Line wrap and sacral abbreviation provisional."
+      },
+      {
+        "line_id": "L11",
+        "literal_observed_hypothesis": "кры",
+        "provisional": true,
+        "image_bbox_xywh": [
+          177,
+          807,
+          421,
+          32
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Only a small beginning of this physically printed line can be proposed; it remains unread beyond these three candidate letters. Previous draft also suggests this run but is NOT independent corroboration."
+      }
+    ],
+    "right_fragments": [
+      {
+        "line_id": "R01",
+        "literal_observed_hypothesis": "начала творѧще",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          78,
+          410,
+          31
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Small isolated central stretch; right column starts earlier than the left body."
+      },
+      {
+        "line_id": "R02",
+        "literal_observed_hypothesis": "хранѧще",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          111,
+          410,
+          31
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "One word only, remaining physical line unread."
+      },
+      {
+        "line_id": "R03",
+        "literal_observed_hypothesis": "оутїніѧ",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          144,
+          410,
+          31
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Low-certainty fragment; may not be exact old-print vowel."
+      },
+      {
+        "line_id": "R04",
+        "literal_observed_hypothesis": "дѣла",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          177,
+          410,
+          31
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "One word in right opening region; all surrounding text unread."
+      },
+      {
+        "line_id": "R08",
+        "literal_observed_hypothesis": "молчати",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          304,
+          410,
+          31
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Single word; not enough to establish reading of entire line."
+      },
+      {
+        "line_id": "R09",
+        "literal_observed_hypothesis": "младенства",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          336,
+          410,
+          31
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Word hypothesis from original printed line, other words unread."
+      },
+      {
+        "line_id": "R-lower-unknown-index-a",
+        "literal_observed_hypothesis": "игꙋменꙋ",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          1006,
+          410,
+          48
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Near upper edge of enlarged right-bottom crop; physical row number not securely reconciled with Kraken or the previous draft."
+      },
+      {
+        "line_id": "R-lower-unknown-index-b",
+        "literal_observed_hypothesis": "послуша",
+        "provisional": true,
+        "image_bbox_xywh": [
+          636,
+          1042,
+          410,
+          46
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": false,
+        "source_note": "Candidate word on next right-bottom printed row; not an exact full-line reading or reliable row index."
+      }
+    ],
+    "caption": [
+      {
+        "line_id": "C01",
+        "literal_observed_hypothesis": "Подобизна першої сторони старого друку без означеня місця і року, правдоподібно",
+        "provisional": true,
+        "image_bbox_xywh": [
+          193,
+          1578,
+          875,
+          22
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": true,
+        "source_note": "Franko's modern caption, not the facsimile's historical text."
+      },
+      {
+        "line_id": "C02",
+        "literal_observed_hypothesis": "з початку XVII віку, що містить саму тільки легенду про Марію Єгиптянку, 6 карток,",
+        "provisional": true,
+        "image_bbox_xywh": [
+          193,
+          1603,
+          875,
+          22
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": true,
+        "source_note": "Separate printed caption with estimated physical bounding box."
+      },
+      {
+        "line_id": "C03",
+        "literal_observed_hypothesis": "11 сторін друку, без пагінації. Подобизна в форматі оріґіналу.",
+        "provisional": true,
+        "image_bbox_xywh": [
+          290,
+          1627,
+          720,
+          24
+        ],
+        "geometry_estimated": true,
+        "line_fully_read": true,
+        "source_note": "Final caption line; original Ukrainian orthography retained."
+      }
+    ]
+  },
+  "textual_notes": [
+    "These snippets are a direct, unverified image-grounded reinspection, not an independent blind first reading; the previous PR #30 provisional text grid was visible before this JSON was saved.",
+    "Exact literal physical lines are not claimed outside the explicitly line_fully_read=true entries. Quoted fragments must not be concatenated into fabricated text.",
+    "The first reproduction is a seventeenth-century printed source as shown by Franko, not automatically a manuscript witness. The Ukrainian caption is Franko's separate voice.",
+    "None of the 71 previously unresolved slots was silently resolved by borrowing a parallel Life of Mary of Egypt. This record is strictly a reading-aid pending complete line-by-line native-image text.",
+    "Enlargement was pixel repetition, not ML-enhanced super-resolution. Small titla and diacritics can remain unresolvable at source-image resolution.",
+    "Failure-oriented internal source recheck corrected two unsupported over-specific assertions: an L11 fragment and exact right-column line indices. The preserved earlier data commit bff23b6 records the pre-review working hypothesis.",
+    "A red-first review gate demonstrated that L01–L03 were falsely labelled entire-line readings while their titla had not been independently checked; changed to `line_fully_read=false` without altering raw hypotheses."
+  ]
+}
