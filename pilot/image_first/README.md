@@ -46,3 +46,27 @@ A separate metadata/shape pass re-fetched and counted fenced transcription block
 - V/100: 1+8+4+18+5+4+2 = **42** lines.
 - V/10: 7+35+47+3 = **92** marked line slots, **71** containing unresolved text.
 - No comparison-based historical CER, independent transcriber certification, genuine double-blind reading or full-volume E2E is claimed.
+
+## Subsequent source-checked TEI→TF progress (same day)
+
+The TDD red gate first failed in [CI 43058788978](https://github.com/alexsosn/franko-tei/actions/runs/43058788978) until the new JSON files existed. Directly copied source-line blocks from the archived I/20 and III/130 first Markdown files were converted to source-linked `single-image-draft-v0` JSON. Estimated region/line pixel boxes and Unicode script spans are clearly marked as inferred annotations, **not measured ground truth**. The independent-review gate remains outstanding.
+
+The original II/100 and V/100 first Markdown files are **immutable**. Later same-context visual reinspection of those two source JPEGs is retained as `vol2_scan00100_reinspection_v1.json` and `vol5_scan00100_reinspection_v1.json`, each containing explicit before/after physical-line versions and an uncertainty note. The corresponding `*_single_reading_v1.json` texts encode those versions; their derivation is transparent, and they are **not** a second blind reading or human-certified transcription.
+
+Actual image-hash-checked TEI→TF smoke has now passed on **five distinct real scans** (I/20, II/100, III/130, IV/100, V/100): [five-page Action 43061787974](https://github.com/alexsosn/franko-tei/actions/runs/43061787974). The job:
+
+1. Downloads only the five original JPEGs and the unchanged pinned source manifests; authenticates exact manifest Git blobs and rehashes actual image bytes.
+2. Rebuilds TEI P5 directly from the saved single-context draft JSON; checks the existing IV/100 XML is byte-identical.
+3. Validates five XML documents against TEI P5 **4.12.0 Relax NG**. TEI Schematron is **not** claimed to have been run.
+4. Uses the real `franko-pilot-tf-batch` CLI, saves and reloads Text-Fabric, checks page IDs, image hashes, status, and every original character slot and physical line against source JSON.
+5. Uploads **text-only TEI and TF** for temporary reproducible inspection, no raw scan images.
+
+This exposed an actual bug: the multi-page composer rejected compatible but different optional feature sets. Fixed separately with red/green tests and logically distinct adversarial review in [#31](https://github.com/alexsosn/franko-tei/issues/31) / [merged PR #33](https://github.com/alexsosn/franko-tei/pull/33).
+
+### Hard remaining blockers
+
+- V/10 still contains 71 incomplete (approximate) old-print line slots; a facsimile containing `⟦…⟧` must **never** be called fully transcribed or silently converted into real Unicode TF character slots.
+- None of the five first readings has two actually blind agent contexts plus a third independent image-grounded text reviewer. The code-review and TEI schema gates do not prove philological reading accuracy.
+- Printed page labels are observed from the original scans; unknown upstream pagination is preserved. Feature-level language and geometry annotations remain provisional.
+- Pilot/issue #11 and PR #30 remain open/draft until full text, independent review, and full-region coverage meet their acceptance gates.
+
