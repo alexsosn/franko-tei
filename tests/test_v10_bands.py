@@ -118,5 +118,18 @@ class IsolatedV10Tests(unittest.TestCase):
                 self.assertEqual(x[3],y[1])
 
 
+    def test_broad_mode_audits_many_rows_but_never_certifies_titla(self):
+        img=Image.new("RGB",(220,660),"white")
+        rows=sample(n=15)
+        out=isolate_group(img,rows,column="left",take=14,divider=155,allow_short=True)
+        self.assertEqual(len(out),14)
+        self.assertTrue(all(row["requires_visual_review"] for row in out))
+        self.assertTrue(all(row["crop_status"]=="unverified_baseline_isolation" for row in out))
+        self.assertEqual([r["candidate_line_id"] for r in out], [r["candidate_line_id"] for r in rows[:14]])
+        for a,b in zip(out,out[1:]):
+            self.assertEqual(a["bbox_xywh"][1]+a["bbox_xywh"][3],b["bbox_xywh"][1])
+        self.assertTrue(all(isinstance(x["crop_too_short"],bool) for x in out))
+
+
 if __name__=="__main__":
     unittest.main()
