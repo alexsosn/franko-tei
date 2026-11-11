@@ -1,0 +1,1022 @@
+{
+  "schema_version": "v10-broad-source-geometry-audit-v0",
+  "status": "segmentation_unchecked",
+  "volume": "5",
+  "scan_page": 10,
+  "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+  "source_asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "original_kraken_native_json_sha256": "172d828bbb0601df96c950a6e4b16230c46e10cbd961231b1be12ae7c2b49b8b",
+  "original_kraken_layout_sha256": "a1355a47ab10d493b31c6881e918891490e91bcb641dc7fbcafe50ad88e5412f",
+  "source_run_id": 43078178554,
+  "source_run_url": "https://github.com/alexsosn/franko-tei/actions/runs/43078178554",
+  "source_artifact_id": 13882724278,
+  "source_artifact_sha256": "1c63e147ee9870f8856ea373900085a44974ae3dc33e09fc2d24c91cc9ddd183",
+  "source_provenance_note": "Audited from the source-pinned GitHub Actions complete derived geometry/v10-broad-source-bands.json in the referenced ZIP; preserves all 76 actual crop boxes and per-seam black fractions, not source imagery. Full original JSON includes baselines, boundaries, raw boxes and source audit details.",
+  "original_candidate_count": 85,
+  "excluded_candidate_ids": [
+    "v5-s00010-k317a17777203-l00001",
+    "v5-s00010-k317a17777203-l00038",
+    "v5-s00010-k317a17777203-l00079",
+    "v5-s00010-k317a17777203-l00080",
+    "v5-s00010-k317a17777203-l00081",
+    "v5-s00010-k317a17777203-l00082",
+    "v5-s00010-k317a17777203-l00083",
+    "v5-s00010-k317a17777203-l00084",
+    "v5-s00010-k317a17777203-l00085"
+  ],
+  "excluded_note": "1 marginal mark; 38 left terminal; 79 right terminal; 80-82 double-column merged bottom; 83-85 separate modern caption, not historical old-source content",
+  "coverage_complete": false,
+  "titla_verified": false,
+  "text_recognized": false,
+  "cer_measured": false,
+  "candidates": [
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00002",
+      "column": "left",
+      "bbox_xywh": [
+        191,
+        144,
+        403,
+        67
+      ],
+      "seam_dark_fraction": 0.060914,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00003",
+      "column": "left",
+      "bbox_xywh": [
+        184,
+        211,
+        414,
+        50
+      ],
+      "seam_dark_fraction": 0.019802,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00004",
+      "column": "left",
+      "bbox_xywh": [
+        184,
+        261,
+        413,
+        39
+      ],
+      "seam_dark_fraction": 0.024752,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00005",
+      "column": "left",
+      "bbox_xywh": [
+        184,
+        300,
+        413,
+        46
+      ],
+      "seam_dark_fraction": 0.009901,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00006",
+      "column": "left",
+      "bbox_xywh": [
+        184,
+        346,
+        417,
+        42
+      ],
+      "seam_dark_fraction": 0.037037,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00007",
+      "column": "left",
+      "bbox_xywh": [
+        312,
+        388,
+        63,
+        24
+      ],
+      "seam_dark_fraction": 0,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00008",
+      "column": "left",
+      "bbox_xywh": [
+        219,
+        412,
+        355,
+        44
+      ],
+      "seam_dark_fraction": 0.029703,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00009",
+      "column": "left",
+      "bbox_xywh": [
+        282,
+        456,
+        211,
+        35
+      ],
+      "seam_dark_fraction": 0,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00010",
+      "column": "left",
+      "bbox_xywh": [
+        195,
+        491,
+        402,
+        33
+      ],
+      "seam_dark_fraction": 0.016484,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00011",
+      "column": "left",
+      "bbox_xywh": [
+        224,
+        524,
+        377,
+        31
+      ],
+      "seam_dark_fraction": 0.038462,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00012",
+      "column": "left",
+      "bbox_xywh": [
+        184,
+        555,
+        414,
+        33
+      ],
+      "seam_dark_fraction": 0.00495,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00013",
+      "column": "left",
+      "bbox_xywh": [
+        185,
+        588,
+        413,
+        35
+      ],
+      "seam_dark_fraction": 0.029703,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00014",
+      "column": "left",
+      "bbox_xywh": [
+        185,
+        623,
+        423,
+        36
+      ],
+      "seam_dark_fraction": 0.014706,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00015",
+      "column": "left",
+      "bbox_xywh": [
+        184,
+        659,
+        418,
+        30
+      ],
+      "seam_dark_fraction": 0.019608,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00016",
+      "column": "left",
+      "bbox_xywh": [
+        184,
+        689,
+        417,
+        35
+      ],
+      "seam_dark_fraction": 0.004926,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00017",
+      "column": "left",
+      "bbox_xywh": [
+        185,
+        724,
+        417,
+        31
+      ],
+      "seam_dark_fraction": 0.00995,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00018",
+      "column": "left",
+      "bbox_xywh": [
+        185,
+        755,
+        412,
+        36
+      ],
+      "seam_dark_fraction": 0.015,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00019",
+      "column": "left",
+      "bbox_xywh": [
+        187,
+        791,
+        420,
+        35
+      ],
+      "seam_dark_fraction": 0.00995,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00020",
+      "column": "left",
+      "bbox_xywh": [
+        187,
+        826,
+        411,
+        37
+      ],
+      "seam_dark_fraction": 0.0199,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00021",
+      "column": "left",
+      "bbox_xywh": [
+        187,
+        863,
+        415,
+        33
+      ],
+      "seam_dark_fraction": 0.014851,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00022",
+      "column": "left",
+      "bbox_xywh": [
+        187,
+        896,
+        414,
+        31
+      ],
+      "seam_dark_fraction": 0.059406,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00023",
+      "column": "left",
+      "bbox_xywh": [
+        188,
+        927,
+        416,
+        33
+      ],
+      "seam_dark_fraction": 0.014778,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00024",
+      "column": "left",
+      "bbox_xywh": [
+        188,
+        960,
+        415,
+        36
+      ],
+      "seam_dark_fraction": 0.039409,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00025",
+      "column": "left",
+      "bbox_xywh": [
+        187,
+        996,
+        416,
+        28
+      ],
+      "seam_dark_fraction": 0.03,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00026",
+      "column": "left",
+      "bbox_xywh": [
+        193,
+        1024,
+        422,
+        41
+      ],
+      "seam_dark_fraction": 0.024752,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00027",
+      "column": "left",
+      "bbox_xywh": [
+        187,
+        1065,
+        420,
+        32
+      ],
+      "seam_dark_fraction": 0.04,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00028",
+      "column": "left",
+      "bbox_xywh": [
+        189,
+        1097,
+        410,
+        34
+      ],
+      "seam_dark_fraction": 0.015,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00029",
+      "column": "left",
+      "bbox_xywh": [
+        190,
+        1131,
+        409,
+        34
+      ],
+      "seam_dark_fraction": 0.060302,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00030",
+      "column": "left",
+      "bbox_xywh": [
+        190,
+        1165,
+        408,
+        30
+      ],
+      "seam_dark_fraction": 0.01005,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00031",
+      "column": "left",
+      "bbox_xywh": [
+        190,
+        1195,
+        421,
+        37
+      ],
+      "seam_dark_fraction": 0.040201,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00032",
+      "column": "left",
+      "bbox_xywh": [
+        189,
+        1232,
+        409,
+        34
+      ],
+      "seam_dark_fraction": 0.030151,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00033",
+      "column": "left",
+      "bbox_xywh": [
+        191,
+        1266,
+        410,
+        31
+      ],
+      "seam_dark_fraction": 0.02,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00034",
+      "column": "left",
+      "bbox_xywh": [
+        190,
+        1297,
+        410,
+        36
+      ],
+      "seam_dark_fraction": 0.030151,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00035",
+      "column": "left",
+      "bbox_xywh": [
+        192,
+        1333,
+        408,
+        29
+      ],
+      "seam_dark_fraction": 0.035176,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00036",
+      "column": "left",
+      "bbox_xywh": [
+        190,
+        1362,
+        410,
+        36
+      ],
+      "seam_dark_fraction": 0.096447,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00037",
+      "column": "left",
+      "bbox_xywh": [
+        196,
+        1398,
+        409,
+        32
+      ],
+      "seam_dark_fraction": 0.246231,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00039",
+      "column": "right",
+      "bbox_xywh": [
+        615,
+        61,
+        424,
+        48
+      ],
+      "seam_dark_fraction": 0.009662,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00040",
+      "column": "right",
+      "bbox_xywh": [
+        615,
+        109,
+        423,
+        28
+      ],
+      "seam_dark_fraction": 0.019512,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00041",
+      "column": "right",
+      "bbox_xywh": [
+        618,
+        137,
+        421,
+        39
+      ],
+      "seam_dark_fraction": 0.024272,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00042",
+      "column": "right",
+      "bbox_xywh": [
+        616,
+        176,
+        426,
+        33
+      ],
+      "seam_dark_fraction": 0.009662,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00043",
+      "column": "right",
+      "bbox_xywh": [
+        618,
+        209,
+        425,
+        33
+      ],
+      "seam_dark_fraction": 0.009709,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00044",
+      "column": "right",
+      "bbox_xywh": [
+        622,
+        242,
+        421,
+        32
+      ],
+      "seam_dark_fraction": 0.044118,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00045",
+      "column": "right",
+      "bbox_xywh": [
+        622,
+        274,
+        418,
+        38
+      ],
+      "seam_dark_fraction": 0,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00046",
+      "column": "right",
+      "bbox_xywh": [
+        622,
+        312,
+        422,
+        34
+      ],
+      "seam_dark_fraction": 0.033981,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00047",
+      "column": "right",
+      "bbox_xywh": [
+        623,
+        346,
+        421,
+        36
+      ],
+      "seam_dark_fraction": 0.019417,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00048",
+      "column": "right",
+      "bbox_xywh": [
+        623,
+        382,
+        421,
+        27
+      ],
+      "seam_dark_fraction": 0.029268,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00049",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        409,
+        419,
+        43
+      ],
+      "seam_dark_fraction": 0.02439,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00050",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        452,
+        421,
+        32
+      ],
+      "seam_dark_fraction": 0.009804,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00051",
+      "column": "right",
+      "bbox_xywh": [
+        622,
+        484,
+        420,
+        35
+      ],
+      "seam_dark_fraction": 0.014634,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00052",
+      "column": "right",
+      "bbox_xywh": [
+        622,
+        519,
+        419,
+        36
+      ],
+      "seam_dark_fraction": 0.04902,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00053",
+      "column": "right",
+      "bbox_xywh": [
+        623,
+        555,
+        417,
+        27
+      ],
+      "seam_dark_fraction": 0.02451,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00054",
+      "column": "right",
+      "bbox_xywh": [
+        621,
+        582,
+        422,
+        40
+      ],
+      "seam_dark_fraction": 0.039024,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00055",
+      "column": "right",
+      "bbox_xywh": [
+        623,
+        622,
+        434,
+        34
+      ],
+      "seam_dark_fraction": 0.014563,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00056",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        656,
+        422,
+        34
+      ],
+      "seam_dark_fraction": 0.009804,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00057",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        690,
+        418,
+        36
+      ],
+      "seam_dark_fraction": 0.034314,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00058",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        726,
+        423,
+        34
+      ],
+      "seam_dark_fraction": 0.009756,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00059",
+      "column": "right",
+      "bbox_xywh": [
+        625,
+        760,
+        420,
+        31
+      ],
+      "seam_dark_fraction": 0.009756,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00060",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        791,
+        422,
+        38
+      ],
+      "seam_dark_fraction": 0.073171,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00061",
+      "column": "right",
+      "bbox_xywh": [
+        626,
+        829,
+        421,
+        35
+      ],
+      "seam_dark_fraction": 0.038835,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00062",
+      "column": "right",
+      "bbox_xywh": [
+        625,
+        864,
+        422,
+        33
+      ],
+      "seam_dark_fraction": 0.019417,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00063",
+      "column": "right",
+      "bbox_xywh": [
+        626,
+        897,
+        429,
+        44
+      ],
+      "seam_dark_fraction": 0.033333,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00064",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        941,
+        432,
+        22
+      ],
+      "seam_dark_fraction": 0.066351,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00065",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        963,
+        433,
+        36
+      ],
+      "seam_dark_fraction": 0.048309,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00066",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        999,
+        423,
+        28
+      ],
+      "seam_dark_fraction": 0.019417,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00067",
+      "column": "right",
+      "bbox_xywh": [
+        622,
+        1027,
+        423,
+        37
+      ],
+      "seam_dark_fraction": 0.04878,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00068",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        1064,
+        420,
+        33
+      ],
+      "seam_dark_fraction": 0.063415,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00069",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        1097,
+        428,
+        38
+      ],
+      "seam_dark_fraction": 0.112195,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00070",
+      "column": "right",
+      "bbox_xywh": [
+        625,
+        1135,
+        419,
+        33
+      ],
+      "seam_dark_fraction": 0.054187,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00071",
+      "column": "right",
+      "bbox_xywh": [
+        625,
+        1168,
+        415,
+        34
+      ],
+      "seam_dark_fraction": 0.024631,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00072",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        1202,
+        426,
+        33
+      ],
+      "seam_dark_fraction": 0.063725,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00073",
+      "column": "right",
+      "bbox_xywh": [
+        623,
+        1235,
+        419,
+        35
+      ],
+      "seam_dark_fraction": 0.04902,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00074",
+      "column": "right",
+      "bbox_xywh": [
+        621,
+        1270,
+        420,
+        31
+      ],
+      "seam_dark_fraction": 0.034146,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00075",
+      "column": "right",
+      "bbox_xywh": [
+        621,
+        1301,
+        419,
+        34
+      ],
+      "seam_dark_fraction": 0.054455,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00076",
+      "column": "right",
+      "bbox_xywh": [
+        624,
+        1335,
+        413,
+        39
+      ],
+      "seam_dark_fraction": 0.064356,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00077",
+      "column": "right",
+      "bbox_xywh": [
+        619,
+        1374,
+        432,
+        29
+      ],
+      "seam_dark_fraction": 0.039024,
+      "may_cut_ink": false,
+      "requires_visual_review": true
+    },
+    {
+      "candidate_id": "v5-s00010-k317a17777203-l00078",
+      "column": "right",
+      "bbox_xywh": [
+        618,
+        1403,
+        420,
+        34
+      ],
+      "seam_dark_fraction": 0.098039,
+      "may_cut_ink": true,
+      "requires_visual_review": true
+    }
+  ]
+}
