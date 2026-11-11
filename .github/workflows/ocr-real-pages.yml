@@ -61,7 +61,7 @@ jobs:
               assert item['lines'], f"No geometric lines: {file}"
               words = [word for line in item['lines'] for word in line['words']]
               assert words, f"No parsed words: {file}"
-              assert all("\\n" not in word['text'] and "\\r" not in word['text']
+              assert all("\n" not in word['text'] and "\r" not in word['text']
                          and len(word['text']) < 1000 for word in words), (
                   f"Malformed/multiline OCR word swallowed TSV rows: {file}")
           PY
