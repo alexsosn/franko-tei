@@ -58,6 +58,22 @@ class TFTests(unittest.TestCase):
         reconstructed='\n'.join(verify_graph_roundtrip(graph))
         self.assertEqual(reconstructed, DRAFT['reading']['raw_response'])
 
+    def test_fractional_native_pixel_boxes_roundtrip_without_truncation(self):
+        # Synthetic fractional region/line geometry; no historical accuracy claim.
+        p=copy.deepcopy(DRAFT)
+        p['reading']['regions'][1]['lines'][0]['bbox_xywh']=[135.25,166.5,955.25,27.5]
+        xml=render_pilot_tei(p,1190,1794)
+        graph=build_tf_graph(xml)
+        nodes=[n for n,t in graph.node_features['otype'].items()
+               if t=='line' and graph.node_features['teiId'][n]=='lb-v4-s00100-body-line-01']
+        self.assertEqual(len(nodes),1)
+        n=nodes[0]
+        self.assertEqual(graph.node_features['x'][n],'135.25')
+        self.assertEqual(graph.node_features['y'][n],'166.5')
+        self.assertEqual(graph.node_features['w'][n],'955.25')
+        self.assertEqual(graph.node_features['h'][n],'27.5')
+        self.assertEqual(graph.metadata['x']['valueType'],'str')
+
     def test_unicode_slots_and_real_page_roundtrip(self):
         graph=build_tf_graph(TEI_FILE.read_text(encoding='utf8'))
         expected=[line['text'] for region in DRAFT['reading']['regions'] for line in region['lines']]
