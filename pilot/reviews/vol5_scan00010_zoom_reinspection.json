@@ -177,7 +177,7 @@
           32
         ],
         "geometry_estimated": true,
-        "line_fully_read": true,
+        "line_fully_read": false,
         "source_note": "Large initial is ornamental, letter identities in first words provisional."
       },
       {
@@ -191,7 +191,7 @@
           32
         ],
         "geometry_estimated": true,
-        "line_fully_read": true,
+        "line_fully_read": false,
         "source_note": "Final suffix and titular glyphs should be checked against enlarged source."
       },
       {
@@ -205,7 +205,7 @@
           32
         ],
         "geometry_estimated": true,
-        "line_fully_read": true,
+        "line_fully_read": false,
         "source_note": "Apostrophe/titlo and Tobit name uncertain."
       },
       {
@@ -486,6 +486,7 @@
     "The first reproduction is a seventeenth-century printed source as shown by Franko, not automatically a manuscript witness. The Ukrainian caption is Franko's separate voice.",
     "None of the 71 previously unresolved slots was silently resolved by borrowing a parallel Life of Mary of Egypt. This record is strictly a reading-aid pending complete line-by-line native-image text.",
     "Enlargement was pixel repetition, not ML-enhanced super-resolution. Small titla and diacritics can remain unresolvable at source-image resolution.",
-    "Failure-oriented internal source recheck corrected two unsupported over-specific assertions: an L11 fragment and exact right-column line indices. The preserved earlier data commit bff23b6 records the pre-review working hypothesis."
+    "Failure-oriented internal source recheck corrected two unsupported over-specific assertions: an L11 fragment and exact right-column line indices. The preserved earlier data commit bff23b6 records the pre-review working hypothesis.",
+    "A red-first review gate demonstrated that L01–L03 were falsely labelled entire-line readings while their titla had not been independently checked; changed to `line_fully_read=false` without altering raw hypotheses."
   ]
 }
