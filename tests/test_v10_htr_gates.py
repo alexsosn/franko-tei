@@ -32,6 +32,8 @@ class TestV10HTRGates(unittest.TestCase):
         self.assertIn("vol5-page-00010-kraken-layout.json", t)
         self.assertIn("crnn-ctc-church-slavonic", t)
         self.assertIn("crnn-ctc-prosta-mova", t)
+        self.assertIn("early-print comparison models", t)
+        self.assertNotIn("mismatched-language control", t)
         self.assertIn("--start-line 2 --max-lines 4", t)
         self.assertIn("--start-line 39 --max-lines 4", t)
         self.assertIn("--margin-y 16", t)
