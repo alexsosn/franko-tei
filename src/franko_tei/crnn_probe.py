@@ -220,12 +220,17 @@ def main(argv=None):
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--start-line", type=int, default=2)
     parser.add_argument("--max-lines", type=int, default=4)
+    parser.add_argument("--margin-y", type=int, default=8,
+                        help="Original-pixel vertical crop margin, 0..40 (preserve superscripts/titla)")
+    parser.add_argument("--margin-x", type=int, default=5,
+                        help="Original-pixel horizontal crop margin, 0..30")
     args = parser.parse_args(argv)
     try:
         records = probe(args.images, args.volume, args.layout,
                         json.loads(args.model_specs.read_text(encoding="utf-8")),
                         args.inference_script, args.output,
-                        start_line=args.start_line, max_lines=args.max_lines)
+                        start_line=args.start_line, max_lines=args.max_lines,
+                        margin_x=args.margin_x, margin_y=args.margin_y)
     except (ValueError, RuntimeError, OSError) as exc:
         parser.error(str(exc))
     print(f"Wrote {len(records)} UNVERIFIED CRNN line candidates to {args.output}")
