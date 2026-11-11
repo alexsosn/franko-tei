@@ -1,0 +1,21 @@
+{
+  "schema_version": "same-context-reinspection-v1",
+  "status": "agent_unverified",
+  "kind": "same-context-image-reinspection",
+  "volume": "5",
+  "scan_page": 100,
+  "original_file": "pilot/image_first/vol5_scan00100_first.md",
+  "first_reading_commit": "7e5b876879a81664788a266b5b21e233806f3755",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "reader_context": "chat-single-context-2026-11-11-five-page-reading",
+  "method": "Second look at original native page within the SAME conversation context, first Markdown remains unchanged. This is not a second blind reader or a third independent review.",
+  "changes": [
+    {
+      "line_index": 3,
+      "before": "бꙋдетъ, тъ азъ поидꙋ ко распѧтомꙋ Х⟦?⟧. и возем иную чашю",
+      "after": "бꙋдетъ, тъ азъ поидꙋ ко распѧтомꙋ Х҃с. и возем иную чашю",
+      "evidence": "Native image, opening Church Slavonic paragraph: presumed abbreviated Христос glyph under titlo is a single-context image rereading; verify exact expansion and diacritic.",
+      "uncertain": true
+    }
+  ]
+}
