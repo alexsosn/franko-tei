@@ -1,0 +1,1150 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 26,
+  "printed_page_observed": "XVII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00026.jpg",
+  "source_image_sha256": "a32dfdfe10e99fcec4489b660d548a63c76024f1cab47a24af4e6962e6109520",
+  "reading": {
+    "reader_id": "gpt6-single-20261111-i26",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-2026-11-11-I26-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read the entire actual printed I/26 JPEG directly before original PDF OCR, preserve 41 physical body lines exactly including old Ukrainian spelling, pre-reform Russian book title, and terminal hyphenation. Keep Roman folio XVII, distinct lower running footer and bottom-right printer signature 3 as separate physical regions (not prose). No neighboring page reconstruction. This is an unverified single image-first reading, not a diplomatic gold text; every suspect glyph is logged.",
+    "raw_response": "XVII\nПолеміка Палєї вся систематично звернена проти Жидів, і власне\nся антіжидівська тенденция Палєї в очах Тіхонравова була найсиль-\nнїйшим доказом на те, що Палея зложена була на Руси-Україні.\nМи знаємо, яке важне місце займали жидівські впливи в старій\nРуси. Хазарське царство в Криму мало пануючу династию і стар-\nшину жидівського віроісповіданя; жидівські місіонери ходили по\nРуси; вони грають важну ролю в оповіданю літописця про хрещенє\nРуси, а віднайдені недавно жидівські реляції про сю подію не по-\nзволяють нам віднести наше літописне оповіданє в обсяг легенд.\nІ пізнїйше впливи жидівські не ослабли, як се бачимо з повстаня\nєресі „жидовствующих“. Значить, був у старій Руси дуже живий\nінтерес — поборювати жидівство, живійший, нїж нпр. у Візантії\nабо в Болгарії. Певна річ, плян — провести в однім творі поле-\nмічну противжидівську тенденцию через усю старозавітну історію,\nпобити Жидів сьвідоцтвами їх власних сьвятих книг, був сьмілий\nна маловченого Русина. Та чому би автором сего пляну не мав\nбути якийсь Грек, що навчив ся писати по церковному? Другу,\nдля нас далеко важнїйшу половину Палєї займають оповіданя,\nвзяті по части з Біблії, по части з писань жидівських, а також\nцїлі апокріфічні твори вставлені в текст чи то без нїякої зміни, чи\nв скорочених редакціях, чи в кінцї розширені спеціальними поле-\nмічними вставками. І так тільки в Палеях стрічає ся тзв. коротша\nредакция апокріфа „Завѣты 12-ти патріарховъ“. Крім апокріфічних\nоповідань вставлено в текст Палєї обширні уступи із Шестоднева\nІвана Екзарха, твір Епіфанія Кипрського „Про 12 каменїв на на-\nгруднику архиєреєвім“, деякі части старохрестиянського Фізіолога,\nвелику часть оповіданя сьв. Єфрема Сирина про Йосифа Прекрасного\nі т. д. В екзегетичній части автор користував ся старшими Отцями\nцеркви, проводячи систематично думку про префіґурацию нового\nзавіта в старім; особливо богато черпав він тут із Вопросоодвітів\nФеодорита Кирського. Рамки для такого твору як Палея були з давна го-\nтові в Візантії. До найстарших старозавітних апокріфів належить\nтзв. Мале Битие, т. е. оповіданє про сотворенє сьвіта аж до часу\nМойсеєвого законодавства на Синайській горі; і тут в рамку біблій-\nного оповіданя вставлено богато апокріфів і цїлий твір є немов ко-\nментарієм до кн. Бития. Твір сей дуже часто цитують старші пи-\nсателї церковні, хоча тепер грецький текст його затрачений і тільки\nнедавно віднайдено сей твір у етиопськім перекладі в Абіссинії.\nЗначить, можна сумнївати ся, чи автор Палєї знав що небудь про\nсей апокріф. Та за те далеко близше його були візантійські літо-\nписцї і хронографи, де так само оповідало ся історію старого за-\nАпокріфи старозавітні.\n3",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            1030,
+            153,
+            100,
+            320
+          ],
+          "description": "Pencil tick-like marks on right margin, not part of printed source text"
+        }
+      ],
+      "occlusions": []
+    },
+    "regions": [
+      {
+        "id": "printed-folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          930,
+          59,
+          147,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XVII",
+            "bbox_xywh": [
+              941,
+              72,
+              80,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "palaea-polemic-body",
+        "kind": "body",
+        "bbox_xywh": [
+          90,
+          126,
+          1015,
+          1425
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "Полеміка Палєї вся систематично звернена проти Жидів, і власне",
+            "bbox_xywh": [
+              101,
+              139,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "ся антіжидівська тенденция Палєї в очах Тіхонравова була найсиль-",
+            "bbox_xywh": [
+              101,
+              173,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "нїйшим доказом на те, що Палея зложена була на Руси-Україні.",
+            "bbox_xywh": [
+              101,
+              207,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "Ми знаємо, яке важне місце займали жидівські впливи в старій",
+            "bbox_xywh": [
+              101,
+              241,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "Руси. Хазарське царство в Криму мало пануючу династию і стар-",
+            "bbox_xywh": [
+              101,
+              275,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "шину жидівського віроісповіданя; жидівські місіонери ходили по",
+            "bbox_xywh": [
+              101,
+              309,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "Руси; вони грають важну ролю в оповіданю літописця про хрещенє",
+            "bbox_xywh": [
+              101,
+              343,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "Руси, а віднайдені недавно жидівські реляції про сю подію не по-",
+            "bbox_xywh": [
+              101,
+              377,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "зволяють нам віднести наше літописне оповіданє в обсяг легенд.",
+            "bbox_xywh": [
+              101,
+              411,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "І пізнїйше впливи жидівські не ослабли, як се бачимо з повстаня",
+            "bbox_xywh": [
+              101,
+              445,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-11",
+            "text": "єресі „жидовствующих“. Значить, був у старій Руси дуже живий",
+            "bbox_xywh": [
+              101,
+              479,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "інтерес — поборювати жидівство, живійший, нїж нпр. у Візантії",
+            "bbox_xywh": [
+              101,
+              513,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "або в Болгарії. Певна річ, плян — провести в однім творі поле-",
+            "bbox_xywh": [
+              101,
+              547,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "мічну противжидівську тенденцию через усю старозавітну історію,",
+            "bbox_xywh": [
+              101,
+              581,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "побити Жидів сьвідоцтвами їх власних сьвятих книг, був сьмілий",
+            "bbox_xywh": [
+              101,
+              615,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "на маловченого Русина. Та чому би автором сего пляну не мав",
+            "bbox_xywh": [
+              101,
+              649,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "бути якийсь Грек, що навчив ся писати по церковному? Другу,",
+            "bbox_xywh": [
+              101,
+              683,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-18",
+            "text": "для нас далеко важнїйшу половину Палєї займають оповіданя,",
+            "bbox_xywh": [
+              101,
+              717,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-19",
+            "text": "взяті по части з Біблії, по части з писань жидівських, а також",
+            "bbox_xywh": [
+              101,
+              751,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-20",
+            "text": "цїлі апокріфічні твори вставлені в текст чи то без нїякої зміни, чи",
+            "bbox_xywh": [
+              101,
+              785,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "в скорочених редакціях, чи в кінцї розширені спеціальними поле-",
+            "bbox_xywh": [
+              101,
+              819,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "мічними вставками. І так тільки в Палеях стрічає ся тзв. коротша",
+            "bbox_xywh": [
+              101,
+              853,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "редакция апокріфа „Завѣты 12-ти патріарховъ“. Крім апокріфічних",
+            "bbox_xywh": [
+              101,
+              887,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-24",
+            "text": "оповідань вставлено в текст Палєї обширні уступи із Шестоднева",
+            "bbox_xywh": [
+              101,
+              921,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "Івана Екзарха, твір Епіфанія Кипрського „Про 12 каменїв на на-",
+            "bbox_xywh": [
+              101,
+              955,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "груднику архиєреєвім“, деякі части старохрестиянського Фізіолога,",
+            "bbox_xywh": [
+              101,
+              989,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-27",
+            "text": "велику часть оповіданя сьв. Єфрема Сирина про Йосифа Прекрасного",
+            "bbox_xywh": [
+              101,
+              1023,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "і т. д. В екзегетичній части автор користував ся старшими Отцями",
+            "bbox_xywh": [
+              101,
+              1057,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-29",
+            "text": "церкви, проводячи систематично думку про префіґурацию нового",
+            "bbox_xywh": [
+              101,
+              1091,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "завіта в старім; особливо богато черпав він тут із Вопросоодвітів",
+            "bbox_xywh": [
+              101,
+              1125,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "Феодорита Кирського. Рамки для такого твору як Палея були з давна го-",
+            "bbox_xywh": [
+              101,
+              1159,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 69,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "тові в Візантії. До найстарших старозавітних апокріфів належить",
+            "bbox_xywh": [
+              101,
+              1193,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-33",
+            "text": "тзв. Мале Битие, т. е. оповіданє про сотворенє сьвіта аж до часу",
+            "bbox_xywh": [
+              101,
+              1227,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-34",
+            "text": "Мойсеєвого законодавства на Синайській горі; і тут в рамку біблій-",
+            "bbox_xywh": [
+              101,
+              1261,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "ного оповіданя вставлено богато апокріфів і цїлий твір є немов ко-",
+            "bbox_xywh": [
+              101,
+              1295,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-36",
+            "text": "ментарієм до кн. Бития. Твір сей дуже часто цитують старші пи-",
+            "bbox_xywh": [
+              101,
+              1329,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-37",
+            "text": "сателї церковні, хоча тепер грецький текст його затрачений і тільки",
+            "bbox_xywh": [
+              101,
+              1363,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "недавно віднайдено сей твір у етиопськім перекладі в Абіссинії.",
+            "bbox_xywh": [
+              101,
+              1397,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-39",
+            "text": "Значить, можна сумнївати ся, чи автор Палєї знав що небудь про",
+            "bbox_xywh": [
+              101,
+              1431,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-40",
+            "text": "сей апокріф. Та за те далеко близше його були візантійські літо-",
+            "bbox_xywh": [
+              101,
+              1465,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-41",
+            "text": "писцї і хронографи, де так само оповідало ся історію старого за-",
+            "bbox_xywh": [
+              101,
+              1499,
+              976,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "running-footer",
+        "kind": "other",
+        "bbox_xywh": [
+          151,
+          1524,
+          336,
+          64
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "running-footer-line",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              169,
+              1543,
+              294,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-single-20261111-i26",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "printer-signature",
+        "kind": "other",
+        "bbox_xywh": [
+          931,
+          1515,
+          76,
+          76
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "printer-signature-line",
+            "text": "3",
+            "bbox_xywh": [
+              956,
+              1544,
+              19,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "Полеміка Палєї",
+        "reason": "First printed line; historical i-types not yet independently verified."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "антіжидівська тенденция",
+        "reason": "Contemporary 1900s historic Ukrainian lexical/orthographic form; no normalization or modern paraphrase."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "Руси-Україні",
+        "reason": "Source hyphen and uppercase; do not editorially emend."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "Хазарське царство",
+        "reason": "Historical geographical interpretation is Franko's; only glyph fidelity is tested."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "жидівського віроісповіданя",
+        "reason": "Old typography/canonical spelling high risk."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "грають важну ролю",
+        "reason": "Original Ukrainian construction may be unfamiliar; source not grammar decides."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "реляції",
+        "reason": "Source vowel letters/diacritics."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "пізнїйше",
+        "reason": "Old i/ї distinction, no automatic Unicode modernization."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "„жидовствующих“",
+        "reason": "Historical Russian quotation embedded in Ukrainian prose, quotation marks and hard/soft distinctions."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "Візантії",
+        "reason": "Historic glyph letters and punctuation around abbreviations."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "плян",
+        "reason": "Old orthography not a modern standardized form."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "противжидівську",
+        "reason": "Text contains historical hostile terminology in source; it is not a model endorsement."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "сьвідоцтвами",
+        "reason": "Old Ukrainian orthographic form."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "половину Палєї",
+        "reason": "Proper noun inflection; source-led character checking."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "цїлі апокріфічні",
+        "reason": "Historical i and diacritic variants."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "тзв. коротша",
+        "reason": "Abbreviation punctuation and typography."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "„Завѣты 12-ти патріарховъ“",
+        "reason": "Pre-reform Russian title, yat and hard sign must be checked."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "Шестоднева",
+        "reason": "Book title/title capitalization and printed space."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "Епіфанія Кипрського",
+        "reason": "Ecclesiastical author name and printed i/ї."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "архиєреєвім",
+        "reason": "Historical form and double vowel."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "Йосифа Прекрасного",
+        "reason": "Historical proper-name form; no modern philological rewriting."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "префіґурацию",
+        "reason": "Historical Cyrillic ґ and vowel letter."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "Вопросоодвітів",
+        "reason": "Compound title may differ in print (вопросоотвітів); special scrutiny."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "з давна го-",
+        "reason": "Physical line wrap and separated archaic phrase."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "Мале Битие",
+        "reason": "Printed book title and small archaic e/i."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "Мойсеєвого",
+        "reason": "Historical proper name/letterform."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "кн. Бития",
+        "reason": "Russian/Ukrainian abbreviation plus title."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "етиопськім",
+        "reason": "Historic ethnonym/printed spelling."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "що небудь",
+        "reason": "Printed word boundary before apocryph."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "історію старого за-",
+        "reason": "Page ends with a hyphenated fragment; no text from next scan supplied."
+      }
+    ]
+  }
+}
