@@ -40,3 +40,7 @@ Original books are in Ukrainian/Church Slavonic/other historical languages; we d
 ## Mixed-script OCR rerun baseline
 
 The `franko-ocr-candidates` CLI operates on native scan images and image checksums from `codex/page-assets`. It runs independently identified multilingual Tesseract candidate passes, retains image/word coordinates and model fingerprints, and never promotes OCR to verified TEI. See [the guide](docs/mixed-script-ocr.md), [real-page OCR workflow](.github/workflows/ocr-real-pages.yml), and [Issue #13](https://github.com/alexsosn/franko-tei/issues/13).
+
+## Specialist Church Slavonic model trial
+
+Two open CRNN-CTC models can be compared on **identical** Kraken line crops via `franko-crnn-probe`; reports retain cropped-pixel SHA256 and model/weights/inference-code fingerprints but are never verified transcriptions. A small trial on III/130 and V/100 is defined by [the paired CRNN workflow](.github/workflows/crnn-real-probe.yml) and [model comparison guide](docs/crnn-paired-probe.md). See [Issue #20](https://github.com/alexsosn/franko-tei/issues/20). No historical CER is claimed.
