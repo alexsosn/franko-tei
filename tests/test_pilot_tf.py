@@ -90,6 +90,20 @@ class PilotTextFabricTests(unittest.TestCase):
         page = next(n for n, t in nf["otype"].items() if t == "page")
         self.assertNotEqual(str(nf["scanPage"][page]), nf["printedPageObserved"][page])
 
+    def test_fractional_image_coordinates_never_silently_truncated(self):
+        data = copy.deepcopy(self.payload)
+        first = data["reading"]["regions"][1]["lines"][0]
+        first["bbox_xywh"] = [135.25, 166.5, 955.25, 27.5]
+        xml = render_pilot_tei(data, 1190, 1794)
+        nf, _, meta = self.graph(xml=xml, payload=data)
+        target = next(n for n, typ in nf["otype"].items()
+                      if typ == "line" and nf["lineSourceId"][n] == "body-line-01")
+        self.assertEqual(nf["ulx"][target], "135.25")
+        self.assertEqual(nf["uly"][target], "166.5")
+        self.assertEqual(nf["lrx"][target], "1090.5")
+        self.assertEqual(nf["lry"][target], "194.0")
+        self.assertEqual(meta["ulx"]["valueType"], "str")
+
     def test_escapes_preserve_combining_marks_original_codepoints_and_punctuation(self):
         data = copy.deepcopy(self.payload)
         text = "ѣ\u0301 <x> & ἀ ꙋ"
