@@ -66,12 +66,14 @@ def _crop_from_line(image, line, margin_x=5, margin_y=8):
         raise ValueError("line bbox missing")
     if any(not isinstance(n, (int, float)) or isinstance(n, bool) for n in rect):
         raise ValueError("invalid bbox coordinate type")
+    from math import isfinite, floor, ceil
+    if any(not isfinite(n) for n in rect):
+        raise ValueError("bbox coordinates must be finite")
     x, y, width, height = rect
     if x < 0 or y < 0 or width <= 0 or height <= 0:
         raise ValueError("negative or degenerate bbox")
     if x + width > image.width or y + height > image.height:
         raise ValueError("bbox exceeds image")
-    from math import floor, ceil
     bounds = [
         max(0, floor(x) - margin_x), max(0, floor(y) - margin_y),
         min(image.width, ceil(x + width) + margin_x),
