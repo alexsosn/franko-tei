@@ -25,5 +25,19 @@ class TestVol4Page101OCR(unittest.TestCase):
         for forbidden in ("franko-pilot-tei","franko-pilot-tf","contents: write"):
             self.assertNotIn(forbidden,s)
 
+
+    def test_new_section_and_subsection_are_source_observed_but_body_not_transcribed(self):
+        import json
+        p=ROOT/"pilot/structure/vol4_scan00101_headings_unverified.json"
+        d=json.loads(p.read_text(encoding="utf8"))
+        self.assertEqual(d["status"],"source_observed_unverified")
+        self.assertEqual(d["source_image_sha256"],"7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447")
+        self.assertEqual([x["kind"] for x in d["observations"]],["section_heading","source_witness_heading"])
+        self.assertIn("Апокаліпси про празники і обряди",d["observations"][0]["text"])
+        self.assertIn("Рукопис о. Теодора з Дубівця",d["observations"][1]["text"])
+        self.assertIsNone(d["printed_page_observed"])
+        self.assertFalse(d["body_read"])
+        self.assertFalse(d["eligible_for_tei_tf"])
+
 if __name__=="__main__":
     unittest.main()
