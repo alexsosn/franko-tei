@@ -55,7 +55,7 @@ class TFTests(unittest.TestCase):
 
     def test_page_roundtrip_explicitly_restores_physical_lb_newlines(self):
         graph=build_tf_graph(TEI_FILE.read_text('utf8'))
-        reconstructed='\\n'.join(verify_graph_roundtrip(graph))
+        reconstructed='\n'.join(verify_graph_roundtrip(graph))
         self.assertEqual(reconstructed, DRAFT['reading']['raw_response'])
 
     def test_unicode_slots_and_real_page_roundtrip(self):
