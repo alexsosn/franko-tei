@@ -103,8 +103,8 @@ class OCRTrialTests(unittest.TestCase):
         self.assertFalse(page["recognized_any_text"])
 
     def test_whitespace_only_tesseract_words_do_not_count_as_text(self):
-        ghost = (TSV.splitlines()[0] + "\\n"
-                 + "5\\t1\\t1\\t1\\t1\\t1\\t10\\t20\\t20\\t10\\t89\\t \\n")
+        ghost = (TSV.splitlines()[0] + "\n"
+                 + "5\t1\t1\t1\t1\t1\t10\t20\t20\t10\t89\t \n")
         self.assertEqual(read_lines(ghost), [])
 
     def test_reject_language_option_injection(self):

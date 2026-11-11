@@ -40,10 +40,13 @@ jobs:
               assert any(r['volume'] == '4' and len(r['lines']) > 0 for r in rows)
               print(filename, [(r['volume'], r['scan_page'], len(r['lines'])) for r in rows])
           PY
+      - name: Record OCR engine version and exact traineddata checksums
+        run: |
+          { tesseract --version 2>&1; tesseract --list-langs 2>&1; find /usr/share/tesseract-ocr -name '*.traineddata' -type f -print0 | sort -z | xargs -0 sha256sum; } > local/tesseract-models.txt
       - name: Upload predictions only; exclude copyrighted scan images
         uses: actions/upload-artifact@v4
         with:
           name: franko-multiscript-ocr-trial
-          path: local/ocr-*.jsonl
+          path: |\n            local/ocr-*.jsonl\n            local/tesseract-models.txt
           retention-days: 14
           if-no-files-found: error

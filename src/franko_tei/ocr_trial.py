@@ -101,7 +101,7 @@ def read_lines(tsv):
         raise ValueError("Not a Tesseract TSV response")
     groups = OrderedDict()
     for row in reader:
-        if row["level"] != "5" or not row["text"]:
+        if row["level"] != "5" or not row["text"] or not row["text"].strip():
             continue
         key = tuple(row[column] for column in
                     ("page_num", "block_num", "par_num", "line_num"))
