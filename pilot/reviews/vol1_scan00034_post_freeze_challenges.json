@@ -1,0 +1,125 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 34,
+  "printed_page_observed": "XXV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "7c6828cb9e510790557557990e6b77191c1eaa48d91479172bfd1374c305c08d",
+  "frozen_first_reading": "pilot/vol1_scan00034_single_reading.json",
+  "review_method": "Failure-oriented rereading of original pinned 1190×1709 JPEG after first response committed, then inspection of badly corrupted original PDF OCR solely as a negative counterhypothesis. Same conversational context; not blind second reader, no complete third review.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "high_risk_omissions": [
+    {
+      "line_id": "main-line-23",
+      "frozen_substring": "сказꙑ, помыслы и сни мои изьводныи ...“",
+      "disposition": "unresolved",
+      "source_evidence": "In the original printed Old Slavonic quote, additional glyphs/at least one apparent word seem present after the phrase approximated as «изьводныи» and before the closing quote. Frozen first response used three dots which may be a hallucinated ellipsis, not a true printed ellipsis. The embedded OCR has an unparseable extra sequence, no trustworthy reconstruction. This line MUST NOT be treated as full-glyph source transcription.",
+      "required_next_step": "Enlarged native crop with specialist Old Church Slavonic glyph-by-glyph reading; record exactly which signs follow, preserve dots only if literally printed."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-12",
+      "reading": "Ѡ ап҃льскыхъ оуставѣхъ",
+      "reason": "Title's Ѡ, titlo, letter count, and final vowel not established from native 1190px scan; source has abbreviation above line."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "всѣхъ оубо штѣжнихъ и дьявольскыхъ",
+      "reason": "Dense Slavonic line likely has several wrong letter substitutions including vowels/ligatures; exact glyph-level reading unavailable."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "крѣпко оукланяи сѧ",
+      "reason": "Old Cyrillic abbreviation/spacing; several initial characters tentative."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "Богословьца Ѡ словесѣхъ",
+      "reason": "Church Slavonic excerpt title likely abbreviated; ь/ъ, Ѡ and titla require independent source inspection."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "Ἰωάννου τοῦ εὐαγγελιστοῦ θεολόγου ἐκ τῶν ἐπῶν",
+      "reason": "Polytonic Greek accents, breathings and words are first-reader hypotheses. PDF OCR produces Latin/Cyrillic nonsense, no corroboration."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "штюжними прѣмыштѧть",
+      "reason": "Quoted Old Slavonic may involve special glyphs/abbreviations and word division not represented correctly by first attempt."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "многыи бо бываѭть неистовыѧ",
+      "reason": "Uncertain small type, historical letterforms and possible overwriting of superscripts."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "а҃. Ѩдль",
+      "reason": "First enumerated manuscript title's glyphs are probably inaccurately inferred. Preserve numeration and mark source reading unresolved, not a verified Ad(a)m name."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "д҃. Патріарси",
+      "reason": "Titlo and list number / title not independently checked."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "Завѣтъ Моѵсинъ",
+      "reason": "Script with ѵ and ѣ; old Cyrillic list entry and numeric titla require specialized source inspection."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "іа҃. Исаиино видѣніе",
+      "reason": "Abbreviated item number and spelling require checking title letterforms."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "іг҃. Захариино явленіе",
+      "reason": "Last numbered item likely fragile; verify all titla and 13 listed items against native image."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "956—987",
+      "reason": "Source visually reads 956—987; corrupted OCR reads 956—981. Do not adopt OCR."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "Ясенеъ і Єздри ѡткровеніе",
+      "reason": "Old Cyrillic source list name uncertain in word endings and ѡ; not normalized from theology."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "Вознесеніе Моисѣєво",
+      "reason": "Uncertain source spelling in old Cyrillic; OCR is unreadable."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "Захариино ѡткровеніе",
+      "reason": "Variant title's orthography and punctuation should be checked directly."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXV top right",
+    "main_text_lines": 40,
+    "paragraph_line_counts": [
+      8,
+      24,
+      8
+    ],
+    "bottom_left": "Апокріфи старозавітні.",
+    "bottom_right": "4 (printer signature)",
+    "source_ocr_negative_control": "Embedded OCR corrupts folio XXV as AXY, Old Slavonic into Latin-like fragments, and Greek into unreadable nonsense. Agreement cannot establish glyph accuracy.",
+    "qa_limitation": "Source layout and serialization complete but Slavonic content especially lines 12–15 and 20–29 is not safe as a scholarly diplomatic transcription."
+  },
+  "source_rights": "Only plain text draft and observations committed; no new scan/JPEG/PDF redistribution.",
+  "limitations": [
+    "No second blind independent image reader",
+    "No third independent text adjudication",
+    "No complete reliable glyph transcription on this page, especially first Old Slavonic quote and titles",
+    "No CER/verified TEI/TF or release."
+  ]
+}
