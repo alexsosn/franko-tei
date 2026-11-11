@@ -113,9 +113,9 @@ def merge_pilot_graphs(entries):
         if metadata is None:
             metadata = deepcopy(graph.metadata)
         else:
-            # Different pages legitimately use different OPTIONAL features.
-            # Preserve every feature definition while refusing disagreements
-            # about any shared feature, otext setting, or valueType.
+            # Pages need not contain identical OPTIONAL node features.
+            # Keep all definitions and refuse any conflict in a shared feature,
+            # including types, otext/sections and source slot conventions.
             for name, definition in graph.metadata.items():
                 if name in metadata:
                     if metadata[name] != definition:
