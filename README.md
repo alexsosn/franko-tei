@@ -10,8 +10,11 @@ An auditable effort to digitize **Іван Франко, *Апокріфи і л
 python -m pip install -e .
 python -m unittest discover -s tests -v
 franko-tei catalog
-# optional: local extraction from a downloaded source PDF; this does NOT recognize images
+# Download one catalogue PDF locally; no PDF files are committed
 python -m pip install -e '.[pdf]'
+franko-tei fetch-scan --volume 3 --output scans/vol3.pdf
+franko-tei inspect-scan --volume 3 --pdf scans/vol3.pdf --output local/vol3-audit.json
+# Extract existing PDF text layer into unverified OCR; this does NOT recognize images
 franko-tei extract-pdf --volume 3 --pdf /path/to/vol3.pdf --start 1 --end 5 --output local/vol3-raw.jsonl
 # After independent scan comparison and explicit manual review of a separate JSONL file:
 franko-tei build-tei --volume 3 --input local/vol3-reviewed.jsonl --output local/vol3-partial.xml
@@ -23,7 +26,7 @@ The extracted JSONL starts with `status=ocr_unchecked`. The TEI exporter refuses
 
 ## Source inventory and rights
 
-[Дім Франка](https://dimfranka.lviv.ua/) provides the five volume landing pages (I 1896, II 1899, III 1902, IV 1906, V 1910). See [catalogue](src/franko_tei/sources.json) and [research audit](docs/source-audit.md). The original printed works and the digital scan images are distinct rights questions. The MIT repository license covers this project's code; it does **not** grant rights in museum scans. PDF bytes, checksums and page counts have not yet been audited.
+[Дім Франка](https://dimfranka.lviv.ua/) provides the five volume landing pages (I 1896, II 1899, III 1902, IV 1906, V 1910). See [catalogue](src/franko_tei/sources.json) and [research audit](docs/source-audit.md). The original printed works and the digital scan images are distinct rights questions. The MIT repository license covers this project's code; it does **not** grant rights in museum scans. PDF bytes, checksums and page counts have not yet been audited locally. The [source-recon workflow](.github/workflows/source-recon.yml) can be run manually to try collecting a checksummed page-count report on a GitHub runner without rehosting the PDF. As of 2026-11-11, the museum server returns HTTP 403 to that runner; the workflow cannot currently acquire a scan. An authorized local PDF can be supplied to `inspect-scan` instead. See the [source-access log](docs/source-audit.md).
 
 ## Roadmap and autonomy
 

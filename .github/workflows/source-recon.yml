@@ -1,0 +1,40 @@
+name: Source reconnaissance (no scan redistribution)
+on:
+  workflow_dispatch:
+    inputs:
+      volume:
+        description: 'Franko volume number (1–5)'
+        required: true
+        type: choice
+        options: ['1', '2', '3', '4', '5']
+        default: '3'
+permissions:
+  contents: read
+concurrency:
+  group: source-recon-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  inspect-one-volume:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      VOLUME: ${{ inputs.volume || '3' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e '.[pdf]'
+      - name: Retrieve one original museum scan to runner only
+        run: |
+          mkdir -p scans audit
+          franko-tei fetch-scan --volume "$VOLUME" --output "scans/vol${VOLUME}.pdf"
+      - name: Audit physical pages, text-layer presence and SHA256
+        run: franko-tei inspect-scan --volume "$VOLUME" --pdf "scans/vol${VOLUME}.pdf" --output "audit/vol${VOLUME}.json"
+      - name: Keep only the metadata report (not scan images)
+        uses: actions/upload-artifact@v4
+        with:
+          name: museum-scan-metadata-${{ env.VOLUME }}
+          path: audit/*.json
+          retention-days: 7
+          if-no-files-found: error
