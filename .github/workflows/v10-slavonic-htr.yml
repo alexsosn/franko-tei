@@ -98,6 +98,31 @@ jobs:
               print(name, [(r['bbox_xywh'],r['seam_black_fraction']) for r in group])
           print('Eight disjoint source bands only; no claim of correct glyphs or titla.')
           PY
+      - name: Audit nearly all facsimile candidate geometry without inventing glyphs
+        run: |
+          franko-v10-bands --scope broad --images real-images --layout geometry/vol5/vol5-page-00010-kraken-layout.json --output geometry/v10-broad-source-bands.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('geometry/v10-broad-source-bands.json').read_text())
+          assert p['diagnostic_scope']=='broad'
+          assert p['status']=='segmentation_unchecked'
+          assert p['line_count']==76
+          assert p['original_candidate_count']==85
+          assert len(p['excluded_source_candidate_ids'])==9
+          assert len({x['candidate_line_id'] for x in p['lines']})==76
+          assert p['coverage_is_complete'] is False
+          assert not p['titla_preservation_verified']
+          assert not p['transcription_verified']
+          for g in (p['lines'][:36], p['lines'][36:]):
+              for a,b in zip(g,g[1:]):
+                  assert a['bbox_xywh'][1]+a['bbox_xywh'][3]==b['bbox_xywh'][1]
+              assert all(r['requires_visual_review'] for r in g)
+          print('Broad source-only candidate report: 76 disjoint source bands,',
+                p['short_band_count'],'thin bands;',
+                p['high_ink_seam_count'],'higher-ink seams;',
+                '9 excluded original Kraken regions retained by ID.')
+          PY
       - name: Fetch reproducible Polyscriptor CRNN inference implementation
         run: |
           set -euo pipefail
@@ -184,5 +209,6 @@ jobs:
           path: |
             ocr-results/*.json
             geometry/v10-isolated-source-bands.json
+            geometry/v10-broad-source-bands.json
           retention-days: 7
           if-no-files-found: error

@@ -82,9 +82,9 @@ def _seam(image, a, b, ya, yb):
     return cut,round(frac,6)
 
 
-def isolate_group(image, rows, column, take=4, divider=615):
+def isolate_group(image, rows, column, take=4, divider=615, allow_short=False):
     """Extract first N rows in one column, with shared nonoverlap y-seams."""
-    if column not in ("left","right") or not isinstance(take,int) or not 1<=take<=10:
+    if column not in ("left","right") or not isinstance(take,int) or not 1<=take<=100:
         raise ValueError("invalid column or row count")
     if len(rows) < take+1:
         raise ValueError("need next physical line to close last candidate")
@@ -101,7 +101,7 @@ def isolate_group(image, rows, column, take=4, divider=615):
         x,y,w,h=line["bbox_xywh"]
         low=top if i==0 else splits[i-1][0]
         high=splits[i][0]
-        if high-low<15:
+        if high-low<=0 or (high-low<15 and not allow_short):
             raise ValueError("isolated strip implausibly short; manual geometry required")
         left=max(0,floor(x)-5)
         right=min(image.width,ceil(x+w)+5)
@@ -119,6 +119,7 @@ def isolate_group(image, rows, column, take=4, divider=615):
         entry["seam_may_cut_ink"]=splits[i][1] >= 0.04
         entry["titla_review_required"]=True
         entry["incoming_seam_black_fraction"]=splits[i-1][1] if i>0 else None
+        entry["crop_too_short"] = high-low<15
         entry["seam_y"]=high
         entry["source_bbox_xywh"]=line["bbox_xywh"]
         entry["risk"]="Horizontal cut may lose titla, superscript glyphs or ligatures; inspect actual original."
@@ -146,19 +147,35 @@ def make_v10_diagnostic_layout(original,left,right,original_layout_sha256):
     return out
 
 
-def run(images_root, source_layout, output):
+def run(images_root, source_layout, output, scope="sample"):
     from PIL import Image
     root,source_layout,output=map(Path,(images_root,source_layout,output))
+    if scope not in ("sample","broad"):
+        raise ValueError("invalid diagnostic scope")
     if output.exists():
         raise FileExistsError("refusing to overwrite diagnostic geometry")
     original=json.loads(source_layout.read_text(encoding="utf8"))
     path,_,digest,page,lines=_validate_layout(root,"5",original)
     if page!=10 or digest!=SOURCE_SHA or len(lines)<79:
         raise ValueError("expected pinned V/10 source and full Kraken layout")
+    left_source=lines[1:38]
+    right_source=lines[38:79]
+    left_take=4 if scope=="sample" else len(left_source)-1
+    right_take=4 if scope=="sample" else len(right_source)-1
     with Image.open(path) as im:
-        left=isolate_group(im,lines[1:38],"left",take=4)
-        right=isolate_group(im,lines[38:79],"right",take=4)
+        left=isolate_group(im,left_source,"left",take=left_take,allow_short=scope=="broad")
+        right=isolate_group(im,right_source,"right",take=right_take,allow_short=scope=="broad")
     result=make_v10_diagnostic_layout(original,left,right,_digest(source_layout))
+    result["diagnostic_scope"]=scope
+    result["source_asset_commit"]=ASSET_COMMIT
+    result["original_candidate_count"]=len(lines)
+    # Do not silently count the marginal mark, two terminal column lines,
+    # three merged double-column regions, or modern caption as decoded text.
+    excluded=([lines[0]] + left_source[left_take:] + right_source[right_take:] + lines[79:])
+    result["excluded_source_candidate_ids"]=[r["candidate_line_id"] for r in excluded]
+    result["coverage_is_complete"]=False
+    result["short_band_count"]=sum(bool(r["crop_too_short"]) for r in left+right)
+    result["high_ink_seam_count"]=sum(bool(r["seam_may_cut_ink"]) for r in left+right)
     # No recognized words are persisted in this source geometry.
     output.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".v10-bands-",dir=output.parent) as td:
@@ -173,9 +190,10 @@ def main(argv=None):
     p.add_argument("--images",type=Path,required=True)
     p.add_argument("--layout",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
+    p.add_argument("--scope",choices=("sample","broad"),default="sample")
     args=p.parse_args(argv)
     try:
-        r=run(args.images,args.layout,args.output)
+        r=run(args.images,args.layout,args.output,scope=args.scope)
     except (OSError,ValueError) as exc:
         p.error(str(exc))
     print(f"Wrote {r['line_count']} unverified V/10 baseline bands; titla must be visually checked.")

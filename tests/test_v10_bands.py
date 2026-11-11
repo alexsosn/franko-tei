@@ -118,5 +118,41 @@ class IsolatedV10Tests(unittest.TestCase):
                 self.assertEqual(x[3],y[1])
 
 
+    def test_broad_mode_audits_many_rows_but_never_certifies_titla(self):
+        img=Image.new("RGB",(220,660),"white")
+        rows=sample(n=15)
+        out=isolate_group(img,rows,column="left",take=14,divider=155,allow_short=True)
+        self.assertEqual(len(out),14)
+        self.assertTrue(all(row["requires_visual_review"] for row in out))
+        self.assertTrue(all(row["crop_status"]=="unverified_baseline_isolation" for row in out))
+        self.assertEqual([r["candidate_line_id"] for r in out], [r["candidate_line_id"] for r in rows[:14]])
+        for a,b in zip(out,out[1:]):
+            self.assertEqual(a["bbox_xywh"][1]+a["bbox_xywh"][3],b["bbox_xywh"][1])
+        self.assertTrue(all(isinstance(x["crop_too_short"],bool) for x in out))
+
+
+    def test_real_broad_geometry_has_durable_source_anchored_audit(self):
+        import json
+        from pathlib import Path
+        p=Path(__file__).resolve().parents[1] / "pilot/geometry/vol5_scan00010_broad_20261111.json"
+        d=json.loads(p.read_text(encoding="utf8"))
+        self.assertEqual(d["status"],"segmentation_unchecked")
+        self.assertEqual(d["source_image_sha256"],"3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c")
+        self.assertEqual(d["source_run_id"],43078178554)
+        self.assertEqual(d["source_artifact_sha256"],"1c63e147ee9870f8856ea373900085a44974ae3dc33e09fc2d24c91cc9ddd183")
+        self.assertEqual(d["original_candidate_count"],85)
+        self.assertEqual(len(d["candidates"]),76)
+        self.assertEqual(len(d["excluded_candidate_ids"]),9)
+        self.assertEqual(sum(bool(r["may_cut_ink"]) for r in d["candidates"]),21)
+        self.assertFalse(d["coverage_complete"])
+        self.assertFalse(d["titla_verified"])
+        self.assertFalse(d["text_recognized"])
+        self.assertEqual(len({r["candidate_id"] for r in d["candidates"]}),76)
+        for group in (d["candidates"][:36],d["candidates"][36:]):
+            for a,b in zip(group,group[1:]):
+                self.assertEqual(a["bbox_xywh"][1]+a["bbox_xywh"][3],b["bbox_xywh"][1])
+        self.assertEqual(d["candidates"][0]["bbox_xywh"],[191,144,403,67])
+
+
 if __name__=="__main__":
     unittest.main()
