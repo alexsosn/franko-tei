@@ -33,5 +33,24 @@ class TestI29(unittest.TestCase):
         self.assertGreaterEqual(len(r["uncertainty_notes"]), 15)
         self.assertEqual(r["coverage"]["occlusions"], [])
 
+
+    def test_post_freeze_glyph_challenges_not_promoted(self):
+        d = json.loads(PATH.read_text(encoding="utf-8"))
+        audit_path = PATH.parent / "reviews/vol1_scan00029_post_freeze_challenges.json"
+        audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"], d["source_image_sha256"])
+        self.assertEqual(audit["status"], "provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        assert audit["corrections"]
+        line_map = {l["id"]: l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for c in audit["corrections"]:
+            self.assertIn(c["line_id"], line_map)
+            self.assertIn(c["frozen_substring"], line_map[c["line_id"]])
+            self.assertNotEqual(c["frozen_substring"], c["proposed_substring"])
+            self.assertIn(c["evidence_kind"], {"native_visual_challenge", "native_plus_ocr_counterhypothesis"})
+            self.assertNotEqual(c["disposition"], "verified")
+        self.assertEqual(len({c["line_id"] for c in audit["corrections"]}), 4)
+
 if __name__ == "__main__":
     unittest.main()
