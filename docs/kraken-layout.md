@@ -43,3 +43,13 @@ superscripts before line-cropping. Feed identical validated line crops to the
 Prosta Mova and Church Slavonic CRNN specialists and multilingual OCR, then
 report CER only on independently checked references. Never auto-promote
 the result to verified TEI.
+
+## Identity and reproducibility caveat
+
+Each candidate_line_id includes a truncated SHA-256 of canonical native Kraken
+segmentation JSON. If the reading order/geometry changes after retraining,
+the ID changes too. It is NOT a stable identifier for a TEI/TF line until
+independently aligned to a printed page. The report stores the full SHA-256
+of the native segmentation JSON bytes. Default bundled segmentation weights
+are not individually pinned in this prototype: no scholarly layout release
+is authorized by these candidate annotations.

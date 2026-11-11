@@ -33,8 +33,9 @@ class KrakenLayoutTests(unittest.TestCase):
 
     def test_preserves_order_geometry_and_region_ids(self):
         lines = normalize_layout(SAMPLE, "3", 130, 1190, 1700)
-        self.assertEqual([x["line_id"] for x in lines],
-                         ["v3-s00130-l00001", "v3-s00130-l00002"])
+        self.assertEqual(len({line["candidate_line_id"] for line in lines}), 2)
+        self.assertTrue(lines[0]["candidate_line_id"].startswith("v3-s00130-k"))
+        self.assertTrue(lines[1]["candidate_line_id"].endswith("-l00002"))
         self.assertEqual(lines[0]["bbox_xywh"], [7, 15, 126, 27])
         self.assertEqual(lines[1]["region_ids"], ["note"])
 
@@ -65,6 +66,7 @@ class KrakenLayoutTests(unittest.TestCase):
         doc = json.loads(files[0].read_text())
         self.assertEqual(doc["status"], "segmentation_unchecked")
         self.assertEqual(doc["source_image_sha256"], self.sha)
+        self.assertEqual(len(doc["native_kraken_json_sha256"]), 64)
         self.assertNotIn("text", doc["lines"][0])
         with self.assertRaises(FileExistsError):
             with patch("franko_tei.kraken_layout.subprocess.run", side_effect=fake):

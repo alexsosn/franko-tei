@@ -3,6 +3,7 @@
 No OCR text is generated, normalized or promoted into TEI.
 """
 import argparse
+from hashlib import sha256
 import json
 from pathlib import Path
 import subprocess
@@ -34,6 +35,8 @@ def normalize_layout(obj, volume, page, width, height):
     if not isinstance(lines, list):
         raise ValueError("Kraken line list missing")
     normalized = []
+    # Layout changes must not silently reuse a candidate line ID.
+    run_fingerprint = sha256(json.dumps(obj, sort_keys=True, ensure_ascii=False).encode("utf8")).hexdigest()[:12]
     for index, line in enumerate(lines, 1):
         if not isinstance(line, dict):
             raise ValueError("invalid Kraken line record")
@@ -44,7 +47,7 @@ def normalize_layout(obj, volume, page, width, height):
         if box[2] <= 0 or box[3] <= 0:
             raise ValueError("degenerate Kraken line polygon")
         normalized.append({
-            "line_id": f"v{volume}-s{page:05d}-l{index:05d}",
+            "candidate_line_id": f"v{volume}-s{page:05d}-k{run_fingerprint}-l{index:05d}",
             "kraken_line_id": line.get("id"),
             "baseline": baseline, "boundary": boundary,
             "bbox_xywh": box, "region_ids": line.get("regions", []),
@@ -99,6 +102,7 @@ def run(images, volume, pages, output, timeout=300):
                 "status": "segmentation_unchecked", "engine": "kraken",
                 "engine_version": kraken_version,
                 "algorithm": "default baseline layout, -bl",
+                "native_kraken_json_sha256": _digest(native),
                 "volume": str(volume), "scan_page": page, "printed_page": entry.get("printed_page"),
                 "source_pdf_sha256_claimed_by_manifest": manifest["source_sha256"],
                 "source_image_path": str(image.relative_to(images)),
