@@ -38,6 +38,24 @@ raw confidence or line count, since multilingual runs may change
 segmentation; establish shared line geometry and separate model candidates.
 Specialist CRNN models accept line crops, not full-page images.
 
+## User-approved agent-first pilot priority (GitHub #11, 2026-11-11)
+
+Prioritize six real-image development pages: I/20, II/100, III/130,
+IV/100, V/100 and V/10. Keep I/21, II/101, III/131, IV/101, V/101
+and V/11 untouched as frozen holdout until evaluation protocol is fixed.
+Use two genuinely separate blind image-only reader contexts, then an
+independent image-inspecting review context; no mandatory human gate.
+Persist full first responses, exact instructions, run/model/context
+identities, image checksums, page-region-line text and mixed-line script/
+language spans, comparison decisions and remaining uncertainty.
+Do not infer context independence merely from different metadata strings.
+
+OCR models (Tesseract, Kraken, CRNN) remain optional comparative
+tools and must not delay the agent-reading to pilot TEI to Text-Fabric slice.
+Proof of image coverage is separate from textual certainty. Preserve
+agent_unverified pilot status; no CER/human-certified gold claim, no
+stable release. See docs/agent-first-evidence.md and #3–#7 for gates.
+
 ## Source/edition invariants
 
 - **Printed scan page index is not printed folio/page number.** Never infer alignment from a constant offset.
