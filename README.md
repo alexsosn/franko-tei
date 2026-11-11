@@ -48,3 +48,7 @@ The user-approved primary workstream is [#11](https://github.com/alexsosn/franko
 ## Specialist Church Slavonic model trial
 
 Two open CRNN-CTC models can be compared on **identical** Kraken line crops via `franko-crnn-probe`; reports retain cropped-pixel SHA256 and model/weights/inference-code fingerprints but are never verified transcriptions. A small trial on III/130 and V/100 is defined by [the paired CRNN workflow](.github/workflows/crnn-real-probe.yml) and [model comparison guide](docs/crnn-paired-probe.md). See [Issue #20](https://github.com/alexsosn/franko-tei/issues/20). No historical CER is claimed.
+
+## One real-page unverified TEI pilot
+
+A single GPT-6 image-reading draft of IV/100 (printed page label 48) is saved as [source-anchored JSON](pilot/vol4_scan00100_single_reading.json) and [facsimile-linked TEI](pilot/vol4_scan00100_single_reading.xml). The `franko-pilot-tei` CLI checks actual image bytes and exact Unicode line roundtrips. This remains `agent_unverified`: no separate blind second reader or reviewing agent has run, and it is not released. See [pilot documentation](docs/single-reading-pilot.md) and [issue #11](https://github.com/alexsosn/franko-tei/issues/11).
