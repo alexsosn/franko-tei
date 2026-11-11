@@ -1,9 +1,10 @@
-name: "Real image-first I/20 + III/130 + IV/100 TEI-to-TF smoke (unverified)"
+name: "Five real image-first pilot pages through TEI-to-TF (unverified)"
 on:
   pull_request:
     paths:
       - pilot/image_first/**
       - tests/test_image_first_structured.py
+      - tests/test_image_first_revisions.py
       - .github/workflows/image-first-real-tei-tf.yml
       - src/franko_tei/pilot_tf_batch.py
       - src/franko_tei/pilot_tei.py
@@ -24,12 +25,12 @@ jobs:
         run: python -m pip install -e '.[tf]' lxml
       - name: Run red-first page-replay and real Unicode graph tests
         run: python -m unittest discover -s tests -p test_image_first_structured.py -v
-      - name: Fetch three exact native image files and original manifests
+      - name: Fetch five exact native image files and original manifests
         shell: bash
         run: |
           set -euo pipefail
           base=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images
-          for spec in 1:20 3:130 4:100; do
+          for spec in 1:20 2:100 3:130 4:100 5:100; do
             vol="${spec%:*}"
             page="${spec#*:}"
             printf -v image 'page-%05d.jpg' "$page"
@@ -42,10 +43,12 @@ jobs:
           set -euo pipefail
           mkdir -p build
           franko-pilot-tei --images native-assets --input pilot/image_first/vol1_scan00020_single_reading.json --output build/v1-s00020.xml
+          franko-pilot-tei --images native-assets --input pilot/image_first/vol2_scan00100_single_reading_v1.json --output build/v2-s00100.xml
           franko-pilot-tei --images native-assets --input pilot/image_first/vol3_scan00130_single_reading.json --output build/v3-s00130.xml
           franko-pilot-tei --images native-assets --input pilot/vol4_scan00100_single_reading.json --output build/v4-s00100.xml
+          franko-pilot-tei --images native-assets --input pilot/image_first/vol5_scan00100_single_reading_v1.json --output build/v5-s00100.xml
           cmp pilot/vol4_scan00100_single_reading.xml build/v4-s00100.xml
-      - name: Validate all three XML documents against TEI P5 4.12.0 RNG
+      - name: Validate all five XML documents against TEI P5 4.12.0 RNG
         run: |
           set -euo pipefail
           curl --fail --location --retry 2 --silent --show-error 'https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/custom/schema/relaxng/tei_all.rng' -o build/tei-all.rng
@@ -58,9 +61,9 @@ jobs:
               assert schema.validate(source), (str(path), str(schema.error_log))
               print(path, "TEI RNG PASS (source text STILL unverified)")
           PY
-      - name: Require immutable pinned manifests and actual bytes for all three pages
+      - name: Require immutable pinned manifests and actual bytes for all five pages
         run: |
-          franko-pilot-tf-batch --images native-assets             --evidence pilot/image_first/vol1_scan00020_single_reading.json --tei build/v1-s00020.xml             --evidence pilot/image_first/vol3_scan00130_single_reading.json --tei build/v3-s00130.xml             --evidence pilot/vol4_scan00100_single_reading.json --tei build/v4-s00100.xml             --output build/three-real-unverified-tf
+          franko-pilot-tf-batch --images native-assets             --evidence pilot/image_first/vol1_scan00020_single_reading.json --tei build/v1-s00020.xml             --evidence pilot/image_first/vol2_scan00100_single_reading_v1.json --tei build/v2-s00100.xml             --evidence pilot/image_first/vol3_scan00130_single_reading.json --tei build/v3-s00130.xml             --evidence pilot/vol4_scan00100_single_reading.json --tei build/v4-s00100.xml             --evidence pilot/image_first/vol5_scan00100_single_reading_v1.json --tei build/v5-s00100.xml             --output build/five-real-unverified-tf
       - name: Load TF and independently compare code points to persisted first-reading JSONs
         run: |
           python - <<'PY'
@@ -69,17 +72,19 @@ jobs:
           from tf.fabric import Fabric
           files=[
             "pilot/image_first/vol1_scan00020_single_reading.json",
+            "pilot/image_first/vol2_scan00100_single_reading_v1.json",
             "pilot/image_first/vol3_scan00130_single_reading.json",
             "pilot/vol4_scan00100_single_reading.json",
+            "pilot/image_first/vol5_scan00100_single_reading_v1.json",
           ]
           drafts=[json.loads(Path(x).read_text("utf8")) for x in files]
-          api=Fabric(locations="build/three-real-unverified-tf",silent="deep").load(
+          api=Fabric(locations="build/five-real-unverified-tf",silent="deep").load(
             "glyph codepoint teiId pageKey volume scanPage imageSha pdfShaClaim status")
           assert api, "Text-Fabric did not load"
           pages=list(api.F.otype.s("page"))
-          assert len(pages)==3, pages
+          assert len(pages)==5, pages
           by_key={api.F.pageKey.v(n):n for n in pages}
-          assert set(by_key)=={"v1-s00020","v3-s00130","v4-s00100"}
+          assert set(by_key)=={"v1-s00020","v2-s00100","v3-s00130","v4-s00100","v5-s00100"}
           for draft in drafts:
               key=f"v{draft['volume']}-s{draft['scan_page']:05d}"
               n=by_key[key]
@@ -103,9 +108,9 @@ jobs:
       - name: Upload experimental generated TEI and TF only, never native scans
         uses: actions/upload-artifact@v4
         with:
-          name: franko-three-real-first-readings-tei-tf-unverified
+          name: franko-five-real-first-readings-tei-tf-unverified
           path: |
             build/v*-s*.xml
-            build/three-real-unverified-tf/*.tf
+            build/five-real-unverified-tf/*.tf
           retention-days: 7
           if-no-files-found: error
