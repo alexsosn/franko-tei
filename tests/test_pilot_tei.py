@@ -173,5 +173,26 @@ class PilotTeiTests(unittest.TestCase):
 
 
 
+
+    def test_unreadable_editorial_gap_markers_never_enter_tei_glyph_text(self):
+        # Synthetic: these markers are working notes, NOT source glyphs.
+        # Keep raw_response internally consistent to isolate the gap gate.
+        for marker in ("⟦…⟧", "⟦?⟧", "⟧", "⟦"):
+            with self.subTest(marker=marker):
+                data=self.sample()
+                line=data['reading']['regions'][1]['lines'][0]
+                line['text']="ѣ́ " + marker + " & зразок"
+                line['language_spans']=[]
+                data['reading']['uncertainty_notes']=[]
+                data['reading']['raw_response']='\n'.join(
+                    item['text'] for region in data['reading']['regions']
+                    for item in region['lines']
+                )
+                with self.assertRaisesRegex(ValueError, 'unread|placeholder|gap'):
+                    validate_single_draft(data,self.root)
+                with self.assertRaisesRegex(ValueError, 'unread|placeholder|gap'):
+                    render_pilot_tei(data,1190,1794)
+
+
 if __name__=='__main__':
     unittest.main()
