@@ -1,0 +1,41 @@
+"""I/31 printed XXII: full native source-first diplomatic candidate."""
+import json
+from pathlib import Path
+import unittest
+
+PATH = Path(__file__).resolve().parents[1] / "pilot/vol1_scan00031_single_reading.json"
+
+
+class TestI31(unittest.TestCase):
+    def test_full_printed_page_without_verified_promotion(self):
+        d = json.loads(PATH.read_text(encoding="utf-8"))
+        self.assertEqual((d["volume"], d["scan_page"], d["printed_page_observed"]), ("1", 31, "XXII"))
+        self.assertEqual(d["asset_commit"], "e871f32537e81f81896f6ce9a6658aba667db9c5")
+        self.assertEqual(d["source_image_sha256"], "b106fd6bf7340de28283ff1d4e33bfdb8e0c30b5a9e1379753dcb63e43c434ef")
+        self.assertEqual(d["status"], "agent_unverified")
+        self.assertNotIn("review", d)
+        r = d["reading"]
+        self.assertEqual(r["context_independence"], "single-working-draft")
+        self.assertFalse(r["source_original_ocr_visible"])
+        self.assertFalse(r["peer_readings_visible"])
+        self.assertTrue(r["coverage"]["entire_image_inspected"])
+        self.assertEqual([reg["kind"] for reg in r["regions"]], ["page_number", "body", "body", "body", "body", "body"])
+        self.assertEqual([len(reg["lines"]) for reg in r["regions"]], [1, 4, 6, 7, 13, 11])
+        lines = [line for reg in r["regions"] for line in reg["lines"]]
+        self.assertEqual(len(lines), 42)
+        self.assertEqual(lines[0]["text"], "XXII")
+        self.assertTrue(lines[1]["text"].startswith("около 1012 року."))
+        self.assertTrue(lines[-1]["text"].endswith("надруковано їх 40"))
+        self.assertIn("Китовраса", r["raw_response"])
+        self.assertIn("ш а м і р", r["raw_response"])
+        self.assertIn("Слав. сказанія о Соломонѣ", r["raw_response"])
+        self.assertIn("Пыпіна", r["raw_response"])
+        self.assertIn("Крехівської Палєї", r["raw_response"])
+        self.assertEqual(r["raw_response"], "\n".join(l["text"] for l in lines))
+        self.assertTrue(all(l["geometry_estimated"] for l in lines))
+        self.assertGreaterEqual(len(r["uncertainty_notes"]), 25)
+        self.assertEqual(r["coverage"]["occlusions"], [])
+
+
+if __name__ == "__main__":
+    unittest.main()
