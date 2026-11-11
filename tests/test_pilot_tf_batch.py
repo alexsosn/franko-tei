@@ -126,6 +126,22 @@ class BatchTests(unittest.TestCase):
             merge_pilot_graphs([
                 ("4", 100, self.first_graph), ("5", 10, forged)])
 
+    def test_malformed_payloads_fail_with_value_error_not_type_errors(self):
+        # Adversarial: user-controlled JSON root and volume may be lists.
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            evidence = root / "malformed.json"
+            tei = root / "unused.xml"
+            for value in ([], {"volume": []}, {"volume": {}}):
+                evidence.write_text(json.dumps(value), encoding="utf8")
+                with self.subTest(value=value), self.assertRaises(ValueError):
+                    verify_source_gated_batch(
+                        [(evidence, tei), (evidence, tei)], root / "images")
+        with self.assertRaises(ValueError):
+            merge_pilot_graphs([
+                ([], 100, self.first_graph),
+                ("5", 10, self.second_graph)])
+
     def test_rejects_promoted_graph_and_wrong_scan_dimension(self):
         promoted = copy.deepcopy(self.second_graph)
         n = next(n for n, t in promoted.node_features["otype"].items()
