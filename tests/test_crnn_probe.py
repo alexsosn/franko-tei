@@ -44,6 +44,7 @@ class PairedCRNNTests(unittest.TestCase):
         self.save()
         self.inference = self.root / "inference.py"
         self.inference.write_text("# mocked pinned inference\n", encoding="utf8")
+        (self.root / "htr_engine_base.py").write_text("# pinned companion test fixture\n", encoding="utf8")
         self.models = {}
         for name in ("prosta", "slavonic"):
             weights = self.root / f"{name}.pt"
@@ -76,6 +77,7 @@ class PairedCRNNTests(unittest.TestCase):
         self.assertEqual(records[1]["crop_png_sha256"], records[3]["crop_png_sha256"])
         self.assertEqual({r["model_name"] for r in records}, {"prosta", "slavonic"})
         self.assertTrue(all(len(r["model_checkpoint_sha256"]) == 64 for r in records))
+        self.assertTrue(all(len(r["upstream_companion_sha256"]) == 64 for r in records))
         self.assertTrue(all(r["kraken_layout_report_sha256"] for r in records))
         self.assertTrue((self.root / "report.json").exists())
         with self.assertRaises(FileExistsError):

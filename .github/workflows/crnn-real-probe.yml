@@ -50,6 +50,10 @@ jobs:
             https://raw.githubusercontent.com/achimrabus/polyscriptor/7994ccadc537c59b0b90eb25b66dfa5d54976d6d/inference_pylaia_native.py \
             -o upstream/inference_pylaia_native.py
           test -s upstream/inference_pylaia_native.py
+          curl --fail --location --retry 2 --silent --show-error \
+            https://raw.githubusercontent.com/achimrabus/polyscriptor/7994ccadc537c59b0b90eb25b66dfa5d54976d6d/htr_engine_base.py \
+            -o upstream/htr_engine_base.py
+          test -s upstream/htr_engine_base.py
       - name: Resolve model commit revisions and download exact open weights
         run: |
           python - <<'PY'

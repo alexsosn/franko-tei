@@ -8,6 +8,7 @@ from hashlib import sha256
 import importlib.util
 import io
 import json
+import sys
 from pathlib import Path
 import re
 import tempfile
@@ -89,7 +90,14 @@ def _load_engine(inference_path, checkpoint, symbols):
     if not spec or not spec.loader:
         raise RuntimeError("could not load pinned Polyscriptor inference module")
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    # The pinned upstream inference file imports sibling htr_engine_base.py to
+    # register optional model presets. Keep that import local and temporary.
+    upstream_dir = str(inference_path.parent.resolve())
+    sys.path.insert(0, upstream_dir)
+    try:
+        spec.loader.exec_module(module)
+    finally:
+        sys.path.remove(upstream_dir)
     return module.PyLaiaInference(checkpoint_path=str(checkpoint), syms_path=str(symbols), device="cpu")
 
 
@@ -128,7 +136,11 @@ def probe(images_root, volume, layout_path, model_specs, inference_path,
         raise FileExistsError("refusing to overwrite OCR candidates")
     if not inference_path.is_file() or inference_path.is_symlink():
         raise ValueError("missing or unsafe inference source")
+    companion_path = inference_path.parent / "htr_engine_base.py"
+    if not companion_path.is_file() or companion_path.is_symlink():
+        raise ValueError("missing pinned Polyscriptor htr_engine_base.py companion")
     inference_sha = _digest(inference_path)
+    companion_sha = _digest(companion_path)
     layout_sha = _digest(layout_path)
     layout = json.loads(layout_path.read_text(encoding="utf-8"))
     image_path, page_entry, image_sha, page, lines = _validate_layout(images_root, volume, layout)
@@ -162,6 +174,7 @@ def probe(images_root, volume, layout_path, model_specs, inference_path,
             records.append({
                 "status": "ocr_unchecked", "engine": "polyscriptor-crnn-ctc",
                 "upstream_inference_sha256": inference_sha,
+                "upstream_companion_sha256": companion_sha,
                 "model_name": name, "model_repo": spec["repo"], "model_revision": spec["revision"],
                 "model_checkpoint_sha256": spec["checkpoint_sha256"],
                 "model_symbols_sha256": spec["symbols_sha256"],
@@ -178,7 +191,7 @@ def probe(images_root, volume, layout_path, model_specs, inference_path,
             })
     if _digest(image_path) != image_sha or _digest(layout_path) != layout_sha:
         raise ValueError("source image/layout changed during inference")
-    if _digest(inference_path) != inference_sha:
+    if _digest(inference_path) != inference_sha or _digest(companion_path) != companion_sha:
         raise ValueError("inference code changed during run")
     for name, spec in models.items():
         if _digest(spec["checkpoint"]) != spec["checkpoint_sha256"] or _digest(spec["symbols"]) != spec["symbols_sha256"]:

@@ -48,3 +48,5 @@ a held-out, independently checked transcription of line images and
 critical-glyph error analysis on ѣ/ѳ/ѵ/ѡ, titla and superscripts. Mixed
 Ukrainian/German/Greek/Latin lines additionally require appropriate
 script-specific models; Church Slavonic models alone cannot handle them.
+
+The pinned `inference_pylaia_native.py` imports the adjacent upstream `htr_engine_base.py` at module import to populate model presets. The workflow fetches **both** files from the same fixed Polyscriptor Git commit. The runner temporarily adds their directory to the Python module path while loading the upstream code, then removes it. Both SHA256 values are recorded in the model outputs. This requirement was found by an actual GitHub Actions run; do not treat a single-file import as sufficient.
