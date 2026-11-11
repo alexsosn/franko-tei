@@ -42,7 +42,7 @@ class TestI29(unittest.TestCase):
         self.assertEqual(audit["status"], "provisional_source_challenges")
         self.assertFalse(audit["independent_blind_reader"])
         self.assertFalse(audit["third_independent_review_complete"])
-        assert audit["corrections"]
+        self.assertTrue(audit["corrections"])
         line_map = {l["id"]: l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
         for c in audit["corrections"]:
             self.assertIn(c["line_id"], line_map)
