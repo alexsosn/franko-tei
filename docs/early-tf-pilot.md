@@ -6,9 +6,13 @@ Built directly from the source-image-anchored [TEI P5 pilot](../pilot/vol4_scan0
 
 ```bash
 python -m pip install -e '.[tf]'
-franko-pilot-tf --tei pilot/vol4_scan00100_single_reading.xml \
+franko-pilot-tf --images images \
+  --evidence pilot/vol4_scan00100_single_reading.json \
+  --tei pilot/vol4_scan00100_single_reading.xml \
   --output local/vol4-scan00100-tf
 ```
+
+The CLI first checks the **actual native JPEG SHA256** against the pinned page manifest, validates the original single-reader JSON and demands that the XML exactly matches a fresh deterministic rendering of that JSON. It also reconstructs the full raw first reading with physical line breaks (joined `lb` lines), separately from each exact line's character slots. Missing images, changed scans, edited XML, or a promoted status fail closed; export never claims independent review.
 
 Uses Text-Fabric 13.1.1 `Fabric.save`. Outputs a reproducible corpus in `.tf` feature files:
 
@@ -18,7 +22,7 @@ Uses Text-Fabric 13.1.1 `Fabric.save`. Outputs a reproducible corpus in `.tf` fe
 - `uncertainty` nodes retain single-reader reading notes and link to source lines, **not** manuscript variants.
 - Page provenance features `imageSha`, `pdfShaClaim`, `imageUrl`, `observedPrintedPage` and `status=agent_unverified` distinguish actual-image evidence from the PDF checksum manifest claim. Unverified OCR never becomes verified TF.
 
-The package has a small pure TEI→graph layer for red-first regression tests, and an optional real TF writer using the pinned library. GitHub Actions loads the resulting `.tf` files via `tf.fabric.Fabric` and runs image-source/text/provenance queries; it publishes only experimental TF features as a short-lived artifact, not scans, a verified corpus, or a stable release.
+The package has a small pure TEI→graph layer for red-first regression tests, and an optional real TF writer using the pinned library. GitHub Actions first retrieves the pinned source JPEG and manifest, then loads resulting `.tf` files via `tf.fabric.Fabric` and runs text/provenance queries; it publishes only experimental TF features as a short-lived artifact, not scans, a verified corpus, or a stable release.
 
 ## Pending gates
 
