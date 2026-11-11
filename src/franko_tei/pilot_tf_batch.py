@@ -3,6 +3,7 @@
 No OCR, blind reader, or independent reviewer is synthesized here.
 """
 import argparse
+import hashlib
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -11,6 +12,34 @@ from tempfile import TemporaryDirectory
 from .pilot_tf import Graph, verify_source_gated_pilot
 
 TYPES = ("languageSpan", "uncertainty", "line", "region", "page")
+
+# Git *blob* SHA-1 for the exact unmodified UTF-8 manifest.json at the pinned
+# e871f32537e81f81896f6ce9a6658aba667db9c5 asset commit. Without this
+# second trust anchor, a forged image plus forged local manifest could pass
+# the ordinary image-against-manifest hash check.
+PINNED_MANIFEST_BLOBS = {
+    "1": "5609cac9aa5295e0a903bcc6856123d719338654",
+    "2": "f2880210e5fe07fb5a8d6792e2b9844c4a282fa5",
+    "3": "3c9b9c9abc5655b2af980eb137751e29a0b4fc53",
+    "4": "93262d692fcc3bfdfc26c0c22a8cc9ef2887a7fd",
+    "5": "707bf7169b8d7d8ea51ad3aedc4a3e0371817e62",
+}
+
+
+def _verify_pinned_manifest(volume, images_root):
+    """Authenticate the *exact* locally supplied manifest against Git."""
+    if volume not in PINNED_MANIFEST_BLOBS:
+        raise ValueError("unknown volume for pinned manifest")
+    path = Path(images_root) / f"vol{volume}" / "manifest.json"
+    try:
+        raw = path.read_bytes()
+    except OSError as exc:
+        raise ValueError("missing pinned source manifest") from exc
+    blob = hashlib.sha1(
+        b"blob " + str(len(raw)).encode("ascii") + b"\0" + raw
+    ).hexdigest()
+    if blob != PINNED_MANIFEST_BLOBS[volume]:
+        raise ValueError("local manifest does not match pinned asset commit")
 
 
 def _inspect(volume, scan, graph):
@@ -143,6 +172,7 @@ def verify_source_gated_batch(pairs, images_root):
     entries = []
     for evidence_path, tei_path in pairs:
         payload = json.loads(Path(evidence_path).read_text(encoding="utf8"))
+        _verify_pinned_manifest(payload.get("volume"), images_root)
         graph = verify_source_gated_pilot(tei_path, evidence_path, images_root)
         entries.append((payload["volume"], payload["scan_page"], graph))
     return merge_pilot_graphs(entries)
