@@ -28,7 +28,7 @@ PINNED_MANIFEST_BLOBS = {
 
 def _verify_pinned_manifest(volume, images_root):
     """Authenticate the *exact* locally supplied manifest against Git."""
-    if volume not in PINNED_MANIFEST_BLOBS:
+    if not isinstance(volume, str) or volume not in PINNED_MANIFEST_BLOBS:
         raise ValueError("unknown volume for pinned manifest")
     path = Path(images_root) / f"vol{volume}" / "manifest.json"
     try:
@@ -43,7 +43,7 @@ def _verify_pinned_manifest(volume, images_root):
 
 
 def _inspect(volume, scan, graph):
-    if volume not in {"1", "2", "3", "4", "5"} or type(scan) is not int or scan < 1:
+    if not isinstance(volume, str) or volume not in {"1", "2", "3", "4", "5"} or type(scan) is not int or scan < 1:
         raise ValueError("invalid volume/scan")
     if not isinstance(graph, Graph):
         raise ValueError("expected a TF Graph")
@@ -101,6 +101,8 @@ def merge_pilot_graphs(entries):
     records = []
     metadata = None
     for volume, scan, graph in entries:
+        # Validate scalar key types *before* putting them into a hash set.
+        _inspect(volume, scan, graph)
         if (volume, scan) in pages_seen:
             raise ValueError("duplicate volume/scan pair")
         pages_seen.add((volume, scan))
@@ -172,6 +174,8 @@ def verify_source_gated_batch(pairs, images_root):
     entries = []
     for evidence_path, tei_path in pairs:
         payload = json.loads(Path(evidence_path).read_text(encoding="utf8"))
+        if not isinstance(payload, dict):
+            raise ValueError("pilot evidence must be a JSON object")
         _verify_pinned_manifest(payload.get("volume"), images_root)
         graph = verify_source_gated_pilot(tei_path, evidence_path, images_root)
         entries.append((payload["volume"], payload["scan_page"], graph))
