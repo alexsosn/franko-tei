@@ -1,0 +1,3070 @@
+{
+  "schema_version": "v10-complete-available-bands-ocr-candidates-v0",
+  "status": "ocr_unchecked",
+  "volume": "5",
+  "scan_page": 10,
+  "source_asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+  "source_run_id": 43080063244,
+  "source_run_url": "https://github.com/alexsosn/franko-tei/actions/runs/43080063244",
+  "source_artifact_id": 13884581031,
+  "source_artifact_sha256": "3dbb17102ee04c750465138849867b8142fb531d78bc85ecf15478241bd23f65",
+  "source_job_id": 130729969006,
+  "source_of_record": "Full exact raw per-model OCR text parsed from machine JSON lines in successful GitHub Actions job log (not retyped or normalized); crop and model SHA fingerprints from actual same-model process.",
+  "model_count": 2,
+  "band_count": 76,
+  "raw_candidate_count": 152,
+  "original_kraken_candidate_count": 85,
+  "uncovered_kraken_candidates": 9,
+  "high_ink_seam_count": 21,
+  "ink_risk_is_a_heuristic": true,
+  "cer_measured": false,
+  "gold_reference_used": false,
+  "complete_page_transcribed": false,
+  "may_feed_tei_tf": false,
+  "independent_glyph_review_complete": false,
+  "printed_or_manuscript_origin_unresolved": true,
+  "warning": "Candidate lines from two pinned models have not been checked against the source glyph by glyph. Several bands may truncate titles, titla, ligatures or superscripts; model agreement is not proof of accuracy. Preserve all readings as hypotheses only.",
+  "candidates": [
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00002",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "cd996f21b0f5f773db003b6cbe188d7a45105ee513452dc313f2acb89b322dac",
+      "bbox_crop_xyxy": [
+        191,
+        144,
+        594,
+        211
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "М҇цⷭ҇а априлѧ, въпорвыи",
+      "model_internal_confidence": 0.9192673771277718
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00003",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "d90d67a122f4a9c89a277e8e28b97cb63b5190a3982263806747ea0239af3ebc",
+      "bbox_crop_xyxy": [
+        184,
+        211,
+        598,
+        261
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "дн҃ь. китїе и жизнь, про¬",
+      "model_internal_confidence": 0.9086171650886535
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00004",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "9fd05481f27601bfb9d99d5597e486afd3bd8621f93860c78ac0a496126ae071",
+      "bbox_crop_xyxy": [
+        184,
+        261,
+        597,
+        300
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "подобныѧ мт҃ри нашеѧ",
+      "model_internal_confidence": 0.977976530790329
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00005",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "db2f8bfeff8f51c65b1c8394be6207240fbe81b710214e983f7681e7889cbc79",
+      "bbox_crop_xyxy": [
+        184,
+        300,
+        597,
+        346
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "марїи египотьскїѧ. спи¬",
+      "model_internal_confidence": 0.9282994322154833
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00006",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "6953719c9563a544d89686f617a7633b73aaace1db7a9dd132ed10e6fbd3cfd3",
+      "bbox_crop_xyxy": [
+        184,
+        346,
+        601,
+        388
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "вановофронїемъ; патрїа",
+      "model_internal_confidence": 0.9506699036468159
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00007",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "39cc1dfcc9b1639ab714bc7df9c2642657da2440be9038aa06a0dd81b60f9d12",
+      "bbox_crop_xyxy": [
+        312,
+        388,
+        375,
+        412
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ра¬",
+      "model_internal_confidence": 0.8304200967152914
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00008",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "926bfc0fa995f62bd64750bcc58a8c32e75b555075b3276502f62b580c119af4",
+      "bbox_crop_xyxy": [
+        219,
+        412,
+        574,
+        456
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "рхомъ їерⷭ҇лимъ вкимво",
+      "model_internal_confidence": 0.9212623374028639
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00009",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "0b39d14d7931f2b5f692292425eb223ceba9f69ad19a9fb0593191627a5add03",
+      "bbox_crop_xyxy": [
+        282,
+        456,
+        493,
+        491
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "блⷭ҇ви; ѡч҃е.",
+      "model_internal_confidence": 0.8781313758630019
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00010",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "7c85b0bcb88caa7e790773e4f76d045ad463ddd391269413677a01db119066a4",
+      "bbox_crop_xyxy": [
+        195,
+        491,
+        597,
+        524
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "Таинꙋ цр҃евꙋ добро есть таити. л",
+      "model_internal_confidence": 0.8778545176610351
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00011",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "b594f9b7110edee56487f92878e35b5709780beb1d17dcab037a99174a3924c0",
+      "bbox_crop_xyxy": [
+        224,
+        524,
+        601,
+        555
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "дѣла бж҃їѧ проповѣдати преславно",
+      "model_internal_confidence": 0.9702065102756023
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00002",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "cd996f21b0f5f773db003b6cbe188d7a45105ee513452dc313f2acb89b322dac",
+      "bbox_crop_xyxy": [
+        191,
+        144,
+        594,
+        211
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "Мцⷭа҇ а҆при́лѧ, въпо́рвыи",
+      "model_internal_confidence": 0.9363694453239441
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00003",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "d90d67a122f4a9c89a277e8e28b97cb63b5190a3982263806747ea0239af3ebc",
+      "bbox_crop_xyxy": [
+        184,
+        211,
+        598,
+        261
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "дн҃ь. Житїѐ и҆жи́знь, пре",
+      "model_internal_confidence": 0.9832994089676783
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00004",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "9fd05481f27601bfb9d99d5597e486afd3bd8621f93860c78ac0a496126ae071",
+      "bbox_crop_xyxy": [
+        184,
+        261,
+        597,
+        300
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "подо́бныѧ ма́три на́шеѧ",
+      "model_internal_confidence": 0.9690900263578995
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00005",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "db2f8bfeff8f51c65b1c8394be6207240fbe81b710214e983f7681e7889cbc79",
+      "bbox_crop_xyxy": [
+        184,
+        300,
+        597,
+        346
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "Ма́рїи сти́потыкїѧ. спи́",
+      "model_internal_confidence": 0.8947366798917452
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00006",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "6953719c9563a544d89686f617a7633b73aaace1db7a9dd132ed10e6fbd3cfd3",
+      "bbox_crop_xyxy": [
+        184,
+        346,
+        601,
+        388
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "рано вофро́нїемъ, па́трїа",
+      "model_internal_confidence": 0.9417810082435608
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00007",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "39cc1dfcc9b1639ab714bc7df9c2642657da2440be9038aa06a0dd81b60f9d12",
+      "bbox_crop_xyxy": [
+        312,
+        388,
+        375,
+        412
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "алꙍⷩ҇",
+      "model_internal_confidence": 0.5140778124332428
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00008",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "926bfc0fa995f62bd64750bcc58a8c32e75b555075b3276502f62b580c119af4",
+      "bbox_crop_xyxy": [
+        219,
+        412,
+        574,
+        456
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "рхо́мъ і҆ерⷭ҇ли́мвкимъ.",
+      "model_internal_confidence": 0.9592406024103579
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00009",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "0b39d14d7931f2b5f692292425eb223ceba9f69ad19a9fb0593191627a5add03",
+      "bbox_crop_xyxy": [
+        282,
+        456,
+        493,
+        491
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "блвѝ, ѡ҆че.",
+      "model_internal_confidence": 0.9403523355722427
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00010",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "7c85b0bcb88caa7e790773e4f76d045ad463ddd391269413677a01db119066a4",
+      "bbox_crop_xyxy": [
+        195,
+        491,
+        597,
+        524
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "Та́ннꙋ црецꙋ добро̀ е҆сть тлити, ҂л҃",
+      "model_internal_confidence": 0.9054266065359116
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00011",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "b594f9b7110edee56487f92878e35b5709780beb1d17dcab037a99174a3924c0",
+      "bbox_crop_xyxy": [
+        224,
+        524,
+        601,
+        555
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "дѣ́ла бж҃їѧ проповѣ́дати пресла́вно",
+      "model_internal_confidence": 0.9833704658917019
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00012",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "af49d908e6bb1e04c73fada019c5f38bc44dad4bf0ed1288d66721bee2b05d02",
+      "bbox_crop_xyxy": [
+        184,
+        555,
+        598,
+        588
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ость. тако бо рече агг҃елъ кто витꙋ;",
+      "model_internal_confidence": 0.9496531966659758
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00013",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "84bf8318c741920caaf83718a72a1a3b3c4c92d80973a893b48c8da2cdd190fe",
+      "bbox_crop_xyxy": [
+        185,
+        588,
+        598,
+        623
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "по славнѣмъ его прозрѣнїи ослѣпленою",
+      "model_internal_confidence": 0.9580886910359064
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00014",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "bf030f4e9fcf3eb4addb76835cc6268d17d3c240325ce633c22e447d31ec217d",
+      "bbox_crop_xyxy": [
+        185,
+        623,
+        608,
+        659
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "очїю. нехранини бо таинь црѧ, чагꙋ",
+      "model_internal_confidence": 0.9139405918471953
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00015",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "4f21f48b288bf6ca0cbe92392301438cf1170da056b5bd8c780d35f39d980497",
+      "bbox_crop_xyxy": [
+        184,
+        659,
+        602,
+        689
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "бно есть и блазнено ѕа еже молчати дѣла¬",
+      "model_internal_confidence": 0.9312293898314238
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00016",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "f9aeab8a8777d71bdab3caaf01064160944b47b1cdfeeaa866b1cf91d7571bc3",
+      "bbox_crop_xyxy": [
+        184,
+        689,
+        601,
+        724
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "б҃жїѧ преславнаѧ, бѣдꙋ дш҃и наноситⸯ.",
+      "model_internal_confidence": 0.9608628121582238
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00017",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "7607831d69096ad01309db7c1e299f5cd1bd44e28da07704d06b3f19a11a7b3a",
+      "bbox_crop_xyxy": [
+        185,
+        724,
+        602,
+        755
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "тѣмъже и азъ боюсѧ молчати дѣла",
+      "model_internal_confidence": 0.9606808770087457
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00018",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "90a952ecb522c0011e5d8298b4deb851623ee0f37ad03a1dda9384733d54ce2b",
+      "bbox_crop_xyxy": [
+        185,
+        755,
+        597,
+        791
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "бж҃їѧ. боспоминаѧ мꙋкꙋ раба оного",
+      "model_internal_confidence": 0.958692850488605
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00019",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "3d2c38cd830be09f98e7e82e46461366e1d91be8b0e599e3c622ae2c9e577b24",
+      "bbox_crop_xyxy": [
+        187,
+        791,
+        607,
+        826
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "прїимшаго гн҃е талантъ ои в земли со",
+      "model_internal_confidence": 0.9599739296568764
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00020",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "84ac231f825847aeff63041293583d3c0b79078ad20a59f04138fd5dd4395b87",
+      "bbox_crop_xyxy": [
+        187,
+        826,
+        598,
+        863
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "крывша, и поикꙋпа имъ не котворша.",
+      "model_internal_confidence": 0.9353552092524136
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00021",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "d0d6c4cbaedba4ab8437143b793d1d21a489fac22040caf1e70326df9a1b1172",
+      "bbox_crop_xyxy": [
+        187,
+        863,
+        602,
+        896
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "побѣсть с҃тꙋю азъ слышавъ никакоже",
+      "model_internal_confidence": 0.9662337478469399
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00012",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "af49d908e6bb1e04c73fada019c5f38bc44dad4bf0ed1288d66721bee2b05d02",
+      "bbox_crop_xyxy": [
+        184,
+        555,
+        598,
+        588
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "е҆сть. та́ко бо рече а҆́гг҃елъ кѿави́тꙋ, ",
+      "model_internal_confidence": 0.9129741031949113
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00013",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "84bf8318c741920caaf83718a72a1a3b3c4c92d80973a893b48c8da2cdd190fe",
+      "bbox_crop_xyxy": [
+        185,
+        588,
+        598,
+        623
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "порла́внѣмъ е҆го̀ прозрѣнїю ѻ҆ слѣпле́ною",
+      "model_internal_confidence": 0.9706119531538429
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00014",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "bf030f4e9fcf3eb4addb76835cc6268d17d3c240325ce633c22e447d31ec217d",
+      "bbox_crop_xyxy": [
+        185,
+        623,
+        608,
+        659
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ѻ́чїю о҆нерани́ти бо тлины црѧ̀, па́гꙋ",
+      "model_internal_confidence": 0.8966314745576758
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00015",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "4f21f48b288bf6ca0cbe92392301438cf1170da056b5bd8c780d35f39d980497",
+      "bbox_crop_xyxy": [
+        184,
+        659,
+        602,
+        689
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "бно е҆стьи҆бла́знено, деⷮ же молча́ти дѣ́ла",
+      "model_internal_confidence": 0.9377896841182265
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00016",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "f9aeab8a8777d71bdab3caaf01064160944b47b1cdfeeaa866b1cf91d7571bc3",
+      "bbox_crop_xyxy": [
+        184,
+        689,
+        601,
+        724
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "бж҃їѧ пресла́внлѧ, б꙽ѫ́дꙋ дш҃и нано́сит꙽.",
+      "model_internal_confidence": 0.9027674877788963
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00017",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "7607831d69096ad01309db7c1e299f5cd1bd44e28da07704d06b3f19a11a7b3a",
+      "bbox_crop_xyxy": [
+        185,
+        724,
+        602,
+        755
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "тѣ́мъ же и҆ а҆́зъ боѡ́сѧ молча́ти дѣ́ла",
+      "model_internal_confidence": 0.9335763607269678
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00018",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "90a952ecb522c0011e5d8298b4deb851623ee0f37ad03a1dda9384733d54ce2b",
+      "bbox_crop_xyxy": [
+        185,
+        755,
+        597,
+        791
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "бж҃їѧ, воспомина́ѧ м́ꙋ́кꙋ раба̀ о҆́ного,",
+      "model_internal_confidence": 0.9380835071206093
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00019",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "3d2c38cd830be09f98e7e82e46461366e1d91be8b0e599e3c622ae2c9e577b24",
+      "bbox_crop_xyxy": [
+        187,
+        791,
+        607,
+        826
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "прїи҆́мшаго гн҃ь тала́нтъ ри҆ взрмлѝ со-",
+      "model_internal_confidence": 0.9415801269252125
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00020",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "84ac231f825847aeff63041293583d3c0b79078ad20a59f04138fd5dd4395b87",
+      "bbox_crop_xyxy": [
+        187,
+        826,
+        598,
+        863
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "кры́вша, и҆ пои́кꙋпа и҆́мъ нетво́рша:",
+      "model_internal_confidence": 0.9343691661551192
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00021",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "d0d6c4cbaedba4ab8437143b793d1d21a489fac22040caf1e70326df9a1b1172",
+      "bbox_crop_xyxy": [
+        187,
+        863,
+        602,
+        896
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "по́вѣсть стꙋю а҆́зъ слы́шавъника́коже",
+      "model_internal_confidence": 0.9670144609502844
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00022",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "72d2a676c03e09cc5445e10f8e41713c59b564830febe7bda9bc85483b0d01eb",
+      "bbox_crop_xyxy": [
+        187,
+        896,
+        601,
+        927
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "не могꙋ таити. и никтоже іии ѿквасъ",
+      "model_internal_confidence": 0.9447068376200539
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00023",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "6fef5579de0f328d60eec72101bd87ea91fad2e9077b64a4b262208b54d03edc",
+      "bbox_crop_xyxy": [
+        188,
+        927,
+        604,
+        960
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "нⸯеⷭ не вѣрꙋи слышавⸯ писанїѧ сїѧ. не мни¬",
+      "model_internal_confidence": 0.8953246389116559
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00024",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "e0d766624a35daf708930f0463e625df14da939d864e6a8d1a0353c2b5234e40",
+      "bbox_crop_xyxy": [
+        188,
+        960,
+        603,
+        996
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "мене гордѧщасѧ; дивѧсѧ чюдеси семꙋ",
+      "model_internal_confidence": 0.9609421912361594
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00025",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "4ead00f5260c1437554035fb85a6ff114b716aca7084ccc5edc409501a49ae78",
+      "bbox_crop_xyxy": [
+        187,
+        996,
+        603,
+        1024
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "великомꙋ. не бꙋдими ѣлⸯгати на стыѧ.",
+      "model_internal_confidence": 0.9785819864935346
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00026",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "f47e8174b787deb55d8a419bc7df192a53d7fa5a26ca521e7c9ffbf7d3206478",
+      "bbox_crop_xyxy": [
+        193,
+        1024,
+        615,
+        1065
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "аще ли сꙋть нѣцыи чтꙋщевⷭ книги сї.",
+      "model_internal_confidence": 0.900216960481235
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00027",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "40cd2147c07f1d736fd257145764cd214f87a5f8cbbc53824f1b1e25ad030891",
+      "bbox_crop_xyxy": [
+        187,
+        1065,
+        607,
+        1097
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "ѧ и высотѣ словеси дивѧщесѧ. и не хотѧ¬",
+      "model_internal_confidence": 0.9516888276124612
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00028",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "2c3dff03da00a1f4dcef0e0927731d24ab2b77a1056f0c689c1f1586fbd64dfa",
+      "bbox_crop_xyxy": [
+        189,
+        1097,
+        599,
+        1131
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ще вѣровати, бꙋди имъ млⷭ҇ть гн҃ѧ.",
+      "model_internal_confidence": 0.9364199042320251
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00029",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "b0daec9a31538c18987dfa807c259aaa456c26855536be1864a560c61e450929",
+      "bbox_crop_xyxy": [
+        190,
+        1131,
+        599,
+        1165
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "тїи бо немощи їл҃ческꙋю помышлѧюще;",
+      "model_internal_confidence": 0.9141498331512724
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00030",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "1e56ccd6fbac683c518eabec011e79c7bbc57bf335b423b6ef51ee7e4d89d2c4",
+      "bbox_crop_xyxy": [
+        190,
+        1165,
+        598,
+        1195
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "непрїѧтна творѧтъ нами гл҃емаѧ о¬",
+      "model_internal_confidence": 0.955011678464485
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00031",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "422018c75dfc0dbb69c885614c853fff4f709e40a3ec9b004342caa660e93daa",
+      "bbox_crop_xyxy": [
+        190,
+        1195,
+        611,
+        1232
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "чл҃цѣхъ. то оуже подобно ми есть нача;",
+      "model_internal_confidence": 0.9216441449366117
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00022",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "72d2a676c03e09cc5445e10f8e41713c59b564830febe7bda9bc85483b0d01eb",
+      "bbox_crop_xyxy": [
+        187,
+        896,
+        601,
+        927
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "неогꙋ таи҆́ти, и҆ ниито́жей ѿха́съ",
+      "model_internal_confidence": 0.8985148514894878
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00023",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "6fef5579de0f328d60eec72101bd87ea91fad2e9077b64a4b262208b54d03edc",
+      "bbox_crop_xyxy": [
+        188,
+        927,
+        604,
+        960
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "н е҆́же вѣ́рꙋй слы́шлъ писа́нїѧ а҆ѧ̀. ис мнѝ",
+      "model_internal_confidence": 0.8839120692676968
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00024",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "e0d766624a35daf708930f0463e625df14da939d864e6a8d1a0353c2b5234e40",
+      "bbox_crop_xyxy": [
+        188,
+        960,
+        603,
+        996
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "менѐ гордѧ́щасѧ, днвѧ́сѧ чюдесѝ семꙋ̀",
+      "model_internal_confidence": 0.9456341373614776
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00025",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "4ead00f5260c1437554035fb85a6ff114b716aca7084ccc5edc409501a49ae78",
+      "bbox_crop_xyxy": [
+        187,
+        996,
+        603,
+        1024
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ꙁели́крммꙋ̀. не бꙋдимиѣлга́ти насты́ѧ",
+      "model_internal_confidence": 0.9262897726651784
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00026",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "f47e8174b787deb55d8a419bc7df192a53d7fa5a26ca521e7c9ffbf7d3206478",
+      "bbox_crop_xyxy": [
+        193,
+        1024,
+        615,
+        1065
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "а҆́щели сꙋть нѣ́жый чтꙋщеѝ҇ кни́ги сі́ꙁ-",
+      "model_internal_confidence": 0.860752697398023
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00027",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "40cd2147c07f1d736fd257145764cd214f87a5f8cbbc53824f1b1e25ad030891",
+      "bbox_crop_xyxy": [
+        187,
+        1065,
+        607,
+        1097
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "ѧ̀о́ и҆вы сотѣ слолеси дивѧ́щесѧ, и҆ мхо́тѧ-",
+      "model_internal_confidence": 0.8964938060803846
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00028",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "2c3dff03da00a1f4dcef0e0927731d24ab2b77a1056f0c689c1f1586fbd64dfa",
+      "bbox_crop_xyxy": [
+        189,
+        1097,
+        599,
+        1131
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ще вѣровати бꙋ́ди и҆́мъ млⷭ҇ть гн҃ѧ.",
+      "model_internal_confidence": 0.9474655191103617
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00029",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "b0daec9a31538c18987dfa807c259aaa456c26855536be1864a560c61e450929",
+      "bbox_crop_xyxy": [
+        190,
+        1131,
+        599,
+        1165
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "ті́нбо не́мощꙋлаческꙋю помышлѧ́юще,",
+      "model_internal_confidence": 0.9472999666418348
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00030",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "1e56ccd6fbac683c518eabec011e79c7bbc57bf335b423b6ef51ee7e4d89d2c4",
+      "bbox_crop_xyxy": [
+        190,
+        1165,
+        598,
+        1195
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "непрїѧ́тна творѧ́тъ на́ми гл҃емлѧ ѻ҆",
+      "model_internal_confidence": 0.9768570827113258
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00031",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "422018c75dfc0dbb69c885614c853fff4f709e40a3ec9b004342caa660e93daa",
+      "bbox_crop_xyxy": [
+        190,
+        1195,
+        611,
+        1232
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "чл҃дѣхъ. то̑ оу́же подо́бноми е҆́сть науль҇",
+      "model_internal_confidence": 0.9380802311176477
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00032",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "eb87f3a8b7e80a07b16b6ad58c1856b037e926bac96fdcaec325451efdca4410",
+      "bbox_crop_xyxy": [
+        189,
+        1232,
+        598,
+        1266
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "пчи повѣсть а и вещꙿ предивнꙋ бывшꙋи",
+      "model_internal_confidence": 0.9148888405826356
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00033",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "799af91f88d2569ae391f7d85092739a34665277154adf289595c8efc9f0317a",
+      "bbox_crop_xyxy": [
+        191,
+        1266,
+        601,
+        1297
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "в родѣ нашемъ. Бысть нѣкто ста¬",
+      "model_internal_confidence": 0.9744635051296603
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00034",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "97d14014c422ea5bdbb97a94926a851ddb57ad201cdd19b7778f9ea1a48b51e2",
+      "bbox_crop_xyxy": [
+        190,
+        1297,
+        600,
+        1333
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "рецъ во единомъ ѿ палестиньскихъ мо¬",
+      "model_internal_confidence": 0.9576843513382806
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00035",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "198e02eda3d170c6a41a617b7232b5082cc61af929766fc6af6f39c8cc471a50",
+      "bbox_crop_xyxy": [
+        192,
+        1333,
+        600,
+        1362
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "настыреи; житїемъ и словомъ оукра¬",
+      "model_internal_confidence": 0.9887238442897797
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00036",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "48b631b4e371304b0de4fbce52f88b112dc77352a3ae9890d0cc9b47d2410340",
+      "bbox_crop_xyxy": [
+        190,
+        1362,
+        600,
+        1398
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "шенъ ꙋ ѿ самыхъ пеленъ возраста. чер¬",
+      "model_internal_confidence": 0.9672921283825023
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00037",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "402293eff14f36659464650865b46b83ec82ff3370a452b886d7afc27d0c389f",
+      "bbox_crop_xyxy": [
+        196,
+        1398,
+        605,
+        1430
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "неческими обычаи и вещьми. зосима же¬",
+      "model_internal_confidence": 0.9262077792270763
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00039",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "d744db8018a56dbf90668a4e89c7e33623934c822617d34b0b0520158962a015",
+      "bbox_crop_xyxy": [
+        615,
+        61,
+        1039,
+        109
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "щенїѧ и дѣла творѧше. и всѧ преданїѧ",
+      "model_internal_confidence": 0.9815312955114577
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00040",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "bd74e9210974aeaa00c092b4c9aa4bdacbf6c739cd38a7bdabce4fec063c268d",
+      "bbox_crop_xyxy": [
+        615,
+        109,
+        1038,
+        137
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "хранѧше. и се все творѧ. и николиже ѿ",
+      "model_internal_confidence": 0.9714123799994185
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00041",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "43f519c1588e9869973b44dd991e90e9572b678ec2d373e07ae5883dc5ab6175",
+      "bbox_crop_xyxy": [
+        618,
+        137,
+        1039,
+        176
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "оученїѧ с҃тыхъ словесъ ославѧднⷩо и лежа",
+      "model_internal_confidence": 0.9377031266689301
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00042",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "24fafa5812c642b015c202c9c52274b98296a83f03d74e6523a7a0785ce452c7",
+      "bbox_crop_xyxy": [
+        616,
+        176,
+        1042,
+        209
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "и въставаѧ, и рꙋкама держа дѣло, и пи¬",
+      "model_internal_confidence": 0.9446393149463754
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00032",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "eb87f3a8b7e80a07b16b6ad58c1856b037e926bac96fdcaec325451efdca4410",
+      "bbox_crop_xyxy": [
+        189,
+        1232,
+        598,
+        1266
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "тѝ по́вѣсть А҆иве́щ꙽ преди́внꙋ бы́дшꙋи",
+      "model_internal_confidence": 0.9428125963761256
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00033",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "799af91f88d2569ae391f7d85092739a34665277154adf289595c8efc9f0317a",
+      "bbox_crop_xyxy": [
+        191,
+        1266,
+        601,
+        1297
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "вро́дѣ на́шемъ. Вы́сть нѣ́кто ста҃",
+      "model_internal_confidence": 0.9297084335018607
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00034",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "97d14014c422ea5bdbb97a94926a851ddb57ad201cdd19b7778f9ea1a48b51e2",
+      "bbox_crop_xyxy": [
+        190,
+        1297,
+        600,
+        1333
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "реꙁъ вое҆ди́номъ ѿпалести́ньскихъ мо-",
+      "model_internal_confidence": 0.9530681484454387
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00035",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "198e02eda3d170c6a41a617b7232b5082cc61af929766fc6af6f39c8cc471a50",
+      "bbox_crop_xyxy": [
+        192,
+        1333,
+        600,
+        1362
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "насты́реи, митіе́мъ и҆сло́вомъ оу҆кра-",
+      "model_internal_confidence": 0.9411624528859791
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00036",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "48b631b4e371304b0de4fbce52f88b112dc77352a3ae9890d0cc9b47d2410340",
+      "bbox_crop_xyxy": [
+        190,
+        1362,
+        600,
+        1398
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "шенъ хѿса́мыхъ пеле́нъ во́зраста, чер꙽",
+      "model_internal_confidence": 0.9391156348742937
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00037",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "402293eff14f36659464650865b46b83ec82ff3370a452b886d7afc27d0c389f",
+      "bbox_crop_xyxy": [
+        196,
+        1398,
+        605,
+        1430
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "не́ческими ѻ҆бы́чаи и҆ вещвм́и ,Арси́млже",
+      "model_internal_confidence": 0.9287114252404469
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00039",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "d744db8018a56dbf90668a4e89c7e33623934c822617d34b0b0520158962a015",
+      "bbox_crop_xyxy": [
+        615,
+        61,
+        1039,
+        109
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "щенїѧ и҆ дѣ́ла творѧ́ше, и҆ вѐ ѧпреда́нїѧ",
+      "model_internal_confidence": 0.9571485760666075
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00040",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "bd74e9210974aeaa00c092b4c9aa4bdacbf6c739cd38a7bdabce4fec063c268d",
+      "bbox_crop_xyxy": [
+        615,
+        109,
+        1038,
+        137
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "хрлнѧ́ше. и҆ сѐ все̑ творѧ̀о҆ и҆ николи́ же ѿ",
+      "model_internal_confidence": 0.948807030916214
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00041",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "43f519c1588e9869973b44dd991e90e9572b678ec2d373e07ae5883dc5ab6175",
+      "bbox_crop_xyxy": [
+        618,
+        137,
+        1039,
+        176
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "оу҆че́нїѧ ст҃ы́хъ слове́съ ѻ҆слабѧ, но̑ и҆ лежа̀",
+      "model_internal_confidence": 0.965704665829738
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00042",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "24fafa5812c642b015c202c9c52274b98296a83f03d74e6523a7a0785ce452c7",
+      "bbox_crop_xyxy": [
+        616,
+        176,
+        1042,
+        209
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "и҆ въстава́ѧ, и҆ рꙋка́ма дерѧа̀ дѣло, и҆ ти",
+      "model_internal_confidence": 0.9650173547656037
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00043",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "99146270adc44a7357f9765d796e946a4ed7f0a1c7e1bce27fb0e4948028c141",
+      "bbox_crop_xyxy": [
+        618,
+        209,
+        1043,
+        242
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ща вкꙋшаѧ; аще достоитъ пищꙋ на",
+      "model_internal_confidence": 0.9414213328592239
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00044",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "8e82afc5dff29e0d4fa3deb009733cf542edd36aaadb576119fdbf423b1a1ca3",
+      "bbox_crop_xyxy": [
+        622,
+        242,
+        1043,
+        274
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "рещно еꙗже вкꙋшаше. едино оубо дѣло",
+      "model_internal_confidence": 0.9653302345957074
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00045",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "466190f89cd3d4ce3c795d17ee9652363a8451b4b01dc3ae448939bfd98f0a49",
+      "bbox_crop_xyxy": [
+        622,
+        274,
+        1040,
+        312
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "имѧше немолъчно еже пѣти присно.",
+      "model_internal_confidence": 0.9489538352936506
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00046",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "0cd2066830902764f54ed7f5694fc609651d1b7db39e43092163be0452754871",
+      "bbox_crop_xyxy": [
+        622,
+        312,
+        1044,
+        346
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ѿ камого бо младеньства вданъ бѣ вмо¬",
+      "model_internal_confidence": 0.9758672118186951
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00047",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "c4689883198c7ee8b6e5dc7061d188fafc1ada9492d2abf222931be36e3c05c6",
+      "bbox_crop_xyxy": [
+        623,
+        346,
+        1044,
+        382
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "настырь, допѧти десѧтнаго же лѣта",
+      "model_internal_confidence": 0.9793566609873916
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00048",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "26213430404b9d69ae2285ab445c245ee7928b5a45dea70af217f286a03cdae5",
+      "bbox_crop_xyxy": [
+        623,
+        382,
+        1044,
+        409
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "сотвори вⸯ немъ. такоже емꙋ живꙋщꙋ",
+      "model_internal_confidence": 0.9816363804480609
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00049",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "673bdbbda2ad417d64cded7309d7cf071271538a0aa6420dd6c6b0c805832a3e",
+      "bbox_crop_xyxy": [
+        624,
+        409,
+        1043,
+        452
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "змона стыси, помысли все бѣ гл҃ѧ. есть",
+      "model_internal_confidence": 0.929500757863647
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00050",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "12081a1a6eae85e4be5009ab2161ed884fd536ef5f2efa9c9fa259ff03d60a69",
+      "bbox_crop_xyxy": [
+        624,
+        452,
+        1045,
+        484
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ли оубо мнихъ на земли. иже ми пока¬",
+      "model_internal_confidence": 0.9728668000962999
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00051",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "c6f9e64a5898c7161ef23af746eb98ae7c6a3cdf119a7719632fb8e34cd03ed1",
+      "bbox_crop_xyxy": [
+        622,
+        484,
+        1042,
+        519
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "жетъ образъ житїѧ. егоже не сотво¬",
+      "model_internal_confidence": 0.9594621079809525
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00052",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "b138889323665a655020e76711b1b9e3bde2721a1ac0957bd0fe71611fd9a709",
+      "bbox_crop_xyxy": [
+        622,
+        519,
+        1041,
+        555
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "рихъ. можетъ зжели мꙋжъ обрѣстисѧ",
+      "model_internal_confidence": 0.975884471878861
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00043",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "99146270adc44a7357f9765d796e946a4ed7f0a1c7e1bce27fb0e4948028c141",
+      "bbox_crop_xyxy": [
+        618,
+        209,
+        1043,
+        242
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ща лкꙋша́ѧ, а҆́ще досто́итъ пи́щꙋ на",
+      "model_internal_confidence": 0.9718840652041965
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00044",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "8e82afc5dff29e0d4fa3deb009733cf542edd36aaadb576119fdbf423b1a1ca3",
+      "bbox_crop_xyxy": [
+        622,
+        242,
+        1043,
+        274
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "рещѝ о е҆́м҆́же вкꙋша́ше. е҆ди́но оу҆́бо дѣ́ло",
+      "model_internal_confidence": 0.9466745954878787
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00045",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "466190f89cd3d4ce3c795d17ee9652363a8451b4b01dc3ae448939bfd98f0a49",
+      "bbox_crop_xyxy": [
+        622,
+        274,
+        1040,
+        312
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "и҆мѧ́ше рмо́лъчно, е҆́же пѣти при́сно.",
+      "model_internal_confidence": 0.9774777465745023
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00046",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "0cd2066830902764f54ed7f5694fc609651d1b7db39e43092163be0452754871",
+      "bbox_crop_xyxy": [
+        622,
+        312,
+        1044,
+        346
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ѿамогѣо младе́ньства в да́нъ бѣ̑ змо",
+      "model_internal_confidence": 0.9252286454041799
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00047",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "c4689883198c7ee8b6e5dc7061d188fafc1ada9492d2abf222931be36e3c05c6",
+      "bbox_crop_xyxy": [
+        623,
+        346,
+        1044,
+        382
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "насты́рь, доѧтидесѧ́тнагоже лѣта",
+      "model_internal_confidence": 0.9747907686978579
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00048",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "26213430404b9d69ae2285ab445c245ee7928b5a45dea70af217f286a03cdae5",
+      "bbox_crop_xyxy": [
+        623,
+        382,
+        1044,
+        409
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "сотвори вне́мъ. та́каже е҆мꙋ̀ жи́дꙋшꙋ",
+      "model_internal_confidence": 0.9515433601430945
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00049",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "673bdbbda2ad417d64cded7309d7cf071271538a0aa6420dd6c6b0c805832a3e",
+      "bbox_crop_xyxy": [
+        624,
+        409,
+        1043,
+        452
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "з монастырѝ, помы́сли требѣ̀ гл҃ѧ, е҆́сть",
+      "model_internal_confidence": 0.9008018757615771
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00050",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "12081a1a6eae85e4be5009ab2161ed884fd536ef5f2efa9c9fa259ff03d60a69",
+      "bbox_crop_xyxy": [
+        624,
+        452,
+        1045,
+        484
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ли оу҆́бо мни́хъ наземлѣ, и҆́жемѝ пока́",
+      "model_internal_confidence": 0.9442576352506876
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00051",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "c6f9e64a5898c7161ef23af746eb98ae7c6a3cdf119a7719632fb8e34cd03ed1",
+      "bbox_crop_xyxy": [
+        622,
+        484,
+        1042,
+        519
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ѧетъ ѻ҆́бразъ житїѧ̀, е҆го́же нкотво",
+      "model_internal_confidence": 0.9703833825058408
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00052",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "b138889323665a655020e76711b1b9e3bde2721a1ac0957bd0fe71611fd9a709",
+      "bbox_crop_xyxy": [
+        622,
+        519,
+        1041,
+        555
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "ри́хъ. мо́жетъхе́ци мꙋ́жъ ѻ҆брѣстиѧ",
+      "model_internal_confidence": 0.9442217537334987
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00053",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "bcb08ef8c4124213ed21ba7afbfb8af7210e9b303ed9b7ddc018b01f56dfc50c",
+      "bbox_crop_xyxy": [
+        623,
+        555,
+        1040,
+        582
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "втꙋстыни, лꙋчши мене дѣломъ.",
+      "model_internal_confidence": 0.9894347318581173
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00054",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "389b2576c6dda29c902a12d70f0babcf0740f47a2d4841d416157b0bd1360626",
+      "bbox_crop_xyxy": [
+        621,
+        582,
+        1043,
+        622
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "си црⷭ҇же помышлѧющꙋ старцꙋꙗви¬",
+      "model_internal_confidence": 0.9383093849305184
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00055",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "71b134ac558155cb659a44e60e3bb5ed44965d360ea5aac96685658d55038969",
+      "bbox_crop_xyxy": [
+        623,
+        622,
+        1057,
+        656
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "еѧ емꙋабг҃елъ и рече емꙋ: еаⷩ҇ѯо си",
+      "model_internal_confidence": 0.9153066643646786
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00056",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "5f649d0828e0bd4c4207608693ab0262067958ca9f1cf4267c690ad23431d827",
+      "bbox_crop_xyxy": [
+        624,
+        656,
+        1046,
+        690
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ма добрѣ оубо ꙗко чл҃къ подвигнꙋлъ",
+      "model_internal_confidence": 0.9452166399535011
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00057",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "0bd625b918be97d9b3d91be3ead8d33ba628c0ea68986dd995d42a0ee6e6f4f9",
+      "bbox_crop_xyxy": [
+        624,
+        690,
+        1042,
+        726
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "сѧ еси. но никтоже совершенъ есть.",
+      "model_internal_confidence": 0.9440673537114087
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00058",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "87ea88aaab57d90f32a3a188b8622d768fa652f21ed7c25981c89a3873c52a33",
+      "bbox_crop_xyxy": [
+        624,
+        726,
+        1047,
+        760
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "но да разꙋмѣеши, колико инѣхъ есть",
+      "model_internal_confidence": 0.960011271869435
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00059",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "9e58a802c3d5b84b69289cd981fcaccee91366be4650ae99fee3ee6905fe9125",
+      "bbox_crop_xyxy": [
+        625,
+        760,
+        1045,
+        791
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ѡбразъ спасенїѧ изыди ѿ землѧ.; ꙗко",
+      "model_internal_confidence": 0.9477080881595612
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00060",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "94eb639c06d6d2e16b09ebc2ff44b1563eea1885c38d81e0382b4614cfc5dd9d",
+      "bbox_crop_xyxy": [
+        624,
+        791,
+        1046,
+        829
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "же звраамъ из домꙋ ѿц҃а своего; і иди",
+      "model_internal_confidence": 0.960539465014999
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00061",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "d4c3331c135421f8a030a1cd7f5c789ec984ba46113d90472c6d3d13c20c5205",
+      "bbox_crop_xyxy": [
+        626,
+        829,
+        1047,
+        864
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ц монастырь сꙋщїи приѡрданѣ. дбїе ꙗже",
+      "model_internal_confidence": 0.8713194421819739
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00062",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "560b98f03b1dd1259154d218be41a5d2315c564b8e55f44425e57254ae55507d",
+      "bbox_crop_xyxy": [
+        625,
+        864,
+        1047,
+        897
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "старецъ изыде ѿ монастырѧ своего",
+      "model_internal_confidence": 0.9922418426722288
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00053",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "bcb08ef8c4124213ed21ba7afbfb8af7210e9b303ed9b7ddc018b01f56dfc50c",
+      "bbox_crop_xyxy": [
+        623,
+        555,
+        1040,
+        582
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "дщꙋсты́ни, лꙋши менѐ дѣ́ломъ зѻ",
+      "model_internal_confidence": 0.9365997537970543
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00054",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "389b2576c6dda29c902a12d70f0babcf0740f47a2d4841d416157b0bd1360626",
+      "bbox_crop_xyxy": [
+        621,
+        582,
+        1043,
+        622
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "Ирици́же помышлѧ́ющꙋ ста́рцꙋ ꙋ ꙗви",
+      "model_internal_confidence": 0.9041455203995985
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00055",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "71b134ac558155cb659a44e60e3bb5ed44965d360ea5aac96685658d55038969",
+      "bbox_crop_xyxy": [
+        623,
+        622,
+        1057,
+        656
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "сѧ є҆мꙋ̀ а҆́ггелъ и҆речѐ е҆мꙋ̀. Ѡси-",
+      "model_internal_confidence": 0.9233729573520454
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00056",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "5f649d0828e0bd4c4207608693ab0262067958ca9f1cf4267c690ad23431d827",
+      "bbox_crop_xyxy": [
+        624,
+        656,
+        1046,
+        690
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ма) добрѣ оу҆́бо ꙗ҆́ко чл҃къ подви́гцꙋлъ",
+      "model_internal_confidence": 0.9705261692404747
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00057",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "0bd625b918be97d9b3d91be3ead8d33ba628c0ea68986dd995d42a0ee6e6f4f9",
+      "bbox_crop_xyxy": [
+        624,
+        690,
+        1042,
+        726
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "сѧ е҆сѝ, но никто́же соверше́нѣсть.",
+      "model_internal_confidence": 0.978423438138432
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00058",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "87ea88aaab57d90f32a3a188b8622d768fa652f21ed7c25981c89a3873c52a33",
+      "bbox_crop_xyxy": [
+        624,
+        726,
+        1047,
+        760
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "но да разꙋмѣеши коли́ко и҆нѣ́хъ е҆ть",
+      "model_internal_confidence": 0.9503425608078638
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00059",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "9e58a802c3d5b84b69289cd981fcaccee91366be4650ae99fee3ee6905fe9125",
+      "bbox_crop_xyxy": [
+        625,
+        760,
+        1045,
+        791
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ѡ҆́бразъ сплс́енїѧ ,и҆зы́ди ѿ землѧ̀, ꙗ҆́ко",
+      "model_internal_confidence": 0.9504194952720819
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00060",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "94eb639c06d6d2e16b09ebc2ff44b1563eea1885c38d81e0382b4614cfc5dd9d",
+      "bbox_crop_xyxy": [
+        624,
+        791,
+        1046,
+        829
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "жерла́мъ и҆здомꙋ ѿц҃а свое҆го̀, и҆дѝ",
+      "model_internal_confidence": 0.9405787474400288
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00061",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "d4c3331c135421f8a030a1cd7f5c789ec984ba46113d90472c6d3d13c20c5205",
+      "bbox_crop_xyxy": [
+        626,
+        829,
+        1047,
+        864
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": " мо насты́рь сꙋ́щїи при іѻрда́нѣѳфїефе",
+      "model_internal_confidence": 0.8933254166653282
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00062",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "560b98f03b1dd1259154d218be41a5d2315c564b8e55f44425e57254ae55507d",
+      "bbox_crop_xyxy": [
+        625,
+        864,
+        1047,
+        897
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ста́рецъ и҆зы́де ѿмонастырѧ свсего̀ да-",
+      "model_internal_confidence": 0.9384240660911951
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00063",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "dc0427b8905ac646ba73504cc64dfb7026df9de29806598de65eb1d14a5f5f77",
+      "bbox_crop_xyxy": [
+        626,
+        897,
+        1055,
+        941
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "ї иде въслѣдъ глаголющаго хиб҃жїею во",
+      "model_internal_confidence": 0.9297374100298494
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00064",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "2ea920c5c287ead0deb6b97280574af7e71363639268c4c2f319405faf917203",
+      "bbox_crop_xyxy": [
+        624,
+        941,
+        1056,
+        963
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "лею водимъ прїиде в монастырарорданъ",
+      "model_internal_confidence": 0.9309125277731154
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00065",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "ddb15727470efbfcc93be4b32ccb4a49752b062ca2daec20c36e7a7c4a3c38fb",
+      "bbox_crop_xyxy": [
+        624,
+        963,
+        1057,
+        999
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "скїи. толꙿкнꙋвъже воврата. и побѣда",
+      "model_internal_confidence": 0.9520055592060089
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00066",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "280f3fc9f7175add0a932348fb29799b16773de884eb131c5df5ccb22caf4fab",
+      "bbox_crop_xyxy": [
+        624,
+        999,
+        1047,
+        1027
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "но бысть игꙋменꙋ. вшеⷣ же поклонисѧ",
+      "model_internal_confidence": 0.9652909534318107
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00067",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "c6d3619194b73b94dd40dd9c67b41c030c10f8301c75f802ee504df04cca9036",
+      "bbox_crop_xyxy": [
+        622,
+        1027,
+        1045,
+        1064
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "по обычаю чернеческомꙋ. лосⸯпросиже го",
+      "model_internal_confidence": 0.9407831948054465
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00068",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "60b1022026fe072df6b92ef9c5d2d7453d867e8a0fc9e4acc19770a4d8524c97",
+      "bbox_crop_xyxy": [
+        624,
+        1064,
+        1044,
+        1097
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "игꙋменъ. ѿкꙋдꙋ еси брате; и чесо ради",
+      "model_internal_confidence": 0.9920872659296602
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00069",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "efedb2f795e09c5d6e19313d1e2ec2acc53e8e70ac39e556fa0e890a7985923c",
+      "bbox_crop_xyxy": [
+        624,
+        1097,
+        1052,
+        1135
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "кⸯ нищимъ на мⸯстарцемъ прїиде ѿвѣ",
+      "model_internal_confidence": 0.9310195025275735
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00070",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "d8bf11c8cb57c529bcc5d03ea622dff68095f859da8df9f7e5d7984d33966bf2",
+      "bbox_crop_xyxy": [
+        625,
+        1135,
+        1044,
+        1168
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "щавъзосима. не вопрошаи мене ѿкꙋдꙋ",
+      "model_internal_confidence": 0.9818503137897042
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00071",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "a2d899545465a68e96025c5be74e5f0d9189fd81db1e15643f8317f62e5c6b18",
+      "bbox_crop_xyxy": [
+        625,
+        1168,
+        1040,
+        1202
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "прїидоѵхъо ползы ради прїидохъ. слы¬",
+      "model_internal_confidence": 0.9776323023769591
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00072",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "38c399bc5ead9c4f37d4b6c07334dcf3040497186a8e0c5d511d2cbdba02436b",
+      "bbox_crop_xyxy": [
+        624,
+        1202,
+        1050,
+        1235
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "шахъ боваше дѣло велико и достохїал.",
+      "model_internal_confidence": 0.9571963316864438
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00063",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "dc0427b8905ac646ba73504cc64dfb7026df9de29806598de65eb1d14a5f5f77",
+      "bbox_crop_xyxy": [
+        626,
+        897,
+        1055,
+        941
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "і҆́и́де въслѣ́дъ глаго́лющагоу бх҃їею во-",
+      "model_internal_confidence": 0.8941923408973508
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00064",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "2ea920c5c287ead0deb6b97280574af7e71363639268c4c2f319405faf917203",
+      "bbox_crop_xyxy": [
+        624,
+        941,
+        1056,
+        963
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "лрю води́мъ прїидисщона ствсрирорда́ньѕ",
+      "model_internal_confidence": 0.8443236022423475
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00065",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "ddb15727470efbfcc93be4b32ccb4a49752b062ca2daec20c36e7a7c4a3c38fb",
+      "bbox_crop_xyxy": [
+        624,
+        963,
+        1057,
+        999
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "скїи. тол꙽кнꙋ въѡ́ъ воврата̀, и҆ повѣ́да-",
+      "model_internal_confidence": 0.8807167490807976
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00066",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "280f3fc9f7175add0a932348fb29799b16773de884eb131c5df5ccb22caf4fab",
+      "bbox_crop_xyxy": [
+        624,
+        999,
+        1047,
+        1027
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "но бы́сть и҆гꙋменꙋ. вшеⷨ же проилони́сѧ",
+      "model_internal_confidence": 0.9097526745918469
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00067",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "c6d3619194b73b94dd40dd9c67b41c030c10f8301c75f802ee504df04cca9036",
+      "bbox_crop_xyxy": [
+        622,
+        1027,
+        1045,
+        1064
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "по ѻ҆бы́члю черне́ческомꙋ. лоепроси́же е҆го̀҇",
+      "model_internal_confidence": 0.8704029619693756
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00068",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "60b1022026fe072df6b92ef9c5d2d7453d867e8a0fc9e4acc19770a4d8524c97",
+      "bbox_crop_xyxy": [
+        624,
+        1064,
+        1044,
+        1097
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "нгꙋменъ: ѿи́ꙋдꙋ е҆сѝ бра́те, иаесо̀ ра́ди",
+      "model_internal_confidence": 0.9244300425052643
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00069",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "efedb2f795e09c5d6e19313d1e2ec2acc53e8e70ac39e556fa0e890a7985923c",
+      "bbox_crop_xyxy": [
+        624,
+        1097,
+        1052,
+        1135
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "си́щимъ на мхта́рцемъ прїйдевѣ",
+      "model_internal_confidence": 0.9323878367741902
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00070",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "d8bf11c8cb57c529bcc5d03ea622dff68095f859da8df9f7e5d7984d33966bf2",
+      "bbox_crop_xyxy": [
+        625,
+        1135,
+        1044,
+        1168
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "щавъ зоси́ма; а҆фопроша́й менѐ ѿкꙋ́дꙋ",
+      "model_internal_confidence": 0.9567161704364576
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00071",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "a2d899545465a68e96025c5be74e5f0d9189fd81db1e15643f8317f62e5c6b18",
+      "bbox_crop_xyxy": [
+        625,
+        1168,
+        1040,
+        1202
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "прїидо́хъ о по́лзы ра́ди прїидо́хъ. слы́с",
+      "model_internal_confidence": 0.9388641322531351
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00072",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "38c399bc5ead9c4f37d4b6c07334dcf3040497186a8e0c5d511d2cbdba02436b",
+      "bbox_crop_xyxy": [
+        624,
+        1202,
+        1050,
+        1235
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "шахъ ѳа́ше дѣло вели́ко и҆ досторла́л-",
+      "model_internal_confidence": 0.9242133223696759
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00073",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "666aa1222329dc83d4b7393cc25d3d3baaf903a340ec785121f362485af7a24e",
+      "bbox_crop_xyxy": [
+        623,
+        1235,
+        1042,
+        1270
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "но; могꙋща дш҃а приводити къ х҃ꙋ егꙋ",
+      "model_internal_confidence": 0.924187114669217
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00074",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "60c66c61a09c898c092cc91735536ed30b190283c8a787ec9c0391cc1ea7f2cb",
+      "bbox_crop_xyxy": [
+        621,
+        1270,
+        1041,
+        1301
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "нашемꙋ. рече же емꙋ игꙋменⸯоргъ единъ",
+      "model_internal_confidence": 0.9607247202783018
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00075",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "c83884289431fbd1101eada2cfe59933248d4401d3552fb7ca122bf3832e4e60",
+      "bbox_crop_xyxy": [
+        621,
+        1301,
+        1040,
+        1335
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "брате, исцѣлѧꙗиⷧ҇ ч҃лческїи родъ тои",
+      "model_internal_confidence": 0.9298510932260089
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00076",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "fc554a1720fdfa1ab319289ab2a1db60d1fd50a70dbf155fac55ef6142186d0c",
+      "bbox_crop_xyxy": [
+        624,
+        1335,
+        1037,
+        1374
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "да нагоучитъ тебе и насъ боли своеи х¬",
+      "model_internal_confidence": 0.9714346543738717
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00077",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "a8b36cce228707323e764f6f9c904a6d2db8854ec1aa0984d19bc36e755e6e7d",
+      "bbox_crop_xyxy": [
+        619,
+        1374,
+        1051,
+        1403
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "и наставитъ тебе сотворити всѧ по¬",
+      "model_internal_confidence": 0.9708577981766533
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00078",
+      "model_name": "church-slavonic",
+      "model_repo": "achimrabus/crnn-ctc-church-slavonic",
+      "model_revision": "2b253a83840eba1948e750b246d60991d3a15285",
+      "model_checkpoint_sha256": "929feb8ae61fda9b411c2d5a2d7c00fd8e0ef8f3889a45d4a57d5ea46aeeb091",
+      "model_symbols_sha256": "d054ba8f912e8922a2adf4a0133aa181db036af38803984b7ef3f198d48881f0",
+      "crop_png_sha256": "5cfbd765a667f33aed9a497daeb46746d415ee261a7d9cdfe281d16d0d4c37e6",
+      "bbox_crop_xyxy": [
+        618,
+        1403,
+        1038,
+        1437
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "лезнаѧ. сїѧ рекшꙋ игꙋменꙋ къ зосимѣ",
+      "model_internal_confidence": 0.9827494978904724
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00073",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "666aa1222329dc83d4b7393cc25d3d3baaf903a340ec785121f362485af7a24e",
+      "bbox_crop_xyxy": [
+        623,
+        1235,
+        1042,
+        1270
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "но, могꙋ́ща даца приводи́ти къхꙋрг҃ꙋ",
+      "model_internal_confidence": 0.9659159233172735
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00074",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "60c66c61a09c898c092cc91735536ed30b190283c8a787ec9c0391cc1ea7f2cb",
+      "bbox_crop_xyxy": [
+        621,
+        1270,
+        1041,
+        1301
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "на шемꙋече́ же е҆мꙋ̀ и҆г҃ꙋмен꙽ слъ е҆ди́нъ",
+      "model_internal_confidence": 0.9281778562636602
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00075",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "c83884289431fbd1101eada2cfe59933248d4401d3552fb7ca122bf3832e4e60",
+      "bbox_crop_xyxy": [
+        621,
+        1301,
+        1040,
+        1335
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "бра́те и҆сдѣлѧ́ꙗиⷧ҇ чл҃ческїи ро́дъ ,꙽ то́и",
+      "model_internal_confidence": 0.8928872977578363
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00076",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "fc554a1720fdfa1ab319289ab2a1db60d1fd50a70dbf155fac55ef6142186d0c",
+      "bbox_crop_xyxy": [
+        624,
+        1335,
+        1037,
+        1374
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "аоу҆чи́тъ тебѐ и҆ на́съ бо́ли своеⷩй х",
+      "model_internal_confidence": 0.9394705517169757
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00077",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "a8b36cce228707323e764f6f9c904a6d2db8854ec1aa0984d19bc36e755e6e7d",
+      "bbox_crop_xyxy": [
+        619,
+        1374,
+        1051,
+        1403
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": false,
+      "transcription": "и҆ наста́витъ тебѐ сотвори́ти всѧ̑ по-",
+      "model_internal_confidence": 0.9571033823184478
+    },
+    {
+      "status": "ocr_unchecked",
+      "candidate_line_id": "v5-s00010-kf8605fa853c3-l00078",
+      "model_name": "prosta-mova",
+      "model_repo": "achimrabus/crnn-ctc-prosta-mova",
+      "model_revision": "db88dcb5dfb767ef27066b012271cf4e6eb31a40",
+      "model_checkpoint_sha256": "7ce441232a8c5e547df19349c0d1f090ae97a3e62397b62824b06407f974f919",
+      "model_symbols_sha256": "319ab53c0e964a10764c32d3fbb6d011cda27f0909ac7acdcd4bb8f72ff64bc5",
+      "crop_png_sha256": "5cfbd765a667f33aed9a497daeb46746d415ee261a7d9cdfe281d16d0d4c37e6",
+      "bbox_crop_xyxy": [
+        618,
+        1403,
+        1038,
+        1437
+      ],
+      "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+      "source_seam_may_cut_ink": true,
+      "transcription": "ле́знаѧсїѧ̀ рі́кшꙋигꙋ́менꙋ ктоси́мъ )",
+      "model_internal_confidence": 0.8870739083032351
+    }
+  ]
+}
