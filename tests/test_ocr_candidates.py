@@ -49,6 +49,27 @@ class CandidateTests(unittest.TestCase):
         self.assertEqual([w["text"] for w in lines[0]["words"]], ["ѣ", "κόσμος"])
         self.assertEqual(lines[1]["words"][0]["text"], "Straße")
 
+    def test_literal_ocr_double_quote_does_not_consume_following_tsv_rows(self):
+        header = TSV.splitlines()[0]
+        unquoted = (
+            header + "\n"
+            + '5\t1\t1\t1\t1\t1\t10\t20\t30\t15\t82.5\t"Heatov\n'
+            + '5\t1\t1\t1\t2\t1\t10\t40\t25\t15\t53\tѣ\n'
+        )
+        lines = _tsv_lines(unquoted)
+        self.assertEqual(len(lines), 2)
+        self.assertEqual(lines[0]["words"][0]["text"], '"Heatov')
+        self.assertEqual(lines[1]["words"][0]["text"], "ѣ")
+        self.assertEqual(sum(len(line["words"]) for line in lines), 2)
+        self.assertTrue(all("\n" not in word["text"] for line in lines for word in line["words"]))
+
+    def test_malformed_tsv_rows_fail_closed_not_folded_into_words(self):
+        header = TSV.splitlines()[0]
+        good = '5\t1\t1\t1\t1\t1\t10\t20\t30\t15\t82.5\tword'
+        for invalid in (good + '\textra', good.rsplit('\t', 1)[0]):
+            with self.subTest(invalid=invalid), self.assertRaisesRegex(ValueError, "TSV|column"):
+                _tsv_lines(header + "\n" + invalid + "\n")
+
     def test_page_selection_strict(self):
         self.assertEqual(_parse_pages("2,4-5,1"), [1, 2, 4, 5])
         for invalid in ("1,1", "0", "8-4", "1,,2", "../1", "1-100"):
