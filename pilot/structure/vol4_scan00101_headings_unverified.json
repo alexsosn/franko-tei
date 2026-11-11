@@ -1,0 +1,68 @@
+{
+  "schema_version": "unverified-image-structure-v0",
+  "status": "source_observed_unverified",
+  "volume": "4",
+  "scan_page": 101,
+  "printed_page_observed": null,
+  "source_asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_path": "vol4/page-00101.jpg",
+  "source_image_sha256": "7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447",
+  "source_dimensions": [
+    1190,
+    1772
+  ],
+  "visual_inspection": "Original native printed page. At top right there is faint reverse-side ink or an unclear page mark; footer printer-signature 7 is not accepted as printed-page folio. Distinct Ukrainian section and witness labels above dense Church Slavonic excerpt. No original OCR available for this page (embedded text empty).",
+  "observations": [
+    {
+      "kind": "section_heading",
+      "text": "II. Апокаліпси про празники і обряди.",
+      "bbox_xywh": [
+        176,
+        514,
+        835,
+        57
+      ],
+      "geometry_estimated": true,
+      "exact_glyphs_verified": false
+    },
+    {
+      "kind": "source_witness_heading",
+      "text": "А. Рукопис о. Теодора з Дубівця стор. 169—176.",
+      "bbox_xywh": [
+        180,
+        653,
+        833,
+        62
+      ],
+      "geometry_estimated": true,
+      "exact_glyphs_verified": false
+    }
+  ],
+  "nontext_areas": [
+    {
+      "kind": "rule",
+      "bbox_xywh": [
+        520,
+        592,
+        118,
+        20
+      ],
+      "description": "Short horizontal printer's ornament/rule between headings"
+    },
+    {
+      "kind": "footer_printers_signature",
+      "bbox_xywh": [
+        173,
+        1590,
+        824,
+        47
+      ],
+      "description": "Pамятки т. IV. and 7 are a printer's footer/signature; never assume 7 is the printed folio"
+    }
+  ],
+  "body_read": false,
+  "eligible_for_tei_tf": false,
+  "context_independence": "same-conversation-visual-observation",
+  "ocr_visible_before_header_read": false,
+  "ocr_predictions_available": false
+}
