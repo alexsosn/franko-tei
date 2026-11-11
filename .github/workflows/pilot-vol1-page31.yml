@@ -1,0 +1,63 @@
+name: "Full native I/31 first reading: source-checked TEI"
+on:
+  pull_request:
+    paths:
+      - pilot/vol1_scan00031_single_reading.json
+      - tests/test_vol1_page31_image.py
+      - .github/workflows/pilot-vol1-page31.yml
+      - src/franko_tei/pilot_tei.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  image-first-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e . lxml
+      - name: Fetch immutable native JPEG and source manifest; no extracted OCR
+        run: |
+          set -euo pipefail
+          mkdir -p native-assets/vol1
+          SRC=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol1
+          curl --fail --silent --show-error --location --retry 2 "$SRC/manifest.json" -o native-assets/vol1/manifest.json
+          curl --fail --silent --show-error --location --retry 2 "$SRC/page-00031.jpg" -o native-assets/vol1/page-00031.jpg
+      - name: Source-gated deterministic pilot-TEI and full-page line audit
+        run: |
+          set -euo pipefail
+          franko-pilot-tei --images native-assets --input pilot/vol1_scan00031_single_reading.json --output build/vol1_scan00031.xml
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from lxml import etree
+          p = json.loads(Path('pilot/vol1_scan00031_single_reading.json').read_text())
+          lines = [l['text'] for r in p['reading']['regions'] for l in r['lines']]
+          assert len(lines) == 42
+          assert p['reading']['raw_response'] == chr(10).join(lines)
+          tree = etree.parse('build/vol1_scan00031.xml')
+          ns = {'t': 'http://www.tei-c.org/ns/1.0'}
+          assert len(tree.xpath('//t:lb', namespaces=ns)) == 42
+          assert len(tree.xpath('//t:pb', namespaces=ns)) == 1
+          print('Source image rehashed; 42 physical lines incl. folio encoded, no reconstructed page boundaries. Unverified.')
+          PY
+      - name: TEI P5 4.12.0 Relax NG validation
+        run: |
+          curl --fail --silent --show-error --location --retry 2             'https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/custom/schema/relaxng/tei_all.rng' -o build/tei_all_4.12.0.rng
+          python - <<'PY'
+          from lxml import etree
+          schema=etree.RelaxNG(etree.parse('build/tei_all_4.12.0.rng'))
+          tei=etree.parse('build/vol1_scan00031.xml')
+          assert schema.validate(tei), schema.error_log
+          print('TEI RNG valid; historical glyph accuracy not independently verified.')
+          PY
+      - name: Save only text-only generated unverified TEI
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-v1s031-image-first-unverified-tei
+          path: build/vol1_scan00031.xml
+          retention-days: 7
+          if-no-files-found: error
