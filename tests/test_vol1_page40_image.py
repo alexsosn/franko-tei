@@ -85,7 +85,7 @@ class TestI40(unittest.TestCase):
         self.assertEqual((len(refs),len(notes)),(1,1))
         self.assertEqual(refs[0].text,'*)')
         self.assertEqual(refs[0].get('target'), '#'+notes[0].get('{http://www.w3.org/XML/1998/namespace}id'))
-        self.assertEqual(extract_transcribed_lines(tei),source['raw_response'].split('\\n'))
+        self.assertEqual(extract_transcribed_lines(tei),source['raw_response'].split(chr(10)))
         self.assertEqual(d['status'],'agent_unverified')
 
 if __name__=="__main__":
