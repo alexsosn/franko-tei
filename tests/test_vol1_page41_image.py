@@ -66,5 +66,17 @@ class TestI41(unittest.TestCase):
             self.assertNotEqual(q["frozen_substring"],q["proposed_substring"])
             self.assertNotEqual(q["disposition"],"verified")
 
+
+    def test_blank_margin_does_not_overlap_text_line_boxes(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        areas=[a["bbox_xywh"] for a in d["reading"]["coverage"]["nontext_areas"]]
+        lines=[l["bbox_xywh"] for r in d["reading"]["regions"] for l in r["lines"]]
+        def overlaps(a,b):
+            ax,ay,aw,ah=a;bx,by,bw,bh=b
+            return ax<bx+bw and bx<ax+aw and ay<by+bh and by<ay+ah
+        for blank in areas:
+            self.assertFalse(any(overlaps(blank,line) for line in lines),
+                             "declared nontext margin overlaps printed text")
+
 if __name__=="__main__":
     unittest.main()
