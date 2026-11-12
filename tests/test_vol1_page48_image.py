@@ -34,10 +34,8 @@ class TestI48(unittest.TestCase):
                   32:"pseudepigraphis",35:"довголїтнїх",36:"phus Novi",38:"apocr.",41:"мов, ясности"}
         for n,s in expected.items():
             self.assertTrue(self.lines[n]["text"].startswith(s),(n,self.lines[n]["text"]))
-        for s in ("Этнографическіе","passim","Апокріф", "Apocrypha, hoc est",
-                  "Ioseph", "De libris apocryphis","Fabri", "Codex"):
-            if s in ("Апокріф","Fabri"):
-                continue
+        for s in ("Этнографическіе","passim","Apocrypha, hoc est",
+                  "Ioseph", "De libris apocryphis", "C.dex apocry-", "Codex"):
             self.assertIn(s,reading["raw_response"])
         self.assertTrue(self.lines[-1]["text"].endswith("Фабріціу-"))
         self.assertEqual(reading["raw_response"],"\n".join(l["text"] for l in self.lines))
