@@ -1,0 +1,1453 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 43,
+  "printed_page_observed": "XXXIV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00043.jpg",
+  "source_image_sha256": "0e11c8d61260f69d4eb2b7f1be2bd9b3ace7b1b5eec4acc7d6275570e9dc47a9",
+  "reading": {
+    "reader_id": "gpt6-source-first-i43-20261112",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-2026-11-12-I43-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full direct original JPEG-only first-reading Volume I physical scan 43 printed Roman XXXIV; 41 body physical lines and folio with 4-line Franko introduction to Іосифъ патріарха, then original offset speaker labels for Пентефрій and Велможа in 13/1/3/8/3/7 dialogue lines, and 2 lines of unfinished Paschal-drama paragraph. Preserve exact line positions and historic old Cyrillic spellings, not a new independent 1708 manuscript witness, no extracted original PDF OCR, neighboring continuation, or peer page I/43 before first freeze. All glyphs unverified and geometry estimated.",
+    "raw_response": "XXXIV\nНа томуже оповіданю основана й драма „Іосифъ патріарха“\nпредставлена в Київі 1708 (Тихонравовъ, op. cit. II, 356—427). На-\nведемо з неї тільки розмову Пентефрія з жінкою по вивисшеню\nЙосифовім (II, 423—424):\nП е н т е ф р і й Не вѣси ли, что нынѣ сотвори ся\nВо Египтѣ?\nВ е л м о ж а Не вѣмъ.\nП е н т. Страхъ велій намъ роди ся.\nВ е л м. Кій страхъ?\nП е н т. Іосифъ, рабъ нашъ, господинъ намъ нынѣ\nЄсть и всему Египту, и се во единъ\nЧести зъ Фараономъ днесь славно посажденній\nСѣдить яко царь, всѣми чтомій, возведеній\nБо есть на престолъ царскій. Азъ же страха ради\nИзійдохъ тайно, да не съ тобою и чади\nНашими велить мя днесь погубить, или\nВъ изгнаніе послати.\nВ е л м. Ни, не бой ся.\nП е н т. Ни ли\nТы внимаеши, или познаеши бѣды\nСея?\nВ е л м. Днесь тобѣ правду всю открію. Виды\nПремногими азъ прелщахъ Іосифа къ волѣ\nМоей, но той презиралъ мя. Азъ же оттоль\nВзыскахъ ему отмстити, что его не прелстихъ,\nА яже онъ претерпѣлъ муки, азъ сотворихъ.\nСе по моей неправдѣ, нѣсть бо онъ повинній\nДо такія мерзости, но мой самъ безчинній\nРазумъ сіе сотворилъ.\nП е н т. О лютъ мнѣ нынѣ!\nЧто се дерзнула еси, безумна? По винѣ\nНашей всяко убіетъ насъ.\nВ е л м. Не бой ся! Знаю\nАзъ, что онъ незлобивъ есть, и милости чаю\nОтъ него получити. Азъ бо есмь виною\nЕго нынѣшней славы: аще бо бы мною\nНе былъ оклеветанъ, то не былъ бы въ темници;\nНе бывши, не зналъ бы царь о немъ. Ко толицѣй\nЖе славѣ азъ то его приведохъ.\nТа безперечно найцікавіший апокріфічний епізод знаходить ся\nв віднайденій мною Пасхальній драмі, що зрештою вся основана на",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            130,
+            1612,
+            1000,
+            105
+          ],
+          "description": "Empty lower printed image margin below the unfinished final prose line; no separate footer or note."
+        }
+      ],
+      "occlusions": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          170,
+          74,
+          156,
+          62
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XXXIV",
+            "bbox_xywh": [
+              178,
+              80,
+              140,
+              50
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "joseph_drama_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          145,
+          971,
+          148
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "На томуже оповіданю основана й драма „Іосифъ патріарха“",
+            "bbox_xywh": [
+              170,
+              151,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "представлена в Київі 1708 (Тихонравовъ, op. cit. II, 356—427). На-",
+            "bbox_xywh": [
+              170,
+              186,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 40,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 40,
+                "end": 51,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 51,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "ведемо з неї тільки розмову Пентефрія з жінкою по вивисшеню",
+            "bbox_xywh": [
+              170,
+              221,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "Йосифовім (II, 423—424):",
+            "bbox_xywh": [
+              170,
+              257,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pentefriy_first",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          286,
+          971,
+          464
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-05",
+            "text": "П е н т е ф р і й Не вѣси ли, что нынѣ сотвори ся",
+            "bbox_xywh": [
+              170,
+              292,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 49,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "Во Египтѣ?",
+            "bbox_xywh": [
+              170,
+              327,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 10,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "В е л м о ж а Не вѣмъ.",
+            "bbox_xywh": [
+              170,
+              362,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 22,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "П е н т. Страхъ велій намъ роди ся.",
+            "bbox_xywh": [
+              170,
+              397,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 35,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "В е л м. Кій страхъ?",
+            "bbox_xywh": [
+              170,
+              433,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 20,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "П е н т. Іосифъ, рабъ нашъ, господинъ намъ нынѣ",
+            "bbox_xywh": [
+              170,
+              468,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 47,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-11",
+            "text": "Єсть и всему Египту, и се во единъ",
+            "bbox_xywh": [
+              170,
+              503,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 34,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "Чести зъ Фараономъ днесь славно посажденній",
+            "bbox_xywh": [
+              170,
+              538,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 43,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "Сѣдить яко царь, всѣми чтомій, возведеній",
+            "bbox_xywh": [
+              170,
+              573,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 41,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "Бо есть на престолъ царскій. Азъ же страха ради",
+            "bbox_xywh": [
+              170,
+              609,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 47,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "Изійдохъ тайно, да не съ тобою и чади",
+            "bbox_xywh": [
+              170,
+              644,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 37,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "Нашими велить мя днесь погубить, или",
+            "bbox_xywh": [
+              170,
+              679,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 36,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "Въ изгнаніе послати.",
+            "bbox_xywh": [
+              170,
+              714,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 20,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "velmozha_reassurance",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          743,
+          971,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-18",
+            "text": "В е л м. Ни, не бой ся.",
+            "bbox_xywh": [
+              170,
+              749,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 23,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pentefriy_question",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          779,
+          971,
+          112
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-19",
+            "text": "П е н т. Ни ли",
+            "bbox_xywh": [
+              170,
+              785,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 14,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-20",
+            "text": "Ты внимаеши, или познаеши бѣды",
+            "bbox_xywh": [
+              170,
+              820,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 30,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "Сея?",
+            "bbox_xywh": [
+              170,
+              855,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 4,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "velmozha_confession",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          884,
+          971,
+          289
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-22",
+            "text": "В е л м. Днесь тобѣ правду всю открію. Виды",
+            "bbox_xywh": [
+              170,
+              890,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 43,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "Премногими азъ прелщахъ Іосифа къ волѣ",
+            "bbox_xywh": [
+              170,
+              925,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 38,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-24",
+            "text": "Моей, но той презиралъ мя. Азъ же оттоль",
+            "bbox_xywh": [
+              170,
+              961,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 40,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "Взыскахъ ему отмстити, что его не прелстихъ,",
+            "bbox_xywh": [
+              170,
+              996,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 44,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "А яже онъ претерпѣлъ муки, азъ сотворихъ.",
+            "bbox_xywh": [
+              170,
+              1031,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 41,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-27",
+            "text": "Се по моей неправдѣ, нѣсть бо онъ повинній",
+            "bbox_xywh": [
+              170,
+              1066,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 42,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "До такія мерзости, но мой самъ безчинній",
+            "bbox_xywh": [
+              170,
+              1101,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 40,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-29",
+            "text": "Разумъ сіе сотворилъ.",
+            "bbox_xywh": [
+              170,
+              1137,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 21,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pentefriy_alarm",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          1166,
+          971,
+          112
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-30",
+            "text": "П е н т. О лютъ мнѣ нынѣ!",
+            "bbox_xywh": [
+              170,
+              1172,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 25,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "Что се дерзнула еси, безумна? По винѣ",
+            "bbox_xywh": [
+              170,
+              1207,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 37,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "Нашей всяко убіетъ насъ.",
+            "bbox_xywh": [
+              170,
+              1242,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 24,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "velmozha_final",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          1271,
+          971,
+          254
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-33",
+            "text": "В е л м. Не бой ся! Знаю",
+            "bbox_xywh": [
+              170,
+              1277,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 24,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-34",
+            "text": "Азъ, что онъ незлобивъ есть, и милости чаю",
+            "bbox_xywh": [
+              170,
+              1313,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 42,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "Отъ него получити. Азъ бо есмь виною",
+            "bbox_xywh": [
+              170,
+              1348,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 36,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-36",
+            "text": "Его нынѣшней славы: аще бо бы мною",
+            "bbox_xywh": [
+              170,
+              1383,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 34,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-37",
+            "text": "Не былъ оклеветанъ, то не былъ бы въ темници;",
+            "bbox_xywh": [
+              170,
+              1418,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 45,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "Не бывши, не зналъ бы царь о немъ. Ко толицѣй",
+            "bbox_xywh": [
+              170,
+              1453,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 45,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-39",
+            "text": "Же славѣ азъ то его приведохъ.",
+            "bbox_xywh": [
+              170,
+              1489,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 30,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "paschal_drama_transition",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          1518,
+          971,
+          77
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-40",
+            "text": "Та безперечно найцікавіший апокріфічний епізод знаходить ся",
+            "bbox_xywh": [
+              170,
+              1524,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-41",
+            "text": "в віднайденій мною Пасхальній драмі, що зрештою вся основана на",
+            "bbox_xywh": [
+              170,
+              1559,
+              955,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i43-20261112",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "На томуже оповіданю ",
+        "reason": "Original source-print Ukrainian and Russian bibliographic details, first reader image-only; historical spellings need independent glyph check."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "представлена в Київі",
+        "reason": "Original source-print Ukrainian and Russian bibliographic details, first reader image-only; historical spellings need independent glyph check."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "ведемо з неї тільки ",
+        "reason": "Original source-print Ukrainian and Russian bibliographic details, first reader image-only; historical spellings need independent glyph check."
+      },
+      {
+        "line_id": "main-line-04",
+        "reading": "Йосифовім (II, 423—4",
+        "reason": "Original source-print Ukrainian and Russian bibliographic details, first reader image-only; historical spellings need independent glyph check."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "П е н т е ф р і й Не",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "Во Египтѣ?",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "В е л м о ж а Не вѣм",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "П е н т. Страхъ велі",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "В е л м. Кій страхъ?",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "П е н т. Іосифъ, раб",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Єсть и всему Египту,",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "Чести зъ Фараономъ д",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "Сѣдить яко царь, всѣ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "Бо есть на престолъ ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "Изійдохъ тайно, да н",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "Нашими велить мя дне",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "Въ изгнаніе послати.",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "В е л м. Ни, не бой ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "П е н т. Ни ли",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Ты внимаеши, или поз",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "Сея?",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "В е л м. Днесь тобѣ ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "Премногими азъ прелщ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "Моей, но той презира",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "Взыскахъ ему отмстит",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "А яже онъ претерпѣлъ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "Се по моей неправдѣ,",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "До такія мерзости, н",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "Разумъ сіе сотворилъ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "П е н т. О лютъ мнѣ ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "Что се дерзнула еси,",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "Нашей всяко убіетъ н",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "В е л м. Не бой ся! ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "Азъ, что онъ незлоби",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "Отъ него получити. А",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "Его нынѣшней славы: ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "Не былъ оклеветанъ, ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "Не бывши, не зналъ б",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "Же славѣ азъ то его ",
+        "reason": "Early-modern printed dramatic dialogue, ѣ/ъ/і/ё, elision and speaker labels: glyphs and physical line start require independent original-image second reading."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "Та безперечно найцік",
+        "reason": "Original source-print Ukrainian and Russian bibliographic details, first reader image-only; historical spellings need independent glyph check."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "в віднайденій мною П",
+        "reason": "Original source-print Ukrainian and Russian bibliographic details, first reader image-only; historical spellings need independent glyph check."
+      },
+      {
+        "line_id": "main-line-01",
+        "reading": "Іосифъ патріарха",
+        "reason": "Original printed title of the 1708 drama, not primary manuscript citation."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "Київі 1708",
+        "reason": "Historical location/date as Franko printed."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "Тихонравовъ, op. cit. II",
+        "reason": "Russian author + Latin source abbreviation, mixed script."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "Пентефрія",
+        "reason": "Old Ukrainian character in dramatic participant name."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "П е н т е ф р і й",
+        "reason": "Physical line has long printed letter-spaced speaker name; do not create fake extra line."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "Не вѣси ли, что нынѣ сотвори ся",
+        "reason": "Unusual old Russian phrase and printed form of сотвори(л) ся."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "В е л м о ж а",
+        "reason": "Letterspaced dramatic speaker label, source spacing uncertain."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "Не вѣмъ",
+        "reason": "Short old Slavonic reply."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "Страхъ велій намъ роди ся",
+        "reason": "Biblical dramatic wording, possible vowel/tense error."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "Кій страхъ?",
+        "reason": "Printed question, old Ukrainian/Russian orthography."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "Іосифъ, рабъ нашъ",
+        "reason": "Old Russian name I/і and hard sign."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Єсть и всему Египту",
+        "reason": "Source verbal form and mixed old script."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "зъ Фараономъ",
+        "reason": "Print initial z and proper name, historical orthography."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "всѣми чтомій",
+        "reason": "Rare phrase and possible OCR error."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "на престолъ царскій",
+        "reason": "Printed dramatic regal ascent."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "Изійдохъ тайно",
+        "reason": "Potential initial i / iz vowel ambiguity."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "Нашими велить мя",
+        "reason": "Old Russian grammar."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "Въ изгнаніе послати",
+        "reason": "Source end of speech."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "Ни, не бой ся",
+        "reason": "One-source-line reply."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "Ни ли",
+        "reason": "Unusual rhetorical form, possibly Нѣ ли or Нѣ ли."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Ты внимаеши, или познаеши бѣды",
+        "reason": "Archaic Greek/Slavonic syntax and yat."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "Днесь тобѣ правду всю открію",
+        "reason": "Printed beginning of confession, rare vowel ending."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "Премногими азъ прелщахъ",
+        "reason": "Old Russian verb spelling."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "Іосифа къ волѣ",
+        "reason": "Historical name and yat."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "Взыскахъ ему отмстити",
+        "reason": "Unusual verb form needs source crop."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "не прелстихъ",
+        "reason": "Possible omitted ь in original print."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "претерпѣлъ муки",
+        "reason": "Yat in old dialogue."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "нѣсть бо онъ повинній",
+        "reason": "Historical word spelling."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "безчинній",
+        "reason": "Source unusual adjective."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "О лютъ мнѣ нынѣ!",
+        "reason": "Speaker exclamation, old Russian yat."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "По винѣ",
+        "reason": "Yat and source punctuation."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "Нашей всяко убіетъ насъ",
+        "reason": "Historical verb spelling."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "незлобивъ есть",
+        "reason": "Old Slavic adjective."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "есмь виною",
+        "reason": "Source participle."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "оклеветанъ",
+        "reason": "Original accusation in Joseph story."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "въ темници",
+        "reason": "Old Russian word form."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "Ко толицѣй",
+        "reason": "Very unusual phrase; may be misread or split."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "Же славѣ азъ то его приведохъ",
+        "reason": "Last line of confession."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "Та безперечно найцікавіший",
+        "reason": "Last prose block starts while page still in main source."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "Пасхальній драмі",
+        "reason": "Continuation cut off at page bottom."
+      }
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 43,
+  "printed_page_observed": "XXXIV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "0e11c8d61260f69d4eb2b7f1be2bd9b3ace7b1b5eec4acc7d6275570e9dc47a9",
+  "frozen_first_reading": "pilot/vol1_scan00043_single_reading.json",
+  "review_method": "Failure-oriented same-context native JPEG reinspection after first complete image-only response commit b5e1f12f; original embedded PDF OCR inspected subsequently only as corrupt negative control, not as full second reader, manuscript or CER gold.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-16",
+      "frozen_substring": "погубить, или",
+      "proposed_substring": "погубити, или",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "unresolved_competing_glyphs",
+      "source_reason": "Source old Cyrillic verb ending has potential additional и in -ити; embedded OCR suggests погубити but garbles neighboring words and cannot certify a glyph. Native image enlargement needed."
+    },
+    {
+      "line_id": "main-line-19",
+      "frozen_substring": "Ни ли",
+      "proposed_substring": "Нѣ ли",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "unresolved_competing_glyphs",
+      "source_reason": "Short printed exclamation has ambiguous vowel after Н. First reader read и, while print may show ѣ; the embedded OCR does not distinguish. This is not a verified correction."
+    },
+    {
+      "line_id": "main-line-13",
+      "frozen_substring": "всѣми чтомій",
+      "proposed_substring": "всѣми чтимій",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "unresolved_competing_glyphs",
+      "source_reason": "Very rare Slavonic literary form: print may read чтимій instead of first-pass чтомій, but the native source at this scale and faulty OCR do not settle о/и."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "Іосифъ патріарха",
+      "reason": "Franko's title of a 1708 drama; precise old Cyrillic source glyphs and title are not independently checked against original play witness."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "Тихонравовъ, op. cit. II, 356—427",
+      "reason": "Mixed bibliographic Russian and Latin roman reference; old embedded OCR fails name and punctuation."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "Пентефрія",
+      "reason": "Person name and archaic Ukrainian vowel combination need source-image check."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "П е н т е ф р і й",
+      "reason": "Printed letterspaced speaker label shares physical line with dialogue text; exact interglyph whitespace has been approximated, not measured."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "сотвори ся",
+      "reason": "Possible different historical verbal ending from source, not safely reconstructed from grammar."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "В е л м о ж а",
+      "reason": "Letterspaced label for female interlocutor; do not split into extra physical lines or silently classify as verified TEI speaker."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "Кій страхъ?",
+      "reason": "Historical spelling and question punctuation."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "Іосифъ, рабъ нашъ",
+      "reason": "Printed older Hebrew name and archaic quote ъ."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "Чести зъ Фараономъ",
+      "reason": "Russian/Ukrainian historical diction and quoted speaker ascent."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "всѣми чтомій",
+      "reason": "Unresolved chтомій/chтимій uncommon old literary form."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "Изійдохъ тайно",
+      "reason": "Historical source prefix і/ы and reading of old Cyrillic combination."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "погубить, или",
+      "reason": "Unresolved -ить/-ити old verb suffix."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "Ни, не бой ся",
+      "reason": "Speaker label plus short historical imperative and source punctuation."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "Ни ли",
+      "reason": "Single ambiguous short question, possible Нѣ ли, not verified."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "познаеши бѣды",
+      "reason": "Historical dramatic quote, old Cyrillic yat and source glyph shapes."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "Днесь тобѣ правду всю открію",
+      "reason": "Start of confession and old word ending, letterspacing."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "Премногими азъ прелщахъ",
+      "reason": "Historical Russian phrase with ambiguous consonants."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "Взыскахъ ему отмстити",
+      "reason": "Rare verb, OCR produces unrelated letters."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "нѣсть бо онъ повинній",
+      "reason": "Dense Cyrillic and old ѣ forms."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "О лютъ мнѣ нынѣ",
+      "reason": "Question/answer dialogue speaker identification and source ѣ letters."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "незлобивъ есть",
+      "reason": "Old Russian uncommon adjective and ъ."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "оклеветанъ",
+      "reason": "Original printed word not separate original 1708 witness."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "Ко толицѣй",
+      "reason": "Rare lexical phrase, potential first-reader substitution."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "Же славѣ азъ то его приведохъ",
+      "reason": "End of confession, printed ѣ/ъ and word forms."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "основана на",
+      "reason": "Page ends before the claimed next dramatic source, do not complete it from I/44."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXXIV upper-left",
+    "body_lines": 41,
+    "region_counts": [
+      4,
+      13,
+      1,
+      3,
+      8,
+      3,
+      7,
+      2
+    ],
+    "text_positions_with_folio": 42,
+    "dialogue_speakers": "Original printed speaker labels at body lines 5, 7, 8, 9, 10, 18, 19, 22, 30, 33. All are physical-line text, not independently verified TEI <speaker> elements.",
+    "last_body_line": "в віднайденій мною Пасхальній драмі, що зрештою вся основана на",
+    "embedded_ocr_negative_control": "PDF OCR misreads printed XXXIV as XXXIY, scrambles speaker labels into mixed Latin/Cyrillic, breaks questions into fake physical rows, and omits historical characters. Cannot establish line count, accuracy or a blind reader."
+  },
+  "rights": "No original JPEG or PDF redistributed in software PR; code license does not grant scanned text rights.",
+  "limitations": [
+    "Only one full original-source image first reading",
+    "Same-context adversarial pass is not independent blinded complete second reading",
+    "No third scholarly textual adjudication",
+    "Source-style speaker labels remain part of physical lines; role semantics not yet encoded",
+    "TEI P5 structural validity is not glyph accuracy or CER truth"
+  ]
+}
