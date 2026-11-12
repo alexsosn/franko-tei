@@ -59,5 +59,23 @@ class TestI43(unittest.TestCase):
         for a in d["reading"]["coverage"]["nontext_areas"]:
             self.assertTrue(all(not overlap(a["bbox_xywh"],b) for b in boxes))
 
+
+    def test_postfreeze_glyph_audit_is_not_a_pretend_blind_reviewer(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        audit=json.loads((PATH.parent/"reviews/vol1_scan00043_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]),2)
+        self.assertGreaterEqual(len(audit["unresolved"]),10)
+        by_id={l["id"]:l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for challenge in audit["corrections"]:
+            self.assertIn(challenge["frozen_substring"],by_id[challenge["line_id"]])
+            self.assertNotEqual(challenge["proposed_substring"],challenge["frozen_substring"])
+            self.assertNotEqual(challenge["disposition"],"verified")
+        self.assertEqual(d["status"],"agent_unverified")
+
 if __name__=="__main__":
     unittest.main()
