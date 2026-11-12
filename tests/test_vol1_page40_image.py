@@ -45,5 +45,24 @@ class TestI40(unittest.TestCase):
                 self.assertGreaterEqual(b,y,line["id"])
                 self.assertLessEqual(a+c,x+w,line["id"])
                 self.assertLessEqual(b+e,y+h,line["id"])
+
+    def test_unverified_slavonic_and_footnote_challenges_are_separate(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        audit=json.loads((PATH.parent/"reviews/vol1_scan00040_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]),2)
+        self.assertGreaterEqual(len(audit["unresolved"]),8)
+        lines={l["id"]:l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for item in audit["corrections"]:
+            self.assertIn(item["frozen_substring"],lines[item["line_id"]])
+            self.assertNotEqual(item["frozen_substring"],item["proposed_substring"])
+            self.assertNotEqual(item["disposition"],"verified")
+        self.assertEqual(d["reading"]["regions"][-1]["kind"],"note")
+        self.assertEqual(len(d["reading"]["regions"][-1]["lines"]),3)
+
 if __name__=="__main__":
     unittest.main()
