@@ -1,0 +1,2071 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 50,
+  "printed_page_observed": "XLI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00050.jpg",
+  "source_image_sha256": "2ec39053337ce1f82efb5527b31c853db440e5fb80b77809095f974a6668b9b3",
+  "reading": {
+    "reader_id": "gpt6-source-first-i50-20261112",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-i50-20261112",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Complete original native I/50 JPEG-only image-first reading, before any embedded PDF OCR or peer text. Preserve physical 40 main rows, all numbered Migne entries 6–34, original typography, title letterspacing and page-number source glyphs; include printed two footer positions (series and quire signature) plus upper right folio XLI for exactly 43 physical text positions. Preserve specific rare Cyrillic/historical spelling and questionable printed page ranges without emendations. All geometry estimated; text agent_unverified pending blind second source reading and third adjudication.",
+    "raw_response": "XLI\n6) В и х і д  І с а і ї  н а  н е б о, переклад з етіопської мови\n(I, 648—674).\n7) Уривок апокріфічного житя Ісаії (I, 703—704).\n8) Уривок із апокріфа: розмова Йосифа з жінкою Пентефрія,\nвинятий із вавилонського Талмуда (I, 705—712).\n9) Третю книгу Маккавеїв (I, 715—758).\n10) Четверту книгу Маккавеїв (I, 745—850).\n11) Молитву Манассії (I, 851—852).\n12) Заповіти 12-ти патріярхів (I, 853—918).\n13) Псалм 151 (I, 937—938).\n14) Псалми Соломонові (I, 939—956).\n15) Пісні Соломонові (I, 956—958).\n16) Переписку Соломонову с царем Сидону і с царем Єгипту\n(I, 958—960).\n17) Жидівські і магометанські лєґенди про Авраама (II, 27—40)\nі про Адама (II, 40—58).\n18) Історію Антіоха Епіфана (II, 106—112).\n19) Лист Варуха (II, 162—167).\n20) Приповідки сина Сирахового (II, 168—176).\n21) Розмови Давида з Богом (II, 191—195) і арабські лєґенди\nпро Давида (II, 195—201).\n22) Уривки з апокріфа Елдам і Модад (II, 219—220).\n23) Йовів заповіт (II, 403—419).\n24) Арабські і жидівські лєґенди про Йосифа патріярху\n(II, 420—431).\n25) Зміст апокріфічної книги Ісуса Навина (II, 441—446).\n26) Лєґенду про покуту Лотову (II, 469—470).\n27) Слово про Мельхіседека (II, 593—587).\n28) Зміст слова сьв. Мефодія Патарського (було друковане\nпо грецьки в книзї „Monumenta patrum orthodoxographa“, виданій\nу Базилеї 1555 р., а по латинї тамже ще 1498 і 1516 — II, 615—621).\n29) Лєґенди про Мойсея і відривки апокріфа „Піднесенє Мой-\nсея на небо“ (II, 625—631).\n30) Лєґенду про Натана, ту саму що є у нас, із Епіфанія\n(II, 633).\n31) Арабські лєґенди про Ноя і його жінку (II, 641—648).\n32) Арабські лєґенди про Соломона (II, 840—871), европейські\nлєґенди про него, розмову Соломона с Сатурном і т. і. (II,872—885)\n33) Апокріф про Товію (II, 1047—1066).\n34) Переклад жидівської книги Яшар (II, 1087—1510).\nАпокріфи старозавітні.\n6",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            70,
+            1642,
+            1050,
+            57
+          ],
+          "description": "Blank lower margin after separately encoded source series footer and printed quire signature."
+        }
+      ],
+      "occlusions": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          923,
+          80,
+          174,
+          66
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XLI",
+            "bbox_xywh": [
+              935,
+              88,
+              148,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "migne_item_06",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          157,
+          1054,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "6) В и х і д  І с а і ї  н а  н е б о, переклад з етіопської мови",
+            "bbox_xywh": [
+              96,
+              164,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "(I, 648—674).",
+            "bbox_xywh": [
+              96,
+              199,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 1,
+                "end": 2,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 2,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_07",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          226,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-03",
+            "text": "7) Уривок апокріфічного житя Ісаії (I, 703—704).",
+            "bbox_xywh": [
+              96,
+              233,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 36,
+                "end": 37,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 37,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_08",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          261,
+          1054,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-04",
+            "text": "8) Уривок із апокріфа: розмова Йосифа з жінкою Пентефрія,",
+            "bbox_xywh": [
+              96,
+              268,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "винятий із вавилонського Талмуда (I, 705—712).",
+            "bbox_xywh": [
+              96,
+              302,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 34,
+                "end": 35,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 35,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_09",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          330,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-06",
+            "text": "9) Третю книгу Маккавеїв (I, 715—758).",
+            "bbox_xywh": [
+              96,
+              337,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 26,
+                "end": 27,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 27,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_10",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          364,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-07",
+            "text": "10) Четверту книгу Маккавеїв (I, 745—850).",
+            "bbox_xywh": [
+              96,
+              371,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 30,
+                "end": 31,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 31,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_11",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          399,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-08",
+            "text": "11) Молитву Манассії (I, 851—852).",
+            "bbox_xywh": [
+              96,
+              406,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 22,
+                "end": 23,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 23,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_12",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          433,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-09",
+            "text": "12) Заповіти 12-ти патріярхів (I, 853—918).",
+            "bbox_xywh": [
+              96,
+              440,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 31,
+                "end": 32,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 32,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_13",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          468,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-10",
+            "text": "13) Псалм 151 (I, 937—938).",
+            "bbox_xywh": [
+              96,
+              475,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 15,
+                "end": 16,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 16,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_14",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          502,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-11",
+            "text": "14) Псалми Соломонові (I, 939—956).",
+            "bbox_xywh": [
+              96,
+              509,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 23,
+                "end": 24,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 24,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_15",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          537,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-12",
+            "text": "15) Пісні Соломонові (I, 956—958).",
+            "bbox_xywh": [
+              96,
+              544,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 22,
+                "end": 23,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 23,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_16",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          571,
+          1054,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-13",
+            "text": "16) Переписку Соломонову с царем Сидону і с царем Єгипту",
+            "bbox_xywh": [
+              96,
+              578,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "(I, 958—960).",
+            "bbox_xywh": [
+              96,
+              613,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 1,
+                "end": 2,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 2,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_17",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          640,
+          1054,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-15",
+            "text": "17) Жидівські і магометанські лєґенди про Авраама (II, 27—40)",
+            "bbox_xywh": [
+              96,
+              647,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 51,
+                "end": 53,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 53,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "і про Адама (II, 40—58).",
+            "bbox_xywh": [
+              96,
+              682,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 13,
+                "end": 15,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 15,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_18",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          709,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-17",
+            "text": "18) Історію Антіоха Епіфана (II, 106—112).",
+            "bbox_xywh": [
+              96,
+              716,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 29,
+                "end": 31,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 31,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_19",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          744,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-18",
+            "text": "19) Лист Варуха (II, 162—167).",
+            "bbox_xywh": [
+              96,
+              751,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 17,
+                "end": 19,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 19,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_20",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          778,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-19",
+            "text": "20) Приповідки сина Сирахового (II, 168—176).",
+            "bbox_xywh": [
+              96,
+              785,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 32,
+                "end": 34,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 34,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_21",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          813,
+          1054,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-20",
+            "text": "21) Розмови Давида з Богом (II, 191—195) і арабські лєґенди",
+            "bbox_xywh": [
+              96,
+              820,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 28,
+                "end": 30,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 30,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "про Давида (II, 195—201).",
+            "bbox_xywh": [
+              96,
+              854,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 12,
+                "end": 14,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 14,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_22",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          882,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-22",
+            "text": "22) Уривки з апокріфа Елдам і Модад (II, 219—220).",
+            "bbox_xywh": [
+              96,
+              889,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 37,
+                "end": 39,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 39,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_23",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          916,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-23",
+            "text": "23) Йовів заповіт (II, 403—419).",
+            "bbox_xywh": [
+              96,
+              923,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 19,
+                "end": 21,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 21,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_24",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          951,
+          1054,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-24",
+            "text": "24) Арабські і жидівські лєґенди про Йосифа патріярху",
+            "bbox_xywh": [
+              96,
+              958,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "(II, 420—431).",
+            "bbox_xywh": [
+              96,
+              992,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 1,
+                "end": 3,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 3,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_25",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1020,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-26",
+            "text": "25) Зміст апокріфічної книги Ісуса Навина (II, 441—446).",
+            "bbox_xywh": [
+              96,
+              1027,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 43,
+                "end": 45,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 45,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_26",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1054,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-27",
+            "text": "26) Лєґенду про покуту Лотову (II, 469—470).",
+            "bbox_xywh": [
+              96,
+              1061,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 31,
+                "end": 33,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 33,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_27",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1089,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-28",
+            "text": "27) Слово про Мельхіседека (II, 593—587).",
+            "bbox_xywh": [
+              96,
+              1096,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 28,
+                "end": 30,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 30,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_28",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1123,
+          1054,
+          108
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-29",
+            "text": "28) Зміст слова сьв. Мефодія Патарського (було друковане",
+            "bbox_xywh": [
+              96,
+              1130,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "по грецьки в книзї „Monumenta patrum orthodoxographa“, виданій",
+            "bbox_xywh": [
+              96,
+              1165,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 20,
+                "end": 52,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 52,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "у Базилеї 1555 р., а по латинї тамже ще 1498 і 1516 — II, 615—621).",
+            "bbox_xywh": [
+              96,
+              1199,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 54,
+                "end": 56,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 56,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_29",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1227,
+          1054,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-32",
+            "text": "29) Лєґенди про Мойсея і відривки апокріфа „Піднесенє Мой-",
+            "bbox_xywh": [
+              96,
+              1234,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-33",
+            "text": "сея на небо“ (II, 625—631).",
+            "bbox_xywh": [
+              96,
+              1268,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 14,
+                "end": 16,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 16,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_30",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1296,
+          1054,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-34",
+            "text": "30) Лєґенду про Натана, ту саму що є у нас, із Епіфанія",
+            "bbox_xywh": [
+              96,
+              1303,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "(II, 633).",
+            "bbox_xywh": [
+              96,
+              1337,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 1,
+                "end": 3,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 3,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_31",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1365,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-36",
+            "text": "31) Арабські лєґенди про Ноя і його жінку (II, 641—648).",
+            "bbox_xywh": [
+              96,
+              1372,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 43,
+                "end": 45,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 45,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_32",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1399,
+          1054,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-37",
+            "text": "32) Арабські лєґенди про Соломона (II, 840—871), европейські",
+            "bbox_xywh": [
+              96,
+              1406,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 35,
+                "end": 37,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 37,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "лєґенди про него, розмову Соломона с Сатурном і т. і. (II,872—885)",
+            "bbox_xywh": [
+              96,
+              1441,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 55,
+                "end": 57,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 57,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_33",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1468,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-39",
+            "text": "33) Апокріф про Товію (II, 1047—1066).",
+            "bbox_xywh": [
+              96,
+              1475,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 23,
+                "end": 25,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 25,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "migne_item_34",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          1503,
+          1054,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-40",
+            "text": "34) Переклад жидівської книги Яшар (II, 1087—1510).",
+            "bbox_xywh": [
+              96,
+              1510,
+              1034,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 36,
+                "end": 38,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 38,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "series_footer",
+        "kind": "other",
+        "bbox_xywh": [
+          150,
+          1565,
+          400,
+          65
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "footer-series-line-01",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              161,
+              1572,
+              363,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i50-20261112",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "quire_signature",
+        "kind": "other",
+        "bbox_xywh": [
+          921,
+          1565,
+          105,
+          65
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "footer-signature-line-01",
+            "text": "6",
+            "bbox_xywh": [
+              930,
+              1572,
+              84,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "6) В и х і д  І с а і ї  н а  н е б о, перекл",
+        "reason": "Original printed list entry 6, physical body row 1: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "(I, 648—674).",
+        "reason": "Original printed list entry 6, physical body row 2: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "7) Уривок апокріфічного житя Ісаії (I, 703—70",
+        "reason": "Original printed list entry 7, physical body row 3: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-04",
+        "reading": "8) Уривок із апокріфа: розмова Йосифа з жінко",
+        "reason": "Original printed list entry 8, physical body row 4: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "винятий із вавилонського Талмуда (I, 705—712)",
+        "reason": "Original printed list entry 8, physical body row 5: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "9) Третю книгу Маккавеїв (I, 715—758).",
+        "reason": "Original printed list entry 9, physical body row 6: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "10) Четверту книгу Маккавеїв (I, 745—850).",
+        "reason": "Original printed list entry 10, physical body row 7: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "11) Молитву Манассії (I, 851—852).",
+        "reason": "Original printed list entry 11, physical body row 8: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "12) Заповіти 12-ти патріярхів (I, 853—918).",
+        "reason": "Original printed list entry 12, physical body row 9: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "13) Псалм 151 (I, 937—938).",
+        "reason": "Original printed list entry 13, physical body row 10: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "14) Псалми Соломонові (I, 939—956).",
+        "reason": "Original printed list entry 14, physical body row 11: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "15) Пісні Соломонові (I, 956—958).",
+        "reason": "Original printed list entry 15, physical body row 12: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "16) Переписку Соломонову с царем Сидону і с ц",
+        "reason": "Original printed list entry 16, physical body row 13: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "(I, 958—960).",
+        "reason": "Original printed list entry 16, physical body row 14: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "17) Жидівські і магометанські лєґенди про Авр",
+        "reason": "Original printed list entry 17, physical body row 15: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "і про Адама (II, 40—58).",
+        "reason": "Original printed list entry 17, physical body row 16: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "18) Історію Антіоха Епіфана (II, 106—112).",
+        "reason": "Original printed list entry 18, physical body row 17: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "19) Лист Варуха (II, 162—167).",
+        "reason": "Original printed list entry 19, physical body row 18: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "20) Приповідки сина Сирахового (II, 168—176).",
+        "reason": "Original printed list entry 20, physical body row 19: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "21) Розмови Давида з Богом (II, 191—195) і ар",
+        "reason": "Original printed list entry 21, physical body row 20: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "про Давида (II, 195—201).",
+        "reason": "Original printed list entry 21, physical body row 21: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "22) Уривки з апокріфа Елдам і Модад (II, 219—",
+        "reason": "Original printed list entry 22, physical body row 22: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "23) Йовів заповіт (II, 403—419).",
+        "reason": "Original printed list entry 23, physical body row 23: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "24) Арабські і жидівські лєґенди про Йосифа п",
+        "reason": "Original printed list entry 24, physical body row 24: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "(II, 420—431).",
+        "reason": "Original printed list entry 24, physical body row 25: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "25) Зміст апокріфічної книги Ісуса Навина (II",
+        "reason": "Original printed list entry 25, physical body row 26: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "26) Лєґенду про покуту Лотову (II, 469—470).",
+        "reason": "Original printed list entry 26, physical body row 27: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "27) Слово про Мельхіседека (II, 593—587).",
+        "reason": "Original printed list entry 27, physical body row 28: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "28) Зміст слова сьв. Мефодія Патарського (бул",
+        "reason": "Original printed list entry 28, physical body row 29: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "по грецьки в книзї „Monumenta patrum orthodox",
+        "reason": "Original printed list entry 28, physical body row 30: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "у Базилеї 1555 р., а по латинї тамже ще 1498 ",
+        "reason": "Original printed list entry 28, physical body row 31: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "29) Лєґенди про Мойсея і відривки апокріфа „П",
+        "reason": "Original printed list entry 29, physical body row 32: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "сея на небо“ (II, 625—631).",
+        "reason": "Original printed list entry 29, physical body row 33: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "30) Лєґенду про Натана, ту саму що є у нас, і",
+        "reason": "Original printed list entry 30, physical body row 34: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "(II, 633).",
+        "reason": "Original printed list entry 30, physical body row 35: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "31) Арабські лєґенди про Ноя і його жінку (II",
+        "reason": "Original printed list entry 31, physical body row 36: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "32) Арабські лєґенди про Соломона (II, 840—87",
+        "reason": "Original printed list entry 32, physical body row 37: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "лєґенди про него, розмову Соломона с Сатурном",
+        "reason": "Original printed list entry 32, physical body row 38: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "33) Апокріф про Товію (II, 1047—1066).",
+        "reason": "Original printed list entry 33, physical body row 39: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "34) Переклад жидівської книги Яшар (II, 1087—",
+        "reason": "Original printed list entry 34, physical body row 40: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+      }
+    ]
+  }
+}
