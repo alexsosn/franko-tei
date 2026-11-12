@@ -1,0 +1,146 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 37,
+  "printed_page_observed": "XXVIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "d9887cb7ade986d33647a23d1891168b884cb2204c5ab89164d71050cbf3809a",
+  "frozen_first_reading": "pilot/vol1_scan00037_single_reading.json",
+  "review_method": "Logically separate failure-oriented rereading of entire native original JPEG after frozen first image-only transcription commit ea802596. Only then opened damaged embedded PDF OCR as fallible counterhypothesis. Same conversational context; not an independent blind second full reader nor independent third text reviewer.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-18",
+      "frozen_substring": "в її склад",
+      "proposed_substring": "в єї склад",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "prefer_proposal_provisional",
+      "source_reason": "Printed nineteenth-century possessive appears as єї, recurrent first-reader substitution to modern її. Embedded OCR happens to show єї but cannot independently prove the original letters."
+    },
+    {
+      "line_id": "main-line-25",
+      "frozen_substring": "12) його імен?",
+      "proposed_substring": "12) его імен?",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "prefer_proposal_provisional",
+      "source_reason": "Final words of Jacob argument on original image appear to say его імен, while initial reading changed the historical form to його. The older OCR also suggests его but is not a reliable primary reading."
+    },
+    {
+      "line_id": "main-line-28",
+      "frozen_substring": "— стоишь посреди двора",
+      "proposed_substring": "— столпъ посреди двора",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "prefer_proposal_provisional",
+      "source_reason": "In letterspaced section 12 original printed Slavonic after the dash appears to be столпъ, not coherent modern стоишь. The original scan should be magnified and checked letter-by-letter before accepting; embedded OCR garbles this as eromme and is unusable."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "О Еносѣ, что былъ на пя-",
+      "reason": "The manuscript-index title printed by Franko has old Russian letters/line wrap; not manuscript-attested from these data."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "Отъ книгъ Еноха праведнаго",
+      "reason": "Original quotation includes Cyrillic ъ, possible archaic vowel variation; no independent second source reading."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "Библіографическіе матерьялы I",
+      "reason": "Pre-reform Russian title, book volume numeral and letterspacing of Поповъ; independent pixel check needed."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "12 І а к о в и ч ь  г л а г о л е м а я  Л ѣ с т в и ц а",
+      "reason": "Very extensive typographic spacing and old Slavonic title. Exact spaces/ь/ѣ should be measured against an enlarged source crop."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "Въ составѣ книги",
+      "reason": "Nested quotation boundaries, ѣ and ъ, and copied bibliographic statement may include first-reader substitutions."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "Откровеніе Авраама",
+      "reason": "Separate cited title is Franko's report; no direct ancient manuscript, exact printed vowel forms unreviewed."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "12 Іаковличь",
+      "reason": "Book title varies within same page; don't force standardization with line 12 before source adjudication."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "З а в ѣ т ы  п а т р і а р х о в ъ",
+      "reason": "Historical Slavonic printed letters and literal letterspacing; verify direct pixels before changing."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "И с а а к ъ  с о н ъ  в и д ѣ",
+      "reason": "Slavonic title line includes unfamiliar characters, guessed first reading; line also contains explicit suspect стоишь."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "дѣютъ на земли и судилъ имъ",
+      "reason": "Quoted Slavonic phrase may have inaccurate pronoun/inflections and letterforms; old OCR is unusable."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "Троїцько-Сергієвої Лаври XVI. в.",
+      "reason": "Source reports a manuscript reference, but original ancient witness not inspected."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "М о л и т в а  І о с и ф о в а",
+      "reason": "Printed title has expanded letterspacing and historical script; don't collapse in diplomatic source text."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "Яґі-",
+      "reason": "Historian surname split across physical lines, possible glyph confusion ґ/г."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "Migne, Dictionnaire des Apocryphes I, 708",
+      "reason": "Latin-script French citation and numeric reference, verify printed punctuation."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "А с е н е ф ь",
+      "reason": "Aseneth name's final soft sign and literal spacing require independent source check."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "М о и с е е в ъ  з а в ѣ т ъ",
+      "reason": "Title's old Russian hard signs/yat; also the first reader may misinterpret source spacing."
+    }
+  ],
+  "coverage_review": {
+    "folio": "XXVIII printed top left (not physical scan number 37)",
+    "physical_body_lines": 41,
+    "region_body_lengths": [
+      7,
+      4,
+      14,
+      2,
+      5,
+      5,
+      2,
+      2
+    ],
+    "first_line": "Continuation of Enoch entry from I/36",
+    "final_line": "Concludes with Яр. Білахевича. as printed, no reconstruction",
+    "ocr_negative_control": "Embedded OCR reads XXYIII instead of XXVIII, misrecognizes many old Cyrillic words with Latin junk and loses the long letterspacing. It is not an independent image-reader or CER reference."
+  },
+  "limitations": [
+    "Only one full first image reader",
+    "Post-freeze failure-oriented review is in the same context, not a complete blind second reading",
+    "No independently adjudicated glyphs or scholarly CER",
+    "No verified TEI/TF, only provenance-checked provisional export"
+  ],
+  "rights": "No source JPEG/PDF binaries or rights claims introduced in PR."
+}
