@@ -1,0 +1,160 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 45,
+  "printed_page_observed": "XXXVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "6833432abc96626b36bd8ac087944fc1a6764d78fd73caae5e3e13d16edcd9bd",
+  "frozen_first_reading": "pilot/vol1_scan00045_single_reading.json",
+  "review_method": "Distinct failure-oriented audit of the pinned original native I/45 JPEG and the already frozen JSON, after source-only first reading commit a6985f5c. Compared physical line count, folio, original verse/prose boundaries, source glyphs, language attributions and TEI roundtrip risks. The source embedded OCR file was not accessible; no OCR-based corrections proposed. Same context, not a blind second full source transcription.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-02",
+      "frozen_substring": "цїкавих",
+      "proposed_substring": "цікавих",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The first reader used a two-dot ї in this Ukrainian adjective. Small printed diacritics may instead be single-dot і; source enlargement needed."
+    },
+    {
+      "line_id": "main-line-05",
+      "frozen_substring": "лїтератури",
+      "proposed_substring": "літератури",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "A likely historical spelling with ї but the dotted vowel can be ambiguous at original resolution. Do not modernize automatically."
+    },
+    {
+      "line_id": "main-line-30",
+      "frozen_substring": "лесть",
+      "proposed_substring": "лест",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The final ь after the t of the Old Slavic object may be a source character or an optical assumption. Review the original line, not a modern dictionary."
+    },
+    {
+      "line_id": "main-line-31",
+      "frozen_substring": "свв.",
+      "proposed_substring": "сьв.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Original abbreviation near Івана appears difficult: double v vs old soft-sign abbreviation. Need a separate original glyph crop."
+    },
+    {
+      "line_id": "main-line-39",
+      "frozen_substring": "Иліею",
+      "proposed_substring": "Іліею",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The first letter of the source name in the closing hymn may be capital Cyrillic И or decimal І, with different source Unicode representations."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-03",
+      "reading": "XVII—XVIII.",
+      "reason": "Punctuation, dash and roman glyphs in the prose are source glyphs, not editorial dates."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "(1805, 1825)",
+      "reason": "Punctuation before the Львові reprint may differ from the first-reader candidate."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "Перемишлї",
+      "reason": "Top dots of original ї versus і need an image-level second pass."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "из рая изгнаннаго",
+      "reason": "Hymn title in historical orthography includes letters ъ/и whose exact placement must be checked."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "подробицї",
+      "reason": "Unusual Ukrainian final ї cannot be verified through contemporary grammar."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "Морска пучина",
+      "reason": "Old hymn language may omit modern a/я; check original letters."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "Была мнѣ вмѣсто",
+      "reason": "Yat characters should be adjudicated visually independent of morphology."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "гробъ оуготовляютъ",
+      "reason": "Digraph оу and ъ must remain source observations, not modernization."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "звѣрми нѣмыми",
+      "reason": "Two yats and end-of-word morphology are high-risk source glyphs."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "владѣти",
+      "reason": "Yat in original participial sequence needs exact verification."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "Раю святѣйший",
+      "reason": "Old hymn spelling and its exclamation mark uncertain in print."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "оубо купно",
+      "reason": "Old Slavic оу spelling is not interchangeable with Cyrillic у."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "повиваху",
+      "reason": "Printed hymn has a low-frequency verb: possible fluent completion error."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "снѣ видѣ",
+      "reason": "Parentheses around quotation and yat may be mis-segmented."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "пришествіем",
+      "reason": "Old Slavic word might have nonstandard consonants or historical i form."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "Іоаннъ, Енохъ и Илія",
+      "reason": "Historical glyphs and hymn number require source-level check."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "былесь",
+      "reason": "Rare form is especially exposed to model language-based reconstruction."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "тѣлеси предстати",
+      "reason": "Printed quotation includes yat and possible old archaic digraphs."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "всѣхъ оутверждати в вѣрѣ",
+      "reason": "Yat, final hard sign, and оу digraph must be independently inspected."
+    }
+  ],
+  "reviewed_properties": {
+    "physical_layout": "Native image displays 40 body rows and upper-left XXXVI; no omitted footnote or second column.",
+    "source_mapping": "One folio + 10 source prose/hymn groups; original line-end hyphens and printed line breaks kept unchanged.",
+    "script_and_language": "Narrative Ukrainian vs mixed historical Slavic hymn verses; no false single modern Church Slavonic language certainty asserted.",
+    "preservation": "Frozen raw_response unchanged; candidate corrections stored only in this review record."
+  },
+  "disposition": "Source contract and structural TEI may pass; philological glyph verification remains blocked without blind independent image reading and third adjudication."
+}

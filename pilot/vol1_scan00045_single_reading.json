@@ -1,0 +1,1193 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 45,
+  "printed_page_observed": "XXXVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00045.jpg",
+  "source_image_sha256": "6833432abc96626b36bd8ac087944fc1a6764d78fd73caae5e3e13d16edcd9bd",
+  "reading": {
+    "reader_id": "gpt6-source-first-i45-20261112",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-2026-11-12-I45-source-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full source-native JPEG image-only first reading I/45 (XXXVI), with 40 original physical body lines, prose and hymn source blocks, original Roman folio. Preserve unnormalized Church Slavonic/Ruthenian forms ѣ/ъ/ї/оу, line hyphenation, typographic punctuation, original mixed-script numerals. No original OCR or competing I/45 reading accessed. All text remains an unverified source candidate, not independent transcription or gold.",
+    "raw_response": "XXXVI\nЯ не буду виписувати натяків на старозавітні апокріфи, які\nзнаходять ся в укр. руських віршах, тих цїкавих памятках нашого\nписьменства XVII—XVIII. віків, що в значній части вийшли з драм.\nЗверну увагу тільки на один важний а доси мало студіований па-\nмятник нашої духовної лїтератури, на „Богогласник“, збірку духов-\nних пісень, видану у-перве в Почаєві 1790 р., а потім ще кілька\nразів у Почаєві (1805, 1825) у Львові (1852, 1870), частями в По-\nчаєві (1800, 1806), у Перемишлї (1834), у Київі і т. д. І так під\nч. 38 читаємо там пісню „Плачъ Адама праотца из рая изгнаннаго“,\nа в нїй між иньшими знаходимо ось які апокріфічні подробицї:\nМорска пучина, вода глубока\nБыла мнѣ вмѣсто моста широка,\nНо се волны на мя возстаютъ,\nВ глубинѣ гробъ оуготовляютъ.\nОбладахъ всѣми звѣрми нѣмыми,\nЦарь быхъ поставленъ владѣти ими,\nНо и гласа ихъ днесь бою ся,\nДа злыхъ зубовъ ихъ сохраню ся.\nІ кінчить ся пісня майже дословною парафразою того плачу\nАдамового, що приведений у нас на стор. 28—29:\nРаю святѣйший, саде Владыки!\nВрагъ азъ явих ся Богу толикій!\nТы мнѣ оубо купно свободи,\nШумомъ листвій Творца умоли!\nПісня про пророка Ілию (ч. 202) основана на тих самих апо-\nкріфічних жерелах, які зведені у нас. Читаємо тут між иньшими:\nАнгели тя в пламенѣ огнен повиваху,\n(Родитель в снѣ видѣ) и огнемъ питаху.\nИ предъ вторымъ страшнымъ пришествіем Христа\nТы обличити лесть прійдешь Антихриста.\nТе саме говорить ся й про Еноха і свв. Івана Евангелиста:\nГди ся имать судъ зачати\nИ Антихристъ людъ прелщати,\nПредварять дни тія\nІоаннъ, Енохъ и Илія (ч. 190).\nІ в другій пісни до св. Івана:\nПонеже былесь списатель новой благодати,\nИмашь оубо предъ днемъ страшным в тѣлеси предстати\nКупно съ Иліею и Енохомъ в мірѣ\nПредъ Антихристом всѣхъ оутверждати в вѣрѣ (ч. 189).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            85,
+            1590,
+            1020,
+            115
+          ],
+          "description": "Blank bottom margin after last native printed text line; no note or printer signature visible."
+        }
+      ],
+      "occlusions": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          174,
+          64,
+          165,
+          57
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XXXVI",
+            "bbox_xywh": [
+              184,
+              71,
+              147,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "franko_bogoglasnik_introduction",
+        "kind": "body",
+        "bbox_xywh": [
+          170,
+          132,
+          980,
+          364
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "Я не буду виписувати натяків на старозавітні апокріфи, які",
+            "bbox_xywh": [
+              175,
+              138,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "знаходять ся в укр. руських віршах, тих цїкавих памятках нашого",
+            "bbox_xywh": [
+              175,
+              174,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "письменства XVII—XVIII. віків, що в значній части вийшли з драм.",
+            "bbox_xywh": [
+              175,
+              210,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 12,
+                "end": 23,
+                "language": null,
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 23,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "Зверну увагу тільки на один важний а доси мало студіований па-",
+            "bbox_xywh": [
+              175,
+              246,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "мятник нашої духовної лїтератури, на „Богогласник“, збірку духов-",
+            "bbox_xywh": [
+              175,
+              282,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "них пісень, видану у-перве в Почаєві 1790 р., а потім ще кілька",
+            "bbox_xywh": [
+              175,
+              318,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "разів у Почаєві (1805, 1825) у Львові (1852, 1870), частями в По-",
+            "bbox_xywh": [
+              175,
+              354,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "чаєві (1800, 1806), у Перемишлї (1834), у Київі і т. д. І так під",
+            "bbox_xywh": [
+              175,
+              390,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "ч. 38 читаємо там пісню „Плачъ Адама праотца из рая изгнаннаго“,",
+            "bbox_xywh": [
+              175,
+              426,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "а в нїй між иньшими знаходимо ось які апокріфічні подробицї:",
+            "bbox_xywh": [
+              175,
+              462,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "adam_lament_hymn",
+        "kind": "body",
+        "bbox_xywh": [
+          380,
+          492,
+          770,
+          292
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-11",
+            "text": "Морска пучина, вода глубока",
+            "bbox_xywh": [
+              385,
+              498,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 27,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "Была мнѣ вмѣсто моста широка,",
+            "bbox_xywh": [
+              385,
+              534,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "Но се волны на мя возстаютъ,",
+            "bbox_xywh": [
+              385,
+              570,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 28,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "В глубинѣ гробъ оуготовляютъ.",
+            "bbox_xywh": [
+              385,
+              606,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "Обладахъ всѣми звѣрми нѣмыми,",
+            "bbox_xywh": [
+              385,
+              642,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "Царь быхъ поставленъ владѣти ими,",
+            "bbox_xywh": [
+              385,
+              678,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 33,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "Но и гласа ихъ днесь бою ся,",
+            "bbox_xywh": [
+              385,
+              714,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 28,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-18",
+            "text": "Да злыхъ зубовъ ихъ сохраню ся.",
+            "bbox_xywh": [
+              385,
+              750,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 31,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "adam_lament_comparison",
+        "kind": "body",
+        "bbox_xywh": [
+          170,
+          780,
+          980,
+          76
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-19",
+            "text": "І кінчить ся пісня майже дословною парафразою того плачу",
+            "bbox_xywh": [
+              175,
+              786,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-20",
+            "text": "Адамового, що приведений у нас на стор. 28—29:",
+            "bbox_xywh": [
+              175,
+              822,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "adam_lament_closing_verse",
+        "kind": "body",
+        "bbox_xywh": [
+          380,
+          852,
+          770,
+          148
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-21",
+            "text": "Раю святѣйший, саде Владыки!",
+            "bbox_xywh": [
+              385,
+              858,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 28,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "Врагъ азъ явих ся Богу толикій!",
+            "bbox_xywh": [
+              385,
+              894,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 31,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "Ты мнѣ оубо купно свободи,",
+            "bbox_xywh": [
+              385,
+              930,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 26,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-24",
+            "text": "Шумомъ листвій Творца умоли!",
+            "bbox_xywh": [
+              385,
+              966,
+              755,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 28,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "elijah_hymn_introduction",
+        "kind": "body",
+        "bbox_xywh": [
+          170,
+          996,
+          980,
+          76
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-25",
+            "text": "Пісня про пророка Ілию (ч. 202) основана на тих самих апо-",
+            "bbox_xywh": [
+              175,
+              1002,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "кріфічних жерелах, які зведені у нас. Читаємо тут між иньшими:",
+            "bbox_xywh": [
+              175,
+              1038,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "elijah_hymn_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          280,
+          1068,
+          870,
+          148
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-27",
+            "text": "Ангели тя в пламенѣ огнен повиваху,",
+            "bbox_xywh": [
+              285,
+              1074,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 35,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "(Родитель в снѣ видѣ) и огнемъ питаху.",
+            "bbox_xywh": [
+              285,
+              1110,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 38,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-29",
+            "text": "И предъ вторымъ страшнымъ пришествіем Христа",
+            "bbox_xywh": [
+              285,
+              1146,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 44,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "Ты обличити лесть прійдешь Антихриста.",
+            "bbox_xywh": [
+              285,
+              1182,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 38,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "enoch_john_introduction",
+        "kind": "body",
+        "bbox_xywh": [
+          170,
+          1212,
+          980,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-31",
+            "text": "Те саме говорить ся й про Еноха і свв. Івана Евангелиста:",
+            "bbox_xywh": [
+              175,
+              1218,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "enoch_john_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          420,
+          1248,
+          730,
+          148
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-32",
+            "text": "Гди ся имать судъ зачати",
+            "bbox_xywh": [
+              425,
+              1254,
+              715,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 24,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-33",
+            "text": "И Антихристъ людъ прелщати,",
+            "bbox_xywh": [
+              425,
+              1290,
+              715,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 27,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-34",
+            "text": "Предварять дни тія",
+            "bbox_xywh": [
+              425,
+              1326,
+              715,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 18,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "Іоаннъ, Енохъ и Илія (ч. 190).",
+            "bbox_xywh": [
+              425,
+              1362,
+              715,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 30,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "john_hymn_introduction",
+        "kind": "body",
+        "bbox_xywh": [
+          170,
+          1392,
+          980,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-36",
+            "text": "І в другій пісни до св. Івана:",
+            "bbox_xywh": [
+              175,
+              1398,
+              965,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "john_hymn_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          280,
+          1428,
+          870,
+          148
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-37",
+            "text": "Понеже былесь списатель новой благодати,",
+            "bbox_xywh": [
+              285,
+              1434,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 40,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "Имашь оубо предъ днемъ страшным в тѣлеси предстати",
+            "bbox_xywh": [
+              285,
+              1470,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 50,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-39",
+            "text": "Купно съ Иліею и Енохомъ в мірѣ",
+            "bbox_xywh": [
+              285,
+              1506,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 31,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-40",
+            "text": "Предъ Антихристом всѣхъ оутверждати в вѣрѣ (ч. 189).",
+            "bbox_xywh": [
+              285,
+              1542,
+              855,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i45-20261112",
+                "start": 0,
+                "end": 52,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-02",
+        "reading": "цїкавих",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "XVII—XVIII.",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "лїтератури",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "(1805, 1825)",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "Перемишлї",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "Плачъ Адама",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "подробицї",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Морска пучина",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "мнѣ вмѣсто",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "оуготовляютъ",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "звѣрми",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "владѣти",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "бою ся",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "святѣйший",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "Врагъ",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "оубо",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "повиваху",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "снѣ видѣ",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "пришествіем",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "лесть",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "свв.",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "Гди",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "прелщати",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "Іоаннъ",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "былесь",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "тѣлеси",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "Иліею",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "вѣрѣ",
+        "reason": "Original historical spelling/letterform remains a first-reader glyph hypothesis; targeted independent native-image optical comparison required, with no modernization or inference from other printings."
+      }
+    ]
+  }
+}
