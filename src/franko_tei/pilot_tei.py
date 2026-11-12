@@ -185,6 +185,46 @@ def validate_single_draft(payload, images_root):
         if key in seen_notes or line_id not in line_text_by_id or source_reading not in line_text_by_id[line_id]:
             raise ValueError('uncertainty note must link to a unique literal reading on an existing line')
         seen_notes.add(key)
+
+    # Optional, explicit links only for source-observed printed footnotes.
+    # The first reading's characters remain frozen: this is later apparatus
+    # metadata, not an invisible OCR correction or blanket footnote heuristic.
+    source_links = reading.get('source_note_links', [])
+    if not isinstance(source_links, list):
+        raise ValueError('source note links must be a list')
+    regions_by_id = {r['id']: r for r in regions}
+    lines_by_id = {line['id']: (r, line)
+                   for r in regions for line in r['lines']}
+    seen_marker_lines, seen_target_notes = set(), set()
+    for link in source_links:
+        if not isinstance(link, dict):
+            raise ValueError('invalid source note link')
+        marker_id = _required_text(link, 'marker_line_id')
+        marker = _required_text(link, 'marker_text')
+        note_id = _required_text(link, 'note_region_id')
+        start = link.get('marker_start')
+        if type(start) is not int or start < 0:
+            raise ValueError('source note marker offset must be a nonnegative integer')
+        source_line = lines_by_id.get(marker_id)
+        note_region = regions_by_id.get(note_id)
+        if source_line is None or source_line[0]['kind'] != 'body':
+            raise ValueError('source note marker must identify a body line')
+        if note_region is None or note_region['kind'] != 'note':
+            raise ValueError('source note link must target an existing note region')
+        if marker_id in seen_marker_lines or note_id in seen_target_notes:
+            raise ValueError('duplicate source note link marker or target')
+        seen_marker_lines.add(marker_id)
+        seen_target_notes.add(note_id)
+        printed = source_line[1]['text']
+        if printed.count(marker) != 1 or printed[start:start+len(marker)] != marker:
+            raise ValueError('source note marker is missing, misplaced or ambiguous')
+        if not note_region['lines'][0]['text'].startswith(marker):
+            raise ValueError('source note region must begin with the same printed marker')
+        covered = [span for span in source_line[1]['language_spans']
+                   if span['start'] <= start and span['end'] >= start+len(marker)]
+        if len(covered) != 1:
+            raise ValueError('source note marker must fit inside one printed text span')
+
     return {'width':width,'height':height,'image_sha256':image_sha}
 
 
@@ -209,7 +249,7 @@ def _zone(parent, region, volume, page, group, identifier):
     return zone
 
 
-def _append_line(parent, line, volume, page, reading_id):
+def _append_line(parent, line, volume, page, reading_id, source_note_link=None):
     lb = _sub(parent,'lb',attrs={'facs':f"#{_facs_id(volume,page,'line',line['id'])}"})
     xml_id(lb, f"lb-v{volume}-s{page:05d}-{line['id']}")
     raw = line['text']
@@ -224,6 +264,7 @@ def _append_line(parent, line, volume, page, reading_id):
     visible = raw[:-1] if illegible_suffix else raw
     spans = line['language_spans']
     previous, current = 0, lb
+    rendered_spans = []  # only this physical line, never earlier lines in the same ab
     for span_index, span in enumerate(spans, 1):
         start, end = span['start'], min(span['end'], len(visible))
         if start >= len(visible):
@@ -238,9 +279,36 @@ def _append_line(parent, line, volume, page, reading_id):
             attrs['cert'] = 'low'
         seg = _sub(parent,'seg',visible[start:end],attrs)
         xml_id(seg, f"seg-v{volume}-s{page:05d}-{line['id']}-{span_index:03d}")
+        rendered_spans.append(seg)
         current = seg
         previous = end
     current.tail = (current.tail or '') + visible[previous:]
+
+    if source_note_link is not None:
+        marker = source_note_link['marker_text']
+        start = source_note_link['marker_start']
+        end = start + len(marker)
+        covering = [i for i, span in enumerate(spans)
+                    if span['start'] <= start and span['end'] >= end]
+        if len(covering) != 1:
+            raise ValueError('source note marker not in a unique text span')
+        i = covering[0]
+        segs = rendered_spans
+        if i >= len(segs):
+            raise ValueError('source note marker span was not rendered')
+        seg = segs[i]
+        local_start = start - spans[i]['start']
+        printed = seg.text or ''
+        if printed[local_start:local_start+len(marker)] != marker:
+            raise ValueError('source note marker differs from rendered original text')
+        seg.text = printed[:local_start]
+        note_id = source_note_link['note_region_id']
+        target = f"#source-note-v{volume}-s{page:05d}-{note_id}"
+        ref = _sub(seg, 'ref', marker,
+                   {'type': 'source-footnote-reference', 'target': target})
+        xml_id(ref, f"source-ref-v{volume}-s{page:05d}-{line['id']}")
+        ref.tail = printed[local_start+len(marker):]
+
     if illegible_suffix:
         gap = _sub(parent, 'gap', attrs={
             'reason': 'illegible', 'extent': 'unknown', 'unit': 'character',
@@ -291,11 +359,24 @@ def render_pilot_tei(payload, image_width, image_height):
     div=_sub(body,'div',attrs={'type':'page','n':str(page),'facs':f"#surface-v{volume}-s{page:05d}"})
     xml_id(div,f"page-v{volume}-s{page:05d}")
     _sub(div,'pb',attrs={'n':str(page),'facs':f"#surface-v{volume}-s{page:05d}"})
+    source_links = draft.get('source_note_links', [])
+    links_by_marker = {link['marker_line_id']: link for link in source_links}
+    linked_note_regions = {link['note_region_id'] for link in source_links}
     for region in draft['regions']:
-        ab=_sub(div,'ab',attrs={'type':region['kind'], 'facs':f"#{_facs_id(volume,page,'region',region['id'])}"})
-        xml_id(ab,f"ab-v{volume}-s{page:05d}-{region['id']}")
+        facs = f"#{_facs_id(volume,page,'region',region['id'])}"
+        if region['kind'] == 'note' and region['id'] in linked_note_regions:
+            ab = _sub(div, 'note',
+                      attrs={'type':'source-footnote', 'facs':facs})
+            xml_id(ab, f"source-note-v{volume}-s{page:05d}-{region['id']}")
+        else:
+            # Retain source-before-change attribute ordering byte-for-byte for
+            # existing persisted pilot XML without explicit note links.
+            ab = _sub(div, 'ab',
+                      attrs={'type':region['kind'], 'facs':facs})
+            xml_id(ab,f"ab-v{volume}-s{page:05d}-{region['id']}")
         for line in region['lines']:
-            _append_line(ab,line,volume,page,draft['reader_id'])
+            _append_line(ab,line,volume,page,draft['reader_id'],
+                         source_note_link=links_by_marker.get(line['id']))
     for index, note in enumerate(draft['uncertainty_notes'], 1):
         n = _sub(div, 'note', f"{note['reading']}: {note['reason']}",
                  {'type': 'agent-reading-uncertainty',
@@ -308,7 +389,13 @@ def extract_transcribed_lines(xml):
     """Losslessly reconstruct physical line strings, with no normalization."""
     root=ET.fromstring(xml)
     result=[]
-    for ab in root.findall(f'.//{{{TEI}}}body//{{{TEI}}}ab'):
+    body = root.find(f'.//{{{TEI}}}body')
+    if body is None:
+        raise ValueError('missing TEI body')
+    for ab in body.iter():
+        if not (ab.tag == tag('ab') or
+                (ab.tag == tag('note') and ab.get('type') == 'source-footnote')):
+            continue
         current=None
         for child in ab:
             if child.tag == tag('lb'):

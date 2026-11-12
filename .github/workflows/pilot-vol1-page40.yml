@@ -42,6 +42,23 @@ jobs:
           ns = {'t': 'http://www.tei-c.org/ns/1.0'}
           assert len(tree.xpath('//t:lb', namespaces=ns)) == 41
           assert len(tree.xpath('//t:pb', namespaces=ns)) == 1
+          source_links=p['reading']['source_note_links']
+          assert len(source_links) == 1
+          print_marker=source_links[0]
+          assert print_marker['marker_line_id'] == 'main-line-30'
+          assert print_marker['note_region_id'] == 'noonday_demon_footnote'
+          original_line=next(l['text'] for r in p['reading']['regions'] for l in r['lines']
+                             if l['id'] == print_marker['marker_line_id'])
+          start=print_marker['marker_start']
+          assert original_line[start:start+len(print_marker['marker_text'])] == '*)'
+          refs=tree.xpath('//t:ref[@type="source-footnote-reference"]',namespaces=ns)
+          notes=tree.xpath('//t:note[@type="source-footnote"]',namespaces=ns)
+          assert len(refs) == len(notes) == 1
+          assert ''.join(refs[0].itertext()) == '*)'
+          xmlid='{http://www.w3.org/XML/1998/namespace}id'
+          assert refs[0].get('target') == '#'+notes[0].get(xmlid)
+          assert len(notes[0].xpath('.//t:lb',namespaces=ns)) == 3
+          assert len(tree.xpath('//t:note[@type="agent-reading-uncertainty"]',namespaces=ns)) > 0
           print('Source image rehashed; 41 physical positions including folio incl. folio encoded, no reconstructed page boundaries. Unverified.')
           PY
       - name: TEI P5 4.12.0 Relax NG validation

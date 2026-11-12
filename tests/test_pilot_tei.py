@@ -232,5 +232,73 @@ class PilotTeiTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'ellipsis'):
             validate_single_draft(bad,self.root)
 
+
+    def _synthetic_source_footnote(self):
+        d=self.sample()
+        r=d['reading']
+        body=r['regions'][1]['lines'][0]
+        body['text']='Сторінка (с. 64)*) і далі'
+        body['language_spans']=[{
+            'text_version':'context-1','start':0,'end':len(body['text']),
+            'language':'uk','script':'Cyrl','uncertain':False,
+        }]
+        r['regions'].append({
+            'id':'source-note','kind':'note','bbox_xywh':[100,275,950,65],
+            'geometry_estimated':True,
+            'lines':[{
+                'id':'source-note-line','text':'*) окрема примітка',
+                'bbox_xywh':[110,285,800,30],'geometry_estimated':True,
+                'language_spans':[],
+            }],
+        })
+        r['uncertainty_notes']=[]
+        r['raw_response']=chr(10).join(['48',body['text'],'*) окрема примітка'])
+        r['source_note_links']=[{
+            'marker_line_id':'text-line',
+            'marker_text':'*)',
+            'marker_start':body['text'].index('*)'),
+            'note_region_id':'source-note',
+        }]
+        return d
+
+    def test_source_footnote_renders_exact_marker_ref_and_real_tei_note(self):
+        data=self._synthetic_source_footnote()
+        validate_single_draft(data,self.root)
+        xml=render_pilot_tei(data,1190,1794)
+        tree=ET.fromstring(xml)
+        refs=[x for x in tree.iter(f'{{{TEI}}}ref')
+              if x.get('type')=='source-footnote-reference']
+        notes=[x for x in tree.iter(f'{{{TEI}}}note')
+               if x.get('type')=='source-footnote']
+        self.assertEqual((len(refs),len(notes)),(1,1))
+        self.assertEqual(refs[0].text,'*)')
+        self.assertEqual(refs[0].get('target'),
+                         '#'+notes[0].get('{http://www.w3.org/XML/1998/namespace}id'))
+        self.assertEqual(extract_transcribed_lines(xml),
+                         ['48','Сторінка (с. 64)*) і далі','*) окрема примітка'])
+        self.assertEqual(data['status'],'agent_unverified')
+
+    def test_source_footnote_fail_closed_on_invalid_targets_and_markers(self):
+        for mode in ('missing-target','wrong-offset','repeated-marker',
+                     'missing-note-glyph','duplicate-link','wrong-region-kind'):
+            data=self._synthetic_source_footnote()
+            link=data['reading']['source_note_links'][0]
+            if mode=='missing-target': link['note_region_id']='not-real'
+            if mode=='wrong-offset': link['marker_start']+=1
+            if mode=='repeated-marker':
+                line=data['reading']['regions'][1]['lines'][0]
+                line['text']+=' *)'
+                line['language_spans'][0]['end']=len(line['text'])
+                data['reading']['raw_response']=chr(10).join(['48',line['text'],'*) окрема примітка'])
+            if mode=='missing-note-glyph':
+                data['reading']['regions'][-1]['lines'][0]['text']='примітка'
+                data['reading']['raw_response']=chr(10).join(['48','Сторінка (с. 64)*) і далі','примітка'])
+            if mode=='duplicate-link':
+                data['reading']['source_note_links'].append(copy.deepcopy(link))
+            if mode=='wrong-region-kind':
+                data['reading']['regions'][-1]['kind']='body'
+            with self.subTest(mode=mode),self.assertRaisesRegex(ValueError,'note|marker|link'):
+                validate_single_draft(data,self.root)
+
 if __name__=='__main__':
     unittest.main()
