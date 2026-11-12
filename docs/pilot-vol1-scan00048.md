@@ -19,3 +19,14 @@
 5. After freezing, a logically independent **failure-oriented same-context review** must challenge difficult glyphs, title initials, bibliographic Roman numerals and line-mixed headings; no false claim of blind second full-page reader or third adjudicator.
 
 Research-grade publication requires independent glyph-by-glyph verification and clarification of mixed inline heading semantics. Continue #11, #3, #5/#6. Next original source is **I/49**.
+
+
+## Subsequent editorial TEI heading-continuation overlay (issue #84)
+
+The frozen I/48 first-reader JSON above is deliberately not modified. Source-backed semantic annotation lives in `pilot/overlays/vol1_scan00048_heading_continuation.json`, with explicit original image SHA256, source reader version, original heading region, first body physical line `main-line-12`, the *exact original* 35-code-point prefix `д а н ь  с т а р о з а в і т н и х.`, and source codepoint offset **0–35**. The following printed space and `Збиранє і публїкованє` begin the narrative on the **same** source row.
+
+Run `franko-pilot-tei --images native-assets --input pilot/vol1_scan00048_single_reading.json --heading-overlay pilot/overlays/vol1_scan00048_heading_continuation.json --output build/vol1_scan00048.xml` with the pinned original JPEG/manifest copied to `native-assets/vol1`.
+
+This opt-in overlay renders a nested TEI `<seg type="printed-heading-continuation" cert="low" corresp="#ab-v1-s00048-section_ix_heading_source_row">` in the appropriate original language span. It points back to the previous separately printed `<ab type="heading">` block. It deliberately does **not** fabricate a `<head>` spanning a physical line boundary or add/reflow a source `<lb>`. The entire printed line remains byte-for-byte reconstructable; the first reader remains `agent_unverified`. TEI P5 4.12.0 permits nested `<seg>` within a `<seg>`.
+
+If the image checksum, reader ID, original heading region, first source body line, literal Unicode prefix, boundary offset, adjacency, or overlap with another source note changes, the overlay fails closed. Without the overlay, all existing page output stays unchanged. The page-specific real-image CI workflow validates both source hash and the TEI P5 schema.
