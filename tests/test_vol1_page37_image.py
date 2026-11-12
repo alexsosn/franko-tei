@@ -51,5 +51,33 @@ class TestI37(unittest.TestCase):
                 self.assertLessEqual(x+w, rx+rw, l["id"])
                 self.assertLessEqual(y+h, ry+rh, l["id"])
 
+
+    def test_postfreeze_adversarial_challenges_stay_unverified(self):
+        d = json.loads(PATH.read_text(encoding="utf-8"))
+        p = PATH.parent / "reviews/vol1_scan00037_post_freeze_challenges.json"
+        audit = json.loads(p.read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"], d["source_image_sha256"])
+        self.assertEqual(audit["status"], "provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]), 3)
+        line_map = {line["id"]: line["text"] for reg in d["reading"]["regions"] for line in reg["lines"]}
+        for item in audit["corrections"]:
+            self.assertIn(item["line_id"], line_map)
+            self.assertIn(item["frozen_substring"], line_map[item["line_id"]])
+            self.assertNotEqual(item["frozen_substring"], item["proposed_substring"])
+            self.assertNotEqual(item["disposition"], "verified")
+        self.assertGreaterEqual(len(audit["unresolved"]), 8)
+
+    def test_french_bibliography_not_cyrillic(self):
+        d = json.loads(PATH.read_text(encoding="utf-8"))
+        lines = {l["id"]: l for r in d["reading"]["regions"] for l in r["lines"]}
+        item = lines["main-line-37"]
+        start = item["text"].index("Migne,")
+        self.assertTrue(any(s["script"] == "Latn" and s["start"] == start
+                            and s["end"] == len(item["text"])
+                            for s in item["language_spans"]))
+
 if __name__ == "__main__":
     unittest.main()
