@@ -1,0 +1,168 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 39,
+  "printed_page_observed": "XXX",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "5e0c503d575274f2d646f63ae2e3bec53397c495d5ce4797170d1b1598c3275f",
+  "frozen_first_reading": "pilot/vol1_scan00039_single_reading.json",
+  "review_method": "Failure-oriented rereading of full original 1190x1716 native JPEG after the initial source-only reading was committed, followed by inspection of the original embedded OCR as a corrupt negative control. Same conversational context; no independent blind second reader or third textual adjudication.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-09",
+      "frozen_substring": "а й текст її",
+      "proposed_substring": "а й текст єї",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "unresolved_competing_glyphs",
+      "source_reason": "Old printed Ukrainian source possessive may read єї; the first pass likely normalized it to її, but original pixels in this line are not clear enough to prove exact glyphs. Old embedded OCR corrupts the word and is no authority."
+    },
+    {
+      "line_id": "main-line-13",
+      "frozen_substring": "Библіографическіе матеріялы",
+      "proposed_substring": "Библіографическіе матеріалы",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "unresolved_competing_glyphs",
+      "source_reason": "Russian bibliographic title appears to have a different vowel sequence in матеріалы; exact printed і/я/ы/а must be checked in enlarged native scan, not inferred from modern bibliographic normalization."
+    },
+    {
+      "line_id": "main-line-26",
+      "frozen_substring": "її письменства",
+      "proposed_substring": "єї письменства",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "prefer_proposal_provisional",
+      "source_reason": "The native print seems to use archaic єї, as Franko does frequently on neighboring pages; original embedded OCR also suggests єї but is very unreliable, so actual glyph check remains mandatory."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "не бывалъ Китоврасъ на земли, но еллинстіи",
+      "reason": "Source continues Old Russian quotation from I/38; exact old Cyrillic letters and spacing need independent rereading."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "философы ввели",
+      "reason": "Quoted Old Russian clause, very vulnerable to transliteration or semantic modernization."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "Тіхонравівського списка",
+      "reason": "Historic Ukrainian surname and case form, print may contain і/ї/й variance."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "текст его",
+      "reason": "Printed old possessive form, check о/є and source letter geometry."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "Откровеніе Авраама",
+      "reason": "Russian historical title printed by Franko, not a manuscript transcription."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "а й текст її",
+      "reason": "Glyph єї/її is contested and must not be promoted."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "Вкраїнї",
+      "reason": "Old Ukrainian vowel forms and Roman XVI century reference."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "П о п о в ъ-С п е р а н с к і й",
+      "reason": "Literal source letterspacing of compound surname, final sign and exact spacing not measured."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "Библіографическіе матеріялы",
+      "reason": "Bibliography may print матеріалы; needs enlarged original glyph check."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "Apocalypses apocryphae, p. XXX—XXXIII",
+      "reason": "Latin title and Roman page range, exact typography/punctuation subject to printed-image review."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "тольоґічного",
+      "reason": "Historical Greek-origin Ukrainian word, first reader may have made vowel or ґ error."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "обовязуючої",
+      "reason": "Print may differ in і/ї/є or apostrophe; no modernization."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "VIII. В п л и в а п о к р і ф і в",
+      "reason": "Very long typographically letterspaced title, literal source distances not measured; section starts here."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "н і с т ь у к р а ї н с ь к о - р у с ь к у.",
+      "reason": "Heading ends within the same physical row where body text begins; stage only knows whole physical line."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "її письменства",
+      "reason": "Likely printed єї, candidate remains provisional."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "Очеркъ исторіи Южнорусскихъ",
+      "reason": "Russian pre-reform title, capitalization and ъ, exactly as source uncertain."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "пѣсенъ",
+      "reason": "Russian yat and hard sign should survive Greek/Cyrillic mixed text parsing."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "Ф р а н к о",
+      "reason": "Historical letterspacing in printed citation; do not collapse source physical characters."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "сюди входить а туди виходить",
+      "reason": "Quoted Ukrainian maxim in Franko text, check curly quotes and words."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "Якоже море не наполнить ся многи рѣки приемля",
+      "reason": "Dense Old Russian quoted literary text, exact ѣ/ъ and word forms not verified."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "твой не наполнить ся множество богатства приемля, зане руцѣ",
+      "reason": "Physical page ends before quote finishes; must not infer continuation."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXX at upper left",
+    "physical_body_lines": 41,
+    "regions": [
+      2,
+      14,
+      7,
+      1,
+      17
+    ],
+    "title_boundary": "Heading VIII starts main line 24 and continues into main line 25 where prose begins",
+    "page_end": "Unclosed old Russian quote ends at зане руцѣ",
+    "ocr_negative_control": "Embedded PDF OCR transforms the VIII heading into misrecognized VHL and loses letterspacing; Old Cyrillic quote becomes Latin/Cyrillic nonsense and cannot certify source glyphs."
+  },
+  "rights": "No new source JPEG/PDF was committed or relicensed.",
+  "limitations": [
+    "No complete second blind image-only full-page reading",
+    "No independent third glyph/text adjudication",
+    "No verified historical character accuracy, CER, TEI/TF release",
+    "Physical title/body boundary is noted but not yet segmented within a single source line"
+  ]
+}
