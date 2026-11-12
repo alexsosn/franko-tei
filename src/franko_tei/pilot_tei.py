@@ -264,6 +264,7 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None):
     visible = raw[:-1] if illegible_suffix else raw
     spans = line['language_spans']
     previous, current = 0, lb
+    rendered_spans = []  # only this physical line, never earlier lines in the same ab
     for span_index, span in enumerate(spans, 1):
         start, end = span['start'], min(span['end'], len(visible))
         if start >= len(visible):
@@ -278,6 +279,7 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None):
             attrs['cert'] = 'low'
         seg = _sub(parent,'seg',visible[start:end],attrs)
         xml_id(seg, f"seg-v{volume}-s{page:05d}-{line['id']}-{span_index:03d}")
+        rendered_spans.append(seg)
         current = seg
         previous = end
     current.tail = (current.tail or '') + visible[previous:]
@@ -291,7 +293,7 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None):
         if len(covering) != 1:
             raise ValueError('source note marker not in a unique text span')
         i = covering[0]
-        segs = [child for child in parent if child.tag == tag('seg')]
+        segs = rendered_spans
         if i >= len(segs):
             raise ValueError('source note marker span was not rendered')
         seg = segs[i]
