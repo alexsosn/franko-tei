@@ -32,15 +32,12 @@ class TestI47(unittest.TestCase):
                   13:"III. Ц",14:"11. Написан",15:"IV. С",
                   16:"паралєлів",17:"Пятий розд",22:"рейшли",
                   23:"Що торка",38:"нашого народа",
-                  39:"(Ивановъ",40:"обозрѣніе",41:"віданя на"}
+                  39:"(И в а н о в ъ",40:"обозрѣніе",41:"віданя на"}
         for n,part in expected.items():
             self.assertTrue(self.lines[n]["text"].startswith(part),
                             (n,self.lines[n]["text"]))
         for source in ("Сатанаїлом","Руданського","Проф. Сумцов","Ивановъ",
-                       "XIII—XIV","Степана","Псалтирі"):
-            # Stepan is referenced in preceding page, not I/47: avoid impossible assertion.
-            if source=="Степана":
-                continue
+                       "XIII—XIV","Псалтирі"):
             self.assertIn(source,r["raw_response"])
         self.assertEqual(r["raw_response"],"\n".join(line["text"] for line in self.lines))
         self.assertTrue(all(line["geometry_estimated"] for line in self.lines))
