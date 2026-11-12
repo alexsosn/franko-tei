@@ -1,0 +1,306 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 50,
+  "printed_page_observed": "XLI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "2ec39053337ce1f82efb5527b31c853db440e5fb80b77809095f974a6668b9b3",
+  "frozen_first_reading": "pilot/vol1_scan00050_single_reading.json",
+  "review_method": "After original image-only full first response freeze cee97f2b, reopened exact pinned I/50 native JPEG solely for failure-oriented adversarial review. Checked folio XLI, 29 original numbered entries, source 40 body rows, full printed series footer and quire signature, line-end hyphenation, odd Migne ranges and literal letterspacing. Same model/conversation context with distinct adversarial objective. No blind second full-page first reader or third philological adjudicator, and no embedded original OCR or other editions used as evidence.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-01",
+      "frozen_substring": "В и х і д  І с а і ї  н а  н е б о",
+      "proposed_substring": "В и х і д І с а і ї н а н е б о",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Exact letterspacing of large source title in item 6 is typography-sensitive, spaces are candidates not measured glyph segmentation."
+    },
+    {
+      "line_id": "main-line-08",
+      "frozen_substring": "Манассії",
+      "proposed_substring": "Манасії",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Historical proper name could include double Cyrillic с or single с in small print."
+    },
+    {
+      "line_id": "main-line-22",
+      "frozen_substring": "Елдам і Модад",
+      "proposed_substring": "Елдад і Модад",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Rare biblical couple Eldad/Modad may bias fluent reading. Original frozen has Елдам, not externally normalized Елдад."
+    },
+    {
+      "line_id": "main-line-24",
+      "frozen_substring": "патріярху",
+      "proposed_substring": "патріярха",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Source grammatical case and ending in item 24 could differ by Ukrainian historical vowel."
+    },
+    {
+      "line_id": "main-line-28",
+      "frozen_substring": "593—587",
+      "proposed_substring": "583—587",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Source item 27 appears to have an inverted page range. A plausible correction cannot be silently made from expected chronology."
+    },
+    {
+      "line_id": "main-line-31",
+      "frozen_substring": "1498 і 1516",
+      "proposed_substring": "1498 і 1515",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Printed publication date of Monumenta/Methodius Latin comparison requires independent glyph inspection."
+    },
+    {
+      "line_id": "main-line-38",
+      "frozen_substring": "II,872—885",
+      "proposed_substring": "II, 872—885",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Missing space after volume-comma in source item 32 might be real printer spacing or first-reader omission."
+    },
+    {
+      "line_id": "main-line-40",
+      "frozen_substring": "Яшар",
+      "proposed_substring": "Ясар",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Printed biblical book name contains Cyrillic ш vs с at small print resolution."
+    },
+    {
+      "line_id": "main-line-29",
+      "frozen_substring": "Мефодія",
+      "proposed_substring": "Методія",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The original printed saint name may have ф/т confusion in the small Cyrillic type."
+    },
+    {
+      "line_id": "main-line-07",
+      "frozen_substring": "745—850",
+      "proposed_substring": "745—850.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Citation punctuation at printed item 10 should not be normalized as a bibliography without checking source."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "6) В и х і д  І с а і ї  н а  н е б о, перекл",
+      "reason": "Original printed list entry 6, physical body row 1: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "(I, 648—674).",
+      "reason": "Original printed list entry 6, physical body row 2: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "7) Уривок апокріфічного житя Ісаії (I, 703—70",
+      "reason": "Original printed list entry 7, physical body row 3: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "8) Уривок із апокріфа: розмова Йосифа з жінко",
+      "reason": "Original printed list entry 8, physical body row 4: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "винятий із вавилонського Талмуда (I, 705—712)",
+      "reason": "Original printed list entry 8, physical body row 5: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "9) Третю книгу Маккавеїв (I, 715—758).",
+      "reason": "Original printed list entry 9, physical body row 6: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "10) Четверту книгу Маккавеїв (I, 745—850).",
+      "reason": "Original printed list entry 10, physical body row 7: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "11) Молитву Манассії (I, 851—852).",
+      "reason": "Original printed list entry 11, physical body row 8: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "12) Заповіти 12-ти патріярхів (I, 853—918).",
+      "reason": "Original printed list entry 12, physical body row 9: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "13) Псалм 151 (I, 937—938).",
+      "reason": "Original printed list entry 13, physical body row 10: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "14) Псалми Соломонові (I, 939—956).",
+      "reason": "Original printed list entry 14, physical body row 11: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "15) Пісні Соломонові (I, 956—958).",
+      "reason": "Original printed list entry 15, physical body row 12: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "16) Переписку Соломонову с царем Сидону і с ц",
+      "reason": "Original printed list entry 16, physical body row 13: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "(I, 958—960).",
+      "reason": "Original printed list entry 16, physical body row 14: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "17) Жидівські і магометанські лєґенди про Авр",
+      "reason": "Original printed list entry 17, physical body row 15: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "і про Адама (II, 40—58).",
+      "reason": "Original printed list entry 17, physical body row 16: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "18) Історію Антіоха Епіфана (II, 106—112).",
+      "reason": "Original printed list entry 18, physical body row 17: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "19) Лист Варуха (II, 162—167).",
+      "reason": "Original printed list entry 19, physical body row 18: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "20) Приповідки сина Сирахового (II, 168—176).",
+      "reason": "Original printed list entry 20, physical body row 19: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "21) Розмови Давида з Богом (II, 191—195) і ар",
+      "reason": "Original printed list entry 21, physical body row 20: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "про Давида (II, 195—201).",
+      "reason": "Original printed list entry 21, physical body row 21: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "22) Уривки з апокріфа Елдам і Модад (II, 219—",
+      "reason": "Original printed list entry 22, physical body row 22: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "23) Йовів заповіт (II, 403—419).",
+      "reason": "Original printed list entry 23, physical body row 23: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "24) Арабські і жидівські лєґенди про Йосифа п",
+      "reason": "Original printed list entry 24, physical body row 24: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "(II, 420—431).",
+      "reason": "Original printed list entry 24, physical body row 25: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "25) Зміст апокріфічної книги Ісуса Навина (II",
+      "reason": "Original printed list entry 25, physical body row 26: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "26) Лєґенду про покуту Лотову (II, 469—470).",
+      "reason": "Original printed list entry 26, physical body row 27: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "27) Слово про Мельхіседека (II, 593—587).",
+      "reason": "Original printed list entry 27, physical body row 28: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "28) Зміст слова сьв. Мефодія Патарського (бул",
+      "reason": "Original printed list entry 28, physical body row 29: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "по грецьки в книзї „Monumenta patrum orthodox",
+      "reason": "Original printed list entry 28, physical body row 30: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "у Базилеї 1555 р., а по латинї тамже ще 1498 ",
+      "reason": "Original printed list entry 28, physical body row 31: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "29) Лєґенди про Мойсея і відривки апокріфа „П",
+      "reason": "Original printed list entry 29, physical body row 32: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "сея на небо“ (II, 625—631).",
+      "reason": "Original printed list entry 29, physical body row 33: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "30) Лєґенду про Натана, ту саму що є у нас, і",
+      "reason": "Original printed list entry 30, physical body row 34: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "(II, 633).",
+      "reason": "Original printed list entry 30, physical body row 35: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "31) Арабські лєґенди про Ноя і його жінку (II",
+      "reason": "Original printed list entry 31, physical body row 36: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "32) Арабські лєґенди про Соломона (II, 840—87",
+      "reason": "Original printed list entry 32, physical body row 37: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "лєґенди про него, розмову Соломона с Сатурном",
+      "reason": "Original printed list entry 32, physical body row 38: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "33) Апокріф про Товію (II, 1047—1066).",
+      "reason": "Original printed list entry 33, physical body row 39: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "34) Переклад жидівської книги Яшар (II, 1087—",
+      "reason": "Original printed list entry 34, physical body row 40: first-reader source-glyph hypothesis. Historical ї/є, punctuation, line-end splits and Migne page ranges require separate independent original-JPEG glyph review; do not silently normalize."
+    }
+  ],
+  "reviewed_properties": {
+    "physical_layout": "Native JPEG has Roman folio XLI at top right, 40 body rows covering Migne 6–34, original series footer Апокріфи старозавітні. and separate right-hand printed quire 6. No text from footer should be attached to item 34.",
+    "catalogue_structure": "Each of the original 29 printed numbered entries starts on a real source physical line. Regions preserve between one and three full source lines per item; TEI serializer uses ab type=body so full list semantics remain a separate TEI development issue.",
+    "uncertain_references": "Item 27 inverted 593—587 page range, item 10 wide 745—850, item 34 1087—1510, and 1498/1516 publication years must remain source hypotheses until independent image reading; do not correct from external expected editions.",
+    "mixed_scripts": "Latin title Monumenta patrum orthodoxographa embedded in Ukrainian body is annotated with an explicit Latin span; print is not evidence of original Greek manuscripts.",
+    "text_integrity": "Source first raw_response unchanged. Alternatives are separate unresolved critical apparatus hypotheses, no verified glyph substitutions."
+  },
+  "disposition": "Ready for unverified source-first TEI development only after latest original-JPEG checksum/TEI P5 and ordinary CI green. Independent blind second image reading and third adjudicator are necessary for verified release."
+}
