@@ -49,5 +49,22 @@ class TestI41(unittest.TestCase):
                 self.assertGreaterEqual(b,y,l["id"])
                 self.assertLessEqual(a+c,x+w,l["id"])
                 self.assertLessEqual(b+e,y+h,l["id"])
+
+    def test_independent_in_objective_source_challenge_stays_provisional(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        audit=json.loads((PATH.parent/"reviews/vol1_scan00041_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]),3)
+        self.assertGreaterEqual(len(audit["unresolved"]),8)
+        line_map={l["id"]:l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for q in audit["corrections"]:
+            self.assertIn(q["frozen_substring"],line_map[q["line_id"]])
+            self.assertNotEqual(q["frozen_substring"],q["proposed_substring"])
+            self.assertNotEqual(q["disposition"],"verified")
+
 if __name__=="__main__":
     unittest.main()
