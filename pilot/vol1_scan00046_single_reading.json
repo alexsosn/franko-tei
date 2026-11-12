@@ -1,0 +1,1232 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 46,
+  "printed_page_observed": "XXXVII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00046.jpg",
+  "source_image_sha256": "66132a611fa164a75b7a3e07456e82f904e023183eb4812f778e48b9b80bc1b2",
+  "reading": {
+    "reader_id": "gpt6-source-first-i46-20261112",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-2026-11-12-I46-source-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full direct native JPEG image-only first reading printed XXXVII physical I/46. Preserve 41 complete source body lines plus Roman folio; multiple hymn/prose groups and 19th century Rudansky commentary, original Slavonic ѣ/ъ/оу, Ukrainian ї and source hyphenation; no OCR or peer I/46 reading before frozen text. This is Franko's printed edition, not its older source witnesses; original geometry is estimated and all glyphs agent_unverified.",
+    "raw_response": "XXXVII\nПро бунт ангелів маємо в Богогласнику кілька цікавих пісень.\nВ одній читаємо немов живцем виняте палейне оповіданє:\nЛюциферъ честнѣйший во тварехъ\nПомысливъ равенъ быти Богу,\nЗъ найвышшаго престола в небѣ\nВчинилъ себѣ во адъ дорогу.\nЕдва бо Михаилъ мечъ прія,\nГордый князь въ адъ слетѣ вопія:\n„Соромъ намъ уже во вѣкъ буде!“\nО праведнѣйший Божій суде!\nА початок сеї піснї:\nВоинства небеснаго силы\nМихаилъ святый воевода;\nЧрезъ него во демонской брани\nСовершенна стала ся згода.\n„Кто як Богъ!“ рече, „поклонѣм ся,\n„Вси купно смиренно молѣм ся!“ (ч. 158).\nДруга пісня ще виразнїйше натякає на апокріф, бо заховує\nй назву Сатанаїла:\nРеклесь: „Воньмимъ!“ Михаиле!\n„Бѣжи в тму, Сатанаиле...\nХтѣлесь быти равенъ Богу,\nПадъ якъ молнія подъ ногу“ (ч. 157).\nНа оповіданє про хрестове дерево натякає пісня на воздвиже-\nние ч. Хреста (ч. 72), де мовить ся про Ісуса:\nТри древа возлюбивый.\nВ пісни „Пресвятѣй и живоначальный Тройцѣ“ натякаєть ся\nна оповіданє про появу Бога Авраамови:\nАврааму оуподобися,\nТройци пресвятой поклонися:\nСей трохъ зрѣвъ, єдинаго\nРеклъ Бога небеснаго (ч. 65).\nНаша новійша лїтература має дуже цікаве свідоцтво пере-\nходу і перетворювання апокріфічних мотивів у поетичній „народній\nБіблії“ Степана Руданського, т. є. в тім циклї поем, якому він дав\nтитул „Байки сьвітовії в сьпівах“ (опубліковано недавно А. Крим-\nським у Зорі 1896 р. і осібно, гл. Твори Степана Руданського, т. II,\nу Львові 1896, стор. 80—227). Руданський вложив свої сьпіви в уста\nстарого лїрника, а зміст їх узяв із оповідань народнїх, уважаючи\nті оповідання витвором власної фантазії укр. народу. У пятьох роз-\nдїлах тої поеми подано ось які апокріфічні оповідання:",
+    "coverage": {
+      "entire_image_inspected": true,
+      "occlusions": [],
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            75,
+            1585,
+            1040,
+            115
+          ],
+          "description": "Blank bottom margin after final body line, with small incidental image blemish; no source footnote or additional text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          894,
+          68,
+          178,
+          57
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XXXVII",
+            "bbox_xywh": [
+              905,
+              76,
+              150,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "bogoglasnik_rebellion_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          139,
+          960,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "Про бунт ангелів маємо в Богогласнику кілька цікавих пісень.",
+            "bbox_xywh": [
+              107,
+              145,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "В одній читаємо немов живцем виняте палейне оповіданє:",
+            "bbox_xywh": [
+              107,
+              180,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lucifer_fall_quotation",
+        "kind": "body",
+        "bbox_xywh": [
+          280,
+          208,
+          780,
+          281
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-03",
+            "text": "Люциферъ честнѣйший во тварехъ",
+            "bbox_xywh": [
+              287,
+              214,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 30,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "Помысливъ равенъ быти Богу,",
+            "bbox_xywh": [
+              287,
+              249,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 27,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "Зъ найвышшаго престола в небѣ",
+            "bbox_xywh": [
+              287,
+              283,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "Вчинилъ себѣ во адъ дорогу.",
+            "bbox_xywh": [
+              287,
+              318,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 27,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "Едва бо Михаилъ мечъ прія,",
+            "bbox_xywh": [
+              287,
+              352,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 26,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "Гордый князь въ адъ слетѣ вопія:",
+            "bbox_xywh": [
+              287,
+              387,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 32,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "„Соромъ намъ уже во вѣкъ буде!“",
+            "bbox_xywh": [
+              287,
+              421,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 31,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "О праведнѣйший Божій суде!",
+            "bbox_xywh": [
+              287,
+              456,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 26,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "michael_hymn_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          484,
+          960,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-11",
+            "text": "А початок сеї піснї:",
+            "bbox_xywh": [
+              107,
+              490,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "michael_hymn_quotation",
+        "kind": "body",
+        "bbox_xywh": [
+          280,
+          519,
+          780,
+          211
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-12",
+            "text": "Воинства небеснаго силы",
+            "bbox_xywh": [
+              287,
+              525,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 23,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "Михаилъ святый воевода;",
+            "bbox_xywh": [
+              287,
+              559,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 23,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "Чрезъ него во демонской брани",
+            "bbox_xywh": [
+              287,
+              594,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "Совершенна стала ся згода.",
+            "bbox_xywh": [
+              287,
+              628,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 26,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "„Кто як Богъ!“ рече, „поклонѣм ся,",
+            "bbox_xywh": [
+              287,
+              663,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 34,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "„Вси купно смиренно молѣм ся!“ (ч. 158).",
+            "bbox_xywh": [
+              287,
+              697,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 40,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "satanail_hymn_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          726,
+          960,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-18",
+            "text": "Друга пісня ще виразнїйше натякає на апокріф, бо заховує",
+            "bbox_xywh": [
+              107,
+              732,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-19",
+            "text": "й назву Сатанаїла:",
+            "bbox_xywh": [
+              107,
+              766,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "satanail_quotation",
+        "kind": "body",
+        "bbox_xywh": [
+          280,
+          795,
+          780,
+          142
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-20",
+            "text": "Реклесь: „Воньмимъ!“ Михаиле!",
+            "bbox_xywh": [
+              287,
+              801,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "„Бѣжи в тму, Сатанаиле...",
+            "bbox_xywh": [
+              287,
+              835,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 25,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "Хтѣлесь быти равенъ Богу,",
+            "bbox_xywh": [
+              287,
+              870,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 25,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "Падъ якъ молнія подъ ногу“ (ч. 157).",
+            "bbox_xywh": [
+              287,
+              904,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 36,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crosswood_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          933,
+          960,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-24",
+            "text": "На оповіданє про хрестове дерево натякає пісня на воздвиже-",
+            "bbox_xywh": [
+              107,
+              939,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "ние ч. Хреста (ч. 72), де мовить ся про Ісуса:",
+            "bbox_xywh": [
+              107,
+              973,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crosswood_quotation",
+        "kind": "body",
+        "bbox_xywh": [
+          280,
+          1002,
+          780,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-26",
+            "text": "Три древа возлюбивый.",
+            "bbox_xywh": [
+              287,
+              1008,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 21,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trinity_abraham_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          1036,
+          960,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-27",
+            "text": "В пісни „Пресвятѣй и живоначальный Тройцѣ“ натякаєть ся",
+            "bbox_xywh": [
+              107,
+              1042,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "на оповіданє про появу Бога Авраамови:",
+            "bbox_xywh": [
+              107,
+              1077,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trinity_abraham_quotation",
+        "kind": "body",
+        "bbox_xywh": [
+          280,
+          1105,
+          780,
+          143
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-29",
+            "text": "Аврааму оуподобися,",
+            "bbox_xywh": [
+              287,
+              1111,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 19,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "Тройци пресвятой поклонися:",
+            "bbox_xywh": [
+              287,
+              1146,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 27,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "Сей трохъ зрѣвъ, єдинаго",
+            "bbox_xywh": [
+              287,
+              1180,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 24,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "Реклъ Бога небеснаго (ч. 65).",
+            "bbox_xywh": [
+              287,
+              1215,
+              765,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rudansky_apocrypha_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          1243,
+          960,
+          315
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-33",
+            "text": "Наша новійша лїтература має дуже цікаве свідоцтво пере-",
+            "bbox_xywh": [
+              107,
+              1249,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-34",
+            "text": "ходу і перетворювання апокріфічних мотивів у поетичній „народній",
+            "bbox_xywh": [
+              107,
+              1284,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "Біблії“ Степана Руданського, т. є. в тім циклї поем, якому він дав",
+            "bbox_xywh": [
+              107,
+              1318,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-36",
+            "text": "титул „Байки сьвітовії в сьпівах“ (опубліковано недавно А. Крим-",
+            "bbox_xywh": [
+              107,
+              1353,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-37",
+            "text": "ським у Зорі 1896 р. і осібно, гл. Твори Степана Руданського, т. II,",
+            "bbox_xywh": [
+              107,
+              1387,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 65,
+                "end": 67,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 67,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "у Львові 1896, стор. 80—227). Руданський вложив свої сьпіви в уста",
+            "bbox_xywh": [
+              107,
+              1422,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-39",
+            "text": "старого лїрника, а зміст їх узяв із оповідань народнїх, уважаючи",
+            "bbox_xywh": [
+              107,
+              1456,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-40",
+            "text": "ті оповідання витвором власної фантазії укр. народу. У пятьох роз-",
+            "bbox_xywh": [
+              107,
+              1491,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-41",
+            "text": "дїлах тої поеми подано ось які апокріфічні оповідання:",
+            "bbox_xywh": [
+              107,
+              1525,
+              945,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i46-20261112",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-02",
+        "reading": "палейне оповіданє",
+        "reason": "Old Ukrainian historical adjectival spelling and final є require separate source-glyph check."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "честнѣйший",
+        "reason": "Yat glyph must not be normalized."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "найвышшаго",
+        "reason": "Historical Slavonic spelling and consonant/ы grouping uncertain."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "Михаилъ мечъ прія",
+        "reason": "High-risk historical source graphemes ъ/і and old past verb."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "слетѣ вопія",
+        "reason": "Yat and vowel reading could be fluent-model regularization."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "„Соромъ намъ",
+        "reason": "Quotation marks and source hard sign not verified."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "сеї піснї",
+        "reason": "Original Ukrainian ї/і needs optical check."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "святый воевода",
+        "reason": "Print's archaic adjective and punctuation require audit."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "„Кто як Богъ!“",
+        "reason": "Original Slavic/Ukrainian mixture, quotation placement and final hard sign."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "молѣм ся",
+        "reason": "Yat and word-boundary printed segmentation require verification."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "виразнїйше",
+        "reason": "Original ї top dots and syntax prone to normalization."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "Сатанаїла",
+        "reason": "Source name with ї must be distinguished from later textual forms."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Реклесь",
+        "reason": "Low-frequency old Slavic verb and subsequent Vоньмимъ are high-risk."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "Бѣжи в тму",
+        "reason": "Yat and word тму may have manuscript/print archaic morphology."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "Хтѣлесь",
+        "reason": "Old Cyrillic yat and rare lexical form need independent reading."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "Падъ якъ молнія",
+        "reason": "Original ъ and Ukrainian і, original punctuation at quote end."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "ние ч. Хреста",
+        "reason": "Physical continuation of воздвиже-: do not join or normalize printed form."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "возлюбивый",
+        "reason": "Old Church Slavonic spelling could be misread from source."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "живоначальный Тройцѣ",
+        "reason": "Old hymn title script endings and yat require source verification."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "оуподобися",
+        "reason": "Historic digraph оу must be preserved or challenged against image."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "Сей трохъ зрѣвъ, єдинаго",
+        "reason": "Original three/yat spelling and initial є need verification."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "новійша лїтература",
+        "reason": "Two historical i/ї variants and mixed text-script."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "циклї поем",
+        "reason": "Historical Ukrainian і/ї in cycle."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "сьвітовії в сьпівах",
+        "reason": "Special spellings in Rudansky's title; no modernization."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "т. II,",
+        "reason": "Roman II code points and quote bibliographical punctuation."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "80—227",
+        "reason": "Source printed citation dash and dates may differ."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "народнїх",
+        "reason": "Historical Ukrainian vowel diacritics require independent check."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "пятьох роз-",
+        "reason": "Source form should not be silently changed to modern apostrophe."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "дїлах тої поеми",
+        "reason": "Final source line historical ї and physical continuation of preceding роз-."
+      }
+    ]
+  }
+}
