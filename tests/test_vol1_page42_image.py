@@ -61,5 +61,24 @@ class TestI42(unittest.TestCase):
         for area in d["reading"]["coverage"]["nontext_areas"]:
             self.assertTrue(all(not overlap(area["bbox_xywh"],x) for x in boxes))
 
+
+    def test_postfreeze_source_challenges_separate_and_unverified(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        a=json.loads((PATH.parent/"reviews/vol1_scan00042_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(a["source_image_sha256"],d["source_image_sha256"])
+        self.assertEqual(a["status"],"provisional_source_challenges")
+        self.assertFalse(a["independent_blind_reader"])
+        self.assertFalse(a["third_independent_review_complete"])
+        self.assertFalse(a["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(a["corrections"]),3)
+        self.assertGreaterEqual(len(a["unresolved"]),10)
+        src={l["id"]:l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for q in a["corrections"]:
+            self.assertIn(q["frozen_substring"],src[q["line_id"]])
+            self.assertNotEqual(q["frozen_substring"],q["proposed_substring"])
+            self.assertNotEqual(q["disposition"],"verified")
+        self.assertEqual(src["footer-title-line-01"],"Апокріфи старозавітні.")
+        self.assertEqual(src["printer-signature-line-01"],"5")
+
 if __name__=="__main__":
     unittest.main()
