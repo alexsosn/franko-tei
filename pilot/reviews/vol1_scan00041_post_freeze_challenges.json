@@ -1,0 +1,170 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 41,
+  "printed_page_observed": "XXXII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "dbb077063e9689fce58dd4db7ad0504a3c40151f4b86d4530ab2a4e7bfb96b1b",
+  "frozen_first_reading": "pilot/vol1_scan00041_single_reading.json",
+  "review_method": "Distinct failure-oriented rereading of original native 1190x1735 JPEG after first-reader raw text was committed e072c287, then extracted original PDF OCR inspected solely as a corrupt negative control. Same conversation context, no genuinely blind independent full second reading or third textual adjudication.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-04",
+      "frozen_substring": "плоду древняго",
+      "proposed_substring": "плоду древнаго",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Printed first Akathist line appears to use archaic древнаго, while first reader supplied modernized extra я; original PDF OCR also suggests древнаго but is not independent gold."
+    },
+    {
+      "line_id": "main-line-13",
+      "frozen_substring": "силу нашего убийца",
+      "proposed_substring": "силоу нашего оубийца",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Source type may use an old оу digraph in силоу and оубийца, not plain у. Small glyphs and first-pass familiarity effect make the correct printed code points uncertain; damaged OCR happens to output оубийца but is not authority."
+    },
+    {
+      "line_id": "main-line-14",
+      "frozen_substring": "раменохъ носаше",
+      "proposed_substring": "раменохъ носяше",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Original scan after abbreviated Христос appears to have historical носяше with я; first reader substituted носаше, possibly conflating with neighboring verses. Requires enlarged native-source check before any accepted correction."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "Ходзінського",
+      "reason": "Printed owner priest surname with historic Ukrainian spelling; no independent original manuscript ownership verification."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "Ікос 2.",
+      "reason": "Exact original initial letter/abbreviation of Akathist section, printed as number 2."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "древняго",
+      "reason": "Source first-reader vowel combination likely wrong and independently unverified."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "отпущены сѧтъ",
+      "reason": "Old Slavonic abbreviation, ѧ/ѫ and titlo/glyph shape uncertain; source may have сѫтъ or different cluster."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "оумрѣти",
+      "reason": "Old Cyrillic оу digraph and ѣ need specialist enlarged glyph check."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "рай земный",
+      "reason": "Source syntax may differ in case endings and script, do not normalize."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "Херувима пламенное оружіе",
+      "reason": "Literary item likely follows Church Slavonic ritual text, but first reader can hallucinate familiar forms."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "Ха҃ съ язвами",
+      "reason": "Titlo over abbreviated Christ name has not been read glyph-by-glyph; the one combining mark placement may be hypothetical."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "юже принесе въ ковчегъ голубица",
+      "reason": "Original source quote archaic Cyrillic letters, printed word forms uncertain."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "силу нашего убийца",
+      "reason": "Old оу digraph(s) may be missing in frozen first reader."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "Хс҃ на своихъ раменохъ носаше",
+      "reason": "Titlo and first-reader verb not reliable; printed initials might be Хс̅, Христос abbreviation, not independently checked."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "Моисей повѣсилъ воужа мѣдянаго",
+      "reason": "Unusual Slavonic syntax and exact vowels/word boundaries require source image enlargement."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "(к. 109—117)",
+      "reason": "Original glyphs appear 109—117; bad embedded OCR says 100—117 and cannot override native image."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "„Бенкетъ",
+      "reason": "Book title begins at end of original physical line, continued into next."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "„П ы т а н ь е",
+      "reason": "Source letterspacing of rubric and title/yat may be incompletely reproduced."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "Для пяти речій",
+      "reason": "Old Ukrainian/Russian dialogue, historical word forms could be misread."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "Кто первый ся народилъ",
+      "reason": "Early-modern dialogue question punctuation and vowel forms."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "Которіи дѣти сварили ся",
+      "reason": "Ancestral Jacob/Esau story, first-reader reconstruction risk."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "Сыны Ісааковы, близнята Савулъ и Іаковъ ным",
+      "reason": "Historical name Савулъ may be inaccurate for Esau; printed difficult last word could be ним/ным/нъм and remains unresolved."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "въ животѣ матчиномъ",
+      "reason": "Old Russian printed Church phrase and ѣ/ъ, not a verified ancient text."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "в драмі „Алексѣй",
+      "reason": "Physical page ends before title completes; no reconstruction from I/42."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXXII upper left; physical scan 41",
+    "main_body_lines": 41,
+    "region_counts": [
+      3,
+      15,
+      3,
+      5,
+      10,
+      5
+    ],
+    "full_akathist_verses": 15,
+    "dialogue_lines": 10,
+    "source_end": "доси, в повнї потверджують сю догадку. І так в драмі „Алексѣй",
+    "ocr_negative_control": "Original embedded OCR reads printed XXXII as ХХХ, misreads Akathist verses in Latin/Cyrillic mixed script, translates old Cyrillic digraphs and confuses 109—117 for 100—117. Not a valid independent witness or CER gold."
+  },
+  "rights": "No images/PDFs redistributed and no source witness license implied.",
+  "limitations": [
+    "Only one full image-only original first reader",
+    "Same-context adversarial reread is not blind independent second full reader",
+    "No third independent full scholarly source review",
+    "Old Church Slavonic titla and text lack verified diplomatic glyph precision; TEI unverified, no released Text Fabric/Context Fabric"
+  ]
+}
