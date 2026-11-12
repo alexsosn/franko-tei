@@ -1,0 +1,1631 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 42,
+  "printed_page_observed": "XXXIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00042.jpg",
+  "source_image_sha256": "03329cd9343776f42a06ffa6039b84ed68976c5385615408961bd3d80478ec51",
+  "reading": {
+    "reader_id": "gpt6-source-first-i42-20261112",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-single-context-2026-11-12-I42-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full direct original-JPEG-only first reading of physical I/42, printed XXXIII, 41 printed body physical lines separated into 11 source prose and poetic sections; include independent printed lower-left title 'Апокріфи старозавітні.' and lower-right printed signature '5' plus Roman folio (44 text positions). Preserve eight Lucifer rebellion verse lines, 3-line lament, 4-line Solomon, four Habakkuk and six Rachel lines, old Cyrillic historical spellings, original end-of-line punctuation and citation. No extracted original PDF OCR, cross-page completion or peer I/42 reading before first freeze. Unverified first reader, estimated boxes and no real original manuscript witness.",
+    "raw_response": "XXXIII\nбожій человѣкъ“, виставленій у Київі 1673 р., зараз на початку чи-\nтаємо ось яке оповіданє про бунт ангелів:\nПрез вынеслость думного ангельского чина\nЛюцифера ангела, той тому причина.\nГды Богу не хтѣлъ во всемъ онъ повиновати,\nЗамыслилъ ровный зъ Богомъ престолъ будовати.\nА такъ зъ свѣтоносца сталъ Люциферомъ спроснымъ,\nЗъ пресвѣтлого сталъ темнымъ, брыдкимъ и незноснымъ,\nИзъ высокого неба низверженъ до ада\nЗъ всѣми тыми, которыхъ зъ нимъ една была рада.\n(Н. Т и х о н р а в о в ъ, Русскія драматическія произведенія\n1672—1725 годовъ. С. Петербургъ 1874, т. I, ст. 5).\nПлачем землї за Адамів гріх починаєть ся дія перша комедії\nна Рождество Христово (Тихонравовъ, op. cit. I, 346). В тій самій\nкомедії бачимо виразний натяк на палейну статю про бунт ангелів\nу віршах:\nГоре, ахъ! Люциферу и цѣлому аду!\nТакъ то намъ милость божа сотвори отраду:\nЗа единъ токмо помыслъ всѣхъ съ неба свергаетъ.\nТутже виступає і Валаам пророкуючи про прихід Христа (I,\n360—361). В ряді пророків, що проповідали прихід Христа, рабін\nцитує й Соломона:\nИ Соломонъ премудрый тоже глаголаше,\nЯко то въ сіе время быти имѣяше.\nНаписалъ: „Родится мужъ въ іудейстей странѣ,\nИже праотцевъ спасетъ зъ пекелной отхлани“ (I, 377).\nНа якімсь апокріфічнім пророцтві Аввакумовім оперті слова\nдругого рабіна про місце, де мав родити ся Христос:\nВъ Вифліемѣ роди ся, а въ коемъ же мѣстѣ,\nВтайнѣ о немъ Аввакумъ сице даетъ вѣсти;\nТако отъ Аввакума бѣ пророкованный:\n„Посреди двохъ животныхъ будеши познанный“ (I, 378).\nОповіданє Рахили в тійже комедії основане по части на творі\nсв. Єфрема про Йосифа Прекрасного; говорить ся тут, що Рахиль\nпородивша Йосифа бачила в снї его будуччину:\nЗряще того ведома, егоже связаша,\nЯко плѣнна раба отъ братій продаша,\nПлачуща, рыдающа, къ рождьшей вопіюща:\n„Рахили, о Рахили!“ слезнѣ глаголюща.\n„Рахили, мати моя, почто мя остави?\n„О мати! чадо твое отъ злыхъ рукъ избави!“ (I, 383)\nАпокріфи старозавітні.\n5",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            90,
+            1630,
+            1040,
+            75
+          ],
+          "description": "Empty lower original image margin below title and print signature; no additional source text."
+        }
+      ],
+      "occlusions": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          890,
+          79,
+          151,
+          55
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XXXIII",
+            "bbox_xywh": [
+              898,
+              84,
+              135,
+              45
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "angel_rebellion_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          152,
+          1046,
+          75
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "божій человѣкъ“, виставленій у Київі 1673 р., зараз на початку чи-",
+            "bbox_xywh": [
+              80,
+              157,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "таємо ось яке оповіданє про бунт ангелів:",
+            "bbox_xywh": [
+              80,
+              191,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "angel_rebellion_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          220,
+          946,
+          277
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-03",
+            "text": "През вынеслость думного ангельского чина",
+            "bbox_xywh": [
+              170,
+              225,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 40,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "Люцифера ангела, той тому причина.",
+            "bbox_xywh": [
+              170,
+              258,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 34,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "Гды Богу не хтѣлъ во всемъ онъ повиновати,",
+            "bbox_xywh": [
+              170,
+              292,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 42,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "Замыслилъ ровный зъ Богомъ престолъ будовати.",
+            "bbox_xywh": [
+              170,
+              325,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 45,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "А такъ зъ свѣтоносца сталъ Люциферомъ спроснымъ,",
+            "bbox_xywh": [
+              170,
+              360,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 48,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "Зъ пресвѣтлого сталъ темнымъ, брыдкимъ и незноснымъ,",
+            "bbox_xywh": [
+              170,
+              395,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 52,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "Изъ высокого неба низверженъ до ада",
+            "bbox_xywh": [
+              170,
+              426,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 35,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "Зъ всѣми тыми, которыхъ зъ нимъ една была рада.",
+            "bbox_xywh": [
+              170,
+              461,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 47,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_source",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          490,
+          1055,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-11",
+            "text": "(Н. Т и х о н р а в о в ъ, Русскія драматическія произведенія",
+            "bbox_xywh": [
+              159,
+              495,
+              960,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 61,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "1672—1725 годовъ. С. Петербургъ 1874, т. I, ст. 5).",
+            "bbox_xywh": [
+              80,
+              528,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 41,
+                "end": 42,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 42,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nativity_drama_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          562,
+          1046,
+          142
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-13",
+            "text": "Плачем землї за Адамів гріх починаєть ся дія перша комедії",
+            "bbox_xywh": [
+              80,
+              567,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "на Рождество Христово (Тихонравовъ, op. cit. I, 346). В тій самій",
+            "bbox_xywh": [
+              80,
+              601,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 36,
+                "end": 46,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 46,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "комедії бачимо виразний натяк на палейну статю про бунт ангелів",
+            "bbox_xywh": [
+              80,
+              635,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "у віршах:",
+            "bbox_xywh": [
+              80,
+              668,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lucifer_lament",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          696,
+          946,
+          110
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-17",
+            "text": "Горе, ахъ! Люциферу и цѣлому аду!",
+            "bbox_xywh": [
+              170,
+              701,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 33,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-18",
+            "text": "Такъ то намъ милость божа сотвори отраду:",
+            "bbox_xywh": [
+              170,
+              734,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 41,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-19",
+            "text": "За единъ токмо помыслъ всѣхъ съ неба свергаетъ.",
+            "bbox_xywh": [
+              170,
+              770,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 47,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "balaam_solomon_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          801,
+          1046,
+          107
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-20",
+            "text": "Тутже виступає і Валаам пророкуючи про прихід Христа (I,",
+            "bbox_xywh": [
+              80,
+              806,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 54,
+                "end": 55,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 55,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "360—361). В ряді пророків, що проповідали прихід Христа, рабін",
+            "bbox_xywh": [
+              80,
+              838,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "цитує й Соломона:",
+            "bbox_xywh": [
+              80,
+              872,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "solomon_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          903,
+          946,
+          145
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-23",
+            "text": "И Соломонъ премудрый тоже глаголаше,",
+            "bbox_xywh": [
+              170,
+              908,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 36,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-24",
+            "text": "Яко то въ сіе время быти имѣяше.",
+            "bbox_xywh": [
+              170,
+              944,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 32,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "Написалъ: „Родится мужъ въ іудейстей странѣ,",
+            "bbox_xywh": [
+              170,
+              977,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 44,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "Иже праотцевъ спасетъ зъ пекелной отхлани“ (I, 377).",
+            "bbox_xywh": [
+              170,
+              1012,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 44,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 44,
+                "end": 45,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 45,
+                "end": 52,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "habakkuk_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          1044,
+          1046,
+          75
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-27",
+            "text": "На якімсь апокріфічнім пророцтві Аввакумовім оперті слова",
+            "bbox_xywh": [
+              80,
+              1049,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "другого рабіна про місце, де мав родити ся Христос:",
+            "bbox_xywh": [
+              80,
+              1083,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "habakkuk_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          1111,
+          946,
+          146
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-29",
+            "text": "Въ Вифліемѣ роди ся, а въ коемъ же мѣстѣ,",
+            "bbox_xywh": [
+              170,
+              1116,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 41,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "Втайнѣ о немъ Аввакумъ сице даетъ вѣсти;",
+            "bbox_xywh": [
+              170,
+              1152,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 40,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "Тако отъ Аввакума бѣ пророкованный:",
+            "bbox_xywh": [
+              170,
+              1185,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 35,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "„Посреди двохъ животныхъ будеши познанный“ (I, 378).",
+            "bbox_xywh": [
+              170,
+              1221,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 44,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 44,
+                "end": 45,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 45,
+                "end": 52,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rachel_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          1250,
+          1046,
+          109
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-33",
+            "text": "Оповіданє Рахили в тійже комедії основане по части на творі",
+            "bbox_xywh": [
+              80,
+              1255,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-34",
+            "text": "св. Єфрема про Йосифа Прекрасного; говорить ся тут, що Рахиль",
+            "bbox_xywh": [
+              80,
+              1289,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "породивша Йосифа бачила в снї его будуччину:",
+            "bbox_xywh": [
+              80,
+              1323,
+              1030,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rachel_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          1355,
+          946,
+          214
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-36",
+            "text": "Зряще того ведома, егоже связаша,",
+            "bbox_xywh": [
+              170,
+              1360,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 33,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-37",
+            "text": "Яко плѣнна раба отъ братій продаша,",
+            "bbox_xywh": [
+              170,
+              1394,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 35,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "Плачуща, рыдающа, къ рождьшей вопіюща:",
+            "bbox_xywh": [
+              170,
+              1428,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 38,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-39",
+            "text": "„Рахили, о Рахили!“ слезнѣ глаголюща.",
+            "bbox_xywh": [
+              170,
+              1463,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 37,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-40",
+            "text": "„Рахили, мати моя, почто мя остави?",
+            "bbox_xywh": [
+              170,
+              1496,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 35,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-41",
+            "text": "„О мати! чадо твое отъ злыхъ рукъ избави!“ (I, 383)",
+            "bbox_xywh": [
+              170,
+              1533,
+              930,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 44,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 44,
+                "end": 45,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 45,
+                "end": 51,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footer_title",
+        "kind": "other",
+        "bbox_xywh": [
+          152,
+          1571,
+          406,
+          41
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "footer-title-line-01",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              160,
+              1576,
+              390,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-source-first-i42-20261112",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "printer_signature",
+        "kind": "other",
+        "bbox_xywh": [
+          947,
+          1571,
+          106,
+          41
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "printer-signature-line-01",
+            "text": "5",
+            "bbox_xywh": [
+              955,
+              1576,
+              90,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "божій человѣкъ“, ви",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "таємо ось яке опові",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "През вынеслость дум",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-04",
+        "reading": "Люцифера ангела, то",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "Гды Богу не хтѣлъ в",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "Замыслилъ ровный зъ",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "А такъ зъ свѣтоносц",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "Зъ пресвѣтлого стал",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "Изъ высокого неба н",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "Зъ всѣми тыми, кото",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "(Н. Т и х о н р а в",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "1672—1725 годовъ. С",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "Плачем землї за Ада",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "на Рождество Христо",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "комедії бачимо вира",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "у віршах:",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "Горе, ахъ! Люциферу",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "Такъ то намъ милост",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "За единъ токмо помы",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Тутже виступає і Ва",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "360—361). В ряді пр",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "цитує й Соломона:",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "И Соломонъ премудры",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "Яко то въ сіе время",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "Написалъ: „Родится ",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "Иже праотцевъ спасе",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "На якімсь апокріфіч",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "другого рабіна про ",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "Въ Вифліемѣ роди ся",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "Втайнѣ о немъ Аввак",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "Тако отъ Аввакума б",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "„Посреди двохъ живо",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "Оповіданє Рахили в ",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "св. Єфрема про Йоси",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "породивша Йосифа ба",
+        "reason": "Direct native-image first-pass spelling or bibliographic details; no independent glyph-level reading."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "Зряще того ведома, ",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "Яко плѣнна раба отъ",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "Плачуща, рыдающа, к",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "„Рахили, о Рахили!“",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "„Рахили, мати моя, ",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "„О мати! чадо твое ",
+        "reason": "Historical Old Cyrillic dramatic quotation: printed ѣ/ъ/і, word forms, punctuation and metrical lines all require a separate blind original-image reading."
+      },
+      {
+        "line_id": "footer-title-line-01",
+        "reading": "Апокріфи старозавіт",
+        "reason": "Printed title/quire signature at lower margin; observed original source, not body or recovered by OCR."
+      },
+      {
+        "line_id": "printer-signature-line-01",
+        "reading": "5",
+        "reason": "Printed title/quire signature at lower margin; observed original source, not body or recovered by OCR."
+      },
+      {
+        "line_id": "main-line-01",
+        "reading": "божій человѣкъ",
+        "reason": "Cross-page running title from I/41, not separately verified historic play."
+      },
+      {
+        "line_id": "main-line-01",
+        "reading": "Київі 1673",
+        "reason": "Printed performance place/date, not corroborated elsewhere."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "През вынеслость",
+        "reason": "Early-modern drama opening phrase may be misread."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "думного ангельского чина",
+        "reason": "Historical Slavonic/Ukrainian wording and case."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "Гды Богу не хтѣлъ",
+        "reason": "Early-modern Polish/Ruthenian speech and yat."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "ровный зъ Богомъ",
+        "reason": "Archaic case and printed hard sign."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "свѣтоносца",
+        "reason": "Uncommon historical word, letter forms."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "спроснымъ",
+        "reason": "First-reader unusual adjective, possibly incorrect source glyphs."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "брыдкимъ и незноснымъ",
+        "reason": "Early-modern lexical mixture."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "зъ нимъ една была рада",
+        "reason": "Historical syntax, high language-model normalization risk."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Т и х о н р а в о в ъ",
+        "reason": "Letterspaced bibliographic author name."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Русскія драматическія произведенія",
+        "reason": "Old Russian bibliographic title."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "1672—1725 годовъ",
+        "reason": "Printed title date range and dash."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "op. cit. I, 346",
+        "reason": "Latin source citation code points."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "Плачем землї",
+        "reason": "Historical Ukrainian printed phrasing."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "Горе, ахъ!",
+        "reason": "Dramatic quoted lament, source punctuation."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "цѣлому аду",
+        "reason": "Russian yat."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "всѣхъ съ неба свергаетъ",
+        "reason": "Orthography and quote-ending period."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Валаам",
+        "reason": "Prophet named in original print."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "рабін",
+        "reason": "Historical Ukrainian source spelling."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "И Соломонъ премудрый",
+        "reason": "Cited dramatic verses, not original Solomon source."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "въ сіе время",
+        "reason": "Old Cyrillic ъ/і distinction."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "іудейстей странѣ",
+        "reason": "Historical quotation vowel endings."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "пекелной отхлани",
+        "reason": "Rare Old Russian phrase and soft/hard sign."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "Аввакумовім",
+        "reason": "Prophetic attribution made by Franko, not checked original."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "Въ Вифліемѣ",
+        "reason": "Place-name glyphs and ѣ."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "Втайнѣ о немъ",
+        "reason": "Archaic prose verse."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "бѣ пророкованный",
+        "reason": "Unusual mixed quotation grammar."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "двохъ животныхъ",
+        "reason": "Printed citation of apocryphal Habakkuk motif."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "Оповіданє Рахили",
+        "reason": "Paraphrase attributed to source drama."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "св. Єфрема",
+        "reason": "Historical work attribution printed by Franko."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "Зряще того ведома",
+        "reason": "Rare phrase: candidate error of letter shapes."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "плѣнна раба",
+        "reason": "Yat and rare grammatical ending."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "рождьшей вопіюща",
+        "reason": "Word form, potentially wrong first source reading."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "„Рахили, мати моя",
+        "reason": "Quotation continues across separate physical line."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "отъ злыхъ рукъ избави",
+        "reason": "Concluding quotation source ending."
+      },
+      {
+        "line_id": "footer-title-line-01",
+        "reading": "Апокріфи старозавітні.",
+        "reason": "Actual separate lower-page printed running title, not body."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "5",
+        "reason": "Printed separate lower-right signature, not modern page number."
+      }
+    ]
+  }
+}
