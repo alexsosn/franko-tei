@@ -54,5 +54,22 @@ class TestI39(unittest.TestCase):
         self.assertEqual(heading["language_spans"][0]["script"],"Latn")
         self.assertEqual((heading["language_spans"][0]["start"],heading["language_spans"][0]["end"]),(0,5))
 
+
+    def test_postfreeze_glyph_challenges_are_not_silent_edit(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        audit=json.loads((PATH.parent/"reviews/vol1_scan00039_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]),2)
+        self.assertGreaterEqual(len(audit["unresolved"]),5)
+        lines={line["id"]:line["text"] for reg in d["reading"]["regions"] for line in reg["lines"]}
+        for candidate in audit["corrections"]:
+            self.assertIn(candidate["frozen_substring"],lines[candidate["line_id"]])
+            self.assertNotEqual(candidate["frozen_substring"],candidate["proposed_substring"])
+            self.assertNotEqual(candidate["disposition"],"verified")
+
 if __name__=="__main__":
     unittest.main()
