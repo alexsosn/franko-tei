@@ -64,5 +64,29 @@ class TestI40(unittest.TestCase):
         self.assertEqual(d["reading"]["regions"][-1]["kind"],"note")
         self.assertEqual(len(d["reading"]["regions"][-1]["lines"]),3)
 
+
+    def test_real_i40_marker_targets_its_three_line_note(self):
+        from franko_tei.pilot_tei import render_pilot_tei, extract_transcribed_lines, TEI
+        from xml.etree import ElementTree as ET
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        source=d['reading']
+        links=source['source_note_links']
+        self.assertEqual(len(links),1)
+        link=links[0]
+        self.assertEqual(link['marker_line_id'],'main-line-30')
+        self.assertEqual(link['marker_text'],'*)')
+        self.assertEqual(link['note_region_id'],'noonday_demon_footnote')
+        raw={x['id']:x['text'] for reg in source['regions'] for x in reg['lines']}
+        self.assertEqual(raw['main-line-30'][link['marker_start']:link['marker_start']+2],'*)')
+        tei=render_pilot_tei(d,1190,1713)
+        root=ET.fromstring(tei)
+        refs=[el for el in root.iter(f'{{{TEI}}}ref') if el.get('type')=='source-footnote-reference']
+        notes=[el for el in root.iter(f'{{{TEI}}}note') if el.get('type')=='source-footnote']
+        self.assertEqual((len(refs),len(notes)),(1,1))
+        self.assertEqual(refs[0].text,'*)')
+        self.assertEqual(refs[0].get('target'), '#'+notes[0].get('{http://www.w3.org/XML/1998/namespace}id'))
+        self.assertEqual(extract_transcribed_lines(tei),source['raw_response'].split('\\n'))
+        self.assertEqual(d['status'],'agent_unverified')
+
 if __name__=="__main__":
     unittest.main()
