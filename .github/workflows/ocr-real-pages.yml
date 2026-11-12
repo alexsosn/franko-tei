@@ -59,6 +59,11 @@ jobs:
               assert all(len(h) == 64 for h in item['traineddata_sha256'].values())
               assert item['text'].strip(), f"No recognized text: {file}"
               assert item['lines'], f"No geometric lines: {file}"
+              words = [word for line in item['lines'] for word in line['words']]
+              assert words, f"No parsed words: {file}"
+              assert all("\n" not in word['text'] and "\r" not in word['text']
+                         and len(word['text']) < 1000 for word in words), (
+                  f"Malformed/multiline OCR word swallowed TSV rows: {file}")
           PY
       - name: Summarize outputs without claiming accuracy
         run: |
@@ -67,7 +72,8 @@ jobs:
           import json
           for file in sorted(Path('ocr-results').rglob('*.json')):
               item = json.loads(file.read_text(encoding='utf8'))
-              print(f"Volume {item['volume']} scan {item['scan_page']}, {item['profile']}: {len(item['text'])} chars, {len(item['lines'])} geometric lines; status={item['status']}")
+              words = [word['text'] for line in item['lines'] for word in line['words']]
+              print(f"Volume {item['volume']} scan {item['scan_page']}, {item['profile']}: {len(item['text'])} chars, {len(item['lines'])} geometric lines, {len(words)} TSV words, max word length {max(map(len, words))}; status={item['status']}")
           PY
       - name: Upload candidate JSON only, never scan images
         uses: actions/upload-artifact@v4

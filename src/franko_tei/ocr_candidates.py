@@ -79,13 +79,20 @@ def _get_page_image(root, volume, entry):
 
 def _tsv_lines(tsv):
     """Preserve per-word boxes, text and raw confidence, without correction."""
-    reader = csv.DictReader(io.StringIO(tsv), delimiter="\t")
+    # Tesseract TSV is *not* RFC 4180 CSV: OCR'd double quotes are literal
+    # word characters. CSV's default quote handling can consume many physical
+    # TSV rows into one bogus word if a glyph looks like an unmatched quote.
+    reader = csv.DictReader(io.StringIO(tsv), delimiter="\t",
+                            quoting=csv.QUOTE_NONE, strict=True)
     required = {"level", "page_num", "block_num", "par_num", "line_num",
                 "word_num", "left", "top", "width", "height", "conf", "text"}
-    if not reader.fieldnames or not required.issubset(reader.fieldnames):
-        raise ValueError("Tesseract TSV columns missing")
+    if (not reader.fieldnames or not required.issubset(reader.fieldnames)
+            or len(reader.fieldnames) != len(set(reader.fieldnames))):
+        raise ValueError("Tesseract TSV columns missing or duplicated")
     lines = {}
     for rec in reader:
+        if None in rec or any(value is None for value in rec.values()):
+            raise ValueError(f"Tesseract TSV row {reader.line_num} has missing/extra columns")
         if rec["level"] != "5" or not rec["text"].strip():
             continue
         key = tuple(int(rec[k]) for k in ("page_num", "block_num", "par_num", "line_num"))
