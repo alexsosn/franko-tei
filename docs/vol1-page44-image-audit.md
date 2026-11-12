@@ -20,7 +20,7 @@ Source physical word wraps, pre-reform Ukrainian `ї/є/ѣ/ъ`, original punctua
 After the full original-JPEG-only first response was committed, the same context reread the native page specifically looking for false fluent spelling substitutions. Only afterward was the original embedded PDF OCR opened as a **corrupt negative control**, *not* as a second independent reader or CER truth. Embedded OCR even misreads printed `XXXV` as `XXXYV`, destroys letterspaced headings, introduces fake physical row boundaries and corrupts the Latin and pre-reform Cyrillic passages.
 
 Separate source audit records three competing *unresolved, not verified* spellings, without editing first `raw_response`:
-- **Body line 1:** `евангелию Нікодимовім` vs perhaps `євангелию Нікодимовім` (initial vowel code point uncertain).
+- **Body line 1:** `евангелію Нікодимовім` vs perhaps `євангелію Нікодимовім` (initial vowel code point uncertain).
 - **Body line 23:** `з її рефлексами` vs perhaps `з єї рефлексами` (historical possessive).
 - **Body line 19:** `и нами не тривожить` vs perhaps `в нами не тривожить` (short old dramatic connective).
 
