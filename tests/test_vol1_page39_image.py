@@ -52,7 +52,7 @@ class TestI39(unittest.TestCase):
                 self.assertLessEqual(b+e,y+h,l["id"])
         heading=regs[4]["lines"][0]
         self.assertEqual(heading["language_spans"][0]["script"],"Latn")
-        self.assertEqual((heading["language_spans"][0]["start"],heading["language_spans"][0]["end"]),(0,4))
+        self.assertEqual((heading["language_spans"][0]["start"],heading["language_spans"][0]["end"]),(0,5))
 
 if __name__=="__main__":
     unittest.main()
