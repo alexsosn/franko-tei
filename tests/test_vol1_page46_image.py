@@ -54,5 +54,23 @@ class TestI46(unittest.TestCase):
                 x,y,w,h = gap["bbox_xywh"]
                 self.assertFalse(a < x+w and x < a+c and b < y+h and y < b+e)
 
+    def test_separate_after_freeze_source_challenge_not_blind_verified(self):
+        d = self.d
+        review = json.loads((PATH.parent/"reviews/vol1_scan00046_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(review["source_image_sha256"], d["source_image_sha256"])
+        self.assertEqual(review["status"], "provisional_source_challenges")
+        self.assertFalse(review["independent_blind_reader"])
+        self.assertFalse(review["third_independent_review_complete"])
+        self.assertFalse(review["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(review["corrections"]), 3)
+        self.assertGreaterEqual(len(review["unresolved"]), 12)
+        original = {l["id"]:l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for c in review["corrections"]:
+            self.assertIn(c["frozen_substring"], original[c["line_id"]])
+            self.assertNotEqual(c["frozen_substring"], c["proposed_substring"])
+            self.assertNotEqual(c["disposition"], "verified")
+        self.assertEqual(d["reading"]["raw_response"], "\n".join(original.values()))
+        self.assertEqual(d["status"], "agent_unverified")
+
 if __name__ == "__main__":
     unittest.main()
