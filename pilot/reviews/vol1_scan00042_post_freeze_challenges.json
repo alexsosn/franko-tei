@@ -1,0 +1,201 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 42,
+  "printed_page_observed": "XXXIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "03329cd9343776f42a06ffa6039b84ed68976c5385615408961bd3d80478ec51",
+  "frozen_first_reading": "pilot/vol1_scan00042_single_reading.json",
+  "review_method": "Failure-oriented same-context native JPEG reread after commit 416792c6 froze complete original-image first transcript, then comparison with severely corrupt pre-existing embedded PDF OCR as negative control. No independent blind full-page reader or third textual reviewer.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-30",
+      "frozen_substring": "сице даетъ вѣсти",
+      "proposed_substring": "сице дасть вѣсти",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The old print at the end of Habakkuk's verse has a small vowel cluster that could read дасть rather than first-pass даетъ. Original PDF OCR says дасть but garbles surrounding words, so it is no independent authority; native original glyph enlargement required."
+    },
+    {
+      "line_id": "main-line-35",
+      "frozen_substring": "породивша Йосифа",
+      "proposed_substring": "породивши Йосифа",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Print appears to have an ambiguous final a/и in Franko's past participle before Йосифа. Old OCR chooses породивши but fails adjacent glyphs, leaving this uncertain."
+    },
+    {
+      "line_id": "main-line-36",
+      "frozen_substring": "Зряще того ведома",
+      "proposed_substring": "Зряше того ведома",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Uncommon early-modern dramatic phrase; a very small source-letter group may be ще or ше. OCR reads Зряше, but is unreliable, so first frozen reading remains intact."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "божій человѣкъ",
+      "reason": "Continues incomplete title from previous physical page I/41; exact old Russian printed glyphs need independent reading."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "вынеслость думного",
+      "reason": "Rare old Ruthenian/Russian wording risks familiarity-based modernization."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "Гды Богу не хтѣлъ",
+      "reason": "Polish-influenced dramatic language with ѣ and hard sign."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "свѣтоносца",
+      "reason": "Printed rare noun and hyphenless glyph sequence."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "спроснымъ",
+      "reason": "Potential source character hallucination in unusual adjective."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "брыдкимъ и незноснымъ",
+      "reason": "Difficult historical spellings and ъ endings."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "зъ нимъ една была рада",
+      "reason": "Source historical word order, not normalized."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "Т и х о н р а в о в ъ",
+      "reason": "Literal printed letterspacing of author surname, exact original distances not measured."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "С. Петербургъ 1874",
+      "reason": "Bibliographic printed punctuation, spacing and year."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "op. cit. I, 346",
+      "reason": "Mixed Latin + Roman citation, old embedded OCR corruptly suggests 316, but native scan shows 346."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "всѣхъ съ неба свергаетъ",
+      "reason": "Quoted prayer/drama has historical Cyrillic case/ending."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "И Соломонъ премудрый",
+      "reason": "Dramatic Solomon prophecy, not original biblical witness."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "іудейстей странѣ",
+      "reason": "Quoted older spelling could differ in vowel and grammatical ending."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "пекелной отхлани",
+      "reason": "Rare historical term, review exact printed glyphs."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "Въ Вифліемѣ",
+      "reason": "Toponym in printed Old Russian/Church Slavonic verse; orthographic variation."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "сице даетъ вѣсти",
+      "reason": "Unresolved дасть/даетъ first pass conflict."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "Посреди двохъ животныхъ",
+      "reason": "Important motif but not verified early manuscript source reading."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "св. Єфрема",
+      "reason": "Franko's attribution to Ephrem, unverified primary source."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "породивша Йосифа",
+      "reason": "Final vowel of Ukrainian participle unresolved."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "Зряще того ведома",
+      "reason": "Old drama phrase uncertainty (ще/ше)."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "Яко плѣнна раба",
+      "reason": "Old Russian yat and possible unusual case."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "рождьшей вопіюща",
+      "reason": "Quoted archaic participle and old Church Slavonic letter forms."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "слезнѣ глаголюща",
+      "reason": "Source diacritic/yat ending uncertain."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "отъ злыхъ рукъ избави",
+      "reason": "Last physical body line and quoted punctuation need checking."
+    },
+    {
+      "line_id": "footer-title-line-01",
+      "reading": "Апокріфи старозавітні.",
+      "reason": "Lower-left printed running title, NOT main body or note; legal source rights remain separate."
+    },
+    {
+      "line_id": "printer-signature-line-01",
+      "reading": "5",
+      "reason": "Separate lower-right printer's signature, not a printed folio or numbered list item."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXXIII upper right",
+    "main_physical_lines": 41,
+    "source_regions": [
+      2,
+      8,
+      2,
+      4,
+      3,
+      3,
+      4,
+      2,
+      4,
+      3,
+      6
+    ],
+    "page_footer_left": "Апокріфи старозавітні.",
+    "page_footer_right": "5",
+    "positions_including_folio_and_footers": 44,
+    "last_body_text": "„О мати! чадо твое отъ злыхъ рукъ избави!“ (I, 383)",
+    "ocr_negative_control": "Embedded PDF OCR mangles mixed old Cyrillic with Latin tokens, misreads Tikhonravov citation I,346 as I,316, turns printed right-hand signature 5 into ct. It cannot certify historical words or be a second independent reader."
+  },
+  "rights": "Original image and PDF source rights are not relicensed and no source binary was added to the PR.",
+  "limitations": [
+    "Only one complete original-image first reading",
+    "Same-context independent-in-objective review is not a blind second complete reading",
+    "No third independent philological adjudication",
+    "Historical printed glyphs not certified or CER gold; TEI P5 valid but unverified; no released TEI/TF/CF"
+  ]
+}
