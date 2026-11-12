@@ -1,0 +1,146 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 38,
+  "printed_page_observed": "XXIX",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "df427a5383cc8550f3b8789833b29b7c53f335052eafe1f5b212386f92bd7afc",
+  "frozen_first_reading": "pilot/vol1_scan00038_single_reading.json",
+  "review_method": "After full I/38 image-first reading was frozen, separate failure-oriented direct native 1190×1696 JPEG reinspection, followed by inspection of corrupt PDF embedded OCR only as a negative/counterhypothesis. Same conversation context; no independent blind second reader or third independent textual adjudication.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-17",
+      "frozen_substring": "переложене.",
+      "proposed_substring": "перекладене.",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "In the paragraph for 21) Софониино обавленіе, the native printed line seems to end перекладене, but first source reader carried over the historical lexical variant переложене from a nearby context. Embedded OCR also reads перекладене but is highly corrupted and cannot be used as gold. Magnify original printed glyphs before editorial adoption."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "И с х о д ъ (в о с х о д ъ) М о и с е е в ъ",
+      "reason": "Printed Old Slavonic title has literal letterspacing and hard signs, exact glyphs require enlarged original inspection."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "Ἀνάληψις",
+      "reason": "Greek word appears with historical typography/accent and possibly apostrophe-like breathing, exact Unicode decomposition, accent and initial breathing not source-verified; tag uncertain."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "Е л д а д ъ  и  М о д а д ъ",
+      "reason": "Two Old Slavonic names, hard signs and letterspacing uncertain."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "П ѣ с н и  Д а в и д о в ы",
+      "reason": "Yat, ъ/ы and original letterspacing in historic title require independent pixel review."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "И л и и н о  о б а в л е н і е",
+      "reason": "Elijah apocalypse name is rare, source letters might be read by semantic guessing."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "С о ф о н и и н о  о б а в л е н і е",
+      "reason": "Zephaniah title, exact vowel sequence and typography unresolved."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "З а х а р и и н о  о б а в л е н і е",
+      "reason": "Unusual title and source letterspacing, need independent native-source glyph read."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "И с а и н о  в и д ѣ н і е",
+      "reason": "Historic title and yat, do not infer actual Greek manuscript from Franko's print."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "П о п о в ъ, Библіографическіе матерьялы I",
+      "reason": "Bilingual spelling, Russian bibliography, author-name spacing and Roman volume should be verified."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "О  п л ѣ н е н і и  і е р у с а л и м с к о м ъ",
+      "reason": "Long printed Old Slavonic heading, physical character spacing not measured."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "І е р е м і и н а, что орла слали съ грамотою въ Вавилонъ",
+      "reason": "Difficult Slavonic line, rare omega/yat-like glyphs and words may be hallucinated or substituted; no independent reading."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "къ Єремеи",
+      "reason": "Greek-derived name and pre-reform Cyrillic, uncertain initial glyph and ending."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "нема його ще",
+      "reason": "Native source could have historical его/єго rather than fluent його; OCR says єго but is unreliable and cannot decide."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "Погодинськім Номоканонї XIV.",
+      "reason": "Printed edition reference and Roman numerals; no direct medieval source inspection."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "(I, 273—297)",
+      "reason": "Cited bibliographic page range and punctuation, may be semicolon rather than comma in source."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "сербському рукопису (Ма-",
+      "reason": "Printed Russian book title intentionally splits across source line; no immediate normalized join in raw text."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "теріялы и замѣтки",
+      "reason": "Historic Russian title, exact vowel/yat and punctuation need enlarged source check."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "О  С о л о м о н ѣ  и  К и т о в р а с ѣ",
+      "reason": "Source title artificial letterspacing and historical spelling require independent reinspection."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "„все лгано — кажеть ся там",
+      "reason": "Quotation remains open across physical scan boundary; must not complete by context or next-page speculation."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXIX upper right, not scan page 38",
+    "physical_body_lines": 41,
+    "entry_line_counts": [
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      1,
+      5,
+      12,
+      3,
+      3
+    ],
+    "source_page_last_line": "Китовраса приписуєть ся Грекам: „все лгано — кажеть ся там",
+    "original_ocr_negative_control": "Embedded OCR has readable XXIX but garbles Greek Ἀνάληψις as Latin fragments and corrupts most Old Cyrillic names/letterspacing. It is not a full independent image reading or valid CER ground truth."
+  },
+  "rights": "Only text/source hashes committed; no new scan JPEG/PDF and no implied rights under the software MIT license.",
+  "limitations": [
+    "No independently blind complete second transcriber",
+    "No third source-by-source full textual adjudicator",
+    "No certified glyphs, CER, or verified TEI/TF release"
+  ]
+}
