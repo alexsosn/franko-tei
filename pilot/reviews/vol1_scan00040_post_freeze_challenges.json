@@ -1,0 +1,149 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 40,
+  "printed_page_observed": "XXXI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "5785693f022cde045683c211188aa4abcd7e58d484f503e1eeef294c3ceb66ec",
+  "frozen_first_reading": "pilot/vol1_scan00040_single_reading.json",
+  "review_method": "Failure-oriented second inspection of native 1190x1713 printed I/40 JPEG after original-image-only first reading freeze c700d2ee, then original PDF embedded OCR opened only as fallible negative comparison. Same conversational context; not a blind independent second transcriber or third complete editorial review.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-29",
+      "frozen_substring": "прелъстившаго",
+      "proposed_substring": "прельстившаго",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "unresolved_competing_glyphs",
+      "source_reason": "Small old Cyrillic sign in the Akathist quote is hard to disambiguate at native raster size: ь versus ъ. Embedded OCR reads прельстившаго, but its adjacent words are badly corrupt, so the source-image glyph must be independently magnified before replacement."
+    },
+    {
+      "line_id": "main-line-31",
+      "frozen_substring": "„Исусе пригвожден-",
+      "proposed_substring": "„Іисусе пригвожден-",
+      "evidence_kind": "native_visual_challenge",
+      "disposition": "unresolved_competing_glyphs",
+      "source_reason": "Printed beginning of the Slavonic invocation appears potentially Іисусе with two initial glyphs, rather than first-pass Исусе; the original print is uncertain and the damaged OCR does not resolve code points. This remains a candidate, not a corrected diplomatic reading."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "твои яко облакъ силенъ взимая",
+      "reason": "Continues a 17th-century Russian quote from preceding I/39; exact old glyphs and ѣ/ъ need independent native-image check."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "П о п о в ъ-С п е р а н с к і й",
+      "reason": "Literal letterspacing of Popov-Speransky printed Russian family name plus line-final Биб-; no source glyph segmentation."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "ліографическіе матеріалы",
+      "reason": "Physical continuation from preceding line, possible і/ї/іа and historical bibliographic vowel errors."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "болваны в Египтѣ",
+      "reason": "Old quoted religious text with yat and historical Russian spelling, no primary manuscript source."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "скуранные, смѣялъ ся",
+      "reason": "Quoted Polish/Ruthenian form has unclear glyphs, possible скуряные or скурянные; do not infer by expected modern morphology."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "Се Адамъ бысть яко",
+      "reason": "Inner quotation with old Cyrillic letter forms, punctuation uncertainty."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "третє є небо емпірейське",
+      "reason": "Theological expression and historical vowel, printed here but not independently verified."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "Идолы бо, Спасе",
+      "reason": "Old Church Slavonic Akathist text, exact character reading and initial characters not independent."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "твоея крѣпости, падоша",
+      "reason": "Old Cyrillic vowel forms and quoted biblical voice, likely OCR traps."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "предстательства съ праведныхъ чинами",
+      "reason": "Dense Church Slavonic quotation may contain an omitted/changed short word or old letter, check enlarged source."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "четвероугольномъ градѣ",
+      "reason": "Original quoted phrase with hard sign/yat, rare word form uncertain."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "прелъстившаго",
+      "reason": "Historical ъ/ь unresolved by first reader and old embedded OCR."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "(тамже 64)*)",
+      "reason": "Footnote marker and enclosing punctuation should be checked with image and remain attached to distinct note block."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "„Исусе пригвожден-",
+      "reason": "Quoted Slavonic source likely has old initial Іи versus И; independently verify printed glyphs."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "невещественный угле",
+      "reason": "Historical spelling, Slavonic quoted phrase with potential omitted/extra letters."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "1571 р. в Стародубі",
+      "reason": "Printed witness date/city is not a newly checked source manuscript, end-of-page paragraph continues."
+    },
+    {
+      "line_id": "note-line-01",
+      "reading": "Клим Ганкевич",
+      "reason": "Author in separately printed footnote, no normalized surname from external catalog used."
+    },
+    {
+      "line_id": "note-line-02",
+      "reading": "C[lemens] H[ankiewicz], Die Mittagsstunde im Volksglauben",
+      "reason": "Exact Latin transliteration, brackets, title capitals and bibliographic punctuation must be preserved; original OCR mangles German title."
+    },
+    {
+      "line_id": "note-line-03",
+      "reading": "Presse, 1884.",
+      "reason": "German periodical name and date, Latin script line within Ukrainian footnote."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXXI upper right; physical image scan 40",
+    "body_line_counts": [
+      19,
+      18
+    ],
+    "footnote_lines": 3,
+    "footnote_kind": "note",
+    "footnote_marker": "*) after тамже 64 in main-line-30",
+    "nontext": "horizontal rule above footnote",
+    "last_main_line": "ного Акафістника, писаного 1571 р. в Стародубі; сей Акафістник",
+    "negative_ocr_control": "Embedded OCR garbles old Cyrillic into Latin mixtures and deforms German Die Mittagsstunde im Volksglauben; cannot serve as gold, second reader or exact glyph adjudicator."
+  },
+  "rights": "No scan binary or source reproduction license is introduced, only source-linked text draft and judgments.",
+  "limitations": [
+    "Only a single full image-first reading",
+    "No independently blind complete second reading",
+    "No third text/glyph-level adjudicator",
+    "No verified TEI/Text Fabric/Context Fabric or CER gold"
+  ]
+}
