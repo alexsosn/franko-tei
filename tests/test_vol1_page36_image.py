@@ -40,5 +40,24 @@ class TestI36(unittest.TestCase):
         self.assertGreaterEqual(len(r["uncertainty_notes"]),35)
         self.assertEqual(r["coverage"]["occlusions"],[])
 
+
+    def test_adversarial_source_challenges_do_not_overwrite_first_response(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        audit_path=PATH.parent/"reviews/vol1_scan00036_post_freeze_challenges.json"
+        audit=json.loads(audit_path.read_text(encoding="utf-8"))
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]),1)
+        self.assertGreaterEqual(len(audit["unresolved"]),5)
+        lines={l["id"]:l["text"] for reg in d["reading"]["regions"] for l in reg["lines"]}
+        for c in audit["corrections"]:
+            self.assertIn(c["frozen_substring"],lines[c["line_id"]])
+            self.assertNotEqual(c["frozen_substring"],c["proposed_substring"])
+            self.assertNotEqual(c["disposition"],"verified")
+        self.assertIn("Кирияна",lines["main-line-25"])
+
 if __name__=="__main__":
     unittest.main()
