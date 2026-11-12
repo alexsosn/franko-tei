@@ -1,0 +1,1369 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 51,
+  "printed_page_observed": "XLII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00051.jpg",
+  "source_image_sha256": "54cb4104e807e9054d10af219cd76b7e59b8429042321b5a7728ff767b6b58fd",
+  "reading": {
+    "reader_id": "gpt6-i51-image-only-source-20261112",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "chat-same-context-2026-11-12-I51-first",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full page original native-image-only first reading of Franko printed Volume I scan 51 / Roman XLII. Read 20 original printed prose rows and 20 old-Cyrillic list rows in 18 numbered entries, 41 physical text positions including folio. Preserve original pre-reform Cyrillic candidates, unusual letterforms, source word splits and Latin titles; extremely difficult Slavonic title letters and superscripts/titla not independently verifiable from photo: all rows explicitly uncertain. A text candidate is not a verified diplomatic transcription. Original OCR, peer I/51 readings and external editions not visible before first freeze. Geometry estimated, language of older list titles unknown.",
+    "raw_response": "XLII\nГрецькі тексти деяких старозавітних апокріфів опублїкував\nТішендорф у своїй книзї „Apocalypses Apocryphae“ і Росиянин\nВасилєв (Anecdota graeco-byzantina, Mosquae).\nУ Словянщинї на апокріфи звернено увагу від хвилї відро-\nдження науки і дослїдів над словянською старовиною. Шукаючи\nпамяток старословянської мови перші діячі відродження Добровський,\nКопитар, Востоков, Калайдович, Кеппен, Шафарик часто натикали\nся на ті твори; Карамзин і Сахаров опублїкували дещо з них. Та\nперший, хто зробив пробу їх широкого, наукового обробленя, був\nПипін у своїй многоцїнній ще й доси книзї „Очеркъ литературной\nисторіи старинныхъ повѣстей и сказокъ русскихъ“, що стала ся ви-\nхідною точкою для всеї новочасної наукової працї на тім полї і по\nдумцї пок. Драгоманова що до своєї наукової стїйности і що до\nсвого впливу на дальші дослїди може сьміло ставити ся обік зна-\nменитої Бенфеєвої передмови до Панчатантри, що вийшла о 5 лїт\nпізнїйше, нїж Пипінова книга. Пипінови треба також завдячити\nпершу сістематичну збірку текстів староруських апокріфів. Збірка\nта, що становить третій том памяток старого письменства, видава-\nних коштом князя Гр. Кушелева-Безбородко, вийшла в р. 1862\nі містить в собі ось які тексти старозавітних апокріфів:\n1) Ѡ исповѣданїи Євгинѣ и ѡ въспрос[к] внучат еа и ѡ бо-\nлѣзни Адамовѣ (два варіанти).\n2) О виноградѣ и како расташе.\n3) О главѣ Адамовѣ.\n4) Сказаніє о Ноѣ (із Слова Меф. Патарського).\n5) Изобрѣтеніе астрономіи (маленьке оповіданє).\n6) Про Мелхіседека (палейна і проложна статя).\n7) Слово св. Афанасія ѡ Мелхіседецѣ.\n8) Книги ѡ Авраамѣ правѣдн и патрїарсѣ.\n9) Лѣствица.\n10) Завѣты патрїарховѣ (видруковано тільки завіт Рувимів\nі Симеонів).\n11) Житїє святаго великого пророка Моисеа, сказанїє бытїа его.\n12) О смерти Моисеовѣ.\n13) Сказаніє о переходѣ Чермнаго моря.\n14) Повѣсть ѡ Китоврасѣ.\n15) Сказаніє о подземномъ человѣцѣ.\n16) Сказаніє о царевнѣ.\n17) Ѡ ожинцкой цѣни.\n18) Соломоновы сѫды.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "occlusions": [],
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            91,
+            1650,
+            1035,
+            102
+          ],
+          "description": "Printed page blank lower margin beneath last item (no printer signature visible)."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          161,
+          77,
+          164,
+          56
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XLII",
+            "bbox_xywh": [
+              172,
+              82,
+              139,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "opening_greek_publications",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          141,
+          1011,
+          117
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "Грецькі тексти деяких старозавітних апокріфів опублїкував",
+            "bbox_xywh": [
+              155,
+              150,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "Тішендорф у своїй книзї „Apocalypses Apocryphae“ і Росиянин",
+            "bbox_xywh": [
+              155,
+              184,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 25,
+                "end": 47,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 47,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "Василєв (Anecdota graeco-byzantina, Mosquae).",
+            "bbox_xywh": [
+              155,
+              218,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 9,
+                "end": 43,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 43,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "slavonic_publications_history",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          254,
+          1011,
+          593
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-04",
+            "text": "У Словянщинї на апокріфи звернено увагу від хвилї відро-",
+            "bbox_xywh": [
+              155,
+              263,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-05",
+            "text": "дження науки і дослїдів над словянською старовиною. Шукаючи",
+            "bbox_xywh": [
+              155,
+              297,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "памяток старословянської мови перші діячі відродження Добровський,",
+            "bbox_xywh": [
+              155,
+              331,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-07",
+            "text": "Копитар, Востоков, Калайдович, Кеппен, Шафарик часто натикали",
+            "bbox_xywh": [
+              155,
+              365,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "ся на ті твори; Карамзин і Сахаров опублїкували дещо з них. Та",
+            "bbox_xywh": [
+              155,
+              399,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-09",
+            "text": "перший, хто зробив пробу їх широкого, наукового обробленя, був",
+            "bbox_xywh": [
+              155,
+              433,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-10",
+            "text": "Пипін у своїй многоцїнній ще й доси книзї „Очеркъ литературной",
+            "bbox_xywh": [
+              155,
+              467,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-11",
+            "text": "исторіи старинныхъ повѣстей и сказокъ русскихъ“, що стала ся ви-",
+            "bbox_xywh": [
+              155,
+              501,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "хідною точкою для всеї новочасної наукової працї на тім полї і по",
+            "bbox_xywh": [
+              155,
+              535,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "думцї пок. Драгоманова що до своєї наукової стїйности і що до",
+            "bbox_xywh": [
+              155,
+              569,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "свого впливу на дальші дослїди може сьміло ставити ся обік зна-",
+            "bbox_xywh": [
+              155,
+              603,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "менитої Бенфеєвої передмови до Панчатантри, що вийшла о 5 лїт",
+            "bbox_xywh": [
+              155,
+              637,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "пізнїйше, нїж Пипінова книга. Пипінови треба також завдячити",
+            "bbox_xywh": [
+              155,
+              671,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "першу сістематичну збірку текстів староруських апокріфів. Збірка",
+            "bbox_xywh": [
+              155,
+              705,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-18",
+            "text": "та, що становить третій том памяток старого письменства, видава-",
+            "bbox_xywh": [
+              155,
+              739,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-19",
+            "text": "них коштом князя Гр. Кушелева-Безбородко, вийшла в р. 1862",
+            "bbox_xywh": [
+              155,
+              773,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-20",
+            "text": "і містить в собі ось які тексти старозавітних апокріфів:",
+            "bbox_xywh": [
+              155,
+              807,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_01",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          867,
+          1011,
+          83
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-21",
+            "text": "1) Ѡ исповѣданїи Євгинѣ и ѡ въспрос[к] внучат еа и ѡ бо-",
+            "bbox_xywh": [
+              155,
+              876,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 56,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "лѣзни Адамовѣ (два варіанти).",
+            "bbox_xywh": [
+              155,
+              910,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 29,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_02",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          935,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-23",
+            "text": "2) О виноградѣ и како расташе.",
+            "bbox_xywh": [
+              155,
+              944,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 30,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_03",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          970,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-24",
+            "text": "3) О главѣ Адамовѣ.",
+            "bbox_xywh": [
+              155,
+              979,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 19,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_04",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1004,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-25",
+            "text": "4) Сказаніє о Ноѣ (із Слова Меф. Патарського).",
+            "bbox_xywh": [
+              155,
+              1013,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 46,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_05",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1038,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-26",
+            "text": "5) Изобрѣтеніе астрономіи (маленьке оповіданє).",
+            "bbox_xywh": [
+              155,
+              1047,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 47,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_06",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1072,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-27",
+            "text": "6) Про Мелхіседека (палейна і проложна статя).",
+            "bbox_xywh": [
+              155,
+              1081,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 46,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_07",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1106,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-28",
+            "text": "7) Слово св. Афанасія ѡ Мелхіседецѣ.",
+            "bbox_xywh": [
+              155,
+              1115,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 36,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_08",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1141,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-29",
+            "text": "8) Книги ѡ Авраамѣ правѣдн и патрїарсѣ.",
+            "bbox_xywh": [
+              155,
+              1150,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 39,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_09",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1175,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-30",
+            "text": "9) Лѣствица.",
+            "bbox_xywh": [
+              155,
+              1184,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 12,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_10",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1209,
+          1011,
+          83
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-31",
+            "text": "10) Завѣты патрїарховѣ (видруковано тільки завіт Рувимів",
+            "bbox_xywh": [
+              155,
+              1218,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 56,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "і Симеонів).",
+            "bbox_xywh": [
+              155,
+              1252,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 12,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_11",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1277,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-33",
+            "text": "11) Житїє святаго великого пророка Моисеа, сказанїє бытїа его.",
+            "bbox_xywh": [
+              155,
+              1286,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 62,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_12",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1312,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-34",
+            "text": "12) О смерти Моисеовѣ.",
+            "bbox_xywh": [
+              155,
+              1321,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 22,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_13",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1346,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-35",
+            "text": "13) Сказаніє о переходѣ Чермнаго моря.",
+            "bbox_xywh": [
+              155,
+              1355,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 38,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_14",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1380,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-36",
+            "text": "14) Повѣсть ѡ Китоврасѣ.",
+            "bbox_xywh": [
+              155,
+              1389,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 24,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_15",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1414,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-37",
+            "text": "15) Сказаніє о подземномъ человѣцѣ.",
+            "bbox_xywh": [
+              155,
+              1423,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 35,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_16",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1448,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-38",
+            "text": "16) Сказаніє о царевнѣ.",
+            "bbox_xywh": [
+              155,
+              1457,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 23,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_17",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1483,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-39",
+            "text": "17) Ѡ ожинцкой цѣни.",
+            "bbox_xywh": [
+              155,
+              1492,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 20,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_18",
+        "kind": "body",
+        "bbox_xywh": [
+          146,
+          1517,
+          1011,
+          49
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-40",
+            "text": "18) Соломоновы сѫды.",
+            "bbox_xywh": [
+              155,
+              1526,
+              988,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i51-image-only-source-20261112",
+                "start": 0,
+                "end": 20,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-02",
+        "reading": "Apocalypses Apocryphae",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "Anecdota graeco-byzantina",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "перший, хто зробив пробу їх широкого, наукового ",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "Пипін у своїй многоцїнній ще й доси книзї „Очерк",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "исторіи старинныхъ повѣстей и сказокъ русскихъ“,",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "хідною точкою для всеї новочасної наукової працї",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "думцї пок. Драгоманова що до своєї наукової стїй",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "свого впливу на дальші дослїди може сьміло стави",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "менитої Бенфеєвої передмови до Панчатантри, що в",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "пізнїйше, нїж Пипінова книга. Пипінови треба так",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "першу сістематичну збірку текстів староруських а",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "та, що становить третій том памяток старого пись",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "них коштом князя Гр. Кушелева-Безбородко, вийшла",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "і містить в собі ось які тексти старозавітних ап",
+        "reason": "Original nineteenth-century Ukrainian/Russian mixed orthography and source print lineation unverified; confirm historical dotted vowels, hard signs, names and source hyphens without semantic emendation."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "1) Ѡ исповѣданїи Євгинѣ и ѡ въспрос[к] внучат еа и ѡ бо",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-22",
+        "reading": "лѣзни Адамовѣ (два варіанти).",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-23",
+        "reading": "2) О виноградѣ и како расташе.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "3) О главѣ Адамовѣ.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "4) Сказаніє о Ноѣ (із Слова Меф. Патарського).",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "5) Изобрѣтеніе астрономіи (маленьке оповіданє).",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "6) Про Мелхіседека (палейна і проложна статя).",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "7) Слово св. Афанасія ѡ Мелхіседецѣ.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "8) Книги ѡ Авраамѣ правѣдн и патрїарсѣ.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "9) Лѣствица.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-31",
+        "reading": "10) Завѣты патрїарховѣ (видруковано тільки завіт Рувимі",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-32",
+        "reading": "і Симеонів).",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "11) Житїє святаго великого пророка Моисеа, сказанїє быт",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "12) О смерти Моисеовѣ.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "13) Сказаніє о переходѣ Чермнаго моря.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "14) Повѣсть ѡ Китоврасѣ.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "15) Сказаніє о подземномъ человѣцѣ.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "16) Сказаніє о царевнѣ.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "17) Ѡ ожинцкой цѣни.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "18) Соломоновы сѫды.",
+        "reason": "Old Cyrillic title typography contains uncertain historic letters and/or possible superscript/titlo marks. This entire row is a provisional reading from native JPEG, not glyph-verified; do not replace with fluent reconstructed Church Slavonic. Verify with separate high-resolution blind reader and compare original letterforms."
+      }
+    ]
+  }
+}
