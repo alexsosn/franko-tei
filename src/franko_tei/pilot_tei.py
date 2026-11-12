@@ -361,14 +361,16 @@ def render_pilot_tei(payload, image_width, image_height):
     links_by_marker = {link['marker_line_id']: link for link in source_links}
     linked_note_regions = {link['note_region_id'] for link in source_links}
     for region in draft['regions']:
-        attrs = {'facs':f"#{_facs_id(volume,page,'region',region['id'])}"}
+        facs = f"#{_facs_id(volume,page,'region',region['id'])}"
         if region['kind'] == 'note' and region['id'] in linked_note_regions:
-            attrs['type'] = 'source-footnote'
-            ab = _sub(div, 'note', attrs=attrs)
+            ab = _sub(div, 'note',
+                      attrs={'type':'source-footnote', 'facs':facs})
             xml_id(ab, f"source-note-v{volume}-s{page:05d}-{region['id']}")
         else:
-            attrs['type'] = region['kind']
-            ab = _sub(div, 'ab', attrs=attrs)
+            # Retain source-before-change attribute ordering byte-for-byte for
+            # existing persisted pilot XML without explicit note links.
+            ab = _sub(div, 'ab',
+                      attrs={'type':region['kind'], 'facs':facs})
             xml_id(ab,f"ab-v{volume}-s{page:05d}-{region['id']}")
         for line in region['lines']:
             _append_line(ab,line,volume,page,draft['reader_id'],
