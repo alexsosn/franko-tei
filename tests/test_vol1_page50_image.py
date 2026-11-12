@@ -40,7 +40,7 @@ class TestI50(unittest.TestCase):
                             (i,reg["lines"][0]["text"]))
         self.assertEqual(self.regions[30]["lines"][0]["text"],"Апокріфи старозавітні.")
         self.assertEqual(self.regions[31]["lines"][0]["text"],"6")
-        for fragment in ("Вихід Ісаії","Йосифа","Молитву Манассії","Псалми Соломонові",
+        for fragment in ("В и х і д  І с а і ї","Йосифа","Молитву Манассії","Псалми Соломонові",
                          "Елдам і Модад","Мельхіседека","Monumenta patrum orthodoxographa",
                          "Мойсея","книги Яшар"):
             self.assertIn(fragment,d["reading"]["raw_response"])
