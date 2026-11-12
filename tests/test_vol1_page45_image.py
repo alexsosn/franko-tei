@@ -74,5 +74,26 @@ class TestI45(unittest.TestCase):
             self.assertFalse(any(overlaps(area["bbox_xywh"], b) for b in boxes))
 
 
+    def test_after_freeze_adversarial_source_challenges_do_not_claim_verification(self):
+        d = self.d
+        audit = json.loads((PATH.parent / "reviews/vol1_scan00045_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"], d["source_image_sha256"])
+        self.assertEqual(audit["status"], "provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]), 3)
+        self.assertGreaterEqual(len(audit["unresolved"]), 12)
+        lines = {line["id"]: line["text"] for reg in d["reading"]["regions"]
+                 for line in reg["lines"]}
+        for item in audit["corrections"]:
+            self.assertIn(item["frozen_substring"], lines[item["line_id"]])
+            self.assertNotEqual(item["frozen_substring"], item["proposed_substring"])
+            self.assertNotEqual(item["disposition"], "verified")
+        self.assertEqual(d["reading"]["raw_response"], "\\n".join(
+            line["text"] for reg in d["reading"]["regions"] for line in reg["lines"]
+        ).replace("\\n", "\n"))
+        self.assertEqual(d["status"], "agent_unverified")
+
 if __name__ == "__main__":
     unittest.main()
