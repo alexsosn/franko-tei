@@ -1,0 +1,196 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 44,
+  "printed_page_observed": "XXXV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "36fc618fd3f217ecd93e2eddfb946bdc167c6f362fc09e6bea12894a55ac60e3",
+  "frozen_first_reading": "pilot/vol1_scan00044_single_reading.json",
+  "review_method": "Failure-oriented separate-purpose native original source-image reread after first full image-only text commit cfce4471; only afterward original embedded PDF OCR consulted as badly corrupt negative control. Same conversation model context, no independent blind second full-page reading or third expert.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-01",
+      "frozen_substring": "евангелію Нікодимовім",
+      "proposed_substring": "євангелію Нікодимовім",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Franko's initial vowel in the historical title may be е or є. The frozen first reading has exactly евангелію (including U+0456 і), and only the separate competing initial form is proposed; the corrupt OCR cannot independently prove the printed source."
+    },
+    {
+      "line_id": "main-line-23",
+      "frozen_substring": "з її рефлексами",
+      "proposed_substring": "з єї рефлексами",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Archaic possessive єї is plausible in Franko print and old OCR proposes it, whereas first reader supplied familiar її. Source vowel glyph in native print must be enlarged and independently checked."
+    },
+    {
+      "line_id": "main-line-19",
+      "frozen_substring": "и нами не тривожить",
+      "proposed_substring": "в нами не тривожить",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The old Cyrillic short connective after нашимъ in Lucifer's verse may be и or в; image pixels and poor OCR do not resolve reliably; preserve first reading and record hypothesis."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "евангелію Нікодимовім",
+      "reason": "Printed title/apocryphal Gospel of Nicodemus includes archaic opening vowel and possible mixed old Russian spelling."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "епізод с Соломоном",
+      "reason": "Historical preposition с preserved; do not modernize to з without original glyph proof."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "Тільки зъ едного страху",
+      "reason": "Old Cyrillic z hard sign and historical adjective in dramatic verse."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "чему ти ся тутъ зосталъ",
+      "reason": "Old dramatic question source vocabulary, case endings and punctuation uncertain."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "Подобно мнѣ тебе Христосъ даровалъ",
+      "reason": "Quoted past dramatic text, multiple old glyphs and potentially mistaken semantic reconstruction."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "С о л о м о н ъ",
+      "reason": "Full heading deliberately letterspaced; exact printed space distances not glyph-segmented."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "Южъ повторне Христосъ",
+      "reason": "Nonstandard historical Slavic lexical form."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "страшнѣйший буде",
+      "reason": "Old adjective with yat and church dramatic voice."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "Л ю ц и ф е р ъ",
+      "reason": "Letterspaced speaker heading and following label 'мовить до слугъ своихъ' not yet semantically linked to dialogue."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "Слуги мои, узрѣте",
+      "reason": "Historical imperative and ѣ."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "изъ пекла выпровадьте",
+      "reason": "Old Slavic noun/verb with hard sign and rare prefix."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "Анѣ Христа того",
+      "reason": "Historical letter ѣ may be different source vowel; cannot decide from poor OCR."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "и нами не тривожить",
+      "reason": "Contested connector: и/в; source-image enlargement needed."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "Кіевская Ста-",
+      "reason": "Printed bibliographic title split over two physical lines, never join source lines."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "т. LIV, стор. 25—29",
+      "reason": "Mixed Roman volume number and Ukrainian citation."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "Теслевцьового",
+      "reason": "Unusual old Ukrainian surname from reported manuscript ownership, not primary witness inspection."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "з її рефлексами",
+      "reason": "Contested pronoun form її/єї, historical Franko orthography."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "Угорській Руси",
+      "reason": "Historical geographical label, not a modern administrative location."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "західно-европейських",
+      "reason": "Old literary-critical vocabulary and hyphenation."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "anima infelix",
+      "reason": "Latin comparandum embedded in Ukrainian sentence; exact letters/punctuation need source check."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "Іван Хре-",
+      "reason": "Physical word-break in John Baptist reference must be preserved."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "висказав до-",
+      "reason": "Physical line-break in paragraph, not a spelling correction."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "Віднайденє ста-",
+      "reason": "Literal source wrap and historical spelling."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "XVII. в.",
+      "reason": "Roman numeral and printed reference to 17th century, date not independently verified."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "калуськім повітї",
+      "reason": "Place in historical source text and old vowel."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "звязки з Угорською Русю.",
+      "reason": "Final original physical page line and punctuation."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXXV top-right",
+    "physical_body_lines": 40,
+    "region_counts": [
+      4,
+      4,
+      1,
+      3,
+      1,
+      6,
+      21
+    ],
+    "total_text_positions": 41,
+    "blank_margin": "No extra note or signature at bottom of scan; lower margin not included in physical source count.",
+    "ocr_negative_control": "Embedded OCR reads XXXV as XXXYV, breaks a printed dramatic question into spurious physical rows, garbles Church Cyrillic and Latin fragments and loses literal letterspacing. It is not valid CER gold or independently blind reading."
+  },
+  "rights": "No original JPEG/PDF binaries redistributed or license claimed on Franko edition.",
+  "limitations": [
+    "One original-image-only full first reading",
+    "Same-context failure-oriented reinspection is not independently blind full second reading",
+    "No separate third glyph adjudication",
+    "No accurate diplomatic glyph claims, verified TEI/TF/CF release or CER gold",
+    "Speaker headings staged as source headings, not source-proved dramatic roles"
+  ]
+}

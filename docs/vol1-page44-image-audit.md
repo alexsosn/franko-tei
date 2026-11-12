@@ -1,0 +1,29 @@
+# I/44 (XXXV): complete source-first Paschal drama and Solomon commentary
+
+## Original native source
+
+Original Franko Volume I **physical scan 44**, observed printed Roman **XXXV** at upper-right, native JPEG `images/vol1/page-00044.jpg` (1190×1721), at pinned asset commit `e871f32537e81f81896f6ce9a6658aba667db9c5`, SHA256 `36fc618fd3f217ecd93e2eddfb946bdc167c6f362fc09e6bea12894a55ac60e3`. PDF SHA256 in the JSON is a **source-manifest claim**, not newly rehashed raw PDF data. This is the nineteenth-century printed text of Franko, not a separate manuscript witness.
+
+The [frozen full direct original-image first reading](../pilot/vol1_scan00044_single_reading.json) has **40 physical main text lines plus folio** (**41 source positions**), with original source regions **4+4+1+3+1+6+21**: four lines continuing the I/43 Paschal-drama discussion about the apocryphal Gospel of Nicodemus and King Solomon; four dramatic verses from Lucifer; one letterspaced speaker heading `С о л о м о н ъ д о Л ю ц и ф е р а м о в и т ь:`; three Solomon verses; a separate letterspaced Lucifer heading; six Lucifer lines ordering the attendants to release Solomon; and **21 physical lines of Franko's analysis** of Paschal drama, the Latin comparandum `anima infelix`, alternative Western European legends and his own earlier study (`Кіевская Старина`, 1896, vol. LIV). The last printed line closes with `звязки з Угорською Русю.`.
+
+Source physical word wraps, pre-reform Ukrainian `ї/є/ѣ/ъ`, original punctuation, Roman references and Latin title are kept as single-reader *candidates*. The headings are literal one-line `kind=heading` source regions; they are not yet scholarly-verified TEI `<sp>` or `<speaker>` roles. No footnote, original occlusion or footer printer mark on this page. Source coordinates are explicitly estimated, not image-derived glyph segmentation.
+
+## Research → plan → red-first TDD → source-gated TEI
+
+1. Original immutable **native JPEG inspected before any extracted PDF OCR**. Test-only [I/44 source contract](../tests/test_vol1_page44_image.py), commit `316f4767`, requires the exact image hash, printed XXXV, 40 main text lines in source blocks, separately letterspaced speaker headings, 41 total physical text positions and nontext boxes never overlapping real line boxes. [CI 43192693050](https://github.com/alexsosn/franko-tei/actions/runs/43192693050) **failed as intended** for missing new source JSON.
+2. The **complete image-only first reader** was committed as `cfce4471` before opening pre-existing embedded OCR or any competing I/44 page text, with all physical source text and anchored uncertainties in immutable `raw_response`. [CI 43192980407](https://github.com/alexsosn/franko-tei/actions/runs/43192980407) green.
+3. [Original immutable JPEG image-first workflow](../.github/workflows/pilot-vol1-page44.yml), commit `d49d1570`, fetches source JPEG + source manifest only, rehashes native bytes, converts the still-**unverified** full first reading, checks **one TEI `pb`, 41 `lb`, exact original physical-line roundtrip**, and validates **TEI P5 4.12.0 Relax NG**. [CI 43193042008](https://github.com/alexsosn/franko-tei/actions/runs/43193042008) and [real JPEG→TEI 43193042066](https://github.com/alexsosn/franko-tei/actions/runs/43193042066) successful.
+4. Second red-first regression `7b7537ef` requires a separate source-glyph challenge artifact, no false independent reviewer, and original `raw_response` unchanged. [Red CI 43193171244](https://github.com/alexsosn/franko-tei/actions/runs/43193171244) failed for missing challenge JSON while [real source gate 43193171454](https://github.com/alexsosn/franko-tei/actions/runs/43193171454) remained green. [Post-freeze native source challenge JSON](../pilot/reviews/vol1_scan00044_post_freeze_challenges.json) committed as `3b8673c5`. Final PR head requires both general CI and native-source TEI P5 green before merge.
+
+## Failure-oriented review of questionable printed glyphs
+
+After the full original-JPEG-only first response was committed, the same context reread the native page specifically looking for false fluent spelling substitutions. Only afterward was the original embedded PDF OCR opened as a **corrupt negative control**, *not* as a second independent reader or CER truth. Embedded OCR even misreads printed `XXXV` as `XXXYV`, destroys letterspaced headings, introduces fake physical row boundaries and corrupts the Latin and pre-reform Cyrillic passages.
+
+Separate source audit records three competing *unresolved, not verified* spellings, without editing first `raw_response`:
+- **Body line 1:** `евангелію Нікодимовім` vs perhaps `євангелію Нікодимовім` (initial vowel code point uncertain).
+- **Body line 23:** `з її рефлексами` vs perhaps `з єї рефлексами` (historical possessive).
+- **Body line 19:** `и нами не тривожить` vs perhaps `в нами не тривожить` (short old dramatic connective).
+
+Other risk loci: source `аналогічний с приведеними`, `Анѣ`, Solomon/Lucifer original typographic letterspacing, rare `Теслевцьового`, `anima infelix`, literal `Іван Хре-` split, and the 21 lines of critical prose in historic spelling. These require independent source-image philological review for accurate diplomatic text.
+
+**Status/release limits:** `agent_unverified` single full first reader, with same-context independently focused adversarial review only; **no independently blind second complete source reading or third historical glyph adjudication**, no CER gold, no verified TEI/Text Fabric/Context Fabric release, no copyright permission conveyed for original scanned images. Original source binaries are not added to software PRs. Editorial #11 and the I/34 Old Slavonic missing quotation [#66](https://github.com/alexsosn/franko-tei/issues/66) remain open. Sequential next original native image: **I/45**.
