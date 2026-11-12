@@ -1,0 +1,24 @@
+# Volume I original scan 51 / printed XLII — Greek scholarship and eighteen archaic Cyrillic titles
+
+**State:** source-image-first, single GPT-6 context, **`agent_unverified`**. A complete provisional *coverage reading* of the original Franko printed page; not a verified palaeographic diplomatic transcription of the old Slavonic quoted material. Neither the printed text nor the source manuscripts constitute established ground truth from this draft.
+
+## Provenance and physical print
+
+- **Immutable native JPEG:** `images/vol1/page-00051.jpg` from asset commit `e871f32537e81f81896f6ce9a6658aba667db9c5`, original manifest image SHA256 `54cb4104e807e9054d10af219cd76b7e59b8429042321b5a7728ff767b6b58fd`, **1190 × 1764**.
+- Source's upper-left printed Roman folio `XLII`, **40 complete physical body rows**: 3 rows on Greek apocryphal publications by Tischendorf and Vasiliev, 17 Ukrainian/Russian historical narrative rows on Slavic scholarship and Pypin, then 20 source rows containing **18 separate numbered titles** from the nineteenth-century collection issued by Grigory Kushelev-Bezborodko. Original item 1 and item 10 each wrap to the next physical row.
+- Mark Greek/Latin publication titles with code-point-preserving `Latn` spans; the old Cyrillic excerpts retain `language=null` with `Cyrl`, because the source's mixture of archaic spelling and quotation cannot be assigned a single trustworthy modern BCP-47 language.
+- The 18 titles contain old Cyrillic letterforms, printed superscripts/abbreviation signs and visually ambiguous glyphs. **This scan cannot support certainty about exact titla, superscript height, ligatures or all individual printed Cyrillic glyphs from one reading.** The first reader preserves visible candidates and explicitly marks at least one uncertainty for every title row; source OCR was not read before the freeze. Example first source candidate `Ѡ исповѣданїи Євгинѣ и ѡ въспрос[к] внучат еа и ѡ бо-` is especially uncertain, including whether source square brackets belong to print and whether the historical glyphs/titla have been captured correctly. Do not promote these candidates as verified Church Slavonic.
+
+## Research → TDD → implementation → review gates
+
+1. Opened the exact immutable original source JPEG, independently of embedded OCR or other I/51 readings; counted 40 original body rows and 18 item IDs, without manufacturing new line breaks.
+2. Red-first immutable-image/source contract committed as `983bfd01` in `tests/test_vol1_page51_image.py`: page identity, original native SHA, 41 physical positions (folio + body), 18 source item IDs, source region order, full original Unicode raw-string roundtrip, anchored glyph uncertainty and text geometry.
+3. Full *first provisional image-only reading* frozen in `pilot/vol1_scan00051_single_reading.json` at `2e597f33`, with **34 line-specific uncertainties**, source line IDs and estimated bounding boxes. Changing the frozen raw text in an after-freeze review would defeat the source-provenance evidence; store alternatives separately.
+4. Dedicated `.github/workflows/pilot-vol1-page51.yml` downloads only pinned original JPEG and manifest, rehashes the original source and generates a TEI pilot containing one `pb`, 41 `lb`, exact Unicode line roundtrip and TEI P5 **4.12.0 Relax NG** validation. Source-image checksum and valid TEI do not establish old glyph accuracy.
+5. Conduct a logically independent-in-purpose failure-oriented reread of the *same* original source after freeze, documenting alternate glyph candidates, line/region problems and original superscript/ligature deficiencies in `pilot/reviews/vol1_scan00051_post_freeze_challenges.json`. **The same conversation/context is not a second blind full page reader**, and it is not a third expert review. No CER claims, verified TEI/TF release or scan redistribution permission is inferred from these gates.
+
+## Next verification and editorial treatment
+
+High-priority historical-glyph checks: first long title with `Ѡ` and possible `[к]`, source title 8's unusual Avraam/patriarch spelling, rare title 9 and title 17, plus any omitted titla/superscript abbreviation. A specialist old Cyrillic typographic transcription, ideally independently blind and with high-resolution crops, should be stored as **new reader evidence**, then adjudicated by a third source reader. Do not reconstruct from modern Ukrainian dictionaries or infer missing words from theological expectations. Source title IDs are a printed list; TEI list semantics can be added via [#87](https://github.com/alexsosn/franko-tei/issues/87) without synthetic physical rows.
+
+Related: [#11](https://github.com/alexsosn/franko-tei/issues/11) source acquisition; [#3](https://github.com/alexsosn/franko-tei/issues/3) blind review; [#5](https://github.com/alexsosn/franko-tei/issues/5) TEI/TF. The next native source is **I/52**.
