@@ -1,0 +1,306 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 49,
+  "printed_page_observed": "XL",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "d41be130ee136bc527daef2895e29b2e694569c2c2f71c324dbfe2389ec4e0a1",
+  "frozen_first_reading": "pilot/vol1_scan00049_single_reading.json",
+  "review_method": "Failure-focused second visual inspection of immutable original native printed I/49 JPEG after the original image-only first response was committed at 13a9a342. Checked 40 physical body rows and five numbered Migne items, Latin/German bibliographic spans, visible letterspacing, quote punctuation, umlauts and original scan folio. Same model/conversation context, logically different objective but no blind independent second full image reading; no original PDF OCR or neighboring I/50 text accessed.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-03",
+      "frozen_substring": "коментариями",
+      "proposed_substring": "коментаріями",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Source language historically mixed Ukrainian orthography; dotted vowel before я potentially present."
+    },
+    {
+      "line_id": "main-line-05",
+      "frozen_substring": "аббатом Біжі",
+      "proposed_substring": "аббатом Біші",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Historical French translator name may have visually similar Cyrillic ж/ш; no bibliographical correction allowed without source optical proof."
+    },
+    {
+      "line_id": "main-line-06",
+      "frozen_substring": "Bjoerik",
+      "proposed_substring": "Bjoerick",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Printed uncommon author name appears near an opening parenthesis; terminal k/ck may be easy to predict from modern bibliography."
+    },
+    {
+      "line_id": "main-line-09",
+      "frozen_substring": "Alten Testaments",
+      "proposed_substring": "Allen Testaments",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Original German title glyph t/l is small in source photograph; semantically plausible modern title must not decide source reading."
+    },
+    {
+      "line_id": "main-line-15",
+      "frozen_substring": "Dillmann",
+      "proposed_substring": "Dillman",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "German printed author's name with letterspacing, final double n not yet glyph-adjudicated."
+    },
+    {
+      "line_id": "main-line-18",
+      "frozen_substring": "Gfrörer, Prophetae",
+      "proposed_substring": "Gfrörer. Prophetae",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Printed inter-bibliography punctuation between surname and Latin title may have comma or period."
+    },
+    {
+      "line_id": "main-line-27",
+      "frozen_substring": "К н и г у А д а м о в у",
+      "proposed_substring": "К н и г у  А д а м о в у",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Printed source letterspacing around book title may require doubled spaces, source glyph positions estimated."
+    },
+    {
+      "line_id": "main-line-32",
+      "frozen_substring": "А д а м і в з а п о в і т",
+      "proposed_substring": "А д а м і в  з а п о в і т",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Letterspaced first phrase and editorial boundary within same source line need independent source geometry."
+    },
+    {
+      "line_id": "main-line-38",
+      "frozen_substring": "Е з д р и",
+      "proposed_substring": "Е с д р и",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Source printed character з/с in biblical proper name deserves independent optical check."
+    },
+    {
+      "line_id": "main-line-40",
+      "frozen_substring": "579—648",
+      "proposed_substring": "579–648",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Exact typographic citation dash is an unverified Unicode hypothesis."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "велике вражінє",
+      "reason": "Historical Ukrainian noun after page-break may be вражінє / вражінє; verify all diacritics on original source scan."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "анґлїйську",
+      "reason": "Original ґ and ї distinct from modern spelling; high glyph confusion."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "Джеремією Джонсоном",
+      "reason": "English editor rendered in Franko's Ukrainian spelling; don't replace from catalogues."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "донї виданий",
+      "reason": "Historical dotted vowel on first source fragment."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "Біжі (псевдонім Вольтера)",
+      "reason": "Abbé's printed name/pseudonym and quotation punctuations need independent verification."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "Bjoerik",
+      "reason": "Uncommon printed scholarly name prone to hallucination from language priors."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "Eranius",
+      "reason": "Latin bibliographic author spelling, Uppsala date and punctuation source check."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "Eichhorn",
+      "reason": "Letterspaced author and spelling in German reference could be mis-segmented."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "apocryphischen",
+      "reason": "Foreign German word may have printed unusual spelling."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "XIX.",
+      "reason": "Roman century glyph and printed dot."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "старозавітних",
+      "reason": "Printed Ukrainian adjective and typography may differ from modern normalizations."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "Вихід Ісаії",
+      "reason": "Referenced Isaiah apocalypse and historical title spelling need image-only adjudication."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "Hoffmann",
+      "reason": "Author visibly letterspaced, frozen text omits typographical spaces — flagged to verify."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "erläuternden",
+      "reason": "German umlaut and source serif/letter combinations."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "Dillmann",
+      "reason": "Author name in visible letterspacing; full exact glyph spacing uncertain."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "und erklärt",
+      "reason": "German text continues prior line, colon/semicolon source spacing."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "Jahrbücher",
+      "reason": "German umlaut and original letter shape."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "Gfrörer",
+      "reason": "Unusual German name letterspacing, maybe missing diacritics."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "abyssinico",
+      "reason": "Latin source bibliographic adjective, no emendation from editions."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "latine versi",
+      "reason": "Latin wording source accuracy vs optical blurred glyphs."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "влаштовуючи",
+      "reason": "Franko's historical participle, could be different archaic verb."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "найповнїйшою",
+      "reason": "Historical accent and dotted letter source."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "Мінєм",
+      "reason": "Abbé Migne original transliteration and vowel source."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "Dictionnaire des Apocryphes",
+      "reason": "French title and original print foreign spelling."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "t. I, 1856, t. II, 1858.",
+      "reason": "Printed volume/dates must not be repaired based on Migne bibliography."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "апокріфічні твори",
+      "reason": "Printed section introduction before five numbered items."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "К н и г у А д а м о в у",
+      "reason": "Letterspaced work title punctuation is a source-layout hypothesis."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "Мандаїтів",
+      "reason": "Printed Mandaean name and mixed old Ukrainian spelling."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "Тигра і Евфрату",
+      "reason": "Original word variants and geographical spelling, no modernization."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "Норбергом 1815—1816",
+      "reason": "Printed author and publication date must remain as imaged."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "Темпестіні (I, 21—290)",
+      "reason": "Printed French translator proper name/citation needs independent scrutiny."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "А д а м і в з а п о в і т",
+      "reason": "Original letterspacing, heading semantic span shares row with explanatory prose."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "ґностичний",
+      "reason": "Original printed ґ/г must be verified in native image."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "сирійських рукописів",
+      "reason": "This is Franko's report about manuscripts, not photographed witnesses; avoid manuscript facsimile claims."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "(I, 290—388)",
+      "reason": "Roman page range and punctuation."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "Е н о х о в у",
+      "reason": "Original work title letterspacing and Ukrainian historical spelling."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "(I, 425—514)",
+      "reason": "Citation boundaries unverified."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "Т р е т ю к н и г у Е з д р и",
+      "reason": "Heading letterspacing with sentence on same physical line."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "Ч е т в е р т у к н и г у Е з д р и",
+      "reason": "Heading letterspacing to be checked at actual source image."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "(I, 579—648)",
+      "reason": "Final citation, no additional source characters in blank margin."
+    }
+  ],
+  "reviewed_properties": {
+    "physical_page": "Original native image shows Roman XL upper left, 40 body printed lines. The first body line continues Фабріціу- from I/48; the final complete line is reference (I, 579—648). No source footnote/quire signature.",
+    "print_witness": "This scanned image is Franko's printed 1896 edition, not the cited Syriac Adam manuscripts, Ethiopian Enoch or ancient Ezra fragments.",
+    "foreign_typography": "Bibliographic German and Latin titles have source letterspacing and umlauts with uncertainty; codepoint language spans are provisional. The original image is insufficient for making a gold CER claim.",
+    "stanza_and_list": "Five Migne printed entries occupy 5/4/2/1/2 original source rows. Numbered entries appear as words in the same printed line, not synthetic new rows or inferred manuscript section divisions.",
+    "original_text_integrity": "Frozen raw_response untouched and no alleged second reader; possible source glyph differences listed separately."
+  },
+  "disposition": "Source-anchored complete unverified draft may merge if original JPEG->TEI P5 and ordinary CI pass. Independently blind complete reading and third philological adjudication remain required before a verified corpus release."
+}
