@@ -60,5 +60,22 @@ class TestI44(unittest.TestCase):
         for area in d["reading"]["coverage"]["nontext_areas"]:
             self.assertFalse(any(overlaps(area["bbox_xywh"],x) for x in boxes))
 
+
+    def test_postfreeze_source_challenge_separate_from_full_first_read(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        audit=json.loads((PATH.parent/"reviews/vol1_scan00044_post_freeze_challenges.json").read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]),2)
+        self.assertGreaterEqual(len(audit["unresolved"]),10)
+        source={l["id"]:l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for q in audit["corrections"]:
+            self.assertIn(q["frozen_substring"],source[q["line_id"]])
+            self.assertNotEqual(q["frozen_substring"],q["proposed_substring"])
+            self.assertNotEqual(q["disposition"],"verified")
+
 if __name__=="__main__":
     unittest.main()
