@@ -1,0 +1,288 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 47,
+  "printed_page_observed": "XXXVIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "3cfc158c6dc7d568e343586a430c6a39aa76e8db982455c6af84898913dff54d",
+  "frozen_first_reading": "pilot/vol1_scan00047_single_reading.json",
+  "review_method": "Postfreeze, logically independent-in-purpose adversarial revisit of the same immutable original native JPEG and first-reading JSON after commit 40535fb3451a. Tested whether apparently plausible glyphs, numbered citations, missing parenthesis, letterspacing and cross-line wrapping could be normalized or hallucinated by the first reader. No external original PDF OCR or peer I/47 reading accessed. Same conversation/model context, not a distinct blind second complete reading or third philological review.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-02",
+      "frozen_substring": "Сатанаїлом",
+      "proposed_substring": "Сатанаілом",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Competing dotted Cyrillic letter after а in name; cannot infer from previous page or modern spelling."
+    },
+    {
+      "line_id": "main-line-08",
+      "frozen_substring": "Сифова",
+      "proposed_substring": "Ситова",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Small original serif distinction ф/т in rare proper name should be checked at glyph level."
+    },
+    {
+      "line_id": "main-line-09",
+      "frozen_substring": "126—126",
+      "proposed_substring": "126—127",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Repeated numeric endpoint is anomalous but plausibly a printed typo; do not repair to expected page number."
+    },
+    {
+      "line_id": "main-line-12",
+      "frozen_substring": "(II. 133—134)",
+      "proposed_substring": "(II, 133—134)",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Unusual period after Roman reference II could be a printed comma or period; punctuation needs second optical pass."
+    },
+    {
+      "line_id": "main-line-16",
+      "frozen_substring": "паралєлів у наших текстах.",
+      "proposed_substring": "паралєлів у наших текстах.)",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The IV Solomonic explanatory parenthesis starts on line 15, with no obvious closing sign on line 16; source might omit it or image may conceal it."
+    },
+    {
+      "line_id": "main-line-32",
+      "frozen_substring": "ґрупах",
+      "proposed_substring": "групах",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Need independent historical glyph inspection for original hard-G stroke vs ordinary г."
+    },
+    {
+      "line_id": "main-line-33",
+      "frozen_substring": "Адам і Ева.",
+      "proposed_substring": "Адам і Ева,",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Punctuation between item 4 and item 5 in embedded enumerated discussion is difficult."
+    },
+    {
+      "line_id": "main-line-40",
+      "frozen_substring": "обозрѣніе",
+      "proposed_substring": "обозрѣние",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Old Russian bibliographic title ѣ plus decimal і vs modern и must stay a source question."
+    },
+    {
+      "line_id": "main-line-41",
+      "frozen_substring": "XIII—XIV",
+      "proposed_substring": "XIII–XIV",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Glyph-level dash width and codepoint in Roman volume references is uncertain."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "П о ч а т о к  с ь в і т а",
+      "reason": "Heading's typographic letterspacing and dotted vowel should be compared with original glyphs."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "Сатанаїлом",
+      "reason": "The source name may use і/ї and its spelling must not be imported from I/46."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "Сотворенє",
+      "reason": "Historic Ukrainian vowel is a glyph-level question, not modern spelling."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "105—107",
+      "reason": "List 3 lacks a visible full stop after the parenthesis; retain exactly as a draft."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "Упадок",
+      "reason": "Potential source initial Cyrillic У and unusual lexical choice."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "Адам вигнаний",
+      "reason": "Number 5 title historically inflected; source punctuation unverified."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "Каін",
+      "reason": "Historical personal name uses і/ї; do not normalize to Каїн."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "Сифова",
+      "reason": "Possible Сифова/Ситова reading at native raster resolution."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "126—126",
+      "reason": "Unusual repeated page number in source candidate, not silently repaired."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "В е л е т н ї",
+      "reason": "Printed heading letterspacing, ї/і codepoints need optical adjudication."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "зопсутє",
+      "reason": "Low-frequency historical form may be reconstructed by first reader."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "(II. 133—134)",
+      "reason": "Original note appears full stop after II rather than comma; to be rechecked."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "Ц а р  Д а в и д",
+      "reason": "Letterspaced heading should not be collapsed or treated as verse."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "Псалтирі",
+      "reason": "Historical dotted vowel, correct Psalter noun source uncertain."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "яким нема",
+      "reason": "Continuation of heading IV has no obvious close parenthesis before next text."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "паралєлів у наших текстах.",
+      "reason": "Printed explanatory aside may omit a closing parenthesis; do not silently supply one."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "Пятий роздїл",
+      "reason": "Absent apostrophe and original historical ї must be checked."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "піднїмаєть ся",
+      "reason": "Original reflexive phrase and dots are vulnerable to normalization."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "всесьвітнїй",
+      "reason": "Historically spelled adjective must remain first-reader candidate."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "книжок пе-",
+      "reason": "Print word split is source-level physical line, never reflow silently."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "народнї",
+      "reason": "Historical dotted vowel and semantic image reading."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "устної словесности",
+      "reason": "Unusual root adjective in Franko's edition."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "значнїйший",
+      "reason": "Historical spelling and letter dots source uncertainty."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "письменними а радо слуха-",
+      "reason": "Source line boundary and punctuation before а are unverified."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "От тим то",
+      "reason": "Spacing and historical idiom not normalized."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "Проф. Сумцов",
+      "reason": "Source bibliographical proper name needs independent visual comparison."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "працї звів",
+      "reason": "Dotted vowel, historical form and syntax."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "українсько-руські",
+      "reason": "Historical hyphen is integral to source text."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "ґрупах",
+      "reason": "Potential historical ґ/г at original scan size."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "Адам і Ева.",
+      "reason": "A period separating item 4 from item 5 may be printer's punctuation."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "Самсон",
+      "reason": "Source proper name can be semantically normalized by a model; check raw pixels."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "в такій",
+      "reason": "Prepositional phrase and spelling require review."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "повнотї",
+      "reason": "Dotted vowel cannot be inferred from modern dictionary."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "призбирано",
+      "reason": "Uncommon historical source verb potentially hallucinated."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "Іванова",
+      "reason": "Original proper name before source citation may have dotted І."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "И в а н о в ъ",
+      "reason": "Original author is letterspaced; source exact spaces and pre-reform signs unverified."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "обозрѣніе т. V, VII, IX, XIII—XIV",
+      "reason": "Bibliographical multi-roman numerals with historical yat and punctuation."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "XIII—XIV, стор. 65—98,",
+      "reason": "Printed final line ends in comma as the bibliography continues onto I/48; no forced full stop."
+    }
+  ],
+  "reviewed_properties": {
+    "source_layout": "Image shows folio XXXVIII in upper-left; 41 printed body rows. Section headings I, II, III, IV are letterspaced; item numbers 1-11 within body line. No source footnote or stamped unreadable text.",
+    "page_structure": "The IV Solomon explanation occupies two printed physical rows, with a possibly unmatched opening parenthesis; first reader preserves exactly what was seen rather than adding a closing sign.",
+    "source_bibliography": "Trailing Ivanov citation is early Russian, with author in letterspaced pre-reform Cyrillic; bibliography continues beyond physical page 47 and is deliberately not completed from page 48.",
+    "uncertainty": "Do not mistake output of TEI XML and valid character slots for independently verified source print glyphs. Title, citations and unusual number ranges remain candidates.",
+    "text_integrity": "Original JSON raw_response frozen before audit, unchanged; alternative readings are separate data."
+  },
+  "disposition": "Acceptable for unverified original-image-first research draft after green CI and source TEI P5; second blind full image reading and independent third adjudication are still required for verified TEI→TF release."
+}
