@@ -28,7 +28,7 @@ class TestI36(unittest.TestCase):
         self.assertTrue(lines[15]["text"].startswith("1) А д а м"))
         self.assertTrue(lines[17]["text"].startswith("2) А д а м л ь"))
         self.assertTrue(lines[22]["text"].startswith("3) Л о б ъ"))
-        self.assertTrue(lines[30]["text"].startswith("4—5) О д р е в ѣ"))
+        self.assertTrue(lines[30]["text"].startswith("4—5) О  д р е в ѣ"))
         self.assertTrue(lines[40]["text"].startswith("6—7) Е н о х"))
         self.assertTrue(lines[-1]["text"].endswith("що в деяких"))
         self.assertIn("Dictionnaire des",r["raw_response"])
@@ -58,6 +58,18 @@ class TestI36(unittest.TestCase):
             self.assertNotEqual(c["frozen_substring"],c["proposed_substring"])
             self.assertNotEqual(c["disposition"],"verified")
         self.assertIn("Кирияна",lines["main-line-25"])
+
+
+    def test_all_estimated_line_boxes_fit_regions(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        for reg in d["reading"]["regions"]:
+            rx,ry,rw,rh=reg["bbox_xywh"]
+            for line in reg["lines"]:
+                x,y,w,h=line["bbox_xywh"]
+                self.assertGreaterEqual(x,rx,line["id"])
+                self.assertGreaterEqual(y,ry,line["id"])
+                self.assertLessEqual(x+w,rx+rw,line["id"])
+                self.assertLessEqual(y+h,ry+rh,line["id"])
 
 if __name__=="__main__":
     unittest.main()
