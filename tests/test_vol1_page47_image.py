@@ -36,7 +36,7 @@ class TestI47(unittest.TestCase):
         for n,part in expected.items():
             self.assertTrue(self.lines[n]["text"].startswith(part),
                             (n,self.lines[n]["text"]))
-        for source in ("Сатанаїлом","Руданського","Проф. Сумцов","Ивановъ",
+        for source in ("Сатанаїлом","Руданського","Проф. Сумцов","И в а н о в ъ",
                        "XIII—XIV","Псалтирі"):
             self.assertIn(source,r["raw_response"])
         self.assertEqual(r["raw_response"],"\n".join(line["text"] for line in self.lines))
