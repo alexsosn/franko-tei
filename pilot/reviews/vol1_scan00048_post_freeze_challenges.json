@@ -1,0 +1,312 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 48,
+  "printed_page_observed": "XXXIX",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "6d48972502b50d9908cf9aad58142c7657981143b7a69d274ee8703ec5150237",
+  "frozen_first_reading": "pilot/vol1_scan00048_single_reading.json",
+  "review_method": "Same original native I/48 source JPEG reopened after complete first text was frozen at b994036d. Failure-oriented visual comparison emphasized per-glyph old Russian bibliography, source Cyrillic/Latin boundaries, upper-right folio, line 12 typographically mixed title/prose, bibliographic Latin title at line 35 and page-final hyphen. Separate objective but same model/conversation context, not an independent blind 41-line second reading or a third verifier. No source original OCR/peer first reading was consulted.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-02",
+      "frozen_substring": "матеріалы",
+      "proposed_substring": "матеріялы",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Pre-reform Russian bibliographic spelling has a tiny vowel cluster and may contain historical ія rather than modern іа. The first reader's source letters are a visual hypothesis."
+    },
+    {
+      "line_id": "main-line-07",
+      "frozen_substring": "Разыс-",
+      "proposed_substring": "Разыc-",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Original Cyrillic title 'Разысканія' is split across physical lines. OCR-style codepoint contamination (Latin c versus Cyrillic с) is possible; never use a normalized title as source evidence."
+    },
+    {
+      "line_id": "main-line-12",
+      "frozen_substring": "д а н ь  с т а р о з а в і т н и х",
+      "proposed_substring": "д а н ь с т а р о з а в і т н и х",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Spacing of the letterspaced heading continuation on the line containing first prose sentence needs visual adjudication."
+    },
+    {
+      "line_id": "main-line-15",
+      "frozen_substring": "релїґійних",
+      "proposed_substring": "релїгійних",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Small source ґ descender/cross stroke vs ordinary г is uncertain in historical Ukrainian term."
+    },
+    {
+      "line_id": "main-line-20",
+      "frozen_substring": "Варенійус",
+      "proposed_substring": "Варенїус",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Rare scholarly name may have been reconstructed by the first reader; source dot placement and vowel count deserve an independent check."
+    },
+    {
+      "line_id": "main-line-21",
+      "frozen_substring": "Лекієн",
+      "proposed_substring": "Лекіен",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Original dotted і versus и/е in bibliographic proper name not guaranteed."
+    },
+    {
+      "line_id": "main-line-26",
+      "frozen_substring": "Елязер",
+      "proposed_substring": "Елязар",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Printed scholar name spelling may differ by a single ambiguous vowel, not settled by external source chronology."
+    },
+    {
+      "line_id": "main-line-31",
+      "frozen_substring": "Іттіґ",
+      "proposed_substring": "Іттіг",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Historical editor's surname and source ґ/г need pixel-level review; first reader may infer normal spelling."
+    },
+    {
+      "line_id": "main-line-35",
+      "frozen_substring": "C.dex apocry-",
+      "proposed_substring": "Codex apocry-",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The source line near 1703 has possibly missing or faint 'o' after C; plausible Latin book title must not be silently restored from knowledge."
+    },
+    {
+      "line_id": "main-line-40",
+      "frozen_substring": "глубокого",
+      "proposed_substring": "глибокого",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Quoted Ruthenian/Ukrainian adjective has archaic vowel that could be modernized without actual source proof."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "70—91",
+      "reason": "Roman volume/bibliographical page-range glyphs, dash length and closing parenthesis unverified."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "Этнографическіе матеріалы",
+      "reason": "Original early-Russian pre-reform bibliographical spelling mixes Cyrillic and Ukrainian editions."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "Черниговъ 1895—1896",
+      "reason": "Printed Russian toponym and dates need separate image-proof."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "ринѣ passim",
+      "reason": "Original source mixes Cyrillic historic yat with Latin passim in one physical line."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "вдоволити",
+      "reason": "Source historic verb vulnerable to fluent-language normalization."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "богатий матеріял",
+      "reason": "Historic Ukrainian letterforms (і/ї) uncertain."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "проф. Веселовський",
+      "reason": "Bibliographical proper name and original spelling must be independently checked."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "Южнорусскія были-",
+      "reason": "Unverified title original Cyrillic and printed physical end hyphen."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "Слав. сказанія",
+      "reason": "Bibliographic abbreviated title and unusual late-Russian i require optical review."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "Китоврасѣ",
+      "reason": "Historic yat and source Cyrillic proper name need independent judgment."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "а п о к р і ф і ч н и х",
+      "reason": "Multi-word letterspacing in IX section heading, including original printed hyphen, may have been imperfectly serialized."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "д а н ь  с т а р о з а в і т н и х",
+      "reason": "Printed heading continuation shares line with beginning of ordinary Ukrainian prose: typographic semantics not yet represented as inline title."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "почало ся",
+      "reason": "Historical separated reflexive not normalized."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "тзв. гуманізму",
+      "reason": "Printed abbreviation and historic spelling uncertain."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "релїґійних",
+      "reason": "Ukrainian original ї and ґ codepoints must be checked visually."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "і релї-",
+      "reason": "Source line-end word split across source region."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "ґійного вченя",
+      "reason": "Source Ukrainian rare ґ and softening needs independent visual verification."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "в XV. і XVI.",
+      "reason": "Roman dates as source text, not editorial century metadata."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "публїкувати",
+      "reason": "Source Ukrainian dotted letter not verified."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "Варенійус",
+      "reason": "Proper-name source reading vulnerable to historical scholarly-name assumption."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "Коккус, Лекієн",
+      "reason": "Early editors' names and spelling uncertain."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "греко-латинського",
+      "reason": "Original hyphenated compound and printed book description."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "„Apocrypha, hoc est",
+      "reason": "Bilingual row: opening quotation mark and Latin title in Franko print, not silently reconstructed from an external edition."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "Ioseph",
+      "reason": "Latin I/J historic initial spelling must not be modernized."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "reperta“",
+      "reason": "End of Latin citation and Ukrainian following text on same line; source quote mark needs checking."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "Елязер у Гамбурзї",
+      "reason": "Potential source scholar name and historically dotted Ukrainian city ending."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "В XVII. в.",
+      "reason": "Original Roman century and preposition near one another."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "Льва Алля-",
+      "reason": "Proper surname source split across a physical line, never infer full word from next row."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "De libris apocryphis",
+      "reason": "Latin title and first printed author's death date uncertain."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "неопублікованою",
+      "reason": "Historical Ukrainian one-word source candidate."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "Іттіґ видав 1685",
+      "reason": "Author name and date in reference may be semantically reconstructed by first reader."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "pseudepigraphis Christi",
+      "reason": "Latin editorial title source glyphs, line break and punctuation."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "бібліоґрафічне",
+      "reason": "Historic source form and original ґ need separate optical validation."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "Фабріціуса",
+      "reason": "Scholarly author's historically transliterated name in Franko print."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "C.dex apocry-",
+      "reason": "Original Latin bibliographic title has a difficult initial C/o sequence; source JPEG glyph unclear, so first reader does not silently regularize to 'Codex'."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "phus Novi Testamenti",
+      "reason": "Latin title continued from previous line; do not restore initial syllables or reflow printed line."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "„Codex",
+      "reason": "Latin title starts near the right-hand end of a Ukrainian physical row."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "apocr. veteris testamenti",
+      "reason": "Source Latin short title and closing quotation mark uncertain."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "ріж-",
+      "reason": "Original physical line-end hyphen and source Ukrainian lexical form."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "старинних",
+      "reason": "Source Ruthenian adjective not to be modernized."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "Фабріціу-",
+      "reason": "Original page stops mid-word, must not supply I/49 completion."
+    }
+  ],
+  "reviewed_properties": {
+    "layout": "One upper-right Roman page folio XXXIX, 41 body printed lines across one continuation paragraph, one section title-start line, remaining 30 source rows; no second column, source footnote or original occlusion.",
+    "source_heading": "The title of IX continues onto the same physical printed line as the expository sentence beginning Збиранє; current TEI pilot marks first title row as heading and second as body, while raw source characters remain preserved. A true intra-line semantically split title needs further source-grounded TEI modelling.",
+    "mixed_languages": "Original source has Ukrainian/Ruthenian prose, early-Russian bibliographic quotes and long Latin book titles. 11 Latin spans are explicit but uncertain; original source codepoint fidelity still unverified.",
+    "title_fragment": "Line 35 first reader proposes 'C.dex apocry-', not the externally expected 'Codex apocry-'; no silent normalization, title and exact printed glyphs need independent source optical check.",
+    "continuity": "First and last body lines continue bibliographic text from I/47 and to I/49 respectively; completion from adjacent pages was not inserted into the frozen physical lines.",
+    "original_unchanged": "All alternative glyph readings are in this challenge file only; frozen first reader raw_response and source spelling unchanged."
+  },
+  "disposition": "Original-image integrity, generated XML and P5 RNG can be gated structurally, but verified historical source glyphs and release-ready TEI/TF require independent blind complete readings and third review."
+}
