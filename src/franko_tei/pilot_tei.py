@@ -228,6 +228,66 @@ def validate_single_draft(payload, images_root):
     return {'width':width,'height':height,'image_sha256':image_sha}
 
 
+
+def validate_heading_overlay(payload, overlay):
+    """Validate an editorial heading continuation against frozen source characters.
+
+    The overlay never edits an original first-reader text; it adds an
+    explicitly uncertain semantic boundary that shares an existing line.
+    """
+    if (not isinstance(overlay, dict) or
+            overlay.get('schema_version') != 'pilot-heading-overlay-v1' or
+            overlay.get('status') != 'agent_unverified'):
+        raise ValueError('unverified source-heading overlay required')
+    if (overlay.get('volume'), overlay.get('scan_page'),
+            overlay.get('source_image_sha256'), overlay.get('source_reader_id')) != (
+            payload.get('volume'), payload.get('scan_page'),
+            payload.get('source_image_sha256'), payload['reading'].get('reader_id')):
+        raise ValueError('heading overlay source/image/page/reader mismatch')
+    if overlay.get('source_pilot_path') != (
+            f"pilot/vol{payload['volume']}_scan{payload['scan_page']:05d}_single_reading.json"):
+        raise ValueError('heading overlay pilot source path mismatch')
+    regions = payload['reading']['regions']
+    links = payload['reading'].get('source_note_links', [])
+    footnote_line_ids = {link['marker_line_id'] for link in links}
+    overlays = overlay.get('continuations')
+    if not isinstance(overlays, list) or not overlays:
+        raise ValueError('heading overlay must contain source continuations')
+    by_line, used_headings = {}, set()
+    for entry in overlays:
+        if not isinstance(entry, dict):
+            raise ValueError('invalid heading overlay record')
+        heading = _id(_required_text(entry, 'heading_region_id'), 'heading region')
+        line_id = _id(_required_text(entry, 'line_id'), 'heading continuation line')
+        literal = _required_text(entry, 'literal')
+        _required_text(entry, 'note')
+        start, end = entry.get('start'), entry.get('end')
+        if (type(start) is not int or start != 0 or type(end) is not int or
+                end != len(literal) or line_id in by_line or heading in used_headings):
+            raise ValueError('heading overlay offset or identity is invalid')
+        source = next((i for i,r in enumerate(regions) if r['id'] == heading), None)
+        if source is None or source+1 >= len(regions):
+            raise ValueError('heading overlay has no adjacent source heading')
+        first, second = regions[source], regions[source+1]
+        if (first['kind'] != 'heading' or second['kind'] != 'body' or
+                second['lines'][0]['id'] != line_id):
+            raise ValueError('heading overlay must link adjacent heading to first body line')
+        line = second['lines'][0]
+        text = line['text']
+        if (not text.startswith(literal) or end >= len(text) or
+                not text[end].isspace() or line_id in footnote_line_ids):
+            raise ValueError('heading overlay literal is not the printed line prefix')
+        spans = line['language_spans']
+        if (not spans or spans[0]['start'] != 0 or spans[0]['end'] < end or
+                spans[0]['text_version'] != payload['reading']['reader_id']):
+            raise ValueError('heading overlay must fit one source language span')
+        by_line[line_id] = entry
+        used_headings.add(heading)
+    return by_line
+
+
+
+
 def _sub(parent, name, text=None, attrs=None):
     el = ET.SubElement(parent, tag(name), attrs or {})
     if text is not None:
@@ -249,7 +309,7 @@ def _zone(parent, region, volume, page, group, identifier):
     return zone
 
 
-def _append_line(parent, line, volume, page, reading_id, source_note_link=None):
+def _append_line(parent, line, volume, page, reading_id, source_note_link=None, heading_continuation=None):
     lb = _sub(parent,'lb',attrs={'facs':f"#{_facs_id(volume,page,'line',line['id'])}"})
     xml_id(lb, f"lb-v{volume}-s{page:05d}-{line['id']}")
     raw = line['text']
@@ -279,6 +339,23 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None):
             attrs['cert'] = 'low'
         seg = _sub(parent,'seg',visible[start:end],attrs)
         xml_id(seg, f"seg-v{volume}-s{page:05d}-{line['id']}-{span_index:03d}")
+        if heading_continuation is not None and span_index == 1:
+            literal = heading_continuation['literal']
+            original = seg.text or ''
+            if not original.startswith(literal):
+                raise ValueError('heading continuation not at exact language span prefix')
+            seg.text = ''
+            continuation = _sub(seg, 'seg', literal, {
+                'type': 'printed-heading-continuation',
+                'cert': 'low',
+                'corresp': (
+                    f"#ab-v{volume}-s{page:05d}-"
+                    f"{heading_continuation['heading_region_id']}"
+                ),
+            })
+            xml_id(continuation,
+                   f"heading-continuation-v{volume}-s{page:05d}-{line['id']}")
+            continuation.tail = original[len(literal):]
         rendered_spans.append(seg)
         current = seg
         previous = end
@@ -317,10 +394,12 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None):
         xml_id(gap, f"gap-v{volume}-s{page:05d}-{line['id']}")
 
 
-def render_pilot_tei(payload, image_width, image_height):
+def render_pilot_tei(payload, image_width, image_height, heading_overlay=None):
     """Serialize a separately validated draft; not a verification operation."""
     if payload.get('schema_version') != 'single-image-draft-v0' or payload.get('status') != 'agent_unverified':
         raise ValueError('refusing non-draft or promoted TEI input')
+    overlay_by_line = (validate_heading_overlay(payload, heading_overlay)
+                       if heading_overlay is not None else {})
     volume, page = payload['volume'], payload['scan_page']
     draft = payload['reading']
     title = f"Franko, Апокріфи і лєґенди — vol. {volume}, scan {page} (unverified pilot)"
@@ -376,7 +455,8 @@ def render_pilot_tei(payload, image_width, image_height):
             xml_id(ab,f"ab-v{volume}-s{page:05d}-{region['id']}")
         for line in region['lines']:
             _append_line(ab,line,volume,page,draft['reader_id'],
-                         source_note_link=links_by_marker.get(line['id']))
+                         source_note_link=links_by_marker.get(line['id']),
+                         heading_continuation=overlay_by_line.get(line['id']))
     for index, note in enumerate(draft['uncertainty_notes'], 1):
         n = _sub(div, 'note', f"{note['reading']}: {note['reason']}",
                  {'type': 'agent-reading-uncertainty',
@@ -424,11 +504,16 @@ def main(argv=None):
     parser.add_argument('--images',type=Path,required=True)
     parser.add_argument('--input',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--heading-overlay',type=Path,
+                        help='Optional source-anchored unverified inline heading overlay JSON')
     args=parser.parse_args(argv)
     try:
         payload=json.loads(args.input.read_text(encoding='utf8'))
         dimensions=validate_single_draft(payload,args.images)
-        xml=render_pilot_tei(payload,dimensions['width'],dimensions['height'])
+        overlay = (json.loads(args.heading_overlay.read_text(encoding='utf8'))
+                   if args.heading_overlay is not None else None)
+        xml=render_pilot_tei(payload,dimensions['width'],dimensions['height'],
+                             heading_overlay=overlay)
         expected=[l['text'] for r in payload['reading']['regions'] for l in r['lines']]
         if extract_transcribed_lines(xml) != expected:
             raise ValueError('exact text roundtrip failed')
