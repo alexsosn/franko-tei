@@ -252,7 +252,7 @@ class PilotTeiTests(unittest.TestCase):
             }],
         })
         r['uncertainty_notes']=[]
-        r['raw_response']='48\\n'+body['text']+'\\n*) окрема примітка'
+        r['raw_response']=chr(10).join(['48',body['text'],'*) окрема примітка'])
         r['source_note_links']=[{
             'marker_line_id':'text-line',
             'marker_text':'*)',
@@ -289,10 +289,10 @@ class PilotTeiTests(unittest.TestCase):
                 line=data['reading']['regions'][1]['lines'][0]
                 line['text']+=' *)'
                 line['language_spans'][0]['end']=len(line['text'])
-                data['reading']['raw_response']='48\\n'+line['text']+'\\n*) окрема примітка'
+                data['reading']['raw_response']=chr(10).join(['48',line['text'],'*) окрема примітка'])
             if mode=='missing-note-glyph':
                 data['reading']['regions'][-1]['lines'][0]['text']='примітка'
-                data['reading']['raw_response']='48\\nСторінка (с. 64)*) і далі\\nпримітка'
+                data['reading']['raw_response']=chr(10).join(['48','Сторінка (с. 64)*) і далі','примітка'])
             if mode=='duplicate-link':
                 data['reading']['source_note_links'].append(copy.deepcopy(link))
             if mode=='wrong-region-kind':
