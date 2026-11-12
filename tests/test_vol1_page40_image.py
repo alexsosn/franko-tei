@@ -85,6 +85,14 @@ class TestI40(unittest.TestCase):
         self.assertEqual((len(refs),len(notes)),(1,1))
         self.assertEqual(refs[0].text,'*)')
         self.assertEqual(refs[0].get('target'), '#'+notes[0].get('{http://www.w3.org/XML/1998/namespace}id'))
+        xmlid='{http://www.w3.org/XML/1998/namespace}id'
+        exact_segment=next(
+            s for s in root.iter(f'{{{TEI}}}seg')
+            if s.get(xmlid)=='seg-v1-s00040-main-line-30-001'
+        )
+        self.assertEqual([r for r in exact_segment.iter(f'{{{TEI}}}ref')],refs)
+        self.assertEqual(exact_segment.text,'въ раи въ полудне“ (тамже 64)')
+        self.assertEqual(refs[0].tail,'. На Адамів запис даний Сатанї')
         self.assertEqual(extract_transcribed_lines(tei),source['raw_response'].split(chr(10)))
         self.assertEqual(d['status'],'agent_unverified')
 
