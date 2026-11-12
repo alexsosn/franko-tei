@@ -1,0 +1,28 @@
+# I/36 (XXVII): full source-only page with numbered Old Testament index entries
+
+## Primary source and physical text
+
+Volume I **physical scan 36**, printed Roman folio **XXVII** (upper right); native original JPEG `images/vol1/page-00036.jpg`, **1190×1701**, pinned to immutable source asset commit `e871f32537e81f81896f6ce9a6658aba667db9c5`. Exact manifest image SHA256: `4d46f782b4a90ffa195809c7ea994fe4bc05896576f6987292f2a35577406dba`. Original source inspected directly, before the first response was written, **not** derived from embedded PDF OCR. The source PDF SHA256 in the JSON is only a manifest claim; no new PDF download/verification occurred.
+
+The [frozen initial full page reading](../pilot/vol1_scan00036_single_reading.json) has **41 physical body lines plus one printed folio**, with seven separate visual regions/paragraphs of **6 + 8 + 2 + 5 + 8 + 10 + 2**. The opening line continues the word `Ла-` from I/35 as `одик. собору`, never silently concatenated or reconstructed. The physical source ends mid-argument after `а другий, що в деяких`. No source line was fabricated from I/37.
+
+The passage first describes the items omitted or added to the printed Laodicean list, then the seventeenth-century publication of `Кириллова книга`, and then Franko's numbered headings **1) Adam**, **2) Adam's Testament**, **3) Adam's Skull**, **4–5) On the Cross Wood**, **6–7) Enoch**. The numeration and extensive *printed letterspacing* are source typography rather than multiple words. French `Migne, Dictionnaire des Apocryphes I, 289—388` and Roman `Памятники I, стор. I—III` are encoded with appropriate Latin script spans, not transliterated into Ukrainian Cyrillic. These bibliographic assertions concern printed nineteenth-century scholarly descriptions; the project has not located/verified the underlying medieval manuscripts from this page.
+
+## Research → plan → TDD → native JPEG test
+
+The smallest user-facing objective was one new complete printed page; no generic OCR infrastructure or converter redesign was proposed.
+
+- **Red-first contract:** `tests/test_vol1_page36_image.py` committed alone at `c91a24f5ade3bf38d18745342d9304488efcc73a`, then its source letterspacing expectation corrected in the test-only `2182406d11109e2c0b96d07a4d853cd83608e399`. [CI red 43125580180](https://github.com/alexsosn/franko-tei/actions/runs/43125580180) reflects absence of the new source-reading JSON.
+- Initial complete source-only first reading persisted as `0a40fa2cc87b0c76b6d611554247db99551ceeae`, before the original embedded OCR or any competing I/36 reading was seen. Source-specific [real-image workflow](../.github/workflows/pilot-vol1-page36.yml) fetches **only** immutable JPEG plus manifest, rehashes the image through pilot TEI conversion, checks one `pb`, 42 `lb`, and TEI P5 4.12.0 Relax NG. It does not certify historical glyph accuracy.
+- A second red-first test `ca531ebba375b3b92e75f97d4162ab264c2270ae` demands a post-freeze source challenge file. The [audit](../pilot/reviews/vol1_scan00036_post_freeze_challenges.json) was subsequently committed as `2be49fccaf876b3d908cf7c5a2664244906e0c43`.
+- Unlike previous pages, image-gated CI initially failed on **estimated line box outside region** and the unit test's wrong expectation for the number of literal letterspacing blanks in `4—5) О  д р е в ѣ`. Both faults were confirmed by actual CI logs; test-only commit `78d954276fc1953a027dfcbb2c974ba4943c1fe2` changed the expected source spacing and added a fail-closed per-line region containment assertion. Data commit `05d8f6e207c525fb54241d8451f2f3077960ac09` expanded only parent geometry by small pixel amounts; it **did not change a single raw source character** or physical line. Native JPEG/TEI and general CI must both be green before merge.
+
+No source binary was committed. All geometry is still estimated, not independently measured; engineering checks prove only source hash, physical coverage and XML serialization.
+
+## Post-freeze failure-oriented source reinspection
+
+A separate adversarial reinspection of the native JPEG found that **body line 25** in the first reader `Індекса Кирияна і Зосими` likely **omits п** and should be `Індекса Киприяна і Зосими`. This is grounded in the original printed glyph shape but is **not yet independently adjudicated**, so it is recorded as an anchored provisional reading and the frozen first response remains untouched. The original embedded PDF OCR suggests corrupt `Кинирияна` and is unsuitable as a reliable independent model.
+
+Further unsafe passages are the Old Slavonic source titles with hard/soft signs and `ѣ`: `Лобъ Адамль`, `Адамль завѣтъ`, `Лобъ Адамовъ, аже въ немъ цр҃кви сем`, and `О древѣ крестномъ`. Source artificial letterspacing was preserved in the first response, but the exact typography, ligatures, titlo and letters still need close source-crop verification. The PDF OCR collapses the letterspacing, corrupts Greek/Old Cyrillic words and mistakenly reads **1629** in the place where the native source appears to print **1639**. It was consulted **after** the first text was committed and cannot be used as CER reference gold or a second independent reader.
+
+**Editorial status:** `agent_unverified` and no verified TEI/TF or scholarly CER. A failure-oriented second pass in the *same conversational context* does not satisfy two genuinely blind complete original-image transcriptions, and no independent third editor has checked every glyph. The source image is not distributed under the project's MIT source code license. Further work should continue sequentially with I/37 and separately adjudicate this page's old Cyrillic titles before any verified corpus milestone. Issue #11 remains open and #66 still tracks the I/34 text omission.
