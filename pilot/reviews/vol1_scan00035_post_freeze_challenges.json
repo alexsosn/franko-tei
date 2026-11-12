@@ -1,0 +1,139 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 35,
+  "printed_page_observed": "XXVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "cfed214a6b656a8cdf2ba2e4449d1fac12e9bdd709821bccf098a77c7aa9e483",
+  "frozen_first_reading": "pilot/vol1_scan00035_single_reading.json",
+  "review_method": "After committing full source-only first draft, independently failure-oriented reinspection of pinned native 1190x1761 JPEG, then consultation of original embedded PDF OCR only as corrupt counterhypothesis. Same conversational context, no genuinely blind second image reader or third editorial review.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-22",
+      "frozen_substring": "її текст",
+      "proposed_substring": "єї текст",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Source appears to use 19th-century Ukrainian єї rather than the first-reader modern-looking її; old OCR also gives єї but cannot certify glyphs."
+    },
+    {
+      "line_id": "main-line-31",
+      "frozen_substring": "ще не має її",
+      "proposed_substring": "ще не має єї",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "The original page seems to have єї, not the first reader's її, in discussion of the missing Solomon/Kitovras story."
+    },
+    {
+      "line_id": "main-line-32",
+      "frozen_substring": "слїду її істнованя",
+      "proposed_substring": "слїду єї істнованя",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Source historical possessive looks like єї; same recurrent fluency modernization as on I/33."
+    },
+    {
+      "line_id": "main-line-33",
+      "frozen_substring": "титул її вставлений",
+      "proposed_substring": "титул єї вставлений",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "In final physical line of first paragraph source appears to read єї; candidate correction isolated rather than rewriting original raw response."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "У перве",
+      "reason": "First phrase may be split or punctuated differently; verify exact printed word, not usage."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "Пѣсни Давыдовы",
+      "reason": "Old Cyrillic title glyphs, yat and multiple letterforms are insufficiently legible at 1190px; don't identify by expected biblical work."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "Паралипомена Иеремѣкина",
+      "reason": "Old Slavonic title may be off by several glyphs, needs enlarged specialist source inspection."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "ѡ плѣненіи, что ѡрла слали",
+      "reason": "Unusual old Slavonic phrase and ѡ/ѣ/ъ; source line requires individual glyph-level verification."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "Дванадесѧть Іаковлича племана Лѣствица",
+      "reason": "In-text title appears in old Cyrillic and is especially susceptible to language-model reconstruction."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "ст҃а Трца",
+      "reason": "Superscript titlo and abbreviation likely inaccurately encoded. Do not convert to expanded words without source reading."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "Китаврасѣ басни и кощоуни",
+      "reason": "Exact old Cyrillic names and historical ѣ, ъ, or superscripts need source crop."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "югославянське",
+      "reason": "Source and OCR may differ on юго/юго-слово and lexical form, not independently checked."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "Житїє и исповѣданїе",
+      "reason": "Slavonic/Serbian printed title includes historical glyphs and possible ligatures; every word requires independent glyph reading."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "Асенефи дъштєре Пентефрїини и како поєть є Іосифъ прѣкрасни",
+      "reason": "High-risk Serbian quoted line; first response likely has multiple wrong glyphs and normalized spacing."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "въ жену себѣ",
+      "reason": "Final quotation words and diacritics require enlarged reinspection."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "Starine т. IX",
+      "reason": "Latin bibliographic title and Roman numeral now get separate script spans; source characters themselves still first-reader hypotheses."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "XVII. в.",
+      "reason": "Roman dating in bibliographic reference to a manuscript; printed date should not be assumed to validate manuscript age."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "за правилом Ла-",
+      "reason": "Last physical source line cuts a word at the bottom; cannot supply next page from context."
+    }
+  ],
+  "structural_review": {
+    "source_page": "Physical scan 35; printed XXVI at top left",
+    "folio_lines": 1,
+    "body_lines": 41,
+    "paragraph_lengths": [
+      33,
+      8
+    ],
+    "last_line": "14 титулів ... за правилом Ла-",
+    "nontext": "No independent footnotes/footers shown",
+    "ocr_negative_control": "Original PDF embedded OCR retains the Roman folio but substitutes Latin for Cyrillic, breaks old Slavonic titles into nonsense and is unusable as reference gold."
+  },
+  "source_rights": "No original scan/JPEG/PDF redistributed in the PR.",
+  "limitations": [
+    "One full source-only first reader; no independent blind second reading",
+    "No third independent textual adjudication",
+    "High-risk Old Slavonic printed titles are not verified, no CER benchmark",
+    "No verified scholarly TEI or Text Fabric release"
+  ]
+}
