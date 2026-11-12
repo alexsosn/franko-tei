@@ -1,0 +1,29 @@
+# I/35 (XXVI): complete source-first printed page and uncertain Slavonic quotation
+
+## Research and source identity
+
+Original Franko Volume I physical scan **35**, printed Roman folio **XXVI**, immutable JPEG `images/vol1/page-00035.jpg` (1190×1761) from asset commit `e871f32537e81f81896f6ce9a6658aba667db9c5`. Manifest source image SHA256 `cfed214a6b656a8cdf2ba2e4449d1fac12e9bdd709821bccf098a77c7aa9e483`. The original image was inspected **before** either first-pass transcription or original embedded OCR was read. This is a nineteenth-century **printed edition**, not an independent medieval manuscript image; no medieval manuscript should be considered verified from the references in Franko's prose.
+
+The [full frozen first response](../pilot/vol1_scan00035_single_reading.json) consists of **41 physical body lines** (33 in first paragraph, 8 in second) plus printed folio, 42 source positions overall. It begins with the Pogodin Nomocanon and the claimed apocryphal amendments to canon 60 of Laodicea, especially attribution to the Bulgarian priest Jeremiah; contains 12 Old Testament titles in this index and a passage on missing books of Eldad and Modad, Aseneth, Moses, Isaiah and Ezra. It cites a Serbian old Slavonic title concerning Aseneth in Novaković's `Starine`; the following paragraph describes later Rus' indices combining older lists and cites Kalaydovich's `Іоаннъ Ексархъ Болгарскій` (Moscow 1824). The last printed source line ends with `за правилом Ла-`: its continuation on I/36 has **not** been inferred from the neighboring scan.
+
+**Low-confidence glyphs are not disguised as verified text.** Dense Old Slavonic spans in physical lines 10–14 and 25–27, particularly `Пѣсни Давыдовы`, `Паралипомена Иеремѣкина`, `Дванадесѧть Іаковлича племана Лѣствица`, `ст҃а Трца`, and `Асенефи дъштєре Пентефрїини`, are plausible visual hypotheses, not scholarly transliterations. Some letters, title breaks, diacritics or titla may be hallucinated or replaced. All bounding boxes are deliberately marked `geometry_estimated=true`; no measured line detection was performed.
+
+## Research → plan → red test → implementation
+
+The goal for this episode was more real printed-text coverage, not creating another general-purpose OCR stack.
+
+1. Source inspected directly at pinned commit; physical line and paragraph count established without using extracted OCR. [PR #67](https://github.com/alexsosn/franko-tei/pull/67) opened as a draft with a **test-only commit** `401d27cb46834fb773cbb7ae0daccf5069d15f69`. [Red CI run 43124537626](https://github.com/alexsosn/franko-tei/actions/runs/43124537626) failed because the full I/35 source-reading JSON was absent.
+2. The complete source-first draft was frozen as `98aa0cd2ca0ac7f21f484f89dc70844a607a4e13`. **Only then** was the original embedded OCR consulted. A source-specific [workflow](../.github/workflows/pilot-vol1-page35.yml) fetches the actual immutable JPEG and manifest, rehashes them through the pilot TEI conversion path, verifies **42 physical line positions, one `pb` and 42 `lb`**, and validates TEI P5 4.12.0 Relax NG. Both general [CI 43124781526](https://github.com/alexsosn/franko-tei/actions/runs/43124781526) and [real-image TEI 43124781404](https://github.com/alexsosn/franko-tei/actions/runs/43124781404) passed.
+3. A distinct adversarial metadata check found that Latin `op. cit.` and `Starine` were incorrectly marked as Cyrillic-script words in the first metadata. A second red-first test `ee53eedab0d012084ce4b575f55a04d5ba9d1363` forced script correctness and demanded a separate post-freeze glyph challenge file. Commit `2a6a2ee86230211410c69392adeb67e5bbab0ad4` isolated these **Latin script spans while leaving every raw-response character unchanged**. [CI run 43125004655](https://github.com/alexsosn/franko-tei/actions/runs/43125004655) still failed intentionally on missing audit while Latin span test passed; [the separate audit](../pilot/reviews/vol1_scan00035_post_freeze_challenges.json) was then committed in `405a289e62dfa723f69ea2abf7a9d9a6997b34c3`.
+
+A successful XML build **does not verify** Old Cyrillic glyphs, titles, historical citations or the author's conclusions.
+
+## Failure-oriented source reading after the freeze
+
+The independent-in-objective, same-context critical pass found at least four plausible silent modernizations: line 22 `її текст` vs source-looking `єї текст`; line 31 `ще не має її` vs `ще не має єї`; line 32 `слїду її істнованя` vs `слїду єї істнованя`; and line 33 `титул її вставлений` vs `титул єї вставлений`. Proposed corrections are saved in the separate post-freeze audit and **not** inserted into the initial response; they remain provisional until another actual image-grounded reading.
+
+Critical remaining uncertainties include the precise text of the three Old Slavonic titles in the Laodicean list, titlo in `ст҃а Трца`, and the Serbian quotation `Житїє и исповѣданїе ...`. The original PDF OCR is a poor negative control: it produces Latin/Cyrillic mixtures and makes the old titles nonsensical. It was consulted only after the first response had been frozen and **cannot serve as gold text or a second reader**. Generic language-model confidence does not establish original source characters.
+
+The independent adversarial PR review is logically distinct from implementation but is **not** a genuinely blind second complete transcription in a separate context; no third independent adjudication exists. The draft is and must remain `agent_unverified`. No certified TEI, Context Fabric/Text Fabric, CER, manuscript witness or source JPEG redistribution follows from this PR. The MIT software license is distinct from the rights to the scanned edition.
+
+After merge, continue sequential physical scan **I/36**; also keep the source-specific historical-glyph task #66 for I/34 and the high-risk Old Slavonic spans here in the review backlog before any verified corpus release.
