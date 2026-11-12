@@ -1,0 +1,130 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 36,
+  "printed_page_observed": "XXVII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "4d46f782b4a90ffa195809c7ea994fe4bc05896576f6987292f2a35577406dba",
+  "frozen_first_reading": "pilot/vol1_scan00036_single_reading.json",
+  "review_method": "Separate failure-oriented rereading of full pinned native 1190x1701 JPEG after frozen first original-image-only response, followed by inspection of visibly corrupt original PDF embedded OCR as negative control. Same conversation context, NOT blind independent second source reader or third review.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-25",
+      "frozen_substring": "Індекса Кирияна і Зосими",
+      "proposed_substring": "Індекса Киприяна і Зосими",
+      "disposition": "prefer_proposal_provisional",
+      "evidence_kind": "native_visual_challenge",
+      "source_reason": "Native print appears to have a short п after Ки, making Киприяна (historical Cyprian) rather than first-pass Кирияна; original OCR reads corrupt Кинирияна and cannot be treated as a second glyph witness. Must enlarge source and adjudicate independently before accepting."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "Восход Моисеев",
+      "reason": "Old Cyrillic book title at top of scan may use archaic spellings, do not modernize or infer from known text."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "Лобъ Адамль, что седмь царей подъ нимъ сѣдѣли",
+      "reason": "Original title glyphs ъ/ь/ѣ and word division need independent source verification, despite first-read fluency."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "називає сь",
+      "reason": "Original printed analytic source word separation appears unusual; inspect pixels rather than correcting grammatical form."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "в Москві 1639",
+      "reason": "Visually likely 1639; corrupt PDF OCR instead reads 1629, which must not override source."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "Декретї Ґелязія",
+      "reason": "Proper name in historic Ukrainian printing; exact initial character may be less certain than semantic normalization suggests."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "А д а м л ь  з а в ѣ т ъ",
+      "reason": "Old Slavonic letters and exact typographic letterspacing require a zoomed image-level comparison."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "Migne, Dictionnaire des",
+      "reason": "French cited edition names with Latin type, preserve mixed-script segmentation and bibliography details."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "Л о б ъ  А д а м л ь, что 30",
+      "reason": "Physical letterspacing and Old Cyrillic title uncertain: no trustworthy independent reading."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "ц а р е й  п о д ъ  н и м ъ  с и д ѣ л о",
+      "reason": "Letterspaced Slavonic continuation, hard signs, yat and source punctuation require enlarged visual check."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "Лобъ Адамовъ, аже въ немъ цр҃кви сем",
+      "reason": "Unusual titlo-bearing source word likely has several erroneous characters; do not expand or treat as verified."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "О  д р е в ѣ  к р е с т н о м ъ",
+      "reason": "Letterspaced Old Slavonic title printed with yat and hard sign; exact source glyphs to adjudicate."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "извѣ-",
+      "reason": "Quoted title with physical word split, potential Russian/Slavonic orthography variation."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "щеніе св. Тройця",
+      "reason": "Title variation quoted by Franko, not independently attested manuscript reading."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "Матерьялы и замѣтки",
+      "reason": "Russian bibliographic title with yat, needs source-specific glyph reinspection."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "6—7) Е н о х",
+      "reason": "Numeration and type letterspacing of name preserved, no proof of historical witness."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "що в деяких",
+      "reason": "Last physical line continues onto next page; do not infer missing phrase."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XXVII upper right",
+    "body_lines": 41,
+    "main_regions": [
+      6,
+      8,
+      2,
+      5,
+      8,
+      10,
+      2
+    ],
+    "complete_first_reading": true,
+    "verified_glyphs": false,
+    "last_line": "знаходить ся у всїх найдавнїйших Індексах, а другий, що в деяких",
+    "negative_control": "Original PDF OCR mixes Latin/Cyrillic, collapses source letterspacing and gives false 1629 for print 1639, hence not ground truth."
+  },
+  "rights": "No original JPEG or PDF added; code MIT license does not grant the print-scan rights.",
+  "limitations": [
+    "No separate blind full second first-reader context",
+    "No third independent editorial reviewer",
+    "No CER or verified diplomatic glyph transcription",
+    "Only provisional TEI/XML output, no released Text Fabric corpus"
+  ]
+}
