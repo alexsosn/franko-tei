@@ -1,0 +1,196 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 46,
+  "printed_page_observed": "XXXVII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "66132a611fa164a75b7a3e07456e82f904e023183eb4812f778e48b9b80bc1b2",
+  "frozen_first_reading": "pilot/vol1_scan00046_single_reading.json",
+  "review_method": "Failure-oriented second study of unchanged original native I/46 JPEG and frozen first source reading after commit 8e59d472. Checked folio, physical lines, stanza boundaries and likely glyph regularization; the source original OCR and neighboring source texts were not consulted. Same model context, logically distinct adversarial objective; no blind second complete reader.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-13",
+      "frozen_substring": "святый",
+      "proposed_substring": "святий",
+      "source_reason": "The source hymn's vowel letter may be historical ы or Ukrainian и; the observed print cannot be normalized on semantic grounds.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge"
+    },
+    {
+      "line_id": "main-line-21",
+      "frozen_substring": "в тму",
+      "proposed_substring": "в тьму",
+      "source_reason": "An omitted or obscured soft sign before тму is a source-glyph uncertainty; the frozen form follows first visual reading.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge"
+    },
+    {
+      "line_id": "main-line-27",
+      "frozen_substring": "живоначальный",
+      "proposed_substring": "живоначальнѣй",
+      "source_reason": "Title of the hymn may have historical ѣй at the ending, or ы/й; printed small vowel cluster requires independent zoomed adjudication.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge"
+    },
+    {
+      "line_id": "main-line-31",
+      "frozen_substring": "єдинаго",
+      "proposed_substring": "единаго",
+      "source_reason": "The first letter of the Old Slavic phrase after the comma may be є or е; two letterforms remain competing hypotheses.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge"
+    },
+    {
+      "line_id": "main-line-41",
+      "frozen_substring": "дїлах",
+      "proposed_substring": "ділах",
+      "source_reason": "Ukrainian historic dot count at the start of continuation after роз- remains a photographic glyph question.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "native_visual_challenge"
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-02",
+      "reading": "палейне оповіданє",
+      "reason": "Old Ukrainian historical adjectival spelling and final є require separate source-glyph check."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "честнѣйший",
+      "reason": "Yat glyph must not be normalized."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "найвышшаго",
+      "reason": "Historical Slavonic spelling and consonant/ы grouping uncertain."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "Михаилъ мечъ прія",
+      "reason": "High-risk historical source graphemes ъ/і and old past verb."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "слетѣ вопія",
+      "reason": "Yat and vowel reading could be fluent-model regularization."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "„Соромъ намъ",
+      "reason": "Quotation marks and source hard sign not verified."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "сеї піснї",
+      "reason": "Original Ukrainian ї/і needs optical check."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "„Кто як Богъ!“",
+      "reason": "Original Slavic/Ukrainian mixture, quotation placement and final hard sign."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "молѣм ся",
+      "reason": "Yat and word-boundary printed segmentation require verification."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "виразнїйше",
+      "reason": "Original ї top dots and syntax prone to normalization."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "Сатанаїла",
+      "reason": "Source name with ї must be distinguished from later textual forms."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "Реклесь",
+      "reason": "Low-frequency old Slavic verb and subsequent Vоньмимъ are high-risk."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "Хтѣлесь",
+      "reason": "Old Cyrillic yat and rare lexical form need independent reading."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "Падъ якъ молнія",
+      "reason": "Original ъ and Ukrainian і, original punctuation at quote end."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "ние ч. Хреста",
+      "reason": "Physical continuation of воздвиже-: do not join or normalize printed form."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "возлюбивый",
+      "reason": "Old Church Slavonic spelling could be misread from source."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "живоначальный Тройцѣ",
+      "reason": "Old hymn title script endings and yat require source verification."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "оуподобися",
+      "reason": "Historic digraph оу must be preserved or challenged against image."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "Сей трохъ зрѣвъ, єдинаго",
+      "reason": "Original three/yat spelling and initial є need verification."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "новійша лїтература",
+      "reason": "Two historical i/ї variants and mixed text-script."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "циклї поем",
+      "reason": "Historical Ukrainian і/ї in cycle."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "сьвітовії в сьпівах",
+      "reason": "Special spellings in Rudansky's title; no modernization."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "т. II,",
+      "reason": "Roman II code points and quote bibliographical punctuation."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "народнїх",
+      "reason": "Historical Ukrainian vowel diacritics require independent check."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "пятьох роз-",
+      "reason": "Source form should not be silently changed to modern apostrophe."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "дїлах тої поеми",
+      "reason": "Final source line historical ї and physical continuation of preceding роз-."
+    }
+  ],
+  "reviewed_properties": {
+    "image_geometry": "Printed XXXVII in upper-right, 41 body rows across 11 physical prose/hymn blocks, distinct blank lower margin; the lower black blemish is not type.",
+    "line_structure": "Preserves 11 source groups and 42 total TEI line slots, without moving verse text to invented physical positions.",
+    "historic_script": "Questioned all high-risk ѣ/ъ/ї/оу and unusual Ruthenian/CSl candidate wording; no authoritative source edition asserted.",
+    "continuity": "Intro to Rudansky is on this page, not extracted from the following page; trailing line ends with a colon, not a fabricated list.",
+    "edits": "No modification to first reading, recorded competitors only."
+  },
+  "disposition": "Structural pilot may merge only after native source gate and CI succeed; original glyphs still need independent image-only second reading plus third adjudication before publication."
+}
