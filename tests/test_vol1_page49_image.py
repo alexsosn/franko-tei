@@ -40,7 +40,7 @@ class TestI49(unittest.TestCase):
                             (n,self.lines[n]["text"]))
         for phrase in ("Bjoerik","Eichhorn","Einleitung","Hoffmann",
                        "Dillmann","Jahrbücher","Gfrörer","Migne",
-                       "Dictionnaire des Apocryphes","Мандаїтів","Енохову","Ездри"):
+                       "Dictionnaire des Apocryphes","Мандаїтів","Е н о х о в у","Е з д р и"):
             # Historical printed name may have original spacing or transliteration;
             # only match its lexical part, never modernize the source line.
             if phrase == "Bjoerik":
