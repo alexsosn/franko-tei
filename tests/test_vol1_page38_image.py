@@ -48,5 +48,33 @@ class TestI38(unittest.TestCase):
                 self.assertLessEqual(a+c,x+w,l["id"])
                 self.assertLessEqual(b+e,y+h,l["id"])
 
+
+    def test_greek_source_word_is_marked_uncertain_greek_script(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        line=d["reading"]["regions"][1]["lines"][1]
+        token="Ἀνάληψις"
+        p=line["text"].index(token)
+        spans=[s for s in line["language_spans"] if s["script"]=="Grek"]
+        self.assertEqual(len(spans),1)
+        self.assertEqual((spans[0]["start"],spans[0]["end"]),(p,p+len(token)))
+        self.assertTrue(spans[0]["uncertain"])
+
+    def test_source_glyph_challenge_separate_from_first_reader(self):
+        d=json.loads(PATH.read_text(encoding="utf-8"))
+        review=PATH.parent/"reviews/vol1_scan00038_post_freeze_challenges.json"
+        audit=json.loads(review.read_text(encoding="utf-8"))
+        self.assertEqual(audit["source_image_sha256"],d["source_image_sha256"])
+        self.assertEqual(audit["status"],"provisional_source_challenges")
+        self.assertFalse(audit["independent_blind_reader"])
+        self.assertFalse(audit["third_independent_review_complete"])
+        self.assertFalse(audit["glyph_by_glyph_verified"])
+        self.assertGreaterEqual(len(audit["corrections"]),1)
+        self.assertGreaterEqual(len(audit["unresolved"]),8)
+        src={l["id"]:l["text"] for r in d["reading"]["regions"] for l in r["lines"]}
+        for item in audit["corrections"]:
+            self.assertIn(item["frozen_substring"],src[item["line_id"]])
+            self.assertNotEqual(item["frozen_substring"],item["proposed_substring"])
+            self.assertNotEqual(item["disposition"],"verified")
+
 if __name__=="__main__":
     unittest.main()
