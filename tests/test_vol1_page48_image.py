@@ -38,6 +38,12 @@ class TestI48(unittest.TestCase):
                   "Ioseph", "De libris apocryphis", "C.dex apocry-", "Codex"):
             self.assertIn(s,reading["raw_response"])
         self.assertTrue(self.lines[-1]["text"].endswith("Фабріціу-"))
+        # Mixed title and prose occupy ONE original source row, with no added line.
+        self.assertIn("Збиранє і публїкованє", self.lines[12]["text"])
+        self.assertEqual(self.lines[11]["text"].split(" ",1)[0],"IX.")
+        self.assertIn("C.dex apocry-",self.lines[35]["text"])
+        self.assertGreaterEqual(sum(sp["language"]=="la" for l in self.lines
+                                    for sp in l["language_spans"]),10)
         self.assertEqual(reading["raw_response"],"\n".join(l["text"] for l in self.lines))
         self.assertTrue(all(l["geometry_estimated"] for l in self.lines))
         self.assertGreaterEqual(len(reading["uncertainty_notes"]),25)
@@ -59,9 +65,11 @@ class TestI48(unittest.TestCase):
                 for sp in spans:
                     self.assertEqual(sp["text_version"],self.d["reading"]["reader_id"])
                     self.assertGreater(sp["end"],sp["start"])
-                    self.assertGreaterEqual(sp["start"],last)
+                    self.assertEqual(sp["start"],last)
                     self.assertLessEqual(sp["end"],len(line["text"]))
                     last=sp["end"]
+                if spans:
+                    self.assertEqual(last,len(line["text"]),line["id"])
         for blank in self.d["reading"]["coverage"]["nontext_areas"]:
             x,y,w,h=blank["bbox_xywh"]
             for a,b,c,d in all_boxes:
