@@ -33,7 +33,7 @@ class TestOriginalI53(unittest.TestCase):
             self.assertEqual(region["id"],f"tikhonravov_item_{number:02d}")
             self.assertTrue(region["lines"][0]["text"].startswith(f"{number}) "))
         self.assertEqual(self.lines[6]["text"][:7],"Надто з")
-        self.assertIn("Методия",self.p["reading"]["raw_response"])
+        self.assertIn("Мефодия",self.p["reading"]["raw_response"])
         self.assertIn("Лавровського",self.p["reading"]["raw_response"])
         self.assertIn("Пипін",self.p["reading"]["raw_response"])
         self.assertIn("Тихонравова",self.p["reading"]["raw_response"])
