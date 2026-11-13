@@ -178,6 +178,14 @@ class PageXmlExportTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             export_candidate(self.candidate, self.images, self.output)
 
+    def test_blank_scan_has_no_fabricated_reading_order(self):
+        payload = copy.deepcopy(self.payload)
+        payload["lines"] = []
+        payload["text"] = ""
+        root = self.get_xml(payload)
+        self.assertEqual(root.findall(".//{" + PAGE_NS + "}TextRegion"), [])
+        self.assertIsNone(root.find(".//{" + PAGE_NS + "}ReadingOrder"))
+
     def test_cli_no_overwrite(self):
         self.write()
         self.assertEqual(main(["--input", str(self.candidate), "--images", str(self.images),
