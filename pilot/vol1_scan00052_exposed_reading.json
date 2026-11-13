@@ -1,0 +1,1416 @@
+{
+  "schema_version": "single-exposed-draft-v1",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 52,
+  "printed_page_observed": "XLIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00052.jpg",
+  "source_image_sha256": "57bc7f36ef25d7a885ac699d8a77784fdc5924a78c6cd67ba65ac61c0938aca2",
+  "reading": {
+    "reader_id": "gpt6-i52-ocr-exposed-single-context-20261113",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "same-conversation-2026-11-13-i52-nonblind",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": true,
+    "external_text_exposure": {
+      "kind": "third_party_ocr",
+      "url": "https://ru.djvu.online/file/nbMyMYV24nTfs",
+      "timing": "before_first_reading",
+      "note": "Previous I/51 postfreeze review in this same conversation exposed a third-party OCR view around printed XLIII / physical I/52. The original embedded PDF OCR in the repository was not consulted. Direct visual source image is primary for this working reading, but no blind-image-first claim is made."
+    },
+    "instructions": "Produce a complete explicitly OCR-exposed/nonblind working draft from the pinned original native Franko printed Volume I scan 52. Preserve all 41 source body physical rows, folio XLIII, old-Cyrillic Kushelev items 19–25, Pypin/Buslaev/Tikhonravov paragraphs and numbered new list items 1–9; preserve source spelling, historical glyph hypotheses, physical printed hyphenation and numeric bibliography. Never claim independence: third-party OCR already exposed in same context before this draft. Keep original embedded OCR unavailable, note source geometry as estimated and all glyphs unverified.",
+    "raw_response": "XLIII\n19) О царь Ѧдаріанѣ.\n20) О третей притчѣ царя Соломона и о премудрости его\nи каковы бысть съдъ отца его Давыда, съдима двѣ мужей.\n21) Притча царя Соломона о царѣ Китоврасѣ.\n22) Сказаніе о премудрости царя Соломона и о Южской\nцарицѣ и о философѣхъ.\n23) Повѣсть царя Давыда и сына его Соломона и о ихъ\nпремудрости.\n24) Повѣсть дивна о цари Соломонѣ.\n25) О пророкѣ Іереміи, изъ Епифанія о св. пророкахъ.\nЗбірка сеся, замітна особливо богатством Соломонівських лєґенд\nбула для свого часу дуже важною появою, та теперішнім вимогам\nнауки вона не відповідає. Пипін не дбав ані про її повноту, ані\nпро сістематичний добір, ані про докладне виданє текстів, затер\nусї особенности списків, навіть транскрібував усї тексти із кири-\nлицї на гражданку. Одним словом, тексти його мають вигляд змо-\nдернїзований. Хибою сего виданя є також брак орієнтуючої перед-\nмови; її помістив Пипін у журналі „Русское Слово“ 1862 р. п. з.\n„Ложныя и отреченныя книги русской старины“.\nЩе перед тим, 1856 р. проф. Буслаєв у першім томі своєї\nкниги „Историческіе очерки русской народной поэзіи“ стор. 484—492\nдав короткий огляд змісту деяких старозавітних апокріфів, помістив-\nши на початку того огляду Індекс книг ложних, винятий із одного\nСоловецького рукопису XVII в. А в 1862 той же Буслаєв надрукував\nу Тихонравовськім журналі „Лѣтописи русской литературы“ обширне\nоповіданє про Соломона з рукоп. XVIII в. (Лѣтописи IV, 112—153).\nВ р. 1863 вийшло в світ знамените виданє апокріфів, доко-\nнане проф. Тихонравовим (Н. С. Т и х о н р а в о в ъ, Памятники отре-\nченной русской литературы, т. I—II). Мала се бути прилога до\nпраці „Отреченныя книги древней Россіи“, та праці сеї Тихонравов\nтак і не написав. Перший том збірки Тихонравова обіймає апокрі-\nфи старозавітні і містить\n1) Три тексти оповідань про Адама.\n2) Два відривки із книги Еноха.\n3) Оповіданє (маленьке) про Ламеха.\n4) Два тексти оповідань про Мелхіседека.\n5) Два варіянти апокріфа „Откровеніе Авраама“.\n6) Смерть Авраама.\n7) Лїствицю.\n8) Дві редакції Заповітів 12-ти патріярхів.\n9) Исходъ Моисеевъ.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "occlusions": [],
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            85,
+            1570,
+            1040,
+            110
+          ],
+          "description": "Blank original lower margin beneath item 9; no printed footnote/signature visible."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          903,
+          69,
+          190,
+          65
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XLIII",
+            "bbox_xywh": [
+              917,
+              81,
+              161,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_19",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          141,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "19) О царь Ѧдаріанѣ.",
+            "bbox_xywh": [
+              86,
+              150,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 20,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_20",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          175,
+          1070,
+          84
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-02",
+            "text": "20) О третей притчѣ царя Соломона и о премудрости его",
+            "bbox_xywh": [
+              86,
+              184,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 53,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "и каковы бысть съдъ отца его Давыда, съдима двѣ мужей.",
+            "bbox_xywh": [
+              86,
+              216,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 54,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_21",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          241,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-04",
+            "text": "21) Притча царя Соломона о царѣ Китоврасѣ.",
+            "bbox_xywh": [
+              86,
+              250,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 42,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_22",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          273,
+          1070,
+          85
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-05",
+            "text": "22) Сказаніе о премудрости царя Соломона и о Южской",
+            "bbox_xywh": [
+              86,
+              282,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 51,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-06",
+            "text": "царицѣ и о философѣхъ.",
+            "bbox_xywh": [
+              86,
+              315,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 22,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_23",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          341,
+          1070,
+          84
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-07",
+            "text": "23) Повѣсть царя Давыда и сына его Соломона и о ихъ",
+            "bbox_xywh": [
+              86,
+              350,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 51,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-08",
+            "text": "премудрости.",
+            "bbox_xywh": [
+              86,
+              382,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 12,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_24",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          404,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-09",
+            "text": "24) Повѣсть дивна о цари Соломонѣ.",
+            "bbox_xywh": [
+              86,
+              413,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 34,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kushelev_item_25",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          438,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-10",
+            "text": "25) О пророкѣ Іереміи, изъ Епифанія о св. пророкахъ.",
+            "bbox_xywh": [
+              86,
+              447,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 52,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "franko_pypin_critique",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          479,
+          1070,
+          319
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-11",
+            "text": "Збірка сеся, замітна особливо богатством Соломонівських лєґенд",
+            "bbox_xywh": [
+              86,
+              488,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-12",
+            "text": "була для свого часу дуже важною появою, та теперішнім вимогам",
+            "bbox_xywh": [
+              86,
+              520,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-13",
+            "text": "науки вона не відповідає. Пипін не дбав ані про її повноту, ані",
+            "bbox_xywh": [
+              86,
+              553,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-14",
+            "text": "про сістематичний добір, ані про докладне виданє текстів, затер",
+            "bbox_xywh": [
+              86,
+              585,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-15",
+            "text": "усї особенности списків, навіть транскрібував усї тексти із кири-",
+            "bbox_xywh": [
+              86,
+              621,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-16",
+            "text": "лицї на гражданку. Одним словом, тексти його мають вигляд змо-",
+            "bbox_xywh": [
+              86,
+              653,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-17",
+            "text": "дернїзований. Хибою сего виданя є також брак орієнтуючої перед-",
+            "bbox_xywh": [
+              86,
+              687,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-18",
+            "text": "мови; її помістив Пипін у журналі „Русское Слово“ 1862 р. п. з.",
+            "bbox_xywh": [
+              86,
+              722,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-19",
+            "text": "„Ложныя и отреченныя книги русской старины“.",
+            "bbox_xywh": [
+              86,
+              755,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "buslaev_studies",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          788,
+          1070,
+          250
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-20",
+            "text": "Ще перед тим, 1856 р. проф. Буслаєв у першім томі своєї",
+            "bbox_xywh": [
+              86,
+              797,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-21",
+            "text": "книги „Историческіе очерки русской народной поэзіи“ стор. 484—492",
+            "bbox_xywh": [
+              86,
+              830,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-22",
+            "text": "дав короткий огляд змісту деяких старозавітних апокріфів, помістив-",
+            "bbox_xywh": [
+              86,
+              863,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "ши на початку того огляду Індекс книг ложних, винятий із одного",
+            "bbox_xywh": [
+              86,
+              896,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-24",
+            "text": "Соловецького рукопису XVII в. А в 1862 той же Буслаєв надрукував",
+            "bbox_xywh": [
+              86,
+              930,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 22,
+                "end": 26,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 26,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "у Тихонравовськім журналі „Лѣтописи русской литературы“ обширне",
+            "bbox_xywh": [
+              86,
+              964,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "оповіданє про Соломона з рукоп. XVIII в. (Лѣтописи IV, 112—153).",
+            "bbox_xywh": [
+              86,
+              995,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 32,
+                "end": 37,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 37,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 51,
+                "end": 53,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 53,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_collection_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1025,
+          1070,
+          218
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-27",
+            "text": "В р. 1863 вийшло в світ знамените виданє апокріфів, доко-",
+            "bbox_xywh": [
+              86,
+              1034,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-28",
+            "text": "нане проф. Тихонравовим (Н. С. Т и х о н р а в о в ъ, Памятники отре-",
+            "bbox_xywh": [
+              86,
+              1067,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 69,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-29",
+            "text": "ченной русской литературы, т. I—II). Мала се бути прилога до",
+            "bbox_xywh": [
+              86,
+              1101,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 30,
+                "end": 31,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 31,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 32,
+                "end": 34,
+                "language": null,
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 34,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "праці „Отреченныя книги древней Россіи“, та праці сеї Тихонравов",
+            "bbox_xywh": [
+              86,
+              1134,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "так і не написав. Перший том збірки Тихонравова обіймає апокрі-",
+            "bbox_xywh": [
+              86,
+              1168,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "фи старозавітні і містить",
+            "bbox_xywh": [
+              86,
+              1200,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_01",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1231,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-33",
+            "text": "1) Три тексти оповідань про Адама.",
+            "bbox_xywh": [
+              86,
+              1240,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_02",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1263,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-34",
+            "text": "2) Два відривки із книги Еноха.",
+            "bbox_xywh": [
+              86,
+              1272,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_03",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1297,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-35",
+            "text": "3) Оповіданє (маленьке) про Ламеха.",
+            "bbox_xywh": [
+              86,
+              1306,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_04",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1330,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-36",
+            "text": "4) Два тексти оповідань про Мелхіседека.",
+            "bbox_xywh": [
+              86,
+              1339,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 40,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_05",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1365,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-37",
+            "text": "5) Два варіянти апокріфа „Откровеніе Авраама“.",
+            "bbox_xywh": [
+              86,
+              1374,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_06",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1398,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-38",
+            "text": "6) Смерть Авраама.",
+            "bbox_xywh": [
+              86,
+              1407,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_07",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1431,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-39",
+            "text": "7) Лїствицю.",
+            "bbox_xywh": [
+              86,
+              1440,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_08",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1463,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-40",
+            "text": "8) Дві редакції Заповітів 12-ти патріярхів.",
+            "bbox_xywh": [
+              86,
+              1472,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tikhonravov_item_09",
+        "kind": "body",
+        "bbox_xywh": [
+          76,
+          1499,
+          1070,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-41",
+            "text": "9) Исходъ Моисеевъ.",
+            "bbox_xywh": [
+              86,
+              1508,
+              1038,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt6-i52-ocr-exposed-single-context-20261113",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "19) О царь Ѧдаріанѣ.",
+        "reason": "19: rare old Cyrillic personal name printed with probable Ѧ and historic dotted letters, exact superscript/titlo may be omitted."
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "20) О третей притчѣ царя Соломона и о премудрости его",
+        "reason": "20: 'третей притчѣ' rare title with historical ѣ and original line break; do not replace using linguistic prior."
+      },
+      {
+        "line_id": "main-line-03",
+        "reading": "и каковы бысть съдъ отца его Давыда, съдима двѣ мужей.",
+        "reason": "20 continuation: original archaic judicial phrase 'съдъ... съдима двѣ мужей' extremely high risk."
+      },
+      {
+        "line_id": "main-line-04",
+        "reading": "21) Притча царя Соломона о царѣ Китоврасѣ.",
+        "reason": "21: original Solomon/Kitorvas title, uncommon original archaic inflection."
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "22) Сказаніе о премудрости царя Соломона и о Южской",
+        "reason": "22: printed old-Cyrillic spelling of southern queen and title ambiguity."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "царицѣ и о философѣхъ.",
+        "reason": "22 continuation: uncommon cyrillic -цѣ and философѣхъ forms not verified."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "23) Повѣсть царя Давыда и сына его Соломона и о ихъ",
+        "reason": "23: unusual 'Повѣсть' and source names/case, script form needs blind image check."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "премудрости.",
+        "reason": "23 continuation archaic Cyrillic, line wrap and diacritics."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "24) Повѣсть дивна о цари Соломонѣ.",
+        "reason": "24: 'о цари Соломонѣ' printed odd historical spelling, do not emend."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "25) О пророкѣ Іереміи, изъ Епифанія о св. пророкахъ.",
+        "reason": "25: Old Church Slavonic biblical name/abbreviation may include titla, printed glyph uncertainties."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Збірка сеся, замітна особливо богатством Соломонівських",
+        "reason": "Body: Franко word 'сеся' and alternate source 'сеса' require original image glyph review."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "усї особенности списків, навіть транскрібував усї текст",
+        "reason": "Body: 'особенности' Russian word inside Ukrainian prose, source spelling may be uncertain."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "лицї на гражданку. Одним словом, тексти його мають вигл",
+        "reason": "Body: line split кирили- / лицї source physical boundary and ѣ/ї uncertain."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "Ще перед тим, 1856 р. проф. Буслаєв у першім томі своєї",
+        "reason": "Buslaev paragraph original ї/є and period date typography uncertain."
+      },
+      {
+        "line_id": "main-line-21",
+        "reading": "книги „Историческіе очерки русской народной поэзіи“ сто",
+        "reason": "Russian title 'Историческіе очерки русской народной поэзіи' may contain historic Cyrillic non-modern spelling."
+      },
+      {
+        "line_id": "main-line-24",
+        "reading": "Соловецького рукопису XVII в. А в 1862 той же Буслаєв н",
+        "reason": "Bibliographical XVII + Russian manuscript claim needs checking source punctuation."
+      },
+      {
+        "line_id": "main-line-25",
+        "reading": "у Тихонравовськім журналі „Лѣтописи русской литературы“",
+        "reason": "Russian book name Лѣтописи and source historic yat, bibliographical ending."
+      },
+      {
+        "line_id": "main-line-26",
+        "reading": "оповіданє про Соломона з рукоп. XVIII в. (Лѣтописи IV, ",
+        "reason": "Printed citation Лѣтописи IV: punctuation, x numerals and end reference need verification."
+      },
+      {
+        "line_id": "main-line-27",
+        "reading": "В р. 1863 вийшло в світ знамените виданє апокріфів, док",
+        "reason": "Bibliography transition: line end 'доко-' physical source hyphen."
+      },
+      {
+        "line_id": "main-line-28",
+        "reading": "нане проф. Тихонравовим (Н. С. Т и х о н р а в о в ъ, П",
+        "reason": "Tikhonravov surname printed in letterspacing, sources script/spacing important."
+      },
+      {
+        "line_id": "main-line-29",
+        "reading": "ченной русской литературы, т. I—II). Мала се бути прило",
+        "reason": "Printed I—II roman bibliography and title, punctuation original OCR confusion."
+      },
+      {
+        "line_id": "main-line-30",
+        "reading": "праці „Отреченныя книги древней Россіи“, та праці сеї Т",
+        "reason": "Old Russian 'Отреченныя ... Россіи' and Ukrainian main text source orthography."
+      },
+      {
+        "line_id": "main-line-33",
+        "reading": "1) Три тексти оповідань про Адама.",
+        "reason": "First item 1 punctuation, numeral source glyphs."
+      },
+      {
+        "line_id": "main-line-34",
+        "reading": "2) Два відривки із книги Еноха.",
+        "reason": "Item 2 word Еноха source spelling and list space."
+      },
+      {
+        "line_id": "main-line-35",
+        "reading": "3) Оповіданє (маленьке) про Ламеха.",
+        "reason": "Item 3 Lambed/Lamech title, parentheses possible printing variants."
+      },
+      {
+        "line_id": "main-line-36",
+        "reading": "4) Два тексти оповідань про Мелхіседека.",
+        "reason": "Item 4 rare Melchizedek printed spelling, source ґ/г no automatic correction."
+      },
+      {
+        "line_id": "main-line-37",
+        "reading": "5) Два варіянти апокріфа „Откровеніе Авраама“.",
+        "reason": "Item 5 Russian title 'Откровеніе Авраама' quote and historic ending need visual adjudication."
+      },
+      {
+        "line_id": "main-line-38",
+        "reading": "6) Смерть Авраама.",
+        "reason": "Item 6 clipped source print punctuation and spellings."
+      },
+      {
+        "line_id": "main-line-39",
+        "reading": "7) Лїствицю.",
+        "reason": "Item 7 ladder title has printed historical ї and hard-to-read first letter."
+      },
+      {
+        "line_id": "main-line-40",
+        "reading": "8) Дві редакції Заповітів 12-ти патріярхів.",
+        "reason": "Item 8 12-ти and endings, original numeral punctuation."
+      },
+      {
+        "line_id": "main-line-41",
+        "reading": "9) Исходъ Моисеевъ.",
+        "reason": "Item 9 original Russian 'Исходъ Моисеевъ' and final hard sign require independent glyph review."
+      }
+    ]
+  }
+}

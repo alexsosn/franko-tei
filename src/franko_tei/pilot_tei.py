@@ -49,12 +49,43 @@ def _valid_xml_text(text):
         raise ValueError("unreadable editorial placeholder cannot become source text")
 
 
+
+def _validate_exposure(payload, reading):
+    """Reject suppressed prior-OCR exposure, also for direct renderer callers."""
+    if (not isinstance(reading, dict) or
+            reading.get('context_independence') != 'single-working-draft'):
+        raise ValueError('a single exposed draft cannot claim independent readers')
+    if payload.get('schema_version') not in {'single-image-draft-v0','single-exposed-draft-v1'}:
+        raise ValueError('unsupported source provenance schema')
+    if payload['schema_version'] == 'single-image-draft-v0':
+        if (reading.get('source_original_ocr_visible') is not False or
+                reading.get('peer_readings_visible') is not False or
+                'external_text_exposure' in reading):
+            raise ValueError('image-only draft must not hide any OCR/peer exposure')
+    else:
+        # A prior outside OCR glimpse makes this reading *nonblind*,
+        # even if the embedded original PDF OCR itself was never accessed.
+        if (reading.get('source_original_ocr_visible') is not False or
+                reading.get('peer_readings_visible') is not True):
+            raise ValueError('exposed draft must attest nonblind external OCR context')
+        exposure = reading.get('external_text_exposure')
+        if not isinstance(exposure, dict) or set(exposure) != {'kind','url','timing','note'}:
+            raise ValueError('complete external OCR exposure provenance required')
+        if (exposure['kind'] != 'third_party_ocr' or
+                exposure['timing'] != 'before_first_reading' or
+                not isinstance(exposure['url'], str) or
+                not exposure['url'].startswith('https://') or
+                not isinstance(exposure['note'], str) or
+                not exposure['note'].strip()):
+            raise ValueError('external OCR exposure kind, time, URL or note invalid')
+
+
 def validate_single_draft(payload, images_root):
     """Validate first image draft; only actual image bytes authorize its source link.
 
     This is NOT `validate_evidence`: no peer reading, review or attestation.
     """
-    if not isinstance(payload, dict) or payload.get('schema_version') != 'single-image-draft-v0':
+    if not isinstance(payload, dict) or payload.get('schema_version') not in {'single-image-draft-v0', 'single-exposed-draft-v1'}:
         raise ValueError('unsupported single-draft schema')
     if payload.get('status') != 'agent_unverified':
         raise ValueError('single draft must remain agent_unverified')
@@ -90,8 +121,7 @@ def validate_single_draft(payload, images_root):
         raise ValueError('model_version must be explicitly null (unknown) or a string')
     if reading.get('context_independence') != 'single-working-draft':
         raise ValueError('single-working-draft is not independent review')
-    if reading.get('source_original_ocr_visible') is not False or reading.get('peer_readings_visible') is not False:
-        raise ValueError('draft must preserve image-only first reading conditions')
+    _validate_exposure(payload, reading)
     coverage = reading.get('coverage')
     if not isinstance(coverage, dict) or coverage.get('entire_image_inspected') is not True:
         raise ValueError('entire page coverage must be declared')
@@ -396,8 +426,9 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None, 
 
 def render_pilot_tei(payload, image_width, image_height, heading_overlay=None):
     """Serialize a separately validated draft; not a verification operation."""
-    if payload.get('schema_version') != 'single-image-draft-v0' or payload.get('status') != 'agent_unverified':
+    if payload.get('schema_version') not in {'single-image-draft-v0', 'single-exposed-draft-v1'} or payload.get('status') != 'agent_unverified':
         raise ValueError('refusing non-draft or promoted TEI input')
+    _validate_exposure(payload, payload.get('reading', {}))
     overlay_by_line = (validate_heading_overlay(payload, heading_overlay)
                        if heading_overlay is not None else {})
     volume, page = payload['volume'], payload['scan_page']
@@ -422,7 +453,17 @@ def render_pilot_tei(payload, image_width, image_height, heading_overlay=None):
     _sub(bibl,'idno',payload['source_pdf_sha256_claimed_by_manifest'],{'type':'PDF-SHA256-claim'})
     _sub(bibl,'idno',payload['source_image_sha256'],{'type':'Image-SHA256-claim'})
     enc=_sub(header,'encodingDesc')
-    _sub(enc,'p','Physical line transcription retains original code points and line endings; page geometry is estimated; printed page labels are image observations. No OCR-based corrections or manuscript variants. Unverified first reading only.')
+    if payload['schema_version'] == 'single-exposed-draft-v1':
+        exposure = draft['external_text_exposure']
+        _sub(enc, 'p', (
+            'Single-context, agent_unverified NONBLIND first working reading. '
+            'Before freeze, third-party OCR for this page had been visible in the same '
+            'conversation; input exposure: ' + exposure['kind'] + '; ' +
+            exposure['timing'] + '; ' + exposure['url'] + '. ' + exposure['note'] +
+            ' Exact physical line reconstruction and valid XML do not verify printed glyphs.'
+        ))
+    else:
+        _sub(enc,'p','Physical line transcription retains original code points and line endings; page geometry is estimated; printed page labels are image observations. No OCR-based corrections or manuscript variants. Unverified first reading only.')
     rev=_sub(header,'revisionDesc')
     _sub(rev,'change','One-context working draft created; no independent second reading.',{'when':'2026-11-11'})
     facs=_sub(root,'facsimile')
