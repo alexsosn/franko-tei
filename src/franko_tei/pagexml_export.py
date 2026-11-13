@@ -51,7 +51,7 @@ def _number(value, name):
 
 
 def _bounds(box, width, height, name):
-    if not isinstance(box, list) or len(box) != 4:
+    if not isinstance(box, (list, tuple)) or len(box) != 4:
         raise ValueError(f"{name}: invalid bbox_xywh")
     x, y, w, h = [_number(v, name) for v in box]
     if x < 0 or y < 0 or w <= 0 or h <= 0 or x + w > width or y + h > height:
@@ -159,6 +159,11 @@ def _validated_payload(data, images_root):
     volume, scan = data.get("volume"), data.get("scan_page")
     if volume not in {"1", "2", "3", "4", "5"} or type(scan) is not int:
         raise ValueError("invalid candidate volume or scan index")
+    expected_prefix = f"vol{volume}/page-{scan:05d}."
+    path_claim = data.get("source_image_path")
+    if (not isinstance(path_claim, str) or not path_claim.startswith(expected_prefix)
+            or not path_claim.endswith((".jpg", ".png"))):
+        raise ValueError("candidate image path/volume mismatch")
     manifest = _read_manifest(images_root, volume)
     if scan < 1 or scan > manifest["page_count"]:
         raise ValueError("candidate scan page outside manifest")
