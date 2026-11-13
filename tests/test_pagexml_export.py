@@ -178,6 +178,13 @@ class PageXmlExportTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             export_candidate(self.candidate, self.images, self.output)
 
+    def test_windows_style_original_candidate_path_is_accepted_but_exported_portably(self):
+        payload = copy.deepcopy(self.payload)
+        payload["source_image_path"] = "vol2" + chr(92) + "page-00001.jpg"
+        root = self.get_xml(payload)
+        self.assertEqual(root.find("{" + PAGE_NS + "}Page").get("imageFilename"),
+                         "vol2/page-00001.jpg")
+
     def test_blank_scan_has_no_fabricated_reading_order(self):
         payload = copy.deepcopy(self.payload)
         payload["lines"] = []
