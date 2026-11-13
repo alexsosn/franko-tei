@@ -90,7 +90,16 @@ jobs:
           schema.assertValid(layout)
           assert layout.find(".//p:Baseline", ns) is not None
           assert layout.find(".//p:TextEquiv", ns) is None
-          print("Official 2019 PAGE XSD valid: real IV/100 candidate and synthetic Kraken geometry.")
+
+          # The PAGE schema requires nonempty OrderedGroup; blank pages omit it.
+          blank = dict(candidate)
+          blank.update(lines=[], text="")
+          Path("synthetic-blank.json").write_text(json.dumps(blank))
+          export_candidate("synthetic-blank.json", "real-images", "synthetic-blank.page.xml")
+          blank_page = etree.parse("synthetic-blank.page.xml")
+          schema.assertValid(blank_page)
+          assert blank_page.find(".//p:ReadingOrder", ns) is None
+          print("Official 2019 PAGE XSD valid: real IV/100, synthetic Kraken and blank page.")
           print("Real image SHA256:", sha256(img.read_bytes()).hexdigest())
           print("Unverified OCR words:", len(words))
           PY
