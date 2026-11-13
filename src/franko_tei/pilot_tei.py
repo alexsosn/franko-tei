@@ -52,6 +52,9 @@ def _valid_xml_text(text):
 
 def _validate_exposure(payload, reading):
     """Reject suppressed prior-OCR exposure, also for direct renderer callers."""
+    if (not isinstance(reading, dict) or
+            reading.get('context_independence') != 'single-working-draft'):
+        raise ValueError('a single exposed draft cannot claim independent readers')
     if payload.get('schema_version') not in {'single-image-draft-v0','single-exposed-draft-v1'}:
         raise ValueError('unsupported source provenance schema')
     if payload['schema_version'] == 'single-image-draft-v0':
