@@ -1,0 +1,111 @@
+name: PAGE XML schema and real-image OCR smoke (unverified)
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/pagexml_export.py
+      - tests/test_pagexml_export.py
+      - pyproject.toml
+      - .github/workflows/pagexml-real-smoke.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pagexml-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Tesseract and XML schema validator
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-ukr tesseract-ocr-rus
+          python -m pip install -e .
+          python -m pip install 'lxml>=5,<7'
+      - name: Download one pinned real page and canonical 2019 PAGE schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          ASSET_SHA=e871f32537e81f81896f6ce9a6658aba667db9c5
+          mkdir -p real-images/vol4
+          base="https://raw.githubusercontent.com/alexsosn/franko-tei/$ASSET_SHA/images/vol4"
+          curl --fail --location --retry 3 --silent --show-error "$base/manifest.json" -o real-images/vol4/manifest.json
+          curl --fail --location --retry 3 --silent --show-error "$base/page-00100.jpg" -o real-images/vol4/page-00100.jpg
+          curl --fail --location --retry 3 --silent --show-error \
+            https://www.primaresearch.org/schema/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd \
+            -o pagecontent.xsd
+      - name: Real IV/100 Tesseract candidate into PAGE (not verified OCR)
+        run: |
+          franko-ocr-candidates --images real-images --volume 4 --pages 100 \
+            --profiles cyrillic --output ocr-candidates
+          franko-pagexml --images real-images \
+            --input ocr-candidates/vol4-page-00100-cyrillic-psm3.json \
+            --output real-iv100.page.xml
+      - name: Validate real OCR PAGE and synthetic Kraken PAGE with official XSD
+        run: |
+          python - <<'PY'
+          from hashlib import sha256
+          import json
+          from pathlib import Path
+          from lxml import etree
+          from franko_tei.pagexml_export import export_candidate, PAGE_NS
+          from franko_tei.ocr_candidates import _get_page_image, _read_manifest
+
+          schema = etree.XMLSchema(etree.parse("pagecontent.xsd"))
+          candidate_path = Path("ocr-candidates/vol4-page-00100-cyrillic-psm3.json")
+          candidate = json.loads(candidate_path.read_text())
+          page = etree.parse("real-iv100.page.xml")
+          schema.assertValid(page)
+          ns = {"p": PAGE_NS}
+          lines = page.findall(".//p:TextLine", ns)
+          words = page.findall(".//p:Word", ns)
+          assert candidate["status"] == "ocr_unchecked"
+          assert len(lines) == len(candidate["lines"])
+          assert len(words) == sum(len(line["words"]) for line in candidate["lines"])
+          assert [w.findtext("p:TextEquiv/p:Unicode", namespaces=ns) for w in words] == [
+              w["text"] for line in candidate["lines"] for w in line["words"]
+          ]
+          assert "UNVERIFIED" in page.findtext(".//p:Metadata/p:Comments", namespaces=ns)
+          manifest = _read_manifest(Path("real-images"), "4")
+          img, actual_hash = _get_page_image(Path("real-images"), "4", manifest["pages"][99])
+          assert actual_hash == candidate["source_image_sha256"]
+
+          # Second independent adapter input; only synthetic geometry, not text.
+          line = candidate["lines"][0]
+          x, y, w, h = line["bbox_xywh"]
+          kraken = dict(candidate)
+          kraken.update(engine="kraken", status="segmentation_unchecked")
+          kraken["lines"] = [{
+              "candidate_line_id": "synthetic-kraken-geometry",
+              "bbox_xywh": [x, y, w, h],
+              "boundary": [[x,y], [x+w,y], [x+w,y+h], [x,y+h]],
+              "baseline": [[x,y+h], [x+w,y+h]],
+              "region_ids": [],
+          }]
+          Path("synthetic-layout.json").write_text(json.dumps(kraken))
+          export_candidate("synthetic-layout.json", "real-images", "synthetic-layout.page.xml")
+          layout = etree.parse("synthetic-layout.page.xml")
+          schema.assertValid(layout)
+          assert layout.find(".//p:Baseline", ns) is not None
+          assert layout.find(".//p:TextEquiv", ns) is None
+
+          # The PAGE schema requires nonempty OrderedGroup; blank pages omit it.
+          blank = dict(candidate)
+          blank.update(lines=[], text="")
+          Path("synthetic-blank.json").write_text(json.dumps(blank))
+          export_candidate("synthetic-blank.json", "real-images", "synthetic-blank.page.xml")
+          blank_page = etree.parse("synthetic-blank.page.xml")
+          schema.assertValid(blank_page)
+          assert blank_page.find(".//p:ReadingOrder", ns) is None
+          print("Official 2019 PAGE XSD valid: real IV/100, synthetic Kraken and blank page.")
+          print("Real image SHA256:", sha256(img.read_bytes()).hexdigest())
+          print("Unverified OCR words:", len(words))
+          PY
+      - name: Upload derived XML only (never source images)
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-pagexml-unverified-smoke
+          path: real-iv100.page.xml
+          retention-days: 7
