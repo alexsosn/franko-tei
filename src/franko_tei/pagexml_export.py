@@ -213,8 +213,12 @@ def _build_xml(payload, image_path, image_sha):
         "imageFilename": image_path, "imageWidth": str(width),
         "imageHeight": str(height),
     })
-    order = _element(page, "ReadingOrder")
-    group = _element(order, "OrderedGroup", {"id": "candidate_order"})
+    # PAGE OrderedGroup requires at least one referenced region.
+    # A scan with no detected lines has no reliable order to record.
+    group = None
+    if lines:
+        order = _element(page, "ReadingOrder")
+        group = _element(order, "OrderedGroup", {"id": "candidate_order"})
     seen = set()
     for i, line in enumerate(lines, 1):
         if not isinstance(line, dict):
