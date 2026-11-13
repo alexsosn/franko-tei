@@ -9,7 +9,7 @@ from hashlib import sha256
 import json
 import math
 import os
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import tempfile
 import xml.etree.ElementTree as ET
 
@@ -159,9 +159,11 @@ def _validated_payload(data, images_root):
     volume, scan = data.get("volume"), data.get("scan_page")
     if volume not in {"1", "2", "3", "4", "5"} or type(scan) is not int:
         raise ValueError("invalid candidate volume or scan index")
-    expected_prefix = f"vol{volume}/page-{scan:05d}."
+    expected_prefixes = (f"vol{volume}/page-{scan:05d}.",
+                         f"vol{volume}" + chr(92) + f"page-{scan:05d}.")
     path_claim = data.get("source_image_path")
-    if (not isinstance(path_claim, str) or not path_claim.startswith(expected_prefix)
+    if (not isinstance(path_claim, str)
+            or not path_claim.startswith(expected_prefixes)
             or not path_claim.endswith((".jpg", ".png"))):
         raise ValueError("candidate image path/volume mismatch")
     manifest = _read_manifest(images_root, volume)
@@ -173,7 +175,8 @@ def _validated_payload(data, images_root):
     image, digest = _get_page_image(images_root, volume, entry)
     if data.get("source_image_sha256") != digest:
         raise ValueError("candidate image checksum mismatch")
-    if data.get("source_image_path") != image.relative_to(images_root).as_posix():
+    relative = image.relative_to(images_root).as_posix()
+    if data.get("source_image_path") not in {relative, str(PureWindowsPath(relative))}:
         raise ValueError("candidate image path mismatch")
     if data.get("source_pdf_sha256_claimed_by_manifest") != manifest["source_sha256"]:
         raise ValueError("candidate PDF checksum claim mismatch")
