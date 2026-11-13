@@ -92,6 +92,10 @@ class SourceProvenanceContract(unittest.TestCase):
             with self.subTest(changed=bad.get("schema_version"),
                               reading=bad["reading"].get("peer_readings_visible")),self.assertRaises(ValueError):
                 validate_single_draft(bad,self.images)
+            # Direct calls to the renderer must also reject forged provenance;
+            # CLI normally validates first, but library users may call it directly.
+            with self.assertRaises(ValueError):
+                render_pilot_tei(bad,1190,1699)
 
     def test_image_first_schema_remains_strict(self):
         first=copy.deepcopy(self.d)
