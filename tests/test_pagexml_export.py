@@ -127,7 +127,7 @@ class PageXmlExportTests(unittest.TestCase):
             ("bbox", [-1, 20, 30, 15]),
             ("bbox", [10, 20, 999, 15]),
             ("bbox", [10, 20, 0, 15]),
-            ("text", "bad\\x01control"),
+            ("text", "bad" + chr(1) + "control"),
             ("confidence", float("nan")),
             ("confidence", 200),
         ]:
