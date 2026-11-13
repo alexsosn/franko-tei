@@ -1,7 +1,6 @@
 """Smoke checks for GitHub's root citation metadata (stdlib only)."""
 
 from pathlib import Path
-import re
 import unittest
 
 
