@@ -22,7 +22,7 @@ Franko’s printed transcriptions and comments must be distinguished from the ol
 
 - [Provisional pilot transcriptions](pilot/) and [ongoing image-first readings](https://github.com/alexsosn/franko-tei/pull/30) — research drafts, **not verified text**.
 - [Open work and research questions](https://github.com/alexsosn/franko-tei/issues).
-- [Transcription principles](docs/transcription.md) and [developer guidance](AGENTS.md).
+- [Transcription principles](docs/transcription.md), [experimental PAGE XML OCR export](docs/pagexml.md), and [developer guidance](AGENTS.md).
 
 ## Rights
 
