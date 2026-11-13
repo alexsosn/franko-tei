@@ -1,0 +1,375 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 53,
+  "printed_page_observed": "XLIV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "b60f7d09474049eec74184ba795aa123e9e12d5141a0598a38a52102c4ace5b0",
+  "frozen_first_reading": "pilot/vol1_scan00053_single_reading.json",
+  "review_method": "Reopened and inspected pinned original Franko I/53 1190x1798 native JPEG AFTER the complete direct image-only initial reading was frozen at 473d2563. Logically independent adversarial goal: find missing printed characters, incorrect old ѣ/ъ/і/ї, bibliographic false modernizations, source line wrapping and wrong historical dates. The original embedded PDF OCR and any other I/53 transcription were NOT accessed; the OCR exposure from the prior page I/52 does not constitute an I/53 peer reading. Same GPT-6/conversation context so this is NOT a second blind full reader, nor a third glyph adjudicator.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-01",
+      "frozen_substring": "Китоврасъ",
+      "proposed_substring": "Китоврасѣ",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Original printed biblical name may be ъ vs ѣ and source final sign; printed title should not be normalized."
+    },
+    {
+      "line_id": "main-line-03",
+      "frozen_substring": "плѣненіи",
+      "proposed_substring": "плѣненіѣ",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Printed old-Cyrillic Jerusalem title has doubled historical vowel letters and uncertain source diacritics."
+    },
+    {
+      "line_id": "main-line-04",
+      "frozen_substring": "Еввинѣ",
+      "proposed_substring": "Еввинь",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Eve's genitive in old printed Cyrillic, source final letter hard to distinguish."
+    },
+    {
+      "line_id": "main-line-06",
+      "frozen_substring": "Мефодия",
+      "proposed_substring": "Методия",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "First-reader source deliberately preserved printed ф rather than normalized т, but exact glyph should be checked."
+    },
+    {
+      "line_id": "main-line-07",
+      "frozen_substring": "Патарського",
+      "proposed_substring": "Патарьского",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Surname adjectival historical spelling could have visible ь; source image required."
+    },
+    {
+      "line_id": "main-line-11",
+      "frozen_substring": "сумнїв-",
+      "proposed_substring": "сумнів-",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Historical ї vs і diacritic and physical line hyphen not yet independently adjudicated."
+    },
+    {
+      "line_id": "main-line-12",
+      "frozen_substring": "иньших",
+      "proposed_substring": "іньших",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Historical word initial Cyrillic и/і distinction in Franko's narrative."
+    },
+    {
+      "line_id": "main-line-15",
+      "frozen_substring": "здаєть",
+      "proposed_substring": "здається",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "First draft correctly preserves split reflexive 'здаєть' + next-line 'ся'; OCR could wrongly normalize within one line."
+    },
+    {
+      "line_id": "main-line-19",
+      "frozen_substring": "вповнї",
+      "proposed_substring": "вповні",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Dotted source historical Ukrainian vowel uncertain in source print."
+    },
+    {
+      "line_id": "main-line-23",
+      "frozen_substring": "предложив",
+      "proposed_substring": "предложивъ",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Franko's source printed verb could be confused with a Russian archaic form; don't substitute."
+    },
+    {
+      "line_id": "main-line-25",
+      "frozen_substring": "Академія",
+      "proposed_substring": "Академия",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Print alternation between Ukrainian і and historic Russian и needs actual glyph check."
+    },
+    {
+      "line_id": "main-line-28",
+      "frozen_substring": "Сборника",
+      "proposed_substring": "Сборникa",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Latin a contamination risk in Russian quotation due typeface; source must stay Cyrillic."
+    },
+    {
+      "line_id": "main-line-31",
+      "frozen_substring": "Повѣсти о плѣ-",
+      "proposed_substring": "Повѣсти о пле-",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Two historical yats, title and hyphen are source hypotheses."
+    },
+    {
+      "line_id": "main-line-32",
+      "frozen_substring": "Іерусалима",
+      "proposed_substring": "Иерусалима",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Source printed decimal І vs Cyrillic И near Jerusalem name."
+    },
+    {
+      "line_id": "main-line-33",
+      "frozen_substring": "Видѣнія Исаіи",
+      "proposed_substring": "Видѣнія Исаии",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Printed Isaiah title has historical i/dot distinctions."
+    },
+    {
+      "line_id": "main-line-34",
+      "frozen_substring": "о послѣднемъ вѣкѣ",
+      "proposed_substring": "о последнемъ веке",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Old Russian source letters and terminal hard signs must not be modernized."
+    },
+    {
+      "line_id": "main-line-36",
+      "frozen_substring": "Описанїи рукописей",
+      "proposed_substring": "Описаніи рукописей",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Mixed Ukrainian/Russian book title printed dotted vowel letter needs adjudication."
+    },
+    {
+      "line_id": "main-line-41",
+      "frozen_substring": "ветхозавѣтныхъ апокрифовъ",
+      "proposed_substring": "ветхозавѣтныхъ апокрифовь",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_original_native_jpeg_challenge",
+      "source_reason": "Bibliographic Russian title, old hard-sign/soft-sign distinctions in final source physical line."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "10) Соломонъ и Китоврасъ.",
+      "reason": "Old printed biblical name Китоврасъ, source ъ and quote shape unverified."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "11) Суды царя Соломона.",
+      "reason": "Historical Cyrillic plural Суды; no modernizing to Судѣ."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "12) Повѣсть о плѣненіи Іерусалима.",
+      "reason": "Old ѣ, е/і in printed Jerusalem title; possible titlo omitted."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "13) Слово о исповѣданіи Еввинѣ и о болѣзни Адамовѣ",
+      "reason": "Old Eve name and И/І, repeated yat; list title palaeography risk."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "14) Слово о древѣ крестномъ.",
+      "reason": "Old крестномъ final sign, historical Cyrillic title."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "Надто з текстів другого тому сюди відносить ся сло",
+      "reason": "Source Methodius name Мефодия with unusual ф rather than modern т, exact spelling to verify."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "Патарського, напечатане тут в цїлости аж у чотирьо",
+      "reason": "Historical Ukrainian цїлости and title punctuation, print-level full line."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "Супроти виданя Пипіна збірка Тихонравова значить в",
+      "reason": "Franko's exact comparative judgement, historical dots in Тихонравова/Pipin."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "поступ. Тихонравов підготовляв своє виданє далеко ",
+      "reason": "Image-first complete source row; exact historical 19th-century Cyrillic grapheme/diacritics, punctuation and line break have not yet been independently adjudicated."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "вибирав для друку по змозї найстарші і найлїпше за",
+      "reason": "Original printed comparative 'найстарші' with historical vowel variants."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "силкував ся в друку віддати текст як найдокладнїйш",
+      "reason": "Body hyphen at end of сумнїв- is source physical split."
+    },
+    {
+      "line_id": "main-line-12",
+      "reading": "них місцях подавав варіянти иньших списків або сво",
+      "reason": "Image-first complete source row; exact historical 19th-century Cyrillic grapheme/diacritics, punctuation and line break have not yet been independently adjudicated."
+    },
+    {
+      "line_id": "main-line-13",
+      "reading": "уваги. Хибою його можна вважати хіба те, що зовсїм",
+      "reason": "Historical Ukrainian зовсїм and source verb узгляднює."
+    },
+    {
+      "line_id": "main-line-14",
+      "reading": "збірки Пипіна і передруковує деякі тексти, що вже ",
+      "reason": "Physical ending по- is printed line-end word split."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "міщені, та й ся хиба вияснює ся тим, що збірка Тих",
+      "reason": "Middle of sentence, likely old Ukrainian ѣ and punctuation errors."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "ся, приготована і видрукована була ще перед 1862 р",
+      "reason": "1862 citation, punctuation and original spelling відрукована."
+    },
+    {
+      "line_id": "main-line-17",
+      "reading": "автор своїм звичаєм не випускав її в сьвіт, так що",
+      "reason": "Print word-end випере- and historical 'сьвіт' require visual verification."
+    },
+    {
+      "line_id": "main-line-18",
+      "reading": "див його своєю, більше прихапцем зладженою збіркою",
+      "reason": "Image-first complete source row; exact historical 19th-century Cyrillic grapheme/diacritics, punctuation and line break have not yet been independently adjudicated."
+    },
+    {
+      "line_id": "main-line-19",
+      "reading": "разї збірка Тихонравова була першою пробою сістема",
+      "reason": "Historical Ukrainian вповнї in first publisher assessment."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "науково зладженого виданя словянських апокріфів. Щ",
+      "reason": "First attempt was incomplete, source spelling and phrasing at exact line boundary."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "не могла зараз бути повною, розумієть ся само собо",
+      "reason": "Name split Тихо- at line end."
+    },
+    {
+      "line_id": "main-line-22",
+      "reading": "нравов чув се і зараз по виданю своєї збірки почав",
+      "reason": "Image-first complete source row; exact historical 19th-century Cyrillic grapheme/diacritics, punctuation and line break have not yet been independently adjudicated."
+    },
+    {
+      "line_id": "main-line-23",
+      "reading": "доповненє і ось уже в 1868 роцї він предложив пете",
+      "reason": "1868 date and Академії name split Ака- at physical line end."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "демії Наук нову збірку текстів, що мала становити ",
+      "reason": "Pa- at line end and date source uncertain."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "мятників. Академія почала друкувати сей том і до 1",
+      "reason": "Printed 'мятників' continuation likely archaic term."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "надруковано 6 листів, та Тихонравов чомусь закинув",
+      "reason": "Printed 1872 and date 6 арк, line-end 'дру-'."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "кованє, зажадав звороту свойого рукопису і ті 6 ли",
+      "reason": "Image-first complete source row; exact historical 19th-century Cyrillic grapheme/diacritics, punctuation and line break have not yet been independently adjudicated."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "сьвіт божий тільки по його смерти, в 1894 р. в 58 ",
+      "reason": "1894 / tom 58 reference, historical Ukrainian сьвіт."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "отд. русск. языка и словесности“, видаваного Акаде",
+      "reason": "Cyrillic Russian bibliographical abbreviation punctuation and quote marks."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "Видруковано там ще два варіянти „Смерти Авраама“, ",
+      "reason": "Printed quotation 'Смерти Авраама' and sentence line break."
+    },
+    {
+      "line_id": "main-line-31",
+      "reading": "копису XIII., а другий із XVII. в., новий варіянт ",
+      "reason": "Roman XIII/XVII and quote 'Повѣсти о плѣ-' historic yat; check exact literal dots."
+    },
+    {
+      "line_id": "main-line-32",
+      "reading": "неніи Іерусалима“ з рукопису XII в., „Вопросы Іоан",
+      "reason": "Title Jerusalem 'Іерусалима' and 'Вопросы Іоанна Богослова' with archaic i."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "Аврааму о праведныхъ душахъ“, сербський переклад „",
+      "reason": "Russian names and Serbian translation syntax, source letterforms."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "о послѣднемъ вѣкѣ“ і старий переклад того самого а",
+      "reason": "Russian apocryphal title 'о послѣднемъ вѣкѣ' with yat and hard signs."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "копису XII в. (той сам текст був тимчасом надруков",
+      "reason": "Reference A. Н. Попов and XII ms, source split 'По-'."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "повим у його „Описанїи рукописей библиотеки А. И. ",
+      "reason": "Russian bibliographical 'Описанїи' and Khudov title, title quote placement."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "і вкінцї „Откровеніе Варуха“.",
+      "reason": "Quoted 'Откровеніе Варуха' punctuation and Ukrainian ending."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "В усякім разї збірка Тихонравова дала товчок до но",
+      "reason": "Third paragraph starts thematic argument; original vowel in Тихонравова."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "над дослїдами старого словянського і спеціально ру",
+      "reason": "Original 'дослїдами' and line-end пись-, check source ѣ/ї."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "менства. На її підставі написана була в р. 1864 ст",
+      "reason": "Printed 1864 Лавровського year and exact historical source spelling."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "„Обозрѣніе ветхозавѣтныхъ апокрифовъ“ (Духовный Вѣ",
+      "reason": "Final source line ends 'томъ' and is continued on I/54; old Russian ѣ/ъ and title exact glyphs."
+    }
+  ],
+  "reviewed_properties": {
+    "physical_page": "One Roman XLIV folio, exactly 41 original body rows: five single-line Tikhonravov printed list titles 10–14, two Methodius rows, 30 lines evaluating Tikhonravov/Pypin and subsequent Academy partial publication, four Lavrovsky paragraph lines. Source last row ends 'томъ', not the complete reference.",
+    "printed_historical_type": "Archaic Russian titles including Иерусалима, Повѣсти, Откровеніе, библиographic Вѣстникъ require independent per-character validation; not a copied ancient manuscript source.",
+    "line_boundaries": "Printed source word-end hyphens at сумнїв-, по-, Тихо-, Ака-, Па-, дру-, ру-, плѣ-, ру-, По-, пись- are preserved in original candidate; review must not join these physical lines.",
+    "provenance": "Strict existing image-only schema v0 and source flags false remain, independent of I/52 exposed v1. No original or third-party I/53 OCR was read before original first response freeze.",
+    "immutable_text": "Do not change initial raw_response based on these 18 possibilities. Keep alternatives as unresolved editorial challenges only."
+  },
+  "disposition": "Structurally acceptable source-first agent_unverified pilot after actual native JPEG→TEI and ordinary CI succeed. Independent blind full-page image readers plus third adjudication remain required for research-grade TEI/Text-Fabric release."
+}
