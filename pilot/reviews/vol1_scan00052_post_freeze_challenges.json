@@ -1,0 +1,301 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 52,
+  "printed_page_observed": "XLIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "57bc7f36ef25d7a885ac699d8a77784fdc5924a78c6cd67ba65ac61c0938aca2",
+  "frozen_first_reading": "pilot/vol1_scan00052_exposed_reading.json",
+  "review_method": "Logically separate failure-hunting inspection of actual original native I/52 JPEG after the complete 41-row working reader was frozen at 1b3cb802. Explicit source condition: prior third-party OCR was exposed in SAME context during I/51 review, so this is not an independent image-only first read. The original embedded OCR was not accessed; a later attempt to fetch it by repository path returned 404. Re-evaluated physical row segmentation, two numbered catalogues, old Cyrillic glyphs, French/Russian/Ukrainian bibliographic spellings, source image hash and the versioned nonblind provenance gate. Only compare alternative glyph hypotheses without rewriting raw_response.",
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "corrections": [
+    {
+      "line_id": "main-line-01",
+      "frozen_substring": "Ѧдаріанѣ",
+      "proposed_substring": "Ѧдарїанѣ",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "The very first archaic name has one- vs two-dot vowel at native image size; written i may be oversimplified."
+    },
+    {
+      "line_id": "main-line-02",
+      "frozen_substring": "третей притчѣ",
+      "proposed_substring": "третьей притчѣ",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Old Cyrillic soft sign and historic ending are not safely resolved by morphology."
+    },
+    {
+      "line_id": "main-line-03",
+      "frozen_substring": "съдима двѣ мужей",
+      "proposed_substring": "съдима двѣхъ мужей",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "The unusual old Slavic courtroom phrase may have a lost consonant/hard sign. Do not replace from expected syntax."
+    },
+    {
+      "line_id": "main-line-05",
+      "frozen_substring": "о Южской",
+      "proposed_substring": "о Южьской",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "The Southern Queen title contains a compact consonant cluster, a plausible missed ь."
+    },
+    {
+      "line_id": "main-line-09",
+      "frozen_substring": "о цари Соломонѣ",
+      "proposed_substring": "о цари Соломоннѣ",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Source item 24 letterspacing and double н near the name are uncertain."
+    },
+    {
+      "line_id": "main-line-10",
+      "frozen_substring": "Епифанія",
+      "proposed_substring": "Епифанїя",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Saint-name source characters and diacritic are uncertain in first reading."
+    },
+    {
+      "line_id": "main-line-11",
+      "frozen_substring": "Збірка сеся",
+      "proposed_substring": "Збірка сеся,",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Punctuation at start of the evaluation may have been guessed; the first version contains a comma later, not after this phrase."
+    },
+    {
+      "line_id": "main-line-14",
+      "frozen_substring": "сістематичний",
+      "proposed_substring": "систематичний",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Printed historical orthography versus modern Ukrainian vowel, OCR exposure could bias reading."
+    },
+    {
+      "line_id": "main-line-15",
+      "frozen_substring": "особенности списків",
+      "proposed_substring": "особливости списків",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Mixed Ukrainian and Russian in Franko prose; image tiny type makes reconstructive substitution possible."
+    },
+    {
+      "line_id": "main-line-16",
+      "frozen_substring": "лицї на гражданку",
+      "proposed_substring": "лиці на гражданку",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Need separate dots count and typeface inspection, especially at line start after кири-."
+    },
+    {
+      "line_id": "main-line-20",
+      "frozen_substring": "Буслаєв",
+      "proposed_substring": "Буслаев",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Source orthographic diphthong may be represented by Cyrillic є/е; verify against print."
+    },
+    {
+      "line_id": "main-line-23",
+      "frozen_substring": "Індекс книг ложних",
+      "proposed_substring": "Индекс книг ложных",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Historical mixed-language title; source-specific printed orthography requires independent reading."
+    },
+    {
+      "line_id": "main-line-28",
+      "frozen_substring": "Т и х о н р а в о в ъ",
+      "proposed_substring": "Тихонравовъ",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Original typographic letterspacing must remain physical; hypothetical alternative only for record, do not flatten."
+    },
+    {
+      "line_id": "main-line-30",
+      "frozen_substring": "Отреченныя книги древней Россіи",
+      "proposed_substring": "Отреченныя книги древней Россіи.",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "Period/quote punctuation near title may differ at original raster size."
+    },
+    {
+      "line_id": "main-line-39",
+      "frozen_substring": "Лїствицю",
+      "proposed_substring": "Ліствицю",
+      "disposition": "unresolved_competing_glyphs",
+      "evidence_kind": "postfreeze_native_visual_challenge",
+      "source_reason": "The dotted historical Ukrainian vowel needs independent glyph reading."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "main-line-01",
+      "reading": "19) О царь Ѧдаріанѣ.",
+      "reason": "19: rare old Cyrillic personal name printed with probable Ѧ and historic dotted letters, exact superscript/titlo may be omitted."
+    },
+    {
+      "line_id": "main-line-02",
+      "reading": "20) О третей притчѣ царя Соломона и о премудрости его",
+      "reason": "20: 'третей притчѣ' rare title with historical ѣ and original line break; do not replace using linguistic prior."
+    },
+    {
+      "line_id": "main-line-03",
+      "reading": "и каковы бысть съдъ отца его Давыда, съдима двѣ мужей.",
+      "reason": "20 continuation: original archaic judicial phrase 'съдъ... съдима двѣ мужей' extremely high risk."
+    },
+    {
+      "line_id": "main-line-04",
+      "reading": "21) Притча царя Соломона о царѣ Китоврасѣ.",
+      "reason": "21: original Solomon/Kitorvas title, uncommon original archaic inflection."
+    },
+    {
+      "line_id": "main-line-05",
+      "reading": "22) Сказаніе о премудрости царя Соломона и о Южской",
+      "reason": "22: printed old-Cyrillic spelling of southern queen and title ambiguity."
+    },
+    {
+      "line_id": "main-line-06",
+      "reading": "царицѣ и о философѣхъ.",
+      "reason": "22 continuation: uncommon cyrillic -цѣ and философѣхъ forms not verified."
+    },
+    {
+      "line_id": "main-line-07",
+      "reading": "23) Повѣсть царя Давыда и сына его Соломона и о ихъ",
+      "reason": "23: unusual 'Повѣсть' and source names/case, script form needs blind image check."
+    },
+    {
+      "line_id": "main-line-08",
+      "reading": "премудрости.",
+      "reason": "23 continuation archaic Cyrillic, line wrap and diacritics."
+    },
+    {
+      "line_id": "main-line-09",
+      "reading": "24) Повѣсть дивна о цари Соломонѣ.",
+      "reason": "24: 'о цари Соломонѣ' printed odd historical spelling, do not emend."
+    },
+    {
+      "line_id": "main-line-10",
+      "reading": "25) О пророкѣ Іереміи, изъ Епифанія о св. пророкахъ.",
+      "reason": "25: Old Church Slavonic biblical name/abbreviation may include titla, printed glyph uncertainties."
+    },
+    {
+      "line_id": "main-line-11",
+      "reading": "Збірка сеся, замітна особливо богатством Соломонівських",
+      "reason": "Body: Franко word 'сеся' and alternate source 'сеса' require original image glyph review."
+    },
+    {
+      "line_id": "main-line-15",
+      "reading": "усї особенности списків, навіть транскрібував усї текст",
+      "reason": "Body: 'особенности' Russian word inside Ukrainian prose, source spelling may be uncertain."
+    },
+    {
+      "line_id": "main-line-16",
+      "reading": "лицї на гражданку. Одним словом, тексти його мають вигл",
+      "reason": "Body: line split кирили- / лицї source physical boundary and ѣ/ї uncertain."
+    },
+    {
+      "line_id": "main-line-20",
+      "reading": "Ще перед тим, 1856 р. проф. Буслаєв у першім томі своєї",
+      "reason": "Buslaev paragraph original ї/є and period date typography uncertain."
+    },
+    {
+      "line_id": "main-line-21",
+      "reading": "книги „Историческіе очерки русской народной поэзіи“ сто",
+      "reason": "Russian title 'Историческіе очерки русской народной поэзіи' may contain historic Cyrillic non-modern spelling."
+    },
+    {
+      "line_id": "main-line-24",
+      "reading": "Соловецького рукопису XVII в. А в 1862 той же Буслаєв н",
+      "reason": "Bibliographical XVII + Russian manuscript claim needs checking source punctuation."
+    },
+    {
+      "line_id": "main-line-25",
+      "reading": "у Тихонравовськім журналі „Лѣтописи русской литературы“",
+      "reason": "Russian book name Лѣтописи and source historic yat, bibliographical ending."
+    },
+    {
+      "line_id": "main-line-26",
+      "reading": "оповіданє про Соломона з рукоп. XVIII в. (Лѣтописи IV, ",
+      "reason": "Printed citation Лѣтописи IV: punctuation, x numerals and end reference need verification."
+    },
+    {
+      "line_id": "main-line-27",
+      "reading": "В р. 1863 вийшло в світ знамените виданє апокріфів, док",
+      "reason": "Bibliography transition: line end 'доко-' physical source hyphen."
+    },
+    {
+      "line_id": "main-line-28",
+      "reading": "нане проф. Тихонравовим (Н. С. Т и х о н р а в о в ъ, П",
+      "reason": "Tikhonravov surname printed in letterspacing, sources script/spacing important."
+    },
+    {
+      "line_id": "main-line-29",
+      "reading": "ченной русской литературы, т. I—II). Мала се бути прило",
+      "reason": "Printed I—II roman bibliography and title, punctuation original OCR confusion."
+    },
+    {
+      "line_id": "main-line-30",
+      "reading": "праці „Отреченныя книги древней Россіи“, та праці сеї Т",
+      "reason": "Old Russian 'Отреченныя ... Россіи' and Ukrainian main text source orthography."
+    },
+    {
+      "line_id": "main-line-33",
+      "reading": "1) Три тексти оповідань про Адама.",
+      "reason": "First item 1 punctuation, numeral source glyphs."
+    },
+    {
+      "line_id": "main-line-34",
+      "reading": "2) Два відривки із книги Еноха.",
+      "reason": "Item 2 word Еноха source spelling and list space."
+    },
+    {
+      "line_id": "main-line-35",
+      "reading": "3) Оповіданє (маленьке) про Ламеха.",
+      "reason": "Item 3 Lambed/Lamech title, parentheses possible printing variants."
+    },
+    {
+      "line_id": "main-line-36",
+      "reading": "4) Два тексти оповідань про Мелхіседека.",
+      "reason": "Item 4 rare Melchizedek printed spelling, source ґ/г no automatic correction."
+    },
+    {
+      "line_id": "main-line-37",
+      "reading": "5) Два варіянти апокріфа „Откровеніе Авраама“.",
+      "reason": "Item 5 Russian title 'Откровеніе Авраама' quote and historic ending need visual adjudication."
+    },
+    {
+      "line_id": "main-line-38",
+      "reading": "6) Смерть Авраама.",
+      "reason": "Item 6 clipped source print punctuation and spellings."
+    },
+    {
+      "line_id": "main-line-39",
+      "reading": "7) Лїствицю.",
+      "reason": "Item 7 ladder title has printed historical ї and hard-to-read first letter."
+    },
+    {
+      "line_id": "main-line-40",
+      "reading": "8) Дві редакції Заповітів 12-ти патріярхів.",
+      "reason": "Item 8 12-ти and endings, original numeral punctuation."
+    },
+    {
+      "line_id": "main-line-41",
+      "reading": "9) Исходъ Моисеевъ.",
+      "reason": "Item 9 original Russian 'Исходъ Моисеевъ' and final hard sign require independent glyph review."
+    }
+  ],
+  "reviewed_properties": {
+    "provenance": "New source schema requires third_party_ocr URL, explicit before_first_reading exposure, peer_readings_visible true, agent_unverified status and unchanged single-working-draft independence. Old image-only schema must continue to reject peer exposure.",
+    "physical_structure": "Roman XLIII at top right, seven Kushelev old Cyrillic titles numbered 19–25 in 10 real printed rows, 22 prose rows across three Franko paragraphs (9+7+6), nine Tikhonravov list entries 1–9, total 41 body rows plus Roman folio. Word-end printing hyphens retained.",
+    "no_manuscript_claim": "The source JPEG is Franko's printed edition discussing Pypin/Buslaev/Tikhonravov; quoted historical titles and manuscript references are not photographs of their earlier manuscripts.",
+    "glyph_risks": "First two old Cyrillic title continuations, especially Ѧ and ѣ/ь, are at high risk; punctuation and diacritics in bibliographic Russian/Ukrainian are also unresolved. Contradictory old title words should be source-photograph tested, not normalized from references.",
+    "data_integrity": "Frozen nonblind raw_response remains unchanged; review alternatives are stored in this separate JSON. Native-image rehash and TEI P5 can prove structural fidelity but not correctly recognized printed characters."
+  },
+  "disposition": "Review only as a complete OCR-exposed unverified source working draft, never blind first image reading or verified TEI/TF. Need genuinely independent image-first recaptures and third philological adjudication to move toward research-grade five volumes."
+}
