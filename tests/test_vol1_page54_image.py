@@ -56,6 +56,27 @@ class Vol1Page54Tests(unittest.TestCase):
         self.assertEqual(self.regions[1]["kind"], "body")
         self.assertEqual(self.regions[2]["kind"], "body")
 
+    def test_post_freeze_challenges_are_explicitly_not_blind_or_verified(self):
+        review_path = ROOT / "pilot/reviews/vol1_scan00054_post_freeze_challenges.json"
+        review = json.loads(review_path.read_text(encoding="utf8"))
+        self.assertEqual(review["status"], "provisional_source_challenges")
+        self.assertEqual((review["volume"], review["scan_page"]), ("1", 54))
+        self.assertEqual(review["source_image_sha256"], IMAGE_SHA)
+        self.assertEqual(review["frozen_first_reading"],
+                         "pilot/vol1_scan00054_single_reading.json")
+        self.assertIs(review["independent_blind_reader"], False)
+        self.assertIs(review["third_independent_review_complete"], False)
+        self.assertIs(review["glyph_by_glyph_verified"], False)
+        self.assertGreaterEqual(len(review["source_spot_checks"]), 3)
+        self.assertGreaterEqual(len(review["unresolved"]), 10)
+        original = {line["id"]: line["text"] for line in self.lines}
+        for record in review["unresolved"]:
+            self.assertIn(record["line_id"], original)
+            self.assertIn(record["reading"], original[record["line_id"]])
+            self.assertTrue(record["source_evidence"])
+            self.assertIn(record["disposition"], ("unresolved", "alternative"))
+        self.assertEqual(review["source_ocr_consulted"], False)
+
     def test_estimated_geometry_and_frozen_tei_character_roundtrip(self):
         self.assertTrue(all(region["geometry_estimated"] for region in self.regions))
         for region in self.regions:
