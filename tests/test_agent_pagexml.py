@@ -197,6 +197,9 @@ class AgentPageXmlTests(unittest.TestCase):
             with self.subTest(text=repr(text)):
                 obj = self.evidence()
                 obj["readings"][0]["regions"][0]["lines"][0]["text"] = text
+                # Old span offsets would trigger the *source validator* first.
+                # Remove them so this test reaches the PAGE safety gate.
+                obj["readings"][0]["regions"][0]["lines"][0]["language_spans"] = []
                 # Keep raw response and review disagreements aligned, so
                 # failure is exclusively attributable to unsafe line text.
                 obj["readings"][0]["raw_response"] = (
