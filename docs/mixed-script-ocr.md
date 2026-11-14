@@ -40,6 +40,31 @@ The GitHub workflow .github/workflows/ocr-real-pages.yml accesses only
 five pinned real image files and their manifests; it uploads text-only
 OCR candidate JSON files, never the scans themselves.
 
+## TSV literal-quote integrity and invalidation (#16)
+
+Tesseract's TSV uses literal double-quote characters in OCR word text,
+not CSV-style quoted fields. Using Python `csv.DictReader` with default
+quote parsing caused the real **I/20** mixed-profile candidate to collapse
+what should have been roughly 401 TSV words to 22 parsed words, with one
+19,023-character spurious token containing subsequent physical TSV rows.
+The quote can occur at the beginning of a recognized word. The corrected
+parser uses `csv.QUOTE_NONE`, rejects duplicated headers and missing/extra
+tab-separated columns, and preserves quote glyphs as literal OCR text.
+
+**Existing I/20 candidate JSON files produced by the old parser must be
+regenerated** before downstream PAGE XML geometry export, comparisons, or
+any line-count/coverage inference. A successful integrity smoke validates
+only TSV record boundaries and word geometry, not OCR glyph accuracy or
+the human editorial reading order. The page's old embedded PDF OCR is also
+not a substitute for verified source text.
+
+The pinned [five-page real-image workflow](../.github/workflows/ocr-real-pages.yml)
+checks that no TSV word contains embedded record delimiters and that I/20's
+mixed OCR no longer exhibits the prior record-swallowing failure.
+The exact number of words can vary with Tesseract version and traineddata;
+the test uses a conservative lower bound instead of treating any OCR
+candidate as a reference transcription.
+
 ## Next scientific evaluation
 
 1. Independently verify stratified line transcriptions across genres,
