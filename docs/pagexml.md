@@ -77,6 +77,8 @@ OCR→PAGE export on the pinned **IV/100** scan and validates the generated
 XML against the 2019-07-15 PRImA XSD using `lxml` (schema fetched only in CI).
 This is a format and geometry **smoke test**, not an OCR-accuracy assessment.
 
+For a separate exporter of **agent image-first draft readings** (one PAGE file per reader, with explicit source evidence hashes and no automatic reviewer claims), see [agent reading PAGE XML](agent-pagexml.md). This remains an unverified source view, not TEI verification.
+
 Next steps: independently inspect real PAGE overlays against the printed
 scans and line crops, preserve agent text alternatives with explicit source
 identity, define bidirectional alignment to scholarly TEI, then assess ALTO

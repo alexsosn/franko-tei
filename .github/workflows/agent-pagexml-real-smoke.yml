@@ -1,0 +1,106 @@
+name: Agent reading PAGE XML XSD + real I/20 smoke (UNVERIFIED)
+on:
+  pull_request:
+    paths:
+      - src/franko_tei/agent_pagexml.py
+      - tests/test_agent_pagexml.py
+      - pyproject.toml
+      - .github/workflows/agent-pagexml-real-smoke.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  agent-pagexml:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install code and official XML schema validator
+        run: |
+          python -m pip install -e .
+          python -m pip install 'lxml>=5,<7'
+      - name: Fetch only pinned I/20 image, manifest, original single draft and 2019 PAGE schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p real-images/vol1
+          ASSET_SHA=e871f32537e81f81896f6ce9a6658aba667db9c5
+          SINGLE_DRAFT_SHA=c22034352571df2dee89ff9c2914a19fc4d216a4
+          source="https://raw.githubusercontent.com/alexsosn/franko-tei/$ASSET_SHA/images/vol1"
+          curl --fail --location --retry 3 --silent --show-error "$source/manifest.json" -o real-images/vol1/manifest.json
+          curl --fail --location --retry 3 --silent --show-error "$source/page-00020.jpg" -o real-images/vol1/page-00020.jpg
+          curl --fail --location --retry 3 --silent --show-error \
+            "https://raw.githubusercontent.com/alexsosn/franko-tei/$SINGLE_DRAFT_SHA/pilot/image_first/vol1_scan00020_single_reading.json" \
+            -o real-single-draft.json
+          curl --fail --location --retry 3 --silent --show-error \
+            https://www.primaresearch.org/schema/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd \
+            -o pagecontent.xsd
+      - name: Real-source PAGE export, XSD validation, exact line comparison
+        run: |
+          franko-pagexml-reading --images real-images --input real-single-draft.json \
+            --output-dir real-reading-page
+          python - <<'PY'
+          from hashlib import sha256
+          import json
+          from lxml import etree
+          from pathlib import Path
+          from franko_tei.pagexml_export import PAGE_NS
+          from franko_tei.pilot_tei import validate_single_draft
+
+          schema = etree.XMLSchema(etree.parse("pagecontent.xsd"))
+          source = json.loads(Path("real-single-draft.json").read_text(encoding="utf8"))
+          validate_single_draft(source, Path("real-images"))
+          expected = [line["text"] for r in source["reading"]["regions"] for line in r["lines"]]
+          expected_source_hash = sha256(Path("real-single-draft.json").read_bytes()).hexdigest()
+          path = Path("real-reading-page/reading-01.page.xml")
+          xml = etree.parse(str(path))
+          schema.assertValid(xml)
+          ns = {"p": PAGE_NS}
+          actual = xml.xpath("//p:TextLine/p:TextEquiv/p:Unicode/text()", namespaces=ns)
+          assert actual == expected, "Missing or changed physical-line characters"
+          assert len(actual) == 42, f"Expected 42 original source-ordered lines; got {len(actual)}"
+          regions = xml.xpath("//p:Page/p:TextRegion", namespaces=ns)
+          assert len(regions) == len(source["reading"]["regions"])
+          assert all("geometry_estimated=" in r.get("comments") for r in regions)
+          comments = xml.xpath("string(//p:Metadata/p:Comments)", namespaces=ns)
+          assert "UNVERIFIED" in comments and "single-working-draft" in comments
+          assert expected_source_hash in comments
+          assert source["source_image_sha256"] in comments
+          assert xml.xpath("//p:TextLine/p:TextEquiv/@conf", namespaces=ns) == []
+          assert len(list(Path("real-reading-page").glob("*.xml"))) == 1
+          print("Real I/20 source-linked PAGE 2019 XSD OK:", len(actual),
+                "unverified lines; source SHA256:", expected_source_hash)
+          PY
+      - name: Synthetic two-reader PAGE XSD (does NOT certify independence)
+        run: |
+          python - <<'PY'
+          import sys
+          from lxml import etree
+          from pathlib import Path
+          from franko_tei.agent_pagexml import export_readings
+          sys.path.insert(0, "tests")
+          from test_agent_pagexml import AgentPageXmlTests
+
+          fixture = AgentPageXmlTests("test_double_evidence_separate_readers_and_exact_character_roundtrip")
+          fixture.setUp()
+          try:
+              fixture.write(fixture.evidence())
+              paths = export_readings(fixture.source, fixture.images, fixture.destination)
+              assert len(paths) == 2
+              schema = etree.XMLSchema(etree.parse("pagecontent.xsd"))
+              for path in paths:
+                  schema.assertValid(etree.parse(str(path)))
+              print("Two synthetic distinct-reader PAGE documents are valid PAGE 2019.")
+          finally:
+              fixture.doCleanups()
+          PY
+      - name: Upload derived XML only, not source image
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-agent-pagexml-real-unverified-I20
+          path: real-reading-page/reading-01.page.xml
+          if-no-files-found: error
+          retention-days: 7
