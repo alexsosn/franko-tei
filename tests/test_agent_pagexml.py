@@ -220,6 +220,47 @@ class AgentPageXmlTests(unittest.TestCase):
             export_readings(self.source, self.images, self.destination)
         self.assertFalse(self.destination.exists())
 
+    def test_explicitly_nonblind_single_draft_never_claims_independent_review(self):
+        obj = self.single()
+        obj["schema_version"] = "single-exposed-draft-v1"
+        obj["reading"]["peer_readings_visible"] = True
+        obj["reading"]["external_text_exposure"] = {
+            "kind": "third_party_ocr", "url": "https://example.org/ocr",
+            "timing": "before_first_reading",
+            "note": "Synthetic external OCR was shown before source-only read",
+        }
+        self.write(obj)
+        files = export_readings(self.source, self.images, self.destination)
+        self.assertEqual(len(files), 1)
+        xml = files[0].read_text()
+        self.assertIn("single-exposed-draft-v1", xml)
+        self.assertIn("source_contains_external_text_exposure=true", xml)
+        self.assertNotIn("certified independent reading", xml)
+
+    def test_source_occlusion_unreadable_suffix_is_not_promoted_as_visible_glyph(self):
+        obj = self.single()
+        reader = obj["reading"]
+        line = reader["regions"][0]["lines"][0]
+        line["text"] = "unreadable print…"
+        line["language_spans"] = []
+        line["unreadable_suffix"] = True
+        reader["uncertainty_notes"] = []
+        reader["coverage"]["occlusions"] = [{
+            "kind": "library_stamp",
+            "bbox_xywh": [30, 35, 40, 12],
+            "description": "Synthetic stamp obstructs suffix",
+            "obscures_source_letters": True,
+            "reconstructed_from_neighbor_page": False,
+            "affected_line_ids": ["a"],
+        }]
+        reader["raw_response"] = "\n".join(
+            l["text"] for r in reader["regions"] for l in r["lines"]
+        )
+        self.write(obj)
+        with self.assertRaisesRegex(ValueError, "unreadable suffix"):
+            export_readings(self.source, self.images, self.destination)
+        self.assertFalse(self.destination.exists())
+
     def test_destination_is_immutable_and_failure_atomic(self):
         self.write(self.single())
         result = export_readings(self.source, self.images, self.destination)
