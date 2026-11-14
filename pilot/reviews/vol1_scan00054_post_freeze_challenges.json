@@ -1,0 +1,200 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 54,
+  "printed_page_observed": "XLV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "91cc5b4ef07b0777e895c63b69261a5b6e91812e297f5cd72516efe807264c05",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "frozen_first_reading": "pilot/vol1_scan00054_single_reading.json",
+  "review_method": "Separate, failure-oriented rereading of the original 1190x1788 printed JPEG after the first response had been committed, in the SAME ChatGPT conversation context. No second independent blind reader, no complete third contextual reviewer. Source original embedded PDF OCR was not read or used.",
+  "source_ocr_consulted": false,
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "source_spot_checks": [
+    {
+      "bbox_xywh": [
+        973,
+        74,
+        110,
+        50
+      ],
+      "image_evidence": "Printed Roman folio XLV is visibly at the upper right, separate from body text.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        83,
+        131,
+        1026,
+        92
+      ],
+      "image_evidence": "Top body begins in the middle of a bibliographic continuation with IX.)., followed by prose on Franko's scholarship.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        85,
+        1169,
+        1030,
+        77
+      ],
+      "image_evidence": "The visually indented paragraph beginning Обік Тихонравова follows the sentence ending з грецькими.; it must not be merged into the previous paragraph as a separate physical line.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        91,
+        1540,
+        1000,
+        65
+      ],
+      "image_evidence": "Final body line рукописи. is present above blank lower margin; no footer or printer signature observed on this page.",
+      "disposition": "layout_observed"
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "paragraph-1-l001",
+      "reading": "IX.).",
+      "disposition": "unresolved",
+      "source_evidence": "The visible page begins with a closing numbered bibliographic continuation; punctuation and exact spacing need comparison with the previous printed XLIV page."
+    },
+    {
+      "line_id": "paragraph-1-l001",
+      "reading": "посвячені",
+      "disposition": "unresolved",
+      "source_evidence": "The first line's consonant/vowel sequence and typography are tentative; OCR should not be used to normalize it."
+    },
+    {
+      "line_id": "paragraph-1-l002",
+      "reading": "Яґіча",
+      "disposition": "unresolved",
+      "source_evidence": "The name's diacritic and the final year are a visual hypothesis from small type."
+    },
+    {
+      "line_id": "paragraph-1-l003",
+      "reading": "Библейская",
+      "disposition": "unresolved",
+      "source_evidence": "Original bibliographic Russian title has pre-reform spelling; exact capitalization and first vowel require image comparison."
+    },
+    {
+      "line_id": "paragraph-1-l005",
+      "reading": "Чтеніяхъ",
+      "disposition": "unresolved",
+      "source_evidence": "The title contains closely spaced pre-reform Russian characters; independent glyph-level reading required."
+    },
+    {
+      "line_id": "paragraph-1-l006",
+      "reading": "диссертация",
+      "disposition": "unresolved",
+      "source_evidence": "The printed word's doubled consonant and initial vowel are not independently confirmed."
+    },
+    {
+      "line_id": "paragraph-1-l008",
+      "reading": "посвятив",
+      "disposition": "unresolved",
+      "source_evidence": "Verb at physical line end could be confused with an alternate historic inflection; no contextual correction permitted."
+    },
+    {
+      "line_id": "paragraph-1-l009",
+      "reading": "збираню",
+      "disposition": "unresolved",
+      "source_evidence": "Source print appears to have early Ukrainian spelling; individual vowel/ending need an enlarged crop."
+    },
+    {
+      "line_id": "paragraph-1-l013",
+      "reading": "пз.",
+      "disposition": "unresolved",
+      "source_evidence": "The bibliographic abbreviation is difficult to resolve exactly at native scale."
+    },
+    {
+      "line_id": "paragraph-1-l014",
+      "reading": "17-тім",
+      "disposition": "unresolved",
+      "source_evidence": "Original Arabic numeral, hyphen and text boundary require review together with the next physical row."
+    },
+    {
+      "line_id": "paragraph-1-l015",
+      "reading": "Сборника“",
+      "disposition": "unresolved",
+      "source_evidence": "The position of the closing quotation mark appears anomalous relative to earlier opening quotation; no editorial repair was made."
+    },
+    {
+      "line_id": "paragraph-1-l019",
+      "reading": "новозавѣтныхъ",
+      "disposition": "unresolved",
+      "source_evidence": "Pre-reform Russian title spelling includes ѣ in first draft; independent source check needed."
+    },
+    {
+      "line_id": "paragraph-1-l020",
+      "reading": "52-ім",
+      "disposition": "unresolved",
+      "source_evidence": "Number with postposed Ukrainian ending and nested quotation marks needs source-faithful review."
+    },
+    {
+      "line_id": "paragraph-1-l023",
+      "reading": "скрібуючи",
+      "disposition": "unresolved",
+      "source_evidence": "Historic word-form and exact initial glyphs remain a first-reader hypothesis."
+    },
+    {
+      "line_id": "paragraph-1-l027",
+      "reading": "західно-европейськими",
+      "disposition": "unresolved",
+      "source_evidence": "Printed hyphenated compound and pre-reform Ukrainian vowels should be checked individually."
+    },
+    {
+      "line_id": "paragraph-2-l001",
+      "reading": "Срезневський",
+      "disposition": "unresolved",
+      "source_evidence": "Person-name spelling is visually plausible but has not been independently checked."
+    },
+    {
+      "line_id": "paragraph-2-l005",
+      "reading": "малоизвѣстныхъ",
+      "disposition": "unresolved",
+      "source_evidence": "Printed Russian title uses unfamiliar type; vowels/ѣ and quote opening should be source-grounded."
+    },
+    {
+      "line_id": "paragraph-2-l005",
+      "reading": "неизвѣстныхъ",
+      "disposition": "unresolved",
+      "source_evidence": "Second term in the same title; distinct source word should be checked separately."
+    },
+    {
+      "line_id": "paragraph-2-l006",
+      "reading": "роздїлів",
+      "disposition": "unresolved",
+      "source_evidence": "Historic glyphs and the long dash in the following parenthetical are tentative."
+    },
+    {
+      "line_id": "paragraph-2-l010",
+      "reading": "памятки",
+      "disposition": "unresolved",
+      "source_evidence": "Original orthography may omit a modern apostrophe; must not modernize silently."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XLV top right",
+    "body_physical_lines": 40,
+    "paragraph_line_counts": [
+      29,
+      11
+    ],
+    "source_text_positions": 41,
+    "real_image_sha_from_manifest_only": true,
+    "geometry": "All region/line boxes in frozen JSON are estimated pixel annotations; not independently measured or validated as accurate baselines",
+    "source_text_accuracy": "Unverified. Full line slots recorded; spelling and bibliographic punctuation may still contain mistakes."
+  },
+  "source_rights": "Original scan is linked from pinned page-assets commit, not added to this PR; MIT code license does not assert page scan redistribution rights.",
+  "limitations": [
+    "No second blind image-only reading",
+    "No third independent image-grounded adjudication",
+    "No historical CER or reference gold",
+    "No verified TEI or Text-Fabric release",
+    "A structurally valid PAGE/TEI export does not certify the glyph choices."
+  ]
+}
