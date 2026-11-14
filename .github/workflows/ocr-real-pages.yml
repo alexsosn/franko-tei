@@ -59,6 +59,17 @@ jobs:
               assert all(len(h) == 64 for h in item['traineddata_sha256'].values())
               assert item['text'].strip(), f"No recognized text: {file}"
               assert item['lines'], f"No geometric lines: {file}"
+              words = [word['text'] for line in item['lines'] for word in line['words']]
+              assert words, f"No Tesseract words parsed: {file}"
+              assert all('\n' not in word and '\r' not in word and
+                         '\t' not in word and len(word) < 1000 for word in words), (
+                  f"Parsed word swallowed TSV rows: {file}")
+              if item['volume'] == '1' and item['scan_page'] == 20 and item['profile'] == 'mixed':
+                  # The previously corrupted candidate collapsed 401 TSV words
+                  # to 22 and a 19,023-character fake word. Not a CER claim.
+                  assert len(words) > 100 and len(item['lines']) >= 20, (
+                      f"I/20 probable quote-swallow regression: {len(words)} words, "
+                      f"{len(item['lines'])} lines")
           PY
       - name: Summarize outputs without claiming accuracy
         run: |
@@ -67,7 +78,8 @@ jobs:
           import json
           for file in sorted(Path('ocr-results').rglob('*.json')):
               item = json.loads(file.read_text(encoding='utf8'))
-              print(f"Volume {item['volume']} scan {item['scan_page']}, {item['profile']}: {len(item['text'])} chars, {len(item['lines'])} geometric lines; status={item['status']}")
+              words = [word['text'] for line in item['lines'] for word in line['words']]
+              print(f"Volume {item['volume']} scan {item['scan_page']}, {item['profile']}: {len(item['text'])} chars, {len(item['lines'])} geometric lines, {len(words)} TSV words, max token {max(map(len, words))}; status={item['status']}")
           PY
       - name: Upload candidate JSON only, never scan images
         uses: actions/upload-artifact@v4
