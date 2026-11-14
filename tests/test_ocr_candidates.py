@@ -49,6 +49,41 @@ class CandidateTests(unittest.TestCase):
         self.assertEqual([w["text"] for w in lines[0]["words"]], ["ѣ", "κόσμος"])
         self.assertEqual(lines[1]["words"][0]["text"], "Straße")
 
+    def test_tesseract_literal_double_quote_is_not_csv_delimiter(self):
+        """Actual TSV is unquoted; visible punctuation must not eat later rows."""
+        header = TSV.splitlines()[0]
+        rows = [
+            '5\t1\t1\t1\t1\t1\t10\t20\t30\t15\t82.5\t"Heatov',
+            '5\t1\t1\t1\t1\t2\t45\t20\t15\t15\t71\tѣ́',
+            '5\t1\t1\t1\t2\t1\t10\t40\t80\t15\t53\t"κόσμος"',
+            '5\t1\t1\t1\t3\t1\t10\t60\t40\t15\t44\tStraße',
+        ]
+        parsed = _tsv_lines(header + "\n" + "\n".join(rows) + "\n")
+        self.assertEqual(len(parsed), 3)
+        self.assertEqual(
+            [w["text"] for line in parsed for w in line["words"]],
+            ['"Heatov', 'ѣ́', '"κόσμος"', 'Straße'],
+        )
+        self.assertTrue(all(
+            "\r" not in w["text"] and "\n" not in w["text"]
+            for line in parsed for w in line["words"]
+        ))
+
+    def test_tesseract_malformed_tsv_fails_closed(self):
+        header = TSV.splitlines()[0]
+        valid = "5\t1\t1\t1\t1\t1\t10\t20\t30\t15\t82.5\tword"
+        invalid_rows = [
+            valid + "\textra-column",
+            "\t".join(valid.split("\t")[:-1]),
+            "1\t1\t1",  # missing fields, even at nonword levels
+        ]
+        for row in invalid_rows:
+            with self.subTest(row=row), self.assertRaisesRegex(ValueError, "TSV|column"):
+                _tsv_lines(header + "\n" + row + "\n")
+        duplicate_headers = header.replace("text", "conf")
+        with self.assertRaisesRegex(ValueError, "TSV|duplicate|column"):
+            _tsv_lines(duplicate_headers + "\n" + valid + "\n")
+
     def test_page_selection_strict(self):
         self.assertEqual(_parse_pages("2,4-5,1"), [1, 2, 4, 5])
         for invalid in ("1,1", "0", "8-4", "1,,2", "../1", "1-100"):
