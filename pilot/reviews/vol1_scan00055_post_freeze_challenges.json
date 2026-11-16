@@ -1,0 +1,256 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 55,
+  "printed_page_observed": "XLVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "2a88ec672ecce66cde5736f252c0b33514f22cadc3af99e701a292366e6542eb",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "frozen_first_reading": "pilot/vol1_scan00055_single_reading.json",
+  "frozen_first_reading_git_blob_sha": "968f451c1a628042c30f3a25a58457e08c576520",
+  "review_method": "After the first-reader JSON was committed, a separate failure-oriented rereading of the pinned 1190x1764 original printed JPEG was conducted within the SAME ChatGPT conversation/context. This challenge audit is logically distinct from constructing the first-pass text, but is NOT a separate blind reader or independent third agent. Historical letterforms remain unresolved. No embedded/original OCR, online text or parallel edition was consulted.",
+  "source_ocr_consulted": false,
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "source_spot_checks": [
+    {
+      "bbox_xywh": [
+        145,
+        66,
+        100,
+        55
+      ],
+      "image_evidence": "Printed folio XLVI is at the upper left; it is not the physical scan index 55.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        136,
+        136,
+        1006,
+        320
+      ],
+      "image_evidence": "The first nine full source rows form a Popov/Tikhonravov paragraph ending 'мав у руках.'",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        136,
+        450,
+        1006,
+        287
+      ],
+      "image_evidence": "The following paragraph begins with 'Смерть Тихонравова', spans eight physical rows, and ends 'я не бачив.'",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        136,
+        746,
+        1006,
+        345
+      ],
+      "image_evidence": "The Veselovsky paragraph is a mixture of Ukrainian commentary and several Russian nineteenth-century titles; title quotes span multiple physical rows.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        135,
+        1490,
+        1010,
+        128
+      ],
+      "image_evidence": "The final two numbered bibliography entries occupy three source rows, first item spanning two; lower margin has no distinct colophon or footer.",
+      "disposition": "layout_observed"
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "paragraph1-l001",
+      "reading": "Видавничу працю",
+      "disposition": "unresolved",
+      "source_evidence": "First body row is indented relative to continuation rows, with word boundaries difficult at native type width."
+    },
+    {
+      "line_id": "paragraph1-l003",
+      "reading": "Библіографическихъ",
+      "disposition": "unresolved",
+      "source_evidence": "Printed Russian bibliographic title appears in old orthography, and the Cyrillic vowel letters need enlarged comparison."
+    },
+    {
+      "line_id": "paragraph1-l003",
+      "reading": "Чтеніяхъ",
+      "disposition": "unresolved",
+      "source_evidence": "Open quote preceding the society name sits near the end of the source row; exact pre-reform letters not independently checked."
+    },
+    {
+      "line_id": "paragraph1-l004",
+      "reading": "исторіи и древностей",
+      "disposition": "unresolved",
+      "source_evidence": "Russian quotation spans a physical hyphen break between row 3 and row 4; title punctuation must remain source-led."
+    },
+    {
+      "line_id": "paragraph1-l005",
+      "reading": "із дуже старих рукописів",
+      "disposition": "unresolved",
+      "source_evidence": "Printed text is visually fairly clear but the small dot and historic letterforms do not justify word-level verification."
+    },
+    {
+      "line_id": "paragraph1-l007",
+      "reading": "Сперанський",
+      "disposition": "unresolved",
+      "source_evidence": "Publisher's surname at start of physical row not matched to a second image-only reading."
+    },
+    {
+      "line_id": "paragraph1-l008",
+      "reading": "описї рукописів Хлудова",
+      "disposition": "unresolved",
+      "source_evidence": "Historic Ukrainian і/ї and the book owner's name are only a single-context reading."
+    },
+    {
+      "line_id": "paragraph2-l002",
+      "reading": "найважнїйшою",
+      "disposition": "unresolved",
+      "source_evidence": "Long historic Ukrainian superlative is visually dense and requires a zoomed source check."
+    },
+    {
+      "line_id": "paragraph2-l003",
+      "reading": "Толковую Палею",
+      "disposition": "unresolved",
+      "source_evidence": "Work name is in running sentence rather than a separate title row, and source capitalization should not be normalized."
+    },
+    {
+      "line_id": "paragraph2-l004",
+      "reading": "1893 р.",
+      "disposition": "unresolved",
+      "source_evidence": "Year and abbreviation are printed in the same line as a line-end break, need visual inspection."
+    },
+    {
+      "line_id": "paragraph2-l005",
+      "reading": "Общество любителей древней пись-",
+      "disposition": "unresolved",
+      "source_evidence": "Russian publication title is split at physical line end and involves quotation typography."
+    },
+    {
+      "line_id": "paragraph2-l006",
+      "reading": "менности“",
+      "disposition": "unresolved",
+      "source_evidence": "Closing quote and whether initial text continues the previous line verbatim remain single-reader assertions."
+    },
+    {
+      "line_id": "paragraph2-l007",
+      "reading": "фотолїтографічним",
+      "disposition": "unresolved",
+      "source_evidence": "Diacritic, vowel glyphs and length of the compound can be mistaken by visual inference."
+    },
+    {
+      "line_id": "paragraph3-l002",
+      "reading": "головнож его",
+      "disposition": "unresolved",
+      "source_evidence": "Adverb ending and edition's spacing need independent source review."
+    },
+    {
+      "line_id": "paragraph3-l003",
+      "reading": "Соломонѣ и Китоврасѣ",
+      "disposition": "unresolved",
+      "source_evidence": "The two pre-reform ѣ glyphs are central to a bibliographic title, yet not separately reviewed."
+    },
+    {
+      "line_id": "paragraph3-l004",
+      "reading": "Журналъ министерства нар. про-",
+      "disposition": "unresolved",
+      "source_evidence": "Publication title has an abbreviation and split word; the exact parenthetical punctuation is unresolved."
+    },
+    {
+      "line_id": "paragraph3-l005",
+      "reading": "Разысканія въ области русскихъ духовныхъ",
+      "disposition": "unresolved",
+      "source_evidence": "Old Russian title with multiple historical glyphs, quote marks and no automatic modernization."
+    },
+    {
+      "line_id": "paragraph3-l006",
+      "reading": "Южнорусскія былины",
+      "disposition": "unresolved",
+      "source_evidence": "Bibliographic title glyphs and inter-title quotes should be checked as images."
+    },
+    {
+      "line_id": "paragraph3-l009",
+      "reading": "плїдний",
+      "disposition": "unresolved",
+      "source_evidence": "Dot on an old-Ukrainian vowel and surrounding typography not independently adjudicated."
+    },
+    {
+      "line_id": "paragraph4-l002",
+      "reading": "Югославянська Академия",
+      "disposition": "unresolved",
+      "source_evidence": "Source historical spelling and capitalization not cross-checked with an isolated second reader."
+    },
+    {
+      "line_id": "paragraph4-l005",
+      "reading": "Яґіч",
+      "disposition": "unresolved",
+      "source_evidence": "Historical rendering of the surname, with ґ/г distinction, requires independent glyph check."
+    },
+    {
+      "line_id": "paragraph4-l006",
+      "reading": "прина-",
+      "disposition": "unresolved",
+      "source_evidence": "Line-final hyphen with continuation on the following physical row could be misread at right margin."
+    },
+    {
+      "line_id": "paragraph4-l009",
+      "reading": "Гарнаковій „Geschichte der altchristlichen Litteratur",
+      "disposition": "unresolved",
+      "source_evidence": "Printed German reference is embedded in Cyrillic text; quotation marks, spelling and case require crop."
+    },
+    {
+      "line_id": "paragraph4-l010",
+      "reading": "bis Eusebius I, B)",
+      "disposition": "unresolved",
+      "source_evidence": "German title continuation uses Latin and Roman glyphs, comma and parenthesis; source punctuation may be easy to invent."
+    },
+    {
+      "line_id": "bibliography-l001",
+      "reading": "Arkiv za povjestnim",
+      "disposition": "unresolved",
+      "source_evidence": "South Slavic Latin title resembles modern romanized forms, but source characters alone govern this reading."
+    },
+    {
+      "line_id": "bibliography-l002",
+      "reading": "Jugoslavansku IX, 105—108",
+      "disposition": "unresolved",
+      "source_evidence": "Second row of the first bibliography item has letterform and pagination punctuation uncertainty."
+    },
+    {
+      "line_id": "bibliography-l003",
+      "reading": "Starine XVI, 70—81",
+      "disposition": "unresolved",
+      "source_evidence": "Last source line's bibliographic series title, volume Roman numeral and range punctuation require blind verification."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XLVI top left",
+    "body_physical_lines": 41,
+    "paragraph_line_counts": [
+      9,
+      8,
+      10,
+      11,
+      3
+    ],
+    "source_text_positions": 42,
+    "real_image_sha_from_manifest_only": true,
+    "geometry": "Estimated line and region bounding boxes, not measured or pixel-gold coordinates.",
+    "source_text_accuracy": "Unverified. 41 complete nonempty physical body-line draft slots; no independent glyph adjudication."
+  },
+  "source_rights": "Original JPEG exists only in pinned page-assets commit; this PR does not copy or redistribute scanned source.",
+  "limitations": [
+    "No separate independent blind image-only reading",
+    "No third independent image-grounded reviewer",
+    "No CER, word accuracy or diplomatic reference gold",
+    "No verified TEI/TF corpus",
+    "Source page visibly inspected but historic glyphs and bibliographic symbols remain provisional"
+  ]
+}
