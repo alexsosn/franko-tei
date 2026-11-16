@@ -1,0 +1,424 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 58,
+  "printed_page_observed": "XLIX",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "8c59377b33c37c56031a2bc2da8203787757c2f282d6c01a6d1a99d879b75489",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "frozen_first_reading": "pilot/vol1_scan00058_single_reading.json",
+  "frozen_first_reading_git_blob_sha": "84c38b44d1d797507687deb959f4e9027efc11b4",
+  "review_method": "Failure-oriented second inspection of the actual pinned 1190x1740 original printed JPEG after first-reader JSON freeze, in the SAME GPT-6 conversation/context. Source image only, no embedded OCR or peer reading used. This is a logically distinct adversarial purpose but not a separate blind image-only reader or an independent third adjudicator. Especially in the dense archaic Cyrillic words, proposed Unicode vowels, titla, editorial brackets and numeral marks may be incorrect. No CER gold or scholarly verified text.",
+  "source_ocr_consulted": false,
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "source_spot_checks": [
+    {
+      "bbox_xywh": [
+        926,
+        54,
+        169,
+        65
+      ],
+      "image_evidence": "Top right Roman folio XLIX is separately printed and not scan-index 58.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        82,
+        134,
+        1048,
+        143
+      ],
+      "image_evidence": "First four body lines discuss copyist hands at manuscript pages 1120–1146; starts with indent then prose.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        86,
+        279,
+        1044,
+        300
+      ],
+      "image_evidence": "Second block includes Franko's Ukrainian prose and a shorter old-Cyrillic incipit within physical printed rows, with abbreviated letters and titla.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        84,
+        803,
+        1045,
+        770
+      ],
+      "image_evidence": "Long Adam quotation interleaved with editorial framing and reference lines; many old Cyrillic letters, supralinear marks and bracketed restorations, poor source certainty.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        145,
+        1579,
+        400,
+        46
+      ],
+      "image_evidence": "Footer at left reads 'Апокріфи старозавітні.' distinct from manuscript and body.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        932,
+        1579,
+        132,
+        47
+      ],
+      "image_evidence": "Printer's right-margin signature '7', distinct from XLIX folio and quoted source numerals.",
+      "disposition": "layout_observed"
+    }
+  ],
+  "additional_adversarial_observations": [
+    {
+      "line_id": "paleia-l003",
+      "source_evidence": "First quoted original title appears letterspaced and printed in old Cyrillic. The source may have a different first vowel/title ending than Книгѣ. No dictionary-driven repair is permitted."
+    },
+    {
+      "line_id": "paleia-l004",
+      "source_evidence": "The proposed superscript abbreviation sequence is not visually certain; the character combinations used in the first draft must not be treated as measured Unicode diplomatic gold."
+    },
+    {
+      "line_id": "paleia-l008",
+      "source_evidence": "The phrase 'створн ан҃лы' is suspicious even as a transcription hypothesis and could contain a substitution/omitted titlo; further high-resolution reading essential."
+    },
+    {
+      "line_id": "adam-l004",
+      "source_evidence": "The first long Adam quotation starts in the same physical row as Franko's commentary; check the opening quote, bracket and source font change."
+    },
+    {
+      "line_id": "adam-l005",
+      "source_evidence": "The abbreviation m҃ти and phrase concerning Eve and Adam may have alternate letters; multiple historical characters are unresolved."
+    },
+    {
+      "line_id": "adam-l017",
+      "source_evidence": "The proposed ѕ҃ numeral and repeated punctuation around часовъ may differ in printed source, making a numerically significant uncertainty."
+    },
+    {
+      "line_id": "adam-l020",
+      "source_evidence": "Source numeral м҃ may encode a different count from the proposed codepoint; keep tentative rather than equating to modern number."
+    },
+    {
+      "line_id": "adam-l021",
+      "source_evidence": "Church-liturgical abbreviations and apparently obsolete vowels are densely printed; overletter positions need separate image inspection."
+    },
+    {
+      "line_id": "adam-l022",
+      "source_evidence": "The final 'Коментуючи' is a new Franko editorial clause after an archaic quotation in the SAME physical line, not a separate physical row."
+    },
+    {
+      "line_id": "printer-l001",
+      "source_evidence": "The line 'Апокріфи старозавітні.' is a printer/running footer, not the manuscript quotation or the printed folio."
+    },
+    {
+      "line_id": "quire-l001",
+      "source_evidence": "Bottom-right 7 is a printer signature, while the observed XLIX at top is the printed folio."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "scribe-l001",
+      "reading": "1120 до 1142",
+      "disposition": "unresolved",
+      "source_evidence": "Source numerical span and spaces must be checked image-first Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "scribe-l002",
+      "reading": "полуустава",
+      "disposition": "unresolved",
+      "source_evidence": "Historical term, u/у glyph sequence tentative Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "scribe-l003",
+      "reading": "1143—1146",
+      "disposition": "unresolved",
+      "source_evidence": "Range and punctuation must be checked Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "scribe-l004",
+      "reading": "иньшою",
+      "disposition": "unresolved",
+      "source_evidence": "Historical spelling and final mark tentative Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l001",
+      "reading": "сторонї",
+      "disposition": "unresolved",
+      "source_evidence": "Historical Ukrainian vowel and sentence boundary Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l002",
+      "reading": "киноварним",
+      "disposition": "unresolved",
+      "source_evidence": "Historical spelling and source word spacing Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l003",
+      "reading": "Книгѣ глаголемая",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** printed archaic letters and overmarks not legible with certainty; first reader hypothesis Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l004",
+      "reading": "палемая толкованнѧ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** archaic title, possible missing overletters/titla Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l004",
+      "reading": "бг҃омъ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** superscript/titlo scope and abbreviation encoding may differ from print Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l004",
+      "reading": "г҃и б҃жи ѡ҃че",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** multiple old-Cyrillic abbreviations; proposed combining marks not verified Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l005",
+      "reading": "незрозумілий",
+      "disposition": "unresolved",
+      "source_evidence": "Printed Ukrainian not independently compared Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l006",
+      "reading": "Палемая Толко-",
+      "disposition": "unresolved",
+      "source_evidence": "Unexpected manuscript title and printed physical hyphen need full reinspection Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l007",
+      "reading": "Б҃ъ прежде всѣхъ вѣкъ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** Church Slavonic abbreviated text; titla and ѣ not independently read Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l008",
+      "reading": "як[о] Б҃ъ силенъ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** editorial bracket, titlo, vowel and neighboring word source ambiguous Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l008",
+      "reading": "створн ан҃лы",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** old-script glyph ambiguity, source could differ substantively Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l009",
+      "reading": "д҃хы, слѫгы своя",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** title/titlo and historical glyph readings are hypotheses Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l009",
+      "reading": "огнь, пламень",
+      "disposition": "unresolved",
+      "source_evidence": "Church Slavonic quote punctuation and letterforms unverified Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l010",
+      "reading": "шестоднев",
+      "disposition": "unresolved",
+      "source_evidence": "Printed compound and source abbreviation tentative Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l012",
+      "reading": "Сатанаїла",
+      "disposition": "unresolved",
+      "source_evidence": "Proper name and historic dotted i require independent glyph check Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l013",
+      "reading": "причиньки",
+      "disposition": "unresolved",
+      "source_evidence": "Historic Ukrainian word requires source check Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "paleia-l014",
+      "reading": "дознавства",
+      "disposition": "unresolved",
+      "source_evidence": "Physical-row hyphen continuation must be retained Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l001",
+      "reading": "ѡ землѣ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** old-script titulik, source may have overmark/superscript missing Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l003",
+      "reading": "апокрі-",
+      "disposition": "unresolved",
+      "source_evidence": "Physical hyphen at end of row critical Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l004",
+      "reading": "Нареч[е] Адамъ имѧ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** bracketed restoration, old-Cyrillic letters and titla Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l005",
+      "reading": "м҃ти ѥсть всемъ живѫщим",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** compressed abbreviation with possible original overletters Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l005",
+      "reading": "Г҃ь Б҃ъ Адамѡ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** abbreviated honorifics and rare vowels Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l006",
+      "reading": "ѡблече ѧ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** old Cyrillic, brackets in row and punctuation Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l007",
+      "reading": "дѫша его",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** old script could contain different superscript/letter Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l008",
+      "reading": "говат[н] емѫ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** printed editorial bracket must be rechecked Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l009",
+      "reading": "Гл҃ть книги",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** compressed letters/titla scope ambiguous Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l010",
+      "reading": "сѣщѫ в поте",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** archaic Cyrillic and word boundaries Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l011",
+      "reading": "Реч[е] же Г҃ь Б҃ъ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** editorial bracket and God abbreviations Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l011",
+      "reading": "Адам быс[ть]",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** bracketed letters and letterforms Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l012",
+      "reading": "155—156 стор. 84—85",
+      "disposition": "unresolved",
+      "source_evidence": "Two printed reference ranges and punctuation need source check Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l013",
+      "reading": "наругу над Адамом",
+      "disposition": "unresolved",
+      "source_evidence": "Franko's commentary must remain distinguished from the quoted old text Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l014",
+      "reading": "Изгна Г҃ь Адама",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** second long archaic Cyrillic passage begins mid source row Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l015",
+      "reading": "ж[е] взятъ быс[ть]",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** editorial brackets and old letters Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l016",
+      "reading": "Едма ѥго мнози",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** plausible but unverified glyphs; do not normalize to parallel sources Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l017",
+      "reading": "ѕ҃. часовъ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** numeral sign/dots and titlo Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l018",
+      "reading": "Сп҃с",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** abbreviation of Saviour and overmark Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l019",
+      "reading": "Самараньинѫ",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** old Cyrillic name/ending could be substantially different Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l020",
+      "reading": "м҃. дн҃ии",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** numeral/title abbreviation of days and superscripts Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l021",
+      "reading": "ст҃ии цр҃ковнии",
+      "disposition": "unresolved",
+      "source_evidence": "**High risk** saint/church titla scope, letters and word separation Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "adam-l022",
+      "reading": "157—158 ст. 85",
+      "disposition": "unresolved",
+      "source_evidence": "Printed reference and ending punctuation Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "printer-l001",
+      "reading": "Апокріфи старозавітні.",
+      "disposition": "unresolved",
+      "source_evidence": "Printer footer is not body text or source manuscript title Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    },
+    {
+      "line_id": "quire-l001",
+      "reading": "7",
+      "disposition": "unresolved",
+      "source_evidence": "Bottom-right print signature distinct from XLIX printed page folio Reinspection after freeze did not establish the exact original historical glyphs; do not silently correct from parallel texts."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XLIX upper right",
+    "body_physical_lines": 41,
+    "paragraph_line_counts": [
+      4,
+      15,
+      22
+    ],
+    "source_text_positions": 44,
+    "printer_footer_regions": 2,
+    "geometry": "Estimated pixels, not measured by source-specific baseline segmentation",
+    "source_text_accuracy": "Unverified image-first hypothesis only. Dense old-Cyrillic quotations have probable character substitutions, missing or misassigned titla/overletters, uncertain brackets. A reliable diplomatic transcription remains blocked on specialist independent reading."
+  },
+  "source_rights": "Native historical print image is linked to immutable codex/page-assets commit. No source image/PDF is bundled in this PR. MIT code licensing cannot be applied to museum scan by implication.",
+  "limitations": [
+    "No genuinely separate image-only second reading",
+    "No third independent text adjudication",
+    "Historic quotation glyphs, missing titla, abbreviations and ancient numerals unverified",
+    "No CER gold, verified TEI or TF release",
+    "Footer position/source character count does not establish exact source typography"
+  ]
+}
