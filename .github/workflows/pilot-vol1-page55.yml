@@ -57,7 +57,7 @@ jobs:
           assert draft['reading']['context_independence'] == 'single-working-draft'
           manifest = _read_manifest(Path('native-assets'), '1')
           image, image_hash = _get_page_image(
-              Path('native-assets'), '1', manifest['pages'][53])
+              Path('native-assets'), '1', manifest['pages'][54])
           assert image_hash == draft['source_image_sha256']
           assert image_hash == '2a88ec672ecce66cde5736f252c0b33514f22cadc3af99e701a292366e6542eb'
 
