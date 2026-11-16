@@ -29,12 +29,20 @@ jobs:
           SOURCE="https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol1"
           curl --fail --silent --show-error --location --retry 3 "$SOURCE/manifest.json" -o native-assets/vol1/manifest.json
           curl --fail --silent --show-error --location --retry 3 "$SOURCE/page-00055.jpg" -o native-assets/vol1/page-00055.jpg
-          curl --fail --silent --show-error --location --retry 3             'https://www.primaresearch.org/schema/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd'             -o build/pagecontent.xsd
-          curl --fail --silent --show-error --location --retry 3             'https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/custom/schema/relaxng/tei_all.rng'             -o build/tei_all.rng
+          curl --fail --silent --show-error --location --retry 3 \
+            'https://www.primaresearch.org/schema/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd' \
+            -o build/pagecontent.xsd
+          curl --fail --silent --show-error --location --retry 3 \
+            'https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/custom/schema/relaxng/tei_all.rng' \
+            -o build/tei_all.rng
       - name: Source-SHA-validated unverified PAGE and pilot TEI projections
         run: |
-          franko-pilot-tei --images native-assets             --input pilot/vol1_scan00055_single_reading.json             --output build/vol1_scan00055.xml
-          franko-pagexml-reading --images native-assets             --input pilot/vol1_scan00055_single_reading.json             --output-dir build/agent-pagexml
+          franko-pilot-tei --images native-assets \
+            --input pilot/vol1_scan00055_single_reading.json \
+            --output build/vol1_scan00055.xml
+          franko-pagexml-reading --images native-assets \
+            --input pilot/vol1_scan00055_single_reading.json \
+            --output-dir build/agent-pagexml
       - name: Validate XML schema, original Unicode, physical lines and provenance
         run: |
           python - <<'PY'
@@ -84,7 +92,7 @@ jobs:
           assert 'UNVERIFIED' in page.xpath('string(//p:Metadata/p:Comments)', namespaces=ns)
           assert hashlib.sha256(source.read_bytes()).hexdigest() in page.xpath(
               'string(//p:Metadata/p:Comments)', namespaces=ns)
-          print('I/55 real image SHA verified; 41 unchanged text lines, TEI P5 RNG and PAGE 2019 XSD valid; no verified glyph claim.')
+          print('I/55 real image SHA verified; 42 unchanged positions (41 body lines + folio), TEI P5 RNG and PAGE 2019 XSD valid; no verified glyph claim.')
           PY
       - name: Upload only unverified textual projections, never source scans
         uses: actions/upload-artifact@v4
