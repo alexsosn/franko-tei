@@ -1,0 +1,783 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 55,
+  "printed_page_observed": "XLVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00055.jpg",
+  "source_image_sha256": "2a88ec672ecce66cde5736f252c0b33514f22cadc3af99e701a292366e6542eb",
+  "reading": {
+    "reader_id": "gpt6-i55-native-image-first-20261116",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "single-ChatGPT-context-2026-11-16-I55-first-reading",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Directly read original pinned printed Franko I/55 (XLVI) full native image, without consulting original OCR or any peer copy. Preserve 41 physical body rows plus folio, paragraph boundaries and two bibliography items, historic Ukrainian/Russian and Latin-script bibliographic titles, original line-end hyphens. Mark uncertain glyphs separately. Boxes estimated. This is a single-context agent_unverified draft, not independent review.",
+    "raw_response": "XLVI\nВидавничу працю Тихонравова в Москві провадив далї его ме-\nтодом ученик его Попов. Він видав Історичну Палею, а в своїх\n„Библіографическихъ матеріалахъ“ (друкували ся в „Чтеніяхъ обще-\nства исторіи и древностей“) він подав цїлий ряд важних апокріфів\nіз дуже старих рукописів, додаючи до них дуже цїнні, головно\nфілологічні уваги. Одну часть зібраних ним матеріялів видав по его\nсмерти Сперанський. Деякі апокріфи видав Попов також у зладже-\nнім ним описї рукописів Хлудова, та сего коштовного виданя я не\nмав у руках.\nСмерть Тихонравова дала привід его ученикам видати в повнї\nтой твір, що в староруській літературі був найважнїйшою збіркою\nапокріфів — Толковую Палею. Видане старанно приготовлене до\nдруку розпочало ся в 1893 р. і тепер текст Палеї вже видрукува-\nний увесь. Рівночасно богате „Общество любителей древней пись-\nменности“ розпочало друк тої самої Палеї, тільки по иньшому,\nпізнїйшому рукопису, фотолїтографічним способом. Сего виданя\nя не бачив.\nІз новійших російських праць про апокріфічні оповіданя в пер-\nшім ряду треба назвати працї проф. Веселовського, головнож его\n„Славянскія сказанія о Соломонѣ и Китоврасѣ“ 1872, „Опыты по\nисторіи христіанской легенды“ (Журналъ министерства нар. про-\nсвѣщенія 1873—74), „Разысканія въ области русскихъ духовныхъ\nстиховъ“, „Южнорусскія былины“, „Изъ исторіи романа и повѣсти“.\nВ прилогах до поодиноких роздїлів своїх праць проф. Веселовський\nдрукує інодї нові тексти апокріфічних оповідань. Загалом працї его\nпоказують найкраще, який богатий та плїдний матеріял дають\nапокріфи для студій літературних в найширшім їх розуміню.\nПо за границями Росії головним огнищем студій над сею\nлітературою є Югославянська Академия в Загребі, що в своїх\nвиданях оголосила доси поважний ряд цїнних текстів апокріфічних\nоповідань. Головними робітниками є тут Серб Ст. Новакович і проф.\nЯґіч. Не маючи у Львові під руками (скандал!) сих для всякого\nСлавіста необхідно потрібних видань і користуючи ся тільки прина-\nгідними виписками, які я поробив собі в бібліотецї словянської\nсеминарії у Віднї, а також бібліографічними показчиками Козака\nі Прейшена (в Гарнаковій „Geschichte der altchristlichen Litteratur\nbis Eusebius I, B) я подаю спис старозавітних апокріфів, опубліко-\nваних у тих виданях:\n1) О созданіи Адама (подав проф. Яґіч, Arkiv za povjestnim\nJugoslavansku IX, 105—108).\n2) Книга Еноха (подав Ст. Новакович, Starine XVI, 70—81).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          143,
+          67,
+          112,
+          47
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "XLVI",
+            "bbox_xywh": [
+              146,
+              74,
+              95,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "paragraph1",
+        "kind": "body",
+        "bbox_xywh": [
+          131,
+          130,
+          1007,
+          325
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "paragraph1-l001",
+            "text": "Видавничу працю Тихонравова в Москві провадив далї его ме-",
+            "bbox_xywh": [
+              143,
+              140,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l002",
+            "text": "тодом ученик его Попов. Він видав Історичну Палею, а в своїх",
+            "bbox_xywh": [
+              143,
+              175,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l003",
+            "text": "„Библіографическихъ матеріалахъ“ (друкували ся в „Чтеніяхъ обще-",
+            "bbox_xywh": [
+              143,
+              210,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l004",
+            "text": "ства исторіи и древностей“) він подав цїлий ряд важних апокріфів",
+            "bbox_xywh": [
+              143,
+              245,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l005",
+            "text": "із дуже старих рукописів, додаючи до них дуже цїнні, головно",
+            "bbox_xywh": [
+              143,
+              280,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l006",
+            "text": "філологічні уваги. Одну часть зібраних ним матеріялів видав по его",
+            "bbox_xywh": [
+              143,
+              315,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l007",
+            "text": "смерти Сперанський. Деякі апокріфи видав Попов також у зладже-",
+            "bbox_xywh": [
+              143,
+              350,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l008",
+            "text": "нім ним описї рукописів Хлудова, та сего коштовного виданя я не",
+            "bbox_xywh": [
+              143,
+              385,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph1-l009",
+            "text": "мав у руках.",
+            "bbox_xywh": [
+              143,
+              420,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "paragraph2",
+        "kind": "body",
+        "bbox_xywh": [
+          131,
+          453,
+          1007,
+          288
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "paragraph2-l001",
+            "text": "Смерть Тихонравова дала привід его ученикам видати в повнї",
+            "bbox_xywh": [
+              143,
+              462,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph2-l002",
+            "text": "той твір, що в староруській літературі був найважнїйшою збіркою",
+            "bbox_xywh": [
+              143,
+              497,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph2-l003",
+            "text": "апокріфів — Толковую Палею. Видане старанно приготовлене до",
+            "bbox_xywh": [
+              143,
+              532,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph2-l004",
+            "text": "друку розпочало ся в 1893 р. і тепер текст Палеї вже видрукува-",
+            "bbox_xywh": [
+              143,
+              567,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph2-l005",
+            "text": "ний увесь. Рівночасно богате „Общество любителей древней пись-",
+            "bbox_xywh": [
+              143,
+              602,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph2-l006",
+            "text": "менности“ розпочало друк тої самої Палеї, тільки по иньшому,",
+            "bbox_xywh": [
+              143,
+              637,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph2-l007",
+            "text": "пізнїйшому рукопису, фотолїтографічним способом. Сего виданя",
+            "bbox_xywh": [
+              143,
+              672,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph2-l008",
+            "text": "я не бачив.",
+            "bbox_xywh": [
+              143,
+              707,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "paragraph3",
+        "kind": "body",
+        "bbox_xywh": [
+          131,
+          741,
+          1007,
+          351
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "paragraph3-l001",
+            "text": "Із новійших російських праць про апокріфічні оповіданя в пер-",
+            "bbox_xywh": [
+              143,
+              746,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l002",
+            "text": "шім ряду треба назвати працї проф. Веселовського, головнож его",
+            "bbox_xywh": [
+              143,
+              781,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l003",
+            "text": "„Славянскія сказанія о Соломонѣ и Китоврасѣ“ 1872, „Опыты по",
+            "bbox_xywh": [
+              143,
+              816,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l004",
+            "text": "исторіи христіанской легенды“ (Журналъ министерства нар. про-",
+            "bbox_xywh": [
+              143,
+              851,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l005",
+            "text": "свѣщенія 1873—74), „Разысканія въ области русскихъ духовныхъ",
+            "bbox_xywh": [
+              143,
+              886,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l006",
+            "text": "стиховъ“, „Южнорусскія былины“, „Изъ исторіи романа и повѣсти“.",
+            "bbox_xywh": [
+              143,
+              921,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l007",
+            "text": "В прилогах до поодиноких роздїлів своїх праць проф. Веселовський",
+            "bbox_xywh": [
+              143,
+              956,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l008",
+            "text": "друкує інодї нові тексти апокріфічних оповідань. Загалом працї его",
+            "bbox_xywh": [
+              143,
+              991,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l009",
+            "text": "показують найкраще, який богатий та плїдний матеріял дають",
+            "bbox_xywh": [
+              143,
+              1026,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph3-l010",
+            "text": "апокріфи для студій літературних в найширшім їх розуміню.",
+            "bbox_xywh": [
+              143,
+              1061,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "paragraph4",
+        "kind": "body",
+        "bbox_xywh": [
+          131,
+          1093,
+          1007,
+          403
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "paragraph4-l001",
+            "text": "По за границями Росії головним огнищем студій над сею",
+            "bbox_xywh": [
+              143,
+              1101,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l002",
+            "text": "літературою є Югославянська Академия в Загребі, що в своїх",
+            "bbox_xywh": [
+              143,
+              1137,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l003",
+            "text": "виданях оголосила доси поважний ряд цїнних текстів апокріфічних",
+            "bbox_xywh": [
+              143,
+              1173,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l004",
+            "text": "оповідань. Головними робітниками є тут Серб Ст. Новакович і проф.",
+            "bbox_xywh": [
+              143,
+              1209,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l005",
+            "text": "Яґіч. Не маючи у Львові під руками (скандал!) сих для всякого",
+            "bbox_xywh": [
+              143,
+              1245,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l006",
+            "text": "Славіста необхідно потрібних видань і користуючи ся тільки прина-",
+            "bbox_xywh": [
+              143,
+              1281,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l007",
+            "text": "гідними виписками, які я поробив собі в бібліотецї словянської",
+            "bbox_xywh": [
+              143,
+              1317,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l008",
+            "text": "семинарії у Віднї, а також бібліографічними показчиками Козака",
+            "bbox_xywh": [
+              143,
+              1353,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l009",
+            "text": "і Прейшена (в Гарнаковій „Geschichte der altchristlichen Litteratur",
+            "bbox_xywh": [
+              143,
+              1389,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l010",
+            "text": "bis Eusebius I, B) я подаю спис старозавітних апокріфів, опубліко-",
+            "bbox_xywh": [
+              143,
+              1425,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "paragraph4-l011",
+            "text": "ваних у тих виданях:",
+            "bbox_xywh": [
+              143,
+              1461,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "bibliography",
+        "kind": "body",
+        "bbox_xywh": [
+          131,
+          1496,
+          1007,
+          129
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "bibliography-l001",
+            "text": "1) О созданіи Адама (подав проф. Яґіч, Arkiv za povjestnim",
+            "bbox_xywh": [
+              143,
+              1503,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "bibliography-l002",
+            "text": "Jugoslavansku IX, 105—108).",
+            "bbox_xywh": [
+              143,
+              1539,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "bibliography-l003",
+            "text": "2) Книга Еноха (подав Ст. Новакович, Starine XVI, 70—81).",
+            "bbox_xywh": [
+              143,
+              1575,
+              988,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "paragraph1-l001",
+        "reading": "далї",
+        "reason": "Historic Ukrainian i/ї and printed forms need independent glyph comparison"
+      },
+      {
+        "line_id": "paragraph1-l002",
+        "reading": "Історичну Палею",
+        "reason": "Capitalization and first letters need a second image-only reading"
+      },
+      {
+        "line_id": "paragraph1-l003",
+        "reading": "Библіографическихъ",
+        "reason": "Pre-reform Russian title glyphs and ending ъ are provisional"
+      },
+      {
+        "line_id": "paragraph1-l003",
+        "reading": "матеріалахъ",
+        "reason": "Printed vowel і/и and original quotation punctuation uncertain"
+      },
+      {
+        "line_id": "paragraph1-l004",
+        "reading": "исторіи и древностей",
+        "reason": "Title exact vowels and closing punctuation need adjudication"
+      },
+      {
+        "line_id": "paragraph1-l005",
+        "reading": "цїнні",
+        "reason": "Historic Ukrainian vowel spelling is tentative"
+      },
+      {
+        "line_id": "paragraph1-l006",
+        "reading": "часть",
+        "reason": "Uncommon Ukrainian printed form should not be normalized"
+      },
+      {
+        "line_id": "paragraph1-l007",
+        "reading": "Сперанський",
+        "reason": "Name must be confirmed against enlarged source pixels"
+      },
+      {
+        "line_id": "paragraph1-l008",
+        "reading": "описї",
+        "reason": "Historic Ukrainian case ending needs pixel inspection"
+      },
+      {
+        "line_id": "paragraph2-l001",
+        "reading": "повнї",
+        "reason": "Historical orthography and dot locations tentative"
+      },
+      {
+        "line_id": "paragraph2-l002",
+        "reading": "найважнїйшою",
+        "reason": "Letter sequence needs second independent reading"
+      },
+      {
+        "line_id": "paragraph2-l003",
+        "reading": "Толковую Палею",
+        "reason": "Russian work title capitalization as printed uncertain"
+      },
+      {
+        "line_id": "paragraph2-l004",
+        "reading": "1893 р.",
+        "reason": "Numeral and following abbreviated punctuation not independently checked"
+      },
+      {
+        "line_id": "paragraph2-l005",
+        "reading": "древней пись-",
+        "reason": "Pre-reform title and exact hyphenation need source adjudication"
+      },
+      {
+        "line_id": "paragraph2-l007",
+        "reading": "фотолїтографічним",
+        "reason": "Long compound and vowel marks tentative"
+      },
+      {
+        "line_id": "paragraph3-l002",
+        "reading": "головнож",
+        "reason": "Source final-ж and spacing require visual confirmation"
+      },
+      {
+        "line_id": "paragraph3-l003",
+        "reading": "Соломонѣ и Китоврасѣ",
+        "reason": "Historic Russian vowels ѣ and Cyrillic title glyphs tentative"
+      },
+      {
+        "line_id": "paragraph3-l004",
+        "reading": "христіанской легенды",
+        "reason": "Russian title vowel and printed quotation mark tentative"
+      },
+      {
+        "line_id": "paragraph3-l005",
+        "reading": "свѣщенія",
+        "reason": "Pre-reform Russian ѣ and і glyphs require comparison"
+      },
+      {
+        "line_id": "paragraph3-l005",
+        "reading": "Разысканія",
+        "reason": "Bibliography spelling and quotation marks need checking"
+      },
+      {
+        "line_id": "paragraph3-l006",
+        "reading": "Южнорусскія былины",
+        "reason": "Title and capitalization only first-reader hypotheses"
+      },
+      {
+        "line_id": "paragraph3-l007",
+        "reading": "прилогах",
+        "reason": "Historic Ukrainian word form needs pixel audit"
+      },
+      {
+        "line_id": "paragraph3-l009",
+        "reading": "плїдний",
+        "reason": "Dot position in early Ukrainian vowel unverified"
+      },
+      {
+        "line_id": "paragraph4-l002",
+        "reading": "Югославянська Академия",
+        "reason": "Historic spelling/capitalization require adjudication"
+      },
+      {
+        "line_id": "paragraph4-l004",
+        "reading": "Серб Ст. Новакович",
+        "reason": "Person descriptor and abbreviated first name uncertain"
+      },
+      {
+        "line_id": "paragraph4-l005",
+        "reading": "Яґіч",
+        "reason": "Name's special consonant and punctuation need independent reading"
+      },
+      {
+        "line_id": "paragraph4-l006",
+        "reading": "прина-",
+        "reason": "Line-end hyphen and beginning of next line need crop"
+      },
+      {
+        "line_id": "paragraph4-l009",
+        "reading": "Прейшена",
+        "reason": "Name spelling and punctuation tentative"
+      },
+      {
+        "line_id": "paragraph4-l009",
+        "reading": "Geschichte der altchristlichen Litteratur",
+        "reason": "Latin-script German title, source quote and letters need independent inspection"
+      },
+      {
+        "line_id": "paragraph4-l010",
+        "reading": "bis Eusebius I, B)",
+        "reason": "Bibliographical punctuation and roman/Latin characters uncertain"
+      },
+      {
+        "line_id": "bibliography-l001",
+        "reading": "О созданіи Адама",
+        "reason": "Mixed Russian/Ukrainian title vowels need source comparison"
+      },
+      {
+        "line_id": "bibliography-l001",
+        "reading": "Arkiv za povjestnim",
+        "reason": "South Slavic Latin orthography provisional; do not substitute bibliographic metadata"
+      },
+      {
+        "line_id": "bibliography-l002",
+        "reading": "Jugoslavansku IX, 105—108",
+        "reason": "Latin title ending and dash glyph not verified"
+      },
+      {
+        "line_id": "bibliography-l003",
+        "reading": "Starine XVI, 70—81",
+        "reason": "Volume, pagination and long-dash typography require a second inspection"
+      }
+    ]
+  }
+}
