@@ -51,7 +51,7 @@ class Vol1Page56Tests(unittest.TestCase):
         self.assertTrue(listed[11].startswith("10) "))
         self.assertIn("Arkiv IX", self.reader["raw_response"])
         self.assertIn("Starine XVIII", self.reader["raw_response"])
-        self.assertIn("Прzeglądu", self.reader["raw_response"].replace("Przeglądu", "Прzeglądu"))
+        self.assertIn("Przeglądu tygodniowego", self.reader["raw_response"])
         self.assertIn("X. Рукописи", self.regions[-1]["lines"][0]["text"])
         self.assertTrue(self.regions[-1]["lines"][-1]["text"].startswith("гих людей"))
         self.assertTrue(self.reader["raw_response"].endswith("уривки і шматочки чудом"))
@@ -83,6 +83,33 @@ class Vol1Page56Tests(unittest.TestCase):
         self.assertIn(IMAGE_SHA, xml)
         self.assertIn("agent_unverified", xml)
         self.assertNotIn("<app>", xml)
+
+
+    def test_frozen_review_challenges_remain_explicitly_nonblind(self):
+        path = ROOT / "pilot/reviews/vol1_scan00056_post_freeze_challenges.json"
+        review = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(review["schema_version"], "post-freeze-image-challenges-v0")
+        self.assertEqual(review["status"], "provisional_source_challenges")
+        self.assertEqual((review["volume"], review["scan_page"]), ("1", 56))
+        self.assertEqual(review["source_image_sha256"], IMAGE_SHA)
+        self.assertEqual(review["frozen_first_reading"],
+                         "pilot/vol1_scan00056_single_reading.json")
+        self.assertEqual(review["frozen_first_reading_git_blob_sha"],
+                         "4ed196e8ed3d7c11f71832160ee76d6f61c9aebd")
+        self.assertIs(review["source_ocr_consulted"], False)
+        self.assertIs(review["independent_blind_reader"], False)
+        self.assertIs(review["third_independent_review_complete"], False)
+        self.assertIs(review["glyph_by_glyph_verified"], False)
+        self.assertEqual(len(review["source_spot_checks"]), 5)
+        self.assertEqual(len(review["unresolved"]), 38)
+        lines = {line["id"]: line["text"] for line in self.lines}
+        for item in review["unresolved"]:
+            self.assertIn(item["line_id"], lines)
+            self.assertIn(item["reading"], lines[item["line_id"]])
+            self.assertEqual(item["disposition"], "unresolved")
+            self.assertTrue(item["source_evidence"])
+
+
 
 
 if __name__ == "__main__":
