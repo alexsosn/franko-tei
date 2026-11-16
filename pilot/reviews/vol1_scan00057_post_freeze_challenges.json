@@ -1,0 +1,265 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 57,
+  "printed_page_observed": "XLVIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "7ada1617b5fe9ed1511c08a3e15d2876157ead38fa8b6d661d1f85c1f3b0bd42",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "frozen_first_reading": "pilot/vol1_scan00057_single_reading.json",
+  "frozen_first_reading_git_blob_sha": "d2ddf1d618334cc0cc83c6b70d9db32d23c6cf63",
+  "review_method": "Separate after-freeze failure-oriented inspection of pinned native JPEG and first-reader evidence in the SAME GPT-6 conversation context. Logically different purpose, but not a second blind reader or independent third review. Original embedded OCR not consulted.",
+  "source_ocr_consulted": false,
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "source_spot_checks": [
+    {
+      "bbox_xywh": [
+        137,
+        63,
+        185,
+        55
+      ],
+      "image_evidence": "Roman folio XLVIII at upper left separate from body, not equal to physical scan 57",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        136,
+        125,
+        1040,
+        115
+      ],
+      "image_evidence": "Three source continuation rows precede numbered manuscript heading",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        139,
+        239,
+        1030,
+        110
+      ],
+      "image_evidence": "First manuscript-heading row has letterspaced '1. Крехівська Палея.' inline with prose",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        144,
+        824,
+        1025,
+        200
+      ],
+      "image_evidence": "Two Polish-script owner quotations embedded across prose rows, following discussion of printed leaf references",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        147,
+        1290,
+        1030,
+        265
+      ],
+      "image_evidence": "Bottom lines contain rare Cyrillic letterform discussion and final full-stop line; no footer",
+      "disposition": "layout_observed"
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "continuation-l001",
+      "reading": "якимось уратовані від затрати",
+      "source_evidence": "Line begins a continuation from preceding scan; no supplied missing beginning permitted",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "continuation-l002",
+      "reading": "важнїй-",
+      "source_evidence": "Physical hyphen continuation rather than normalized word",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "continuation-l003",
+      "reading": "пізнїйше.",
+      "source_evidence": "Punctuation and historical dotted vowel uncertain",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l001",
+      "reading": "1. Крехівська Палея.",
+      "source_evidence": "First body row contains letterspaced inline numbered heading; do not invent separate source line",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l003",
+      "reading": "in 4-to",
+      "source_evidence": "Latin script and size abbreviation ambiguous at scan resolution",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l004",
+      "reading": "574",
+      "source_evidence": "Printed manuscript leaf count requires source glyph audit, not historical inference",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l005",
+      "reading": "1148 сторін",
+      "source_evidence": "Equivalent page count is Franko's statement, not independently checked codicology",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l006",
+      "reading": "340—341",
+      "source_evidence": "First lacuna page range punctuation needs enlarged original",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l007",
+      "reading": "1068—1069, між стор. 1132—1133",
+      "source_evidence": "Two manuscript gap ranges, risk of transposition",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l008",
+      "reading": "кустодів",
+      "source_evidence": "Technical vocabulary and historical letterform uncertain",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l009",
+      "reading": "1119",
+      "source_evidence": "Page-number reference at line beginning needs checking",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l010",
+      "reading": "полууставом",
+      "source_evidence": "Double vowel and palaeographical term need image audit",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l011",
+      "reading": "Киновар",
+      "source_evidence": "Capitalization/spelling of term as printed not verified",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l012",
+      "reading": "поправок; поправки",
+      "source_evidence": "Source semicolon and spacing uncertain",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l015",
+      "reading": "28 рядків письма; 16 карток",
+      "source_evidence": "Printed counts are hypotheses until independently checked",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l018",
+      "reading": "стор. 346 читаємо: Jan",
+      "source_evidence": "Polish inscription starts mid physical row",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l019",
+      "reading": "Zolkiewskiy Nazolkwie Hetman Polny Korony",
+      "source_evidence": "Unusual Polish orthography and segmentation must not be corrected from memory",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l020",
+      "reading": "Jan Zolkiewski Nazolkwie Marszałek у Hetman Polny Korony",
+      "source_evidence": "Critical Latin/Cyrillic y/у and Polish ł ambiguity",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l021",
+      "reading": "Hetman Polny Korony Polny Korony“.",
+      "source_evidence": "Repeated quote text and dangling closing quote need genuine source check",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l022",
+      "reading": "Polny, написані",
+      "source_evidence": "Transition from Polish quote to Franko prose should preserve original boundary",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l023",
+      "reading": "1133. А що між стор. 1132—1133",
+      "source_evidence": "Repeated manuscript page ranges and punctuation",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l026",
+      "reading": "Ян Жолкевський умер 1623 р.",
+      "source_evidence": "Printed historical date is not externally verified",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l029",
+      "reading": "XVI або й XV віку",
+      "source_evidence": "Roman century numerals need independent source reading",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l031",
+      "reading": "великого юса (ѫ)",
+      "source_evidence": "Rare printed glyph looks similar to ж in native scan; first reader's ѫ is not source-verified",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l032",
+      "reading": "замѣсть ѣ уживає ся дуже часто е",
+      "source_evidence": "Source historical letters at line start strongly doubtful; independent crop required",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l033",
+      "reading": "ъ, та часто замість ы",
+      "source_evidence": "Hard sign versus soft sign and yery not yet distinguished by second reader",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l034",
+      "reading": "ѣ і ь в серединї слів",
+      "source_evidence": "Printed historic pair could be a different pair of letters, audit visually",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l035",
+      "reading": "Потоломей зам. Птоломей",
+      "source_evidence": "Unusual historical name variants source-verified only at initial-pass level",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "paleia-l036",
+      "reading": "ріжниця між е і є",
+      "source_evidence": "Contrasting Cyrillic glyphs, visual form not certified",
+      "disposition": "unresolved"
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XLVIII top left",
+    "body_physical_lines": 40,
+    "paragraph_line_counts": [
+      3,
+      37
+    ],
+    "source_text_positions": 41,
+    "real_image_sha_from_manifest_only": true,
+    "geometry": "Estimated line and region bboxes; source glyph fidelity not established",
+    "source_text_accuracy": "Unverified first-reading hypotheses; 29 post-freeze challenges unresolved"
+  },
+  "source_rights": "Source JPEG is on pinned asset branch, not included in PR. Code MIT does not relicense scans.",
+  "limitations": [
+    "No second blind reader",
+    "No third independently source-inspecting adjudicator",
+    "Polish owner note is high risk",
+    "Rare Cyrillic examples must not be gold",
+    "No verified TEI/TF corpus or CER reference"
+  ]
+}
