@@ -1,0 +1,322 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 56,
+  "printed_page_observed": "XLVII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "9488d14c57dc57a13633a8d2d66954a8d0ca42c6e2faca04883cc0fe039aab6a",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "frozen_first_reading": "pilot/vol1_scan00056_single_reading.json",
+  "frozen_first_reading_git_blob_sha": "4ed196e8ed3d7c11f71832160ee76d6f61c9aebd",
+  "review_method": "Separate failure-oriented rereading of the pinned original JPEG after the first draft was written and committed, within the SAME GPT-6 conversation/context. The check treats words as potential errors and source segmentation as adversarial assumptions; it does not supply a second isolated blind text or a third independent judge. Neither original PDF OCR nor external edited copies were used.",
+  "source_ocr_consulted": false,
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "source_spot_checks": [
+    {
+      "bbox_xywh": [
+        913,
+        64,
+        162,
+        71
+      ],
+      "image_evidence": "Original Roman folio XLVII is printed near top right, not source scan index 56.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        84,
+        140,
+        1049,
+        449
+      ],
+      "image_evidence": "Numbered bibliography 3–10 occupies thirteen visible physical text rows, with item 6 and several later entries extending across lines.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        90,
+        584,
+        1043,
+        525
+      ],
+      "image_evidence": "Serbian and eastern-European scholarship paragraph visibly fills fifteen consecutive rows and preserves line-final hyphens.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        90,
+        1109,
+        1043,
+        259
+      ],
+      "image_evidence": "Two separate short paragraphs discuss Draghomanov (three rows) and Polish research (four rows).",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        92,
+        1350,
+        1041,
+        232
+      ],
+      "image_evidence": "New Roman X section heading is inline with same physical line as beginning of its prose; following five body lines end at cut-off 'чудом'.",
+      "disposition": "layout_observed"
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "catalogue-l001",
+      "reading": "Откровеніе Авраама",
+      "source_evidence": "Check pre-reform and Ukrainian Cyrillic word-initial letters without emending from other editions.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l001",
+      "reading": "Arkiv IX, 83—91",
+      "source_evidence": "At page's first line, Latin citation range has irregular spacing/dash artifacts in the print image; source punctuation uncertain.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l002",
+      "reading": "Асенеф",
+      "source_evidence": "Source title could be confused with a different Slavonic consonant/name form; need enlarged glyph view.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l003",
+      "reading": "Іов",
+      "source_evidence": "Ukrainian/Russian І/И letter distinction not confirmed independently.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l004",
+      "reading": "Житіе и жизнь святаго и праведнаго Іова",
+      "source_evidence": "Quoted source title has historic Cyrillic orthography; each printed vowel and final consonant requires source check.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l004",
+      "reading": "(подав др.",
+      "source_evidence": "Catalogue item 6 spills to the next physical line; punctuation after title/source author should be independently checked.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l005",
+      "reading": "Полівка)",
+      "source_evidence": "Second line of item 6 is exactly one continuation word and closing parenthesis, not item 7.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l006",
+      "reading": "Параліпомена Єремії",
+      "source_evidence": "Title letterforms and first vowels require a source-inspecting second reader.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l007",
+      "reading": "сербський текст опублікував також А. Попов",
+      "source_evidence": "Line 7 citation may contain spacing and author initial differences.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l008",
+      "reading": "рукописей Хлудова, 406—413).",
+      "source_evidence": "Russian book title's historical glyphs and bibliographic punctuation remain tentative.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l009",
+      "reading": "Варохово",
+      "source_evidence": "Name form and source Russian spelling must not be silently normalized to Baruch.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l010",
+      "reading": "205—209)",
+      "source_evidence": "Printed reference line may include trailing punctuation not captured on first pass.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l011",
+      "reading": "Видѣніе Исаіи",
+      "source_evidence": "Read ѣ and name vowels independently, rather than importing a modern title.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l012",
+      "reading": "Видѣніе Даніилово",
+      "source_evidence": "Source spelling may be obscured by compressed type.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l013",
+      "reading": "Русскій Филологическій вѣстникъ",
+      "source_evidence": "Mixed nineteenth-century Cyrillic glyphs and capitalization in periodical title need independent audit.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "catalogue-l013",
+      "reading": "VII, 23—26",
+      "source_evidence": "Roman volume and range format remain tentative.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l002",
+      "reading": "Москаль Соколов",
+      "source_evidence": "Person reference and first word may be mistaken for ethnicity versus a name, should be read from pixels.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l003",
+      "reading": "Матеріалахъ и замѣткахъ",
+      "source_evidence": "Actual Russian title letters and quotation marks require image checking.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l004",
+      "reading": "Індексах",
+      "source_evidence": "Uncommon capitalization and initial historical letter still first-pass only.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l006",
+      "reading": "старословянських",
+      "source_evidence": "Dense old Ukrainian word and line-final compound boundary could contain letter substitutions.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l007",
+      "reading": "Шафарика",
+      "source_evidence": "Read surname as printed, avoiding bibliographic standardization.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l008",
+      "reading": "Тиквеньского",
+      "source_evidence": "Manuscript label can easily be corrupted by Cyrillic recognition.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l009",
+      "reading": "Теодора Попо-",
+      "source_evidence": "Physical hyphen continuation in a proper name must be source-grounded.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l010",
+      "reading": "Кіевской Старинѣ",
+      "source_evidence": "Source uses Russian pre-reform journal spelling; historical vowels/punctuation tentative.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l011",
+      "reading": "укр.-руських",
+      "source_evidence": "Abbreviation and hyphen vs short dash at word boundary ambiguous.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l013",
+      "reading": "о. Яре-",
+      "source_evidence": "Source hyphen in last name/clerical abbreviation makes a vulnerable multirow citation.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l014",
+      "reading": "Білахевича",
+      "source_evidence": "Manuscript owner surname and vowel shapes need visual verification.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "serbian-l015",
+      "reading": "лоб Адамів",
+      "source_evidence": "Lexeme and typography must not be inferred from apocrypha tradition.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "bulgaria-l001",
+      "reading": "многоцїнні",
+      "source_evidence": "Old Ukrainian vowel spelling uncertain.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "bulgaria-l002",
+      "reading": "доторкаєть ся",
+      "source_evidence": "Historic word division must not be normalized.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "poland-l002",
+      "reading": "Сьвєнтек",
+      "source_evidence": "Polish surname printed in Cyrillic may use tricky vowel/special sign.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "poland-l003",
+      "reading": "Радлін-",
+      "source_evidence": "Person's name split across physical lines, no expansion based on surname lookup.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "poland-l004",
+      "reading": "Przeglądu tygodniowego",
+      "source_evidence": "Latin Polish bibliography requires source-specific nasal letter ą and precise romanization.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "sectionX-l001",
+      "reading": "X. Рукописи визискані в сьому томі.",
+      "source_evidence": "Printed letterspacing and inline heading after Roman numeral cannot be reduced to a separate line/region without evidence.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "sectionX-l001",
+      "reading": "Лишаесь нам ще",
+      "source_evidence": "Verb ending in historical orthography appears ambiguous at native resolution.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "sectionX-l003",
+      "reading": "Їх не богато",
+      "source_evidence": "Original two dots / apostrophe and word division must be corroborated.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "sectionX-l005",
+      "reading": "приватна власність моя або дру-",
+      "source_evidence": "Last paragraph wraps and continues on next physical row; don't create a new source page or sentence.",
+      "disposition": "unresolved"
+    },
+    {
+      "line_id": "sectionX-l006",
+      "reading": "уривки і шматочки чудом",
+      "source_evidence": "Bottom row ends without sentence punctuation; continuation on next scan must not be fabricated.",
+      "disposition": "unresolved"
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "XLVII top right",
+    "body_physical_lines": 41,
+    "paragraph_line_counts": [
+      13,
+      15,
+      3,
+      4,
+      6
+    ],
+    "source_text_positions": 42,
+    "real_image_sha_from_manifest_only": true,
+    "geometry": "All bounding boxes in first-reader JSON are estimated, not independently measured.",
+    "source_text_accuracy": "Unverified first-reader draft; 38 line-anchored challenges remain unresolved and must not be silently changed."
+  },
+  "source_rights": "Printed source image not bundled, only referenced at pinned branch/commit. Code MIT license does not cover it.",
+  "limitations": [
+    "No isolated blind second reading",
+    "No isolated third image-grounded review",
+    "No CER gold set or proven accuracy",
+    "Printed section X heading letterspacing and pre-reform vowels are not certified",
+    "TEI/PAGE are provisional serialization representations; geometry estimates not source gold"
+  ]
+}
