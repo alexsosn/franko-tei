@@ -46,7 +46,7 @@ class Vol1Page57Tests(unittest.TestCase):
                 self.assertIn(phrase, lines)
         self.assertTrue(self.regions[1]["lines"][-1]["text"].endswith("пізнїйше."))
         self.assertTrue(self.regions[-1]["lines"][-1]["text"].endswith("руський характер списка."))
-        self.assertNotIn("verified", self.payload["status"])
+        self.assertEqual(self.payload["status"], "agent_unverified")
 
     def test_nonblind_flags_and_estimated_source_geometry(self):
         r = self.reader
@@ -75,6 +75,32 @@ class Vol1Page57Tests(unittest.TestCase):
         self.assertIn(IMAGE_SHA, xml)
         self.assertIn("agent_unverified", xml)
         self.assertNotIn("<app>", xml)
+
+
+    def test_frozen_source_challenges_are_not_second_reader_claims(self):
+        review = json.loads((ROOT / "pilot/reviews/vol1_scan00057_post_freeze_challenges.json")
+                            .read_text(encoding="utf-8"))
+        self.assertEqual(review["schema_version"], "post-freeze-image-challenges-v0")
+        self.assertEqual(review["status"], "provisional_source_challenges")
+        self.assertEqual((review["volume"], review["scan_page"]), ("1", 57))
+        self.assertEqual(review["source_image_sha256"], IMAGE_SHA)
+        self.assertEqual(review["frozen_first_reading"],
+                         "pilot/vol1_scan00057_single_reading.json")
+        self.assertEqual(review["frozen_first_reading_git_blob_sha"],
+                         "d2ddf1d618334cc0cc83c6b70d9db32d23c6cf63")
+        self.assertIs(review["source_ocr_consulted"], False)
+        self.assertIs(review["independent_blind_reader"], False)
+        self.assertIs(review["third_independent_review_complete"], False)
+        self.assertIs(review["glyph_by_glyph_verified"], False)
+        self.assertEqual(len(review["source_spot_checks"]), 5)
+        self.assertEqual(len(review["unresolved"]), 29)
+        line_map = {line["id"]: line["text"] for line in self.lines}
+        for item in review["unresolved"]:
+            self.assertIn(item["line_id"], line_map)
+            self.assertIn(item["reading"], line_map[item["line_id"]])
+            self.assertEqual(item["disposition"], "unresolved")
+            self.assertTrue(item["source_evidence"])
+
 
 
 if __name__ == "__main__":
