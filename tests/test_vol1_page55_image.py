@@ -84,5 +84,31 @@ class Vol1Page55Tests(unittest.TestCase):
         self.assertNotIn("<app>", xml)
 
 
+    def test_post_freeze_adversarial_notes_are_anchored_and_not_blind(self):
+        path = ROOT / "pilot/reviews/vol1_scan00055_post_freeze_challenges.json"
+        review = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(review["schema_version"], "post-freeze-image-challenges-v0")
+        self.assertEqual(review["status"], "provisional_source_challenges")
+        self.assertEqual((review["volume"], review["scan_page"]), ("1", 55))
+        self.assertEqual(review["source_image_sha256"], IMAGE_SHA)
+        self.assertEqual(review["frozen_first_reading"],
+                         "pilot/vol1_scan00055_single_reading.json")
+        self.assertEqual(review["frozen_first_reading_git_blob_sha"],
+                         "968f451c1a628042c30f3a25a58457e08c576520")
+        self.assertIs(review["independent_blind_reader"], False)
+        self.assertIs(review["third_independent_review_complete"], False)
+        self.assertIs(review["glyph_by_glyph_verified"], False)
+        self.assertIs(review["source_ocr_consulted"], False)
+        self.assertEqual(len(review["source_spot_checks"]), 5)
+        self.assertEqual(len(review["unresolved"]), 27)
+        lines = {l["id"]: l["text"] for l in self.lines}
+        for item in review["unresolved"]:
+            self.assertIn(item["line_id"], lines)
+            self.assertIn(item["reading"], lines[item["line_id"]])
+            self.assertEqual(item["disposition"], "unresolved")
+            self.assertTrue(item["source_evidence"])
+
+
+
 if __name__ == "__main__":
     unittest.main()
