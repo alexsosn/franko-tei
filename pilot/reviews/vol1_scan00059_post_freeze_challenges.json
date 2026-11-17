@@ -1,0 +1,543 @@
+{
+  "schema_version": "post-freeze-image-challenges-v0",
+  "status": "provisional_source_challenges",
+  "volume": "1",
+  "scan_page": 59,
+  "printed_page_observed": "L",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_sha256": "78a7b662b402bc34d763189f0f890787eb6b276b6ea05ea9142960cca0442de4",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "frozen_first_reading": "pilot/vol1_scan00059_single_reading.json",
+  "frozen_first_reading_git_blob_sha": "42ddc12e210ef1f041a2fa399221e95a2fb8c951",
+  "review_method": "Same ChatGPT context, second failure-oriented inspection of original image after immutable first-reader draft freeze. Distinct adversarial purpose, NOT isolated blind second reader or independent third reviewer. No original embedded PDF OCR or peer source used. Any plausible errors remain unresolved and first response unchanged.",
+  "source_ocr_consulted": false,
+  "independent_blind_reader": false,
+  "third_independent_review_complete": false,
+  "glyph_by_glyph_verified": false,
+  "source_spot_checks": [
+    {
+      "bbox_xywh": [
+        175,
+        68,
+        93,
+        54
+      ],
+      "image_evidence": "Printed Roman folio L at upper left, distinct from scan index 59.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        158,
+        142,
+        1004,
+        315
+      ],
+      "image_evidence": "First 9 printed rows continue printed comparison of Cherubim and life tree, with dense early-Cyrillic quote and end reference (161—162).",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        161,
+        475,
+        1008,
+        300
+      ],
+      "image_evidence": "Next block introduces physiological discussion and old Cyrillic reproductive text; print changes font within physical rows.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        159,
+        770,
+        1009,
+        175
+      ],
+      "image_evidence": "Latin quote on physiological hot/cold theory, continuing over several source physical lines with spaced author name and bibliographic imprint.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        158,
+        942,
+        1009,
+        244
+      ],
+      "image_evidence": "Cain and Abel quotation with printed [sic!] and bibliography in same paragraph, no clean separate region boundary.",
+      "disposition": "layout_observed"
+    },
+    {
+      "bbox_xywh": [
+        159,
+        1180,
+        1007,
+        447
+      ],
+      "image_evidence": "Final 12 physical rows begin with printed section titles, include dense old-Cyrillic genealogy and end mid-word 'Ме-' above lower blank margin.",
+      "disposition": "layout_observed"
+    }
+  ],
+  "additional_adversarial_observations": [
+    {
+      "line_id": "cherubim-l001",
+      "source_evidence": "The printed physical line begins in a previous source passage; never invent its opening from I/58."
+    },
+    {
+      "line_id": "cherubim-l003",
+      "source_evidence": "The printed opening old-Cyrillic question has bracketed material and appears to use historic type with difficult spacing. The draft word Разумѣеши needs crop."
+    },
+    {
+      "line_id": "cherubim-l004",
+      "source_evidence": "The first-reader ѡстѫпи may hide different original consonants/vowels; physical line coverage is not text accuracy."
+    },
+    {
+      "line_id": "cherubim-l006",
+      "source_evidence": "The sequence 'Іс҃у и ѧвѣ пронзи ка-' is a high-probability substantive misreading. Require second full-source reading rather than philological correction."
+    },
+    {
+      "line_id": "cherubim-l007",
+      "source_evidence": "The phrase 'Гн҃а кровъ ... очисти ю и ѡсти' may contain fabricated or omitted letters, retain only as tentative first response."
+    },
+    {
+      "line_id": "cherubim-l008",
+      "source_evidence": "Editorial brackets [ѡ], [во] and divine references cannot be inferred from a parallel edition."
+    },
+    {
+      "line_id": "physiology-l001",
+      "source_evidence": "The `ѡ зачатїи Каїна` heading appears inline within Franko prose; don't manufacture new physical lines or verified section nodes."
+    },
+    {
+      "line_id": "physiology-l005",
+      "source_evidence": "The embryo/genesis old-script words are compressed, with source letterform uncertainty for every word."
+    },
+    {
+      "line_id": "physiology-l007",
+      "source_evidence": "The end-of-line hyphen following смерзъ- must not be removed by normalization."
+    },
+    {
+      "line_id": "physiology-l009",
+      "source_evidence": "Latin original starts at end of the Cyrillic prose line after `quod`; printed quote should be rechecked for punctuation."
+    },
+    {
+      "line_id": "physiology-l010",
+      "source_evidence": "Complete Latin sentence is visibly present but exact letters/periods should be proofed directly. Do not treat background knowledge as facsimile."
+    },
+    {
+      "line_id": "physiology-l011",
+      "source_evidence": "The Latin quote continues and ends before spaced author citation `Albertus`; source quote boundary important."
+    },
+    {
+      "line_id": "physiology-l012",
+      "source_evidence": "Print has bibliographic imprint `Amsterodami 1660` and `p. 17—18`, but citation is not independently verified."
+    },
+    {
+      "line_id": "physiology-l018",
+      "source_evidence": "The odd phrase `Дегенши [Диоген?]` is a dangerous hypothesis, perhaps materially inconsistent with the print; don't upgrade to verified."
+    },
+    {
+      "line_id": "physiology-l019",
+      "source_evidence": "Original `[sic!]` is explicit editorial text, while surrounding old-Cyrillic phrase could contain multiple errors."
+    },
+    {
+      "line_id": "genealogy-l001",
+      "source_evidence": "The heading `ѡ души и ѡ разѫме` contains source historic overmarks that may be omitted in plain Unicode."
+    },
+    {
+      "line_id": "genealogy-l004",
+      "source_evidence": "A proposed `г҃. с҃ны` expression has uncertain numeral/titla; no morphological normalization."
+    },
+    {
+      "line_id": "genealogy-l007",
+      "source_evidence": "The Eve name as `Евзе` appears especially doubtful; revisit original, not lexicon."
+    },
+    {
+      "line_id": "genealogy-l008",
+      "source_evidence": "The Abel slaying phrase contains bracketed source restoration and rare vowels, with questionable prepositions."
+    },
+    {
+      "line_id": "genealogy-l010",
+      "source_evidence": "Source proper names and the abbreviated reporting verb are very difficult in dense type, strong reason for independent lines."
+    },
+    {
+      "line_id": "genealogy-l012",
+      "source_evidence": "Bottom text ends with partial `Ме-` on the printed page and must remain incomplete; no invisible footer or manuscript interpolation."
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "cherubim-l001",
+      "reading": "наведені у нас (стор. 28) слова про Херувима, що по вигнаню Ада-",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l002",
+      "reading": "мовім приставлений був пильнувати дерева животного автор запи-",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l003",
+      "reading": "тує Жидовина: „Разумѣеши л[и], о жидовине, что есть древо",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l004",
+      "reading": "животное, когда ли ѡстѫпи херѡвимъ ѡ древа животна? не",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l005",
+      "reading": "егда ли ся въдрузи на мѣсте крайнѣе зовомо Голгоѳа, рекше",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l006",
+      "reading": "лобное мѣсто? тѫ бо пропятъ бывшо Іс҃у и ѧвѣ пронзи ка-",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l007",
+      "reading": "мен честна та Гн҃а кровъ до главы Адамовы и очисти ю и ѡсти,",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l008",
+      "reading": "да то видѣвъ херѡвимъ ѡстѫпи [ѡ] древа жы[во]тнаго (стор. 87,",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l009",
+      "reading": "пор. П. Тол. 161—162).",
+      "disposition": "unresolved",
+      "source_evidence": "The Cherubim quotation contains old Cyrillic glyphs, possible titla, editorial brackets and line-break typography. Source characters here are first-reader hypotheses, not verified. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l001",
+      "reading": "На стор. 88—90 находить ся роздїл „ѡ зачатїи Каїна“ —",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l002",
+      "reading": "розвідка фізіологічна, цїкава тим, що висказує погляди супротивлежні",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l003",
+      "reading": "тим, які висказував про се Арістотель і які за ним повторяла в се-",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l004",
+      "reading": "реднїх віках західня Европа. Бо коли Палея зачатє дитини приписує",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l005",
+      "reading": "тому, що „ѡ мужа стѫденѣ ѧскипенїе семеннѣе примѣшает ся",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l006",
+      "reading": "противъ сочни крови женстѣй“, а в такім разї „съкладаєт ся ѡ",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l007",
+      "reading": "стѫдена мужескаг[о] семени... ѡ жены ж[е] кровъ тепла смерзъ-",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l008",
+      "reading": "ши ся въ плоть претвѧраєт ся“ (88 г. П. Тол. 164), натомість у",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l009",
+      "reading": "зах. Европі аж до кінця середнїх віків держав ся погляд, „quod",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l010",
+      "reading": "mulier est frigida et humida a natura, vir autem est calidus et siccus.",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l011",
+      "reading": "Frigidissimus virorum est calidior calidissima mulierum“ (Albertus",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l012",
+      "reading": "Magnus, De secretis mulierum. Amsterodami 1660, p. 17—18). Про",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l013",
+      "reading": "Каїна і Авеля говорить ся, що „Каїнъ въ перваго грѣха зачатокъ",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l014",
+      "reading": "и преступленїя заповѣд[и] бж҃їѧ, Авель же плод смиренїя быс[ть]",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l015",
+      "reading": "и чадо желанїя и смертнаго ѡвѣта“. Є се натяк на оповіданє, яке",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l016",
+      "reading": "знаходить ся в гностичній книзі Адама (Migne, Dictionnaire des",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l017",
+      "reading": "Apocryphes I, 290 і д.), що у нас в цїлости не була звісна. Тутже",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l018",
+      "reading": "автор подає увагу: „но и Дегенши [Диоген?] философ реч[е] юноши",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l019",
+      "reading": "нѣкоемѫ бес пестака шатаетца [sic!] ся: отцъ твой пїанъ тебѣ",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l020",
+      "reading": "всѣлъ“ (92, П. Тол. 171—172).",
+      "disposition": "unresolved",
+      "source_evidence": "Old Cyrillic morphology, Latin typography and edition-commentary transitions on this physical line need an independent source glyph check; no normalization. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l001",
+      "reading": "На стор. 94—97 є статейка „ѡ души и ѡ разѫме“ —",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l002",
+      "reading": "проба середньовічної психології; стор. 98 „ѡ Каин[е]“, стор. 101",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l003",
+      "reading": "„о убїенїи Авеля“, стор. 103 „о роженїи Сифовѣ“; ся статейка",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l004",
+      "reading": "кінчить ся ось як: „Роди же Адам г҃. с҃ны: Каїна, Авеля, Сифа,",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l005",
+      "reading": "и две дщери: Азарѫ, Асѫламѫ. и по повелѣнїю бж҃ю дастъ имена",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l006",
+      "reading": "всемъ звѣремъ и скотомъ и гадамъ и рыбамъ и птицамъ и своим",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l007",
+      "reading": "чадом, Адама ж[е] създавъ Г҃ь и имѧ дал, тако ж[е] и Евзе.",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l008",
+      "reading": "Авель ж[е] убїенъ быс[ть] ѡ брат[а] своего Каїна. Каїнъ же",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l009",
+      "reading": "поятъ себѣ женѫ сестрѫ свою первую Азарѫ, Сифъ ж[е] поятъ",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l010",
+      "reading": "вторую сестрѫ свою Асѫламѫ. а инде гл҃ть дщери Адамли первую",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l011",
+      "reading": "Каламанѫ, а вторую Идевѣрѫ“ (104). Се остатнє реченє важне для",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l012",
+      "reading": "того, бо по думцї Жданова вказує, що автор Палєї знав Слово Ме-",
+      "disposition": "unresolved",
+      "source_evidence": "Dense historical Cyrillic with possible superscripts, abbreviations, names and bracketed editorial letters requires an independent image reading. The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l003",
+      "reading": "Разумѣеши л[и]",
+      "disposition": "unresolved",
+      "source_evidence": "Old-Cyrillic question begins, original brackets and ѣ may be wrong The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l005",
+      "reading": "Голгоѳа",
+      "disposition": "unresolved",
+      "source_evidence": "Proper name uses uncertain rare letter ѳ The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l006",
+      "reading": "Іс҃у и ѧвѣ пронзи ка-",
+      "disposition": "unresolved",
+      "source_evidence": "Highly doubtful source word sequence and titlo, could be substantial error The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l007",
+      "reading": "Гн҃а кровъ",
+      "disposition": "unresolved",
+      "source_evidence": "Tentative divine abbreviation and vowel forms The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "cherubim-l008",
+      "reading": "жы[во]тнаго",
+      "disposition": "unresolved",
+      "source_evidence": "Editorial reconstruction and source glyph forms uncertain The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l005",
+      "reading": "ѧскипенїе семеннѣе",
+      "disposition": "unresolved",
+      "source_evidence": "Ancient physiology quotation difficult at scan resolution The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l007",
+      "reading": "мужескаг[о]",
+      "disposition": "unresolved",
+      "source_evidence": "Bracketed ending and old Cyrillic wordform uncertain The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l010",
+      "reading": "mulier est frigida et humida a natura",
+      "disposition": "unresolved",
+      "source_evidence": "Latin text must be checked character-by-character, not assumed from known quotations The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l011",
+      "reading": "Frigidissimus virorum est calidior",
+      "disposition": "unresolved",
+      "source_evidence": "Latin comparative ending/punctuation should be collated The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l012",
+      "reading": "Amsterodami 1660",
+      "disposition": "unresolved",
+      "source_evidence": "Printed bibliographic place spelling may be irregular The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l014",
+      "reading": "бж҃їѧ",
+      "disposition": "unresolved",
+      "source_evidence": "Titlo/cyrillic title abbreviation uncertain The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l018",
+      "reading": "Дегенши [Диоген?]",
+      "disposition": "unresolved",
+      "source_evidence": "Very high-risk name/editorial bracket; should not be mistaken for certified source The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "physiology-l019",
+      "reading": "[sic!]",
+      "disposition": "unresolved",
+      "source_evidence": "Printed editorial bracket/segmentation needs source review The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l001",
+      "reading": "ѡ разѫме",
+      "disposition": "unresolved",
+      "source_evidence": "Potential overletters and rare vowel glyphs not verified The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l004",
+      "reading": "г҃. с҃ны",
+      "disposition": "unresolved",
+      "source_evidence": "Abbreviated numeral or divine overletter reading likely incomplete The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l007",
+      "reading": "имѧ дал, тако ж[е] и Евзе",
+      "disposition": "unresolved",
+      "source_evidence": "Name, word division and bracket highly doubtful The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l010",
+      "reading": "Асѫламѫ. а инде гл҃ть",
+      "disposition": "unresolved",
+      "source_evidence": "Names, punctuation and titlo scope all unresolved The image was revisited after freeze without establishing an independently verified glyph reading."
+    },
+    {
+      "line_id": "genealogy-l012",
+      "reading": "Слово Ме-",
+      "disposition": "unresolved",
+      "source_evidence": "Printed page break is final, never complete from next scan The image was revisited after freeze without establishing an independently verified glyph reading."
+    }
+  ],
+  "coverage_review": {
+    "printed_folio": "L top left",
+    "body_physical_lines": 41,
+    "paragraph_line_counts": [
+      9,
+      20,
+      12
+    ],
+    "source_text_positions": 42,
+    "footer_regions_observed": 0,
+    "real_image_sha_from_manifest_only": true,
+    "geometry": "All bounding boxes estimated, not measured; source pixel geometry is not a benchmark.",
+    "source_text_accuracy": "Unverified source text. First-reader old-Cyrillic word sequence, superscript marks, editorial brackets, punctuation and rare glyphs may contain substantive errors."
+  },
+  "source_rights": "Pinned source image is on existing page-assets asset branch, not redistributed in this PR. MIT code license does not establish museum scan rights.",
+  "limitations": [
+    "No truly isolated second blind image-only reader",
+    "No third independent source-inspecting adjudicator",
+    "Dense Old Cyrillic passages may contain hallucinated characters/words and unrepresented titla",
+    "Latin source is directly visible but print quotation boundaries need review",
+    "No CER, verified TEI/TF or stable scholarly manuscript-witness metadata"
+  ]
+}

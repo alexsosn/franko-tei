@@ -1,0 +1,105 @@
+name: "I/59 native-image reading: PAGE + TEI source smoke (UNVERIFIED)"
+on:
+  pull_request:
+    paths:
+      - pilot/vol1_scan00059_single_reading.json
+      - tests/test_vol1_page59_image.py
+      - .github/workflows/pilot-vol1-page59.yml
+      - src/franko_tei/pilot_tei.py
+      - src/franko_tei/agent_pagexml.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-anchored-readings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local package and XML validator
+        run: python -m pip install -e . 'lxml>=5,<7'
+      - name: Fetch pinned original I/59 JPEG, original manifest, PAGE and TEI schemas
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p native-assets/vol1 build
+          SOURCE="https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol1"
+          curl --fail --silent --show-error --location --retry 3 "$SOURCE/manifest.json" -o native-assets/vol1/manifest.json
+          curl --fail --silent --show-error --location --retry 3 "$SOURCE/page-00059.jpg" -o native-assets/vol1/page-00059.jpg
+          curl --fail --silent --show-error --location --retry 3 \
+            'https://www.primaresearch.org/schema/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd' \
+            -o build/pagecontent.xsd
+          curl --fail --silent --show-error --location --retry 3 \
+            'https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/custom/schema/relaxng/tei_all.rng' \
+            -o build/tei_all.rng
+      - name: Source-SHA-validated unverified PAGE and pilot TEI projections
+        run: |
+          franko-pilot-tei --images native-assets \
+            --input pilot/vol1_scan00059_single_reading.json \
+            --output build/vol1_scan00059.xml
+          franko-pagexml-reading --images native-assets \
+            --input pilot/vol1_scan00059_single_reading.json \
+            --output-dir build/agent-pagexml
+      - name: Validate XML schema, original Unicode, physical lines and provenance
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          from lxml import etree
+          from franko_tei.ocr_candidates import _read_manifest, _get_page_image
+          from franko_tei.pilot_tei import extract_transcribed_lines
+          from franko_tei.pagexml_export import PAGE_NS
+
+          source = Path('pilot/vol1_scan00059_single_reading.json')
+          draft = json.loads(source.read_text(encoding='utf8'))
+          original = [line['text'] for region in draft['reading']['regions']
+                      for line in region['lines']]
+          assert len(original) == 42
+          assert [len(r['lines']) for r in draft['reading']['regions']] == [1,9,20,12]
+          assert draft['reading']['raw_response'] == '\n'.join(original)
+          assert draft['status'] == 'agent_unverified'
+          assert draft['reading']['context_independence'] == 'single-working-draft'
+          manifest = _read_manifest(Path('native-assets'), '1')
+          image, image_hash = _get_page_image(
+              Path('native-assets'), '1', manifest['pages'][58])
+          assert image_hash == draft['source_image_sha256']
+          assert image_hash == '78a7b662b402bc34d763189f0f890787eb6b276b6ea05ea9142960cca0442de4'
+
+          tei_path = Path('build/vol1_scan00059.xml')
+          tei = etree.parse(str(tei_path))
+          tei_rng = etree.RelaxNG(etree.parse('build/tei_all.rng'))
+          tei_rng.assertValid(tei)
+          ns_tei = {'tei': 'http://www.tei-c.org/ns/1.0'}
+          assert len(tei.xpath('//tei:lb', namespaces=ns_tei)) == 42
+          assert len(tei.xpath('//tei:pb', namespaces=ns_tei)) == 1
+          assert len(tei.xpath('//tei:note[@type="agent-reading-uncertainty"]', namespaces=ns_tei)) == 59
+          assert extract_transcribed_lines(tei_path.read_text(encoding='utf8')) == original
+
+          page_file = Path('build/agent-pagexml/reading-01.page.xml')
+          page = etree.parse(str(page_file))
+          schema = etree.XMLSchema(etree.parse('build/pagecontent.xsd'))
+          schema.assertValid(page)
+          ns = {'p': PAGE_NS}
+          page_lines = page.xpath('//p:TextLine/p:TextEquiv/p:Unicode/text()', namespaces=ns)
+          assert page_lines == original
+          assert len(page.xpath('//p:TextRegion', namespaces=ns)) == 4
+          assert len(page.xpath('//p:TextLine', namespaces=ns)) == 42
+          assert len(list(Path('build/agent-pagexml').glob('*.xml'))) == 1
+          assert 'UNVERIFIED' in page.xpath('string(//p:Metadata/p:Comments)', namespaces=ns)
+          assert hashlib.sha256(source.read_bytes()).hexdigest() in page.xpath(
+              'string(//p:Metadata/p:Comments)', namespaces=ns)
+          print('I/59 real image SHA verified; 42 unchanged positions (41 body lines + folio), TEI P5 RNG and PAGE 2019 XSD valid; no verified glyph claim.')
+          PY
+      - name: Upload only unverified textual projections, never source scans
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-v1s059-first-read-unverified-page-tei
+          path: |
+            build/vol1_scan00059.xml
+            build/agent-pagexml/reading-01.page.xml
+          if-no-files-found: error
+          retention-days: 7
