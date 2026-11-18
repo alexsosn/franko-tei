@@ -32,7 +32,7 @@ printed scholarly prose, not independently collated editions.
 
 ## Data fidelity / interoperability
 
-[The I/54 source-gated smoke workflow](../.github/workflows/pilot-vol1-page54.yml)
+[The I/54 source-gated smoke workflow](https://github.com/alexsosn/franko-tei/blob/e2bff1ea029a5991922ecf53e6f3fb0e10c2feb7/.github/workflows/pilot-vol1-page54.yml)
 checks the actual pinned image SHA, full physical-line order, exact Unicode
 roundtrip through the project's provisional TEI P5 renderer and separate
 PAGE XML 2019 reading adapter. It validates TEI against **P5 4.12.0 Relax

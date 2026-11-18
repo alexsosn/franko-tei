@@ -10,7 +10,7 @@ The page quotes the Bogoglasnik on Lucifer's rebellion and Michael, refers to Sa
 
 1. Direct visual first reading of pinned original JPEG before opening OCR/competing I/46 text; preserve 41 rows plus folio and the eleven prose/verse groups.
 2. Test-only red-first commit `ad528887` specifies exact source hash, physical line layout, and source geometry. Complete source-only first response frozen in `pilot/vol1_scan00046_single_reading.json` commit `8e59d472`.
-3. `.github/workflows/pilot-vol1-page46.yml` fetches pinned native image and manifest **without extracted OCR**, rehashes JPEG, requires exactly one TEI page anchor, 42 TEI line anchors and original string roundtrip, and validates TEI P5 4.12.0 RNG.
+3. [archived pilot-vol1-page46.yml](https://github.com/alexsosn/franko-tei/blob/e2bff1ea029a5991922ecf53e6f3fb0e10c2feb7/.github/workflows/pilot-vol1-page46.yml) fetches pinned native image and manifest **without extracted OCR**, rehashes JPEG, requires exactly one TEI page anchor, 42 TEI line anchors and original string roundtrip, and validates TEI P5 4.12.0 RNG.
 4. Original glyphs and punctuation remain unresolved: Lucifer title `честнѣйший`, `найвышшаго`, `слетѣ`; mixed-language `Реклесь` and `Хтѣлесь`; quotation-mark placement; `живоначальный`; song `Сей трохъ зрѣвъ`; Rudansky title and edition references. Do not infer source manuscript variants.
 5. Separate failure-oriented review and actual image-to-TEI CI must pass before merging. A same-context adversarial reread does not qualify as a blind second/third review.
 

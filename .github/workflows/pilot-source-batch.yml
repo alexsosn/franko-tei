@@ -1,0 +1,78 @@
+name: "Pilot corpus: batch original-image / TEI / PAGE validation (UNVERIFIED)"
+on:
+  pull_request:
+    paths:
+      - 'pilot/vol*_scan*.json'
+      - 'src/franko_tei/pilot_batch.py'
+      - 'src/franko_tei/pilot_tei.py'
+      - 'src/franko_tei/agent_pagexml.py'
+      - 'src/franko_tei/agent_evidence.py'
+      - 'src/franko_tei/ocr_candidates.py'
+      - 'tests/test_pilot_corpus.py'
+      - '.github/workflows/pilot-source-batch.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'pilot/vol*_scan*.json'
+      - 'src/franko_tei/pilot_batch.py'
+      - 'src/franko_tei/pilot_tei.py'
+      - 'src/franko_tei/agent_pagexml.py'
+      - 'src/franko_tei/agent_evidence.py'
+      - 'src/franko_tei/ocr_candidates.py'
+      - 'tests/test_pilot_corpus.py'
+      - '.github/workflows/pilot-source-batch.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pilot-source-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-verified-structure:
+    name: Check actual JPEG bytes and UNVERIFIED XML projections
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local library and official XML validators
+        run: python -m pip install -e . 'lxml>=5,<7'
+      - name: Select changed reading JSON or full corpus on shared-code edits
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          mkdir -p build
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "FRANKO_BATCH_ALL=1" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          BASE="$PR_BASE"
+          if [[ -z "$BASE" ]]; then BASE="$PUSH_BEFORE"; fi
+          if [[ -z "$BASE" ]] || ! git cat-file -e "${BASE}^{commit}" 2>/dev/null; then
+            echo "No comparable Git base; scan all existing readings."
+            echo "FRANKO_BATCH_ALL=1" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          git diff --name-only --diff-filter=ACMRD "$BASE" HEAD > build/changed-files.txt
+          echo "Selected changes:"
+          cat build/changed-files.txt
+      - name: Source-hash checked original JPEG, Unicode, PAGE 2019 and TEI P5 4.12
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${FRANKO_BATCH_ALL:-}" == "1" ]]; then
+            python -m franko_tei.pilot_batch --all --work-dir build/pilot-source-batch
+          else
+            python -m franko_tei.pilot_batch --changes-file build/changed-files.txt \
+              --work-dir build/pilot-source-batch
+          fi
+      - name: Never upload original source images
+        run: echo "Original scans remain in the ephemeral runner cache only; text is explicitly agent_unverified."
