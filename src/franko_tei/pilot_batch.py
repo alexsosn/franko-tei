@@ -233,6 +233,21 @@ def verify_with_original(file, images_root, tei_schema, page_schema, scratch_roo
         payload["reading"]["uncertainty_notes"]
     ):
         raise ValueError("TEI lost source uncertainty annotations")
+    # The PAGE projection deliberately rejects editorial ellipsis used for a
+    # photographed but unreadable suffix. Never export the marker as glyph
+    # text, nor pretend to have a PAGE-valid reading for such a source page.
+    # TEI <gap> stays mandatory, verified structurally against the original
+    # JPEG/manifest. A future PAGE gap mapping needs a separate source gate.
+    gap_count = sum(
+        line.get("unreadable_suffix", False) is True
+        for region in payload["reading"]["regions"] for line in region["lines"]
+    )
+    if gap_count:
+        if len(tree.xpath("//t:gap[@reason='illegible']", namespaces=ns)) != gap_count:
+            raise ValueError("TEI dropped or invented an unreadable source gap")
+        return "tei-gap-only (PAGE export intentionally unsupported)"
+    if tree.xpath("//t:gap[@reason='illegible']", namespaces=ns):
+        raise ValueError("TEI contains a gap not marked in frozen original")
     with TemporaryDirectory(prefix="franko-page-", dir=scratch_root) as temp:
         page_files = export_readings(file, images_root, Path(temp) / "page")
         if len(page_files) != 1:
@@ -248,6 +263,7 @@ def verify_with_original(file, images_root, tei_schema, page_schema, scratch_roo
         comments = page.xpath("string(//p:Metadata/p:Comments)", namespaces=pn)
         if "UNVERIFIED" not in comments or sha256(file.read_bytes()).hexdigest() not in comments:
             raise ValueError("PAGE XML lacks unverified provenance/source JSON checksum")
+    return "tei-and-page"
 
 
 def main(argv=None):
@@ -281,10 +297,10 @@ def main(argv=None):
     page = etree.XMLSchema(etree.parse(str(schema_files[1][1])))
     for file in chosen:
         try:
-            verify_with_original(file, images, tei, page, args.work_dir)
+            result = verify_with_original(file, images, tei, page, args.work_dir)
         except Exception as exc:
             raise RuntimeError(f"batch source validation failed on {file.name}: {exc}") from exc
-        print(f"PASS source-image + TEI/PAGE integrity (UNVERIFIED): {file.name}")
+        print(f"PASS original image + {result} integrity (UNVERIFIED): {file.name}")
     print(f"PASS {len(chosen)} frozen readings; original-image hashes and XML structure only, no CER or glyph certification.")
     return 0
 
