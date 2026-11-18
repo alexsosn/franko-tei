@@ -1,0 +1,1028 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 76,
+  "printed_page_observed": "1",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00076.jpg",
+  "source_image_sha256": "b72d76faa5f296aac9ff8a49f3f91a4052f0e044ebeab12ab8e7e1c634988a82",
+  "reading": {
+    "reader_id": "gpt6-native-image-first-vol1index-page1-20261119",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "run_id": null,
+    "context_id": "single-chatgpt-context-volume1-index-batch-20261119",
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "First reading from pinned original image of physical I/76, first printed Arabic page 1 after Roman preface LXVI. This is a NEW two-column 'Індекс книг правдивих і заказаних.' containing two parallel manuscript texts A/B, NOT one 41-line column. Source-origin ordering: main heading, entire A left-column witness (OT then NT), entire B right-column witness (OT then NT), printed series footer, and bottom-right page numeral 1. Geometry is estimated, text accuracy especially poor for Old-Cyrillic title/abbreviations; no OCR or peer source read before freeze. Horizontal printer ornament is nontext. The next physical scan 77 is printed index page 2. No independent reader, no historical glyph accuracy/CER/verified.",
+    "raw_response": "I. Індекс книг правдивих і заказаних.\nА. Рукопис о. Теодора з Ду-\nбовець (стор. 164—166).\nѠ книгахъ, которыя по-\nдобает чести. Ветхаго\nЗакона кв.\nТол'ко бо слышахом ѿ жи-\nдов въѡбраженіе а-а Быт[ь]я,\nв Исхода, г Левиты, д Числа,\nе Вторыйзамон, ѕ Іс Навгин, з\nСудии, и Руѳь, ѳ д Царствїа,\nі Ездра, аі Псалтир, ві Прит-\nчи, гі Церковник, ді Пѣсни\nпѣснем, єі Іѡв, таж[е] ві Про-\nрокы: а Іосїа, в Амос, г Ми-\nхеа, д Іѡл, е Іѡна, ѕ Авдѣй,\nз Наѹм, и Аввакѹм, ѳ Со-\nфонїи, і Аггей, аі Захарїа. ві\nМалахїа. Таж[е] вел[и]кых про-\nроки: а Ісаїа, в Єремеи, г Єзе-\nкиил, д Данїил, посем Варѹх\nпосланїе.\nНоваго ж[е] Закона:\nд є҃глистны: Матѳей, М[а]р-\n[ко], Лѹка, Іѡан. Потом по\nап҃слских Дѣян[и]я, посланїе\nсъборных з҃: а-е ѿ Іаковля,\nв Петрово, г-е Іѡанново, д По-\nБ. Рукопис о. Іллі Яремецького\nБілахевича (стор. 375—380).\nѠ книгахъ бытейских,\nпророческих Ветхаго\nЗавѣта,\nихъ же приимала ст҃аа собор-\nная Цр҃ковь апостольская, их-\nже подобаетъ намъ христїа-\nном чести, ихъже есть всѣх\nм҃, ѿ нихже и паралепи чт҃т-\nса (не вичислені).\nѠ книгахъ Новаго За-\nвѣта: прїиде бо истина\nГ҃дь н҃шъ Хр҃стосъ Сн҃ъ и\nСлово бж҃іе.\nНоваго же Завѣта: Єг҃лїа,\nДѣанїа апостолска, Посланїа\nАпокріфи старозавітні.\n1",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            503,
+            522,
+            92,
+            39
+          ],
+          "description": "Short horizontal decorative rule below index title, not printed text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "index-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          136,
+          447,
+          940,
+          91
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "index-title-l001",
+            "text": "I. Індекс книг правдивих і заказаних.",
+            "bbox_xywh": [
+              145,
+              471,
+              919,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          56,
+          564,
+          508,
+          92
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-label-l001",
+            "text": "А. Рукопис о. Теодора з Ду-",
+            "bbox_xywh": [
+              69,
+              583,
+              475,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-label-l002",
+            "text": "бовець (стор. 164—166).",
+            "bbox_xywh": [
+              69,
+              619,
+              475,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-old-testament",
+        "kind": "body",
+        "bbox_xywh": [
+          59,
+          655,
+          503,
+          688
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-old-testament-l001",
+            "text": "Ѡ книгахъ, которыя по-",
+            "bbox_xywh": [
+              70,
+              670,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l002",
+            "text": "добает чести. Ветхаго",
+            "bbox_xywh": [
+              70,
+              704,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l003",
+            "text": "Закона кв.",
+            "bbox_xywh": [
+              70,
+              738,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l004",
+            "text": "Тол'ко бо слышахом ѿ жи-",
+            "bbox_xywh": [
+              70,
+              772,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l005",
+            "text": "дов въѡбраженіе а-а Быт[ь]я,",
+            "bbox_xywh": [
+              70,
+              806,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l006",
+            "text": "в Исхода, г Левиты, д Числа,",
+            "bbox_xywh": [
+              70,
+              840,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l007",
+            "text": "е Вторыйзамон, ѕ Іс Навгин, з",
+            "bbox_xywh": [
+              70,
+              874,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l008",
+            "text": "Судии, и Руѳь, ѳ д Царствїа,",
+            "bbox_xywh": [
+              70,
+              908,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l009",
+            "text": "і Ездра, аі Псалтир, ві Прит-",
+            "bbox_xywh": [
+              70,
+              942,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l010",
+            "text": "чи, гі Церковник, ді Пѣсни",
+            "bbox_xywh": [
+              70,
+              976,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l011",
+            "text": "пѣснем, єі Іѡв, таж[е] ві Про-",
+            "bbox_xywh": [
+              70,
+              1010,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l012",
+            "text": "рокы: а Іосїа, в Амос, г Ми-",
+            "bbox_xywh": [
+              70,
+              1044,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l013",
+            "text": "хеа, д Іѡл, е Іѡна, ѕ Авдѣй,",
+            "bbox_xywh": [
+              70,
+              1078,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l014",
+            "text": "з Наѹм, и Аввакѹм, ѳ Со-",
+            "bbox_xywh": [
+              70,
+              1112,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l015",
+            "text": "фонїи, і Аггей, аі Захарїа. ві",
+            "bbox_xywh": [
+              70,
+              1146,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l016",
+            "text": "Малахїа. Таж[е] вел[и]кых про-",
+            "bbox_xywh": [
+              70,
+              1180,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l017",
+            "text": "роки: а Ісаїа, в Єремеи, г Єзе-",
+            "bbox_xywh": [
+              70,
+              1214,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l018",
+            "text": "киил, д Данїил, посем Варѹх",
+            "bbox_xywh": [
+              70,
+              1248,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-testament-l019",
+            "text": "посланїе.",
+            "bbox_xywh": [
+              70,
+              1282,
+              477,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-new-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          69,
+          1354,
+          480,
+          68
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-new-heading-l001",
+            "text": "Новаго ж[е] Закона:",
+            "bbox_xywh": [
+              90,
+              1377,
+              440,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-new-testament",
+        "kind": "body",
+        "bbox_xywh": [
+          60,
+          1432,
+          503,
+          201
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-new-testament-l001",
+            "text": "д є҃глистны: Матѳей, М[а]р-",
+            "bbox_xywh": [
+              71,
+              1454,
+              480,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-testament-l002",
+            "text": "[ко], Лѹка, Іѡан. Потом по",
+            "bbox_xywh": [
+              71,
+              1489,
+              480,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-testament-l003",
+            "text": "ап҃слских Дѣян[и]я, посланїе",
+            "bbox_xywh": [
+              71,
+              1524,
+              480,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-testament-l004",
+            "text": "съборных з҃: а-е ѿ Іаковля,",
+            "bbox_xywh": [
+              71,
+              1559,
+              480,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-testament-l005",
+            "text": "в Петрово, г-е Іѡанново, д По-",
+            "bbox_xywh": [
+              71,
+              1594,
+              480,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          572,
+          564,
+          563,
+          92
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-label-l001",
+            "text": "Б. Рукопис о. Іллі Яремецького",
+            "bbox_xywh": [
+              585,
+              583,
+              537,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-label-l002",
+            "text": "Білахевича (стор. 375—380).",
+            "bbox_xywh": [
+              585,
+              619,
+              537,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-old-testament",
+        "kind": "body",
+        "bbox_xywh": [
+          574,
+          654,
+          554,
+          365
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-old-testament-l001",
+            "text": "Ѡ книгахъ бытейских,",
+            "bbox_xywh": [
+              590,
+              670,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l002",
+            "text": "пророческих Ветхаго",
+            "bbox_xywh": [
+              590,
+              704,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l003",
+            "text": "Завѣта,",
+            "bbox_xywh": [
+              590,
+              738,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l004",
+            "text": "ихъ же приимала ст҃аа собор-",
+            "bbox_xywh": [
+              590,
+              772,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l005",
+            "text": "ная Цр҃ковь апостольская, их-",
+            "bbox_xywh": [
+              590,
+              806,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l006",
+            "text": "же подобаетъ намъ христїа-",
+            "bbox_xywh": [
+              590,
+              840,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l007",
+            "text": "ном чести, ихъже есть всѣх",
+            "bbox_xywh": [
+              590,
+              874,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l008",
+            "text": "м҃, ѿ нихже и паралепи чт҃т-",
+            "bbox_xywh": [
+              590,
+              908,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-testament-l009",
+            "text": "са (не вичислені).",
+            "bbox_xywh": [
+              590,
+              942,
+              520,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-new-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          576,
+          1348,
+          554,
+          177
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-new-heading-l001",
+            "text": "Ѡ книгахъ Новаго За-",
+            "bbox_xywh": [
+              589,
+              1368,
+              518,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-heading-l002",
+            "text": "вѣта: прїиде бо истина",
+            "bbox_xywh": [
+              589,
+              1403,
+              518,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-heading-l003",
+            "text": "Г҃дь н҃шъ Хр҃стосъ Сн҃ъ и",
+            "bbox_xywh": [
+              589,
+              1438,
+              518,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-heading-l004",
+            "text": "Слово бж҃іе.",
+            "bbox_xywh": [
+              589,
+              1473,
+              518,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-new-testament",
+        "kind": "body",
+        "bbox_xywh": [
+          575,
+          1524,
+          555,
+          109
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-new-testament-l001",
+            "text": "Новаго же Завѣта: Єг҃лїа,",
+            "bbox_xywh": [
+              591,
+              1540,
+              516,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-testament-l002",
+            "text": "Дѣанїа апостолска, Посланїа",
+            "bbox_xywh": [
+              591,
+              1578,
+              516,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "printer-series",
+        "kind": "other",
+        "bbox_xywh": [
+          133,
+          1621,
+          369,
+          70
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "printer-series-l001",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              145,
+              1642,
+              340,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          917,
+          1605,
+          94,
+          76
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "1",
+            "bbox_xywh": [
+              928,
+              1625,
+              68,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "index-title-l001",
+        "reading": "I. Індекс книг правдивих і заказани",
+        "reason": "Printed header/footer form, capitalization and line splitting from visual first-reader candidate; not yet independently adjudicated."
+      },
+      {
+        "line_id": "witness-a-label-l001",
+        "reading": "А. Рукопис о. Теодора з Ду-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-label-l002",
+        "reading": "бовець (стор. 164—166).",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l001",
+        "reading": "Ѡ книгахъ, которыя по-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l002",
+        "reading": "добает чести. Ветхаго",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l003",
+        "reading": "Закона кв.",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l004",
+        "reading": "Тол'ко бо слышахом ѿ жи-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l005",
+        "reading": "дов въѡбраженіе а-а Быт[ь]я,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l006",
+        "reading": "в Исхода, г Левиты, д Числа,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l007",
+        "reading": "е Вторыйзамон, ѕ Іс Навгин, з",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l008",
+        "reading": "Судии, и Руѳь, ѳ д Царствїа,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l009",
+        "reading": "і Ездра, аі Псалтир, ві Прит-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l010",
+        "reading": "чи, гі Церковник, ді Пѣсни",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l011",
+        "reading": "пѣснем, єі Іѡв, таж[е] ві Про-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l012",
+        "reading": "рокы: а Іосїа, в Амос, г Ми-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l013",
+        "reading": "хеа, д Іѡл, е Іѡна, ѕ Авдѣй,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l014",
+        "reading": "з Наѹм, и Аввакѹм, ѳ Со-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l015",
+        "reading": "фонїи, і Аггей, аі Захарїа. ві",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l016",
+        "reading": "Малахїа. Таж[е] вел[и]кых про-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l017",
+        "reading": "роки: а Ісаїа, в Єремеи, г Єзе-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l018",
+        "reading": "киил, д Данїил, посем Варѹх",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-old-testament-l019",
+        "reading": "посланїе.",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-new-heading-l001",
+        "reading": "Новаго ж[е] Закона:",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-new-testament-l001",
+        "reading": "д є҃глистны: Матѳей, М[а]р-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-new-testament-l002",
+        "reading": "[ко], Лѹка, Іѡан. Потом по",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-new-testament-l003",
+        "reading": "ап҃слских Дѣян[и]я, посланїе",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-new-testament-l004",
+        "reading": "съборных з҃: а-е ѿ Іаковля,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-a-new-testament-l005",
+        "reading": "в Петрово, г-е Іѡанново, д По-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-label-l001",
+        "reading": "Б. Рукопис о. Іллі Яремецького",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-label-l002",
+        "reading": "Білахевича (стор. 375—380).",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l001",
+        "reading": "Ѡ книгахъ бытейских,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l002",
+        "reading": "пророческих Ветхаго",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l003",
+        "reading": "Завѣта,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l004",
+        "reading": "ихъ же приимала ст҃аа собор-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l005",
+        "reading": "ная Цр҃ковь апостольская, их-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l006",
+        "reading": "же подобаетъ намъ христїа-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l007",
+        "reading": "ном чести, ихъже есть всѣх",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l008",
+        "reading": "м҃, ѿ нихже и паралепи чт҃т-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-old-testament-l009",
+        "reading": "са (не вичислені).",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-new-heading-l001",
+        "reading": "Ѡ книгахъ Новаго За-",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-new-heading-l002",
+        "reading": "вѣта: прїиде бо истина",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-new-heading-l003",
+        "reading": "Г҃дь н҃шъ Хр҃стосъ Сн҃ъ и",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-new-heading-l004",
+        "reading": "Слово бж҃іе.",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-new-testament-l001",
+        "reading": "Новаго же Завѣта: Єг҃лїа,",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "witness-b-new-testament-l002",
+        "reading": "Дѣанїа апостолска, Посланїа",
+        "reason": "Dense printed Church-Slavonic book-list text with titla, ordinal numerals, ambiguous glyphs and letter restorations. Original image consulted; very low-confidence first reader may be wrong at whole-word level. The two columns represent distinct printed manuscript extracts, not a single interleaved sequence."
+      },
+      {
+        "line_id": "printer-series-l001",
+        "reading": "Апокріфи старозавітні.",
+        "reason": "Printed header/footer form, capitalization and line splitting from visual first-reader candidate; not yet independently adjudicated."
+      },
+      {
+        "line_id": "witness-a-label-l002",
+        "reading": "бовець",
+        "reason": "Printed locality/source manuscript label and line-continuation spelling uncertain."
+      },
+      {
+        "line_id": "witness-a-old-testament-l001",
+        "reading": "которыя",
+        "reason": "The title phrase is visually ambiguous, possible different inflected Church-Slavonic word."
+      },
+      {
+        "line_id": "witness-a-old-testament-l003",
+        "reading": "кв.",
+        "reason": "Original Cyrillic numeral and superscript marks are especially uncertain."
+      },
+      {
+        "line_id": "witness-a-old-testament-l007",
+        "reading": "Вторыйзамон",
+        "reason": "Possible invented compound. Must be checked letter-by-letter against original print."
+      },
+      {
+        "line_id": "witness-a-old-testament-l014",
+        "reading": "Аввакѹм",
+        "reason": "Prophet's name, source letterforms and numeric prefix require reinspection."
+      },
+      {
+        "line_id": "witness-a-new-testament-l005",
+        "reading": "д По-",
+        "reason": "Page-continuation fragment into index page 2 must not be completed from neighbor without source provenance."
+      },
+      {
+        "line_id": "witness-b-old-testament-l008",
+        "reading": "паралепи",
+        "reason": "Paralipomenon expression is low-confidence lexical reading."
+      },
+      {
+        "line_id": "witness-b-old-testament-l009",
+        "reading": "(не вичислені)",
+        "reason": "Franko's parenthetical editorial note requires separate semantic markup."
+      },
+      {
+        "line_id": "witness-b-new-heading-l003",
+        "reading": "Хр҃стосъ",
+        "reason": "Abbreviation/sacred-name overletters not independently examined."
+      },
+      {
+        "line_id": "witness-b-new-testament-l002",
+        "reading": "Посланїа",
+        "reason": "Continues into printed page 2, do not silently combine source rows."
+      }
+    ]
+  }
+}
