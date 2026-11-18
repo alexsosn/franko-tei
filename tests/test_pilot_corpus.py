@@ -4,7 +4,9 @@ import json
 from pathlib import Path
 import unittest
 
-from franko_tei.pilot_batch import (\n    discover_readings, select_readings, check_draft_offline, inventory_readings\n)
+from franko_tei.pilot_batch import (
+    discover_readings, select_readings, check_draft_offline, inventory_readings
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 PILOT = ROOT / "pilot"
