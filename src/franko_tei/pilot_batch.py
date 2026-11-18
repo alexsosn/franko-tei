@@ -64,6 +64,10 @@ def select_readings(pilot_dir, changed_paths=None):
         if path.startswith("pilot/vol") and path.endswith(".json"):
             if len(posix.parts) != 2 or not _READING_RE.fullmatch(posix.name):
                 raise ValueError(f"unexpected pilot reading name: {path}")
+            # A deleted reading must not quietly drop from the validation set.
+            # A retraction needs a separate explicit, reviewed data migration.
+            if not (Path(pilot_dir) / posix.name).is_file():
+                raise ValueError(f"missing or deleted original reading: {path}")
         changed.add(path)
     if changed & _CORE_PATHS:
         return files
