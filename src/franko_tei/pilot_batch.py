@@ -70,6 +70,38 @@ def select_readings(pilot_dir, changed_paths=None):
     return [p for p in files if f"pilot/{p.name}" in changed]
 
 
+def inventory_readings(pilot_dir):
+    """Derive one machine-readable status row per physical page from source JSON.
+
+    Duplicate first/B candidates are retained as separate readings, never
+    counted as independent *verified* reviews. No stale sidecar to maintain.
+    """
+    pages = {}
+    for file in discover_readings(pilot_dir):
+        payload = json.loads(file.read_text(encoding="utf-8"))
+        lines = check_draft_offline(file, payload)
+        key = (payload["volume"], payload["scan_page"])
+        sha = payload["source_image_sha256"]
+        record = pages.setdefault(key, {
+            "volume": key[0],
+            "scan_page": key[1],
+            "source_image_sha256": sha,
+            "status": "agent_unverified",
+            "readings": [],
+        })
+        if record["source_image_sha256"] != sha:
+            raise ValueError(f"conflicting source images for {key}")
+        record["readings"].append({
+            "path": f"pilot/{file.name}",
+            "schema_version": payload["schema_version"],
+            "physical_text_positions": len(lines),
+            "unresolved_uncertainty_notes": len(payload["reading"]["uncertainty_notes"]),
+            "prior_text_exposure": payload["schema_version"] == "single-exposed-draft-v1",
+            "context_independence": payload["reading"]["context_independence"],
+        })
+    return [pages[key] for key in sorted(pages)]
+
+
 def _sha(value, label):
     if not isinstance(value, str) or not _SHA_RE.fullmatch(value):
         raise ValueError(f"{label} is not a lowercase SHA256")
@@ -271,11 +303,24 @@ def main(argv=None):
     parser.add_argument("--pilot-dir", type=Path, default=Path("pilot"))
     parser.add_argument("--changes-file", type=Path, default=None)
     parser.add_argument("--all", action="store_true", help="check every existing first draft")
+    parser.add_argument("--inventory-json", action="store_true",
+                        help="print current per-page candidate/uncertainty status, no downloads")
     parser.add_argument("--work-dir", type=Path, default=Path("build/pilot-batch"))
     parser.add_argument("--no-fetch", action="store_true", help="use previously cached pinned images")
     args = parser.parse_args(argv)
     if args.all and args.changes_file:
         parser.error("--all and --changes-file are mutually exclusive")
+    if args.inventory_json:
+        if args.changes_file or args.all:
+            parser.error("--inventory-json is separate from source verification")
+        rows = inventory_readings(args.pilot_dir)
+        print(json.dumps({
+            "printed_pages_with_drafts": len(rows),
+            "draft_readings": sum(len(x["readings"]) for x in rows),
+            "verified_pages": 0,
+            "pages": rows,
+        }, ensure_ascii=False, indent=2))
+        return 0
     changed = args.changes_file.read_text(encoding="utf-8").splitlines() if args.changes_file else None
     chosen = select_readings(args.pilot_dir, changed)
     if not chosen:
