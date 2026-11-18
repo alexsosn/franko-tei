@@ -61,7 +61,7 @@ jobs:
             echo "FRANKO_BATCH_ALL=1" >> "$GITHUB_ENV"
             exit 0
           fi
-          git diff --name-only --diff-filter=ACMR "$BASE" HEAD > build/changed-files.txt
+          git diff --name-only --diff-filter=ACMRD "$BASE" HEAD > build/changed-files.txt
           echo "Selected changes:"
           cat build/changed-files.txt
       - name: Source-hash checked original JPEG, Unicode, PAGE 2019 and TEI P5 4.12
