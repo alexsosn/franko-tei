@@ -19,7 +19,7 @@ The source data `pilot/vol1_scan00052_exposed_reading.json` uses `single-exposed
 1. The source page and existing pilot serializer were inspected. A **red-first** test contract was committed first at `3a281621`, covering provenance, 42 physical text positions, numbered items **19–25 and 1–9**, Unicode roundtrip, source image checksum and failure cases for false blindness.
 2. Versioned, strictly nonblind provenance support was added in `src/franko_tei/pilot_tei.py` at `7ddb9f3a`; old `single-image-draft-v0` behavior remains intact.
 3. **Complete nonblind working text** frozen at `1b3cb802`; separate post-freeze audits should preserve the frozen `raw_response` as original attempt, with proposed alternatives stored in `pilot/reviews/vol1_scan00052_post_freeze_challenges.json`.
-4. Dedicated `.github/workflows/pilot-vol1-page52.yml` fetches only original pinned JPEG/manifest, rehashes the native image, validates 42 `lb`, one `pb`, original Unicode line reconstruction, exposure metadata and TEI P5 4.12.0 Relax NG. Valid XML does not establish accurate Cyrillic letterforms or independent reading.
+4. Dedicated [archived pilot-vol1-page52.yml](https://github.com/alexsosn/franko-tei/blob/e2bff1ea029a5991922ecf53e6f3fb0e10c2feb7/.github/workflows/pilot-vol1-page52.yml) fetches only original pinned JPEG/manifest, rehashes the native image, validates 42 `lb`, one `pb`, original Unicode line reconstruction, exposure metadata and TEI P5 4.12.0 Relax NG. Valid XML does not establish accurate Cyrillic letterforms or independent reading.
 5. Merge only following an adversarial review of **actual source image, code and tests**, and green ordinary and native-source CI on the final commit.
 
 ## Remaining work
