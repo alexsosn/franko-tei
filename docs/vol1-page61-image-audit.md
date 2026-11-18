@@ -23,7 +23,7 @@ Neither the generated PAGE XML nor pilot TEI constitutes a verified diplomatic s
 - [Issue #114](https://github.com/alexsosn/franko-tei/issues/114) contains the original source evidence and required acceptance plan.
 - **Red-first test-only commit** `a5cd2bd653c1580ec4236ff18dd21fd0fef096e7`: [CI run 44354489494](https://github.com/alexsosn/franko-tei/actions/runs/44354489494) failed intentionally on the missing `pilot/vol1_scan00061_single_reading.json` (4 errors, other tests passed).
 - First source transcription frozen in commit `d40067f9720cd7517c1bd74904b9d304e9a0a609`; no original OCR or peer reader is used. Assertions cover all 42 raw source positions, pinned origin metadata, source-specific page boundaries, line-anchored unresolved glyphs and negative forged verification status.
-- The [I/61 workflow](../.github/workflows/pilot-vol1-page61.yml) checks actual pinned source JPEG SHA from `images/vol1/manifest.json`, PAGE XML 2019 XSD, TEI P5 4.12 Relax NG, exact raw Unicode round-trip and 61 explicit uncertainty annotations. This is an engineering gate only. **Check job conclusion on GitHub before claiming it passed.**
+- The [I/61 workflow](https://github.com/alexsosn/franko-tei/blob/e2bff1ea029a5991922ecf53e6f3fb0e10c2feb7/.github/workflows/pilot-vol1-page61.yml) checks actual pinned source JPEG SHA from `images/vol1/manifest.json`, PAGE XML 2019 XSD, TEI P5 4.12 Relax NG, exact raw Unicode round-trip and 61 explicit uncertainty annotations. This is an engineering gate only. **Check job conclusion on GitHub before claiming it passed.**
 - Full Python 3.10/3.12 CI and a logically separate real-source adversarial code review must pass before merging even an unverified working draft.
 
 ## Must remain open for the research-grade release

@@ -29,7 +29,7 @@ The same-context source audit must not be labeled a second independent reader or
 - Issue [#112](https://github.com/alexsosn/franko-tei/issues/112): primary source research, source hash and acceptance plan.
 - Red-first unit test commit `949e6e32382f019c19608f8f58847611de047b2f`: [GitHub Actions 44317945400](https://github.com/alexsosn/franko-tei/actions/runs/44317945400) failed, as planned, because `pilot/vol1_scan00060_single_reading.json` did not exist. The prior tests continued to succeed.
 - Frozen single-source-reader JSON: commit `75af574bda5ef8d3d50c5506ab9e356a22fa959b`, with 41 distinct body rows + LI and exact raw Unicode physical-line positions.
-- Source-pinned PAGE XML 2019 / TEI P5 4.12 schema smoke: [workflow](../.github/workflows/pilot-vol1-page60.yml), which explicitly checks JPEG bytes, immutable JSON source text and `agent_unverified` status. **Do not mark this step passed until its actual job conclusion is checked.**
+- Source-pinned PAGE XML 2019 / TEI P5 4.12 schema smoke: [workflow](https://github.com/alexsosn/franko-tei/blob/e2bff1ea029a5991922ecf53e6f3fb0e10c2feb7/.github/workflows/pilot-vol1-page60.yml), which explicitly checks JPEG bytes, immutable JSON source text and `agent_unverified` status. **Do not mark this step passed until its actual job conclusion is checked.**
 - Pending: genuinely independent second image-only reading, an independently produced third reading / adjudication, resolution of noted historical letters and real-gold comparison. This issue must remain **open** after any engineering PR merge.
 
 Provisional quality: useful for locating the passage and for developing the next reading and review workflows, not for citation of Franko's exact historic source lettering.

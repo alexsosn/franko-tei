@@ -51,3 +51,5 @@ The one-workflow policy concerns **first-reader source ingestion**. Distinct, na
 ## Release gate
 
 The status inventory covers **provisional first-reader files**, not the 2,337 source images and not a complete release coverage report. Research-release readiness still requires complete five-volume source mapping, independent textual accuracy checks, full TEI semantics, successful Text-Fabric build and researcher-query E2E testing. Do not interpret a valid source checksum or XML as a statement about literal glyph fidelity or scan redistribution rights.
+
+Historical source-audit documents link to the retired per-page Actions definitions at the immutable pre-consolidation commit. Historic Actions run links remain accessible. New work uses the one active batch workflow.
