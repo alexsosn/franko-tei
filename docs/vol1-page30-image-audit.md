@@ -14,7 +14,7 @@ Smallest user-facing output: one entire new printed-page reading; preserve raw r
 
 - Red test-only commit `a00fb1f7b488c8ace974f0bd6d5c01afc0a299a6`; [CI run 43109093798](https://github.com/alexsosn/franko-tei/actions/runs/43109093798) fails in unit tests because I/30 source JSON was deliberately missing.
 - First source-only reading committed as `80d6f7b9c45f2c4b07dc57d0cce4184b54ac7348`, before original embedded OCR was inspected. Estimated geometric regions were enlarged in a separate commit `2616793db5760b4f01b11813169c985a9d30eb8f` to contain line boxes without changing the frozen raw text.
-- [Native-image I/30 workflow](../.github/workflows/pilot-vol1-page30.yml) downloads only the pinned actual JPEG and manifest and calls the real pilot TEI validator, which rehashes the image. It checks 42 total line positions including folio, one pb and TEI P5 4.12.0 Relax NG conformance. This is engineering validation of source identity and XML shape, **not** a character-level accuracy certification.
+- [Native-image I/30 workflow](https://github.com/alexsosn/franko-tei/blob/e2bff1ea029a5991922ecf53e6f3fb0e10c2feb7/.github/workflows/pilot-vol1-page30.yml) downloads only the pinned actual JPEG and manifest and calls the real pilot TEI validator, which rehashes the image. It checks 42 total line positions including folio, one pb and TEI P5 4.12.0 Relax NG conformance. This is engineering validation of source identity and XML shape, **not** a character-level accuracy certification.
 
 ## Post-freeze adversarial reading
 

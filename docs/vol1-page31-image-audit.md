@@ -14,7 +14,7 @@ Smallest text-facing slice: a full original-image transcription of one new page,
 
 - **Red-first test** at `bc030eb314b1ccc993577b795371566140e992da`. [Failed CI run 43111359853](https://github.com/alexsosn/franko-tei/actions/runs/43111359853) invokes `tests/test_vol1_page31_image.py` before the JSON exists.
 - **Frozen raw page reading** at `536a30065e97b7495d18a24ce72ffe6a542c747f`. It was persisted before consulting the original page OCR or any competing I/31 reading.
-- [Native image + provisional TEI workflow](../.github/workflows/pilot-vol1-page31.yml) downloads only pinned JPEG and manifest, rehashes the actual image through `franko-pilot-tei`, checks 42 line positions including folio, one `pb` and 42 `lb`, and runs TEI P5 4.12.0 Relax NG validation.
+- [Native image + provisional TEI workflow](https://github.com/alexsosn/franko-tei/blob/e2bff1ea029a5991922ecf53e6f3fb0e10c2feb7/.github/workflows/pilot-vol1-page31.yml) downloads only pinned JPEG and manifest, rehashes the actual image through `franko-pilot-tei`, checks 42 line positions including folio, one `pb` and 42 `lb`, and runs TEI P5 4.12.0 Relax NG validation.
 - A second **red test** requires separate anchored post-freeze glyph challenges; the [review artifact](../pilot/reviews/vol1_scan00031_post_freeze_challenges.json) records their source evidence without altering the raw first reading.
 
 The page-by-page workflow proves source identity and XML shape; it does **not** imply any text has passed independent reading or scholarly validation.
