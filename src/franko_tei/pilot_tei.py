@@ -429,6 +429,12 @@ def render_pilot_tei(payload, image_width, image_height, heading_overlay=None):
     if payload.get('schema_version') not in {'single-image-draft-v0', 'single-exposed-draft-v1'} or payload.get('status') != 'agent_unverified':
         raise ValueError('refusing non-draft or promoted TEI input')
     _validate_exposure(payload, payload.get('reading', {}))
+    # Renderer callers may bypass validate_single_draft (which also checks the
+    # JPEG); never silently serialize edits to a frozen first-reader response.
+    draft = payload['reading']
+    if draft.get('raw_response') != '\n'.join(
+            line['text'] for region in draft['regions'] for line in region['lines']):
+        raise ValueError('raw_response differs from frozen physical lines')
     overlay_by_line = (validate_heading_overlay(payload, heading_overlay)
                        if heading_overlay is not None else {})
     volume, page = payload['volume'], payload['scan_page']
