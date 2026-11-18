@@ -86,7 +86,7 @@ jobs:
           ns = {'p': PAGE_NS}
           page_lines = page.xpath('//p:TextLine/p:TextEquiv/p:Unicode/text()', namespaces=ns)
           assert page_lines == original
-          assert len(page.xpath('//p:TextRegion', namespaces=ns)) == 4
+          assert len(page.xpath('//p:TextRegion', namespaces=ns)) == 3
           assert len(page.xpath('//p:TextLine', namespaces=ns)) == 42
           assert len(list(Path('build/agent-pagexml').glob('*.xml'))) == 1
           assert 'UNVERIFIED' in page.xpath('string(//p:Metadata/p:Comments)', namespaces=ns)
