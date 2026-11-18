@@ -42,6 +42,9 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertEqual(select_readings(PILOT, ["pilot/vol1_scan00020_independent_image_reading_b.json"]),
                          [PILOT / "vol1_scan00020_independent_image_reading_b.json"])
         self.assertEqual(select_readings(PILOT, None), all_paths)
+        # Deleting a frozen first-reader record is not an unreviewed skip.
+        with self.assertRaises(ValueError):
+            select_readings(PILOT, ["pilot/vol1_scan00999_single_reading.json"])
 
     def test_unknown_page_naming_cannot_silently_bypass_checks(self):
         with self.assertRaises(ValueError):
