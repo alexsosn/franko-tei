@@ -163,7 +163,7 @@ class ReviewSmoke(unittest.TestCase):
         html = APP.read_text(encoding='utf-8')
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
-        self.assertGreaterEqual(len(anchors), 29)
+        self.assertGreaterEqual(len(anchors), 39)
         self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
                          [('89', 141, 'pachomius-vision-heading-line-01'),
                           ('90', 141, 'pachomius-word-heading-line-01'),
@@ -179,7 +179,7 @@ class ReviewSmoke(unittest.TestCase):
         # Complete linguistic coverage for the annotated anchor-page batch.
         for scan in sorted({e[3] for e in anchors}):
             record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
-            if scan in (53, 56, 59, 63, 67, 68, 71, 72, 74, 75, 76, 77, 90, 94, 101, 141, 142, 143, 156, 205, 211, 307, 518):
+            if scan in (53, 56, 59, 63, 67, 68, 71, 72, 74, 75, 76, 77, 90, 94, 101, 141, 142, 143, 156, 205, 211, 301, 307, 453, 500, 514, 518, 523):
                 self.assertIn('language_annotation', record['reading'])
             elif 'language_annotation' not in record['reading']:
                 continue  # future batches use the general corpus validator
@@ -273,6 +273,20 @@ class ReviewSmoke(unittest.TestCase):
             rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
             self.assertIsNone(rec['printed_page_observed'])
             self.assertFalse(any(r['kind'] == 'page_number' for r in rec['reading']['regions']))
+        linked = [e for e in contents['4']['entries'] if e[3] is not None]
+        self.assertGreaterEqual(len(linked), 39)
+        self.assertTrue(all(len(e) > 6 and e[6] for e in linked))
+        isaiah = next(e for e in anchors if e[3] == 301 and e[4] == 1)
+        self.assertTrue(isaiah[1].startswith('Б.'))
+        self.assertTrue(isaiah[6]['text'].startswith('А.'))
+        for scan in (301, 453):
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            self.assertIsNone(rec['printed_page_observed'])
+            self.assertFalse(any(r['kind'] == 'page_number' for r in rec['reading']['regions']))
+        rec514 = json.loads((root / 'pilot/vol4_scan00514_single_reading.json').read_text(encoding='utf-8'))['reading']
+        lines514 = {l['id']: l for r in rec514['regions'] for l in r['lines']}
+        self.assertEqual([s['language'] for s in lines514['editorial-line-04']['language_spans']], ['uk', 'cu'])
+        self.assertEqual([s['language'] for s in lines514['editorial-line-08']['language_spans']], ['cu', 'uk'])
         manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
                     'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
                                  {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
