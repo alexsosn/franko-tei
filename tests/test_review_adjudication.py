@@ -119,3 +119,39 @@ class AdjudicationTests(unittest.TestCase):
         self.assertIn("ꙗко цр҃ю",row["original"])
         self.assertEqual(row["language_spans"],[])
         self.assertEqual(row["uncertainty_status"],"source_notes_need_reassessment")
+
+    def test_repository_append_only_and_cli_validation(self):
+        import subprocess
+        import tempfile
+        from pathlib import Path
+        from franko_tei.review_adjudication import check_repository, main
+        with tempfile.TemporaryDirectory() as tmp:
+            repo=Path(tmp)
+            def git(*args):
+                return subprocess.check_output(["git","-C",tmp,*args]).decode().strip()
+            git("init","-q")
+            git("config","user.name","Test")
+            git("config","user.email","test@example.invalid")
+            p=repo/PATH; p.parent.mkdir(); p.write_bytes(RAW)
+            git("add","."); git("commit","-qm","source")
+            source_commit=git("rev-parse","HEAD")
+            def loader(commit,path):
+                if (commit,path)!=(source_commit,PATH):
+                    raise ValueError("wrong source")
+                return RAW
+            b=fixture(); b["source_commit"]=source_commit; raw=encode(b)
+            r=make_intake(raw,issue(),hashlib.sha256(raw).hexdigest(),loader)
+            a=adjudicate(r,b["events"][0]["event_id"],"accept",EDITOR,REASON,intake_digest(r),loader)
+            i=repo/"reviews"/"intake"/(b["bundle_id"]+".json"); i.parent.mkdir(parents=True); i.write_bytes(encode(r))
+            git("add","."); git("commit","-qm","intake")
+            intake_commit=git("rev-parse","HEAD")
+            q=repo/"reviews"/"adjudications"/(a["event_id"]+".json"); q.parent.mkdir(); q.write_bytes(encode(a))
+            self.assertEqual(len(check_repository(repo,intake_commit,intake_commit)),1)
+            self.assertEqual(main(["--check","--repo",tmp,"--trusted-commit",intake_commit,
+                                   "--previous-commit",intake_commit]),0)
+            i.write_bytes(encode(r)+b" ")
+            with self.assertRaisesRegex(ValueError,"published ledger record changed"):
+                check_repository(repo,intake_commit,intake_commit)
+            i.unlink()
+            with self.assertRaisesRegex(ValueError,"published ledger record removed"):
+                check_repository(repo,intake_commit,intake_commit)
