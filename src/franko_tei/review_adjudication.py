@@ -54,8 +54,7 @@ def editor_identity(editor):
 
 # Printed superscript numerals (including ranges and incomplete range ends).
 # These are lexical evidence only, not inferred links to apparatus notes.
-_SUPER_DIGITS = "⁰¹²³⁴⁵⁶⁷⁸⁹"
-_MARKER = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+(?:[—–-][⁰¹²³⁴⁵⁶⁷⁸⁹]+)?[)—–-]?")
+_MARKER = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+(?:[—–-][⁰¹²³⁴⁵⁶⁷⁸⁹]+)?[),—–-]?")
 _WITNESS_LABEL = re.compile(r"^[А-ЯІЇЄҐ]\. Рукопис\b")
 _WITNESS_PAGES = re.compile(r" стор\. [0-9]+(?:—[0-9]+)?\.$")
 
@@ -79,6 +78,13 @@ def apparatus_mapping(original, replacement):
     # Repeated identical attachments are ambiguous without explicit linkage.
     require(len({(m[0], m[1]) for m in before}) == len(before),
             "ambiguous repeated apparatus attachment")
+    for marker, anchor, _, _ in before:
+        # A marker could otherwise be moved between identical unmarked words.
+        # Count occurrences of the exact anchor at a token boundary; refuse
+        # ambiguous repeated words rather than guessing correspondence.
+        pattern = re.compile(r"(?<!\S)" + re.escape(anchor) + r"(?=$|\s|[⁰¹²³⁴⁵⁶⁷⁸⁹])")
+        require(len(pattern.findall(original)) == len(pattern.findall(replacement)) == 1,
+                "ambiguous repeated apparatus anchor")
     return [{"literal": a[0], "source_start": a[2], "source_end": a[3],
              "start": b[2], "end": b[3]} for a, b in zip(before, after)]
 

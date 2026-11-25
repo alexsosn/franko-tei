@@ -245,3 +245,14 @@ class AdjudicationTests(unittest.TestCase):
         m=row["apparatus_markers"][0]
         self.assertEqual(m["start"],m["source_start"]+2)
         self.assertEqual(row["text"][m["start"]:m["end"]],"¹)")
+
+    def test_apparatus_anchor_ambiguity(self):
+        from franko_tei.review_adjudication import apparatus_mapping
+        for old,new in (("Адам⁵) Адам", "Адам Адам⁵)"),
+                        ("Адам⁵) и", "Адам⁵, и"),
+                        ("Адам⁵) и", "Адам⁵) Адам и"),
+                        ("слово", "слово¹)")):
+            with self.assertRaises(ValueError):
+                apparatus_mapping(old,new)
+        self.assertEqual(apparatus_mapping("и слово⁵)", "иное слово⁵)"),
+                         [{"literal":"⁵)","source_start":7,"source_end":9,"start":10,"end":12}])
