@@ -1,0 +1,963 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 49,
+  "printed_page_observed": "XLV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00049.jpg",
+  "source_image_sha256": "833d134d78143113af870234ca897d4b19a17c431504bc8219fbe5ba85da41e6",
+  "reading": {
+    "reader_id": "gpt62-ii-49-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00041-00050-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image, preserving physical lines, historical spelling, bibliographic switches, notes and folio. No OCR or same-page peer text. Estimated geometry; historical Czech and Polish readings provisional.",
+    "raw_response": "XLV\nвіку походять: пісня про сїм радостей Марії (поч. Poszdrovyenye\ntho yesth pyrve), уривок піснї про вступленє Марії до неба, далї\nпоемка про Ісусові муки, основана на канонїчних євангелиях, крім\nдодатка взятого з якоїсь пасийної істориї (є і в наших „Страстях“):\nKiedy przez most bieżeli, sami po nim biegli,\nA Jezusa miłego w rzekę Cedron wlekli\nMaczając i narzając bez żadnej lutości (стор. 84).\nЗ XVI в. походить пісня про житє Ісуса, кілька разів друко-\nвана починаючи від 1532 р.; в нїй читаємо між иньшим, як Ісус\nPo śmierci boską mocą na przedpiekle stąpił,\nPiekielne wrota zborzył, czarta wnet zwyciężył (стор. 166),\nа також натяк на леґенду про Лонгина:\nBok potym święty włocznią okrutnie otworzon,\nWypłynęła krew z wodą; tą rycerz jest ochrzcon\nGdy ią dotknął oczu swych, wzrok mu jest przywrócon. (ibid.)\nВ піснї на воскресенє, поміщеній у рукописній збірцї біблїот.\nЧарторийських у Кракові, зладженій 1521 р., знаходимо опис входу\nІсусового до пекла, але досить далекий від тексту Нїкодимового єв.;\nІсус вивівши праведників із пекла дає їм свій хрест і говорить:\n„Otoż macie znamię mojej męki,\nWeźmicież je z mojej mocnej ręki,\nKrzyża świętego,\nDonieście je do raju ziemskiego.\nEnochowi z Eliaszem dajcie“ і т. д. (стор. 244).\nДалї оповідаєть ся, як Ісус передом післав Гавриїла, аби спо-\nвістив Марію про його воскресенє, а потім сам явив ся їй перший\n(стор. 245). В иньшім рукописї з половини XVI в., що знаходить ся\nв Курницькій біблїотецї, є пісня про Ісусово різдво, а в нїй ось\nякі рядки:\nTego dnia cuda się stali,\nIże trzy słońca nastali,\nDziecię boskie ukazali.\nSybilla prorokowała,\nIż pannę w niebie widziała,\nDzieciątko w ręku trzymała.\nCesarzewi ukazała,\nWszechmocność mu powiedziała,\nKtórego panna trzymała.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          960,
+          100,
+          95,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XLV",
+            "bbox_xywh": [
+              960,
+              100,
+              95,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          63,
+          175,
+          980,
+          1470
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "віку походять: пісня про сїм радостей Марії (поч. Poszdrovyenye",
+            "bbox_xywh": [
+              63,
+              175,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 50,
+                "end": 63,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "tho yesth pyrve), уривок піснї про вступленє Марії до неба, далї",
+            "bbox_xywh": [
+              63,
+              214,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 15,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "поемка про Ісусові муки, основана на канонїчних євангелиях, крім",
+            "bbox_xywh": [
+              63,
+              252,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "додатка взятого з якоїсь пасийної істориї (є і в наших „Страстях“):",
+            "bbox_xywh": [
+              63,
+              291,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "Kiedy przez most bieżeli, sami po nim biegli,",
+            "bbox_xywh": [
+              213,
+              330,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 45,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "A Jezusa miłego w rzekę Cedron wlekli",
+            "bbox_xywh": [
+              213,
+              368,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "Maczając i narzając bez żadnej lutości (стор. 84).",
+            "bbox_xywh": [
+              213,
+              407,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 38,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 38,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "З XVI в. походить пісня про житє Ісуса, кілька разів друко-",
+            "bbox_xywh": [
+              63,
+              446,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "вана починаючи від 1532 р.; в нїй читаємо між иньшим, як Ісус",
+            "bbox_xywh": [
+              63,
+              484,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "Po śmierci boską mocą na przedpiekle stąpił,",
+            "bbox_xywh": [
+              213,
+              523,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "Piekielne wrota zborzył, czarta wnet zwyciężył (стор. 166),",
+            "bbox_xywh": [
+              213,
+              562,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 46,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "а також натяк на леґенду про Лонгина:",
+            "bbox_xywh": [
+              63,
+              601,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "Bok potym święty włocznią okrutnie otworzon,",
+            "bbox_xywh": [
+              138,
+              639,
+              905,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "Wypłynęła krew z wodą; tą rycerz jest ochrzcon",
+            "bbox_xywh": [
+              138,
+              678,
+              905,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "Gdy ią dotknął oczu swych, wzrok mu jest przywrócon. (ibid.)",
+            "bbox_xywh": [
+              138,
+              717,
+              905,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 52,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 54,
+                "end": 59,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 59,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "В піснї на воскресенє, поміщеній у рукописній збірцї біблїот.",
+            "bbox_xywh": [
+              63,
+              755,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "Чарторийських у Кракові, зладженій 1521 р., знаходимо опис входу",
+            "bbox_xywh": [
+              63,
+              794,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "Ісусового до пекла, але досить далекий від тексту Нїкодимового єв.;",
+            "bbox_xywh": [
+              63,
+              833,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "Ісус вивівши праведників із пекла дає їм свій хрест і говорить:",
+            "bbox_xywh": [
+              63,
+              871,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "„Otoż macie znamię mojej męki,",
+            "bbox_xywh": [
+              213,
+              910,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 1,
+                "end": 30,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "Weźmicież je z mojej mocnej ręki,",
+            "bbox_xywh": [
+              213,
+              949,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "Krzyża świętego,",
+            "bbox_xywh": [
+              213,
+              987,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "Donieście je do raju ziemskiego.",
+            "bbox_xywh": [
+              213,
+              1026,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "Enochowi z Eliaszem dajcie“ і т. д. (стор. 244).",
+            "bbox_xywh": [
+              213,
+              1065,
+              830,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 26,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "Далї оповідаєть ся, як Ісус передом післав Гавриїла, аби спо-",
+            "bbox_xywh": [
+              63,
+              1103,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "вістив Марію про його воскресенє, а потім сам явив ся їй перший",
+            "bbox_xywh": [
+              63,
+              1142,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "(стор. 245). В иньшім рукописї з половини XVI в., що знаходить ся",
+            "bbox_xywh": [
+              63,
+              1181,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "в Курницькій біблїотецї, є пісня про Ісусово різдво, а в нїй ось",
+            "bbox_xywh": [
+              63,
+              1219,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "які рядки:",
+            "bbox_xywh": [
+              63,
+              1258,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "Tego dnia cuda się stali,",
+            "bbox_xywh": [
+              328,
+              1297,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "Iże trzy słońca nastali,",
+            "bbox_xywh": [
+              328,
+              1336,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "Dziecię boskie ukazali.",
+            "bbox_xywh": [
+              328,
+              1374,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "Sybilla prorokowała,",
+            "bbox_xywh": [
+              328,
+              1413,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 20,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "Iż pannę w niebie widziała,",
+            "bbox_xywh": [
+              328,
+              1452,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "Dzieciątko w ręku trzymała.",
+            "bbox_xywh": [
+              328,
+              1490,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "Cesarzewi ukazała,",
+            "bbox_xywh": [
+              328,
+              1529,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-37",
+            "text": "Wszechmocność mu powiedziała,",
+            "bbox_xywh": [
+              328,
+              1568,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-38",
+            "text": "Którego panna trzymała.",
+            "bbox_xywh": [
+              328,
+              1606,
+              715,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-49-image-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-01",
+        "reading": "Poszdrovyenye",
+        "reason": "Old Polish orthography provisional."
+      },
+      {
+        "line_id": "preface-line-07",
+        "reading": "narzając",
+        "reason": "Unusual word, retain printed form."
+      },
+      {
+        "line_id": "preface-line-13",
+        "reading": "włocznią",
+        "reason": "Printed accent and vowel provisional."
+      }
+    ]
+  }
+}
