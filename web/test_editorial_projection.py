@@ -47,6 +47,31 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
             self.assertTrue(any(p["volume"]=="4" and p["scan"]==68 for p in overlay["pages"]))
 
+    def test_coverage_snapshot_counts_physical_scans_not_search_versions(self):
+        from franko_tei.pilot_batch import discover_readings
+        from collections import Counter
+        from franko_tei.pilot_tei import PINNED_ASSET_COMMIT
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            coverage=json.loads((output/"coverage.json").read_text())
+            self.assertEqual(coverage["ref"],REF)
+            self.assertEqual(coverage["asset_commit"],PINNED_ASSET_COMMIT)
+            expected={str(v):Counter() for v in range(1,6)}
+            for path in discover_readings(ROOT/"pilot"):
+                volume,scan,_=path.stem.split("_",2)
+                expected[volume[3:]][int(scan[4:])]+=1
+            for v,total in enumerate((469,526,446,580,316),1):
+                row=coverage["volumes"][str(v)]
+                self.assertEqual(row["total"],total)
+                self.assertEqual(row["scans"],sorted(expected[str(v)]))
+                self.assertEqual(row["candidates"],sum(expected[str(v)].values()))
+                self.assertEqual(row["multiple"],sorted(n for n,c in expected[str(v)].items() if c>1))
+            self.assertIn(20,coverage["volumes"]["1"]["multiple"])
+            self.assertNotIn(2,coverage["volumes"]["1"]["scans"])
+            # Published accepted corrections do not create a second frozen reading.
+            self.assertEqual(coverage["volumes"]["1"]["scans"].count(104),1)
+
     def test_browser_reading_and_exact_search(self):
         from playwright.sync_api import sync_playwright, expect
         from test_review_editor import png, W, H
@@ -124,6 +149,20 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(line).to_contain_text("Сидъ")
                 expect(page.locator("#editorialNotice")).to_contain_text("source")
                 expect(page.locator("#editorialView")).to_be_hidden()
+                page.locator("#contentsOpen").click()
+                page.locator("#contentsCoverage summary").click()
+                coverage=json.loads((output/"coverage.json").read_text())
+                volume=coverage["volumes"]["1"]
+                expect(page.locator("#coverageStatus")).to_contain_text(f'{len(volume["scans"])} / {volume["total"]}')
+                expect(page.locator("#coverageStatus")).to_contain_text("not verified")
+                page.locator("#contentsVolume").select_option("4")
+                iv=coverage["volumes"]["4"]
+                expect(page.locator("#coverageStatus")).to_contain_text(f'{len(iv["scans"])} / {iv["total"]}')
+                missing=next(n for n in range(1,iv["total"]+1) if n not in iv["scans"])
+                page.locator("#coverageNext").click()
+                expect(page.locator("#ref")).to_have_value(REF)
+                expect(page.locator("#page")).to_have_value(str(missing))
+                expect(page.locator("#contentsPanel")).not_to_be_visible()
                 self.assertFalse(errors,errors)
                 browser.close()
 
