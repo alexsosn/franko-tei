@@ -9,6 +9,28 @@ COMMIT = 'e871f32537e81f81896f6ce9a6658aba667db9c5'
 PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aH1sAAAAASUVORK5CYII='
 
 class ReviewSmoke(unittest.TestCase):
+    def test_volume_one_contents_records(self):
+        # Edition-specific regression checks; source scan and printed folio are distinct.
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        entries = data['1']['entries']
+        items = [entry for entry in entries if len(entry) > 4 and entry[4] == 1]
+        self.assertEqual(len(items), 118)
+        self.assertEqual([sum(entry[0] == n for entry in items) for n in range(465, 470)], [19, 27, 34, 28, 10])
+        reversed_range = next(e for e in items if e[2] == '324–320')
+        self.assertEqual(reversed_range[0], 465)
+        self.assertIsNone(reversed_range[3])
+        continuation = next(e for e in items if e[1].startswith('В. Перехід через Червоне море'))
+        self.assertEqual(continuation[0], 467)
+        self.assertEqual(continuation[2], '251–254')
+        self.assertIn('гірка вода', continuation[1])
+        self.assertTrue(any(e[0] == 469 and e[2] == '338–339' for e in items))
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, data['1']['sources'])
+            self.assertTrue(title and printed)
+            self.assertTrue(scan is None or 1 <= scan <= 469)
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
