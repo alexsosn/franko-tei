@@ -1,4 +1,5 @@
 """Read-only live smoke against actual pinned source assets; no fixtures."""
+import json
 import re
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -21,6 +22,12 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#scan")).to_be_visible()
             expect(page.locator("#candidate .line-text")).to_have_count(42)
             expect(page.locator("#draftStatus")).to_contain_text("printed folio XI")
+            catalogue = json.loads((Path(__file__).resolve().parents[1] / "src/franko_tei/sources.json").read_text(encoding="utf-8"))
+            titles = [f"{v['roman']} — {v['title']}" for v in catalogue["volumes"]]
+            expect(page.locator("#volume option")).to_have_text(titles)
+            expect(page.locator("#searchVolume option")).to_have_text(["All volumes", *titles])
+            expect(page.locator("#choice option").filter(has_text="GPT-6 · single reading")).to_have_count(1)
+            expect(page.locator("#choice option").filter(has_text="GPT-6 · independent image reading b")).to_have_count(1)
             first_note = page.locator(".uncertainty-toggle").first
             expect(page.locator(".uncertainty-reasons").first).to_be_hidden()
             expect(page.locator("#candidate mark").first).to_be_visible()
