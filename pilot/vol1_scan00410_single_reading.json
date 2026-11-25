@@ -864,6 +864,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 14,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i410-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 49,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i410-first-image-20261125"
+              },
+              {
+                "start": 49,
                 "end": 57,
                 "language": "orv",
                 "script": "Cyrl",
@@ -1105,5 +1121,14 @@
         "reason": "Historical vernacular; exact uk ligatures, titla, breathings, accents and historical glyphs provisional."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "d1c0b6cf999c667495c9cd38c712ed14bf16e97a",
+    "source_record_blob": "5c4127c80a8be7ff98b1a903f0bd8c363f9524f6",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual review of frozen reading against pinned original image. Distinguish embedded scriptural question or standalone Cyrillic numerals from surrounding text; no numeral value normalization, no recension or glyph verification."
   }
 }
