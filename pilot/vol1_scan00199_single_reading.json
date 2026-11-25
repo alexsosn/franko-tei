@@ -76,6 +76,14 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i199-first-image-20261125"
+              },
+              {
+                "start": 3,
                 "end": 24,
                 "language": "uk",
                 "script": "Cyrl",
@@ -914,5 +922,14 @@
         "reason": "Provisional direct image reading; historical glyphs, titla, numeral labels, spelling and typography need reinspection."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "61d5d0ab935af4cc5f7c216a265383652e97645c",
+    "source_record_blob": "08f6446f5bfd6e481a8625007aaa380a9c12246a",
+    "scope": "Script refinement only: Roman numerals retain contextual language.",
+    "status": "agent_unverified",
+    "method": "Separate annotation audit against exact frozen reading; no change to source text, geometry or provenance."
   }
 }
