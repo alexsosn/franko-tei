@@ -63,21 +63,24 @@ def _validate_exposure(payload, reading):
                 'external_text_exposure' in reading):
             raise ValueError('image-only draft must not hide any OCR/peer exposure')
     else:
-        # A prior outside OCR glimpse makes this reading *nonblind*,
-        # even if the embedded original PDF OCR itself was never accessed.
-        if (reading.get('source_original_ocr_visible') is not False or
-                reading.get('peer_readings_visible') is not True):
-            raise ValueError('exposed draft must attest nonblind external OCR context')
+        # Exposed readings remain nonblind. Distinguish outside text from
+        # the edition's own embedded OCR; never suppress either provenance.
         exposure = reading.get('external_text_exposure')
         if not isinstance(exposure, dict) or set(exposure) != {'kind','url','timing','note'}:
-            raise ValueError('complete external OCR exposure provenance required')
-        if (exposure['kind'] != 'third_party_ocr' or
-                exposure['timing'] != 'before_first_reading' or
+            raise ValueError('complete OCR exposure provenance required')
+        kind = exposure['kind']
+        embedded = kind == 'embedded_pdf_ocr'
+        if kind not in ('third_party_ocr', 'embedded_pdf_ocr'):
+            raise ValueError('unsupported OCR exposure kind')
+        if (reading.get('source_original_ocr_visible') is not embedded or
+                reading.get('peer_readings_visible') is not (not embedded)):
+            raise ValueError('exposed draft flags contradict OCR exposure kind')
+        if (exposure['timing'] != 'before_first_reading' or
                 not isinstance(exposure['url'], str) or
                 not exposure['url'].startswith('https://') or
                 not isinstance(exposure['note'], str) or
                 not exposure['note'].strip()):
-            raise ValueError('external OCR exposure kind, time, URL or note invalid')
+            raise ValueError('OCR exposure time, URL or note invalid')
 
 
 def validate_single_draft(payload, images_root):
