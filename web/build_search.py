@@ -35,7 +35,9 @@ def build(pilot, output, ref):
                 unavailable.append({"path": candidate_path, "reason": "source_blob_changed"})
                 continue
             rows = project_lines(raw, candidate_path, ledger)
-            accepted = [r for r in rows if r["status"] != "agent_unverified"]
+            accepted = [dict(r, contributor_login=ledger[(candidate_path, r["line_id"])]["submitter"]["login_at_intake"],
+                             review_reason=ledger[(candidate_path, r["line_id"])]["adjudication"]["reason"])
+                        for r in rows if r["status"] != "agent_unverified"]
             pages.append(dict(volume=volume, scan=scan, suffix=suffix, path=candidate_path,
                               blob=blob_sha(raw), lines=accepted))
             corrected = "\n".join(r["text"] for r in rows)

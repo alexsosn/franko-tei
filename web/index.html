@@ -7409,7 +7409,7 @@ async function editorialBlob(raw){
 function checkedEditorial(page,data,blob,path){
   if(!page||page.path!==path||page.blob!==blob||!Array.isArray(page.lines)||!page.lines.length)return null;
   const lines=new Map();
-  for(const region of data.reading.regions)for(const line of region.lines)lines.set(line.id,{region,line});
+  for(const region of data.reading.regions)for(const line of region.lines){if(lines.has(line.id))return null;lines.set(line.id,{region,line});}
   const reviewed=new Map();
   for(const r of page.lines){
     const source=lines.get(r.line_id);
@@ -7431,9 +7431,9 @@ function editorialDetail(row,gutter,review){
   const status=document.createElement('strong');uiText(status,review.review_kind==='agent'?'Agent review · provisional':'Human editorial review');
   const original=document.createElement('p'),label=document.createElement('span');uiText(label,'Original reading');original.append(label,document.createTextNode(': '));
   const literal=document.createElement('span');literal.className='editorial-original';literal.textContent=review.original;original.append(literal);
-  const credit=document.createElement('p'),creditLabel=document.createElement('span');uiText(creditLabel,'Contributor');credit.append(creditLabel,document.createTextNode(' · GitHub ID '+review.contributor_id+' · '));
+  const credit=document.createElement('p'),creditLabel=document.createElement('span');uiText(creditLabel,'Contributor');credit.append(creditLabel,document.createTextNode(' · '+(typeof review.contributor_login==='string'?review.contributor_login+' · ':'')+'GitHub ID '+review.contributor_id+' · '));
   const link=document.createElement('a');link.href=review.issue_url;link.target='_blank';link.rel='noopener';uiText(link,'View contribution');credit.append(link);
-  detail.append(status,original,credit);
+  detail.append(status,original,credit);if(review.review_kind==='agent'&&typeof review.agent?.model==='string')status.append(document.createTextNode(' · '+review.agent.model));if(typeof review.source_commit==='string'&&/^[a-f0-9]{40}$/.test(review.source_commit)){const source=document.createElement('p');source.textContent='Git · '+review.source_commit;detail.append(source);}if(typeof review.review_reason==='string'){const reason=document.createElement('p');reason.textContent=review.review_reason;detail.append(reason);}
   if(review.status==='accepted_correction'){const warning=document.createElement('p');uiText(warning,'Language and uncertainty annotations need reassessment.');detail.append(warning);}
   toggle.onclick=()=>{detail.hidden=!detail.hidden;toggle.setAttribute('aria-expanded',String(!detail.hidden));};
   gutter.append(toggle);row.after(detail);
