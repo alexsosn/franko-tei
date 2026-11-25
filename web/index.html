@@ -16,13 +16,14 @@
 .uncertainty-reasons,.alternate-reasons{margin-left:68px}
 #candidate h3{margin-left:68px}
 #searchOpen,#searchGo{display:inline-flex;align-items:center;justify-content:center;gap:6px}.search-icon{flex:none;display:block}
+#contentsPanel{background:white;border-bottom:1px solid #d7d9d5;padding:12px 20px;max-height:45vh;overflow:auto}#contentsSources{display:flex;gap:6px;flex-wrap:wrap}#contentsEntries{padding-left:1.4em}#contentsEntries li{margin:4px 0;overflow-wrap:anywhere}#contentsEntries button{white-space:normal;text-align:left}#contentsEntries .subentry{margin-left:1.25em}#contentsEntries .source-link{font-size:12px;padding:2px 5px;margin-left:6px}
 </style>
 <header><h1>Franko · OCR &amp; transcription review</h1><nav>
 <label>Volume <select id="volume"><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label>
 <button id="prev" aria-label="Previous scan">←</button><label>Scan <input id="page" type="number" min="1" value="20"></label><span id="total"></span><button id="next" aria-label="Next scan">→</button><button id="go">Go / reload</button>
 <label>Reading ref <input id="ref" value="main" list="refs" spellcheck="false" title="Git branch or commit containing pilot readings"></label><datalist id="refs"><option value="main"><option value="transcription/vol1-scans-62-100"><option value="transcription/vol1-scans-101-140"></datalist>
-<button id="searchOpen" aria-expanded="false" aria-controls="searchPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search corpus</span></button></nav><p id="status" role="status">Loading…</p><small>Physical scan index, not printed pagination. All OCR and draft readings are unverified. Images load from the existing pinned source repository; dimensions and draft metadata are checked, not downloaded byte hashes.</small></header>
-<section id="searchPanel" hidden><nav><input id="query" type="search" placeholder="Search full text" aria-label="Search text"><label>Volume <select id="searchVolume"><option value="all">All volumes</option><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><label>Source <select id="searchSource"><option value="both">Both</option><option value="agent">Agent readings</option><option value="ocr">Original OCR</option></select></label><label><input id="caseSensitive" type="checkbox"> Case sensitive</label><button id="searchGo"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button></nav><p id="searchStatus" role="status">Search uses literal text and flexible whitespace; spelling and diacritics are preserved.</p><div id="searchResults"></div><button id="searchMore" hidden>Show more results</button></section><main><section class="panel"><nav><h2>Original scan</h2><button id="minus" aria-label="Zoom out">−</button><button id="fit">Fit width</button><button id="plus" aria-label="Zoom in">+</button><a id="source" target="_blank" rel="noopener">Open full image</a></nav><p id="lineinfo" class="muted">Select a draft line to locate its approximate position.</p><div class="scroller" id="imageScroll"><div id="canvas"><img id="scan" alt="Original printed page" hidden><div id="highlight" hidden></div></div><p id="imageError" class="error"></p></div></section>
+<button id="contentsOpen" aria-expanded="false" aria-controls="contentsPanel">Contents · Зміст</button><button id="searchOpen" aria-expanded="false" aria-controls="searchPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search corpus</span></button></nav><p id="status" role="status">Loading…</p><small>Physical scan index, not printed pagination. All OCR and draft readings are unverified. Images load from the existing pinned source repository; dimensions and draft metadata are checked, not downloaded byte hashes.</small></header>
+<section id="contentsPanel" hidden aria-label="Volume contents"><h2 id="contentsTitle">Contents · Зміст</h2><p id="contentsStatus" class="muted"></p><p>Original contents scans:</p><nav id="contentsSources"></nav><ol id="contentsEntries"></ol></section><section id="searchPanel" hidden><nav><input id="query" type="search" placeholder="Search full text" aria-label="Search text"><label>Volume <select id="searchVolume"><option value="all">All volumes</option><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><label>Source <select id="searchSource"><option value="both">Both</option><option value="agent">Agent readings</option><option value="ocr">Original OCR</option></select></label><label><input id="caseSensitive" type="checkbox"> Case sensitive</label><button id="searchGo"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button></nav><p id="searchStatus" role="status">Search uses literal text and flexible whitespace; spelling and diacritics are preserved.</p><div id="searchResults"></div><button id="searchMore" hidden>Show more results</button></section><main><section class="panel"><nav><h2>Original scan</h2><button id="minus" aria-label="Zoom out">−</button><button id="fit">Fit width</button><button id="plus" aria-label="Zoom in">+</button><a id="source" target="_blank" rel="noopener">Open full image</a></nav><p id="lineinfo" class="muted">Select a draft line to locate its approximate position.</p><div class="scroller" id="imageScroll"><div id="canvas"><img id="scan" alt="Original printed page" hidden><div id="highlight" hidden></div></div><p id="imageError" class="error"></p></div></section>
 <section class="panel"><nav><h2>Text candidates</h2><label>View <select id="mode"><option value="draft">Agent readings</option><option value="ocr">Original PDF OCR</option><option value="both">Both</option></select></label><select id="choice" aria-label="Reading candidate"></select></nav><div id="textscroll"><section id="draftSection"><p id="draftStatus" role="status"></p><div id="candidate"></div><details id="notes" hidden><summary>Source provenance</summary><pre id="noteText"></pre><a id="readingSource" target="_blank" rel="noopener">Original reading JSON</a></details></section><section id="ocrSection" hidden><h2>Original PDF OCR · unchecked</h2><p id="ocrStatus" role="status"></p><pre id="ocr"></pre></section></div></section></main>
 <script>
 'use strict';
@@ -56,7 +57,7 @@ function renderLine(line,region,notes,alternates=[]){const row=document.createEl
 $('candidate').append(row);if(alternates.length){btn.classList.add('alternate-diff');const toggle=document.createElement('button');toggle.type='button';toggle.className='alternate-toggle';toggle.textContent='≠ '+alternates.length;toggle.title='Show approximate alternate line readings';toggle.setAttribute('aria-label','Alternate readings for '+line.id);toggle.setAttribute('aria-expanded','false');const details=document.createElement('div');details.className='alternate-reasons';details.hidden=true;const hint=document.createElement('small');hint.textContent='Approximate geometry match; compare the original image. Not an adjudicated alignment.';details.append(hint);for(const alt of alternates){const p=document.createElement('p');const name=document.createElement('strong');name.textContent=alt.label+' · '+alt.reader;p.append(name,document.createTextNode('\n'+alt.text));details.append(p);}toggle.onclick=()=>{details.hidden=!details.hidden;toggle.setAttribute('aria-expanded',String(!details.hidden));};gutter.append(toggle);$('candidate').append(details);}if(!notes.length)return;const toggle=document.createElement('button');toggle.type='button';toggle.className='uncertainty-toggle';toggle.textContent='⚑ '+notes.length;toggle.title='Show uncertainty reasons';toggle.setAttribute('aria-label','Uncertainty notes for '+line.id);toggle.setAttribute('aria-expanded','false');const reasons=document.createElement('div');reasons.className='uncertainty-reasons';reasons.hidden=true;for(const {note,ranges} of anchored){const p=document.createElement('p');const label=document.createElement('strong');label.textContent=String(note.reading??'Unanchored reading');p.append(label,document.createTextNode(' — '));const reason=document.createElement('span');reason.textContent=String(note.reason??'No reason supplied');p.append(reason);if(ranges.length!==1){const warning=document.createElement('small');warning.textContent=ranges.length?' (Multiple exact occurrences; location ambiguous.)':' (Literal not found in line; no highlight.)';p.append(warning);}reasons.append(p);}toggle.onclick=()=>{reasons.hidden=!reasons.hidden;toggle.setAttribute('aria-expanded',String(!reasons.hidden));};gutter.prepend(toggle);$('candidate').append(reasons);}
 function renderCandidate(){clearHighlight();$('candidate').replaceChildren();$('notes').hidden=true;const c=candidates[Number($('choice').value)];if(!c)return;const d=c.data,r=d.reading;message('draftStatus','Unverified · '+candidateLabel(c.suffix,r)+' · '+r.reader_id+' · printed folio '+(d.printed_page_observed??'unknown')+' · '+r.context_independence+' · '+candidates.length+' candidate(s); purple bars indicate approximate differing lines');const byLine=new Map();for(const note of r.uncertainty_notes??[]){if(!note||typeof note.line_id!=='string')continue;const list=byLine.get(note.line_id)??[];list.push(note);byLine.set(note.line_id,list);}for(const region of r.regions){const h=document.createElement('h3');h.textContent=region.kind;$('candidate').append(h);for(const line of region.lines){renderLine(line,region,byLine.get(line.id)??[],alternateMatches(line,c));byLine.delete(line.id);}}if(byLine.size)message('draftStatus',$('draftStatus').textContent+' · Unmatched uncertainty line IDs: '+[...byLine.keys()].join(', ')+' (see original JSON).');$('notes').hidden=false;message('noteText',JSON.stringify({original_ocr_visible:r.source_original_ocr_visible,peer_readings_visible:r.peer_readings_visible,source_image_sha256:d.source_image_sha256},null,2));$('readingSource').href=c.url;}
 function checkDraft(d,v,n,image){if(d.volume!==v||d.scan_page!==n||d.asset_commit!==PIN||d.source_image_path!==image.path||d.source_image_sha256!==image.sha256)throw Error('Source identity mismatch');if(d.status!=='agent_unverified'||!['single-image-draft-v0','single-exposed-draft-v1'].includes(d.schema_version)||!d.reading||!Array.isArray(d.reading.regions)||!d.reading.regions.every(r=>Array.isArray(r.lines)&&r.lines.every(l=>typeof l.text==='string')))throw Error('Unsupported draft schema');}
-async function load(){const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;current=null;candidates=[];$('choice').replaceChildren();$('candidate').replaceChildren();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
+async function load(){if(!$('contentsPanel').hidden)renderContents();const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;current=null;candidates=[];$('choice').replaceChildren();$('candidate').replaceChildren();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
 if(!/^[A-Za-z0-9][A-Za-z0-9._/-]*$/.test(ref)||ref.split('/').some(x=>!x||x==='.'||x==='..')){message('status','Invalid reading ref. Enter a branch name or commit SHA.');return;}
 try{let manifest=manifests.get(v);if(!manifest){manifest=await(await get(asset('vol'+v+'/manifest.json'),signal)).json();if(id!==generation)return;if(manifest.volume!==v||!Array.isArray(manifest.pages)||!Number.isInteger(manifest.page_count)||manifest.page_count<1)throw Error('Invalid volume manifest');manifests.set(v,manifest);}n=Math.min(n,manifest.page_count);$('page').value=n;activeScan=n;$('page').max=manifest.page_count;message('total','/ '+manifest.page_count);$('prev').disabled=n<=1;$('next').disabled=n>=manifest.page_count;const page=manifest.pages.find(p=>p.scan_page===n);if(!page)throw Error('Scan missing from manifest');const image=page.artifacts.find(a=>a.role==='page_image');const ocr=page.artifacts.find(a=>a.role==='embedded_ocr');if(!image||!ocr||!['jpg','png'].some(ext=>image.path==='vol'+v+'/page-'+pad(n)+'.'+ext)||ocr.path!=='original_ocr/vol'+v+'/page-'+pad(n)+'.txt'||!(page.width>0&&page.height>0))throw Error('Invalid source manifest entry');current={page,image};history.replaceState(null,'','#'+new URLSearchParams({v,p:String(n),ref}));message('status','Volume '+v+' · scan '+n+' / '+manifest.page_count+' · reading ref: '+ref);$('source').href=asset(image.path);$('scan').onload=()=>{if(id!==generation)return;if($('scan').naturalWidth!==page.width||$('scan').naturalHeight!==page.height){message('imageError','Image dimensions differ from manifest.');return;}$('scan').hidden=false;};$('scan').onerror=()=>{if(id===generation)message('imageError','Image could not be loaded. Try Open full image or reload.');};$('scan').src=asset(image.path);
 const ocrTask=(async()=>{try{const value=await(await get(asset(ocr.path),signal)).text();if(id!==generation)return;message('ocr',value);message('ocrStatus',value.trim()?'Original extraction; no spatial line alignment.':'Empty original OCR (no non-whitespace text).');}catch(e){if(id===generation)message('ocrStatus','OCR unavailable: '+e.message);}})();
@@ -79,6 +80,803 @@ async function openHit(hit){$('volume').value=hit.volume;$('page').value=hit.sca
 function showHits(){const end=Math.min(shownHits+100,searchHits.length);for(;shownHits<end;shownHits++){const hit=searchHits[shownHits];const button=document.createElement('button');button.type='button';const label=document.createElement('strong');label.textContent='Volume '+hit.volume+' · scan '+hit.scan+' · '+(hit.kind==='ocr'?'Original OCR':hit.suffix.replaceAll('_',' '))+' · '+hit.matches+' match'+(hit.matches===1?'':'es');button.append(label,document.createTextNode('\n'));appendExcerpt(button,hit.text,hit.first);button.onclick=()=>openHit(hit);$('searchResults').append(button);}$('searchMore').hidden=shownHits>=searchHits.length;}
 async function searchCorpus(){const id=++searchGeneration;searchController?.abort();searchController=new AbortController();const signal=searchController.signal;const query=$('query').value.trim(),ref=$('ref').value.trim(),source=$('searchSource').value,volume=$('searchVolume').value;searchHits=[];shownHits=0;$('searchResults').replaceChildren();$('searchMore').hidden=true;if(!query){message('searchStatus','Enter text to search.');return;}if(source!=='ocr'&&!validRef(ref)){message('searchStatus','Invalid reading ref.');return;}const re=queryRegex(query,$('caseSensitive').checked),volumes=volume==='all'?['1','2','3','4','5']:[volume];message('searchStatus','Loading text indexes…');let tree;const getTree=()=>tree??=branchTree(ref,signal);const jobs=[];for(const v of volumes){if(source!=='agent')jobs.push({label:'OCR V'+v,run:async()=>ocrIndex(v,signal)});if(source!=='ocr')jobs.push({label:'Agent V'+v,run:async()=>{const d=await agentIndex(v,ref,signal,getTree);return d.entries.map(e=>({...e,ref:d.ref,kind:'agent',volume:v}));}});}const settled=await Promise.allSettled(jobs.map(j=>j.run()));if(id!==searchGeneration)return;const errors=[],rows=[];settled.forEach((r,i)=>{if(r.status==='fulfilled')rows.push(...r.value);else errors.push(jobs[i].label+': '+r.reason.message);});for(const row of rows){re.lastIndex=0;let first=null,matches=0;for(const m of row.text.matchAll(re)){first??=m;matches++;}if(matches)searchHits.push({...row,first,matches});}searchHits.sort((a,b)=>Number(a.volume)-Number(b.volume)||a.scan-b.scan||a.kind.localeCompare(b.kind)||String(a.suffix).localeCompare(String(b.suffix)));const agent=rows.filter(r=>r.kind==='agent'),ocr=rows.filter(r=>r.kind==='ocr');const refs=[...new Set(agent.map(r=>r.ref.slice(0,12)))];if(refs.length>1)errors.push('Agent indexes came from different revisions; reload the viewer for a consistent snapshot.');message('searchStatus',searchHits.length+' matching page/candidate records · '+searchHits.reduce((n,h)=>n+h.matches,0)+' occurrences. Searched '+agent.length+' agent candidates'+(refs.length?' ('+refs.join(', ')+')':'')+' and '+ocr.length+' original OCR pages ('+ocr.filter(r=>r.text.trim()).length+' nonempty).'+(errors.length?' INCOMPLETE SEARCH — '+errors.join('; '):''));showHits();}
 $('searchOpen').onclick=()=>{$('searchPanel').hidden=!$('searchPanel').hidden;$('searchOpen').setAttribute('aria-expanded',String(!$('searchPanel').hidden));if(!$('searchPanel').hidden)$('query').focus();};$('searchGo').onclick=searchCorpus;$('query').onkeydown=e=>{if(e.key==='Enter')searchCorpus();};$('searchMore').onclick=showHits;
+// Provisional image-derived navigation extract, not a diplomatic page transcription.
+ // Entries: [source TOC scan, title, printed reference (first child's start for sections), inspected target scan or null, depth].
+const volumeContents={
+  "1": {
+    "sources": [
+      465,
+      466,
+      467,
+      468,
+      469
+    ],
+    "coverage": "Section headings only; individual entries pending.",
+    "entries": [
+      [
+        465,
+        "Від Археоґрафічної комісиї.",
+        "",
+        null
+      ],
+      [
+        465,
+        "Передмова",
+        "I–LXVI",
+        null
+      ],
+      [
+        465,
+        "I. Індекс книг правдивих і заказаних.",
+        "1",
+        76
+      ],
+      [
+        465,
+        "II. Від сотвореня сьвіта до смерти Христа.",
+        "7",
+        null
+      ],
+      [
+        465,
+        "III. Сатанаіл і бунт ангелів.",
+        "11",
+        null
+      ],
+      [
+        465,
+        "IV. Про рай.",
+        "17",
+        null
+      ],
+      [
+        465,
+        "V. Оповіданя про Адама і Еву.",
+        "19",
+        null
+      ],
+      [
+        466,
+        "VI. Від Адама до Ноя.",
+        "33",
+        null
+      ],
+      [
+        466,
+        "VII. Книга Еноха (Із полтавського ркп. ігумена Геннадия)",
+        "39–64",
+        null
+      ],
+      [
+        466,
+        "VIII. Про Ноя і потопу сьвіта.",
+        "65",
+        null
+      ],
+      [
+        466,
+        "IX. Від Ноя до Авраама.",
+        "74",
+        null
+      ],
+      [
+        466,
+        "X. Оповіданя про Авраама.",
+        "80",
+        null
+      ],
+      [
+        466,
+        "XI. Оповіданя про Мелхіседека.",
+        "92",
+        null
+      ],
+      [
+        466,
+        "XII. Авраамові сини.",
+        "102",
+        null
+      ],
+      [
+        467,
+        "XIII. Сини Ісаакові.",
+        "108",
+        null
+      ],
+      [
+        467,
+        "XIV. Патріархи в Єгиптї.",
+        "124",
+        null
+      ],
+      [
+        467,
+        "XV. Заповіти дванацяти патріархів (Крех. Палея).",
+        "174",
+        null
+      ],
+      [
+        467,
+        "XVI. Оповіданя про Мойсея.",
+        "225",
+        null
+      ],
+      [
+        468,
+        "XVII. Від Мойсея до Давида.",
+        "264",
+        null
+      ],
+      [
+        468,
+        "XVIII. Оповіданя про Давида.",
+        "272",
+        null
+      ],
+      [
+        468,
+        "XIX. Оповіданя про Соломона.",
+        "280",
+        null
+      ],
+      [
+        468,
+        "XX. Від Соломона до Христа.",
+        "296",
+        null
+      ],
+      [
+        469,
+        "Показчик імен осіб і місць згаданих в текстах сего тому.",
+        "341–355",
+        null
+      ],
+      [
+        469,
+        "Показчик писателїв і творів наведених у сьому томі",
+        "356–361",
+        null
+      ],
+      [
+        469,
+        "Показчик лєгендових і казочних мотивів і т. п. в текстах сего тому",
+        "362–383",
+        null
+      ],
+      [
+        469,
+        "Показчик неясних або рідше вживаних слів у текстах сего тому",
+        "384–387",
+        null
+      ],
+      [
+        469,
+        "Важнїйші похибки друкарські.",
+        "388",
+        null
+      ]
+    ]
+  },
+  "2": {
+    "sources": [
+      519,
+      520,
+      521,
+      522,
+      523,
+      524,
+      525
+    ],
+    "coverage": "Section headings only; individual entries pending.",
+    "entries": [
+      [
+        519,
+        "Передмова",
+        "I–LXXVIII",
+        null
+      ],
+      [
+        519,
+        "I. Пророцтва про Ісуса.",
+        "1",
+        83
+      ],
+      [
+        520,
+        "II. Ісусові родичі.",
+        "36",
+        null
+      ],
+      [
+        521,
+        "III. Ісусове різдво.",
+        "112",
+        null
+      ],
+      [
+        521,
+        "IV. Ісусові дитячі лїта.",
+        "152",
+        null
+      ],
+      [
+        522,
+        "V. Ісусове хрещене і покуса.",
+        "174",
+        null
+      ],
+      [
+        522,
+        "VI. Ісус учитель і чудотворець.",
+        "204",
+        null
+      ],
+      [
+        523,
+        "VII. Ісусові муки і смерть.",
+        "219",
+        null
+      ],
+      [
+        523,
+        "VIII. Ісусів прихід до пекла, воскресене і вознесене.",
+        "293",
+        null
+      ],
+      [
+        524,
+        "IX. Вороги і приятелї Ісусові.",
+        "335",
+        null
+      ],
+      [
+        525,
+        "X. Смерть Марії Богородицї.",
+        "368",
+        null
+      ]
+    ]
+  },
+  "3": {
+    "sources": [
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446
+    ],
+    "coverage": "Section headings only; individual entries pending.",
+    "entries": [
+      [
+        439,
+        "Codex apocryphus, Plan der Sammlung, Inhalt der bisher erschienenen drei Bände",
+        "A–M",
+        null
+      ],
+      [
+        439,
+        "Передмова",
+        "I–LXVIII",
+        null
+      ],
+      [
+        439,
+        "I. Реєстри апостолів.",
+        "1",
+        87
+      ],
+      [
+        440,
+        "II. Оповіданя про ап. Петра.",
+        "14",
+        null
+      ],
+      [
+        440,
+        "III. Оповіданя про сьв. Павла.",
+        "28",
+        null
+      ],
+      [
+        441,
+        "IV. Оповіданя про сьв. Івана Богослова.",
+        "49",
+        null
+      ],
+      [
+        441,
+        "V. Оповіданя про сьв. Тому.",
+        "91",
+        null
+      ],
+      [
+        442,
+        "VI. Оповіданя про сьв. Андрія.",
+        "126",
+        null
+      ],
+      [
+        442,
+        "VII. Оповіданя про сьв. Матвія.",
+        "156",
+        null
+      ],
+      [
+        442,
+        "VIII. Оповіданя про сьв. Филипа.",
+        "170",
+        null
+      ],
+      [
+        443,
+        "IX. Оповіданя про Якова брата Господнього.",
+        "185",
+        null
+      ],
+      [
+        443,
+        "X. Оповіданя про иньших апостолів.",
+        "192",
+        null
+      ],
+      [
+        443,
+        "XI. Оповіданя про євангелистів Марка і Луку",
+        "200",
+        null
+      ],
+      [
+        444,
+        "XII. Оповіданя про апостольських учеників.",
+        "213",
+        null
+      ],
+      [
+        446,
+        "Додатки і поправки",
+        "270–318",
+        null
+      ],
+      [
+        446,
+        "Додаток до тому II, стор. 74–98",
+        "319–323",
+        null
+      ],
+      [
+        446,
+        "Показчик письменників і творів наведених у II. і III. томах „Памяток“",
+        "325–332",
+        null
+      ],
+      [
+        446,
+        "Показчик імен власних і назв у III томі",
+        "333–352",
+        null
+      ],
+      [
+        446,
+        "Зміст",
+        "353–360",
+        439
+      ]
+    ]
+  },
+  "4": {
+    "sources": [
+      569,
+      570,
+      571,
+      572,
+      573,
+      574
+    ],
+    "coverage": "Section headings only; individual entries pending.",
+    "entries": [
+      [
+        569,
+        "Передмова",
+        "I–XVI",
+        null
+      ],
+      [
+        569,
+        "I. Катехізми на апокріфічні теми.",
+        "1",
+        53
+      ],
+      [
+        570,
+        "II. Апокалїпси про празники і обряди.",
+        "49",
+        101
+      ],
+      [
+        571,
+        "III. Апокалїпси про загробове житє.",
+        "104",
+        156
+      ],
+      [
+        572,
+        "IV. Апокалїпси про конець сьвіта.",
+        "249",
+        301
+      ],
+      [
+        573,
+        "Додатки і поправки. До роздїлу I.",
+        "401",
+        453
+      ],
+      [
+        573,
+        "До роздїлу II.",
+        "448",
+        null
+      ],
+      [
+        574,
+        "До роздїлу III.",
+        "462",
+        null
+      ],
+      [
+        574,
+        "До роздїлу IV.",
+        "471",
+        null
+      ]
+    ]
+  },
+  "5": {
+    "sources": [
+      311,
+      312
+    ],
+    "coverage": "Section headings and item titles; individual destinations pending where not inspected.",
+    "entries": [
+      [
+        311,
+        "Передмова",
+        "I",
+        null
+      ],
+      [
+        311,
+        "I. Апостольські сучасники і ученики",
+        "1",
+        13
+      ],
+      [
+        311,
+        "1. Житіє Марії Магдалини",
+        "1–8",
+        13,
+        1
+      ],
+      [
+        311,
+        "2. Св. Іван Хреститель",
+        "9–13",
+        null,
+        1
+      ],
+      [
+        311,
+        "3. Юда врадник",
+        "14–15",
+        null,
+        1
+      ],
+      [
+        311,
+        "4. Св. Конон, проложне житіє",
+        "16–17",
+        null,
+        1
+      ],
+      [
+        311,
+        "5. Св. Аверкій, проложне житіє",
+        "18–19",
+        null,
+        1
+      ],
+      [
+        311,
+        "6. Житіє св. Аверкія, друга редакція",
+        "20–21",
+        null,
+        1
+      ],
+      [
+        311,
+        "7. Св. Ірина, проложне житіє",
+        "22–24",
+        null,
+        1
+      ],
+      [
+        311,
+        "8. Іринино мученіє",
+        "25–44",
+        null,
+        1
+      ],
+      [
+        311,
+        "9. Страсть св. Антіпи, єпіскопа арнасійського",
+        "44",
+        null,
+        1
+      ],
+      [
+        311,
+        "Доповненє до I. розділу",
+        "45",
+        57
+      ],
+      [
+        311,
+        "4. б. Св. Конон Ісаврійський",
+        "45–46",
+        57,
+        1
+      ],
+      [
+        311,
+        "4. в. Повне житіє Конона Ісаврійського",
+        "47–60",
+        null,
+        1
+      ],
+      [
+        311,
+        "II. Мученики перших віків",
+        "61",
+        73
+      ],
+      [
+        311,
+        "1. Св. Іпатій, проложне житіє",
+        "61–63",
+        73,
+        1
+      ],
+      [
+        311,
+        "2. Муки св. Іпатія, переклад старосербського повного житія",
+        "63–78",
+        null,
+        1
+      ],
+      [
+        311,
+        "3. Мученє св. Ґеорґія, перша апокріфічна редакція",
+        "79–85",
+        null,
+        1
+      ],
+      [
+        311,
+        "4. Мученє св. Георгія, друга апокріфічна редакція",
+        "86–96",
+        null,
+        1
+      ],
+      [
+        311,
+        "5. Мученє св. Георгія, найстарша редакція",
+        "96–114",
+        null,
+        1
+      ],
+      [
+        311,
+        "6. Чудо св. Георгія про змія і царівну, галицька редакція",
+        "114–116",
+        null,
+        1
+      ],
+      [
+        311,
+        "7. Чудо св. Георгія про змія і царівну, угроруська редакція",
+        "116–119",
+        null,
+        1
+      ],
+      [
+        311,
+        "8. Житє і муки св. Никити",
+        "119–125",
+        null,
+        1
+      ],
+      [
+        311,
+        "9. Житє і муки св. Никити, покутська редакція",
+        "125–130",
+        null,
+        1
+      ],
+      [
+        311,
+        "10. Память св. мученика Никити, угроруська редакція",
+        "131–137",
+        null,
+        1
+      ],
+      [
+        311,
+        "11. Житє св. Климента Анкирського",
+        "138–144",
+        null,
+        1
+      ],
+      [
+        311,
+        "12. Мученє св. Теодора Тірона",
+        "144–149",
+        null,
+        1
+      ],
+      [
+        311,
+        "13. Муки св. Теодора Тірона, популярна перерібка",
+        "149–153",
+        null,
+        1
+      ],
+      [
+        312,
+        "14. Чудо св. Теодора Тірона, проложна статя",
+        "154–157",
+        null,
+        1
+      ],
+      [
+        312,
+        "15. Чудо св. Теодора Тірона в коливом",
+        "157–159",
+        null,
+        1
+      ],
+      [
+        312,
+        "16. Память св. Дросіди",
+        "159–161",
+        null,
+        1
+      ],
+      [
+        312,
+        "17. Мученє св. Мирини",
+        "162–176",
+        null,
+        1
+      ],
+      [
+        312,
+        "18. Муки св. Юліянії",
+        "176–186",
+        null,
+        1
+      ],
+      [
+        312,
+        "19. Муки св. Варвари і Юліянії",
+        "186–190",
+        null,
+        1
+      ],
+      [
+        312,
+        "III. Найстарші аскети",
+        "191",
+        203
+      ],
+      [
+        312,
+        "1. Житіє св. Антонія Єгипетського",
+        "191–197",
+        203,
+        1
+      ],
+      [
+        312,
+        "2. » св. Макарія Єгипетського",
+        "197–199",
+        null,
+        1
+      ],
+      [
+        312,
+        "3. » св. Макарія Александрійського",
+        "200–206",
+        null,
+        1
+      ],
+      [
+        312,
+        "4. » Марка Афінейського",
+        "206–214",
+        null,
+        1
+      ],
+      [
+        312,
+        "5. » св. Сави Освященного",
+        "214–239",
+        null,
+        1
+      ],
+      [
+        312,
+        "6. » Епіфанія Кипрського",
+        "240–248",
+        null,
+        1
+      ],
+      [
+        312,
+        "7. » Петра Афонського",
+        "249–265",
+        null,
+        1
+      ],
+      [
+        312,
+        "8. » Марії Єгиптянки",
+        "266–283",
+        null,
+        1
+      ],
+      [
+        312,
+        "9. » Марії Єгиптянки, популярна перерібка",
+        "283–288",
+        null,
+        1
+      ],
+      [
+        312,
+        "10. » св. Марини монаха",
+        "288–293",
+        null,
+        1
+      ],
+      [
+        312,
+        "Доповненя до першої части",
+        "294",
+        306
+      ],
+      [
+        312,
+        "I. До повного житія Конона Ісаврійського",
+        "294–296",
+        306,
+        1
+      ],
+      [
+        312,
+        "II. Початок житія Петра Афонського",
+        "296–297",
+        null,
+        1
+      ]
+    ]
+  }
+};
+function closeContents(){ $('contentsPanel').hidden=true;$('contentsOpen').setAttribute('aria-expanded','false'); }
+function jumpContents(v,n){if($('volume').value!==v||!Number.isInteger(n)||n<1||n>counts[Number(v)])return;closeContents();$('page').value=String(n);load();}
+function renderContents(){const v=$('volume').value,d=volumeContents[v];$('contentsSources').replaceChildren();$('contentsEntries').replaceChildren();if(!d)return;message('contentsTitle','Contents · Зміст — Volume '+v);message('contentsStatus','Provisional image reading. '+d.coverage+' Printed numbers are distinct from scan indices; unavailable destinations are not guessed. Section start numbers derive from first listed item.');for(const n of d.sources){const b=document.createElement('button');b.type='button';b.textContent='Scan '+n;b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}for(const [source,title,printed,scan,depth] of d.entries){const li=document.createElement('li');if(depth)li.className='subentry';const label=title+(printed?' · p. '+printed:'');if(scan!==null){const b=document.createElement('button');b.type='button';b.dataset.scan=String(scan);b.textContent=label;b.onclick=()=>jumpContents(v,scan);li.append(b);}else {const t=document.createElement('span');t.textContent=label+' (destination pending)';li.append(t);}const b=document.createElement('button');b.type='button';b.className='source-link';b.textContent='TOC '+source;b.setAttribute('aria-label','Open original contents scan '+source+' for '+title);b.onclick=()=>jumpContents(v,source);li.append(b);$('contentsEntries').append(li);}}
+$('contentsOpen').onclick=()=>{if(!$('contentsPanel').hidden){closeContents();return;}renderContents();$('contentsPanel').hidden=false;$('contentsOpen').setAttribute('aria-expanded','true');};
 const params=new URLSearchParams(location.hash.slice(1));if(['1','2','3','4','5'].includes(params.get('v')))$('volume').value=params.get('v');if(params.has('p'))$('page').value=params.get('p');if(params.has('ref'))$('ref').value=params.get('ref');updateMode();load();
 </script>
 </html>
