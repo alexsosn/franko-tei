@@ -126,7 +126,8 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#contentsProvenance summary').click()
             self.assertEqual(page.locator('#contentsSources button:visible').count(), 2)
             self.assertTrue(page.locator('#contentsEntries .source-link').first.is_visible())
-            self.assertTrue(page.locator('#contentsEntries .contents-note-indicator').first.is_visible())
+            self.assertEqual(page.locator('#contentsEntries .contents-note-indicator').count(), 0)
+            self.assertTrue(page.locator('#contentsEntries .contents-note:not(.contents-original)').first.is_visible())
             page.locator('#contentsSources button').first.click()
             self.assertEqual(page.evaluate('window.lastJump')[:2], ['5','311'])
             self.choose_locale(page, 'uk')
@@ -138,13 +139,40 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#contentsTitle').inner_text(), 'Зміст — Том 5')
             self.assertEqual(page.locator('#contentsEntries .contents-name').first.inner_text(), page.evaluate("volumeContents['5'].entries[0][1]"))
             b = page.locator('#contentsEntries button[data-estimated-scan]').first
-            self.assertIn('не перевірено', b.inner_text())
+            self.assertIn('не звірено', b.get_attribute('title'))
             page.keyboard.press('Escape')
             self.assertTrue(page.locator('#contentsPanel').is_hidden())
             self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'false')
             self.choose_locale(page, 'en')
             self.assertEqual(page.locator('html').get_attribute('lang'), 'en')
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
+            browser.close()
+
+    def test_contents_page_alignment_and_quiet_rows(self):
+        html = APP.read_text(encoding='utf-8')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            for width in (320, 760, 1200):
+                page = browser.new_page(viewport={'width':width,'height':700})
+                page.route('https://**/*', lambda route: route.abort())
+                page.set_content(html)
+                page.locator('#contentsOpen').click()
+                for provenance in (False, True):
+                    if provenance:
+                        page.locator('#contentsProvenance summary').click()
+                    rows = page.locator('#contentsEntries li')
+                    self.assertEqual(rows.locator('.contents-state, .contents-note-indicator').count(), 0)
+                    self.assertEqual(page.locator('#contentsStatus').is_visible(), provenance)
+                    coords = rows.locator('.contents-meta').evaluate_all('nodes => nodes.map(n => n.getBoundingClientRect().right)')
+                    self.assertLess(max(coords)-min(coords), 1.1)
+                    self.assertTrue(rows.evaluate_all('nodes => nodes.every(li => {const b=li.querySelector(".contents-destination"), t=li.querySelector(".contents-title-group"), m=li.querySelector(".contents-meta"); const a=[...li.querySelectorAll(".contents-actions button")].filter(x=>x.getClientRects().length);return a.every(x=>{const r=x.getBoundingClientRect();return r.left>=t.getBoundingClientRect().right-1 && r.right<=m.getBoundingClientRect().left+1 && r.top>=b.getBoundingClientRect().top-1 && r.bottom<=b.getBoundingClientRect().bottom+1;});})'))
+                    self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollWidth <= el.clientWidth'))
+                page.locator('#contentsFilter').fill('CAVT-066')
+                row = page.locator('#contentsEntries li:visible').first
+                row.locator('.contents-ref-toggle').click()
+                self.assertTrue(row.locator('.contents-ref-detail').is_visible())
+                self.assertTrue(page.locator('#contentsPanel').is_visible())
+                page.close()
             browser.close()
 
     def test_contents_audit_agrees_with_embedded_data(self):
@@ -586,7 +614,7 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertEqual(page.locator('#contentsEntries button[data-scan], #contentsEntries button[data-estimated-scan]').count(), count)
                 b = page.locator('#contentsEntries button[data-estimated-scan]').first
                 scan = b.get_attribute('data-estimated-scan')
-                self.assertIn('unverified', b.inner_text())
+                self.assertIn('not inspected', b.get_attribute('title'))
                 b.click()
                 self.assertEqual(page.evaluate('window.lastJump'), [v, scan, True])
                 self.assertTrue(page.locator('#contentsPanel').is_hidden())
