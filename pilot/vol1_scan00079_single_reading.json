@@ -1,0 +1,947 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 79,
+  "printed_page_observed": "4",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00079.jpg",
+  "source_image_sha256": "c32bf7c43161d9a0e8339ce1e363ebf35e7d29bd1adde9a95086d6f5c5daac4a",
+  "reading": {
+    "reader_id": "gpt62-i79-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i79-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG. No embedded OCR or peer page reading shown; surrounding project context visible, not isolated corroboration. Read witness A then B without interleaving, preserve physical rows and editorial notes; glyph encodings and geometry approximate. Source hash claimed by manifest, native-byte and XML checks pending CI.",
+    "raw_response": "4\nА с е к н и г и л' ж и в ы я и х' ж е\nн е п о д о б а е т ч е с т и.\nАдам. Єнох. Ламех. Патріар'-\nси. Молитва Іѡсифова. Єдам.\nΨал'мы Соломоновыи. Іліино\nѡбавленіе. Софонія ѡбавленіе.\nПетрово ѡбавленіе. Ѡбходи\nапостолстіи. Варнавле посланіе.\nдонскій, книга Ѳеѡдоръ Сту-\nдитъ, книга Ѳеѡдоръ Авꙋкаръ\nепп҃ъ Карійскій, книга Ісаакъ\nСиринъ, книга Дороѳей, книга\nОуставъ ст҃ыхъ ѡтц҃ъ, книга\nПандектъ, книга Лимонисъ,\nкнига Іс҃ Сираховъ, книга Сло-\nвоположникъ, книга Закон-\nникъ, книга Стоглавъ, книга\nАндрей Юродивый, книга Іу-\nстинъ философъ, книга Ни-\nфонтъ, книга Єпифаній Кипръ-\nскій, книга Іаковъ Жидовинъ,\nкнига Судебникъ, книга Мѣ-\nнѣя ѡбщая, книга два[на]де-\nсять Мѣнѣй мѣсячныхъ Четь-\nих, в них же написана житія\nст҃ыхъ пророкъ и апостолъ и\nст҃ителей и прп҃одобныхъ ѡц҃ъ\nі страсти мчн҃ческія, книга Па-\nтерикъ Егупетскій, книга Па-\nтерикъ печери Кіевскія, книга\nПатерикъ азбучный, книга Па-\nтерикъ Скитскій, книга Пате-\nрикъ Іерусалимскій, книга Па-\nтерикъ Ст҃ія Гори, книга Нилъ\nСинаит, книга Камень вѣри,\nкнига Коса, книга Алфавит\nдх҃овный. То сꙋть преданныя\nкниги, ихже подобаетъ нам\nхр҃стіаном правовѣрним почи-\nтати и из них са поучати.\nК н и г ы и н ъ н і е, и х' ж е х р҃ т і а-\nн о м ъ п р а в о с л а в н ы м ъ\n(далї вишкрябано) сꙋть же сіи.\nСоставленный мирстій псал-\nми, еже есть сія: Грядите вси\nвѣрніи. И другое грядѣте. И\nкр҃ту твоему водрузивса на\nземли. Патріарси. Адамъ. Є-",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            174,
+            157,
+            462,
+            1176
+          ],
+          "description": "Left witness column blank until the rejected-book heading; faint show-through is not recto text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          180,
+          91,
+          30,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "4",
+            "bbox_xywh": [
+              180,
+              91,
+              30,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "a-rejected-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          174,
+          1350,
+          444,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "a-rejected-heading-l001",
+            "text": "А с е к н и г и л' ж и в ы я и х' ж е",
+            "bbox_xywh": [
+              174,
+              1350,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "a-rejected-heading-l002",
+            "text": "н е п о д о б а е т ч е с т и.",
+            "bbox_xywh": [
+              174,
+              1388,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "a-rejected-books",
+        "kind": "body",
+        "bbox_xywh": [
+          174,
+          1437,
+          444,
+          217
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "a-rejected-books-l001",
+            "text": "Адам. Єнох. Ламех. Патріар'-",
+            "bbox_xywh": [
+              174,
+              1437,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "a-rejected-books-l002",
+            "text": "си. Молитва Іѡсифова. Єдам.",
+            "bbox_xywh": [
+              174,
+              1474,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "a-rejected-books-l003",
+            "text": "Ψал'мы Соломоновыи. Іліино",
+            "bbox_xywh": [
+              174,
+              1511,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "a-rejected-books-l004",
+            "text": "ѡбавленіе. Софонія ѡбавленіе.",
+            "bbox_xywh": [
+              174,
+              1547,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "a-rejected-books-l005",
+            "text": "Петрово ѡбавленіе. Ѡбходи",
+            "bbox_xywh": [
+              174,
+              1584,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "a-rejected-books-l006",
+            "text": "апостолстіи. Варнавле посланіе.",
+            "bbox_xywh": [
+              174,
+              1620,
+              444,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "b-approved-continuation",
+        "kind": "body",
+        "bbox_xywh": [
+          678,
+          161,
+          462,
+          1165
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "b-approved-continuation-l001",
+            "text": "донскій, книга Ѳеѡдоръ Сту-",
+            "bbox_xywh": [
+              678,
+              161,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l002",
+            "text": "дитъ, книга Ѳеѡдоръ Авꙋкаръ",
+            "bbox_xywh": [
+              678,
+              197,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l003",
+            "text": "епп҃ъ Карійскій, книга Ісаакъ",
+            "bbox_xywh": [
+              678,
+              234,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l004",
+            "text": "Сиринъ, книга Дороѳей, книга",
+            "bbox_xywh": [
+              678,
+              270,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l005",
+            "text": "Оуставъ ст҃ыхъ ѡтц҃ъ, книга",
+            "bbox_xywh": [
+              678,
+              307,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l006",
+            "text": "Пандектъ, книга Лимонисъ,",
+            "bbox_xywh": [
+              678,
+              343,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l007",
+            "text": "книга Іс҃ Сираховъ, книга Сло-",
+            "bbox_xywh": [
+              678,
+              380,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l008",
+            "text": "воположникъ, книга Закон-",
+            "bbox_xywh": [
+              678,
+              416,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l009",
+            "text": "никъ, книга Стоглавъ, книга",
+            "bbox_xywh": [
+              678,
+              453,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l010",
+            "text": "Андрей Юродивый, книга Іу-",
+            "bbox_xywh": [
+              678,
+              489,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l011",
+            "text": "стинъ философъ, книга Ни-",
+            "bbox_xywh": [
+              678,
+              526,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l012",
+            "text": "фонтъ, книга Єпифаній Кипръ-",
+            "bbox_xywh": [
+              678,
+              562,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l013",
+            "text": "скій, книга Іаковъ Жидовинъ,",
+            "bbox_xywh": [
+              678,
+              598,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l014",
+            "text": "книга Судебникъ, книга Мѣ-",
+            "bbox_xywh": [
+              678,
+              635,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l015",
+            "text": "нѣя ѡбщая, книга два[на]де-",
+            "bbox_xywh": [
+              678,
+              671,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l016",
+            "text": "сять Мѣнѣй мѣсячныхъ Четь-",
+            "bbox_xywh": [
+              678,
+              708,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l017",
+            "text": "их, в них же написана житія",
+            "bbox_xywh": [
+              678,
+              744,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l018",
+            "text": "ст҃ыхъ пророкъ и апостолъ и",
+            "bbox_xywh": [
+              678,
+              781,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l019",
+            "text": "ст҃ителей и прп҃одобныхъ ѡц҃ъ",
+            "bbox_xywh": [
+              678,
+              817,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l020",
+            "text": "і страсти мчн҃ческія, книга Па-",
+            "bbox_xywh": [
+              678,
+              854,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l021",
+            "text": "терикъ Егупетскій, книга Па-",
+            "bbox_xywh": [
+              678,
+              890,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l022",
+            "text": "терикъ печери Кіевскія, книга",
+            "bbox_xywh": [
+              678,
+              927,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l023",
+            "text": "Патерикъ азбучный, книга Па-",
+            "bbox_xywh": [
+              678,
+              963,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l024",
+            "text": "терикъ Скитскій, книга Пате-",
+            "bbox_xywh": [
+              678,
+              1000,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l025",
+            "text": "рикъ Іерусалимскій, книга Па-",
+            "bbox_xywh": [
+              678,
+              1036,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l026",
+            "text": "терикъ Ст҃ія Гори, книга Нилъ",
+            "bbox_xywh": [
+              678,
+              1073,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l027",
+            "text": "Синаит, книга Камень вѣри,",
+            "bbox_xywh": [
+              678,
+              1109,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l028",
+            "text": "книга Коса, книга Алфавит",
+            "bbox_xywh": [
+              678,
+              1146,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l029",
+            "text": "дх҃овный. То сꙋть преданныя",
+            "bbox_xywh": [
+              678,
+              1182,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l030",
+            "text": "книги, ихже подобаетъ нам",
+            "bbox_xywh": [
+              678,
+              1219,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l031",
+            "text": "хр҃стіаном правовѣрним почи-",
+            "bbox_xywh": [
+              678,
+              1255,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-approved-continuation-l032",
+            "text": "тати и из них са поучати.",
+            "bbox_xywh": [
+              678,
+              1292,
+              462,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "b-rejected-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          675,
+          1356,
+          461,
+          108
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "b-rejected-heading-l001",
+            "text": "К н и г ы и н ъ н і е, и х' ж е х р҃ т і а-",
+            "bbox_xywh": [
+              675,
+              1356,
+              461,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-heading-l002",
+            "text": "н о м ъ п р а в о с л а в н ы м ъ",
+            "bbox_xywh": [
+              675,
+              1393,
+              461,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-heading-l003",
+            "text": "(далї вишкрябано) сꙋть же сіи.",
+            "bbox_xywh": [
+              675,
+              1430,
+              461,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "b-rejected-books",
+        "kind": "body",
+        "bbox_xywh": [
+          678,
+          1482,
+          459,
+          183
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "b-rejected-books-l001",
+            "text": "Составленный мирстій псал-",
+            "bbox_xywh": [
+              678,
+              1482,
+              459,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-books-l002",
+            "text": "ми, еже есть сія: Грядите вси",
+            "bbox_xywh": [
+              678,
+              1519,
+              459,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-books-l003",
+            "text": "вѣрніи. И другое грядѣте. И",
+            "bbox_xywh": [
+              678,
+              1556,
+              459,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-books-l004",
+            "text": "кр҃ту твоему водрузивса на",
+            "bbox_xywh": [
+              678,
+              1593,
+              459,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-books-l005",
+            "text": "земли. Патріарси. Адамъ. Є-",
+            "bbox_xywh": [
+              678,
+              1631,
+              459,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "a-rejected-heading-l001",
+        "reading": "А с е к н и г и л' ж и в ы я и х' ж е",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "a-rejected-heading-l002",
+        "reading": "н е п о д о б а е т ч е с т и.",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "a-rejected-books-l001",
+        "reading": "Адам. Єнох. Ламех. Патріар'-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "a-rejected-books-l002",
+        "reading": "си. Молитва Іѡсифова. Єдам.",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "a-rejected-books-l003",
+        "reading": "Ψал'мы Соломоновыи. Іліино",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "a-rejected-books-l004",
+        "reading": "ѡбавленіе. Софонія ѡбавленіе.",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "a-rejected-books-l005",
+        "reading": "Петрово ѡбавленіе. Ѡбходи",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "a-rejected-books-l006",
+        "reading": "апостолстіи. Варнавле посланіе.",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l001",
+        "reading": "донскій, книга Ѳеѡдоръ Сту-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l002",
+        "reading": "дитъ, книга Ѳеѡдоръ Авꙋкаръ",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l003",
+        "reading": "епп҃ъ Карійскій, книга Ісаакъ",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l004",
+        "reading": "Сиринъ, книга Дороѳей, книга",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l005",
+        "reading": "Оуставъ ст҃ыхъ ѡтц҃ъ, книга",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l006",
+        "reading": "Пандектъ, книга Лимонисъ,",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l007",
+        "reading": "книга Іс҃ Сираховъ, книга Сло-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l008",
+        "reading": "воположникъ, книга Закон-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l009",
+        "reading": "никъ, книга Стоглавъ, книга",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l010",
+        "reading": "Андрей Юродивый, книга Іу-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l011",
+        "reading": "стинъ философъ, книга Ни-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l012",
+        "reading": "фонтъ, книга Єпифаній Кипръ-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l013",
+        "reading": "скій, книга Іаковъ Жидовинъ,",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l014",
+        "reading": "книга Судебникъ, книга Мѣ-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l015",
+        "reading": "нѣя ѡбщая, книга два[на]де-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l016",
+        "reading": "сять Мѣнѣй мѣсячныхъ Четь-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l017",
+        "reading": "их, в них же написана житія",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l018",
+        "reading": "ст҃ыхъ пророкъ и апостолъ и",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l019",
+        "reading": "ст҃ителей и прп҃одобныхъ ѡц҃ъ",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l020",
+        "reading": "і страсти мчн҃ческія, книга Па-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l021",
+        "reading": "терикъ Егупетскій, книга Па-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l022",
+        "reading": "терикъ печери Кіевскія, книга",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l023",
+        "reading": "Патерикъ азбучный, книга Па-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l024",
+        "reading": "терикъ Скитскій, книга Пате-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l025",
+        "reading": "рикъ Іерусалимскій, книга Па-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l026",
+        "reading": "терикъ Ст҃ія Гори, книга Нилъ",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l027",
+        "reading": "Синаит, книга Камень вѣри,",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l028",
+        "reading": "книга Коса, книга Алфавит",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l029",
+        "reading": "дх҃овный. То сꙋть преданныя",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l030",
+        "reading": "книги, ихже подобаетъ нам",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l031",
+        "reading": "хр҃стіаном правовѣрним почи-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-approved-continuation-l032",
+        "reading": "тати и из них са поучати.",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-heading-l001",
+        "reading": "К н и г ы и н ъ н і е, и х' ж е х р҃ т і а-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-heading-l002",
+        "reading": "н о м ъ п р а в о с л а в н ы м ъ",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-heading-l003",
+        "reading": "(далї вишкрябано) сꙋть же сіи.",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-books-l001",
+        "reading": "Составленный мирстій псал-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-books-l002",
+        "reading": "ми, еже есть сія: Грядите вси",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-books-l003",
+        "reading": "вѣрніи. И другое грядѣте. И",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-books-l004",
+        "reading": "кр҃ту твоему водрузивса на",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      },
+      {
+        "line_id": "b-rejected-books-l005",
+        "reading": "земли. Патріарси. Адамъ. Є-",
+        "reason": "Provisional direct reading. Old Cyrillic letterforms, supralinear marks, abbreviations, names, rare titles, bracket contents and tracking require isolated visual rereading; no harmonization across witnesses."
+      }
+    ]
+  }
+}
