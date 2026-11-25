@@ -29,7 +29,9 @@ class FootnoteLanguageTests(unittest.TestCase):
                    {"start": 2, "end": 4, "language": "zxx"}])), [])
 
     def test_actual_corrected_pages_have_neutral_labels(self):
-        expected = {90: 83, 92: 78, 110: 10, 200: 6, 250: 11, 300: 22}
+        expected = {86: 32, 90: 83, 92: 78, 94: 40, 98: 63,
+                    101: 50, 105: 23, 108: 19, 109: 49,
+                    110: 10, 111: 22, 112: 40, 200: 6, 250: 11, 300: 22}
         for page, count in expected.items():
             with self.subTest(page=page):
                 path = PILOT / f"vol1_scan{page:05d}_single_reading.json"
