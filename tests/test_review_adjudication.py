@@ -261,7 +261,6 @@ class AdjudicationTests(unittest.TestCase):
         from pathlib import Path
         from franko_tei.review_adjudication import check_repository, StaleEditorialSource
         from franko_tei.review_bundle import git_source_loader, blob_sha
-        from franko_tei.footnote_audit import audit_reading
         import subprocess
         root=Path(__file__).resolve().parents[1]
         ref=subprocess.check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip()

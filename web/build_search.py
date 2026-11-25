@@ -8,8 +8,8 @@ import subprocess
 from printed_indexes import build_printed_indexes
 
 from franko_tei.pilot_batch import discover_readings, check_draft_offline
-from franko_tei.review_adjudication import check_repository, project_lines
-from franko_tei.review_bundle import blob_sha
+from franko_tei.review_adjudication import check_repository, project_lines, StaleEditorialSource
+from franko_tei.review_bundle import blob_sha, git_source_loader
 from franko_tei.pilot_tei import PINNED_ASSET_COMMIT
 
 # Physical scan counts in the five immutable asset manifests at this commit.
@@ -23,6 +23,7 @@ def build(pilot, output, ref):
     entries = {str(v): [] for v in range(1, 6)}
     repo = pilot.resolve().parent
     ledger = check_repository(repo, ref)
+    source_loader = git_source_loader(repo, ref)
     pages, unavailable = [], []
     affected = {key[0] for key in ledger}
     seen = set()
@@ -37,11 +38,12 @@ def build(pilot, output, ref):
         candidate_path = "pilot/" + path.name
         if candidate_path in affected:
             seen.add(candidate_path)
-            targets = [value["event"]["target"] for key, value in ledger.items() if key[0] == candidate_path]
-            if any(t["candidate_blob"] != blob_sha(raw) for t in targets):
+            try:
+                rows = project_lines(raw, candidate_path, ledger, source_loader=source_loader,
+                                     projection_commit=ref)
+            except StaleEditorialSource:
                 unavailable.append({"path": candidate_path, "reason": "source_blob_changed"})
                 continue
-            rows = project_lines(raw, candidate_path, ledger)
             accepted = [dict(r, contributor_login=ledger[(candidate_path, r["line_id"])]["submitter"]["login_at_intake"],
                              review_reason=ledger[(candidate_path, r["line_id"])]["adjudication"]["reason"])
                         for r in rows if r["status"] != "agent_unverified"]
