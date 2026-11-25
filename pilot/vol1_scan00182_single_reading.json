@@ -1,0 +1,452 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 182,
+  "printed_page_observed": "107",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00182.jpg",
+  "source_image_sha256": "f5334b06b65941e52d3ccfa204fcde4f45ca32df05b362f2c6974cc84370d8d8",
+  "reading": {
+    "reader_id": "gpt62-i182-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i182-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG without embedded OCR or peer page text. Surrounding project context visible; not isolated corroboration. Preserve physical lines, separate apparatus, editorial commentary, repeated reference labels and source brackets. Historical glyphs and diacritics incomplete, geometry estimated; manifest SHA pending native-byte/XML checks.",
+    "raw_response": "107\nпрузы, и нагы хождаху и ядяху мяса верблюжа к'¹²— вку ва-\nрена¹²), и пїяху кровъ и млеко скотїє.\n¹) По скончаніиже ²) пріиде имъ царь отъ Мунтова роду, сына Ноева, име-\nнемъ Приворъ ³) и иде ⁴) на царство индѣйское ⁵) идѣже бяше Измайловичи, вопче\nродъ Измайловъ ⁶—⁶) vac. ⁷—⁷) vac. ⁸) И пріиде Приворъ въ пустыню ту Измаилъ,\nякоже прежде речеся ⁹) дод. по пустыни той 10 ¹⁰) vac. ¹¹—¹¹) vac. ¹²—¹²) vac.\nЗ чотирох текстів сего апокріфа, надрукованих Тіхонравовим\n(Памятники отреченной русской литературы II, 213—281) тільки\nодин текст Тульської збірки XVIII в. в сьому місцї де в чому по-\nдібний до нашого і для того з него ми й виписали варіанти. Та\nй тут, як бачимо, Тульський список має деякі важні пропуски,\nа особливо пропущено цїнний для нас зворот про кровосумішку\nІзмаїла з матірю.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            453,
+            761,
+            210,
+            9
+          ],
+          "description": "Decorative closing rule."
+        },
+        {
+          "bbox_xywh": [
+            99,
+            783,
+            918,
+            802
+          ],
+          "description": "Blank lower page."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          956,
+          80,
+          60,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "107",
+            "bbox_xywh": [
+              956,
+              80,
+              60,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-d-end",
+        "kind": "body",
+        "bbox_xywh": [
+          99,
+          142,
+          918,
+          66
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-d-end-l001",
+            "text": "прузы, и нагы хождаху и ядяху мяса верблюжа к'¹²— вку ва-",
+            "bbox_xywh": [
+              99,
+              142,
+              918,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "witness-d-end-l002",
+            "text": "рена¹²), и пїяху кровъ и млеко скотїє.",
+            "bbox_xywh": [
+              99,
+              177,
+              918,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-d-apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          98,
+          241,
+          918,
+          116
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-d-apparatus-l001",
+            "text": "¹) По скончаніиже ²) пріиде имъ царь отъ Мунтова роду, сына Ноева, име-",
+            "bbox_xywh": [
+              98,
+              241,
+              918,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 71,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "witness-d-apparatus-l002",
+            "text": "немъ Приворъ ³) и иде ⁴) на царство индѣйское ⁵) идѣже бяше Измайловичи, вопче",
+            "bbox_xywh": [
+              98,
+              270,
+              918,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 78,
+                "language": null,
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "witness-d-apparatus-l003",
+            "text": "родъ Измайловъ ⁶—⁶) vac. ⁷—⁷) vac. ⁸) И пріиде Приворъ въ пустыню ту Измаилъ,",
+            "bbox_xywh": [
+              98,
+              299,
+              918,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 77,
+                "language": null,
+                "script": null,
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "witness-d-apparatus-l004",
+            "text": "якоже прежде речеся ⁹) дод. по пустыни той 10 ¹⁰) vac. ¹¹—¹¹) vac. ¹²—¹²) vac.",
+            "bbox_xywh": [
+              98,
+              328,
+              918,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 78,
+                "language": null,
+                "script": null,
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-d",
+        "kind": "body",
+        "bbox_xywh": [
+          99,
+          384,
+          917,
+          242
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-d-l001",
+            "text": "З чотирох текстів сего апокріфа, надрукованих Тіхонравовим",
+            "bbox_xywh": [
+              99,
+              384,
+              917,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l002",
+            "text": "(Памятники отреченной русской литературы II, 213—281) тільки",
+            "bbox_xywh": [
+              99,
+              419,
+              917,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": null,
+                "script": null,
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l003",
+            "text": "один текст Тульської збірки XVIII в. в сьому місцї де в чому по-",
+            "bbox_xywh": [
+              99,
+              454,
+              917,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": null,
+                "script": null,
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l004",
+            "text": "дібний до нашого і для того з него ми й виписали варіанти. Та",
+            "bbox_xywh": [
+              99,
+              489,
+              917,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l005",
+            "text": "й тут, як бачимо, Тульський список має деякі важні пропуски,",
+            "bbox_xywh": [
+              99,
+              524,
+              917,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l006",
+            "text": "а особливо пропущено цїнний для нас зворот про кровосумішку",
+            "bbox_xywh": [
+              99,
+              560,
+              917,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l007",
+            "text": "Ізмаїла з матірю.",
+            "bbox_xywh": [
+              99,
+              595,
+              917,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "witness-d-end-l001",
+        "reading": "прузы, и нагы хождаху и ядяху мяса верблюжа к'¹²— вку ва-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-d-end-l002",
+        "reading": "рена¹²), и пїяху кровъ и млеко скотїє.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-d-apparatus-l001",
+        "reading": "¹) По скончаніиже ²) пріиде имъ царь отъ Мунтова роду, сына Ноева, име-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-d-apparatus-l002",
+        "reading": "немъ Приворъ ³) и иде ⁴) на царство индѣйское ⁵) идѣже бяше Измайловичи, вопче",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-d-apparatus-l003",
+        "reading": "родъ Измайловъ ⁶—⁶) vac. ⁷—⁷) vac. ⁸) И пріиде Приворъ въ пустыню ту Измаилъ,",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-d-apparatus-l004",
+        "reading": "якоже прежде речеся ⁹) дод. по пустыни той 10 ¹⁰) vac. ¹¹—¹¹) vac. ¹²—¹²) vac.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-d-l001",
+        "reading": "З чотирох текстів сего апокріфа, надрукованих Тіхонравовим",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-d-l002",
+        "reading": "(Памятники отреченной русской литературы II, 213—281) тільки",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-d-l003",
+        "reading": "один текст Тульської збірки XVIII в. в сьому місцї де в чому по-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-d-l004",
+        "reading": "дібний до нашого і для того з него ми й виписали варіанти. Та",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-d-l005",
+        "reading": "й тут, як бачимо, Тульський список має деякі важні пропуски,",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-d-l006",
+        "reading": "а особливо пропущено цїнний для нас зворот про кровосумішку",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-d-l007",
+        "reading": "Ізмаїла з матірю.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      }
+    ]
+  }
+}
