@@ -147,6 +147,183 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
             browser.close()
 
+    def test_contents_audit_agrees_with_embedded_data(self):
+        import csv
+        import json
+        html = APP.read_text(encoding='utf-8')
+        def embedded(name):
+            return json.loads(html.split('const ' + name + ' = ', 1)[1].split(';\n', 1)[0])
+        data = embedded('volumeContents')
+        translations = embedded('contentsEnglish')
+        refs = embedded('contentsWorkRefs')
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as stream:
+            rows = list(csv.DictReader(stream, delimiter='\t', quoting=csv.QUOTE_NONE))
+        self.assertEqual(len(rows), sum(len(x['entries']) for x in data.values()))
+        seen = set()
+        for row in rows:
+            v, i = row['volume'], int(row['index_zero_based'])
+            self.assertNotIn((v, i), seen)
+            seen.add((v, i))
+            e = data[v]['entries'][i]
+            self.assertEqual((str(e[0]), e[1], e[2] or ''), (row['contents_scan'], row['literal_title'], row['printed_reference']))
+            self.assertEqual(translations[v][e[1]], row['english_draft'])
+            key = json.dumps(e[:3], ensure_ascii=False, separators=(',', ':'))
+            self.assertEqual(refs.get(v, {}).get(key, []), json.loads(row['catalog_refs_json']))
+            self.assertEqual(row['translation_review'], 'compared-with-printed-TOC-transcription')
+
+    def test_contents_catalogue_citation_discrepancies(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def links(volume, index):
+            entry = data[volume]['entries'][index]
+            return refs.get(volume, {}).get(json.dumps(entry[:3], ensure_ascii=False, separators=(',', ':')), [])
+        for index, identifier in ((36, 'ECCA 933'), (40, 'ECCA 403'), (70, 'ECCA 888')):
+            link = next(x for x in links('3', index) if x['id'] == identifier)
+            self.assertEqual(link['relation'], 'candidate')
+            self.assertIn('page', link['evidence'])
+        self.assertEqual(next(x for x in links('2', 85) if x['id'] == 'ECCA 489')['relation'], 'work-family')
+        self.assertTrue(any(x['id'] == 'ECCA 919' and x['relation'] == 'candidate' for x in links('1', 13)))
+
+    def test_contents_hagiography_reference_scope(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def link(volume, index, identifier):
+            key = json.dumps(data[volume]['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return next(x for x in refs[volume][key] if x['id'] == identifier)
+        ananias = link('3', 115, 'ECCA 958')
+        self.assertEqual(ananias['relation'], 'work-family')
+        self.assertIn('79', ananias['evidence'])
+        for volume, index, identifier in (('3', 116, 'ECCA 958'), ('2', 135, 'ECCA 635'), ('5', 4, 'ECCA 678')):
+            self.assertEqual(link(volume, index, identifier)['relation'], 'candidate')
+
+    def test_contents_ocp_edition_vs_composite(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def link(volume, index, identifier):
+            key = json.dumps(data[volume]['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return next(x for x in refs[volume][key] if x['id'] == identifier)
+        for index, identifier in ((34, 'CAVT-066'), (62, 'CAVT-101'), (81, 'CAVT-118')):
+            item = link('1', index, identifier)
+            self.assertEqual(item['relation'], 'edition-match')
+            self.assertEqual(item['kind'], 'catalog')
+        self.assertIn('recension A', link('1', 62, 'CAVT-101')['evidence'])
+        self.assertEqual(link('1', 45, 'CAVT-089')['relation'], 'work-family')
+        for index in range(82, 94):
+            self.assertEqual(link('1', index, 'CAVT-118')['relation'], 'work-family')
+        self.assertEqual(link('4', 45, 'CAVT-088')['relation'], 'edition-match')
+
+    def test_old_testament_audit_preserves_excerpt_and_recension_scope(self):
+        import csv
+        import json
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as stream:
+            rows = {(r['volume'], int(r['index_zero_based'])): r for r in csv.DictReader(stream, delimiter='\t', quoting=csv.QUOTE_NONE)}
+        for index in (20, 29, 31, 37, 40, 58, 105):
+            r = rows['1', index]
+            self.assertEqual(r['status'], 'title-supported')
+            self.assertIn('excerpt', r['evidence_or_caveat'])
+            self.assertIn('Pseudo-Methodius', r['scholarly_title'])
+            self.assertEqual(json.loads(r['catalog_refs_json']), [])
+        for index in (130, 132):
+            self.assertEqual(rows['1', index]['status'], 'edition-match')
+            self.assertIn('Somov', rows['1', index]['evidence_or_caveat'])
+        self.assertEqual(rows['1', 131]['status'], 'candidate')
+        self.assertEqual(json.loads(rows['1', 131]['catalog_refs_json']), [])
+
+    def test_contents_work_references(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        for volume, records in refs.items():
+            identities = {(e[0], e[1], e[2]) for e in data[volume]['entries']}
+            for key, links in records.items():
+                self.assertIn(tuple(json.loads(key)), identities)
+                self.assertTrue(links)
+                for link in links:
+                    self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate'))
+                    self.assertIn(link['provider'], ('e-Clavis', 'OCP'))
+                    self.assertTrue(link['title'] and link['id'] and link['evidence'])
+                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/', 'https://github.com/OnlineCriticalPseudepigrapha/')))
+        html = html.replace('updateMode();load();', 'updateMode();load=()=>{window.lastJump=[$(\'volume\').value,$(\'page\').value];};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsFilter').fill('2 Enoch')
+            row = page.locator('#contentsEntries li:visible').filter(has_text='2 Enoch').first
+            row.locator('.contents-ref-toggle').click()
+            self.assertTrue(row.locator('.contents-ref-detail').is_visible())
+            self.assertIn('CAVT-066', row.locator('.contents-ref-detail').inner_text())
+            self.assertTrue(page.locator('#contentsPanel').is_visible())
+            page.locator('#contentsVolume').select_option('2')
+            page.locator('#contentsFilter').fill('ECCA 421')
+            self.assertEqual(page.locator('#contentsEntries li:visible').count(), 4)
+            row = page.locator('#contentsEntries li:visible').first
+            self.assertTrue(row.locator('.contents-ref-detail').is_hidden())
+            self.assertIn('Infancy Gospel of Thomas', row.locator('.contents-canonical').inner_text())
+            row.locator('.contents-ref-toggle').click()
+            link = row.locator('.contents-ref-detail a').first
+            self.assertEqual(link.get_attribute('target'), '_blank')
+            self.assertIn('noopener', link.get_attribute('rel'))
+            self.assertIn('infancy-gospel-of-thomas', link.get_attribute('href'))
+            self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollWidth <= el.clientWidth'))
+            page.evaluate("setUILocale('uk')")
+            self.assertIn('Збіг із виданням', row.locator('.contents-ref-detail').inner_text())
+            self.assertEqual(page.locator('#volume').input_value(), '1')
+            row.locator('.contents-destination').click()
+            self.assertEqual(page.evaluate('window.lastJump')[0], '2')
+            browser.close()
+
+    def test_english_contents_translation(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        translations = json.loads(html.split('const contentsEnglish = ', 1)[1].split(';\n', 1)[0])
+        for volume, record in data.items():
+            self.assertEqual(set(translations[volume]), {entry[1] for entry in record['entries']})
+            self.assertTrue(all(isinstance(t, str) and t.strip() for t in translations[volume].values()))
+        html = html.replace('updateMode();load();', 'updateMode();load=()=>{};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.locator('#contentsOpen').click()
+            self.assertIn('Old Testament apocrypha', page.locator('#contentsVolume option:checked').inner_text())
+            self.assertTrue(page.locator('#contentsEntries .contents-original').first.is_hidden())
+            page.locator('#contentsProvenance summary').click()
+            self.assertEqual(page.locator('#contentsEntries .contents-original').first.inner_text(), data['1']['entries'][0][1])
+            self.assertTrue(page.locator('#contentsTranslationNote').is_visible())
+            page.locator('#contentsProvenance summary').click()
+            self.assertIsNone(page.evaluate("contentsTranslation('1','missing source title')"))
+            page.locator('#contentsFilter').fill('Enoch')
+            self.assertGreater(page.locator('#contentsEntries .contents-destination:visible').count(), 0)
+            page.locator('#contentsFilter').fill('Еноха')
+            self.assertGreater(page.locator('#contentsEntries .contents-destination:visible').count(), 0)
+            page.locator('#contentsFilter').fill('')
+            for volume, record in data.items():
+                page.locator('#contentsVolume').select_option(volume)
+                names = page.locator('#contentsEntries .contents-name')
+                self.assertEqual(names.count(), len(record['entries']))
+                self.assertEqual(names.all_text_contents(), [translations[volume][e[1]] for e in record['entries']])
+                self.assertEqual(names.first.get_attribute('lang'), 'en')
+            page.evaluate("setUILocale('uk')")
+            self.assertEqual(page.locator('#contentsEntries .contents-name').all_text_contents(), [e[1] for e in data['5']['entries']])
+            self.assertEqual(page.locator('#contentsEntries .contents-name').first.get_attribute('lang'), 'uk')
+            page.evaluate("setUILocale('en')")
+            self.assertEqual(page.locator('#contentsEntries .contents-name').all_text_contents(), [translations['5'][e[1]] for e in data['5']['entries']])
+            browser.close()
+
     def test_single_contents_toolbar(self):
         html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
             "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value];};load();")
