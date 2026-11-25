@@ -213,7 +213,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(link['relation'], 'candidate')
             self.assertIn('page', link['evidence'])
         self.assertEqual(next(x for x in links('2', 85) if x['id'] == 'ECCA 489')['relation'], 'work-family')
-        self.assertTrue(any(x['id'] == 'ECCA 919' and x['relation'] == 'candidate' for x in links('1', 13)))
+        self.assertFalse(any(x['id'] == 'ECCA 919' for x in links('1', 13)))
 
     def test_contents_hagiography_reference_scope(self):
         import json
@@ -380,13 +380,16 @@ class ReviewSmoke(unittest.TestCase):
         def links(index):
             key = json.dumps(data['1']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
             return {link['id']: link for link in refs['1'].get(key, [])}
-        for index in (22, 48, 98, 99):
+        for index in (11, 12, 22, 24, 25, 48, 98, 99):
             self.assertEqual(links(index)['ECCA 121']['relation'], 'work-family')
         for index in (128, 129):
             self.assertEqual(links(index)['CAVT-213']['relation'], 'work-family')
         self.assertNotIn('CAVT-001', links(22))
         self.assertNotIn('CAVT-213', links(138))
         self.assertNotIn('ECCA 121', links(97))
+        self.assertNotIn('CAVT-207', links(104))
+        self.assertNotIn('ECCA 919', links(13))
+        self.assertFalse([r for r in rows if r['status'] == 'candidate'])
         self.assertEqual(data['1']['entries'][7][2], '324–320')
 
     def test_contents_work_references(self):
