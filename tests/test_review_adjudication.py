@@ -77,3 +77,44 @@ class AdjudicationTests(unittest.TestCase):
         with self.assertRaises(ValueError): decision(record(b))
         r=record(); ledger=validate_ledger([r],[decision(r)],load_source)
         with self.assertRaises(ValueError): project_lines(RAW+b" ",PATH,ledger)
+
+    def test_real_competing_candidate_and_combining_titlo(self):
+        from pathlib import Path
+        from franko_tei.review_bundle import blob_sha
+        root=Path(__file__).resolve().parents[1]
+        alt="pilot/vol1_scan00020_alternate_reading_01.json"
+        csl="pilot/vol2_scan00100_alternate_reading_01.json"
+        def loader(rev,path):
+            if rev!=REV or path not in (PATH,alt,csl):
+                raise ValueError("unexpected source")
+            return (root/path).read_bytes()
+        def proposal(path,region_id,line_id,number,replacement):
+            raw=loader(REV,path); source=json.loads(raw)
+            region=next(r for r in source["reading"]["regions"] if r["id"]==region_id)
+            line=next(l for l in region["lines"] if l["id"]==line_id)
+            b=fixture()
+            b["bundle_id"]=f"00000000-0000-4000-8000-{number:012d}"
+            e=b["events"][0]
+            e["event_id"]=f"00000000-0000-4000-8001-{number:012d}"
+            e["target"].update(candidate_path=path,candidate_blob=blob_sha(raw),
+                               asset_commit=source["asset_commit"],image_sha256=source["source_image_sha256"],
+                               reader_id=source["reading"]["reader_id"],region_id=region_id,
+                               line_id=line_id,original=line["text"])
+            e["replacement"]=replacement(line["text"])
+            who=issue(); who.update(id=number+123456,number=number,html_url=f"https://github.com/alexsosn/franko-tei/issues/{number}")
+            who["user"]["id"]=number+100
+            payload=encode(b)
+            r=make_intake(payload,who,hashlib.sha256(payload).hexdigest(),loader)
+            a=adjudicate(r,e["event_id"],"accept",EDITOR,REASON,intake_digest(r),loader)
+            return r,a
+        r=record(); a=decision(r)
+        competing,b=proposal(alt,"early-apocrypha-context",LINE["id"],43,lambda s:s.replace("ὀνόματι","ὀνόμασι"))
+        with self.assertRaisesRegex(ValueError,"competing page bases"):
+            validate_ledger([r,competing],[a,b],loader)
+        second,c=proposal(csl,"witness-e-excerpt","witness-e-excerpt-line-03",44,lambda s:s.replace("Авимелихъ","Авимелих"))
+        ledger=validate_ledger([r,second],[a,c],loader)
+        row=next(x for x in project_lines(loader(REV,csl),csl,ledger) if x["line_id"]=="witness-e-excerpt-line-03")
+        self.assertIn("ꙗко цр҃ю",row["text"])
+        self.assertIn("ꙗко цр҃ю",row["original"])
+        self.assertEqual(row["language_spans"],[])
+        self.assertEqual(row["uncertainty_status"],"source_notes_need_reassessment")
