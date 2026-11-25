@@ -1913,6 +1913,38 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i193-first-image-20261125"
+              },
+              {
+                "start": 1,
+                "end": 3,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i193-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i193-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 16,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i193-first-image-20261125"
+              },
+              {
+                "start": 16,
                 "end": 60,
                 "language": "uk",
                 "script": "Cyrl",
@@ -2252,5 +2284,14 @@
         "reason": "Provisional dense apparatus reading; historical glyphs, variant names, labels and language boundaries require reinspection."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "61d5d0ab935af4cc5f7c216a265383652e97645c",
+    "source_record_blob": "0a5b0c078aa284087515ab2838ba6cd6cfa1acbd",
+    "scope": "Script refinement only: Roman numerals retain contextual language.",
+    "status": "agent_unverified",
+    "method": "Separate annotation audit against exact frozen reading; no change to source text, geometry or provenance."
   }
 }
