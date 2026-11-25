@@ -1,0 +1,362 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 198,
+  "printed_page_observed": "123",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00198.jpg",
+  "source_image_sha256": "2a21f7763865f2d80111bf47e652cb270f256bf8c2459b5cb6fe23d8ee8639bd",
+  "reading": {
+    "reader_id": "gpt62-i198-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i198-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct image-first draft. Contextual BCP 47 language and ISO 15924 script spans cover every code point; mixed apparatus and editorial interventions segmented. Historical glyphs and geometry provisional.",
+    "raw_response": "123\nОповіданє про смерть Ісава з руки Якова напечатав Порфірєв\nіз Временника Георгія Амартола по рукоп. XVI в., що був в біблїо-\nтецї Соловецького манастиря (Апокрифическія сказ. о ветхозав. ли-\nцахъ и событіяхъ по рукоп. Солов. библіот. стор. 259), та сей текст\nхоча по змісту близький до нашого, стилїзований зовсїм відмінно,\nтак що варіантів із него ми не виписували, бо треба б було пере-\nписати цїле оповіданє В Коломенській анї Ковельській Палеї сего\nоповіданя нема.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            464,
+            546,
+            214,
+            9
+          ],
+          "description": "Decorative closing rule."
+        },
+        {
+          "bbox_xywh": [
+            103,
+            568,
+            924,
+            1046
+          ],
+          "description": "Blank lower page with show-through."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          963,
+          74,
+          59,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "123",
+            "bbox_xywh": [
+              963,
+              74,
+              59,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-d",
+        "kind": "body",
+        "bbox_xywh": [
+          103,
+          138,
+          924,
+          275
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-d-l001",
+            "text": "Оповіданє про смерть Ісава з руки Якова напечатав Порфірєв",
+            "bbox_xywh": [
+              103,
+              138,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l002",
+            "text": "із Временника Георгія Амартола по рукоп. XVI в., що був в біблїо-",
+            "bbox_xywh": [
+              103,
+              173,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 30,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 44,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l003",
+            "text": "тецї Соловецького манастиря (Апокрифическія сказ. о ветхозав. ли-",
+            "bbox_xywh": [
+              103,
+              208,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 65,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l004",
+            "text": "цахъ и событіяхъ по рукоп. Солов. библіот. стор. 259), та сей текст",
+            "bbox_xywh": [
+              103,
+              243,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 42,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l005",
+            "text": "хоча по змісту близький до нашого, стилїзований зовсїм відмінно,",
+            "bbox_xywh": [
+              103,
+              278,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l006",
+            "text": "так що варіантів із него ми не виписували, бо треба б було пере-",
+            "bbox_xywh": [
+              103,
+              313,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l007",
+            "text": "писати цїле оповіданє В Коломенській анї Ковельській Палеї сего",
+            "bbox_xywh": [
+              103,
+              347,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-d-l008",
+            "text": "оповіданя нема.",
+            "bbox_xywh": [
+              103,
+              382,
+              924,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-d-l001",
+        "reading": "Оповіданє про смерть Ісава з руки Якова напечатав Порфірєв",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      },
+      {
+        "line_id": "editorial-d-l002",
+        "reading": "із Временника Георгія Амартола по рукоп. XVI в., що був в біблїо-",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      },
+      {
+        "line_id": "editorial-d-l003",
+        "reading": "тецї Соловецького манастиря (Апокрифическія сказ. о ветхозав. ли-",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      },
+      {
+        "line_id": "editorial-d-l004",
+        "reading": "цахъ и событіяхъ по рукоп. Солов. библіот. стор. 259), та сей текст",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      },
+      {
+        "line_id": "editorial-d-l005",
+        "reading": "хоча по змісту близький до нашого, стилїзований зовсїм відмінно,",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      },
+      {
+        "line_id": "editorial-d-l006",
+        "reading": "так що варіантів із него ми не виписували, бо треба б було пере-",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      },
+      {
+        "line_id": "editorial-d-l007",
+        "reading": "писати цїле оповіданє В Коломенській анї Ковельській Палеї сего",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      },
+      {
+        "line_id": "editorial-d-l008",
+        "reading": "оповіданя нема.",
+        "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
+      }
+    ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "61d5d0ab935af4cc5f7c216a265383652e97645c",
+    "source_record_blob": "57abc124beca6003d6c2489b2818837cda24a2e1",
+    "scope": "Script refinement only: Roman numerals retain contextual language.",
+    "status": "agent_unverified",
+    "method": "Separate annotation audit against exact frozen reading; no change to source text, geometry or provenance."
+  }
+}

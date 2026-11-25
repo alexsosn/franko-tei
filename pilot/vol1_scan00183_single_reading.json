@@ -1,0 +1,978 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 183,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00183.jpg",
+  "source_image_sha256": "16f14625c0654055d085ccfd92601f2458cbac3e7ddc8d603f4f14f268b7808d",
+  "reading": {
+    "reader_id": "gpt62-i183-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i183-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG without embedded OCR or peer page text. Surrounding project context visible; not isolated corroboration. Preserve physical lines, separate apparatus, editorial commentary, repeated reference labels and source brackets. Historical glyphs and diacritics incomplete, geometry estimated; manifest SHA pending native-byte/XML checks.",
+    "raw_response": "XIII. Сини Ісаакові.\nА. Ковельська Палея, стор. 196.\n[Вродженє Ісава і Якова] Быст[ь] оубо по оумрт҃вии¹) Авра-\nамовѣ²) бл҃гви Бъ҃ Исаака сн҃а³) своего³). моляше же Исаакъ⁴),\nреч[е]³), Ревекы дѣля жены своея, ꙗко неплоды бѣ⁵). и послуша\nего Бъ҃ и зачат же Ревекка. играста же младен'ца во чревѣ⁶) ея.\nпомли же ся Ревека Гоу҃ Боу҃ и реч[е]: что се³) мнѣ будет? и\nреч[е] ей Гь҃ Бъ҃: два сн҃а во оутробѣ твоей еста, старѣишии\nменшому поработает а людїє людїй преспѣют⁷). по семже оубо\nꙗко приспѣша ей дн҃їє родити, и роди первенецъ и бѣ той чер-\nменъ⁸). потомже³) и³) меньшаго породи⁹), но прилапаше рука\nея¹⁰) пятѣ старѣишаго. и нареч[е] первенцю имя Исавъ, брату¹¹)\nже его³) имя Иакѣвъ.\n¹) смр҃ти ²) Авраамли ³) vac ⁴) дод. Гоу҃ ⁵) дод. и не ражда ⁶) утробѣ ⁷) преспѣетъ\n⁸) чернъ ⁹) род[и] ¹⁰) его ¹¹) другому\nВаріанти виписані із Крехівської Палеї стор. 181, де опові-\nданє се має титул Ѡ І с а ц е п о в е с т ь. Основою сего оповіданя\nє оповіданє біблїйне (Бития XXV, 21—27), відки взяті майже всї\nподробицї нашого оповіданя. Ми наводимо його тут як основу пі-\nзнїйшої повірки, висказаної нпр. в диялоґу „Банкетъ духовный“\n(Кіевская Старина 1891, т. XXXVII, стор. 68), буцїм то Ісав з Яко-\nвом сварили ся ще в материному животї.\nБ. Крехівська Палея, стор. 190—205.\n(Ѡ л е с т в и ц и). Пойде ж[е]¹) Яковъ к Лавану дяде²) своему,\nѡбрѣте мѣсто и спа³) ту, на камени възложивъ главу, слн҃це бо\nзашло бяше. и⁵) вид[е] сонъ. И се лествица бяше утвержена на",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            160,
+            71,
+            948,
+            332
+          ],
+          "description": "Blank section opening; no secure printed folio."
+        },
+        {
+          "bbox_xywh": [
+            593,
+            490,
+            76,
+            9
+          ],
+          "description": "Decorative rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-xiii",
+        "kind": "heading",
+        "bbox_xywh": [
+          427,
+          428,
+          415,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-xiii-l001",
+            "text": "XIII. Сини Ісаакові.",
+            "bbox_xywh": [
+              427,
+              428,
+              415,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 4,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-a-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          373,
+          531,
+          517,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-label-l001",
+            "text": "А. Ковельська Палея, стор. 196.",
+            "bbox_xywh": [
+              373,
+              531,
+              517,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "esau-jacob-birth",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          600,
+          948,
+          392
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "esau-jacob-birth-l001",
+            "text": "[Вродженє Ісава і Якова] Быст[ь] оубо по оумрт҃вии¹) Авра-",
+            "bbox_xywh": [
+              162,
+              600,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l002",
+            "text": "амовѣ²) бл҃гви Бъ҃ Исаака сн҃а³) своего³). моляше же Исаакъ⁴),",
+            "bbox_xywh": [
+              162,
+              636,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l003",
+            "text": "реч[е]³), Ревекы дѣля жены своея, ꙗко неплоды бѣ⁵). и послуша",
+            "bbox_xywh": [
+              162,
+              672,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l004",
+            "text": "его Бъ҃ и зачат же Ревекка. играста же младен'ца во чревѣ⁶) ея.",
+            "bbox_xywh": [
+              162,
+              708,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l005",
+            "text": "помли же ся Ревека Гоу҃ Боу҃ и реч[е]: что се³) мнѣ будет? и",
+            "bbox_xywh": [
+              162,
+              744,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l006",
+            "text": "реч[е] ей Гь҃ Бъ҃: два сн҃а во оутробѣ твоей еста, старѣишии",
+            "bbox_xywh": [
+              162,
+              780,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l007",
+            "text": "меншому поработает а людїє людїй преспѣют⁷). по семже оубо",
+            "bbox_xywh": [
+              162,
+              816,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l008",
+            "text": "ꙗко приспѣша ей дн҃їє родити, и роди первенецъ и бѣ той чер-",
+            "bbox_xywh": [
+              162,
+              852,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l009",
+            "text": "менъ⁸). потомже³) и³) меньшаго породи⁹), но прилапаше рука",
+            "bbox_xywh": [
+              162,
+              888,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l010",
+            "text": "ея¹⁰) пятѣ старѣишаго. и нареч[е] первенцю имя Исавъ, брату¹¹)",
+            "bbox_xywh": [
+              162,
+              924,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "esau-jacob-birth-l011",
+            "text": "же его³) имя Иакѣвъ.",
+            "bbox_xywh": [
+              162,
+              960,
+              948,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-a-apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          164,
+          1020,
+          948,
+          58
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-apparatus-l001",
+            "text": "¹) смр҃ти ²) Авраамли ³) vac ⁴) дод. Гоу҃ ⁵) дод. и не ражда ⁶) утробѣ ⁷) преспѣетъ",
+            "bbox_xywh": [
+              164,
+              1020,
+              948,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 28,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 37,
+                "end": 45,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 50,
+                "end": 83,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "witness-a-apparatus-l002",
+            "text": "⁸) чернъ ⁹) род[и] ¹⁰) его ¹¹) другому",
+            "bbox_xywh": [
+              164,
+              1049,
+              948,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-a",
+        "kind": "body",
+        "bbox_xywh": [
+          167,
+          1110,
+          943,
+          247
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-a-l001",
+            "text": "Варіанти виписані із Крехівської Палеї стор. 181, де опові-",
+            "bbox_xywh": [
+              167,
+              1110,
+              943,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-a-l002",
+            "text": "данє се має титул Ѡ І с а ц е п о в е с т ь. Основою сего оповіданя",
+            "bbox_xywh": [
+              167,
+              1146,
+              943,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 43,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-a-l003",
+            "text": "є оповіданє біблїйне (Бития XXV, 21—27), відки взяті майже всї",
+            "bbox_xywh": [
+              167,
+              1182,
+              943,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 28,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 31,
+                "language": "ru",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 38,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 38,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-a-l004",
+            "text": "подробицї нашого оповіданя. Ми наводимо його тут як основу пі-",
+            "bbox_xywh": [
+              167,
+              1218,
+              943,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-a-l005",
+            "text": "знїйшої повірки, висказаної нпр. в диялоґу „Банкетъ духовный“",
+            "bbox_xywh": [
+              167,
+              1253,
+              943,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 60,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 60,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-a-l006",
+            "text": "(Кіевская Старина 1891, т. XXXVII, стор. 68), буцїм то Ісав з Яко-",
+            "bbox_xywh": [
+              167,
+              1289,
+              943,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 1,
+                "end": 27,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 27,
+                "end": 33,
+                "language": "ru",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              },
+              {
+                "start": 33,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-a-l007",
+            "text": "вом сварили ся ще в материному животї.",
+            "bbox_xywh": [
+              167,
+              1325,
+              943,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-b-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          358,
+          1426,
+          569,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-label-l001",
+            "text": "Б. Крехівська Палея, стор. 190—205.",
+            "bbox_xywh": [
+              358,
+              1426,
+              569,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "jacob-ladder",
+        "kind": "body",
+        "bbox_xywh": [
+          166,
+          1499,
+          946,
+          104
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "jacob-ladder-l001",
+            "text": "(Ѡ л е с т в и ц и). Пойде ж[е]¹) Яковъ к Лавану дяде²) своему,",
+            "bbox_xywh": [
+              166,
+              1499,
+              946,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "jacob-ladder-l002",
+            "text": "ѡбрѣте мѣсто и спа³) ту, на камени възложивъ главу, слн҃це бо",
+            "bbox_xywh": [
+              166,
+              1535,
+              946,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "jacob-ladder-l003",
+            "text": "зашло бяше. и⁵) вид[е] сонъ. И се лествица бяше утвержена на",
+            "bbox_xywh": [
+              166,
+              1571,
+              946,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i183-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "section-xiii-l001",
+        "reading": "XIII. Сини Ісаакові.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-a-label-l001",
+        "reading": "А. Ковельська Палея, стор. 196.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l001",
+        "reading": "[Вродженє Ісава і Якова] Быст[ь] оубо по оумрт҃вии¹) Авра-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l002",
+        "reading": "амовѣ²) бл҃гви Бъ҃ Исаака сн҃а³) своего³). моляше же Исаакъ⁴),",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l003",
+        "reading": "реч[е]³), Ревекы дѣля жены своея, ꙗко неплоды бѣ⁵). и послуша",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l004",
+        "reading": "его Бъ҃ и зачат же Ревекка. играста же младен'ца во чревѣ⁶) ея.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l005",
+        "reading": "помли же ся Ревека Гоу҃ Боу҃ и реч[е]: что се³) мнѣ будет? и",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l006",
+        "reading": "реч[е] ей Гь҃ Бъ҃: два сн҃а во оутробѣ твоей еста, старѣишии",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l007",
+        "reading": "меншому поработает а людїє людїй преспѣют⁷). по семже оубо",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l008",
+        "reading": "ꙗко приспѣша ей дн҃їє родити, и роди первенецъ и бѣ той чер-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l009",
+        "reading": "менъ⁸). потомже³) и³) меньшаго породи⁹), но прилапаше рука",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l010",
+        "reading": "ея¹⁰) пятѣ старѣишаго. и нареч[е] первенцю имя Исавъ, брату¹¹)",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "esau-jacob-birth-l011",
+        "reading": "же его³) имя Иакѣвъ.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-a-apparatus-l001",
+        "reading": "¹) смр҃ти ²) Авраамли ³) vac ⁴) дод. Гоу҃ ⁵) дод. и не ражда ⁶) утробѣ ⁷) преспѣетъ",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-a-apparatus-l002",
+        "reading": "⁸) чернъ ⁹) род[и] ¹⁰) его ¹¹) другому",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-a-l001",
+        "reading": "Варіанти виписані із Крехівської Палеї стор. 181, де опові-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-a-l002",
+        "reading": "данє се має титул Ѡ І с а ц е п о в е с т ь. Основою сего оповіданя",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-a-l003",
+        "reading": "є оповіданє біблїйне (Бития XXV, 21—27), відки взяті майже всї",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-a-l004",
+        "reading": "подробицї нашого оповіданя. Ми наводимо його тут як основу пі-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-a-l005",
+        "reading": "знїйшої повірки, висказаної нпр. в диялоґу „Банкетъ духовный“",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-a-l006",
+        "reading": "(Кіевская Старина 1891, т. XXXVII, стор. 68), буцїм то Ісав з Яко-",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "editorial-a-l007",
+        "reading": "вом сварили ся ще в материному животї.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "witness-b-label-l001",
+        "reading": "Б. Крехівська Палея, стор. 190—205.",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "jacob-ladder-l001",
+        "reading": "(Ѡ л е с т в и ц и). Пойде ж[е]¹) Яковъ к Лавану дяде²) своему,",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "jacob-ladder-l002",
+        "reading": "ѡбрѣте мѣсто и спа³) ту, на камени възложивъ главу, слн҃це бо",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      },
+      {
+        "line_id": "jacob-ladder-l003",
+        "reading": "зашло бяше. и⁵) вид[е] сонъ. И се лествица бяше утвержена на",
+        "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
+      }
+    ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "f5ca30c1a3ab9fac78ffe28ecb63f16b18967fa7",
+    "source_record_blob": "7c731f8a5f15800dc83e67e66450c3dc6290927b",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Contextual annotation of frozen candidate based on previously inspected original scan and exact reading text; prior annotations visible; not independent textual review. Historical recension not assigned. Ambiguous Russian/Slavonic variant language unresolved on I/182."
+  }
+}
