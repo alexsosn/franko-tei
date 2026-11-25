@@ -199,7 +199,7 @@ class ReviewSmoke(unittest.TestCase):
             page.set_content(html)
             for line in ['questions-heading-line-01','untitled-heading-line-01']:
                 page.locator('#contentsOpen').click()
-                page.locator(f'#contentsEntries button[data-line="{line}"]').click()
+                page.locator(f'#contentsEntries button[data-scan="71"][data-line="{line}"]').click()
                 page.locator(f'#candidate [data-line-id="{line}"][aria-pressed="true"]').wait_for()
                 self.assertIn(line, page.locator('#lineinfo').inner_text())
                 self.assertEqual(page.locator('#candidate [aria-pressed="true"]').count(), 1)
