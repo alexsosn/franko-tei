@@ -17,7 +17,7 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Read pinned native image directly; preserve physical lines, historical Ukrainian and quoted language spans, notes, page numbers and printer marks. On XVI preserve table by separate column regions in left-to-right order, no inferred missing cells. Geometry estimated; agent-unverified.",
+    "instructions": "Read pinned native image directly; preserve physical lines, historical Ukrainian and quoted language spans, notes, page numbers and printer marks. On XVI preserve table by separate column regions in left-to-right order, no inferred missing cells. Geometry estimated; agent-unverified. Review: column row coordinates re-estimated individually from visual baselines, preserving blank row spaces and all original text.",
     "raw_response": "XVI\nЛїпсіус (op. cit I, 17—25) у тім, що реєстр апостолів уже від най-\nдавнїйших часів не був усталений, що одна й та сама особа вва-\nжала ся раз апостолом, другий раз нї, одно й те саме імя прикла-\nдало ся раз до сеї особи, то знов до иньшої, ідентіфікувало ся раз\nз тим, другий раз з иньшим. Ріжницї бачимо вже в канонїчних\nевангеліях та Апостольських Дїянях; для лекшого перегляду зво-\nдимо ті реєстри в одну табельку:\nМарко\nIII, 16—19.\n1. Симон\nПетро\n2. Яков\nЗеведеїв\n3. Іван Зе-\nведеїв\n4. Андрій\n5. Филип\n6. Варфо-\nломей\n7. Матвій\n8. Тома\n9. Яков\nАлфеїв\n10. Таддей\n11. Симон\nКананїт\n12. Юда\nІскаріот\nМатвій\nX, 2—4.\n1. Симон\nПетро\n2. Андрій\nбрат Петрів\n3. Яков\nЗеведеїв\n4. Іван Зе-\nведеїв\n5. Филип\n6. Варфо-\nломей\n7. Тома\n8. Матвій\nмитар\n9. Яков\nАлфеїв\n10. Леввей-\nТаддей\n11. Симон\nКананїт\n12. Юда\nІскаріот\nЛука\nIV, 14—16.\n1. Симон\nПетро\n2. Андрій\nбрат Петрів\n3. Яков\nЗеведеїв\n4. Іван\nЗеведеїв\n5. Филип\n6. Варфо-\nломей\n7. Матвій\n8. Тома\n9. Яков\nАлфеїв\n10. Симон\nЗилот\n11. Юда\nЯковів\n12. Юда\nІскаріот\nІван\nI, 37, 41—43.\n1. Андрій\n2. Петро\n3. Филип\n4. Ната-\nнаіл\n5. (Іван)\n6. Андрій\n7. Юда\nзрадник\n8. Тома\nблизнець\n9. Юда не\nІскаріот\n10. другий\nЗеведеєнко\nАп. Дїяня\nI, 13.\n1. Петро\n2. Іван\n3. Яков\nЗеведеїв\n4. Андрій\n5. Филип\n6. Тома\n7. Варфо-\nломей\n8. Матвій\n9. Яков\nАлфеїв\n10. Симон\nЗилот\n11. Юда\nЯковів\n12. Матїй\n(зам. Юди\nзрадника)",
     "coverage": {
       "entire_image_inspected": true,
@@ -258,9 +258,9 @@
         "kind": "other",
         "bbox_xywh": [
           193,
-          494,
+          490,
           172,
-          1017
+          1014
         ],
         "geometry_estimated": true,
         "lines": [
@@ -269,9 +269,9 @@
             "text": "Марко",
             "bbox_xywh": [
               193,
-              494,
+              493,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -290,9 +290,9 @@
             "text": "III, 16—19.",
             "bbox_xywh": [
               193,
-              542,
+              524,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -311,9 +311,9 @@
             "text": "1. Симон",
             "bbox_xywh": [
               193,
-              590,
+              605,
               172,
-              48
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -332,9 +332,9 @@
             "text": "Петро",
             "bbox_xywh": [
               193,
-              639,
+              638,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -353,9 +353,9 @@
             "text": "2. Яков",
             "bbox_xywh": [
               193,
-              687,
+              682,
               172,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -374,9 +374,9 @@
             "text": "Зеведеїв",
             "bbox_xywh": [
               193,
-              736,
+              716,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -395,9 +395,9 @@
             "text": "3. Іван Зе-",
             "bbox_xywh": [
               193,
-              784,
+              761,
               172,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -416,9 +416,9 @@
             "text": "ведеїв",
             "bbox_xywh": [
               193,
-              833,
+              795,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -437,9 +437,9 @@
             "text": "4. Андрій",
             "bbox_xywh": [
               193,
-              881,
+              840,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -458,9 +458,9 @@
             "text": "5. Филип",
             "bbox_xywh": [
               193,
-              929,
+              919,
               172,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -479,9 +479,9 @@
             "text": "6. Варфо-",
             "bbox_xywh": [
               193,
-              978,
+              963,
               172,
-              47
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -500,9 +500,9 @@
             "text": "ломей",
             "bbox_xywh": [
               193,
-              1026,
+              997,
               172,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -521,9 +521,9 @@
             "text": "7. Матвій",
             "bbox_xywh": [
               193,
-              1075,
+              1042,
               172,
-              47
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -542,9 +542,9 @@
             "text": "8. Тома",
             "bbox_xywh": [
               193,
-              1123,
+              1121,
               172,
-              48
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -563,9 +563,9 @@
             "text": "9. Яков",
             "bbox_xywh": [
               193,
-              1172,
+              1200,
               172,
-              47
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -584,9 +584,9 @@
             "text": "Алфеїв",
             "bbox_xywh": [
               193,
-              1220,
+              1234,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -605,9 +605,9 @@
             "text": "10. Таддей",
             "bbox_xywh": [
               193,
-              1268,
+              1279,
               172,
-              48
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -626,9 +626,9 @@
             "text": "11. Симон",
             "bbox_xywh": [
               193,
-              1317,
+              1359,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -647,9 +647,9 @@
             "text": "Кананїт",
             "bbox_xywh": [
               193,
-              1365,
+              1392,
               172,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -668,9 +668,9 @@
             "text": "12. Юда",
             "bbox_xywh": [
               193,
-              1414,
+              1438,
               172,
-              47
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -689,9 +689,9 @@
             "text": "Іскаріот",
             "bbox_xywh": [
               193,
-              1462,
+              1471,
               172,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -712,9 +712,9 @@
         "kind": "other",
         "bbox_xywh": [
           372,
-          494,
+          490,
           173,
-          1017
+          1014
         ],
         "geometry_estimated": true,
         "lines": [
@@ -723,9 +723,9 @@
             "text": "Матвій",
             "bbox_xywh": [
               372,
-              494,
+              493,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -744,9 +744,9 @@
             "text": "X, 2—4.",
             "bbox_xywh": [
               372,
-              536,
+              524,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -765,9 +765,9 @@
             "text": "1. Симон",
             "bbox_xywh": [
               372,
-              578,
+              605,
               173,
-              42
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -786,9 +786,9 @@
             "text": "Петро",
             "bbox_xywh": [
               372,
-              621,
+              638,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -807,9 +807,9 @@
             "text": "2. Андрій",
             "bbox_xywh": [
               372,
-              663,
+              682,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -828,9 +828,9 @@
             "text": "брат Петрів",
             "bbox_xywh": [
               372,
-              705,
+              716,
               173,
-              42
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -849,9 +849,9 @@
             "text": "3. Яков",
             "bbox_xywh": [
               372,
-              748,
+              761,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -870,9 +870,9 @@
             "text": "Зеведеїв",
             "bbox_xywh": [
               372,
-              790,
+              795,
               173,
-              42
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -891,9 +891,9 @@
             "text": "4. Іван Зе-",
             "bbox_xywh": [
               372,
-              833,
+              840,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -912,9 +912,9 @@
             "text": "ведеїв",
             "bbox_xywh": [
               372,
-              875,
+              874,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -933,9 +933,9 @@
             "text": "5. Филип",
             "bbox_xywh": [
               372,
-              917,
+              919,
               173,
-              42
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -954,9 +954,9 @@
             "text": "6. Варфо-",
             "bbox_xywh": [
               372,
-              960,
+              963,
               173,
-              41
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -975,9 +975,9 @@
             "text": "ломей",
             "bbox_xywh": [
               372,
-              1002,
+              997,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -996,9 +996,9 @@
             "text": "7. Тома",
             "bbox_xywh": [
               372,
-              1044,
+              1042,
               173,
-              42
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1017,9 +1017,9 @@
             "text": "8. Матвій",
             "bbox_xywh": [
               372,
-              1087,
+              1121,
               173,
-              41
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1038,9 +1038,9 @@
             "text": "митар",
             "bbox_xywh": [
               372,
-              1129,
+              1155,
               173,
-              42
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1059,9 +1059,9 @@
             "text": "9. Яков",
             "bbox_xywh": [
               372,
-              1172,
+              1200,
               173,
-              41
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1080,9 +1080,9 @@
             "text": "Алфеїв",
             "bbox_xywh": [
               372,
-              1214,
+              1234,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1101,9 +1101,9 @@
             "text": "10. Леввей-",
             "bbox_xywh": [
               372,
-              1256,
+              1279,
               173,
-              42
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1122,9 +1122,9 @@
             "text": "Таддей",
             "bbox_xywh": [
               372,
-              1299,
+              1313,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1143,9 +1143,9 @@
             "text": "11. Симон",
             "bbox_xywh": [
               372,
-              1341,
+              1359,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1164,9 +1164,9 @@
             "text": "Кананїт",
             "bbox_xywh": [
               372,
-              1383,
+              1392,
               173,
-              42
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1185,9 +1185,9 @@
             "text": "12. Юда",
             "bbox_xywh": [
               372,
-              1426,
+              1438,
               173,
-              41
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1206,9 +1206,9 @@
             "text": "Іскаріот",
             "bbox_xywh": [
               372,
-              1468,
+              1471,
               173,
-              42
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1229,9 +1229,9 @@
         "kind": "other",
         "bbox_xywh": [
           551,
-          494,
+          490,
           173,
-          1017
+          1014
         ],
         "geometry_estimated": true,
         "lines": [
@@ -1240,9 +1240,9 @@
             "text": "Лука",
             "bbox_xywh": [
               551,
-              494,
+              493,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1261,9 +1261,9 @@
             "text": "IV, 14—16.",
             "bbox_xywh": [
               551,
-              538,
+              524,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1282,9 +1282,9 @@
             "text": "1. Симон",
             "bbox_xywh": [
               551,
-              582,
+              605,
               173,
-              43
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1303,9 +1303,9 @@
             "text": "Петро",
             "bbox_xywh": [
               551,
-              626,
+              638,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1324,9 +1324,9 @@
             "text": "2. Андрій",
             "bbox_xywh": [
               551,
-              670,
+              682,
               173,
-              44
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1345,9 +1345,9 @@
             "text": "брат Петрів",
             "bbox_xywh": [
               551,
-              715,
+              716,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1366,9 +1366,9 @@
             "text": "3. Яков",
             "bbox_xywh": [
               551,
-              759,
+              761,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1387,9 +1387,9 @@
             "text": "Зеведеїв",
             "bbox_xywh": [
               551,
-              803,
+              795,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1408,9 +1408,9 @@
             "text": "4. Іван",
             "bbox_xywh": [
               551,
-              847,
+              840,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1429,9 +1429,9 @@
             "text": "Зеведеїв",
             "bbox_xywh": [
               551,
-              891,
+              874,
               173,
-              44
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1450,9 +1450,9 @@
             "text": "5. Филип",
             "bbox_xywh": [
               551,
-              936,
+              919,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1471,9 +1471,9 @@
             "text": "6. Варфо-",
             "bbox_xywh": [
               551,
-              980,
+              963,
               173,
-              43
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1492,9 +1492,9 @@
             "text": "ломей",
             "bbox_xywh": [
               551,
-              1024,
+              997,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1513,9 +1513,9 @@
             "text": "7. Матвій",
             "bbox_xywh": [
               551,
-              1068,
+              1042,
               173,
-              44
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1534,9 +1534,9 @@
             "text": "8. Тома",
             "bbox_xywh": [
               551,
-              1113,
+              1121,
               173,
-              43
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1555,9 +1555,9 @@
             "text": "9. Яков",
             "bbox_xywh": [
               551,
-              1157,
+              1200,
               173,
-              43
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1576,9 +1576,9 @@
             "text": "Алфеїв",
             "bbox_xywh": [
               551,
-              1201,
+              1234,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1597,9 +1597,9 @@
             "text": "10. Симон",
             "bbox_xywh": [
               551,
-              1245,
+              1279,
               173,
-              43
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1618,9 +1618,9 @@
             "text": "Зилот",
             "bbox_xywh": [
               551,
-              1289,
+              1313,
               173,
-              44
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1639,9 +1639,9 @@
             "text": "11. Юда",
             "bbox_xywh": [
               551,
-              1334,
+              1359,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1660,9 +1660,9 @@
             "text": "Яковів",
             "bbox_xywh": [
               551,
-              1378,
+              1392,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1681,9 +1681,9 @@
             "text": "12. Юда",
             "bbox_xywh": [
               551,
-              1422,
+              1438,
               173,
-              43
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1702,9 +1702,9 @@
             "text": "Іскаріот",
             "bbox_xywh": [
               551,
-              1466,
+              1471,
               173,
-              44
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1725,9 +1725,9 @@
         "kind": "other",
         "bbox_xywh": [
           730,
-          494,
+          490,
           175,
-          933
+          935
         ],
         "geometry_estimated": true,
         "lines": [
@@ -1736,9 +1736,9 @@
             "text": "Іван",
             "bbox_xywh": [
               730,
-              494,
+              493,
               175,
-              53
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1757,9 +1757,9 @@
             "text": "I, 37, 41—43.",
             "bbox_xywh": [
               730,
-              548,
+              524,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1778,9 +1778,9 @@
             "text": "1. Андрій",
             "bbox_xywh": [
               730,
-              603,
+              605,
               175,
-              54
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1799,9 +1799,9 @@
             "text": "2. Петро",
             "bbox_xywh": [
               730,
-              658,
+              682,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1820,9 +1820,9 @@
             "text": "3. Филип",
             "bbox_xywh": [
               730,
-              713,
+              761,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1841,9 +1841,9 @@
             "text": "4. Ната-",
             "bbox_xywh": [
               730,
-              768,
+              840,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1862,9 +1862,9 @@
             "text": "наіл",
             "bbox_xywh": [
               730,
-              823,
+              874,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1883,9 +1883,9 @@
             "text": "5. (Іван)",
             "bbox_xywh": [
               730,
-              878,
+              919,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1904,9 +1904,9 @@
             "text": "6. Андрій",
             "bbox_xywh": [
               730,
-              933,
+              963,
               175,
-              53
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1925,9 +1925,9 @@
             "text": "7. Юда",
             "bbox_xywh": [
               730,
-              987,
+              1121,
               175,
-              54
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1946,9 +1946,9 @@
             "text": "зрадник",
             "bbox_xywh": [
               730,
-              1042,
+              1155,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1967,9 +1967,9 @@
             "text": "8. Тома",
             "bbox_xywh": [
               730,
-              1097,
+              1200,
               175,
-              54
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -1988,9 +1988,9 @@
             "text": "близнець",
             "bbox_xywh": [
               730,
-              1152,
+              1234,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2009,9 +2009,9 @@
             "text": "9. Юда не",
             "bbox_xywh": [
               730,
-              1207,
+              1279,
               175,
-              54
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2030,9 +2030,9 @@
             "text": "Іскаріот",
             "bbox_xywh": [
               730,
-              1262,
+              1313,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2051,9 +2051,9 @@
             "text": "10. другий",
             "bbox_xywh": [
               730,
-              1317,
+              1359,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2072,9 +2072,9 @@
             "text": "Зеведеєнко",
             "bbox_xywh": [
               730,
-              1372,
+              1392,
               175,
-              54
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2095,9 +2095,9 @@
         "kind": "other",
         "bbox_xywh": [
           911,
-          494,
+          490,
           180,
-          1046
+          1047
         ],
         "geometry_estimated": true,
         "lines": [
@@ -2106,9 +2106,9 @@
             "text": "Ап. Дїяня",
             "bbox_xywh": [
               911,
-              494,
+              493,
               180,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2127,9 +2127,9 @@
             "text": "I, 13.",
             "bbox_xywh": [
               911,
-              543,
+              524,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2148,9 +2148,9 @@
             "text": "1. Петро",
             "bbox_xywh": [
               911,
-              593,
+              605,
               180,
-              49
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2169,9 +2169,9 @@
             "text": "2. Іван",
             "bbox_xywh": [
               911,
-              643,
+              682,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2190,9 +2190,9 @@
             "text": "3. Яков",
             "bbox_xywh": [
               911,
-              693,
+              761,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2211,9 +2211,9 @@
             "text": "Зеведеїв",
             "bbox_xywh": [
               911,
-              743,
+              795,
               180,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2232,9 +2232,9 @@
             "text": "4. Андрій",
             "bbox_xywh": [
               911,
-              792,
+              840,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2253,9 +2253,9 @@
             "text": "5. Филип",
             "bbox_xywh": [
               911,
-              842,
+              919,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2274,9 +2274,9 @@
             "text": "6. Тома",
             "bbox_xywh": [
               911,
-              892,
+              963,
               180,
-              49
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2295,9 +2295,9 @@
             "text": "7. Варфо-",
             "bbox_xywh": [
               911,
-              942,
+              1042,
               180,
-              49
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2316,9 +2316,9 @@
             "text": "ломей",
             "bbox_xywh": [
               911,
-              992,
+              1076,
               180,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2337,9 +2337,9 @@
             "text": "8. Матвій",
             "bbox_xywh": [
               911,
-              1041,
+              1121,
               180,
-              49
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2358,9 +2358,9 @@
             "text": "9. Яков",
             "bbox_xywh": [
               911,
-              1091,
+              1200,
               180,
-              49
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2379,9 +2379,9 @@
             "text": "Алфеїв",
             "bbox_xywh": [
               911,
-              1141,
+              1234,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2400,9 +2400,9 @@
             "text": "10. Симон",
             "bbox_xywh": [
               911,
-              1191,
+              1279,
               180,
-              49
+              31
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2421,9 +2421,9 @@
             "text": "Зилот",
             "bbox_xywh": [
               911,
-              1241,
+              1313,
               180,
-              48
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2442,9 +2442,9 @@
             "text": "11. Юда",
             "bbox_xywh": [
               911,
-              1290,
+              1359,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2463,9 +2463,9 @@
             "text": "Яковів",
             "bbox_xywh": [
               911,
-              1340,
+              1392,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2484,9 +2484,9 @@
             "text": "12. Матїй",
             "bbox_xywh": [
               911,
-              1390,
+              1438,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2505,9 +2505,9 @@
             "text": "(зам. Юди",
             "bbox_xywh": [
               911,
-              1440,
+              1471,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
@@ -2526,9 +2526,9 @@
             "text": "зрадника)",
             "bbox_xywh": [
               911,
-              1490,
+              1505,
               180,
-              49
+              30
             ],
             "geometry_estimated": true,
             "language_spans": [
