@@ -1,0 +1,158 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 5,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00005.jpg",
+  "source_image_sha256": "902852da5a3d1eb4490fdb20dde670901c70350b414f22533993264bf2d6dc99",
+  "reading": {
+    "reader_id": "gpt62-v5s00005-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol5-front-matter-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Transcribe original printed title matter from pinned scan, preserve line breaks and spelling; exclude later ownership marks and reverse show-through from edition text. Geometry estimated; language spans contextual. No blind-review or verified claim.",
+    "raw_response": "ПАМЯТКИ\nукраїнсько=руської мови і лїтератури.\nVI.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Later handwritten accession marks at head, crossed out and faint numbers; not edition text.",
+          "bbox_xywh": [
+            177,
+            0,
+            575,
+            130
+          ]
+        },
+        {
+          "description": "Reverse-side show-through above half-title (not repeated).",
+          "bbox_xywh": [
+            95,
+            140,
+            1000,
+            500
+          ]
+        },
+        {
+          "description": "Reverse-side show-through below half-title (not repeated).",
+          "bbox_xywh": [
+            95,
+            960,
+            1000,
+            620
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "series",
+        "kind": "heading",
+        "bbox_xywh": [
+          115,
+          690,
+          960,
+          179
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-line-01",
+            "text": "ПАМЯТКИ",
+            "bbox_xywh": [
+              400,
+              690,
+              430,
+              70
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00005-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "series-line-02",
+            "text": "українсько=руської мови і лїтератури.",
+            "bbox_xywh": [
+              115,
+              794,
+              960,
+              75
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00005-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "series-volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          560,
+          903,
+          80,
+          50
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-volume-line-01",
+            "text": "VI.",
+            "bbox_xywh": [
+              560,
+              903,
+              80,
+              50
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00005-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "series-line-02",
+        "reading": "=",
+        "reason": "Double-stroke printed hyphen; exact typographic encoding provisional."
+      },
+      {
+        "line_id": "series-line-02",
+        "reading": "лїтератури",
+        "reason": "Diaeresis of historical type retained provisionally."
+      }
+    ]
+  }
+}

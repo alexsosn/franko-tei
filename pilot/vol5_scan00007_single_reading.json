@@ -1,0 +1,461 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 7,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00007.jpg",
+  "source_image_sha256": "9f7a9fe2f592a1ed2b450f93858f0ca4894bc3a66a0e5ba1065f6a8bc2f3cf1f",
+  "reading": {
+    "reader_id": "gpt62-v5s00007-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol5-front-matter-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Transcribe original printed title matter from pinned scan, preserve line breaks and spelling; exclude later ownership marks and reverse show-through from edition text. Geometry estimated; language spans contextual. No blind-review or verified claim.",
+    "raw_response": "CODEX APOCRYPHUS\ne manuscriptis ukraino-russicis collectus opera Dr. Joannis Franko.\nVol. V, Legendarum de sanctis pars prima.\nАПОКРІФИ І ЛЄҐЕНДИ\nЗ УКРАЇНСЬКИХ РУКОПИСІВ.\nзібрав, упорядкував і пояснив\nДр. Іван Франко.\nТОМ V.\nЛєґенди про святих.\nЧасть перша.\nЗ одною подобизною старого друку.\nУ ЛЬВОВІ, 1910.\nНакладом Наукового Товариства імени Шевченка.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Polish ownership stamp: BIBLJOTEKA SEMINARJUM / UNIW J. K. / WE LWOWIE / FILOLOGJI POLSKIEJ (provisional stamp reading; later copy provenance).",
+          "bbox_xywh": [
+            407,
+            1113,
+            300,
+            120
+          ]
+        },
+        {
+          "description": "Faded blue oval ownership stamp, partly illegible.",
+          "bbox_xywh": [
+            775,
+            1442,
+            330,
+            230
+          ]
+        },
+        {
+          "description": "Decorative horizontal rules.",
+          "bbox_xywh": [
+            95,
+            277,
+            965,
+            18
+          ]
+        },
+        {
+          "description": "Rules above and below volume number.",
+          "bbox_xywh": [
+            420,
+            1040,
+            315,
+            80
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "latin-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          90,
+          145,
+          980,
+          131
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "latin-title-line-01",
+            "text": "CODEX APOCRYPHUS",
+            "bbox_xywh": [
+              265,
+              145,
+              630,
+              45
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-02",
+            "text": "e manuscriptis ukraino-russicis collectus opera Dr. Joannis Franko.",
+            "bbox_xywh": [
+              90,
+              195,
+              980,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-03",
+            "text": "Vol. V, Legendarum de sanctis pars prima.",
+            "bbox_xywh": [
+              280,
+              236,
+              605,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 5,
+                "end": 6,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 6,
+                "end": 41,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          90,
+          409,
+          990,
+          277
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-title-line-01",
+            "text": "АПОКРІФИ І ЛЄҐЕНДИ",
+            "bbox_xywh": [
+              90,
+              409,
+              990,
+              155
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "volume-title-line-02",
+            "text": "З УКРАЇНСЬКИХ РУКОПИСІВ.",
+            "bbox_xywh": [
+              210,
+              621,
+              750,
+              65
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editor",
+        "kind": "other",
+        "bbox_xywh": [
+          340,
+          785,
+          485,
+          146
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editor-line-01",
+            "text": "зібрав, упорядкував і пояснив",
+            "bbox_xywh": [
+              400,
+              785,
+              345,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editor-line-02",
+            "text": "Др. Іван Франко.",
+            "bbox_xywh": [
+              340,
+              848,
+              485,
+              83
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          475,
+          1055,
+          215,
+          50
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "ТОМ V.",
+            "bbox_xywh": [
+              475,
+              1055,
+              215,
+              50
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 4,
+                "end": 5,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 5,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "subtitle",
+        "kind": "heading",
+        "bbox_xywh": [
+          293,
+          1234,
+          560,
+          148
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "subtitle-line-01",
+            "text": "Лєґенди про святих.",
+            "bbox_xywh": [
+              293,
+              1234,
+              560,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "subtitle-line-02",
+            "text": "Часть перша.",
+            "bbox_xywh": [
+              450,
+              1300,
+              250,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "subtitle-line-03",
+            "text": "З одною подобизною старого друку.",
+            "bbox_xywh": [
+              370,
+              1344,
+              405,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imprint",
+        "kind": "other",
+        "bbox_xywh": [
+          160,
+          1497,
+          830,
+          110
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "imprint-line-01",
+            "text": "У ЛЬВОВІ, 1910.",
+            "bbox_xywh": [
+              445,
+              1497,
+              260,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "imprint-line-02",
+            "text": "Накладом Наукового Товариства імени Шевченка.",
+            "bbox_xywh": [
+              160,
+              1564,
+              830,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00007-20261125",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "volume-title-line-01",
+        "reading": "ЛЄҐЕНДИ",
+        "reason": "Display letter Є and Ґ provisional."
+      },
+      {
+        "line_id": "editor-line-01",
+        "reading": "зібрав, упорядкував і пояснив",
+        "reason": "Small caps transcribed as lowercase; casing remains provisional."
+      }
+    ]
+  }
+}
