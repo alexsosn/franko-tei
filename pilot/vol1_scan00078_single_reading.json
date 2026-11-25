@@ -1,0 +1,776 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 78,
+  "printed_page_observed": "3",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00078.jpg",
+  "source_image_sha256": "8dd1bb0e715f7edaabeee18f78f7e728234bb4078421f749fbf568ce1629bde1",
+  "reading": {
+    "reader_id": "gpt62-i78-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i78-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "First direct reading of the pinned printed source JPEG; no embedded OCR or peer reading shown. Other pages and project context visible; not isolated corroboration. Preserve physical rows, folio and boundary fragments. For parallel columns use witness A then B, not interleaving text rows; keep distinct column geometry and blank alignment areas. Letter spacing, glyphs, titla and geometry approximate. Source hash claimed by pinned manifest; native-byte and XML validation pending CI.",
+    "raw_response": "3\nгорій Амиритскій, книга Гри-\nгорій Цамблакъ, книга Григо-\nрій Акраганскій, книга Кирилъ\nСловенскій, книга Козма Пре-\nзвитеръ, книга Амфилохій И-\nконійскій, книга Паладій мних,\nкнига Ириней Лугдонскій, кни-\nга Петръ Дамаскинъ, книга\nСпиридоній Тримифінскій,\nкнига Златій Чопъ, книга А-\nнастасій Синайскія гори, кни-\nга Симеѡнъ Бг҃опріемецъ, кни-\nга Симеѡнъ Дивногорецъ, кни-\nга Симеѡнъ Іерусалимскій,\nкнига Симеѡнъ новій Бг҃о-\nсловъ, книга Єѵодій, книга\nВарлаам [и] Іѡасафъ царевич,\nкнига Єфрем Сурин, книга\nМаξимъ Исповѣдникъ, книга\nМаξим Грекъ, книга Даніила,\nкнига Никонъ, книга Нилъ,\nкнига Ѳеѡдор Єдескій, книга\nІѡсифъ, книга Павелъ Мона-\nсійскій, книга Геннадій зовемій\nЗлатострꙋй, книга Хроноградъ,\nкнига Родословіе, книга Глꙋ-\nбина, книга Бисеръ, книга Кир-\nница, книга Меѳодій Патръ-\nскій, книга Пчела, книга Лѣ-\nтописецъ Великія гори, книга\nМакарій Великій, книга Иси-\nдоръ Пилꙋсіѡтъ, книга Иси\nхій презвитеръ, книга Діѡптра\nзовемое зерцало мирозрител-\nное, книга второе зерцало: бе-\nсѣдословіе дш҃и с тѣлом, кни\nга Августин Иппона града епп҃ъ,\nкнига Іларіѡнъ Великій, книга\nГеѡргій Писидъ, книга Іосифъ\nМаттаѳіинъ, книга Козма Ин-\nдикопловъ, книга Козма Халки-",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            93,
+            140,
+            477,
+            1442
+          ],
+          "description": "Left witness column is intentionally blank on this page; no recto text observed. Faint scan show-through not transcribed."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          996,
+          78,
+          39,
+          46
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "3",
+            "bbox_xywh": [
+              999,
+              81,
+              33,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-approved-books-continuation",
+        "kind": "body",
+        "bbox_xywh": [
+          590,
+          141,
+          448,
+          1411
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-approved-books-continuation-l001",
+            "text": "горій Амиритскій, книга Гри-",
+            "bbox_xywh": [
+              593,
+              144,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l002",
+            "text": "горій Цамблакъ, книга Григо-",
+            "bbox_xywh": [
+              593,
+              178,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l003",
+            "text": "рій Акраганскій, книга Кирилъ",
+            "bbox_xywh": [
+              593,
+              213,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l004",
+            "text": "Словенскій, книга Козма Пре-",
+            "bbox_xywh": [
+              593,
+              247,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l005",
+            "text": "звитеръ, книга Амфилохій И-",
+            "bbox_xywh": [
+              593,
+              281,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l006",
+            "text": "конійскій, книга Паладій мних,",
+            "bbox_xywh": [
+              593,
+              316,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l007",
+            "text": "книга Ириней Лугдонскій, кни-",
+            "bbox_xywh": [
+              593,
+              350,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l008",
+            "text": "га Петръ Дамаскинъ, книга",
+            "bbox_xywh": [
+              593,
+              384,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l009",
+            "text": "Спиридоній Тримифінскій,",
+            "bbox_xywh": [
+              593,
+              419,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l010",
+            "text": "книга Златій Чопъ, книга А-",
+            "bbox_xywh": [
+              593,
+              453,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l011",
+            "text": "настасій Синайскія гори, кни-",
+            "bbox_xywh": [
+              593,
+              487,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l012",
+            "text": "га Симеѡнъ Бг҃опріемецъ, кни-",
+            "bbox_xywh": [
+              593,
+              521,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l013",
+            "text": "га Симеѡнъ Дивногорецъ, кни-",
+            "bbox_xywh": [
+              593,
+              556,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l014",
+            "text": "га Симеѡнъ Іерусалимскій,",
+            "bbox_xywh": [
+              593,
+              590,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l015",
+            "text": "книга Симеѡнъ новій Бг҃о-",
+            "bbox_xywh": [
+              593,
+              624,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l016",
+            "text": "словъ, книга Єѵодій, книга",
+            "bbox_xywh": [
+              593,
+              659,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l017",
+            "text": "Варлаам [и] Іѡасафъ царевич,",
+            "bbox_xywh": [
+              593,
+              693,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l018",
+            "text": "книга Єфрем Сурин, книга",
+            "bbox_xywh": [
+              593,
+              727,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l019",
+            "text": "Маξимъ Исповѣдникъ, книга",
+            "bbox_xywh": [
+              593,
+              762,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l020",
+            "text": "Маξим Грекъ, книга Даніила,",
+            "bbox_xywh": [
+              593,
+              796,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l021",
+            "text": "книга Никонъ, книга Нилъ,",
+            "bbox_xywh": [
+              593,
+              830,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l022",
+            "text": "книга Ѳеѡдор Єдескій, книга",
+            "bbox_xywh": [
+              593,
+              864,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l023",
+            "text": "Іѡсифъ, книга Павелъ Мона-",
+            "bbox_xywh": [
+              593,
+              899,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l024",
+            "text": "сійскій, книга Геннадій зовемій",
+            "bbox_xywh": [
+              593,
+              933,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l025",
+            "text": "Златострꙋй, книга Хроноградъ,",
+            "bbox_xywh": [
+              593,
+              967,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l026",
+            "text": "книга Родословіе, книга Глꙋ-",
+            "bbox_xywh": [
+              593,
+              1002,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l027",
+            "text": "бина, книга Бисеръ, книга Кир-",
+            "bbox_xywh": [
+              593,
+              1036,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l028",
+            "text": "ница, книга Меѳодій Патръ-",
+            "bbox_xywh": [
+              593,
+              1070,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l029",
+            "text": "скій, книга Пчела, книга Лѣ-",
+            "bbox_xywh": [
+              593,
+              1105,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l030",
+            "text": "тописецъ Великія гори, книга",
+            "bbox_xywh": [
+              593,
+              1139,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l031",
+            "text": "Макарій Великій, книга Иси-",
+            "bbox_xywh": [
+              593,
+              1173,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l032",
+            "text": "доръ Пилꙋсіѡтъ, книга Иси",
+            "bbox_xywh": [
+              593,
+              1207,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l033",
+            "text": "хій презвитеръ, книга Діѡптра",
+            "bbox_xywh": [
+              593,
+              1242,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l034",
+            "text": "зовемое зерцало мирозрител-",
+            "bbox_xywh": [
+              593,
+              1276,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l035",
+            "text": "ное, книга второе зерцало: бе-",
+            "bbox_xywh": [
+              593,
+              1310,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l036",
+            "text": "сѣдословіе дш҃и с тѣлом, кни",
+            "bbox_xywh": [
+              593,
+              1345,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l037",
+            "text": "га Августин Иппона града епп҃ъ,",
+            "bbox_xywh": [
+              593,
+              1379,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l038",
+            "text": "книга Іларіѡнъ Великій, книга",
+            "bbox_xywh": [
+              593,
+              1413,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l039",
+            "text": "Геѡргій Писидъ, книга Іосифъ",
+            "bbox_xywh": [
+              593,
+              1448,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l040",
+            "text": "Маттаѳіинъ, книга Козма Ин-",
+            "bbox_xywh": [
+              593,
+              1482,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-approved-books-continuation-l041",
+            "text": "дикопловъ, книга Козма Халки-",
+            "bbox_xywh": [
+              593,
+              1516,
+              442,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "witness-b-approved-books-continuation-l001",
+        "reading": "горій Амиритскій, книга Гри-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l002",
+        "reading": "горій Цамблакъ, книга Григо-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l003",
+        "reading": "рій Акраганскій, книга Кирилъ",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l004",
+        "reading": "Словенскій, книга Козма Пре-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l005",
+        "reading": "звитеръ, книга Амфилохій И-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l006",
+        "reading": "конійскій, книга Паладій мних,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l007",
+        "reading": "книга Ириней Лугдонскій, кни-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l008",
+        "reading": "га Петръ Дамаскинъ, книга",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l009",
+        "reading": "Спиридоній Тримифінскій,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l010",
+        "reading": "книга Златій Чопъ, книга А-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l011",
+        "reading": "настасій Синайскія гори, кни-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l012",
+        "reading": "га Симеѡнъ Бг҃опріемецъ, кни-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l013",
+        "reading": "га Симеѡнъ Дивногорецъ, кни-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l014",
+        "reading": "га Симеѡнъ Іерусалимскій,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l015",
+        "reading": "книга Симеѡнъ новій Бг҃о-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l016",
+        "reading": "словъ, книга Єѵодій, книга",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l017",
+        "reading": "Варлаам [и] Іѡасафъ царевич,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l018",
+        "reading": "книга Єфрем Сурин, книга",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l019",
+        "reading": "Маξимъ Исповѣдникъ, книга",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l020",
+        "reading": "Маξим Грекъ, книга Даніила,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l021",
+        "reading": "книга Никонъ, книга Нилъ,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l022",
+        "reading": "книга Ѳеѡдор Єдескій, книга",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l023",
+        "reading": "Іѡсифъ, книга Павелъ Мона-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l024",
+        "reading": "сійскій, книга Геннадій зовемій",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l025",
+        "reading": "Златострꙋй, книга Хроноградъ,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l026",
+        "reading": "книга Родословіе, книга Глꙋ-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l027",
+        "reading": "бина, книга Бисеръ, книга Кир-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l028",
+        "reading": "ница, книга Меѳодій Патръ-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l029",
+        "reading": "скій, книга Пчела, книга Лѣ-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l030",
+        "reading": "тописецъ Великія гори, книга",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l031",
+        "reading": "Макарій Великій, книга Иси-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l032",
+        "reading": "доръ Пилꙋсіѡтъ, книга Иси",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l033",
+        "reading": "хій презвитеръ, книга Діѡптра",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l034",
+        "reading": "зовемое зерцало мирозрител-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l035",
+        "reading": "ное, книга второе зерцало: бе-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l036",
+        "reading": "сѣдословіе дш҃и с тѣлом, кни",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l037",
+        "reading": "га Августин Иппона града епп҃ъ,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l038",
+        "reading": "книга Іларіѡнъ Великій, книга",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l039",
+        "reading": "Геѡргій Писидъ, книга Іосифъ",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l040",
+        "reading": "Маттаѳіинъ, книга Козма Ин-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-approved-books-continuation-l041",
+        "reading": "дикопловъ, книга Козма Халки-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      }
+    ]
+  }
+}
