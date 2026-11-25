@@ -134,8 +134,16 @@
             "language_spans": [
               {
                 "start": 0,
-                "end": 54,
+                "end": 29,
                 "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 29,
+                "end": 54,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i403-final-gap-20261125"
@@ -155,6 +163,14 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 20,
                 "end": 63,
                 "language": "orv",
                 "script": "Cyrl",
@@ -486,6 +502,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 27,
+                "end": 31,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 31,
                 "end": 56,
                 "language": "orv",
                 "script": "Cyrl",
@@ -570,8 +602,32 @@
             "language_spans": [
               {
                 "start": 0,
-                "end": 56,
+                "end": 30,
                 "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 30,
+                "end": 34,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 34,
+                "end": 45,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 45,
+                "end": 56,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i403-final-gap-20261125"
@@ -591,6 +647,14 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 30,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 30,
                 "end": 58,
                 "language": "orv",
                 "script": "Cyrl",
@@ -822,6 +886,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 5,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 5,
+                "end": 30,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 30,
                 "end": 59,
                 "language": "orv",
                 "script": "Cyrl",
@@ -864,10 +944,18 @@
               },
               {
                 "start": 22,
-                "end": 46,
+                "end": 43,
                 "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 43,
+                "end": 46,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
                 "text_version": "gpt62-i403-final-gap-20261125"
               }
             ]
@@ -982,10 +1070,18 @@
               },
               {
                 "start": 22,
-                "end": 49,
+                "end": 45,
                 "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
+                "text_version": "gpt62-i403-final-gap-20261125"
+              },
+              {
+                "start": 45,
+                "end": 49,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
                 "text_version": "gpt62-i403-final-gap-20261125"
               }
             ]
@@ -1264,5 +1360,14 @@
         "note_region_id": "note-5"
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "75df12117a568c63d5d19da770c4a6c61321973d",
+    "source_record_blob": "2d503b30f16fb87af4f09fa6d8f96fa8e127c18f",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual review of exact frozen candidate against original pinned scan. Distinguish explicit Church Slavonic quotations and liturgical formulae from historical Ruthenian explanation, and standalone Cyrillic numeral tokens from lexical abbreviations. No recensional or glyph verification."
   }
 }
