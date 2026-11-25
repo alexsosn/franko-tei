@@ -1,0 +1,977 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 64,
+  "printed_page_observed": "LX",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00064.jpg",
+  "source_image_sha256": "831b5cd18f95674012cf4f40704ad94e0860e64f3de2207a79307ea0492be412",
+  "reading": {
+    "reader_id": "gpt62-ii-64-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00061-00070-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original image without OCR or same-page peer text. Physical lines, contextual language spans, printed spelling, notes, estimated geometry and column reading order. Provisional.",
+    "raw_response": "LX\nПетръ у одра стаетъ, и горко рыдаетъ,\nГлаголя с слезами: „Буди Матко с нами!“\nЦарица вѣщаетъ, ему обѣщаетъ:\n„Что хощешь у Сына упрошу едина“.\nПоминувши опис самої смерти Марії пісня веде річ далї:\nЕвреинъ оный, лютый Аѳоній\nДерзну хулити, лесть сотворити,\nТѣмже бѣжаше, одръ постизаше\nНизврещи тѣло, но казненъ зѣло:\nАнгелъ предстояше, руцѣ отсѣкаше.\nАѳоній волаетъ, Дѣву прославляетъ...\nѲома ревнивый въ Индіи бывый\nТамъ забавил ся, здѣ не ставил ся.\nПо семъ приспѣвши и гробъ узрѣвши\nЗѣло рыдаетъ, плачь прилагаетъ.\nНо плачь преложи ся, въ радость обрати ся,\nГробъ бо отверзаютъ и не обрѣтаютъ:\nЦарева палата до неба есть взята,\nОнъ поясъ пріймаетъ, уже не рыдаетъ.\nІнтересні дві піснї про Йоакима і Анну. Вони цїлком основані\nна апокріфах, та характеристичні деталї показують, що їх автори\nне мали перед собою Первоєвангелия, але черпали з західно-евро-\nпейських переробок, може по просту з Димитрієвої Минеї. І так\nу піснї N. 143 Йоаким з Анною\nУбо в новомѣсячіи говяди приведоша,\nСвѣщи даша до ківота, ниць на землю падоша,\nНо отъ церкви изгнаша, офѣръ не пріяша,\nСвѣщи отвергаютъ и ихъ укаряютъ,\nЗане бяху неплодни.\nВ пустинї Йоакимови являєть ся ангел і сповіщає його:\n„Надъ надежду Анна благодатствованна\nДщерь всѣхъ предизбранну, міру пожаданну\nЗачала въ той годинѣ —\nзовсїм у дусї доґми про непорочне зачатє. Аннї ангел не\nявляєть ся; Йоаким стрічає її дома і сам сповіщає її про те, що\nчув від ангела, сам обіцяєть ся віддати дочку до храма. В другій\nпіснї (N. 144) написаній Дмитром Левковским, сказано, що Йоаким",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          100,
+          90,
+          110,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LX",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              100,
+              90,
+              110,
+              39
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v1",
+        "kind": "body",
+        "bbox_xywh": [
+          260,
+          170,
+          850,
+          153
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v1-line-01",
+            "text": "Петръ у одра стаетъ, и горко рыдаетъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 37,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              170,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-02",
+            "text": "Глаголя с слезами: „Буди Матко с нами!“",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 39,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              208,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-03",
+            "text": "Царица вѣщаетъ, ему обѣщаетъ:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              247,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-04",
+            "text": "„Что хощешь у Сына упрошу едина“.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              285,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p1",
+        "kind": "body",
+        "bbox_xywh": [
+          185,
+          345,
+          930,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p1-line-01",
+            "text": "Поминувши опис самої смерти Марії пісня веде річ далї:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              185,
+              345,
+              930,
+              39
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v2",
+        "kind": "body",
+        "bbox_xywh": [
+          260,
+          405,
+          850,
+          228
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v2-line-01",
+            "text": "Евреинъ оный, лютый Аѳоній",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              405,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-02",
+            "text": "Дерзну хулити, лесть сотворити,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              443,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-03",
+            "text": "Тѣмже бѣжаше, одръ постизаше",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              481,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-04",
+            "text": "Низврещи тѣло, но казненъ зѣло:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              519,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-05",
+            "text": "Ангелъ предстояше, руцѣ отсѣкаше.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              557,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-06",
+            "text": "Аѳоній волаетъ, Дѣву прославляетъ...",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              595,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v3",
+        "kind": "body",
+        "bbox_xywh": [
+          260,
+          665,
+          850,
+          309
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v3-line-01",
+            "text": "Ѳома ревнивый въ Индіи бывый",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              665,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-02",
+            "text": "Тамъ забавил ся, здѣ не ставил ся.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 34,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              704,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-03",
+            "text": "По семъ приспѣвши и гробъ узрѣвши",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              742,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-04",
+            "text": "Зѣло рыдаетъ, плачь прилагаетъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              781,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-05",
+            "text": "Но плачь преложи ся, въ радость обрати ся,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 42,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              820,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-06",
+            "text": "Гробъ бо отверзаютъ и не обрѣтаютъ:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              858,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-07",
+            "text": "Царева палата до неба есть взята,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              897,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-08",
+            "text": "Онъ поясъ пріймаетъ, уже не рыдаетъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              935,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "kind": "body",
+        "bbox_xywh": [
+          110,
+          1005,
+          1020,
+          195
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p2-line-01",
+            "text": "Інтересні дві піснї про Йоакима і Анну. Вони цїлком основані",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1005,
+              1020,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p2-line-02",
+            "text": "на апокріфах, та характеристичні деталї показують, що їх автори",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1044,
+              1020,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p2-line-03",
+            "text": "не мали перед собою Первоєвангелия, але черпали з західно-евро-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1083,
+              1020,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p2-line-04",
+            "text": "пейських переробок, може по просту з Димитрієвої Минеї. І так",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1122,
+              1020,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p2-line-05",
+            "text": "у піснї N. 143 Йоаким з Анною",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1161,
+              1020,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v4",
+        "kind": "body",
+        "bbox_xywh": [
+          260,
+          1220,
+          850,
+          195
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v4-line-01",
+            "text": "Убо в новомѣсячіи говяди приведоша,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1220,
+              850,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-02",
+            "text": "Свѣщи даша до ківота, ниць на землю падоша,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1259,
+              850,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-03",
+            "text": "Но отъ церкви изгнаша, офѣръ не пріяша,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 39,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1298,
+              850,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-04",
+            "text": "Свѣщи отвергаютъ и ихъ укаряютъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1337,
+              850,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-05",
+            "text": "Зане бяху неплодни.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1376,
+              850,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "kind": "body",
+        "bbox_xywh": [
+          185,
+          1440,
+          940,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p3-line-01",
+            "text": "В пустинї Йоакимови являєть ся ангел і сповіщає його:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              185,
+              1440,
+              940,
+              39
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v5",
+        "kind": "body",
+        "bbox_xywh": [
+          260,
+          1490,
+          850,
+          115
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v5-line-01",
+            "text": "„Надъ надежду Анна благодатствованна",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1490,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v5-line-02",
+            "text": "Дщерь всѣхъ предизбранну, міру пожаданну",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 40,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1528,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v5-line-03",
+            "text": "Зачала въ той годинѣ —",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 20,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              260,
+              1567,
+              850,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "kind": "body",
+        "bbox_xywh": [
+          110,
+          1630,
+          1020,
+          160
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p4-line-01",
+            "text": "зовсїм у дусї доґми про непорочне зачатє. Аннї ангел не",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1630,
+              1020,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p4-line-02",
+            "text": "являєть ся; Йоаким стрічає її дома і сам сповіщає її про те, що",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1670,
+              1020,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p4-line-03",
+            "text": "чув від ангела, сам обіцяєть ся віддати дочку до храма. В другій",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1710,
+              1020,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p4-line-04",
+            "text": "піснї (N. 144) написаній Дмитром Левковским, сказано, що Йоаким",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-64-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              1750,
+              1020,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "v3-line-08",
+        "reading": "пріймаетъ",
+        "reason": "Historical spelling provisional."
+      },
+      {
+        "line_id": "v4-line-03",
+        "reading": "офѣръ",
+        "reason": "Historical vowel glyph provisional."
+      }
+    ]
+  }
+}
