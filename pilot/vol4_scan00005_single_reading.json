@@ -1,0 +1,140 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 5,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00005.jpg",
+  "source_image_sha256": "ea0cafb144913a80a247461877b43e9803d1427e112275fcc1bc76fd5f35cd16",
+  "reading": {
+    "reader_id": "gpt62-iv-5-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-frontmatter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original JPEG without prior OCR or peer text for this page; preserve physical lines, historical spelling, source uncertainty, contextual languages and estimated geometry. Exclude later copy-specific marks from printed text and document them. No verified claim.",
+    "raw_response": "ПАМЯТКИ\nукраїнсько=руської мови і лїтератури.\nIV.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            435,
+            42,
+            110,
+            75
+          ],
+          "description": "Later handwritten number 56; not printed edition."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "series",
+        "kind": "heading",
+        "bbox_xywh": [
+          130,
+          710,
+          950,
+          185
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-line-01",
+            "text": "ПАМЯТКИ",
+            "bbox_xywh": [
+              435,
+              710,
+              370,
+              66
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-5-image-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "series-line-02",
+            "text": "українсько=руської мови і лїтератури.",
+            "bbox_xywh": [
+              130,
+              822,
+              950,
+              73
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-5-image-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          575,
+          925,
+          90,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "IV.",
+            "bbox_xywh": [
+              575,
+              925,
+              90,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-5-image-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "series-line-02",
+        "reading": "=",
+        "reason": "Two-stroke hyphen-like display glyph; encoded provisionally as equals sign, not normalized."
+      },
+      {
+        "line_id": "series-line-02",
+        "reading": "лїтератури",
+        "reason": "Display type diacritic reading provisional."
+      }
+    ]
+  }
+}

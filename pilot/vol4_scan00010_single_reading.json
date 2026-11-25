@@ -1,0 +1,1001 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 10,
+  "printed_page_observed": "VI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00010.jpg",
+  "source_image_sha256": "4c156c270386a3b368c50c223a729545b25ba212bcf08b795f0543b7d595073e",
+  "reading": {
+    "reader_id": "gpt62-iv-10-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-frontmatter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original JPEG without prior OCR or peer text for this page; preserve physical lines, historical spelling, source uncertainty, contextual languages and estimated geometry. Exclude later copy-specific marks from printed text and document them. No verified claim.",
+    "raw_response": "VI\nвідань та творів відповідного змісту, інодї фантастичних (або таких,\nщо лише нам видають ся фантастичними), нераз високо поетичних\nабо знов плитко доктрінерських, з відтінками і слїдами старих,\nосуджених церковою єресий та забобонів, заборонених церковними\nіндексами або й допущених у церковні книги та обряди, що все\nдо певної міри можна підтягти під назву апокріфів. Кажу до пев-\nної міри, бо тут границя між апокріфічними і церковою допущеними\nтворами ще менше виразна, як прим. при апостольських житіях\nі дїянях. Індекси старих апокріфів зазначують власне з отсего циклю\nменше творів, як з инших циклів пройдених нами доси, а в додат-\nку дуже часто ті твори являють ся нам так поперероблювані, об-\nшлїфовані та обезбарвлені під правовірний шабльон, що лише по-\nрівняне студіованє маси текстів на ріжних мовах і в ріжних редак-\nціях може дати нам більше-менше певну відповідь на те, чи і чому\nсі твори треба зачислити до апокріфів. От тому то, і з огляду на\nдалеко ще доси неповне прослїдженє великої части належних сюди\nматеріялів я обмежив при доборі матеріялу свою тему як найшир-\nше і притягнув сюди річи, яких деякі вчені не звикли зачислювати\nдо апокріфів та ще й есхатольоґічних, а зробив се навмисне, власне\nдля того, що детальнїйші дослїди виказують інтересні звязки між\nнайріжнїйшими творами сього циклю, і тому я бажав дати в руки\nспеціяльним дослїдникам як найбільше матеріялу, хоч би на пер-\nший погляд і зайвого. Розкладаючи той матеріял по льоґічній схе-\nмі я зібрав його в ось які чотири ґрупи:\n1. Апокріфічні катехізми, так звані в росийській науцї\nВопросоотвіти, по грецьки Ἐρωτήματα, яких богато попадаєть ся\nв наших старих рукописах і в множестві ріжних форм, комбінацій\nта редакцій, часто в виривках, майже нїколи в якійсь закругленій,\nпляново уложеній цїлости. Не вважаючи на богато зібраних мною\nкарпаторуських текстів сеї ґрупи не можу сказати, щоб я вичер-\nпав навіть те, що містить ся в самих львівських бібліотеках; спе-\nціяльно не пощастило менї віднайти тих рукописів бібліотеки львів-\nського Василіянського манастиря, з яких подібні річи цитував проф.\nКалужняцкий ¹). Надію ся ще при спеціяльних студіях над сими тек-\nстами поповнити сю хибу, яка зрештою ледви чи буде мати прін-\nціпіяльне значінє. Задля діяльоґової форми, а по части й задля змі-\n¹) Е. І. Калужняцкій, Обзоръ славянорусскихъ памятниковъ языка и пись-\nма, находящихся въ библіотекахъ и архивахъ Львовскихъ (Труды третьяго археологи-\nческаго съѣзда въ Россіи бывшаго въ Кіевѣ въ августѣ 1874 года. Томъ второй. Кіевъ,\n1878 г., стор. 213—321, див. особливо стор. 233 - 240 і ноти).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            137,
+            1450,
+            230,
+            15
+          ],
+          "description": "Printed footnote separator rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          135,
+          110,
+          48,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "VI",
+            "bbox_xywh": [
+              135,
+              110,
+              48,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          137,
+          177,
+          945,
+          1255
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "відань та творів відповідного змісту, інодї фантастичних (або таких,",
+            "bbox_xywh": [
+              137,
+              177,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "що лише нам видають ся фантастичними), нераз високо поетичних",
+            "bbox_xywh": [
+              137,
+              211,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "або знов плитко доктрінерських, з відтінками і слїдами старих,",
+            "bbox_xywh": [
+              137,
+              246,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "осуджених церковою єресий та забобонів, заборонених церковними",
+            "bbox_xywh": [
+              137,
+              281,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "індексами або й допущених у церковні книги та обряди, що все",
+            "bbox_xywh": [
+              137,
+              316,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "до певної міри можна підтягти під назву апокріфів. Кажу до пев-",
+            "bbox_xywh": [
+              137,
+              351,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "ної міри, бо тут границя між апокріфічними і церковою допущеними",
+            "bbox_xywh": [
+              137,
+              386,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "творами ще менше виразна, як прим. при апостольських житіях",
+            "bbox_xywh": [
+              137,
+              421,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "і дїянях. Індекси старих апокріфів зазначують власне з отсего циклю",
+            "bbox_xywh": [
+              137,
+              455,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "менше творів, як з инших циклів пройдених нами доси, а в додат-",
+            "bbox_xywh": [
+              137,
+              490,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "ку дуже часто ті твори являють ся нам так поперероблювані, об-",
+            "bbox_xywh": [
+              137,
+              525,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "шлїфовані та обезбарвлені під правовірний шабльон, що лише по-",
+            "bbox_xywh": [
+              137,
+              560,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "рівняне студіованє маси текстів на ріжних мовах і в ріжних редак-",
+            "bbox_xywh": [
+              137,
+              595,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "ціях може дати нам більше-менше певну відповідь на те, чи і чому",
+            "bbox_xywh": [
+              137,
+              630,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "сі твори треба зачислити до апокріфів. От тому то, і з огляду на",
+            "bbox_xywh": [
+              137,
+              665,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "далеко ще доси неповне прослїдженє великої части належних сюди",
+            "bbox_xywh": [
+              137,
+              699,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "матеріялів я обмежив при доборі матеріялу свою тему як найшир-",
+            "bbox_xywh": [
+              137,
+              734,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "ше і притягнув сюди річи, яких деякі вчені не звикли зачислювати",
+            "bbox_xywh": [
+              137,
+              769,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "до апокріфів та ще й есхатольоґічних, а зробив се навмисне, власне",
+            "bbox_xywh": [
+              137,
+              804,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "для того, що детальнїйші дослїди виказують інтересні звязки між",
+            "bbox_xywh": [
+              137,
+              839,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "найріжнїйшими творами сього циклю, і тому я бажав дати в руки",
+            "bbox_xywh": [
+              137,
+              874,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "спеціяльним дослїдникам як найбільше матеріялу, хоч би на пер-",
+            "bbox_xywh": [
+              137,
+              909,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "ший погляд і зайвого. Розкладаючи той матеріял по льоґічній схе-",
+            "bbox_xywh": [
+              137,
+              943,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "мі я зібрав його в ось які чотири ґрупи:",
+            "bbox_xywh": [
+              137,
+              978,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 40,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "1. Апокріфічні катехізми, так звані в росийській науцї",
+            "bbox_xywh": [
+              137,
+              1013,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "Вопросоотвіти, по грецьки Ἐρωτήματα, яких богато попадаєть ся",
+            "bbox_xywh": [
+              137,
+              1048,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 13,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 26,
+                "end": 35,
+                "language": "grc",
+                "script": "Grek",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 35,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "в наших старих рукописах і в множестві ріжних форм, комбінацій",
+            "bbox_xywh": [
+              137,
+              1083,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "та редакцій, часто в виривках, майже нїколи в якійсь закругленій,",
+            "bbox_xywh": [
+              137,
+              1118,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "пляново уложеній цїлости. Не вважаючи на богато зібраних мною",
+            "bbox_xywh": [
+              137,
+              1153,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "карпаторуських текстів сеї ґрупи не можу сказати, щоб я вичер-",
+            "bbox_xywh": [
+              137,
+              1187,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "пав навіть те, що містить ся в самих львівських бібліотеках; спе-",
+            "bbox_xywh": [
+              137,
+              1222,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "ціяльно не пощастило менї віднайти тих рукописів бібліотеки львів-",
+            "bbox_xywh": [
+              137,
+              1257,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "ського Василіянського манастиря, з яких подібні річи цитував проф.",
+            "bbox_xywh": [
+              137,
+              1292,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "Калужняцкий ¹). Надію ся ще при спеціяльних студіях над сими тек-",
+            "bbox_xywh": [
+              137,
+              1327,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "стами поповнити сю хибу, яка зрештою ледви чи буде мати прін-",
+            "bbox_xywh": [
+              137,
+              1362,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "ціпіяльне значінє. Задля діяльоґової форми, а по части й задля змі-",
+            "bbox_xywh": [
+              137,
+              1397,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bibliographic-note",
+        "kind": "note",
+        "bbox_xywh": [
+          137,
+          1480,
+          945,
+          125
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "bibliographic-note-line-01",
+            "text": "¹) Е. І. Калужняцкій, Обзоръ славянорусскихъ памятниковъ языка и пись-",
+            "bbox_xywh": [
+              137,
+              1480,
+              945,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "bibliographic-note-line-02",
+            "text": "ма, находящихся въ библіотекахъ и архивахъ Львовскихъ (Труды третьяго археологи-",
+            "bbox_xywh": [
+              137,
+              1511,
+              945,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 80,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "bibliographic-note-line-03",
+            "text": "ческаго съѣзда въ Россіи бывшаго въ Кіевѣ въ августѣ 1874 года. Томъ второй. Кіевъ,",
+            "bbox_xywh": [
+              137,
+              1542,
+              945,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 83,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "bibliographic-note-line-04",
+            "text": "1878 г., стор. 213—321, див. особливо стор. 233 - 240 і ноти).",
+            "bbox_xywh": [
+              137,
+              1573,
+              945,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-10-image-20261125",
+                "start": 9,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-26",
+        "reading": "Вопросоотвіти",
+        "reason": "Printed historical Russian term may use ѣ or another glyph; initial reading preserved, language attribution uncertain."
+      },
+      {
+        "line_id": "preface-line-26",
+        "reading": "Ἐρωτήματα",
+        "reason": "Greek breathing and accent provisional."
+      },
+      {
+        "line_id": "bibliographic-note-line-01",
+        "reading": "Е. І.",
+        "reason": "Initials in small type; Latin/Cyrillic homoglyphs and I/І distinction provisional."
+      },
+      {
+        "line_id": "bibliographic-note-line-03",
+        "reading": "Кіевѣ",
+        "reason": "Historical small-type spelling provisional."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "preface-line-34",
+        "marker_text": "¹)",
+        "marker_start": 12,
+        "note_region_id": "bibliographic-note"
+      }
+    ]
+  }
+}
