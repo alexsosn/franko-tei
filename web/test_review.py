@@ -260,6 +260,46 @@ class ReviewSmoke(unittest.TestCase):
                         self.assertEqual(parse_qs(url.query)['doc'], [{'CAVT-001': 'AdamEve.xml', 'CAVT-088': 'TAbr.xml'}[link['id']]])
         self.assertTrue({'CAVT-001', 'CAVT-066', 'CAVT-088', 'CAVT-089', 'CAVT-101', 'CAVT-118'}.issubset(found))
 
+    def test_contents_reference_localization_and_multiple_catalogues(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        for records in refs.values():
+            for links in records.values():
+                for link in links:
+                    self.assertTrue(link['titleUk'] and link['evidenceUk'])
+                    self.assertNotEqual(link['evidence'], link['evidenceUk'])
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.evaluate("setUILocale('en')")
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsVolume').select_option('4')
+            page.locator('#contentsFilter').fill('ECCA 983')
+            row = page.locator('#contentsEntries li:visible').first
+            row.locator('.contents-ref-toggle').click()
+            detail = row.locator('.contents-ref-detail')
+            self.assertEqual(detail.locator('a').count(), 2)
+            self.assertIn('CAVT-218', detail.inner_text())
+            self.assertIn('ECCA 983', detail.inner_text())
+            original = detail.locator('.contents-ref-original').inner_text()
+            english = detail.locator('.contents-ref-evidence').all_text_contents()
+            hrefs = detail.locator('a').evaluate_all('nodes => nodes.map(x => x.href)')
+            page.evaluate("setUILocale('uk')")
+            self.assertTrue(detail.is_visible())
+            self.assertEqual(detail.locator('.contents-ref-evidence[lang=uk]').count(), 2)
+            self.assertNotEqual(english, detail.locator('.contents-ref-evidence').all_text_contents())
+            self.assertIn('Вознесіння Ісаї', detail.inner_text())
+            self.assertEqual(hrefs, detail.locator('a').evaluate_all('nodes => nodes.map(x => x.href)'))
+            page.locator('#contentsFilter').fill('Вознесіння Ісаї')
+            self.assertTrue(row.is_visible())
+            page.evaluate("setUILocale('en')")
+            self.assertEqual(english, detail.locator('.contents-ref-evidence').all_text_contents())
+            self.assertEqual(original, detail.locator('.contents-ref-original').inner_text())
+            browser.close()
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
