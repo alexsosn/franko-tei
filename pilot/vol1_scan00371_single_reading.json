@@ -1,0 +1,834 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 371,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00371.jpg",
+  "source_image_sha256": "b0135244ab504fcc1e8b0b50a72ddc95d6c404d3e188b310dc5cb54de4ccd09b",
+  "reading": {
+    "reader_id": "gpt62-i371-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i350-379-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Pinned original image first. Provisional orv for historical vernacular, cu text, Ukrainian editorial prose and Russian, Latin and German citations distinguished. Physical lines retained; geometry and historical glyphs provisional. No verified claim.",
+    "raw_response": "XX. Від Соломона до Христа.\nА. Рукопис попа Ст. Теслевцьового к. 232—239.\n(Мц҃я Іюла к҃. дн҃ь. Ст҃го слав'наго пророка Іліи).\nСей ст҃ый пророк бж҃ій Іліа Ѳезвитанин' родом был из мѣста\nѲезвы ѿ зем'лѣ Аравитской, с поколѣна Аронова. Ѡц҃ь его был\nна имя Совакъ. А коли его мт҃и родила сего ст҃го Ілію, той\nночи ѡцеви его Соваку привидѣлъ ся такій сонъ: яко бы мужѣ\nоу бѣлых шатах бесѣдовали со Іліемъ и огнем его повивали\nи поломен огненный давали ему ѣсти той то его дитинѣ. Ви-\nдѣв'ши то Совакъ такій сонъ чудовал ся тому, и пошов'ши до\nІєрусалиму повѣдал тоє сц҃енником тот' свой сонъ. Тамъ Со-\nвакови єдинъ мудрецъ [сказалъ]: „Не бой ся, чл҃вче, будет тому\nдитяти житїє свѣтъ и будет тоє дитя другъ бж҃ый и любый,\nслава его будетъ великая и будет яко агг҃лъ“. Що такъ ся\nи стало. Бо коли Іліа выросъ, пророковал ѡ Хс҃ѣ лѣтъ кє҃., иж то\nмал ся Хс҃ народити на сей свѣтъ видимый. Тоє пророковал\nЖыдом невѣр'ным и людєм поганым, а то было єще перед на-\nроженям Хв҃ымъ за осмь сотъ лѣтъ и за шесть надцать.\nА коли дойшол до старости своей, жыл оу чстотѣ своей яко\nагг҃лъ.\nОу тоты часы пов'стали были люде поганый, невѣр'ный\nболвофалци, которие не хотѣли вѣрыти нбс҃ному Бгу҃ сотворыте-\nлеви, але вѣрыли болваномъ, идолом поганым, нечистым до того\nчасу, поки им был наставъ корол невѣр'ный Ахавъ на имя,\nс царицею своєю поганою Єзавелїю, злою и лютою царицею, которая\nто была великою гонителкою на самого нбс҃ного Бга҃ и на цр҃квы\nбж҃їи и на людей вѣрных, цр҃квы пустошила, дх҃вных тратити\nказала, людей мучила, тратила, на свою поганую вѣру ломила,",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "section-title rule",
+          "bbox_xywh": [
+            577,
+            561,
+            74,
+            8
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          318,
+          498,
+          602,
+          44
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-l001",
+            "text": "XX. Від Соломона до Христа.",
+            "bbox_xywh": [
+              318,
+              498,
+              602,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i371-first-image-20261125"
+              },
+              {
+                "start": 2,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          257,
+          599,
+          718,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-l001",
+            "text": "А. Рукопис попа Ст. Теслевцьового к. 232—239.",
+            "bbox_xywh": [
+              257,
+              599,
+              718,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "elijah-birth",
+        "kind": "body",
+        "bbox_xywh": [
+          144,
+          663,
+          944,
+          635
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "elijah-birth-l001",
+            "text": "(Мц҃я Іюла к҃. дн҃ь. Ст҃го слав'наго пророка Іліи).",
+            "bbox_xywh": [
+              144,
+              663,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l002",
+            "text": "Сей ст҃ый пророк бж҃ій Іліа Ѳезвитанин' родом был из мѣста",
+            "bbox_xywh": [
+              144,
+              698,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l003",
+            "text": "Ѳезвы ѿ зем'лѣ Аравитской, с поколѣна Аронова. Ѡц҃ь его был",
+            "bbox_xywh": [
+              144,
+              733,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l004",
+            "text": "на имя Совакъ. А коли его мт҃и родила сего ст҃го Ілію, той",
+            "bbox_xywh": [
+              144,
+              769,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l005",
+            "text": "ночи ѡцеви его Соваку привидѣлъ ся такій сонъ: яко бы мужѣ",
+            "bbox_xywh": [
+              144,
+              804,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l006",
+            "text": "оу бѣлых шатах бесѣдовали со Іліемъ и огнем его повивали",
+            "bbox_xywh": [
+              144,
+              839,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l007",
+            "text": "и поломен огненный давали ему ѣсти той то его дитинѣ. Ви-",
+            "bbox_xywh": [
+              144,
+              875,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l008",
+            "text": "дѣв'ши то Совакъ такій сонъ чудовал ся тому, и пошов'ши до",
+            "bbox_xywh": [
+              144,
+              910,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l009",
+            "text": "Ієрусалиму повѣдал тоє сц҃енником тот' свой сонъ. Тамъ Со-",
+            "bbox_xywh": [
+              144,
+              945,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l010",
+            "text": "вакови єдинъ мудрецъ [сказалъ]: „Не бой ся, чл҃вче, будет тому",
+            "bbox_xywh": [
+              144,
+              980,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l011",
+            "text": "дитяти житїє свѣтъ и будет тоє дитя другъ бж҃ый и любый,",
+            "bbox_xywh": [
+              144,
+              1016,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l012",
+            "text": "слава его будетъ великая и будет яко агг҃лъ“. Що такъ ся",
+            "bbox_xywh": [
+              144,
+              1051,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l013",
+            "text": "и стало. Бо коли Іліа выросъ, пророковал ѡ Хс҃ѣ лѣтъ кє҃., иж то",
+            "bbox_xywh": [
+              144,
+              1086,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l014",
+            "text": "мал ся Хс҃ народити на сей свѣтъ видимый. Тоє пророковал",
+            "bbox_xywh": [
+              144,
+              1121,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l015",
+            "text": "Жыдом невѣр'ным и людєм поганым, а то было єще перед на-",
+            "bbox_xywh": [
+              144,
+              1157,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l016",
+            "text": "роженям Хв҃ымъ за осмь сотъ лѣтъ и за шесть надцать.",
+            "bbox_xywh": [
+              144,
+              1192,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 52,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l017",
+            "text": "А коли дойшол до старости своей, жыл оу чстотѣ своей яко",
+            "bbox_xywh": [
+              144,
+              1227,
+              944,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-birth-l018",
+            "text": "агг҃лъ.",
+            "bbox_xywh": [
+              144,
+              1263,
+              944,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "elijah-persecution",
+        "kind": "body",
+        "bbox_xywh": [
+          137,
+          1300,
+          945,
+          287
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "elijah-persecution-l001",
+            "text": "Оу тоты часы пов'стали были люде поганый, невѣр'ный",
+            "bbox_xywh": [
+              137,
+              1300,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-persecution-l002",
+            "text": "болвофалци, которие не хотѣли вѣрыти нбс҃ному Бгу҃ сотворыте-",
+            "bbox_xywh": [
+              137,
+              1336,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-persecution-l003",
+            "text": "леви, але вѣрыли болваномъ, идолом поганым, нечистым до того",
+            "bbox_xywh": [
+              137,
+              1372,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-persecution-l004",
+            "text": "часу, поки им был наставъ корол невѣр'ный Ахавъ на имя,",
+            "bbox_xywh": [
+              137,
+              1408,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-persecution-l005",
+            "text": "с царицею своєю поганою Єзавелїю, злою и лютою царицею, которая",
+            "bbox_xywh": [
+              137,
+              1444,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-persecution-l006",
+            "text": "то была великою гонителкою на самого нбс҃ного Бга҃ и на цр҃квы",
+            "bbox_xywh": [
+              137,
+              1480,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-persecution-l007",
+            "text": "бж҃їи и на людей вѣрных, цр҃квы пустошила, дх҃вных тратити",
+            "bbox_xywh": [
+              137,
+              1516,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "elijah-persecution-l008",
+            "text": "казала, людей мучила, тратила, на свою поганую вѣру ломила,",
+            "bbox_xywh": [
+              137,
+              1552,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i371-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "elijah-birth-l001",
+        "reading": "(Мц҃я Іюла к҃. дн҃ь. Ст҃го слав'наго пророка Іліи).",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l002",
+        "reading": "Сей ст҃ый пророк бж҃ій Іліа Ѳезвитанин' родом был из мѣста",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l003",
+        "reading": "Ѳезвы ѿ зем'лѣ Аравитской, с поколѣна Аронова. Ѡц҃ь его был",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l004",
+        "reading": "на имя Совакъ. А коли его мт҃и родила сего ст҃го Ілію, той",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l005",
+        "reading": "ночи ѡцеви его Соваку привидѣлъ ся такій сонъ: яко бы мужѣ",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l006",
+        "reading": "оу бѣлых шатах бесѣдовали со Іліемъ и огнем его повивали",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l007",
+        "reading": "и поломен огненный давали ему ѣсти той то его дитинѣ. Ви-",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l008",
+        "reading": "дѣв'ши то Совакъ такій сонъ чудовал ся тому, и пошов'ши до",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l009",
+        "reading": "Ієрусалиму повѣдал тоє сц҃енником тот' свой сонъ. Тамъ Со-",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l010",
+        "reading": "вакови єдинъ мудрецъ [сказалъ]: „Не бой ся, чл҃вче, будет тому",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l011",
+        "reading": "дитяти житїє свѣтъ и будет тоє дитя другъ бж҃ый и любый,",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l012",
+        "reading": "слава его будетъ великая и будет яко агг҃лъ“. Що такъ ся",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l013",
+        "reading": "и стало. Бо коли Іліа выросъ, пророковал ѡ Хс҃ѣ лѣтъ кє҃., иж то",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l014",
+        "reading": "мал ся Хс҃ народити на сей свѣтъ видимый. Тоє пророковал",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l015",
+        "reading": "Жыдом невѣр'ным и людєм поганым, а то было єще перед на-",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l016",
+        "reading": "роженям Хв҃ымъ за осмь сотъ лѣтъ и за шесть надцать.",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l017",
+        "reading": "А коли дойшол до старости своей, жыл оу чстотѣ своей яко",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l018",
+        "reading": "агг҃лъ.",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l001",
+        "reading": "Оу тоты часы пов'стали были люде поганый, невѣр'ный",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l002",
+        "reading": "болвофалци, которие не хотѣли вѣрыти нбс҃ному Бгу҃ сотворыте-",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l003",
+        "reading": "леви, але вѣрыли болваномъ, идолом поганым, нечистым до того",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l004",
+        "reading": "часу, поки им был наставъ корол невѣр'ный Ахавъ на имя,",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l005",
+        "reading": "с царицею своєю поганою Єзавелїю, злою и лютою царицею, которая",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l006",
+        "reading": "то была великою гонителкою на самого нбс҃ного Бга҃ и на цр҃квы",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l007",
+        "reading": "бж҃їи и на людей вѣрных, цр҃квы пустошила, дх҃вных тратити",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l008",
+        "reading": "казала, людей мучила, тратила, на свою поганую вѣру ломила,",
+        "reason": "Historical type: exact titla, breathings, diacritics and glyphs provisional."
+      },
+      {
+        "line_id": "elijah-birth-l013",
+        "reading": "кє҃.",
+        "reason": "Source numeral resembles кє with titlo; no inference from chronological context."
+      },
+      {
+        "line_id": "elijah-birth-l003",
+        "reading": "Аравитской",
+        "reason": "Source appears Аравитской; exact historical place-name adjective provisional."
+      },
+      {
+        "line_id": "elijah-persecution-l002",
+        "reading": "болвофалци",
+        "reason": "Source appears болвофалци or болвофалци with additional historical marks; do not normalize to modern term."
+      }
+    ]
+  }
+}
