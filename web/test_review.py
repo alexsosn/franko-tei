@@ -219,6 +219,24 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(link('1', index, 'CAVT-118')['relation'], 'work-family')
         self.assertEqual(link('4', 45, 'CAVT-088')['relation'], 'edition-match')
 
+    def test_old_testament_audit_preserves_excerpt_and_recension_scope(self):
+        import csv
+        import json
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as stream:
+            rows = {(r['volume'], int(r['index_zero_based'])): r for r in csv.DictReader(stream, delimiter='\t', quoting=csv.QUOTE_NONE)}
+        for index in (20, 29, 31, 37, 40, 58, 105):
+            r = rows['1', index]
+            self.assertEqual(r['status'], 'title-supported')
+            self.assertIn('excerpt', r['evidence_or_caveat'])
+            self.assertIn('Pseudo-Methodius', r['scholarly_title'])
+            self.assertEqual(json.loads(r['catalog_refs_json']), [])
+        for index in (130, 132):
+            self.assertEqual(rows['1', index]['status'], 'edition-match')
+            self.assertIn('Somov', rows['1', index]['evidence_or_caveat'])
+        self.assertEqual(rows['1', 131]['status'], 'candidate')
+        self.assertEqual(json.loads(rows['1', 131]['catalog_refs_json']), [])
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
