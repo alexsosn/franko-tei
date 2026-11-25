@@ -7749,10 +7749,15 @@ function sourceFontMode(line,ranges=languageRanges(line)){
   const group=s=>s.script==='Cyrl'&&['cu','chu','orv'].includes(s.language)?'slavonic':s.script==='Grek'?'greek':'plain';
   const ordered=[...ranges].sort((a,b)=>a.start-b.start);
   if(!ordered.length)return 'plain';
-  const mode=group(ordered[0]);if(mode==='plain')return mode;
+  // Common-script nonlinguistic labels do not make a source line multilingual.
+  // They still retain their separate language ranges in the original display.
+  const neutral=s=>s.language==='zxx'&&s.script==='Zyyy';
+  const linguistic=ordered.find(s=>!neutral(s));
+  if(!linguistic)return 'plain';
+  const mode=group(linguistic);if(mode==='plain')return mode;
   let end=0;
   for(const s of ordered){
-    if(group(s)!==mode||line.text.slice(end,s.start).trim())return 'plain';
+    if((!neutral(s)&&group(s)!==mode)||line.text.slice(end,s.start).trim())return 'plain';
     end=s.end;
   }
   return line.text.slice(end).trim()?'plain':mode;
