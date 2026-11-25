@@ -163,6 +163,26 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(page.locator("#ref")).to_have_value(REF)
                 expect(page.locator("#page")).to_have_value(str(missing))
                 expect(page.locator("#contentsPanel")).not_to_be_visible()
+                # No use of a published snapshot for an unrelated explicit commit.
+                page.locator("#ref").evaluate("(el) => el.value = '0'.repeat(40)")
+                page.locator("#contentsOpen").click()
+                page.locator("#contentsCoverage summary").click()
+                expect(page.locator("#coverageStatus")).to_have_text("Coverage unavailable for this reading version.")
+                expect(page.locator("#coverageNext")).to_be_disabled()
+                page.locator("#contentsClose").click()
+                # Invalid input cannot masquerade as an empty volume.
+                for mutation in range(4):
+                    rejected=page.evaluate("""([data, mutation]) => {
+                        const d=structuredClone(data);
+                        switch(mutation){
+                            case 0: d.asset_commit='0'.repeat(40); break;
+                            case 1: d.volumes['1'].scans.push(0); break;
+                            case 2: d.volumes['1'].total=1; break;
+                            case 3: d.volumes['1'].scans.push(d.volumes['1'].scans[0]); break;
+                        }
+                        try { validateCoverage(d); return false; } catch { return true; }
+                    }""", [coverage, mutation])
+                    self.assertTrue(rejected,mutation)
                 self.assertFalse(errors,errors)
                 browser.close()
 
