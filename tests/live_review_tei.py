@@ -34,7 +34,7 @@ def main():
         schema=etree.RelaxNG(etree.parse(str(rng)))
         for path in PAGES:
             raw=loader(REF,path)
-            rows=project_lines(raw,path,ledger)
+            rows=project_lines(raw,path,ledger,source_loader=loader,projection_commit=REF)
             accepted=[r for r in rows if r["status"]!="agent_unverified"]
             assert accepted, path
             xml=verified_editorial_tei(ROOT,path,images,REF)
