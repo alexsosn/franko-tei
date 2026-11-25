@@ -1,0 +1,318 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 113,
+  "printed_page_observed": "38",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00113.jpg",
+  "source_image_sha256": "1ea52d6aa8444001e7f029038b85d432ee741022f0a0af9a2a916d452a6da3c4",
+  "reading": {
+    "reader_id": "gpt62-i113-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i113-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG without embedded OCR or peer page text. Surrounding project context visible; not isolated corroboration. Preserve physical rows, observed folio only, source headings, editorial brackets, parenthesized question marks and apparatus. Historical glyphs, breathings, accent coverage and geometry approximate. Manifest SHA pending native-byte/XML checks.",
+    "raw_response": "38\n⁸) траву ⁹) вѣдѣ ¹⁰) възстонавъ ¹¹) дод. Ламех ¹²) к женама своима ¹³) язю ¹⁴) свѣ-\nдын ¹⁵) невѣд[ыи].\nТолковая Палея стор. 99, стовп. 198; Т и х о н р а в о в ъ, Памят-\nники отр. р. лит. I. 24—25.\nО перших Адамових потомках в нашій старій лїтературі заховали\nся тілько дрібні леґендові подробицї, котрі ми тут і звели по нашим\nрукописам. Індекс згадує про якийсь осібний апокріф „Ламех“, та апо-\nкріф такий у нас не був звісний. Про жидівсько-тальмудичне походженє\nлеґенд о похоронї Авеля за приводом горлицї і о вбійстві Каіна слїпим\nЛамехом гл. П о р ф и р ь е в ъ, Апокрифическія сказанія о ветхозав. ли-\nцахъ и событіяхъ, стор. 42 і єгож Апокр. сказ. о ветхоз. лицахъ и соб.\nпо рукоп. Солов. библ. ст. 50—51, 104, 105.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            531,
+            783,
+            229,
+            15
+          ],
+          "description": "Decorative closing rule."
+        },
+        {
+          "bbox_xywh": [
+            143,
+            811,
+            1006,
+            962
+          ],
+          "description": "Blank lower page with faint show-through."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          160,
+          119,
+          46,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "38",
+            "bbox_xywh": [
+              160,
+              119,
+              46,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-g-apparatus-end",
+        "kind": "note",
+        "bbox_xywh": [
+          161,
+          190,
+          976,
+          62
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-g-apparatus-end-l001",
+            "text": "⁸) траву ⁹) вѣдѣ ¹⁰) възстонавъ ¹¹) дод. Ламех ¹²) к женама своима ¹³) язю ¹⁴) свѣ-",
+            "bbox_xywh": [
+              161,
+              190,
+              976,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-g-apparatus-end-l002",
+            "text": "дын ¹⁵) невѣд[ыи].",
+            "bbox_xywh": [
+              161,
+              221,
+              976,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-g",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          261,
+          979,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-g-l001",
+            "text": "Толковая Палея стор. 99, стовп. 198; Т и х о н р а в о в ъ, Памят-",
+            "bbox_xywh": [
+              162,
+              261,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-g-l002",
+            "text": "ники отр. р. лит. I. 24—25.",
+            "bbox_xywh": [
+              162,
+              299,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-section-summary",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          349,
+          979,
+          292
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-section-summary-l001",
+            "text": "О перших Адамових потомках в нашій старій лїтературі заховали",
+            "bbox_xywh": [
+              162,
+              349,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-section-summary-l002",
+            "text": "ся тілько дрібні леґендові подробицї, котрі ми тут і звели по нашим",
+            "bbox_xywh": [
+              162,
+              385,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-section-summary-l003",
+            "text": "рукописам. Індекс згадує про якийсь осібний апокріф „Ламех“, та апо-",
+            "bbox_xywh": [
+              162,
+              422,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-section-summary-l004",
+            "text": "кріф такий у нас не був звісний. Про жидівсько-тальмудичне походженє",
+            "bbox_xywh": [
+              162,
+              459,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-section-summary-l005",
+            "text": "леґенд о похоронї Авеля за приводом горлицї і о вбійстві Каіна слїпим",
+            "bbox_xywh": [
+              162,
+              496,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-section-summary-l006",
+            "text": "Ламехом гл. П о р ф и р ь е в ъ, Апокрифическія сказанія о ветхозав. ли-",
+            "bbox_xywh": [
+              162,
+              533,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-section-summary-l007",
+            "text": "цахъ и событіяхъ, стор. 42 і єгож Апокр. сказ. о ветхоз. лицахъ и соб.",
+            "bbox_xywh": [
+              162,
+              570,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-section-summary-l008",
+            "text": "по рукоп. Солов. библ. ст. 50—51, 104, 105.",
+            "bbox_xywh": [
+              162,
+              607,
+              979,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "witness-g-apparatus-end-l001",
+        "reading": "⁸) траву ⁹) вѣдѣ ¹⁰) възстонавъ ¹¹) дод. Ламех ¹²) к женама своима ¹³) язю ¹⁴) свѣ-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "witness-g-apparatus-end-l002",
+        "reading": "дын ¹⁵) невѣд[ыи].",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-g-l001",
+        "reading": "Толковая Палея стор. 99, стовп. 198; Т и х о н р а в о в ъ, Памят-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-g-l002",
+        "reading": "ники отр. р. лит. I. 24—25.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l001",
+        "reading": "О перших Адамових потомках в нашій старій лїтературі заховали",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l002",
+        "reading": "ся тілько дрібні леґендові подробицї, котрі ми тут і звели по нашим",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l003",
+        "reading": "рукописам. Індекс згадує про якийсь осібний апокріф „Ламех“, та апо-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l004",
+        "reading": "кріф такий у нас не був звісний. Про жидівсько-тальмудичне походженє",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l005",
+        "reading": "леґенд о похоронї Авеля за приводом горлицї і о вбійстві Каіна слїпим",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l006",
+        "reading": "Ламехом гл. П о р ф и р ь е в ъ, Апокрифическія сказанія о ветхозав. ли-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l007",
+        "reading": "цахъ и событіяхъ, стор. 42 і єгож Апокр. сказ. о ветхоз. лицахъ и соб.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "editorial-section-summary-l008",
+        "reading": "по рукоп. Солов. библ. ст. 50—51, 104, 105.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      }
+    ]
+  }
+}
