@@ -56,10 +56,12 @@
     for(const note of data.reading.uncertainty_notes??[])if(note.line_id===line.id){const p=document.createElement('p');p.textContent=note.reading+' — '+note.reason;el('reviewReasons').append(p);}
     el('reviewUncertainty').hidden=!el('reviewReasons').childElementCount;
     const img=el('reviewImage'),w=img.naturalWidth,h=img.naturalHeight,b=line.bbox_xywh;
+    el('reviewCrop').classList.remove('review-full');
     if(imageReady&&validBox(b,w,h)){
       const top=Math.max(0,b[1]-b[3]),bottom=Math.min(h,b[1]+2*b[3]);
       el('reviewCrop').style.aspectRatio=w+'/'+(bottom-top);img.style.top=(-100*top/(bottom-top))+'%';el('reviewCrop').hidden=false;
-    }else el('reviewCrop').hidden=true;
+    }else if(imageReady){el('reviewCrop').classList.add('review-full');el('reviewCrop').style.aspectRatio='auto';img.style.top='0';el('reviewCrop').hidden=false;}
+    else el('reviewCrop').hidden=true;
     controls();
   }
   function select(id,force=false){
@@ -82,7 +84,7 @@
   }
   async function open(){
     const id=++serial,active=candidates[Number(el('choice').value)],ref=el('ref').value.trim(),selected=renderedLines.find(r=>r.btn.getAttribute('aria-pressed')==='true')?.line.id;
-    el('reviewBody').hidden=true;imageReady=false;storageFailed=false;el('reviewCrop').hidden=true;
+    el('reviewBody').hidden=true;el('reviewRecovery').hidden=true;imageReady=false;storageFailed=false;el('reviewCrop').hidden=true;
     el('reviewDialog').showModal();status('Loading pinned reading…');
     try{
       stored=localStorage.getItem(KEY);let s=stored?JSON.parse(stored):null,commit,path;
@@ -114,7 +116,7 @@
       img.onload=ready;img.onerror=ready;img.src=asset(image.path);
       el('reviewBody').hidden=false;paint();if(img.complete)ready();
       status(s.locked?'Prepared locally; not submitted.':'Draft saved locally.');
-    }catch(e){if(id===serial)status(e.message);}
+    }catch(e){if(id===serial){status(e.message);el('reviewRecovery').hidden=!stored;}}
   }
   el('reviewOpen').onclick=open;
   el('reviewClose').onclick=()=>el('reviewDialog').close();
@@ -130,6 +132,8 @@
   el('reviewPrepare').onclick=()=>run(()=>{if(el('reviewPrepare').disabled)return;session.locked=true;persist();controls();status('Prepared locally; not submitted.');el('reviewBundle').focus();el('reviewBundle').select();});
   el('reviewCopy').onclick=async()=>{try{await navigator.clipboard.writeText(el('reviewBundle').value);status('Copied.');}catch(e){el('reviewBundle').focus();el('reviewBundle').select();status('Select and copy the JSON manually.');}};
   function clearDraft(question){run(()=>{if(!confirm(tr(question)))return;if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(KEY);el('reviewDialog').close();});}
+  el('reviewRecover').onclick=()=>{if(!stored)return;const url=URL.createObjectURL(new Blob([stored],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='franko-local-review-recovery.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+  el('reviewRecoverDiscard').onclick=()=>{try{if(!confirm(tr('Discard this local draft and all its decisions?')))return;if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(KEY);el('reviewDialog').close();}catch(e){status(e.message);}};
   el('reviewReset').onclick=()=>clearDraft('Have you saved or submitted this bundle? Remove the local batch?');
   el('reviewDiscard').onclick=()=>clearDraft('Discard this local draft and all its decisions?');
 })();

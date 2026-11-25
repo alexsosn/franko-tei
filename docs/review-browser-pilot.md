@@ -24,3 +24,7 @@ Image dimensions are checked, not image byte hashes; source crop is approximate.
 Exact Git blob hash is computed from the fetched original candidate bytes.
 The production CLI still decides trusted commit ancestry. The browser test
 uses actual frozen text and a synthetic image; no scholarly decisions.
+
+If the exact pinned candidate is unavailable or its Git blob changes, the
+editor refuses to reopen the session, preserves the local data, and offers
+a recovery download (not a submission bundle) or explicit discard.

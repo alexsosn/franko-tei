@@ -24,6 +24,7 @@ class EditorSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(args=["--no-sandbox"])
             page = browser.new_page(viewport={"width":390,"height":844})
+            changed = False
             manifest = {"volume":"1","page_count":469,"pages":[{"scan_page":20,"width":W,"height":H,"artifacts":[
                 {"role":"page_image","path":SOURCE["source_image_path"],"sha256":SOURCE["source_image_sha256"]},
                 {"role":"embedded_ocr","path":"original_ocr/vol1/page-00020.txt"}]}]}
@@ -38,7 +39,7 @@ class EditorSmoke(unittest.TestCase):
                 if u.endswith("/manifest.json"):
                     return r.fulfill(json=manifest)
                 if u.endswith("/"+PATH):
-                    return r.fulfill(body=RAW,content_type="application/json")
+                    return r.fulfill(body=RAW+(b" " if changed and ("/"+REV+"/") in u else b""),content_type="application/json")
                 if u.endswith("/"+SOURCE["source_image_path"]):
                     return r.fulfill(body=png(),content_type="image/png")
                 if u.endswith("page-00020.txt"):
@@ -78,6 +79,15 @@ class EditorSmoke(unittest.TestCase):
             expect(page.locator("#reviewBundle")).to_have_value(raw.decode())
             expect(page.locator("#reviewEdit")).to_have_attribute("readonly", "")
             self.assertIn("review-bundle.yml",page.locator("#reviewGitHub").get_attribute("href"))
+            # Even a whitespace-only change in the pinned JSON changes its Git blob.
+            old=page.evaluate("localStorage.getItem('franko-review-session-v1')")
+            page.locator("#reviewClose").click()
+            changed=True
+            page.locator("#reviewOpen").click()
+            expect(page.locator("#reviewStatus")).to_contain_text("Pinned local source changed")
+            expect(page.locator("#reviewBody")).to_be_hidden()
+            expect(page.locator("#reviewRecovery")).to_be_visible()
+            self.assertEqual(page.evaluate("localStorage.getItem('franko-review-session-v1')"),old)
             browser.close()
 
 if __name__=="__main__":
