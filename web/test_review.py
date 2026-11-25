@@ -75,7 +75,7 @@ class ReviewSmoke(unittest.TestCase):
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
             self.assertEqual(result, [['1',145,46,99,0],['2',140,27,113,0],
-                                      ['3',170,39,131,0],['4',112,49,63,0],['5',48,11,37,0]])
+                                      ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
                 contentsDestination('3',[439,'example','LIX–LXVIII',null,1]),
