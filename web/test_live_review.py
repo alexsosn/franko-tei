@@ -32,7 +32,7 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             # Real self-hosted font faces must load, rather than silently fall back.
             page.locator("#fontSettings summary").click()
             for selector, values, sample in [
-                ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh"), ("ponomar", "Franko Ponomar")], "ꙗꙖꙑб҃ъ"),
+                ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh")], "ꙗꙖꙑб҃ъ"),
                 ("#greekFont", [("gentium", "Franko Gentium"), ("garamond", "Franko Garamond")], "Ἐν ἀρχῇ ἄ"),
             ]:
                 for value, family in values:
@@ -44,7 +44,7 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             page.reload()
             expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
             page.locator("#fontSettings summary").click()
-            expect(page.locator("#slavonicFont")).to_have_value("ponomar")
+            expect(page.locator("#slavonicFont")).to_have_value("monomakh")
             expect(page.locator("#greekFont")).to_have_value("garamond")
             page.locator("#resetFonts").click()
             page.locator("#fontSettings summary").click()
