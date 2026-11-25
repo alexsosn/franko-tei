@@ -126,7 +126,8 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#contentsProvenance summary').click()
             self.assertEqual(page.locator('#contentsSources button:visible').count(), 2)
             self.assertTrue(page.locator('#contentsEntries .source-link').first.is_visible())
-            self.assertTrue(page.locator('#contentsEntries .contents-note-indicator').first.is_visible())
+            self.assertEqual(page.locator('#contentsEntries .contents-note-indicator').count(), 0)
+            self.assertTrue(page.locator('#contentsEntries .contents-note:not(.contents-original)').first.is_visible())
             page.locator('#contentsSources button').first.click()
             self.assertEqual(page.evaluate('window.lastJump')[:2], ['5','311'])
             self.choose_locale(page, 'uk')
@@ -138,13 +139,301 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#contentsTitle').inner_text(), 'Зміст — Том 5')
             self.assertEqual(page.locator('#contentsEntries .contents-name').first.inner_text(), page.evaluate("volumeContents['5'].entries[0][1]"))
             b = page.locator('#contentsEntries button[data-estimated-scan]').first
-            self.assertIn('не перевірено', b.inner_text())
+            self.assertIn('не звірено', b.get_attribute('title'))
             page.keyboard.press('Escape')
             self.assertTrue(page.locator('#contentsPanel').is_hidden())
             self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'false')
             self.choose_locale(page, 'en')
             self.assertEqual(page.locator('html').get_attribute('lang'), 'en')
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
+            browser.close()
+
+    def test_contents_page_alignment_and_quiet_rows(self):
+        html = APP.read_text(encoding='utf-8')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            for width in (320, 760, 1200):
+                page = browser.new_page(viewport={'width':width,'height':700})
+                page.route('https://**/*', lambda route: route.abort())
+                page.set_content(html)
+                page.locator('#contentsOpen').click()
+                for provenance in (False, True):
+                    if provenance:
+                        page.locator('#contentsProvenance summary').click()
+                    rows = page.locator('#contentsEntries li')
+                    self.assertEqual(rows.locator('.contents-state, .contents-note-indicator').count(), 0)
+                    self.assertEqual(page.locator('#contentsStatus').is_visible(), provenance)
+                    coords = rows.locator('.contents-meta').evaluate_all('nodes => nodes.map(n => n.getBoundingClientRect().right)')
+                    self.assertLess(max(coords)-min(coords), 1.1)
+                    self.assertTrue(rows.evaluate_all('nodes => nodes.every(li => {const b=li.querySelector(".contents-destination"), t=li.querySelector(".contents-title-group"), m=li.querySelector(".contents-meta"); const a=[...li.querySelectorAll(".contents-actions button")].filter(x=>x.getClientRects().length);return a.every(x=>{const r=x.getBoundingClientRect();return r.left>=t.getBoundingClientRect().right-1 && r.right<=m.getBoundingClientRect().left+1 && r.top>=b.getBoundingClientRect().top-1 && r.bottom<=b.getBoundingClientRect().bottom+1;});})'))
+                    self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollWidth <= el.clientWidth'))
+                page.locator('#contentsFilter').fill('CAVT-066')
+                row = page.locator('#contentsEntries li:visible').first
+                row.locator('.contents-ref-toggle').click()
+                self.assertTrue(row.locator('.contents-ref-detail').is_visible())
+                self.assertTrue(page.locator('#contentsPanel').is_visible())
+                page.close()
+            browser.close()
+
+    def test_contents_audit_agrees_with_embedded_data(self):
+        import csv
+        import json
+        html = APP.read_text(encoding='utf-8')
+        def embedded(name):
+            return json.loads(html.split('const ' + name + ' = ', 1)[1].split(';\n', 1)[0])
+        data = embedded('volumeContents')
+        translations = embedded('contentsEnglish')
+        refs = embedded('contentsWorkRefs')
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as stream:
+            rows = list(csv.DictReader(stream, delimiter='\t', quoting=csv.QUOTE_NONE))
+        self.assertEqual(len(rows), sum(len(x['entries']) for x in data.values()))
+        seen = set()
+        for row in rows:
+            v, i = row['volume'], int(row['index_zero_based'])
+            self.assertNotIn((v, i), seen)
+            seen.add((v, i))
+            e = data[v]['entries'][i]
+            self.assertEqual((str(e[0]), e[1], e[2] or ''), (row['contents_scan'], row['literal_title'], row['printed_reference']))
+            self.assertEqual(translations[v][e[1]], row['english_draft'])
+            key = json.dumps(e[:3], ensure_ascii=False, separators=(',', ':'))
+            self.assertEqual(refs.get(v, {}).get(key, []), json.loads(row['catalog_refs_json']))
+            self.assertEqual(row['translation_review'], 'compared-with-printed-TOC-transcription')
+
+    def test_contents_catalogue_citation_discrepancies(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def links(volume, index):
+            entry = data[volume]['entries'][index]
+            return refs.get(volume, {}).get(json.dumps(entry[:3], ensure_ascii=False, separators=(',', ':')), [])
+        for index, identifier in ((36, 'ECCA 933'), (40, 'ECCA 403'), (70, 'ECCA 888')):
+            link = next(x for x in links('3', index) if x['id'] == identifier)
+            self.assertEqual(link['relation'], 'candidate')
+            self.assertIn('page', link['evidence'])
+        self.assertEqual(next(x for x in links('2', 85) if x['id'] == 'ECCA 489')['relation'], 'work-family')
+        self.assertTrue(any(x['id'] == 'ECCA 919' and x['relation'] == 'candidate' for x in links('1', 13)))
+
+    def test_contents_hagiography_reference_scope(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def link(volume, index, identifier):
+            key = json.dumps(data[volume]['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return next(x for x in refs[volume][key] if x['id'] == identifier)
+        ananias = link('3', 115, 'ECCA 958')
+        self.assertEqual(ananias['relation'], 'work-family')
+        self.assertIn('79', ananias['evidence'])
+        for volume, index, identifier in (('3', 116, 'ECCA 958'), ('2', 135, 'ECCA 635'), ('5', 4, 'ECCA 678')):
+            self.assertEqual(link(volume, index, identifier)['relation'], 'candidate')
+
+    def test_contents_ocp_edition_vs_composite(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def link(volume, index, identifier):
+            key = json.dumps(data[volume]['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return next(x for x in refs[volume][key] if x['id'] == identifier)
+        for index, identifier in ((34, 'CAVT-066'), (62, 'CAVT-101'), (81, 'CAVT-118')):
+            item = link('1', index, identifier)
+            self.assertEqual(item['relation'], 'edition-match')
+            self.assertEqual(item['kind'], 'catalog')
+        self.assertIn('recension A', link('1', 62, 'CAVT-101')['evidence'])
+        self.assertEqual(link('1', 45, 'CAVT-089')['relation'], 'work-family')
+        for index in range(82, 94):
+            self.assertEqual(link('1', index, 'CAVT-118')['relation'], 'work-family')
+        self.assertEqual(link('4', 45, 'CAVT-088')['relation'], 'edition-match')
+
+    def test_old_testament_audit_preserves_excerpt_and_recension_scope(self):
+        import csv
+        import json
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as stream:
+            rows = {(r['volume'], int(r['index_zero_based'])): r for r in csv.DictReader(stream, delimiter='\t', quoting=csv.QUOTE_NONE)}
+        for index in (20, 29, 31, 37, 40, 58, 105):
+            r = rows['1', index]
+            self.assertEqual(r['status'], 'title-supported')
+            self.assertIn('excerpt', r['evidence_or_caveat'])
+            self.assertIn('Pseudo-Methodius', r['scholarly_title'])
+            self.assertEqual(json.loads(r['catalog_refs_json']), [])
+        for index in (130, 132):
+            self.assertEqual(rows['1', index]['status'], 'edition-match')
+            self.assertIn('Somov', rows['1', index]['evidence_or_caveat'])
+        self.assertEqual(rows['1', 131]['status'], 'candidate')
+        self.assertEqual(json.loads(rows['1', 131]['catalog_refs_json']), [])
+
+    def test_contents_ocp_public_destinations(self):
+        import json
+        from urllib.parse import urlsplit, parse_qs
+        html = APP.read_text(encoding='utf-8')
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        found = set()
+        for records in refs.values():
+            for links in records.values():
+                for link in links:
+                    if link['provider'] != 'OCP':
+                        continue
+                    found.add(link['id'])
+                    url = urlsplit(link['url'])
+                    self.assertEqual(url.scheme, 'https')
+                    self.assertEqual(url.netloc, 'pseudepigrapha.org')
+                    if link['kind'] == 'catalog':
+                        self.assertEqual(url.path, '/')
+                        self.assertEqual(url.fragment, ':~:text=' + link['id'])
+                    else:
+                        self.assertEqual(url.path, '/reader.html')
+                        self.assertEqual(parse_qs(url.query)['doc'], [{'CAVT-001': 'AdamEve.xml', 'CAVT-088': 'TAbr.xml'}[link['id']]])
+        self.assertTrue({'CAVT-001', 'CAVT-066', 'CAVT-088', 'CAVT-089', 'CAVT-101', 'CAVT-118'}.issubset(found))
+
+    def test_contents_reference_localization_and_multiple_catalogues(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        for records in refs.values():
+            for links in records.values():
+                for link in links:
+                    self.assertTrue(link['titleUk'] and link['evidenceUk'])
+                    self.assertNotEqual(link['evidence'], link['evidenceUk'])
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.evaluate("setUILocale('en')")
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsVolume').select_option('4')
+            page.locator('#contentsFilter').fill('ECCA 983')
+            row = page.locator('#contentsEntries li:visible').first
+            row.locator('.contents-ref-toggle').click()
+            detail = row.locator('.contents-ref-detail')
+            self.assertEqual(detail.locator('a').count(), 2)
+            self.assertIn('CAVT-218', detail.inner_text())
+            self.assertIn('ECCA 983', detail.inner_text())
+            original = detail.locator('.contents-ref-original').inner_text()
+            english = detail.locator('.contents-ref-evidence').all_text_contents()
+            hrefs = detail.locator('a').evaluate_all('nodes => nodes.map(x => x.href)')
+            page.evaluate("setUILocale('uk')")
+            self.assertTrue(detail.is_visible())
+            self.assertEqual(detail.locator('.contents-ref-evidence[lang=uk]').count(), 2)
+            self.assertNotEqual(english, detail.locator('.contents-ref-evidence').all_text_contents())
+            self.assertIn('Вознесіння Ісаї', detail.inner_text())
+            self.assertEqual(hrefs, detail.locator('a').evaluate_all('nodes => nodes.map(x => x.href)'))
+            page.locator('#contentsFilter').fill('Вознесіння Ісаї')
+            self.assertTrue(row.is_visible())
+            page.evaluate("setUILocale('en')")
+            self.assertEqual(english, detail.locator('.contents-ref-evidence').all_text_contents())
+            self.assertEqual(original, detail.locator('.contents-ref-original').inner_text())
+            browser.close()
+
+    def test_contents_palaea_and_prophets_comparative_references(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def links(index):
+            key = json.dumps(data['1']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return {link['id']: link for link in refs['1'].get(key, [])}
+        adam = links(23)
+        self.assertEqual(adam['ECCA 309']['relation'], 'work-family')
+        self.assertEqual(adam['CAVT-001']['relation'], 'candidate')
+        self.assertIn('burial', adam['ECCA 309']['evidence'])
+        for index in (126, 127):
+            link = links(index)['CAVT-213']
+            self.assertEqual(link['relation'], 'work-family')
+            self.assertEqual(link['kind'], 'catalog')
+            self.assertTrue(link['titleUk'] and link['evidenceUk'])
+        self.assertEqual(links(128)['CAVT-213']['relation'], 'candidate')
+        for index in (32, 63, 64):
+            self.assertNotIn('CAVT-066' if index == 32 else 'CAVT-101', links(index))
+
+    def test_contents_work_references(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        for volume, records in refs.items():
+            identities = {(e[0], e[1], e[2]) for e in data[volume]['entries']}
+            for key, links in records.items():
+                self.assertIn(tuple(json.loads(key)), identities)
+                self.assertTrue(links)
+                for link in links:
+                    self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate'))
+                    self.assertIn(link['provider'], ('e-Clavis', 'OCP'))
+                    self.assertTrue(link['title'] and link['id'] and link['evidence'])
+                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/')))
+        html = html.replace('updateMode();load();', 'updateMode();load=()=>{window.lastJump=[$(\'volume\').value,$(\'page\').value];};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsFilter').fill('2 Enoch')
+            row = page.locator('#contentsEntries li:visible').filter(has_text='2 Enoch').first
+            row.locator('.contents-ref-toggle').click()
+            self.assertTrue(row.locator('.contents-ref-detail').is_visible())
+            self.assertIn('CAVT-066', row.locator('.contents-ref-detail').inner_text())
+            self.assertTrue(page.locator('#contentsPanel').is_visible())
+            page.locator('#contentsVolume').select_option('2')
+            page.locator('#contentsFilter').fill('ECCA 421')
+            self.assertEqual(page.locator('#contentsEntries li:visible').count(), 4)
+            row = page.locator('#contentsEntries li:visible').first
+            self.assertTrue(row.locator('.contents-ref-detail').is_hidden())
+            self.assertIn('Infancy Gospel of Thomas', row.locator('.contents-canonical').inner_text())
+            row.locator('.contents-ref-toggle').click()
+            link = row.locator('.contents-ref-detail a').first
+            self.assertEqual(link.get_attribute('target'), '_blank')
+            self.assertIn('noopener', link.get_attribute('rel'))
+            self.assertIn('infancy-gospel-of-thomas', link.get_attribute('href'))
+            self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollWidth <= el.clientWidth'))
+            page.evaluate("setUILocale('uk')")
+            self.assertIn('Збіг із виданням', row.locator('.contents-ref-detail').inner_text())
+            self.assertEqual(page.locator('#volume').input_value(), '1')
+            row.locator('.contents-destination').click()
+            self.assertEqual(page.evaluate('window.lastJump')[0], '2')
+            browser.close()
+
+    def test_english_contents_translation(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        translations = json.loads(html.split('const contentsEnglish = ', 1)[1].split(';\n', 1)[0])
+        for volume, record in data.items():
+            self.assertEqual(set(translations[volume]), {entry[1] for entry in record['entries']})
+            self.assertTrue(all(isinstance(t, str) and t.strip() for t in translations[volume].values()))
+        html = html.replace('updateMode();load();', 'updateMode();load=()=>{};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.locator('#contentsOpen').click()
+            self.assertIn('Old Testament apocrypha', page.locator('#contentsVolume option:checked').inner_text())
+            self.assertTrue(page.locator('#contentsEntries .contents-original').first.is_hidden())
+            page.locator('#contentsProvenance summary').click()
+            self.assertEqual(page.locator('#contentsEntries .contents-original').first.inner_text(), data['1']['entries'][0][1])
+            self.assertTrue(page.locator('#contentsTranslationNote').is_visible())
+            page.locator('#contentsProvenance summary').click()
+            self.assertIsNone(page.evaluate("contentsTranslation('1','missing source title')"))
+            page.locator('#contentsFilter').fill('Enoch')
+            self.assertGreater(page.locator('#contentsEntries .contents-destination:visible').count(), 0)
+            page.locator('#contentsFilter').fill('Еноха')
+            self.assertGreater(page.locator('#contentsEntries .contents-destination:visible').count(), 0)
+            page.locator('#contentsFilter').fill('')
+            for volume, record in data.items():
+                page.locator('#contentsVolume').select_option(volume)
+                names = page.locator('#contentsEntries .contents-name')
+                self.assertEqual(names.count(), len(record['entries']))
+                self.assertEqual(names.all_text_contents(), [translations[volume][e[1]] for e in record['entries']])
+                self.assertEqual(names.first.get_attribute('lang'), 'en')
+            page.evaluate("setUILocale('uk')")
+            self.assertEqual(page.locator('#contentsEntries .contents-name').all_text_contents(), [e[1] for e in data['5']['entries']])
+            self.assertEqual(page.locator('#contentsEntries .contents-name').first.get_attribute('lang'), 'uk')
+            page.evaluate("setUILocale('en')")
+            self.assertEqual(page.locator('#contentsEntries .contents-name').all_text_contents(), [translations['5'][e[1]] for e in data['5']['entries']])
             browser.close()
 
     def test_single_contents_toolbar(self):
@@ -328,7 +617,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,109,36,0],['2',140,29,111,0],
+            self.assertEqual(result, [['1',145,109,36,0],['2',140,40,100,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -346,7 +635,7 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertEqual(page.locator('#contentsEntries button[data-scan], #contentsEntries button[data-estimated-scan]').count(), count)
                 b = page.locator('#contentsEntries button[data-estimated-scan]').first
                 scan = b.get_attribute('data-estimated-scan')
-                self.assertIn('unverified', b.inner_text())
+                self.assertIn('not inspected', b.get_attribute('title'))
                 b.click()
                 self.assertEqual(page.evaluate('window.lastJump'), [v, scan, True])
                 self.assertTrue(page.locator('#contentsPanel').is_hidden())
@@ -363,6 +652,14 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
                          [21, 19, 21, 19, 16, 17, 16])
         self.assertEqual(sum(e[4] == 2 for e in items), 4)
+        # Original images: Roman folios II, V, VI, XVII, XX, XXIV, XXV, XXXIII, XXXIX, LXI, LXIII.
+        preface = volume['entries'][2:13]
+        self.assertEqual([(e[2], e[3]) for e in preface],
+                         [('II–IV', 6), ('V–VI', 9), ('VI–XVII', 10), ('XVII–XX', 21),
+                          ('XX–XXIV', 24), ('XXIV–XXV', 28), ('XXV–XXXII', 29),
+                          ('XXXIII–XXXIX', 37), ('XXXIX–LXI', 43), ('LXI–LXIII', 65),
+                          ('LXIII–LXXVIII', 67)])
+        self.assertTrue(all(len(e) == 6 and 'heading' in e[5] for e in preface))
         continuation = next(e for e in items if e[1].startswith('З. О еллинскихъ мудрецехъ'))
         self.assertEqual((continuation[0], continuation[2]), (519, '33–35'))
         self.assertIn('520', continuation[5])
@@ -919,6 +1216,85 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(d['reading']['reader_id'], anchor['reader_id'])
             self.assertEqual([l['text'] for r in d['reading']['regions'] if r['kind'] == 'heading'
                               for l in r['lines'] if l['id'] == anchor['line_id']], [anchor['text']])
+
+
+    def test_editorial_comparison_uses_existing_gutter(self):
+        import json
+        root=Path(__file__).resolve().parents[1]
+        source=json.loads((root/"pilot/vol1_scan00104_single_reading.json").read_text())
+        intake=json.loads((root/"reviews/intake/fe896df3-3330-4020-b684-4b334a2f24cc.json").read_text())
+        e=next(e for e in intake["bundle"]["events"] if e["target"]["line_id"]=="witness-e-death-adam-l003")
+        region=next(r for r in source["reading"]["regions"] if r["id"]==e["target"]["region_id"])
+        line=next(l for l in region["lines"] if l["id"]==e["target"]["line_id"])
+        review=dict(status="accepted_correction",review_kind="agent",original=line["text"],text=e["replacement"],
+                    contributor_id=intake["submitter"]["github_user_id"],contributor_login=intake["submitter"]["login_at_intake"],
+                    issue_url=intake["submitter"]["issue_url"],source_commit=intake["bundle"]["source_commit"],
+                    review_reason="Internal adjudication log must not be inserted into the reader.")
+        html=APP.read_text(encoding="utf-8").replace("updateMode();load();","updateMode();load=()=>{};load();")
+        with sync_playwright() as p:
+            browser=p.chromium.launch(executable_path=os.environ.get("CHROMIUM") or None,args=["--no-sandbox"])
+            page=browser.new_page(viewport={"width":390,"height":844})
+            page.set_content(html)
+            page.evaluate("""([line,region,review])=>{
+                renderLine(line,region,[]);
+                renderLine({...line,id:'corrected',text:review.text,language_spans:[]},region,[],[],review,line);
+                renderLine({...line,id:'confirmed'},region,[],[],{...review,status:'accepted_confirmation',text:line.text});
+                renderLine({...line,id:'combined',text:review.text,language_spans:[]},region,
+                    [{reading:line.text,reason:'Source note'}],
+                    [{label:'Other reading',reader:'other',text:line.text+'!'}],review,line);
+            }""",[line,region,review])
+            rows=page.locator("#candidate .line-row")
+            self.assertEqual(rows.count(),4)
+            self.assertEqual(page.locator(".editorial-toggle,.editorial-details").count(),0)
+            self.assertEqual(rows.nth(1).locator(".alternate-toggle").count(),1)
+            self.assertEqual(rows.nth(1).locator(".alternate-diff").count(),0)
+            self.assertEqual(rows.nth(3).locator(".alternate-diff").count(),1)
+            self.assertEqual(rows.nth(2).locator("button").count(),0)
+            corrected=rows.nth(1).locator(".line-text")
+            self.assertEqual(corrected.get_attribute("data-font-mode"),"slavonic")
+            self.assertIn("Franko Monomakh",corrected.evaluate("e=>getComputedStyle(e).fontFamily"))
+            self.assertEqual(corrected.locator(".language-span").count(),0)
+            self.assertEqual(page.evaluate("sourceFontMode({text:'аѣ',language_spans:[{start:0,end:1,language:'uk',script:'Cyrl'},{start:1,end:2,language:'cu',script:'Cyrl'}]})"),"plain")
+            self.assertEqual(rows.nth(3).locator("button").count(),2)
+            self.assertEqual(page.locator(".alternate-reasons:visible").count(),0)
+            self.assertEqual(page.locator(".variant-diff:visible").count(),0)
+            self.assertEqual(page.locator("#editorialControls").evaluate("e=>e.closest('details').id"),"readingInfo")
+            for width,height in [(390,844),(320,568),(1280,800)]:
+                page.set_viewport_size({"width":width,"height":height})
+                # No second gutter row or extra vertical space for a confirmation.
+                self.assertEqual(rows.nth(2).bounding_box()["height"],rows.nth(0).bounding_box()["height"])
+                for row in (rows.nth(1),rows.nth(3)):
+                    self.assertLessEqual(row.locator(".line-gutter").bounding_box()["height"],row.locator(".line-text").bounding_box()["height"])
+            toggle=rows.nth(1).locator(".alternate-toggle")
+            toggle.focus()
+            page.keyboard.press("Enter")
+            panel=page.locator(".alternate-reasons:visible")
+            self.assertEqual(panel.count(),1)
+            self.assertIn("Original reading",panel.inner_text())
+            self.assertIn("Agent review · provisional",panel.inner_text())
+            self.assertIn(review["contributor_login"],panel.inner_text())
+            self.assertEqual(panel.locator("a").get_attribute("href"),review["issue_url"])
+            self.assertEqual(panel.locator(".alt-text").text_content(),line["text"])
+            self.assertIn("Franko Monomakh",panel.locator(".alt-text").evaluate("e=>getComputedStyle(e).fontFamily"))
+            self.assertNotIn(review["source_commit"],panel.inner_text())
+            self.assertNotIn("Internal adjudication",panel.inner_text())
+            self.assertNotIn("Approximate geometry match",panel.inner_text())
+            self.assertGreater(rows.nth(1).locator(".variant-diff").count(),0)
+            self.assertGreater(panel.locator(".variant-diff").count(),0)
+            self.assertEqual(toggle.get_attribute("aria-expanded"),"true")
+            self.assertEqual(toggle.get_attribute("aria-controls"),panel.get_attribute("id"))
+            toggle.click()
+            self.assertEqual(rows.nth(1).locator(".variant-diff").count(),0)
+            self.assertEqual(page.locator(".alternate-reasons:visible").count(),0)
+            rows.nth(3).locator(".alternate-toggle").click()
+            panel=page.locator(".alternate-reasons:visible")
+            self.assertEqual(panel.locator(".alt-text").count(),2)
+            self.assertIn("Approximate geometry match",panel.inner_text())
+            self.assertLess(panel.inner_text().index("Original reading"),panel.inner_text().index("Approximate geometry match"))
+            self.choose_locale(page,"uk")
+            self.assertIn("Початкове читання",panel.inner_text())
+            self.assertIn("Агентна перевірка",panel.inner_text())
+            browser.close()
 
     def test_comparison(self):
         with sync_playwright() as p:

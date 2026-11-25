@@ -52,18 +52,6 @@
   // A native textarea cannot style ranges; choose a full historical/Greek
   // face only when every non-whitespace character is covered by that group.
   // Never apply source offsets to the edited value.
-  function reviewFontMode(line,ranges){
-    const group=s=>s.script==='Cyrl'&&['cu','chu','orv'].includes(s.language)?'slavonic':s.script==='Grek'?'greek':'plain';
-    const ordered=[...ranges].sort((a,b)=>a.start-b.start);
-    if(!ordered.length)return 'plain';
-    const mode=group(ordered[0]);if(mode==='plain')return mode;
-    let end=0;
-    for(const s of ordered){
-      if(group(s)!==mode||line.text.slice(end,s.start).trim())return 'plain';
-      end=s.end;
-    }
-    return line.text.slice(end).trim()?'plain':mode;
-  }
   function paintOriginal(line){
     const original=el('reviewOriginal'),ranges=languageRanges(line).sort((a,b)=>a.start-b.start);
     original.replaceChildren();
@@ -75,7 +63,7 @@
       span.textContent=line.text.slice(r.start,r.end);original.append(span);end=r.end;
     }
     original.append(document.createTextNode(line.text.slice(end)));
-    el('reviewEdit').dataset.fontMode=reviewFontMode(line,ranges);
+    el('reviewEdit').dataset.fontMode=sourceFontMode(line,ranges);
   }
   function paint(){
     const x=entry(),line=x.line;
@@ -176,27 +164,33 @@
   const keyGroups={marks:markKeys,letters,superscripts,greek};
   const codepoints=s=>[...s].map(c=>'U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')).join(' ');
   const insertLabel=(c,name)=>name+' · '+codepoints(c);
-  function renderKeyboard(){
-    const keys=el('reviewCharacters'),group=el('reviewKeyboardGroup').value;
-    keys.replaceChildren();
-    uiText(el('reviewCharacterInfo'),'Choose a character; marks are inserted after the caret.');
-    for(const [char,name] of keyGroups[group]){
-      const b=document.createElement('button');b.type='button';b.dataset.insert=char;
-      b.textContent=/^\p{M}/u.test(char)?'◌'+char:char;
-      b.title=insertLabel(char,name);b.setAttribute('aria-label',b.title);
-      b.disabled=!!session?.locked||storageFailed;
-      // Preserve the last selection when pointer/touch activates a key.
-      b.addEventListener('mousedown',e=>e.preventDefault());
-      b.onclick=()=>{const input=el('reviewEdit');if(input.readOnly)return;
-        input.setRangeText(char,input.selectionStart,input.selectionEnd,'end');input.focus();
-        input.dispatchEvent(new Event('input'));el('reviewCharacterInfo').removeAttribute('data-ui-text');
-        el('reviewCharacterInfo').textContent=insertLabel(char,name);
-      };
-      keys.append(b);
+  // Both dialogs share the same raw Unicode keys and insertion behavior.
+  // Review locking is scoped to its input, never the search query.
+  function bindKeyboard({group,keys,info,input,locked=()=>false}){
+    function render(){
+      keys.replaceChildren();
+      uiText(info,'Choose a character; marks are inserted after the caret.');
+      for(const [char,name] of keyGroups[group.value]){
+        const b=document.createElement('button');b.type='button';b.dataset.insert=char;
+        b.textContent=/^\p{M}/u.test(char)?'◌'+char:char;
+        b.title=insertLabel(char,name);b.setAttribute('aria-label',b.title);
+        b.disabled=locked();
+        // Avoid losing the selection on mouse activation; touch/keyboard use the native selection.
+        b.addEventListener('mousedown',e=>e.preventDefault());
+        b.onclick=()=>{
+          if(input.readOnly||input.disabled||locked())return;
+          input.setRangeText(char,input.selectionStart,input.selectionEnd,'end');input.focus();
+          input.dispatchEvent(new Event('input',{bubbles:true}));
+          info.removeAttribute('data-ui-text');info.textContent=insertLabel(char,name);
+        };
+        keys.append(b);
+      }
     }
+    group.addEventListener('change',render);
+    render();
   }
-  el('reviewKeyboardGroup').onchange=renderKeyboard;
-  renderKeyboard();
+  bindKeyboard({group:el('reviewKeyboardGroup'),keys:el('reviewCharacters'),info:el('reviewCharacterInfo'),input:el('reviewEdit'),locked:()=>!!session?.locked||storageFailed});
+  bindKeyboard({group:el('searchKeyboardGroup'),keys:el('searchCharacters'),info:el('searchCharacterInfo'),input:el('query')});
   el('reviewSave').onclick=()=>run(()=>record(session.working===entry().line.text?'confirm':'correct'));
   el('reviewDefer').onclick=()=>run(()=>record('defer'));
   el('reviewUndo').onclick=()=>run(()=>{if(dirty()&&!confirm(tr('Discard the unrecorded edit for this line?')))return;session.events=session.events.filter(e=>e.target.line_id!==session.selected);session.working=entry().line.text;session.note='';persist();paint();});

@@ -53,10 +53,17 @@ identity. Unchanged lines retain original language annotations; corrected
 lines have no inherited language offsets and are explicitly marked
 needs_reannotation / source_notes_need_reassessment. Original uncertainties
 remain in the frozen source. Confirmation does not resolve uncertainty or
-establish complete page verification. Corrections to headings, page
-numbers, note regions, explicit footnote markers and gap-bearing lines
-are intentionally refused in this pilot pending structural handling.
-Only plain body corrections are admitted. A different candidate or a new
+establish complete page verification. Corrections to page numbers, note regions, linked footnote markers and
+gap-bearing lines remain refused. Single-line printed witness labels of
+the form "Д. Рукопис ... стор. 106—110." can be corrected if the siglum,
+page reference, punctuation and numerals are unchanged. The region and
+line IDs stay frozen; no TOC or witness identity is modified. For body
+lines with unlinked printed superscript numerals, the exact ordered
+marker literals and preceding attached tokens must remain unchanged;
+ambiguous repeated attachments are refused. The projection includes
+original and corrected half-open code-point offsets and
+unlinked_markers_preserved, never inferred apparatus links. Changes
+to the attached token itself still need explicit structural review. A different candidate or a new
 blob never silently inherits these decisions.
 
 The current slice supplies the shared projection contract, not a new
