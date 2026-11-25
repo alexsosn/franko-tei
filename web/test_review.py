@@ -328,6 +328,27 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(original, detail.locator('.contents-ref-original').inner_text())
             browser.close()
 
+    def test_contents_palaea_and_prophets_comparative_references(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def links(index):
+            key = json.dumps(data['1']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return {link['id']: link for link in refs['1'].get(key, [])}
+        adam = links(23)
+        self.assertEqual(adam['ECCA 309']['relation'], 'work-family')
+        self.assertEqual(adam['CAVT-001']['relation'], 'candidate')
+        self.assertIn('burial', adam['ECCA 309']['evidence'])
+        for index in (126, 127):
+            link = links(index)['CAVT-213']
+            self.assertEqual(link['relation'], 'work-family')
+            self.assertEqual(link['kind'], 'catalog')
+            self.assertTrue(link['titleUk'] and link['evidenceUk'])
+        self.assertEqual(links(128)['CAVT-213']['relation'], 'candidate')
+        for index in (32, 63, 64):
+            self.assertNotIn('CAVT-066' if index == 32 else 'CAVT-101', links(index))
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
