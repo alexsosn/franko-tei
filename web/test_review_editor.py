@@ -26,6 +26,8 @@ class EditorSmoke(unittest.TestCase):
                 u=r.request.url
                 if u=="https://reader.test/":
                     return r.fulfill(content_type="text/html",body=(ROOT/"web/index.html").read_text())
+                if u=="https://reader.test/review-editor.js":
+                    return r.fulfill(content_type="text/javascript",body=(ROOT/"web/review-editor.js").read_text())
                 if u.endswith("/commits/main"):
                     return r.fulfill(json={"sha":REV})
                 if u.endswith("/manifest.json"):
