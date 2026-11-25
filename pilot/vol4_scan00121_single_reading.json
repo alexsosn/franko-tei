@@ -955,8 +955,16 @@
               {
                 "text_version": "gpt62-single-20261125-v4s00121",
                 "start": 0,
-                "end": 61,
+                "end": 43,
                 "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00121",
+                "start": 43,
+                "end": 61,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true
               }
@@ -976,6 +984,14 @@
               {
                 "text_version": "gpt62-single-20261125-v4s00121",
                 "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00121",
+                "start": 20,
                 "end": 63,
                 "language": "uk",
                 "script": "Cyrl",
@@ -1139,7 +1155,9 @@
       "status": "provisional",
       "scope": "First-reading contiguous code-point language/script spans on all linguistic lines.",
       "policy": "uk historical Ukrainian/Ruthenian tentative, cu Church Slavonic invocation where separately supported, pl Polish Latin-script signature, la Latin editorial insertions. Numeric-only folios untagged. Historic register uncertain; punctuation belongs to adjacent spans.",
-      "notes": "Uhniv continuation and Bachva start are provisionally uk in the existing annotation scheme; Bachva witness may specifically represent Pannonian Rusyn, requires dialect review rather than assuming modern Ukrainian. Polish signature preserves roko, not normalized. Latin sic and Ukrainian editorial correction markers distinct."
+      "notes": "Uhniv continuation and Bachva start are provisionally uk in the existing annotation scheme; Bachva witness may specifically represent Pannonian Rusyn, requires dialect review rather than assuming modern Ukrainian. Polish signature preserves roko, not normalized. Latin sic and Ukrainian editorial correction markers distinct. The standard opening Trinitarian invocation is tentatively tagged cu separately from the surrounding vernacular; mixed orthographic features remain uncertain.",
+      "prior_reading_blob": "c952023f176844b49b8063b91a5385c706b8b144",
+      "annotation_review": "Language metadata only; physical line text and IDs unchanged."
     },
     "geometry_review": {
       "status": "estimated",
