@@ -48,9 +48,38 @@
     el('reviewProgress').textContent=s.events.length+' / '+MAX+' · '+bytes(json()).length+' / '+LIMIT+' B · '+tr(event()?.decision==='confirm'?'Confirmed locally':event()?.decision==='correct'?'Corrected locally':event()?.decision==='defer'?'Deferred locally':'No decision yet');
     el('reviewExport').hidden=!s.locked||storageFailed;el('reviewBundle').value=s.locked&&!storageFailed?json():'';el('reviewDiscard').disabled=storageFailed||s.locked;
   }
+  // Source spans are code-point offsets, converted by the shared reader helper.
+  // A native textarea cannot style ranges; choose a full historical/Greek
+  // face only when every non-whitespace character is covered by that group.
+  // Never apply source offsets to the edited value.
+  function reviewFontMode(line,ranges){
+    const group=s=>s.script==='Cyrl'&&['cu','chu','orv'].includes(s.language)?'slavonic':s.script==='Grek'?'greek':'plain';
+    const ordered=[...ranges].sort((a,b)=>a.start-b.start);
+    if(!ordered.length)return 'plain';
+    const mode=group(ordered[0]);if(mode==='plain')return mode;
+    let end=0;
+    for(const s of ordered){
+      if(group(s)!==mode||line.text.slice(end,s.start).trim())return 'plain';
+      end=s.end;
+    }
+    return line.text.slice(end).trim()?'plain':mode;
+  }
+  function paintOriginal(line){
+    const original=el('reviewOriginal'),ranges=languageRanges(line).sort((a,b)=>a.start-b.start);
+    original.replaceChildren();
+    let end=0;
+    for(const r of ranges){
+      original.append(document.createTextNode(line.text.slice(end,r.start)));
+      const span=document.createElement('span');span.className='language-span';
+      span.dataset.language=r.language;span.dataset.script=String(r.script??'');span.lang=r.language;
+      span.textContent=line.text.slice(r.start,r.end);original.append(span);end=r.end;
+    }
+    original.append(document.createTextNode(line.text.slice(end)));
+    el('reviewEdit').dataset.fontMode=reviewFontMode(line,ranges);
+  }
   function paint(){
     const x=entry(),line=x.line;
-    el('reviewLine').value=session.selected;el('reviewOriginal').textContent=line.text;
+    el('reviewLine').value=session.selected;paintOriginal(line);
     el('reviewEdit').value=session.working;el('reviewNote').value=session.note;
     el('reviewReasons').replaceChildren();
     for(const note of data.reading.uncertainty_notes??[])if(note.line_id===line.id){const p=document.createElement('p');p.textContent=note.reading+' — '+note.reason;el('reviewReasons').append(p);}
