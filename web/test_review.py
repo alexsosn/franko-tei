@@ -163,7 +163,7 @@ class ReviewSmoke(unittest.TestCase):
         html = APP.read_text(encoding='utf-8')
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
-        self.assertGreaterEqual(len(anchors), 11)
+        self.assertGreaterEqual(len(anchors), 15)
         self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
                          [('89', 141, 'pachomius-vision-heading-line-01'),
                           ('90', 141, 'pachomius-word-heading-line-01'),
@@ -179,7 +179,7 @@ class ReviewSmoke(unittest.TestCase):
         # Complete linguistic coverage for the annotated anchor-page batch.
         for scan in sorted({e[3] for e in anchors}):
             record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
-            if scan in (71, 94, 141, 142, 143, 211, 307, 518):
+            if scan in (71, 72, 74, 75, 76, 94, 141, 142, 143, 211, 307, 518):
                 self.assertIn('language_annotation', record['reading'])
             elif 'language_annotation' not in record['reading']:
                 continue  # future batches use the general corpus validator
@@ -207,6 +207,26 @@ class ReviewSmoke(unittest.TestCase):
         greek = [(l['text'][s['start']:s['end']], s['script']) for l in note_lines
                  for s in l['language_spans'] if s['language'] == 'grc']
         self.assertEqual(greek, [('ἔτη ἓξ καὶ πέντε. καὶ φυτευθήσονται.', 'Grek')])
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (72, 74, 75, 76)],
+                         [('20', 72, 'teacher-heading-line-01'),
+                          ('22', 74, 'communion-heading-line-01'),
+                          ('23', 75, 'gospel-heading-line-01'),
+                          ('24', 76, 'souls-heading-line-01')])
+        communion = next(e for e in anchors if e[3] == 74)
+        self.assertIn('Якимчицький', communion[1])
+        self.assertIn('Комарнянський', communion[6]['text'])
+        self.assertIn('witness identification pending', communion[5])
+        for scan, marker_id in [(72, 'creation-line-07'), (75, 'gospel-line-37')]:
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            self.assertEqual(len(rec['source_note_links']), 1)
+            link = rec['source_note_links'][0]
+            self.assertEqual(link['marker_line_id'], marker_id)
+            line = next(l for r in rec['regions'] for l in r['lines'] if l['id'] == marker_id)
+            start = link['marker_start']
+            self.assertEqual(line['text'][start:start + len(link['marker_text'])], link['marker_text'])
+            note = next(r for r in rec['regions'] if r['id'] == link['note_region_id'])
+            self.assertEqual(note['kind'], 'note')
+            self.assertTrue(note['lines'][0]['text'].startswith(link['marker_text']))
         manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
                     'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
                                  {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
