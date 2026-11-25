@@ -1,0 +1,531 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 93,
+  "printed_page_observed": "18",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00093.jpg",
+  "source_image_sha256": "bd1adcae40ae5a7662865f58db6628501a5ba10635b0f350c5df135f6faf414c",
+  "reading": {
+    "reader_id": "gpt62-i93-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i93-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG, without embedded OCR or peer page reading. Surrounding project context visible, not isolated corroboration. Preserve physical lines, observed folio only, editorial brackets, separate witness and commentary, and literal superscript note references. Glyphs and geometry approximate; manifest SHA pending native-byte/XML checks.",
+    "raw_response": "18\nГл. Палея толковая ст. 62, стовпцї 123—125, відкіля взяті ва-\nріянти поміщені у нас в примітках. Гл. також И. Я. П о р ф и р ь е в ъ, Ска-\nзанія о ветхозавѣтныхъ лицахъ и событіяхъ по рукописямъ Соловецкой\nбибліотеки, стор. 89—90, також палейний текст.\nБ. Рукопис о. Білахевича, стор. 408.\nИ́ насади Бг҃ъ рай на востоцѣхъ во Єдемѣ, і въведе ту\nчл҃вка, его же созда. и́ прозябе Бг҃ъ еще ѿ земли всяко древо\nкрасно во видѣніе і добро во снѣдь, и́ древо жизни посредѣ рая,\nи́ древо еже видѣти разумно добру и́ лукаву.\nРѣка же ісходитъ із Єдема напаяти рай. Тамо разлучает\nся во четири начала: имя единой Физонъ, сія ѡбходитъ всю\nземлю Євилатску, тамо оубо ест злато, злато же ѡноя земля\nесть добро тамо есть андраξъ и́ камень зеленій. имя рѣцѣ\nвторой Гіѡнъ, сія ѡбходящи всю землю Єѳіѡпску. Рѣка тре-\nтая Тигръ, сія идущи прямо Асиріѡмъ. Рѣка четвертая Єфратъ.\nХоча поміщений тут палейний текст не має в собі нїяких апокрі-\nфічних подробиць, то про те він заслугує на увагу як давня і дуже ще\nслабка проба мальованя пейзажа словами. Статейка о. Білахевича до по-\nдробиць узятих з Біблїї дочіплює деякі подробицї, котрих там нема; сї\nподробицї (ґеоґрафія рік випливаючих із раю і мінерали, які находять ся\nнад тими ріками) взяті з якогось середновікового ляпідара (статї о до-\nрогих камінях), котрих образцї будуть поміщені в одній із дальших кни-\nжок нашої збірки.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            552,
+            1236,
+            235,
+            18
+          ],
+          "description": "Decorative closing rule."
+        },
+        {
+          "bbox_xywh": [
+            180,
+            1260,
+            960,
+            468
+          ],
+          "description": "Blank lower page."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          182,
+          118,
+          44,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "18",
+            "bbox_xywh": [
+              182,
+              118,
+              44,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-a",
+        "kind": "body",
+        "bbox_xywh": [
+          185,
+          186,
+          974,
+          143
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-a-l001",
+            "text": "Гл. Палея толковая ст. 62, стовпцї 123—125, відкіля взяті ва-",
+            "bbox_xywh": [
+              185,
+              186,
+              974,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-a-l002",
+            "text": "ріянти поміщені у нас в примітках. Гл. також И. Я. П о р ф и р ь е в ъ, Ска-",
+            "bbox_xywh": [
+              185,
+              222,
+              974,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-a-l003",
+            "text": "занія о ветхозавѣтныхъ лицахъ и событіяхъ по рукописямъ Соловецкой",
+            "bbox_xywh": [
+              185,
+              259,
+              974,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-a-l004",
+            "text": "библіотеки, стор. 89—90, також палейний текст.",
+            "bbox_xywh": [
+              185,
+              295,
+              974,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          377,
+          398,
+          581,
+          34
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-label-l001",
+            "text": "Б. Рукопис о. Білахевича, стор. 408.",
+            "bbox_xywh": [
+              377,
+              398,
+              581,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-paradise",
+        "kind": "body",
+        "bbox_xywh": [
+          185,
+          470,
+          978,
+          143
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-paradise-l001",
+            "text": "И́ насади Бг҃ъ рай на востоцѣхъ во Єдемѣ, і въведе ту",
+            "bbox_xywh": [
+              185,
+              470,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-paradise-l002",
+            "text": "чл҃вка, его же созда. и́ прозябе Бг҃ъ еще ѿ земли всяко древо",
+            "bbox_xywh": [
+              185,
+              507,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-paradise-l003",
+            "text": "красно во видѣніе і добро во снѣдь, и́ древо жизни посредѣ рая,",
+            "bbox_xywh": [
+              185,
+              543,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-paradise-l004",
+            "text": "и́ древо еже видѣти разумно добру и́ лукаву.",
+            "bbox_xywh": [
+              185,
+              579,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-rivers",
+        "kind": "body",
+        "bbox_xywh": [
+          186,
+          615,
+          978,
+          216
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-rivers-l001",
+            "text": "Рѣка же ісходитъ із Єдема напаяти рай. Тамо разлучает",
+            "bbox_xywh": [
+              186,
+              615,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-rivers-l002",
+            "text": "ся во четири начала: имя единой Физонъ, сія ѡбходитъ всю",
+            "bbox_xywh": [
+              186,
+              652,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-rivers-l003",
+            "text": "землю Євилатску, тамо оубо ест злато, злато же ѡноя земля",
+            "bbox_xywh": [
+              186,
+              688,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-rivers-l004",
+            "text": "есть добро тамо есть андраξъ и́ камень зеленій. имя рѣцѣ",
+            "bbox_xywh": [
+              186,
+              725,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-rivers-l005",
+            "text": "второй Гіѡнъ, сія ѡбходящи всю землю Єѳіѡпску. Рѣка тре-",
+            "bbox_xywh": [
+              186,
+              761,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-rivers-l006",
+            "text": "тая Тигръ, сія идущи прямо Асиріѡмъ. Рѣка четвертая Єфратъ.",
+            "bbox_xywh": [
+              186,
+              797,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-b",
+        "kind": "body",
+        "bbox_xywh": [
+          192,
+          869,
+          970,
+          291
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-b-l001",
+            "text": "Хоча поміщений тут палейний текст не має в собі нїяких апокрі-",
+            "bbox_xywh": [
+              192,
+              869,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-b-l002",
+            "text": "фічних подробиць, то про те він заслугує на увагу як давня і дуже ще",
+            "bbox_xywh": [
+              192,
+              905,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-b-l003",
+            "text": "слабка проба мальованя пейзажа словами. Статейка о. Білахевича до по-",
+            "bbox_xywh": [
+              192,
+              942,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-b-l004",
+            "text": "дробиць узятих з Біблїї дочіплює деякі подробицї, котрих там нема; сї",
+            "bbox_xywh": [
+              192,
+              979,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-b-l005",
+            "text": "подробицї (ґеоґрафія рік випливаючих із раю і мінерали, які находять ся",
+            "bbox_xywh": [
+              192,
+              1015,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-b-l006",
+            "text": "над тими ріками) взяті з якогось середновікового ляпідара (статї о до-",
+            "bbox_xywh": [
+              192,
+              1052,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-b-l007",
+            "text": "рогих камінях), котрих образцї будуть поміщені в одній із дальших кни-",
+            "bbox_xywh": [
+              192,
+              1089,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-b-l008",
+            "text": "жок нашої збірки.",
+            "bbox_xywh": [
+              192,
+              1126,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-a-l001",
+        "reading": "Гл. Палея толковая ст. 62, стовпцї 123—125, відкіля взяті ва-",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-a-l002",
+        "reading": "ріянти поміщені у нас в примітках. Гл. також И. Я. П о р ф и р ь е в ъ, Ска-",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-a-l003",
+        "reading": "занія о ветхозавѣтныхъ лицахъ и событіяхъ по рукописямъ Соловецкой",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-a-l004",
+        "reading": "библіотеки, стор. 89—90, також палейний текст.",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-label-l001",
+        "reading": "Б. Рукопис о. Білахевича, стор. 408.",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-paradise-l001",
+        "reading": "И́ насади Бг҃ъ рай на востоцѣхъ во Єдемѣ, і въведе ту",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-paradise-l002",
+        "reading": "чл҃вка, его же созда. и́ прозябе Бг҃ъ еще ѿ земли всяко древо",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-paradise-l003",
+        "reading": "красно во видѣніе і добро во снѣдь, и́ древо жизни посредѣ рая,",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-paradise-l004",
+        "reading": "и́ древо еже видѣти разумно добру и́ лукаву.",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-rivers-l001",
+        "reading": "Рѣка же ісходитъ із Єдема напаяти рай. Тамо разлучает",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-rivers-l002",
+        "reading": "ся во четири начала: имя единой Физонъ, сія ѡбходитъ всю",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-rivers-l003",
+        "reading": "землю Євилатску, тамо оубо ест злато, злато же ѡноя земля",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-rivers-l004",
+        "reading": "есть добро тамо есть андраξъ и́ камень зеленій. имя рѣцѣ",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-rivers-l005",
+        "reading": "второй Гіѡнъ, сія ѡбходящи всю землю Єѳіѡпску. Рѣка тре-",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "witness-b-rivers-l006",
+        "reading": "тая Тигръ, сія идущи прямо Асиріѡмъ. Рѣка четвертая Єфратъ.",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l001",
+        "reading": "Хоча поміщений тут палейний текст не має в собі нїяких апокрі-",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l002",
+        "reading": "фічних подробиць, то про те він заслугує на увагу як давня і дуже ще",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l003",
+        "reading": "слабка проба мальованя пейзажа словами. Статейка о. Білахевича до по-",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l004",
+        "reading": "дробиць узятих з Біблїї дочіплює деякі подробицї, котрих там нема; сї",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l005",
+        "reading": "подробицї (ґеоґрафія рік випливаючих із раю і мінерали, які находять ся",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l006",
+        "reading": "над тими ріками) взяті з якогось середновікового ляпідара (статї о до-",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l007",
+        "reading": "рогих камінях), котрих образцї будуть поміщені в одній із дальших кни-",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-b-l008",
+        "reading": "жок нашої збірки.",
+        "reason": "Provisional direct printed reading. Historical letters, titla, superscript reference numbers, bracket contents, names, punctuation and tracking require isolated visual rereading; no normalization or harmonization."
+      }
+    ]
+  }
+}
