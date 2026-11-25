@@ -20,7 +20,7 @@ class ReviewSmoke(unittest.TestCase):
             def draft(n):
                 return {'volume': '1', 'scan_page': n, 'status': 'agent_unverified', 'schema_version': 'single-image-draft-v0', 'asset_commit': COMMIT,
                     'source_image_path': f'vol1/page-{n:05d}.'+('jpg' if n == 1 else 'png'), 'source_image_sha256': ('a' if n == 1 else 'c')*64,
-                    'printed_page_observed': 'XI', 'reading': {'reader_id': 'synthetic', 'context_independence': 'single', 'regions': [{'kind': 'body', 'lines': [{'id': 'l1', 'text': 'ѣ <script>ἀ</script>', 'bbox_xywh': [0, 0, 1, 1], 'geometry_estimated': True}, {'id': 'l2', 'text': 'ѣѣ ѣ', 'bbox_xywh': [0, 0, 1, 1], 'geometry_estimated': True}]}], 'uncertainty_notes': [{'line_id':'l1','reading':'ἀ','reason':'synthetic accent note'}, {'line_id':'l1','reading':'<script>ἀ','reason':'overlapping note'}, {'line_id':'l2','reading':'ѣ','reason':'repeated reading'}, {'line_id':'l2','reading':'absent','reason':'unanchored fixture'}]}}
+                    'printed_page_observed': 'XI', 'reading': {'reader_id': 'synthetic', 'context_independence': 'single', 'regions': [{'kind': 'body', 'lines': [{'id': 'l1', 'text': 'ѣ <script>ἀ</script>', 'bbox_xywh': [0, 0, 1, .4], 'geometry_estimated': True}, {'id': 'l2', 'text': 'ѣѣ ѣ', 'bbox_xywh': [0, .6, 1, .4], 'geometry_estimated': True}]}], 'uncertainty_notes': [{'line_id':'l1','reading':'ἀ','reason':'synthetic accent note'}, {'line_id':'l1','reading':'<script>ἀ','reason':'overlapping note'}, {'line_id':'l2','reading':'ѣ','reason':'repeated reading'}, {'line_id':'l2','reading':'absent','reason':'unanchored fixture'}]}}
             alternate = draft(1)
             alternate['reading']['reader_id'] = 'synthetic-alternate'
             alternate['reading']['regions'][0]['lines'][0]['text'] = 'alternate ἀ'
@@ -48,6 +48,12 @@ class ReviewSmoke(unittest.TestCase):
             page.set_content(APP.read_text(encoding='utf-8'))
             page.locator('#candidate').get_by_text('ѣ <script>ἀ</script>', exact=False).wait_for()
             self.assertEqual(page.locator('#choice option').count(), 2)
+            self.assertEqual(page.locator('.alternate-toggle').count(), 1)
+            self.assertFalse(page.locator('.alternate-reasons').first.is_visible())
+            page.locator('.alternate-toggle').first.click()
+            self.assertIn('alternate ἀ', page.locator('.alternate-reasons').first.text_content())
+            self.assertIn('Approximate geometry match', page.locator('.alternate-reasons').first.text_content())
+            page.locator('.alternate-toggle').first.click()
             page.locator('#choice').select_option(label='alternate reading 01')
             self.assertIn('alternate ἀ', page.locator('#candidate').text_content())
             self.assertEqual(page.locator('#candidate mark').first.text_content(), 'ἀ')
