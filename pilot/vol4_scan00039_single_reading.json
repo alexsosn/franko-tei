@@ -1,0 +1,1127 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 39,
+  "printed_page_observed": "XXXV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00039.jpg",
+  "source_image_sha256": "bad8155dab1124b26cae22fc8ccba296377755152cc201785649651860ce16e2",
+  "reading": {
+    "reader_id": "gpt62-iv-39-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-31-40-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Source-first physical line transcription from pinned native JPEG, no OCR or peer reading for these pages. Preserve historical glyphs, printed sic, line-end hyphens, numbering, contextual language and uncertainty. Geometry estimated; no verified claim.",
+    "raw_response": "XXXV\nВ Естрайхеровій бібліоґрафії старого польського письменства¹)\nзнаходимо дуже мало слїдів розширеня апокріфів серед польської\nсуспільности. Подаю тут те, що більше-менше подобає на такі слї-\nди. І так під р. 1527 Естрайхер нотує краківське виданє брошури\nVincentius, Prophetiae tres Danielis horribiles — твір очевидно\nне польський, а передрукований із якогось західного виданя, але\nчи має який звязок з апокріфічним Видїнєм Даниловим, не відомо.\nВ р. 1528 вийшла і потім богато разів (1544 і пізн.) була передрукована\n(коли вірити Естрайхеру) книжечка: Sybilla Erythraea, carmina in-\nterpretavit Georgius Libanus. Під роком 1533 подано виданє „Wy-\nprawa duszy na tamten świat, po polsku, po łacinie i po litewsku“,\nнїбито публїковане в Вільнї — річ о стільки фантастична, що й сам\nд. Естрайхер ставить її під знаком запитаня. В р. 1535 якийсь\nProszowianus видав Ode de inferorum demolitione, річ, яку-б\nварто роздивити близше. В р. 1590 вийшла книжечка Dąbrow-\nski, Opisanie wieków ostatecznych; чи має вона що спільного з От-\nкровенїєм Мефодія Патарського, годї сказати. Здаєть ся, що ту са-\nму книжечку подає Естрайхер і під р. 1596 нз. Dąbrowski X.,\nŻałosne opisanie wieków ostatnich. Не стрічаємо тут натомісь анї Proroc-\ntwa św. Metodjusza, знаного з рукоп. Оссол. ч. 10 виразно як копія\nз друку, анї книжки „Wieczność piekielna“, знаної з руського пе-\nрекладу відомого в двох копіях, описаних мною в нарисї „Карпа-\nторуське письменство“ ²), хоч апокріфічного в нїй дуже мало.\nЗ XVII в. і то аж з кінцевих десятилїть (копія з р. 1680) дій-\nшли до нас дві памятки польської апокріфічної лїтератури. В дру-\nгім томі свойого „Latopisca“ Йоахим Єрлич, православний шляхтич,\nхоч і писав по польськи, перериваючи оповіданє подїй з зими\n1660 р., вставляє в свій текст ось який:\nList Pana Jezusa Nazarańskiego, króla Juckiego.\nTe słowa Boże święte, na ten świat zesłane od samego Pana Boga\nLwowi Papieżowi, a Lew Papież posłał bratu swemu Królowi na-\nprzeciwko nieprzyjaciołom onego, i ten list taką moc ma, gdy onego\nkto czyta albo onego słucha, tedy ten człowiek na dzień 1000 grze-\nchów odpustu ma, i na każdy dzień żadna zła rzecz nie zaszkodzi, tak-\n¹) K. Estreicher, Bibliografia Polska XV—XVI stul. Kraków 1875 і йогож\nBibliografia polska, część II tomu I, Kraków 1882.\n²) Ів. Франко, Карпаторуське письменство XVII--XVIII в. Львів 1900, ст.\n116—124.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            130,
+            1458,
+            220,
+            10
+          ],
+          "description": "Footnote rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          980,
+          85,
+          115,
+          55
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XXXV",
+            "bbox_xywh": [
+              980,
+              85,
+              115,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 4,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          125,
+          167,
+          955,
+          965
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "В Естрайхеровій бібліоґрафії старого польського письменства¹)",
+            "bbox_xywh": [
+              125,
+              167,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "знаходимо дуже мало слїдів розширеня апокріфів серед польської",
+            "bbox_xywh": [
+              125,
+              201,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "суспільности. Подаю тут те, що більше-менше подобає на такі слї-",
+            "bbox_xywh": [
+              125,
+              235,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "ди. І так під р. 1527 Естрайхер нотує краківське виданє брошури",
+            "bbox_xywh": [
+              125,
+              270,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "Vincentius, Prophetiae tres Danielis horribiles — твір очевидно",
+            "bbox_xywh": [
+              125,
+              304,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 47,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "не польський, а передрукований із якогось західного виданя, але",
+            "bbox_xywh": [
+              125,
+              339,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "чи має який звязок з апокріфічним Видїнєм Даниловим, не відомо.",
+            "bbox_xywh": [
+              125,
+              373,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "В р. 1528 вийшла і потім богато разів (1544 і пізн.) була передрукована",
+            "bbox_xywh": [
+              125,
+              408,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 71,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "(коли вірити Естрайхеру) книжечка: Sybilla Erythraea, carmina in-",
+            "bbox_xywh": [
+              125,
+              442,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 35,
+                "end": 65,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "terpretavit Georgius Libanus. Під роком 1533 подано виданє „Wy-",
+            "bbox_xywh": [
+              125,
+              477,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 28,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 60,
+                "end": 63,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "prawa duszy na tamten świat, po polsku, po łacinie i po litewsku“,",
+            "bbox_xywh": [
+              125,
+              511,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 64,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "нїбито публїковане в Вільнї — річ о стільки фантастична, що й сам",
+            "bbox_xywh": [
+              125,
+              546,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "д. Естрайхер ставить її під знаком запитаня. В р. 1535 якийсь",
+            "bbox_xywh": [
+              125,
+              580,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "Proszowianus видав Ode de inferorum demolitione, річ, яку-б",
+            "bbox_xywh": [
+              125,
+              615,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 12,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 12,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 19,
+                "end": 47,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 47,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "варто роздивити близше. В р. 1590 вийшла книжечка Dąbrow-",
+            "bbox_xywh": [
+              125,
+              649,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 50,
+                "end": 57,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "ski, Opisanie wieków ostatecznych; чи має вона що спільного з От-",
+            "bbox_xywh": [
+              125,
+              683,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 33,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "кровенїєм Мефодія Патарського, годї сказати. Здаєть ся, що ту са-",
+            "bbox_xywh": [
+              125,
+              718,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "му книжечку подає Естрайхер і під р. 1596 нз. Dąbrowski X.,",
+            "bbox_xywh": [
+              125,
+              752,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 46,
+                "end": 59,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "Żałosne opisanie wieków ostatnich. Не стрічаємо тут натомісь анї Proroc-",
+            "bbox_xywh": [
+              125,
+              787,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 33,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 65,
+                "end": 72,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "twa św. Metodjusza, знаного з рукоп. Оссол. ч. 10 виразно як копія",
+            "bbox_xywh": [
+              125,
+              821,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 18,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "з друку, анї книжки „Wieczność piekielna“, знаної з руського пе-",
+            "bbox_xywh": [
+              125,
+              856,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 21,
+                "end": 40,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 40,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "рекладу відомого в двох копіях, описаних мною в нарисї „Карпа-",
+            "bbox_xywh": [
+              125,
+              890,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "торуське письменство“ ²), хоч апокріфічного в нїй дуже мало.",
+            "bbox_xywh": [
+              125,
+              925,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "З XVII в. і то аж з кінцевих десятилїть (копія з р. 1680) дій-",
+            "bbox_xywh": [
+              125,
+              959,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "шли до нас дві памятки польської апокріфічної лїтератури. В дру-",
+            "bbox_xywh": [
+              125,
+              994,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "гім томі свойого „Latopisca“ Йоахим Єрлич, православний шляхтич,",
+            "bbox_xywh": [
+              125,
+              1028,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 18,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 27,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "хоч і писав по польськи, перериваючи оповіданє подїй з зими",
+            "bbox_xywh": [
+              125,
+              1063,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "1660 р., вставляє в свій текст ось який:",
+            "bbox_xywh": [
+              125,
+              1097,
+              955,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 40,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "letter-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          200,
+          1203,
+          870,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "letter-heading-line-01",
+            "text": "List Pana Jezusa Nazarańskiego, króla Juckiego.",
+            "bbox_xywh": [
+              200,
+              1203,
+              870,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "letter",
+        "kind": "body",
+        "bbox_xywh": [
+          125,
+          1252,
+          952,
+          173
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "letter-line-01",
+            "text": "Te słowa Boże święte, na ten świat zesłane od samego Pana Boga",
+            "bbox_xywh": [
+              125,
+              1252,
+              952,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "letter-line-02",
+            "text": "Lwowi Papieżowi, a Lew Papież posłał bratu swemu Królowi na-",
+            "bbox_xywh": [
+              125,
+              1286,
+              952,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "letter-line-03",
+            "text": "przeciwko nieprzyjaciołom onego, i ten list taką moc ma, gdy onego",
+            "bbox_xywh": [
+              125,
+              1321,
+              952,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "letter-line-04",
+            "text": "kto czyta albo onego słucha, tedy ten człowiek na dzień 1000 grze-",
+            "bbox_xywh": [
+              125,
+              1355,
+              952,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "letter-line-05",
+            "text": "chów odpustu ma, i na każdy dzień żadna zła rzecz nie zaszkodzi, tak-",
+            "bbox_xywh": [
+              125,
+              1390,
+              952,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 69,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "note-1",
+        "kind": "note",
+        "bbox_xywh": [
+          128,
+          1480,
+          950,
+          60
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "note-1-line-01",
+            "text": "¹) K. Estreicher, Bibliografia Polska XV—XVI stul. Kraków 1875 і йогож",
+            "bbox_xywh": [
+              128,
+              1480,
+              950,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 3,
+                "end": 62,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 62,
+                "end": 70,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "note-1-line-02",
+            "text": "Bibliografia polska, część II tomu I, Kraków 1882.",
+            "bbox_xywh": [
+              128,
+              1510,
+              950,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 50,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "note-2",
+        "kind": "note",
+        "bbox_xywh": [
+          127,
+          1545,
+          950,
+          60
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "note-2-line-01",
+            "text": "²) Ів. Франко, Карпаторуське письменство XVII--XVIII в. Львів 1900, ст.",
+            "bbox_xywh": [
+              127,
+              1545,
+              950,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 71,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "note-2-line-02",
+            "text": "116—124.",
+            "bbox_xywh": [
+              127,
+              1575,
+              950,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-39-image-20261126",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "letter-heading-line-01",
+        "reading": "Juckiego",
+        "reason": "Unusual title spelling retained, not modernized to Judzkiego."
+      },
+      {
+        "line_id": "letter-heading-line-01",
+        "reading": "Nazarańskiego",
+        "reason": "Printed title vowel and accent provisional."
+      },
+      {
+        "line_id": "letter-line-02",
+        "reading": "Lwowi Papieżowi",
+        "reason": "Printed wording retained."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "preface-line-01",
+        "marker_text": "¹)",
+        "marker_start": 59,
+        "note_region_id": "note-1"
+      },
+      {
+        "marker_line_id": "preface-line-23",
+        "marker_text": "²)",
+        "marker_start": 22,
+        "note_region_id": "note-2"
+      }
+    ]
+  }
+}
