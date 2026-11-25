@@ -70,7 +70,9 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#ocrStatus")).to_contain_text("Empty original OCR")
             expect(page.locator("#ocr")).to_have_text("")
             # Actual exposed reading I/52 contains whole-line and partial uncertainty notes.
-            page.goto(base + "#v=1&p=52&ref=main")
+            page.locator("#volume").select_option("1")
+            page.locator("#page").fill("52")
+            page.locator("#go").click()
             expect(page.locator("#choice option").filter(has_text="exposed reading")).to_have_count(1)
             page.locator("#choice").select_option(label="GPT-6 · exposed reading")
             whole_flag = page.get_by_role("button", name="Uncertainty notes for main-line-01", exact=True)
