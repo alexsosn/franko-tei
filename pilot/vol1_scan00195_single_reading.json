@@ -1187,6 +1187,22 @@
               },
               {
                 "start": 18,
+                "end": 58,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i195-first-image-20261125"
+              },
+              {
+                "start": 58,
+                "end": 59,
+                "language": "ru",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i195-first-image-20261125"
+              },
+              {
+                "start": 59,
                 "end": 60,
                 "language": "ru",
                 "script": "Cyrl",
@@ -1366,6 +1382,22 @@
               },
               {
                 "start": 1,
+                "end": 40,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i195-first-image-20261125"
+              },
+              {
+                "start": 40,
+                "end": 43,
+                "language": "ru",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i195-first-image-20261125"
+              },
+              {
+                "start": 43,
                 "end": 50,
                 "language": "ru",
                 "script": "Cyrl",
@@ -1524,6 +1556,22 @@
               },
               {
                 "start": 31,
+                "end": 37,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i195-first-image-20261125"
+              },
+              {
+                "start": 37,
+                "end": 43,
+                "language": "ru",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i195-first-image-20261125"
+              },
+              {
+                "start": 43,
                 "end": 50,
                 "language": "ru",
                 "script": "Cyrl",
@@ -1835,5 +1883,14 @@
         "reason": "Provisional direct image reading; historical glyphs, variant names, labels and typography need reinspection."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "61d5d0ab935af4cc5f7c216a265383652e97645c",
+    "source_record_blob": "d321f1d28c1e97d9f886fca21212ef5852f301e1",
+    "scope": "Script refinement only: Roman numerals retain contextual language.",
+    "status": "agent_unverified",
+    "method": "Separate annotation audit against exact frozen reading; no change to source text, geometry or provenance."
   }
 }
