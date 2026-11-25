@@ -163,7 +163,12 @@ class ReviewSmoke(unittest.TestCase):
         html = APP.read_text(encoding='utf-8')
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
-        self.assertEqual(len(anchors), 4)
+        self.assertGreaterEqual(len(anchors), 8)
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
+                         [('89', 141, 'pachomius-vision-heading-line-01'),
+                          ('90', 141, 'pachomius-word-heading-line-01'),
+                          ('89', 142, 'untitled-heading-line-01'),
+                          ('91', 143, 'dorotheus-heading-line-01')])
         for e in anchors:
             a = e[6]
             d = json.loads((root / f"pilot/vol4_scan{e[3]:05d}_{a['suffix']}.json").read_text(encoding='utf-8'))
