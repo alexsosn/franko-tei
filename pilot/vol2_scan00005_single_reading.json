@@ -1,0 +1,770 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 5,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00005.jpg",
+  "source_image_sha256": "442155b7c964b25e107a8fb8915cf5e51e9342bcebf18b8ed4a0d1290bb9d9bd",
+  "reading": {
+    "reader_id": "gpt62-ii-5-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00001-00010-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Transcribe physical lines of pinned source image, no OCR or peer text for this page. Preserve spelling, line-end hyphens and bibliographic language switches; approximate geometry; no verified claim.",
+    "raw_response": "ПЕРЕДМОВА.\nI. Зміст і характер отсего тома. Отсей другий том\n„Памяток українсько-руської мови і лїтератури“ містить у собі\nпершу половину збірки новозавітних апокріфів, а власне апокріфи\nі леґенди євангельського круга, тоб то на теми анальоґічні з тими,\nпро які говорять канонїчні євангелия. Земне житє Ісуса, його ма-\nтери і найблизшого окруженя, отсе зміст сих оповідань. Друга по-\nловина обійме оповіданя про апостолів і деяких учеників Ісусових.\nЗадля самого характеру зібраних тут матеріялів сей том має фізі-\nономію значно відмінну від першого тома нашої збірки. Бо коли\nтам мали ми переважно твори мало доступні для ширших мас на-\nрода, читані хиба більше письменними, важкі своєю мовою і темні\nнераз своїм змістом, тут зустрічаємо переважно річи, котрими\nцікавили ся і доси цікавлять ся широкі верстви народа, надто річи\nоповідані дуже інтересно, нераз поетично і драматично, або ж такі,\nщо сильно вдаряли на фантазию. От тим то головне явище, яке\nбачимо в матеріялах сего тома — се богатство нових, популярних\nпереробок старих апокріфічних історій. І коли в першім томі нам\nприходило ся черпати в значній мірі з рукопису (Крехівської Па-\nлєї), що хоч був уживаний в нашім краю, то про те і мовою і пись-\nмом виявляє чуже, північне походжене, то тут, у другім томі, ми\nмайже без виємка (крім одинокого невеличкого оповіданя взятого\nз тоїж Крехівської Палєї) знаходимо ся на ґрунті українсько-\nруського письменства. Друга характерна прикмета отсего тома —\nбогатство угроруського матеріялу. Можна назвати щасливим при-\nпадком те, що дд. В. Гнатюк і проф. О. Колесса в часі своїх по-\nдорожей на Угорську Русь повіднаходили рукописи, з котрих менї\nдовело ся опублікувати поміщені тут оповіданя. Та про те з самого\nфакту, що в короткім часі, майже не шукаючи спеціяльно, вони\nмогли повіднаходити такі богаті збірки, ми можемо догадувати ся\nАпокріфи новозавітні. А.\n1",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            520,
+            565,
+            125,
+            22
+          ],
+          "description": "Decorative rule beneath preface heading."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "preface-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          340,
+          472,
+          505,
+          60
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-title-line-01",
+            "text": "ПЕРЕДМОВА.",
+            "bbox_xywh": [
+              340,
+              472,
+              505,
+              57
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          58,
+          610,
+          990,
+          1092
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "I. Зміст і характер отсего тома. Отсей другий том",
+            "bbox_xywh": [
+              58,
+              610,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "„Памяток українсько-руської мови і лїтератури“ містить у собі",
+            "bbox_xywh": [
+              58,
+              648,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "першу половину збірки новозавітних апокріфів, а власне апокріфи",
+            "bbox_xywh": [
+              58,
+              685,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "і леґенди євангельського круга, тоб то на теми анальоґічні з тими,",
+            "bbox_xywh": [
+              58,
+              723,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "про які говорять канонїчні євангелия. Земне житє Ісуса, його ма-",
+            "bbox_xywh": [
+              58,
+              761,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "тери і найблизшого окруженя, отсе зміст сих оповідань. Друга по-",
+            "bbox_xywh": [
+              58,
+              798,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "ловина обійме оповіданя про апостолів і деяких учеників Ісусових.",
+            "bbox_xywh": [
+              58,
+              836,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "Задля самого характеру зібраних тут матеріялів сей том має фізі-",
+            "bbox_xywh": [
+              58,
+              874,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "ономію значно відмінну від першого тома нашої збірки. Бо коли",
+            "bbox_xywh": [
+              58,
+              911,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "там мали ми переважно твори мало доступні для ширших мас на-",
+            "bbox_xywh": [
+              58,
+              949,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "рода, читані хиба більше письменними, важкі своєю мовою і темні",
+            "bbox_xywh": [
+              58,
+              987,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "нераз своїм змістом, тут зустрічаємо переважно річи, котрими",
+            "bbox_xywh": [
+              58,
+              1024,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "цікавили ся і доси цікавлять ся широкі верстви народа, надто річи",
+            "bbox_xywh": [
+              58,
+              1062,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "оповідані дуже інтересно, нераз поетично і драматично, або ж такі,",
+            "bbox_xywh": [
+              58,
+              1100,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "що сильно вдаряли на фантазию. От тим то головне явище, яке",
+            "bbox_xywh": [
+              58,
+              1137,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "бачимо в матеріялах сего тома — се богатство нових, популярних",
+            "bbox_xywh": [
+              58,
+              1175,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "переробок старих апокріфічних історій. І коли в першім томі нам",
+            "bbox_xywh": [
+              58,
+              1212,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "приходило ся черпати в значній мірі з рукопису (Крехівської Па-",
+            "bbox_xywh": [
+              58,
+              1250,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "лєї), що хоч був уживаний в нашім краю, то про те і мовою і пись-",
+            "bbox_xywh": [
+              58,
+              1288,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "мом виявляє чуже, північне походжене, то тут, у другім томі, ми",
+            "bbox_xywh": [
+              58,
+              1325,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "майже без виємка (крім одинокого невеличкого оповіданя взятого",
+            "bbox_xywh": [
+              58,
+              1363,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "з тоїж Крехівської Палєї) знаходимо ся на ґрунті українсько-",
+            "bbox_xywh": [
+              58,
+              1401,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "руського письменства. Друга характерна прикмета отсего тома —",
+            "bbox_xywh": [
+              58,
+              1438,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "богатство угроруського матеріялу. Можна назвати щасливим при-",
+            "bbox_xywh": [
+              58,
+              1476,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "падком те, що дд. В. Гнатюк і проф. О. Колесса в часі своїх по-",
+            "bbox_xywh": [
+              58,
+              1514,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "дорожей на Угорську Русь повіднаходили рукописи, з котрих менї",
+            "bbox_xywh": [
+              58,
+              1551,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "довело ся опублікувати поміщені тут оповіданя. Та про те з самого",
+            "bbox_xywh": [
+              58,
+              1589,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "факту, що в короткім часі, майже не шукаючи спеціяльно, вони",
+            "bbox_xywh": [
+              58,
+              1627,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "могли повіднаходити такі богаті збірки, ми можемо догадувати ся",
+            "bbox_xywh": [
+              58,
+              1664,
+              990,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          128,
+          1705,
+          300,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "Апокріфи новозавітні. А.",
+            "bbox_xywh": [
+              128,
+              1705,
+              300,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sheet-number",
+        "kind": "other",
+        "bbox_xywh": [
+          940,
+          1705,
+          40,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "sheet-number-line-01",
+            "text": "1",
+            "bbox_xywh": [
+              940,
+              1705,
+              40,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-5-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-22",
+        "reading": "Палєї",
+        "reason": "Check historical ї/є letterform in the name; provisional."
+      }
+    ]
+  }
+}
