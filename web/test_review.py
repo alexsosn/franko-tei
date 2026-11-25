@@ -20,7 +20,8 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual([sum(entry[0] == n for entry in items) for n in range(465, 470)], [19, 27, 34, 28, 10])
         reversed_range = next(e for e in items if e[2] == '324–320')
         self.assertEqual(reversed_range[0], 465)
-        self.assertIsNone(reversed_range[3])
+        self.assertEqual(reversed_range[3], 399)
+        self.assertIn('325', reversed_range[5])
         continuation = next(e for e in items if e[1].startswith('В. Перехід через Червоне море'))
         self.assertEqual(continuation[0], 467)
         self.assertEqual(continuation[2], '251–254')
@@ -30,6 +31,35 @@ class ReviewSmoke(unittest.TestCase):
             self.assertIn(source, data['1']['sources'])
             self.assertTrue(title and printed)
             self.assertTrue(scan is None or 1 <= scan <= 469)
+
+    def test_contents_navigation(self):
+        # Isolate click handling from remote loading (covered by the other smoke tests).
+        html = APP.read_text(encoding='utf-8')
+        marker = 'updateMode();load();'
+        self.assertIn(marker, html)
+        html = html.replace(marker, "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,$('ref').value,$('mode').value];if(!$('contentsPanel').hidden)renderContents();};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width': 390, 'height': 844})
+            page.set_content(html)
+            page.locator('#volume').select_option('1')
+            page.locator('#ref').fill('feature/example')
+            page.locator('#mode').select_option('both')
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsEntries button[data-scan="399"]').click()
+            self.assertEqual(page.evaluate('window.lastJump'), ['1', '399', 'feature/example', 'both'])
+            self.assertTrue(page.locator('#contentsPanel').is_hidden())
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsSources button').filter(has_text='469').click()
+            self.assertEqual(page.evaluate('window.lastJump')[:2], ['1', '469'])
+            page.locator('#contentsOpen').click()
+            page.locator('#volume').select_option('5')
+            self.assertIn('Volume 5', page.locator('#contentsTitle').inner_text())
+            self.assertEqual(page.locator('#contentsSources button').count(), 2)
+            page.locator('#contentsSources button').first.focus()
+            page.keyboard.press('Enter')
+            self.assertEqual(page.evaluate('window.lastJump')[:2], ['5', '311'])
+            browser.close()
 
     def test_comparison(self):
         with sync_playwright() as p:
@@ -83,7 +113,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.locator('#contentsPanel').is_visible())
             self.assertIn('Індекс книг правдивих і заказаних', page.locator('#contentsEntries').inner_text())
             self.assertEqual(page.locator('#contentsSources button').count(), 5)
-            self.assertEqual(page.locator('#contentsEntries button[data-scan="76"]').count(), 1)
+            self.assertEqual(page.locator('#contentsEntries button[data-scan="76"]').count(), 3)
             page.locator('#contentsOpen').click()
             self.assertTrue(page.locator('#contentsPanel').is_hidden())
             for control in ['#searchOpen', '#searchGo']:
