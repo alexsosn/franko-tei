@@ -176,6 +176,25 @@ class ReviewSmoke(unittest.TestCase):
             hits = [l for region in d['reading']['regions'] if region['kind'] == 'heading'
                     for l in region['lines'] if l['id'] == a['line_id']]
             self.assertEqual([l['text'] for l in hits], [a['text']])
+        # Complete linguistic coverage for the annotated anchor-page batch.
+        for scan in sorted({e[3] for e in anchors}):
+            record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            if 'language_annotation' not in record['reading']:
+                continue  # earlier or future batches use the general corpus validator
+            for region in record['reading']['regions']:
+                for line in region['lines']:
+                    if not any(c.isalpha() for c in line['text']):
+                        continue
+                    spans = line['language_spans']
+                    self.assertTrue(spans, (scan, line['id']))
+                    self.assertEqual(spans[0]['start'], 0)
+                    self.assertEqual(spans[-1]['end'], len(line['text']))
+                    self.assertTrue(all(a['end'] == b['start'] for a, b in zip(spans, spans[1:])))
+                    self.assertTrue(all(s['text_version'] == record['reading']['reader_id'] for s in spans))
+        annotated = json.loads((root / 'pilot/vol4_scan00142_single_reading.json').read_text(encoding='utf-8'))
+        lines = {l['id']: l for r in annotated['reading']['regions'] for l in r['lines']}
+        self.assertEqual([(lines['untitled-line-14']['text'][s['start']:s['end']], s['script'])
+                          for s in lines['untitled-line-14']['language_spans'] if s['language'] == 'la'], [('[sic!]', 'Latn')])
         manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
                     'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
                                  {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
