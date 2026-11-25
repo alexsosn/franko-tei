@@ -1,0 +1,940 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 8,
+  "printed_page_observed": "D",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00008.jpg",
+  "source_image_sha256": "c741b6e9b7e3d691b529ea1abf4bab4a01ea28a589af5a35ee8fee2f875fbcea",
+  "reading": {
+    "reader_id": "gpt62-v3-s00008-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image without OCR or peer readings; preserve physical lines, historical spelling, unusual page ranges, contextual language spans and uncertainty. Later accession marks are separately documented. Approximate geometry, no verified claim.",
+    "raw_response": "D\nden biblischen Sintflutbericht durch spätere talmudische Legenden wei-\nter ausmalt (S. 65—73).\nIX. Von Noah bis Abraham — vier kleine Texte aus dem\nPseudo-Methodius und der Paläa, wo über „Heber und den babyloni-\nschen Turmbau“, über „Serug und Nachor“ sowie über die beiden\nEngel Arot und Marot und ihre Bestrafung erzählt wird (S. 74—79).\nX. Erzählungen vom Abraham. Text A (S. 80—86) ist\nein Auszug aus der apokryphen Abraham-Apocalypse, welcher in den\nText der Paläa verflochten wurde; Text B (S. 86—90) eine Erzählung\nvon Abrahams Bewirthung der drei Fremden und Sodoms Unter-\ngang — der biblische Bericht ganz durch spätere Erdichtungen über-\nmalt; weitere zwei Text-Fragmente gehören zur Loth-Legende, also\nein Rätsel der Tochter Loths (S. 90) und Loths Busse (Abraham\npflanzte drei angebrannte Baumstücke und Loth trug in seinem Munde\nWasser aus dem Jordan, auf dem Bauche kriechend, und begoss die\nStücke, bis sie nach 3 Monaten grün wurden — S. 90—91).\nXI. Erzählungen vom Melchisedech — zwei Texte, wo\nder biblische Kern von einem reichen Sagengewebe umsponnen ist. In\neiner Paläa-Einkleidung haben wir die Erzählung des Pseudo-Ahana-\nsius über Melchisedech und den Untergang seines Geschlechtes und dann\neine spätere ruthenische Bearbeitung derselben Legende (S. 92—101).\nXII. Abrahams Söhne — zuerst ein Paläa-Text über Isaaks\nOpferung, dann vier kleine Texte und Textfragmente über Ismael, seine\nBlutschande mit seiner Mutter Hagar und über ihre Nachkommenschaft\n(S. 102—107).\nXIII. Isaaks Söhne. Ausser kleineren Textfragmenten (A über\nJacob und Esau, wie sie schon im Mutterleibe haderten (S. 108), C.\nüber drei Stabe Jacobs) wurde hier ein grösseres Apokryphum, die\nsogenannte „Leiter Jacobs“ aus der Krechover Paläa abgedruckt. Die\neigentliche apokryphe Erzählung von einer Vision Jacobs nimmt hier\neinen kleinen Raum ein, — das übrige ist ein antijüdischer Commen-\ntar dazu (S. 108—120).\nXIV. Die Patriarchen in Ägypten. Zuerst eine Reihe\nExcerpte aus dem bekannten Roman Ephräm des Syrers über den\nschönen Joseph; dieser Roman wurde ebenfalls der Paläa entnommen\n(S. 124—146); ein Testament Jacobs, wo der analoge biblische Be-\nricht durch verschiedene dem Physiologus entnommene Details sowie\ndurch antijüdische Polemik erweitert wird (S. 146-154). Den Schluss\nbildet eine populäre ungarisch-ruthenische Erzählung vom Joseph,\nhauptsächlich der Bibel, hie und da aber auch dem Ephräm nachge-\nbildet, mit bemerkenswerthem Localcolorit (S. 157—173).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          102,
+          114,
+          42,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "D",
+            "bbox_xywh": [
+              102,
+              114,
+              42,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "contents-summary",
+        "kind": "body",
+        "bbox_xywh": [
+          94,
+          188,
+          1009,
+          1497
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "contents-summary-line-01",
+            "text": "den biblischen Sintflutbericht durch spätere talmudische Legenden wei-",
+            "bbox_xywh": [
+              94,
+              188,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-02",
+            "text": "ter ausmalt (S. 65—73).",
+            "bbox_xywh": [
+              94,
+              224,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-03",
+            "text": "IX. Von Noah bis Abraham — vier kleine Texte aus dem",
+            "bbox_xywh": [
+              94,
+              261,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-04",
+            "text": "Pseudo-Methodius und der Paläa, wo über „Heber und den babyloni-",
+            "bbox_xywh": [
+              94,
+              297,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-05",
+            "text": "schen Turmbau“, über „Serug und Nachor“ sowie über die beiden",
+            "bbox_xywh": [
+              94,
+              334,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-06",
+            "text": "Engel Arot und Marot und ihre Bestrafung erzählt wird (S. 74—79).",
+            "bbox_xywh": [
+              94,
+              370,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-07",
+            "text": "X. Erzählungen vom Abraham. Text A (S. 80—86) ist",
+            "bbox_xywh": [
+              94,
+              407,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-08",
+            "text": "ein Auszug aus der apokryphen Abraham-Apocalypse, welcher in den",
+            "bbox_xywh": [
+              94,
+              443,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-09",
+            "text": "Text der Paläa verflochten wurde; Text B (S. 86—90) eine Erzählung",
+            "bbox_xywh": [
+              94,
+              480,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-10",
+            "text": "von Abrahams Bewirthung der drei Fremden und Sodoms Unter-",
+            "bbox_xywh": [
+              94,
+              516,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-11",
+            "text": "gang — der biblische Bericht ganz durch spätere Erdichtungen über-",
+            "bbox_xywh": [
+              94,
+              553,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-12",
+            "text": "malt; weitere zwei Text-Fragmente gehören zur Loth-Legende, also",
+            "bbox_xywh": [
+              94,
+              589,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-13",
+            "text": "ein Rätsel der Tochter Loths (S. 90) und Loths Busse (Abraham",
+            "bbox_xywh": [
+              94,
+              626,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-14",
+            "text": "pflanzte drei angebrannte Baumstücke und Loth trug in seinem Munde",
+            "bbox_xywh": [
+              94,
+              662,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-15",
+            "text": "Wasser aus dem Jordan, auf dem Bauche kriechend, und begoss die",
+            "bbox_xywh": [
+              94,
+              699,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-16",
+            "text": "Stücke, bis sie nach 3 Monaten grün wurden — S. 90—91).",
+            "bbox_xywh": [
+              94,
+              735,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-17",
+            "text": "XI. Erzählungen vom Melchisedech — zwei Texte, wo",
+            "bbox_xywh": [
+              94,
+              772,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-18",
+            "text": "der biblische Kern von einem reichen Sagengewebe umsponnen ist. In",
+            "bbox_xywh": [
+              94,
+              808,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-19",
+            "text": "einer Paläa-Einkleidung haben wir die Erzählung des Pseudo-Ahana-",
+            "bbox_xywh": [
+              94,
+              845,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-20",
+            "text": "sius über Melchisedech und den Untergang seines Geschlechtes und dann",
+            "bbox_xywh": [
+              94,
+              881,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-21",
+            "text": "eine spätere ruthenische Bearbeitung derselben Legende (S. 92—101).",
+            "bbox_xywh": [
+              94,
+              918,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-22",
+            "text": "XII. Abrahams Söhne — zuerst ein Paläa-Text über Isaaks",
+            "bbox_xywh": [
+              94,
+              954,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-23",
+            "text": "Opferung, dann vier kleine Texte und Textfragmente über Ismael, seine",
+            "bbox_xywh": [
+              94,
+              991,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-24",
+            "text": "Blutschande mit seiner Mutter Hagar und über ihre Nachkommenschaft",
+            "bbox_xywh": [
+              94,
+              1027,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-25",
+            "text": "(S. 102—107).",
+            "bbox_xywh": [
+              94,
+              1064,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-26",
+            "text": "XIII. Isaaks Söhne. Ausser kleineren Textfragmenten (A über",
+            "bbox_xywh": [
+              94,
+              1100,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-27",
+            "text": "Jacob und Esau, wie sie schon im Mutterleibe haderten (S. 108), C.",
+            "bbox_xywh": [
+              94,
+              1137,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-28",
+            "text": "über drei Stabe Jacobs) wurde hier ein grösseres Apokryphum, die",
+            "bbox_xywh": [
+              94,
+              1173,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-29",
+            "text": "sogenannte „Leiter Jacobs“ aus der Krechover Paläa abgedruckt. Die",
+            "bbox_xywh": [
+              94,
+              1210,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-30",
+            "text": "eigentliche apokryphe Erzählung von einer Vision Jacobs nimmt hier",
+            "bbox_xywh": [
+              94,
+              1246,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-31",
+            "text": "einen kleinen Raum ein, — das übrige ist ein antijüdischer Commen-",
+            "bbox_xywh": [
+              94,
+              1283,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-32",
+            "text": "tar dazu (S. 108—120).",
+            "bbox_xywh": [
+              94,
+              1319,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 22,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-33",
+            "text": "XIV. Die Patriarchen in Ägypten. Zuerst eine Reihe",
+            "bbox_xywh": [
+              94,
+              1356,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-34",
+            "text": "Excerpte aus dem bekannten Roman Ephräm des Syrers über den",
+            "bbox_xywh": [
+              94,
+              1392,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-35",
+            "text": "schönen Joseph; dieser Roman wurde ebenfalls der Paläa entnommen",
+            "bbox_xywh": [
+              94,
+              1429,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-36",
+            "text": "(S. 124—146); ein Testament Jacobs, wo der analoge biblische Be-",
+            "bbox_xywh": [
+              94,
+              1465,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-37",
+            "text": "richt durch verschiedene dem Physiologus entnommene Details sowie",
+            "bbox_xywh": [
+              94,
+              1502,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-38",
+            "text": "durch antijüdische Polemik erweitert wird (S. 146-154). Den Schluss",
+            "bbox_xywh": [
+              94,
+              1538,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-39",
+            "text": "bildet eine populäre ungarisch-ruthenische Erzählung vom Joseph,",
+            "bbox_xywh": [
+              94,
+              1575,
+              1009,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-40",
+            "text": "hauptsächlich der Bibel, hie und da aber auch dem Ephräm nachge-",
+            "bbox_xywh": [
+              94,
+              1611,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-41",
+            "text": "bildet, mit bemerkenswerthem Localcolorit (S. 157—173).",
+            "bbox_xywh": [
+              94,
+              1648,
+              1009,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00008-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "contents-summary-line-19",
+        "reading": "Pseudo-Ahana-",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      },
+      {
+        "line_id": "contents-summary-line-38",
+        "reading": "146-154",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      }
+    ]
+  }
+}
