@@ -12,6 +12,7 @@ from pathlib import Path
 import subprocess
 
 from .pilot_batch import check_draft_offline
+from .review_bundle import unique_pairs, reject_constant
 from .review_bundle import (
     REPO, LOGIN, SHA256, PATH, fields, match, require, literal, identifier,
     make_intake, assert_new, blob_sha, git_source_loader,
@@ -64,7 +65,7 @@ def adjudicate(record, event_id, outcome, editor, reason, approved_digest, sourc
     require(editor_id != contributor, "self-adjudication forbidden")
     if outcome == "accept":
         require(event["decision"] != "defer", "deferred line cannot be accepted")
-        # First slice restricts acceptance to plain body/note lines; structural
+        # First slice restricts corrections to plain body lines; structural
         # headings/folios and any explicit source note marker need their own gate.
         target = event["target"]
         source = json.loads(source_loader(record["bundle"]["source_commit"], target["candidate_path"]))
@@ -168,7 +169,12 @@ def project_lines(raw, path, ledger):
 def _read_records(directory):
     records = []
     for path in sorted(directory.glob("*.json")):
-        record = json.loads(path.read_text(encoding="utf-8"))
+        require(not path.is_symlink() and path.is_file(), "invalid ledger file")
+        record = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs,
+                            parse_constant=reject_constant, parse_float=reject_constant)
+        identity = record["bundle"]["bundle_id"] if directory.name == "intake" else record["event_id"]
+        identifier(identity, "record ID")
+        require(path.name == identity + ".json", "ledger filename does not match record ID")
         records.append(record)
     return records
 
@@ -200,7 +206,8 @@ def main(argv=None):
     _, login = editor_identity(editor)
     permission = json.loads(subprocess.check_output(["gh", "api", "--hostname", "github.com",
         f"repos/{REPO}/collaborators/{login}/permission"], timeout=30))
-    require(permission.get("permission") in ("admin", "write", "maintain"), "repository editor permission required")
+    require(permission.get("permission") in ("admin", "write", "maintain")
+            and permission.get("user", {}).get("id") == editor["id"], "repository editor permission required")
     d = adjudicate(candidates[0], args.event_id, args.outcome, editor, args.reason,
                    args.approve_intake_sha256, loader)
     validate_ledger(intakes, decisions + [d], loader)
