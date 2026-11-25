@@ -3,6 +3,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
+from tempfile import TemporaryDirectory
 
 from franko_tei.pilot_batch import (
     discover_readings, select_readings, check_draft_offline, inventory_readings
@@ -45,6 +46,23 @@ class CorpusBatchContract(unittest.TestCase):
         # Deleting a frozen first-reader record is not an unreviewed skip.
         with self.assertRaises(ValueError):
             select_readings(PILOT, ["pilot/vol1_scan00999_single_reading.json"])
+
+    def test_numbered_alternate_is_discovered_as_separate_unverified_candidate(self):
+        # Synthetic duplicate of a real record, used only to exercise filename discovery.
+        source = PILOT / "vol1_scan00060_single_reading.json"
+        payload = json.loads(source.read_text(encoding="utf-8"))
+        with TemporaryDirectory() as tmp:
+            primary = Path(tmp) / source.name
+            alternate = Path(tmp) / "vol1_scan00060_alternate_reading_01.json"
+            primary.write_bytes(source.read_bytes())
+            alternate.write_bytes(source.read_bytes())
+            self.assertEqual(set(discover_readings(tmp)), {primary, alternate})
+            self.assertEqual(check_draft_offline(alternate, payload), payload["reading"]["raw_response"].split("\n"))
+            self.assertEqual(select_readings(tmp, ["pilot/" + alternate.name]), [alternate])
+            inventory = inventory_readings(tmp)
+            self.assertEqual(len(inventory), 1)
+            self.assertEqual(len(inventory[0]["readings"]), 2)
+            self.assertEqual(inventory[0]["status"], "agent_unverified")
 
     def test_unknown_page_naming_cannot_silently_bypass_checks(self):
         with self.assertRaises(ValueError):
