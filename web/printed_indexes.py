@@ -493,7 +493,7 @@ def build_printed_indexes(pilot, ref):
         eligible = {scan for scan, reader, _ in page_specs
                     if scan in files and files[scan][1]["reading"]["reader_id"] == reader
                     and files[scan][2] == SOURCE_BLOBS[scan]}
-        if kind == "names":
+        if kind in ("names", "works"):
             for pair in ATOMIC_PAIRS:
                 if not set(pair) <= eligible:
                     eligible.difference_update(pair)
@@ -525,7 +525,7 @@ def build_printed_indexes(pilot, ref):
                 for stop in ends:
                     part = [{"id": l["id"], "text": l["text"]} for l in lines[previous:stop]]
                     if (scan, region_id, previous + 1) in CONTINUATIONS:
-                        # A region/page boundary never manufactures a new name.
+                        # A region/page boundary never manufactures a new entry.
                         prior = entries[-1] if entries else section["entries"][-1]
                         segments = prior.setdefault("segments", [
                             dict(source=prior["source"], region_id=prior["region_id"],
