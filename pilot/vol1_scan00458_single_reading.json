@@ -1,0 +1,853 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 458,
+  "printed_page_observed": "383",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00458.jpg",
+  "source_image_sha256": "c36f6944287ea901d540b0a2f507b0d76cd6cc5ddb81a4d46b84a0bfc0b2d230",
+  "reading": {
+    "reader_id": "gpt62-i458-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i449-458-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read original pinned image only; preserve physical lines, ditto marks, historical orthography, printed references. Dotted leaders and geometry estimated.",
+    "raw_response": "383\nЯ.\nЯков бачить у снї драбину і на нїй 24 лиць . . . 199\n„ співом заклинає Бога, щоби дав йому виясненє сего сну 109\n„ кладе три палицї в жерело і тілько тодї поїть овець . 121\n„ боре ся в ночи з ангелом, котрий вкінцї роздирає йому\nлитку, так що Яков храмає . . . . . . 121\n„ велить своїм синам застрілити Ісава, що виступив проти\nних війною, та Юда не хоче стріляти до него, а тодї\nЯков сам убив Ісава . . . . . . . . 122\n„ мав три смутки в однім місяцї . . . . . 122\n„ посилає Йосифа, щоби відвідав братів, а потім винуватить\nсебе в єго смерти . . . . . . . 124, 130\n„ плаче над плащем Йосифовим . . . . . 129—130\n„ довідує ся від Веніямина, що Йосиф живий, дістає лист\nЙосифів і їде до Єгипту . . . . . . 144—145\n„ перед смертю благословить синів і пророкує про Христа\nі Антихриста . . . . . . . . 146—154\n„ довідавши ся уперве від дочки, що Йосиф живий, гово-\nрить їй: „Будь і ти жива, доню, на віки“, і ся дочка\nжила аж до часів Мойсея . . . . . . . 336",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative closing rule",
+          "bbox_xywh": [
+            471,
+            931,
+            216,
+            16
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          974,
+          98,
+          58,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "383",
+            "bbox_xywh": [
+              974,
+              98,
+              58,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "letter-ya",
+        "kind": "heading",
+        "bbox_xywh": [
+          558,
+          163,
+          43,
+          34
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "letter-ya-l001",
+            "text": "Я.",
+            "bbox_xywh": [
+              558,
+              163,
+              43,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "motifs",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          223,
+          946,
+          574
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "motifs-l001",
+            "text": "Яков бачить у снї драбину і на нїй 24 лиць . . . 199",
+            "bbox_xywh": [
+              100,
+              223,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 48,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 48,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 49,
+                "end": 52,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l002",
+            "text": "„ співом заклинає Бога, щоби дав йому виясненє сего сну 109",
+            "bbox_xywh": [
+              100,
+              253,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 56,
+                "end": 59,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l003",
+            "text": "„ кладе три палицї в жерело і тілько тодї поїть овець . 121",
+            "bbox_xywh": [
+              100,
+              284,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 56,
+                "end": 59,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l004",
+            "text": "„ боре ся в ночи з ангелом, котрий вкінцї роздирає йому",
+            "bbox_xywh": [
+              100,
+              314,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l005",
+            "text": "литку, так що Яков храмає . . . . . . 121",
+            "bbox_xywh": [
+              100,
+              345,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 37,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 37,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 38,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l006",
+            "text": "„ велить своїм синам застрілити Ісава, що виступив проти",
+            "bbox_xywh": [
+              100,
+              375,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l007",
+            "text": "них війною, та Юда не хоче стріляти до него, а тодї",
+            "bbox_xywh": [
+              100,
+              405,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l008",
+            "text": "Яков сам убив Ісава . . . . . . . . 122",
+            "bbox_xywh": [
+              100,
+              436,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 35,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 39,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l009",
+            "text": "„ мав три смутки в однім місяцї . . . . . 122",
+            "bbox_xywh": [
+              100,
+              466,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 45,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l010",
+            "text": "„ посилає Йосифа, щоби відвідав братів, а потім винуватить",
+            "bbox_xywh": [
+              100,
+              496,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l011",
+            "text": "себе в єго смерти . . . . . . . 124, 130",
+            "bbox_xywh": [
+              100,
+              527,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 31,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 40,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l012",
+            "text": "„ плаче над плащем Йосифовим . . . . . 129—130",
+            "bbox_xywh": [
+              100,
+              557,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 38,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 38,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 39,
+                "end": 46,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l013",
+            "text": "„ довідує ся від Веніямина, що Йосиф живий, дістає лист",
+            "bbox_xywh": [
+              100,
+              587,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l014",
+            "text": "Йосифів і їде до Єгипту . . . . . . 144—145",
+            "bbox_xywh": [
+              100,
+              618,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 35,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 35,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 43,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l015",
+            "text": "„ перед смертю благословить синів і пророкує про Христа",
+            "bbox_xywh": [
+              100,
+              648,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l016",
+            "text": "і Антихриста . . . . . . . . 146—154",
+            "bbox_xywh": [
+              100,
+              678,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 28,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 36,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l017",
+            "text": "„ довідавши ся уперве від дочки, що Йосиф живий, гово-",
+            "bbox_xywh": [
+              100,
+              709,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l018",
+            "text": "рить їй: „Будь і ти жива, доню, на віки“, і ся дочка",
+            "bbox_xywh": [
+              100,
+              739,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l019",
+            "text": "жила аж до часів Мойсея . . . . . . . 336",
+            "bbox_xywh": [
+              100,
+              769,
+              946,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 37,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 37,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              },
+              {
+                "start": 38,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i458-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "motifs-l001",
+        "reading": "Яков бачить у снї драбину і на нїй 24 лиць . . . 199",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l002",
+        "reading": "„ співом заклинає Бога, щоби дав йому виясненє сего сну 109",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l003",
+        "reading": "„ кладе три палицї в жерело і тілько тодї поїть овець . 121",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l004",
+        "reading": "„ боре ся в ночи з ангелом, котрий вкінцї роздирає йому",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l005",
+        "reading": "литку, так що Яков храмає . . . . . . 121",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l006",
+        "reading": "„ велить своїм синам застрілити Ісава, що виступив проти",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l007",
+        "reading": "них війною, та Юда не хоче стріляти до него, а тодї",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l008",
+        "reading": "Яков сам убив Ісава . . . . . . . . 122",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l009",
+        "reading": "„ мав три смутки в однім місяцї . . . . . 122",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l010",
+        "reading": "„ посилає Йосифа, щоби відвідав братів, а потім винуватить",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l011",
+        "reading": "себе в єго смерти . . . . . . . 124, 130",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l012",
+        "reading": "„ плаче над плащем Йосифовим . . . . . 129—130",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l013",
+        "reading": "„ довідує ся від Веніямина, що Йосиф живий, дістає лист",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l014",
+        "reading": "Йосифів і їде до Єгипту . . . . . . 144—145",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l015",
+        "reading": "„ перед смертю благословить синів і пророкує про Христа",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l016",
+        "reading": "і Антихриста . . . . . . . . 146—154",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l017",
+        "reading": "„ довідавши ся уперве від дочки, що Йосиф живий, гово-",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l018",
+        "reading": "рить їй: „Будь і ти жива, доню, на віки“, і ся дочка",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l019",
+        "reading": "жила аж до часів Мойсея . . . . . . . 336",
+        "reason": "Provisional motif index reading; historical spelling and exact dotted leader count require collation."
+      },
+      {
+        "line_id": "motifs-l001",
+        "reading": "199",
+        "reason": "3× native JPEG crop [815,188,65,32], display width 992, confirms printed 199."
+      }
+    ]
+  }
+}
