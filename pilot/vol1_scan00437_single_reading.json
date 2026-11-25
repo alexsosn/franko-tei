@@ -1,0 +1,1123 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 437,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00437.jpg",
+  "source_image_sha256": "db352f448a016e4810cda0704923a7191f15313a725b73c0501aac6e902a6448",
+  "reading": {
+    "reader_id": "gpt62-i437-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i429-438-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original image only; preserve columns, physical lines, headings, ditto marks and reference numbers. Contextual title language, dotted leaders and geometry provisional.",
+    "raw_response": "Показчик лєґендових і казочних мотивів і т. и.\nв текстах сего тому.\nА.\nАввакум пророк занесений ангелом за волосє до Вавилона\nза 70 миль і дає обід Даниїлови в львиній ямі . 313—314\nАвель убитий Каіном лежав непохований 30 літ . 9\nАвер (Євер) один не пристав до тих, що будували стовп ва-\nвилонський, от тим то й мова Адамова лишила ся у него\nбез зміни . . . . . . . . 78, 93\nАвраам дивлячись на батькові ідоли доходить до віри в одного\nБога . . . . . . . . . . 80\n„ продає батькових богів купцям . . . . . 81\n„ палить деревляного бога Варисата . . . . 82\n„ викладає батькови про одного Бога . . . . 83\n„ запалює храм з батьковими богами, при чім брат єго гине\nв огнї . . . . . . . . . . 83\n„ уходить з батькового дому, в котрий зараз ударив грім 84\n„ вкинений Халдейцями в огняну піч виходить з неї без\nшкоди . . . . . . . . . 231\n„ від архангела Гавриїла за 6 місяцїв навчив ся всякої\nмудрости . . . . . . . . . 84\n„ не їв дома нїколи без гостя, а коли диявол позаставляв\nусї дороги, не їв 5 день ждучи гостей . . 86, 330\n„ вижидаючи гостей зустрів Бога з двома ангелами і за-\nпросив їх до себе . . . . . . 86, 331\n„ завдає Лотови покуту думаючи, що він згине і не зможе\nєї сповнити . . . . . . . . 87, 88\n„ привозить Мелхіседекови на гору Фаворську одїж і олїй,\nвикликає його і помазує та зодягає . . 95, 96\n„ на розказ Божий веде свого сина Ісаака, щоби його дати\nБогу в жертву . . . . . . . . 102\n„ не хотїв прогнати з дому Ізмаїла і Аґару, та вчинив се\nна розказ ангела . . . . . . . 104",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative wavy rule",
+          "bbox_xywh": [
+            532,
+            647,
+            110,
+            11
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          200,
+          513,
+          800,
+          102
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-l001",
+            "text": "Показчик лєґендових і казочних мотивів і т. и.",
+            "bbox_xywh": [
+              200,
+              513,
+              800,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "title-l002",
+            "text": "в текстах сего тому.",
+            "bbox_xywh": [
+              200,
+              567,
+              800,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "letter-a",
+        "kind": "heading",
+        "bbox_xywh": [
+          575,
+          683,
+          43,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "letter-a-l001",
+            "text": "А.",
+            "bbox_xywh": [
+              575,
+              683,
+              43,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "motifs",
+        "kind": "body",
+        "bbox_xywh": [
+          143,
+          723,
+          941,
+          889
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "motifs-l001",
+            "text": "Аввакум пророк занесений ангелом за волосє до Вавилона",
+            "bbox_xywh": [
+              143,
+              723,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l002",
+            "text": "за 70 миль і дає обід Даниїлови в львиній ямі . 313—314",
+            "bbox_xywh": [
+              143,
+              753,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 48,
+                "end": 55,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l003",
+            "text": "Авель убитий Каіном лежав непохований 30 літ . 9",
+            "bbox_xywh": [
+              143,
+              783,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 38,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 47,
+                "end": 48,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l004",
+            "text": "Авер (Євер) один не пристав до тих, що будували стовп ва-",
+            "bbox_xywh": [
+              143,
+              813,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l005",
+            "text": "вилонський, от тим то й мова Адамова лишила ся у него",
+            "bbox_xywh": [
+              143,
+              842,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l006",
+            "text": "без зміни . . . . . . . . 78, 93",
+            "bbox_xywh": [
+              143,
+              872,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 26,
+                "end": 32,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l007",
+            "text": "Авраам дивлячись на батькові ідоли доходить до віри в одного",
+            "bbox_xywh": [
+              143,
+              902,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l008",
+            "text": "Бога . . . . . . . . . . 80",
+            "bbox_xywh": [
+              143,
+              932,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 27,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l009",
+            "text": "„ продає батькових богів купцям . . . . . 81",
+            "bbox_xywh": [
+              143,
+              961,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 44,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l010",
+            "text": "„ палить деревляного бога Варисата . . . . 82",
+            "bbox_xywh": [
+              143,
+              991,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 43,
+                "end": 45,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l011",
+            "text": "„ викладає батькови про одного Бога . . . . 83",
+            "bbox_xywh": [
+              143,
+              1021,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 46,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l012",
+            "text": "„ запалює храм з батьковими богами, при чім брат єго гине",
+            "bbox_xywh": [
+              143,
+              1050,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l013",
+            "text": "в огнї . . . . . . . . . . 83",
+            "bbox_xywh": [
+              143,
+              1080,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 27,
+                "end": 29,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l014",
+            "text": "„ уходить з батькового дому, в котрий зараз ударив грім 84",
+            "bbox_xywh": [
+              143,
+              1110,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 56,
+                "end": 58,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l015",
+            "text": "„ вкинений Халдейцями в огняну піч виходить з неї без",
+            "bbox_xywh": [
+              143,
+              1140,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l016",
+            "text": "шкоди . . . . . . . . . 231",
+            "bbox_xywh": [
+              143,
+              1169,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 27,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l017",
+            "text": "„ від архангела Гавриїла за 6 місяцїв навчив ся всякої",
+            "bbox_xywh": [
+              143,
+              1199,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 30,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l018",
+            "text": "мудрости . . . . . . . . . 84",
+            "bbox_xywh": [
+              143,
+              1229,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 27,
+                "end": 29,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l019",
+            "text": "„ не їв дома нїколи без гостя, а коли диявол позаставляв",
+            "bbox_xywh": [
+              143,
+              1258,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l020",
+            "text": "усї дороги, не їв 5 день ждучи гостей . . 86, 330",
+            "bbox_xywh": [
+              143,
+              1288,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 20,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 49,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l021",
+            "text": "„ вижидаючи гостей зустрів Бога з двома ангелами і за-",
+            "bbox_xywh": [
+              143,
+              1318,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l022",
+            "text": "просив їх до себе . . . . . . 86, 331",
+            "bbox_xywh": [
+              143,
+              1348,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 37,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l023",
+            "text": "„ завдає Лотови покуту думаючи, що він згине і не зможе",
+            "bbox_xywh": [
+              143,
+              1377,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l024",
+            "text": "єї сповнити . . . . . . . . 87, 88",
+            "bbox_xywh": [
+              143,
+              1407,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 34,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l025",
+            "text": "„ привозить Мелхіседекови на гору Фаворську одїж і олїй,",
+            "bbox_xywh": [
+              143,
+              1437,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l026",
+            "text": "викликає його і помазує та зодягає . . 95, 96",
+            "bbox_xywh": [
+              143,
+              1466,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 39,
+                "end": 45,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l027",
+            "text": "„ на розказ Божий веде свого сина Ісаака, щоби його дати",
+            "bbox_xywh": [
+              143,
+              1496,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l028",
+            "text": "Богу в жертву . . . . . . . . 102",
+            "bbox_xywh": [
+              143,
+              1526,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 33,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l029",
+            "text": "„ не хотїв прогнати з дому Ізмаїла і Аґару, та вчинив се",
+            "bbox_xywh": [
+              143,
+              1556,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "motifs-l030",
+            "text": "на розказ ангела . . . . . . . 104",
+            "bbox_xywh": [
+              143,
+              1585,
+              941,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 34,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i437-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "motifs-l001",
+        "reading": "Аввакум пророк занесений ангелом за волосє до Вавилона",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l002",
+        "reading": "за 70 миль і дає обід Даниїлови в львиній ямі . 313—314",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l003",
+        "reading": "Авель убитий Каіном лежав непохований 30 літ . 9",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l004",
+        "reading": "Авер (Євер) один не пристав до тих, що будували стовп ва-",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l005",
+        "reading": "вилонський, от тим то й мова Адамова лишила ся у него",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l006",
+        "reading": "без зміни . . . . . . . . 78, 93",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l007",
+        "reading": "Авраам дивлячись на батькові ідоли доходить до віри в одного",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l008",
+        "reading": "Бога . . . . . . . . . . 80",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l009",
+        "reading": "„ продає батькових богів купцям . . . . . 81",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l010",
+        "reading": "„ палить деревляного бога Варисата . . . . 82",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l011",
+        "reading": "„ викладає батькови про одного Бога . . . . 83",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l012",
+        "reading": "„ запалює храм з батьковими богами, при чім брат єго гине",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l013",
+        "reading": "в огнї . . . . . . . . . . 83",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l014",
+        "reading": "„ уходить з батькового дому, в котрий зараз ударив грім 84",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l015",
+        "reading": "„ вкинений Халдейцями в огняну піч виходить з неї без",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l016",
+        "reading": "шкоди . . . . . . . . . 231",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l017",
+        "reading": "„ від архангела Гавриїла за 6 місяцїв навчив ся всякої",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l018",
+        "reading": "мудрости . . . . . . . . . 84",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l019",
+        "reading": "„ не їв дома нїколи без гостя, а коли диявол позаставляв",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l020",
+        "reading": "усї дороги, не їв 5 день ждучи гостей . . 86, 330",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l021",
+        "reading": "„ вижидаючи гостей зустрів Бога з двома ангелами і за-",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l022",
+        "reading": "просив їх до себе . . . . . . 86, 331",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l023",
+        "reading": "„ завдає Лотови покуту думаючи, що він згине і не зможе",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l024",
+        "reading": "єї сповнити . . . . . . . . 87, 88",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l025",
+        "reading": "„ привозить Мелхіседекови на гору Фаворську одїж і олїй,",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l026",
+        "reading": "викликає його і помазує та зодягає . . 95, 96",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l027",
+        "reading": "„ на розказ Божий веде свого сина Ісаака, щоби його дати",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l028",
+        "reading": "Богу в жертву . . . . . . . . 102",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l029",
+        "reading": "„ не хотїв прогнати з дому Ізмаїла і Аґару, та вчинив се",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      },
+      {
+        "line_id": "motifs-l030",
+        "reading": "на розказ ангела . . . . . . . 104",
+        "reason": "Provisional index reading; historical spelling, exact dotted-leader count and reference digits require collation."
+      }
+    ]
+  }
+}

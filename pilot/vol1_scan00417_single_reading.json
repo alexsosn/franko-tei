@@ -1,0 +1,2940 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 417,
+  "printed_page_observed": "342",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00417.jpg",
+  "source_image_sha256": "7b60712458593cb17afcf9167512ffb3ce0a2c3b7aa62450c90bbaf3c5c64848",
+  "reading": {
+    "reader_id": "gpt62-i417-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i416-418-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned image only. Preserve index entries, ditto signs, physical lines and numeric references. Left column then right column. Geometry estimated; Ukrainian text with nonlinguistic numbers.",
+    "raw_response": "342\nАкадемія Наук віденська 32\n„          „      петербурська 6, 32\n„          „      югословянська 6\nАкнан ріка 338\nАким отець Богородицї 149, 311, 321\nАкинф, камінь 245\nАкрис син Валаама 228, 233\nАлдаод, прор. 322\nАлександер В. 338\nАлександро-Невська Лавра 223\nАлкафрос 125\nАмаврийський дуб 86\nАмаликитяне, 122, 238, 239\nАмалфегор, дочка Йовова 267\nАмантїйська ріка 241\nАматунта ріка 245\nАмбакум пророк 322\nАмбрам, син Каата 225\nАмемфрия, Єгиптянка 157, 213, 218\nАмефуст камінь 256\nАмимис, імя Бога 110\nАмисьми, імя Бога 118\nАммалик 251, 252, 257, 262\nАммон, цар моавський 259\nАммонїти 338\nАмон 290\nАмор 182\nАморсї 182, 189\nАмос пророк 1, 322, 323\nАмос, отець Ісаї 306\nАмрам отець Мойсеїв 226\nАмфілохій Іконїйський 3\nАмфусий камінь 245\nАнан син Юдин 189\nАнанїя 307, 309, 310, 311, 315,\n318, 322\nАнастасий Синаїт 2\nАндрей Юродивий 4\nАнна архиєрей 147\n„     мати Богородицї 149, 323\n„     пророчиця 323\nАподион камінь 257\nАпос, син Валаамів 223\nАнтихрист 10, 37, 151, 152, 155, 242\nАнфиси кам. 242\nАнфракія 245\nАнѳракс камінь 181, 240\nАпостоли 217, 238\nАпфо імя бога (?) 302\nАрабат 45\nАравити 334\nАравитська земля 296\nАравитські гори 70\nАравоо 46\nАрам батько Фамари 190\nАрам брат Авраамів 82, 83\nАраматська земля 195\nАрамська земля 197\nАраратські гори 67\nАрафов 243\nАревео 245\nАред 9, 36, 39, 52, 68\nАрикнис 244\nАрис звізда 49\nАркин син Валаамів 24, 43\nАрмій 225\nАрмінське поле 232\nАрмяне 228 229\nАрон 112, 225, 226, 228, 233, 234,\n236, 237, 239, 245, 218, 249,\n253, 257, 296, 322\nАрот 79\nАрур 78\nАрфаксад 77\nАрхангели многоочиті 7\nАрхас 48\nАрхеографічна Комісия Петерб. 6\nАсаф 274, 275, 276, 322\nАсафат 303\nАсахар 195\nАсидона ріка 315\nАсир гора 190\nАсир, син Яковів 153, 174, 194,\n209, 212, 242\nАсирин 205\nАсирия 239\nАсирияне 18, 106, 304, 307\nАсирийська земля 27\nАспар, царевич перський, ученик\nВалаамів 259\nАспис камінь 241\nАсуама дочка Адамова 33\nАсурї 255, 276\nАсюр 248\nАттик, цар вавилонський 309, 310,\n314, 317, 318\nАукино камінь 241, 256\nАунан син Юдин 190, 195",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Vertical rule dividing index columns",
+          "bbox_xywh": [
+            607,
+            160,
+            7,
+            1413
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          144,
+          92,
+          59,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "342",
+            "bbox_xywh": [
+              144,
+              92,
+              59,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "index-left",
+        "kind": "body",
+        "bbox_xywh": [
+          144,
+          159,
+          458,
+          1399
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "index-left-l001",
+            "text": "Академія Наук віденська 32",
+            "bbox_xywh": [
+              144,
+              159,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 26,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l002",
+            "text": "„          „      петербурська 6, 32",
+            "bbox_xywh": [
+              144,
+              188,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 36,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l003",
+            "text": "„          „      югословянська 6",
+            "bbox_xywh": [
+              144,
+              216,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 33,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l004",
+            "text": "Акнан ріка 338",
+            "bbox_xywh": [
+              144,
+              245,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 11,
+                "end": 14,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l005",
+            "text": "Аким отець Богородицї 149, 311, 321",
+            "bbox_xywh": [
+              144,
+              274,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 35,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l006",
+            "text": "Акинф, камінь 245",
+            "bbox_xywh": [
+              144,
+              302,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l007",
+            "text": "Акрис син Валаама 228, 233",
+            "bbox_xywh": [
+              144,
+              331,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 26,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l008",
+            "text": "Алдаод, прор. 322",
+            "bbox_xywh": [
+              144,
+              359,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l009",
+            "text": "Александер В. 338",
+            "bbox_xywh": [
+              144,
+              388,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l010",
+            "text": "Александро-Невська Лавра 223",
+            "bbox_xywh": [
+              144,
+              417,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 28,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l011",
+            "text": "Алкафрос 125",
+            "bbox_xywh": [
+              144,
+              445,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 12,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l012",
+            "text": "Амаврийський дуб 86",
+            "bbox_xywh": [
+              144,
+              474,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 19,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l013",
+            "text": "Амаликитяне, 122, 238, 239",
+            "bbox_xywh": [
+              144,
+              502,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 26,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l014",
+            "text": "Амалфегор, дочка Йовова 267",
+            "bbox_xywh": [
+              144,
+              531,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 27,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l015",
+            "text": "Амантїйська ріка 241",
+            "bbox_xywh": [
+              144,
+              559,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l016",
+            "text": "Аматунта ріка 245",
+            "bbox_xywh": [
+              144,
+              588,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l017",
+            "text": "Амбакум пророк 322",
+            "bbox_xywh": [
+              144,
+              617,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l018",
+            "text": "Амбрам, син Каата 225",
+            "bbox_xywh": [
+              144,
+              645,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 21,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l019",
+            "text": "Амемфрия, Єгиптянка 157, 213, 218",
+            "bbox_xywh": [
+              144,
+              674,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 33,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l020",
+            "text": "Амефуст камінь 256",
+            "bbox_xywh": [
+              144,
+              702,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l021",
+            "text": "Амимис, імя Бога 110",
+            "bbox_xywh": [
+              144,
+              731,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l022",
+            "text": "Амисьми, імя Бога 118",
+            "bbox_xywh": [
+              144,
+              760,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 21,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l023",
+            "text": "Аммалик 251, 252, 257, 262",
+            "bbox_xywh": [
+              144,
+              788,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 8,
+                "end": 26,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l024",
+            "text": "Аммон, цар моавський 259",
+            "bbox_xywh": [
+              144,
+              817,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 24,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l025",
+            "text": "Аммонїти 338",
+            "bbox_xywh": [
+              144,
+              845,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 12,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l026",
+            "text": "Амон 290",
+            "bbox_xywh": [
+              144,
+              874,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 8,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l027",
+            "text": "Амор 182",
+            "bbox_xywh": [
+              144,
+              902,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 8,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l028",
+            "text": "Аморсї 182, 189",
+            "bbox_xywh": [
+              144,
+              931,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 15,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l029",
+            "text": "Амос пророк 1, 322, 323",
+            "bbox_xywh": [
+              144,
+              960,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 23,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l030",
+            "text": "Амос, отець Ісаї 306",
+            "bbox_xywh": [
+              144,
+              988,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l031",
+            "text": "Амрам отець Мойсеїв 226",
+            "bbox_xywh": [
+              144,
+              1017,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 23,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l032",
+            "text": "Амфілохій Іконїйський 3",
+            "bbox_xywh": [
+              144,
+              1045,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 23,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l033",
+            "text": "Амфусий камінь 245",
+            "bbox_xywh": [
+              144,
+              1074,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l034",
+            "text": "Анан син Юдин 189",
+            "bbox_xywh": [
+              144,
+              1103,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l035",
+            "text": "Ананїя 307, 309, 310, 311, 315,",
+            "bbox_xywh": [
+              144,
+              1131,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 31,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l036",
+            "text": "318, 322",
+            "bbox_xywh": [
+              144,
+              1160,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 8,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l037",
+            "text": "Анастасий Синаїт 2",
+            "bbox_xywh": [
+              144,
+              1188,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l038",
+            "text": "Андрей Юродивий 4",
+            "bbox_xywh": [
+              144,
+              1217,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l039",
+            "text": "Анна архиєрей 147",
+            "bbox_xywh": [
+              144,
+              1246,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l040",
+            "text": "„     мати Богородицї 149, 323",
+            "bbox_xywh": [
+              144,
+              1274,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 30,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l041",
+            "text": "„     пророчиця 323",
+            "bbox_xywh": [
+              144,
+              1303,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 19,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l042",
+            "text": "Аподион камінь 257",
+            "bbox_xywh": [
+              144,
+              1331,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l043",
+            "text": "Апос, син Валаамів 223",
+            "bbox_xywh": [
+              144,
+              1360,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 22,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l044",
+            "text": "Антихрист 10, 37, 151, 152, 155, 242",
+            "bbox_xywh": [
+              144,
+              1388,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 36,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l045",
+            "text": "Анфиси кам. 242",
+            "bbox_xywh": [
+              144,
+              1417,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 15,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l046",
+            "text": "Анфракія 245",
+            "bbox_xywh": [
+              144,
+              1446,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 12,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l047",
+            "text": "Анѳракс камінь 181, 240",
+            "bbox_xywh": [
+              144,
+              1474,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 23,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l048",
+            "text": "Апостоли 217, 238",
+            "bbox_xywh": [
+              144,
+              1503,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-left-l049",
+            "text": "Апфо імя бога (?) 302",
+            "bbox_xywh": [
+              144,
+              1531,
+              458,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 21,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "index-right",
+        "kind": "body",
+        "bbox_xywh": [
+          618,
+          163,
+          473,
+          1416
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "index-right-l001",
+            "text": "Арабат 45",
+            "bbox_xywh": [
+              618,
+              163,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 9,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l002",
+            "text": "Аравити 334",
+            "bbox_xywh": [
+              618,
+              192,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 8,
+                "end": 11,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l003",
+            "text": "Аравитська земля 296",
+            "bbox_xywh": [
+              618,
+              221,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l004",
+            "text": "Аравитські гори 70",
+            "bbox_xywh": [
+              618,
+              250,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l005",
+            "text": "Аравоо 46",
+            "bbox_xywh": [
+              618,
+              278,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 9,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l006",
+            "text": "Арам батько Фамари 190",
+            "bbox_xywh": [
+              618,
+              307,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 22,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l007",
+            "text": "Арам брат Авраамів 82, 83",
+            "bbox_xywh": [
+              618,
+              336,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 25,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l008",
+            "text": "Араматська земля 195",
+            "bbox_xywh": [
+              618,
+              365,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l009",
+            "text": "Арамська земля 197",
+            "bbox_xywh": [
+              618,
+              394,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l010",
+            "text": "Араратські гори 67",
+            "bbox_xywh": [
+              618,
+              423,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l011",
+            "text": "Арафов 243",
+            "bbox_xywh": [
+              618,
+              452,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 10,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l012",
+            "text": "Аревео 245",
+            "bbox_xywh": [
+              618,
+              481,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 10,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l013",
+            "text": "Аред 9, 36, 39, 52, 68",
+            "bbox_xywh": [
+              618,
+              510,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 22,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l014",
+            "text": "Арикнис 244",
+            "bbox_xywh": [
+              618,
+              539,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 8,
+                "end": 11,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l015",
+            "text": "Арис звізда 49",
+            "bbox_xywh": [
+              618,
+              568,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 14,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l016",
+            "text": "Аркин син Валаамів 24, 43",
+            "bbox_xywh": [
+              618,
+              597,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 25,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l017",
+            "text": "Армій 225",
+            "bbox_xywh": [
+              618,
+              626,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 9,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l018",
+            "text": "Армінське поле 232",
+            "bbox_xywh": [
+              618,
+              655,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l019",
+            "text": "Армяне 228 229",
+            "bbox_xywh": [
+              618,
+              684,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 14,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l020",
+            "text": "Арон 112, 225, 226, 228, 233, 234,",
+            "bbox_xywh": [
+              618,
+              712,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 34,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l021",
+            "text": "236, 237, 239, 245, 218, 249,",
+            "bbox_xywh": [
+              618,
+              741,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 29,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l022",
+            "text": "253, 257, 296, 322",
+            "bbox_xywh": [
+              618,
+              770,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l023",
+            "text": "Арот 79",
+            "bbox_xywh": [
+              618,
+              799,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l024",
+            "text": "Арур 78",
+            "bbox_xywh": [
+              618,
+              828,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l025",
+            "text": "Арфаксад 77",
+            "bbox_xywh": [
+              618,
+              857,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 11,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l026",
+            "text": "Архангели многоочиті 7",
+            "bbox_xywh": [
+              618,
+              886,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 22,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l027",
+            "text": "Архас 48",
+            "bbox_xywh": [
+              618,
+              915,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 8,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l028",
+            "text": "Археографічна Комісия Петерб. 6",
+            "bbox_xywh": [
+              618,
+              944,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 31,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l029",
+            "text": "Асаф 274, 275, 276, 322",
+            "bbox_xywh": [
+              618,
+              973,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 23,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l030",
+            "text": "Асафат 303",
+            "bbox_xywh": [
+              618,
+              1002,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 10,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l031",
+            "text": "Асахар 195",
+            "bbox_xywh": [
+              618,
+              1031,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 10,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l032",
+            "text": "Асидона ріка 315",
+            "bbox_xywh": [
+              618,
+              1060,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 16,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l033",
+            "text": "Асир гора 190",
+            "bbox_xywh": [
+              618,
+              1089,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 13,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l034",
+            "text": "Асир, син Яковів 153, 174, 194,",
+            "bbox_xywh": [
+              618,
+              1118,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 31,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l035",
+            "text": "209, 212, 242",
+            "bbox_xywh": [
+              618,
+              1147,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 13,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l036",
+            "text": "Асирин 205",
+            "bbox_xywh": [
+              618,
+              1175,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 10,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l037",
+            "text": "Асирия 239",
+            "bbox_xywh": [
+              618,
+              1204,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 10,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l038",
+            "text": "Асирияне 18, 106, 304, 307",
+            "bbox_xywh": [
+              618,
+              1233,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 26,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l039",
+            "text": "Асирийська земля 27",
+            "bbox_xywh": [
+              618,
+              1262,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 19,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l040",
+            "text": "Аспар, царевич перський, ученик",
+            "bbox_xywh": [
+              618,
+              1291,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l041",
+            "text": "Валаамів 259",
+            "bbox_xywh": [
+              618,
+              1320,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 12,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l042",
+            "text": "Аспис камінь 241",
+            "bbox_xywh": [
+              618,
+              1349,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 16,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l043",
+            "text": "Асуама дочка Адамова 33",
+            "bbox_xywh": [
+              618,
+              1378,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 23,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l044",
+            "text": "Асурї 255, 276",
+            "bbox_xywh": [
+              618,
+              1407,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 14,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l045",
+            "text": "Асюр 248",
+            "bbox_xywh": [
+              618,
+              1436,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 8,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l046",
+            "text": "Аттик, цар вавилонський 309, 310,",
+            "bbox_xywh": [
+              618,
+              1465,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 33,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l047",
+            "text": "314, 317, 318",
+            "bbox_xywh": [
+              618,
+              1494,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 13,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l048",
+            "text": "Аукино камінь 241, 256",
+            "bbox_xywh": [
+              618,
+              1523,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 22,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "index-right-l049",
+            "text": "Аунан син Юдин 190, 195",
+            "bbox_xywh": [
+              618,
+              1552,
+              473,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 23,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i417-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "index-left-l004",
+        "reading": "Акнан",
+        "reason": "Exact letters of the hydronym provisional."
+      },
+      {
+        "line_id": "index-left-l028",
+        "reading": "Аморсї",
+        "reason": "Exact final letters provisional."
+      },
+      {
+        "line_id": "index-left-l043",
+        "reading": "Апос",
+        "reason": "Printed name reading provisional."
+      },
+      {
+        "line_id": "index-left-l047",
+        "reading": "Анѳракс",
+        "reason": "Historical medial glyph provisional."
+      },
+      {
+        "line_id": "index-right-l005",
+        "reading": "Аравоо",
+        "reason": "Final vowel provisional."
+      },
+      {
+        "line_id": "index-right-l014",
+        "reading": "Арикнис",
+        "reason": "Exact printed name provisional."
+      },
+      {
+        "line_id": "index-right-l021",
+        "reading": "218",
+        "reason": "Visible digit looks like 1, though 248 is also possible; preserve 218 provisionally rather than silently sorting the reference list."
+      },
+      {
+        "line_id": "index-right-l034",
+        "reading": "153",
+        "reason": "Digit shape imperfect; reference provisional."
+      },
+      {
+        "line_id": "index-right-l045",
+        "reading": "Асюр",
+        "reason": "Exact name provisional."
+      }
+    ]
+  }
+}
