@@ -56,7 +56,7 @@ class EditorSmoke(unittest.TestCase):
             page.locator("#reviewLine").select_option("early-apocrypha-context-line-06")
             expect(edit).to_have_attribute("data-font-mode","plain")
             self.assertIn("Monomakh historic",edit.evaluate("e => getComputedStyle(e).fontFamily.split(',')[0]"))
-            self.assertIn("U+0460-0489",page.evaluate("Array.from(document.fonts).find(f=>f.family.includes('Monomakh historic')).unicodeRange.toUpperCase()"))
+            self.assertRegex(page.evaluate("Array.from(document.fonts).find(f=>f.family.includes('Monomakh historic')).unicodeRange.toUpperCase()"), r"U\+0?460-0?489")
             page.locator("#reviewLine").select_option("early-apocrypha-context-line-03")
             expect(edit).to_have_attribute("data-font-mode","greek")
             page.locator("#reviewLine").select_option(LINE["id"])
