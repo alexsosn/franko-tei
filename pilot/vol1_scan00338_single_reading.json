@@ -1,0 +1,447 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 338,
+  "printed_page_observed": "263",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00338.jpg",
+  "source_image_sha256": "54d40d86b6c997b050ab164a14b1d20c50a619043253e28f3155d3623ae98c0a",
+  "reading": {
+    "reader_id": "gpt62-i338-final-gap-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i-final-gaps-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original pinned image reading; all physical lines, printed folio when visible, headings, manuscript text and Franko commentary. Estimated geometry. Exact historical accentuation, titla, and mixed-language attribution provisional. No same-page embedded OCR or peer reading consulted.",
+    "raw_response": "263\nпро Валаама) опублїкував др. Ом. Калитовський у книжцї „Мате-\nріялы до рускои литературы апокрифичнои“ Львів 1884.\nАпокріфічних оповідань про Мойсея в жидівській рабінській\nлїтературі досить богато, та в церковнословянських текстах їх за-\nховало ся мало. Огляд лїтератури сего предмету гл. И. Я. П о р -\nф и р ь е в ъ, Апокр. сказ. о ветхозав. лицахъ и соб. Казань 1872,\nстор. 289—294 і єгож Апокр. сказ. о ветхозав. лиц. и соб. по ру-\nкоп. Солов. библ. ст. 67—71, 184—204, 227—235, 259—260; W e i l,\nBiblische Legenden der Muselmänner стор. 126—191; M. G r ü n b a u m,\nNeue Beiträge zur semitischem Sagenkunde, 152—185, а надто O.\nZ ö c k l e r, Die Apokryphen des Alten Testaments, München 1891,\nстор. 424, 437, 438, 476.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Printed closing floral ornament",
+          "bbox_xywh": [
+            480,
+            700,
+            218,
+            150
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          964,
+          79,
+          58,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "263",
+            "bbox_xywh": [
+              964,
+              79,
+              58,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          112,
+          147,
+          926,
+          418
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-l001",
+            "text": "про Валаама) опублїкував др. Ом. Калитовський у книжцї „Мате-",
+            "bbox_xywh": [
+              112,
+              147,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 55,
+                "end": 61,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l002",
+            "text": "ріялы до рускои литературы апокрифичнои“ Львів 1884.",
+            "bbox_xywh": [
+              112,
+              182,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 40,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 40,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l003",
+            "text": "Апокріфічних оповідань про Мойсея в жидівській рабінській",
+            "bbox_xywh": [
+              112,
+              217,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l004",
+            "text": "лїтературі досить богато, та в церковнословянських текстах їх за-",
+            "bbox_xywh": [
+              112,
+              252,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l005",
+            "text": "ховало ся мало. Огляд лїтератури сего предмету гл. И. Я. П о р -",
+            "bbox_xywh": [
+              112,
+              287,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 51,
+                "end": 64,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l006",
+            "text": "ф и р ь е в ъ, Апокр. сказ. о ветхозав. лицахъ и соб. Казань 1872,",
+            "bbox_xywh": [
+              112,
+              322,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l007",
+            "text": "стор. 289—294 і єгож Апокр. сказ. о ветхозав. лиц. и соб. по ру-",
+            "bbox_xywh": [
+              112,
+              357,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 20,
+                "end": 64,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l008",
+            "text": "коп. Солов. библ. ст. 67—71, 184—204, 227—235, 259—260; W e i l,",
+            "bbox_xywh": [
+              112,
+              392,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 56,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l009",
+            "text": "Biblische Legenden der Muselmänner стор. 126—191; M. G r ü n b a u m,",
+            "bbox_xywh": [
+              112,
+              427,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 35,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 35,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 50,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l010",
+            "text": "Neue Beiträge zur semitischem Sagenkunde, 152—185, а надто O.",
+            "bbox_xywh": [
+              112,
+              462,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 51,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 51,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              },
+              {
+                "start": 59,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l011",
+            "text": "Z ö c k l e r, Die Apokryphen des Alten Testaments, München 1891,",
+            "bbox_xywh": [
+              112,
+              497,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l012",
+            "text": "стор. 424, 437, 438, 476.",
+            "bbox_xywh": [
+              112,
+              532,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i338-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-l005",
+        "reading": "ховало ся мало. Огляд лїтератури сего предмету гл. И. Я. П о р -",
+        "reason": "Bibliographic letterspacing, historical spelling and title punctuation provisional."
+      },
+      {
+        "line_id": "editorial-l006",
+        "reading": "ф и р ь е в ъ, Апокр. сказ. о ветхозав. лицахъ и соб. Казань 1872,",
+        "reason": "Bibliographic letterspacing, historical spelling and title punctuation provisional."
+      },
+      {
+        "line_id": "editorial-l007",
+        "reading": "стор. 289—294 і єгож Апокр. сказ. о ветхозав. лиц. и соб. по ру-",
+        "reason": "Bibliographic letterspacing, historical spelling and title punctuation provisional."
+      },
+      {
+        "line_id": "editorial-l008",
+        "reading": "коп. Солов. библ. ст. 67—71, 184—204, 227—235, 259—260; W e i l,",
+        "reason": "Bibliographic letterspacing, historical spelling and title punctuation provisional."
+      },
+      {
+        "line_id": "editorial-l009",
+        "reading": "Biblische Legenden der Muselmänner стор. 126—191; M. G r ü n b a u m,",
+        "reason": "Bibliographic letterspacing, historical spelling and title punctuation provisional."
+      },
+      {
+        "line_id": "editorial-l010",
+        "reading": "Neue Beiträge zur semitischem Sagenkunde, 152—185, а надто O.",
+        "reason": "Bibliographic letterspacing, historical spelling and title punctuation provisional."
+      },
+      {
+        "line_id": "editorial-l011",
+        "reading": "Z ö c k l e r, Die Apokryphen des Alten Testaments, München 1891,",
+        "reason": "Bibliographic letterspacing, historical spelling and title punctuation provisional."
+      }
+    ]
+  }
+}
