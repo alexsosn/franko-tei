@@ -134,6 +134,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 21,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i409-final-gap-20261125"
+              },
+              {
+                "start": 21,
+                "end": 25,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i409-final-gap-20261125"
+              },
+              {
+                "start": 25,
                 "end": 62,
                 "language": "orv",
                 "script": "Cyrl",
@@ -697,7 +713,7 @@
               {
                 "start": 0,
                 "end": 59,
-                "language": "orv",
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i409-final-gap-20261125"
@@ -718,7 +734,7 @@
               {
                 "start": 0,
                 "end": 6,
-                "language": "orv",
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i409-final-gap-20261125"
@@ -1119,5 +1135,14 @@
         "note_region_id": "note-1"
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "75df12117a568c63d5d19da770c4a6c61321973d",
+    "source_record_blob": "c38a9d505c94e0e02be5aab91a45c8bfd0b5e06c",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual review of exact frozen candidate against original pinned scan. Distinguish explicit Church Slavonic quotations and liturgical formulae from historical Ruthenian explanation, and standalone Cyrillic numeral tokens from lexical abbreviations. No recensional or glyph verification."
   }
 }

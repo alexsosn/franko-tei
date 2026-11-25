@@ -764,6 +764,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 52,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i406-final-gap-20261125"
+              },
+              {
+                "start": 52,
+                "end": 55,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i406-final-gap-20261125"
+              },
+              {
+                "start": 55,
                 "end": 61,
                 "language": "orv",
                 "script": "Cyrl",
@@ -785,6 +801,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 40,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i406-final-gap-20261125"
+              },
+              {
+                "start": 40,
+                "end": 43,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i406-final-gap-20261125"
+              },
+              {
+                "start": 43,
                 "end": 65,
                 "language": "orv",
                 "script": "Cyrl",
@@ -1156,5 +1188,14 @@
         "note_region_id": "note-1"
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "75df12117a568c63d5d19da770c4a6c61321973d",
+    "source_record_blob": "08f1a78ba552523bb6417ccedea00ada787b426f",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual review of exact frozen candidate against original pinned scan. Distinguish explicit Church Slavonic quotations and liturgical formulae from historical Ruthenian explanation, and standalone Cyrillic numeral tokens from lexical abbreviations. No recensional or glyph verification."
   }
 }
