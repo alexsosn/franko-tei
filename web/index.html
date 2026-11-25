@@ -7956,13 +7956,13 @@ async function renderPrintedIndexes(){
   const id=++indexRequest,v=$('contentsVolume').value||$('volume').value;
   $('contentsTitle').textContent=indexText('Indexes — Volume ','Покажчики — Том ')+v;
   $('indexEntries').replaceChildren();$('indexKind').disabled=true;$('indexSourcePages').replaceChildren();$('contentsEmpty').hidden=true;uiText($('contentsFilterStatus'),'');
-  $('indexStatus').textContent=indexText('Loading indexes…','Завантаження покажчиків…');
+  $('indexSources').hidden=true;$('indexStatus').textContent=indexText('Loading indexes…','Завантаження покажчиків…');
   try{
     const d=await cached('printed-indexes',async()=>validatePrintedIndexes(await(await get('./search/printed-indexes.json')).json()));
     if(id!==indexRequest||navigationMode!=='indexes'||!$('contentsPanel').open||v!==$('contentsVolume').value)return;
     indexSnapshot=d;drawPrintedIndex(d,v);
   }catch(e){
-    if(id===indexRequest&&navigationMode==='indexes'){uiText($('indexStatus'),'Index data unavailable');$('indexSources').hidden=true;}
+    if(id===indexRequest&&navigationMode==='indexes'&&$('contentsPanel').open){uiText($('indexStatus'),'Index data unavailable');$('indexSources').hidden=true;}
   }
 }
 $('contentsMode').onclick=()=>selectNavigationMode('contents');
