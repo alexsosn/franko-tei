@@ -1,0 +1,839 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 34,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00034.jpg",
+  "source_image_sha256": "6751bc255227c4641aeb1384ff39a257ae541de168de037ff5dd1e3ba40c50d5",
+  "reading": {
+    "reader_id": "gpt62-v5s00034-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-031-040-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned scan directly, no OCR or peer text for these scans accessed. Estimated line geometry and provisional historical typography; all textual rows explicitly uncertain. No verified or diplomatic-completeness claim. Adversarial pass corrected note region kind, source marker links, Latin shelfmark/numeral spans or visible numeral/mark readings where applicable; initial text remains in branch history.",
+    "raw_response": "VII. Свята Ирина.\nВасиліянський Пролог ч. XIV, стор. 152—153.\nСтих: Мечем оумръши и поживши\nстранно, и мирно оумръла еси Ирино!\nИрина посѣчена бывши безъ ѡбращанїа\nи оумре въ патыи.\nТа баше единородна соущи Ликинїа Василиска и Ликинїа\nмт҃ре, ѿ града македонскаго, Пиналопїи пръвѣе ѿ родителеи име-\nновавши са. баше же тѣлом лѣпа и красотою многыа перешед-\nшїа. на высоцѣ столпѣ пребываше, егоже ѡц҃ь еа създалъ баше,\nсъ ѿроковицами прекрасными тринадесятїю. много и неоскѫдно\nизобилованїе имѫщїа богатество, прст҃олъ и трапеза и свѣщникъ\nзлатом искованыи баше же, вънегда ѡц҃ь еа създа стлъпъ лѣ-\nтом шестым. Апелїаном нѣким старцем наказема¹), его же\nоучена Ликинїа оучилъ са баше. видѣвши голѫба въшедша и но-\nсаща сѫщецъ масличенъ и на трапезѫ положившаго, таже пакы\nвидѣ ѡрла несѫща вѣнецъ ѿ различных цвѣтецъ, и на трапезѫ\nположившаго. и пакы ѿ иного ѡконца гаврана въшедша, носаща\nзмїю и положившаго на трапезѫ. недооумѣваюши са еи и по-\nмышлѣющи еи, что бѫдетъ виденїе и что вещь явлѣетъ, ста-\nрецъ же Апелїанъ то исказа, яко голѫбь ест наказанїе нравѫ,\nа сѫщецъ масличныи назнаменанїе вещем и ѡбрѣстїе кръщенїю;\nѡрел же цр҃а горам сѫщаго вѣнца ради, еже ѿ избранных еа\nи добрых назнаменѫа съѡдоленїе. гавран иже съ змїею скръбь\nи напасть являюще. и вся елика то исповѣда подвигъ ко мч҃нїю\n¹) На марґ. дописано пізнїйшою рукою: оучима.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Double heading rule",
+          "bbox_xywh": [
+            540,
+            600,
+            120,
+            20
+          ]
+        },
+        {
+          "description": "Footnote rule",
+          "bbox_xywh": [
+            113,
+            1642,
+            225,
+            12
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "heading-1",
+        "kind": "heading",
+        "bbox_xywh": [
+          400,
+          530,
+          420,
+          48
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-1-line-01",
+            "text": "VII. Свята Ирина.",
+            "bbox_xywh": [
+              400,
+              530,
+              420,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 4,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "other-2",
+        "kind": "other",
+        "bbox_xywh": [
+          225,
+          690,
+          785,
+          43
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "other-2-line-01",
+            "text": "Василіянський Пролог ч. XIV, стор. 152—153.",
+            "bbox_xywh": [
+              225,
+              690,
+              785,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 24,
+                "end": 27,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 27,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-3",
+        "kind": "body",
+        "bbox_xywh": [
+          628,
+          766,
+          480,
+          116
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-3-line-01",
+            "text": "Стих: Мечем оумръши и поживши",
+            "bbox_xywh": [
+              628,
+              766,
+              480,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-02",
+            "text": "странно, и мирно оумръла еси Ирино!",
+            "bbox_xywh": [
+              628,
+              795,
+              480,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-03",
+            "text": "Ирина посѣчена бывши безъ ѡбращанїа",
+            "bbox_xywh": [
+              628,
+              824,
+              480,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-04",
+            "text": "и оумре въ патыи.",
+            "bbox_xywh": [
+              628,
+              853,
+              480,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-4",
+        "kind": "body",
+        "bbox_xywh": [
+          114,
+          905,
+          985,
+          717
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-4-line-01",
+            "text": "Та баше единородна соущи Ликинїа Василиска и Ликинїа",
+            "bbox_xywh": [
+              114,
+              905,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-02",
+            "text": "мт҃ре, ѿ града македонскаго, Пиналопїи пръвѣе ѿ родителеи име-",
+            "bbox_xywh": [
+              114,
+              943,
+              985,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-03",
+            "text": "новавши са. баше же тѣлом лѣпа и красотою многыа перешед-",
+            "bbox_xywh": [
+              114,
+              980,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-04",
+            "text": "шїа. на высоцѣ столпѣ пребываше, егоже ѡц҃ь еа създалъ баше,",
+            "bbox_xywh": [
+              114,
+              1018,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-05",
+            "text": "съ ѿроковицами прекрасными тринадесятїю. много и неоскѫдно",
+            "bbox_xywh": [
+              114,
+              1056,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-06",
+            "text": "изобилованїе имѫщїа богатество, прст҃олъ и трапеза и свѣщникъ",
+            "bbox_xywh": [
+              114,
+              1094,
+              985,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-07",
+            "text": "златом искованыи баше же, вънегда ѡц҃ь еа създа стлъпъ лѣ-",
+            "bbox_xywh": [
+              114,
+              1131,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-08",
+            "text": "том шестым. Апелїаном нѣким старцем наказема¹), его же",
+            "bbox_xywh": [
+              114,
+              1169,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-09",
+            "text": "оучена Ликинїа оучилъ са баше. видѣвши голѫба въшедша и но-",
+            "bbox_xywh": [
+              114,
+              1207,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-10",
+            "text": "саща сѫщецъ масличенъ и на трапезѫ положившаго, таже пакы",
+            "bbox_xywh": [
+              114,
+              1245,
+              985,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-11",
+            "text": "видѣ ѡрла несѫща вѣнецъ ѿ различных цвѣтецъ, и на трапезѫ",
+            "bbox_xywh": [
+              114,
+              1282,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-12",
+            "text": "положившаго. и пакы ѿ иного ѡконца гаврана въшедша, носаща",
+            "bbox_xywh": [
+              114,
+              1320,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-13",
+            "text": "змїю и положившаго на трапезѫ. недооумѣваюши са еи и по-",
+            "bbox_xywh": [
+              114,
+              1358,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-14",
+            "text": "мышлѣющи еи, что бѫдетъ виденїе и что вещь явлѣетъ, ста-",
+            "bbox_xywh": [
+              114,
+              1396,
+              985,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-15",
+            "text": "рецъ же Апелїанъ то исказа, яко голѫбь ест наказанїе нравѫ,",
+            "bbox_xywh": [
+              114,
+              1433,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-16",
+            "text": "а сѫщецъ масличныи назнаменанїе вещем и ѡбрѣстїе кръщенїю;",
+            "bbox_xywh": [
+              114,
+              1471,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-17",
+            "text": "ѡрел же цр҃а горам сѫщаго вѣнца ради, еже ѿ избранных еа",
+            "bbox_xywh": [
+              114,
+              1509,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-18",
+            "text": "и добрых назнаменѫа съѡдоленїе. гавран иже съ змїею скръбь",
+            "bbox_xywh": [
+              114,
+              1547,
+              985,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-19",
+            "text": "и напасть являюще. и вся елика то исповѣда подвигъ ко мч҃нїю",
+            "bbox_xywh": [
+              114,
+              1584,
+              985,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footnote-5",
+        "kind": "note",
+        "bbox_xywh": [
+          185,
+          1667,
+          600,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "footnote-5-line-01",
+            "text": "¹) На марґ. дописано пізнїйшою рукою: оучима.",
+            "bbox_xywh": [
+              185,
+              1667,
+              600,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 38,
+                "end": 44,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 44,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "heading-1-line-01",
+        "reading": "VII. Свята Ирина.",
+        "reason": "Provisional direct reading: historical spelling, punctuation and embedded manuscript forms require source reinspection."
+      },
+      {
+        "line_id": "other-2-line-01",
+        "reading": "Василіянський Пролог ч. XIV, стор. 152—153.",
+        "reason": "Provisional direct reading: historical spelling, punctuation and embedded manuscript forms require source reinspection."
+      },
+      {
+        "line_id": "body-3-line-01",
+        "reading": "Стих: Мечем оумръши и поживши",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-3-line-02",
+        "reading": "странно, и мирно оумръла еси Ирино!",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-3-line-03",
+        "reading": "Ирина посѣчена бывши безъ ѡбращанїа",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-3-line-04",
+        "reading": "и оумре въ патыи.",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-01",
+        "reading": "Та баше единородна соущи Ликинїа Василиска и Ликинїа",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-02",
+        "reading": "мт҃ре, ѿ града македонскаго, Пиналопїи пръвѣе ѿ родителеи име-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-03",
+        "reading": "новавши са. баше же тѣлом лѣпа и красотою многыа перешед-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-04",
+        "reading": "шїа. на высоцѣ столпѣ пребываше, егоже ѡц҃ь еа създалъ баше,",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-05",
+        "reading": "съ ѿроковицами прекрасными тринадесятїю. много и неоскѫдно",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-06",
+        "reading": "изобилованїе имѫщїа богатество, прст҃олъ и трапеза и свѣщникъ",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-07",
+        "reading": "златом искованыи баше же, вънегда ѡц҃ь еа създа стлъпъ лѣ-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-08",
+        "reading": "том шестым. Апелїаном нѣким старцем наказема¹), его же",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-09",
+        "reading": "оучена Ликинїа оучилъ са баше. видѣвши голѫба въшедша и но-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-10",
+        "reading": "саща сѫщецъ масличенъ и на трапезѫ положившаго, таже пакы",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-11",
+        "reading": "видѣ ѡрла несѫща вѣнецъ ѿ различных цвѣтецъ, и на трапезѫ",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-12",
+        "reading": "положившаго. и пакы ѿ иного ѡконца гаврана въшедша, носаща",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-13",
+        "reading": "змїю и положившаго на трапезѫ. недооумѣваюши са еи и по-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-14",
+        "reading": "мышлѣющи еи, что бѫдетъ виденїе и что вещь явлѣетъ, ста-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-15",
+        "reading": "рецъ же Апелїанъ то исказа, яко голѫбь ест наказанїе нравѫ,",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-16",
+        "reading": "а сѫщецъ масличныи назнаменанїе вещем и ѡбрѣстїе кръщенїю;",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-17",
+        "reading": "ѡрел же цр҃а горам сѫщаго вѣнца ради, еже ѿ избранных еа",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-18",
+        "reading": "и добрых назнаменѫа съѡдоленїе. гавран иже съ змїею скръбь",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-4-line-19",
+        "reading": "и напасть являюще. и вся елика то исповѣда подвигъ ко мч҃нїю",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "footnote-5-line-01",
+        "reading": "¹) На марґ. дописано пізнїйшою рукою: оучима.",
+        "reason": "Provisional direct reading: historical spelling, punctuation and embedded manuscript forms require source reinspection."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "body-4-line-08",
+        "marker_text": "¹)",
+        "marker_start": 44,
+        "note_region_id": "footnote-5"
+      }
+    ]
+  }
+}

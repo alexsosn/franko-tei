@@ -1,0 +1,848 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 32,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00032.jpg",
+  "source_image_sha256": "f3fd4904088855370e625e66944ef4d3ced2cb76b8520fa7d960548810d6258d",
+  "reading": {
+    "reader_id": "gpt62-v5s00032-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-031-040-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned scan directly, no OCR or peer text for these scans accessed. Estimated line geometry and provisional historical typography; all textual rows explicitly uncertain. No verified or diplomatic-completeness claim. Adversarial pass corrected note region kind, source marker links, Latin shelfmark/numeral spans or visible numeral/mark readings where applicable; initial text remains in branch history.",
+    "raw_response": "VI. Житіє святого Аверкія.\nДруга редакція.\nРукопис бібліотеки львівського університету ч. 1 F. 15.\nСлово ѡ прпд҃внѣ ѡверкеи епискоупѣ ераполь-\nскомъ. г҃и бл҃сви ѡч҃е.\nВ ераполїи бѣаше епп҃ъ малъ тѣломъ, но смиренїемъ вы-\nсокъ, кротокъ и мл҃стивъ. дарова емоу б҃гъ даръ бѣсы прогонити\nѿ чл҃вѣкъ. и ѿ многыхъ чл҃вѣкъ изгоняше бѣсы. единою же нощи\nяви са бѣсъ и рече емоу: многа ми зла твориши, не даси ми\nни на единомъ чл҃вцѣ почити. оустрою та быти к римоу. и рече\nѡверкій бѣсоу: ни враны кости моеа не изнесеть в римъ, занеже\nдалече рим ѿ іарапола. и той изрекъ бѣсъ изыйде в римъ и\nвниде въ цр҃коу дщерь. и печалѣнъ бывъ цр҃ь и цр҃ца ѡ дщери,\nи бояре и вси людие, занеже едина дщерь бѣ цр҃а того. к тоже\nврѣма бѣахоу пришли гости изъ арапола к рим, и повѣдаша\nцр҃ю ѡ аверкіи, яко бѣсы изгонитъ ѿ чл҃вѣкъ. и радъ бывъ ѡ томъ\nцр҃ь, и ѿради боярина силна и с нимъ моужей и коней иноход-\nцевъ ко властелемъ, занже не въ его цр҃ствѣ тои градъ, да быша\nпонудили старца того, чтобы потроудил са доити до его цр҃-\nствїа. и ехаша ѡни многы дн҃и до іаропола ѿ рима, многы\nграды минуша и допросиша са до манастыра того, и внидо-\nша в хоуду пещероу, в неиже старецъ пребываше. и вшедше к не-\nмоу и бл҃гсвиша са и повѣдаша емоу цр҃ва словеса и болезнь\nдщери его. и рече ѡверкій: ѡканный бѣсе, хощеши двигноути\nстарость мою! и рече посломъ: азъ ни цр҃а ради вашего хощю\nбыти ни дщери его дѣла, ни вас дѣла, но иду тамъ да изго-\nню бѣса ѿтоудоу. за троудъ свои въздамъ емоу дѣло. и при-\nведоша емоу кони иноходци и молиша старца, да бы шелъ на",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "heading-1",
+        "kind": "heading",
+        "bbox_xywh": [
+          270,
+          560,
+          640,
+          48
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-1-line-01",
+            "text": "VI. Житіє святого Аверкія.",
+            "bbox_xywh": [
+              270,
+              560,
+              640,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 3,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "heading-2",
+        "kind": "heading",
+        "bbox_xywh": [
+          460,
+          636,
+          300,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-2-line-01",
+            "text": "Друга редакція.",
+            "bbox_xywh": [
+              460,
+              636,
+              300,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "other-3",
+        "kind": "other",
+        "bbox_xywh": [
+          145,
+          724,
+          920,
+          43
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "other-3-line-01",
+            "text": "Рукопис бібліотеки львівського університету ч. 1 F. 15.",
+            "bbox_xywh": [
+              145,
+              724,
+              920,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 49,
+                "end": 51,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 51,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "heading-4",
+        "kind": "heading",
+        "bbox_xywh": [
+          92,
+          805,
+          1030,
+          69
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-4-line-01",
+            "text": "Слово ѡ прпд҃внѣ ѡверкеи епискоупѣ ераполь-",
+            "bbox_xywh": [
+              92,
+              805,
+              1030,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "heading-4-line-02",
+            "text": "скомъ. г҃и бл҃сви ѡч҃е.",
+            "bbox_xywh": [
+              92,
+              840,
+              1030,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-5",
+        "kind": "body",
+        "bbox_xywh": [
+          94,
+          886,
+          1030,
+          923
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-5-line-01",
+            "text": "В ераполїи бѣаше епп҃ъ малъ тѣломъ, но смиренїемъ вы-",
+            "bbox_xywh": [
+              94,
+              886,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-02",
+            "text": "сокъ, кротокъ и мл҃стивъ. дарова емоу б҃гъ даръ бѣсы прогонити",
+            "bbox_xywh": [
+              94,
+              926,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-03",
+            "text": "ѿ чл҃вѣкъ. и ѿ многыхъ чл҃вѣкъ изгоняше бѣсы. единою же нощи",
+            "bbox_xywh": [
+              94,
+              966,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-04",
+            "text": "яви са бѣсъ и рече емоу: многа ми зла твориши, не даси ми",
+            "bbox_xywh": [
+              94,
+              1006,
+              1030,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-05",
+            "text": "ни на единомъ чл҃вцѣ почити. оустрою та быти к римоу. и рече",
+            "bbox_xywh": [
+              94,
+              1047,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-06",
+            "text": "ѡверкій бѣсоу: ни враны кости моеа не изнесеть в римъ, занеже",
+            "bbox_xywh": [
+              94,
+              1087,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-07",
+            "text": "далече рим ѿ іарапола. и той изрекъ бѣсъ изыйде в римъ и",
+            "bbox_xywh": [
+              94,
+              1127,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-08",
+            "text": "вниде въ цр҃коу дщерь. и печалѣнъ бывъ цр҃ь и цр҃ца ѡ дщери,",
+            "bbox_xywh": [
+              94,
+              1167,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-09",
+            "text": "и бояре и вси людие, занеже едина дщерь бѣ цр҃а того. к тоже",
+            "bbox_xywh": [
+              94,
+              1207,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-10",
+            "text": "врѣма бѣахоу пришли гости изъ арапола к рим, и повѣдаша",
+            "bbox_xywh": [
+              94,
+              1247,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-11",
+            "text": "цр҃ю ѡ аверкіи, яко бѣсы изгонитъ ѿ чл҃вѣкъ. и радъ бывъ ѡ томъ",
+            "bbox_xywh": [
+              94,
+              1287,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-12",
+            "text": "цр҃ь, и ѿради боярина силна и с нимъ моужей и коней иноход-",
+            "bbox_xywh": [
+              94,
+              1327,
+              1030,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-13",
+            "text": "цевъ ко властелемъ, занже не въ его цр҃ствѣ тои градъ, да быша",
+            "bbox_xywh": [
+              94,
+              1368,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-14",
+            "text": "понудили старца того, чтобы потроудил са доити до его цр҃-",
+            "bbox_xywh": [
+              94,
+              1408,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-15",
+            "text": "ствїа. и ехаша ѡни многы дн҃и до іаропола ѿ рима, многы",
+            "bbox_xywh": [
+              94,
+              1448,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-16",
+            "text": "грады минуша и допросиша са до манастыра того, и внидо-",
+            "bbox_xywh": [
+              94,
+              1488,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-17",
+            "text": "ша в хоуду пещероу, в неиже старецъ пребываше. и вшедше к не-",
+            "bbox_xywh": [
+              94,
+              1528,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-18",
+            "text": "моу и бл҃гсвиша са и повѣдаша емоу цр҃ва словеса и болезнь",
+            "bbox_xywh": [
+              94,
+              1568,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-19",
+            "text": "дщери его. и рече ѡверкій: ѡканный бѣсе, хощеши двигноути",
+            "bbox_xywh": [
+              94,
+              1608,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-20",
+            "text": "старость мою! и рече посломъ: азъ ни цр҃а ради вашего хощю",
+            "bbox_xywh": [
+              94,
+              1648,
+              1030,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-21",
+            "text": "быти ни дщери его дѣла, ни вас дѣла, но иду тамъ да изго-",
+            "bbox_xywh": [
+              94,
+              1689,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-22",
+            "text": "ню бѣса ѿтоудоу. за троудъ свои въздамъ емоу дѣло. и при-",
+            "bbox_xywh": [
+              94,
+              1729,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-23",
+            "text": "ведоша емоу кони иноходци и молиша старца, да бы шелъ на",
+            "bbox_xywh": [
+              94,
+              1769,
+              1030,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00032-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "heading-1-line-01",
+        "reading": "VI. Житіє святого Аверкія.",
+        "reason": "Provisional direct reading: historical spelling, punctuation and embedded manuscript forms require source reinspection."
+      },
+      {
+        "line_id": "heading-2-line-01",
+        "reading": "Друга редакція.",
+        "reason": "Provisional direct reading: historical spelling, punctuation and embedded manuscript forms require source reinspection."
+      },
+      {
+        "line_id": "other-3-line-01",
+        "reading": "Рукопис бібліотеки львівського університету ч. 1 F. 15.",
+        "reason": "Provisional direct reading: historical spelling, punctuation and embedded manuscript forms require source reinspection."
+      },
+      {
+        "line_id": "heading-4-line-01",
+        "reading": "Слово ѡ прпд҃внѣ ѡверкеи епискоупѣ ераполь-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "heading-4-line-02",
+        "reading": "скомъ. г҃и бл҃сви ѡч҃е.",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-01",
+        "reading": "В ераполїи бѣаше епп҃ъ малъ тѣломъ, но смиренїемъ вы-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-02",
+        "reading": "сокъ, кротокъ и мл҃стивъ. дарова емоу б҃гъ даръ бѣсы прогонити",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-03",
+        "reading": "ѿ чл҃вѣкъ. и ѿ многыхъ чл҃вѣкъ изгоняше бѣсы. единою же нощи",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-04",
+        "reading": "яви са бѣсъ и рече емоу: многа ми зла твориши, не даси ми",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-05",
+        "reading": "ни на единомъ чл҃вцѣ почити. оустрою та быти к римоу. и рече",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-06",
+        "reading": "ѡверкій бѣсоу: ни враны кости моеа не изнесеть в римъ, занеже",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-07",
+        "reading": "далече рим ѿ іарапола. и той изрекъ бѣсъ изыйде в римъ и",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-08",
+        "reading": "вниде въ цр҃коу дщерь. и печалѣнъ бывъ цр҃ь и цр҃ца ѡ дщери,",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-09",
+        "reading": "и бояре и вси людие, занеже едина дщерь бѣ цр҃а того. к тоже",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-10",
+        "reading": "врѣма бѣахоу пришли гости изъ арапола к рим, и повѣдаша",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-11",
+        "reading": "цр҃ю ѡ аверкіи, яко бѣсы изгонитъ ѿ чл҃вѣкъ. и радъ бывъ ѡ томъ",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-12",
+        "reading": "цр҃ь, и ѿради боярина силна и с нимъ моужей и коней иноход-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-13",
+        "reading": "цевъ ко властелемъ, занже не въ его цр҃ствѣ тои градъ, да быша",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-14",
+        "reading": "понудили старца того, чтобы потроудил са доити до его цр҃-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-15",
+        "reading": "ствїа. и ехаша ѡни многы дн҃и до іаропола ѿ рима, многы",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-16",
+        "reading": "грады минуша и допросиша са до манастыра того, и внидо-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-17",
+        "reading": "ша в хоуду пещероу, в неиже старецъ пребываше. и вшедше к не-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-18",
+        "reading": "моу и бл҃гсвиша са и повѣдаша емоу цр҃ва словеса и болезнь",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-19",
+        "reading": "дщери его. и рече ѡверкій: ѡканный бѣсе, хощеши двигноути",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-20",
+        "reading": "старость мою! и рече посломъ: азъ ни цр҃а ради вашего хощю",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-21",
+        "reading": "быти ни дщери его дѣла, ни вас дѣла, но иду тамъ да изго-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-22",
+        "reading": "ню бѣса ѿтоудоу. за троудъ свои въздамъ емоу дѣло. и при-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-5-line-23",
+        "reading": "ведоша емоу кони иноходци и молиша старца, да бы шелъ на",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      }
+    ]
+  }
+}
