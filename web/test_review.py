@@ -299,7 +299,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,70,75,0],['2',140,29,111,0],
+            self.assertEqual(result, [['1',145,75,70,0],['2',140,29,111,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -470,6 +470,13 @@ class ReviewSmoke(unittest.TestCase):
             ('1', 165, 'witness-g-label-l001'),
             ('1', 167, 'section-xi-l001'),
             ('1', 167, 'witness-a-label-l001'),
+            ('1', 172, 'witness-b-l001'),
+            ('1', 177, 'section-xii-l001'),
+            ('1', 177, 'witness-a-label-l001'),
+            ('1', 179, 'witness-b-label-l001'),
+            ('1', 180, 'witness-c-label-l001'),
+            ('1', 181, 'witness-g-label-l001'),
+            ('1', 181, 'witness-d-label-l001'),
             ('2', 100, 'heading-e-line-01'),
             ('2', 100, 'heading-zh-line-01'),
         }
@@ -491,7 +498,7 @@ class ReviewSmoke(unittest.TestCase):
                 actual.add((volume, e[3], anchor['line_id']))
         self.assertTrue(expected <= actual, expected - actual)
         # Metadata enrichment must cover every linguistic line in these reused drafts.
-        for scan in (82, 86, 89, 90, 92, 93, 94, 98, 101, 103, 104, 105, 106, 108, 109, 110, 111, 112, 114, 140, 143, 147, 149, 152, 153, 154, 155, 161, 165, 166, 167):
+        for scan in (82, 86, 89, 90, 92, 93, 94, 98, 101, 103, 104, 105, 106, 108, 109, 110, 111, 112, 114, 140, 143, 147, 149, 152, 153, 154, 155, 161, 165, 166, 167, 172, 177, 179, 180):
             record = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
             reading = record['reading']
             self.assertIn('prior_reading_blob', reading['language_annotation'])
@@ -516,6 +523,15 @@ class ReviewSmoke(unittest.TestCase):
         self.assertIn(('но коментар, що тут приводимо: ', 'uk', 'Cyrl'), annotated_literals(166))
         self.assertIn(('Да разумеєши ли жидо-', 'cu', 'Cyrl'), annotated_literals(166))
         self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 165 and len(e) > 6 and e[6]]), 2)
+        self.assertIn(('Veteris Testamenti Codex apocryphus, t. I, 311—320', 'la', 'Latn'), annotated_literals(172))
+        self.assertIn(('La Bible III, 1.', 'fr', 'Latn'), annotated_literals(180))
+        self.assertIn(('Доси у Порф. пропущено', 'uk', 'Cyrl'), annotated_literals(179))
+        self.assertIn(('[sic!]', 'la', 'Latn'), annotated_literals(177))
+        self.assertIn(("sic!", 'la', 'Latn'), annotated_literals(181))
+        rec177 = json.loads((root / 'pilot/vol1_scan00177_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(rec177['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in rec177['reading']['regions']))
+        self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 181 and len(e) > 6 and e[6]]), 2)
         rec167 = json.loads((root / 'pilot/vol1_scan00167_single_reading.json').read_text(encoding='utf-8'))
         self.assertIsNone(rec167['printed_page_observed'])
         self.assertFalse(any(r['kind'] == 'page_number' for r in rec167['reading']['regions']))
