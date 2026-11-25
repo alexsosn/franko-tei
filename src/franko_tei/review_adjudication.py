@@ -168,8 +168,14 @@ def project_lines(raw, path, ledger):
 
 def _read_records(directory):
     records = []
-    for path in sorted(directory.glob("*.json")):
-        require(not path.is_symlink() and path.is_file(), "invalid ledger file")
+    require(not directory.is_symlink() and not directory.parent.is_symlink(),
+            "ledger directory cannot be a symlink")
+    if not directory.exists():
+        return records
+    require(directory.is_dir(), "invalid ledger directory")
+    for path in sorted(directory.iterdir()):
+        require(path.suffix == ".json" and not path.is_symlink() and path.is_file(),
+                "invalid ledger file")
         record = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs,
                             parse_constant=reject_constant, parse_float=reject_constant)
         identity = record["bundle"]["bundle_id"] if directory.name == "intake" else record["event_id"]
@@ -187,6 +193,8 @@ def check_repository(repo, trusted_commit, previous_commit=None):
     """
     repo = Path(repo)
     match(SHA, trusted_commit, "trusted commit")
+    intakes = _read_records(repo / "reviews" / "intake")
+    decisions = _read_records(repo / "reviews" / "adjudications")
     if previous_commit is not None:
         match(SHA, previous_commit, "previous commit")
         files = subprocess.check_output(
@@ -200,9 +208,7 @@ def check_repository(repo, trusted_commit, previous_commit=None):
             old = subprocess.check_output(["git", "-C", str(repo), "show",
                                            previous_commit + ":" + name], timeout=15)
             require(target.read_bytes() == old, "published ledger record changed")
-    return validate_ledger(_read_records(repo / "reviews" / "intake"),
-                           _read_records(repo / "reviews" / "adjudications"),
-                           git_source_loader(repo, trusted_commit))
+    return validate_ledger(intakes, decisions, git_source_loader(repo, trusted_commit))
 
 
 def main(argv=None):

@@ -155,3 +155,19 @@ class AdjudicationTests(unittest.TestCase):
             i.unlink()
             with self.assertRaisesRegex(ValueError,"published ledger record removed"):
                 check_repository(repo,intake_commit,intake_commit)
+
+    def test_ledger_directory_no_hidden_or_indirect_records(self):
+        from pathlib import Path
+        import tempfile
+        from franko_tei.review_adjudication import _read_records
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); folder=root/"reviews"/"intake"; folder.mkdir(parents=True)
+            (folder/"ignored.txt").write_text("not a valid ledger record")
+            with self.assertRaisesRegex(ValueError,"invalid ledger file"):
+                _read_records(folder)
+            (folder/"ignored.txt").unlink()
+            folder.rmdir()
+            actual=root/"outside"; actual.mkdir()
+            folder.symlink_to(actual,target_is_directory=True)
+            with self.assertRaisesRegex(ValueError,"cannot be a symlink"):
+                _read_records(folder)
