@@ -5,6 +5,8 @@ from pathlib import Path
 import re
 import subprocess
 
+from printed_indexes import build_printed_indexes
+
 from franko_tei.pilot_batch import discover_readings, check_draft_offline
 from franko_tei.review_adjudication import check_repository, project_lines
 from franko_tei.review_bundle import blob_sha
@@ -64,6 +66,9 @@ def build(pilot, output, ref):
                                candidates=sum(counts.values()),
                                multiple=sorted(n for n,c in counts.items() if c > 1))
     output.mkdir(parents=True, exist_ok=True)
+    (output / "printed-indexes.json").write_text(
+        json.dumps(build_printed_indexes(pilot, ref), ensure_ascii=False, separators=(",", ":")), encoding="utf-8",
+    )
     (output / "coverage.json").write_text(
         json.dumps(dict(ref=ref, asset_commit=PINNED_ASSET_COMMIT, volumes=volumes),
                    separators=(",", ":")), encoding="utf-8",

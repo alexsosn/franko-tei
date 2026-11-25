@@ -100,6 +100,29 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 /* Contents uses the reader's neutral surface and compact typography. */
 #contentsPanel{width:min(680px,calc(100vw - 20px));height:min(740px,calc(100dvh - 24px));padding:0;overflow:hidden}
 #contentsPanel[open]{display:flex;flex-direction:column}
+#navigationModes{display:flex;gap:4px}
+#navigationModes button{flex:1;min-height:36px;background:transparent;border:1px solid #d7d9d5;border-radius:5px}
+#navigationModes button[aria-pressed="true"]{background:#e8efeb;border-color:#a7bdb2;font-weight:650}
+#indexTools{min-width:0}
+#indexTools select{width:100%}
+#indexStatus{font-size:12px;margin:4px 0;color:#525e55}
+#indexSources{font-size:12px}
+#indexSourcePages{display:flex;flex-wrap:wrap;gap:4px;max-height:90px;overflow:auto;margin-top:4px}
+#indexSourcePages button{min-height:32px}
+#indexEntries{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;list-style:none;margin:0;padding:4px 14px 12px}
+#indexEntries li{border-bottom:1px solid #eceeea;padding:8px 0;overflow-wrap:anywhere}
+#indexEntries .index-label{font-weight:600}
+#indexEntries .index-detail{font-size:13px;margin-top:3px}
+#indexEntries .index-source{display:none;margin-top:4px;font-size:12px;min-height:32px}
+#contentsPanel:has(#indexSources[open]) #indexEntries .index-source{display:inline-block}
+#indexEntries .index-context{font-size:12px;color:#525e55}
+#indexEntries .index-refs{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-top:4px}
+#indexEntries .index-refs button{min-height:36px;padding:4px 9px;color:#235d55}
+#indexEntries .index-refs summary{min-height:36px;display:flex;align-items:center;cursor:pointer;font-size:13px;color:#235d55}
+#indexEntries .index-refs details{max-width:100%}
+#indexEntries .index-unresolved{font-size:13px;color:#525e55;padding:4px}
+#indexEntries [hidden],#indexTools[hidden],#indexEntries[hidden],#contentsEntries[hidden]{display:none!important}
+@media(max-height:450px){#navigationModes button{min-height:30px} #indexStatus{margin:2px 0}}
 #contentsPanel .dialog-heading{padding:12px 14px 6px;margin:0;flex:none}
 #contentsTitle{outline:none}
 .contents-tools{padding:0 14px 9px;display:grid;grid-template-columns:minmax(0,1fr);gap:6px;border-bottom:1px solid #d7d9d5;flex:none}
@@ -209,7 +232,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 </section>
 <details id="advancedSettings" class="settings-group"><summary>Advanced · source version</summary><p class="settings-hint" id="refHint">Use main for published readings, or enter a Git branch or commit to inspect drafts.</p><p class="settings-hint">The source changes only when you select Load ref.</p><label for="refDraft">Reading ref</label><div class="settings-ref-row"><input id="refDraft" list="refs" spellcheck="false" autocomplete="off" autocapitalize="none" aria-describedby="refHint refError" title="Git branch or commit containing pilot readings"><button id="applyRef" type="button">Load ref</button></div><input id="ref" type="hidden" value="main"><datalist id="refs"><option value="main"><option value="transcription/vol1-scans-62-100"><option value="transcription/vol1-scans-101-140"></datalist><p id="refError" role="alert" class="error" hidden></p><p id="status" role="status">Loading…</p><small>Physical scan index, not printed pagination. All OCR and draft readings are unverified. Images load from the pinned source repository; dimensions and draft metadata are checked, not downloaded byte hashes.</small></details>
 </div><div class="settings-footer"><small>Display changes apply immediately.</small><button id="settingsDone" type="button">Done</button></div></dialog>
-<dialog id="contentsPanel" aria-labelledby="contentsTitle"><div class="dialog-heading"><h2 id="contentsTitle" tabindex="-1">Contents</h2><button id="contentsClose" type="button" aria-label="Close contents">✕</button></div><div class="contents-tools"><div class="contents-volume-row"><select id="contentsVolume" aria-label="Volume"></select><button id="contentsFirstScan" type="button">First scan</button></div><input id="contentsFilter" type="search" placeholder="Filter titles or pages" aria-label="Filter titles or pages"><p id="contentsFilterStatus" role="status"></p><details id="contentsCoverage"><summary>Draft coverage</summary><p id="coverageStatus" role="status"></p><p id="coverageRevision"></p><p id="coveragePinHint" hidden>Opening a scan pins the reader to this snapshot.</p><button id="coverageNext" type="button" disabled>Next scan without a draft</button></details><details id="contentsProvenance"><summary>Original contents &amp; notes</summary><p id="contentsStatus"></p><p id="contentsTranslationNote">English titles are provisional translations; original titles appear below.</p><nav id="contentsSources" aria-label="Original contents scans"></nav></details></div><p id="contentsEmpty" hidden>No matching entries.</p><ol id="contentsEntries"></ol></dialog><dialog id="searchPanel" aria-labelledby="searchTitle"><div class="dialog-heading"><h2 id="searchTitle">Search corpus</h2><button id="searchClose" type="button" aria-label="Close search">✕</button></div><nav><input id="query" type="search" placeholder="Search full text" aria-label="Search text"><label>Volume <select id="searchVolume"><option value="all">All volumes</option><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><label>Source <select id="searchSource"><option value="both">Both</option><option value="agent">Agent readings</option><option value="ocr">Original OCR</option></select></label><label><input id="caseSensitive" type="checkbox"> Case sensitive</label><button id="searchGo"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button></nav><details id="searchKeyboard"><summary>Historical characters</summary><div class="review-keyboard"><div class="review-row"><label for="searchKeyboardGroup">Historical characters</label><select id="searchKeyboardGroup"><option value="marks">Diacritics</option><option value="letters">Letters</option><option value="superscripts">Superscript letters</option><option value="greek">Greek</option></select></div><div id="searchCharacters" aria-label="Historical characters"></div><p id="searchCharacterInfo" aria-live="polite"></p></div></details><p id="searchStatus" role="status">Search uses literal text and flexible whitespace; spelling and diacritics are preserved.</p><div id="searchResults"></div><button id="searchMore" hidden>Show more results</button></dialog>
+<dialog id="contentsPanel" aria-labelledby="contentsTitle"><div class="dialog-heading"><h2 id="contentsTitle" tabindex="-1">Contents</h2><button id="contentsClose" type="button" aria-label="Close contents">✕</button></div><div class="contents-tools"><div class="contents-volume-row"><select id="contentsVolume" aria-label="Volume"></select><button id="contentsFirstScan" type="button">First scan</button></div><div id="navigationModes" role="group" aria-label="Navigation mode"><button id="contentsMode" type="button" aria-pressed="true">Contents</button><button id="indexMode" type="button" aria-pressed="false">Indexes</button></div><div id="indexTools" hidden><select id="indexKind" aria-label="Index type"></select><p id="indexStatus" role="status"></p><details id="indexSources"><summary>Original index scans</summary><div id="indexSourcePages"></div><p id="indexRevision"></p></details></div><input id="contentsFilter" type="search" placeholder="Filter titles or pages" aria-label="Filter titles or pages"><p id="contentsFilterStatus" role="status"></p><details id="contentsCoverage"><summary>Draft coverage</summary><p id="coverageStatus" role="status"></p><p id="coverageRevision"></p><p id="coveragePinHint" hidden>Opening a scan pins the reader to this snapshot.</p><button id="coverageNext" type="button" disabled>Next scan without a draft</button></details><details id="contentsProvenance"><summary>Original contents &amp; notes</summary><p id="contentsStatus"></p><p id="contentsTranslationNote">English titles are provisional translations; original titles appear below.</p><nav id="contentsSources" aria-label="Original contents scans"></nav></details></div><p id="contentsEmpty" hidden>No matching entries.</p><ol id="contentsEntries"></ol><ol id="indexEntries" hidden></ol></dialog><dialog id="searchPanel" aria-labelledby="searchTitle"><div class="dialog-heading"><h2 id="searchTitle">Search corpus</h2><button id="searchClose" type="button" aria-label="Close search">✕</button></div><nav><input id="query" type="search" placeholder="Search full text" aria-label="Search text"><label>Volume <select id="searchVolume"><option value="all">All volumes</option><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><label>Source <select id="searchSource"><option value="both">Both</option><option value="agent">Agent readings</option><option value="ocr">Original OCR</option></select></label><label><input id="caseSensitive" type="checkbox"> Case sensitive</label><button id="searchGo"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button></nav><details id="searchKeyboard"><summary>Historical characters</summary><div class="review-keyboard"><div class="review-row"><label for="searchKeyboardGroup">Historical characters</label><select id="searchKeyboardGroup"><option value="marks">Diacritics</option><option value="letters">Letters</option><option value="superscripts">Superscript letters</option><option value="greek">Greek</option></select></div><div id="searchCharacters" aria-label="Historical characters"></div><p id="searchCharacterInfo" aria-live="polite"></p></div></details><p id="searchStatus" role="status">Search uses literal text and flexible whitespace; spelling and diacritics are preserved.</p><div id="searchResults"></div><button id="searchMore" hidden>Show more results</button></dialog>
 <dialog id="reviewDialog" aria-labelledby="reviewTitle">
 <div class="dialog-heading"><h2 id="reviewTitle">Proofread</h2><button id="reviewClose" type="button" aria-label="Close proofreading">✕</button></div>
 <p id="reviewStatus" role="status">Loading pinned reading…</p><div id="reviewRecovery" hidden><p>Local draft cannot be opened. Save a recovery copy before discarding it.</p><div class="review-row"><button id="reviewRecover" type="button">Download recovery draft</button><button id="reviewRecoverDiscard" type="button">Discard draft</button></div></div>
@@ -232,6 +255,19 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 const $ = id => document.getElementById(id);
 /* Interface-only localization. Never apply this to OCR, transcription or source notes. */
 const uiDictionary={
+  "Indexes":"Покажчики",
+  "Navigation mode":"Режим навігації",
+  "Index type":"Вид покажчика",
+  "Original index scans":"Скани оригінальних покажчиків",
+  "Filter index entries":"Фільтрувати статті покажчика",
+  "People and places":"Імена та географічні назви",
+  "Authors and works":"Автори та твори",
+  "Legendary and folktale motifs":"Легендові та казкові мотиви",
+  "Rare words":"Рідкісні слова",
+  "Index entries unavailable for this volume":"Статті покажчика для цього тому поки недоступні",
+  "Index data unavailable":"Дані покажчиків недоступні",
+  "No matching entries.":"Немає відповідних статей.",
+
 'Compare with original reading':'Порівняти з початковим читанням','Show accepted corrections':'Показати прийняті виправлення','Editorial':'Редакційне читання','Accepted correction':'Прийняте виправлення','Accepted confirmation':'Прийняте підтвердження','Agent review · provisional':'Агентна перевірка · попередньо','Human editorial review':'Редакторська перевірка людиною','Original reading':'Початкове читання','Contributor':'Учасник','View contribution':'Переглянути внесок','Language and uncertainty annotations need reassessment.':'Мовна розмітка й позначки непевності потребують повторної перевірки.','Editorial source changed; accepted corrections not applied.':'Джерело змінилося; прийняті виправлення не застосовано.','Editorial view unavailable for this revision.':'Редакційне читання недоступне для цієї версії.','Source uncertainty notes (not re-anchored).':'Позначки непевності джерела (без нової прив’язки).','Original candidate':'Початкове читання',
 
 'Download recovery draft':'Завантажити резервну чернетку','Local draft cannot be opened. Save a recovery copy before discarding it.':'Не вдалося відкрити локальну чернетку. Збережіть резервну копію, перш ніж видаляти її.','Save correction':'Зберегти виправлення','Confirm unchanged':'Підтвердити без змін','Confirmed locally':'Підтверджено локально','Corrected locally':'Виправлено локально','Deferred locally':'Відкладено локально','No decision yet':'Рішення ще немає','Discard draft':'Відкинути чернетку','Discard this local draft and all its decisions?':'Відкинути цю локальну чернетку та всі рішення?','Discard the unrecorded edit for this line?':'Відкинути незаписану зміну цього рядка?','Have you saved or submitted this bundle? Remove the local batch?':'Ви зберегли або надіслали пакет? Видалити локальний пакет?','Diacritics':'Діакритика','Letters':'Літери','Superscript letters':'Надрядкові літери','Greek':'Грецька','Choose a character; marks are inserted after the caret.':'Оберіть символ; знаки вставляються в позицію курсора.','Proofread':'Вичитка','Close proofreading':'Закрити вичитку','Source line':'Рядок джерела','Previous line':'Попередній рядок','Next line':'Наступний рядок','Working reading':'Робоче читання','Note (optional)':'Примітка (необов’язково)','Save & next':'Зберегти й далі','Defer':'Відкласти','Undo decision':'Скасувати рішення','Prepare GitHub submission':'Підготувати надсилання до GitHub','Copy JSON':'Копіювати JSON','Open GitHub form':'Відкрити форму GitHub','Start another batch':'Почати новий пакет','Historical characters':'Історичні символи','Review bundle JSON':'JSON пакета вичитки','Loading pinned reading…':'Завантаження зафіксованого читання…','Draft saved locally.':'Чернетку збережено на пристрої.','Prepared locally; not submitted.':'Підготовлено локально; не надіслано.','Scan available; line geometry is approximate.':'Скан доступний; геометрія приблизна.','Image unavailable; confirmation and correction disabled.':'Зображення недоступне; підтвердження та виправлення вимкнено.','Copy this JSON into the GitHub issue form. Submission is public; your GitHub account will be credited after acceptance. Preparing a bundle does not submit it.':'Скопіюйте JSON у форму GitHub. Надсилання публічне; внесок буде зараховано вашому обліковому запису після прийняття. Підготовка пакета не надсилає його.','Confirm & next':'Підтвердити й далі','Copied.':'Скопійовано.','Select and copy the JSON manually.':'Виділіть і скопіюйте JSON вручну.',
@@ -7823,8 +7859,118 @@ function appendContentsReferences(li,actions,v,entry,links){
 function contentsTranslation(v,title){const translations=contentsEnglish[v];return translations&&Object.hasOwn(translations,title)?translations[title]:null;}
 function contentsOriginalLang(title){return title.startsWith('Codex apocryphus,')?'de':/^(O Sybillach|O postawie)/.test(title)?'pl':'uk';}
 function refreshContentsTitles(){const translated=uiLocale==='en';for(const node of $('contentsEntries').querySelectorAll('[data-contents-en]')){node.textContent=translated?node.dataset.contentsEn:node.dataset.contentsUk;node.lang=uiLocale;}for(const option of $('contentsVolume').options){if(!option.dataset.original)option.dataset.original=option.textContent;option.textContent=translated?(contentsVolumeEnglish[Number(option.value)]||option.dataset.original):option.dataset.original;}for(const name of $('contentsEntries').querySelectorAll('.contents-name')){const english=translated&&name.dataset.english;name.textContent=english||name.dataset.original;name.lang=english?'en':contentsOriginalLang(name.dataset.original);}for(const original of $('contentsEntries').querySelectorAll('.contents-original'))original.hidden=!translated;$('contentsTranslationNote').hidden=!translated;}
-function filterContents(){const query=$('contentsFilter').value.trim().normalize('NFC').toLocaleLowerCase('uk');let visible=0;for(const li of $('contentsEntries').children){li.hidden=!!query&&!li.dataset.filter.includes(query);if(!li.hidden)visible++;}$('contentsEmpty').hidden=visible!==0;uiText($('contentsFilterStatus'),query?visible+' matching entries':'');if(query)$('contentsEntries').scrollTop=0;}
-function renderContents(){const v=$('contentsVolume').value||$('volume').value,d=volumeContents[v],list=$('contentsEntries');$('contentsSources').replaceChildren();list.replaceChildren();if(!d)return;uiText($('contentsTitle'),'Contents — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,anchored=d.entries.filter(e=>e[6]).length;uiText($('contentsStatus'),verified+' / '+d.entries.length+' checked · '+anchored+' exact lines');for(const n of d.sources){const b=document.createElement('button');b.type='button';uiText(b,'Scan '+n);b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}const fragment=document.createDocumentFragment();for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');li.className=depth?'subentry'+(depth>=2?' subentry-deep':''):'contents-section';const english=contentsTranslation(v,title),links=contentsReferences(v,entry);li.dataset.filter=(title+' '+(english??'')+' '+(printed??'')+' '+links.map(x=>x.title+' '+x.titleUk+' '+x.id).join(' ')).normalize('NFC').toLocaleLowerCase('uk');const b=document.createElement('button');b.type='button';b.className='contents-destination';const name=document.createElement('span');name.className='contents-name';name.id='contents-name-'+v+'-'+d.entries.indexOf(entry);name.dataset.original=title;name.dataset.english=english??'';name.lang=contentsOriginalLang(title);name.textContent=title;const meta=document.createElement('span');meta.className='contents-meta';const page=document.createElement('span');uiText(page,printed?'p. '+printed:'—');if(dest){if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);uiAttr(b,'title','Calculated from printed pagination; work start not inspected');}else{b.dataset.scan=String(dest.scan);if(anchor)b.dataset.line=anchor.line_id;uiAttr(b,'title',anchor?'Open exact heading in its recorded reading':'Open checked scan');}if(v===$('volume').value&&dest.scan===Number($('page').value))b.dataset.current='true';b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');}else{b.disabled=true;uiAttr(b,'title','Destination pending');}meta.append(page);const titleGroup=document.createElement('span');titleGroup.className='contents-title-group';titleGroup.append(name);const canonical=[...new Set(links.filter(x=>x.relation==='edition-match').map(x=>x.title))];if(canonical.length){const subtitle=document.createElement('small');subtitle.className='contents-canonical';setContentsBilingual(subtitle,canonical.join(' / '),[...new Set(links.filter(x=>x.relation==='edition-match').map(x=>x.titleUk))].join(' / '));titleGroup.append(subtitle);}b.append(titleGroup,meta);li.append(b);const src=document.createElement('button');src.type='button';src.className='source-link';src.textContent='↗ '+source;uiAttr(src,'aria-label','Open original contents scan '+source+' for '+title);src.onclick=()=>jumpContents(v,source);const actions=document.createElement('span');actions.className='contents-actions';actions.append(src);li.append(actions);appendContentsReferences(li,actions,v,entry,links);if(english){const original=document.createElement('small');original.className='contents-note contents-original';original.lang=contentsOriginalLang(title);original.textContent=title;li.append(original);}if(note){const n=document.createElement('small');n.className='contents-note';n.lang='en';n.textContent=note;li.append(n);}fragment.append(li);}list.append(fragment);refreshContentsTitles();filterContents();list.scrollTop=0;}
+function filterContents(){if(navigationMode==="indexes"){filterPrintedIndexes();return;}const query=$('contentsFilter').value.trim().normalize('NFC').toLocaleLowerCase('uk');let visible=0;for(const li of $('contentsEntries').children){li.hidden=!!query&&!li.dataset.filter.includes(query);if(!li.hidden)visible++;}$('contentsEmpty').hidden=visible!==0;uiText($('contentsFilterStatus'),query?visible+' matching entries':'');if(query)$('contentsEntries').scrollTop=0;}
+function renderContents(){if(navigationMode==="indexes"){renderPrintedIndexes();return;}const v=$('contentsVolume').value||$('volume').value,d=volumeContents[v],list=$('contentsEntries');$('contentsSources').replaceChildren();list.replaceChildren();if(!d)return;uiText($('contentsTitle'),'Contents — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,anchored=d.entries.filter(e=>e[6]).length;uiText($('contentsStatus'),verified+' / '+d.entries.length+' checked · '+anchored+' exact lines');for(const n of d.sources){const b=document.createElement('button');b.type='button';uiText(b,'Scan '+n);b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}const fragment=document.createDocumentFragment();for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');li.className=depth?'subentry'+(depth>=2?' subentry-deep':''):'contents-section';const english=contentsTranslation(v,title),links=contentsReferences(v,entry);li.dataset.filter=(title+' '+(english??'')+' '+(printed??'')+' '+links.map(x=>x.title+' '+x.titleUk+' '+x.id).join(' ')).normalize('NFC').toLocaleLowerCase('uk');const b=document.createElement('button');b.type='button';b.className='contents-destination';const name=document.createElement('span');name.className='contents-name';name.id='contents-name-'+v+'-'+d.entries.indexOf(entry);name.dataset.original=title;name.dataset.english=english??'';name.lang=contentsOriginalLang(title);name.textContent=title;const meta=document.createElement('span');meta.className='contents-meta';const page=document.createElement('span');uiText(page,printed?'p. '+printed:'—');if(dest){if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);uiAttr(b,'title','Calculated from printed pagination; work start not inspected');}else{b.dataset.scan=String(dest.scan);if(anchor)b.dataset.line=anchor.line_id;uiAttr(b,'title',anchor?'Open exact heading in its recorded reading':'Open checked scan');}if(v===$('volume').value&&dest.scan===Number($('page').value))b.dataset.current='true';b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');}else{b.disabled=true;uiAttr(b,'title','Destination pending');}meta.append(page);const titleGroup=document.createElement('span');titleGroup.className='contents-title-group';titleGroup.append(name);const canonical=[...new Set(links.filter(x=>x.relation==='edition-match').map(x=>x.title))];if(canonical.length){const subtitle=document.createElement('small');subtitle.className='contents-canonical';setContentsBilingual(subtitle,canonical.join(' / '),[...new Set(links.filter(x=>x.relation==='edition-match').map(x=>x.titleUk))].join(' / '));titleGroup.append(subtitle);}b.append(titleGroup,meta);li.append(b);const src=document.createElement('button');src.type='button';src.className='source-link';src.textContent='↗ '+source;uiAttr(src,'aria-label','Open original contents scan '+source+' for '+title);src.onclick=()=>jumpContents(v,source);const actions=document.createElement('span');actions.className='contents-actions';actions.append(src);li.append(actions);appendContentsReferences(li,actions,v,entry,links);if(english){const original=document.createElement('small');original.className='contents-note contents-original';original.lang=contentsOriginalLang(title);original.textContent=title;li.append(original);}if(note){const n=document.createElement('small');n.className='contents-note';n.lang='en';n.textContent=note;li.append(n);}fragment.append(li);}list.append(fragment);refreshContentsTitles();filterContents();list.scrollTop=0;}
+
+// The index is a published provisional extraction, independent of the reader's selected ref.
+// Its page targets identify observed folios, not exact occurrences or headings.
+let navigationMode="contents", indexRequest=0, indexSnapshot=null;
+const printedIndexLabels={names:"People and places",works:"Authors and works",motifs:"Legendary and folktale motifs",glossary:"Rare words"};
+function indexText(en,uk){return uiLocale==="uk"?uk:en;}
+function syncNavigationMode(){
+  const active=navigationMode==="indexes";
+  $('contentsMode').setAttribute('aria-pressed',String(!active));
+  $('indexMode').setAttribute('aria-pressed',String(active));
+  for(const id of ['contentsEntries','contentsCoverage','contentsProvenance'])$(id).hidden=active;
+  for(const id of ['indexTools','indexEntries'])$(id).hidden=!active;
+  const label=active?'Filter index entries':'Filter titles or pages';
+  $('contentsFilter').placeholder=translateUI(label);
+  $('contentsFilter').setAttribute('aria-label',translateUI(label));
+}
+function selectNavigationMode(mode){
+  if(mode===navigationMode)return;
+  navigationMode=mode;indexRequest++;coverageRequest++;
+  $('contentsFilter').value='';$('contentsCoverage').open=false;$('contentsProvenance').open=false;$('indexSources').open=false;
+  syncNavigationMode();renderContents();
+}
+function validatePrintedIndexes(d){
+  if(!d||d.schema_version!==1||d.status!=='agent_unverified'||!/^[a-f0-9]{40}$/.test(d.ref)||!Array.isArray(d.sections))throw Error('Invalid index snapshot');
+  const ids=new Set();
+  for(const s of d.sections){
+    if(s.volume!=='1'||!Object.hasOwn(printedIndexLabels,s.kind)||ids.has(s.kind)||
+       !Array.isArray(s.scans)||!s.scans.every(n=>Number.isInteger(n)&&n>=1&&n<=counts[1])||
+       !Array.isArray(s.structured_scans)||!s.structured_scans.every(n=>s.scans.includes(n))||
+       !Array.isArray(s.entries))throw Error('Invalid index section');
+    ids.add(s.kind);
+    for(const e of s.entries){
+      if(typeof e.label!=='string'||typeof e.detail!=='string'||typeof e.context!=='string'||!s.structured_scans.includes(e.source?.scan)||!Array.isArray(e.refs))throw Error('Invalid entry');
+      for(const r of e.refs){
+        if(r.volume!=='1'||typeof r.literal!=='string'||!Array.isArray(r.targets)||!Array.isArray(r.missing)||
+           !r.targets.every(t=>Number.isInteger(t.page)&&t.page>=1&&t.page<=340&&Number.isInteger(t.scan)&&t.scan>=76&&t.scan<=415))throw Error('Invalid reference');
+      }
+    }
+  }
+  return d;
+}
+function appendIndexTarget(node,page,scan,literal){
+  if(scan===undefined){const t=document.createElement('span');t.className='index-unresolved';t.textContent=literal;t.title=indexText('No unique folio observation','Немає однозначно зафіксованої сторінки');node.append(t);return;}
+  const b=document.createElement('button');b.type='button';b.textContent=literal;b.dataset.scan=String(scan);
+  b.title=indexText('Open cited page (folio recorded in draft)','Відкрити цитовану сторінку (номер зафіксовано в чернетці)');
+  b.onclick=()=>jumpContents('1',scan);node.append(b);
+}
+function appendIndexRef(node,ref){
+  const targets=new Map(ref.targets.map(t=>[t.page,t.scan]));
+  const pages=[...targets.keys(),...ref.missing].sort((a,b)=>a-b);
+  if(pages.length===1){appendIndexTarget(node,pages[0],targets.get(pages[0]),ref.literal);return;}
+  if(!pages.length){appendIndexTarget(node,null,undefined,ref.literal);return;}
+  const d=document.createElement('details'),s=document.createElement('summary');s.textContent=ref.literal;
+  const group=document.createElement('div');group.className='index-refs';
+  for(const p of pages)appendIndexTarget(group,p,targets.get(p),String(p));
+  d.append(s,group);node.append(d);
+}
+function filterPrintedIndexes(){
+  const query=$('contentsFilter').value.trim().normalize('NFC').toLocaleLowerCase('uk');
+  let visible=0;for(const li of $('indexEntries').children){li.hidden=!!query&&!li.dataset.filter.includes(query);if(!li.hidden)visible++;}
+  $('contentsEmpty').hidden=!query||visible!==0;
+  uiText($('contentsFilterStatus'),query?visible+' matching entries':'');
+  if(query)$('indexEntries').scrollTop=0;
+}
+function drawPrintedIndex(d,v){
+  const list=$('indexEntries'), select=$('indexKind'),previous=select.value;
+  const sections=d.sections.filter(s=>s.volume===v);
+  select.replaceChildren();list.replaceChildren();$('indexSourcePages').replaceChildren();
+  for(const s of sections){const o=document.createElement('option');o.value=s.kind;o.textContent=translateUI(printedIndexLabels[s.kind]);select.append(o);}
+  select.disabled=!sections.length;
+  if(!sections.length){uiText($('indexStatus'),'Index entries unavailable for this volume');$('indexSources').hidden=true;filterPrintedIndexes();return;}
+  if(sections.some(s=>s.kind===previous))select.value=previous;
+  const section=sections.find(s=>s.kind===select.value)||sections[0];
+  $('indexSources').hidden=false;
+  $('indexStatus').textContent=indexText(
+    section.structured_scans.length+' / '+section.scans.length+' index pages structured · provisional',
+    section.structured_scans.length+' / '+section.scans.length+' сторінок розмічено · попередні дані');
+  $('indexRevision').textContent=indexText('Source reading snapshot: ','Версія джерельного читання: ')+d.ref;
+  for(const scan of section.scans){const b=document.createElement('button');b.type='button';b.textContent=String(scan);b.onclick=()=>jumpContents(v,scan);$('indexSourcePages').append(b);}
+  const fragment=document.createDocumentFragment();
+  for(const e of section.entries){
+    const li=document.createElement('li');li.dataset.entry=e.id;
+    li.dataset.filter=[e.context,e.label,e.detail,...e.refs.map(r=>r.literal)].join(' ').normalize('NFC').toLocaleLowerCase('uk');
+    if(e.context){const c=document.createElement('div');c.className='index-context';c.textContent=e.context;li.append(c);}
+    const label=document.createElement('div');label.className='index-label';label.textContent=e.label;li.append(label);
+    if(e.detail){const detail=document.createElement('div');detail.className='index-detail';detail.textContent=e.detail;li.append(detail);}
+    if(e.refs.length){const refs=document.createElement('div');refs.className='index-refs';for(const r of e.refs.slice(0,8))appendIndexRef(refs,r);
+      if(e.refs.length>8){const more=document.createElement('details'),summary=document.createElement('summary');summary.textContent=indexText('+'+(e.refs.length-8)+' more','Ще '+(e.refs.length-8));const rest=document.createElement('div');rest.className='index-refs';for(const r of e.refs.slice(8))appendIndexRef(rest,r);more.append(summary,rest);refs.append(more);}
+      li.append(refs);}
+    const source=document.createElement("button");source.type="button";source.className="index-source";source.textContent=indexText("Source scan ","Скан джерела ")+e.source.scan;source.onclick=()=>jumpContents(v,e.source.scan);li.append(source);
+    fragment.append(li);
+  }
+  list.append(fragment);filterPrintedIndexes();list.scrollTop=0;
+}
+async function renderPrintedIndexes(){
+  const id=++indexRequest,v=$('contentsVolume').value||$('volume').value;
+  $('contentsTitle').textContent=indexText('Indexes — Volume ','Покажчики — Том ')+v;
+  $('indexEntries').replaceChildren();$('indexKind').disabled=true;$('indexSourcePages').replaceChildren();$('contentsEmpty').hidden=true;uiText($('contentsFilterStatus'),'');
+  $('indexSources').hidden=true;$('indexStatus').textContent=indexText('Loading indexes…','Завантаження покажчиків…');
+  try{
+    const d=await cached('printed-indexes',async()=>validatePrintedIndexes(await(await get('./search/printed-indexes.json')).json()));
+    if(id!==indexRequest||navigationMode!=='indexes'||!$('contentsPanel').open||v!==$('contentsVolume').value)return;
+    indexSnapshot=d;drawPrintedIndex(d,v);
+  }catch(e){
+    if(id===indexRequest&&navigationMode==='indexes'&&$('contentsPanel').open){uiText($('indexStatus'),'Index data unavailable');$('indexSources').hidden=true;}
+  }
+}
+$('contentsMode').onclick=()=>selectNavigationMode('contents');
+$('indexMode').onclick=()=>selectNavigationMode('indexes');
+$('indexKind').onchange=()=>{if(indexSnapshot&&navigationMode==='indexes'){ $('contentsFilter').value='';drawPrintedIndex(indexSnapshot,$('contentsVolume').value); }};
 
 let coverageRequest=0;
 function validateCoverage(d){
@@ -7870,7 +8016,7 @@ async function renderCoverage(){
   }
 }
 $('contentsCoverage').addEventListener('toggle',()=>{if($('contentsCoverage').open&&$('contentsPanel').open)renderCoverage();else coverageRequest++;});
-function openContents(){$('contentsVolume').replaceChildren(...[...$('volume').options].map(o=>o.cloneNode(true)));$('contentsVolume').value=$('volume').value;$('contentsFilter').value='';$('contentsProvenance').open=false;$('contentsCoverage').open=false;coverageRequest++;renderContents();openDialog('contentsPanel','contentsOpen');$('contentsTitle').focus({preventScroll:true});const list=$('contentsEntries');list.scrollTop=0;const hit=list.querySelector('[data-current]');if(hit){const a=hit.getBoundingClientRect(),b=list.getBoundingClientRect();list.scrollTop=Math.max(0,a.top-b.top-(list.clientHeight-a.height)/2);}}
+function openContents(){syncNavigationMode();$('contentsVolume').replaceChildren(...[...$('volume').options].map(o=>o.cloneNode(true)));$('contentsVolume').value=$('volume').value;$('contentsFilter').value='';$('contentsProvenance').open=false;$('contentsCoverage').open=false;coverageRequest++;renderContents();openDialog('contentsPanel','contentsOpen');$('contentsTitle').focus({preventScroll:true});const list=$('contentsEntries');list.scrollTop=0;const hit=list.querySelector('[data-current]');if(hit){const a=hit.getBoundingClientRect(),b=list.getBoundingClientRect();list.scrollTop=Math.max(0,a.top-b.top-(list.clientHeight-a.height)/2);}}
 $('contentsVolume').onchange=()=>{$('contentsFilter').value='';renderContents();if($('contentsCoverage').open)renderCoverage();};$('contentsFirstScan').onclick=()=>jumpContents($('contentsVolume').value,1);$('contentsFilter').oninput=filterContents;
 
 $('contentsOpen').onclick=openContents;$('contentsClose').onclick=closeContents;$('contentsPanel').addEventListener('cancel',event=>{event.preventDefault();closeContents();});$('contentsPanel').addEventListener('close',()=>$('contentsOpen').setAttribute('aria-expanded','false'));
