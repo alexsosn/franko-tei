@@ -1,0 +1,83 @@
+name: Kraken PP-OCRv6 multilingual historical OCR smoke
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/kraken-smoke.yml'
+      - 'src/franko_tei/kraken_trial.py'
+      - 'tests/test_kraken_trial.py'
+      - 'docs/ocr-kraken.md'
+      - 'src/franko_tei/ocr_candidates.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-image-kraken:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Kraken and the HF CLI
+        run: |
+          python -m pip install -e .
+          python -m pip install 'kraken==7.1.0' 'huggingface_hub>=0.34,<2'
+          kraken --version
+      - name: Download open-weight historical multilingual model
+        run: |
+          mkdir -p local/models
+          python - <<'PY'
+          from pathlib import Path
+          from huggingface_hub import hf_hub_download
+          path = hf_hub_download(
+              repo_id='small-models-for-glam/kraken-ppocrv6-medium',
+              filename='medium.safetensors',
+              local_dir='local/models',
+          )
+          assert Path(path).is_file() and Path(path).stat().st_size > 1000
+          print('Downloaded model:', path)
+          PY
+          sha256sum local/models/medium.safetensors | tee local/model.sha256
+      - name: Obtain only the four pinned scan images and their manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=https://raw.githubusercontent.com/alexsosn/franko-tei/e871f32537e81f81896f6ce9a6658aba667db9c5/images
+          for spec in 5:100 3:130 1:20 4:100; do
+            vol="${spec%:*}"
+            page="${spec#*:}"
+            dir="local/scans/vol$vol"
+            mkdir -p "$dir"
+            printf -v img 'page-%05d.jpg' "$page"
+            curl -fsSL --retry 2 "$BASE/vol$vol/manifest.json" -o "$dir/manifest.json"
+            curl -fsSL --retry 2 "$BASE/vol$vol/$img" -o "$dir/$img"
+          done
+      - name: Run on four actual source-verified pages
+        run: |
+          python -m franko_tei.kraken_trial --images-root local/scans --pages 5:100,3:130,1:20,4:100 \
+            --model local/models/medium.safetensors \
+            --model-sha256 15313b51ace64cbfa81f8f6ef25ad64f04e5a6fb7f7823e67b107527bc081ac9 \
+            --model-id small-models-for-glam/kraken-ppocrv6-medium \
+            --output-dir local/kraken
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = [json.loads(x) for x in Path('local/kraken/candidates.jsonl').read_text().splitlines()]
+          assert len(rows) == 4
+          assert all(x['status'] == 'ocr_unchecked' and x['model_sha256'] and x['source_image_sha256'] and x['recognized_any_text'] for x in rows)
+          print('Kraken real-image smoke:', [(r['volume'], r['scan_page'], len(r['lines'])) for r in rows])
+          PY
+      - name: Capture exact engine version without model weights
+        run: kraken --version > local/kraken-version.txt 2>&1
+      - name: Upload ALTO, candidates and checksums only (never scans or model weights)
+        uses: actions/upload-artifact@v4
+        with:
+          name: franko-kraken-ppocrv6-medium-trial
+          path: |
+            local/kraken/*.alto.xml
+            local/kraken/candidates.jsonl
+            local/model.sha256
+            local/kraken-version.txt
+          retention-days: 14
+          if-no-files-found: error
