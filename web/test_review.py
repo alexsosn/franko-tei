@@ -662,7 +662,7 @@ class ReviewSmoke(unittest.TestCase):
         self.assertIn(('нема].', 'uk', 'Cyrl'), annotated_literals(330))
         self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 330 and len(e) > 6 and e[6]]), 2)
         self.assertIn(('Περὶ τῶν ιβ. λίθων τῶν ὄντων', 'grc', 'Grek'), annotated_literals(332))
-        self.assertIn(('І. Я. П о р ф и р ь е в ъ, Апокр. сказ.', 'ru', 'Cyrl'), annotated_literals(332))
+        self.assertIn(('И. Я. П о р ф и р ь е в ъ, Апокр. сказ.', 'ru', 'Cyrl'), annotated_literals(332))
         self.assertIn(('[з боку', 'uk', 'Cyrl'), annotated_literals(335))
         self.assertIn(('[sic !]', 'la', 'Latn'), annotated_literals(335))
         asher = next(e for e in contents['1']['entries'] if e[3] == 284 and len(e) > 6 and e[6])
