@@ -33,7 +33,7 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             page.locator("#settingsOpen").click()
             page.locator("#fontSettings summary").click()
             for selector, values, sample in [
-                ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh")], "ꙗꙖꙑб҃ъ"),
+                ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh"), ("firaslav", "Franko FiraSlav"), ("notosans", "Franko Noto Sans")], "ꙗꙖꙑб҃ъ"),
                 ("#greekFont", [("gentium", "Franko Gentium"), ("garamond", "Franko Garamond")], "Ἐν ἀρχῇ ἄ"),
             ]:
                 for value, family in values:
@@ -46,7 +46,7 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
             page.locator("#settingsOpen").click()
             page.locator("#fontSettings summary").click()
-            expect(page.locator("#slavonicFont")).to_have_value("monomakh")
+            expect(page.locator("#slavonicFont")).to_have_value("notosans")
             expect(page.locator("#greekFont")).to_have_value("garamond")
             page.locator("#resetFonts").click()
             page.locator("#fontSettings summary").click()
@@ -74,6 +74,10 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             page.locator("#searchGo").click()
             expect(page.locator("#searchResults")).to_contain_text("scan 20")
             expect(page.locator("#searchStatus")).not_to_contain_text("INCOMPLETE")
+            page.locator("#searchResults button").filter(has_text="scan 20").first.click()
+            expect(page.locator("#candidate .search-match").first).to_be_visible()
+            assert "βιβλία ἐπ’ ὀνόμασι" in "".join(page.locator("#candidate .search-match").all_text_contents())
+            page.locator("#searchOpen").click()
             page.locator("#searchVolume").select_option("all")
             page.locator("#searchSource").select_option("ocr")
             page.locator("#query").fill("XI")

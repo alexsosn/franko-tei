@@ -10,6 +10,8 @@ FONTS = ROOT / "web/fonts"
 SLAVONIC = {
     "Shafarik-Regular.woff2": "b4344bbc568f13b3dbe55e9079b993995ec8ecb2",
     "Monomakh-Regular.woff2": "4d7c0809ebc700036286d992c30d2b4ec4a0d59c",
+    "FiraSlav-Regular.woff2": "bc19be214f34e14822585abe7608ac27894978a9",
+    "NotoSans-Regular.ttf": "d55220958aa51eeeb85048d746eabe43d2cd9f14",
 }
 GREEK = {
     "GentiumPlus-Regular.ttf": "42cbe62ce01b975c209574c646796aea3ace9806",
