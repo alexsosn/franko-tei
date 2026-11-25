@@ -1,0 +1,2571 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 34,
+  "printed_page_observed": "XVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00034.jpg",
+  "source_image_sha256": "45a96f0612ffeaedfd94582e7b1e07fc97e887223a555a8467f53caf380f2451",
+  "reading": {
+    "reader_id": "gpt62-v3-s00034-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-preface-31-40-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical Ukrainian and quoted language spans, notes, page numbers and printer marks. On XVI preserve table by separate column regions in left-to-right order, no inferred missing cells. Geometry estimated; agent-unverified.",
+    "raw_response": "XVI\nЛїпсіус (op. cit I, 17—25) у тім, що реєстр апостолів уже від най-\nдавнїйших часів не був усталений, що одна й та сама особа вва-\nжала ся раз апостолом, другий раз нї, одно й те саме імя прикла-\nдало ся раз до сеї особи, то знов до иньшої, ідентіфікувало ся раз\nз тим, другий раз з иньшим. Ріжницї бачимо вже в канонїчних\nевангеліях та Апостольських Дїянях; для лекшого перегляду зво-\nдимо ті реєстри в одну табельку:\nМарко\nIII, 16—19.\n1. Симон\nПетро\n2. Яков\nЗеведеїв\n3. Іван Зе-\nведеїв\n4. Андрій\n5. Филип\n6. Варфо-\nломей\n7. Матвій\n8. Тома\n9. Яков\nАлфеїв\n10. Таддей\n11. Симон\nКананїт\n12. Юда\nІскаріот\nМатвій\nX, 2—4.\n1. Симон\nПетро\n2. Андрій\nбрат Петрів\n3. Яков\nЗеведеїв\n4. Іван Зе-\nведеїв\n5. Филип\n6. Варфо-\nломей\n7. Тома\n8. Матвій\nмитар\n9. Яков\nАлфеїв\n10. Леввей-\nТаддей\n11. Симон\nКананїт\n12. Юда\nІскаріот\nЛука\nIV, 14—16.\n1. Симон\nПетро\n2. Андрій\nбрат Петрів\n3. Яков\nЗеведеїв\n4. Іван\nЗеведеїв\n5. Филип\n6. Варфо-\nломей\n7. Матвій\n8. Тома\n9. Яков\nАлфеїв\n10. Симон\nЗилот\n11. Юда\nЯковів\n12. Юда\nІскаріот\nІван\nI, 37, 41—43.\n1. Андрій\n2. Петро\n3. Филип\n4. Ната-\nнаіл\n5. (Іван)\n6. Андрій\n7. Юда\nзрадник\n8. Тома\nблизнець\n9. Юда не\nІскаріот\n10. другий\nЗеведеєнко\nАп. Дїяня\nI, 13.\n1. Петро\n2. Іван\n3. Яков\nЗеведеїв\n4. Андрій\n5. Филип\n6. Тома\n7. Варфо-\nломей\n8. Матвій\n9. Яков\nАлфеїв\n10. Симон\nЗилот\n11. Юда\nЯковів\n12. Матїй\n(зам. Юди\nзрадника)",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            179,
+            467,
+            917,
+            16
+          ],
+          "description": "Table top rule."
+        },
+        {
+          "bbox_xywh": [
+            186,
+            571,
+            906,
+            14
+          ],
+          "description": "Double header separator."
+        },
+        {
+          "bbox_xywh": [
+            126,
+            1453,
+            316,
+            177
+          ],
+          "description": "Later faint blue stamp overlaps table bottom."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          186,
+          122,
+          70,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XVI",
+            "bbox_xywh": [
+              186,
+              122,
+              70,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          184,
+          187,
+          911,
+          229
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "Лїпсіус (op. cit I, 17—25) у тім, що реєстр апостолів уже від най-",
+            "bbox_xywh": [
+              184,
+              187,
+              911,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 9,
+                "end": 25,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 25,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "давнїйших часів не був усталений, що одна й та сама особа вва-",
+            "bbox_xywh": [
+              184,
+              219,
+              911,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "жала ся раз апостолом, другий раз нї, одно й те саме імя прикла-",
+            "bbox_xywh": [
+              184,
+              252,
+              911,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "дало ся раз до сеї особи, то знов до иньшої, ідентіфікувало ся раз",
+            "bbox_xywh": [
+              184,
+              285,
+              911,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "з тим, другий раз з иньшим. Ріжницї бачимо вже в канонїчних",
+            "bbox_xywh": [
+              184,
+              317,
+              911,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "евангеліях та Апостольських Дїянях; для лекшого перегляду зво-",
+            "bbox_xywh": [
+              184,
+              350,
+              911,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "димо ті реєстри в одну табельку:",
+            "bbox_xywh": [
+              184,
+              383,
+              911,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "table-mark",
+        "kind": "other",
+        "bbox_xywh": [
+          193,
+          494,
+          172,
+          1017
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "table-mark-line-01",
+            "text": "Марко",
+            "bbox_xywh": [
+              193,
+              494,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-02",
+            "text": "III, 16—19.",
+            "bbox_xywh": [
+              193,
+              542,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-03",
+            "text": "1. Симон",
+            "bbox_xywh": [
+              193,
+              590,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-04",
+            "text": "Петро",
+            "bbox_xywh": [
+              193,
+              639,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-05",
+            "text": "2. Яков",
+            "bbox_xywh": [
+              193,
+              687,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-06",
+            "text": "Зеведеїв",
+            "bbox_xywh": [
+              193,
+              736,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-07",
+            "text": "3. Іван Зе-",
+            "bbox_xywh": [
+              193,
+              784,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-08",
+            "text": "ведеїв",
+            "bbox_xywh": [
+              193,
+              833,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-09",
+            "text": "4. Андрій",
+            "bbox_xywh": [
+              193,
+              881,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-10",
+            "text": "5. Филип",
+            "bbox_xywh": [
+              193,
+              929,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-11",
+            "text": "6. Варфо-",
+            "bbox_xywh": [
+              193,
+              978,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-12",
+            "text": "ломей",
+            "bbox_xywh": [
+              193,
+              1026,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-13",
+            "text": "7. Матвій",
+            "bbox_xywh": [
+              193,
+              1075,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-14",
+            "text": "8. Тома",
+            "bbox_xywh": [
+              193,
+              1123,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-15",
+            "text": "9. Яков",
+            "bbox_xywh": [
+              193,
+              1172,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-16",
+            "text": "Алфеїв",
+            "bbox_xywh": [
+              193,
+              1220,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-17",
+            "text": "10. Таддей",
+            "bbox_xywh": [
+              193,
+              1268,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-18",
+            "text": "11. Симон",
+            "bbox_xywh": [
+              193,
+              1317,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-19",
+            "text": "Кананїт",
+            "bbox_xywh": [
+              193,
+              1365,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-20",
+            "text": "12. Юда",
+            "bbox_xywh": [
+              193,
+              1414,
+              172,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-mark-line-21",
+            "text": "Іскаріот",
+            "bbox_xywh": [
+              193,
+              1462,
+              172,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "table-matthew",
+        "kind": "other",
+        "bbox_xywh": [
+          372,
+          494,
+          173,
+          1017
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "table-matthew-line-01",
+            "text": "Матвій",
+            "bbox_xywh": [
+              372,
+              494,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-02",
+            "text": "X, 2—4.",
+            "bbox_xywh": [
+              372,
+              536,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-03",
+            "text": "1. Симон",
+            "bbox_xywh": [
+              372,
+              578,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-04",
+            "text": "Петро",
+            "bbox_xywh": [
+              372,
+              621,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-05",
+            "text": "2. Андрій",
+            "bbox_xywh": [
+              372,
+              663,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-06",
+            "text": "брат Петрів",
+            "bbox_xywh": [
+              372,
+              705,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-07",
+            "text": "3. Яков",
+            "bbox_xywh": [
+              372,
+              748,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-08",
+            "text": "Зеведеїв",
+            "bbox_xywh": [
+              372,
+              790,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-09",
+            "text": "4. Іван Зе-",
+            "bbox_xywh": [
+              372,
+              833,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-10",
+            "text": "ведеїв",
+            "bbox_xywh": [
+              372,
+              875,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-11",
+            "text": "5. Филип",
+            "bbox_xywh": [
+              372,
+              917,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-12",
+            "text": "6. Варфо-",
+            "bbox_xywh": [
+              372,
+              960,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-13",
+            "text": "ломей",
+            "bbox_xywh": [
+              372,
+              1002,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-14",
+            "text": "7. Тома",
+            "bbox_xywh": [
+              372,
+              1044,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-15",
+            "text": "8. Матвій",
+            "bbox_xywh": [
+              372,
+              1087,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-16",
+            "text": "митар",
+            "bbox_xywh": [
+              372,
+              1129,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-17",
+            "text": "9. Яков",
+            "bbox_xywh": [
+              372,
+              1172,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-18",
+            "text": "Алфеїв",
+            "bbox_xywh": [
+              372,
+              1214,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-19",
+            "text": "10. Леввей-",
+            "bbox_xywh": [
+              372,
+              1256,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-20",
+            "text": "Таддей",
+            "bbox_xywh": [
+              372,
+              1299,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-21",
+            "text": "11. Симон",
+            "bbox_xywh": [
+              372,
+              1341,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-22",
+            "text": "Кананїт",
+            "bbox_xywh": [
+              372,
+              1383,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-23",
+            "text": "12. Юда",
+            "bbox_xywh": [
+              372,
+              1426,
+              173,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-matthew-line-24",
+            "text": "Іскаріот",
+            "bbox_xywh": [
+              372,
+              1468,
+              173,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "table-luke",
+        "kind": "other",
+        "bbox_xywh": [
+          551,
+          494,
+          173,
+          1017
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "table-luke-line-01",
+            "text": "Лука",
+            "bbox_xywh": [
+              551,
+              494,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-02",
+            "text": "IV, 14—16.",
+            "bbox_xywh": [
+              551,
+              538,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-03",
+            "text": "1. Симон",
+            "bbox_xywh": [
+              551,
+              582,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-04",
+            "text": "Петро",
+            "bbox_xywh": [
+              551,
+              626,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-05",
+            "text": "2. Андрій",
+            "bbox_xywh": [
+              551,
+              670,
+              173,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-06",
+            "text": "брат Петрів",
+            "bbox_xywh": [
+              551,
+              715,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-07",
+            "text": "3. Яков",
+            "bbox_xywh": [
+              551,
+              759,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-08",
+            "text": "Зеведеїв",
+            "bbox_xywh": [
+              551,
+              803,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-09",
+            "text": "4. Іван",
+            "bbox_xywh": [
+              551,
+              847,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-10",
+            "text": "Зеведеїв",
+            "bbox_xywh": [
+              551,
+              891,
+              173,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-11",
+            "text": "5. Филип",
+            "bbox_xywh": [
+              551,
+              936,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-12",
+            "text": "6. Варфо-",
+            "bbox_xywh": [
+              551,
+              980,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-13",
+            "text": "ломей",
+            "bbox_xywh": [
+              551,
+              1024,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-14",
+            "text": "7. Матвій",
+            "bbox_xywh": [
+              551,
+              1068,
+              173,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-15",
+            "text": "8. Тома",
+            "bbox_xywh": [
+              551,
+              1113,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-16",
+            "text": "9. Яков",
+            "bbox_xywh": [
+              551,
+              1157,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-17",
+            "text": "Алфеїв",
+            "bbox_xywh": [
+              551,
+              1201,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-18",
+            "text": "10. Симон",
+            "bbox_xywh": [
+              551,
+              1245,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-19",
+            "text": "Зилот",
+            "bbox_xywh": [
+              551,
+              1289,
+              173,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-20",
+            "text": "11. Юда",
+            "bbox_xywh": [
+              551,
+              1334,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-21",
+            "text": "Яковів",
+            "bbox_xywh": [
+              551,
+              1378,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-22",
+            "text": "12. Юда",
+            "bbox_xywh": [
+              551,
+              1422,
+              173,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-luke-line-23",
+            "text": "Іскаріот",
+            "bbox_xywh": [
+              551,
+              1466,
+              173,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "table-john",
+        "kind": "other",
+        "bbox_xywh": [
+          730,
+          494,
+          175,
+          933
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "table-john-line-01",
+            "text": "Іван",
+            "bbox_xywh": [
+              730,
+              494,
+              175,
+              53
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-02",
+            "text": "I, 37, 41—43.",
+            "bbox_xywh": [
+              730,
+              548,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-03",
+            "text": "1. Андрій",
+            "bbox_xywh": [
+              730,
+              603,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-04",
+            "text": "2. Петро",
+            "bbox_xywh": [
+              730,
+              658,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-05",
+            "text": "3. Филип",
+            "bbox_xywh": [
+              730,
+              713,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-06",
+            "text": "4. Ната-",
+            "bbox_xywh": [
+              730,
+              768,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-07",
+            "text": "наіл",
+            "bbox_xywh": [
+              730,
+              823,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-08",
+            "text": "5. (Іван)",
+            "bbox_xywh": [
+              730,
+              878,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-09",
+            "text": "6. Андрій",
+            "bbox_xywh": [
+              730,
+              933,
+              175,
+              53
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-10",
+            "text": "7. Юда",
+            "bbox_xywh": [
+              730,
+              987,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-11",
+            "text": "зрадник",
+            "bbox_xywh": [
+              730,
+              1042,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-12",
+            "text": "8. Тома",
+            "bbox_xywh": [
+              730,
+              1097,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-13",
+            "text": "близнець",
+            "bbox_xywh": [
+              730,
+              1152,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-14",
+            "text": "9. Юда не",
+            "bbox_xywh": [
+              730,
+              1207,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-15",
+            "text": "Іскаріот",
+            "bbox_xywh": [
+              730,
+              1262,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-16",
+            "text": "10. другий",
+            "bbox_xywh": [
+              730,
+              1317,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-john-line-17",
+            "text": "Зеведеєнко",
+            "bbox_xywh": [
+              730,
+              1372,
+              175,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "table-acts",
+        "kind": "other",
+        "bbox_xywh": [
+          911,
+          494,
+          180,
+          1046
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "table-acts-line-01",
+            "text": "Ап. Дїяня",
+            "bbox_xywh": [
+              911,
+              494,
+              180,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-02",
+            "text": "I, 13.",
+            "bbox_xywh": [
+              911,
+              543,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-03",
+            "text": "1. Петро",
+            "bbox_xywh": [
+              911,
+              593,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-04",
+            "text": "2. Іван",
+            "bbox_xywh": [
+              911,
+              643,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-05",
+            "text": "3. Яков",
+            "bbox_xywh": [
+              911,
+              693,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-06",
+            "text": "Зеведеїв",
+            "bbox_xywh": [
+              911,
+              743,
+              180,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-07",
+            "text": "4. Андрій",
+            "bbox_xywh": [
+              911,
+              792,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-08",
+            "text": "5. Филип",
+            "bbox_xywh": [
+              911,
+              842,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-09",
+            "text": "6. Тома",
+            "bbox_xywh": [
+              911,
+              892,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-10",
+            "text": "7. Варфо-",
+            "bbox_xywh": [
+              911,
+              942,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-11",
+            "text": "ломей",
+            "bbox_xywh": [
+              911,
+              992,
+              180,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-12",
+            "text": "8. Матвій",
+            "bbox_xywh": [
+              911,
+              1041,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-13",
+            "text": "9. Яков",
+            "bbox_xywh": [
+              911,
+              1091,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-14",
+            "text": "Алфеїв",
+            "bbox_xywh": [
+              911,
+              1141,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-15",
+            "text": "10. Симон",
+            "bbox_xywh": [
+              911,
+              1191,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-16",
+            "text": "Зилот",
+            "bbox_xywh": [
+              911,
+              1241,
+              180,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-17",
+            "text": "11. Юда",
+            "bbox_xywh": [
+              911,
+              1290,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-18",
+            "text": "Яковів",
+            "bbox_xywh": [
+              911,
+              1340,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-19",
+            "text": "12. Матїй",
+            "bbox_xywh": [
+              911,
+              1390,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-20",
+            "text": "(зам. Юди",
+            "bbox_xywh": [
+              911,
+              1440,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "table-acts-line-21",
+            "text": "зрадника)",
+            "bbox_xywh": [
+              911,
+              1490,
+              180,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00034-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "table-luke-line-02",
+        "reading": "IV, 14—16.",
+        "reason": "Provisional source glyph, diacritic, printed form or stamp-overlapped reading; no silent normalization."
+      },
+      {
+        "line_id": "table-john-line-09",
+        "reading": "6. Андрій",
+        "reason": "Provisional source glyph, diacritic, printed form or stamp-overlapped reading; no silent normalization."
+      },
+      {
+        "line_id": "table-john-line-17",
+        "reading": "Зеведеєнко",
+        "reason": "Provisional source glyph, diacritic, printed form or stamp-overlapped reading; no silent normalization."
+      },
+      {
+        "line_id": "table-acts-line-19",
+        "reading": "Матїй",
+        "reason": "Provisional source glyph, diacritic, printed form or stamp-overlapped reading; no silent normalization."
+      }
+    ]
+  }
+}
