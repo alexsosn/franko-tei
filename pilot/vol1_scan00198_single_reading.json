@@ -138,6 +138,22 @@
               },
               {
                 "start": 30,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 44,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i198-first-image-20261125"
+              },
+              {
+                "start": 44,
                 "end": 65,
                 "language": "uk",
                 "script": "Cyrl",
@@ -333,5 +349,14 @@
         "reason": "Provisional direct image reading; historical glyphs, names, variant labels and typography need reinspection."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "61d5d0ab935af4cc5f7c216a265383652e97645c",
+    "source_record_blob": "57abc124beca6003d6c2489b2818837cda24a2e1",
+    "scope": "Script refinement only: Roman numerals retain contextual language.",
+    "status": "agent_unverified",
+    "method": "Separate annotation audit against exact frozen reading; no change to source text, geometry or provenance."
   }
 }
