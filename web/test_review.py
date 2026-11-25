@@ -617,7 +617,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,102,43,0],['2',140,29,111,0],
+            self.assertEqual(result, [['1',145,102,43,0],['2',140,40,100,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -652,6 +652,14 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
                          [21, 19, 21, 19, 16, 17, 16])
         self.assertEqual(sum(e[4] == 2 for e in items), 4)
+        # Original images: Roman folios II, V, VI, XVII, XX, XXIV, XXV, XXXIII, XXXIX, LXI, LXIII.
+        preface = volume['entries'][2:13]
+        self.assertEqual([(e[2], e[3]) for e in preface],
+                         [('II–IV', 6), ('V–VI', 9), ('VI–XVII', 10), ('XVII–XX', 21),
+                          ('XX–XXIV', 24), ('XXIV–XXV', 28), ('XXV–XXXII', 29),
+                          ('XXXIII–XXXIX', 37), ('XXXIX–LXI', 43), ('LXI–LXIII', 65),
+                          ('LXIII–LXXVIII', 67)])
+        self.assertTrue(all(len(e) == 6 and 'heading' in e[5] for e in preface))
         continuation = next(e for e in items if e[1].startswith('З. О еллинскихъ мудрецехъ'))
         self.assertEqual((continuation[0], continuation[2]), (519, '33–35'))
         self.assertIn('520', continuation[5])
