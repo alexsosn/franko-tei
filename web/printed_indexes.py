@@ -30,6 +30,30 @@ SOURCE_BLOBS = {416: "4dc041eecb418dc4f16654feb3f4dd98ed592452",
 # Additional explicitly segmented pages in the glossary. None has an
 # entry crossing the recorded scan/column boundaries in these drafts.
 EXTRA_PAGES = {
+    "names": (
+        (417, "gpt62-i417-first-image-20261125", {
+            "index-left": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,36,37,38,39,40,41,42,43,44,45,46,47,48,49],
+            "index-right": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,22,23,24,25,26,27,28,29,30,31,32,33,35,36,37,38,39,41,42,43,44,45,47,48,49]}),
+        (418, "gpt62-i418-first-image-20261125", {
+            "index-a": [1,2,3,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23],
+            "index-b": [1,2,3,4,5,6,7],
+            "index-v-left": [1,4,5,6,7,8,10,12,13,14],
+            "index-v-right": [2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,24,25,26,27,28,29,30,32,33,34,35,36,37,38,39,40,41,42,43,44,45],
+            "index-g": [1,2]}),
+        (419, "gpt62-i419-first-image-20261125", {
+            "left": [1,2,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49],
+            "right-g": [1,2,3],
+            "right-d": [4,5,6,7,8,9,10,13,14,18,19,21,22,23,24,25,26,27,28,29,30,32,33,34,35,36,37,38,39,40,41,42,43]}),
+        (420, "gpt62-i420-first-image-20261125", {
+            "left": [3,4,5,6,7,8,9,10,11,12,13,14,24,25,26,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47],
+            "right": [1,2,3,5,6,7,8,9,10,11,12,13,18,19,20,21,22,23,24,26,27,28,29,30,31,32,33,39,40,41,42,43,44,45,46,47,48,49]}),
+        (421, "gpt62-i421-first-image-20261125", {
+            "left-e": [1,2,3,4,5,6,7,8,9,10],
+            "left-zh": [4,5,6],
+            "left-z": [1,2,4,5,7,9,10,11,13,14,15,16,17,18,19,20,21],
+            "left-i": [1,2],
+            "right": [1,2,3,4,5,6,7,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,28,29,30,31,32,44,45,46,47,49]}),
+    ),
     "glossary": (
         (460, "gpt62-i460-first-image-20261125", {
             "left": [2,3,4,6,8,10,11,13,15,18,20,22,24,25,26,28,30,32,35,37,38,40,41,43,44,45,49],
@@ -42,7 +66,47 @@ EXTRA_PAGES = {
             "right": [2,3,4,7,8,10,11,13,14,15,17,19,22,24,25,26,27,29,30,31,33,34,35,37,39,40,41,42,44,46,48]}),
     ),
 }
+# Editorial context is separate from the printed ditto glyphs.
+NAME_CONTEXTS = {
+    (417, "index-left", 2): "Академія Наук",
+    (417, "index-left", 3): "Академія Наук",
+    (417, "index-left", 40): "Анна",
+    (417, "index-left", 41): "Анна",
+    (418, "index-a", 15): "камінь",
+    (418, "index-v-left", 6): "Вавилонський",
+    (418, "index-v-left", 7): "Вавилонський",
+    (418, "index-v-right", 14): "Василий",
+    (418, "index-v-right", 15): "Василий",
+    (418, "index-v-right", 16): "Василий",
+    (419, "left", 10): "Гаїдад",
+    (419, "left", 19): "Геннадій",
+    (419, "left", 22): "Георгій",
+    (419, "left", 23): "Георгій",
+    (419, "left", 25): "син Левіїв",
+    (419, "left", 41): "Григорій",
+    (419, "left", 42): "Григорій",
+    (419, "left", 43): "Григорій",
+    (419, "left", 44): "Григорій",
+    (419, "left", 45): "Григорій",
+    (419, "left", 46): "Григорій",
+    (419, "left", 47): "Григорій",
+    (419, "left", 48): "Григорій",
+    (419, "left", 49): "Григорій",
+    (420, "right", 12): "Енос",
+    (420, "right", 13): "Енос",
+    (420, "right", 44): "Єтривська",
+    (421, "left-z", 2): "син Яковів",
+    (421, "right", 3): "імя Бога",
+    (421, "right", 4): "імя Бога",
+    (421, "right", 5): "імя Бога",
+    (421, "right", 21): "цар",
+}
 SOURCE_BLOBS.update({
+    417: "d2e707ec31b1757619e7cc293d69de50f562d2fc",
+    418: "2f9210d9d0f69d99f61c585cbb923361019861a1",
+    419: "300c03db9adbeab783be0dc51f753525f03b4f9f",
+    420: "06ddfea746b776b7227d95d7445ba77bfe9c551b",
+    421: "a3ff6bfec252e48cb942d0577657017b9dfc8",
     460: "600c616fe03fe0531c7e6d730d4192d88bc43f67",
     461: "d4d6497923b6d002dd66a69f79066cd4bed93e13",
     462: "f54a224cb68cd485fe90b5ff1ddca922d2deaf88",
@@ -105,6 +169,22 @@ def parse_entry(kind, lines, targets):
             if other:
                 refs.append(other)
         return label, detail, refs
+    if kind == "names":
+        # Some source rows use full stops as separators, or lack punctuation.
+        # Split only explicit comma/period boundaries. A damaged token such as
+        # "2 9" is not two page references or a guessed 29/209.
+        m = re.fullmatch(r"(.+?)\s+([0-9][0-9\s,.—–-]*)", joined)
+        if m:
+            label, tail = m.groups()
+            tokens = [token.strip() for token in re.split(r"[,.]", tail) if token.strip()]
+            refs = []
+            for token in tokens:
+                ref = make_ref(token, targets) if re.fullmatch(TOKEN, token) else None
+                refs.append(ref or dict(literal=token, volume="1", role="unresolved",
+                                        targets=[], missing=[]))
+            if any(ref["role"] != "unresolved" for ref in refs):
+                return label, "", refs
+            return joined, "", []
     m = TAIL.search(joined)
     if not m:
         return joined, "", []
@@ -173,7 +253,8 @@ def build_printed_indexes(pilot, ref):
                     part = [{"id": l["id"], "text": l["text"]} for l in lines[previous:stop]]
                     label, detail, refs = parse_entry(kind, [l["text"] for l in part], targets)
                     # Only the explicit Abraham block on the pilot motif page.
-                    context = "Авраам" if kind == "motifs" and label.startswith("„") else ""
+                    context = ("Авраам" if kind == "motifs" and label.startswith("„")
+                               else NAME_CONTEXTS.get((scan, region_id, previous + 1), "") if kind == "names" else "")
                     entries.append(dict(id=f"v1-{scan}-{part[0]['id']}", source=source,
                                         region_id=region_id, lines=part, label=label,
                                         detail=detail, context=context, refs=refs))
