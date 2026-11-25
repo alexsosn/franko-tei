@@ -69,8 +69,31 @@ def reject_constant(_value):
 def read_bundle(raw):
     require(isinstance(raw, bytes) and 0 < len(raw) <= MAX_BYTES, "bundle size exceeds limit")
     try:
-        return json.loads(raw.decode("utf-8"), object_pairs_hook=unique_pairs,
-                          parse_constant=reject_constant)
+        text = raw.decode("utf-8")
+        # Python versions differ in their JSON decoder recursion limits.
+        # Bound container depth before decoding, ignoring brackets in strings.
+        depth = 0
+        quoted = escaped = False
+        for char in text:
+            if quoted:
+                if escaped:
+                    escaped = False
+                elif char == "\\":
+                    escaped = True
+                elif char == '"':
+                    quoted = False
+            elif char == '"':
+                quoted = True
+            elif char in "[{":
+                depth += 1
+                require(depth <= 8, "JSON nesting exceeds limit")
+            elif char in "]}":
+                depth -= 1
+                require(depth >= 0, "invalid JSON nesting")
+        result = json.loads(text, object_pairs_hook=unique_pairs,
+                            parse_constant=reject_constant)
+        require(isinstance(result, dict), "bundle must be a JSON object")
+        return result
     except (UnicodeError, RecursionError) as exc:
         raise ValueError("invalid or excessively nested JSON") from exc
 
