@@ -4,6 +4,10 @@ Read `README.md`, `docs/agent-loop.md`, `docs/transcription.md`, and open GitHub
 
 Mission: produce a **source-verifiable** five-volume diplomatic electronic edition of Ivan Franko's *Апокріфи і лєґенди з українських рукописів* (1896–1910), TEI P5 first, then Text-Fabric/Context-Fabric. Respect the difference between Franko's printed edition and the medieval/early modern manuscripts he transcribed.
 
+## Current editorial phase — user decision (2026-11-25)
+
+Prioritize complete agent-produced diplomatic text **and provisional structural/language markup across all five volumes**. Human researcher capacity is insufficient for page-by-page proofreading during ingestion. No human review, human-approved gold text, or exhaustive multi-agent adjudication of every glyph is a prerequisite for merging or publishing a usable working draft. All review at this stage may be performed by agents; a logically distinct adversarial review of each batch, grounded in actual scans and data, remains required. Preserve alternatives, provenance, uncertainty and gaps. Publish drafts explicitly as `agent_unverified` in the comparison/review interface so researchers can later inspect and correct text and markup in place. Keep source/structural checks and the separate verified-promotion/research-grade release requirements; never imply draft publication establishes textual accuracy.
+
 ## Non-negotiable gates for every ticket
 
 1. **Research**: read actual source scans/metadata, code and relevant TEI documentation; capture evidence and uncertainties in ticket or PR. Avoid speculative complexity. Opening a needed research issue is allowed.
@@ -47,9 +51,9 @@ Specialist CRNN models accept line crops, not full-page images.
 
 ## User-approved agent-first pilot priority (GitHub #11, 2026-11-11)
 
-Prioritize six real-image development pages: I/20, II/100, III/130,
-IV/100, V/100 and V/10. Keep I/21, II/101, III/131, IV/101, V/101
-and V/11 untouched as frozen holdout until evaluation protocol is fixed.
+Historical evaluation protocol (not a gate for ordinary draft ingestion or an active restriction on corpus coverage): prioritize six real-image development pages: I/20, II/100, III/130,
+IV/100, V/100 and V/10. Originally designated holdouts were I/21, II/101, III/131, IV/101, V/101
+and V/11; any page already read or exposed is ineligible for a new blind holdout claim. Select genuinely untouched samples for subsequent evaluation.
 Use two genuinely separate blind image-only reader contexts, then an
 independent image-inspecting review context; no mandatory human gate.
 Persist full first responses, exact instructions, run/model/context

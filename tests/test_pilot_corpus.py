@@ -116,8 +116,15 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertTrue(all(r["context_independence"] == "single-working-draft"
                             for r in i20["readings"]))
         i52 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 52))
-        self.assertEqual(len(i52["readings"]), 1)
-        self.assertTrue(i52["readings"][0]["prior_text_exposure"])
+        by_path = {r["path"]: r for r in i52["readings"]}
+        self.assertTrue(by_path["pilot/vol1_scan00052_exposed_reading.json"]["prior_text_exposure"])
+        self.assertFalse(by_path["pilot/vol1_scan00052_alternate_reading_01.json"]["prior_text_exposure"])
+        for volume, scan in [(1, n) for n in range(20, 62)] + [(2, 100), (3, 130), (4, 100), (5, 100)]:
+            path = PILOT / f"vol{volume}_scan{scan:05d}_alternate_reading_01.json"
+            candidate = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(candidate["reading"]["model_id"], "GPT-6.2")
+            page = next(p for p in inventory if (p["volume"], p["scan_page"]) == (str(volume), scan))
+            self.assertIn(f"pilot/{path.name}", {r["path"] for r in page["readings"]})
 
     def test_unreadable_source_suffix_is_explicit_tei_gap_not_page_glyph(self):
         # A real pinned source draft with a documented source obstruction:

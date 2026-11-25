@@ -1,0 +1,312 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 100,
+  "printed_page_observed": "48",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00100.jpg",
+  "source_image_sha256": "f70aff53495efa92c330518017e35efcd0b9ace664fe16eb2436ca01cdcbb2be",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v4s00100",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-reread-20261125-4-100",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native page before fetching prior transcription. Preserve physical lines and historical orthography. Titla, numerals, superscripts and diacritics provisional, not exhaustive. Estimated geometry reused after text composition; mixed-language annotation incomplete. No independent adjudication.",
+    "raw_response": "48\nчасти просто взяті з „Бесѣды трехъ святителей“. Інтересно, що\nсам автор сього катехізма видїлює ті питаня окремо від попереднїх,\nшкільних, і називає їх (пит. 26) „квестіями людей посполитых“,\nнатякаючи сим на значне розповсюдженє подібних питань і відпо-\nвідий серед простого народу. Отсей твір, очевидно скомпонований\nна те, щоб його виставлено прилюдно живими особами підчас до-\nрічного екзамену в якійсь братській школї, де були присутні й ро-\nдичі дїтий, був опублїкований мною із сього самого рукопису (тодї\nвін був у депозитї в Ставропигійській бібліотецї, тепер лежить\nу бібліотецї сьв. Онуфрейського манастиря у Львові) в „Кіевской\nСтаринѣ“ 1892 р., за цьвітень стор. 59—70. На жаль, для отсього\nнового виданя я не міг на ново переглянути рукопису.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            492,
+            681,
+            260,
+            43
+          ],
+          "description": "Decorative printer ornament; not textual content"
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "page-number",
+        "kind": "page_number",
+        "bbox_xywh": [
+          130,
+          87,
+          62,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "page-number-line",
+            "text": "48",
+            "bbox_xywh": [
+              138,
+              96,
+              42,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          130,
+          152,
+          974,
+          450
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-line-01",
+            "text": "части просто взяті з „Бесѣды трехъ святителей“. Інтересно, що",
+            "bbox_xywh": [
+              135,
+              166,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "body-line-02",
+            "text": "сам автор сього катехізма видїлює ті питаня окремо від попереднїх,",
+            "bbox_xywh": [
+              135,
+              202,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-03",
+            "text": "шкільних, і називає їх (пит. 26) „квестіями людей посполитых“,",
+            "bbox_xywh": [
+              135,
+              238,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-04",
+            "text": "натякаючи сим на значне розповсюдженє подібних питань і відпо-",
+            "bbox_xywh": [
+              135,
+              274,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-05",
+            "text": "відий серед простого народу. Отсей твір, очевидно скомпонований",
+            "bbox_xywh": [
+              135,
+              310,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-06",
+            "text": "на те, щоб його виставлено прилюдно живими особами підчас до-",
+            "bbox_xywh": [
+              135,
+              346,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-07",
+            "text": "річного екзамену в якійсь братській школї, де були присутні й ро-",
+            "bbox_xywh": [
+              135,
+              382,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-08",
+            "text": "дичі дїтий, був опублїкований мною із сього самого рукопису (тодї",
+            "bbox_xywh": [
+              135,
+              418,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-09",
+            "text": "він був у депозитї в Ставропигійській бібліотецї, тепер лежить",
+            "bbox_xywh": [
+              135,
+              454,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-10",
+            "text": "у бібліотецї сьв. Онуфрейського манастиря у Львові) в „Кіевской",
+            "bbox_xywh": [
+              135,
+              490,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-11",
+            "text": "Старинѣ“ 1892 р., за цьвітень стор. 59—70. На жаль, для отсього",
+            "bbox_xywh": [
+              135,
+              526,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "body-line-12",
+            "text": "нового виданя я не міг на ново переглянути рукопису.",
+            "bbox_xywh": [
+              135,
+              562,
+              955,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00100",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": []
+  }
+}
