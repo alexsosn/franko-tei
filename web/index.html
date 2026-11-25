@@ -95,7 +95,17 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #contentsEntries .contents-destination[data-current]{box-shadow:inset 2px 0 #527b68}
 #contentsEntries .contents-destination:focus-visible,#contentsPanel button:focus-visible,#contentsPanel summary:focus-visible{outline:2px solid #537c8c;outline-offset:-2px}
 #contentsEntries .source-link{min-height:36px;min-width:40px;font-size:11px;padding:3px 5px;color:#235d55;border:0;background:transparent;align-self:center}
-#contentsEntries .contents-original[hidden]{display:none}
+#contentsEntries .contents-original[hidden],#contentsEntries .contents-ref-detail[hidden]{display:none}
+#contentsEntries .contents-actions{display:flex;align-items:center;gap:2px;min-height:44px}
+#contentsEntries .contents-ref-toggle{width:40px;min-height:44px;padding:4px;border:0;background:transparent;color:#235d55}
+#contentsEntries .contents-ref-toggle svg{width:17px;height:17px;vertical-align:middle}
+#contentsEntries .contents-ref-toggle[aria-expanded="true"]{background:#e8efeb}
+#contentsEntries .contents-ref-detail{grid-column:1/-1;margin:0 8px 8px;padding:8px 10px;border-left:2px solid #a7bdb2;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+#contentsEntries .contents-ref-record+ .contents-ref-record{margin-top:8px;padding-top:8px;border-top:1px solid #d7d9d5}
+#contentsEntries .contents-ref-record p{margin:3px 0}
+#contentsEntries .contents-ref-record a{display:inline-flex;align-items:center;min-height:32px;color:#235d55;text-decoration:underline}
+#contentsEntries .contents-ref-state{color:#525e55}
+#contentsEntries .contents-ref-original{color:#525e55;margin:0 0 6px}
 #contentsEntries .contents-note{grid-column:1/-1;font-size:12px;color:#525e55;padding:0 8px 6px;overflow-wrap:anywhere}
 #contentsPanel:not(:has(#contentsProvenance[open])) .source-link,#contentsPanel:not(:has(#contentsProvenance[open])) .contents-note{display:none}
 #contentsEmpty{padding:16px 14px;color:#525e55;margin:0}
@@ -155,6 +165,14 @@ const uiDictionary={
   "Close contents": "Закрити зміст",
   "Filter titles or pages": "Фільтр за назвою або сторінкою",
   "Original contents & notes": "Оригінал змісту та примітки",
+  "Work references": "Бібліографія твору",
+  "Edition match": "Збіг із виданням",
+  "Work family; witness not checked": "Текстова традиція; список не звірено",
+  "Possible match; not identified": "Можливий збіг; не ідентифіковано",
+  "e-Clavis bibliography": "Бібліографія e-Clavis",
+  "OCP critical text (comparison)": "Критичний текст OCP (для зіставлення)",
+  "OCP registry (edition not confirmed)": "Реєстр OCP (видання не підтверджено)",
+  "Original title": "Оригінальна назва",
   "English titles are provisional translations; original titles appear below.": "Англійські назви є попередніми перекладами; нижче наведено оригінальні назви.",
   "Original contents scans": "Скани оригінального змісту",
   "No matching entries.": "Немає відповідних записів.",
@@ -271,7 +289,7 @@ const contentsEnglish = {
   "1": {
     "Від Археоґрафічної комісиї.": "From the Archaeographic Commission.",
     "Передмова": "Preface",
-    "I. Індекс книг правдивих і заказаних.": "I. Index of authentic and prohibited books.",
+    "I. Індекс книг правдивих і заказаних.": "I. Index of true and prohibited books.",
     "А. Рукопис о. Теодора з Дубівця": "А. Manuscript of Fr. Theodore of Dubivtsi",
     "Б. Рукопис о. Ілї Яремецького-Білахевича": "Б. Manuscript of Fr. Illia Yaremetsky-Bilakhevych",
     "II. Від сотвореня сьвіта до смерти Христа.": "II. From the creation of the world to the death of Christ.",
@@ -301,7 +319,7 @@ const contentsEnglish = {
     "Д. Сифові потомки (Із Слова Меф. Патарського)": "Д. Seth's descendants (from the Discourse of Methodius of Patara)",
     "Е. Про Еноха (Крех. Палея)": "Е. On Enoch (Krekhiv Palaea)",
     "Ж. Про Ламеха (Крех. Палея)": "Ж. On Lamech (Krekhiv Palaea)",
-    "VII. Книга Еноха (Із полтавського ркп. ігумена Геннадия)": "VII. Book of Enoch (from the Poltava MS of Hegumen Gennadius)",
+    "VII. Книга Еноха (Із полтавського ркп. ігумена Геннадия)": "VII. Book of Enoch (2 Enoch; from the Poltava MS of Hegumen Gennadius)",
     "VIII. Про Ноя і потопу сьвіта.": "VIII. On Noah and the Flood.",
     "А. Потопа сьвіта (Крех. Палея)": "А. The Flood (Krekhiv Palaea)",
     "Б. Ной і єго жінка та Сатана (Із Слова Меф. Патарського)": "Б. Noah, his wife and Satan (from the Discourse of Methodius of Patara)",
@@ -486,7 +504,7 @@ const contentsEnglish = {
     "Ж. Слово человѣческое о младенствѣ Ісус Христовѣ царском (Іспаський ркпс)": "Ж. A discourse on the childhood of Jesus Christ the King (Ispas MS)",
     "З. Чудо о Господѣ нашемъ Іисусѣ Христѣ (Ркпс Румянцівського Музея)": "З. Miracle concerning our Lord Jesus Christ (Rumyantsev Museum MS)",
     "И. Слово о Господѣ нашемъ Ісусѣ Христѣ (Ркпс Яремецького-Білахевича)": "И. Discourse on our Lord Jesus Christ (MS of Yaremetsky-Bilakhevych)",
-    "Відривки білоруського євангелия Томи": "Fragments of the Belarusian Gospel of Thomas",
+    "Відривки білоруського євангелия Томи": "Fragments of the Belarusian Infancy Gospel of Thomas",
     "І. Незгода в Йосифовій сїм’ї із за Ісуса (Перемиський Пролог)": "І. Discord in Joseph's family on account of Jesus (Przemyśl Prologue)",
     "К. Сказаніє Христова пришествія к мору (Перемиський Пролог)": "К. Account of Christ's coming to the sea (Przemyśl Prologue)",
     "V. Ісусове хрещене і покуса.": "V. Jesus' baptism and temptation.",
@@ -637,8 +655,8 @@ const contentsEnglish = {
     "В. Памят св. ап. еванг. Матѳея (Перем. Прольог)": "В. Commemoration of the holy Apostle and Evangelist Matthew (Przemyśl Prologue)",
     "Г. Св. ап. Матѳея еванг. (Рукоп. Т. з Дубівця)": "Г. Of the holy Apostle and Evangelist Matthew (MS of T. of Dubivtsi)",
     "VIII. Оповіданя про сьв. Филипа.": "VIII. Tales of St Philip.",
-    "А. Житіє св. ап. Филипа избранно от писаній святыхъ и положено єсть въ Метофрестѣ (Львівський рукоп. Оссол. 38)": "А. Life of the holy Apostle Philip, selected from the writings of the saints and included in the Metaphrastes (Lviv Ossolineum MS 38)",
-    "Б. Чудо преславного архангела Михаила в Хонѣхъ, і Архипа поломонаря (Львівський рукопис Оссол. 38)": "Б. Miracle of the glorious Archangel Michael at Chonae and Archippus the church attendant (Lviv Ossolineum MS 38)",
+    "А. Житіє св. ап. Филипа избранно от писаній святыхъ и положено єсть въ Метофрестѣ (Львівський рукоп. Оссол. 38)": "А. Life of the holy Apostle Philip, selected from the writings of the saints and included in the work of Metaphrastes (Lviv Ossolineum MS 38)",
+    "Б. Чудо преславного архангела Михаила в Хонѣхъ, і Архипа поломонаря (Львівський рукопис Оссол. 38)": "Б. Miracle of the glorious Archangel Michael at Chonae and Archippus the sacristan (Lviv Ossolineum MS 38)",
     "В. Мученіє св. ап. Филипа (Рукоп. Оссол. 38)": "В. Martyrdom of the holy Apostle Philip (Ossolineum MS 38)",
     "Г. Житіє св. ап. Хва Филиппа, писано от Авдея єп. вавилонскаго (Перем. Прольог)": "Г. Life of the holy Apostle of Christ Philip, written by Abdias, bishop of Babylon (Przemyśl Prologue)",
     "Д. Страсть св. ап. Филипа, єдинаго от дванадесят апостолъ (Перем. Прольог)": "Д. Passion of the holy Apostle Philip, one of the twelve apostles (Przemyśl Prologue)",
@@ -868,10 +886,10 @@ const contentsEnglish = {
     "9. Житє і муки св. Никити, покутська редакція": "9. Life and Passion of St Nicetas, Pokuttia recension",
     "10. Память св. мученика Никити, угроруська редакція": "10. Commemoration of St Nicetas the Martyr, Carpatho-Rusyn recension",
     "11. Житє св. Климента Анкирського": "11. Life of St Clement of Ancyra",
-    "12. Мученє св. Теодора Тірона": "12. Martyrdom of St Theodore Tiron",
-    "13. Муки св. Теодора Тірона, популярна перерібка": "13. Passion of St Theodore Tiron, popular adaptation",
-    "14. Чудо св. Теодора Тірона, проложна статя": "14. Miracle of St Theodore Tiron, Prologue reading",
-    "15. Чудо св. Теодора Тірона в коливом": "15. Miracle of St Theodore Tiron involving kollyva",
+    "12. Мученє св. Теодора Тірона": "12. Martyrdom of St Theodore the Recruit (Tiron)",
+    "13. Муки св. Теодора Тірона, популярна перерібка": "13. Passion of St Theodore the Recruit (Tiron), popular adaptation",
+    "14. Чудо св. Теодора Тірона, проложна статя": "14. Miracle of St Theodore the Recruit (Tiron), Prologue reading",
+    "15. Чудо св. Теодора Тірона в коливом": "15. Miracle of St Theodore the Recruit (Tiron) involving kollyba",
     "16. Память св. Дросіди": "16. Commemoration of St Drosida",
     "17. Мученє св. Мирини": "17. Martyrdom of St Myrina",
     "18. Муки св. Юліянії": "18. Passion of St Juliana",
@@ -881,7 +899,7 @@ const contentsEnglish = {
     "2. » св. Макарія Єгипетського": "2. Life of St Macarius of Egypt",
     "3. » св. Макарія Александрійського": "3. Life of St Macarius of Alexandria",
     "4. » Марка Афінейського": "4. Life of Mark of Athens",
-    "5. » св. Сави Освященного": "5. Life of St Sabbas the Sanctified",
+    "5. » св. Сави Освященного": "5. Life of St Sabas the Sanctified",
     "6. » Епіфанія Кипрського": "6. Life of Epiphanius of Cyprus",
     "7. » Петра Афонського": "7. Life of Peter of Athos",
     "8. » Марії Єгиптянки": "8. Life of Mary of Egypt",
@@ -890,6 +908,644 @@ const contentsEnglish = {
     "Доповненя до першої части": "Supplements to the first part",
     "I. До повного житія Конона Ісаврійського": "I. To the full Life of Conon of Isauria",
     "II. Початок житія Петра Афонського": "II. Beginning of the Life of Peter of Athos"
+  }
+};
+// Work references are keyed by exact source scan, literal title, printed reference. No inferred TEI boundary.
+const contentsWorkRefs = {
+  "1": {
+    "[466,\"VII. Книга Еноха (Із полтавського ркп. ігумена Геннадия)\",\"39–64\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-066",
+        "title": "2 Enoch (Slavonic Enoch)",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "The OCP canonical registry identifies CAVT 66 as 2 Enoch; the published Poltava witness is cited in the Slavonic Enoch bibliography. OCP lists the edition as staged; the link opens the registry, not a critical text.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"Б. О лествици (Крех. Палея)\",\"108–120\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-101",
+        "title": "Ladder of Jacob",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "The OCP registry and Pennington's English translation identify the Palaea tradition. The exact Krekhiv recension remains to be compared; OCP lists the edition as staged.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"XV. Заповіти дванацяти патріархів (Крех. Палея).\",\"174\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"1. Заветъ Рувимовъ о благоумьи\",\"174–177\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"2. Завѣтъ Семионовъ о зависти\",\"177–180\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"3. Завѣт Левгин о жречестве и о прозорьстве\",\"180–187\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"4. Завѣт Іюдин о мужестве\",\"187–195\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"5. Завѣтъ Сахаровъ о доброумьи\",\"195–197\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"6. Завѣтъ Заулоновъ о милосердіи и о милостини\",\"197–200\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"7. Завѣт Данов о ярости и о лжи\",\"200–203\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"8. Завѣтъ Нефталимовъ о естественей благости\",\"203–206\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"9. Завѣт Гадовъ о ненависти\",\"206–209\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"10. Завѣт Асировъ о двою лицю и о злобѣ и о доброумьи\",\"209–212\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"11. Завѣт Іосифль о премудрости\",\"212–218\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[467,\"12. Завѣт Веньяминовъ о помысле чистомъ\",\"218–224\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-118",
+        "title": "Testaments of the Twelve Patriarchs",
+        "relation": "work-family",
+        "url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/master/CANON.md",
+        "evidence": "OCP lists the collective work, not individual Slavonic witnesses, as staged; link opens its canonical registry.",
+        "kind": "catalog"
+      }
+    ],
+    "[465,\"Б. Житіє о Адамѣ і Евѣ і о согрѣшеніи их (Дрогобицький рукопис)\",\"23–26\"]": [
+      {
+        "provider": "OCP",
+        "id": "Life of Adam and Eve",
+        "title": "Life of Adam and Eve (Apocalypse of Moses)",
+        "relation": "candidate",
+        "url": "https://pseudepigrapha.org/reader.html?doc=AdamEve.xml",
+        "evidence": "The OCP edition contains Greek and Latin witnesses. The Drohobych Slavonic title alone cannot establish equivalence.",
+        "kind": "edition"
+      }
+    ]
+  },
+  "2": {
+    "[519,\"В. Сказаніє Афродитияна о бывшемъ чюдеси въ персцѣ земли (Замойський рукопис)\",\"3–11\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 974",
+        "title": "Legend of Aphroditianus",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/legend-of-aphroditianus/",
+        "evidence": "The named narrator and Persian miracle agree with the catalogue title; the Zamość witness is not independently collated.",
+        "kind": "bibliography"
+      }
+    ],
+    "[521,\"Л. Слово о убіеніи св. и славнаго пророка Захарыи (Замойський ркпс)\",\"146–149\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 509",
+        "title": "Martyrdom of Zechariah",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/martyrdom-of-zechariah/",
+        "evidence": "Catalogue cites Franko II, 146–147, Lviv I F 15; printed TOC extends to 149.",
+        "kind": "bibliography"
+      }
+    ],
+    "[522,\"Ж. Слово человѣческое о младенствѣ Ісус Христовѣ царском (Іспаський ркпс)\",\"159–164\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 421",
+        "title": "Infancy Gospel of Thomas",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/infancy-gospel-of-thomas/",
+        "evidence": "Catalogue explicitly cites Franko II, 159–163, witness I.",
+        "kind": "bibliography"
+      }
+    ],
+    "[522,\"З. Чудо о Господѣ нашемъ Іисусѣ Христѣ (Ркпс Румянцівського Музея)\",\"164–169\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 421",
+        "title": "Infancy Gospel of Thomas",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/infancy-gospel-of-thomas/",
+        "evidence": "Catalogue explicitly cites Franko II, 164–169, witness R.",
+        "kind": "bibliography"
+      }
+    ],
+    "[522,\"И. Слово о Господѣ нашемъ Ісусѣ Христѣ (Ркпс Яремецького-Білахевича)\",\"169–172\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 421",
+        "title": "Infancy Gospel of Thomas",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/infancy-gospel-of-thomas/",
+        "evidence": "Catalogue explicitly cites Franko II, 169–172, witness F.",
+        "kind": "bibliography"
+      }
+    ],
+    "[522,\"Відривки білоруського євангелия Томи\",\"408–409\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 421",
+        "title": "Infancy Gospel of Thomas",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/infancy-gospel-of-thomas/",
+        "evidence": "Printed title and childhood context support this family; Belarusian fragments not matched in the catalogue.",
+        "kind": "bibliography"
+      }
+    ],
+    "[523,\"Л. Чьтенія въскресная. Дѣянія святыя Тройца, сътворено Карином и Лицѣошемъ (Ркпс Ст. Комаревського)\",\"252–273\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 309",
+        "title": "Acts of Pilate / Gospel of Nicodemus",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-pilate-gospel-of-nicodemus/",
+        "evidence": "Catalogue cites Franko II, 252–272, long redaction; TOC extends to 273.",
+        "kind": "bibliography"
+      }
+    ],
+    "[524,\"А. Оповіданє Карина і Лисина про Ісусів прихід до пекла (Ркпс Ст. Комаревського)\",\"293–304\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 309",
+        "title": "Acts of Pilate / Gospel of Nicodemus (Descent into Hell)",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-pilate-gospel-of-nicodemus/",
+        "evidence": "Catalogue cites Franko II, 293–304, long redaction.",
+        "kind": "bibliography"
+      }
+    ],
+    "[524,\"А. Пилатів лист до кесаря Клявдия (Ркпс Ст. Комаревського)\",\"335–336\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 259",
+        "title": "Epistle of Pilate to Claudius",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-pilate-to-claudius/",
+        "evidence": "Sender and addressee agree; exact manuscript versions require collation.",
+        "kind": "bibliography"
+      }
+    ],
+    "[524,\"Б. Пилатів лист до кесаря Клявдия (Ковельська Палея)\",\"336–337\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 259",
+        "title": "Epistle of Pilate to Claudius",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-pilate-to-claudius/",
+        "evidence": "Sender and addressee agree; exact manuscript versions require collation.",
+        "kind": "bibliography"
+      }
+    ],
+    "[525,\"А. Пять болїстей Богородицї (Ркпс Павла Кизикевича)\",\"368–369\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 753",
+        "title": "Dialogue of Mary and Christ on the Departure of the Soul",
+        "relation": "candidate",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/dialogue-of-mary-and-christ-on-the-departure-of-the-soul/",
+        "evidence": "Catalogue cites Franko II, 368–369, but TOC title is Five Sorrows of the Mother of God. Check text before asserting identification.",
+        "kind": "bibliography"
+      }
+    ]
+  },
+  "3": {
+    "[440,\"А. Мученіє св. великого первомученика Стефана (Замойський рукоп.)\",\"28–33\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 735",
+        "title": "Martyrdom of Stephen",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/martyrdom-of-stephen/",
+        "evidence": "Catalogue cites Zamość witness, Franko III, 28–33.",
+        "kind": "bibliography"
+      }
+    ],
+    "[446,\"Ѵ. (а). Св. славнаго і всехвалнаго прѣвомученика архидіякона Стефана (Рукоп. Оссол. 38)\",\"259–259\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 735",
+        "title": "Martyrdom of Stephen",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/martyrdom-of-stephen/",
+        "evidence": "Catalogue cites Lviv witness, Franko III, 256–259; printed TOC 259–259 is retained.",
+        "kind": "bibliography"
+      }
+    ],
+    "[440,\"Б. Мученіє св. первомученици и равноапостолныя Ѳеклы (Замойський рукоп.)\",\"33–45\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 787",
+        "title": "Acts of Paul and Thecla",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul-and-thecla/",
+        "evidence": "Catalogue cites Franko III, 33–45, witness F.",
+        "kind": "bibliography"
+      }
+    ],
+    "[441,\"Б. Прохора в потребах самого седмаго поставленнаго... списаніє єдинаго апостола Іоанна богослова (Рукоп. уривок XVII в.)\",\"56–61\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 203",
+        "title": "Acts of John by Prochorus",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john-by-prochorus/",
+        "evidence": "The source heading names Prochorus and John; exact fragment not collated.",
+        "kind": "bibliography"
+      }
+    ],
+    "[441,\"А. Дѣянія св. ап. Фомы въ Индеи, како полату създа цареви (Львівський рукоп. Оссол. 38)\",\"91–98\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 125",
+        "title": "Acts of Thomas",
+        "relation": "candidate",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/",
+        "evidence": "Palace episode or martyrdom is consistent with the work; check each witness independently.",
+        "kind": "bibliography"
+      }
+    ],
+    "[441,\"Б. Дѣяніє и мученіє св. ап. Фомы (Замойський рукоп.)\",\"98–101\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 125",
+        "title": "Acts of Thomas",
+        "relation": "candidate",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/",
+        "evidence": "Palace episode or martyrdom is consistent with the work; check each witness independently.",
+        "kind": "bibliography"
+      }
+    ],
+    "[441,\"В. Страсть св. ап. Ѳомы (Перем. Прол.)\",\"101–111\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 504",
+        "title": "Acts of Thomas and His Wonderworking Skin",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas-and-his-wonderworking-skin/",
+        "evidence": "Catalogue explicitly cites Franko III, 101–111.",
+        "kind": "bibliography"
+      }
+    ],
+    "[442,\"А. Повѣсть о съдѣяніи св. ап. Андреа и Матѳеа, и колико пострадаша въ градѣ человѣкоядецъ, и како спасени бышя Господем нашим Ісус Христом, киимъ образом обращени бывше человѣци оныя къ православнои вѣрѣ (Львівський рукоп. унїверс. I. В. 1.)\",\"126–141\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 517",
+        "title": "Acts of Andrew and Matthias (also Matthew)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew-and-matthias/",
+        "evidence": "The city of the cannibals narrative is distinctive; source names Matthew, retained in translation.",
+        "kind": "bibliography"
+      }
+    ],
+    "[442,\"А. Мученіє св. ап. Матѳея евангелиста (Львівський рукоп. Оссол. 38)\",\"156–164\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 420",
+        "title": "Acts of Matthew",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-matthew/",
+        "evidence": "Catalogue cites Franko III, 156–164, Ossolineum 38.",
+        "kind": "bibliography"
+      }
+    ],
+    "[442,\"А. Житіє св. ап. Филипа избранно от писаній святыхъ и положено єсть въ Метофрестѣ (Львівський рукоп. Оссол. 38)\",\"170–173\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 808",
+        "title": "Hypomnema on Philip, by Symeon Metaphrastes",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/hypomnema-on-philip-by-symeon-metaphrastes/",
+        "evidence": "Catalogue explicitly cites Franko III, 170–173; BHG 1527.",
+        "kind": "bibliography"
+      }
+    ],
+    "[442,\"Б. Чудо преславного архангела Михаила в Хонѣхъ, і Архипа поломонаря (Львівський рукопис Оссол. 38)\",\"173–174\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 217",
+        "title": "Miracle of Michael the Archangel at Chonae",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/miracle-of-michael-the-archangel-at-chonae/",
+        "evidence": "Chonae and Archippus are distinctive; precise Slavonic version not collated.",
+        "kind": "bibliography"
+      }
+    ],
+    "[442,\"В. Мученіє св. ап. Филипа (Рукоп. Оссол. 38)\",\"174–179\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 980",
+        "title": "Acts of Philip",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/",
+        "evidence": "Catalogue cites the Ossolineum 38 witness in Franko III, 174–179.",
+        "kind": "bibliography"
+      }
+    ]
+  },
+  "4": {
+    "[571,\"А. Слово о святомъ Авраамѣ, єгда яви ся єму Архистратигъ Михаилъ. (Унгварський рукоп.)\",\"104\"]": [
+      {
+        "provider": "OCP",
+        "id": "CAVT-088",
+        "title": "Testament of Abraham",
+        "relation": "candidate",
+        "url": "https://pseudepigrapha.org/reader.html?doc=TAbr.xml",
+        "evidence": "Michael visits Abraham in this work; the OCP Greek edition is a comparative candidate, not a matched Slavonic witness.",
+        "kind": "edition"
+      }
+    ],
+    "[570,\"А. Ефистолія о недѣли. (Рукоп. Т. з Дубівця)\",\"49\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"Б. Друга епістолія. (Страшевицька Минея)\",\"53\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"В. Слово по вся неделя. Сія епістолія и посланіє до Ієрусалима сыномъ человѣческимъ. (Рук. Георгія Білявського)\",\"56\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"Г. Слово о святой недели, сіє єсть епистолія, приказаніє Господнє. (Рукоп. Ярем. Білах.)\",\"61\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"Д. Лист небесний. (Уривок, Дрогобицький рук.)\",\"63\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"Е. Друга епістолія про недїлю, уривок. (Калуський рук.)\",\"64\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"З. Лист небесний. (Бачв. рукоп.)\",\"69\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"І. Лист небесний. (Яйковецький рукоп.)\",\"71\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[570,\"К. Лист Божій. (Львівський друк 1903 р.)\",\"75\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[573,\"Ѯ. О спаденномъ камени со небесе епистолія сія. (Рукоп. бібл. Петруш. ч. 168)\",\"448\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[573,\"Ѱ. Лист небесний. (Берлинський рукоп.)\",\"453\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[573,\"Ѳ. Wimja Otca i Syna i Swiataho Ducha. (Лист небесний, Стратинський рукоп.)\",\"455\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 880",
+        "title": "Epistle of Christ from Heaven (Sunday Letter)",
+        "relation": "work-family",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-christ-from-heaven/",
+        "evidence": "Heavenly/Sunday Letter tradition; individual recensions and protective adaptations still require textual comparison.",
+        "kind": "bibliography"
+      }
+    ],
+    "[571,\"Б. Видѣніє еже видѣ святыи Исаія пророкъ сынъ Амосовъ. (Рукоп. моск. Успенського собора)\",\"109\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 983",
+        "title": "Ascension of Isaiah",
+        "relation": "candidate",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/ascension-of-isaiah/",
+        "evidence": "Vision of Isaiah may belong to this tradition; compare incipit and content.",
+        "kind": "bibliography"
+      }
+    ],
+    "[571,\"В. Слово от видѣнія Павла апостола. (Сваричівський Ізмараґд)\",\"117\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 818",
+        "title": "Apocalypse of Paul (Visio Pauli)",
+        "relation": "candidate",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-of-paul/",
+        "evidence": "Heading describes a vision of Paul; other visions exist, so compare the text.",
+        "kind": "bibliography"
+      }
+    ],
+    "[571,\"Ж. Открытіє мукъ пресвятыи Богородици, иж оглядала, где мучат ся грѣшнии. (Рукоп. Георгія Білявського)\",\"153\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 900",
+        "title": "Apocalypse of the Virgin",
+        "relation": "candidate",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-of-the-virgin/",
+        "evidence": "The Virgin and tour of punishments suggest the tradition; exact work/recension not collated.",
+        "kind": "bibliography"
+      }
+    ],
+    "[571,\"З. Слово о откровеніи мук, єгда ходила пресв. Богородица з Михаилом, где мучит ся родъ христіянскій. (Рукоп. І. Кузикевича)\",\"139\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 900",
+        "title": "Apocalypse of the Virgin",
+        "relation": "candidate",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-of-the-virgin/",
+        "evidence": "The Virgin and tour of punishments suggest the tradition; exact work/recension not collated.",
+        "kind": "bibliography"
+      }
+    ],
+    "[572,\"Г. Слово св. Іоанна богослова о вознесеніи Господа нашего Ісуса Христа. (Іспаський рукопис)\",\"258\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 885",
+        "title": "1 Apocryphal Apocalypse of John",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/1-apocryphal-apocalypse-of-john/",
+        "evidence": "Catalogue explicitly cites Franko IV, 258–264.",
+        "kind": "bibliography"
+      }
+    ]
   }
 };
 const volumeContents = {
@@ -5852,11 +6508,30 @@ function contentsDestination(v,entry){const d=volumeContents[v],p=contentsPagina
 function contentsAnchorIndex(anchor,available){if(!anchor)return -1;const hits=[];for(const [i,c] of available.entries()){const r=c.data.reading;if(c.suffix!==anchor.suffix||r.reader_id!==anchor.reader_id)continue;const lines=r.regions.flatMap(region=>region.lines.map(line=>({region,line}))).filter(x=>x.line.id===anchor.line_id);if(lines.length===1&&lines[0].region.kind==='heading'&&lines[0].line.text===anchor.text)hits.push(i);}return hits.length===1?hits[0]:-1;}
 function jumpContents(v,n,anchor=null,estimated=false){if(!Object.hasOwn(volumeContents,v)||!Number.isInteger(n)||n<1||n>counts[Number(v)])return;closeContents();setReaderVolume(v);$('page').value=String(n);pendingContentsAnchor=anchor;pendingContentsEstimate=estimated;if(anchor&&$('mode').value==='ocr'){$('mode').value='both';updateMode();}load();}
 const contentsVolumeEnglish = ['','I — Old Testament apocrypha','II — New Testament apocrypha: A. Apocryphal Gospels','III — New Testament apocrypha: B. Apocryphal Acts of the Apostles','IV — Eschatological apocrypha','V — Legends of saints. Part one'];
+function contentsReferences(v,entry){const records=contentsWorkRefs[v],key=JSON.stringify(entry.slice(0,3));return records&&Object.hasOwn(records,key)?records[key]:[];}
+function appendContentsReferences(li,actions,v,entry,links){
+ if(!links.length)return;
+ const b=document.createElement('button');b.type='button';b.className='contents-ref-toggle';
+ b.setAttribute('aria-expanded','false');uiAttr(b,'aria-label','Work references');uiAttr(b,'title','Work references');
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.7');
+ const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1v14');svg.append(path);b.append(svg);
+ const detail=document.createElement('div');detail.className='contents-ref-detail';detail.hidden=true;
+ detail.id='contents-ref-'+v+'-'+volumeContents[v].entries.indexOf(entry);b.setAttribute('aria-controls',detail.id);
+ const original=document.createElement('p');original.className='contents-ref-original';const label=document.createElement('span');uiText(label,'Original title');const title=document.createElement('span');title.lang=contentsOriginalLang(entry[1]);title.textContent=': '+entry[1];original.append(label,title);detail.append(original);
+ for(const link of links){const record=document.createElement('div');record.className='contents-ref-record';
+ const name=document.createElement('strong');name.lang='en';name.textContent=link.title;
+ const status=document.createElement('p');status.className='contents-ref-state';uiText(status,link.relation==='edition-match'?'Edition match':link.relation==='work-family'?'Work family; witness not checked':'Possible match; not identified');
+ const evidence=document.createElement('p');evidence.lang='en';evidence.textContent=link.evidence;
+ const a=document.createElement('a');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';const provider=document.createElement('span');uiText(provider,link.provider==='e-Clavis'?'e-Clavis bibliography':link.kind==='edition'?'OCP critical text (comparison)':'OCP registry (edition not confirmed)');const identifier=document.createElement('span');identifier.textContent=' · '+link.id;a.append(provider,identifier);
+ record.append(name,status,evidence,a);detail.append(record);}
+ b.onclick=()=>{detail.hidden=!detail.hidden;b.setAttribute('aria-expanded',String(!detail.hidden));};
+ actions.append(b);li.append(detail);
+}
 function contentsTranslation(v,title){const translations=contentsEnglish[v];return translations&&Object.hasOwn(translations,title)?translations[title]:null;}
 function contentsOriginalLang(title){return title.startsWith('Codex apocryphus,')?'de':/^(O Sybillach|O postawie)/.test(title)?'pl':'uk';}
 function refreshContentsTitles(){const translated=uiLocale==='en';for(const option of $('contentsVolume').options){if(!option.dataset.original)option.dataset.original=option.textContent;option.textContent=translated?(contentsVolumeEnglish[Number(option.value)]||option.dataset.original):option.dataset.original;}for(const name of $('contentsEntries').querySelectorAll('.contents-name')){const english=translated&&name.dataset.english;name.textContent=english||name.dataset.original;name.lang=english?'en':contentsOriginalLang(name.dataset.original);}for(const original of $('contentsEntries').querySelectorAll('.contents-original'))original.hidden=!translated;$('contentsTranslationNote').hidden=!translated;}
 function filterContents(){const query=$('contentsFilter').value.trim().normalize('NFC').toLocaleLowerCase('uk');let visible=0;for(const li of $('contentsEntries').children){li.hidden=!!query&&!li.dataset.filter.includes(query);if(!li.hidden)visible++;}$('contentsEmpty').hidden=visible!==0;uiText($('contentsFilterStatus'),query?visible+' matching entries':'');if(query)$('contentsEntries').scrollTop=0;}
-function renderContents(){const v=$('contentsVolume').value||$('volume').value,d=volumeContents[v],list=$('contentsEntries');$('contentsSources').replaceChildren();list.replaceChildren();if(!d)return;uiText($('contentsTitle'),'Contents — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,anchored=d.entries.filter(e=>e[6]).length;uiText($('contentsStatus'),verified+' / '+d.entries.length+' checked · '+anchored+' exact lines');for(const n of d.sources){const b=document.createElement('button');b.type='button';uiText(b,'Scan '+n);b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}const fragment=document.createDocumentFragment();for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');li.className=depth?'subentry'+(depth>=2?' subentry-deep':''):'contents-section';const english=contentsTranslation(v,title);li.dataset.filter=(title+' '+(english??'')+' '+(printed??'')).normalize('NFC').toLocaleLowerCase('uk');const b=document.createElement('button');b.type='button';b.className='contents-destination';const name=document.createElement('span');name.className='contents-name';name.dataset.original=title;name.dataset.english=english??'';name.lang=contentsOriginalLang(title);name.textContent=title;const meta=document.createElement('span');meta.className='contents-meta';const page=document.createElement('span');uiText(page,printed?'p. '+printed:'—');const state=document.createElement('span');state.className='contents-state';if(dest){if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);uiText(state,'unverified');uiAttr(b,'title','Calculated from printed pagination; work start not inspected');}else{b.dataset.scan=String(dest.scan);uiText(state,anchor?'line':'page');if(anchor)b.dataset.line=anchor.line_id;uiAttr(b,'title',anchor?'Open exact heading in its recorded reading':'Open checked scan');}if(v===$('volume').value&&dest.scan===Number($('page').value))b.dataset.current='true';b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');}else{b.disabled=true;uiText(state,'pending');uiAttr(b,'title','Destination pending');}meta.append(page,state);b.append(name,meta);li.append(b);const src=document.createElement('button');src.type='button';src.className='source-link';src.textContent='↗ '+source;uiAttr(src,'aria-label','Open original contents scan '+source+' for '+title);src.onclick=()=>jumpContents(v,source);li.append(src);if(english){const original=document.createElement('small');original.className='contents-note contents-original';original.lang=contentsOriginalLang(title);original.textContent=title;li.append(original);}if(note){const indicator=document.createElement('span');indicator.className='contents-note-indicator';uiText(indicator,'note');meta.append(indicator);const n=document.createElement('small');n.className='contents-note';n.lang='en';n.textContent=note;li.append(n);}fragment.append(li);}list.append(fragment);refreshContentsTitles();filterContents();list.scrollTop=0;}
+function renderContents(){const v=$('contentsVolume').value||$('volume').value,d=volumeContents[v],list=$('contentsEntries');$('contentsSources').replaceChildren();list.replaceChildren();if(!d)return;uiText($('contentsTitle'),'Contents — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,anchored=d.entries.filter(e=>e[6]).length;uiText($('contentsStatus'),verified+' / '+d.entries.length+' checked · '+anchored+' exact lines');for(const n of d.sources){const b=document.createElement('button');b.type='button';uiText(b,'Scan '+n);b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}const fragment=document.createDocumentFragment();for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');li.className=depth?'subentry'+(depth>=2?' subentry-deep':''):'contents-section';const english=contentsTranslation(v,title),links=contentsReferences(v,entry);li.dataset.filter=(title+' '+(english??'')+' '+(printed??'')+' '+links.map(x=>x.title+' '+x.id).join(' ')).normalize('NFC').toLocaleLowerCase('uk');const b=document.createElement('button');b.type='button';b.className='contents-destination';const name=document.createElement('span');name.className='contents-name';name.dataset.original=title;name.dataset.english=english??'';name.lang=contentsOriginalLang(title);name.textContent=title;const meta=document.createElement('span');meta.className='contents-meta';const page=document.createElement('span');uiText(page,printed?'p. '+printed:'—');const state=document.createElement('span');state.className='contents-state';if(dest){if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);uiText(state,'unverified');uiAttr(b,'title','Calculated from printed pagination; work start not inspected');}else{b.dataset.scan=String(dest.scan);uiText(state,anchor?'line':'page');if(anchor)b.dataset.line=anchor.line_id;uiAttr(b,'title',anchor?'Open exact heading in its recorded reading':'Open checked scan');}if(v===$('volume').value&&dest.scan===Number($('page').value))b.dataset.current='true';b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');}else{b.disabled=true;uiText(state,'pending');uiAttr(b,'title','Destination pending');}meta.append(page,state);b.append(name,meta);li.append(b);const src=document.createElement('button');src.type='button';src.className='source-link';src.textContent='↗ '+source;uiAttr(src,'aria-label','Open original contents scan '+source+' for '+title);src.onclick=()=>jumpContents(v,source);const actions=document.createElement('span');actions.className='contents-actions';actions.append(src);li.append(actions);appendContentsReferences(li,actions,v,entry,links);if(english){const original=document.createElement('small');original.className='contents-note contents-original';original.lang=contentsOriginalLang(title);original.textContent=title;li.append(original);}if(note){const indicator=document.createElement('span');indicator.className='contents-note-indicator';uiText(indicator,'note');meta.append(indicator);const n=document.createElement('small');n.className='contents-note';n.lang='en';n.textContent=note;li.append(n);}fragment.append(li);}list.append(fragment);refreshContentsTitles();filterContents();list.scrollTop=0;}
 
 function openContents(){$('contentsVolume').replaceChildren(...[...$('volume').options].map(o=>o.cloneNode(true)));$('contentsVolume').value=$('volume').value;$('contentsFilter').value='';$('contentsProvenance').open=false;renderContents();openDialog('contentsPanel','contentsOpen');$('contentsTitle').focus({preventScroll:true});const list=$('contentsEntries');list.scrollTop=0;const hit=list.querySelector('[data-current]');if(hit){const a=hit.getBoundingClientRect(),b=list.getBoundingClientRect();list.scrollTop=Math.max(0,a.top-b.top-(list.clientHeight-a.height)/2);}}
 $('contentsVolume').onchange=()=>{$('contentsFilter').value='';renderContents();};$('contentsFirstScan').onclick=()=>jumpContents($('contentsVolume').value,1);$('contentsFilter').oninput=filterContents;
