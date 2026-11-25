@@ -36,7 +36,7 @@ class ReviewSmoke(unittest.TestCase):
             page.evaluate('''fixture => {
                 location.hash = 'v=1&p=1';
                 window.fetch = async url => {
-                    if(url.endsWith('/search/vol1.json') || url.endsWith('./search/vol1.json')) return new Response(JSON.stringify({ref:'a'.repeat(40),volume:'1',entries:[{scan:1,suffix:'single_reading',text:'ѣ <script>ἀ</script>'},{scan:1,suffix:'alternate_reading_01',text:'alternate ἀ'},{scan:1,suffix:'alternate_reading_02',text:'legacy ἀ'}]}));
+                    if(url.endsWith('/search/vol1.json') || url.endsWith('./search/vol1.json')) return new Response(JSON.stringify({ref:'a'.repeat(40),volume:'1',entries:[{scan:1,suffix:'single_reading',text:'ѣ <script>ἀ</script>\\nѣѣ ѣ end'},{scan:1,suffix:'alternate_reading_01',text:'alternate ἀ\\nѣѣ ѣ end'},{scan:1,suffix:'alternate_reading_02',text:'legacy ἀ\\nѣѣ ѣ end'}]}));
                     if(url.includes('/repos/alexsosn/franko-tei/commits/')) return new Response(JSON.stringify({sha:'a'.repeat(40),commit:{tree:{sha:'b'.repeat(40)}}}));
                     if(url.includes('/repos/alexsosn/franko-tei/git/trees/')) return new Response(JSON.stringify({truncated:false,tree:[{type:'blob',path:'pilot/vol1_scan00001_single_reading.json'},{type:'blob',path:'pilot/vol1_scan00001_alternate_reading_01.json'},{type:'blob',path:'pilot/vol1_scan00001_alternate_reading_02.json'}]}));
                     if(url.endsWith('/full.txt')) {const v=Number(url.match(/vol([1-5])/)[1]);return new Response((v===1?'ѣ  ἀ':'')+'\\f'.repeat([0,469,526,446,580,316][v]));}
@@ -240,6 +240,7 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#query').fill('ἀ')
             page.locator('#searchGo').click()
             page.locator('#searchResults button').first.wait_for()
+            self.assertIn('line 1', page.locator('#searchResults').text_content())
             self.assertIn('scan 1', page.locator('#searchResults').text_content())
             self.assertEqual(page.locator('#searchResults button').count(), 3)
             page.locator('#searchResults button').filter(has_text='alternate reading 02').click()
@@ -248,6 +249,11 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.locator('.line-text').first.evaluate('(el) => document.activeElement === el'))
             self.assertEqual(page.evaluate("diffRanges('ἀ x','ά x')"), [[[0,2]],[[0,2]]])
             self.assertEqual(page.evaluate("matchLineRanges(['one','two'],2,5)"), [[0,2,3],[1,0,1]])
+            self.assertEqual(page.evaluate("diffRanges('same','same')"), [[],[]])
+            self.assertEqual(page.evaluate("diffRanges('ꙗ','ꙗ҃')"), [[[0,1]],[[0,2]]])
+            self.assertEqual(page.evaluate("diffRanges('ab','axb')"), [[],[[1,2]]])
+            # A search pinned to its published SHA must not download all candidate files.
+            page.evaluate("window.realFetch=window.fetch; window.fetch=(url,...rest)=>{if(String(url).includes('/repos/alexsosn/franko-tei/'))throw Error('unexpected branch reconstruction');return window.realFetch(url,...rest);}")
             page.locator('#searchOpen').click()
             page.locator('#searchSource').select_option('ocr')
             page.locator('#searchVolume').select_option('all')
@@ -256,6 +262,10 @@ class ReviewSmoke(unittest.TestCase):
             page.get_by_text('2337 original OCR pages', exact=False).wait_for()
             self.assertEqual(page.locator('#searchResults button').count(), 1)
             self.assertIn('scan 1', page.locator('#searchResults').text_content())
+            page.locator('#searchResults button').first.click()
+            page.locator('#ocr .search-match').wait_for()
+            self.assertEqual(page.locator('#ocr .search-match').text_content(), 'ѣ  ἀ')
+            page.locator('#searchOpen').click()
             page.locator('#searchSource').select_option('agent')
             page.locator('#searchVolume').select_option('1')
             page.locator('#query').fill('<script>')
