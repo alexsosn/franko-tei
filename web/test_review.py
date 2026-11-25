@@ -113,6 +113,24 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(title)
             self.assertTrue(scan is None or 1 <= scan <= 446)
 
+    def test_volume_four_contents_records(self):
+        import json
+        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        volume = data['4']
+        items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
+        self.assertEqual(volume['sources'], list(range(569, 575)))
+        self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
+                         [16, 25, 17, 19, 20, 6])
+        self.assertEqual(len(items), 103)
+        self.assertEqual(sum(e[0] == 572 and e[1].startswith('Б.') for e in items), 2)
+        for printed in ('225', '366'):
+            self.assertTrue(any(e[2] == printed for e in items))
+        self.assertTrue(any(e[1].startswith('Ѳ. Wimja Otca') for e in items))
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, volume['sources'])
+            self.assertTrue(title and printed)
+            self.assertTrue(scan is None or 1 <= scan <= 580)
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
