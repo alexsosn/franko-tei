@@ -48,9 +48,38 @@
     el('reviewProgress').textContent=s.events.length+' / '+MAX+' · '+bytes(json()).length+' / '+LIMIT+' B · '+tr(event()?.decision==='confirm'?'Confirmed locally':event()?.decision==='correct'?'Corrected locally':event()?.decision==='defer'?'Deferred locally':'No decision yet');
     el('reviewExport').hidden=!s.locked||storageFailed;el('reviewBundle').value=s.locked&&!storageFailed?json():'';el('reviewDiscard').disabled=storageFailed||s.locked;
   }
+  // Source spans are code-point offsets, converted by the shared reader helper.
+  // A native textarea cannot style ranges; choose a full historical/Greek
+  // face only when every non-whitespace character is covered by that group.
+  // Never apply source offsets to the edited value.
+  function reviewFontMode(line,ranges){
+    const group=s=>s.script==='Cyrl'&&['cu','chu','orv'].includes(s.language)?'slavonic':s.script==='Grek'?'greek':'plain';
+    const ordered=[...ranges].sort((a,b)=>a.start-b.start);
+    if(!ordered.length)return 'plain';
+    const mode=group(ordered[0]);if(mode==='plain')return mode;
+    let end=0;
+    for(const s of ordered){
+      if(group(s)!==mode||line.text.slice(end,s.start).trim())return 'plain';
+      end=s.end;
+    }
+    return line.text.slice(end).trim()?'plain':mode;
+  }
+  function paintOriginal(line){
+    const original=el('reviewOriginal'),ranges=languageRanges(line).sort((a,b)=>a.start-b.start);
+    original.replaceChildren();
+    let end=0;
+    for(const r of ranges){
+      original.append(document.createTextNode(line.text.slice(end,r.start)));
+      const span=document.createElement('span');span.className='language-span';
+      span.dataset.language=r.language;span.dataset.script=String(r.script??'');span.lang=r.language;
+      span.textContent=line.text.slice(r.start,r.end);original.append(span);end=r.end;
+    }
+    original.append(document.createTextNode(line.text.slice(end)));
+    el('reviewEdit').dataset.fontMode=reviewFontMode(line,ranges);
+  }
   function paint(){
     const x=entry(),line=x.line;
-    el('reviewLine').value=session.selected;el('reviewOriginal').textContent=line.text;
+    el('reviewLine').value=session.selected;paintOriginal(line);
     el('reviewEdit').value=session.working;el('reviewNote').value=session.note;
     el('reviewReasons').replaceChildren();
     for(const note of data.reading.uncertainty_notes??[])if(note.line_id===line.id){const p=document.createElement('p');p.textContent=note.reading+' — '+note.reason;el('reviewReasons').append(p);}
@@ -126,7 +155,48 @@
   const move=n=>run(()=>{const list=entries(),i=list.findIndex(x=>x.line.id===session.selected)+n;if(list[i])select(list[i].line.id);});
   el('reviewPrevious').onclick=()=>move(-1);el('reviewNext').onclick=()=>move(1);
   for(const field of ['reviewEdit','reviewNote'])el(field).oninput=()=>run(()=>{session.working=el('reviewEdit').value;session.note=el('reviewNote').value;persist();controls();status('Draft saved locally.');});
-  for(const char of ['ѣ','ѧ','ѫ','ꙗ','ꙑ','ѿ','ѡ','҃','҇','́','̀','̓','̔']){const b=document.createElement('button');b.type='button';b.textContent=/\p{M}/u.test(char)?'◌'+char:char;b.title='U+'+char.codePointAt(0).toString(16).toUpperCase();b.onclick=()=>{const input=el('reviewEdit');input.setRangeText(char,input.selectionStart,input.selectionEnd,'end');input.focus();input.dispatchEvent(new Event('input'));};el('reviewCharacters').append(b);}
+  // Unicode TN41 and Slavonic Computing Initiative keyboard; no PUA glyphs.
+  // Explicit sequences, not normalization. Dotted circle is preview only.
+  const markKeys=[
+    ['\u0301','Acute · Оксія'],['\u0300','Grave · Варія'],['\u0311','Inverted breve · Камора'],
+    ['\u0486','Soft breathing · Псилі'],['\u0485','Rough breathing · Дасія'],
+    ['\u0486\u0301','Breathing + acute · Ісо'],['\u0486\u0300','Breathing + grave · Апостроф'],['\u0486\u0311','Breathing + kamora · Великий апостроф'],
+    ['\u0483','Titlo · Титло'],['\u0487','Pokrytie · Покриття'],['\ua66f','Vzmet · Взмет'],
+    ['\u033e','Vertical tilde · Єрок'],['\u0303','Tilde · Тильда'],['\ua67d','Payerok · Паєрок'],['\ua67c','Kavyka · Кавика'],
+    ['\u0306','Breve · Коротка'],['\u0308','Diaeresis · Кендема'],['\u030f','Double grave · Кендема'],
+    ['\u0484','Palatalization · Палаталізація'],['\u0302','Circumflex · Циркумфлекс'],['\u0304','Macron · Макрон'],['\u0310','Candrabindu'],['\u0307','Dot above'],['\u0323','Dot below'],
+    ['\u2e2f','Spacing yerok'],['\ua67e','Spacing kavyka'],['\ua67f','Spacing payerok'],['\u0482','Thousands sign']
+  ];
+  const letterKeys=[...('абвгдеёжѕзийіїјклмнопрстуфхцчшщъыьэюяєѣѧѩѫѭѡѻѽѿѹꙋꙑꙗѯѱѳѵѷꙁꙃꙅꙇꙉꙍꙏꙑꙓꙕꙙꙛꙝꙟꙡꙣꙥꙧꙩ')];
+  const letters=[...new Set(letterKeys.flatMap(c=>[c,c.toUpperCase()]))].map(c=>[c,'Cyrillic letter']);
+  const superNames='б в г д ж з к л м н о п р с т х ц ч ш щ ѳ ст а е ꙉ ꙋ ѣ ю ꙗ ѧ ѫ ѭ'.split(' ');
+  const extraSuperNames='є і ї у ъ ы ь ѡ'.split(' ');
+  const superscripts=superNames.map((n,i)=>[String.fromCodePoint(0x2de0+i),'Superscript '+n]).concat(extraSuperNames.map((n,i)=>[String.fromCodePoint(0xa674+i),'Superscript '+n]));
+  const greek=[...('αβγδεζηθικλμνξοπρσςτυφχψω')].flatMap(c=>[c,c.toUpperCase()]).filter((c,i,a)=>a.indexOf(c)===i).map(c=>[c,'Greek letter']).concat([['\u0313','Smooth breathing'],['\u0314','Rough breathing'],['\u0342','Perispomeni'],['\u0345','Iota subscript'],['\u0301','Acute'],['\u0300','Grave'],['\u0308','Diaeresis']]);
+  const keyGroups={marks:markKeys,letters,superscripts,greek};
+  const codepoints=s=>[...s].map(c=>'U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')).join(' ');
+  const insertLabel=(c,name)=>name+' · '+codepoints(c);
+  function renderKeyboard(){
+    const keys=el('reviewCharacters'),group=el('reviewKeyboardGroup').value;
+    keys.replaceChildren();
+    uiText(el('reviewCharacterInfo'),'Choose a character; marks are inserted after the caret.');
+    for(const [char,name] of keyGroups[group]){
+      const b=document.createElement('button');b.type='button';b.dataset.insert=char;
+      b.textContent=/^\p{M}/u.test(char)?'◌'+char:char;
+      b.title=insertLabel(char,name);b.setAttribute('aria-label',b.title);
+      b.disabled=!!session?.locked||storageFailed;
+      // Preserve the last selection when pointer/touch activates a key.
+      b.addEventListener('mousedown',e=>e.preventDefault());
+      b.onclick=()=>{const input=el('reviewEdit');if(input.readOnly)return;
+        input.setRangeText(char,input.selectionStart,input.selectionEnd,'end');input.focus();
+        input.dispatchEvent(new Event('input'));el('reviewCharacterInfo').removeAttribute('data-ui-text');
+        el('reviewCharacterInfo').textContent=insertLabel(char,name);
+      };
+      keys.append(b);
+    }
+  }
+  el('reviewKeyboardGroup').onchange=renderKeyboard;
+  renderKeyboard();
   el('reviewSave').onclick=()=>run(()=>record(session.working===entry().line.text?'confirm':'correct'));
   el('reviewDefer').onclick=()=>run(()=>record('defer'));
   el('reviewUndo').onclick=()=>run(()=>{if(dirty()&&!confirm(tr('Discard the unrecorded edit for this line?')))return;session.events=session.events.filter(e=>e.target.line_id!==session.selected);session.working=entry().line.text;session.note='';persist();paint();});

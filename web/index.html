@@ -153,16 +153,23 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 @media(max-width:760px){#contentsPanel{width:calc(100vw - 16px);max-width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}#contentsEntries{padding-inline:6px}#contentsEntries .contents-destination{grid-template-columns:minmax(0,1fr) minmax(52px,72px);gap:6px;padding-inline:6px}#contentsEntries .subentry .contents-name{padding-inline-start:8px}#contentsEntries .subentry-deep .contents-name{padding-inline-start:16px}}
 @media(max-height:450px){#contentsPanel .dialog-heading{padding-block:5px} .contents-tools{gap:3px;padding-bottom:5px} #contentsSources{max-height:48px}}
 #reviewDialog{max-width:min(680px,96vw);width:680px;max-height:94dvh;overflow:auto}
-#reviewBody{display:grid;gap:8px}#reviewBody[hidden],#reviewExport[hidden],#reviewCrop[hidden]{display:none}
+#reviewBody{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;min-width:0}#reviewBody>*{min-width:0;max-width:100%}#reviewDialog{box-sizing:border-box;overflow-wrap:anywhere}#reviewKeyboardGroup,#reviewLine{max-width:100%;min-width:0}.review-keyboard,.review-row{min-width:0;max-width:100%}#reviewCharacters{min-width:0;max-width:100%;box-sizing:border-box}#reviewBody[hidden],#reviewExport[hidden],#reviewCrop[hidden]{display:none}
 .review-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.review-row button{min-height:36px}.review-row select{min-width:0;flex:1}
 #reviewBody textarea,#reviewNote{width:100%;box-sizing:border-box;font-size:17px}
-#reviewEdit,.review-original{font-family:var(--historic-font),var(--greek-font),serif;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}
+#reviewEdit,.review-original{font-family:var(--historic-font),var(--greek-fallback),"Franko Gentium","Franko Shafarik",serif;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}
+#reviewEdit[data-font-mode="slavonic"]{font-family:var(--slavonic-font),"Franko Monomakh","Franko Shafarik",var(--greek-font),serif}
+#reviewEdit[data-font-mode="greek"]{font-family:var(--greek-font),"Franko Gentium",var(--historic-font),"Franko Shafarik",serif}
 .review-original{padding:6px 8px;border-left:2px solid #999;background:#8881}
 #reviewCrop{position:relative;overflow:hidden;background:#8881;width:100%}
 #reviewImage{display:block;width:100%;height:auto;position:absolute;left:0}#reviewCrop.review-full{max-height:240px;overflow:auto}#reviewCrop.review-full #reviewImage{position:static}#reviewBox{position:absolute;pointer-events:none;border:1px dashed #9b753d;background:transparent}
 #reviewOpen{flex:0 0 auto;min-width:30px;min-height:30px}
 #reviewProgress,#reviewSource,#reviewImageStatus{margin:0;font-size:12px;overflow-wrap:anywhere}
 #reviewBundle{font-family:monospace;font-size:12px}
+#reviewCharacters{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:4px;margin-top:6px;max-height:164px;overflow:auto;padding:2px}
+#reviewCharacters button{min-height:42px;font-family:"Franko Monomakh","Franko Shafarik",var(--greek-font),serif;font-size:23px;line-height:1.4;padding:4px 2px}
+#reviewCharacterInfo{font-size:12px;margin:4px 0;min-height:1.3em;overflow-wrap:anywhere}
+.review-keyboard label{font-size:13px}
+@media(max-width:480px){#reviewCharacters{grid-template-columns:repeat(auto-fill,minmax(36px,1fr));max-height:138px}}
 </style>
 <header><nav class="mainbar" aria-label="Reader navigation"><h1>Franko</h1><button id="contentsOpen" type="button" aria-label="Contents" title="Contents" aria-haspopup="dialog" aria-expanded="false" aria-controls="contentsPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 6h14M5 12h14M5 18h14"/><path d="M2 6h.01M2 12h.01M2 18h.01"/></svg><span class="contents-label">Contents</span><span id="contentsCurrentVolume" aria-hidden="true">I</span></button><select id="volume" hidden aria-label="Volume"><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select><div class="page-controls"><button id="prev" aria-label="Previous scan" title="Previous scan">←</button><label><span class="sr-only">Scan number</span><input id="page" type="number" min="1" value="20" inputmode="numeric"></label><span id="total"></span><button id="next" aria-label="Next scan" title="Next scan">→</button><button id="go" aria-label="Go / reload" title="Go / reload">↻</button></div><button id="searchOpen" aria-label="Search corpus" title="Search corpus" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search corpus</span></button><button id="languageOpen" type="button" aria-label="Language / Мова" title="Language / Мова" aria-haspopup="dialog" aria-expanded="false" aria-controls="languagePanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg></button><button id="settingsOpen" aria-label="Reader settings" title="Reader settings" aria-haspopup="dialog" aria-controls="readerSettings" aria-expanded="false"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="10" cy="18" r="2" fill="white"/></svg><span>Settings</span></button></nav><nav id="mobilePanes" aria-label="Reader pane"><button id="showScan" aria-pressed="false">Scan</button><button id="showText" aria-pressed="true">Text</button></nav><p id="notice" role="status" hidden></p></header>
 <dialog id="languagePanel" aria-labelledby="languageTitle"><div class="dialog-heading"><h2 id="languageTitle">Language / Мова</h2><button id="languageClose" type="button" aria-label="Close / Закрити">✕</button></div><div class="language-options"><button type="button" data-locale="en" lang="en" aria-pressed="true">English</button><button type="button" data-locale="uk" lang="uk" aria-pressed="false">Українська</button></div></dialog>
@@ -193,7 +200,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 <div id="reviewOriginal" class="review-original"></div>
 <details id="reviewUncertainty" hidden><summary>Uncertainty notes</summary><div id="reviewReasons"></div></details>
 <label for="reviewEdit">Working reading</label><textarea id="reviewEdit" rows="3" spellcheck="false" autocapitalize="off" autocorrect="off"></textarea>
-<div id="reviewCharacters" class="review-row" aria-label="Historical characters"></div>
+<div class="review-keyboard"><div class="review-row"><label for="reviewKeyboardGroup">Historical characters</label><select id="reviewKeyboardGroup"><option value="marks">Diacritics</option><option value="letters">Letters</option><option value="superscripts">Superscript letters</option><option value="greek">Greek</option></select></div><div id="reviewCharacters" aria-label="Historical characters"></div><p id="reviewCharacterInfo" aria-live="polite"></p></div>
 <label for="reviewNote">Note (optional)</label><input id="reviewNote" type="text" maxlength="2048" spellcheck="false">
 <div class="review-row"><button id="reviewSave" type="button">Save &amp; next</button><button id="reviewDefer" type="button">Defer</button><button id="reviewUndo" type="button">Undo decision</button></div>
 <p id="reviewProgress"></p><div class="review-row"><button id="reviewPrepare" type="button">Prepare GitHub submission</button><button id="reviewDiscard" type="button">Discard draft</button></div>
@@ -205,7 +212,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 const $ = id => document.getElementById(id);
 /* Interface-only localization. Never apply this to OCR, transcription or source notes. */
 const uiDictionary={
-'Download recovery draft':'Завантажити резервну чернетку','Local draft cannot be opened. Save a recovery copy before discarding it.':'Не вдалося відкрити локальну чернетку. Збережіть резервну копію, перш ніж видаляти її.','Save correction':'Зберегти виправлення','Confirm unchanged':'Підтвердити без змін','Confirmed locally':'Підтверджено локально','Corrected locally':'Виправлено локально','Deferred locally':'Відкладено локально','No decision yet':'Рішення ще немає','Discard draft':'Відкинути чернетку','Discard this local draft and all its decisions?':'Відкинути цю локальну чернетку та всі рішення?','Discard the unrecorded edit for this line?':'Відкинути незаписану зміну цього рядка?','Have you saved or submitted this bundle? Remove the local batch?':'Ви зберегли або надіслали пакет? Видалити локальний пакет?','Proofread':'Вичитка','Close proofreading':'Закрити вичитку','Source line':'Рядок джерела','Previous line':'Попередній рядок','Next line':'Наступний рядок','Working reading':'Робоче читання','Note (optional)':'Примітка (необов’язково)','Save & next':'Зберегти й далі','Defer':'Відкласти','Undo decision':'Скасувати рішення','Prepare GitHub submission':'Підготувати надсилання до GitHub','Copy JSON':'Копіювати JSON','Open GitHub form':'Відкрити форму GitHub','Start another batch':'Почати новий пакет','Historical characters':'Історичні символи','Review bundle JSON':'JSON пакета вичитки','Loading pinned reading…':'Завантаження зафіксованого читання…','Draft saved locally.':'Чернетку збережено на пристрої.','Prepared locally; not submitted.':'Підготовлено локально; не надіслано.','Scan available; line geometry is approximate.':'Скан доступний; геометрія приблизна.','Image unavailable; confirmation and correction disabled.':'Зображення недоступне; підтвердження та виправлення вимкнено.','Copy this JSON into the GitHub issue form. Submission is public; your GitHub account will be credited after acceptance. Preparing a bundle does not submit it.':'Скопіюйте JSON у форму GitHub. Надсилання публічне; внесок буде зараховано вашому обліковому запису після прийняття. Підготовка пакета не надсилає його.','Confirm & next':'Підтвердити й далі','Copied.':'Скопійовано.','Select and copy the JSON manually.':'Виділіть і скопіюйте JSON вручну.',
+'Download recovery draft':'Завантажити резервну чернетку','Local draft cannot be opened. Save a recovery copy before discarding it.':'Не вдалося відкрити локальну чернетку. Збережіть резервну копію, перш ніж видаляти її.','Save correction':'Зберегти виправлення','Confirm unchanged':'Підтвердити без змін','Confirmed locally':'Підтверджено локально','Corrected locally':'Виправлено локально','Deferred locally':'Відкладено локально','No decision yet':'Рішення ще немає','Discard draft':'Відкинути чернетку','Discard this local draft and all its decisions?':'Відкинути цю локальну чернетку та всі рішення?','Discard the unrecorded edit for this line?':'Відкинути незаписану зміну цього рядка?','Have you saved or submitted this bundle? Remove the local batch?':'Ви зберегли або надіслали пакет? Видалити локальний пакет?','Diacritics':'Діакритика','Letters':'Літери','Superscript letters':'Надрядкові літери','Greek':'Грецька','Choose a character; marks are inserted after the caret.':'Оберіть символ; знаки вставляються в позицію курсора.','Proofread':'Вичитка','Close proofreading':'Закрити вичитку','Source line':'Рядок джерела','Previous line':'Попередній рядок','Next line':'Наступний рядок','Working reading':'Робоче читання','Note (optional)':'Примітка (необов’язково)','Save & next':'Зберегти й далі','Defer':'Відкласти','Undo decision':'Скасувати рішення','Prepare GitHub submission':'Підготувати надсилання до GitHub','Copy JSON':'Копіювати JSON','Open GitHub form':'Відкрити форму GitHub','Start another batch':'Почати новий пакет','Historical characters':'Історичні символи','Review bundle JSON':'JSON пакета вичитки','Loading pinned reading…':'Завантаження зафіксованого читання…','Draft saved locally.':'Чернетку збережено на пристрої.','Prepared locally; not submitted.':'Підготовлено локально; не надіслано.','Scan available; line geometry is approximate.':'Скан доступний; геометрія приблизна.','Image unavailable; confirmation and correction disabled.':'Зображення недоступне; підтвердження та виправлення вимкнено.','Copy this JSON into the GitHub issue form. Submission is public; your GitHub account will be credited after acceptance. Preparing a bundle does not submit it.':'Скопіюйте JSON у форму GitHub. Надсилання публічне; внесок буде зараховано вашому обліковому запису після прийняття. Підготовка пакета не надсилає його.','Confirm & next':'Підтвердити й далі','Copied.':'Скопійовано.','Select and copy the JSON manually.':'Виділіть і скопіюйте JSON вручну.',
 
   "Reading": "Читання",
   "Text source": "Джерело тексту",
@@ -2373,137 +2380,281 @@ const volumeContents = {
         466,
         "В. Каін, Авель і Сиф (Із Слова Меф. Патарського)",
         "34–35",
+        109,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i109-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Із Слова Меѳодія Патарського, ркп. XVIII в. стор. 7—9."
+        }
       ],
       [
         466,
         "Г. Про Сифа (Крех. Палея)",
         "35–36",
+        110,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i110-first-image-20261125",
+          "line_id": "witness-d-label-l001",
+          "text": "Г. Із Крехівської Палеї, стор. 105."
+        }
       ],
       [
         466,
         "Д. Сифові потомки (Із Слова Меф. Патарського)",
         "36",
+        111,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i111-first-image-20261125",
+          "line_id": "witness-e-label-l001",
+          "text": "Д. Із Слова Меѳодія Патарського."
+        }
       ],
       [
         466,
         "Е. Про Еноха (Крех. Палея)",
         "36–37",
+        111,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i111-first-image-20261125",
+          "line_id": "witness-f-label-l001",
+          "text": "Е. Із Крехівської Палеї стор. 106."
+        }
       ],
       [
         466,
         "Ж. Про Ламеха (Крех. Палея)",
         "37–38",
+        112,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i112-first-image-20261125",
+          "line_id": "witness-g-label-l001",
+          "text": "Ж. Із Крехівської Палеї стор. 106—107."
+        }
       ],
       [
         466,
         "VII. Книга Еноха (Із полтавського ркп. ігумена Геннадия)",
         "39–64",
-        114
+        114,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i114-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "VII. Книга Еноха."
+        }
       ],
       [
         466,
         "VIII. Про Ноя і потопу сьвіта.",
         "65",
-        140
+        140,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i140-first-image-20261125",
+          "line_id": "section-viii-l001",
+          "text": "VIII. Про Ноя і потопу сьвіта."
+        }
       ],
       [
         466,
         "А. Потопа сьвіта (Крех. Палея)",
         "65–68",
         140,
-        1
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i140-first-image-20261125",
+          "line_id": "witness-a-heading-l001",
+          "text": "А. Крехівська Палея, стор. 107—112"
+        }
       ],
       [
         466,
         "Б. Ной і єго жінка та Сатана (Із Слова Меф. Патарського)",
         "68–71",
+        143,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i143-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Із Слова Меѳодія Патарського."
+        }
       ],
       [
         466,
         "В. По потопі сьвіта і Пророчество Ноєво (Крех. Палея)",
         "72–73",
+        147,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i147-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Крехівська Палея стор. 115—116, 119—120."
+        }
       ],
       [
         466,
         "IX. Від Ноя до Авраама.",
         "74",
-        149
+        149,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i149-first-image-20261125",
+          "line_id": "section-ix-l001",
+          "text": "IX. Від Ноя до Авраама."
+        }
       ],
       [
         466,
         "А. Мунт і Неврот і перші війни (Із Слова Мефодия Патарського)",
         "74–77",
         149,
-        1
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i149-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Із слова Меѳодія Патарського стор. 19—22."
+        }
       ],
       [
         466,
         "Б. Євер і стовп Вавилонський (Крех. Палея)",
         "77–78",
+        152,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i152-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Крехівська Палея стор. 120—122, 128."
+        }
       ],
       [
         466,
         "В. Серух і Нахор (Крех. Палея)",
         "78–79",
+        153,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i153-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Крехівська Палея стор. 129."
+        }
       ],
       [
         466,
         "Г. Арот і Марот (Ковельська Палея)",
         "79",
-        null,
-        1
+        154,
+        1,
+        "The contents labels this item Г.; the printed witness heading on p. 79 repeats В. Both labels retained.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i154-first-image-20261125",
+          "line_id": "witness-d-label-l001",
+          "text": "В. Ковельська Палея, стор. 662—663."
+        }
       ],
       [
         466,
         "X. Оповіданя про Авраама.",
         "80",
-        155
+        155,
+        0,
+        "Printed page 80 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i155-first-image-20261125",
+          "line_id": "section-x-l001",
+          "text": "X. Оповіданя про Авраама."
+        }
       ],
       [
         466,
         "А. Книги о Аврааме праотци и патриарсе (Крех. Палея)",
         "80–86",
         155,
-        1
+        1,
+        "Printed page 80 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i155-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Крехівська Палея, стор. 129—136, 149."
+        }
       ],
       [
         466,
         "Б. Слово о Авраамѣ, єгда вопроситъ во домъ свой святую Тройцу (Ркпс. о. Яремецького-Білахевича)",
         "86–90",
+        161,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i161-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Рукопис о. Яремецького-Білахевича стор. 82—86 і 124."
+        }
       ],
       [
         466,
         "В. Загадка дочки Лотової (Крех. Палея)",
         "90",
+        165,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i165-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Крехівська Палея ст. 161."
+        }
       ],
       [
         466,
         "Г. Указъ о другомъ древѣ крестномъ (Ркп. о. Яремецького-Білахевича)",
         "90–91",
+        165,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i165-first-image-20261125",
+          "line_id": "witness-g-label-l001",
+          "text": "Г. Рукопис о. Яремецького-Білахевича стор. 107—108."
+        }
       ],
       [
         466,
@@ -2516,62 +2667,127 @@ const volumeContents = {
         466,
         "XI. Оповіданя про Мелхіседека.",
         "92",
-        167
+        167,
+        0,
+        "Printed page 92 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i167-first-image-20261125",
+          "line_id": "section-xi-l001",
+          "text": "XI. Оповіданя про Мелхіседека."
+        }
       ],
       [
         466,
         "А. О Мелхіседеци (Крех. Палея)",
         "92–97",
         167,
-        1
+        1,
+        "Printed page 92 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i167-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Крехівська Палея стор. 141—149."
+        }
       ],
       [
         466,
         "Б. Слово о. Мелхиседецѣ цари Салимском (Ркп. о. Яремецького-Білахевича)",
         "97–101",
+        172,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i172-first-image-20261125",
+          "line_id": "witness-b-l001",
+          "text": "Б. Рукопис о. Яремецького-Білахевича, стор. 100—104."
+        }
       ],
       [
         466,
         "XII. Авраамові сини.",
         "102",
-        177
+        177,
+        0,
+        "Printed p. 102 is supplied by the contents; faint possible numeral traces on the section opening do not support a secure folio reading.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i177-first-image-20261125",
+          "line_id": "section-xii-l001",
+          "text": "XII. Авраамові сини."
+        }
       ],
       [
         466,
         "А. О Исацѣ (Крех. Палея)",
         "102–104",
         177,
-        1
+        1,
+        "Printed p. 102 is supplied by the contents; faint possible numeral traces on the section opening do not support a secure folio reading.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i177-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Крехівська Палея, стор. 168—174."
+        }
       ],
       [
         466,
         "Б. Слово о Агарѣ и о сыну ея Исмаилу (Ркпс. о. Яремецького-Білахевича)",
         "104–105",
+        179,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i179-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Рукопис о. Яремецького Білахевича, стор. 124—125."
+        }
       ],
       [
         466,
         "В. Невѣрніи языци откуду зачаша ся (Ркпс. о. Теодора з Дубівця)",
         "105–106",
+        180,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i180-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Рукопис о. Теодора з Дубівця стор. 82—83."
+        }
       ],
       [
         466,
         "Г. О Измаиле (Крех. Палея)",
         "106",
+        181,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i181-first-image-20261125",
+          "line_id": "witness-g-label-l001",
+          "text": "Г. Крехівська Палея стор. 181."
+        }
       ],
       [
         466,
         "Д. Ізмаілтяне (Із Слова Меф. Патарського)",
         "106–107",
+        181,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i181-first-image-20261125",
+          "line_id": "witness-d-label-l001",
+          "text": "Д. Із слова Меѳодія Патарського, стор. 22—23."
+        }
       ],
       [
         466,
@@ -2584,249 +2800,505 @@ const volumeContents = {
         467,
         "XIII. Сини Ісаакові.",
         "108",
-        183
+        183,
+        0,
+        "Printed p. 108 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i183-first-image-20261125",
+          "line_id": "section-xiii-l001",
+          "text": "XIII. Сини Ісаакові."
+        }
       ],
       [
         467,
         "А. Вродженє Ісава і Якова (Ковельська Палея)",
         "108",
         183,
-        1
+        1,
+        "Printed p. 108 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i183-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Ковельська Палея, стор. 196."
+        }
       ],
       [
         467,
         "Б. О лествици (Крех. Палея)",
         "108–120",
         183,
-        1
+        1,
+        "Printed p. 108 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i183-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Крехівська Палея, стор. 190—205."
+        }
       ],
       [
         467,
         "В. Три палицї Яковові (Крех. Палея)",
         "121",
+        196,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i196-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Крехівська Палея, стор. 207—208."
+        }
       ],
       [
         467,
         "Г. О брани Іаковли съ ангеломъ (Крех. Палея)",
         "121–122",
+        196,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i196-first-image-20261125",
+          "line_id": "witness-g-label-l001",
+          "text": "Г. Крехівська Палея стор. 208—209."
+        }
       ],
       [
         467,
         "Д. Бытьє Исава сына Исаакова",
         "122–123",
+        197,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i197-first-image-20261125",
+          "line_id": "witness-d-label-l001",
+          "text": "Д. Крехівська Палея стор. 211—212."
+        }
       ],
       [
         467,
         "XIV. Патріархи в Єгиптї.",
         "124",
-        199
+        199,
+        0,
+        "Printed p. 124 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i199-first-image-20261125",
+          "line_id": "section-xiv-l001",
+          "text": "XIV. Патріярхи в Єгиптї."
+        }
       ],
       [
         467,
         "А. Повесть о прекраснем Іосифе, єгоже продаша братіа зависти ради (Крех. Палея)",
         "124–126",
         199,
-        1
+        1,
+        "Printed p. 124 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i199-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Крехівська Палея стор. 212—216."
+        }
       ],
       [
         467,
         "Б. Плач Йосифа в рові (Ркпс. о. Т. з Дубівця)",
         "126–127",
+        201,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i201-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Рукопис о. Теодора з Дубівця стор. 482—484."
+        }
       ],
       [
         467,
         "В. Брати продають Йосифа в неволю; плач Йосифа на гробі матери (Крех. Палея)",
         "127–129",
+        202,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i202-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Крехівська Палея стор. 217—220."
+        }
       ],
       [
         467,
         "Г. Плач Якова над Йосифовим плащем (Крех. Палея)",
         "129–131",
+        204,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i204-first-image-20261125",
+          "line_id": "witness-g-label-l001",
+          "text": "Г. Крехівська Палея стор. 222—225."
+        }
       ],
       [
         467,
         "Д. Йосиф і Пентефриєва жінка (Крех. Палея)",
         "131–135",
+        206,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i206-first-image-20261125",
+          "line_id": "witness-d-label-l001",
+          "text": "Д. Крехівська Палея, стор. 228—234, 238—240."
+        }
       ],
       [
         467,
         "Е. Як Йосиф дав себе пізнати братам (Іспаський ркпс.)",
         "136–138",
-        null,
-        1
+        211,
+        1,
+        "The contents uses Е.; the source heading uses Є. Both literal labels are retained.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i211-first-image-20261125",
+          "line_id": "witness-e-label-l001",
+          "text": "Є. Іспаський рукопис XVIII в. стор. 7—12."
+        }
       ],
       [
         467,
         "Ж. Йосифова ворожба (Крех. Палея)",
         "138–139",
+        213,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i213-first-image-20261125",
+          "line_id": "witness-zh-label-l001",
+          "text": "Ж. Крехівська Палея, стор. 247—248."
+        }
       ],
       [
         467,
         "З. Плач Йосифа, коли побачив Вениамина (Ркпс. о. Т. з Дубівця)",
         "138–140",
-        null,
-        1
+        214,
+        1,
+        "Printed contents gives pp. 138–140; the witness heading and supplied title actually begin on printed p. 139 (scan 214), after Joseph's divination. Literal reference retained.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i214-first-image-20261125",
+          "line_id": "witness-z-label-l001",
+          "text": "З. Рукопис о. Теодора з Дубівця стор. 502—504."
+        }
       ],
       [
         467,
         "И. Плач Вениамина посудженого за крадїж (Ркпс. о. Т. з Дубівця)",
         "140–141",
+        215,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i215-first-image-20261125",
+          "line_id": "witness-i-label-l001",
+          "text": "И. Рукопис о. Теодора з Дубівця стор. 505—506."
+        }
       ],
       [
         467,
         "І. Йосифове привитанє з братами (Крех. Палея)",
         "141–144",
+        216,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i216-first-image-20261125",
+          "line_id": "witness-j-label-l001",
+          "text": "І. Крехівська Палея, стор. 251—255."
+        }
       ],
       [
         467,
         "К. Подорож Якова до Єгипту і стріча з Йосифом (Крех. Палея)",
         "144–146",
+        219,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i219-first-image-20261125",
+          "line_id": "witness-k-label-l001",
+          "text": "К. Крехівська Палея, стор. 256—258."
+        }
       ],
       [
         467,
         "Л. Яковів заповіт (Крех. Палея)",
         "146–155",
+        221,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i221-first-image-20261125",
+          "line_id": "witness-heading-l001",
+          "text": "Л. Крехівська Палея стор. 264—276."
+        }
       ],
       [
         467,
         "М. Йосиф оповідає братам свої пригоди (Крех. Палея)",
         "155–157",
+        230,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i230-first-image-20261125",
+          "line_id": "witness-heading-l001",
+          "text": "М. Крехівська Палея, стор. 278—280."
+        }
       ],
       [
         467,
         "Н. Сказаніє о Іосифѣ Прекрасном (Ркпс. о. Ст. Теслевцьового)",
         "157–173",
+        232,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i232-first-image-20261125",
+          "line_id": "witness-heading-l001",
+          "text": "Н. Угро-руський рукопис попа Стефана Теслевцьового"
+        }
       ],
       [
         467,
         "XV. Заповіти дванацяти патріархів (Крех. Палея).",
         "174",
-        249
+        249,
+        0,
+        "Printed p. 174 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i249-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "XV. Заповіти дванацяти патріархів."
+        }
       ],
       [
         467,
         "1. Заветъ Рувимовъ о благоумьи",
         "174–177",
         249,
-        1
+        1,
+        "Printed p. 174 is supplied by the contents; no folio numeral is visible on the section opening.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i249-first-image-20261125",
+          "line_id": "reuben-heading-l001",
+          "text": "1. Завѣтъ Роувимовъ ѡ благоумьи."
+        }
       ],
       [
         467,
         "2. Завѣтъ Семионовъ о зависти",
         "177–180",
+        252,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i252-first-image-20261125",
+          "line_id": "simeon-heading-l001",
+          "text": "2. Завѣтъ Семиѡновъ ѡ зависти."
+        }
       ],
       [
         467,
         "3. Завѣт Левгин о жречестве и о прозорьстве",
         "180–187",
+        255,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i255-first-image-20261125",
+          "line_id": "levi-heading-l001",
+          "text": "3. Завѣт Левгіи ѡ жречествѣ и ѡ прозорьствѣ."
+        }
       ],
       [
         467,
         "4. Завѣт Іюдин о мужестве",
         "187–195",
+        262,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i262-first-image-20261125",
+          "line_id": "judah-heading-l001",
+          "text": "4. Завѣт Іюдин ѡ мужествѣ."
+        }
       ],
       [
         467,
         "5. Завѣтъ Сахаровъ о доброумьи",
         "195–197",
+        270,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i270-first-image-20261125",
+          "line_id": "issachar-heading-l001",
+          "text": "5. Завѣтъ Сахаровъ ѡ доброумьи."
+        }
       ],
       [
         467,
         "6. Завѣтъ Заулоновъ о милосердіи и о милостини",
         "197–200",
+        272,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i272-first-image-20261125",
+          "line_id": "zebulun-heading-l001",
+          "text": "6. Завѣтъ Завлоновъ ѡ мл҃срди и ѡ мл҃стни."
+        }
       ],
       [
         467,
         "7. Завѣт Данов о ярости и о лжи",
         "200–203",
+        275,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i275-first-image-20261125",
+          "line_id": "dan-heading-l001",
+          "text": "7. Завѣт Данов ѡ ярости и ѡ лжи."
+        }
       ],
       [
         467,
         "8. Завѣтъ Нефталимовъ о естественей благости",
         "203–206",
+        278,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i278-first-image-20261125",
+          "line_id": "naphtali-heading-l001",
+          "text": "8. Завѣтъ Нефталимовъ ѡ естественей бл҃гости."
+        }
       ],
       [
         467,
         "9. Завѣт Гадовъ о ненависти",
         "206–209",
+        281,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i281-first-image-20261125",
+          "line_id": "gad-heading-l001",
+          "text": "9. Завѣт Гадовъ ѡ ненависти."
+        }
       ],
       [
         467,
         "10. Завѣт Асировъ о двою лицю и о злобѣ и о доброумьи",
         "209–212",
+        284,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i284-first-image-20261125",
+          "line_id": "asher-heading-l001",
+          "text": "10. Завѣт Асировъ ѡ двою лицю и ѡ злобѣ и ѡ"
+        }
       ],
       [
         467,
         "11. Завѣт Іосифль о премудрости",
         "212–218",
+        287,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i287-contents-image-20261125",
+          "line_id": "joseph-heading-l001",
+          "text": "11. Завѣт Іѡсифль ѡ премудрости."
+        }
       ],
       [
         467,
         "12. Завѣт Веньяминовъ о помысле чистомъ",
         "218–224",
+        293,
+        1,
         null,
-        1
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i293-contents-image-20261125",
+          "line_id": "benjamin-heading-l001",
+          "text": "12. Завѣт Веньяминовъ ѡ помысле чстомъ."
+        }
       ],
       [
         467,
         "XVI. Оповіданя про Мойсея.",
         "225",
-        300
+        300,
+        0,
+        "Printed p. 225 is supplied by the contents; the section opening has no securely visible folio numeral.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i300-contents-image-20261125",
+          "line_id": "section-xvi-l001",
+          "text": "XVI. Оповіданя про Мойсея."
+        }
       ],
       [
         467,
         "А. Житьє святаго великого пророка Мойсея, сказаніє бытья его (Крех. Палея)",
         "225–245",
         300,
-        1
+        1,
+        "Printed p. 225 is supplied by the contents; the section opening has no securely visible folio numeral.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i300-contents-image-20261125",
+          "line_id": "witness-a-heading-l001",
+          "text": "А. Крехівська Палея стор. 366—500."
+        }
       ],
       [
         467,

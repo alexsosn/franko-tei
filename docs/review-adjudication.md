@@ -67,3 +67,24 @@ correction or authenticated two-account smoke is included in this PR.
 Tests use actual I/20 and II/100 frozen texts with synthetic decisions,
 accounts and local Git history. No new workflow is triggered by a
 public issue.
+
+## Agent-assisted adjudication (explicitly not human verification)
+
+With the repository owner's approval, an independently reasoning agent can
+inspect the actual pinned facsimile and adjudicate a contributor proposal.
+The authorized GitHub account only operates publication; it can be the same
+account as the submitter. The agent schema is distinct from human
+adjudication and must not contain a human adjudicator ID. The existing human
+self-adjudication prohibition remains unchanged.
+
+Pass all three CLI arguments `--agent-model`, `--agent-context-id` (a
+locally assigned UUIDv4 identifying this review episode, not a provider
+session ID), and `--agent-image-sha256` plus the usual explicit reason
+and intake digest. The source image digest must match the proposal.
+Record an actual visual readback and residual uncertainty in the reason.
+The operator's authenticated ID and repository permission are checked as
+before. This is a trusted attestation reviewed in Git, not cryptographic
+proof of visual inspection or independent agency. No automated acceptance
+of arbitrary submissions. Agent decisions remain provisional, with source
+uncertainties retained, and must never be counted as human verification.
+The contributor is still the original submitting account, not the agent.

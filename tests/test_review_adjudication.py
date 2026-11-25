@@ -171,3 +171,30 @@ class AdjudicationTests(unittest.TestCase):
             folder.symlink_to(actual,target_is_directory=True)
             with self.assertRaisesRegex(ValueError,"cannot be a symlink"):
                 _read_records(folder)
+
+    def test_agent_operator_is_not_human_reviewer(self):
+        r=record()
+        agent={"model":"GPT-6.2","context_id":"00000000-0000-4000-8000-000000000099",
+               "image_sha256":r["bundle"]["events"][0]["target"]["image_sha256"]}
+        e=r["bundle"]["events"][0]
+        a=adjudicate(r,e["event_id"],"accept",issue()["user"],REASON,intake_digest(r),load_source,agent=agent)
+        self.assertEqual(a["schema_version"],"franko-review-agent-adjudication-v1")
+        self.assertEqual(a["operator_id"],1234)
+        self.assertNotIn("adjudicator_id",a)
+        ledger=validate_ledger([r],[a],load_source)
+        row=next(x for x in project_lines(RAW,PATH,ledger) if x["line_id"]==LINE["id"])
+        self.assertEqual(row["review_kind"],"agent")
+        self.assertEqual(row["operator_id"],1234)
+        self.assertEqual(row["agent"],agent)
+        self.assertNotIn("adjudicator_id",row)
+        self.assertEqual(row["status"],"accepted_correction")
+        self.assertEqual(row["uncertainty_status"],"source_notes_need_reassessment")
+        for field,value in (("model",""),("context_id","not-a-uuid"),("image_sha256","0"*64)):
+            bad=copy.deepcopy(agent); bad[field]=value
+            with self.assertRaises(ValueError):
+                adjudicate(r,e["event_id"],"accept",issue()["user"],REASON,intake_digest(r),load_source,agent=bad)
+        forged=copy.deepcopy(a); forged["adjudicator_id"]=1234
+        with self.assertRaises(ValueError): validate_ledger([r],[forged],load_source)
+        forged=copy.deepcopy(a); forged["agent"]["image_sha256"]="0"*64
+        with self.assertRaises(ValueError): validate_ledger([r],[forged],load_source)
+        with self.assertRaises(ValueError): validate_ledger([r],[a,decision(r)],load_source)
