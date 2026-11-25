@@ -28,6 +28,13 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#searchVolume option")).to_have_text(["All volumes", *titles])
             expect(page.locator("#choice option").filter(has_text="GPT-6 · single reading")).to_have_count(1)
             expect(page.locator("#choice option").filter(has_text="GPT-6 · independent image reading b")).to_have_count(1)
+            expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
+            page.locator("#showLanguages").check()
+            expect(page.locator(".languages-on .language-span[data-language='grc']").first).to_be_visible()
+            expect(page.locator("#languageLegend")).to_contain_text("Ancient Greek")
+            page.locator("#showLanguages").uncheck()
+            expect(page.locator("#languageLegend")).to_be_hidden()
+            page.locator("#choice").select_option(label="GPT-6 · single reading")
             first_note = page.locator(".uncertainty-toggle").first
             expect(page.locator(".uncertainty-reasons").first).to_be_hidden()
             expect(page.locator("#candidate mark").first).to_be_visible()
