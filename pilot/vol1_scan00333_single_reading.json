@@ -880,13 +880,13 @@
         ]
       },
       {
-        "id": "hungarian-notes",
+        "id": "hungarian-note-1",
         "kind": "note",
         "bbox_xywh": [
           227,
           1483,
           786,
-          58
+          28
         ],
         "geometry_estimated": true,
         "lines": [
@@ -926,7 +926,20 @@
                 "text_version": "gpt62-i333-final-gap-20261125"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "hungarian-note-2",
+        "kind": "note",
+        "bbox_xywh": [
+          227,
+          1513,
+          786,
+          28
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "hungarian-notes-l002",
             "text": "**) Мадярське слово hamis — фальшивий.",
@@ -1167,6 +1180,25 @@
         "line_id": "hungarian-notes-l002",
         "reading": "**) Мадярське слово hamis — фальшивий.",
         "reason": "Exact source title, italic foreign word or abbreviation typography provisional."
+      },
+      {
+        "line_id": "balaam-body-l001",
+        "reading": "повили",
+        "reason": "Separate source reinspection: appears побили, not повили; frozen initial reading retained pending correction."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "balaam-body-l001",
+        "marker_text": "*)",
+        "marker_start": 14,
+        "note_region_id": "hungarian-note-1"
+      },
+      {
+        "marker_line_id": "balaam-body-l023",
+        "marker_text": "**)",
+        "marker_start": 32,
+        "note_region_id": "hungarian-note-2"
       }
     ]
   }
