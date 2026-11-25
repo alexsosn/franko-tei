@@ -63,6 +63,36 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(continuation[2], '251–254')
         self.assertIn('гірка вода', continuation[1])
         self.assertTrue(any(e[0] == 469 and e[2] == '338–339' for e in items))
+        # Heading identities in the existing source-linked Volume I readings.
+        targets = {105: 343, 106: 345, 107: 410, 108: 347, 109: 347,
+                   110: 348, 111: 349, 112: 350, 113: 351, 114: 352,
+                   115: 355, 116: 355, 117: 357, 118: 358, 119: 360,
+                   120: 364, 121: 365, 122: 366, 123: 368, 124: 369,
+                   125: 371, 126: 371, 127: 378, 128: 379, 129: 380,
+                   130: 382, 131: 387, 139: 413, 140: 416, 141: 431,
+                   142: 437, 143: 459, 144: 464}
+        self.assertEqual({i: entries[i][3] for i in targets}, targets)
+        self.assertTrue(all(entries[i][6]['suffix'] == 'single_reading' for i in targets))
+        self.assertEqual(len([e for e in entries if len(e) > 6 and e[6]]), 145)
+        for i in (108, 115, 125):
+            self.assertEqual(entries[i][6]['line_id'], 'section-title-l001')
+            self.assertNotEqual(entries[i][6]['line_id'], entries[i+1][6]['line_id'])
+        self.assertEqual(entries[110][6]['text'], 'Б. Дрогобицький рукопис стор. 23.')
+        self.assertEqual(entries[124][6]['text'], 'К. Крехівська Палея, стор. 1136—1137.')
+        self.assertEqual(entries[144][2], '388')
+        self.assertIn('scan 463', entries[144][5])
+        final_targets = {7: (399, 'witness-heading-l001'), 13: (400, 'witness-heading-l001'),
+                         49: (405, 'witness-heading-l001'), 59: (408, 'witness-heading-l001'),
+                         103: (339, 'section-heading-l001'), 104: (339, 'witness-heading-l001'),
+                         132: (390, 'witness-heading-l001'), 133: (394, 'witness-heading-l001'),
+                         134: (395, 'witness-heading-i-l001'), 135: (395, 'witness-heading-j-l001'),
+                         136: (396, 'witness-heading-l001'), 137: (397, 'witness-heading-l001'),
+                         138: (397, 'list-heading-l001')}
+        self.assertEqual({i: (entries[i][3], entries[i][6]['line_id']) for i in final_targets}, final_targets)
+        self.assertEqual(len({(e[3], e[6]['line_id']) for e in entries}), 145)
+        self.assertTrue(all(e[3] is not None for e in entries))
+        self.assertIn('325', entries[7][5])
+        self.assertIn('Є.', entries[59][6]['text'])
         for source, title, printed, scan, *_ in items:
             self.assertIn(source, data['1']['sources'])
             self.assertTrue(title and printed)
@@ -617,7 +647,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,109,36,0],['2',140,40,100,0],
+            self.assertEqual(result, [['1',145,145,0,0],['2',140,40,100,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -633,6 +663,12 @@ class ReviewSmoke(unittest.TestCase):
                     page.locator('#contentsOpen').click()
                 page.locator('#contentsVolume').select_option(v)
                 self.assertEqual(page.locator('#contentsEntries button[data-scan], #contentsEntries button[data-estimated-scan]').count(), count)
+                if v == '1':
+                    self.assertEqual(page.locator('#contentsEntries button[data-estimated-scan]').count(), 0)
+                    self.assertEqual(page.locator('#contentsEntries button[data-line]').count(), 145)
+                    page.locator('#contentsEntries button[data-scan="399"]').click()
+                    self.assertEqual(page.evaluate('window.lastJump'), ['1', '399', False])
+                    continue
                 b = page.locator('#contentsEntries button[data-estimated-scan]').first
                 scan = b.get_attribute('data-estimated-scan')
                 self.assertIn('not inspected', b.get_attribute('title'))
