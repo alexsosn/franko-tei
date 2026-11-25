@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 import unittest
 
-from franko_tei.review_bundle import validate_bundle, make_intake, read_bundle, git_source_loader
+from franko_tei.review_bundle import validate_bundle, make_intake, read_bundle, git_source_loader, issue_bundle, assert_new
 
 ROOT = Path(__file__).resolve().parents[1]
 PATH = "pilot/vol1_scan00020_single_reading.json"
@@ -114,3 +114,31 @@ class ReviewBundleTests(unittest.TestCase):
             p.write_bytes(b"new"); git("add","."); git("commit","-qm","untrusted descendant")
             with self.assertRaises(ValueError): loader(git("rev-parse","HEAD"),PATH)
             with self.assertRaises(ValueError): loader(trusted,"../secret")
+
+    def test_form_body_and_exact_digest(self):
+        raw = encode(fixture())
+        i = issue()
+        i["body"] = "### Review bundle\n\n```json\n" + raw.decode() + "\n```\n"
+        self.assertEqual(issue_bundle(i), raw)
+        for bad in ("[attachment](https://example.invalid/file.json)", i["body"]+"extra", "### Review bundle\n\n```json\n{}\n```\n```json\n{}\n```"):
+            j = dict(i, body=bad)
+            with self.assertRaises(ValueError): issue_bundle(j)
+        j = dict(i, pull_request={})
+        with self.assertRaises(ValueError): issue_bundle(j)
+
+    def test_replay_and_distinct_contributor(self):
+        b = fixture()
+        raw = encode(b)
+        first = make_intake(raw, issue(), hashlib.sha256(raw).hexdigest(), load_source)
+        with self.assertRaises(ValueError): assert_new(first, [first])
+        b["bundle_id"] = "00000000-0000-4000-8000-000000000003"
+        b["events"][0]["event_id"] = "00000000-0000-4000-8000-000000000004"
+        raw = encode(b)
+        renamed = issue()
+        renamed["user"]["login"] = "renamed-reader"
+        second = make_intake(raw, renamed, hashlib.sha256(raw).hexdigest(), load_source)
+        with self.assertRaises(ValueError): assert_new(second, [first])
+        renamed["user"]["id"] = 5678
+        third = make_intake(raw, renamed, hashlib.sha256(raw).hexdigest(), load_source)
+        assert_new(third, [first])
+        self.assertEqual(third["status"], "pending_adjudication")
