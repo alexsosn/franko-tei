@@ -54,7 +54,8 @@ class AdjudicationTests(unittest.TestCase):
         with self.assertRaises(ValueError): decision(r,editor=issue()["user"])
         for edit in ("bundle_sha256","bundle_raw_utf8","bundle"):
             altered=copy.deepcopy(r); altered[edit]="corrupt"
-            with self.assertRaises(ValueError): decision(altered)
+            with self.assertRaises(ValueError):
+                adjudicate(altered,r['bundle']['events'][0]['event_id'],'accept',EDITOR,REASON,intake_digest(altered),load_source)
         a=decision(r); a["contributor_id"]=777
         with self.assertRaises(ValueError): validate_ledger([r],[a],load_source)
         with self.assertRaises(ValueError): adjudicate(r,r["bundle"]["events"][0]["event_id"],"accept",EDITOR,REASON,"0"*64,load_source)
