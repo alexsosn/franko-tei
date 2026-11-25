@@ -1,0 +1,772 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 301,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00301.jpg",
+  "source_image_sha256": "2154d9616b0feab108a5cdc2742f3b615714425fdd2ddfbeac11d15c7ea73b47",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v4s00301",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-pr143-remaining-checked-headings-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full visual reading of pinned original page including headings, manuscript text, commentary and printer furniture. TOC titles known; no original OCR or peer page reading used. Provisional glyphs and estimated geometry. Not blind or verified.",
+    "raw_response": "IV. Апокалїпси про конець сьвіта.\nА. Сваричівський Ізмараґд XVI в. Бібліот. Нар. Дому у Львові\n(муз. о. Петрушевича ч. 1) к. 167—168.\n(Прⷪрчество Исаино сн҃а Амосова, иⷤ прⷪчьствова\nс’ рыданїєⷨ ѡ послѣдниⷯ дн҃ехъ провидѣвъ дх҃оⷨ\nст҃ымъ хотѧщиⷯ быти ны. бл҃ви ѡч҃е). Ѡ чл҃ци, слышите,\nтако гл҃єⷮ Гь҃, и в’немлѣте гл҃ы оустъ моиⷯ, и приклоните оуши\nваши въ съвѣтъ моєго ꙗзыка. вы мои люⷣ и азъ вашь Бъ҃,\nискоупиⷯ вы ѿ дїавола льсти кровїю своєю и нарекоⷯ вы собѣ\nсн҃ы. выⷤ не ꙗко ѡц҃ю ми послꙋжисте ни акы Гноу҃ поработасте,\nно чюжи славы моєа бысте, чюдесеⷨ моиⷨ не ꙗсте вѣры и запо-\nвѣди моа ѿвръгосте. того дѣлѧ боудєⷮ на вы гнѣвъ мои в’ по-\nслѣд’наа дн҃и, зане неправда многа въ васъ оумножит сѧ и\nсмиренїє ѿвръжено, зависть и лесть гнѣвъ жироуєть въ васъ,\nпогыбе истин’на, л’жа покры землю. чада роⷣтелѧ своѧ беⷭчест-\nвоуюⷮ, и възненавидиⷮ братъ брата, и дрꙋгъ дрꙋга завистїю\nснѣсть, и свою д’щерь мт҃и на блоудъ предастъ. дѣти не сты-\nдѣти сѧ начноуⷮ родитель своиⷯ, а оучители иⷯ запойци и ли-\nцемѣри боудоуⷮ, а чер’ньци срамослов’ци и кощюн’ници боудоуть,\nа кн҃зи немлⷭтивїи, соуд’їа неправед’ни, не боудоуⷮ избав’лѧа хоꙋ-\nдыⷯ из’ роукы силныⷯ. и въс’плачють в’довы и сироты не имоуще\nзастꙋпника, зане кн҃зи не смирѧюⷮ властїи и властели не с’жалѧт\nсѧ моучаще хоудыа. и в’зыщеⷮ жена посаг’ноути моужа, а не\nмоужь жены. и боудоуⷮ знаменїа въ слн҃ци и в’ лꙋнѣ, и голоⷭ въ\nвсѣⷯ странаⷯ, и тоуга ꙗзыкоⷨ и млъва въ градѣⷯ. вложю ꙗрость\nПамятки т. IV.\n32",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "section-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          232,
+          553,
+          725,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-heading-line-01",
+            "text": "IV. Апокалїпси про конець сьвіта.",
+            "bbox_xywh": [
+              232,
+              553,
+              725,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "isaiah-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          125,
+          697,
+          939,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "isaiah-heading-line-01",
+            "text": "А. Сваричівський Ізмараґд XVI в. Бібліот. Нар. Дому у Львові",
+            "bbox_xywh": [
+              125,
+              697,
+              939,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "isaiah-heading-line-02",
+            "text": "(муз. о. Петрушевича ч. 1) к. 167—168.",
+            "bbox_xywh": [
+              125,
+              739,
+              939,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "isaiah",
+        "kind": "body",
+        "bbox_xywh": [
+          124,
+          817,
+          951,
+          777
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "isaiah-line-01",
+            "text": "(Прⷪрчество Исаино сн҃а Амосова, иⷤ прⷪчьствова",
+            "bbox_xywh": [
+              124,
+              817,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-02",
+            "text": "с’ рыданїєⷨ ѡ послѣдниⷯ дн҃ехъ провидѣвъ дх҃оⷨ",
+            "bbox_xywh": [
+              124,
+              853,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 46,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-03",
+            "text": "ст҃ымъ хотѧщиⷯ быти ны. бл҃ви ѡч҃е). Ѡ чл҃ци, слышите,",
+            "bbox_xywh": [
+              124,
+              888,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-04",
+            "text": "тако гл҃єⷮ Гь҃, и в’немлѣте гл҃ы оустъ моиⷯ, и приклоните оуши",
+            "bbox_xywh": [
+              124,
+              924,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-05",
+            "text": "ваши въ съвѣтъ моєго ꙗзыка. вы мои люⷣ и азъ вашь Бъ҃,",
+            "bbox_xywh": [
+              124,
+              959,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-06",
+            "text": "искоупиⷯ вы ѿ дїавола льсти кровїю своєю и нарекоⷯ вы собѣ",
+            "bbox_xywh": [
+              124,
+              995,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-07",
+            "text": "сн҃ы. выⷤ не ꙗко ѡц҃ю ми послꙋжисте ни акы Гноу҃ поработасте,",
+            "bbox_xywh": [
+              124,
+              1030,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-08",
+            "text": "но чюжи славы моєа бысте, чюдесеⷨ моиⷨ не ꙗсте вѣры и запо-",
+            "bbox_xywh": [
+              124,
+              1066,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-09",
+            "text": "вѣди моа ѿвръгосте. того дѣлѧ боудєⷮ на вы гнѣвъ мои в’ по-",
+            "bbox_xywh": [
+              124,
+              1101,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-10",
+            "text": "слѣд’наа дн҃и, зане неправда многа въ васъ оумножит сѧ и",
+            "bbox_xywh": [
+              124,
+              1137,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-11",
+            "text": "смиренїє ѿвръжено, зависть и лесть гнѣвъ жироуєть въ васъ,",
+            "bbox_xywh": [
+              124,
+              1172,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-12",
+            "text": "погыбе истин’на, л’жа покры землю. чада роⷣтелѧ своѧ беⷭчест-",
+            "bbox_xywh": [
+              124,
+              1208,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-13",
+            "text": "воуюⷮ, и възненавидиⷮ братъ брата, и дрꙋгъ дрꙋга завистїю",
+            "bbox_xywh": [
+              124,
+              1243,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-14",
+            "text": "снѣсть, и свою д’щерь мт҃и на блоудъ предастъ. дѣти не сты-",
+            "bbox_xywh": [
+              124,
+              1279,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-15",
+            "text": "дѣти сѧ начноуⷮ родитель своиⷯ, а оучители иⷯ запойци и ли-",
+            "bbox_xywh": [
+              124,
+              1314,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-16",
+            "text": "цемѣри боудоуⷮ, а чер’ньци срамослов’ци и кощюн’ници боудоуть,",
+            "bbox_xywh": [
+              124,
+              1350,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-17",
+            "text": "а кн҃зи немлⷭтивїи, соуд’їа неправед’ни, не боудоуⷮ избав’лѧа хоꙋ-",
+            "bbox_xywh": [
+              124,
+              1386,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 66,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-18",
+            "text": "дыⷯ из’ роукы силныⷯ. и въс’плачють в’довы и сироты не имоуще",
+            "bbox_xywh": [
+              124,
+              1421,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-19",
+            "text": "застꙋпника, зане кн҃зи не смирѧюⷮ властїи и властели не с’жалѧт",
+            "bbox_xywh": [
+              124,
+              1457,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-20",
+            "text": "сѧ моучаще хоудыа. и в’зыщеⷮ жена посаг’ноути моужа, а не",
+            "bbox_xywh": [
+              124,
+              1492,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-21",
+            "text": "моужь жены. и боудоуⷮ знаменїа въ слн҃ци и в’ лꙋнѣ, и голоⷭ въ",
+            "bbox_xywh": [
+              124,
+              1528,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "isaiah-line-22",
+            "text": "всѣⷯ странаⷯ, и тоуга ꙗзыкоⷨ и млъва въ градѣⷯ. вложю ꙗрость",
+            "bbox_xywh": [
+              124,
+              1563,
+              951,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          203,
+          1628,
+          160,
+          26
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "Памятки т. IV.",
+            "bbox_xywh": [
+              203,
+              1628,
+              160,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00301",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sheet-number",
+        "kind": "other",
+        "bbox_xywh": [
+          997,
+          1619,
+          35,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "sheet-number-line-01",
+            "text": "32",
+            "bbox_xywh": [
+              997,
+              1619,
+              35,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "isaiah-line-01",
+        "reading": "(Прⷪрчество Исаино сн҃а Амосова, иⷤ прⷪчьствова",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-02",
+        "reading": "с’ рыданїєⷨ ѡ послѣдниⷯ дн҃ехъ провидѣвъ дх҃оⷨ",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-03",
+        "reading": "ст҃ымъ хотѧщиⷯ быти ны. бл҃ви ѡч҃е). Ѡ чл҃ци, слышите,",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-04",
+        "reading": "тако гл҃єⷮ Гь҃, и в’немлѣте гл҃ы оустъ моиⷯ, и приклоните оуши",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-05",
+        "reading": "ваши въ съвѣтъ моєго ꙗзыка. вы мои люⷣ и азъ вашь Бъ҃,",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-06",
+        "reading": "искоупиⷯ вы ѿ дїавола льсти кровїю своєю и нарекоⷯ вы собѣ",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-07",
+        "reading": "сн҃ы. выⷤ не ꙗко ѡц҃ю ми послꙋжисте ни акы Гноу҃ поработасте,",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-08",
+        "reading": "но чюжи славы моєа бысте, чюдесеⷨ моиⷨ не ꙗсте вѣры и запо-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-09",
+        "reading": "вѣди моа ѿвръгосте. того дѣлѧ боудєⷮ на вы гнѣвъ мои в’ по-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-10",
+        "reading": "слѣд’наа дн҃и, зане неправда многа въ васъ оумножит сѧ и",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-11",
+        "reading": "смиренїє ѿвръжено, зависть и лесть гнѣвъ жироуєть въ васъ,",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-12",
+        "reading": "погыбе истин’на, л’жа покры землю. чада роⷣтелѧ своѧ беⷭчест-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-13",
+        "reading": "воуюⷮ, и възненавидиⷮ братъ брата, и дрꙋгъ дрꙋга завистїю",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-14",
+        "reading": "снѣсть, и свою д’щерь мт҃и на блоудъ предастъ. дѣти не сты-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-15",
+        "reading": "дѣти сѧ начноуⷮ родитель своиⷯ, а оучители иⷯ запойци и ли-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-16",
+        "reading": "цемѣри боудоуⷮ, а чер’ньци срамослов’ци и кощюн’ници боудоуть,",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-17",
+        "reading": "а кн҃зи немлⷭтивїи, соуд’їа неправед’ни, не боудоуⷮ избав’лѧа хоꙋ-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-18",
+        "reading": "дыⷯ из’ роукы силныⷯ. и въс’плачють в’довы и сироты не имоуще",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-19",
+        "reading": "застꙋпника, зане кн҃зи не смирѧюⷮ властїи и властели не с’жалѧт",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-20",
+        "reading": "сѧ моучаще хоудыа. и в’зыщеⷮ жена посаг’ноути моужа, а не",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-21",
+        "reading": "моужь жены. и боудоуⷮ знаменїа въ слн҃ци и в’ лꙋнѣ, и голоⷭ въ",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "isaiah-line-22",
+        "reading": "всѣⷯ странаⷯ, и тоуга ꙗзыкоⷨ и млъва въ градѣⷯ. вложю ꙗрость",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      }
+    ],
+    "language_annotation": {
+      "annotator": "GPT-6.2",
+      "date": "2026-11-25",
+      "status": "provisional",
+      "scope": "First-reading code-point language/script spans on all linguistic lines.",
+      "policy": "cu Church Slavonic; uk Ukrainian including tentative historical Ruthenian; ru Russian bibliography. Numeric-only folio/sheet numbers untagged. Historic language attribution uncertain.",
+      "notes": "Church Slavonic-dominant prophecy, section and witness headings Ukrainian. TOC label Б versus actual heading А; keep both. No front-side folio numeral."
+    }
+  }
+}
