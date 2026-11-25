@@ -80,11 +80,6 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollHeight > el.clientHeight && el.clientWidth >= el.scrollWidth'))
             self.assertEqual(page.locator('#contentsEntries .contents-destination').first.evaluate('el => getComputedStyle(el).borderTopStyle'), 'none')
             self.assertTrue(page.locator('#contentsEntries .contents-destination').first.evaluate('el => el.getBoundingClientRect().height >= 40'))
-            if os.environ.get('CI'):
-                import base64
-                shot = base64.b64encode(page.screenshot(type='jpeg', quality=70)).decode('ascii')
-                for i in range(0, len(shot), 2048):
-                    print('CONTENTS_MOBILE_SHOT ' + shot[i:i+2048], flush=True)
             page.locator('#contentsFilter').fill('Еноха')
             self.assertTrue(0 < page.locator('#contentsEntries .contents-destination:visible').count() < 145)
             page.locator('#contentsFilter').fill('zzzzzzzzzz')
@@ -141,11 +136,15 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#settingsClose').click()
             page.locator('#contentsOpen').click()
             self.assertIn('Зміст', page.locator('#contentsTitle').inner_text())
-            if os.environ.get('CI'):
-                import base64
-                shot = base64.b64encode(page.screenshot(type='jpeg', quality=65)).decode('ascii')
-                for i in range(0, len(shot), 2048):
-                    print('CONTENTS_DESKTOP_SHOT ' + shot[i:i+2048], flush=True)
+            self.assertEqual(page.locator('#contentsEntries').evaluate('el => el.scrollTop'), 0)
+            page.keyboard.press('Escape')
+            page.evaluate("$('page').value='399'")
+            page.locator('#contentsOpen').click()
+            self.assertTrue(page.locator('#contentsEntries button[data-scan="399"]').evaluate("""el => {
+                const a=el.getBoundingClientRect(), b=$('contentsEntries').getBoundingClientRect();
+                return a.top >= b.top && a.bottom <= b.bottom;
+            }"""))
+            self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollTop > 0'))
             browser.close()
 
     def test_locale_persists_and_preserves_source_text(self):
