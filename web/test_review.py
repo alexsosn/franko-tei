@@ -74,7 +74,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,46,99,0],['2',140,27,113,0],
+            self.assertEqual(result, [['1',145,57,88,0],['2',140,29,111,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -191,6 +191,61 @@ class ReviewSmoke(unittest.TestCase):
             }""")
             self.assertEqual(result, [1, -1, -1, -1])
             browser.close()
+
+    def test_contents_reuses_existing_readings(self):
+        import json
+        root = Path(__file__).resolve().parents[1]
+        contents = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        expected = {
+            ('1', 8, 'commission-heading-line-01'),
+            ('1', 76, 'section-title-l001'),
+            ('1', 76, 'witness-a-label-l001'),
+            ('1', 76, 'witness-b-label-l001'),
+            ('1', 82, 'section-title-l001'),
+            ('1', 82, 'witness-label-l001'),
+            ('1', 86, 'section-title-l001'),
+            ('1', 86, 'witness-a-label-l001'),
+            ('1', 89, 'witness-b-label-l001'),
+            ('1', 90, 'witness-c-label-l001'),
+            ('1', 90, 'witness-d-label-l001'),
+            ('1', 92, 'section-title-l001'),
+            ('1', 92, 'witness-a-label-l001'),
+            ('1', 93, 'witness-b-label-l001'),
+            ('1', 94, 'section-title-l001'),
+            ('1', 94, 'witness-a-label-l001'),
+            ('1', 98, 'witness-b-label-l001'),
+            ('1', 101, 'witness-c-label-l001'),
+            ('1', 103, 'witness-d-label-l001'),
+            ('1', 104, 'witness-e-label-l001'),
+            ('1', 105, 'witness-f-label-l001'),
+            ('1', 106, 'witness-g-label-l001'),
+            ('1', 106, 'witness-h-label-l001'),
+            ('1', 108, 'section-title-l001'),
+            ('1', 108, 'witness-a-label-l001'),
+            ('1', 108, 'witness-b-label-l001'),
+            ('2', 100, 'heading-e-line-01'),
+            ('2', 100, 'heading-zh-line-01'),
+        }
+        actual = set()
+        # Validate all anchors, not just those from the original IV pilot.
+        for volume, data in contents.items():
+            for e in data['entries']:
+                if len(e) < 7 or not e[6]:
+                    continue
+                anchor = e[6]
+                self.assertIsNotNone(e[3])
+                record = json.loads((root / f"pilot/vol{volume}_scan{e[3]:05d}_{anchor['suffix']}.json").read_text(encoding='utf-8'))
+                self.assertEqual(record['volume'], volume)
+                self.assertEqual(record['scan_page'], e[3])
+                self.assertEqual(record['reading']['reader_id'], anchor['reader_id'])
+                hits = [(r['kind'], l['text']) for r in record['reading']['regions']
+                        for l in r['lines'] if l['id'] == anchor['line_id']]
+                self.assertEqual(hits, [('heading', anchor['text'])])
+                actual.add((volume, e[3], anchor['line_id']))
+        self.assertTrue(expected <= actual, expected - actual)
+        # A two-column page and two sequential witnesses must have distinct anchors.
+        self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 76 and len(e) > 6 and e[6]]), 3)
+        self.assertEqual(len([e for e in contents['2']['entries'] if e[3] == 100 and len(e) > 6 and e[6]]), 2)
 
     def test_contents_line_navigation_real_reading_fixture(self):
         # Real candidate records; synthetic transport/image dimensions only.
