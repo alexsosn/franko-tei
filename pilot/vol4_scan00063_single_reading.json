@@ -1,0 +1,1074 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 63,
+  "printed_page_observed": "11",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00063.jpg",
+  "source_image_sha256": "bc8d2f8ead9ece4d375c0e28b5596c22279500999c9f93d785d5ebfcbcc7662d",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v4s00063",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-pr143-catechisms-cont-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full visual reading of pinned original page including headings, manuscript text and editorial insertions. TOC titles known; no OCR or peer page reading used. Provisional historic characters and estimated geometry. Not blind or verified.",
+    "raw_response": "11\n61. Въпроⷭ: Что єⷭт връхъ цр҃кви?\nѠвѣт: Глава Гн҃а.\n26. Въпроⷭ: Что єⷭт ѡлтар?\nѠвѣт: Гробъ Гс҃нь.\n63. Въпроⷭ: Что єⷭт верхъ ѡлтарю?\nѠвѣт: Плащеница.\n64. Въпроⷭ: Что єⷭт трапеза?\nѠвѣт: Перси Гс҃на.\n65. Въпроⷭ: Что єⷭт дари?\nѠвѣт: Хс҃.\n66. Въпроⷭ: Что єⷭт лыжица?\nѠвѣт: Бъ҃. [зверха дописано: ѡгнь].\n67. [Въпроⷭ: Что єⷭт] кадилница?\nѠвѣт: Бц҃а.\n68. Въпроⷭ: Что єсть димїан?\nѠвѣт: Дх҃ъ ст҃ый.\n69. Въпроⷭ: Что єсть амвон?\nѠвѣт: Равна гора.\n70. Въпроⷭ: Что єⷭт єѵг҃ліє?\nѠвѣт: Оуста Гн҃а.\n71. Въпроⷭ: Что єⷭт столпи ѡлтарю?\nѠвѣт: Колѣнѣ Гс҃ни.\n72. Въпроⷭ: Что єⷭт порог ѡлтарю?\nѠвѣт: Войни стригꙋщей гроба Гс҃на.\n73. Въпроⷭ: Что єⷭт двери цр҃кви?\nѠвѣт: Агг҃льскїй ѡбраз. Бꙋ҃ нашемꙋ слава.\nСе окрема редакція „Бесѣды трехъ святителей“; про її від-\nносини до инших надрукованих доси текстів див. передмову.\nГ. Рукопис Ілї Яремецького-Білахевича, стор. 174—177.\n(Вопроситъ ст҃їй Василїй, ѿповѣдає ст҃їй Гри-\nгорїй бг҃ословъ).\n1. Вопроⷭ: Кто двоє борет сѧ в мирѣ силнїє?\nѠвѣт: Животъ и смр҃ть.\n2. Вопроⷭ: Кто первїй пророкъ бж҃ієй таинѣ?\nѠвѣт: Адамъ. Єгда єго Бг҃ъ творець сотвориⷧ и в раю\nєго посадилъ, в той часъ Адаⷨ оуснꙋлъ. Рече Гс҃дь:",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1012,
+          100,
+          41,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "11",
+            "bbox_xywh": [
+              1012,
+              100,
+              41,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "biliavsky-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          120,
+          168,
+          732,
+          913
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "biliavsky-cont-line-01",
+            "text": "61. Въпроⷭ: Что єⷭт връхъ цр҃кви?",
+            "bbox_xywh": [
+              120,
+              168,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-02",
+            "text": "Ѡвѣт: Глава Гн҃а.",
+            "bbox_xywh": [
+              120,
+              203,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-03",
+            "text": "26. Въпроⷭ: Что єⷭт ѡлтар?",
+            "bbox_xywh": [
+              120,
+              239,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 26,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-04",
+            "text": "Ѡвѣт: Гробъ Гс҃нь.",
+            "bbox_xywh": [
+              120,
+              274,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-05",
+            "text": "63. Въпроⷭ: Что єⷭт верхъ ѡлтарю?",
+            "bbox_xywh": [
+              120,
+              309,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-06",
+            "text": "Ѡвѣт: Плащеница.",
+            "bbox_xywh": [
+              120,
+              344,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 16,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-07",
+            "text": "64. Въпроⷭ: Что єⷭт трапеза?",
+            "bbox_xywh": [
+              120,
+              380,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-08",
+            "text": "Ѡвѣт: Перси Гс҃на.",
+            "bbox_xywh": [
+              120,
+              415,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-09",
+            "text": "65. Въпроⷭ: Что єⷭт дари?",
+            "bbox_xywh": [
+              120,
+              450,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 25,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-10",
+            "text": "Ѡвѣт: Хс҃.",
+            "bbox_xywh": [
+              120,
+              486,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 10,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-11",
+            "text": "66. Въпроⷭ: Что єⷭт лыжица?",
+            "bbox_xywh": [
+              120,
+              521,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-12",
+            "text": "Ѡвѣт: Бъ҃. [зверха дописано: ѡгнь].",
+            "bbox_xywh": [
+              120,
+              556,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 12,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 12,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 29,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-13",
+            "text": "67. [Въпроⷭ: Что єⷭт] кадилница?",
+            "bbox_xywh": [
+              120,
+              591,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-14",
+            "text": "Ѡвѣт: Бц҃а.",
+            "bbox_xywh": [
+              120,
+              627,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 11,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-15",
+            "text": "68. Въпроⷭ: Что єсть димїан?",
+            "bbox_xywh": [
+              120,
+              662,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-16",
+            "text": "Ѡвѣт: Дх҃ъ ст҃ый.",
+            "bbox_xywh": [
+              120,
+              697,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-17",
+            "text": "69. Въпроⷭ: Что єсть амвон?",
+            "bbox_xywh": [
+              120,
+              733,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-18",
+            "text": "Ѡвѣт: Равна гора.",
+            "bbox_xywh": [
+              120,
+              768,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-19",
+            "text": "70. Въпроⷭ: Что єⷭт єѵг҃ліє?",
+            "bbox_xywh": [
+              120,
+              803,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-20",
+            "text": "Ѡвѣт: Оуста Гн҃а.",
+            "bbox_xywh": [
+              120,
+              838,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-21",
+            "text": "71. Въпроⷭ: Что єⷭт столпи ѡлтарю?",
+            "bbox_xywh": [
+              120,
+              874,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 34,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-22",
+            "text": "Ѡвѣт: Колѣнѣ Гс҃ни.",
+            "bbox_xywh": [
+              120,
+              909,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-23",
+            "text": "72. Въпроⷭ: Что єⷭт порог ѡлтарю?",
+            "bbox_xywh": [
+              120,
+              944,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-24",
+            "text": "Ѡвѣт: Войни стригꙋщей гроба Гс҃на.",
+            "bbox_xywh": [
+              120,
+              980,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 34,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-25",
+            "text": "73. Въпроⷭ: Что єⷭт двери цр҃кви?",
+            "bbox_xywh": [
+              120,
+              1015,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "biliavsky-cont-line-26",
+            "text": "Ѡвѣт: Агг҃льскїй ѡбраз. Бꙋ҃ нашемꙋ слава.",
+            "bbox_xywh": [
+              120,
+              1050,
+              732,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 41,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          107,
+          1126,
+          963,
+          67
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "Се окрема редакція „Бесѣды трехъ святителей“; про її від-",
+            "bbox_xywh": [
+              107,
+              1126,
+              963,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 19,
+                "end": 44,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 44,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "носини до инших надрукованих доси текстів див. передмову.",
+            "bbox_xywh": [
+              107,
+              1162,
+              963,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bila-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          150,
+          1289,
+          883,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "bila-heading-line-01",
+            "text": "Г. Рукопис Ілї Яремецького-Білахевича, стор. 174—177.",
+            "bbox_xywh": [
+              150,
+              1289,
+              883,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bila",
+        "kind": "body",
+        "bbox_xywh": [
+          106,
+          1362,
+          968,
+          247
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "bila-line-01",
+            "text": "(Вопроситъ ст҃їй Василїй, ѿповѣдає ст҃їй Гри-",
+            "bbox_xywh": [
+              106,
+              1362,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 45,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "bila-line-02",
+            "text": "горїй бг҃ословъ).",
+            "bbox_xywh": [
+              106,
+              1398,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "bila-line-03",
+            "text": "1. Вопроⷭ: Кто двоє борет сѧ в мирѣ силнїє?",
+            "bbox_xywh": [
+              106,
+              1434,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "bila-line-04",
+            "text": "Ѡвѣт: Животъ и смр҃ть.",
+            "bbox_xywh": [
+              106,
+              1470,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "bila-line-05",
+            "text": "2. Вопроⷭ: Кто первїй пророкъ бж҃ієй таинѣ?",
+            "bbox_xywh": [
+              106,
+              1506,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "bila-line-06",
+            "text": "Ѡвѣт: Адамъ. Єгда єго Бг҃ъ творець сотвориⷧ и в раю",
+            "bbox_xywh": [
+              106,
+              1542,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 51,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "bila-line-07",
+            "text": "єго посадилъ, в той часъ Адаⷨ оуснꙋлъ. Рече Гс҃дь:",
+            "bbox_xywh": [
+              106,
+              1578,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00063",
+                "start": 0,
+                "end": 50,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "biliavsky-cont-line-01",
+        "reading": "61. Въпроⷭ: Что єⷭт връхъ цр҃кви?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-02",
+        "reading": "Ѡвѣт: Глава Гн҃а.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-03",
+        "reading": "26. Въпроⷭ: Что єⷭт ѡлтар?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-03",
+        "reading": "26.",
+        "reason": "Printed 26 between 61 and 63; retained as observed, not silently corrected to 62."
+      },
+      {
+        "line_id": "biliavsky-cont-line-04",
+        "reading": "Ѡвѣт: Гробъ Гс҃нь.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-05",
+        "reading": "63. Въпроⷭ: Что єⷭт верхъ ѡлтарю?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-06",
+        "reading": "Ѡвѣт: Плащеница.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-07",
+        "reading": "64. Въпроⷭ: Что єⷭт трапеза?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-08",
+        "reading": "Ѡвѣт: Перси Гс҃на.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-09",
+        "reading": "65. Въпроⷭ: Что єⷭт дари?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-10",
+        "reading": "Ѡвѣт: Хс҃.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-11",
+        "reading": "66. Въпроⷭ: Что єⷭт лыжица?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-12",
+        "reading": "Ѡвѣт: Бъ҃. [зверха дописано: ѡгнь].",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-13",
+        "reading": "67. [Въпроⷭ: Что єⷭт] кадилница?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-14",
+        "reading": "Ѡвѣт: Бц҃а.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-15",
+        "reading": "68. Въпроⷭ: Что єсть димїан?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-16",
+        "reading": "Ѡвѣт: Дх҃ъ ст҃ый.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-17",
+        "reading": "69. Въпроⷭ: Что єсть амвон?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-18",
+        "reading": "Ѡвѣт: Равна гора.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-19",
+        "reading": "70. Въпроⷭ: Что єⷭт єѵг҃ліє?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-20",
+        "reading": "Ѡвѣт: Оуста Гн҃а.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-21",
+        "reading": "71. Въпроⷭ: Что єⷭт столпи ѡлтарю?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-22",
+        "reading": "Ѡвѣт: Колѣнѣ Гс҃ни.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-23",
+        "reading": "72. Въпроⷭ: Что єⷭт порог ѡлтарю?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-24",
+        "reading": "Ѡвѣт: Войни стригꙋщей гроба Гс҃на.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-25",
+        "reading": "73. Въпроⷭ: Что єⷭт двери цр҃кви?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "biliavsky-cont-line-26",
+        "reading": "Ѡвѣт: Агг҃льскїй ѡбраз. Бꙋ҃ нашемꙋ слава.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "bila-line-01",
+        "reading": "(Вопроситъ ст҃їй Василїй, ѿповѣдає ст҃їй Гри-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "bila-line-02",
+        "reading": "горїй бг҃ословъ).",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "bila-line-03",
+        "reading": "1. Вопроⷭ: Кто двоє борет сѧ в мирѣ силнїє?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "bila-line-04",
+        "reading": "Ѡвѣт: Животъ и смр҃ть.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "bila-line-05",
+        "reading": "2. Вопроⷭ: Кто первїй пророкъ бж҃ієй таинѣ?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "bila-line-06",
+        "reading": "Ѡвѣт: Адамъ. Єгда єго Бг҃ъ творець сотвориⷧ и в раю",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "bila-line-07",
+        "reading": "єго посадилъ, в той часъ Адаⷨ оуснꙋлъ. Рече Гс҃дь:",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      }
+    ],
+    "language_annotation": {
+      "annotator": "GPT-6.2",
+      "date": "2026-11-25",
+      "status": "provisional",
+      "scope": "First-reading contiguous code-point language/script spans on all linguistic lines.",
+      "policy": "cu Church Slavonic; uk Ukrainian including tentative historical Ruthenian; ru Russian bibliographical title. Folio numerals untagged; historical language labels uncertain.",
+      "notes": "Church Slavonic-dominant catechetical register with local features; Ukrainian editorial prose and Russian bibliographic title separately tagged. This is provisional register attribution, not a verified classification."
+    }
+  }
+}
