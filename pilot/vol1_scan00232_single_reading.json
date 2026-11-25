@@ -341,7 +341,7 @@
           100,
           587,
           928,
-          135
+          100
         ],
         "geometry_estimated": true,
         "lines": [
@@ -407,7 +407,20 @@
                 "text_version": "gpt62-i232-first-image-20261125"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "joseph-family",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          688,
+          929,
+          736
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "joseph-title-l004",
             "text": "тафраста)*) Іяковъ патріарха старозаконный мѣвъ оу себе",
@@ -428,20 +441,7 @@
                 "text_version": "gpt62-i232-first-image-20261125"
               }
             ]
-          }
-        ]
-      },
-      {
-        "id": "joseph-family",
-        "kind": "body",
-        "bbox_xywh": [
-          100,
-          696,
-          929,
-          728
-        ],
-        "geometry_estimated": true,
-        "lines": [
+          },
           {
             "id": "joseph-family-l002",
             "text": "двѣ женѣ, за которые то служилъ Лавановѣ зі҃. лѣтъ: единой",
@@ -1094,6 +1094,11 @@
         "line_id": "joseph-family-l021",
         "reading": "оусѣшитки",
         "reason": "Historical vernacular word and spelling uncertain."
+      },
+      {
+        "line_id": "joseph-title-l004",
+        "reading": "тафраста)*)",
+        "reason": "The end of the scraped rubric and opening narrative share this physical line; title prefix remains visible in the body line, exact semantic boundary not projected as an overlay in this batch."
       }
     ],
     "source_note_links": [
