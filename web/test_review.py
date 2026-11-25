@@ -299,7 +299,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,75,70,0],['2',140,29,111,0],
+            self.assertEqual(result, [['1',145,78,67,0],['2',140,29,111,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -477,6 +477,14 @@ class ReviewSmoke(unittest.TestCase):
             ('1', 180, 'witness-c-label-l001'),
             ('1', 181, 'witness-g-label-l001'),
             ('1', 181, 'witness-d-label-l001'),
+            ('1', 183, 'section-xiii-l001'),
+            ('1', 183, 'witness-a-label-l001'),
+            ('1', 183, 'witness-b-label-l001'),
+            ('1', 196, 'witness-c-label-l001'),
+            ('1', 196, 'witness-g-label-l001'),
+            ('1', 197, 'witness-d-label-l001'),
+            ('1', 199, 'section-xiv-l001'),
+            ('1', 199, 'witness-a-label-l001'),
             ('2', 100, 'heading-e-line-01'),
             ('2', 100, 'heading-zh-line-01'),
         }
@@ -532,6 +540,30 @@ class ReviewSmoke(unittest.TestCase):
         self.assertIsNone(rec177['printed_page_observed'])
         self.assertFalse(any(r['kind'] == 'page_number' for r in rec177['reading']['regions']))
         self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 181 and len(e) > 6 and e[6]]), 2)
+        # Existing fully annotated readings are reused without rewriting their text or metadata.
+        for scan in (183, 196, 197, 198, 199):
+            reading = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            for region in reading['regions']:
+                for line in region['lines']:
+                    if not any(c.isalpha() for c in line['text']):
+                        continue
+                    spans = line['language_spans']
+                    self.assertTrue(spans)
+                    self.assertEqual(spans[0]['start'], 0)
+                    self.assertEqual(spans[-1]['end'], len(line['text']))
+                    self.assertTrue(all(a['end'] == b['start'] for a, b in zip(spans, spans[1:])))
+                    self.assertTrue(all(s['text_version'] == reading['reader_id'] for s in spans))
+        self.assertIn(('[Вродженє Ісава і Якова] ', 'uk', 'Cyrl'), annotated_literals(183))
+        self.assertIn(('англъ же рече: что ти есть имя? онъ же ѿвѣща:', 'cu', 'Cyrl'), annotated_literals(196))
+        self.assertIn(('vac.', 'la', 'Latn'), annotated_literals(197))
+        self.assertIn(('Апокрифическія сказ. о ветхозав. ли-', 'ru', 'Cyrl'), annotated_literals(198))
+        self.assertIn(('sic!', 'la', 'Latn'), annotated_literals(199))
+        for scan, count in ((183, 3), (196, 2), (197, 1), (199, 2)):
+            self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == scan and len(e) > 6 and e[6]]), count)
+        for scan in (183, 199):
+            record = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            self.assertIsNone(record['printed_page_observed'])
+            self.assertFalse(any(r['kind'] == 'page_number' for r in record['reading']['regions']))
         rec167 = json.loads((root / 'pilot/vol1_scan00167_single_reading.json').read_text(encoding='utf-8'))
         self.assertIsNone(rec167['printed_page_observed'])
         self.assertFalse(any(r['kind'] == 'page_number' for r in rec167['reading']['regions']))
