@@ -1,0 +1,691 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 139,
+  "printed_page_observed": "64",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00139.jpg",
+  "source_image_sha256": "7bd4fb8b641c087ccdcd8f98eaab3113621b584b3c80f6c4c55b0a1eec0ab973",
+  "reading": {
+    "reader_id": "gpt62-i139-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i139-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG without embedded OCR or peer page text. Surrounding project context visible; not isolated corroboration. Preserve physical rows, observed folio only, editorial discussion, section heading, source brackets, superscript apparatus markers and printer furniture. Historical glyphs and diacritics incomplete; no normalization. Geometry estimated; manifest SHA pending native-byte/XML checks.",
+    "raw_response": "64\nсолов. бібліот. 107). Нема сумніву, що наш апокріф є переводом\nгрецького тексту, давно затраченого, а звісного тільки по невелич-\nким цїтатам у візантийского хронїста Георгія Сінкелла і по на-\nтякам отцїв церкви Оріґена, Клїмента Александрійського, Тертуліана\nі др. та деяких пізнїйших апокріфів, як „Завіти 12-ти патріархів“\nТі фраґменти грецького тексту зібрані Фабріцієм в єго виданю Codex\nPsevdepigraphus Veteris Testamenti. Hamburgi, 1722, стор. 160—223.\nЧи словянський перевод передавав грецький текст вповнї, чи в ско-\nроченю, сего не можемо сказати. Грецький текст був переводом\nз жидівського, також затраченого первовзору, зложеного в головній\nчасти ще перед різдвом Христовим, та мабуть часто перероблюва-\nного. З того первовзору правдоподібно в перших віках христіянства\nзроблений був з одного боку грецький переклад, з котрого пішов\nнаш текст, а з другого боку сирійський чи арабський з котрого\nнайдалї в VI в. по Хр. зроблений був етіопський переклад. Сей\nостатнїй відкрито в р. 1773 в Абісінії, а уперве видано Лорансом\nв р. 1823 в англійськім переводї. З пізнїйших переводів згадаємо\nнїмецький Гофмана 1833., латинський Ґфререра 1840, французький\nМіня (Dictionnaire des Apocryphes t. I, 426—541), нїмецький Діль-\nмана 1853, англійський Шодде 1882. Сей текст етіопський значно\nобширнїйший і дуже відмінний від нашого. Резюме з него подав\nПорфірєв (Апокр. сказ. и ветхозав. лицахъ и событіяхъ, Казань\n1872., стор. 198—231). Покажчик важнїйших праць про сю книгу\nі переклад деяких відривків етіопського тексту гл. в книзї Dr. Otto\nZ ö c k l e r, Die Apokryphen des Alten Testaments nebst einem Anhang\nüber die Pseudepigraphenliteratur. München 1891, ст. 426—437. Ми\nперепечатали текст Попова без змін що до річи і мови, а позволили\nсобі тільки зазначити декуди очевидні по нашій думцї пропуски\nв текстї, котрих поки що ми не можемо поповнити порівнюючи\nнаш текст з яким небудь другим. Так само ми позмінювали значно\nінтерпункцію, бажаючи вчинити текст ясним, бо при хибній інтер-\nпункції захованій Поповим після рукопису, він дуже часто зовсїм\nтемний. Букви надстрочні з малими виємками ми з тіпоґрафського\nогляду позносили в текст; титли задержано, так само і великі\nбукви заховано не всюди там, де вони є в текстї Попова, а ста-\nвлено консеквентно при іменах власних і назвах народів",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            532,
+            1519,
+            261,
+            22
+          ],
+          "description": "Decorative closing rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          184,
+          97,
+          41,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "64",
+            "bbox_xywh": [
+              184,
+              97,
+              41,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-enoch-continuation",
+        "kind": "body",
+        "bbox_xywh": [
+          181,
+          167,
+          956,
+          1290
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-enoch-continuation-l001",
+            "text": "солов. бібліот. 107). Нема сумніву, що наш апокріф є переводом",
+            "bbox_xywh": [
+              181,
+              167,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l002",
+            "text": "грецького тексту, давно затраченого, а звісного тільки по невелич-",
+            "bbox_xywh": [
+              181,
+              203,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l003",
+            "text": "ким цїтатам у візантийского хронїста Георгія Сінкелла і по на-",
+            "bbox_xywh": [
+              181,
+              239,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l004",
+            "text": "тякам отцїв церкви Оріґена, Клїмента Александрійського, Тертуліана",
+            "bbox_xywh": [
+              181,
+              274,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l005",
+            "text": "і др. та деяких пізнїйших апокріфів, як „Завіти 12-ти патріархів“",
+            "bbox_xywh": [
+              181,
+              310,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l006",
+            "text": "Ті фраґменти грецького тексту зібрані Фабріцієм в єго виданю Codex",
+            "bbox_xywh": [
+              181,
+              346,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l007",
+            "text": "Psevdepigraphus Veteris Testamenti. Hamburgi, 1722, стор. 160—223.",
+            "bbox_xywh": [
+              181,
+              382,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l008",
+            "text": "Чи словянський перевод передавав грецький текст вповнї, чи в ско-",
+            "bbox_xywh": [
+              181,
+              418,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l009",
+            "text": "роченю, сего не можемо сказати. Грецький текст був переводом",
+            "bbox_xywh": [
+              181,
+              454,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l010",
+            "text": "з жидівського, також затраченого первовзору, зложеного в головній",
+            "bbox_xywh": [
+              181,
+              490,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l011",
+            "text": "части ще перед різдвом Христовим, та мабуть часто перероблюва-",
+            "bbox_xywh": [
+              181,
+              526,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l012",
+            "text": "ного. З того первовзору правдоподібно в перших віках христіянства",
+            "bbox_xywh": [
+              181,
+              562,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l013",
+            "text": "зроблений був з одного боку грецький переклад, з котрого пішов",
+            "bbox_xywh": [
+              181,
+              597,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l014",
+            "text": "наш текст, а з другого боку сирійський чи арабський з котрого",
+            "bbox_xywh": [
+              181,
+              633,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l015",
+            "text": "найдалї в VI в. по Хр. зроблений був етіопський переклад. Сей",
+            "bbox_xywh": [
+              181,
+              669,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l016",
+            "text": "остатнїй відкрито в р. 1773 в Абісінії, а уперве видано Лорансом",
+            "bbox_xywh": [
+              181,
+              705,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l017",
+            "text": "в р. 1823 в англійськім переводї. З пізнїйших переводів згадаємо",
+            "bbox_xywh": [
+              181,
+              741,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l018",
+            "text": "нїмецький Гофмана 1833., латинський Ґфререра 1840, французький",
+            "bbox_xywh": [
+              181,
+              777,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l019",
+            "text": "Міня (Dictionnaire des Apocryphes t. I, 426—541), нїмецький Діль-",
+            "bbox_xywh": [
+              181,
+              813,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l020",
+            "text": "мана 1853, англійський Шодде 1882. Сей текст етіопський значно",
+            "bbox_xywh": [
+              181,
+              849,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l021",
+            "text": "обширнїйший і дуже відмінний від нашого. Резюме з него подав",
+            "bbox_xywh": [
+              181,
+              884,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l022",
+            "text": "Порфірєв (Апокр. сказ. и ветхозав. лицахъ и событіяхъ, Казань",
+            "bbox_xywh": [
+              181,
+              920,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l023",
+            "text": "1872., стор. 198—231). Покажчик важнїйших праць про сю книгу",
+            "bbox_xywh": [
+              181,
+              956,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l024",
+            "text": "і переклад деяких відривків етіопського тексту гл. в книзї Dr. Otto",
+            "bbox_xywh": [
+              181,
+              992,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l025",
+            "text": "Z ö c k l e r, Die Apokryphen des Alten Testaments nebst einem Anhang",
+            "bbox_xywh": [
+              181,
+              1028,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l026",
+            "text": "über die Pseudepigraphenliteratur. München 1891, ст. 426—437. Ми",
+            "bbox_xywh": [
+              181,
+              1064,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l027",
+            "text": "перепечатали текст Попова без змін що до річи і мови, а позволили",
+            "bbox_xywh": [
+              181,
+              1100,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l028",
+            "text": "собі тільки зазначити декуди очевидні по нашій думцї пропуски",
+            "bbox_xywh": [
+              181,
+              1136,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l029",
+            "text": "в текстї, котрих поки що ми не можемо поповнити порівнюючи",
+            "bbox_xywh": [
+              181,
+              1172,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l030",
+            "text": "наш текст з яким небудь другим. Так само ми позмінювали значно",
+            "bbox_xywh": [
+              181,
+              1207,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l031",
+            "text": "інтерпункцію, бажаючи вчинити текст ясним, бо при хибній інтер-",
+            "bbox_xywh": [
+              181,
+              1243,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l032",
+            "text": "пункції захованій Поповим після рукопису, він дуже часто зовсїм",
+            "bbox_xywh": [
+              181,
+              1279,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l033",
+            "text": "темний. Букви надстрочні з малими виємками ми з тіпоґрафського",
+            "bbox_xywh": [
+              181,
+              1315,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l034",
+            "text": "огляду позносили в текст; титли задержано, так само і великі",
+            "bbox_xywh": [
+              181,
+              1351,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l035",
+            "text": "букви заховано не всюди там, де вони є в текстї Попова, а ста-",
+            "bbox_xywh": [
+              181,
+              1387,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-enoch-continuation-l036",
+            "text": "влено консеквентно при іменах власних і назвах народів",
+            "bbox_xywh": [
+              181,
+              1423,
+              956,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-enoch-continuation-l001",
+        "reading": "солов. бібліот. 107). Нема сумніву, що наш апокріф є переводом",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l002",
+        "reading": "грецького тексту, давно затраченого, а звісного тільки по невелич-",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l003",
+        "reading": "ким цїтатам у візантийского хронїста Георгія Сінкелла і по на-",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l004",
+        "reading": "тякам отцїв церкви Оріґена, Клїмента Александрійського, Тертуліана",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l005",
+        "reading": "і др. та деяких пізнїйших апокріфів, як „Завіти 12-ти патріархів“",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l006",
+        "reading": "Ті фраґменти грецького тексту зібрані Фабріцієм в єго виданю Codex",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l007",
+        "reading": "Psevdepigraphus Veteris Testamenti. Hamburgi, 1722, стор. 160—223.",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l008",
+        "reading": "Чи словянський перевод передавав грецький текст вповнї, чи в ско-",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l009",
+        "reading": "роченю, сего не можемо сказати. Грецький текст був переводом",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l010",
+        "reading": "з жидівського, також затраченого первовзору, зложеного в головній",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l011",
+        "reading": "части ще перед різдвом Христовим, та мабуть часто перероблюва-",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l012",
+        "reading": "ного. З того первовзору правдоподібно в перших віках христіянства",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l013",
+        "reading": "зроблений був з одного боку грецький переклад, з котрого пішов",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l014",
+        "reading": "наш текст, а з другого боку сирійський чи арабський з котрого",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l015",
+        "reading": "найдалї в VI в. по Хр. зроблений був етіопський переклад. Сей",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l016",
+        "reading": "остатнїй відкрито в р. 1773 в Абісінії, а уперве видано Лорансом",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l017",
+        "reading": "в р. 1823 в англійськім переводї. З пізнїйших переводів згадаємо",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l018",
+        "reading": "нїмецький Гофмана 1833., латинський Ґфререра 1840, французький",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l019",
+        "reading": "Міня (Dictionnaire des Apocryphes t. I, 426—541), нїмецький Діль-",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l020",
+        "reading": "мана 1853, англійський Шодде 1882. Сей текст етіопський значно",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l021",
+        "reading": "обширнїйший і дуже відмінний від нашого. Резюме з него подав",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l022",
+        "reading": "Порфірєв (Апокр. сказ. и ветхозав. лицахъ и событіяхъ, Казань",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l023",
+        "reading": "1872., стор. 198—231). Покажчик важнїйших праць про сю книгу",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l024",
+        "reading": "і переклад деяких відривків етіопського тексту гл. в книзї Dr. Otto",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l025",
+        "reading": "Z ö c k l e r, Die Apokryphen des Alten Testaments nebst einem Anhang",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l026",
+        "reading": "über die Pseudepigraphenliteratur. München 1891, ст. 426—437. Ми",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l027",
+        "reading": "перепечатали текст Попова без змін що до річи і мови, а позволили",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l028",
+        "reading": "собі тільки зазначити декуди очевидні по нашій думцї пропуски",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l029",
+        "reading": "в текстї, котрих поки що ми не можемо поповнити порівнюючи",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l030",
+        "reading": "наш текст з яким небудь другим. Так само ми позмінювали значно",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l031",
+        "reading": "інтерпункцію, бажаючи вчинити текст ясним, бо при хибній інтер-",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l032",
+        "reading": "пункції захованій Поповим після рукопису, він дуже часто зовсїм",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l033",
+        "reading": "темний. Букви надстрочні з малими виємками ми з тіпоґрафського",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l034",
+        "reading": "огляду позносили в текст; титли задержано, так само і великі",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l035",
+        "reading": "букви заховано не всюди там, де вони є в текстї Попова, а ста-",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      },
+      {
+        "line_id": "editorial-enoch-continuation-l036",
+        "reading": "влено консеквентно при іменах власних і назвах народів",
+        "reason": "Provisional direct printed reading; historical glyphs, titla, accents, breathings, numeral signs, bibliographic details, superscript references and typography require isolated visual rereading. Diacritic coverage incomplete."
+      }
+    ]
+  }
+}
