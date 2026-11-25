@@ -8,6 +8,11 @@ import subprocess
 from franko_tei.pilot_batch import discover_readings, check_draft_offline
 from franko_tei.review_adjudication import check_repository, project_lines
 from franko_tei.review_bundle import blob_sha
+from franko_tei.pilot_tei import PINNED_ASSET_COMMIT
+
+# Physical scan counts in the five immutable asset manifests at this commit.
+# These include front matter, blank/scan-only pages, and printed contents.
+SCAN_COUNTS = (469, 526, 446, 580, 316)
 
 
 def build(pilot, output, ref):
@@ -44,7 +49,25 @@ def build(pilot, output, ref):
             if corrected != text:
                 entries[volume].append(dict(scan=scan, suffix=suffix, text=corrected, reviewed=True))
     unavailable.extend({"path": p, "reason": "source_missing"} for p in sorted(affected-seen))
+    volumes = {}
+    for volume, rows in entries.items():
+        total = SCAN_COUNTS[int(volume)-1]
+        counts = {}
+        for row in rows:
+            if row.get("reviewed"):
+                continue
+            scan = row["scan"]
+            if type(scan) is not int or not 1 <= scan <= total:
+                raise ValueError(f"candidate outside pinned volume manifest: {volume}/{scan}")
+            counts[scan] = counts.get(scan, 0) + 1
+        volumes[volume] = dict(total=total, scans=sorted(counts),
+                               candidates=sum(counts.values()),
+                               multiple=sorted(n for n,c in counts.items() if c > 1))
     output.mkdir(parents=True, exist_ok=True)
+    (output / "coverage.json").write_text(
+        json.dumps(dict(ref=ref, asset_commit=PINNED_ASSET_COMMIT, volumes=volumes),
+                   separators=(",", ":")), encoding="utf-8",
+    )
     (output / "editorial.json").write_text(json.dumps(dict(ref=ref, pages=pages, unavailable=unavailable), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     for volume, rows in entries.items():
         (output / f"vol{volume}.json").write_text(
