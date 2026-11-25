@@ -1,0 +1,556 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 85,
+  "printed_page_observed": "10",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00085.jpg",
+  "source_image_sha256": "b4f123e570625571b85a2a310af5b34b7c5d13cd37bf231238076939e561c43a",
+  "reading": {
+    "reader_id": "gpt62-i85-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i85-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "First direct reading of original printed JPEG; no embedded OCR or peer page text. Surrounding project context visible, not isolated corroboration. Preserve observed physical rows, folio only if printed, editorial brackets and superscript Arabic note references as literal Unicode superscript digits followed by parenthesis. Do not invent missing note bodies. Geometry and historical glyphs approximate. Manifest SHA pending native-byte and XML validation in shared CI.",
+    "raw_response": "10\nствѣ лі҃ лѣт, съ оучн҃ки своими быс[ть] ні҃ лѣт а оувѣрая ст҃ое\nеѵгл҃іе д҃ лѣт[а]. в'сѣх лѣт л҃ и́ г҃. прчт҃ая быс[ть] въ чл҃цѣх\nи҃ и ѳ҃: въ ѡца и́ мтр҃е в҃ лѣтѣ, оу цр҃кви ві҃ лѣт, въ дому Іѡ-\nсифовѣ д҃ мс҃цѣ. На єі҃ лѣто изволи Гь҃ въплотитис[а]. А по воз-\nнесеніи Гн҃и въ дому Бг҃ослова лі҃ лѣтъ. А в'сѣх лѣт ѿ рж҃ства\nХва҃ до Адама ҂є҃ и́ ѳ҃. Пятого стана ѕ҃ роди са Хс҃. ѿ рж҃ства\nХва҃ до Константина цр҃я т҃ и́ і҃. И рус'ское цр҃ство разорися\nВавилонаны, вавилонское Пръсы, пръское Іерл҃имом, ієрл҃имское\nрымским, римское Ан'тихристом, Ан'тихво Хст҃ом и́стлѣетса.\nроди са Хс҃ з҃ дн҃ь а крстис[а] въ і҃ час нощи. ять быс[ть] въ є҃\nчас нощи, распят быс[ть] въ ѕ҃ час дн҃е, въскрсь въ ѕ҃ час нощи,\nвъзнесеся въ д҃ час дн҃е мс҃ца мая.\nСя статя — компіляция ріжних подробиць біблійних і апокріфічних, вибра-\nних головно з Палеї і із Житя Адама і Еви. Тексту єї я доси не находив печатаного.\nАналоґічні уступи о сотвореню Адама з вісьмох частей гл. в во-\nпросо-одвітах сьв. Івана Златоустого, Василія Великого і Григорія Бо-\nгослова (Н. С. Т и х о н р а в о в ъ, Памятники отреченной русской литера-\nтуры II, 433) і далї в отсїй книжцї; иньші імена дочок Адамових подає\nСлово Меѳодія Патарського (Т и х о н р а в о в ъ, op. cit. II, 213, 226\nі далї у нас), ще иньші находимо в Крехівській Палеї в уступі, котрий\nпечатаємо далї між легендами про Адама; о тім, як дві горлицї навчили\nАдама похоронити трупа Авеля гл. И. Я. П о р ф и р ь е в ъ, Апокриф.\nсказанія о ветхозав. лицахъ и событіяхъ, 106; о сїмох пімстах положе-\nних Богом на Каіна гл. П о р ф и р ь е в ъ, op. cit. 104; А. Н. П ы п и н ъ\nПамятники старинной русской литературы III, 172; о дозволї Ноєви\nі єго потомкам їсти мясо гл. далї легенди про Ноя.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            552,
+            1212,
+            223,
+            16
+          ],
+          "description": "Decorative closing rule."
+        },
+        {
+          "bbox_xywh": [
+            168,
+            1248,
+            972,
+            474
+          ],
+          "description": "Blank lower area; faint scan show-through not recto text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          180,
+          106,
+          42,
+          37
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "10",
+            "bbox_xywh": [
+              180,
+              106,
+              42,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "creation-christ-chronology",
+        "kind": "body",
+        "bbox_xywh": [
+          181,
+          173,
+          968,
+          430
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "creation-christ-chronology-l001",
+            "text": "ствѣ лі҃ лѣт, съ оучн҃ки своими быс[ть] ні҃ лѣт а оувѣрая ст҃ое",
+            "bbox_xywh": [
+              181,
+              173,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l002",
+            "text": "еѵгл҃іе д҃ лѣт[а]. в'сѣх лѣт л҃ и́ г҃. прчт҃ая быс[ть] въ чл҃цѣх",
+            "bbox_xywh": [
+              181,
+              209,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l003",
+            "text": "и҃ и ѳ҃: въ ѡца и́ мтр҃е в҃ лѣтѣ, оу цр҃кви ві҃ лѣт, въ дому Іѡ-",
+            "bbox_xywh": [
+              181,
+              245,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l004",
+            "text": "сифовѣ д҃ мс҃цѣ. На єі҃ лѣто изволи Гь҃ въплотитис[а]. А по воз-",
+            "bbox_xywh": [
+              181,
+              281,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l005",
+            "text": "несеніи Гн҃и въ дому Бг҃ослова лі҃ лѣтъ. А в'сѣх лѣт ѿ рж҃ства",
+            "bbox_xywh": [
+              181,
+              317,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l006",
+            "text": "Хва҃ до Адама ҂є҃ и́ ѳ҃. Пятого стана ѕ҃ роди са Хс҃. ѿ рж҃ства",
+            "bbox_xywh": [
+              181,
+              353,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l007",
+            "text": "Хва҃ до Константина цр҃я т҃ и́ і҃. И рус'ское цр҃ство разорися",
+            "bbox_xywh": [
+              181,
+              389,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l008",
+            "text": "Вавилонаны, вавилонское Пръсы, пръское Іерл҃имом, ієрл҃имское",
+            "bbox_xywh": [
+              181,
+              425,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l009",
+            "text": "рымским, римское Ан'тихристом, Ан'тихво Хст҃ом и́стлѣетса.",
+            "bbox_xywh": [
+              181,
+              461,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l010",
+            "text": "роди са Хс҃ з҃ дн҃ь а крстис[а] въ і҃ час нощи. ять быс[ть] въ є҃",
+            "bbox_xywh": [
+              181,
+              497,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l011",
+            "text": "час нощи, распят быс[ть] въ ѕ҃ час дн҃е, въскрсь въ ѕ҃ час нощи,",
+            "bbox_xywh": [
+              181,
+              533,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "creation-christ-chronology-l012",
+            "text": "възнесеся въ д҃ час дн҃е мс҃ца мая.",
+            "bbox_xywh": [
+              181,
+              569,
+              968,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-summary",
+        "kind": "body",
+        "bbox_xywh": [
+          184,
+          617,
+          960,
+          58
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-summary-l001",
+            "text": "Ся статя — компіляция ріжних подробиць біблійних і апокріфічних, вибра-",
+            "bbox_xywh": [
+              184,
+              617,
+              960,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-summary-l002",
+            "text": "них головно з Палеї і із Житя Адама і Еви. Тексту єї я доси не находив печатаного.",
+            "bbox_xywh": [
+              184,
+              646,
+              960,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-bibliography",
+        "kind": "body",
+        "bbox_xywh": [
+          185,
+          705,
+          969,
+          434
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-bibliography-l001",
+            "text": "Аналоґічні уступи о сотвореню Адама з вісьмох частей гл. в во-",
+            "bbox_xywh": [
+              185,
+              705,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l002",
+            "text": "просо-одвітах сьв. Івана Златоустого, Василія Великого і Григорія Бо-",
+            "bbox_xywh": [
+              185,
+              742,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l003",
+            "text": "гослова (Н. С. Т и х о н р а в о в ъ, Памятники отреченной русской литера-",
+            "bbox_xywh": [
+              185,
+              778,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l004",
+            "text": "туры II, 433) і далї в отсїй книжцї; иньші імена дочок Адамових подає",
+            "bbox_xywh": [
+              185,
+              814,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l005",
+            "text": "Слово Меѳодія Патарського (Т и х о н р а в о в ъ, op. cit. II, 213, 226",
+            "bbox_xywh": [
+              185,
+              851,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l006",
+            "text": "і далї у нас), ще иньші находимо в Крехівській Палеї в уступі, котрий",
+            "bbox_xywh": [
+              185,
+              887,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l007",
+            "text": "печатаємо далї між легендами про Адама; о тім, як дві горлицї навчили",
+            "bbox_xywh": [
+              185,
+              924,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l008",
+            "text": "Адама похоронити трупа Авеля гл. И. Я. П о р ф и р ь е в ъ, Апокриф.",
+            "bbox_xywh": [
+              185,
+              960,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l009",
+            "text": "сказанія о ветхозав. лицахъ и событіяхъ, 106; о сїмох пімстах положе-",
+            "bbox_xywh": [
+              185,
+              996,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l010",
+            "text": "них Богом на Каіна гл. П о р ф и р ь е в ъ, op. cit. 104; А. Н. П ы п и н ъ",
+            "bbox_xywh": [
+              185,
+              1033,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l011",
+            "text": "Памятники старинной русской литературы III, 172; о дозволї Ноєви",
+            "bbox_xywh": [
+              185,
+              1069,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l012",
+            "text": "і єго потомкам їсти мясо гл. далї легенди про Ноя.",
+            "bbox_xywh": [
+              185,
+              1105,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "creation-christ-chronology-l001",
+        "reading": "ствѣ лі҃ лѣт, съ оучн҃ки своими быс[ть] ні҃ лѣт а оувѣрая ст҃ое",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l002",
+        "reading": "еѵгл҃іе д҃ лѣт[а]. в'сѣх лѣт л҃ и́ г҃. прчт҃ая быс[ть] въ чл҃цѣх",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l003",
+        "reading": "и҃ и ѳ҃: въ ѡца и́ мтр҃е в҃ лѣтѣ, оу цр҃кви ві҃ лѣт, въ дому Іѡ-",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l004",
+        "reading": "сифовѣ д҃ мс҃цѣ. На єі҃ лѣто изволи Гь҃ въплотитис[а]. А по воз-",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l005",
+        "reading": "несеніи Гн҃и въ дому Бг҃ослова лі҃ лѣтъ. А в'сѣх лѣт ѿ рж҃ства",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l006",
+        "reading": "Хва҃ до Адама ҂є҃ и́ ѳ҃. Пятого стана ѕ҃ роди са Хс҃. ѿ рж҃ства",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l007",
+        "reading": "Хва҃ до Константина цр҃я т҃ и́ і҃. И рус'ское цр҃ство разорися",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l008",
+        "reading": "Вавилонаны, вавилонское Пръсы, пръское Іерл҃имом, ієрл҃имское",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l009",
+        "reading": "рымским, римское Ан'тихристом, Ан'тихво Хст҃ом и́стлѣетса.",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l010",
+        "reading": "роди са Хс҃ з҃ дн҃ь а крстис[а] въ і҃ час нощи. ять быс[ть] въ є҃",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l011",
+        "reading": "час нощи, распят быс[ть] въ ѕ҃ час дн҃е, въскрсь въ ѕ҃ час нощи,",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "creation-christ-chronology-l012",
+        "reading": "възнесеся въ д҃ час дн҃е мс҃ца мая.",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-summary-l001",
+        "reading": "Ся статя — компіляция ріжних подробиць біблійних і апокріфічних, вибра-",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-summary-l002",
+        "reading": "них головно з Палеї і із Житя Адама і Еви. Тексту єї я доси не находив печатаного.",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l001",
+        "reading": "Аналоґічні уступи о сотвореню Адама з вісьмох частей гл. в во-",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l002",
+        "reading": "просо-одвітах сьв. Івана Златоустого, Василія Великого і Григорія Бо-",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l003",
+        "reading": "гослова (Н. С. Т и х о н р а в о в ъ, Памятники отреченной русской литера-",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l004",
+        "reading": "туры II, 433) і далї в отсїй книжцї; иньші імена дочок Адамових подає",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l005",
+        "reading": "Слово Меѳодія Патарського (Т и х о н р а в о в ъ, op. cit. II, 213, 226",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l006",
+        "reading": "і далї у нас), ще иньші находимо в Крехівській Палеї в уступі, котрий",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l007",
+        "reading": "печатаємо далї між легендами про Адама; о тім, як дві горлицї навчили",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l008",
+        "reading": "Адама похоронити трупа Авеля гл. И. Я. П о р ф и р ь е в ъ, Апокриф.",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l009",
+        "reading": "сказанія о ветхозав. лицахъ и событіяхъ, 106; о сїмох пімстах положе-",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l010",
+        "reading": "них Богом на Каіна гл. П о р ф и р ь е в ъ, op. cit. 104; А. Н. П ы п и н ъ",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l011",
+        "reading": "Памятники старинной русской литературы III, 172; о дозволї Ноєви",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      },
+      {
+        "line_id": "editorial-bibliography-l012",
+        "reading": "і єго потомкам їсти мясо гл. далї легенди про Ноя.",
+        "reason": "Provisional printed source reading. Historical glyphs, titla, numeral letters, brackets, names, bibliography and superscript apparatus markers require isolated visual verification. Superscript Arabic numerals represent visible printed note references, not footnote text."
+      }
+    ]
+  }
+}

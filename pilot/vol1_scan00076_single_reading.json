@@ -1,0 +1,1018 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 76,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00076.jpg",
+  "source_image_sha256": "b72d76faa5f296aac9ff8a49f3f91a4052f0e044ebeab12ab8e7e1c634988a82",
+  "reading": {
+    "reader_id": "gpt62-i76-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i76-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "First direct reading of the pinned printed source JPEG; no embedded OCR or peer reading shown. Other pages and project context visible; not isolated corroboration. Preserve physical rows, folio and boundary fragments. For parallel columns use witness A then B, not interleaving text rows; keep distinct column geometry and blank alignment areas. Letter spacing, glyphs, titla and geometry approximate. Source hash claimed by pinned manifest; native-byte and XML validation pending CI.",
+    "raw_response": "1\nI. Індекс книг правдивих і заказаних.\nА. Рукопис о. Теодора з Ду-\nбовець (стор. 164—166).\nѠ к н и г а х,  к о т о р о у ю  п о-\nд о б а е т  ч е с т и.  В е т х а г о\nЗ а к о н а  к҃в.\nТол'ко бо слышахом ѿ жи-\nдов въображеніе а҃-а Быт[ь]а,\nв҃ Исход, г҃ Левиты, д҃ Числа,\nє҃ Вторыйзакон, ѕ҃ Іс҃ Навин, з҃\nСждна, и҃ Рꙋѳ, ѳ҃ д҃ Царствія,\nі҃ Єздра, аі҃ Ψалтыр, ві҃ Прит-\nчи, гі҃ Церковник, ді҃ Пѣсни\nпѣснем, єі҃ Іѡв, таж[е] ві҃ Про-\nрокы: а҃ Іѡсія, в҃ Амос, г҃ Ми-\nхея, д҃ Іѡл, є҃ Іѡна, ѕ҃ Авдей,\nз҃ Наоум, и҃ Аввакꙋм, ѳ҃ Со-\nфоній, і҃ Аггей, аі҃ Захарія. ві҃\nМалахія. Таж[е] вел[и]кых про-\nрок: а҃ Исаія, в҃ Єремея, г҃ Єзе-\nкеил, д҃ Даніил, посем Варꙋх\nпосланіе.\nН о в а г о ж[е]  З а к о н а:\nд҃ еѵгл҃исты: Матѳей, М[а]р-\n[ко], Лоука, Іѡан. Потом по\nапсл҃ьскꙋ Дѣян[і]а, посланіе\nсъборных з҃: а҃-е ѿ Іяковля,\nв҃ Петрово, г҃-е Іѡаново, д҃ Ію-\nБ. Рукопис о. Ілії Яремецького\nБілахевича (стор. 375—380).\nѠ к н и г а х ъ  б ы т е й с к и х,\nп р о р о ч е с к и х  С т а р а г о\nЗ а в ѣ т а,\nих' же приняла ст҃ая собор-\nная Цр҃ковь апостолская, их-\nже подобаетъ намъ христіа-\nном чести, их'же есть всѣхъ\nмд҃, ѿ нихже и́ парамеи чтꙋт-\nса (не вичислені).\nѠ к н и г а х ъ  Н о в а г о  З а-\nв ѣ т а: п р і й д е  б о  и с т и н н а\nГ д҃ ь  н ш҃ ъ  Х р҃ т о с  С н҃ ъ  и\nС л о в о  б ж҃ і е.\nНоваго же Завѣта: Єѵгл҃ія,\nДѣянія апостолска, Посланія\nАпокріфи старозавітні.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            514,
+            530,
+            78,
+            12
+          ],
+          "description": "Decorative rule under section heading."
+        },
+        {
+          "bbox_xywh": [
+            584,
+            1008,
+            449,
+            366
+          ],
+          "description": "Blank space between aligned comparison sections in right witness column."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "other",
+        "bbox_xywh": [
+          924,
+          1613,
+          38,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "1",
+            "bbox_xywh": [
+              927,
+              1616,
+              32,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          137,
+          468,
+          821,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-l001",
+            "text": "I. Індекс книг правдивих і заказаних.",
+            "bbox_xywh": [
+              140,
+              471,
+              815,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          68,
+          576,
+          461,
+          75
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-label-l001",
+            "text": "А. Рукопис о. Теодора з Ду-",
+            "bbox_xywh": [
+              71,
+              579,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-label-l002",
+            "text": "бовець (стор. 164—166).",
+            "bbox_xywh": [
+              71,
+              615,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-old-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          67,
+          669,
+          461,
+          112
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-old-heading-l001",
+            "text": "Ѡ к н и г а х,  к о т о р о у ю  п о-",
+            "bbox_xywh": [
+              70,
+              672,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-heading-l002",
+            "text": "д о б а е т  ч е с т и.  В е т х а г о",
+            "bbox_xywh": [
+              70,
+              709,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-heading-l003",
+            "text": "З а к о н а  к҃в.",
+            "bbox_xywh": [
+              70,
+              745,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-old-text",
+        "kind": "body",
+        "bbox_xywh": [
+          67,
+          788,
+          462,
+          577
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-old-text-l001",
+            "text": "Тол'ко бо слышахом ѿ жи-",
+            "bbox_xywh": [
+              70,
+              791,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l002",
+            "text": "дов въображеніе а҃-а Быт[ь]а,",
+            "bbox_xywh": [
+              70,
+              827,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l003",
+            "text": "в҃ Исход, г҃ Левиты, д҃ Числа,",
+            "bbox_xywh": [
+              70,
+              863,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l004",
+            "text": "є҃ Вторыйзакон, ѕ҃ Іс҃ Навин, з҃",
+            "bbox_xywh": [
+              70,
+              899,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l005",
+            "text": "Сждна, и҃ Рꙋѳ, ѳ҃ д҃ Царствія,",
+            "bbox_xywh": [
+              70,
+              935,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l006",
+            "text": "і҃ Єздра, аі҃ Ψалтыр, ві҃ Прит-",
+            "bbox_xywh": [
+              70,
+              971,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l007",
+            "text": "чи, гі҃ Церковник, ді҃ Пѣсни",
+            "bbox_xywh": [
+              70,
+              1007,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l008",
+            "text": "пѣснем, єі҃ Іѡв, таж[е] ві҃ Про-",
+            "bbox_xywh": [
+              70,
+              1042,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l009",
+            "text": "рокы: а҃ Іѡсія, в҃ Амос, г҃ Ми-",
+            "bbox_xywh": [
+              70,
+              1078,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l010",
+            "text": "хея, д҃ Іѡл, є҃ Іѡна, ѕ҃ Авдей,",
+            "bbox_xywh": [
+              70,
+              1114,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l011",
+            "text": "з҃ Наоум, и҃ Аввакꙋм, ѳ҃ Со-",
+            "bbox_xywh": [
+              70,
+              1150,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l012",
+            "text": "фоній, і҃ Аггей, аі҃ Захарія. ві҃",
+            "bbox_xywh": [
+              70,
+              1186,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l013",
+            "text": "Малахія. Таж[е] вел[и]кых про-",
+            "bbox_xywh": [
+              70,
+              1222,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l014",
+            "text": "рок: а҃ Исаія, в҃ Єремея, г҃ Єзе-",
+            "bbox_xywh": [
+              70,
+              1258,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l015",
+            "text": "кеил, д҃ Даніил, посем Варꙋх",
+            "bbox_xywh": [
+              70,
+              1293,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-old-text-l016",
+            "text": "посланіе.",
+            "bbox_xywh": [
+              70,
+              1329,
+              456,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-new-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          104,
+          1389,
+          425,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-new-heading-l001",
+            "text": "Н о в а г о ж[е]  З а к о н а:",
+            "bbox_xywh": [
+              107,
+              1392,
+              419,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-new-text",
+        "kind": "body",
+        "bbox_xywh": [
+          67,
+          1438,
+          461,
+          184
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-new-text-l001",
+            "text": "д҃ еѵгл҃исты: Матѳей, М[а]р-",
+            "bbox_xywh": [
+              70,
+              1441,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-text-l002",
+            "text": "[ко], Лоука, Іѡан. Потом по",
+            "bbox_xywh": [
+              70,
+              1477,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-text-l003",
+            "text": "апсл҃ьскꙋ Дѣян[і]а, посланіе",
+            "bbox_xywh": [
+              70,
+              1514,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-text-l004",
+            "text": "съборных з҃: а҃-е ѿ Іяковля,",
+            "bbox_xywh": [
+              70,
+              1550,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-new-text-l005",
+            "text": "в҃ Петрово, г҃-е Іѡаново, д҃ Ію-",
+            "bbox_xywh": [
+              70,
+              1586,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          583,
+          576,
+          468,
+          75
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-label-l001",
+            "text": "Б. Рукопис о. Ілії Яремецького",
+            "bbox_xywh": [
+              586,
+              579,
+              462,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-label-l002",
+            "text": "Білахевича (стор. 375—380).",
+            "bbox_xywh": [
+              586,
+              615,
+              462,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-old-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          581,
+          669,
+          470,
+          112
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-old-heading-l001",
+            "text": "Ѡ к н и г а х ъ  б ы т е й с к и х,",
+            "bbox_xywh": [
+              584,
+              672,
+              464,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-heading-l002",
+            "text": "п р о р о ч е с к и х  С т а р а г о",
+            "bbox_xywh": [
+              584,
+              709,
+              464,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-heading-l003",
+            "text": "З а в ѣ т а,",
+            "bbox_xywh": [
+              584,
+              745,
+              464,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-old-text",
+        "kind": "body",
+        "bbox_xywh": [
+          581,
+          790,
+          461,
+          219
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-old-text-l001",
+            "text": "их' же приняла ст҃ая собор-",
+            "bbox_xywh": [
+              584,
+              793,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-text-l002",
+            "text": "ная Цр҃ковь апостолская, их-",
+            "bbox_xywh": [
+              584,
+              829,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-text-l003",
+            "text": "же подобаетъ намъ христіа-",
+            "bbox_xywh": [
+              584,
+              865,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-text-l004",
+            "text": "ном чести, их'же есть всѣхъ",
+            "bbox_xywh": [
+              584,
+              901,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-text-l005",
+            "text": "мд҃, ѿ нихже и́ парамеи чтꙋт-",
+            "bbox_xywh": [
+              584,
+              937,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-old-text-l006",
+            "text": "са (не вичислені).",
+            "bbox_xywh": [
+              584,
+              973,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-new-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          583,
+          1386,
+          461,
+          146
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-new-heading-l001",
+            "text": "Ѡ к н и г а х ъ  Н о в а г о  З а-",
+            "bbox_xywh": [
+              586,
+              1389,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-heading-l002",
+            "text": "в ѣ т а: п р і й д е  б о  и с т и н н а",
+            "bbox_xywh": [
+              586,
+              1425,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-heading-l003",
+            "text": "Г д҃ ь  н ш҃ ъ  Х р҃ т о с  С н҃ ъ  и",
+            "bbox_xywh": [
+              586,
+              1460,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-heading-l004",
+            "text": "С л о в о  б ж҃ і е.",
+            "bbox_xywh": [
+              586,
+              1496,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-new-text",
+        "kind": "body",
+        "bbox_xywh": [
+          581,
+          1540,
+          461,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-new-text-l001",
+            "text": "Новаго же Завѣта: Єѵгл҃ія,",
+            "bbox_xywh": [
+              584,
+              1543,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-new-text-l002",
+            "text": "Дѣянія апостолска, Посланія",
+            "bbox_xywh": [
+              584,
+              1578,
+              455,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "series-footer",
+        "kind": "other",
+        "bbox_xywh": [
+          137,
+          1628,
+          254,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-footer-l001",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              140,
+              1631,
+              248,
+              24
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "section-title-l001",
+        "reading": "I. Індекс книг правдивих і заказаних.",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-label-l001",
+        "reading": "А. Рукопис о. Теодора з Ду-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-label-l002",
+        "reading": "бовець (стор. 164—166).",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-heading-l001",
+        "reading": "Ѡ к н и г а х,  к о т о р о у ю  п о-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-heading-l002",
+        "reading": "д о б а е т  ч е с т и.  В е т х а г о",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-heading-l003",
+        "reading": "З а к о н а  к҃в.",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l001",
+        "reading": "Тол'ко бо слышахом ѿ жи-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l002",
+        "reading": "дов въображеніе а҃-а Быт[ь]а,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l003",
+        "reading": "в҃ Исход, г҃ Левиты, д҃ Числа,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l004",
+        "reading": "є҃ Вторыйзакон, ѕ҃ Іс҃ Навин, з҃",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l005",
+        "reading": "Сждна, и҃ Рꙋѳ, ѳ҃ д҃ Царствія,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l006",
+        "reading": "і҃ Єздра, аі҃ Ψалтыр, ві҃ Прит-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l007",
+        "reading": "чи, гі҃ Церковник, ді҃ Пѣсни",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l008",
+        "reading": "пѣснем, єі҃ Іѡв, таж[е] ві҃ Про-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l009",
+        "reading": "рокы: а҃ Іѡсія, в҃ Амос, г҃ Ми-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l010",
+        "reading": "хея, д҃ Іѡл, є҃ Іѡна, ѕ҃ Авдей,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l011",
+        "reading": "з҃ Наоум, и҃ Аввакꙋм, ѳ҃ Со-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l012",
+        "reading": "фоній, і҃ Аггей, аі҃ Захарія. ві҃",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l013",
+        "reading": "Малахія. Таж[е] вел[и]кых про-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l014",
+        "reading": "рок: а҃ Исаія, в҃ Єремея, г҃ Єзе-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l015",
+        "reading": "кеил, д҃ Даніил, посем Варꙋх",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-old-text-l016",
+        "reading": "посланіе.",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-new-heading-l001",
+        "reading": "Н о в а г о ж[е]  З а к о н а:",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-new-text-l001",
+        "reading": "д҃ еѵгл҃исты: Матѳей, М[а]р-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-new-text-l002",
+        "reading": "[ко], Лоука, Іѡан. Потом по",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-new-text-l003",
+        "reading": "апсл҃ьскꙋ Дѣян[і]а, посланіе",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-new-text-l004",
+        "reading": "съборных з҃: а҃-е ѿ Іяковля,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-a-new-text-l005",
+        "reading": "в҃ Петрово, г҃-е Іѡаново, д҃ Ію-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-label-l001",
+        "reading": "Б. Рукопис о. Ілії Яремецького",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-label-l002",
+        "reading": "Білахевича (стор. 375—380).",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-heading-l001",
+        "reading": "Ѡ к н и г а х ъ  б ы т е й с к и х,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-heading-l002",
+        "reading": "п р о р о ч е с к и х  С т а р а г о",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-heading-l003",
+        "reading": "З а в ѣ т а,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-text-l001",
+        "reading": "их' же приняла ст҃ая собор-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-text-l002",
+        "reading": "ная Цр҃ковь апостолская, их-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-text-l003",
+        "reading": "же подобаетъ намъ христіа-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-text-l004",
+        "reading": "ном чести, их'же есть всѣхъ",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-text-l005",
+        "reading": "мд҃, ѿ нихже и́ парамеи чтꙋт-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-old-text-l006",
+        "reading": "са (не вичислені).",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-new-heading-l001",
+        "reading": "Ѡ к н и г а х ъ  Н о в а г о  З а-",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-new-heading-l002",
+        "reading": "в ѣ т а: п р і й д е  б о  и с т и н н а",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-new-heading-l003",
+        "reading": "Г д҃ ь  н ш҃ ъ  Х р҃ т о с  С н҃ ъ  и",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-new-heading-l004",
+        "reading": "С л о в о  б ж҃ і е.",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-new-text-l001",
+        "reading": "Новаго же Завѣта: Єѵгл҃ія,",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "witness-b-new-text-l002",
+        "reading": "Дѣянія апостолска, Посланія",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "series-footer-l001",
+        "reading": "Апокріфи старозавітні.",
+        "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "folio-l001",
+        "reading": "1",
+        "reason": "Post-capture structural audit: bottom-right numeral beside the series footer is most likely a printer's quire signature, as on scans 66 and 74; following scans show folios 2 and 3 at the top. Logical page 1 is inferred, not an unambiguous observed folio. Preserve the original transcription, line ID and ordering; reclassify only the region and observed folio metadata."
+      }
+    ]
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 75,
+  "printed_page_observed": "LXVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00075.jpg",
+  "source_image_sha256": "7f461453987a821e4982223821d58d4187839671774769aa93d4226d2eaa04ac",
+  "reading": {
+    "reader_id": "gpt62-i75-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i75-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "First direct reading of the pinned printed source JPEG; no embedded OCR or peer reading shown. Other pages and project context visible; not isolated corroboration. Preserve physical rows, folio and boundary fragments. For parallel columns use witness A then B, not interleaving text rows; keep distinct column geometry and blank alignment areas. Letter spacing, glyphs, titla and geometry approximate. Source hash claimed by pinned manifest; native-byte and XML validation pending CI.",
+    "raw_response": "LXVI\nдоставленє мінї рукопису о. Яремецького-Білахевича, о. М. Зубриць-\nкому в Мшанци за доставленє мінї рукопису Дрогобицького, В. Гна-\nтюкови за доставленє мінї рукопису о. Ст. Теслевцьового і селяни-\nнови Гулейчукови з Іспаса над Черемошем за доставленє мінї\nІспаського рукопису.\nЛьвів 9. сїчня 1897.\nДр. Іван Франко.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            524,
+            599,
+            238,
+            26
+          ],
+          "description": "Decorative horizontal tailpiece, not text."
+        },
+        {
+          "bbox_xywh": [
+            144,
+            636,
+            996,
+            1080
+          ],
+          "description": "Blank lower part with faint show-through and scattered scan marks; no printed recto text observed."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          165,
+          63,
+          97,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "LXVI",
+            "bbox_xywh": [
+              168,
+              66,
+              91,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "acknowledgements",
+        "kind": "body",
+        "bbox_xywh": [
+          160,
+          137,
+          984,
+          184
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "acknowledgements-l001",
+            "text": "доставленє мінї рукопису о. Яремецького-Білахевича, о. М. Зубриць-",
+            "bbox_xywh": [
+              163,
+              140,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "acknowledgements-l002",
+            "text": "кому в Мшанци за доставленє мінї рукопису Дрогобицького, В. Гна-",
+            "bbox_xywh": [
+              163,
+              176,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "acknowledgements-l003",
+            "text": "тюкови за доставленє мінї рукопису о. Ст. Теслевцьового і селяни-",
+            "bbox_xywh": [
+              163,
+              212,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "acknowledgements-l004",
+            "text": "нови Гулейчукови з Іспаса над Черемошем за доставленє мінї",
+            "bbox_xywh": [
+              163,
+              248,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "acknowledgements-l005",
+            "text": "Іспаського рукопису.",
+            "bbox_xywh": [
+              163,
+              284,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface-date",
+        "kind": "body",
+        "bbox_xywh": [
+          299,
+          335,
+          306,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-date-l001",
+            "text": "Львів 9. сїчня 1897.",
+            "bbox_xywh": [
+              302,
+              338,
+              300,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface-signature",
+        "kind": "body",
+        "bbox_xywh": [
+          789,
+          393,
+          294,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-signature-l001",
+            "text": "Др. Іван Франко.",
+            "bbox_xywh": [
+              792,
+              396,
+              288,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "acknowledgements-l001",
+        "reading": "доставленє мінї рукопису о. Яремецького-Білахевича, о. М. Зубриць-",
+        "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
+      },
+      {
+        "line_id": "acknowledgements-l002",
+        "reading": "кому в Мшанци за доставленє мінї рукопису Дрогобицького, В. Гна-",
+        "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
+      },
+      {
+        "line_id": "acknowledgements-l003",
+        "reading": "тюкови за доставленє мінї рукопису о. Ст. Теслевцьового і селяни-",
+        "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
+      },
+      {
+        "line_id": "acknowledgements-l004",
+        "reading": "нови Гулейчукови з Іспаса над Черемошем за доставленє мінї",
+        "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
+      },
+      {
+        "line_id": "acknowledgements-l005",
+        "reading": "Іспаського рукопису.",
+        "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
+      },
+      {
+        "line_id": "preface-date-l001",
+        "reading": "Львів 9. сїчня 1897.",
+        "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
+      },
+      {
+        "line_id": "preface-signature-l001",
+        "reading": "Др. Іван Франко.",
+        "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
+      }
+    ]
+  }
+}
