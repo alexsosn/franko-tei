@@ -372,67 +372,69 @@ const volumeContents = {
         440,
         "II. Оповіданя про ап. Петра.",
         "14",
-        null
+        98,
+        0,
+        "Printed contents gives 14–15 for item A; actual section opens on p. 12 (scan 98)."
       ],
       [
         440,
         "III. Оповіданя про сьв. Павла.",
         "28",
-        null
+        114
       ],
       [
         441,
         "IV. Оповіданя про сьв. Івана Богослова.",
         "49",
-        null
+        135
       ],
       [
         441,
         "V. Оповіданя про сьв. Тому.",
         "91",
-        null
+        177
       ],
       [
         442,
         "VI. Оповіданя про сьв. Андрія.",
         "126",
-        null
+        212
       ],
       [
         442,
         "VII. Оповіданя про сьв. Матвія.",
         "156",
-        null
+        242
       ],
       [
         442,
         "VIII. Оповіданя про сьв. Филипа.",
         "170",
-        null
+        256
       ],
       [
         443,
         "IX. Оповіданя про Якова брата Господнього.",
         "185",
-        null
+        271
       ],
       [
         443,
         "X. Оповіданя про иньших апостолів.",
         "192",
-        null
+        278
       ],
       [
         443,
         "XI. Оповіданя про євангелистів Марка і Луку",
         "200",
-        null
+        286
       ],
       [
         444,
         "XII. Оповіданя про апостольських учеників.",
         "213",
-        null
+        299
       ],
       [
         446,
@@ -875,7 +877,7 @@ const volumeContents = {
 };
 function closeContents(){ $('contentsPanel').hidden=true;$('contentsOpen').setAttribute('aria-expanded','false'); }
 function jumpContents(v,n){if($('volume').value!==v||!Number.isInteger(n)||n<1||n>counts[Number(v)])return;closeContents();$('page').value=String(n);load();}
-function renderContents(){const v=$('volume').value,d=volumeContents[v];$('contentsSources').replaceChildren();$('contentsEntries').replaceChildren();if(!d)return;message('contentsTitle','Contents · Зміст — Volume '+v);message('contentsStatus','Provisional image reading. '+d.coverage+' Printed numbers are distinct from scan indices; unavailable destinations are not guessed. Section start numbers derive from first listed item.');for(const n of d.sources){const b=document.createElement('button');b.type='button';b.textContent='Scan '+n;b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}for(const [source,title,printed,scan,depth] of d.entries){const li=document.createElement('li');if(depth)li.className='subentry';const label=title+(printed?' · p. '+printed:'');if(scan!==null){const b=document.createElement('button');b.type='button';b.dataset.scan=String(scan);b.textContent=label;b.onclick=()=>jumpContents(v,scan);li.append(b);}else {const t=document.createElement('span');t.textContent=label+' (destination pending)';li.append(t);}const b=document.createElement('button');b.type='button';b.className='source-link';b.textContent='TOC '+source;b.setAttribute('aria-label','Open original contents scan '+source+' for '+title);b.onclick=()=>jumpContents(v,source);li.append(b);$('contentsEntries').append(li);}}
+function renderContents(){const v=$('volume').value,d=volumeContents[v];$('contentsSources').replaceChildren();$('contentsEntries').replaceChildren();if(!d)return;message('contentsTitle','Contents · Зміст — Volume '+v);message('contentsStatus','Provisional image reading. '+d.coverage+' Printed numbers are distinct from scan indices; unavailable destinations are not guessed. Section start numbers derive from first listed item.');for(const n of d.sources){const b=document.createElement('button');b.type='button';b.textContent='Scan '+n;b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}for(const [source,title,printed,scan,depth,note] of d.entries){const li=document.createElement('li');if(depth)li.className='subentry';const label=title+(printed?' · p. '+printed:'');if(scan!==null){const b=document.createElement('button');b.type='button';b.dataset.scan=String(scan);b.textContent=label;b.onclick=()=>jumpContents(v,scan);li.append(b);}else {const t=document.createElement('span');t.textContent=label+' (destination pending)';li.append(t);}const b=document.createElement('button');b.type='button';b.className='source-link';b.textContent='TOC '+source;b.setAttribute('aria-label','Open original contents scan '+source+' for '+title);b.onclick=()=>jumpContents(v,source);li.append(b);if(note){const t=document.createElement('small');t.textContent=' · '+note;li.append(t);}$('contentsEntries').append(li);}}
 $('contentsOpen').onclick=()=>{if(!$('contentsPanel').hidden){closeContents();return;}renderContents();$('contentsPanel').hidden=false;$('contentsOpen').setAttribute('aria-expanded','true');};
 const params=new URLSearchParams(location.hash.slice(1));if(['1','2','3','4','5'].includes(params.get('v')))$('volume').value=params.get('v');if(params.has('p'))$('page').value=params.get('p');if(params.has('ref'))$('ref').value=params.get('ref');updateMode();load();
 </script>
