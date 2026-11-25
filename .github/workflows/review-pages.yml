@@ -23,10 +23,13 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: pip install -e . playwright fonttools brotli
+      - run: python web/test_editorial_projection.py
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_fonts.py
@@ -42,6 +45,8 @@ jobs:
       artifact_id: ${{ steps.upload.outputs.artifact_id }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
