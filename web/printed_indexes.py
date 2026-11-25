@@ -53,6 +53,50 @@ EXTRA_PAGES = {
             "left-z": [1,2,4,5,7,9,10,11,13,14,15,16,17,18,19,20,21],
             "left-i": [1,2],
             "right": [1,2,3,4,5,6,7,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,28,29,30,31,32,44,45,46,47,49]}),
+        (422, "gpt62-i422-first-image-20261125", {
+            "left": [1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,24,25,26,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,44,45,46,49],
+            "right": [11,12,13,14,15,16,17,18,19,20,21,22,23,25,27,33,34,35,36,37,38,39,40,41,42,43,44,45,48,49]}),
+        (423, "gpt62-i423-first-image-20261125", {
+            "left-i": [1,2,3,4,12,13,14,15,16,17],
+            "left-k": [1,2,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,26,27,28],
+            "right-k": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+            "right-l": [1,2,3,4,5,6,7,9,10,14,15,16,17,18,19]}),
+        (424, "gpt62-i424-first-image-20261125", {
+            "left-l": [1,2,6,7,8,9,10,11,12,13,14,15,16],
+            "left-m": [1,2,3,4,5,6,7,9,10,11,12,13,14,15,16,17,18,20,21,22,23,24,25,26,27,28,29,30],
+            "right": [1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,26,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,48]}),
+        (425, "gpt62-i425-first-image-20261125", {
+            "left-m": [2,3,4,5,6,7,8,9,10,17,18,19,20,21,23,25,26,27,28,29,31,32],
+            "left-n": [1,2,3,6,7,8,9,10,11,12,13],
+            "right-n": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,29],
+            "right-o": [1,2,3,4,5,6,7,8,9,10,11,12,13,14]}),
+        (426, "gpt62-i426-first-image-20261125", {
+            "left-p": [2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
+            "left-r": [1,2,4,5,6,7,11],
+            "right-r": [1,3,4,5,6,7,8,9,10,11,12,17,18,19,20,21,22],
+            "right-s": [1,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23]}),
+        (427, "gpt62-i427-first-image-20261125", {
+            "left": [1,2,3,4,6,8,9,10,11,12,13,14,15,16,17,19,20,21,22,23,24,25,26,27,28,30,34,35,36,37,38,39,40,41,43,44,45,46,47,48,49],
+            "right": [1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,21,22,23,24,25,26,27,28,31,32,33,34,35,36,37,38,39,40,41,42,43,48,49]}),
+        (428, "gpt62-i428-first-image-20261125", {
+            "left-s": [1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+            "left-t": [1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18],
+            "left-u": [1,2,3,4,5,6,7],
+            "right-u": [1,2,3,4],
+            "right-f": [1,2,3,4,5,6,7,8,9,11,19,20,21,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41]}),
+        (429, "gpt62-i429-first-image-20261125", {
+            "left-f": [1,2,3,4],
+            "left-x": [1,2,3,4,5,6,7,9,10,11,12,13,14,15,17,18,20,21,22,23,24,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42],
+            "right-x": [1,2,3,4,5,6,7,8,17,18,19,20,21],
+            "right-theta": [1,2,3,4],
+            "right-ts": [1,2,3,4],
+            "right-ch": [2,3,4,5],
+            "right-ya": [1,2]}),
+        (430, "gpt62-i430-first-image-20261125", {
+            "left": [14],
+            "right-ya": [4,5,6],
+            "right-yu": [1],
+            "right-shch": [1]}),
     ),
     "glossary": (
         (460, "gpt62-i460-first-image-20261125", {
@@ -68,6 +112,93 @@ EXTRA_PAGES = {
 }
 # Editorial context is separate from the printed ditto glyphs.
 NAME_CONTEXTS = {
+    (422, "left", 10): "Індийські",
+    (422, "left", 12): "Індия",
+    (422, "left", 13): "ефіопська",
+    (422, "left", 19): "Іоав",
+    (422, "left", 24): "Іоан",
+    (422, "left", 25): "Іоан",
+    (422, "left", 26): "Іоан",
+    (422, "left", 27): "Іоан",
+    (422, "left", 36): "пророк",
+    (422, "left", 37): "пророк",
+    (422, "left", 46): "Іосиф",
+    (422, "right", 35): "Ісахар",
+    (422, "right", 42): "Ісус",
+    (422, "right", 43): "Ісус",
+    (422, "right", 44): "Ісус",
+    (422, "right", 45): "Ісус",
+    (422, "right", 46): "Ісус",
+    (423, "left-i", 5): "Іюда",
+    (423, "left-k", 2): "син Левії",
+    (423, "left-k", 7): "Каінан син",
+    (423, "left-k", 10): "мати трьох отроків",
+    (423, "left-k", 20): "син Ізмаїла",
+    (423, "right-k", 2): "Кирил",
+    (423, "right-k", 3): "Кирил",
+    (423, "right-k", 7): "негниюче дерево",
+    (423, "right-k", 10): "Козма",
+    (423, "right-k", 11): "Козма",
+    (423, "right-k", 15): "Константин",
+    (423, "right-k", 20): "Крон",
+    (423, "right-l", 6): "цар вавилонський",
+    (423, "right-l", 7): "цар вавилонський",
+    (424, "left-l", 14): "Лювійські",
+    (424, "left-m", 12): "Макарий",
+    (424, "left-m", 14): "Максим",
+    (424, "left-m", 18): "Малелеіл",
+    (424, "right", 6): "сестра Мойсеєва",
+    (424, "right", 12): "син Ізмаїлів",
+    (424, "right", 14): "Матѳей",
+    (424, "right", 16): "син Енохів",
+    (424, "right", 17): "син Енохів",
+    (424, "right", 31): "син Левіїв",
+    (424, "right", 37): "син Енохів",
+    (425, "left-m", 4): "пророк",
+    (425, "left-m", 9): "Моавля",
+    (425, "left-m", 20): "син Ноїв",
+    (425, "left-m", 30): "Мунт",
+    (425, "left-n", 10): "пророк",
+    (425, "left-n", 12): "син Ізмаїла",
+    (425, "right-n", 7): "гл. Неврод",
+    (425, "right-n", 18): "Ніл",
+    (425, "right-n", 19): "Ніл",
+    (425, "right-n", 21): "Нікон",
+    (426, "left-p", 4): "Павло",
+    (426, "left-p", 16): "Персида",
+    (426, "left-p", 29): "цар ізмаїльський",
+    (426, "left-r", 2): "ангел",
+    (426, "left-r", 3): "Рагуїл",
+    (426, "left-r", 7): "город",
+    (427, "left", 14): "архангел",
+    (427, "left", 15): "архангел",
+    (427, "left", 29): "Семеон",
+    (427, "left", 37): "Семфора",
+    (427, "right", 15): "Симеон",
+    (427, "right", 16): "Симеон",
+    (428, "left-t", 7): "Теодор",
+    (428, "left-t", 8): "Теодор",
+    (428, "left-t", 14): "ріка",
+    (428, "left-u", 3): "Угорська",
+    (428, "right-u", 3): "Урия",
+    (428, "right-f", 25): "Фелоной",
+    (428, "right-f", 28): "ріка",
+    (428, "right-f", 34): "Филип",
+    (428, "right-f", 38): "Филон",
+    (429, "left-f", 3): "цар",
+    (429, "left-x", 14): "Хамово",
+    (429, "left-x", 16): "земля",
+    (429, "left-x", 25): "Хеврон",
+    (429, "left-x", 30): "племя",
+    (429, "left-x", 39): "цар",
+    (429, "right-x", 2): "цар",
+    (429, "right-x", 6): "цар",
+    (429, "right-x", 7): "цар",
+    (429, "right-x", 8): "цар",
+    (429, "right-x", 19): "цар",
+    (429, "right-x", 21): "Хус",
+    (429, "right-ts", 4): "жінка Мойсеєва",
+    (429, "right-ya", 2): "Яков",
     (417, "index-left", 2): "Академія Наук",
     (417, "index-left", 3): "Академія Наук",
     (417, "index-left", 40): "Анна",
@@ -102,6 +233,15 @@ NAME_CONTEXTS = {
     (421, "right", 21): "цар",
 }
 SOURCE_BLOBS.update({
+    422: "f7ec80af0be6a32a8e3ae7a43805145d78437c72",
+    423: "0df835d131f7038572d2ac42ee29a033dd97df94",
+    424: "3d068c94633b40d8284f0803420f1806e4c7f3fd",
+    425: "090ead89b042709501a7bd8f06feadb13884f309",
+    426: "1c2c04fae740ec649a8226103b96f3bb2bebadf7",
+    427: "9236f4ee9ae5790f4b8470c76c68b67d0e45f620",
+    428: "682bbce13b4aeaa80b05c9f77e497e52a72aa336",
+    429: "5c326d0934f04f74bc00879ce8e3f49d7a5bef77",
+    430: "dea6a4aff18edadc3a71fc44f20919092e967459",
     417: "d2e707ec31b1757619e7cc293d69de50f562d2fc",
     418: "2f9210d9d0f69d99f61c585cbb923361019861a1",
     419: "300c03db9adbeab783be0dc51f753525f03b4f9f",
@@ -111,6 +251,13 @@ SOURCE_BLOBS.update({
     461: "d4d6497923b6d002dd66a69f79066cd4bed93e13",
     462: "f54a224cb68cd485fe90b5ff1ddca922d2deaf88",
 })
+# The following first partitions continue the immediately preceding article.
+# Pairs are atomic: do not expose a truncated article or orphan if either
+# scan's pinned reading is absent or changed.
+CONTINUATIONS = {(422, "right", 1), (425, "left-m", 1),
+                 (430, "left", 1), (430, "right-ya", 1)}
+ATOMIC_PAIRS = ((424, 425), (429, 430))
+
 NUMBER = r"[1-9][0-9]{0,2}"
 TOKEN = NUMBER + r"(?:[—–-]" + NUMBER + r")?"
 TAIL = re.compile(r"\s+(" + TOKEN + r"(?:\s*,\s*" + TOKEN + r")*)\s*,?$")
@@ -224,10 +371,18 @@ def build_printed_indexes(pilot, ref):
         section = dict(volume="1", kind=kind, scans=list(range(start, end + 1)),
                        draft_scans=draft_scans, structured_scans=[], entries=[])
         sections.append(section)
-        for scan, reader, partitions in ((start, reader, partitions), *EXTRA_PAGES.get(kind, ())):
+        page_specs = ((start, reader, partitions), *EXTRA_PAGES.get(kind, ()))
+        eligible = {scan for scan, reader, _ in page_specs
+                    if scan in files and files[scan][1]["reading"]["reader_id"] == reader
+                    and files[scan][2] == SOURCE_BLOBS[scan]}
+        if kind == "names":
+            for pair in ATOMIC_PAIRS:
+                if not set(pair) <= eligible:
+                    eligible.difference_update(pair)
+        for scan, reader, partitions in page_specs:
             # A changed/missing reading must not publish stale partitions or block
             # unrelated reader deployments. Re-segment explicitly against new bytes.
-            if scan not in files:
+            if scan not in eligible:
                 continue
             path, draft, blob = files[scan]
             reading = draft["reading"]
@@ -251,6 +406,18 @@ def build_printed_indexes(pilot, ref):
                 previous = 0
                 for stop in ends:
                     part = [{"id": l["id"], "text": l["text"]} for l in lines[previous:stop]]
+                    if kind == "names" and (scan, region_id, previous + 1) in CONTINUATIONS:
+                        # A region/page boundary never manufactures a new name.
+                        prior = entries[-1] if entries else section["entries"][-1]
+                        segments = prior.setdefault("segments", [
+                            dict(source=prior["source"], region_id=prior["region_id"],
+                                 lines=prior["lines"][:])])
+                        segments.append(dict(source=source, region_id=region_id, lines=part))
+                        prior["lines"].extend(part)
+                        prior["label"], prior["detail"], prior["refs"] = parse_entry(
+                            kind, [l["text"] for l in prior["lines"]], targets)
+                        previous = stop
+                        continue
                     label, detail, refs = parse_entry(kind, [l["text"] for l in part], targets)
                     # Only the explicit Abraham block on the pilot motif page.
                     context = ("Авраам" if kind == "motifs" and label.startswith("„")
