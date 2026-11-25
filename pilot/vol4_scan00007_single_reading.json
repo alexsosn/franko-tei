@@ -1,0 +1,382 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 7,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00007.jpg",
+  "source_image_sha256": "6f0d86e271f84abc4cb36d3eae9c749b40013849bf8e1f46faee96ec02ada4ee",
+  "reading": {
+    "reader_id": "gpt62-iv-7-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-frontmatter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original JPEG without prior OCR or peer text for this page; preserve physical lines, historical spelling, source uncertainty, contextual languages and estimated geometry. Exclude later copy-specific marks from printed text and document them. No verified claim.",
+    "raw_response": "CODEX APOCRYPHUS\ne manuscriptis ukraino-russicis collectus opera Dr. Joannis Franko.\nVol. IV, Apocalypses apocryphas continens.\nАПОКРІФИ І ЛЄҐЕНДИ\nЗ УКРАЇНСЬКИХ РУКОПИСІВ\nЗІБРАВ, УПОРЯДКУВАВ І ПОЯСНИВ\nДр. Іван Франко.\nТОМ IV.\nАпокріфи есхатольоґічні.\nУ Львові, 1906.\nНакладом Наукового Товариства імени Шевченка.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            155,
+            310,
+            950,
+            20
+          ],
+          "description": "Double decorative rule."
+        },
+        {
+          "bbox_xywh": [
+            490,
+            1110,
+            310,
+            90
+          ],
+          "description": "Decorative rules around volume label."
+        },
+        {
+          "bbox_xywh": [
+            590,
+            1610,
+            120,
+            15
+          ],
+          "description": "Decorative rule."
+        },
+        {
+          "bbox_xywh": [
+            810,
+            1480,
+            330,
+            200
+          ],
+          "description": "Later faint oval library stamp, overlapping imprint but printed lines remain legible."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "latin-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          150,
+          175,
+          955,
+          135
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "latin-title-line-01",
+            "text": "CODEX APOCRYPHUS",
+            "bbox_xywh": [
+              150,
+              175,
+              955,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-02",
+            "text": "e manuscriptis ukraino-russicis collectus opera Dr. Joannis Franko.",
+            "bbox_xywh": [
+              150,
+              220,
+              955,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-03",
+            "text": "Vol. IV, Apocalypses apocryphas continens.",
+            "bbox_xywh": [
+              150,
+              265,
+              955,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 42,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          150,
+          450,
+          960,
+          290
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-line-01",
+            "text": "АПОКРІФИ І ЛЄҐЕНДИ",
+            "bbox_xywh": [
+              150,
+              450,
+              960,
+              155
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "title-line-02",
+            "text": "З УКРАЇНСЬКИХ РУКОПИСІВ",
+            "bbox_xywh": [
+              285,
+              670,
+              735,
+              70
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editor",
+        "kind": "other",
+        "bbox_xywh": [
+          390,
+          830,
+          500,
+          175
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editor-line-01",
+            "text": "ЗІБРАВ, УПОРЯДКУВАВ І ПОЯСНИВ",
+            "bbox_xywh": [
+              470,
+              830,
+              350,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editor-line-02",
+            "text": "Др. Іван Франко.",
+            "bbox_xywh": [
+              390,
+              900,
+              500,
+              105
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          490,
+          1128,
+          300,
+          55
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "ТОМ IV.",
+            "bbox_xywh": [
+              490,
+              1128,
+              300,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "subtitle",
+        "kind": "heading",
+        "bbox_xywh": [
+          340,
+          1325,
+          630,
+          65
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "subtitle-line-01",
+            "text": "Апокріфи есхатольоґічні.",
+            "bbox_xywh": [
+              340,
+              1325,
+              630,
+              64
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imprint",
+        "kind": "other",
+        "bbox_xywh": [
+          240,
+          1550,
+          815,
+          120
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "imprint-line-01",
+            "text": "У Львові, 1906.",
+            "bbox_xywh": [
+              530,
+              1550,
+              260,
+              55
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "imprint-line-02",
+            "text": "Накладом Наукового Товариства імени Шевченка.",
+            "bbox_xywh": [
+              240,
+              1630,
+              815,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-7-image-20261125",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "title-line-01",
+        "reading": "ЛЄҐЕНДИ",
+        "reason": "Decorative capital letter forms; Ґ distinct from Г; reading provisional."
+      }
+    ]
+  }
+}

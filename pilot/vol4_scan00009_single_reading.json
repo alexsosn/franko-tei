@@ -1,0 +1,728 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 9,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00009.jpg",
+  "source_image_sha256": "8662e12c477983dd351a43f7a096642200914e12ee86fb6e20eb6035869fd2a3",
+  "reading": {
+    "reader_id": "gpt62-iv-9-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-frontmatter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original JPEG without prior OCR or peer text for this page; preserve physical lines, historical spelling, source uncertainty, contextual languages and estimated geometry. Exclude later copy-specific marks from printed text and document them. No verified claim.",
+    "raw_response": "Передмова.\nI. Вступ. При укладаню отсего тому Памяток я ще більше\nяк при попередніх томах змушений був обставинами йти своєю\nвласною дорогою. Одно те, що я мусів зректи ся думки вичерпати\nвсі тексти сеї ґрупи, які доси стали відомі по катальоґам росий-\nських бібліотек і про яких українське походжене можна би дога-\nдувати ся, і обмежив ся тут лише на передрук деяких текстів\nіз наших старих рукописів XII - XIII в., опублїкованих росийськими\nвченими (такі тексти головно з перґаменових рукоп. Успенського Со-\nбора та Троїцької Сергієвої Лаври біля Москви), а зрештою майже\nвиключно користував ся галицько-руськими кодексами XVI—XIX\nвіків; а друге те, що я не мав перед собою анї одної систематичної\nзбірки есхатольоґічних апокріфів на якій будь иншій мові і мусів\nсам укладати плян, якому анальоґічного не знаходив де инде. При\nукладі сього пляну, який був діскутований також на засіданю фі-\nльольоґічної секції Наук. тов. ім. Шевченка, я виходив із ось яких\nфактів і спостережень.\nЕсхатольоґічними (від грецького ἔσχατος — остатнїй, крайнїй)\nназивають ся ті апокріфічні оповіданя, розмови та поученя, що зай-\nмають ся „крайнїми“, остатнїми питанями теольоґії, етики та при-\nродознавства, отже питанями про початок і кінець усього творіня\nта про його творця, про лад творіня і недовідомі його явища, про\nкрайнї питаня етики в роді антаґонїзму добра і зла та про ролю\nзла в творіню сьвіта, про боротьбу тих двох сил у людськім\nжитю та при смерти, про житє душ по смерти і врештї про\nсподіваний кінець сьвіта та страшний суд. Про всї ті питаня\nнаша теольоґія має певні вироблені погляди, доґми та тези,\nпоза якими а нераз і в суміш із якими йде цїла ватага опо-",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            560,
+            650,
+            90,
+            15
+          ],
+          "description": "Decorative rule."
+        },
+        {
+          "bbox_xywh": [
+            820,
+            1500,
+            295,
+            210
+          ],
+          "description": "Later library stamp partly overlaps last five printed lines; uncertain readings explicitly anchored."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "preface-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          405,
+          565,
+          430,
+          65
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-title-line-01",
+            "text": "Передмова.",
+            "bbox_xywh": [
+              405,
+              565,
+              430,
+              64
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          110,
+          685,
+          980,
+          590
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "I. Вступ. При укладаню отсего тому Памяток я ще більше",
+            "bbox_xywh": [
+              110,
+              685,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "як при попередніх томах змушений був обставинами йти своєю",
+            "bbox_xywh": [
+              110,
+              721,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "власною дорогою. Одно те, що я мусів зректи ся думки вичерпати",
+            "bbox_xywh": [
+              110,
+              758,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "всі тексти сеї ґрупи, які доси стали відомі по катальоґам росий-",
+            "bbox_xywh": [
+              110,
+              795,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "ських бібліотек і про яких українське походжене можна би дога-",
+            "bbox_xywh": [
+              110,
+              832,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "дувати ся, і обмежив ся тут лише на передрук деяких текстів",
+            "bbox_xywh": [
+              110,
+              869,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "із наших старих рукописів XII - XIII в., опублїкованих росийськими",
+            "bbox_xywh": [
+              110,
+              906,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "вченими (такі тексти головно з перґаменових рукоп. Успенського Со-",
+            "bbox_xywh": [
+              110,
+              943,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "бора та Троїцької Сергієвої Лаври біля Москви), а зрештою майже",
+            "bbox_xywh": [
+              110,
+              980,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "виключно користував ся галицько-руськими кодексами XVI—XIX",
+            "bbox_xywh": [
+              110,
+              1016,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "віків; а друге те, що я не мав перед собою анї одної систематичної",
+            "bbox_xywh": [
+              110,
+              1053,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "збірки есхатольоґічних апокріфів на якій будь иншій мові і мусів",
+            "bbox_xywh": [
+              110,
+              1090,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "сам укладати плян, якому анальоґічного не знаходив де инде. При",
+            "bbox_xywh": [
+              110,
+              1127,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "укладі сього пляну, який був діскутований також на засіданю фі-",
+            "bbox_xywh": [
+              110,
+              1164,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "льольоґічної секції Наук. тов. ім. Шевченка, я виходив із ось яких",
+            "bbox_xywh": [
+              110,
+              1201,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "фактів і спостережень.",
+            "bbox_xywh": [
+              110,
+              1238,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "definition",
+        "kind": "body",
+        "bbox_xywh": [
+          110,
+          1274,
+          980,
+          400
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "definition-line-01",
+            "text": "Есхатольоґічними (від грецького ἔσχατος — остатнїй, крайнїй)",
+            "bbox_xywh": [
+              110,
+              1274,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 32,
+                "end": 39,
+                "language": "grc",
+                "script": "Grek",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 39,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-02",
+            "text": "називають ся ті апокріфічні оповіданя, розмови та поученя, що зай-",
+            "bbox_xywh": [
+              110,
+              1310,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-03",
+            "text": "мають ся „крайнїми“, остатнїми питанями теольоґії, етики та при-",
+            "bbox_xywh": [
+              110,
+              1346,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-04",
+            "text": "родознавства, отже питанями про початок і кінець усього творіня",
+            "bbox_xywh": [
+              110,
+              1383,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-05",
+            "text": "та про його творця, про лад творіня і недовідомі його явища, про",
+            "bbox_xywh": [
+              110,
+              1419,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-06",
+            "text": "крайнї питаня етики в роді антаґонїзму добра і зла та про ролю",
+            "bbox_xywh": [
+              110,
+              1455,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-07",
+            "text": "зла в творіню сьвіта, про боротьбу тих двох сил у людськім",
+            "bbox_xywh": [
+              110,
+              1492,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-08",
+            "text": "житю та при смерти, про житє душ по смерти і врештї про",
+            "bbox_xywh": [
+              110,
+              1528,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-09",
+            "text": "сподіваний кінець сьвіта та страшний суд. Про всї ті питаня",
+            "bbox_xywh": [
+              110,
+              1564,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-10",
+            "text": "наша теольоґія має певні вироблені погляди, доґми та тези,",
+            "bbox_xywh": [
+              110,
+              1601,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "definition-line-11",
+            "text": "поза якими а нераз і в суміш із якими йде цїла ватага опо-",
+            "bbox_xywh": [
+              110,
+              1637,
+              980,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-9-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-07",
+        "reading": "XII - XIII",
+        "reason": "Dash shape and surrounding spacing provisional."
+      },
+      {
+        "line_id": "preface-line-07",
+        "reading": "опублїкованих",
+        "reason": "Dot/diacritic distinction in historical type provisional."
+      },
+      {
+        "line_id": "definition-line-07",
+        "reading": "у людськім",
+        "reason": "Faint overlapping oval library stamp; visible reading provisional; check at native resolution."
+      },
+      {
+        "line_id": "definition-line-08",
+        "reading": "врештї про",
+        "reason": "Faint overlapping oval library stamp; visible reading provisional; check at native resolution."
+      },
+      {
+        "line_id": "definition-line-09",
+        "reading": "всї ті питаня",
+        "reason": "Faint overlapping oval library stamp; visible reading provisional; check at native resolution."
+      },
+      {
+        "line_id": "definition-line-10",
+        "reading": "доґми та тези",
+        "reason": "Faint overlapping oval library stamp; visible reading provisional; check at native resolution."
+      },
+      {
+        "line_id": "definition-line-11",
+        "reading": "цїла ватага опо-",
+        "reason": "Faint overlapping oval library stamp; visible reading provisional; check at native resolution."
+      }
+    ]
+  }
+}
