@@ -269,7 +269,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.evaluate("diffRanges('ꙗ','ꙗ҃')"), [[[0,1]],[[0,2]]])
             self.assertEqual(page.evaluate("diffRanges('ab','axb')"), [[],[[1,2]]])
             # A search pinned to its published SHA must not download all candidate files.
-            page.evaluate("window.realFetch=window.fetch; window.fetch=(url,...rest)=>{if(String(url).includes('/repos/alexsosn/franko-tei/'))throw Error('unexpected branch reconstruction');return window.realFetch(url,...rest);}")
+            page.evaluate("() => {window.realFetch=window.fetch; window.fetch=(url,...rest)=>{if(String(url).includes('/repos/alexsosn/franko-tei/'))throw Error('unexpected branch reconstruction');return window.realFetch(url,...rest);};}")
             page.locator('#searchOpen').click()
             page.locator('#searchSource').select_option('ocr')
             page.locator('#searchVolume').select_option('all')
