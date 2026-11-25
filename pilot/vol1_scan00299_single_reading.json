@@ -1,0 +1,809 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 299,
+  "printed_page_observed": "224",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00299.jpg",
+  "source_image_sha256": "397f6ddfc8c732febd9b52da59df4fb1b142ab4bc5ef4e36d14754a4ede943da",
+  "reading": {
+    "reader_id": "gpt62-i299-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i298-331-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original image only. Preserve physical lines, manuscript lacuna dots, footnotes and contextual language. Historical diacritics and geometry provisional.",
+    "raw_response": "224\nнадруковано два заповіти, Рувима і Симеона, також повної редакції,\nпо списку Румянцівської Палеї. Аналїз змісту сего апокріфа подав\nПорфірєв у своїй книзї „Апокриф. сказ. о ветхозав. лицахъ и со-\nбытіяхъ, Казань 1872“, стор. 256—284; в єго збірцї старозав. апо-\nкріфів по Соловецьким рукописам (стор. 59—67) бачимо пробу по-\nрівнати словянський текст Заповітів з грецьким і визначити сло-\nвянські приставки. З латинської були Заповіти перекладені також\nна чеську мову, гл. E. Kozak, Bibliographische Übersicht der biblisch-\napokryphen Litteratur bei den Slaven. Список рукописів, де знахо-\nдять ся иньші, доси ще не визискані списки церковнословянського\nтексту сего апокріфа, поданий в книзї Гарнака „Geschichte der\naltchristlichen Litteratur bis Eusebius“, Bd. I, 2 Hälfte, 915. Додати\nще треба, що надрукована нами при кінцї заповіту Венияминового\nпалейна приставка не находить ся при текстї повної редакції у Ті-\nхонравова (I, 232), а натомісць властива є текстови скороченої\nредакції, хоч і тут в найстаршій, опублїкованій Тіхонравовим формі\n(I, 145) вона значно коротша, нїж в пізнїйших списках. Сю піз-\nнїйшу редакцию сего уступу опублїкував Порфірєв по списку Со-\nловецької Палеї (op. cit. 193—194); варіанти її супроти нашого\nтексту ми виписали висше. Треба ще й те зазначити, що в корот-\nкій редакції Заповітів (в тім числї і в Ковельській Палеї) заповіт\nЙосифів стоїть на першім місцї, перед Рувимовим.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Closing ornament",
+          "bbox_xywh": [
+            514,
+            1042,
+            215,
+            110
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          174,
+          86,
+          56,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "224",
+            "bbox_xywh": [
+              174,
+              86,
+              56,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "discussion",
+        "kind": "body",
+        "bbox_xywh": [
+          169,
+          150,
+          918,
+          748
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "discussion-l001",
+            "text": "надруковано два заповіти, Рувима і Симеона, також повної редакції,",
+            "bbox_xywh": [
+              169,
+              150,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l002",
+            "text": "по списку Румянцівської Палеї. Аналїз змісту сего апокріфа подав",
+            "bbox_xywh": [
+              169,
+              184,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l003",
+            "text": "Порфірєв у своїй книзї „Апокриф. сказ. о ветхозав. лицахъ и со-",
+            "bbox_xywh": [
+              169,
+              218,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 63,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l004",
+            "text": "бытіяхъ, Казань 1872“, стор. 256—284; в єго збірцї старозав. апо-",
+            "bbox_xywh": [
+              169,
+              253,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 36,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l005",
+            "text": "кріфів по Соловецьким рукописам (стор. 59—67) бачимо пробу по-",
+            "bbox_xywh": [
+              169,
+              287,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 39,
+                "end": 44,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l006",
+            "text": "рівнати словянський текст Заповітів з грецьким і визначити сло-",
+            "bbox_xywh": [
+              169,
+              321,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l007",
+            "text": "вянські приставки. З латинської були Заповіти перекладені також",
+            "bbox_xywh": [
+              169,
+              356,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l008",
+            "text": "на чеську мову, гл. E. Kozak, Bibliographische Übersicht der biblisch-",
+            "bbox_xywh": [
+              169,
+              390,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l009",
+            "text": "apokryphen Litteratur bei den Slaven. Список рукописів, де знахо-",
+            "bbox_xywh": [
+              169,
+              424,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 36,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l010",
+            "text": "дять ся иньші, доси ще не визискані списки церковнословянського",
+            "bbox_xywh": [
+              169,
+              458,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l011",
+            "text": "тексту сего апокріфа, поданий в книзї Гарнака „Geschichte der",
+            "bbox_xywh": [
+              169,
+              493,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 47,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l012",
+            "text": "altchristlichen Litteratur bis Eusebius“, Bd. I, 2 Hälfte, 915. Додати",
+            "bbox_xywh": [
+              169,
+              527,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 62,
+                "end": 70,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l013",
+            "text": "ще треба, що надрукована нами при кінцї заповіту Венияминового",
+            "bbox_xywh": [
+              169,
+              561,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l014",
+            "text": "палейна приставка не находить ся при текстї повної редакції у Ті-",
+            "bbox_xywh": [
+              169,
+              596,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l015",
+            "text": "хонравова (I, 232), а натомісць властива є текстови скороченої",
+            "bbox_xywh": [
+              169,
+              630,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l016",
+            "text": "редакції, хоч і тут в найстаршій, опублїкованій Тіхонравовим формі",
+            "bbox_xywh": [
+              169,
+              664,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l017",
+            "text": "(I, 145) вона значно коротша, нїж в пізнїйших списках. Сю піз-",
+            "bbox_xywh": [
+              169,
+              698,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 4,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l018",
+            "text": "нїйшу редакцию сего уступу опублїкував Порфірєв по списку Со-",
+            "bbox_xywh": [
+              169,
+              733,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l019",
+            "text": "ловецької Палеї (op. cit. 193—194); варіанти її супроти нашого",
+            "bbox_xywh": [
+              169,
+              767,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 25,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 26,
+                "end": 33,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              },
+              {
+                "start": 33,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l020",
+            "text": "тексту ми виписали висше. Треба ще й те зазначити, що в корот-",
+            "bbox_xywh": [
+              169,
+              801,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l021",
+            "text": "кій редакції Заповітів (в тім числї і в Ковельській Палеї) заповіт",
+            "bbox_xywh": [
+              169,
+              836,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "discussion-l022",
+            "text": "Йосифів стоїть на першім місцї, перед Рувимовим.",
+            "bbox_xywh": [
+              169,
+              870,
+              918,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i299-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "discussion-l001",
+        "reading": "надруковано два заповіти, Рувима і Симеона, також повної редакції,",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l002",
+        "reading": "по списку Румянцівської Палеї. Аналїз змісту сего апокріфа подав",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l003",
+        "reading": "Порфірєв у своїй книзї „Апокриф. сказ. о ветхозав. лицахъ и со-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l004",
+        "reading": "бытіяхъ, Казань 1872“, стор. 256—284; в єго збірцї старозав. апо-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l005",
+        "reading": "кріфів по Соловецьким рукописам (стор. 59—67) бачимо пробу по-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l006",
+        "reading": "рівнати словянський текст Заповітів з грецьким і визначити сло-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l007",
+        "reading": "вянські приставки. З латинської були Заповіти перекладені також",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l008",
+        "reading": "на чеську мову, гл. E. Kozak, Bibliographische Übersicht der biblisch-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l009",
+        "reading": "apokryphen Litteratur bei den Slaven. Список рукописів, де знахо-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l010",
+        "reading": "дять ся иньші, доси ще не визискані списки церковнословянського",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l011",
+        "reading": "тексту сего апокріфа, поданий в книзї Гарнака „Geschichte der",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l012",
+        "reading": "altchristlichen Litteratur bis Eusebius“, Bd. I, 2 Hälfte, 915. Додати",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l013",
+        "reading": "ще треба, що надрукована нами при кінцї заповіту Венияминового",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l014",
+        "reading": "палейна приставка не находить ся при текстї повної редакції у Ті-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l015",
+        "reading": "хонравова (I, 232), а натомісць властива є текстови скороченої",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l016",
+        "reading": "редакції, хоч і тут в найстаршій, опублїкованій Тіхонравовим формі",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l017",
+        "reading": "(I, 145) вона значно коротша, нїж в пізнїйших списках. Сю піз-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l018",
+        "reading": "нїйшу редакцию сего уступу опублїкував Порфірєв по списку Со-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l019",
+        "reading": "ловецької Палеї (op. cit. 193—194); варіанти її супроти нашого",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l020",
+        "reading": "тексту ми виписали висше. Треба ще й те зазначити, що в корот-",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l021",
+        "reading": "кій редакції Заповітів (в тім числї і в Ковельській Палеї) заповіт",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l022",
+        "reading": "Йосифів стоїть на першім місцї, перед Рувимовим.",
+        "reason": "Provisional image-first reading; exact historic letterforms, marks, punctuation and layout require collation."
+      },
+      {
+        "line_id": "discussion-l010",
+        "reading": "списки церковнословянського",
+        "reason": "3× original JPEG crop [545,390,280,32], display width 1024, confirms beginning of printed phrase."
+      }
+    ]
+  }
+}
