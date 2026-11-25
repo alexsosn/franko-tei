@@ -123,6 +123,8 @@ def validate_bundle(bundle, source_loader):
         replacement = event["replacement"]
         if decision == "correct":
             literal(replacement, "replacement")
+            require(not any(c in replacement for c in ("\u0085", "\u2028", "\u2029")),
+                    "replacement cannot contain a physical line break")
             require(replacement != target["original"], "unchanged correction; use confirm")
             require(not lines[0].get("unreadable_suffix"), "gap correction requires structural review")
         else:
@@ -178,7 +180,8 @@ def make_intake(raw, issue, approved_sha256, source_loader):
     submitter = issue_identity(issue)
     bundle = validate_bundle(read_bundle(raw), source_loader)
     return {"schema_version": "franko-review-intake-v1", "status": "pending_adjudication",
-            "submitter": submitter, "bundle_sha256": approved_sha256, "bundle": bundle}
+            "submitter": submitter, "bundle_sha256": approved_sha256,
+            "bundle_raw_utf8": raw.decode("utf-8"), "bundle": bundle}
 
 
 def issue_bundle(issue):
@@ -191,7 +194,10 @@ def issue_bundle(issue):
     body = body.replace("\r\n", "\n")
     m = re.fullmatch(r"### Review bundle\n\n```json\n([\s\S]+?)\n```\n*", body)
     require(m is not None, "use the Review bundle form with a JSON payload")
-    raw = m.group(1).encode("utf-8")
+    try:
+        raw = m.group(1).encode("utf-8")
+    except UnicodeError as exc:
+        raise ValueError("invalid issue Unicode") from exc
     read_bundle(raw)
     return raw
 

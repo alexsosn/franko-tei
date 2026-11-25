@@ -15,7 +15,6 @@ SOURCE = json.loads((ROOT / PATH).read_text(encoding="utf-8"))
 REV = "a" * 40
 RAW = (ROOT / PATH).read_bytes()
 BLOB = hashlib.sha1(f"blob {len(RAW)}".encode() + bytes([0]) + RAW).hexdigest()
-LINE = SOURCE["reading"]["regions"][1]["lines"][0]
 # Use the explicit ID, not a positional guess.
 REGION = next(r for r in SOURCE["reading"]["regions"] if r["id"] == "early-apocrypha-context")
 LINE = next(l for l in REGION["lines"] if l["id"] == "early-apocrypha-context-line-01")
@@ -72,7 +71,7 @@ class ReviewBundleTests(unittest.TestCase):
 
     def test_decisions_and_duplicates(self):
         for decision, replacement in [("confirm", "changed"), ("defer", "changed"), ("correct", LINE["text"]),
-                                       ("correct", "\n"), ("correct", "\x00"), ("correct", " "), ("delete", None)]:
+                                       ("correct", "\n"), ("correct", "\x00"), ("correct", " "), ("correct", "a\u2028b"), ("delete", None)]:
             with self.subTest(decision=decision, replacement=replacement):
                 b = fixture(); b["events"][0].update(decision=decision, replacement=replacement)
                 with self.assertRaises(ValueError): validate_bundle(b, load_source)
@@ -94,6 +93,7 @@ class ReviewBundleTests(unittest.TestCase):
         self.assertEqual(record["submitter"]["github_user_id"], 1234)
         self.assertEqual(record["status"], "pending_adjudication")
         self.assertEqual(record["bundle_sha256"], digest)
+        self.assertEqual(record["bundle_raw_utf8"].encode("utf-8"), raw)
         self.assertEqual(record, make_intake(raw, issue(), digest, load_source))
         with self.assertRaises(ValueError): make_intake(raw+b" ", issue(), digest, load_source)
         for bad in ({"id": True, "login": "reader", "type": "User"}, {"id": 1, "login": "robot", "type": "Bot"}):

@@ -33,7 +33,8 @@ git diff --cached
 ```
 
 Digest binds exact JSON text extracted from the GitHub issue body (LF line
-endings, without fences). Preview never writes. A changed payload cannot
+endings, without fences). The exact extracted JSON is preserved in `bundle_raw_utf8`
+so its digest remains independently reproducible after parsing. Preview never writes. A changed payload cannot
 pass the old digest. Output is pending_adjudication, not accepted, scored,
 or published. Duplicate IDs, replay and same-account duplicate decisions
 are refused against existing local intake records; concurrent PRs and
