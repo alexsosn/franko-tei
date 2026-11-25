@@ -1,0 +1,817 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 346,
+  "printed_page_observed": "271",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00346.jpg",
+  "source_image_sha256": "eb8728374cde474abb0cf1883b9666dfebb567e19792a944f4c6ead3f828f4f0",
+  "reading": {
+    "reader_id": "gpt62-i346-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i340-349-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Pinned original image first. Historical Ruthenian vernacular orv provisional, Church Slavonic apparatus, Ukrainian editorial prose, Russian and Bulgarian bibliography and Latin abbreviations distinguished. Physical lines preserved; estimated geometry and exact glyphs provisional. No inferred folio on section opening. No verified claim.",
+    "raw_response": "271\nІильскій, жебы не зоставали оу неволи. бо бывши Самсон судия\nѿ Бг҃а данний, аби вызволил их из руки филистинскои, а гди\nоузятий был оу неволю, знову Филистинове оуставали на Ізра-\nилитянов неволю. И выслухал Бг҃ъ Самсона и дав знову ему\nсилу, жебы ѡборонил люд бж҃ій ѿ неприятелей, и там то Самсон\nѡбвалив мури оусѣ филистинские з воєводами и преложоних панов\nи всѣх, которие там были, и оупокоив люд Іильскій. Во Тройци\nєдиному Бг҃у честь и слава во вѣки вѣком, аминъ.\nАпокріфічних оповідань про Самсона не названо в індексах\nі не опубліковано в збірках апокріфів. У виданій Поповим істо-\nричній Палеї (А. Н. П о п о в ъ, Книга бытія неба и земли (Палея\nисторическая) съ приложеніемъ сокращенной Палеи русской ре-\nдакціи. Москва 1881, стор. 122—132) находить ся „Сказаніє о Сам-\nсонѣ“ з деякими апокріфічними подробицями. Иньше оповіданє\n„О Самсонѣ богатырѣ, о рожденіи Самсона сына Мануилова,\nо силѣ его и о женѣ его Далидѣ“ находить ся в Копенгагенській\nрукописній збірцї (С р е з н е в с к і й, Свѣдѣнія и замѣтки о мало-\nизвѣстныхъ и неизвѣстныхъ памятникахъ, N. LXI, стор. 353), та\nсе оповіданє доси не опубліковане. Болгарський список „Слова\nо Самсонѣ“, геть відмінного від нашого уривка, опублікував Н. А.\nНачов по Тиквенському рукопису (Сборникъ за народни умотворения,\nнаука и книжнина, т. VIII і уваги до него т. X, стор. 100—101).\nОповіданє про Самсона в Крехівській Палеї, стор. 589—599 не має\nапокріфічних подробиць, а йде досить вірно за Біблією.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "decorative ornament",
+          "bbox_xywh": [
+            466,
+            1133,
+            228,
+            161
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          953,
+          93,
+          59,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "271",
+            "bbox_xywh": [
+              953,
+              93,
+              59,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "samson-end",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          155,
+          932,
+          280
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "samson-end-l001",
+            "text": "Іильскій, жебы не зоставали оу неволи. бо бывши Самсон судия",
+            "bbox_xywh": [
+              91,
+              155,
+              932,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "samson-end-l002",
+            "text": "ѿ Бг҃а данний, аби вызволил их из руки филистинскои, а гди",
+            "bbox_xywh": [
+              91,
+              190,
+              932,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "samson-end-l003",
+            "text": "оузятий был оу неволю, знову Филистинове оуставали на Ізра-",
+            "bbox_xywh": [
+              91,
+              225,
+              932,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "samson-end-l004",
+            "text": "илитянов неволю. И выслухал Бг҃ъ Самсона и дав знову ему",
+            "bbox_xywh": [
+              91,
+              260,
+              932,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "samson-end-l005",
+            "text": "силу, жебы ѡборонил люд бж҃ій ѿ неприятелей, и там то Самсон",
+            "bbox_xywh": [
+              91,
+              295,
+              932,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "samson-end-l006",
+            "text": "ѡбвалив мури оусѣ филистинские з воєводами и преложоних панов",
+            "bbox_xywh": [
+              91,
+              330,
+              932,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "samson-end-l007",
+            "text": "и всѣх, которие там были, и оупокоив люд Іильскій. Во Тройци",
+            "bbox_xywh": [
+              91,
+              365,
+              932,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "samson-end-l008",
+            "text": "єдиному Бг҃у честь и слава во вѣки вѣком, аминъ.",
+            "bbox_xywh": [
+              91,
+              400,
+              932,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 48,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-commentary",
+        "kind": "body",
+        "bbox_xywh": [
+          98,
+          466,
+          945,
+          559
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-commentary-l001",
+            "text": "Апокріфічних оповідань про Самсона не названо в індексах",
+            "bbox_xywh": [
+              98,
+              466,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l002",
+            "text": "і не опубліковано в збірках апокріфів. У виданій Поповим істо-",
+            "bbox_xywh": [
+              98,
+              501,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l003",
+            "text": "ричній Палеї (А. Н. П о п о в ъ, Книга бытія неба и земли (Палея",
+            "bbox_xywh": [
+              98,
+              536,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 64,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l004",
+            "text": "историческая) съ приложеніемъ сокращенной Палеи русской ре-",
+            "bbox_xywh": [
+              98,
+              571,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l005",
+            "text": "дакціи. Москва 1881, стор. 122—132) находить ся „Сказаніє о Сам-",
+            "bbox_xywh": [
+              98,
+              606,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 49,
+                "end": 64,
+                "language": "und",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l006",
+            "text": "сонѣ“ з деякими апокріфічними подробицями. Иньше оповіданє",
+            "bbox_xywh": [
+              98,
+              641,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "und",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l007",
+            "text": "„О Самсонѣ богатырѣ, о рожденіи Самсона сына Мануилова,",
+            "bbox_xywh": [
+              98,
+              676,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l008",
+            "text": "о силѣ его и о женѣ его Далидѣ“ находить ся в Копенгагенській",
+            "bbox_xywh": [
+              98,
+              710,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 30,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l009",
+            "text": "рукописній збірцї (С р е з н е в с к і й, Свѣдѣнія и замѣтки о мало-",
+            "bbox_xywh": [
+              98,
+              745,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 68,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l010",
+            "text": "извѣстныхъ и неизвѣстныхъ памятникахъ, N. LXI, стор. 353), та",
+            "bbox_xywh": [
+              98,
+              780,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 37,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 37,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 39,
+                "end": 40,
+                "language": "und",
+                "script": "Latn",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 40,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 45,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l011",
+            "text": "се оповіданє доси не опубліковане. Болгарський список „Слова",
+            "bbox_xywh": [
+              98,
+              815,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 54,
+                "end": 60,
+                "language": "und",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l012",
+            "text": "о Самсонѣ“, геть відмінного від нашого уривка, опублікував Н. А.",
+            "bbox_xywh": [
+              98,
+              850,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 10,
+                "language": "und",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l013",
+            "text": "Начов по Тиквенському рукопису (Сборникъ за народни умотворения,",
+            "bbox_xywh": [
+              98,
+              885,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 64,
+                "language": "bg",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l014",
+            "text": "наука и книжнина, т. VIII і уваги до него т. X, стор. 100—101).",
+            "bbox_xywh": [
+              98,
+              920,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 16,
+                "language": "bg",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 25,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 46,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              },
+              {
+                "start": 46,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l015",
+            "text": "Оповіданє про Самсона в Крехівській Палеї, стор. 589—599 не має",
+            "bbox_xywh": [
+              98,
+              955,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-l016",
+            "text": "апокріфічних подробиць, а йде досить вірно за Біблією.",
+            "bbox_xywh": [
+              98,
+              990,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i346-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "samson-end-l001",
+        "reading": "Іильскій, жебы не зоставали оу неволи. бо бывши Самсон судия",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l002",
+        "reading": "ѿ Бг҃а данний, аби вызволил их из руки филистинскои, а гди",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l003",
+        "reading": "оузятий был оу неволю, знову Филистинове оуставали на Ізра-",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l004",
+        "reading": "илитянов неволю. И выслухал Бг҃ъ Самсона и дав знову ему",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l005",
+        "reading": "силу, жебы ѡборонил люд бж҃ій ѿ неприятелей, и там то Самсон",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l006",
+        "reading": "ѡбвалив мури оусѣ филистинские з воєводами и преложоних панов",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l007",
+        "reading": "и всѣх, которие там были, и оупокоив люд Іильскій. Во Тройци",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l008",
+        "reading": "єдиному Бг҃у честь и слава во вѣки вѣком, аминъ.",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "samson-end-l003",
+        "reading": "оуставали",
+        "reason": "Exact historical form uncertain."
+      },
+      {
+        "line_id": "editorial-commentary-l005",
+        "reading": "Сказаніє",
+        "reason": "Quoted historical title; exact language and final vowel uncertain."
+      },
+      {
+        "line_id": "samson-end-l001",
+        "reading": "Іильскій",
+        "reason": "Reinspection: first word has an abbreviated historical spelling with an overline; draft misses exact titlo."
+      },
+      {
+        "line_id": "samson-end-l007",
+        "reading": "Іильскій",
+        "reason": "Reinspection: first word has an abbreviated historical spelling with an overline; draft misses exact titlo."
+      }
+    ]
+  }
+}
