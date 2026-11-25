@@ -1,0 +1,912 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 249,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00249.jpg",
+  "source_image_sha256": "51df530487f184f4c6b95563892ddccc4527054d1dc829e742b2a86025e07be3",
+  "reading": {
+    "reader_id": "gpt62-i249-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i221-260-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Original pinned source image first. Church Slavonic text of the Krekhiv Palaea, Ukrainian edition headings and Latin sic distinguished. Physical lines retained; estimated geometry; precise diacritics, titla and spaced typography provisional. No inferred folio on title page. No verified claim.",
+    "raw_response": "XV. Заповіти дванацяти патріархів.\nКрехівська Палея, стор. 281—366.\n1. Завѣтъ Роувимовъ ѡ благоумьи.\nНаписаніє завѣт[а] Рувимова, єлико заповѣд[а] сн҃мъ своимъ\nпреж[е] оумртвія своєго въ рке҃. лѣт[о] умртвія своєг[о], въ в҃-є\nлѣт[о] по скончаніи Ѡсифовѣ. болящю Рувиму събраша[ся] по-\nсѣтити єго сн҃ве єго и сн҃ве сн҃въ єго. и простре к нимъ словеса\nсвоꙗ¹) и реч[е] имъ:\n„Чад[а] моꙗ, азъ умираю и иду поутемъ ѡц҃ь моихъ“. и ви-\nдѣвъ Іюду и Гада и Асира, брат[і]ю свою и реч[е] имъ: „въздвиг-\nнете мя, брат[і]а моꙗ, да рку брат[і]и моєи и чадом моим, єлико\nимамъ въ ср҃дци моємъ таинъ. скончаваю бо ся азъ уже.“\nи въсклонився и человá [sic!] и въсплак[а]вся реч[е]: „послоушайте\nмене,²) брат[і]а мои и чад[а] моꙗ, внимайте гл҃ы Рувима ѡц҃а\nвашего, єлико азъ заповѣдаю вамъ. и³) се³) заповѣдаю³) вамъ³)\nи се ви завѣщаю Бм҃ъ нб҃снымъ дн҃сь, ꙗкож[е] не ходит[и] в нера-\nзуміи юностьнѣмь и в блуд[ѣ],⁴) в немь ж[е] излияхся азъ [и]\nѡскверних ложе ѡц҃а моєго Іакова. съгрѣшихъ с Валлою рабою\nѡц҃а моєго, ꙗко язви мя язвою велик[о]ю въ утробѣ моєи и за\nз҃. мц҃ь, и аще не быс[ть], ѡц҃ь мой Іаковъ молился ѡ мнѣ\nГви҃, ꙗко хоташе Гь҃ убити мя. бѣхъ бо лѣт л҃. єгда сътворих\nзлоє пред Гм҃ь. и з҃. мц҃ь болѣх до смр҃ти и похотѣніємь дш҃а\nз҃. лѣт каях ся пред Гм҃ь, вина ни ѡлоу не вкусих и мас[о] не\nвниде въ уста моꙗ,⁵) по воли не вкуси[х], плача ся блуднаг[о]\nради съгрѣшенія. великъ бо бяше грѣхъ и не будетъ въ Іил҃и\nтаковаго.\n„И нн҃ѣ послушайте мене, чад[а] моꙗ, Рувима ѡц҃а вашего,\nиже видѣхъ з҃. дх҃ъ прелѣстных в покаяніи моємъ. з҃. дх҃ъ дано",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "section-title separator",
+          "bbox_xywh": [
+            590,
+            529,
+            74,
+            6
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          253,
+          462,
+          763,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-l001",
+            "text": "XV. Заповіти дванацяти патріархів.",
+            "bbox_xywh": [
+              253,
+              462,
+              763,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              },
+              {
+                "start": 2,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          373,
+          565,
+          522,
+          41
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-l001",
+            "text": "Крехівська Палея, стор. 281—366.",
+            "bbox_xywh": [
+              373,
+              565,
+              522,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reuben-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          305,
+          637,
+          646,
+          41
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "reuben-heading-l001",
+            "text": "1. Завѣтъ Роувимовъ ѡ благоумьи.",
+            "bbox_xywh": [
+              305,
+              637,
+              646,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reuben-opening",
+        "kind": "body",
+        "bbox_xywh": [
+          163,
+          701,
+          945,
+          173
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "reuben-opening-l001",
+            "text": "Написаніє завѣт[а] Рувимова, єлико заповѣд[а] сн҃мъ своимъ",
+            "bbox_xywh": [
+              163,
+              701,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-opening-l002",
+            "text": "преж[е] оумртвія своєго въ рке҃. лѣт[о] умртвія своєг[о], въ в҃-є",
+            "bbox_xywh": [
+              163,
+              736,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-opening-l003",
+            "text": "лѣт[о] по скончаніи Ѡсифовѣ. болящю Рувиму събраша[ся] по-",
+            "bbox_xywh": [
+              163,
+              770,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-opening-l004",
+            "text": "сѣтити єго сн҃ве єго и сн҃ве сн҃въ єго. и простре к нимъ словеса",
+            "bbox_xywh": [
+              163,
+              805,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-opening-l005",
+            "text": "своꙗ¹) и реч[е] имъ:",
+            "bbox_xywh": [
+              163,
+              839,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reuben-address",
+        "kind": "body",
+        "bbox_xywh": [
+          162,
+          887,
+          945,
+          634
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "reuben-address-l001",
+            "text": "„Чад[а] моꙗ, азъ умираю и иду поутемъ ѡц҃ь моихъ“. и ви-",
+            "bbox_xywh": [
+              162,
+              887,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l002",
+            "text": "дѣвъ Іюду и Гада и Асира, брат[і]ю свою и реч[е] имъ: „въздвиг-",
+            "bbox_xywh": [
+              162,
+              922,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l003",
+            "text": "нете мя, брат[і]а моꙗ, да рку брат[і]и моєи и чадом моим, єлико",
+            "bbox_xywh": [
+              162,
+              957,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l004",
+            "text": "имамъ въ ср҃дци моємъ таинъ. скончаваю бо ся азъ уже.“",
+            "bbox_xywh": [
+              162,
+              992,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l005",
+            "text": "и въсклонився и человá [sic!] и въсплак[а]вся реч[е]: „послоушайте",
+            "bbox_xywh": [
+              162,
+              1028,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 22,
+                "language": "und",
+                "script": "Latn",
+                "uncertain": true,
+                "text_version": "gpt62-i249-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 24,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 28,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 66,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l006",
+            "text": "мене,²) брат[і]а мои и чад[а] моꙗ, внимайте гл҃ы Рувима ѡц҃а",
+            "bbox_xywh": [
+              162,
+              1063,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l007",
+            "text": "вашего, єлико азъ заповѣдаю вамъ. и³) се³) заповѣдаю³) вамъ³)",
+            "bbox_xywh": [
+              162,
+              1098,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l008",
+            "text": "и се ви завѣщаю Бм҃ъ нб҃снымъ дн҃сь, ꙗкож[е] не ходит[и] в нера-",
+            "bbox_xywh": [
+              162,
+              1133,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l009",
+            "text": "зуміи юностьнѣмь и в блуд[ѣ],⁴) в немь ж[е] излияхся азъ [и]",
+            "bbox_xywh": [
+              162,
+              1169,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l010",
+            "text": "ѡскверних ложе ѡц҃а моєго Іакова. съгрѣшихъ с Валлою рабою",
+            "bbox_xywh": [
+              162,
+              1204,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l011",
+            "text": "ѡц҃а моєго, ꙗко язви мя язвою велик[о]ю въ утробѣ моєи и за",
+            "bbox_xywh": [
+              162,
+              1239,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l012",
+            "text": "з҃. мц҃ь, и аще не быс[ть], ѡц҃ь мой Іаковъ молился ѡ мнѣ",
+            "bbox_xywh": [
+              162,
+              1274,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l013",
+            "text": "Гви҃, ꙗко хоташе Гь҃ убити мя. бѣхъ бо лѣт л҃. єгда сътворих",
+            "bbox_xywh": [
+              162,
+              1310,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l014",
+            "text": "злоє пред Гм҃ь. и з҃. мц҃ь болѣх до смр҃ти и похотѣніємь дш҃а",
+            "bbox_xywh": [
+              162,
+              1345,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l015",
+            "text": "з҃. лѣт каях ся пред Гм҃ь, вина ни ѡлоу не вкусих и мас[о] не",
+            "bbox_xywh": [
+              162,
+              1380,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l016",
+            "text": "вниде въ уста моꙗ,⁵) по воли не вкуси[х], плача ся блуднаг[о]",
+            "bbox_xywh": [
+              162,
+              1415,
+              945,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l017",
+            "text": "ради съгрѣшенія. великъ бо бяше грѣхъ и не будетъ въ Іил҃и",
+            "bbox_xywh": [
+              162,
+              1451,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "reuben-address-l018",
+            "text": "таковаго.",
+            "bbox_xywh": [
+              162,
+              1486,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "spirits-opening",
+        "kind": "body",
+        "bbox_xywh": [
+          151,
+          1533,
+          955,
+          76
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "spirits-opening-l001",
+            "text": "„И нн҃ѣ послушайте мене, чад[а] моꙗ, Рувима ѡц҃а вашего,",
+            "bbox_xywh": [
+              151,
+              1533,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "spirits-opening-l002",
+            "text": "иже видѣхъ з҃. дх҃ъ прелѣстных в покаяніи моємъ. з҃. дх҃ъ дано",
+            "bbox_xywh": [
+              151,
+              1571,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i249-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "reuben-heading-l001",
+        "reading": "1. Завѣтъ Роувимовъ ѡ благоумьи.",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-opening-l001",
+        "reading": "Написаніє завѣт[а] Рувимова, єлико заповѣд[а] сн҃мъ своимъ",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-opening-l002",
+        "reading": "преж[е] оумртвія своєго въ рке҃. лѣт[о] умртвія своєг[о], въ в҃-є",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-opening-l003",
+        "reading": "лѣт[о] по скончаніи Ѡсифовѣ. болящю Рувиму събраша[ся] по-",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-opening-l004",
+        "reading": "сѣтити єго сн҃ве єго и сн҃ве сн҃въ єго. и простре к нимъ словеса",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-opening-l005",
+        "reading": "своꙗ¹) и реч[е] имъ:",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l001",
+        "reading": "„Чад[а] моꙗ, азъ умираю и иду поутемъ ѡц҃ь моихъ“. и ви-",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l002",
+        "reading": "дѣвъ Іюду и Гада и Асира, брат[і]ю свою и реч[е] имъ: „въздвиг-",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l003",
+        "reading": "нете мя, брат[і]а моꙗ, да рку брат[і]и моєи и чадом моим, єлико",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l004",
+        "reading": "имамъ въ ср҃дци моємъ таинъ. скончаваю бо ся азъ уже.“",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l005",
+        "reading": "и въсклонився и человá [sic!] и въсплак[а]вся реч[е]: „послоушайте",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l006",
+        "reading": "мене,²) брат[і]а мои и чад[а] моꙗ, внимайте гл҃ы Рувима ѡц҃а",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l007",
+        "reading": "вашего, єлико азъ заповѣдаю вамъ. и³) се³) заповѣдаю³) вамъ³)",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l008",
+        "reading": "и се ви завѣщаю Бм҃ъ нб҃снымъ дн҃сь, ꙗкож[е] не ходит[и] в нера-",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l009",
+        "reading": "зуміи юностьнѣмь и в блуд[ѣ],⁴) в немь ж[е] излияхся азъ [и]",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l010",
+        "reading": "ѡскверних ложе ѡц҃а моєго Іакова. съгрѣшихъ с Валлою рабою",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l011",
+        "reading": "ѡц҃а моєго, ꙗко язви мя язвою велик[о]ю въ утробѣ моєи и за",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l012",
+        "reading": "з҃. мц҃ь, и аще не быс[ть], ѡц҃ь мой Іаковъ молился ѡ мнѣ",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l013",
+        "reading": "Гви҃, ꙗко хоташе Гь҃ убити мя. бѣхъ бо лѣт л҃. єгда сътворих",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l014",
+        "reading": "злоє пред Гм҃ь. и з҃. мц҃ь болѣх до смр҃ти и похотѣніємь дш҃а",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l015",
+        "reading": "з҃. лѣт каях ся пред Гм҃ь, вина ни ѡлоу не вкусих и мас[о] не",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l016",
+        "reading": "вниде въ уста моꙗ,⁵) по воли не вкуси[х], плача ся блуднаг[о]",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l017",
+        "reading": "ради съгрѣшенія. великъ бо бяше грѣхъ и не будетъ въ Іил҃и",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "reuben-address-l018",
+        "reading": "таковаго.",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "spirits-opening-l001",
+        "reading": "„И нн҃ѣ послушайте мене, чад[а] моꙗ, Рувима ѡц҃а вашего,",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "spirits-opening-l002",
+        "reading": "иже видѣхъ з҃. дх҃ъ прелѣстных в покаяніи моємъ. з҃. дх҃ъ дано",
+        "reason": "Historical type: exact titla, accent marks, abbreviation glyphs and restorations provisional."
+      },
+      {
+        "line_id": "section-title-l001",
+        "reading": "дванацяти",
+        "reason": "Historical Ukrainian spelling as read."
+      },
+      {
+        "line_id": "reuben-opening-l002",
+        "reading": "рке҃.",
+        "reason": "Exact numeral/titlo provisional."
+      },
+      {
+        "line_id": "reuben-address-l005",
+        "reading": "человá",
+        "reason": "Printed form and acute mark uncertain; Latin á in draft likely Cyrillic а with accent."
+      },
+      {
+        "line_id": "reuben-address-l011",
+        "reading": "язви",
+        "reason": "Exact verb uncertain."
+      },
+      {
+        "line_id": "reuben-address-l015",
+        "reading": "ѡлоу",
+        "reason": "Exact historical letters uncertain."
+      },
+      {
+        "line_id": "reuben-address-l005",
+        "reading": "[sic!] и въсплак[а]вся",
+        "reason": "Reinspection shows a separate а immediately after [sic!], apparently omitted in frozen reading; proposed [sic!] а и въсплак[а]вся. Preserve first reading for later adjudication."
+      },
+      {
+        "line_id": "reuben-heading-l001",
+        "reading": "благоумьи",
+        "reason": "Heading type may read благоумьй or благоумьи; ending and marks provisional."
+      }
+    ]
+  }
+}

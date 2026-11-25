@@ -31,7 +31,6 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
             # Real self-hosted font faces must load, rather than silently fall back.
             page.locator("#settingsOpen").click()
-            page.locator("#fontSettings summary").click()
             for selector, values, sample in [
                 ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh"), ("firaslav", "Franko FiraSlav"), ("notosans", "Franko Noto Sans")], "ꙗꙖꙑб҃ъ"),
                 ("#greekFont", [("gentium", "Franko Gentium"), ("garamond", "Franko Garamond")], "Ἐν ἀρχῇ ἄ"),
@@ -45,11 +44,9 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             page.reload()
             expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
             page.locator("#settingsOpen").click()
-            page.locator("#fontSettings summary").click()
             expect(page.locator("#slavonicFont")).to_have_value("notosans")
             expect(page.locator("#greekFont")).to_have_value("garamond")
             page.locator("#resetFonts").click()
-            page.locator("#fontSettings summary").click()
             page.locator("#showLanguages").check()
             page.locator("#settingsClose").click()
             expect(page.locator(".languages-on .language-span[data-language='grc']").first).to_be_visible()
@@ -102,12 +99,18 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#scan")).to_be_visible()
             expect(page.locator("#draftStatus")).to_contain_text("No draft found")
             expect(page.locator("#highlight")).to_be_hidden()
-            page.locator("#volume").select_option("4")
+            page.locator("#contentsOpen").click()
+            page.locator("#contentsVolume").select_option("4")
+            page.locator("#contentsFirstScan").click()
+            expect(page.locator("#contentsCurrentVolume")).to_have_text("IV")
             expect(page.locator("#scan")).to_be_visible()
             expect(page.locator("#ocrStatus")).to_contain_text("Empty original OCR")
             expect(page.locator("#ocr")).to_have_text("")
             # Actual exposed reading I/52 contains whole-line and partial uncertainty notes.
-            page.locator("#volume").select_option("1")
+            page.locator("#contentsOpen").click()
+            page.locator("#contentsVolume").select_option("1")
+            page.locator("#contentsFirstScan").click()
+            expect(page.locator("#contentsCurrentVolume")).to_have_text("I")
             page.locator("#page").fill("52")
             page.locator("#go").click()
             expect(page.locator("#choice option").filter(has_text="exposed reading")).to_have_count(1)
