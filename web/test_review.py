@@ -155,6 +155,57 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(result, [1, -1, -1, -1])
             browser.close()
 
+    def test_contents_line_navigation_real_reading_fixture(self):
+        # Real candidate records; synthetic transport/image dimensions only.
+        import json
+        root = Path(__file__).resolve().parents[1]
+        draft = json.loads((root / 'pilot/vol4_scan00071_single_reading.json').read_text(encoding='utf-8'))
+        html = APP.read_text(encoding='utf-8')
+        contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        anchors = [e for e in contents['4']['entries'] if len(e) > 6]
+        self.assertEqual(len(anchors), 4)
+        for e in anchors:
+            a = e[6]
+            d = json.loads((root / f"pilot/vol4_scan{e[3]:05d}_{a['suffix']}.json").read_text(encoding='utf-8'))
+            self.assertEqual(d['reading']['reader_id'], a['reader_id'])
+            hits = [l for region in d['reading']['regions'] if region['kind'] == 'heading'
+                    for l in region['lines'] if l['id'] == a['line_id']]
+            self.assertEqual([l['text'] for l in hits], [a['text']])
+        manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
+                    'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
+                                 {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':390,'height':844})
+            page.evaluate("""fixture => {
+                location.hash='v=4&p=71';
+                window.fetch=async url=>{
+                    if(url.endsWith('/manifest.json'))return new Response(JSON.stringify(fixture.manifest));
+                    if(url.endsWith('.txt'))return new Response('');
+                    if(url.endsWith('vol4_scan00071_single_reading.json')&&!url.includes('/missing/'))
+                        return new Response(JSON.stringify(fixture.draft));
+                    return new Response('',{status:404});
+                };
+                const src=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,'src');
+                Object.defineProperty(HTMLImageElement.prototype,'src',{get:src.get,set(value){
+                    src.set.call(this,'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="1190" height="1783"></svg>'));
+                }});
+            }""", {'manifest':manifest,'draft':draft})
+            page.set_content(html)
+            for line in ['questions-heading-line-01','untitled-heading-line-01']:
+                page.locator('#contentsOpen').click()
+                page.locator(f'#contentsEntries button[data-line="{line}"]').click()
+                page.locator(f'#candidate [data-line-id="{line}"][aria-pressed="true"]').wait_for()
+                self.assertIn(line, page.locator('#lineinfo').inner_text())
+                self.assertEqual(page.locator('#candidate [aria-pressed="true"]').count(), 1)
+            page.locator('#ref').fill('missing')
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsEntries button[data-line="questions-heading-line-01"]').click()
+            page.get_by_text('Exact contents heading is unavailable in this ref; opened the scan only.').wait_for()
+            self.assertEqual(page.locator('#candidate [aria-pressed="true"]').count(), 0)
+            self.assertTrue(page.locator('#highlight').is_hidden())
+            browser.close()
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
