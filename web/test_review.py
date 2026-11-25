@@ -349,6 +349,23 @@ class ReviewSmoke(unittest.TestCase):
         for index in (32, 63, 64):
             self.assertNotIn('CAVT-066' if index == 32 else 'CAVT-101', links(index))
 
+    def test_contents_vol2_prophecy_derivations(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def links(index):
+            key = json.dumps(data['2']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return {link['id']: link for link in refs['2'].get(key, [])}
+        for index in (17, 18, 19, 22):
+            link = links(index)['ECCA 974']
+            self.assertEqual(link['relation'], 'work-family')
+            self.assertTrue(link['evidenceUk'] and link['titleUk'])
+        self.assertEqual(links(16)['ECCA 974']['relation'], 'edition-match')
+        self.assertEqual(links(32)['ECCA 545']['relation'], 'work-family')
+        for index in (15, 20, 21, 23, 24, 25, 26):
+            self.assertFalse(links(index), f'Unsupported work link for II/{index}')
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
