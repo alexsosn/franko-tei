@@ -7894,6 +7894,7 @@ function validatePrintedIndexes(d){
     ids.add(s.kind);
     for(const e of s.entries){
       if(typeof e.label!=='string'||typeof e.detail!=='string'||typeof e.context!=='string'||!s.structured_scans.includes(e.source?.scan)||!Array.isArray(e.refs))throw Error('Invalid entry');
+      if(e.segments!==undefined&&(!Array.isArray(e.segments)||e.segments.length<2||!e.segments.every(sg=>s.structured_scans.includes(sg.source?.scan)&&typeof sg.region_id==="string"&&Array.isArray(sg.lines))))throw Error("Invalid continuation");
       for(const r of e.refs){
         if(r.volume!=='1'||typeof r.literal!=='string'||!Array.isArray(r.targets)||!Array.isArray(r.missing)||
            !r.targets.every(t=>Number.isInteger(t.page)&&t.page>=1&&t.page<=340&&Number.isInteger(t.scan)&&t.scan>=76&&t.scan<=415))throw Error('Invalid reference');
@@ -7950,7 +7951,7 @@ function drawPrintedIndex(d,v){
     if(e.refs.length){const refs=document.createElement('div');refs.className='index-refs';for(const r of e.refs.slice(0,8))appendIndexRef(refs,r);
       if(e.refs.length>8){const more=document.createElement('details'),summary=document.createElement('summary');summary.textContent=indexText('+'+(e.refs.length-8)+' more','Ще '+(e.refs.length-8));const rest=document.createElement('div');rest.className='index-refs';for(const r of e.refs.slice(8))appendIndexRef(rest,r);more.append(summary,rest);refs.append(more);}
       li.append(refs);}
-    const source=document.createElement("button");source.type="button";source.className="index-source";source.textContent=indexText("Source scan ","Скан джерела ")+e.source.scan;source.onclick=()=>jumpContents(v,e.source.scan);li.append(source);
+    for(const scan of new Set((e.segments||[e]).map(sg=>sg.source.scan))){const source=document.createElement("button");source.type="button";source.className="index-source";source.textContent=indexText("Source scan ","Скан джерела ")+scan;source.onclick=()=>jumpContents(v,scan);li.append(source);}
     fragment.append(li);
   }
   list.append(fragment);filterPrintedIndexes();list.scrollTop=0;
