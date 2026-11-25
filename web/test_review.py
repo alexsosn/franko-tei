@@ -201,6 +201,24 @@ class ReviewSmoke(unittest.TestCase):
         for volume, index, identifier in (('3', 116, 'ECCA 958'), ('2', 135, 'ECCA 635'), ('5', 4, 'ECCA 678')):
             self.assertEqual(link(volume, index, identifier)['relation'], 'candidate')
 
+    def test_contents_ocp_edition_vs_composite(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def link(volume, index, identifier):
+            key = json.dumps(data[volume]['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return next(x for x in refs[volume][key] if x['id'] == identifier)
+        for index, identifier in ((34, 'CAVT-066'), (62, 'CAVT-101'), (81, 'CAVT-118')):
+            item = link('1', index, identifier)
+            self.assertEqual(item['relation'], 'edition-match')
+            self.assertEqual(item['kind'], 'catalog')
+        self.assertIn('recension A', link('1', 62, 'CAVT-101')['evidence'])
+        self.assertEqual(link('1', 45, 'CAVT-089')['relation'], 'work-family')
+        for index in range(82, 94):
+            self.assertEqual(link('1', index, 'CAVT-118')['relation'], 'work-family')
+        self.assertEqual(link('4', 45, 'CAVT-088')['relation'], 'edition-match')
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
