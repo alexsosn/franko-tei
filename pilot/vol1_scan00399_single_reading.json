@@ -1,0 +1,793 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 399,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00399.jpg",
+  "source_image_sha256": "20ac7d01f6e7b1f74fb15a651273f12e4fa11fffd801fe04ee281f825e8ef114",
+  "reading": {
+    "reader_id": "gpt62-i399-final-gap-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i394-403-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original pinned image reading; retain physical lines, editorial prose, list numerals, headings, witness text and printed folio if visible. Estimated geometry. Exact historical accents, titla and bracket restorations provisional. No same-page embedded OCR or peer reading consulted.",
+    "raw_response": "Д О Д А Т К И.\nПоловина отсего тому була вже видрукувана, коли я одержав\nвід д. В. Гнатюка угроруський рукопис попа Стефана Теслевцьового.\nВважаючи потрібним передрукувати з того рукопису все, що від-\nповідають метї отсеї збірки, я подаю тут в доповненю ті тексти\nз сего рукопису, що відносять ся до початкових роздїлів збірки.\nКрім того подаю і з иньших рукописів дещо такого, на що я не\nзвернув був уваги укладаючи систематичний порядок текстів\nу роздїли.\nДо роздїлу II.\nБ. Рукопис о. Яремецького-Білахевича, стор. 214.\nВ неделю сотворилъ Бг҃ъ нбо й землю, дн҃ь и нощъ и всю\nвселенную. В понеделокъ сотвори сл҃нце, мс҃ць и звѣзды [sic!]\nи вся небесная. Во второкъ насади раи, в среду оустави воду\nв мори, в четвертокъ сотвори скоти, гади и птици й вся звѣрїє.\nВ пꙗтокъ сотвори Адама ѿ чистїа глини, в суботу дшу\nдалъ єму.\nВ о п р о с: На колико частїй раздѣливъ Бг҃ъ часть Адамову?\nѠ в ѣ т ъ: а҃-ꙗ часть далъ Аврааму бголюбство; втораꙗ\nчасть дал силу Самсону; третаꙗ часть дал богатства Іѡву; чет-\nвертаꙗ часть далъ красоту Іѡсифу; пꙗтаꙗ часть далъ кротость\nДв҃ду; шестаꙗ часть далъ мудрость Соломону; седмаꙗ часть\nдалъ Авесалому власи златїє, сн҃у Дв҃дову.\nВ о п р о с: Колико любилъ Бг҃ъ Адама?\nѠ в ѣ т ъ: Колико любилъ ѡц҃ъ сн҃а своєго.\nВ о п р о с: Кто сидитъ выше Гд҃а на пр҃толѣ?\nѠ в ѣ т ъ: Адамъ, єгда далъ єму Бг҃ъ [в рукоп. хибно:\nБгу҃] дшу.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "appendix-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          438,
+          524,
+          359,
+          43
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "appendix-heading-l001",
+            "text": "Д О Д А Т К И.",
+            "bbox_xywh": [
+              438,
+              524,
+              359,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          154,
+          599,
+          948,
+          287
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-l001",
+            "text": "Половина отсего тому була вже видрукувана, коли я одержав",
+            "bbox_xywh": [
+              154,
+              599,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l002",
+            "text": "від д. В. Гнатюка угроруський рукопис попа Стефана Теслевцьового.",
+            "bbox_xywh": [
+              154,
+              635,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l003",
+            "text": "Вважаючи потрібним передрукувати з того рукопису все, що від-",
+            "bbox_xywh": [
+              154,
+              671,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l004",
+            "text": "повідають метї отсеї збірки, я подаю тут в доповненю ті тексти",
+            "bbox_xywh": [
+              154,
+              707,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l005",
+            "text": "з сего рукопису, що відносять ся до початкових роздїлів збірки.",
+            "bbox_xywh": [
+              154,
+              744,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l006",
+            "text": "Крім того подаю і з иньших рукописів дещо такого, на що я не",
+            "bbox_xywh": [
+              154,
+              780,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l007",
+            "text": "звернув був уваги укладаючи систематичний порядок текстів",
+            "bbox_xywh": [
+              154,
+              816,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-l008",
+            "text": "у роздїли.",
+            "bbox_xywh": [
+              154,
+              852,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          505,
+          924,
+          217,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-heading-l001",
+            "text": "До роздїлу II.",
+            "bbox_xywh": [
+              505,
+              924,
+              217,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          262,
+          978,
+          734,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-l001",
+            "text": "Б. Рукопис о. Яремецького-Білахевича, стор. 214.",
+            "bbox_xywh": [
+              262,
+              978,
+              734,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "questions-body",
+        "kind": "body",
+        "bbox_xywh": [
+          156,
+          1035,
+          948,
+          612
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "questions-body-l001",
+            "text": "В неделю сотворилъ Бг҃ъ нбо й землю, дн҃ь и нощъ и всю",
+            "bbox_xywh": [
+              156,
+              1035,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l002",
+            "text": "вселенную. В понеделокъ сотвори сл҃нце, мс҃ць и звѣзды [sic!]",
+            "bbox_xywh": [
+              156,
+              1071,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              },
+              {
+                "start": 56,
+                "end": 60,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              },
+              {
+                "start": 60,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l003",
+            "text": "и вся небесная. Во второкъ насади раи, в среду оустави воду",
+            "bbox_xywh": [
+              156,
+              1107,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l004",
+            "text": "в мори, в четвертокъ сотвори скоти, гади и птици й вся звѣрїє.",
+            "bbox_xywh": [
+              156,
+              1144,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l005",
+            "text": "В пꙗтокъ сотвори Адама ѿ чистїа глини, в суботу дшу",
+            "bbox_xywh": [
+              156,
+              1180,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 51,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l006",
+            "text": "далъ єму.",
+            "bbox_xywh": [
+              156,
+              1216,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l007",
+            "text": "В о п р о с: На колико частїй раздѣливъ Бг҃ъ часть Адамову?",
+            "bbox_xywh": [
+              156,
+              1252,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l008",
+            "text": "Ѡ в ѣ т ъ: а҃-ꙗ часть далъ Аврааму бголюбство; втораꙗ",
+            "bbox_xywh": [
+              156,
+              1288,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l009",
+            "text": "часть дал силу Самсону; третаꙗ часть дал богатства Іѡву; чет-",
+            "bbox_xywh": [
+              156,
+              1324,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l010",
+            "text": "вертаꙗ часть далъ красоту Іѡсифу; пꙗтаꙗ часть далъ кротость",
+            "bbox_xywh": [
+              156,
+              1360,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l011",
+            "text": "Дв҃ду; шестаꙗ часть далъ мудрость Соломону; седмаꙗ часть",
+            "bbox_xywh": [
+              156,
+              1396,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l012",
+            "text": "далъ Авесалому власи златїє, сн҃у Дв҃дову.",
+            "bbox_xywh": [
+              156,
+              1432,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 42,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l013",
+            "text": "В о п р о с: Колико любилъ Бг҃ъ Адама?",
+            "bbox_xywh": [
+              156,
+              1469,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l014",
+            "text": "Ѡ в ѣ т ъ: Колико любилъ ѡц҃ъ сн҃а своєго.",
+            "bbox_xywh": [
+              156,
+              1505,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 42,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l015",
+            "text": "В о п р о с: Кто сидитъ выше Гд҃а на пр҃толѣ?",
+            "bbox_xywh": [
+              156,
+              1541,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 45,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l016",
+            "text": "Ѡ в ѣ т ъ: Адамъ, єгда далъ єму Бг҃ъ [в рукоп. хибно:",
+            "bbox_xywh": [
+              156,
+              1577,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 37,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              },
+              {
+                "start": 37,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "questions-body-l017",
+            "text": "Бгу҃] дшу.",
+            "bbox_xywh": [
+              156,
+              1613,
+              948,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 10,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i399-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "questions-body-l001",
+        "reading": "В неделю сотворилъ Бг҃ъ нбо й землю, дн҃ь и нощъ и всю",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l002",
+        "reading": "вселенную. В понеделокъ сотвори сл҃нце, мс҃ць и звѣзды [sic!]",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l003",
+        "reading": "и вся небесная. Во второкъ насади раи, в среду оустави воду",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l004",
+        "reading": "в мори, в четвертокъ сотвори скоти, гади и птици й вся звѣрїє.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l005",
+        "reading": "В пꙗтокъ сотвори Адама ѿ чистїа глини, в суботу дшу",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l006",
+        "reading": "далъ єму.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l007",
+        "reading": "В о п р о с: На колико частїй раздѣливъ Бг҃ъ часть Адамову?",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l008",
+        "reading": "Ѡ в ѣ т ъ: а҃-ꙗ часть далъ Аврааму бголюбство; втораꙗ",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l009",
+        "reading": "часть дал силу Самсону; третаꙗ часть дал богатства Іѡву; чет-",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l010",
+        "reading": "вертаꙗ часть далъ красоту Іѡсифу; пꙗтаꙗ часть далъ кротость",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l011",
+        "reading": "Дв҃ду; шестаꙗ часть далъ мудрость Соломону; седмаꙗ часть",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l012",
+        "reading": "далъ Авесалому власи златїє, сн҃у Дв҃дову.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l013",
+        "reading": "В о п р о с: Колико любилъ Бг҃ъ Адама?",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l014",
+        "reading": "Ѡ в ѣ т ъ: Колико любилъ ѡц҃ъ сн҃а своєго.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l015",
+        "reading": "В о п р о с: Кто сидитъ выше Гд҃а на пр҃толѣ?",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l016",
+        "reading": "Ѡ в ѣ т ъ: Адамъ, єгда далъ єму Бг҃ъ [в рукоп. хибно:",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "questions-body-l017",
+        "reading": "Бгу҃] дшу.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      }
+    ]
+  }
+}
