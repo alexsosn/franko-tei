@@ -57,9 +57,9 @@ function renderLine(line,region,notes,alternates=[]){const row=document.createEl
 $('candidate').append(row);if(alternates.length){btn.classList.add('alternate-diff');const toggle=document.createElement('button');toggle.type='button';toggle.className='alternate-toggle';toggle.textContent='≠ '+alternates.length;toggle.title='Show approximate alternate line readings';toggle.setAttribute('aria-label','Alternate readings for '+line.id);toggle.setAttribute('aria-expanded','false');const details=document.createElement('div');details.className='alternate-reasons';details.hidden=true;const hint=document.createElement('small');hint.textContent='Approximate geometry match; compare the original image. Not an adjudicated alignment.';details.append(hint);for(const alt of alternates){const p=document.createElement('p');const name=document.createElement('strong');name.textContent=alt.label+' · '+alt.reader;p.append(name,document.createTextNode('\n'+alt.text));details.append(p);}toggle.onclick=()=>{details.hidden=!details.hidden;toggle.setAttribute('aria-expanded',String(!details.hidden));};gutter.append(toggle);$('candidate').append(details);}if(!notes.length)return;const toggle=document.createElement('button');toggle.type='button';toggle.className='uncertainty-toggle';toggle.textContent='⚑ '+notes.length;toggle.title='Show uncertainty reasons';toggle.setAttribute('aria-label','Uncertainty notes for '+line.id);toggle.setAttribute('aria-expanded','false');const reasons=document.createElement('div');reasons.className='uncertainty-reasons';reasons.hidden=true;for(const {note,ranges} of anchored){const p=document.createElement('p');const label=document.createElement('strong');label.textContent=String(note.reading??'Unanchored reading');p.append(label,document.createTextNode(' — '));const reason=document.createElement('span');reason.textContent=String(note.reason??'No reason supplied');p.append(reason);if(ranges.length!==1){const warning=document.createElement('small');warning.textContent=ranges.length?' (Multiple exact occurrences; location ambiguous.)':' (Literal not found in line; no highlight.)';p.append(warning);}reasons.append(p);}toggle.onclick=()=>{reasons.hidden=!reasons.hidden;toggle.setAttribute('aria-expanded',String(!reasons.hidden));};gutter.prepend(toggle);$('candidate').append(reasons);}
 function renderCandidate(){clearHighlight();$('candidate').replaceChildren();$('notes').hidden=true;const c=candidates[Number($('choice').value)];if(!c)return;const d=c.data,r=d.reading;message('draftStatus','Unverified · '+candidateLabel(c.suffix,r)+' · '+r.reader_id+' · printed folio '+(d.printed_page_observed??'unknown')+' · '+r.context_independence+' · '+candidates.length+' candidate(s); purple bars indicate approximate differing lines');const byLine=new Map();for(const note of r.uncertainty_notes??[]){if(!note||typeof note.line_id!=='string')continue;const list=byLine.get(note.line_id)??[];list.push(note);byLine.set(note.line_id,list);}for(const region of r.regions){const h=document.createElement('h3');h.textContent=region.kind;$('candidate').append(h);for(const line of region.lines){renderLine(line,region,byLine.get(line.id)??[],alternateMatches(line,c));byLine.delete(line.id);}}if(byLine.size)message('draftStatus',$('draftStatus').textContent+' · Unmatched uncertainty line IDs: '+[...byLine.keys()].join(', ')+' (see original JSON).');$('notes').hidden=false;message('noteText',JSON.stringify({original_ocr_visible:r.source_original_ocr_visible,peer_readings_visible:r.peer_readings_visible,source_image_sha256:d.source_image_sha256},null,2));$('readingSource').href=c.url;}
 function checkDraft(d,v,n,image){if(d.volume!==v||d.scan_page!==n||d.asset_commit!==PIN||d.source_image_path!==image.path||d.source_image_sha256!==image.sha256)throw Error('Source identity mismatch');if(d.status!=='agent_unverified'||!['single-image-draft-v0','single-exposed-draft-v1'].includes(d.schema_version)||!d.reading||!Array.isArray(d.reading.regions)||!d.reading.regions.every(r=>Array.isArray(r.lines)&&r.lines.every(l=>typeof l.text==='string')))throw Error('Unsupported draft schema');}
-async function load(){const anchor=pendingContentsAnchor;pendingContentsAnchor=null;let anchorIndex=-1,anchorApplied=false;const applyAnchor=()=>{if(!anchor||anchorApplied||anchorIndex<0||$('scan').hidden||Number($('choice').value)!==anchorIndex||$('mode').value==='ocr')return;const b=[...$('candidate').querySelectorAll('.line-text')].find(b=>b.dataset.lineId===anchor.line_id);if(b){anchorApplied=true;b.scrollIntoView({block:'center',inline:'nearest'});b.click();}};if(!$('contentsPanel').hidden)renderContents();const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;current=null;candidates=[];$('choice').replaceChildren();$('candidate').replaceChildren();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
+async function load(){const anchor=pendingContentsAnchor,estimated=pendingContentsEstimate;pendingContentsAnchor=null;pendingContentsEstimate=false;let anchorIndex=-1,anchorApplied=false;const applyAnchor=()=>{if(!anchor||anchorApplied||anchorIndex<0||$('scan').hidden||Number($('choice').value)!==anchorIndex||$('mode').value==='ocr')return;const b=[...$('candidate').querySelectorAll('.line-text')].find(b=>b.dataset.lineId===anchor.line_id);if(b){anchorApplied=true;b.scrollIntoView({block:'center',inline:'nearest'});b.click();}};if(!$('contentsPanel').hidden)renderContents();const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;current=null;candidates=[];$('choice').replaceChildren();$('candidate').replaceChildren();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
 if(!/^[A-Za-z0-9][A-Za-z0-9._/-]*$/.test(ref)||ref.split('/').some(x=>!x||x==='.'||x==='..')){message('status','Invalid reading ref. Enter a branch name or commit SHA.');return;}
-try{let manifest=manifests.get(v);if(!manifest){manifest=await(await get(asset('vol'+v+'/manifest.json'),signal)).json();if(id!==generation)return;if(manifest.volume!==v||!Array.isArray(manifest.pages)||!Number.isInteger(manifest.page_count)||manifest.page_count<1)throw Error('Invalid volume manifest');manifests.set(v,manifest);}n=Math.min(n,manifest.page_count);$('page').value=n;activeScan=n;$('page').max=manifest.page_count;message('total','/ '+manifest.page_count);$('prev').disabled=n<=1;$('next').disabled=n>=manifest.page_count;const page=manifest.pages.find(p=>p.scan_page===n);if(!page)throw Error('Scan missing from manifest');const image=page.artifacts.find(a=>a.role==='page_image');const ocr=page.artifacts.find(a=>a.role==='embedded_ocr');if(!image||!ocr||!['jpg','png'].some(ext=>image.path==='vol'+v+'/page-'+pad(n)+'.'+ext)||ocr.path!=='original_ocr/vol'+v+'/page-'+pad(n)+'.txt'||!(page.width>0&&page.height>0))throw Error('Invalid source manifest entry');current={page,image};history.replaceState(null,'','#'+new URLSearchParams({v,p:String(n),ref}));message('status','Volume '+v+' · scan '+n+' / '+manifest.page_count+' · reading ref: '+ref);$('source').href=asset(image.path);$('scan').onload=()=>{if(id!==generation)return;if($('scan').naturalWidth!==page.width||$('scan').naturalHeight!==page.height){message('imageError','Image dimensions differ from manifest.');return;}$('scan').hidden=false;applyAnchor();};$('scan').onerror=()=>{if(id===generation)message('imageError','Image could not be loaded. Try Open full image or reload.');};$('scan').src=asset(image.path);
+try{let manifest=manifests.get(v);if(!manifest){manifest=await(await get(asset('vol'+v+'/manifest.json'),signal)).json();if(id!==generation)return;if(manifest.volume!==v||!Array.isArray(manifest.pages)||!Number.isInteger(manifest.page_count)||manifest.page_count<1)throw Error('Invalid volume manifest');manifests.set(v,manifest);}n=Math.min(n,manifest.page_count);$('page').value=n;activeScan=n;$('page').max=manifest.page_count;message('total','/ '+manifest.page_count);$('prev').disabled=n<=1;$('next').disabled=n>=manifest.page_count;const page=manifest.pages.find(p=>p.scan_page===n);if(!page)throw Error('Scan missing from manifest');const image=page.artifacts.find(a=>a.role==='page_image');const ocr=page.artifacts.find(a=>a.role==='embedded_ocr');if(!image||!ocr||!['jpg','png'].some(ext=>image.path==='vol'+v+'/page-'+pad(n)+'.'+ext)||ocr.path!=='original_ocr/vol'+v+'/page-'+pad(n)+'.txt'||!(page.width>0&&page.height>0))throw Error('Invalid source manifest entry');current={page,image};history.replaceState(null,'','#'+new URLSearchParams({v,p:String(n),ref}));message('status','Volume '+v+' · scan '+n+' / '+manifest.page_count+' · reading ref: '+ref+(estimated?' · Unverified contents destination; check the heading.':''));$('source').href=asset(image.path);$('scan').onload=()=>{if(id!==generation)return;if($('scan').naturalWidth!==page.width||$('scan').naturalHeight!==page.height){message('imageError','Image dimensions differ from manifest.');return;}$('scan').hidden=false;applyAnchor();};$('scan').onerror=()=>{if(id===generation)message('imageError','Image could not be loaded. Try Open full image or reload.');};$('scan').src=asset(image.path);
 const ocrTask=(async()=>{try{const value=await(await get(asset(ocr.path),signal)).text();if(id!==generation)return;message('ocr',value);message('ocrStatus',value.trim()?'Original extraction; no spatial line alignment.':'Empty original OCR (no non-whitespace text).');}catch(e){if(id===generation)message('ocrStatus','OCR unavailable: '+e.message);}})();
 const draftTask=(async()=>{const results=await Promise.all(suffixes.map(async suffix=>{const path='pilot/vol'+v+'_scan'+pad(n)+'_'+suffix+'.json';const url=readURL(ref,path);try{const response=await get(url,signal,true);if(!response)return null;const data=await response.json();checkDraft(data,v,n,image);return {data,url,suffix};}catch(e){return {error:suffix+': '+e.message};}}));if(id!==generation)return;const errors=results.filter(r=>r?.error).map(r=>r.error);candidates=results.filter(r=>r?.data);for(const [i,c] of candidates.entries())$('choice').add(new Option(candidateLabel(c.suffix,c.data.reading),i));if(candidates.length){if(anchor){anchorIndex=contentsAnchorIndex(anchor,candidates);if(anchorIndex>=0)$('choice').value=String(anchorIndex);}renderCandidate();if(anchor&&anchorIndex<0)message('lineinfo','Exact contents heading is unavailable in this ref; opened the scan only.');applyAnchor();if(errors.length)message('draftStatus',$('draftStatus').textContent+' · Other candidate errors: '+errors.join('; '));}else{if(anchor)message('lineinfo','Exact contents heading is unavailable in this ref; opened the scan only.');message('draftStatus',errors.length?errors.join('; '):'No draft found at this ref (404). Check the ref or switch to original PDF OCR.');if(!errors.length&&$('mode').value==='draft'){$('mode').value='both';updateMode();}}})();await Promise.all([ocrTask,draftTask]);
 }catch(e){if(id===generation){message('status','Unable to load page: '+e.message);message('draftStatus','Page not loaded.');message('ocrStatus','Page not loaded.');}}}
@@ -91,19 +91,23 @@ const volumeContents = {
       468,
       469
     ],
-    "coverage": "Section headings and all individual titles; individual destinations pending where not inspected.",
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
     "entries": [
       [
         465,
         "Від Археоґрафічної комісиї.",
         "",
-        null
+        8,
+        0,
+        "Original scan heading reads Від Комісиї Археоґрафічної; unnumbered start inspected."
       ],
       [
         465,
         "Передмова",
         "I–LXVI",
-        null
+        10,
+        0,
+        "Preface heading inspected; Roman p. I has no visible folio numeral."
       ],
       [
         465,
@@ -1096,20 +1100,23 @@ const volumeContents = {
       524,
       525
     ],
-    "coverage": "Section headings, preface outline and all item titles; individual destinations pending where not inspected.",
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
     "entries": [
       [
         519,
         "Передмова",
         "I–LXXVIII",
-        null
+        5,
+        0,
+        "Preface heading inspected; Roman p. I has no visible folio numeral."
       ],
       [
         519,
         "I. Зміст і характер отсего тома",
         "I–II",
-        null,
-        1
+        5,
+        1,
+        "Section heading inspected on the preface opening."
       ],
       [
         519,
@@ -2083,26 +2090,31 @@ const volumeContents = {
       445,
       446
     ],
-    "coverage": "Individual titles and preface outline read from all eight contents scans; most item destinations pending.",
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
     "entries": [
       [
         439,
         "Codex apocryphus, Plan der Sammlung, Inhalt der bisher erschienenen drei Bände",
         "A–M",
-        null
+        5,
+        0,
+        "German introduction heading inspected; alphabetic pagination begins here."
       ],
       [
         439,
         "Передмова",
         "I–LXVIII",
-        null
+        19,
+        0,
+        "Preface heading inspected; Roman p. I has no visible folio numeral."
       ],
       [
         439,
         "I. Вступ",
         "I–IV",
-        null,
-        1
+        19,
+        1,
+        "Section heading inspected on the preface opening."
       ],
       [
         439,
@@ -2136,15 +2148,17 @@ const volumeContents = {
         439,
         "VI. Уваги про поодинокі оповіданя:",
         "",
-        null,
-        1
+        43,
+        1,
+        "No printed reference in TOC; heading inspected on p. XXV."
       ],
       [
         439,
         "1. Оповіданя про ап. Петра",
         "XXV–XXVII",
-        null,
-        2
+        43,
+        2,
+        "Subsection heading inspected on p. XXV."
       ],
       [
         439,
@@ -3277,13 +3291,15 @@ const volumeContents = {
       573,
       574
     ],
-    "coverage": "Individual titles read from all six contents scans, including supplements; uninspected destinations pending.",
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
     "entries": [
       [
         569,
         "Передмова",
         "I–XVI",
-        null
+        9,
+        0,
+        "Preface heading inspected; the printed TOC range I–XVI is inconsistent with the observed continuation on pp. XVII–XXXIV; start only verified."
       ],
       [
         569,
@@ -4405,13 +4421,15 @@ const volumeContents = {
       311,
       312
     ],
-    "coverage": "Section headings and item titles; individual destinations pending where not inspected.",
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
     "entries": [
       [
         311,
         "Передмова",
         "I",
-        null
+        11,
+        0,
+        "Preface heading inspected; no visible folio numeral."
       ],
       [
         311,
@@ -4741,10 +4759,14 @@ const volumeContents = {
   }
 };
 function closeContents(){ $('contentsPanel').hidden=true;$('contentsOpen').setAttribute('aria-expanded','false'); }
-let pendingContentsAnchor=null;
+let pendingContentsAnchor=null,pendingContentsEstimate=false;
+// Main-text offsets are corroborated by inspected starts and folios. Roman offsets are separate; never infer the IV/V prefaces from the main offset.
+const contentsPagination={1:{arabic:75},2:{arabic:82,roman:4,romanMax:78},3:{arabic:86,roman:18,romanMax:68},4:{arabic:52},5:{arabic:12}};
+function contentsRoman(value){if(!/^(?=[IVXLCDM]+$)M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/.test(value))return null;const digits={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};return [...value].reduce((n,c,i)=>n+(digits[c]<(digits[value[i+1]]??0)?-digits[c]:digits[c]),0);}
+function contentsDestination(v,entry){const d=volumeContents[v],p=contentsPagination[v];if(!d||!p||!Array.isArray(entry))return null;const scan=entry[3];if(scan!==null)return Number.isInteger(scan)&&scan>=1&&scan<=counts[Number(v)]?{scan,kind:'verified'}:null;const printed=entry[2];if(typeof printed!=='string')return null;let n=null;const a=printed.match(/^([1-9][0-9]*)(?=$|[–, і])/);if(a)n=Number(a[1])+p.arabic;else{const r=printed.match(/^([IVXLCDM]+)(?=$|[–, і])/);if(r&&p.roman!==undefined){const folio=contentsRoman(r[1]);if(folio!==null&&folio<=p.romanMax)n=folio+p.roman;}}return Number.isSafeInteger(n)&&n>=1&&n<d.sources[0]&&n<=counts[Number(v)]?{scan:n,kind:'estimated'}:null;}
 function contentsAnchorIndex(anchor,available){if(!anchor)return -1;const hits=[];for(const [i,c] of available.entries()){const r=c.data.reading;if(c.suffix!==anchor.suffix||r.reader_id!==anchor.reader_id)continue;const lines=r.regions.flatMap(region=>region.lines.map(line=>({region,line}))).filter(x=>x.line.id===anchor.line_id);if(lines.length===1&&lines[0].region.kind==='heading'&&lines[0].line.text===anchor.text)hits.push(i);}return hits.length===1?hits[0]:-1;}
-function jumpContents(v,n,anchor=null){if($('volume').value!==v||!Number.isInteger(n)||n<1||n>counts[Number(v)])return;closeContents();$('page').value=String(n);pendingContentsAnchor=anchor;if(anchor&&$('mode').value==='ocr'){$('mode').value='both';updateMode();}load();}
-function renderContents(){const v=$('volume').value,d=volumeContents[v];$('contentsSources').replaceChildren();$('contentsEntries').replaceChildren();if(!d)return;message('contentsTitle','Contents · Зміст — Volume '+v);message('contentsStatus','Provisional image reading. '+d.coverage+' Printed numbers are distinct from scan indices; unavailable destinations are not guessed. Section start numbers derive from first listed item.');for(const n of d.sources){const b=document.createElement('button');b.type='button';b.textContent='Scan '+n;b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}for(const [source,title,printed,scan,depth,note,anchor] of d.entries){const li=document.createElement('li');if(depth){li.className='subentry';if(depth===2)li.classList.add('subentry-deep');}const label=title+(printed?' · p. '+printed:'');if(scan!==null){const b=document.createElement('button');b.type='button';b.dataset.scan=String(scan);b.textContent=label;if(anchor){b.dataset.line=anchor.line_id;b.title='Open exact heading in its recorded reading';}b.onclick=()=>jumpContents(v,scan,anchor??null);li.append(b);}else {const t=document.createElement('span');t.textContent=label+' (destination pending)';li.append(t);}const b=document.createElement('button');b.type='button';b.className='source-link';b.textContent='TOC '+source;b.setAttribute('aria-label','Open original contents scan '+source+' for '+title);b.onclick=()=>jumpContents(v,source);li.append(b);if(note){const t=document.createElement('small');t.textContent=' · '+note;li.append(t);}$('contentsEntries').append(li);}}
+function jumpContents(v,n,anchor=null,estimated=false){if($('volume').value!==v||!Number.isInteger(n)||n<1||n>counts[Number(v)])return;closeContents();$('page').value=String(n);pendingContentsAnchor=anchor;pendingContentsEstimate=estimated;if(anchor&&$('mode').value==='ocr'){$('mode').value='both';updateMode();}load();}
+function renderContents(){const v=$('volume').value,d=volumeContents[v];$('contentsSources').replaceChildren();$('contentsEntries').replaceChildren();if(!d)return;message('contentsTitle','Contents · Зміст — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,estimated=d.entries.filter(e=>contentsDestination(v,e)?.kind==='estimated').length;message('contentsStatus',verified+' inspected page destinations · '+estimated+' unverified calculated destinations. Exact line anchors open their recorded reading. Calculated links use the printed start page and volume-specific offset; check the heading against the scan. Printed references may contain errors.');for(const n of d.sources){const b=document.createElement('button');b.type='button';b.textContent='Scan '+n;b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');if(depth){li.className='subentry';if(depth===2)li.classList.add('subentry-deep');}const label=title+(printed?' · p. '+printed:'');if(dest){const b=document.createElement('button');b.type='button';if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);b.textContent=label+' · unverified scan '+dest.scan;b.title='Calculated from printed pagination; work start not inspected';}else{b.dataset.scan=String(dest.scan);b.textContent=label;if(anchor){b.dataset.line=anchor.line_id;b.title='Open exact heading in its recorded reading';}}b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');li.append(b);}else {const t=document.createElement('span');t.textContent=label+' (destination pending)';li.append(t);}const b=document.createElement('button');b.type='button';b.className='source-link';b.textContent='TOC '+source;b.setAttribute('aria-label','Open original contents scan '+source+' for '+title);b.onclick=()=>jumpContents(v,source);li.append(b);if(note){const t=document.createElement('small');t.textContent=' · '+note;li.append(t);}$('contentsEntries').append(li);}}
 $('contentsOpen').onclick=()=>{if(!$('contentsPanel').hidden){closeContents();return;}renderContents();$('contentsPanel').hidden=false;$('contentsOpen').setAttribute('aria-expanded','true');};
 const params=new URLSearchParams(location.hash.slice(1));if(['1','2','3','4','5'].includes(params.get('v')))$('volume').value=params.get('v');if(params.has('p'))$('page').value=params.get('p');if(params.has('ref'))$('ref').value=params.get('ref');updateMode();load();
 </script>
