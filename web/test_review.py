@@ -114,6 +114,43 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
             browser.close()
 
+    def test_locale_persists_and_preserves_source_text(self):
+        html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width': 390, 'height': 844})
+            page.route('http://franko.test/**', lambda route: route.fulfill(status=200, content_type='text/html; charset=utf-8', body=html) if route.request.resource_type == 'document' else route.abort())
+            page.goto('http://franko.test/')
+            page.evaluate("""() => {
+                $('page').value='71'; $('volume').value='4'; $('ref').value='test/ref';
+                message('ocr','Search corpus'); message('noteText','Unverified');
+                message('status','Volume 4 · scan 71 / 580 · reading ref: test/ref · Unverified contents destination; check the heading.');
+                message('draftStatus','Unverified · GPT-6.2 · single reading · reader · printed folio 19 · single-working-draft · 1 candidate(s); purple bars indicate approximate differing lines');
+                message('searchStatus','7 occurrences found · 1/2 indexes loaded · 1 unavailable · searching…');
+                $('query').value='ꙗко';
+                const option=new Option('',0);uiText(option,'GPT-6.2 · single reading');$('choice').add(option);
+            }""")
+            page.locator('#settingsOpen').click()
+            page.locator('#uiLocale').select_option('uk')
+            self.assertIn('Том 4', page.locator('#status').text_content())
+            self.assertIn('не перевірено', page.locator('#notice').inner_text())
+            self.assertIn('Не перевірено', page.locator('#draftStatus').text_content())
+            self.assertIn('Знайдено збігів: 7', page.locator('#searchStatus').text_content())
+            self.assertEqual(page.locator('#choice option').text_content(), 'GPT-6.2 · одне читання')
+            self.assertEqual(page.locator('#ocr').text_content(), 'Search corpus')
+            self.assertEqual(page.locator('#noteText').text_content(), 'Unverified')
+            self.assertEqual(page.locator('#query').input_value(), 'ꙗко')
+            self.assertEqual(page.locator('#page').input_value(), '71')
+            self.assertEqual(page.locator('#ref').input_value(), 'test/ref')
+            self.assertEqual(page.evaluate("localStorage.getItem('franko-ui-locale')"), 'uk')
+            page.reload()
+            self.assertEqual(page.locator('html').get_attribute('lang'), 'uk')
+            page.locator('#settingsOpen').click()
+            page.locator('#uiLocale').select_option('en')
+            page.reload()
+            self.assertEqual(page.locator('html').get_attribute('lang'), 'en')
+            browser.close()
+
     def test_all_volume_contents_destinations(self):
         # A calculated page is deliberately not a verified work start or line anchor.
         html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
