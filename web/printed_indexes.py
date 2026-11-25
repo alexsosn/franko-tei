@@ -27,6 +27,26 @@ SOURCE_BLOBS = {416: "4dc041eecb418dc4f16654feb3f4dd98ed592452",
                 431: "e664c2826055e20af0f7696e8e3c4e5f54e2a379",
                 437: "df3dba2453e10ee5ee44b9bfc12edb5304cc409f",
                 459: "70c19e15133c47d635d4b50c5f80a1af06af040e"}
+# Additional explicitly segmented pages in the glossary. None has an
+# entry crossing the recorded scan/column boundaries in these drafts.
+EXTRA_PAGES = {
+    "glossary": (
+        (460, "gpt62-i460-first-image-20261125", {
+            "left": [2,3,4,6,8,10,11,13,15,18,20,22,24,25,26,28,30,32,35,37,38,40,41,43,44,45,49],
+            "right": [1,2,3,4,6,8,10,13,15,17,20,22,24,26,27,28,30,31,33,35,36,37,39,40,41,42,44,45,47,48,49]}),
+        (461, "gpt62-i461-first-image-20261125", {
+            "left": [2,3,6,7,10,11,14,16,17,18,20,21,22,24,26,28,29,31,33,34,36,37,38,40,42,43,44,46,47,48,49],
+            "right": [3,7,9,11,13,17,21,22,24,25,26,28,33,35,37,38,40,43,45,46,47,48,49]}),
+        (462, "gpt62-i462-first-image-20261125", {
+            "left": [1,2,4,9,10,12,14,16,17,19,21,22,24,26,28,30,31,33,35,38,41,42,43,44,46,47],
+            "right": [2,3,4,7,8,10,11,13,14,15,17,19,22,24,25,26,27,29,30,31,33,34,35,37,39,40,41,42,44,46,48]}),
+    ),
+}
+SOURCE_BLOBS.update({
+    460: "600c616fe03fe0531c7e6d730d4192d88bc43f67",
+    461: "d4d6497923b6d002dd66a69f79066cd4bed93e13",
+    462: "f54a224cb68cd485fe90b5ff1ddca922d2deaf88",
+})
 NUMBER = r"[1-9][0-9]{0,2}"
 TOKEN = NUMBER + r"(?:[—–-]" + NUMBER + r")?"
 TAIL = re.compile(r"\s+(" + TOKEN + r"(?:\s*,\s*" + TOKEN + r")*)\s*,?$")
@@ -62,6 +82,15 @@ def parse_entry(kind, lines, targets):
     """
     joined = " ".join(lines)
     if kind == "glossary":
+        # Two explicitly named forms in one gloss, each with its own page:
+        # Попава 199, попавица 241; Ꙗза 12, яза 148.
+        paired = re.match(r"^([^\d]+?) (" + NUMBER + r"), ([^\d]+?) (" + NUMBER + r") (.+)$", joined)
+        if paired:
+            first, p1, second, p2, detail = paired.groups()
+            refs = [make_ref(p1, targets), make_ref(p2, targets)]
+            if all(refs):
+                refs[0]["form"], refs[1]["form"] = first, second
+                return f"{first} {p1}, {second} {p2}", detail, refs
         m = re.match(r"^(.+?) (" + TOKEN + r") (.+)$", joined)
         if not m:
             return joined, "", []
@@ -115,40 +144,42 @@ def build_printed_indexes(pilot, ref):
         section = dict(volume="1", kind=kind, scans=list(range(start, end + 1)),
                        draft_scans=draft_scans, structured_scans=[], entries=[])
         sections.append(section)
-        # A changed/missing reading must not publish stale partitions or block
-        # unrelated reader deployments. Re-segment explicitly against new bytes.
-        if start not in files:
-            continue
-        path, draft, blob = files[start]
-        reading = draft["reading"]
-        if reading["reader_id"] != reader or blob != SOURCE_BLOBS[start]:
-            continue
-        source = dict(volume="1", scan=start, path="pilot/" + path.name,
-                      blob=blob, reader_id=reader, asset_commit=draft["asset_commit"])
-        entries = []
-        seen_regions = set()
-        for region in reading["regions"]:
-            region_id = region["id"]
-            if region_id not in partitions:
-                if region["kind"] == "body" and region_id != "intro":
-                    raise ValueError(f"unpartitioned body region: {path}: {region_id}")
+        for scan, reader, partitions in ((start, reader, partitions), *EXTRA_PAGES.get(kind, ())):
+            # A changed/missing reading must not publish stale partitions or block
+            # unrelated reader deployments. Re-segment explicitly against new bytes.
+            if scan not in files:
                 continue
-            seen_regions.add(region_id)
-            lines = region["lines"]
-            ends = partitions[region_id]
-            if sorted(set(ends)) != ends or ends[0] < 1 or ends[-1] != len(lines):
-                raise ValueError(f"index line partition no longer fits: {path}: {region_id}")
-            previous = 0
-            for stop in ends:
-                part = [{"id": l["id"], "text": l["text"]} for l in lines[previous:stop]]
-                label, detail, refs = parse_entry(kind, [l["text"] for l in part], targets)
-                # Only the explicit Abraham block on the pilot motif page.
-                context = "Авраам" if kind == "motifs" and label.startswith("„") else ""
-                entries.append(dict(id=f"v1-{start}-{part[0]['id']}", source=source,
-                                    region_id=region_id, lines=part, label=label,
-                                    detail=detail, context=context, refs=refs))
-                previous = stop
-        if seen_regions != set(partitions):
-            raise ValueError(f"missing index regions: {path}")
-        section.update(structured_scans=[start], entries=entries)
+            path, draft, blob = files[scan]
+            reading = draft["reading"]
+            if reading["reader_id"] != reader or blob != SOURCE_BLOBS[scan]:
+                continue
+            source = dict(volume="1", scan=scan, path="pilot/" + path.name,
+                          blob=blob, reader_id=reader, asset_commit=draft["asset_commit"])
+            entries = []
+            seen_regions = set()
+            for region in reading["regions"]:
+                region_id = region["id"]
+                if region_id not in partitions:
+                    if region["kind"] == "body" and region_id != "intro":
+                        raise ValueError(f"unpartitioned body region: {path}: {region_id}")
+                    continue
+                seen_regions.add(region_id)
+                lines = region["lines"]
+                ends = partitions[region_id]
+                if sorted(set(ends)) != ends or ends[0] < 1 or ends[-1] != len(lines):
+                    raise ValueError(f"index line partition no longer fits: {path}: {region_id}")
+                previous = 0
+                for stop in ends:
+                    part = [{"id": l["id"], "text": l["text"]} for l in lines[previous:stop]]
+                    label, detail, refs = parse_entry(kind, [l["text"] for l in part], targets)
+                    # Only the explicit Abraham block on the pilot motif page.
+                    context = "Авраам" if kind == "motifs" and label.startswith("„") else ""
+                    entries.append(dict(id=f"v1-{scan}-{part[0]['id']}", source=source,
+                                        region_id=region_id, lines=part, label=label,
+                                        detail=detail, context=context, refs=refs))
+                    previous = stop
+            if seen_regions != set(partitions):
+                raise ValueError(f"missing index regions: {path}")
+            section["structured_scans"].append(scan)
+            section["entries"].extend(entries)
     return dict(schema_version=1, ref=ref, status="agent_unverified", sections=sections)
