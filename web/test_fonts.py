@@ -53,3 +53,16 @@ for name, expected in SLAVONIC.items():
 for name, expected in GREEK.items():
     verify(name, cmap(name, expected), greek)
     print(name, "covers", len(set(greek)), "sample characters")
+
+# Assert that every exposed key (including combining sequences) has a glyph
+# in the palette's explicit vendored font stack, independent of system fonts.
+import subprocess
+script = (ROOT / "web/review-editor.js").read_text(encoding="utf-8")
+palette = script[script.index("  const markKeys="):script.index("  const codepoints=")]
+groups = json.loads(subprocess.check_output(["node", "-e", palette + "\nconsole.log(JSON.stringify(keyGroups));"], text=True))
+stack = set()
+for name in ("Monomakh-Regular.woff2", "Shafarik-Regular.woff2", "GentiumPlus-Regular.ttf", "EBGaramond.ttf"):
+    stack.update(cmap(name, (SLAVONIC | GREEK)[name]))
+for group, keys in groups.items():
+    verify("keyboard " + group, stack, "◌" + "".join(k[0] for k in keys))
+    print("Keyboard", group, "covers", len(keys), "keys in vendored font stack")

@@ -140,7 +140,9 @@
   ];
   const letterKeys=[...('абвгдеёжѕзийіїјклмнопрстуфхцчшщъыьэюяєѣѧѩѫѭѡѻѽѿѹꙋꙑꙗѯѱѳѵѷꙁꙃꙅꙇꙉꙍꙏꙑꙓꙕꙙꙛꙝꙟꙡꙣꙥꙧꙩ')];
   const letters=[...new Set(letterKeys.flatMap(c=>[c,c.toUpperCase()]))].map(c=>[c,'Cyrillic letter']);
-  const superscripts=Array.from({length:32},(_,i)=>[String.fromCodePoint(0x2de0+i),'Superscript Cyrillic letter']).concat(Array.from({length:8},(_,i)=>[String.fromCodePoint(0xa674+i),'Superscript Cyrillic letter']));
+  const superNames='б в г д ж з к л м н о п р с т х ц ч ш щ ѳ ст а е ꙉ ꙋ ѣ ю ꙗ ѧ ѫ ѭ'.split(' ');
+  const extraSuperNames='є і ї у ъ ы ь ѡ'.split(' ');
+  const superscripts=superNames.map((n,i)=>[String.fromCodePoint(0x2de0+i),'Superscript '+n]).concat(extraSuperNames.map((n,i)=>[String.fromCodePoint(0xa674+i),'Superscript '+n]));
   const greek=[...('αβγδεζηθικλμνξοπρσςτυφχψω')].flatMap(c=>[c,c.toUpperCase()]).filter((c,i,a)=>a.indexOf(c)===i).map(c=>[c,'Greek letter']).concat([['\u0313','Smooth breathing'],['\u0314','Rough breathing'],['\u0342','Perispomeni'],['\u0345','Iota subscript'],['\u0301','Acute'],['\u0300','Grave'],['\u0308','Diaeresis']]);
   const keyGroups={marks:markKeys,letters,superscripts,greek};
   const codepoints=s=>[...s].map(c=>'U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')).join(' ');

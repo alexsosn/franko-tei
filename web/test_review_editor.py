@@ -65,6 +65,7 @@ class EditorSmoke(unittest.TestCase):
             expect(edit).to_have_value("а\u0311\u033e")
             page.locator("#reviewCharacters [data-insert='\u0486\u0301']").click()
             expect(edit).to_have_value("а\u0311\u033e\u0486\u0301")
+            expect(page.locator("#reviewCharacterInfo")).to_contain_text("U+0486 U+0301")
             page.locator("#reviewKeyboardGroup").select_option("letters")
             page.locator("#reviewCharacters [data-insert='ꙋ']").click()
             expect(edit).to_have_value("а\u0311\u033e\u0486\u0301ꙋ")
@@ -74,6 +75,8 @@ class EditorSmoke(unittest.TestCase):
             page.locator("#reviewKeyboardGroup").select_option("marks")
             page.locator("#reviewCharacters [data-insert='\u0487']").click()
             expect(edit).to_have_value("а\u0311\u033e\u0486\u0301ꙋ\u2df4\u0487")
+            self.assertLessEqual(page.locator("#reviewCharacters").evaluate("e => e.clientHeight"),164)
+            self.assertTrue(page.locator("#reviewDialog").evaluate("e => e.scrollWidth <= e.clientWidth+1"))
             # Replacement preserves the exact raw sequence through export, not NFC.
             replacement=LINE["text"].replace("ὀνόμασι","ὀνόματι")+" "+edit.input_value()
             page.locator("#reviewEdit").fill(replacement+"\ninvalid")
