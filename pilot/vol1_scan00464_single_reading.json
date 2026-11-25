@@ -1,0 +1,1763 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 464,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00464.jpg",
+  "source_image_sha256": "84270330d52810e76f81c7fa2fddcb8fa6bdd66035c184e65e194ac28cfd860f",
+  "reading": {
+    "reader_id": "gpt62-i464-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i459-468-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read original pinned image only; preserve physical lines, table row order, source titles, printed references. Historical glyphs and language classification provisional; geometry estimated.",
+    "raw_response": "Важнїйші похибки друкарські.\nСтор. ряд. стоїть: читай:\n40 1 з гори Бгъ,   Бг҃ъ\n42 16 „ „ ҆ иже   ѡ҆ иже\n42 1 з низу ҆ росѹ   і҆ росѹ\n51 10 „ „ потребат ся и҆ по-   потребат ся. и҆ по-\nложи   ложи\n53 4 „ „ книгы нб҃са:   книгы: нб҃са\n54 6 „ „ сѹть, [права].   сѹть [права]\n54 2 „ „ взака   всяка\n60 16 „ „ поротаніе   пороптаніе\n61 1 з гори плогь   плоть\n68 6 з низу принорликїй   принорливїй\n69 10 „ „ в’горое   в’торое\n71 10 з гори възлаз[е]   възлаж[е]\n71 1 з низу нетнюче   негниюче\n79 1 з гори Кол. Съжеґрѹхъ   Ков. Съжеґрѹхъ\n85 3 з гори ѡслопы   ѡслоны\n85 15 „ „ истакновени   истикновени\n87 12 „ „ є҆ст64) е   є҆сте64)\n103 1 з низу въ град   въ град[е]\n105 7 з гори сна   сн҃а\n110 11 „ „ бл҃сви   бл҃сви“\n146 4 з низу скверни   ѡскверни\n147 нумерована хибно 247\n151 14 з низу и҆гыї   и҆тыї\n183 20 з гори но, по долне   но подолне\n234 2 з низу свѣгъ   свѣтъ\n234 1 „ „ наплаєгъ   наплаєть\n247 3 з гори Фи[акеи]   Фи[веа]",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative horizontal rule",
+          "bbox_xywh": [
+            551,
+            431,
+            100,
+            7
+          ]
+        },
+        {
+          "description": "Decorative horizontal rule",
+          "bbox_xywh": [
+            472,
+            1438,
+            281,
+            14
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          291,
+          364,
+          616,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-l001",
+            "text": "Важнїйші похибки друкарські.",
+            "bbox_xywh": [
+              291,
+              364,
+              616,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "table-header",
+        "kind": "heading",
+        "bbox_xywh": [
+          159,
+          468,
+          686,
+          26
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "table-header-l001",
+            "text": "Стор. ряд. стоїть: читай:",
+            "bbox_xywh": [
+              159,
+              468,
+              686,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "errata",
+        "kind": "body",
+        "bbox_xywh": [
+          159,
+          502,
+          863,
+          820
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "errata-l001",
+            "text": "40 1 з гори Бгъ,   Бг҃ъ",
+            "bbox_xywh": [
+              159,
+              502,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 16,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l002",
+            "text": "42 16 „ „ ҆ иже   ѡ҆ иже",
+            "bbox_xywh": [
+              159,
+              531,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 15,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 24,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l003",
+            "text": "42 1 з низу ҆ росѹ   і҆ росѹ",
+            "bbox_xywh": [
+              159,
+              561,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l004",
+            "text": "51 10 „ „ потребат ся и҆ по-   потребат ся. и҆ по-",
+            "bbox_xywh": [
+              159,
+              590,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 50,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l005",
+            "text": "ложи   ложи",
+            "bbox_xywh": [
+              159,
+              620,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 4,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 4,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 11,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l006",
+            "text": "53 4 „ „ книгы нб҃са:   книгы: нб҃са",
+            "bbox_xywh": [
+              159,
+              649,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l007",
+            "text": "54 6 „ „ сѹть, [права].   сѹть [права]",
+            "bbox_xywh": [
+              159,
+              678,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 26,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l008",
+            "text": "54 2 „ „ взака   всяка",
+            "bbox_xywh": [
+              159,
+              708,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 14,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l009",
+            "text": "60 16 „ „ поротаніе   пороптаніе",
+            "bbox_xywh": [
+              159,
+              737,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l010",
+            "text": "61 1 з гори плогь   плоть",
+            "bbox_xywh": [
+              159,
+              767,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 25,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l011",
+            "text": "68 6 з низу принорликїй   принорливїй",
+            "bbox_xywh": [
+              159,
+              796,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 26,
+                "end": 37,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l012",
+            "text": "69 10 „ „ в’горое   в’торое",
+            "bbox_xywh": [
+              159,
+              825,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l013",
+            "text": "71 10 з гори възлаз[е]   възлаж[е]",
+            "bbox_xywh": [
+              159,
+              855,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 34,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l014",
+            "text": "71 1 з низу нетнюче   негниюче",
+            "bbox_xywh": [
+              159,
+              884,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 30,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l015",
+            "text": "79 1 з гори Кол. Съжеґрѹхъ   Ков. Съжеґрѹхъ",
+            "bbox_xywh": [
+              159,
+              914,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 26,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 26,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 34,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l016",
+            "text": "85 3 з гори ѡслопы   ѡслоны",
+            "bbox_xywh": [
+              159,
+              943,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 12,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l017",
+            "text": "85 15 „ „ истакновени   истикновени",
+            "bbox_xywh": [
+              159,
+              972,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l018",
+            "text": "87 12 „ „ є҆ст64) е   є҆сте64)",
+            "bbox_xywh": [
+              159,
+              1002,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 14,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 16,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 27,
+                "end": 29,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l019",
+            "text": "103 1 з низу въ град   въ град[е]",
+            "bbox_xywh": [
+              159,
+              1031,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l020",
+            "text": "105 7 з гори сна   сн҃а",
+            "bbox_xywh": [
+              159,
+              1061,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 16,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l021",
+            "text": "110 11 „ „ бл҃сви   бл҃сви“",
+            "bbox_xywh": [
+              159,
+              1090,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 11,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 17,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l022",
+            "text": "146 4 з низу скверни   ѡскверни",
+            "bbox_xywh": [
+              159,
+              1119,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 20,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 31,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l023",
+            "text": "147 нумерована хибно 247",
+            "bbox_xywh": [
+              159,
+              1149,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 4,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 4,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 24,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l024",
+            "text": "151 14 з низу и҆гыї   и҆тыї",
+            "bbox_xywh": [
+              159,
+              1178,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l025",
+            "text": "183 20 з гори но, по долне   но подолне",
+            "bbox_xywh": [
+              159,
+              1208,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 26,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 26,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 39,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l026",
+            "text": "234 2 з низу свѣгъ   свѣтъ",
+            "bbox_xywh": [
+              159,
+              1237,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 26,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l027",
+            "text": "234 1 „ „ наплаєгъ   наплаєть",
+            "bbox_xywh": [
+              159,
+              1266,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 29,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "errata-l028",
+            "text": "247 3 з гори Фи[акеи]   Фи[веа]",
+            "bbox_xywh": [
+              159,
+              1296,
+              863,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 6,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 13,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i464-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 31,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i464-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "errata-l001",
+        "reading": "40 1 з гори Бгъ,   Бг҃ъ",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l002",
+        "reading": "42 16 „ „ ҆ иже   ѡ҆ иже",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l003",
+        "reading": "42 1 з низу ҆ росѹ   і҆ росѹ",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l004",
+        "reading": "51 10 „ „ потребат ся и҆ по-   потребат ся. и҆ по-",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l005",
+        "reading": "ложи   ложи",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l006",
+        "reading": "53 4 „ „ книгы нб҃са:   книгы: нб҃са",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l007",
+        "reading": "54 6 „ „ сѹть, [права].   сѹть [права]",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l008",
+        "reading": "54 2 „ „ взака   всяка",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l009",
+        "reading": "60 16 „ „ поротаніе   пороптаніе",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l010",
+        "reading": "61 1 з гори плогь   плоть",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l011",
+        "reading": "68 6 з низу принорликїй   принорливїй",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l012",
+        "reading": "69 10 „ „ в’горое   в’торое",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l013",
+        "reading": "71 10 з гори възлаз[е]   възлаж[е]",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l014",
+        "reading": "71 1 з низу нетнюче   негниюче",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l015",
+        "reading": "79 1 з гори Кол. Съжеґрѹхъ   Ков. Съжеґрѹхъ",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l016",
+        "reading": "85 3 з гори ѡслопы   ѡслоны",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l017",
+        "reading": "85 15 „ „ истакновени   истикновени",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l018",
+        "reading": "87 12 „ „ є҆ст64) е   є҆сте64)",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l019",
+        "reading": "103 1 з низу въ град   въ град[е]",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l020",
+        "reading": "105 7 з гори сна   сн҃а",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l021",
+        "reading": "110 11 „ „ бл҃сви   бл҃сви“",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l022",
+        "reading": "146 4 з низу скверни   ѡскверни",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l023",
+        "reading": "147 нумерована хибно 247",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l024",
+        "reading": "151 14 з низу и҆гыї   и҆тыї",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l025",
+        "reading": "183 20 з гори но, по долне   но подолне",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l026",
+        "reading": "234 2 з низу свѣгъ   свѣтъ",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l027",
+        "reading": "234 1 „ „ наплаєгъ   наплаєть",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "errata-l028",
+        "reading": "247 3 з гори Фи[акеи]   Фи[веа]",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      }
+    ]
+  }
+}
