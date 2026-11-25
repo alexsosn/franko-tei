@@ -1,0 +1,826 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 347,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00347.jpg",
+  "source_image_sha256": "0348f99cdc05e308ac90e165b4b8b082a0e1681fc002595762a2eba529f52332",
+  "reading": {
+    "reader_id": "gpt62-i347-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i340-349-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Pinned original image first. Historical Ruthenian vernacular orv provisional, Church Slavonic apparatus, Ukrainian editorial prose, Russian and Bulgarian bibliography and Latin abbreviations distinguished. Physical lines preserved; estimated geometry and exact glyphs provisional. No inferred folio on section opening. No verified claim.",
+    "raw_response": "XVIII. Оповіданя про Давида.\nА. Рукопис о. Яремецького-Білахевича, стор. 123—124.\n(С л о в о [ѡ] цр҃у Дв҃ду к а к о с п и с а П с а л т и р ъ, всѣхъ\nпсал'мѣвъ т҃а҃є). Яко клят ся Дв҃дъ Гд҃ви, ѡбѣща ся Бг҃у\nІяковлю, да єгда воцарит ся Дв҃дъ, ѡбрѣте мѣсто Гд҃ви. И сѣде\nнаписати псалтиръ, [и] не вѣдаше, ѡкуду и с чего пишет. Єдинъ\nвелможній, имя ему Вїѡръ, хотяше в тайнѣ гл҃ати цр҃ю. Цр҃ь же\nрече: „Прійди в нощи и сповѣжъ мнѣ“. Вїѡръ же прійде при ве-\nчери и видѣша юношу во ухо шепчуще цр҃у, и не яви ся, но изійде.\nЗаутра рече ему цр҃ь: „Чему-с не прійшолъ в тайнѣ? Но паки\nпрійди во вечер и сповѣж мнѣ вся, яже видѣлъ єси“. Їѡръ же\nпрійде и видѣ юношу во ухо єму гл҃юще и паки возврати ся. Но\nзаутра цр҃ь рече ему со гнѣвом: „Что-с не прійшолъ, яко рѣхъ\nтебѣ?“ Виѡръ же рече: „Тричѣ уже-м приходилъ, анѣ єдной\nнощи не находил тя во єдинствѣ“. Тогда аж цр҃ь поразумѣ, что\nсотвори и рече: „Прійди во вечер!“ Єгдаж Їѡр прійде во вечеръ,\nДв҃дъ вопросит єго, єсли чл҃вкъ яко ж[е] всегда? И то разумѣ\nДв҃дъ, яко аг҃глъ Гд҃нь кажетъ єму писати псалтир. И сѣде\nДв҃дъ на мѣстѣ ѡсобном писати псалтир. И паки бяше саджавка\nпред палацами царскими. В той саджавцѣ жабы непрестанне\nскрежетаху, кричаху, Дв҃дъ же през ѡній крикъ не можаху писати.\nИ повелѣ Дв҃дъ заметати саджавку соломою, каменієм, землею,\nяко да не кричатъ жабы. Бо єдну же нощъ видѣ Дв҃дъ жабу\nвеликую распаляющую ся на писаніє Дв҃дово и покази єму писаніє.\nВ той час почуди ся вельми Дв҃дъ. И паки вторицею покази пи-\nсаніє. Ѡскорбѣ вельми Дв҃дъ, не вѣдаше что творити. И паки\nтретицею покази Дв҃ду писаніє. Тогда рече Давид: „Заклинаю тя\nдіаволе Бг҃омъ вышнимъ, что тако пакость мнѣ твориши?“",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "section-title rule",
+          "bbox_xywh": [
+            592,
+            545,
+            76,
+            8
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          347,
+          486,
+          593,
+          44
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-l001",
+            "text": "XVIII. Оповіданя про Давида.",
+            "bbox_xywh": [
+              347,
+              486,
+              593,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i347-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          236,
+          591,
+          792,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-l001",
+            "text": "А. Рукопис о. Яремецького-Білахевича, стор. 123—124.",
+            "bbox_xywh": [
+              236,
+              591,
+              792,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "david-narrative",
+        "kind": "body",
+        "bbox_xywh": [
+          166,
+          657,
+          926,
+          911
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "david-narrative-l001",
+            "text": "(С л о в о [ѡ] цр҃у Дв҃ду к а к о с п и с а П с а л т и р ъ, всѣхъ",
+            "bbox_xywh": [
+              166,
+              657,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l002",
+            "text": "псал'мѣвъ т҃а҃є). Яко клят ся Дв҃дъ Гд҃ви, ѡбѣща ся Бг҃у",
+            "bbox_xywh": [
+              166,
+              692,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l003",
+            "text": "Іяковлю, да єгда воцарит ся Дв҃дъ, ѡбрѣте мѣсто Гд҃ви. И сѣде",
+            "bbox_xywh": [
+              166,
+              727,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l004",
+            "text": "написати псалтиръ, [и] не вѣдаше, ѡкуду и с чего пишет. Єдинъ",
+            "bbox_xywh": [
+              166,
+              762,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l005",
+            "text": "велможній, имя ему Вїѡръ, хотяше в тайнѣ гл҃ати цр҃ю. Цр҃ь же",
+            "bbox_xywh": [
+              166,
+              797,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l006",
+            "text": "рече: „Прійди в нощи и сповѣжъ мнѣ“. Вїѡръ же прійде при ве-",
+            "bbox_xywh": [
+              166,
+              832,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l007",
+            "text": "чери и видѣша юношу во ухо шепчуще цр҃у, и не яви ся, но изійде.",
+            "bbox_xywh": [
+              166,
+              867,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l008",
+            "text": "Заутра рече ему цр҃ь: „Чему-с не прійшолъ в тайнѣ? Но паки",
+            "bbox_xywh": [
+              166,
+              902,
+              926,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l009",
+            "text": "прійди во вечер и сповѣж мнѣ вся, яже видѣлъ єси“. Їѡръ же",
+            "bbox_xywh": [
+              166,
+              937,
+              926,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l010",
+            "text": "прійде и видѣ юношу во ухо єму гл҃юще и паки возврати ся. Но",
+            "bbox_xywh": [
+              166,
+              972,
+              926,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l011",
+            "text": "заутра цр҃ь рече ему со гнѣвом: „Что-с не прійшолъ, яко рѣхъ",
+            "bbox_xywh": [
+              166,
+              1007,
+              926,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l012",
+            "text": "тебѣ?“ Виѡръ же рече: „Тричѣ уже-м приходилъ, анѣ єдной",
+            "bbox_xywh": [
+              166,
+              1042,
+              926,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l013",
+            "text": "нощи не находил тя во єдинствѣ“. Тогда аж цр҃ь поразумѣ, что",
+            "bbox_xywh": [
+              166,
+              1078,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l014",
+            "text": "сотвори и рече: „Прійди во вечер!“ Єгдаж Їѡр прійде во вечеръ,",
+            "bbox_xywh": [
+              166,
+              1113,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l015",
+            "text": "Дв҃дъ вопросит єго, єсли чл҃вкъ яко ж[е] всегда? И то разумѣ",
+            "bbox_xywh": [
+              166,
+              1148,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l016",
+            "text": "Дв҃дъ, яко аг҃глъ Гд҃нь кажетъ єму писати псалтир. И сѣде",
+            "bbox_xywh": [
+              166,
+              1183,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l017",
+            "text": "Дв҃дъ на мѣстѣ ѡсобном писати псалтир. И паки бяше саджавка",
+            "bbox_xywh": [
+              166,
+              1218,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l018",
+            "text": "пред палацами царскими. В той саджавцѣ жабы непрестанне",
+            "bbox_xywh": [
+              166,
+              1253,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l019",
+            "text": "скрежетаху, кричаху, Дв҃дъ же през ѡній крикъ не можаху писати.",
+            "bbox_xywh": [
+              166,
+              1288,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l020",
+            "text": "И повелѣ Дв҃дъ заметати саджавку соломою, каменієм, землею,",
+            "bbox_xywh": [
+              166,
+              1323,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l021",
+            "text": "яко да не кричатъ жабы. Бо єдну же нощъ видѣ Дв҃дъ жабу",
+            "bbox_xywh": [
+              166,
+              1358,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l022",
+            "text": "великую распаляющую ся на писаніє Дв҃дово и покази єму писаніє.",
+            "bbox_xywh": [
+              166,
+              1393,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l023",
+            "text": "В той час почуди ся вельми Дв҃дъ. И паки вторицею покази пи-",
+            "bbox_xywh": [
+              166,
+              1428,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l024",
+            "text": "саніє. Ѡскорбѣ вельми Дв҃дъ, не вѣдаше что творити. И паки",
+            "bbox_xywh": [
+              166,
+              1463,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l025",
+            "text": "третицею покази Дв҃ду писаніє. Тогда рече Давид: „Заклинаю тя",
+            "bbox_xywh": [
+              166,
+              1498,
+              926,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "david-narrative-l026",
+            "text": "діаволе Бг҃омъ вышнимъ, что тако пакость мнѣ твориши?“",
+            "bbox_xywh": [
+              166,
+              1533,
+              926,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i347-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "david-narrative-l001",
+        "reading": "(С л о в о [ѡ] цр҃у Дв҃ду к а к о с п и с а П с а л т и р ъ, всѣхъ",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l002",
+        "reading": "псал'мѣвъ т҃а҃є). Яко клят ся Дв҃дъ Гд҃ви, ѡбѣща ся Бг҃у",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l003",
+        "reading": "Іяковлю, да єгда воцарит ся Дв҃дъ, ѡбрѣте мѣсто Гд҃ви. И сѣде",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l004",
+        "reading": "написати псалтиръ, [и] не вѣдаше, ѡкуду и с чего пишет. Єдинъ",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l005",
+        "reading": "велможній, имя ему Вїѡръ, хотяше в тайнѣ гл҃ати цр҃ю. Цр҃ь же",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l006",
+        "reading": "рече: „Прійди в нощи и сповѣжъ мнѣ“. Вїѡръ же прійде при ве-",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l007",
+        "reading": "чери и видѣша юношу во ухо шепчуще цр҃у, и не яви ся, но изійде.",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l008",
+        "reading": "Заутра рече ему цр҃ь: „Чему-с не прійшолъ в тайнѣ? Но паки",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l009",
+        "reading": "прійди во вечер и сповѣж мнѣ вся, яже видѣлъ єси“. Їѡръ же",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l010",
+        "reading": "прійде и видѣ юношу во ухо єму гл҃юще и паки возврати ся. Но",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l011",
+        "reading": "заутра цр҃ь рече ему со гнѣвом: „Что-с не прійшолъ, яко рѣхъ",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l012",
+        "reading": "тебѣ?“ Виѡръ же рече: „Тричѣ уже-м приходилъ, анѣ єдной",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l013",
+        "reading": "нощи не находил тя во єдинствѣ“. Тогда аж цр҃ь поразумѣ, что",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l014",
+        "reading": "сотвори и рече: „Прійди во вечер!“ Єгдаж Їѡр прійде во вечеръ,",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l015",
+        "reading": "Дв҃дъ вопросит єго, єсли чл҃вкъ яко ж[е] всегда? И то разумѣ",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l016",
+        "reading": "Дв҃дъ, яко аг҃глъ Гд҃нь кажетъ єму писати псалтир. И сѣде",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l017",
+        "reading": "Дв҃дъ на мѣстѣ ѡсобном писати псалтир. И паки бяше саджавка",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l018",
+        "reading": "пред палацами царскими. В той саджавцѣ жабы непрестанне",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l019",
+        "reading": "скрежетаху, кричаху, Дв҃дъ же през ѡній крикъ не можаху писати.",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l020",
+        "reading": "И повелѣ Дв҃дъ заметати саджавку соломою, каменієм, землею,",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l021",
+        "reading": "яко да не кричатъ жабы. Бо єдну же нощъ видѣ Дв҃дъ жабу",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l022",
+        "reading": "великую распаляющую ся на писаніє Дв҃дово и покази єму писаніє.",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l023",
+        "reading": "В той час почуди ся вельми Дв҃дъ. И паки вторицею покази пи-",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l024",
+        "reading": "саніє. Ѡскорбѣ вельми Дв҃дъ, не вѣдаше что творити. И паки",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l025",
+        "reading": "третицею покази Дв҃ду писаніє. Тогда рече Давид: „Заклинаю тя",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l026",
+        "reading": "діаволе Бг҃омъ вышнимъ, что тако пакость мнѣ твориши?“",
+        "reason": "Historical type: titla, breathings, diacritics, apostrophes and exact glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l002",
+        "reading": "т҃а҃є",
+        "reason": "Printed numeral and exact titla uncertain; no inferred value."
+      },
+      {
+        "line_id": "david-narrative-l005",
+        "reading": "Вїѡръ",
+        "reason": "Name glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l006",
+        "reading": "Вїѡръ",
+        "reason": "Name glyphs provisional."
+      },
+      {
+        "line_id": "david-narrative-l012",
+        "reading": "анѣ",
+        "reason": "Exact word uncertain."
+      }
+    ]
+  }
+}
