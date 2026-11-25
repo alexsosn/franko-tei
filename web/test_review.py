@@ -114,6 +114,52 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
             browser.close()
 
+    def test_contents_work_references(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        for volume, records in refs.items():
+            identities = {(e[0], e[1], e[2]) for e in data[volume]['entries']}
+            for key, links in records.items():
+                self.assertIn(tuple(json.loads(key)), identities)
+                self.assertTrue(links)
+                for link in links:
+                    self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate'))
+                    self.assertIn(link['provider'], ('e-Clavis', 'OCP'))
+                    self.assertTrue(link['title'] and link['id'] and link['evidence'])
+                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/', 'https://github.com/OnlineCriticalPseudepigrapha/')))
+        html = html.replace('updateMode();load();', 'updateMode();load=()=>{window.lastJump=[$(\'volume\').value,$(\'page\').value];};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsFilter').fill('2 Enoch')
+            row = page.locator('#contentsEntries li:visible').filter(has_text='2 Enoch').first
+            row.locator('.contents-ref-toggle').click()
+            self.assertTrue(row.locator('.contents-ref-detail').is_visible())
+            self.assertIn('CAVT-066', row.locator('.contents-ref-detail').inner_text())
+            self.assertTrue(page.locator('#contentsPanel').is_visible())
+            page.locator('#contentsVolume').select_option('2')
+            page.locator('#contentsFilter').fill('ECCA 421')
+            self.assertEqual(page.locator('#contentsEntries li:visible').count(), 4)
+            row = page.locator('#contentsEntries li:visible').first
+            self.assertTrue(row.locator('.contents-ref-detail').is_hidden())
+            row.locator('.contents-ref-toggle').click()
+            link = row.locator('.contents-ref-detail a').first
+            self.assertEqual(link.get_attribute('target'), '_blank')
+            self.assertIn('noopener', link.get_attribute('rel'))
+            self.assertIn('infancy-gospel-of-thomas', link.get_attribute('href'))
+            self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollWidth <= el.clientWidth'))
+            page.evaluate("setUILocale('uk')")
+            self.assertIn('Збіг із виданням', row.locator('.contents-ref-detail').inner_text())
+            self.assertEqual(page.locator('#volume').input_value(), '1')
+            row.locator('.contents-destination').click()
+            self.assertEqual(page.evaluate('window.lastJump')[0], '2')
+            browser.close()
+
     def test_english_contents_translation(self):
         import json
         html = APP.read_text(encoding='utf-8')
