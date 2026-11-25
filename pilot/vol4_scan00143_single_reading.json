@@ -174,22 +174,6 @@
               {
                 "text_version": "gpt62-single-20261125-v4s00143",
                 "start": 0,
-                "end": 38,
-                "language": "uk",
-                "script": "Cyrl",
-                "uncertain": false
-              },
-              {
-                "text_version": "gpt62-single-20261125-v4s00143",
-                "start": 38,
-                "end": 53,
-                "language": "ru",
-                "script": "Cyrl",
-                "uncertain": false
-              },
-              {
-                "text_version": "gpt62-single-20261125-v4s00143",
-                "start": 53,
                 "end": 62,
                 "language": "uk",
                 "script": "Cyrl",
@@ -303,14 +287,14 @@
               {
                 "text_version": "gpt62-single-20261125-v4s00143",
                 "start": 0,
-                "end": 24,
+                "end": 11,
                 "language": "ru",
                 "script": "Cyrl",
                 "uncertain": false
               },
               {
                 "text_version": "gpt62-single-20261125-v4s00143",
-                "start": 24,
+                "start": 11,
                 "end": 63,
                 "language": "uk",
                 "script": "Cyrl",
@@ -1076,7 +1060,7 @@
       "prior_reading_blob": "a8ac2b953490b928377bbc1420e6f359f4328090",
       "scope": "Language/script metadata only; frozen source characters, line IDs, geometry, raw_response and uncertainty notes unchanged.",
       "policy": "Code-point spans over frozen reader_id. cu = Church Slavonic (including mixed local forms when dominant); uk = Ukrainian, with uncertain=true for provisional historical Ruthenian/early Ukrainian attribution; ru = Russian bibliography; la = Latin editorial formula. Numeral-only folio/sheet lines remain untagged. Script labels refer to the linguistic writing system, not every punctuation or numeral code point. Language uncertainty is separate from glyph uncertainty.",
-      "notes": "Russian citation spans include cross-line continuation; citation punctuation and place/date assigned to bibliographic context. Ukrainian prose includes names without treating isolated proper names as language switches."
+      "notes": "Russian bibliographic titles include cross-line continuation; Russian place/date forms are included where supported. Ukrainian editorial page locators stay Ukrainian. Isolated author names and numerical references in Ukrainian prose are not separate language switches."
     }
   }
 }
