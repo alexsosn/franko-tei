@@ -28,6 +28,10 @@ Work on the highest-priority unblocked issue; prioritize complete first-hand rea
 - The batch source smoke checks original JPEG and manifest SHA, TEI P5 4.12 Relax NG and PAGE XML 2019 XSD where export is supported. A TEI `<gap>` for an unreadable image suffix is **not** a printed PAGE glyph, so such pages receive a clearly labeled TEI-only structural pass. None of these checks establishes historical character accuracy.
 - See [batch development guide](docs/batch-transcription.md). Text production and genuinely independent source-reading review have priority over workflow plumbing.
 
+## Language annotation during draft ingestion
+
+Follow [contextual language annotation](docs/language-annotation.md). Include contextual language and script spans during first reading or in a separate annotation-only pass; cover every lexical range, including mixed-language citations and apparatus, and explicitly mark unresolved language. Prefer cu for Church Slavonic; use orv only provisionally for historical Ruthenian with evidence and uncertainty. Do not infer language or recension from script alone. Preserve Unicode code points, combining marks, source reading and exact line IDs. Coordinate with other transcription/contents branches: annotate their new pages in their own branch, and restrict retrospective edits to nonoverlapping existing main candidates. A usable draft may still merge with incomplete spans; prioritize filling them in batches.
+
 ## Available local page source (11 November 2026)
 
 The user uploaded all 2,337 native page images plus untouched OCR/manifests

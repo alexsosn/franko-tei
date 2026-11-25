@@ -3,6 +3,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
+import unicodedata
 from tempfile import TemporaryDirectory
 
 from franko_tei.pilot_batch import (
@@ -26,6 +27,40 @@ class CorpusBatchContract(unittest.TestCase):
                 self.assertGreater(len(lines), 1)
                 self.assertEqual(payload["reading"]["raw_response"], "\n".join(lines))
                 self.assertEqual(payload["status"], "agent_unverified")
+
+    def test_completed_contextual_annotations_cover_exact_codepoints(self):
+        # Data acceptance for explicit completed annotation passes only.
+        # Legacy/ongoing draft readings may still be partially annotated.
+        annotated = 0
+        for path in discover_readings(PILOT):
+            data = json.loads(path.read_text(encoding="utf-8"))
+            annotation = data.get("language_annotation")
+            if annotation is None:
+                continue
+            annotated += 1
+            with self.subTest(path=path.name):
+                self.assertEqual(annotation["schema_version"],
+                                 "contextual-language-annotation-v1")
+                self.assertEqual(annotation["status"], "agent_unverified")
+                self.assertRegex(annotation["source_record_commit"], r"^[0-9a-f]{40}$")
+                self.assertRegex(annotation["source_record_blob"], r"^[0-9a-f]{40}$")
+                for region in data["reading"]["regions"]:
+                    for line in region["lines"]:
+                        text = line["text"]
+                        previous = 0
+                        for span in line["language_spans"]:
+                            self.assertEqual(span["start"], previous)
+                            self.assertGreater(span["end"], previous)
+                            self.assertTrue(span["language"])
+                            self.assertTrue(span["script"])
+                            if span["language"] == "und":
+                                self.assertTrue(span["uncertain"])
+                            if previous:
+                                self.assertFalse(unicodedata.category(
+                                    text[previous]).startswith("M"))
+                            previous = span["end"]
+                        self.assertEqual(previous, len(text))
+        self.assertGreater(annotated, 0)
 
     def test_changed_page_selection_is_precise_but_core_changes_scan_all(self):
         all_paths = discover_readings(PILOT)
