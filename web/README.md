@@ -18,6 +18,12 @@ Dashed outlines mean estimated geometry. Original OCR has no line alignment and 
 
 The source manifest, images and original OCR are loaded from the pinned asset commit rather than rehosted. The viewer checks image dimensions and draft metadata against the manifest, not the downloaded image/OCR byte hashes. Use the existing pilot batch validator for byte-level checks. The software license does not resolve source scan rights.
 
+## Draft coverage
+
+In Contents, expand **Draft coverage** for the selected volume. The compact projection is generated with the search index from validated frozen candidate files, counting distinct physical scans rather than search versions or editorial overlays. The denominator includes all scans from the immutable source manifests (including blank pages, illustrations and contents); absence of a candidate is not evidence of missing printed text. A draft is not a verified page. Multiple readings are counted separately in the generated metadata, not in the progress numerator. Original OCR alone does not count.
+
+Coverage refers to the displayed exact published commit. When browsing main, it may lag newly merged drafts; **Next scan without a draft** explicitly pins the reader to that snapshot, advances after the current physical scan (or starts from scan 1 for another volume), and wraps once. Return to main in Settings to see newer readings. An unrelated branch or commit, absent index, invalid data or failed request reports coverage unavailable rather than zero progress. No scans, candidate text or personal information are copied into the coverage artifact.
+
 ## Testing
 
 ```sh
