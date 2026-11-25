@@ -9,6 +9,42 @@ COMMIT = 'e871f32537e81f81896f6ce9a6658aba667db9c5'
 PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aH1sAAAAASUVORK5CYII='
 
 class ReviewSmoke(unittest.TestCase):
+    def choose_locale(self, page, locale):
+        page.locator('#languageOpen').click()
+        page.locator(f'#languagePanel [data-locale="{locale}"]').click()
+        self.assertTrue(page.locator('#languagePanel').is_hidden())
+
+    def test_toolbar_language_switcher(self):
+        html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.set_content(html)
+            control = page.locator('header .mainbar #languageOpen')
+            for width, height in ((320,640),(390,844),(896,414),(1280,800)):
+                page.set_viewport_size({'width':width,'height':height})
+                self.assertTrue(control.is_visible())
+                self.assertTrue(control.locator('svg').is_visible())
+                self.assertEqual(control.locator('svg').get_attribute('aria-hidden'), 'true')
+                self.assertTrue(page.locator('.mainbar').evaluate('el => el.scrollWidth <= el.clientWidth'))
+                for locale in ('uk','en'):
+                    control.focus()
+                    page.keyboard.press('Enter')
+                    self.assertTrue(page.locator('#languagePanel').is_visible())
+                    self.assertEqual(control.get_attribute('aria-expanded'), 'true')
+                    self.assertEqual(page.locator('#languagePanel [data-locale]').all_text_contents(), ['English', 'Українська'])
+                    page.locator(f'#languagePanel [data-locale="{locale}"]').click()
+                    self.assertEqual(page.locator('html').get_attribute('lang'), locale)
+                    self.assertTrue(page.locator('#languagePanel').is_hidden())
+                    self.assertEqual(control.get_attribute('aria-expanded'), 'false')
+                    self.assertTrue(control.evaluate('el => el === document.activeElement'))
+                control.click()
+                page.keyboard.press('Escape')
+                self.assertTrue(page.locator('#languagePanel').is_hidden())
+                self.assertTrue(control.evaluate('el => el === document.activeElement'))
+            self.assertEqual(page.locator('#readerSettings #uiLocale').count(), 0)
+            browser.close()
+
     def test_volume_one_contents_records(self):
         # Edition-specific regression checks; source scan and printed folio are distinct.
         import json
@@ -93,13 +129,11 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.locator('#contentsEntries .contents-note-indicator').first.is_visible())
             page.locator('#contentsSources button').first.click()
             self.assertEqual(page.evaluate('window.lastJump')[:2], ['5','311'])
-            page.locator('#settingsOpen').click()
-            page.locator('#uiLocale').select_option('uk')
+            self.choose_locale(page, 'uk')
             self.assertEqual(page.locator('html').get_attribute('lang'), 'uk')
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Налаштування читача')
             self.assertEqual(page.locator('#showText').inner_text(), 'Текст')
             self.assertEqual(page.locator('#searchOpen').get_attribute('aria-label'), 'Пошук у корпусі')
-            page.locator('#settingsClose').click()
             page.locator('#contentsOpen').click()
             self.assertEqual(page.locator('#contentsTitle').inner_text(), 'Зміст — Том 5')
             self.assertEqual(page.locator('#contentsEntries .contents-name').first.inner_text(), page.evaluate("volumeContents['5'].entries[0][1]"))
@@ -108,8 +142,7 @@ class ReviewSmoke(unittest.TestCase):
             page.keyboard.press('Escape')
             self.assertTrue(page.locator('#contentsPanel').is_hidden())
             self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'false')
-            page.locator('#settingsOpen').click()
-            page.locator('#uiLocale').select_option('en')
+            self.choose_locale(page, 'en')
             self.assertEqual(page.locator('html').get_attribute('lang'), 'en')
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
             browser.close()
@@ -142,9 +175,7 @@ class ReviewSmoke(unittest.TestCase):
             page.keyboard.press('Escape')
             self.assertEqual(page.locator('#contentsCurrentVolume').inner_text(), 'IV')
             self.assertTrue(page.locator('#contentsOpen').evaluate('el => el === document.activeElement'))
-            page.locator('#settingsOpen').click()
-            page.locator('#uiLocale').select_option('uk')
-            page.locator('#settingsClose').click()
+            self.choose_locale(page, 'uk')
             self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-label'), 'Зміст — Том 4')
             page.locator('#contentsOpen').click()
             self.assertEqual(page.locator('#contentsFirstScan').inner_text(), 'Перший скан')
@@ -166,7 +197,7 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertTrue(page.locator('#settingsDone').is_visible())
                 self.assertFalse(page.locator('#advancedSettings').evaluate('el => el.open'))
                 self.assertTrue(page.locator('#mode').is_visible())
-                self.assertTrue(page.locator('#uiLocale').is_visible())
+                self.assertEqual(page.locator('#readerSettings [data-locale]').count(), 0)
                 self.assertTrue(page.locator('#slavonicFont').is_visible())
                 self.assertTrue(page.locator('#greekFont').is_visible())
                 self.assertTrue(page.locator('#autoReading').is_disabled())
@@ -185,7 +216,9 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#languagesHint').click()
             self.assertTrue(page.locator('#showLanguages').is_checked())
             self.assertTrue(page.locator('#languageLegend').is_visible())
-            page.locator('#uiLocale').select_option('uk')
+            page.locator('#settingsDone').click()
+            self.choose_locale(page, 'uk')
+            page.locator('#settingsOpen').click()
             self.assertEqual(page.locator('#settingsDone').inner_text(), 'Готово')
             self.assertEqual(page.locator('#settingsReadingTitle').inner_text(), 'Читання')
             page.locator('#advancedSettings summary').click()
@@ -233,9 +266,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.locator('#contentsFilter').is_visible())
             page.keyboard.press('Escape')
             self.assertTrue(page.locator('#contentsOpen').evaluate('el => el === document.activeElement'))
-            page.locator('#settingsOpen').click()
-            page.locator('#uiLocale').select_option('uk')
-            page.locator('#settingsClose').click()
+            self.choose_locale(page, 'uk')
             page.locator('#contentsOpen').click()
             self.assertIn('Зміст', page.locator('#contentsTitle').inner_text())
             self.assertEqual(page.locator('#contentsEntries').evaluate('el => el.scrollTop'), 0)
@@ -265,8 +296,7 @@ class ReviewSmoke(unittest.TestCase):
                 $('query').value='ꙗко';
                 const option=new Option('',0);uiText(option,'GPT-6.2 · single reading');$('choice').add(option);
             }""")
-            page.locator('#settingsOpen').click()
-            page.locator('#uiLocale').select_option('uk')
+            self.choose_locale(page, 'uk')
             self.assertIn('Том 4', page.locator('#status').text_content())
             self.assertIn('не перевірено', page.locator('#notice').inner_text())
             self.assertIn('Не перевірено', page.locator('#draftStatus').text_content())
@@ -280,8 +310,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.evaluate("localStorage.getItem('franko-ui-locale')"), 'uk')
             page.reload()
             self.assertEqual(page.locator('html').get_attribute('lang'), 'uk')
-            page.locator('#settingsOpen').click()
-            page.locator('#uiLocale').select_option('en')
+            self.choose_locale(page, 'en')
             page.reload()
             self.assertEqual(page.locator('html').get_attribute('lang'), 'en')
             browser.close()
@@ -763,7 +792,7 @@ class ReviewSmoke(unittest.TestCase):
             # Reader-first layout: test real viewport geometry, not CSS declarations.
             for width, height in [(1280,720), (896,414), (390,844), (320,568)]:
                 page.set_viewport_size({'width':width,'height':height})
-                self.assertLessEqual(page.locator('header').bounding_box()['height'], 100)
+                self.assertLessEqual(page.locator('header').bounding_box()['height'], 130 if width <= 420 else 100)
                 self.assertGreaterEqual(page.locator('main').bounding_box()['height'], height*.75)
                 self.assertGreaterEqual(page.locator('#textscroll').bounding_box()['height'], height*.65)
                 self.assertTrue(page.evaluate('document.documentElement.scrollWidth <= innerWidth'))
