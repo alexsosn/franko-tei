@@ -817,8 +817,16 @@
             "language_spans": [
               {
                 "start": 0,
-                "end": 27,
+                "end": 23,
                 "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i393-final-gap-20261125"
+              },
+              {
+                "start": 23,
+                "end": 27,
+                "language": "uk",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i393-final-gap-20261125"
@@ -917,8 +925,16 @@
             "language_spans": [
               {
                 "start": 0,
-                "end": 60,
+                "end": 34,
                 "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i393-final-gap-20261125"
+              },
+              {
+                "start": 34,
+                "end": 60,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i393-final-gap-20261125"
@@ -939,7 +955,7 @@
               {
                 "start": 0,
                 "end": 60,
-                "language": "orv",
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i393-final-gap-20261125"
@@ -1156,5 +1172,14 @@
         "reason": "Exact historical glyphs, abbreviation signs, accents and mixed historical language attribution provisional."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "f54e7b1e89dea9d75398af977f0f3c6996fa42eb",
+    "source_record_blob": "362776eae70acdbb1b370dc68c06f1fa5e41f6d5",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual annotation pass against the original pinned printed image and exact frozen reading. Explicitly introduced Church Slavonic quotations/formulae distinguished from historical vernacular (uncertain); independent Cyrillic numeral tokens separated from linguistic material; printed editorial abbreviation distinguished only where supported. No recensional or glyph verification claimed."
   }
 }

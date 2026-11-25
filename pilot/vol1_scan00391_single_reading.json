@@ -145,8 +145,16 @@
             "language_spans": [
               {
                 "start": 0,
-                "end": 56,
+                "end": 46,
                 "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i391-final-gap-20261125"
+              },
+              {
+                "start": 46,
+                "end": 56,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i391-final-gap-20261125"
@@ -166,6 +174,14 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i391-final-gap-20261125"
+              },
+              {
+                "start": 27,
                 "end": 57,
                 "language": "orv",
                 "script": "Cyrl",
@@ -691,6 +707,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 42,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i391-final-gap-20261125"
+              },
+              {
+                "start": 42,
+                "end": 45,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i391-final-gap-20261125"
+              },
+              {
+                "start": 45,
                 "end": 62,
                 "language": "orv",
                 "script": "Cyrl",
@@ -1140,5 +1172,14 @@
         "reason": "Exact historical glyphs, abbreviation signs, accents and mixed historical language attribution provisional."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "f54e7b1e89dea9d75398af977f0f3c6996fa42eb",
+    "source_record_blob": "65e4b36d18226d8111b1182cdca2c105cef4ec0b",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual annotation pass against the original pinned printed image and exact frozen reading. Explicitly introduced Church Slavonic quotations/formulae distinguished from historical vernacular (uncertain); independent Cyrillic numeral tokens separated from linguistic material; printed editorial abbreviation distinguished only where supported. No recensional or glyph verification claimed."
   }
 }
