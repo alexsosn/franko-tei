@@ -1,0 +1,811 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 101,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00101.jpg",
+  "source_image_sha256": "7c83be53c6de550e46cc6b70c23abb7cb2aabc9bcc0f1e3380a3ec7c9f0d8447",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v4s00101",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-pr143-apocalypse-starts-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full visual reading of pinned original page including headings, manuscript text, commentary and printer furniture. TOC titles known; no original OCR or peer page reading used. Provisional glyphs and estimated geometry. Not blind or verified.",
+    "raw_response": "II. Апокалїпси про празники і обряди.\nА. Рукопис о. Теодора з Дубівця стор. 169—176.\n[Єфистолїа ѡ недѣли]. Пришедши в’ Рим въ ѡлтарѣ\nпрехвалных апⷭлъ Петра и Павла, рекшю Го҃у нашемꙋ І҃с Хо҃у: Ꙗко\nты єси Петре камень, и на том камени съзиждꙋ цр҃ковъ мою,\nи врата адова не оудолѣют еи, и дам ти ключ црⷭтва нбⷭнаго,\nєгож свѧжеши на земли, бꙋдет свѧзан на нб҃сѣх, єгож раздрѣ-\nшите на земли, бꙋдет раздрѣшен на нб҃сѣх. ѹвѣсивше сѧ ст҃ѣи\nєфистолїи над ѡл’тарем цр҃кви ст҃ых апⷭлъ, ꙗви сѧ въ снѣ ар-\nхїєпⷭкопоу гл҃ющи: „ѹстани, внииди въ цр҃ков, прочтеш єфистол\nмл҃нїи моих“. слышав архїєпⷭпъ ст҃ыи глаⷭ въставъ скоро и в’ни-\nде въ цр҃ков, ѡбрѣте ст҃оую єфистолїю висащꙋ ѹ стопа [sic!]\nвысоко ѹ цр҃кви над ѡл’тарем. и призва єпⷭпъ множество ієрей\nи чръноризец, плакаⷭ гръко и мл҃а сѧ Гви҃ г҃. дн҃и и г҃. нощи.\nмл҃ащим сѧ им и поклони сѧ г҃.-ж[ди] и простер фєлон свой,\nи прїат ст҃оую єфистолїю, и цѣлова ю, и ѿвръзе ю, ѡбрѣте\nвъ ней сици написано и рече: Ги҃ бл҃ви ѡче.\n„Послꙋшаите мене, сн҃ве члⷭстїи, ꙗко даⷨ ваⷨ вѣрꙋ вѣровати,\nгрѣхи попирати ваша ради ст҃ыа недѣлѣ. аще не покаєтеⷭ злыⷯ грѣ-\nхоⷡ вашиⷯ и не ѡстанете их, нѣⷭ лиⷯ вар’варьскых ꙗзык препоꙋщаⷧ\nна ваⷭ, и пролїаша кроⷡ? ни тако вѣры ꙗсте єѵг҃лїю моємоу гл҃ю-\nщемоу: „нб҃о и землѧ мимоидєт, а словеса моа не мимоидꙋт“.\nпꙋща на вы зимы г҃. студеныа и злыа, град, снѣг, слан, голод,\nвеⷭт и жаби и проугъ, гꙋсеница ст҃ыа ради нд҃лѣ. древꙋ в’сакомоу\nплода не сотвороу, ис’соушꙋ за злыа грѣхи ваша. и нн҃ѣ гл҃ю\nваⷨ: ст҃ѣте ст҃оую нд҃лю, среⷣ, паⷮ, тѣми бо дн҃ьми землѧ стоиⷮ\nПамятки т. IV.\n7",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "section-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          178,
+          526,
+          817,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-heading-line-01",
+            "text": "II. Апокалїпси про празники і обряди.",
+            "bbox_xywh": [
+              178,
+              526,
+              817,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "epistle-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          194,
+          672,
+          772,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "epistle-heading-line-01",
+            "text": "А. Рукопис о. Теодора з Дубівця стор. 169—176.",
+            "bbox_xywh": [
+              194,
+              672,
+              772,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "epistle",
+        "kind": "body",
+        "bbox_xywh": [
+          104,
+          750,
+          947,
+          844
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "epistle-line-01",
+            "text": "[Єфистолїа ѡ недѣли]. Пришедши в’ Рим въ ѡлтарѣ",
+            "bbox_xywh": [
+              104,
+              750,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-02",
+            "text": "прехвалных апⷭлъ Петра и Павла, рекшю Го҃у нашемꙋ І҃с Хо҃у: Ꙗко",
+            "bbox_xywh": [
+              104,
+              785,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-03",
+            "text": "ты єси Петре камень, и на том камени съзиждꙋ цр҃ковъ мою,",
+            "bbox_xywh": [
+              104,
+              821,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-04",
+            "text": "и врата адова не оудолѣют еи, и дам ти ключ црⷭтва нбⷭнаго,",
+            "bbox_xywh": [
+              104,
+              856,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-05",
+            "text": "єгож свѧжеши на земли, бꙋдет свѧзан на нб҃сѣх, єгож раздрѣ-",
+            "bbox_xywh": [
+              104,
+              891,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-06",
+            "text": "шите на земли, бꙋдет раздрѣшен на нб҃сѣх. ѹвѣсивше сѧ ст҃ѣи",
+            "bbox_xywh": [
+              104,
+              927,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-07",
+            "text": "єфистолїи над ѡл’тарем цр҃кви ст҃ых апⷭлъ, ꙗви сѧ въ снѣ ар-",
+            "bbox_xywh": [
+              104,
+              962,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-08",
+            "text": "хїєпⷭкопоу гл҃ющи: „ѹстани, внииди въ цр҃ков, прочтеш єфистол",
+            "bbox_xywh": [
+              104,
+              997,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-09",
+            "text": "мл҃нїи моих“. слышав архїєпⷭпъ ст҃ыи глаⷭ въставъ скоро и в’ни-",
+            "bbox_xywh": [
+              104,
+              1033,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-10",
+            "text": "де въ цр҃ков, ѡбрѣте ст҃оую єфистолїю висащꙋ ѹ стопа [sic!]",
+            "bbox_xywh": [
+              104,
+              1068,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 53,
+                "end": 59,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-11",
+            "text": "высоко ѹ цр҃кви над ѡл’тарем. и призва єпⷭпъ множество ієрей",
+            "bbox_xywh": [
+              104,
+              1104,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-12",
+            "text": "и чръноризец, плакаⷭ гръко и мл҃а сѧ Гви҃ г҃. дн҃и и г҃. нощи.",
+            "bbox_xywh": [
+              104,
+              1139,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-13",
+            "text": "мл҃ащим сѧ им и поклони сѧ г҃.-ж[ди] и простер фєлон свой,",
+            "bbox_xywh": [
+              104,
+              1174,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-14",
+            "text": "и прїат ст҃оую єфистолїю, и цѣлова ю, и ѿвръзе ю, ѡбрѣте",
+            "bbox_xywh": [
+              104,
+              1210,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-15",
+            "text": "въ ней сици написано и рече: Ги҃ бл҃ви ѡче.",
+            "bbox_xywh": [
+              104,
+              1245,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-16",
+            "text": "„Послꙋшаите мене, сн҃ве члⷭстїи, ꙗко даⷨ ваⷨ вѣрꙋ вѣровати,",
+            "bbox_xywh": [
+              104,
+              1280,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-17",
+            "text": "грѣхи попирати ваша ради ст҃ыа недѣлѣ. аще не покаєтеⷭ злыⷯ грѣ-",
+            "bbox_xywh": [
+              104,
+              1316,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-18",
+            "text": "хоⷡ вашиⷯ и не ѡстанете их, нѣⷭ лиⷯ вар’варьскых ꙗзык препоꙋщаⷧ",
+            "bbox_xywh": [
+              104,
+              1351,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-19",
+            "text": "на ваⷭ, и пролїаша кроⷡ? ни тако вѣры ꙗсте єѵг҃лїю моємоу гл҃ю-",
+            "bbox_xywh": [
+              104,
+              1386,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-20",
+            "text": "щемоу: „нб҃о и землѧ мимоидєт, а словеса моа не мимоидꙋт“.",
+            "bbox_xywh": [
+              104,
+              1422,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-21",
+            "text": "пꙋща на вы зимы г҃. студеныа и злыа, град, снѣг, слан, голод,",
+            "bbox_xywh": [
+              104,
+              1457,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-22",
+            "text": "веⷭт и жаби и проугъ, гꙋсеница ст҃ыа ради нд҃лѣ. древꙋ в’сакомоу",
+            "bbox_xywh": [
+              104,
+              1493,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-23",
+            "text": "плода не сотвороу, ис’соушꙋ за злыа грѣхи ваша. и нн҃ѣ гл҃ю",
+            "bbox_xywh": [
+              104,
+              1528,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "epistle-line-24",
+            "text": "ваⷨ: ст҃ѣте ст҃оую нд҃лю, среⷣ, паⷮ, тѣми бо дн҃ьми землѧ стоиⷮ",
+            "bbox_xywh": [
+              104,
+              1563,
+              947,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          178,
+          1601,
+          159,
+          26
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "Памятки т. IV.",
+            "bbox_xywh": [
+              178,
+              1601,
+              159,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00101",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sheet-number",
+        "kind": "other",
+        "bbox_xywh": [
+          973,
+          1593,
+          31,
+          26
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "sheet-number-line-01",
+            "text": "7",
+            "bbox_xywh": [
+              973,
+              1593,
+              31,
+              26
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "epistle-line-01",
+        "reading": "[Єфистолїа ѡ недѣли]. Пришедши в’ Рим въ ѡлтарѣ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-02",
+        "reading": "прехвалных апⷭлъ Петра и Павла, рекшю Го҃у нашемꙋ І҃с Хо҃у: Ꙗко",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-03",
+        "reading": "ты єси Петре камень, и на том камени съзиждꙋ цр҃ковъ мою,",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-04",
+        "reading": "и врата адова не оудолѣют еи, и дам ти ключ црⷭтва нбⷭнаго,",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-05",
+        "reading": "єгож свѧжеши на земли, бꙋдет свѧзан на нб҃сѣх, єгож раздрѣ-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-06",
+        "reading": "шите на земли, бꙋдет раздрѣшен на нб҃сѣх. ѹвѣсивше сѧ ст҃ѣи",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-07",
+        "reading": "єфистолїи над ѡл’тарем цр҃кви ст҃ых апⷭлъ, ꙗви сѧ въ снѣ ар-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-08",
+        "reading": "хїєпⷭкопоу гл҃ющи: „ѹстани, внииди въ цр҃ков, прочтеш єфистол",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-09",
+        "reading": "мл҃нїи моих“. слышав архїєпⷭпъ ст҃ыи глаⷭ въставъ скоро и в’ни-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-10",
+        "reading": "де въ цр҃ков, ѡбрѣте ст҃оую єфистолїю висащꙋ ѹ стопа [sic!]",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-11",
+        "reading": "высоко ѹ цр҃кви над ѡл’тарем. и призва єпⷭпъ множество ієрей",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-12",
+        "reading": "и чръноризец, плакаⷭ гръко и мл҃а сѧ Гви҃ г҃. дн҃и и г҃. нощи.",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-13",
+        "reading": "мл҃ащим сѧ им и поклони сѧ г҃.-ж[ди] и простер фєлон свой,",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-14",
+        "reading": "и прїат ст҃оую єфистолїю, и цѣлова ю, и ѿвръзе ю, ѡбрѣте",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-15",
+        "reading": "въ ней сици написано и рече: Ги҃ бл҃ви ѡче.",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-16",
+        "reading": "„Послꙋшаите мене, сн҃ве члⷭстїи, ꙗко даⷨ ваⷨ вѣрꙋ вѣровати,",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-17",
+        "reading": "грѣхи попирати ваша ради ст҃ыа недѣлѣ. аще не покаєтеⷭ злыⷯ грѣ-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-18",
+        "reading": "хоⷡ вашиⷯ и не ѡстанете их, нѣⷭ лиⷯ вар’варьскых ꙗзык препоꙋщаⷧ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-19",
+        "reading": "на ваⷭ, и пролїаша кроⷡ? ни тако вѣры ꙗсте єѵг҃лїю моємоу гл҃ю-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-20",
+        "reading": "щемоу: „нб҃о и землѧ мимоидєт, а словеса моа не мимоидꙋт“.",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-21",
+        "reading": "пꙋща на вы зимы г҃. студеныа и злыа, град, снѣг, слан, голод,",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-22",
+        "reading": "веⷭт и жаби и проугъ, гꙋсеница ст҃ыа ради нд҃лѣ. древꙋ в’сакомоу",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-23",
+        "reading": "плода не сотвороу, ис’соушꙋ за злыа грѣхи ваша. и нн҃ѣ гл҃ю",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "epistle-line-24",
+        "reading": "ваⷨ: ст҃ѣте ст҃оую нд҃лю, среⷣ, паⷮ, тѣми бо дн҃ьми землѧ стоиⷮ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      }
+    ],
+    "language_annotation": {
+      "annotator": "GPT-6.2",
+      "date": "2026-11-25",
+      "status": "provisional",
+      "scope": "First-reading code-point language/script spans on all linguistic lines.",
+      "policy": "cu Church Slavonic; uk Ukrainian including tentative historical Ruthenian; la Latin editorial insertions. Numeric-only folio/sheet numbers untagged. Historic language attribution uncertain.",
+      "notes": "Church Slavonic-dominant epistle with local forms; Latin editorial [sic!] separate. No front-side folio numeral visible; faint show-through excluded."
+    }
+  }
+}
