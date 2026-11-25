@@ -29,6 +29,25 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#choice option").filter(has_text="GPT-6 · single reading")).to_have_count(1)
             expect(page.locator("#choice option").filter(has_text="GPT-6 · independent image reading b")).to_have_count(1)
             expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
+            # Real self-hosted font faces must load, rather than silently fall back.
+            page.locator("#fontSettings summary").click()
+            for selector, values, sample in [
+                ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh")], "ꙗꙖꙑб҃ъ"),
+                ("#greekFont", [("gentium", "Franko Gentium"), ("garamond", "Franko Garamond")], "Ἐν ἀρχῇ ἄ"),
+            ]:
+                for value, family in values:
+                    page.locator(selector).select_option(value)
+                    assert page.evaluate("""async ([family, sample]) => {
+                        const faces = await document.fonts.load('21px "' + family + '"', sample);
+                        return faces.length > 0 && faces.every(face => face.status === 'loaded');
+                    }""", [family, sample]), family
+            page.reload()
+            expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
+            page.locator("#fontSettings summary").click()
+            expect(page.locator("#slavonicFont")).to_have_value("monomakh")
+            expect(page.locator("#greekFont")).to_have_value("garamond")
+            page.locator("#resetFonts").click()
+            page.locator("#fontSettings summary").click()
             page.locator("#showLanguages").check()
             expect(page.locator(".languages-on .language-span[data-language='grc']").first).to_be_visible()
             expect(page.locator("#languageLegend")).to_contain_text("Ancient Greek")
