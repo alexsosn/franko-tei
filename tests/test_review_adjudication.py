@@ -198,3 +198,50 @@ class AdjudicationTests(unittest.TestCase):
         forged=copy.deepcopy(a); forged["agent"]["image_sha256"]="0"*64
         with self.assertRaises(ValueError): validate_ledger([r],[forged],load_source)
         with self.assertRaises(ValueError): validate_ledger([r],[a,decision(r)],load_source)
+
+    def test_real_heading_and_unlinked_apparatus(self):
+        from pathlib import Path
+        from franko_tei.review_bundle import blob_sha
+        path="pilot/vol1_scan00104_single_reading.json"
+        raw=(Path(__file__).resolve().parents[1]/path).read_bytes()
+        source=json.loads(raw)
+        def loader(rev,p):
+            if (rev,p)!=(REV,path):
+                raise ValueError("wrong source")
+            return raw
+        def proposal(region_id,line_id,transform):
+            region=next(r for r in source["reading"]["regions"] if r["id"]==region_id)
+            line=next(l for l in region["lines"] if l["id"]==line_id)
+            b=fixture(); e=b["events"][0]
+            e["target"].update(candidate_path=path,candidate_blob=blob_sha(raw),
+                asset_commit=source["asset_commit"],image_sha256=source["source_image_sha256"],
+                reader_id=source["reading"]["reader_id"],region_id=region_id,
+                line_id=line_id,original=line["text"])
+            e["replacement"]=transform(line["text"])
+            payload=encode(b)
+            r=make_intake(payload,issue(),hashlib.sha256(payload).hexdigest(),loader)
+            a=adjudicate(r,e["event_id"],"accept",EDITOR,REASON,intake_digest(r),loader)
+            rows=project_lines(raw,path,validate_ledger([r],[a],loader))
+            return next(x for x in rows if x["line_id"]==line_id)
+        heading=proposal("witness-e-label","witness-e-label-l001",lambda s:s.replace("Ілї","Іллі"))
+        self.assertEqual(heading["region_id"],"witness-e-label")
+        self.assertEqual(heading["text"],"Д. Рукопис о. Іллі Білахевича стор. 106—110.")
+        for transform in (lambda s:s.replace("106","107"),lambda s:s.replace("Д.","Е."),lambda s:s.replace("—","-")):
+            with self.assertRaises(ValueError):
+                proposal("witness-e-label","witness-e-label-l001",transform)
+        row=proposal("witness-e-death-adam","witness-e-death-adam-l003",lambda s:s.replace("Сидъ","Сиѳъ").replace("своея","своеꙗ"))
+        self.assertEqual(row["apparatus_status"],"unlinked_markers_preserved")
+        self.assertEqual([m["literal"] for m in row["apparatus_markers"]],["⁵)","⁶)","⁶)"])
+        for m in row["apparatus_markers"]:
+            self.assertEqual(row["original"][m["source_start"]:m["source_end"]],m["literal"])
+            self.assertEqual(row["text"][m["start"]:m["end"]],m["literal"])
+        for transform in (lambda s:s.replace("⁵)","⁷)"),lambda s:s.replace("⁵)",""),
+                          lambda s:s.replace("⁵)","⁵)⁵)"),lambda s:s.replace("вопроситъ⁵)","вопросит⁵)"),
+                          lambda s:s.replace("⁵)","⁵ )"),lambda s:s.replace("⁵)","").replace("Сидъ","Сидъ⁵)")):
+            with self.assertRaises(ValueError):
+                proposal("witness-e-death-adam","witness-e-death-adam-l003",transform)
+        # Length-changing correction before the apparatus must remap offsets.
+        row=proposal("witness-e-death-adam","witness-e-death-adam-l001",lambda s:s.replace("бяше","бꙗ҆́ше"))
+        m=row["apparatus_markers"][0]
+        self.assertEqual(m["start"],m["source_start"]+2)
+        self.assertEqual(row["text"][m["start"]:m["end"]],"¹)")
