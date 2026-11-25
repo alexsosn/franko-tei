@@ -1,0 +1,462 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 354,
+  "printed_page_observed": "279",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00354.jpg",
+  "source_image_sha256": "256d3b1d549f5dedf06a420b873bd98aa8f6453398d9010023194c1f11cc18a6",
+  "reading": {
+    "reader_id": "gpt62-i354-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i350-379-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Pinned original image first. Church Slavonic, provisional historical vernacular orv, Ukrainian editorial prose, German and Russian bibliography distinguished. Physical lines retained, estimated geometry, exact glyphs and numerals provisional. No inferred folio on section opening. No verified claim.",
+    "raw_response": "279\nбукарештське оповіданє проф. Веселовський без підстави потожсам-\nлює його з тим текстом, який він опублікував у Яґічевім Архіві,\nт. I, 608—611 пз. Zur bulgarischen Alexandersage; наше оповіданє\nне має с тим текстом нїчогісінько спільного (гл. А. Н. В е с е л о в-\nс к і й, Разысканія въ области русскаго духовнаго стиха VI, 17).\nДо лїтератури Сібіллї, вказаної в „Ж. і Сл.“ (вона зрештою сюди\nмало стосуєть ся) дод. А. Н. В е с е л о в с к і й, Опыты по исторіи\nразвитія христіанской легенды II, 1. (Журналъ министерства нар.\nпросвѣщенія 1876, Февраль, стор. 241—288). Вказаний мною\nв „Ж. і Сл.“ латинський рукопис віденьської надв. бібліотеки, як\nя пізнїйше переконав ся, анї з нашим оповіданєм, анї з сібіллїн-\nською лїтературою не має нїчого спільного.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "decorative ornament",
+          "bbox_xywh": [
+            466,
+            769,
+            221,
+            151
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          953,
+          87,
+          58,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "279",
+            "bbox_xywh": [
+              953,
+              87,
+              58,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-commentary-continuation",
+        "kind": "body",
+        "bbox_xywh": [
+          103,
+          149,
+          922,
+          420
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-commentary-continuation-l001",
+            "text": "букарештське оповіданє проф. Веселовський без підстави потожсам-",
+            "bbox_xywh": [
+              103,
+              149,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l002",
+            "text": "лює його з тим текстом, який він опублікував у Яґічевім Архіві,",
+            "bbox_xywh": [
+              103,
+              184,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l003",
+            "text": "т. I, 608—611 пз. Zur bulgarischen Alexandersage; наше оповіданє",
+            "bbox_xywh": [
+              103,
+              219,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 4,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 4,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 18,
+                "end": 48,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 48,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l004",
+            "text": "не має с тим текстом нїчогісінько спільного (гл. А. Н. В е с е л о в-",
+            "bbox_xywh": [
+              103,
+              254,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 49,
+                "end": 69,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l005",
+            "text": "с к і й, Разысканія въ области русскаго духовнаго стиха VI, 17).",
+            "bbox_xywh": [
+              103,
+              289,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 55,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 56,
+                "end": 58,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 58,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l006",
+            "text": "До лїтератури Сібіллї, вказаної в „Ж. і Сл.“ (вона зрештою сюди",
+            "bbox_xywh": [
+              103,
+              324,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l007",
+            "text": "мало стосуєть ся) дод. А. Н. В е с е л о в с к і й, Опыты по исторіи",
+            "bbox_xywh": [
+              103,
+              359,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 68,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l008",
+            "text": "развитія христіанской легенды II, 1. (Журналъ министерства нар.",
+            "bbox_xywh": [
+              103,
+              394,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 29,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 32,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 38,
+                "end": 63,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l009",
+            "text": "просвѣщенія 1876, Февраль, стор. 241—288). Вказаний мною",
+            "bbox_xywh": [
+              103,
+              429,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 25,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              },
+              {
+                "start": 25,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l010",
+            "text": "в „Ж. і Сл.“ латинський рукопис віденьської надв. бібліотеки, як",
+            "bbox_xywh": [
+              103,
+              464,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l011",
+            "text": "я пізнїйше переконав ся, анї з нашим оповіданєм, анї з сібіллїн-",
+            "bbox_xywh": [
+              103,
+              499,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "editorial-commentary-continuation-l012",
+            "text": "ською лїтературою не має нїчого спільного.",
+            "bbox_xywh": [
+              103,
+              534,
+              922,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i354-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-commentary-continuation-l003",
+        "reading": "пз.",
+        "reason": "Bibliographic abbreviation appears пз.; keep unresolved rather than expanding it silently."
+      },
+      {
+        "line_id": "editorial-commentary-continuation-l004",
+        "reading": "нїчогісінько",
+        "reason": "Exact diaereses provisional."
+      }
+    ]
+  }
+}
