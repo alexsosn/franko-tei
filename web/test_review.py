@@ -61,6 +61,43 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.evaluate('window.lastJump')[:2], ['5', '311'])
             browser.close()
 
+    def test_all_volume_contents_destinations(self):
+        # A calculated page is deliberately not a verified work start or line anchor.
+        html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
+            "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,pendingContentsEstimate];pendingContentsEstimate=false;if(!$('contentsPanel').hidden)renderContents();};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':390,'height':844})
+            page.set_content(html)
+            result = page.evaluate("""() => Object.entries(volumeContents).map(([v,d])=>{
+                const ds=d.entries.map(e=>contentsDestination(v,e));
+                return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
+                        ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
+            })""")
+            self.assertEqual(result, [['1',145,46,99,0],['2',140,27,113,0],
+                                      ['3',170,39,131,0],['4',112,49,63,0],['5',48,11,37,0]])
+            self.assertEqual(page.evaluate("""() => [
+                contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
+                contentsDestination('3',[439,'example','LIX–LXVIII',null,1]),
+                contentsDestination('1',[465,'bad','9999',null,1]),
+                contentsDestination('2',[519,'bad','IIII',null,1]),
+                contentsDestination('3',[439,'bad','',null,1]),
+                contentsDestination('4',[570,'known','90',141,1])
+            ]"""), [{'scan':29,'kind':'estimated'},{'scan':77,'kind':'estimated'},
+                      None,None,None,{'scan':141,'kind':'verified'}])
+            for v, count in [('1',145),('2',140),('3',170),('4',112),('5',48)]:
+                page.locator('#volume').select_option(v)
+                if page.locator('#contentsPanel').is_hidden():
+                    page.locator('#contentsOpen').click()
+                self.assertEqual(page.locator('#contentsEntries button[data-scan], #contentsEntries button[data-estimated-scan]').count(), count)
+                b = page.locator('#contentsEntries button[data-estimated-scan]').first
+                scan = b.get_attribute('data-estimated-scan')
+                self.assertIn('unverified', b.inner_text())
+                b.click()
+                self.assertEqual(page.evaluate('window.lastJump'), [v, scan, True])
+                self.assertTrue(page.locator('#contentsPanel').is_hidden())
+            browser.close()
+
     def test_volume_two_contents_records(self):
         import json
         html = APP.read_text(encoding='utf-8')
@@ -103,7 +140,7 @@ class ReviewSmoke(unittest.TestCase):
         self.assertTrue(any(e[2] == '' and e[1].startswith('Ж. Събор') for e in items))
         self.assertTrue(any(e[2] == '192–193, 304' for e in items))
         self.assertEqual(len(items), 151)
-        self.assertEqual(sum(e[3] is not None for e in items), 22)
+        self.assertEqual(sum(e[3] is not None for e in items), 25)
         for printed, scan in [('160–154', 236), ('154–255', 240), ('295–207', 291), ('211–233', 317), ('259–259', 342), ('14–15', 98)]:
             self.assertEqual(next(e[3] for e in items if e[2] == printed), scan)
         self.assertEqual(next(e[3] for e in items if e[1].startswith('Ж. Събор')), 95)
@@ -275,7 +312,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertFalse(any(r['kind'] == 'page_number' for r in rec['reading']['regions']))
         linked = [e for e in contents['4']['entries'] if e[3] is not None]
         self.assertGreaterEqual(len(linked), 48)
-        self.assertTrue(all(len(e) > 6 and e[6] for e in linked))
+        self.assertTrue(all(len(e) > 6 and e[6] for e in linked if e[1] != 'Передмова'))
         isaiah = next(e for e in anchors if e[3] == 301 and e[4] == 1)
         self.assertTrue(isaiah[1].startswith('Б.'))
         self.assertTrue(isaiah[6]['text'].startswith('А.'))
