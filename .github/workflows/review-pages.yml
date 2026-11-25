@@ -31,31 +31,80 @@ jobs:
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_review.py
       - run: python web/test_live_review.py
-  deploy:
+  package:
     needs: browser
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 10
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact_id }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: pip install -e .
-      - uses: actions/configure-pages@v6
       - run: |
           mkdir -p _site
           cp web/index.html _site/index.html
           python web/build_search.py --output _site/search
       - uses: actions/upload-pages-artifact@v5
+        id: upload
         with:
+          name: github-pages
           path: _site
+  deploy:
+    needs: package
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v6
+      - name: Wait for the uploaded artifact to become visible
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.package.outputs.artifact_id }}
+        run: |
+          set -euo pipefail
+          [[ "$ARTIFACT_ID" =~ ^[0-9]+$ ]]
+          for attempt in {1..12}; do
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages" \
+              | jq -e --arg id "$ARTIFACT_ID" '.artifacts | length == 1 and (.[0].id | tostring) == $id and (.[0].expired | not)' >/dev/null; then
+              echo "Artifact $ARTIFACT_ID visible in Actions API."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Expected Pages artifact $ARTIFACT_ID is not visible."
+          exit 1
       - name: Deploy viewer
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages
+      - name: Verify the published revision
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          for attempt in {1..18}; do
+            if curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/index.html?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-index.html" \
+              && cmp -s web/index.html "$RUNNER_TEMP/published-index.html" \
+              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/vol1.json?rev=$GITHUB_SHA" \
+              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null; then
+              echo "Public viewer and search index match $GITHUB_SHA."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Public viewer or search index does not match $GITHUB_SHA."
+          exit 1
