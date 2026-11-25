@@ -5225,7 +5225,7 @@ function renderContents(){const v=$('contentsVolume').value||$('volume').value,d
 function openContents(){$('contentsVolume').replaceChildren(...[...$('volume').options].map(o=>o.cloneNode(true)));$('contentsVolume').value=$('volume').value;$('contentsFilter').value='';$('contentsProvenance').open=false;renderContents();openDialog('contentsPanel',narrowReader()?'contentsOpenMobile':'contentsOpen');$('contentsTitle').focus({preventScroll:true});const hit=$('contentsEntries').querySelector('[data-current]');if(hit)hit.scrollIntoView({block:'nearest',inline:'nearest'});}
 $('contentsVolume').onchange=()=>{$('contentsFilter').value='';renderContents();};$('contentsFilter').oninput=filterContents;
 
-$('contentsOpen').onclick=openContents;$('contentsOpenMobile').onclick=openContents;$('contentsClose').onclick=closeContents;$('contentsPanel').addEventListener('close',()=>{for(const id of ['contentsOpen','contentsOpenMobile'])$(id).setAttribute('aria-expanded','false');});
+$('contentsOpen').onclick=openContents;$('contentsOpenMobile').onclick=openContents;$('contentsClose').onclick=closeContents;$('contentsPanel').addEventListener('cancel',event=>{event.preventDefault();closeContents();});$('contentsPanel').addEventListener('close',()=>{for(const id of ['contentsOpen','contentsOpenMobile'])$(id).setAttribute('aria-expanded','false');});
 
 // Search indexes are page records, never an inferred combined edition.
 let searchGeneration=0, searchController=null, searchHits=[], shownHits=0;
