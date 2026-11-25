@@ -55,6 +55,15 @@ class ReviewSmoke(unittest.TestCase):
                 Object.defineProperty(HTMLImageElement.prototype,'src',{get:src.get,set(value){src.set.call(this,fixture.png)}});
             }''', fixture)
             page.set_content(APP.read_text(encoding='utf-8'))
+            # Contents data comes from the pinned edition, independent of reading ref.
+            self.assertTrue(page.locator('#contentsPanel').is_hidden())
+            page.locator('#contentsOpen').click()
+            self.assertTrue(page.locator('#contentsPanel').is_visible())
+            self.assertIn('Індекс книг правдивих і заказаних', page.locator('#contentsEntries').inner_text())
+            self.assertEqual(page.locator('#contentsSources button').count(), 5)
+            self.assertEqual(page.locator('#contentsEntries button[data-scan="76"]').count(), 1)
+            page.locator('#contentsOpen').click()
+            self.assertTrue(page.locator('#contentsPanel').is_hidden())
             for control in ['#searchOpen', '#searchGo']:
                 self.assertEqual(page.locator(control + ' svg').count(), 1)
                 self.assertEqual(page.locator(control + ' svg').get_attribute('aria-hidden'), 'true')
