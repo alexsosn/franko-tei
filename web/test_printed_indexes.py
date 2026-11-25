@@ -107,7 +107,10 @@ class PrintedIndexesTest(unittest.TestCase):
             self.assertEqual(page.locator("#indexKind option").count(), 4)
             self.assertIn("6 / 15", page.locator("#indexStatus").inner_text())
             page.locator("#contentsFilter").fill("Авель")
-            row = page.locator("#indexEntries li:visible")
+            visible = page.locator("#indexEntries li:visible")
+            expected = [e for e in data["sections"][0]["entries"] if "авель" in " ".join([e["context"], e["label"], e["detail"], *[r["literal"] for r in e["refs"]]]).lower()]
+            self.assertEqual(visible.count(), len(expected))
+            row = visible.filter(has=page.locator(".index-label").get_by_text("Авель", exact=True))
             self.assertEqual(row.count(), 1)
             self.assertEqual(row.locator(".index-label").inner_text(), "Авель")
             entry = next(e for e in data["sections"][0]["entries"] if e["label"] == "Авель")
