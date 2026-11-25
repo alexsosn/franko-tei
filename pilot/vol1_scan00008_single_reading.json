@@ -1,0 +1,795 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 8,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00008.jpg",
+  "source_image_sha256": "c3e902b032ac8d72f832fdcca7816ab9c90f7e029141faba96d5a481f9432ae6",
+  "reading": {
+    "reader_id": "gpt62-i8-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned source image without embedded OCR or prior candidate. Transcribe printed edition; later accession marks and digital overlays excluded from edition text and documented separately in front-matter audit. Physical line geometry estimated (especially title blocks with widely separated display lines); language spans contextual, full code-point coverage. No verified claim.",
+    "raw_response": "Від Комісиї Археоґрафічної.\nВідповідно загальній програмі, прийнятій Археоґрафіч-\nною комісиєю Наукового товариства імени Шевченка, роз-\nпочинає вона сим томом другу серию своїх публікаций:\nПамятки українсько-руської мови і лїтератури (Monumenta\nlinguae necnon litterarum ukraino-russicarum). Тим часом\nяк перва серия: Жерела до істориї України-Руси (Fontes\nhistoriae Ukraino-Russicae (Ruthenicae)¹) мають містити ма-\nтериял історичний і переважно — актовий, друга ся се-\nрия має подавати або материяли не друковані зовсїм, або\nсистематичні збірники материялів друкованих і недрукова-\nних, досї до систематичних колекций не зведених, або —\nна рештї — неприступні, рідкі старі друки, не повторені\nновійшими часами, — що служать до пізнаня мови укра-\nїнсько-руського народу, з усїми його галузями, і письмен-\nства, почавши від перших проб його на українсько-руській\nземлї аж до новійших часів (устна словесність має свій\nорґан в Етноґрафічнім Збірнику Наукового Товариства\nімени Шевченка.²)\nПоле, як бачимо, велике, зібрані в комісиї Архео-\nґрафічній наукові сили згромадили і приготували значну\nкількість материялів, і видавнича діяльність комісиї здержу-\nєть ся поки що в скромних розмірах лише невеликими за-\nсобами грошевими. І так комісиї предложена тепер до ви-\nданя простора колекция памяток апокрифічної і леґендар-\nної лїтератури, що має зайняти кілька томів (до неї на-\nлежить і сей том), систематично уложена колекция дра-\n¹) Перший том його вийшов р. 1895.\n²) Пор. загальний проект в Записках 1895 р. I (т. V).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "later handwritten accession and institutional annotation",
+          "bbox_xywh": [
+            421,
+            105,
+            404,
+            172
+          ]
+        },
+        {
+          "description": "later rectangular library stamp",
+          "bbox_xywh": [
+            469,
+            261,
+            234,
+            186
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "commission-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          307,
+          435,
+          557,
+          46
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commission-heading-line-01",
+            "text": "Від Комісиї Археоґрафічної.",
+            "bbox_xywh": [
+              307,
+              435,
+              557,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commission-statement",
+        "kind": "body",
+        "bbox_xywh": [
+          130,
+          533,
+          909,
+          607
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commission-statement-line-01",
+            "text": "Відповідно загальній програмі, прийнятій Археоґрафіч-",
+            "bbox_xywh": [
+              130,
+              533,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-02",
+            "text": "ною комісиєю Наукового товариства імени Шевченка, роз-",
+            "bbox_xywh": [
+              130,
+              567,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-03",
+            "text": "починає вона сим томом другу серию своїх публікаций:",
+            "bbox_xywh": [
+              130,
+              600,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-04",
+            "text": "Памятки українсько-руської мови і лїтератури (Monumenta",
+            "bbox_xywh": [
+              130,
+              634,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 46,
+                "end": 55,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-05",
+            "text": "linguae necnon litterarum ukraino-russicarum). Тим часом",
+            "bbox_xywh": [
+              130,
+              668,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 44,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-06",
+            "text": "як перва серия: Жерела до істориї України-Руси (Fontes",
+            "bbox_xywh": [
+              130,
+              701,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 48,
+                "end": 54,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-07",
+            "text": "historiae Ukraino-Russicae (Ruthenicae)¹) мають містити ма-",
+            "bbox_xywh": [
+              130,
+              735,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 39,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-08",
+            "text": "териял історичний і переважно — актовий, друга ся се-",
+            "bbox_xywh": [
+              130,
+              769,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-09",
+            "text": "рия має подавати або материяли не друковані зовсїм, або",
+            "bbox_xywh": [
+              130,
+              803,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-10",
+            "text": "систематичні збірники материялів друкованих і недрукова-",
+            "bbox_xywh": [
+              130,
+              836,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-11",
+            "text": "них, досї до систематичних колекций не зведених, або —",
+            "bbox_xywh": [
+              130,
+              870,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-12",
+            "text": "на рештї — неприступні, рідкі старі друки, не повторені",
+            "bbox_xywh": [
+              130,
+              904,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-13",
+            "text": "новійшими часами, — що служать до пізнаня мови укра-",
+            "bbox_xywh": [
+              130,
+              937,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-14",
+            "text": "їнсько-руського народу, з усїми його галузями, і письмен-",
+            "bbox_xywh": [
+              130,
+              971,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-15",
+            "text": "ства, почавши від перших проб його на українсько-руській",
+            "bbox_xywh": [
+              130,
+              1005,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-16",
+            "text": "землї аж до новійших часів (устна словесність має свій",
+            "bbox_xywh": [
+              130,
+              1038,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-17",
+            "text": "орґан в Етноґрафічнім Збірнику Наукового Товариства",
+            "bbox_xywh": [
+              130,
+              1072,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-statement-line-18",
+            "text": "імени Шевченка.²)",
+            "bbox_xywh": [
+              130,
+              1106,
+              909,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commission-program",
+        "kind": "body",
+        "bbox_xywh": [
+          128,
+          1141,
+          913,
+          272
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commission-program-line-01",
+            "text": "Поле, як бачимо, велике, зібрані в комісиї Архео-",
+            "bbox_xywh": [
+              128,
+              1141,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-program-line-02",
+            "text": "ґрафічній наукові сили згромадили і приготували значну",
+            "bbox_xywh": [
+              128,
+              1175,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-program-line-03",
+            "text": "кількість материялів, і видавнича діяльність комісиї здержу-",
+            "bbox_xywh": [
+              128,
+              1209,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-program-line-04",
+            "text": "єть ся поки що в скромних розмірах лише невеликими за-",
+            "bbox_xywh": [
+              128,
+              1243,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-program-line-05",
+            "text": "собами грошевими. І так комісиї предложена тепер до ви-",
+            "bbox_xywh": [
+              128,
+              1277,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-program-line-06",
+            "text": "даня простора колекция памяток апокрифічної і леґендар-",
+            "bbox_xywh": [
+              128,
+              1311,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-program-line-07",
+            "text": "ної лїтератури, що має зайняти кілька томів (до неї на-",
+            "bbox_xywh": [
+              128,
+              1345,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-program-line-08",
+            "text": "лежить і сей том), систематично уложена колекция дра-",
+            "bbox_xywh": [
+              128,
+              1379,
+              913,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footnotes",
+        "kind": "note",
+        "bbox_xywh": [
+          201,
+          1452,
+          735,
+          66
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "footnotes-line-01",
+            "text": "¹) Перший том його вийшов р. 1895.",
+            "bbox_xywh": [
+              201,
+              1452,
+              735,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "footnotes-line-02",
+            "text": "²) Пор. загальний проект в Записках 1895 р. I (т. V).",
+            "bbox_xywh": [
+              201,
+              1485,
+              735,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 44,
+                "end": 45,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 45,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 50,
+                "end": 51,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i8-first-image-20261125",
+                "start": 51,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "commission-heading-line-01",
+        "reading": "Археоґрафічної",
+        "reason": "Exact ґ form provisional."
+      },
+      {
+        "line_id": "commission-statement-line-07",
+        "reading": "¹)",
+        "reason": "Raised footnote number rendered in Unicode."
+      },
+      {
+        "line_id": "commission-statement-line-18",
+        "reading": "²)",
+        "reason": "Raised footnote number rendered in Unicode."
+      },
+      {
+        "line_id": "footnotes-line-02",
+        "reading": "проект",
+        "reason": "Historical spelling as read; check against source."
+      }
+    ]
+  }
+}

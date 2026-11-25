@@ -1,0 +1,125 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 4,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00004.jpg",
+  "source_image_sha256": "75a0147a06f7897f15c03f68abc08518e99c6642dbe31dd92372751df075c133",
+  "reading": {
+    "reader_id": "gpt62-i4-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned source image without embedded OCR or prior candidate. Transcribe printed edition; later accession marks and digital overlays excluded from edition text and documented separately in front-matter audit. Physical line geometry estimated (especially title blocks with widely separated display lines); language spans contextual, full code-point coverage. No verified claim.",
+    "raw_response": "ПАМЯТКИ\nукраїнсько-руської мови і лїтератури\nI.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "half-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          174,
+          686,
+          776,
+          182
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "half-title-line-01",
+            "text": "ПАМЯТКИ",
+            "bbox_xywh": [
+              174,
+              686,
+              776,
+              87
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i4-first-image-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "half-title-line-02",
+            "text": "українсько-руської мови і лїтератури",
+            "bbox_xywh": [
+              174,
+              777,
+              776,
+              87
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i4-first-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          537,
+          909,
+          56,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "I.",
+            "bbox_xywh": [
+              537,
+              909,
+              56,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i4-first-image-20261125",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "half-title-line-02",
+        "reading": "лїтератури",
+        "reason": "Exact diaeresis in display type provisional."
+      }
+    ]
+  }
+}
