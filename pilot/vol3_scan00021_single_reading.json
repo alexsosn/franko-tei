@@ -1,0 +1,995 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 21,
+  "printed_page_observed": "III",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00021.jpg",
+  "source_image_sha256": "e691cfb1c6829853452313c14c229886233c739adbc95d3367b74ca2424d1861",
+  "reading": {
+    "reader_id": "gpt62-v3-s00021-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-preface-21-30-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read native image directly without embedded OCR or peer text. Preserve printed physical lines, historical Ukrainian spelling, multilingual citations, footnotes, page number and printer marks, mark uncertainty. Estimated geometry, agent-unverified.",
+    "raw_response": "III\nсходї, в сирийських, арабських, коптських, етіопських та вірмен-\nських текстах, із яких Лїпсіус міг визискати лише не богато. Так\nсамо й славянські тексти звісні були йому лише в малій части,\nчерез посередництво пок. Соловйова; від часу виходу остатнього\nтома працї Лїпсіуса й тут віднайдено дещо нового.\nДруга важна недостача працї Лїпсіуса, се було певне обме-\nжене предмету. Не мотивуючи докладно причини він виключив із\nкруга свойого дослїду цїлу парість апокріфічної лїтератури, так\nзвані Псевдоклиментини, виключив пізнїйшу лєґенду про пригоди\nсьв. Павла та сестер Ксантипи, Полїксени й Ревекки в Ішпанїї, не\nобняв своїм дослїдом пригод значної части апостольських учеників\nі т. п. Певна річ, сю недостачу можна оправдати по части недо-\nстачею матеріялу, а по части розумною економією автора: він не\nбажав надто розтягати своєї працї.\nВже в часї друкованя працї Лїпсіуса розпочав молодий його\nученик Макс Боннет працювати над збиране́м і кращим виданєм\nпоодиноких житій або зовсїм залишених Тішендорфом (Acta\nTimothei), або таких, які на основі ново визисканого рукописного\nматеріялу можна було видати повнїйше й поправнїйше, нїж се\nбуло можливе для Тішендорфа (Acta Thomae, 1883). По викін-\nченю своєї працї Лїпсіус узяв ся до спілки з Боннетом зробити\nнове, систематичне виданє грецьких текстів апокріфічних апостоль-\nських актів, у якому сам він зредаґував перший том (1891), що\nмістить акти Петра, Павла й Тадея; другий том, виданий ще за\nжитя Лїпсіуса, але редаґований Боннетом, містить акти Андрія,\nМатвія, Варфоломея, Івана й Матїя (1898). Вже по смерти Лїп-\nсіуса, при кінцї 1902 р. видав М. Боннет третїй том сеї важної\nзбірки, де містять ся акти Филипа й Томи. Запевно д. Боннет не\nсхоче зупинити ся на сьому і дасть нам у дальших томах свойого\nвиданя ще й решту текстів, що належать до сього круга лїтера-\nтури. Тимчасом і инші вчені працювали або працюють над публї-\nкацією деяких текстів. І так акти ап. Івана богослова, писані тзв.\nПсевдо-Прохором, у-перве опублїкував у грецькім текстї й славян-\nськім перекладї архимандрит Амфілохій у Москві (1878), а потім\nгрецький текст їх видав проф. Цан (1880). Над критичним виданєм\nПсевдо-Климентин працює від кількох лїт американський учений\nРічардсон. Значне число сирийських текстів опублїкував Райт¹),\n¹) D. William Wright, Apocryphal Acts of the Apostles, edited from\nSyriac manuscripts in the Britisch Museum and other libraries, London 1871 (1 том\nсирийські тексти, 2 том анґлїйський переклад). Дальші причинки до сирийських",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            130,
+            1505,
+            222,
+            6
+          ],
+          "description": "Printed horizontal footnote rule, no text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1044,
+          94,
+          62,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "III",
+            "bbox_xywh": [
+              1044,
+              94,
+              62,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          120,
+          161,
+          978,
+          1320
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "сходї, в сирийських, арабських, коптських, етіопських та вірмен-",
+            "bbox_xywh": [
+              120,
+              161,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "ських текстах, із яких Лїпсіус міг визискати лише не богато. Так",
+            "bbox_xywh": [
+              120,
+              196,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "само й славянські тексти звісні були йому лише в малій части,",
+            "bbox_xywh": [
+              120,
+              232,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "через посередництво пок. Соловйова; від часу виходу остатнього",
+            "bbox_xywh": [
+              120,
+              268,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "тома працї Лїпсіуса й тут віднайдено дещо нового.",
+            "bbox_xywh": [
+              120,
+              303,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "Друга важна недостача працї Лїпсіуса, се було певне обме-",
+            "bbox_xywh": [
+              120,
+              339,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "жене предмету. Не мотивуючи докладно причини він виключив із",
+            "bbox_xywh": [
+              120,
+              375,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "круга свойого дослїду цїлу парість апокріфічної лїтератури, так",
+            "bbox_xywh": [
+              120,
+              410,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "звані Псевдоклиментини, виключив пізнїйшу лєґенду про пригоди",
+            "bbox_xywh": [
+              120,
+              446,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "сьв. Павла та сестер Ксантипи, Полїксени й Ревекки в Ішпанїї, не",
+            "bbox_xywh": [
+              120,
+              482,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "обняв своїм дослїдом пригод значної части апостольських учеників",
+            "bbox_xywh": [
+              120,
+              517,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "і т. п. Певна річ, сю недостачу можна оправдати по части недо-",
+            "bbox_xywh": [
+              120,
+              553,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "стачею матеріялу, а по части розумною економією автора: він не",
+            "bbox_xywh": [
+              120,
+              589,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "бажав надто розтягати своєї працї.",
+            "bbox_xywh": [
+              120,
+              624,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "Вже в часї друкованя працї Лїпсіуса розпочав молодий його",
+            "bbox_xywh": [
+              120,
+              660,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "ученик Макс Боннет працювати над збиране́м і кращим виданєм",
+            "bbox_xywh": [
+              120,
+              696,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "поодиноких житій або зовсїм залишених Тішендорфом (Acta",
+            "bbox_xywh": [
+              120,
+              731,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 51,
+                "end": 55,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "Timothei), або таких, які на основі ново визисканого рукописного",
+            "bbox_xywh": [
+              120,
+              767,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 8,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "матеріялу можна було видати повнїйше й поправнїйше, нїж се",
+            "bbox_xywh": [
+              120,
+              803,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "було можливе для Тішендорфа (Acta Thomae, 1883). По викін-",
+            "bbox_xywh": [
+              120,
+              838,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 29,
+                "end": 40,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 40,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "ченю своєї працї Лїпсіус узяв ся до спілки з Боннетом зробити",
+            "bbox_xywh": [
+              120,
+              874,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "нове, систематичне виданє грецьких текстів апокріфічних апостоль-",
+            "bbox_xywh": [
+              120,
+              910,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "ських актів, у якому сам він зредаґував перший том (1891), що",
+            "bbox_xywh": [
+              120,
+              945,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "містить акти Петра, Павла й Тадея; другий том, виданий ще за",
+            "bbox_xywh": [
+              120,
+              981,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "житя Лїпсіуса, але редаґований Боннетом, містить акти Андрія,",
+            "bbox_xywh": [
+              120,
+              1017,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "Матвія, Варфоломея, Івана й Матїя (1898). Вже по смерти Лїп-",
+            "bbox_xywh": [
+              120,
+              1052,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "сіуса, при кінцї 1902 р. видав М. Боннет третїй том сеї важної",
+            "bbox_xywh": [
+              120,
+              1088,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "збірки, де містять ся акти Филипа й Томи. Запевно д. Боннет не",
+            "bbox_xywh": [
+              120,
+              1124,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "схоче зупинити ся на сьому і дасть нам у дальших томах свойого",
+            "bbox_xywh": [
+              120,
+              1159,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "виданя ще й решту текстів, що належать до сього круга лїтера-",
+            "bbox_xywh": [
+              120,
+              1195,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "тури. Тимчасом і инші вчені працювали або працюють над публї-",
+            "bbox_xywh": [
+              120,
+              1231,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "кацією деяких текстів. І так акти ап. Івана богослова, писані тзв.",
+            "bbox_xywh": [
+              120,
+              1266,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "Псевдо-Прохором, у-перве опублїкував у грецькім текстї й славян-",
+            "bbox_xywh": [
+              120,
+              1302,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "ськім перекладї архимандрит Амфілохій у Москві (1878), а потім",
+            "bbox_xywh": [
+              120,
+              1338,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "грецький текст їх видав проф. Цан (1880). Над критичним виданєм",
+            "bbox_xywh": [
+              120,
+              1373,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "Псевдо-Климентин працює від кількох лїт американський учений",
+            "bbox_xywh": [
+              120,
+              1409,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-37",
+            "text": "Річардсон. Значне число сирийських текстів опублїкував Райт¹),",
+            "bbox_xywh": [
+              120,
+              1445,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          126,
+          1526,
+          972,
+          98
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "apparatus-line-01",
+            "text": "¹) D. William Wright, Apocryphal Acts of the Apostles, edited from",
+            "bbox_xywh": [
+              126,
+              1526,
+              972,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 3,
+                "end": 66,
+                "language": "en",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-02",
+            "text": "Syriac manuscripts in the Britisch Museum and other libraries, London 1871 (1 том",
+            "bbox_xywh": [
+              126,
+              1558,
+              972,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 74,
+                "language": "en",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 74,
+                "end": 81,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-03",
+            "text": "сирийські тексти, 2 том анґлїйський переклад). Дальші причинки до сирийських",
+            "bbox_xywh": [
+              126,
+              1591,
+              972,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00021-20261125",
+                "start": 0,
+                "end": 76,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-08",
+        "reading": "парість",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      },
+      {
+        "line_id": "preface-line-16",
+        "reading": "збиране́м",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      },
+      {
+        "line_id": "apparatus-line-02",
+        "reading": "Britisch",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      }
+    ]
+  }
+}

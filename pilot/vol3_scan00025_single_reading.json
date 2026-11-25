@@ -1,0 +1,971 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 25,
+  "printed_page_observed": "VII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00025.jpg",
+  "source_image_sha256": "6af4ca4591df95fd205c77fe1e12d818475df6a942b063175fce46318b932331",
+  "reading": {
+    "reader_id": "gpt62-v3-s00025-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-preface-21-30-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read native image directly without embedded OCR or peer text. Preserve printed physical lines, historical Ukrainian spelling, multilingual citations, footnotes, page number and printer marks, mark uncertainty. Estimated geometry, agent-unverified.",
+    "raw_response": "VII\nімена загально звісних авторів або роблячи їх героями популярні\nчи звісні з канонїчних писань персонажі. Найстарші христіянські\nполємісти та апольоґети, Іреней, Юстин Мученик, Климент Але-\nксандрийський, Тертулїян, Оріґен, Евзебій та Епіфанїй Кипрський\nзаховали нам цїлу масу згадок про такі єретицькі книги, масу\nтитулів і дещо виписок із них. Богато з тих писань доховало ся\nдо наших часів, але в такій формі, що часто змушує нас диву-\nвати ся, чого ті старі поборники правовірности так сердили ся на\nті писаня, в яких ми тепер не можемо добачити майже нїчого єре-\nтицького. Тут стають нам у пригодї ріжні старі копії тих текстів;\nіз незлїчимих варіянтів у тих копіях ми переконуємо ся доочне, як\nдавня католицька церков присвоювала собі ті первісно єретицькі\nтвори, перероблюючи їх, а властиво викидаючи з них усякі слїди\nєретицької доктріни, а лишаючи здебільшого нетиканою повістеву\nчи радше казкову їх канву, хоч і тут дуже часто ампутовано за-\nнадто дикі вибрики орієнтальної фантазії.\nДивлячи ся з сього погляду Лїпсіус у своїй статї про апокр.\nапост. акти, написаній для анґлїйської енцикльопедії Сміта й Уоса,\nа потім переробленій на вступ до його чотиротомової книги, роз-\nріжнює три катеґорії належних сюди творів: 1) єретицькі (ебіонїт-\nські та ґностичні), заховані в первісній формі, 2) католицькі, первісно\nзложені католиками і 3) католицькі перерібки творів первісно єре-\nтицьких, з більш або менше виразними слїдами їх єретицького\nпоходженя¹).\nЩо до історичної вартости всїх сих писань треба розріжнити\nдві річи. Про апостолів і їх пригоди вони не дають нам нїчого пев-\nного; образ їх проповіди, змальований у них (навіть у Псевдокли-\nментинах) зовсїм не відповідає дїйсности (див. мою статю „Сьвятий\nКлимент у Корсунї“ і в нїй роздїл присьвячений розборови Псевдо-\nКлиментин), — се так. Але се не перепиняє, що в них може бути\nбогато зерен історичної правди власне в побічних річах, у ґеоґра-\nфічних деталях, у натяках на історичні фіґури та обставини, осо-\nбливо в натяках на річи сучасні авторам тих апокріфічних творів.\nСе навіть конечна річ, так як сьогоднї в кождім романї, чи автор\nхоче видати його за історичний, чи нї, ви знайдете масу історично\nвірного — візьміть хоч би найдрантивійші фабрикати в тім родї,\nромани якого будь Самарова або Мільова. Нїмецький учений Аль-\n¹) R. A. L(ipsius), Apocryphal acts of the apostles (William Smith\nund Henry Wace, A Dictionary of christian biography, London 1900, vol. I,\nстор. 27 і д.).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            103,
+            1571,
+            228,
+            5
+          ],
+          "description": "Printed horizontal footnote rule, no text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1032,
+          143,
+          62,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "VII",
+            "bbox_xywh": [
+              1032,
+              143,
+              62,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          102,
+          205,
+          988,
+          1340
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "імена загально звісних авторів або роблячи їх героями популярні",
+            "bbox_xywh": [
+              102,
+              205,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "чи звісні з канонїчних писань персонажі. Найстарші христіянські",
+            "bbox_xywh": [
+              102,
+              241,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "полємісти та апольоґети, Іреней, Юстин Мученик, Климент Але-",
+            "bbox_xywh": [
+              102,
+              277,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "ксандрийський, Тертулїян, Оріґен, Евзебій та Епіфанїй Кипрський",
+            "bbox_xywh": [
+              102,
+              313,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "заховали нам цїлу масу згадок про такі єретицькі книги, масу",
+            "bbox_xywh": [
+              102,
+              349,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "титулів і дещо виписок із них. Богато з тих писань доховало ся",
+            "bbox_xywh": [
+              102,
+              386,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "до наших часів, але в такій формі, що часто змушує нас диву-",
+            "bbox_xywh": [
+              102,
+              422,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "вати ся, чого ті старі поборники правовірности так сердили ся на",
+            "bbox_xywh": [
+              102,
+              458,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "ті писаня, в яких ми тепер не можемо добачити майже нїчого єре-",
+            "bbox_xywh": [
+              102,
+              494,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "тицького. Тут стають нам у пригодї ріжні старі копії тих текстів;",
+            "bbox_xywh": [
+              102,
+              530,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "із незлїчимих варіянтів у тих копіях ми переконуємо ся доочне, як",
+            "bbox_xywh": [
+              102,
+              567,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "давня католицька церков присвоювала собі ті первісно єретицькі",
+            "bbox_xywh": [
+              102,
+              603,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "твори, перероблюючи їх, а властиво викидаючи з них усякі слїди",
+            "bbox_xywh": [
+              102,
+              639,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "єретицької доктріни, а лишаючи здебільшого нетиканою повістеву",
+            "bbox_xywh": [
+              102,
+              675,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "чи радше казкову їх канву, хоч і тут дуже часто ампутовано за-",
+            "bbox_xywh": [
+              102,
+              712,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "надто дикі вибрики орієнтальної фантазії.",
+            "bbox_xywh": [
+              102,
+              748,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "Дивлячи ся з сього погляду Лїпсіус у своїй статї про апокр.",
+            "bbox_xywh": [
+              102,
+              784,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "апост. акти, написаній для анґлїйської енцикльопедії Сміта й Уоса,",
+            "bbox_xywh": [
+              102,
+              820,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "а потім переробленій на вступ до його чотиротомової книги, роз-",
+            "bbox_xywh": [
+              102,
+              856,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "ріжнює три катеґорії належних сюди творів: 1) єретицькі (ебіонїт-",
+            "bbox_xywh": [
+              102,
+              893,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "ські та ґностичні), заховані в первісній формі, 2) католицькі, первісно",
+            "bbox_xywh": [
+              102,
+              929,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 71,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "зложені католиками і 3) католицькі перерібки творів первісно єре-",
+            "bbox_xywh": [
+              102,
+              965,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "тицьких, з більш або менше виразними слїдами їх єретицького",
+            "bbox_xywh": [
+              102,
+              1001,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "походженя¹).",
+            "bbox_xywh": [
+              102,
+              1037,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "Що до історичної вартости всїх сих писань треба розріжнити",
+            "bbox_xywh": [
+              102,
+              1074,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "дві річи. Про апостолів і їх пригоди вони не дають нам нїчого пев-",
+            "bbox_xywh": [
+              102,
+              1110,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "ного; образ їх проповіди, змальований у них (навіть у Псевдокли-",
+            "bbox_xywh": [
+              102,
+              1146,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "ментинах) зовсїм не відповідає дїйсности (див. мою статю „Сьвятий",
+            "bbox_xywh": [
+              102,
+              1182,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "Климент у Корсунї“ і в нїй роздїл присьвячений розборови Псевдо-",
+            "bbox_xywh": [
+              102,
+              1219,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "Климентин), — се так. Але се не перепиняє, що в них може бути",
+            "bbox_xywh": [
+              102,
+              1255,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "богато зерен історичної правди власне в побічних річах, у ґеоґра-",
+            "bbox_xywh": [
+              102,
+              1291,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "фічних деталях, у натяках на історичні фіґури та обставини, осо-",
+            "bbox_xywh": [
+              102,
+              1327,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "бливо в натяках на річи сучасні авторам тих апокріфічних творів.",
+            "bbox_xywh": [
+              102,
+              1363,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "Се навіть конечна річ, так як сьогоднї в кождім романї, чи автор",
+            "bbox_xywh": [
+              102,
+              1400,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "хоче видати його за історичний, чи нї, ви знайдете масу історично",
+            "bbox_xywh": [
+              102,
+              1436,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "вірного — візьміть хоч би найдрантивійші фабрикати в тім родї,",
+            "bbox_xywh": [
+              102,
+              1472,
+              988,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-37",
+            "text": "романи якого будь Самарова або Мільова. Нїмецький учений Аль-",
+            "bbox_xywh": [
+              102,
+              1508,
+              988,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          101,
+          1597,
+          984,
+          89
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "apparatus-line-01",
+            "text": "¹) R. A. L(ipsius), Apocryphal acts of the apostles (William Smith",
+            "bbox_xywh": [
+              101,
+              1597,
+              984,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 3,
+                "end": 66,
+                "language": "en",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-02",
+            "text": "und Henry Wace, A Dictionary of christian biography, London 1900, vol. I,",
+            "bbox_xywh": [
+              101,
+              1626,
+              984,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 3,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 4,
+                "end": 73,
+                "language": "en",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-03",
+            "text": "стор. 27 і д.).",
+            "bbox_xywh": [
+              101,
+              1656,
+              984,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00025-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-18",
+        "reading": "Уоса",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      },
+      {
+        "line_id": "preface-line-36",
+        "reading": "найдрантивійші",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      },
+      {
+        "line_id": "preface-line-37",
+        "reading": "Мільова",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      }
+    ]
+  }
+}

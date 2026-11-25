@@ -1,0 +1,1027 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 23,
+  "printed_page_observed": "V",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00023.jpg",
+  "source_image_sha256": "ac5f694f452c6029d102c61d561fec6ccdaaace9f095ba523b50a3c91001068e",
+  "reading": {
+    "reader_id": "gpt62-v3-s00023-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-preface-21-30-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read native image directly without embedded OCR or peer text. Preserve printed physical lines, historical Ukrainian spelling, multilingual citations, footnotes, page number and printer marks, mark uncertainty. Estimated geometry, agent-unverified.",
+    "raw_response": "V\nПетра, Павла, Івана, не говорячи вже про иньших, губить ся для\nнас у сумерках незвісного і що вся ота богата лїтература, яка по-\nчавши від кінця II віку нашої ери починає обсновувати житє й при-\nгоди тих перших героїв христіянства, плила з яких хочете иньших\nжерел, а не з певних історичних традицій.\nЩо-ж се були за жерела? Можемо розріжнити їх кілька\nкатеґорій, головно-ж індівідуальні, льокальні й доктрінальні.\nВ письмі африканського отця церкви з III в. Тертулїяна „De\nbaptismo“ розд. 17 читаємо ось яку інтересну звістку: „А коли\nті, що читають писаня фальшиво титуловані іменем Павла (Pauli\nperperam inscripta), покликаючи ся на приклад Теклї признають\nжінкам право навчати і хрестити, то нехайже знають, що в Азії\nпресвитер, який скомпонував се писанє (eam scripturam construxit),\nбув позбавлений свойого уряду, коли йому се доказано, хоч сам він\nпризнав ся, що зробив се з любови для Павла“¹). Те, що робив один\nз особливої любови для Павла, міг робити другий з особливої нена-\nвисти супроти нього, якою подиктоване прим. оповіданє про Пав-\nлові (Савлові) вчинки в надрукованім нами (стор. 27—33) „му-\nченію“ сьв. Стефана.\nДалеко важнїйшим мотивом повстаня многих апокріфів були\nльокальні відносини. Кожда важнїйша христіянська церков у часї\nна стілько пізнім, що її початки були вже забуті, бажала мати\nсвоїм патроном і основателем якогось апостола або безпосереднього\nапостольського ученика. Таким способом уже в половинї II в. пов-\nстає в Римі переказ про заснованє римської церкви ап. Петром\nі про смерть сього апостола на римському форум. Значно пізнїйше\nвитворюєть ся ефеська традиція про заснованє ефеської церкви сьв.\nІваном, зовсїм на перекір канонїчним Ап. Дїяням, які признають\nсе дїло ап. Павлови. З подібного жерела, зразу побожного бажаня,\nа далї з конкуренційного інтересу та полїтичних змагань ріжних\nцерков, виплили льокалїзації дїяльности й мучеництва Марка\nв Александрі́ї, Варнави в Кипрі, Луки в Тебах, Діонїзія в Парижі,\nФилипа в Єраполї, Теклї в Селевкії і т. п. Лєґенди сеї катеґорії,\nхоч переважно досить пізні (деякі йдуть аж із середнїх віків, прим.\nлєґенда про Діонїзія в Парижі, про проповідь Якова в Ішпанїї,\nАндрія на Руси), мають переважно значний історичний інтерес, бо\n¹) Otto Bardenhewer, Geschichte der altkirchlichen Litteratur, Bd. I.\nFreiburg i. Br. 1902, стор. 420, див. також C. Schlau, Die Akten des Paulus und\nder Thekla. Leipzig 1877; Th. Zahn, Geschichte des neutestamentlichen Kanons\nBd. II, Th. 2, стор. 895 і д.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            144,
+            1488,
+            222,
+            5
+          ],
+          "description": "Printed horizontal footnote rule, no text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1065,
+          107,
+          62,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "V",
+            "bbox_xywh": [
+              1065,
+              107,
+              62,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          130,
+          172,
+          978,
+          1280
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "Петра, Павла, Івана, не говорячи вже про иньших, губить ся для",
+            "bbox_xywh": [
+              130,
+              172,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "нас у сумерках незвісного і що вся ота богата лїтература, яка по-",
+            "bbox_xywh": [
+              130,
+              207,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "чавши від кінця II віку нашої ери починає обсновувати житє й при-",
+            "bbox_xywh": [
+              130,
+              243,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "годи тих перших героїв христіянства, плила з яких хочете иньших",
+            "bbox_xywh": [
+              130,
+              278,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "жерел, а не з певних історичних традицій.",
+            "bbox_xywh": [
+              130,
+              314,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "Що-ж се були за жерела? Можемо розріжнити їх кілька",
+            "bbox_xywh": [
+              130,
+              349,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "катеґорій, головно-ж індівідуальні, льокальні й доктрінальні.",
+            "bbox_xywh": [
+              130,
+              385,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "В письмі африканського отця церкви з III в. Тертулїяна „De",
+            "bbox_xywh": [
+              130,
+              420,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 56,
+                "end": 58,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "baptismo“ розд. 17 читаємо ось яку інтересну звістку: „А коли",
+            "bbox_xywh": [
+              130,
+              456,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 8,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "ті, що читають писаня фальшиво титуловані іменем Павла (Pauli",
+            "bbox_xywh": [
+              130,
+              492,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 56,
+                "end": 61,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "perperam inscripta), покликаючи ся на приклад Теклї признають",
+            "bbox_xywh": [
+              130,
+              527,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 18,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "жінкам право навчати і хрестити, то нехайже знають, що в Азії",
+            "bbox_xywh": [
+              130,
+              563,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "пресвитер, який скомпонував се писанє (eam scripturam construxit),",
+            "bbox_xywh": [
+              130,
+              598,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 39,
+                "end": 64,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 64,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "був позбавлений свойого уряду, коли йому се доказано, хоч сам він",
+            "bbox_xywh": [
+              130,
+              634,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "признав ся, що зробив се з любови для Павла“¹). Те, що робив один",
+            "bbox_xywh": [
+              130,
+              669,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "з особливої любови для Павла, міг робити другий з особливої нена-",
+            "bbox_xywh": [
+              130,
+              705,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "висти супроти нього, якою подиктоване прим. оповіданє про Пав-",
+            "bbox_xywh": [
+              130,
+              740,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "лові (Савлові) вчинки в надрукованім нами (стор. 27—33) „му-",
+            "bbox_xywh": [
+              130,
+              776,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "ченію“ сьв. Стефана.",
+            "bbox_xywh": [
+              130,
+              812,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "Далеко важнїйшим мотивом повстаня многих апокріфів були",
+            "bbox_xywh": [
+              130,
+              847,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "льокальні відносини. Кожда важнїйша христіянська церков у часї",
+            "bbox_xywh": [
+              130,
+              883,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "на стілько пізнім, що її початки були вже забуті, бажала мати",
+            "bbox_xywh": [
+              130,
+              918,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "своїм патроном і основателем якогось апостола або безпосереднього",
+            "bbox_xywh": [
+              130,
+              954,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "апостольського ученика. Таким способом уже в половинї II в. пов-",
+            "bbox_xywh": [
+              130,
+              989,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "стає в Римі переказ про заснованє римської церкви ап. Петром",
+            "bbox_xywh": [
+              130,
+              1025,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "і про смерть сього апостола на римському форум. Значно пізнїйше",
+            "bbox_xywh": [
+              130,
+              1060,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "витворюєть ся ефеська традиція про заснованє ефеської церкви сьв.",
+            "bbox_xywh": [
+              130,
+              1096,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "Іваном, зовсїм на перекір канонїчним Ап. Дїяням, які признають",
+            "bbox_xywh": [
+              130,
+              1132,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "се дїло ап. Павлови. З подібного жерела, зразу побожного бажаня,",
+            "bbox_xywh": [
+              130,
+              1167,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "а далї з конкуренційного інтересу та полїтичних змагань ріжних",
+            "bbox_xywh": [
+              130,
+              1203,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "церков, виплили льокалїзації дїяльности й мучеництва Марка",
+            "bbox_xywh": [
+              130,
+              1238,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "в Александрі́ї, Варнави в Кипрі, Луки в Тебах, Діонїзія в Парижі,",
+            "bbox_xywh": [
+              130,
+              1274,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "Филипа в Єраполї, Теклї в Селевкії і т. п. Лєґенди сеї катеґорії,",
+            "bbox_xywh": [
+              130,
+              1309,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "хоч переважно досить пізні (деякі йдуть аж із середнїх віків, прим.",
+            "bbox_xywh": [
+              130,
+              1345,
+              978,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "лєґенда про Діонїзія в Парижі, про проповідь Якова в Ішпанїї,",
+            "bbox_xywh": [
+              130,
+              1380,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "Андрія на Руси), мають переважно значний історичний інтерес, бо",
+            "bbox_xywh": [
+              130,
+              1416,
+              978,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          136,
+          1511,
+          978,
+          121
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "apparatus-line-01",
+            "text": "¹) Otto Bardenhewer, Geschichte der altkirchlichen Litteratur, Bd. I.",
+            "bbox_xywh": [
+              136,
+              1511,
+              978,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 3,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-02",
+            "text": "Freiburg i. Br. 1902, стор. 420, див. також C. Schlau, Die Akten des Paulus und",
+            "bbox_xywh": [
+              136,
+              1541,
+              978,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 20,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 20,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 44,
+                "end": 79,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-03",
+            "text": "der Thekla. Leipzig 1877; Th. Zahn, Geschichte des neutestamentlichen Kanons",
+            "bbox_xywh": [
+              136,
+              1571,
+              978,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 76,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-04",
+            "text": "Bd. II, Th. 2, стор. 895 і д.",
+            "bbox_xywh": [
+              136,
+              1601,
+              978,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00023-20261125",
+                "start": 13,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-07",
+        "reading": "індівідуальні",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      },
+      {
+        "line_id": "preface-line-26",
+        "reading": "форум",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      },
+      {
+        "line_id": "preface-line-32",
+        "reading": "Александрі́ї",
+        "reason": "Exact source spelling, diacritics or glyph reading provisional; not silently normalized."
+      }
+    ]
+  }
+}
