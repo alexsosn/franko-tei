@@ -123,7 +123,7 @@ class ReviewSmoke(unittest.TestCase):
                          [16, 25, 17, 19, 20, 6])
         self.assertEqual(len(items), 103)
         self.assertEqual(sum(e[0] == 572 and e[1].startswith('Б.') for e in items), 2)
-        self.assertEqual(sum(e[3] is not None for e in items), 37)
+        self.assertEqual(sum(e[3] is not None for e in items), 40)
         for source, printed, scan in [(572, '225', 307), (574, '366', 518), (571, '139', 211)]:
             self.assertEqual(next(e[3] for e in items if e[0] == source and e[2] == printed), scan)
         self.assertEqual(next(e[3] for e in items if e[0] == 570 and e[1].startswith('Т.')), 141)
@@ -163,7 +163,7 @@ class ReviewSmoke(unittest.TestCase):
         html = APP.read_text(encoding='utf-8')
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
-        self.assertGreaterEqual(len(anchors), 45)
+        self.assertGreaterEqual(len(anchors), 48)
         self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
                          [('89', 141, 'pachomius-vision-heading-line-01'),
                           ('90', 141, 'pachomius-word-heading-line-01'),
@@ -179,7 +179,7 @@ class ReviewSmoke(unittest.TestCase):
         # Complete linguistic coverage for the annotated anchor-page batch.
         for scan in sorted({e[3] for e in anchors}):
             record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
-            if scan in (53, 56, 59, 63, 67, 68, 71, 72, 74, 75, 76, 77, 90, 94, 101, 105, 108, 113, 115, 116, 119, 141, 142, 143, 156, 205, 211, 301, 307, 453, 500, 514, 518, 523):
+            if scan in (53, 56, 59, 63, 67, 68, 71, 72, 74, 75, 76, 77, 90, 94, 101, 105, 108, 113, 115, 116, 119, 121, 123, 127, 141, 142, 143, 156, 205, 211, 301, 307, 453, 500, 514, 518, 523):
                 self.assertIn('language_annotation', record['reading'])
             elif 'language_annotation' not in record['reading']:
                 continue  # future batches use the general corpus validator
@@ -274,7 +274,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertIsNone(rec['printed_page_observed'])
             self.assertFalse(any(r['kind'] == 'page_number' for r in rec['reading']['regions']))
         linked = [e for e in contents['4']['entries'] if e[3] is not None]
-        self.assertGreaterEqual(len(linked), 45)
+        self.assertGreaterEqual(len(linked), 48)
         self.assertTrue(all(len(e) > 6 and e[6] for e in linked))
         isaiah = next(e for e in anchors if e[3] == 301 and e[4] == 1)
         self.assertTrue(isaiah[1].startswith('Б.'))
@@ -309,6 +309,19 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(latin, ['[sic!]'])
         rec119 = json.loads((root / 'pilot/vol4_scan00119_single_reading.json').read_text(encoding='utf-8'))['reading']
         self.assertIn('1632', rec119['raw_response'])
+        later_epistles = [e for e in anchors if e[3] in (121, 123, 127)]
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in later_epistles],
+                         [('69', 121, 'bachva-heading-line-01'),
+                          ('71', 123, 'yaikovtsi-heading-line-01'),
+                          ('75', 127, 'lviv-heading-line-01')])
+        rec121 = json.loads((root / 'pilot/vol4_scan00121_single_reading.json').read_text(encoding='utf-8'))['reading']
+        spans121 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
+                    for r in rec121['regions'] for l in r['lines'] for s in l['language_spans']]
+        self.assertIn(('Wiktor Bilik, roko 1861, grudnia 7.', 'pl', 'Latn'), spans121)
+        self.assertIn(('[sic!]', 'la', 'Latn'), spans121)
+        rec127 = json.loads((root / 'pilot/vol4_scan00127_single_reading.json').read_text(encoding='utf-8'))['reading']
+        self.assertIn('1903', rec127['raw_response'])
+        self.assertEqual(sum(l['text'].count('†') for r in rec127['regions'] for l in r['lines']), 3)
         manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
                     'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
                                  {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
