@@ -1,16 +1,40 @@
-name: Deploy OCR review viewer
+name: OCR review viewer
 on:
+  pull_request:
+    paths:
+      - 'web/**'
+      - '.github/workflows/review-pages.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - '.github/workflows/review-pages.yml'
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
-  group: review-pages
+  group: review-pages-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: python web/test_review.py
+      - run: python web/test_live_review.py
   deploy:
-    if: github.ref == 'refs/heads/main'
+    needs: browser
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     environment:
       name: github-pages
