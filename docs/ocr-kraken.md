@@ -9,7 +9,7 @@ The smoke is run on four real source images from `codex/page-assets`:
 - I/20: Ukrainian editorial prose with Ancient Greek, German and Latin in lines
 - IV/100: editorial Ukrainian, no embedded PDF OCR in volume IV
 
-It uses Kraken neural baseline segmentation `segment -bl` and line recognition `ocr -m`. Raw ALTO XML is archived for every page, including line geometry; `candidates.jsonl` is machine-only, `ocr_unchecked`. Image and model weights SHA-256 are checked. **No scan images or model weights are rehosted in workflow artifacts.**
+It uses Kraken neural baseline segmentation `segment -bl` and line recognition `ocr -m`. Raw ALTO XML is archived for every page, including line geometry; `candidates.jsonl` is machine-only, `ocr_unchecked`. Image and model weights SHA-256 are checked. The JSONL `bbox` is `[x_min, y_min, x_max, y_max]` in source pixels, not width/height; the original ALTO remains authoritative for machine geometry. **No scan images or model weights are rehosted in workflow artifacts.**
 
 Previous real run [43032729997](https://github.com/alexsosn/franko-tei/actions/runs/43032729997) recognized 42, 44, 42 and 14 lines respectively. This proves execution, not correctness. Main now uses the existing manifest/hash helpers and rejects nonfinite or out-of-source line coordinates, and checks model/image bytes again after recognition. The exact model SHA256 from that run is required by the workflow. Only the four pinned scans and manifests are downloaded into the temporary runner cache.
 
@@ -18,7 +18,7 @@ To reproduce on an image checkout:
 ```bash
 python -m pip install -e .
 python -m pip install 'kraken==7.1.0' 'huggingface_hub>=0.34,<2'
-hf download small-models-for-glam/kraken-ppocrv6-medium medium.safetensors --local-dir local/models
+python -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id='small-models-for-glam/kraken-ppocrv6-medium', filename='medium.safetensors', local_dir='local/models')"
 python -m franko_tei.kraken_trial --images-root images \
   --pages 5:100,3:130,1:20,4:100 \
   --model local/models/medium.safetensors \
