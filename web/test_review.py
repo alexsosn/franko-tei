@@ -163,7 +163,7 @@ class ReviewSmoke(unittest.TestCase):
         html = APP.read_text(encoding='utf-8')
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
-        self.assertGreaterEqual(len(anchors), 8)
+        self.assertGreaterEqual(len(anchors), 11)
         self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
                          [('89', 141, 'pachomius-vision-heading-line-01'),
                           ('90', 141, 'pachomius-word-heading-line-01'),
@@ -179,7 +179,7 @@ class ReviewSmoke(unittest.TestCase):
         # Complete linguistic coverage for the annotated anchor-page batch.
         for scan in sorted({e[3] for e in anchors}):
             record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
-            if scan in (71, 94, 141, 142, 143):
+            if scan in (71, 94, 141, 142, 143, 211, 307, 518):
                 self.assertIn('language_annotation', record['reading'])
             elif 'language_annotation' not in record['reading']:
                 continue  # future batches use the general corpus validator
@@ -197,6 +197,16 @@ class ReviewSmoke(unittest.TestCase):
         lines = {l['id']: l for r in annotated['reading']['regions'] for l in r['lines']}
         self.assertEqual([(lines['untitled-line-14']['text'][s['start']:s['end']], s['script'])
                           for s in lines['untitled-line-14']['language_spans'] if s['language'] == 'la'], [('[sic!]', 'Latn')])
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (211, 307, 518)],
+                         [('139', 211, 'revelation-heading-line-01'),
+                          ('225', 307, 'daniel-heading-line-01'),
+                          ('366', 518, 'macarius-heading-line-01')])
+        daniel = json.loads((root / 'pilot/vol4_scan00307_single_reading.json').read_text(encoding='utf-8'))
+        note_lines = [l for r in daniel['reading']['regions'] if r['kind'] == 'note' for l in r['lines']]
+        self.assertEqual(len(note_lines), 3)
+        greek = [(l['text'][s['start']:s['end']], s['script']) for l in note_lines
+                 for s in l['language_spans'] if s['language'] == 'grc']
+        self.assertEqual(greek, [('ἔτη ἓξ καὶ πέντε. καὶ φυτευθήσονται.', 'Grek')])
         manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
                     'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
                                  {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
