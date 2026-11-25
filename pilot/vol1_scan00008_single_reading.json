@@ -682,13 +682,13 @@
         ]
       },
       {
-        "id": "footnotes",
+        "id": "commission-footnote-1",
         "kind": "note",
         "bbox_xywh": [
           201,
           1452,
           735,
-          66
+          32
         ],
         "geometry_estimated": true,
         "lines": [
@@ -712,7 +712,20 @@
                 "uncertain": false
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "commission-footnote-2",
+        "kind": "note",
+        "bbox_xywh": [
+          201,
+          1485,
+          735,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "footnotes-line-02",
             "text": "²) Пор. загальний проект в Записках 1895 р. I (т. V).",
@@ -789,6 +802,20 @@
         "line_id": "footnotes-line-02",
         "reading": "проект",
         "reason": "Historical spelling as read; check against source."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "commission-statement-line-07",
+        "marker_text": "¹)",
+        "marker_start": 39,
+        "note_region_id": "commission-footnote-1"
+      },
+      {
+        "marker_line_id": "commission-statement-line-18",
+        "marker_text": "²)",
+        "marker_start": 15,
+        "note_region_id": "commission-footnote-2"
       }
     ]
   }
