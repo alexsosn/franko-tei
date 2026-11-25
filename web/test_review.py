@@ -1141,6 +1141,85 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual([l['text'] for r in d['reading']['regions'] if r['kind'] == 'heading'
                               for l in r['lines'] if l['id'] == anchor['line_id']], [anchor['text']])
 
+
+    def test_editorial_comparison_uses_existing_gutter(self):
+        import json
+        root=Path(__file__).resolve().parents[1]
+        source=json.loads((root/"pilot/vol1_scan00104_single_reading.json").read_text())
+        intake=json.loads((root/"reviews/intake/fe896df3-3330-4020-b684-4b334a2f24cc.json").read_text())
+        e=next(e for e in intake["bundle"]["events"] if e["target"]["line_id"]=="witness-e-death-adam-l003")
+        region=next(r for r in source["reading"]["regions"] if r["id"]==e["target"]["region_id"])
+        line=next(l for l in region["lines"] if l["id"]==e["target"]["line_id"])
+        review=dict(status="accepted_correction",review_kind="agent",original=line["text"],text=e["replacement"],
+                    contributor_id=intake["submitter"]["github_user_id"],contributor_login=intake["submitter"]["login_at_intake"],
+                    issue_url=intake["submitter"]["issue_url"],source_commit=intake["bundle"]["source_commit"],
+                    review_reason="Internal adjudication log must not be inserted into the reader.")
+        html=APP.read_text(encoding="utf-8").replace("updateMode();load();","updateMode();load=()=>{};load();")
+        with sync_playwright() as p:
+            browser=p.chromium.launch(executable_path=os.environ.get("CHROMIUM") or None,args=["--no-sandbox"])
+            page=browser.new_page(viewport={"width":390,"height":844})
+            page.set_content(html)
+            page.evaluate("""([line,region,review])=>{
+                renderLine(line,region,[]);
+                renderLine({...line,id:'corrected',text:review.text,language_spans:[]},region,[],[],review,line);
+                renderLine({...line,id:'confirmed'},region,[],[],{...review,status:'accepted_confirmation',text:line.text});
+                renderLine({...line,id:'combined',text:review.text,language_spans:[]},region,
+                    [{reading:line.text,reason:'Source note'}],
+                    [{label:'Other reading',reader:'other',text:line.text+'!'}],review,line);
+            }""",[line,region,review])
+            rows=page.locator("#candidate .line-row")
+            self.assertEqual(rows.count(),4)
+            self.assertEqual(page.locator(".editorial-toggle,.editorial-details").count(),0)
+            self.assertEqual(rows.nth(1).locator(".alternate-toggle").count(),1)
+            self.assertEqual(rows.nth(1).locator(".alternate-diff").count(),0)
+            self.assertEqual(rows.nth(3).locator(".alternate-diff").count(),1)
+            self.assertEqual(rows.nth(2).locator("button").count(),0)
+            corrected=rows.nth(1).locator(".line-text")
+            self.assertEqual(corrected.get_attribute("data-font-mode"),"slavonic")
+            self.assertIn("Franko Monomakh",corrected.evaluate("e=>getComputedStyle(e).fontFamily"))
+            self.assertEqual(corrected.locator(".language-span").count(),0)
+            self.assertEqual(page.evaluate("sourceFontMode({text:'аѣ',language_spans:[{start:0,end:1,language:'uk',script:'Cyrl'},{start:1,end:2,language:'cu',script:'Cyrl'}]})"),"plain")
+            self.assertEqual(rows.nth(3).locator("button").count(),2)
+            self.assertEqual(page.locator(".alternate-reasons:visible").count(),0)
+            self.assertEqual(page.locator(".variant-diff:visible").count(),0)
+            self.assertEqual(page.locator("#editorialControls").evaluate("e=>e.closest('details').id"),"readingInfo")
+            for width,height in [(390,844),(320,568),(1280,800)]:
+                page.set_viewport_size({"width":width,"height":height})
+                # No second gutter row or extra vertical space for a confirmation.
+                self.assertEqual(rows.nth(2).bounding_box()["height"],rows.nth(0).bounding_box()["height"])
+                for row in (rows.nth(1),rows.nth(3)):
+                    self.assertLessEqual(row.locator(".line-gutter").bounding_box()["height"],row.locator(".line-text").bounding_box()["height"])
+            toggle=rows.nth(1).locator(".alternate-toggle")
+            toggle.focus()
+            page.keyboard.press("Enter")
+            panel=page.locator(".alternate-reasons:visible")
+            self.assertEqual(panel.count(),1)
+            self.assertIn("Original reading",panel.inner_text())
+            self.assertIn("Agent review · provisional",panel.inner_text())
+            self.assertIn(review["contributor_login"],panel.inner_text())
+            self.assertEqual(panel.locator("a").get_attribute("href"),review["issue_url"])
+            self.assertEqual(panel.locator(".alt-text").text_content(),line["text"])
+            self.assertIn("Franko Monomakh",panel.locator(".alt-text").evaluate("e=>getComputedStyle(e).fontFamily"))
+            self.assertNotIn(review["source_commit"],panel.inner_text())
+            self.assertNotIn("Internal adjudication",panel.inner_text())
+            self.assertNotIn("Approximate geometry match",panel.inner_text())
+            self.assertGreater(rows.nth(1).locator(".variant-diff").count(),0)
+            self.assertGreater(panel.locator(".variant-diff").count(),0)
+            self.assertEqual(toggle.get_attribute("aria-expanded"),"true")
+            self.assertEqual(toggle.get_attribute("aria-controls"),panel.get_attribute("id"))
+            toggle.click()
+            self.assertEqual(rows.nth(1).locator(".variant-diff").count(),0)
+            self.assertEqual(page.locator(".alternate-reasons:visible").count(),0)
+            rows.nth(3).locator(".alternate-toggle").click()
+            panel=page.locator(".alternate-reasons:visible")
+            self.assertEqual(panel.locator(".alt-text").count(),2)
+            self.assertIn("Approximate geometry match",panel.inner_text())
+            self.assertLess(panel.inner_text().index("Original reading"),panel.inner_text().index("Approximate geometry match"))
+            self.choose_locale(page,"uk")
+            self.assertIn("Початкове читання",panel.inner_text())
+            self.assertIn("Агентна перевірка",panel.inner_text())
+            browser.close()
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
