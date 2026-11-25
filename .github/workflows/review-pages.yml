@@ -29,9 +29,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -e . playwright fonttools brotli
-      - run: python web/test_editorial_projection.py
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
+      - run: python web/test_editorial_projection.py
       - run: python web/test_fonts.py
       - run: python web/test_review.py
       - run: python web/test_review_editor.py
