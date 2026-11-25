@@ -20,11 +20,13 @@ class ReviewSmoke(unittest.TestCase):
             def draft(n):
                 return {'volume': '1', 'scan_page': n, 'status': 'agent_unverified', 'schema_version': 'single-image-draft-v0', 'asset_commit': COMMIT,
                     'source_image_path': f'vol1/page-{n:05d}.'+('jpg' if n == 1 else 'png'), 'source_image_sha256': ('a' if n == 1 else 'c')*64,
-                    'printed_page_observed': 'XI', 'reading': {'reader_id': 'synthetic', 'context_independence': 'single', 'regions': [{'kind': 'body', 'lines': [{'id': 'l1', 'text': 'ѣ <script>ἀ</script>', 'bbox_xywh': [0, 0, 1, 1], 'geometry_estimated': True}]}], 'uncertainty_notes': ['synthetic note']}}
+                    'printed_page_observed': 'XI', 'reading': {'reader_id': 'synthetic', 'context_independence': 'single', 'regions': [{'kind': 'body', 'lines': [{'id': 'l1', 'text': 'ѣ <script>ἀ</script>', 'bbox_xywh': [0, 0, 1, 1], 'geometry_estimated': True}, {'id': 'l2', 'text': 'ѣѣ ѣ', 'bbox_xywh': [0, 0, 1, 1], 'geometry_estimated': True}]}], 'uncertainty_notes': [{'line_id':'l1','reading':'ἀ','reason':'synthetic accent note'}, {'line_id':'l1','reading':'<script>ἀ','reason':'overlapping note'}, {'line_id':'l2','reading':'ѣ','reason':'repeated reading'}, {'line_id':'l2','reading':'absent','reason':'unanchored fixture'}]}}
             fixture = {'manifest': {'volume': '1', 'page_count': 2, 'pages': [artifact(1,'jpg'),artifact(2,'png')]}, 'draft1': draft(1), 'draft2': draft(2), 'png': PNG}
             page.evaluate('''fixture => {
                 location.hash = 'v=1&p=1';
                 window.fetch = async url => {
+                    if(url.endsWith('/search/vol1.json') || url.endsWith('./search/vol1.json')) return new Response(JSON.stringify({ref:'a'.repeat(40),volume:'1',entries:[{scan:1,suffix:'single_reading',text:'ѣ <script>ἀ</script>'}]}));
+                    if(url.endsWith('/full.txt')) {const v=Number(url.match(/vol([1-5])/)[1]);return new Response((v===1?'ѣ  ἀ':'')+'\\f'.repeat([0,469,526,446,580,316][v]));}
                     if(url.endsWith('/manifest.json')) return new Response(JSON.stringify(fixture.manifest));
                     if(url.endsWith('page-00001.txt')) {
                         if(window.delayOldOCR) await new Promise(resolve => {window.releaseOldOCR=resolve});
@@ -40,10 +42,44 @@ class ReviewSmoke(unittest.TestCase):
             }''', fixture)
             page.set_content(APP.read_text(encoding='utf-8'))
             page.locator('#candidate').get_by_text('ѣ <script>ἀ</script>', exact=False).wait_for()
+            self.assertEqual(page.locator('#candidate .line-text').first.text_content(), 'ѣ <script>ἀ</script>')
+            self.assertIn('ἀ', page.locator('#candidate mark').all_text_contents())
+            self.assertFalse(page.locator('.uncertainty-reasons').first.is_visible())
+            page.locator('.uncertainty-toggle').first.click()
+            self.assertTrue(page.get_by_text('synthetic accent note', exact=True).is_visible())
+            page.locator('.uncertainty-toggle').first.click()
+            self.assertFalse(page.locator('.uncertainty-reasons').first.is_visible())
+            self.assertNotIn('uncertainty_notes', page.locator('#noteText').text_content())
+            self.assertEqual(page.locator('#candidate .line-text').nth(1).locator('mark').all_text_contents(), ['ѣ','ѣ','ѣ'])
+            page.locator('.uncertainty-toggle').nth(1).click()
+            self.assertTrue(page.get_by_text('Multiple exact occurrences', exact=False).is_visible())
+            self.assertTrue(page.get_by_text('Literal not found in line', exact=False).is_visible())
+            page.locator('.uncertainty-toggle').nth(1).click()
+            page.locator('#searchOpen').click()
+            page.locator('#searchVolume').select_option('1')
+            page.locator('#searchSource').select_option('agent')
+            page.locator('#query').fill('ἀ')
+            page.locator('#searchGo').click()
+            page.locator('#searchResults button').first.wait_for()
+            self.assertIn('scan 1', page.locator('#searchResults').text_content())
+            page.locator('#searchSource').select_option('ocr')
+            page.locator('#searchVolume').select_option('all')
+            page.locator('#query').fill('ѣ ἀ')
+            page.locator('#searchGo').click()
+            page.get_by_text('2337 original OCR pages', exact=False).wait_for()
+            self.assertEqual(page.locator('#searchResults button').count(), 1)
+            self.assertIn('scan 1', page.locator('#searchResults').text_content())
+            page.locator('#searchSource').select_option('agent')
+            page.locator('#searchVolume').select_option('1')
+            page.locator('#query').fill('<script>')
+            page.locator('#searchGo').click()
+            page.locator('#searchResults button').first.wait_for()
+            page.locator('#searchResults button').first.click()
+            page.locator('#candidate .line-text').first.wait_for()
             page.locator('#mode').select_option('both')
             self.assertEqual(page.locator('#ocr').text_content(), 'ѣ  ἀ\n')
             page.locator('#scan').wait_for()
-            page.locator('#candidate button').first.click()
+            page.locator('#candidate .line-text').first.click()
             self.assertTrue(page.locator('#highlight').is_visible())
             self.assertIn('estimated', page.locator('#lineinfo').text_content())
             page.locator('#next').click()

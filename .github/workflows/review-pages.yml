@@ -3,11 +3,13 @@ on:
   pull_request:
     paths:
       - 'web/**'
+      - 'pilot/**'
       - '.github/workflows/review-pages.yml'
   push:
     branches: [main]
     paths:
       - 'web/**'
+      - 'pilot/**'
       - '.github/workflows/review-pages.yml'
   workflow_dispatch:
 permissions:
@@ -24,7 +26,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - run: pip install playwright
+      - run: pip install -e . playwright
+      - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_review.py
       - run: python web/test_live_review.py
@@ -41,10 +44,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install -e .
       - uses: actions/configure-pages@v6
       - run: |
           mkdir -p _site
           cp web/index.html _site/index.html
+          python web/build_search.py --output _site/search
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
