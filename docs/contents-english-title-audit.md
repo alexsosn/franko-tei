@@ -9,7 +9,7 @@ The audit is in [contents-english-title-audit.tsv](contents-english-title-audit.
 - candidate: possible identification or related text; require comparison of incipit, explicit, narrative and manuscript context. Do not display as a confirmed work identity.
 - pending: no individual bibliographic verification recorded.
 
-Current snapshot: 615 records; 12 edition matches, 69 title/terminology-supported, 51 candidates, 483 pending. Several records are editorial headings and not distinct works. No claim of exhaustive research. For a future claim of complete review, resolve each pending row with an evidence-bearing status or an explicit documented unsuccessful search; do not promote candidates by keyword overlap.
+Current snapshot: 615 records; 17 edition matches, 70 title/terminology-supported, 51 candidates, 477 pending. All 615 translations were compared with the recorded printed-TOC transcriptions; 55 records differ from the preceding audit. This is not a new image-level collation or exhaustive bibliographic review. The `translation_review` column records that limited review scope; `catalog_refs_json` records 60 rows with links (17 edition matches, 34 work-family, 9 candidate relations). Several records are editorial headings and not distinct works. No claim of exhaustive research. For a future claim of complete review, resolve each pending row with an evidence-bearing status or an explicit documented unsuccessful search; do not promote candidates by keyword overlap.
 
 ## Terminology
 
@@ -29,3 +29,7 @@ Current snapshot: 615 records; 12 edition matches, 69 title/terminology-supporte
 - Anissava Miltenova, [South Slavonic Apocryphal Collections](https://academicabooks.bg/product/south-slavonic-apocryphal-collections/) (2018).
 
 Preserve Franko's original title and literal English translation independently of scholarly names, which may refer to a textual family rather than the exact work. No automatic TEI boundaries, work IDs or merging of variants from this register. 
+
+## Reader integration
+
+In Contents, the main row opens the work as before. An adjacent book icon independently discloses references, original title, evidence, relationship, identifier and an external link. Only edition matches receive a canonical-title subtitle in the collapsed list. The filter also matches catalogue titles and identifiers. Candidate links remain labelled possible matches. OCP registry references must not be presented as available critical texts; where an OCP text is available for comparison, this still does not establish the identity of the Slavonic witness. Bibliographic labels are independent of scan/line verification. The HTML lookup is keyed by the exact volume and tuple (contents scan, literal title, printed reference); the TSV mirrors the embedded records for audit. When TEI/TF work identities become stable, promote individually substantiated relations to shared bibliography metadata, rather than generating work boundaries or merging variants from titles.
