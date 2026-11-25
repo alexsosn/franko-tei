@@ -4,12 +4,18 @@ on:
     paths:
       - 'web/**'
       - 'pilot/**'
+      - 'reviews/**'
+      - 'src/franko_tei/review_adjudication.py'
+      - 'src/franko_tei/review_bundle.py'
       - '.github/workflows/review-pages.yml'
   push:
     branches: [main]
     paths:
       - 'web/**'
       - 'pilot/**'
+      - 'reviews/**'
+      - 'src/franko_tei/review_adjudication.py'
+      - 'src/franko_tei/review_bundle.py'
       - '.github/workflows/review-pages.yml'
   workflow_dispatch:
 permissions:
@@ -23,12 +29,15 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: pip install -e . playwright fonttools brotli
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
+      - run: python web/test_editorial_projection.py
       - run: python web/test_fonts.py
       - run: python web/test_review.py
       - run: python web/test_review_editor.py
@@ -42,6 +51,8 @@ jobs:
       artifact_id: ${{ steps.upload.outputs.artifact_id }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -113,6 +124,8 @@ jobs:
               && cmp -s web/review-editor.js "$RUNNER_TEMP/published-review.js" \
               && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/vol1.json?rev=$GITHUB_SHA" \
               | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null \
+              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/editorial.json?rev=$GITHUB_SHA" \
+              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and (.pages | type == "array")' >/dev/null \
               && verify_fonts; then
               echo "Public viewer, fonts and search index match $GITHUB_SHA."
               exit 0
