@@ -45,7 +45,16 @@
               36
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i185-first-image-20261125"
+              }
+            ]
           }
         ]
       },
@@ -233,8 +242,24 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i185-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 40,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i185-first-image-20261125"
+              },
+              {
+                "start": 40,
                 "end": 57,
-                "language": null,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i185-first-image-20261125"
@@ -485,9 +510,25 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 39,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i185-first-image-20261125"
+              },
+              {
+                "start": 39,
+                "end": 43,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i185-first-image-20261125"
+              },
+              {
+                "start": 43,
                 "end": 65,
-                "language": null,
-                "script": null,
+                "language": "cu",
+                "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i185-first-image-20261125"
               }
@@ -1144,5 +1185,14 @@
         "reason": "Provisional direct image reading; historical glyphs, titla, names, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "f5ca30c1a3ab9fac78ffe28ecb63f16b18967fa7",
+    "source_record_blob": "38edfed743c0b5067f7750292d294242b615b41e",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Contextual annotation of frozen candidate based on previously inspected original scan and exact reading text; prior annotations visible; not independent textual review. Historical recension not assigned. Ambiguous Russian/Slavonic variant language unresolved on I/182."
   }
 }
