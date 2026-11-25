@@ -31,7 +31,6 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
             # Real self-hosted font faces must load, rather than silently fall back.
             page.locator("#settingsOpen").click()
-            page.locator("#fontSettings summary").click()
             for selector, values, sample in [
                 ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh"), ("firaslav", "Franko FiraSlav"), ("notosans", "Franko Noto Sans")], "ꙗꙖꙑб҃ъ"),
                 ("#greekFont", [("gentium", "Franko Gentium"), ("garamond", "Franko Garamond")], "Ἐν ἀρχῇ ἄ"),
@@ -45,11 +44,9 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             page.reload()
             expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
             page.locator("#settingsOpen").click()
-            page.locator("#fontSettings summary").click()
             expect(page.locator("#slavonicFont")).to_have_value("notosans")
             expect(page.locator("#greekFont")).to_have_value("garamond")
             page.locator("#resetFonts").click()
-            page.locator("#fontSettings summary").click()
             page.locator("#showLanguages").check()
             page.locator("#settingsClose").click()
             expect(page.locator(".languages-on .language-span[data-language='grc']").first).to_be_visible()
