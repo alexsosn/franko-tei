@@ -113,5 +113,8 @@ arbitrary language relabeling, or reformat-only exception. A successful
 projection records both blobs and the new commit in source_revision.
 Corrected rows still have empty language spans pending reannotation.
 This is direct compatibility only; accepting new decisions against a
-different blob, chaining annotation revisions and TEI/TF integration
-remain separate work. No source candidate is rewritten by this verifier.
+different blob and chaining annotation revisions remain separate work.
+The reader/search builder and source-gated editorial TEI exporter use the
+same verifier; TEI review notes retain links to both revisions and their
+blob IDs. The TF integration remains separate. No source candidate is
+rewritten by this verifier.

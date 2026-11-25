@@ -306,7 +306,9 @@ def project_lines(raw, path, ledger, *, source_loader=None, projection_commit=No
 
     The caller must pass a ledger from validate_ledger. A correction invalidates
     original language offsets (and potentially uncertainty readings); no
-    automatic reannotation or page verification is performed.
+    automatic reannotation or page verification is performed. A changed blob
+    is refused unless the caller supplies a trusted loader and exact revision
+    and the direct annotation-only derivation is independently reconstructed.
     """
     match(PATH, path, "candidate path")
     digest = blob_sha(raw)

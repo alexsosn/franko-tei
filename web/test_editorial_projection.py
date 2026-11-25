@@ -192,7 +192,7 @@ class EditorialProjectionTests(unittest.TestCase):
         from franko_tei.review_tei import render_editorial_tei
         from franko_tei.pilot_tei import TEI, extract_transcribed_lines
         def encode(value): return json.dumps(value,ensure_ascii=False).encode('utf-8')
-        from franko_tei.review_adjudication import check_repository, StaleEditorialSource
+        from franko_tei.review_adjudication import check_repository, StaleEditorialSource, project_lines
         from franko_tei.review_bundle import git_source_loader, blob_sha
         import subprocess
         root=Path(__file__).resolve().parents[1]
@@ -257,11 +257,13 @@ class EditorialProjectionTests(unittest.TestCase):
         rejected(lambda d:d["reading"].pop("footnote_marker_annotation"))
         rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(marker_count=2))
         rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(source_record_blob="0"*40))
+        rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(source_record_commit="b"*40))
         rejected(lambda d:d["reading"].update(instructions="changed"))
         rejected(lambda d:d["reading"]["regions"][0]["lines"][0]["bbox_xywh"].__setitem__(0,1))
         rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(text="changed"))
         rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(id="changed"))
         rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(language_spans=[]))
+        rejected(lambda d:next(l for r in d["reading"]["regions"] for l in r["lines"] if l["id"]==line["id"])["language_spans"][0].update(language="uk"))
         rejected(lambda d:d["reading"]["uncertainty_notes"].clear())
         rejected(lambda d:d.update(source_image_sha256="0"*64))
         # A reformat-only revision remains stale, even with trusted bytes.
