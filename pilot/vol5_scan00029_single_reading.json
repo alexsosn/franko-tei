@@ -1,0 +1,477 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 29,
+  "printed_page_observed": "17",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00029.jpg",
+  "source_image_sha256": "c6401d5b50e60a7b1fb121261aa5ff5dd67e71da5dd3dc5af22b3eb44e580270",
+  "reading": {
+    "reader_id": "gpt62-v5s00029-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-021-030-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Visual first-pass reading of this specific pinned scan; no embedded OCR or peer reading for this page accessed. Retain historical forms, physical lines, separate editorial and manuscript text, observed folio only. Prior context had OCR exposure for V/13–14, no blind independence claim. Geometry approximate; accents and supralinear letters not fully recovered. Agent-unverified.",
+    "raw_response": "17\nселѣ, а плоды хранити, ѡвы же в' тотарехъ заключи и запеча-\nтавъ въ погребе под ѡснованіемъ своего домоу. и по оумертвїи\nдомѹ его на цр҃ковь оустроеноу копающїи же ѡсноѹ цр҃кви ѡбрѣ-\nтоша же сосѹд скѹделный. мнѣвшимъ злато, и съкрѹшиша единъ\nі изыдоша бѣси в' видѣніи ѡгненѣ и всѧ оустрашахѹт сѧ, яко\nнемощи прійти из домѹ по захоженіи слн҃ца, дон'деже помолят\nсѧ ст҃омѹ кононоу и покы исчезахѹ. ѡбразъ же мч҃енію его сице\nбѣ. игемоноу магдовоу пришедшоу ятъ бысть и х҃а исповѣда\nи не покорив сѧ пожрети идоломъ свѧзанъ бысть и біенъ велми.\nи стекши сѧ людіи множество да оубіютъ игемона, и сеи ѡбѣже.\nпоимши же конона и кровь ѡтерши ею же бѣ ѡмазанъ, въ сво-\nемъ домоу оустроиша и. и потом' два лѣт поживъ къ бг҃у ѡ-\nиде егоже възлюби.\nПАМЯТКИ VI.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Later red and blue library accession marks in left margin, not source text.",
+          "bbox_xywh": [
+            0,
+            800,
+            70,
+            550
+          ]
+        },
+        {
+          "description": "Decorative closing rule",
+          "bbox_xywh": [
+            443,
+            770,
+            245,
+            30
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1025,
+          95,
+          50,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "17",
+            "bbox_xywh": [
+              1025,
+              95,
+              50,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "body",
+        "kind": "body",
+        "bbox_xywh": [
+          55,
+          169,
+          1030,
+          477
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-line-01",
+            "text": "селѣ, а плоды хранити, ѡвы же в' тотарехъ заключи и запеча-",
+            "bbox_xywh": [
+              55,
+              169,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-02",
+            "text": "тавъ въ погребе под ѡснованіемъ своего домоу. и по оумертвїи",
+            "bbox_xywh": [
+              55,
+              206,
+              1030,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-03",
+            "text": "домѹ его на цр҃ковь оустроеноу копающїи же ѡсноѹ цр҃кви ѡбрѣ-",
+            "bbox_xywh": [
+              55,
+              242,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-04",
+            "text": "тоша же сосѹд скѹделный. мнѣвшимъ злато, и съкрѹшиша единъ",
+            "bbox_xywh": [
+              55,
+              279,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-05",
+            "text": "і изыдоша бѣси в' видѣніи ѡгненѣ и всѧ оустрашахѹт сѧ, яко",
+            "bbox_xywh": [
+              55,
+              316,
+              1030,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-06",
+            "text": "немощи прійти из домѹ по захоженіи слн҃ца, дон'деже помолят",
+            "bbox_xywh": [
+              55,
+              352,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-07",
+            "text": "сѧ ст҃омѹ кононоу и покы исчезахѹ. ѡбразъ же мч҃енію его сице",
+            "bbox_xywh": [
+              55,
+              389,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-08",
+            "text": "бѣ. игемоноу магдовоу пришедшоу ятъ бысть и х҃а исповѣда",
+            "bbox_xywh": [
+              55,
+              426,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-09",
+            "text": "и не покорив сѧ пожрети идоломъ свѧзанъ бысть и біенъ велми.",
+            "bbox_xywh": [
+              55,
+              463,
+              1030,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-10",
+            "text": "и стекши сѧ людіи множество да оубіютъ игемона, и сеи ѡбѣже.",
+            "bbox_xywh": [
+              55,
+              499,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-11",
+            "text": "поимши же конона и кровь ѡтерши ею же бѣ ѡмазанъ, въ сво-",
+            "bbox_xywh": [
+              55,
+              536,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-12",
+            "text": "емъ домоу оустроиша и. и потом' два лѣт поживъ къ бг҃у ѡ-",
+            "bbox_xywh": [
+              55,
+              573,
+              1030,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-13",
+            "text": "иде егоже възлюби.",
+            "bbox_xywh": [
+              55,
+              609,
+              1030,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "series-signature",
+        "kind": "other",
+        "bbox_xywh": [
+          135,
+          1693,
+          150,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-signature-line-01",
+            "text": "ПАМЯТКИ VI.",
+            "bbox_xywh": [
+              135,
+              1693,
+              150,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 8,
+                "end": 10,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00029-20261125",
+                "start": 10,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "body-line-01",
+        "reading": "селѣ, а плоды хранити, ѡвы же в' тотарехъ заключи и запеча-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-02",
+        "reading": "тавъ въ погребе под ѡснованіемъ своего домоу. и по оумертвїи",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-03",
+        "reading": "домѹ его на цр҃ковь оустроеноу копающїи же ѡсноѹ цр҃кви ѡбрѣ-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-04",
+        "reading": "тоша же сосѹд скѹделный. мнѣвшимъ злато, и съкрѹшиша единъ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-05",
+        "reading": "і изыдоша бѣси в' видѣніи ѡгненѣ и всѧ оустрашахѹт сѧ, яко",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-06",
+        "reading": "немощи прійти из домѹ по захоженіи слн҃ца, дон'деже помолят",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-07",
+        "reading": "сѧ ст҃омѹ кононоу и покы исчезахѹ. ѡбразъ же мч҃енію его сице",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-08",
+        "reading": "бѣ. игемоноу магдовоу пришедшоу ятъ бысть и х҃а исповѣда",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-09",
+        "reading": "и не покорив сѧ пожрети идоломъ свѧзанъ бысть и біенъ велми.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-10",
+        "reading": "и стекши сѧ людіи множество да оубіютъ игемона, и сеи ѡбѣже.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-11",
+        "reading": "поимши же конона и кровь ѡтерши ею же бѣ ѡмазанъ, въ сво-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-12",
+        "reading": "емъ домоу оустроиша и. и потом' два лѣт поживъ къ бг҃у ѡ-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-13",
+        "reading": "иде егоже възлюби.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      }
+    ],
+    "source_note_links": []
+  }
+}
