@@ -328,7 +328,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,57,88,0],['2',140,29,111,0],
+            self.assertEqual(result, [['1',145,102,43,0],['2',140,29,111,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -477,6 +477,71 @@ class ReviewSmoke(unittest.TestCase):
             ('1', 108, 'section-title-l001'),
             ('1', 108, 'witness-a-label-l001'),
             ('1', 108, 'witness-b-label-l001'),
+            ('1', 109, 'witness-c-label-l001'),
+            ('1', 110, 'witness-d-label-l001'),
+            ('1', 111, 'witness-e-label-l001'),
+            ('1', 111, 'witness-f-label-l001'),
+            ('1', 112, 'witness-g-label-l001'),
+            ('1', 114, 'section-title-l001'),
+            ('1', 140, 'section-viii-l001'),
+            ('1', 140, 'witness-a-heading-l001'),
+            ('1', 143, 'witness-b-label-l001'),
+            ('1', 147, 'witness-c-label-l001'),
+            ('1', 149, 'section-ix-l001'),
+            ('1', 149, 'witness-a-label-l001'),
+            ('1', 152, 'witness-b-label-l001'),
+            ('1', 153, 'witness-c-label-l001'),
+            ('1', 154, 'witness-d-label-l001'),
+            ('1', 155, 'section-x-l001'),
+            ('1', 155, 'witness-a-label-l001'),
+            ('1', 161, 'witness-b-label-l001'),
+            ('1', 165, 'witness-c-label-l001'),
+            ('1', 165, 'witness-g-label-l001'),
+            ('1', 167, 'section-xi-l001'),
+            ('1', 167, 'witness-a-label-l001'),
+            ('1', 172, 'witness-b-l001'),
+            ('1', 177, 'section-xii-l001'),
+            ('1', 177, 'witness-a-label-l001'),
+            ('1', 179, 'witness-b-label-l001'),
+            ('1', 180, 'witness-c-label-l001'),
+            ('1', 181, 'witness-g-label-l001'),
+            ('1', 181, 'witness-d-label-l001'),
+            ('1', 183, 'section-xiii-l001'),
+            ('1', 183, 'witness-a-label-l001'),
+            ('1', 183, 'witness-b-label-l001'),
+            ('1', 196, 'witness-c-label-l001'),
+            ('1', 196, 'witness-g-label-l001'),
+            ('1', 197, 'witness-d-label-l001'),
+            ('1', 199, 'section-xiv-l001'),
+            ('1', 199, 'witness-a-label-l001'),
+            ('1', 201, 'witness-b-label-l001'),
+            ('1', 202, 'witness-c-label-l001'),
+            ('1', 204, 'witness-g-label-l001'),
+            ('1', 206, 'witness-d-label-l001'),
+            ('1', 211, 'witness-e-label-l001'),
+            ('1', 213, 'witness-zh-label-l001'),
+            ('1', 214, 'witness-z-label-l001'),
+            ('1', 215, 'witness-i-label-l001'),
+            ('1', 216, 'witness-j-label-l001'),
+            ('1', 219, 'witness-k-label-l001'),
+            ('1', 221, 'witness-heading-l001'),
+            ('1', 230, 'witness-heading-l001'),
+            ('1', 232, 'witness-heading-l001'),
+            ('1', 249, 'section-title-l001'),
+            ('1', 249, 'reuben-heading-l001'),
+            ('1', 252, 'simeon-heading-l001'),
+            ('1', 255, 'levi-heading-l001'),
+            ('1', 262, 'judah-heading-l001'),
+            ('1', 270, 'issachar-heading-l001'),
+            ('1', 272, 'zebulun-heading-l001'),
+            ('1', 275, 'dan-heading-l001'),
+            ('1', 278, 'naphtali-heading-l001'),
+            ('1', 281, 'gad-heading-l001'),
+            ('1', 284, 'asher-heading-l001'),
+            ('1', 287, 'joseph-heading-l001'),
+            ('1', 293, 'benjamin-heading-l001'),
+            ('1', 300, 'section-xvi-l001'),
+            ('1', 300, 'witness-a-heading-l001'),
             ('2', 100, 'heading-e-line-01'),
             ('2', 100, 'heading-zh-line-01'),
         }
@@ -498,7 +563,7 @@ class ReviewSmoke(unittest.TestCase):
                 actual.add((volume, e[3], anchor['line_id']))
         self.assertTrue(expected <= actual, expected - actual)
         # Metadata enrichment must cover every linguistic line in these reused drafts.
-        for scan in (82, 86, 89, 90, 92, 93, 94, 98, 101, 103, 104, 105, 106, 108):
+        for scan in (82, 86, 89, 90, 92, 93, 94, 98, 101, 103, 104, 105, 106, 108, 109, 110, 111, 112, 114, 140, 143, 147, 149, 152, 153, 154, 155, 161, 165, 166, 167, 172, 177, 179, 180):
             record = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
             reading = record['reading']
             self.assertIn('prior_reading_blob', reading['language_annotation'])
@@ -512,6 +577,106 @@ class ReviewSmoke(unittest.TestCase):
                     self.assertEqual(spans[-1]['end'], len(line['text']))
                     self.assertTrue(all(a['end'] == b['start'] for a, b in zip(spans, spans[1:])))
                     self.assertTrue(all(s['text_version'] == reading['reader_id'] for s in spans))
+        def annotated_literals(scan):
+            reading = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            return {(l['text'][s['start']:s['end']], s['language'], s['script'])
+                    for r in reading['regions'] for l in r['lines'] for s in l['language_spans']}
+        self.assertIn(('ὁ Λὼτ θυγατρόγαμος ἐγένετο διὰ τῆς μέθης, ὁ πατὴρ ἀνὴρ καὶ', 'grc', 'Grek'), annotated_literals(165))
+        self.assertIn(('ὁ πάππος πατήρ.', 'grc', 'Grek'), annotated_literals(165))
+        self.assertIn(('Arkiv zu povjestnicu', 'hr', 'Latn'), annotated_literals(166))
+        self.assertIn(('Cărtile poporane ale Ro-', 'ro', 'Latn'), annotated_literals(166))
+        self.assertIn(('но коментар, що тут приводимо: ', 'uk', 'Cyrl'), annotated_literals(166))
+        self.assertIn(('Да разумеєши ли жидо-', 'cu', 'Cyrl'), annotated_literals(166))
+        self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 165 and len(e) > 6 and e[6]]), 2)
+        self.assertIn(('Veteris Testamenti Codex apocryphus, t. I, 311—320', 'la', 'Latn'), annotated_literals(172))
+        self.assertIn(('La Bible III, 1.', 'fr', 'Latn'), annotated_literals(180))
+        self.assertIn(('Доси у Порф. пропущено', 'uk', 'Cyrl'), annotated_literals(179))
+        self.assertIn(('[sic!]', 'la', 'Latn'), annotated_literals(177))
+        self.assertIn(("sic!", 'la', 'Latn'), annotated_literals(181))
+        rec177 = json.loads((root / 'pilot/vol1_scan00177_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(rec177['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in rec177['reading']['regions']))
+        self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 181 and len(e) > 6 and e[6]]), 2)
+        # Existing fully annotated readings are reused without rewriting their text or metadata.
+        for scan in (183, 196, 197, 198, 199, 201, 202, 204, 206, 211, 213, 214, 215, 216, 219, 221, 230, 232, 249, 252, 255, 262, 270, 272, 275, 278, 281, 284, 287, 293, 300):
+            reading = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            for region in reading['regions']:
+                for line in region['lines']:
+                    if not any(c.isalpha() for c in line['text']):
+                        continue
+                    spans = line['language_spans']
+                    self.assertTrue(spans)
+                    self.assertEqual(spans[0]['start'], 0)
+                    self.assertEqual(spans[-1]['end'], len(line['text']))
+                    self.assertTrue(all(a['end'] == b['start'] for a, b in zip(spans, spans[1:])))
+                    self.assertTrue(all(s['text_version'] == reading['reader_id'] for s in spans))
+        self.assertIn(('[Вродженє Ісава і Якова] ', 'uk', 'Cyrl'), annotated_literals(183))
+        self.assertIn(('англъ же рече: что ти есть имя? онъ же ѿвѣща:', 'cu', 'Cyrl'), annotated_literals(196))
+        self.assertIn(('vac.', 'la', 'Latn'), annotated_literals(197))
+        self.assertIn(('Апокрифическія сказ. о ветхозав. ли-', 'ru', 'Cyrl'), annotated_literals(198))
+        self.assertIn(('sic!', 'la', 'Latn'), annotated_literals(199))
+        for scan, count in ((183, 3), (196, 2), (197, 1), (199, 2)):
+            self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == scan and len(e) > 6 and e[6]]), count)
+        for scan in (183, 199):
+            record = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            self.assertIsNone(record['printed_page_observed'])
+            self.assertFalse(any(r['kind'] == 'page_number' for r in record['reading']['regions']))
+        # The two printed references beginning at p. 138 are not the same destination.
+        joseph_divination = next(e for e in contents['1']['entries'] if e[1].startswith('Ж. Йосифова ворожба'))
+        joseph_lament = next(e for e in contents['1']['entries'] if e[1].startswith('З. Плач Йосифа, коли побачив'))
+        self.assertEqual((joseph_divination[2], joseph_divination[3]), ('138–139', 213))
+        self.assertEqual((joseph_lament[2], joseph_lament[3]), ('138–140', 214))
+        self.assertIn('139', joseph_lament[5])
+        self.assertIn(('[Плач Йосифа в рові.] ', 'uk', 'Cyrl'), annotated_literals(201))
+        self.assertIn(('Логинъ же сотникъ снємъ убо куресь съ главы своея', 'cu', 'Cyrl'), annotated_literals(206))
+        self.assertIn(('же рече: Не боися, ѡче, я то Венимина [', 'orv', 'Cyrl'), annotated_literals(211))
+        self.assertIn(('1. Завѣтъ Роувимовъ ѡ благоумьи.', 'cu', 'Cyrl'), annotated_literals(249))
+        self.assertIn(('Памятники отреченной русской литературы', 'ru', 'Cyrl'), annotated_literals(252))
+        self.assertIn(('op. cit.', 'la', 'Latn'), annotated_literals(255))
+        self.assertIn(('(Сказаніє ѡ Іѡсифѣ Прекрасном о сн҃у Іакова', 'orv', 'Cyrl'), annotated_literals(232))
+        self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 249 and len(e) > 6 and e[6]]), 2)
+        # The Asher title spans two physical lines; the anchor selects the first.
+        joseph = next(e for e in contents['1']['entries'] if e[3] == 287 and len(e) > 6 and e[6])
+        self.assertEqual(joseph[6]['line_id'], 'joseph-heading-l001')
+        self.assertIn(('op. cit.', 'la', 'Latn'), annotated_literals(287))
+        self.assertIn(('[sic !]', 'la', 'Latn'), annotated_literals(287))
+        self.assertIn(('op. cit.', 'la', 'Latn'), annotated_literals(293))
+        self.assertIn(('[sic !]', 'la', 'Latn'), annotated_literals(293))
+        self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 300 and len(e) > 6 and e[6]]), 2)
+        rec300 = json.loads((root / 'pilot/vol1_scan00300_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(rec300['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in rec300['reading']['regions']))
+        asher = next(e for e in contents['1']['entries'] if e[3] == 284 and len(e) > 6 and e[6])
+        self.assertEqual(asher[6]['line_id'], 'asher-heading-l001')
+        self.assertIn(('доброумьи.', 'cu', 'Cyrl'), annotated_literals(284))
+        for scan, line_id in ((262, 'judah-heading-l001'), (270, 'issachar-heading-l001'),
+                              (272, 'zebulun-heading-l001'), (275, 'dan-heading-l001'),
+                              (278, 'naphtali-heading-l001'), (281, 'gad-heading-l001')):
+            self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == scan and len(e) > 6 and e[6] and e[6]['line_id'] == line_id]), 1)
+        rec249 = json.loads((root / 'pilot/vol1_scan00249_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(rec249['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in rec249['reading']['regions']))
+        rec167 = json.loads((root / 'pilot/vol1_scan00167_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(rec167['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in rec167['reading']['regions']))
+        rec154 = json.loads((root / 'pilot/vol1_scan00154_single_reading.json').read_text(encoding='utf-8'))['reading']
+        spans154 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
+                    for r in rec154['regions'] for l in r['lines'] for s in l['language_spans']]
+        self.assertIn(('Patrologiae graecae cursus completus, t. 153', 'la', 'Latn'), spans154)
+        self.assertIn(('Beiträge zur vergleichenden Mythologie aus der Hagada (Zeitschrift der', 'de', 'Latn'), spans154)
+        harut = next(e for e in contents['1']['entries'] if e[3] == 154 and len(e) > 6 and e[6])
+        self.assertTrue(harut[1].startswith('Г.'))
+        self.assertTrue(harut[6]['text'].startswith('В.'))
+        self.assertTrue(harut[5])
+        rec155 = json.loads((root / 'pilot/vol1_scan00155_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(rec155['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in rec155['reading']['regions']))
+        rec143 = json.loads((root / 'pilot/vol1_scan00143_single_reading.json').read_text(encoding='utf-8'))['reading']
+        spans143 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
+                    for r in rec143['regions'] for l in r['lines'] for s in l['language_spans']]
+        self.assertIn(('vac.', 'la', 'Latn'), spans143)
+        self.assertIn(('vacat', 'la', 'Latn'), spans143)
+        self.assertIn(('цїле се речене', 'uk', 'Cyrl'), spans143)
         rec90 = json.loads((root / 'pilot/vol1_scan00090_single_reading.json').read_text(encoding='utf-8'))['reading']
         spans90 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
                    for r in rec90['regions'] for l in r['lines'] for s in l['language_spans']]
