@@ -14,7 +14,7 @@ import subprocess
 from .pilot_batch import check_draft_offline
 from .review_bundle import unique_pairs, reject_constant
 from .review_bundle import (
-    REPO, LOGIN, SHA256, PATH, fields, match, require, literal, identifier,
+    REPO, LOGIN, SHA, SHA256, PATH, fields, match, require, literal, identifier,
     make_intake, assert_new, blob_sha, git_source_loader,
 )
 
@@ -179,19 +179,56 @@ def _read_records(directory):
     return records
 
 
+def check_repository(repo, trusted_commit, previous_commit=None):
+    """Validate every record and preserve previously published ledger bytes.
+
+    The supplied trusted commit must come from the trusted main ref, not a
+    submission or untrusted PR head. Run in a full-history canonical checkout.
+    """
+    repo = Path(repo)
+    match(SHA, trusted_commit, "trusted commit")
+    if previous_commit is not None:
+        match(SHA, previous_commit, "previous commit")
+        files = subprocess.check_output(
+            ["git", "-C", str(repo), "ls-tree", "-r", "-z", "--name-only",
+             previous_commit, "--", "reviews/intake", "reviews/adjudications"],
+            timeout=30).split(b"\x00")
+        for item in filter(None, files):
+            name = item.decode("utf-8")
+            target = repo / name
+            require(target.is_file() and not target.is_symlink(), "published ledger record removed")
+            old = subprocess.check_output(["git", "-C", str(repo), "show",
+                                           previous_commit + ":" + name], timeout=15)
+            require(target.read_bytes() == old, "published ledger record changed")
+    return validate_ledger(_read_records(repo / "reviews" / "intake"),
+                           _read_records(repo / "reviews" / "adjudications"),
+                           git_source_loader(repo, trusted_commit))
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("bundle_id")
-    parser.add_argument("event_id")
-    parser.add_argument("outcome", choices=("accept", "reject"))
-    parser.add_argument("--reason", required=True)
-    parser.add_argument("--approve-intake-sha256", required=True)
+    parser.add_argument("bundle_id", nargs="?")
+    parser.add_argument("event_id", nargs="?")
+    parser.add_argument("outcome", nargs="?", choices=("accept", "reject"))
+    parser.add_argument("--reason")
+    parser.add_argument("--approve-intake-sha256")
+    parser.add_argument("--check", action="store_true", help="Validate published ledger without writing")
+    parser.add_argument("--trusted-commit", help="Trusted main commit for check only")
+    parser.add_argument("--previous-commit", help="Preserve ledger bytes from this commit in check mode")
     parser.add_argument("--repo", type=Path, default=Path("."))
     parser.add_argument("--write", action="store_true", help="Otherwise preview only")
     args = parser.parse_args(argv)
+    repo = args.repo.resolve()
+    if args.check:
+        require(not args.write and args.bundle_id is None and args.event_id is None and args.outcome is None
+                and args.reason is None and args.approve_intake_sha256 is None
+                and args.trusted_commit is not None, "invalid check arguments")
+        ledger = check_repository(repo, args.trusted_commit, args.previous_commit)
+        print(f"Validated editorial ledger: {len(ledger)} accepted lines")
+        return 0
+    require(args.trusted_commit is None and args.previous_commit is None, "check-only options")
     identifier(args.bundle_id, "bundle ID")
     identifier(args.event_id, "event ID")
-    repo = args.repo.resolve()
     trusted = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "--verify",
                                        "refs/remotes/origin/main^{commit}"], timeout=15).decode().strip()
     loader = git_source_loader(repo, trusted)
