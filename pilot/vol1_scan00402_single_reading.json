@@ -974,10 +974,18 @@
               },
               {
                 "start": 24,
-                "end": 33,
+                "end": 30,
                 "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
+                "text_version": "gpt62-i402-final-gap-20261125"
+              },
+              {
+                "start": 30,
+                "end": 33,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
                 "text_version": "gpt62-i402-final-gap-20261125"
               }
             ]
@@ -1207,5 +1215,14 @@
         "note_region_id": "note-3"
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "75df12117a568c63d5d19da770c4a6c61321973d",
+    "source_record_blob": "d4e8e034fa7049a66662eca4e5244667785cf59d",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual review of exact frozen candidate against original pinned scan. Distinguish explicit Church Slavonic quotations and liturgical formulae from historical Ruthenian explanation, and standalone Cyrillic numeral tokens from lexical abbreviations. No recensional or glyph verification."
   }
 }
