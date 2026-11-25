@@ -98,15 +98,23 @@ jobs:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           set -euo pipefail
+          verify_fonts() {
+            local font
+            for font in web/fonts/*; do
+              curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/fonts/${font##*/}?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-font" || return 1
+              cmp -s "$font" "$RUNNER_TEMP/published-font" || return 1
+            done
+          }
           for attempt in {1..18}; do
             if curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/index.html?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-index.html" \
               && cmp -s web/index.html "$RUNNER_TEMP/published-index.html" \
               && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/vol1.json?rev=$GITHUB_SHA" \
-              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null; then
-              echo "Public viewer and search index match $GITHUB_SHA."
+              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null \
+              && verify_fonts; then
+              echo "Public viewer, fonts and search index match $GITHUB_SHA."
               exit 0
             fi
             sleep 5
           done
-          echo "::error::Public viewer or search index does not match $GITHUB_SHA."
+          echo "::error::Public viewer, fonts or search index does not match $GITHUB_SHA."
           exit 1
