@@ -61,6 +61,30 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.evaluate('window.lastJump')[:2], ['5', '311'])
             browser.close()
 
+    def test_volume_two_contents_records(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        volume = data['2']
+        items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
+        self.assertEqual(len(items), 129)
+        self.assertEqual(volume['sources'], list(range(519, 526)))
+        self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
+                         [21, 19, 21, 19, 16, 17, 16])
+        self.assertEqual(sum(e[4] == 2 for e in items), 4)
+        continuation = next(e for e in items if e[1].startswith('З. О еллинскихъ мудрецехъ'))
+        self.assertEqual((continuation[0], continuation[2]), (519, '33–35'))
+        self.assertIn('520', continuation[5])
+        reversed_range = next(e for e in items if e[2] == '194–169')
+        self.assertIn('Printed', reversed_range[5])
+        self.assertTrue(any(e[2] == '154–156 і 403–408' for e in items))
+        self.assertTrue(any(e[1] == 'O Sybillach' for e in items))
+        self.assertTrue(any(e[1].startswith('O postawie Jezusa Chrystusa') for e in items))
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, volume['sources'])
+            self.assertTrue(title and printed)
+            self.assertTrue(scan is None or 1 <= scan <= 526)
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
