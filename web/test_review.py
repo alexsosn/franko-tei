@@ -237,6 +237,29 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(rows['1', 131]['status'], 'candidate')
         self.assertEqual(json.loads(rows['1', 131]['catalog_refs_json']), [])
 
+    def test_contents_ocp_public_destinations(self):
+        import json
+        from urllib.parse import urlsplit, parse_qs
+        html = APP.read_text(encoding='utf-8')
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        found = set()
+        for records in refs.values():
+            for links in records.values():
+                for link in links:
+                    if link['provider'] != 'OCP':
+                        continue
+                    found.add(link['id'])
+                    url = urlsplit(link['url'])
+                    self.assertEqual(url.scheme, 'https')
+                    self.assertEqual(url.netloc, 'pseudepigrapha.org')
+                    if link['kind'] == 'catalog':
+                        self.assertEqual(url.path, '/')
+                        self.assertEqual(url.fragment, ':~:text=' + link['id'])
+                    else:
+                        self.assertEqual(url.path, '/reader.html')
+                        self.assertEqual(parse_qs(url.query)['doc'], [{'CAVT-001': 'AdamEve.xml', 'CAVT-088': 'TAbr.xml'}[link['id']]])
+        self.assertTrue({'CAVT-001', 'CAVT-066', 'CAVT-088', 'CAVT-089', 'CAVT-101', 'CAVT-118'}.issubset(found))
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
@@ -251,7 +274,7 @@ class ReviewSmoke(unittest.TestCase):
                     self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate'))
                     self.assertIn(link['provider'], ('e-Clavis', 'OCP'))
                     self.assertTrue(link['title'] and link['id'] and link['evidence'])
-                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/', 'https://github.com/OnlineCriticalPseudepigrapha/')))
+                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/')))
         html = html.replace('updateMode();load();', 'updateMode();load=()=>{window.lastJump=[$(\'volume\').value,$(\'page\').value];};load();')
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
