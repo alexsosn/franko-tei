@@ -30,6 +30,8 @@ class ReviewSmoke(unittest.TestCase):
                 location.hash = 'v=1&p=1';
                 window.fetch = async url => {
                     if(url.endsWith('/search/vol1.json') || url.endsWith('./search/vol1.json')) return new Response(JSON.stringify({ref:'a'.repeat(40),volume:'1',entries:[{scan:1,suffix:'single_reading',text:'ѣ <script>ἀ</script>'},{scan:1,suffix:'alternate_reading_01',text:'alternate ἀ'}]}));
+                    if(url.includes('/repos/alexsosn/franko-tei/commits/')) return new Response(JSON.stringify({sha:'a'.repeat(40),commit:{tree:{sha:'b'.repeat(40)}}}));
+                    if(url.includes('/repos/alexsosn/franko-tei/git/trees/')) return new Response(JSON.stringify({truncated:false,tree:[{type:'blob',path:'pilot/vol1_scan00001_single_reading.json'},{type:'blob',path:'pilot/vol1_scan00001_alternate_reading_01.json'}]}));
                     if(url.endsWith('/full.txt')) {const v=Number(url.match(/vol([1-5])/)[1]);return new Response((v===1?'ѣ  ἀ':'')+'\\f'.repeat([0,469,526,446,580,316][v]));}
                     if(url.endsWith('/manifest.json')) return new Response(JSON.stringify(fixture.manifest));
                     if(url.endsWith('page-00001.txt')) {
