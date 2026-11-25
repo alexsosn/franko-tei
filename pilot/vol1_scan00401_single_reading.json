@@ -397,6 +397,38 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 15,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i401-final-gap-20261125"
+              },
+              {
+                "start": 15,
+                "end": 18,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i401-final-gap-20261125"
+              },
+              {
+                "start": 18,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i401-final-gap-20261125"
+              },
+              {
+                "start": 27,
+                "end": 30,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i401-final-gap-20261125"
+              },
+              {
+                "start": 30,
                 "end": 61,
                 "language": "orv",
                 "script": "Cyrl",
@@ -1114,5 +1146,14 @@
         "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "75df12117a568c63d5d19da770c4a6c61321973d",
+    "source_record_blob": "128193f99a3ba28a21f9141ad7cd7028d595b13f",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual review of exact frozen candidate against original pinned scan. Distinguish explicit Church Slavonic quotations and liturgical formulae from historical Ruthenian explanation, and standalone Cyrillic numeral tokens from lexical abbreviations. No recensional or glyph verification."
   }
 }
