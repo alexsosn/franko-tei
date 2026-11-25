@@ -28,3 +28,18 @@ uses actual frozen text and a synthetic image; no scholarly decisions.
 If the exact pinned candidate is unavailable or its Git blob changes, the
 editor refuses to reopen the session, preserves the local data, and offers
 a recovery download (not a submission bundle) or explicit discard.
+
+## Historical character keyboard
+Use the group selector: Diacritics, Letters (upper and lower case),
+Superscript letters, Greek. The dotted circle is only a visual preview;
+the button inserts the exact Unicode sequence at the editor selection,
+without normalization. Key tooltip, accessible label and the last-inserted
+character description include Unicode code points. Church Slavonic
+breathing uses U+0486 (psili), U+0485 (dasia); iso and apostrof use
+breathing then accent. Kamora is U+0311, yerok U+033E, vzmet U+A66F;
+ordinary tilde U+0303 is offered separately, not treated as equivalent.
+Pokrytie U+0487 may be added after a superscript letter when visible.
+References: https://www.unicode.org/notes/tn41/tn41-1.pdf (Table 13)
+and https://sci.ponomar.net/keyboard.html . The font cmap test covers
+every key across the bundled Monomakh/Shafarik/Greek fallback stack;
+this does not prove correct shaping of every historical combination.
