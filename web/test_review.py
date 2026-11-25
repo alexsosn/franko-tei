@@ -114,6 +114,31 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
             browser.close()
 
+    def test_contents_audit_agrees_with_embedded_data(self):
+        import csv
+        import json
+        html = APP.read_text(encoding='utf-8')
+        def embedded(name):
+            return json.loads(html.split('const ' + name + ' = ', 1)[1].split(';\n', 1)[0])
+        data = embedded('volumeContents')
+        translations = embedded('contentsEnglish')
+        refs = embedded('contentsWorkRefs')
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as stream:
+            rows = list(csv.DictReader(stream, delimiter='\t', quoting=csv.QUOTE_NONE))
+        self.assertEqual(len(rows), sum(len(x['entries']) for x in data.values()))
+        seen = set()
+        for row in rows:
+            v, i = row['volume'], int(row['index_zero_based'])
+            self.assertNotIn((v, i), seen)
+            seen.add((v, i))
+            e = data[v]['entries'][i]
+            self.assertEqual((str(e[0]), e[1], e[2] or ''), (row['contents_scan'], row['literal_title'], row['printed_reference']))
+            self.assertEqual(translations[v][e[1]], row['english_draft'])
+            key = json.dumps(e[:3], ensure_ascii=False, separators=(',', ':'))
+            self.assertEqual(refs.get(v, {}).get(key, []), json.loads(row['catalog_refs_json']))
+            self.assertEqual(row['translation_review'], 'compared-with-printed-TOC-transcription')
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
@@ -147,6 +172,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#contentsEntries li:visible').count(), 4)
             row = page.locator('#contentsEntries li:visible').first
             self.assertTrue(row.locator('.contents-ref-detail').is_hidden())
+            self.assertIn('Infancy Gospel of Thomas', row.locator('.contents-canonical').inner_text())
             row.locator('.contents-ref-toggle').click()
             link = row.locator('.contents-ref-detail a').first
             self.assertEqual(link.get_attribute('target'), '_blank')
