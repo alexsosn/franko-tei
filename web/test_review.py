@@ -154,6 +154,20 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(next(x for x in links('2', 85) if x['id'] == 'ECCA 489')['relation'], 'work-family')
         self.assertTrue(any(x['id'] == 'ECCA 919' and x['relation'] == 'candidate' for x in links('1', 13)))
 
+    def test_contents_hagiography_reference_scope(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def link(volume, index, identifier):
+            key = json.dumps(data[volume]['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return next(x for x in refs[volume][key] if x['id'] == identifier)
+        ananias = link('3', 115, 'ECCA 958')
+        self.assertEqual(ananias['relation'], 'work-family')
+        self.assertIn('79', ananias['evidence'])
+        for volume, index, identifier in (('3', 116, 'ECCA 958'), ('2', 135, 'ECCA 635'), ('5', 4, 'ECCA 678')):
+            self.assertEqual(link(volume, index, identifier)['relation'], 'candidate')
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
