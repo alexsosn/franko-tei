@@ -96,12 +96,18 @@ class ReviewSmoke(unittest.TestCase):
         items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
         self.assertEqual(volume['sources'], list(range(439, 447)))
         self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
-                         [21, 20, 17, 16, 18, 22, 22, 16])
+                         [21, 20, 17, 16, 18, 22, 21, 16])
         self.assertEqual(sum(e[4] == 2 for e in items), 13)
         for printed in ('160–154', '154–255', '295–207', '211–233', '259–259'):
             self.assertTrue(any(e[2] == printed for e in items), printed)
         self.assertTrue(any(e[2] == '' and e[1].startswith('Ж. Събор') for e in items))
         self.assertTrue(any(e[2] == '192–193, 304' for e in items))
+        self.assertEqual(len(items), 151)
+        self.assertEqual(sum(e[3] is not None for e in items), 22)
+        for printed, scan in [('160–154', 236), ('154–255', 240), ('295–207', 291), ('211–233', 317), ('259–259', 342), ('14–15', 98)]:
+            self.assertEqual(next(e[3] for e in items if e[2] == printed), scan)
+        self.assertEqual(next(e[3] for e in items if e[1].startswith('Ж. Събор')), 95)
+        self.assertEqual(sum(e[3] == 299 for e in items), 2)
         for source, title, printed, scan, *_ in items:
             self.assertIn(source, volume['sources'])
             self.assertTrue(title)
