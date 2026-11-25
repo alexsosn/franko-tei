@@ -114,6 +114,39 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
             browser.close()
 
+    def test_english_contents_translation(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        translations = json.loads(html.split('const contentsEnglish = ', 1)[1].split(';\n', 1)[0])
+        for volume, record in data.items():
+            self.assertEqual(set(translations[volume]), {entry[1] for entry in record['entries']})
+            self.assertTrue(all(isinstance(t, str) and t.strip() for t in translations[volume].values()))
+        html = html.replace('updateMode();load();', 'updateMode();load=()=>{};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsFilter').fill('Enoch')
+            self.assertGreater(page.locator('#contentsEntries .contents-destination:visible').count(), 0)
+            page.locator('#contentsFilter').fill('Еноха')
+            self.assertGreater(page.locator('#contentsEntries .contents-destination:visible').count(), 0)
+            page.locator('#contentsFilter').fill('')
+            for volume, record in data.items():
+                page.locator('#contentsVolume').select_option(volume)
+                names = page.locator('#contentsEntries .contents-name')
+                self.assertEqual(names.count(), len(record['entries']))
+                self.assertEqual(names.all_text_contents(), [translations[volume][e[1]] for e in record['entries']])
+                self.assertEqual(names.first.get_attribute('lang'), 'en')
+            page.evaluate("setUILocale('uk')")
+            self.assertEqual(page.locator('#contentsEntries .contents-name').all_text_contents(), [e[1] for e in data['5']['entries']])
+            self.assertEqual(page.locator('#contentsEntries .contents-name').first.get_attribute('lang'), 'uk')
+            page.evaluate("setUILocale('en')")
+            self.assertEqual(page.locator('#contentsEntries .contents-name').all_text_contents(), [translations['5'][e[1]] for e in data['5']['entries']])
+            browser.close()
+
     def test_single_contents_toolbar(self):
         html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
             "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value];};load();")
