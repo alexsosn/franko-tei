@@ -122,6 +122,25 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             assert whole_flag.bounding_box()["x"] < whole_row.locator(".line-text").bounding_box()["x"]
             whole_flag.click()
             expect(whole_row.locator("xpath=following-sibling::div[contains(@class,'uncertainty-reasons')][1]")).to_contain_text("rare old Cyrillic personal name")
+            # Actual pinned source image + reader in the proofreading dialog.
+            # Keep the test entirely local: no issue submission or editorial claim.
+            review = browser.new_page(viewport={"width": 390, "height": 844})
+            review.set_default_timeout(60000)
+            review.goto(base + "#v=1&p=20&ref=a3b6069761757be39bd8d9ea2f76fbdda2388116")
+            expect(review.locator("#choice option").filter(has_text="GPT-6 · single reading")).to_have_count(1)
+            review.locator("#choice").select_option(label="GPT-6 · single reading")
+            review.locator("#reviewOpen").click()
+            expect(review.locator("#reviewLine option").first).to_be_attached()
+            review.locator("#reviewLine").select_option("early-apocrypha-context-line-01")
+            expect(review.locator("#reviewOriginal")).to_have_text("стольські конституціи згадують також про фальшиві βιβλία ἐπ’ ὀνόμασι")
+            expect(review.locator("#reviewBox")).to_be_visible()
+            expect(review.locator("#reviewSave")).to_be_enabled()
+            assert review.locator("#reviewImage").evaluate("img => img.naturalWidth > 500 && img.naturalHeight > 500")
+            assert review.locator("#reviewDialog").evaluate("el => el.getBoundingClientRect().width <= innerWidth")
+            review.locator("#reviewUncertainty summary").click()
+            expect(review.locator("#reviewReasons")).to_contain_text("Greek diacritics/polytonics")
+            review.locator("#reviewClose").click()
+            review.close()
             browser.close()
     finally:
         server.shutdown()

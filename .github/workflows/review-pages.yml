@@ -31,6 +31,7 @@ jobs:
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_fonts.py
       - run: python web/test_review.py
+      - run: python web/test_review_editor.py
       - run: python web/test_live_review.py
   package:
     needs: browser
@@ -47,7 +48,7 @@ jobs:
       - run: pip install -e .
       - run: |
           mkdir -p _site
-          cp web/index.html _site/index.html
+          cp web/index.html web/review-editor.js _site/
           cp -R web/fonts _site/fonts
           python web/build_search.py --output _site/search
       - uses: actions/upload-pages-artifact@v5
@@ -108,6 +109,8 @@ jobs:
           for attempt in {1..18}; do
             if curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/index.html?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-index.html" \
               && cmp -s web/index.html "$RUNNER_TEMP/published-index.html" \
+              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/review-editor.js?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-review.js" \
+              && cmp -s web/review-editor.js "$RUNNER_TEMP/published-review.js" \
               && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/vol1.json?rev=$GITHUB_SHA" \
               | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null \
               && verify_fonts; then
