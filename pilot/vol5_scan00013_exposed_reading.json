@@ -3,7 +3,7 @@
   "status": "agent_unverified",
   "volume": "5",
   "scan_page": 13,
-  "printed_page_observed": "1",
+  "printed_page_observed": null,
   "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
   "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
   "source_image_path": "vol5/page-00013.jpg",
@@ -23,7 +23,7 @@
       "timing": "before_first_reading",
       "note": "Embedded text layer was retrieved in the preceding turn, before this reading. Source JPEG is the primary evidence; no blind claim."
     },
-    "instructions": "Read the pinned scan directly, retaining printed physical rows and tentative historic glyphs. Earlier embedded OCR was seen. Do not silently resolve uncertainties or claim independent text. Geometry estimated; accents and superscripts incompletely recovered.",
+    "instructions": "Read the pinned scan directly, retaining printed physical rows and tentative historic glyphs. Earlier embedded OCR was seen. Do not silently resolve uncertainties or claim independent text. Geometry estimated; accents and superscripts incompletely recovered. Footer number 1 classified after comparison with V/21 footer signature 2 and V/22 printed folio 10; not a directly observed folio. Existing region and line IDs retained.",
     "raw_response": "I. Апостольські сучасники і ученики.\nI. Житіє Марії Магдалини. Копія з рукопису Михайлівського\nЗолотоверхого ман. у Київі.\nМⷭца тоⷤ кв҃. днь. житіє мр҃іи магдалыни из-\nбранъ ѡ многиⷯ писаній ст҃ыⷯ.\nОтѣшеніе грѣшникоⷨ, ѡбраⷥ кающиⷨсѧ, оучител'ница\nблоуⷣникоⷨ, изрѧдна всѣⷯ добродѣтель къ истин'номѹ дѹханію,\nв'сѣмъ сн҃оⷨ и д'щеремъ храмѹ х҃ва, даетъ нн҃ѣ бл҃женнаѧ не-\nвѣста и стаѧ грѣшница магдалыни. еѧже начало сквръно, конеⷰ\nже изрѧдеⷩ. ѡ житіѧ бѣсовска и съ быⷮ в'ней ѡбитеⷧ чⷵтоты и чер'-\nто, ст҃ыѧ троⷣица. и ѡ съсѹда скврънаго быⷮ чаша къ пітію цр҃ѧ\nвысокаго достойнъ трапезѣ его, възненавидѣна въ единоⷨ\nградѣ, събыⷭтсѧ чюдна оученіеⷨ в'семѹ мирѹ. быⷭ магдалына\nчеⷭтныⷯ родитель ѡ сн҃оⷨ інлевь. ѡ виданіи града ближнаго іе-\nрслимѹ, сестра искръна мар'ѳы и лазара. яже лѣⷮ своиⷯ дошедши\nродителем же еѧ скоро ѡ сего вѣкоу прешедшиⷨ, имѣли множѣ-\nство из'ѡбиліѧ мірска ѡставиша. лѣпотѹ телеснѹю выш'ше иныⷯ\nимоуще, і ѡ похотѣніѧ телеснаго и съвѣта чл҃чскаго злаго, и ска-\nзател'наго н'рава, и къ зломѹ ѡбычаю приклонена и ко жизни\nи пищи времен'нѣй и простран'но житіє в'да себе. попоущающи\nсквръной плъти похоти его, внѣмже всѧка дша и добродѣтель\nпогибаетъ. раⷥлично ядѹще, ѡдѣаніемъ многоцѣнныⷨ оукра-\nсившисѧ и преⷣ ѡчима чл҃чскыми яв'лятиⷭ, и сама в лѣпотѣ своей\nнадѣашесѧ ѡчи свои на тъщетоу і оуши къ злыⷨ бесѣдаⷨ зайти.\nі языкъ гл҃оⷨ многиⷨ подати, ко ликованію и бесѣдѣ съвѣтнѣй\nт'щевѣ быти, ѡ мл҃твѣ же и постѣ николиже не радити. сіѧ\nпол'за ей быⷭ къ вреженію и погѹбленію наслѣдіѧ вѣчнаго.\nи сице помалѹ оукрадашесⷭ блоуⷣ и бестѹдіе, первѣе тайно, и по-\nПАМЯТКИ VI.\n1",
     "coverage": {
       "entire_image_inspected": true,
@@ -740,7 +740,7 @@
       },
       {
         "id": "folio",
-        "kind": "page_number",
+        "kind": "other",
         "bbox_xywh": [
           965,
           1624,
