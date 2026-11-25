@@ -1,0 +1,744 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 156,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00156.jpg",
+  "source_image_sha256": "7681f3f96fce9b2fa0bd086a777ec08cc85205c6be5e51f1b8568d510a42ce8c",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v4s00156",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-pr143-apocalypse-starts-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full visual reading of pinned original page including headings, manuscript text, commentary and printer furniture. TOC titles known; no original OCR or peer page reading used. Provisional glyphs and estimated geometry. Not blind or verified.",
+    "raw_response": "III. Апокалїпси про загробове житє.\nА. Унґварський рукопис XVIII в. стор. 392—401.\n(Слово ѡ свѧтомъ Авраамѣ, єгда ꙗви сѧ ємꙋ\nархистратигъ Михаилъ). Вонєгда скончаша сѧ днїє ѡцꙋ\nАвраамꙋ, гл҃а Гс҃дь ко архистратигꙋ Михаилꙋ: „Поиди ко Авра-\nамꙋ и реци ємꙋ, да изыйдет ѿ житїа сего и да распорѧдит дом\nсвои, что комꙋ, и да наготовит себѣ домовинꙋ ко смерти“.\nИде Михаилъ ко Авраамꙋ и наиде єго сидѧщаго пред врати\nсвоими, и поздоровилъ єго Михаилъ. Баше же старїи Авраамъ\nи не познаше, кто єсть. и рече Авраам ємꙋ: „Ѡкꙋдꙋ єси чл҃вче?“\nИ рече ємꙋ Михаил: „Подорожнїи єстем чоловѣкъ“. Рече Авраам:\n„Посѣди у мене, вонийди во дом мой, вечер’ уже єсть, и почїєшъ\nу мене, а завтра пойдешъ, где схочъ“. И воспроcилъ Михаил\nАвраама: „Повѣчъ ми, ꙗкъ тебѣ имѧ, господине?“ Рече [Авра-\nамь]: „Мнѣ єсть имѧ Авраам“. Рече Михаилъ: „Слышах тѧ\nмꙋжа любимаго, ишовъ ємъ до тебе м҃. днїй“.\nТото бесѣдꙋющим имъ и призва Авраам сн҃а своєго Ісаака\nи рече ємꙋ: „Пойди, чадо, приведи тел’ца! трꙋденъ єсть гость\nнш҃ь“. И приведе Ісакъ тел’ца под дꙋбъ великъ зѣло, имѣяй на\nсобѣ вѣтвїи т҃. и слиша Авраам ѿ вѣтвїй глас глаголющъ: „ст҃ъ\nс҃. с҃. Гс҃дь“. Сокрывїй Авраамъ таинꙋ во ср҃дци своємъ и помы-\nшлѧше: „Что хочетъ бити тайна сїа?“ Рече Авраамъ сн҃ꙋ своємꙋ\nІсакꙋ: „Заколѣте три баранки и зварите ихъ, да ꙗми; прїйде\nми радость днесь“. Призва Авраам сн҃а своєго Ісака и рече: „Чадо\nмоє, сн҃ꙋ мой любимїй, востани, налѣй води во умивалницꙋ, да\nумию рꙋки и ноги гостеви нашемꙋ миломꙋ“. Розꙋмѣвъ Авраам",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "section-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          240,
+          508,
+          785,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-heading-line-01",
+            "text": "III. Апокалїпси про загробове житє.",
+            "bbox_xywh": [
+              240,
+              508,
+              785,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "abraham-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          240,
+          676,
+          793,
+          31
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "abraham-heading-line-01",
+            "text": "А. Унґварський рукопис XVIII в. стор. 392—401.",
+            "bbox_xywh": [
+              240,
+              676,
+              793,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "abraham",
+        "kind": "body",
+        "bbox_xywh": [
+          145,
+          751,
+          971,
+          862
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "abraham-line-01",
+            "text": "(Слово ѡ свѧтомъ Авраамѣ, єгда ꙗви сѧ ємꙋ",
+            "bbox_xywh": [
+              145,
+              751,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-02",
+            "text": "архистратигъ Михаилъ). Вонєгда скончаша сѧ днїє ѡцꙋ",
+            "bbox_xywh": [
+              145,
+              787,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-03",
+            "text": "Авраамꙋ, гл҃а Гс҃дь ко архистратигꙋ Михаилꙋ: „Поиди ко Авра-",
+            "bbox_xywh": [
+              145,
+              824,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-04",
+            "text": "амꙋ и реци ємꙋ, да изыйдет ѿ житїа сего и да распорѧдит дом",
+            "bbox_xywh": [
+              145,
+              860,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-05",
+            "text": "свои, что комꙋ, и да наготовит себѣ домовинꙋ ко смерти“.",
+            "bbox_xywh": [
+              145,
+              896,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-06",
+            "text": "Иде Михаилъ ко Авраамꙋ и наиде єго сидѧщаго пред врати",
+            "bbox_xywh": [
+              145,
+              932,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-07",
+            "text": "своими, и поздоровилъ єго Михаилъ. Баше же старїи Авраамъ",
+            "bbox_xywh": [
+              145,
+              968,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-08",
+            "text": "и не познаше, кто єсть. и рече Авраам ємꙋ: „Ѡкꙋдꙋ єси чл҃вче?“",
+            "bbox_xywh": [
+              145,
+              1004,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-09",
+            "text": "И рече ємꙋ Михаил: „Подорожнїи єстем чоловѣкъ“. Рече Авраам:",
+            "bbox_xywh": [
+              145,
+              1040,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-10",
+            "text": "„Посѣди у мене, вонийди во дом мой, вечер’ уже єсть, и почїєшъ",
+            "bbox_xywh": [
+              145,
+              1076,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-11",
+            "text": "у мене, а завтра пойдешъ, где схочъ“. И воспроcилъ Михаил",
+            "bbox_xywh": [
+              145,
+              1113,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-12",
+            "text": "Авраама: „Повѣчъ ми, ꙗкъ тебѣ имѧ, господине?“ Рече [Авра-",
+            "bbox_xywh": [
+              145,
+              1149,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-13",
+            "text": "амь]: „Мнѣ єсть имѧ Авраам“. Рече Михаилъ: „Слышах тѧ",
+            "bbox_xywh": [
+              145,
+              1185,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-14",
+            "text": "мꙋжа любимаго, ишовъ ємъ до тебе м҃. днїй“.",
+            "bbox_xywh": [
+              145,
+              1221,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-15",
+            "text": "Тото бесѣдꙋющим имъ и призва Авраам сн҃а своєго Ісаака",
+            "bbox_xywh": [
+              145,
+              1257,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-16",
+            "text": "и рече ємꙋ: „Пойди, чадо, приведи тел’ца! трꙋденъ єсть гость",
+            "bbox_xywh": [
+              145,
+              1293,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-17",
+            "text": "нш҃ь“. И приведе Ісакъ тел’ца под дꙋбъ великъ зѣло, имѣяй на",
+            "bbox_xywh": [
+              145,
+              1329,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-18",
+            "text": "собѣ вѣтвїи т҃. и слиша Авраам ѿ вѣтвїй глас глаголющъ: „ст҃ъ",
+            "bbox_xywh": [
+              145,
+              1365,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-19",
+            "text": "с҃. с҃. Гс҃дь“. Сокрывїй Авраамъ таинꙋ во ср҃дци своємъ и помы-",
+            "bbox_xywh": [
+              145,
+              1402,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-20",
+            "text": "шлѧше: „Что хочетъ бити тайна сїа?“ Рече Авраамъ сн҃ꙋ своємꙋ",
+            "bbox_xywh": [
+              145,
+              1438,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-21",
+            "text": "Ісакꙋ: „Заколѣте три баранки и зварите ихъ, да ꙗми; прїйде",
+            "bbox_xywh": [
+              145,
+              1474,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-22",
+            "text": "ми радость днесь“. Призва Авраам сн҃а своєго Ісака и рече: „Чадо",
+            "bbox_xywh": [
+              145,
+              1510,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-23",
+            "text": "моє, сн҃ꙋ мой любимїй, востани, налѣй води во умивалницꙋ, да",
+            "bbox_xywh": [
+              145,
+              1546,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "abraham-line-24",
+            "text": "умию рꙋки и ноги гостеви нашемꙋ миломꙋ“. Розꙋмѣвъ Авраам",
+            "bbox_xywh": [
+              145,
+              1582,
+              971,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00156",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "abraham-line-01",
+        "reading": "(Слово ѡ свѧтомъ Авраамѣ, єгда ꙗви сѧ ємꙋ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-02",
+        "reading": "архистратигъ Михаилъ). Вонєгда скончаша сѧ днїє ѡцꙋ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-03",
+        "reading": "Авраамꙋ, гл҃а Гс҃дь ко архистратигꙋ Михаилꙋ: „Поиди ко Авра-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-04",
+        "reading": "амꙋ и реци ємꙋ, да изыйдет ѿ житїа сего и да распорѧдит дом",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-05",
+        "reading": "свои, что комꙋ, и да наготовит себѣ домовинꙋ ко смерти“.",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-06",
+        "reading": "Иде Михаилъ ко Авраамꙋ и наиде єго сидѧщаго пред врати",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-07",
+        "reading": "своими, и поздоровилъ єго Михаилъ. Баше же старїи Авраамъ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-08",
+        "reading": "и не познаше, кто єсть. и рече Авраам ємꙋ: „Ѡкꙋдꙋ єси чл҃вче?“",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-09",
+        "reading": "И рече ємꙋ Михаил: „Подорожнїи єстем чоловѣкъ“. Рече Авраам:",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-10",
+        "reading": "„Посѣди у мене, вонийди во дом мой, вечер’ уже єсть, и почїєшъ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-11",
+        "reading": "у мене, а завтра пойдешъ, где схочъ“. И воспроcилъ Михаил",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-12",
+        "reading": "Авраама: „Повѣчъ ми, ꙗкъ тебѣ имѧ, господине?“ Рече [Авра-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-13",
+        "reading": "амь]: „Мнѣ єсть имѧ Авраам“. Рече Михаилъ: „Слышах тѧ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-14",
+        "reading": "мꙋжа любимаго, ишовъ ємъ до тебе м҃. днїй“.",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-15",
+        "reading": "Тото бесѣдꙋющим имъ и призва Авраам сн҃а своєго Ісаака",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-16",
+        "reading": "и рече ємꙋ: „Пойди, чадо, приведи тел’ца! трꙋденъ єсть гость",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-17",
+        "reading": "нш҃ь“. И приведе Ісакъ тел’ца под дꙋбъ великъ зѣло, имѣяй на",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-18",
+        "reading": "собѣ вѣтвїи т҃. и слиша Авраам ѿ вѣтвїй глас глаголющъ: „ст҃ъ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-19",
+        "reading": "с҃. с҃. Гс҃дь“. Сокрывїй Авраамъ таинꙋ во ср҃дци своємъ и помы-",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-20",
+        "reading": "шлѧше: „Что хочетъ бити тайна сїа?“ Рече Авраамъ сн҃ꙋ своємꙋ",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-21",
+        "reading": "Ісакꙋ: „Заколѣте три баранки и зварите ихъ, да ꙗми; прїйде",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-22",
+        "reading": "ми радость днесь“. Призва Авраам сн҃а своєго Ісака и рече: „Чадо",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-23",
+        "reading": "моє, сн҃ꙋ мой любимїй, востани, налѣй води во умивалницꙋ, да",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "abraham-line-24",
+        "reading": "умию рꙋки и ноги гостеви нашемꙋ миломꙋ“. Розꙋмѣвъ Авраам",
+        "reason": "Provisional visual reading: exact historic glyphs, titla, superscripts and punctuation need independent enlarged comparison."
+      }
+    ],
+    "language_annotation": {
+      "annotator": "GPT-6.2",
+      "date": "2026-11-25",
+      "status": "provisional",
+      "scope": "First-reading code-point language/script spans on all linguistic lines.",
+      "policy": "cu Church Slavonic; uk Ukrainian including tentative historical Ruthenian; la Latin editorial insertions. Numeric-only folio/sheet numbers untagged. Historic language attribution uncertain.",
+      "notes": "Abraham narrative has vernacular syntax and lexicon (єстем, подорожнїи, у мене, завтра, баранки); tentative historical Ukrainian with Church Slavonic formulae. No front-side folio numeral visible; faint show-through excluded."
+    }
+  }
+}
