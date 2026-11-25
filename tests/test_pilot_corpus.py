@@ -194,6 +194,7 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertEqual(check_draft_offline(source, payload), reading["raw_response"].splitlines())
         xml = render_pilot_tei(payload, 1190, 1800)
         self.assertIn("embedded_pdf_ocr", xml)
+        self.assertNotIn("third-party OCR for this page", xml)
         for key, value in [
             ("source_original_ocr_visible", False),
             ("peer_readings_visible", True),

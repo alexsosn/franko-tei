@@ -466,7 +466,7 @@ def render_pilot_tei(payload, image_width, image_height, heading_overlay=None):
         exposure = draft['external_text_exposure']
         _sub(enc, 'p', (
             'Single-context, agent_unverified NONBLIND first working reading. '
-            'Before freeze, third-party OCR for this page had been visible in the same '
+            'Before freeze, OCR for this page had been visible in the same '
             'conversation; input exposure: ' + exposure['kind'] + '; ' +
             exposure['timing'] + '; ' + exposure['url'] + '. ' + exposure['note'] +
             ' Exact physical line reconstruction and valid XML do not verify printed glyphs.'
