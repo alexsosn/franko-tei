@@ -17,7 +17,7 @@
     "context_independence": "single-working-draft",
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Read pinned scan directly, no OCR or peer text for these scans accessed. Estimated line geometry and provisional historical typography; all textual rows explicitly uncertain. No verified or diplomatic-completeness claim.",
+    "instructions": "Read pinned scan directly, no OCR or peer text for these scans accessed. Estimated line geometry and provisional historical typography; all textual rows explicitly uncertain. No verified or diplomatic-completeness claim. Adversarial pass corrected note region kind, source marker links, Latin shelfmark/numeral spans or visible numeral/mark readings where applicable; initial text remains in branch history.",
     "raw_response": "VII. Свята Ирина.\nВасиліянський Пролог ч. XIV, стор. 152—153.\nСтих: Мечем оумръши и поживши\nстранно, и мирно оумръла еси Ирино!\nИрина посѣчена бывши безъ ѡбращанїа\nи оумре въ патыи.\nТа баше единородна соущи Ликинїа Василиска и Ликинїа\nмт҃ре, ѿ града македонскаго, Пиналопїи пръвѣе ѿ родителеи име-\nновавши са. баше же тѣлом лѣпа и красотою многыа перешед-\nшїа. на высоцѣ столпѣ пребываше, егоже ѡц҃ь еа създалъ баше,\nсъ ѿроковицами прекрасными тринадесятїю. много и неоскѫдно\nизобилованїе имѫщїа богатество, прст҃олъ и трапеза и свѣщникъ\nзлатом искованыи баше же, вънегда ѡц҃ь еа създа стлъпъ лѣ-\nтом шестым. Апелїаном нѣким старцем наказема¹), его же\nоучена Ликинїа оучилъ са баше. видѣвши голѫба въшедша и но-\nсаща сѫщецъ масличенъ и на трапезѫ положившаго, таже пакы\nвидѣ ѡрла несѫща вѣнецъ ѿ различных цвѣтецъ, и на трапезѫ\nположившаго. и пакы ѿ иного ѡконца гаврана въшедша, носаща\nзмїю и положившаго на трапезѫ. недооумѣваюши са еи и по-\nмышлѣющи еи, что бѫдетъ виденїе и что вещь явлѣетъ, ста-\nрецъ же Апелїанъ то исказа, яко голѫбь ест наказанїе нравѫ,\nа сѫщецъ масличныи назнаменанїе вещем и ѡбрѣстїе кръщенїю;\nѡрел же цр҃а горам сѫщаго вѣнца ради, еже ѿ избранных еа\nи добрых назнаменѫа съѡдоленїе. гавран иже съ змїею скръбь\nи напасть являюще. и вся елика то исповѣда подвигъ ко мч҃нїю\n¹) На марґ. дописано пізнїйшою рукою: оучима.",
     "coverage": {
       "entire_image_inspected": true,
@@ -68,6 +68,14 @@
               {
                 "text_version": "gpt62-v5s00034-20261125",
                 "start": 0,
+                "end": 4,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 4,
                 "end": 17,
                 "language": "uk",
                 "script": "Cyrl",
@@ -102,6 +110,22 @@
               {
                 "text_version": "gpt62-v5s00034-20261125",
                 "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 24,
+                "end": 27,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 27,
                 "end": 43,
                 "language": "uk",
                 "script": "Cyrl",
@@ -622,7 +646,7 @@
       },
       {
         "id": "footnote-5",
-        "kind": "footnote",
+        "kind": "note",
         "bbox_xywh": [
           185,
           1667,
@@ -645,6 +669,22 @@
               {
                 "text_version": "gpt62-v5s00034-20261125",
                 "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 38,
+                "end": 44,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00034-20261125",
+                "start": 44,
                 "end": 45,
                 "language": "uk",
                 "script": "Cyrl",
@@ -785,6 +825,14 @@
         "line_id": "footnote-5-line-01",
         "reading": "¹) На марґ. дописано пізнїйшою рукою: оучима.",
         "reason": "Provisional direct reading: historical spelling, punctuation and embedded manuscript forms require source reinspection."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "body-4-line-08",
+        "marker_text": "¹)",
+        "marker_start": 44,
+        "note_region_id": "footnote-5"
       }
     ]
   }
