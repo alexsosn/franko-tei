@@ -1,0 +1,869 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 21,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00021.jpg",
+  "source_image_sha256": "9794066f5bdbe2647e2b1be4236f729722b7faf0f9e34d6d7d9979c57d667f70",
+  "reading": {
+    "reader_id": "gpt62-v5s00021-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-021-030-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Visual first-pass reading of this specific pinned scan; no embedded OCR or peer reading for this page accessed. Retain historical forms, physical lines, separate editorial and manuscript text, observed folio only. Prior context had OCR exposure for V/13–14, no blind independence claim. Geometry approximate; accents and supralinear letters not fully recovered. Agent-unverified.",
+    "raw_response": "II. Святий Іван Хреститель.\nРукопис Народного Дому у Львові ч. 67, стор. 204—206.\nМс҃ца авгоуста въ кѳ҃. ст҃го славнаго пр҃рка и\nпрд҃тчи и крⷭтителѧ гн҃ѧ іѡанна Слово на оусѣкно-\nвеніе чⷵтъ его главы. Бл҃ви ѡч҃е.\nРодив'ши сѧ і҃соу въ виѳлеѡмѣ іоудейстѣмъ възисканіе\nсътвори ирод четверовластникъ, якож би погуби рождшее сѧ\nѡтроча. Възвѣсти ж агг҃лъ гн҃ь къ іѡсифѹ, яко в'зати ѡтроча\nи мт҃рь его и ити въ египет. и сътвори тако. и пребывающѹ\nемѹ съ ѡтрочатем и съ мт҃ріею его, и не ѡбрѣтаемѹ і҃соу иро-\nдом повелѣ дѣти сѹщаѧ избити въ виѳлеѡмѣ. елисаветъ же\nвземши сн҃а своего іѡанна бѣжаше в' подгоріе. ирод же искавъ\nіѡанна и не обрѣте его, и поусти к' захаріи ѡц҃ѹ его гл҃а: где\nесть сн҃ъ твой и гдѣ еси скрылъ? приведи ми его. или не вѣси,\nяко кров твоа под рѹкою моею есть? рече же захаріа: не вѣмъ\nгде есть сн҃ъ мой, азъ бо слоужитель есмь г҃а б҃а. слышав'шимъ\nіродъ посла оубійци своѧ оуже противѹ свѣтѹ и заклаша захарію\nвъ ст҃лищи бж҃іи.\nВъ оутрѣй же дн҃ь прійдоша вси людіе въ ст҃лище и ноу-\nжахѹ захарію в' час цѣлованіа. коснящѹ же емоу дръзноувше\nнѣціи ѡ них в'нидоша въ ст҃лище, и се глас быс҃т гл҃а: захаріа\nоубіенъ бысть. сътвориша ж вси людіе плач и жалость велику до\nседми дн҃ій и седми нощій. бѧше же кров захаріина съгоустила\nсѧ оу трѣб'ника аки камень, а тѣло не ѡбрѣте сѧ никакоже.\nИ внегда идѹщи елисавети под горною с' сн҃ом своим, и\nтроудны изнемогши бѧше, но и гонящих мнѧше сѧ по ней нѣ-\nПАМЯТКИ VI.\n2",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative double rule",
+          "bbox_xywh": [
+            505,
+            619,
+            130,
+            18
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "work",
+        "kind": "heading",
+        "bbox_xywh": [
+          245,
+          542,
+          650,
+          54
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "work-line-01",
+            "text": "II. Святий Іван Хреститель.",
+            "bbox_xywh": [
+              245,
+              542,
+              650,
+              54
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 2,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "source",
+        "kind": "other",
+        "bbox_xywh": [
+          102,
+          700,
+          945,
+          47
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "source-line-01",
+            "text": "Рукопис Народного Дому у Львові ч. 67, стор. 204—206.",
+            "bbox_xywh": [
+              102,
+              700,
+              945,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "incipit",
+        "kind": "heading",
+        "bbox_xywh": [
+          65,
+          775,
+          1020,
+          108
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "incipit-line-01",
+            "text": "Мс҃ца авгоуста въ кѳ҃. ст҃го славнаго пр҃рка и",
+            "bbox_xywh": [
+              65,
+              775,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "incipit-line-02",
+            "text": "прд҃тчи и крⷭтителѧ гн҃ѧ іѡанна Слово на оусѣкно-",
+            "bbox_xywh": [
+              65,
+              811,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "incipit-line-03",
+            "text": "веніе чⷵтъ его главы. Бл҃ви ѡч҃е.",
+            "bbox_xywh": [
+              65,
+              847,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-1",
+        "kind": "body",
+        "bbox_xywh": [
+          65,
+          890,
+          1020,
+          475
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-1-line-01",
+            "text": "Родив'ши сѧ і҃соу въ виѳлеѡмѣ іоудейстѣмъ възисканіе",
+            "bbox_xywh": [
+              65,
+              890,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-02",
+            "text": "сътвори ирод четверовластникъ, якож би погуби рождшее сѧ",
+            "bbox_xywh": [
+              65,
+              927,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-03",
+            "text": "ѡтроча. Възвѣсти ж агг҃лъ гн҃ь къ іѡсифѹ, яко в'зати ѡтроча",
+            "bbox_xywh": [
+              65,
+              963,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-04",
+            "text": "и мт҃рь его и ити въ египет. и сътвори тако. и пребывающѹ",
+            "bbox_xywh": [
+              65,
+              1000,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-05",
+            "text": "емѹ съ ѡтрочатем и съ мт҃ріею его, и не ѡбрѣтаемѹ і҃соу иро-",
+            "bbox_xywh": [
+              65,
+              1036,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-06",
+            "text": "дом повелѣ дѣти сѹщаѧ избити въ виѳлеѡмѣ. елисаветъ же",
+            "bbox_xywh": [
+              65,
+              1073,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-07",
+            "text": "вземши сн҃а своего іѡанна бѣжаше в' подгоріе. ирод же искавъ",
+            "bbox_xywh": [
+              65,
+              1109,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-08",
+            "text": "іѡанна и не обрѣте его, и поусти к' захаріи ѡц҃ѹ его гл҃а: где",
+            "bbox_xywh": [
+              65,
+              1146,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-09",
+            "text": "есть сн҃ъ твой и гдѣ еси скрылъ? приведи ми его. или не вѣси,",
+            "bbox_xywh": [
+              65,
+              1182,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-10",
+            "text": "яко кров твоа под рѹкою моею есть? рече же захаріа: не вѣмъ",
+            "bbox_xywh": [
+              65,
+              1219,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-11",
+            "text": "где есть сн҃ъ мой, азъ бо слоужитель есмь г҃а б҃а. слышав'шимъ",
+            "bbox_xywh": [
+              65,
+              1255,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-12",
+            "text": "іродъ посла оубійци своѧ оуже противѹ свѣтѹ и заклаша захарію",
+            "bbox_xywh": [
+              65,
+              1292,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-13",
+            "text": "въ ст҃лищи бж҃іи.",
+            "bbox_xywh": [
+              65,
+              1328,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-2",
+        "kind": "body",
+        "bbox_xywh": [
+          65,
+          1366,
+          1020,
+          210
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-2-line-01",
+            "text": "Въ оутрѣй же дн҃ь прійдоша вси людіе въ ст҃лище и ноу-",
+            "bbox_xywh": [
+              65,
+              1366,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-02",
+            "text": "жахѹ захарію в' час цѣлованіа. коснящѹ же емоу дръзноувше",
+            "bbox_xywh": [
+              65,
+              1401,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-03",
+            "text": "нѣціи ѡ них в'нидоша въ ст҃лище, и се глас быс҃т гл҃а: захаріа",
+            "bbox_xywh": [
+              65,
+              1436,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-04",
+            "text": "оубіенъ бысть. сътвориша ж вси людіе плач и жалость велику до",
+            "bbox_xywh": [
+              65,
+              1471,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-05",
+            "text": "седми дн҃ій и седми нощій. бѧше же кров захаріина съгоустила",
+            "bbox_xywh": [
+              65,
+              1506,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-06",
+            "text": "сѧ оу трѣб'ника аки камень, а тѣло не ѡбрѣте сѧ никакоже.",
+            "bbox_xywh": [
+              65,
+              1541,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-3",
+        "kind": "body",
+        "bbox_xywh": [
+          65,
+          1580,
+          1020,
+          78
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-3-line-01",
+            "text": "И внегда идѹщи елисавети под горною с' сн҃ом своим, и",
+            "bbox_xywh": [
+              65,
+              1580,
+              1020,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-02",
+            "text": "троудны изнемогши бѧше, но и гонящих мнѧше сѧ по ней нѣ-",
+            "bbox_xywh": [
+              65,
+              1619,
+              1020,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "series-signature",
+        "kind": "other",
+        "bbox_xywh": [
+          145,
+          1670,
+          160,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-signature-line-01",
+            "text": "ПАМЯТКИ VI.",
+            "bbox_xywh": [
+              145,
+              1670,
+              160,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 8,
+                "end": 10,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00021-20261125",
+                "start": 10,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "printer-signature",
+        "kind": "other",
+        "bbox_xywh": [
+          972,
+          1669,
+          32,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "printer-signature-line-01",
+            "text": "2",
+            "bbox_xywh": [
+              972,
+              1669,
+              32,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "incipit-line-01",
+        "reading": "Мс҃ца авгоуста въ кѳ҃. ст҃го славнаго пр҃рка и",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "incipit-line-02",
+        "reading": "прд҃тчи и крⷭтителѧ гн҃ѧ іѡанна Слово на оусѣкно-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "incipit-line-03",
+        "reading": "веніе чⷵтъ его главы. Бл҃ви ѡч҃е.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-01",
+        "reading": "Родив'ши сѧ і҃соу въ виѳлеѡмѣ іоудейстѣмъ възисканіе",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-02",
+        "reading": "сътвори ирод четверовластникъ, якож би погуби рождшее сѧ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-03",
+        "reading": "ѡтроча. Възвѣсти ж агг҃лъ гн҃ь къ іѡсифѹ, яко в'зати ѡтроча",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-04",
+        "reading": "и мт҃рь его и ити въ египет. и сътвори тако. и пребывающѹ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-05",
+        "reading": "емѹ съ ѡтрочатем и съ мт҃ріею его, и не ѡбрѣтаемѹ і҃соу иро-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-06",
+        "reading": "дом повелѣ дѣти сѹщаѧ избити въ виѳлеѡмѣ. елисаветъ же",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-07",
+        "reading": "вземши сн҃а своего іѡанна бѣжаше в' подгоріе. ирод же искавъ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-08",
+        "reading": "іѡанна и не обрѣте его, и поусти к' захаріи ѡц҃ѹ его гл҃а: где",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-09",
+        "reading": "есть сн҃ъ твой и гдѣ еси скрылъ? приведи ми его. или не вѣси,",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-10",
+        "reading": "яко кров твоа под рѹкою моею есть? рече же захаріа: не вѣмъ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-11",
+        "reading": "где есть сн҃ъ мой, азъ бо слоужитель есмь г҃а б҃а. слышав'шимъ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-12",
+        "reading": "іродъ посла оубійци своѧ оуже противѹ свѣтѹ и заклаша захарію",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-13",
+        "reading": "въ ст҃лищи бж҃іи.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-01",
+        "reading": "Въ оутрѣй же дн҃ь прійдоша вси людіе въ ст҃лище и ноу-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-02",
+        "reading": "жахѹ захарію в' час цѣлованіа. коснящѹ же емоу дръзноувше",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-03",
+        "reading": "нѣціи ѡ них в'нидоша въ ст҃лище, и се глас быс҃т гл҃а: захаріа",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-04",
+        "reading": "оубіенъ бысть. сътвориша ж вси людіе плач и жалость велику до",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-05",
+        "reading": "седми дн҃ій и седми нощій. бѧше же кров захаріина съгоустила",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-06",
+        "reading": "сѧ оу трѣб'ника аки камень, а тѣло не ѡбрѣте сѧ никакоже.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-3-line-01",
+        "reading": "И внегда идѹщи елисавети под горною с' сн҃ом своим, и",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-3-line-02",
+        "reading": "троудны изнемогши бѧше, но и гонящих мнѧше сѧ по ней нѣ-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      }
+    ],
+    "source_note_links": []
+  }
+}

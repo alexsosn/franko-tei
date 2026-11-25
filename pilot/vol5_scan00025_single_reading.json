@@ -1,0 +1,605 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 25,
+  "printed_page_observed": "13",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00025.jpg",
+  "source_image_sha256": "139d0ab4479c79ccb729fa39dfb326d2a8aafb1c1ce704e2b15e1a1be57f03b4",
+  "reading": {
+    "reader_id": "gpt62-v5s00025-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-021-030-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Visual first-pass reading of this specific pinned scan; no embedded OCR or peer reading for this page accessed. Retain historical forms, physical lines, separate editorial and manuscript text, observed folio only. Prior context had OCR exposure for V/13–14, no blind independence claim. Geometry approximate; accents and supralinear letters not fully recovered. Agent-unverified.",
+    "raw_response": "13\nдою помръзлою оусѣчена бысть. Ѡ водо бл҃свеннаѧ, очищающи\nгрѣхы. Ѡ водо острѣйша меча ѡсѣкающи главоу на обличеніе\nневѣрным. Ѡ гробе ст҃го мѹжа въ храмѣ гн҃и съкровенъ сый, и\nгробъ же нечестивыхъ под землею плоти не пріемлѧа, но неѧ-\nсытми и чръвми и птицами всѧкими из'ядены, а дроугыѧ не-\nвидимы водою быша. Ѡ гробе нечестивых всего трѹса и скрежета\nзѹбнаго плъне.\nОусѣченъ же бысть ст҃ый іѡанъ иродіады ради иродом\nцр҃емъ мс҃ца авгоуста въ кѳ҃. цр҃ствоующѹ иродѹ, а в' насъ\nцр҃ствѹющѹ г҃у нашемоу і҃с х҃оу, емоуже слава и дръжава съ ѡц҃ем\nи ст҃ым дх҃омъ нн҃ѣ и прⷭно и въ вѣкы вѣкомъ. аминь.\nСе житіє Івана Хрестителя основане в переважній части на\nвідомім апокріфічнім євангелію Якова (пор. Памятки т. II, стор.\n69, 107, 150).\nОріґінальних тут лише кілька рисів, таких як битє Івана Іро-\nдом та повішенє його. Оповіданє про смерть Іродіяди, якій лїд на\nріцї відрізав голову, див. також Памятки II, стор. 340. Тамже стор.\n358—362 була надрукована частина житія Марії Магдалини, яке\nв повній формі передруковано висше як перша статя сього тома.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative double rule after editorial remarks",
+          "bbox_xywh": [
+            450,
+            1020,
+            250,
+            35
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1020,
+          112,
+          50,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "13",
+            "bbox_xywh": [
+              1020,
+              112,
+              50,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "body-1",
+        "kind": "body",
+        "bbox_xywh": [
+          65,
+          184,
+          1020,
+          254
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-1-line-01",
+            "text": "дою помръзлою оусѣчена бысть. Ѡ водо бл҃свеннаѧ, очищающи",
+            "bbox_xywh": [
+              65,
+              184,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-02",
+            "text": "грѣхы. Ѡ водо острѣйша меча ѡсѣкающи главоу на обличеніе",
+            "bbox_xywh": [
+              65,
+              220,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-03",
+            "text": "невѣрным. Ѡ гробе ст҃го мѹжа въ храмѣ гн҃и съкровенъ сый, и",
+            "bbox_xywh": [
+              65,
+              257,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-04",
+            "text": "гробъ же нечестивыхъ под землею плоти не пріемлѧа, но неѧ-",
+            "bbox_xywh": [
+              65,
+              293,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-05",
+            "text": "сытми и чръвми и птицами всѧкими из'ядены, а дроугыѧ не-",
+            "bbox_xywh": [
+              65,
+              329,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-06",
+            "text": "видимы водою быша. Ѡ гробе нечестивых всего трѹса и скрежета",
+            "bbox_xywh": [
+              65,
+              365,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-07",
+            "text": "зѹбнаго плъне.",
+            "bbox_xywh": [
+              65,
+              402,
+              1020,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 14,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-2",
+        "kind": "body",
+        "bbox_xywh": [
+          65,
+          441,
+          1020,
+          148
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-2-line-01",
+            "text": "Оусѣченъ же бысть ст҃ый іѡанъ иродіады ради иродом",
+            "bbox_xywh": [
+              65,
+              441,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-02",
+            "text": "цр҃емъ мс҃ца авгоуста въ кѳ҃. цр҃ствоующѹ иродѹ, а в' насъ",
+            "bbox_xywh": [
+              65,
+              478,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-03",
+            "text": "цр҃ствѹющѹ г҃у нашемоу і҃с х҃оу, емоуже слава и дръжава съ ѡц҃ем",
+            "bbox_xywh": [
+              65,
+              515,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-04",
+            "text": "и ст҃ым дх҃омъ нн҃ѣ и прⷭно и въ вѣкы вѣкомъ. аминь.",
+            "bbox_xywh": [
+              65,
+              552,
+              1020,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-1",
+        "kind": "other",
+        "bbox_xywh": [
+          65,
+          616,
+          1020,
+          105
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-1-line-01",
+            "text": "Се житіє Івана Хрестителя основане в переважній части на",
+            "bbox_xywh": [
+              65,
+              616,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-02",
+            "text": "відомім апокріфічнім євангелію Якова (пор. Памятки т. II, стор.",
+            "bbox_xywh": [
+              65,
+              651,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 54,
+                "end": 56,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 56,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-03",
+            "text": "69, 107, 150).",
+            "bbox_xywh": [
+              65,
+              686,
+              1020,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-2",
+        "kind": "other",
+        "bbox_xywh": [
+          65,
+          725,
+          1020,
+          190
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-2-line-01",
+            "text": "Оріґінальних тут лише кілька рисів, таких як битє Івана Іро-",
+            "bbox_xywh": [
+              65,
+              725,
+              1020,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-02",
+            "text": "дом та повішенє його. Оповіданє про смерть Іродіяди, якій лїд на",
+            "bbox_xywh": [
+              65,
+              763,
+              1020,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-03",
+            "text": "ріцї відрізав голову, див. також Памятки II, стор. 340. Тамже стор.",
+            "bbox_xywh": [
+              65,
+              801,
+              1020,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 41,
+                "end": 43,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 43,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-04",
+            "text": "358—362 була надрукована частина житія Марії Магдалини, яке",
+            "bbox_xywh": [
+              65,
+              839,
+              1020,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-05",
+            "text": "в повній формі передруковано висше як перша статя сього тома.",
+            "bbox_xywh": [
+              65,
+              877,
+              1020,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00025-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "body-1-line-01",
+        "reading": "дою помръзлою оусѣчена бысть. Ѡ водо бл҃свеннаѧ, очищающи",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-02",
+        "reading": "грѣхы. Ѡ водо острѣйша меча ѡсѣкающи главоу на обличеніе",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-03",
+        "reading": "невѣрным. Ѡ гробе ст҃го мѹжа въ храмѣ гн҃и съкровенъ сый, и",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-04",
+        "reading": "гробъ же нечестивыхъ под землею плоти не пріемлѧа, но неѧ-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-05",
+        "reading": "сытми и чръвми и птицами всѧкими из'ядены, а дроугыѧ не-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-06",
+        "reading": "видимы водою быша. Ѡ гробе нечестивых всего трѹса и скрежета",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-1-line-07",
+        "reading": "зѹбнаго плъне.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-01",
+        "reading": "Оусѣченъ же бысть ст҃ый іѡанъ иродіады ради иродом",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-02",
+        "reading": "цр҃емъ мс҃ца авгоуста въ кѳ҃. цр҃ствоующѹ иродѹ, а в' насъ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-03",
+        "reading": "цр҃ствѹющѹ г҃у нашемоу і҃с х҃оу, емоуже слава и дръжава съ ѡц҃ем",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-2-line-04",
+        "reading": "и ст҃ым дх҃омъ нн҃ѣ и прⷭно и въ вѣкы вѣкомъ. аминь.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      }
+    ],
+    "source_note_links": []
+  }
+}
