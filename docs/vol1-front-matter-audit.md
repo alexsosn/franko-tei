@@ -14,7 +14,8 @@ Refs #159. Original images at immutable asset revision [e871f325](https://github
 | 8 | Commission statement, heading and two notes | Printed text candidate, no visible folio |
 | 9 | Commission statement continuation | Printed folio II |
 | 10 | Opening of preface, section I | No visible folio; footer and printer signature 1 are not folio |
-| 11–19 | Not yet inspected in this batch | Pending |
+| 11–14 | Preface, printed II–V (separate numbering from commission statement) | Printed text candidates |
+| 15–19 | Not yet inspected in this batch | Pending |
 
 ## Non-edition text and markings
 
