@@ -45,7 +45,16 @@
               37
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i181-first-image-20261125"
+              }
+            ]
           }
         ]
       },
@@ -152,7 +161,7 @@
                 "end": 55,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -173,7 +182,7 @@
                 "end": 64,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -194,7 +203,7 @@
                 "end": 64,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -215,7 +224,7 @@
                 "end": 62,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -236,7 +245,7 @@
                 "end": 59,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -257,7 +266,7 @@
                 "end": 15,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -291,7 +300,7 @@
                 "end": 30,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -385,9 +394,25 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i181-first-image-20261125"
+              },
+              {
+                "start": 38,
+                "end": 42,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i181-first-image-20261125"
+              },
+              {
+                "start": 42,
                 "end": 61,
-                "language": null,
-                "script": null,
+                "language": "cu",
+                "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
@@ -485,7 +510,7 @@
                 "end": 56,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -519,7 +544,7 @@
                 "end": 45,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": true,
+                "uncertain": false,
                 "text_version": "gpt62-i181-first-image-20261125"
               }
             ]
@@ -550,8 +575,16 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i181-first-image-20261125"
+              },
+              {
+                "start": 13,
                 "end": 54,
-                "language": null,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
                 "text_version": "gpt62-i181-first-image-20261125"
@@ -1001,5 +1034,14 @@
         "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "f5ca30c1a3ab9fac78ffe28ecb63f16b18967fa7",
+    "source_record_blob": "0db0a3fba707abbab169cdb783533ce453ed3394",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Contextual annotation of frozen candidate based on previously inspected original scan and exact reading text; prior annotations visible; not independent textual review. Historical recension not assigned. Ambiguous Russian/Slavonic variant language unresolved on I/182."
   }
 }
