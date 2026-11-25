@@ -1,0 +1,444 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 3,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00003.jpg",
+  "source_image_sha256": "5809af8f29bfb7160c5e8314c33f7202254d68aa621828084e51d0f9d6356ea7",
+  "reading": {
+    "reader_id": "gpt62-ii-3-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00001-00010-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native scan, no OCR/peer text for this page. Printed edition only; subsequent stamps and annotations documented as exclusions. Physical lines and estimated geometry; contextual language spans; unverified.",
+    "raw_response": "CODEX APOCRYPHUS\ne manuscriptis ukraino-russicis collectus opera Dr Joannis Franko.\nVol. II, Evangelia apocrypha.\nАПОКРІФИ І ЛЄҐЕНДИ\nЗ УКРАЇНСЬКИХ РУКОПИСІВ\nзібрав, упорядкував і пояснив\nДр. Іван Франко.\nТОМ II.\nАпокріфи новозавітні.\nА. АПОКРІФІЧНІ ЄВАНГЕЛИЯ.\nУ Львові, 1899.\nНакладом Наукового Товариства імени Шевченка.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            240,
+            10,
+            120,
+            80
+          ],
+          "description": "Later handwritten accession mark 53."
+        },
+        {
+          "bbox_xywh": [
+            835,
+            19,
+            330,
+            80
+          ],
+          "description": "Crossed-out handwritten inventory number, apparently Nr. inw. 223; not printed text."
+        },
+        {
+          "bbox_xywh": [
+            420,
+            1320,
+            295,
+            126
+          ],
+          "description": "Later Polish oval library stamp: BIBLJOTEKA SEMINARJUM / UNIW. J. K. / WE LWOWIE / partially faded lower line."
+        },
+        {
+          "bbox_xywh": [
+            710,
+            1440,
+            350,
+            180
+          ],
+          "description": "Faded later oval stamp; illegible in part."
+        },
+        {
+          "bbox_xywh": [
+            120,
+            282,
+            940,
+            22
+          ],
+          "description": "Decorative rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "latin-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          130,
+          165,
+          930,
+          125
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "latin-title-line-01",
+            "text": "CODEX APOCRYPHUS",
+            "bbox_xywh": [
+              290,
+              165,
+              620,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-02",
+            "text": "e manuscriptis ukraino-russicis collectus opera Dr Joannis Franko.",
+            "bbox_xywh": [
+              130,
+              214,
+              930,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-03",
+            "text": "Vol. II, Evangelia apocrypha.",
+            "bbox_xywh": [
+              395,
+              250,
+              410,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 5,
+                "end": 7,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 7,
+                "end": 29,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          120,
+          426,
+          950,
+          258
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-line-01",
+            "text": "АПОКРІФИ І ЛЄҐЕНДИ",
+            "bbox_xywh": [
+              120,
+              426,
+              950,
+              152
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "title-line-02",
+            "text": "З УКРАЇНСЬКИХ РУКОПИСІВ",
+            "bbox_xywh": [
+              240,
+              620,
+              715,
+              64
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editor",
+        "kind": "other",
+        "bbox_xywh": [
+          320,
+          766,
+          560,
+          166
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editor-line-01",
+            "text": "зібрав, упорядкував і пояснив",
+            "bbox_xywh": [
+              390,
+              766,
+              410,
+              45
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editor-line-02",
+            "text": "Др. Іван Франко.",
+            "bbox_xywh": [
+              320,
+              837,
+              560,
+              95
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          480,
+          1047,
+          235,
+          53
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "ТОМ II.",
+            "bbox_xywh": [
+              480,
+              1047,
+              235,
+              53
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 4,
+                "end": 6,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 6,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "subtitle",
+        "kind": "heading",
+        "bbox_xywh": [
+          285,
+          1180,
+          620,
+          122
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "subtitle-line-01",
+            "text": "Апокріфи новозавітні.",
+            "bbox_xywh": [
+              285,
+              1180,
+              620,
+              55
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "subtitle-line-02",
+            "text": "А. АПОКРІФІЧНІ ЄВАНГЕЛИЯ.",
+            "bbox_xywh": [
+              350,
+              1254,
+              490,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imprint",
+        "kind": "other",
+        "bbox_xywh": [
+          210,
+          1440,
+          780,
+          147
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "imprint-line-01",
+            "text": "У Львові, 1899.",
+            "bbox_xywh": [
+              450,
+              1440,
+              300,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "imprint-line-02",
+            "text": "Накладом Наукового Товариства імени Шевченка.",
+            "bbox_xywh": [
+              210,
+              1535,
+              780,
+              52
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-3-image-20261125",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "title-line-01",
+        "reading": "ЛЄҐЕНДИ",
+        "reason": "Historical display-type letter/diacritic reading provisional; no normalization."
+      }
+    ]
+  }
+}
