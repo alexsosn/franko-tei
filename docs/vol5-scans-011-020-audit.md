@@ -6,13 +6,13 @@ Source: [native images at pinned revision](https://github.com/alexsosn/franko-te
 |---|---|---|
 | 11 | unnumbered | Existing preface draft retained unchanged |
 | 12 | unnumbered | Blank verso with reverse-side show-through; no new edition text |
-| 13 | 1 | Opening of Life of Mary Magdalene; reading outstanding |
-| 14 | 2 | Continuation; reading outstanding |
-| 15–19 | 3–7 | Five new agent_unverified drafts, 41 body rows each |
-| 20 | 8 | New agent_unverified draft, 37 body rows; end of work |
+| 13 | 1 | Opening of Life of Mary Magdalene, 25 Church Slavonic rows, Ukrainian headings and signature, folio |
+| 14 | 2 | 41 body rows and folio |
+| 15–19 | 3–7 | 41 body rows each |
+| 20 | 8 | 37 body rows; end of work |
 
-The embedded OCR for V/13–14 was inspected in this context and is visibly corrupted. The current exposed-draft validator only accepts external OCR exposure with source_original_ocr_visible=false, so these two pages are not falsely classified as image-only readings. Prefer a fresh image-only context for those pages; a future validator change to support embedded-OCR exposure would require its own tests. No OCR was accessed for V/15–20 themselves; adjacent-page exposure is stated in each reading's instructions. No claim of blind context independence.
+V/13–14 have explicit embedded-PDF-OCR exposure provenance: the text layer was retrieved before the visual readings. The original validator refused this truthful state; regression test commit c4c6cc9 failed CI, and a narrowly scoped change in d85ccf2 allows the existing exposed-draft schema to distinguish embedded OCR (original=true, peer=false) from prior third-party OCR (original=false, peer=true). Both remain nonblind, and image-only drafts still reject any exposure. No OCR was accessed for V/15–20 themselves; adjacent-page exposure is stated in each reading's instructions. No claim of blind context independence.
 
-V/15–20 have 242 tentative body rows plus six folios, contextual Church Slavonic spans and estimated geometry. Dense accent/breathing marks and superscript readings are incomplete; every body row is explicitly uncertain. No modernization intended, no claim of complete diplomatic accuracy. Source rereading identified two lexical forms on V/18 (three occurrences) and corrected them before publication, retaining the initial candidate in commit 6af7f0d5f3ebc9186158ac05c63074c54e6cb980. Checked physical row counts, manifest links, offsets and page transitions (V/15→16, V/16→17, V/18→19, V/19→20). Paragraph grouping remains provisional. Existing shared tests and real-image CI required; no local full suite executed.
+Eight new working readings contain 308 Church Slavonic rows (including incipit), plus Ukrainian headings/signature and eight folios. Dense accent/breathing marks and superscript readings are incomplete; every Church Slavonic row is explicitly uncertain. No claim of complete diplomatic accuracy. Source rereading identified two lexical forms on V/18 (three occurrences) and corrected them before publication, retaining the initial candidate in commit 6af7f0d5f3ebc9186158ac05c63074c54e6cb980. Physical rows, manifest links, code-point spans and cross-page transitions inspected; paragraph grouping and geometry remain provisional.
 
-This is a ten-scan batch scope, not ten newly completed text pages. Do not mark ready until V/13–14 are addressed and technical checks pass. V/9–10 remain a separate exceptional facsimile problem documented in the preceding audit.
+Existing shared tests and real-image CI required; local full suite not executed (no network access for clone). A local isolated probe of the original validator rejected the new explicit state before the implementation; full GitHub CI red observed on the test-only commit. No verified status. V/9–10 remain a separate exceptional facsimile problem.
