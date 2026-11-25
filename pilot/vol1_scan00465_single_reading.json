@@ -1,0 +1,1567 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 465,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00465.jpg",
+  "source_image_sha256": "c460d7e87f6eac129ef2607f948a1109d4814f078aaab2ab43c51768a8a410fc",
+  "reading": {
+    "reader_id": "gpt62-i465-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i459-468-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read original pinned image only; preserve physical lines, table row order, source titles, printed references. Historical glyphs and language classification provisional; geometry estimated.",
+    "raw_response": "ЗМІСТ.\nСторона\nВід Археоґрафічної комісиї.\nПередмова . . . . . . . . . . I—LXVI\nI. Індекс книг правдивих і заказаних.\nА. Рукопис о. Теодора з Дубівця . . . . . 1—5\nБ. Рукопис о. Іллї Яремецького-Білахевича . . 1—6\nII. Від сотвореня сьвіта до смерти Христа.\nА. Рукопис о. Теодора з Дубівця . . . . . 7—15\nБ. Рукопис о. Яремецького-Білахевича . . . . 324—320\nIII. Сатанаіл і бунт ангелів.\nА. О Сотонаилѣ (Крехівська Палея) . . . . 11—13\nБ. Слово о сотвореню ангелъ (Рукп. о. Яремецького-\nБілахевича) . . . . . . . . . 14\nВ. Як Бог і Сотона рай садили (Ркп. о. Т. з Дубівця) 15\nГ. Теж (Ркп. о. Яремецького-Білахевича) . . . 15—16\nД. Бунт ангелів і сьв. Михаіл (Ркп. о. Ст. Теслевцьо-\nвого) . . . . . . . . . . . 325—330\nIV. Про рай.\nА. Крехівська Палея . . . . . . . . 17—18\nБ. Рукопис о. Яремецького-Білахевича . . . . 18\nV. Оповіданя про Адама і Еву.\nА. Слово о Адамѣ (Ркп. о. Т. з Дубівця) . . . 19—23\nБ. Житіє о Адамѣ и Евѣ и о согрѣшеніи их (Дрого-\nбицький рукопис) . . . . . . . 23—26\nВ. Сотворенє сьвіта і перших людей, їх перший гріх\nі вигнанє з раю (Із Слова Мефодия Патарського) 26—28\nГ. О изгнаніи Адамови (Крех. Палея) . . . . 28—29\nД. Смерть Адама (Ркп. Яремецького-Білахевича) . . 29—30\nЕ. О сдеяніи св. Тройцы (Крех. Палея) . . . 30\nЖ. Слово о главѣ Адамовѣ, како в корени лежала\n(Ркп. о. Яремецького-Білахевича) . . . . 31\nЗ. О главѣ Адамовѣ, которую принесли дѣмони з дре-\nвомъ (Дрогобицький ркп.) . . . . . 31—32",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative horizontal rule",
+          "bbox_xywh": [
+            537,
+            573,
+            105,
+            8
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          431,
+          490,
+          337,
+          56
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-l001",
+            "text": "ЗМІСТ.",
+            "bbox_xywh": [
+              431,
+              490,
+              337,
+              56
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "column-header",
+        "kind": "heading",
+        "bbox_xywh": [
+          981,
+          608,
+          84,
+          21
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "column-header-l001",
+            "text": "Сторона",
+            "bbox_xywh": [
+              981,
+              608,
+              84,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contents",
+        "kind": "body",
+        "bbox_xywh": [
+          150,
+          621,
+          923,
+          939
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "contents-l001",
+            "text": "Від Археоґрафічної комісиї.",
+            "bbox_xywh": [
+              150,
+              621,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l002",
+            "text": "Передмова . . . . . . . . . . I—LXVI",
+            "bbox_xywh": [
+              150,
+              650,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 9,
+                "end": 29,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 36,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l003",
+            "text": "I. Індекс книг правдивих і заказаних.",
+            "bbox_xywh": [
+              150,
+              679,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 1,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l004",
+            "text": "А. Рукопис о. Теодора з Дубівця . . . . . 1—5",
+            "bbox_xywh": [
+              150,
+              709,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 45,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l005",
+            "text": "Б. Рукопис о. Іллї Яремецького-Білахевича . . 1—6",
+            "bbox_xywh": [
+              150,
+              738,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 45,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 46,
+                "end": 49,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l006",
+            "text": "II. Від сотвореня сьвіта до смерти Христа.",
+            "bbox_xywh": [
+              150,
+              768,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 2,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l007",
+            "text": "А. Рукопис о. Теодора з Дубівця . . . . . 7—15",
+            "bbox_xywh": [
+              150,
+              797,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 46,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l008",
+            "text": "Б. Рукопис о. Яремецького-Білахевича . . . . 324—320",
+            "bbox_xywh": [
+              150,
+              826,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 44,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 52,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l009",
+            "text": "III. Сатанаіл і бунт ангелів.",
+            "bbox_xywh": [
+              150,
+              856,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l010",
+            "text": "А. О Сотонаилѣ (Крехівська Палея) . . . . 11—13",
+            "bbox_xywh": [
+              150,
+              885,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 14,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 33,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 42,
+                "end": 47,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l011",
+            "text": "Б. Слово о сотвореню ангелъ (Рукп. о. Яремецького-",
+            "bbox_xywh": [
+              150,
+              915,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 27,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l012",
+            "text": "Білахевича) . . . . . . . . . 14",
+            "bbox_xywh": [
+              150,
+              944,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 11,
+                "end": 29,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 29,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 32,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l013",
+            "text": "В. Як Бог і Сотона рай садили (Ркп. о. Т. з Дубівця) 15",
+            "bbox_xywh": [
+              150,
+              973,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 53,
+                "end": 55,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l014",
+            "text": "Г. Теж (Ркп. о. Яремецького-Білахевича) . . . 15—16",
+            "bbox_xywh": [
+              150,
+              1003,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 39,
+                "end": 45,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 46,
+                "end": 51,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l015",
+            "text": "Д. Бунт ангелів і сьв. Михаіл (Ркп. о. Ст. Теслевцьо-",
+            "bbox_xywh": [
+              150,
+              1032,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l016",
+            "text": "вого) . . . . . . . . . . . 325—330",
+            "bbox_xywh": [
+              150,
+              1062,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 5,
+                "end": 27,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 27,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 28,
+                "end": 35,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l017",
+            "text": "IV. Про рай.",
+            "bbox_xywh": [
+              150,
+              1091,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 2,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l018",
+            "text": "А. Крехівська Палея . . . . . . . . 17—18",
+            "bbox_xywh": [
+              150,
+              1120,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 35,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 41,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l019",
+            "text": "Б. Рукопис о. Яремецького-Білахевича . . . . 18",
+            "bbox_xywh": [
+              150,
+              1150,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 44,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 47,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l020",
+            "text": "V. Оповіданя про Адама і Еву.",
+            "bbox_xywh": [
+              150,
+              1179,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 1,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l021",
+            "text": "А. Слово о Адамѣ (Ркп. о. Т. з Дубівця) . . . 19—23",
+            "bbox_xywh": [
+              150,
+              1209,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 16,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 39,
+                "end": 45,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 46,
+                "end": 51,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l022",
+            "text": "Б. Житіє о Адамѣ и Евѣ и о согрѣшеніи их (Дрого-",
+            "bbox_xywh": [
+              150,
+              1238,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 40,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 40,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l023",
+            "text": "бицький рукопис) . . . . . . . 23—26",
+            "bbox_xywh": [
+              150,
+              1267,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 16,
+                "end": 30,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 30,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 31,
+                "end": 36,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l024",
+            "text": "В. Сотворенє сьвіта і перших людей, їх перший гріх",
+            "bbox_xywh": [
+              150,
+              1297,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l025",
+            "text": "і вигнанє з раю (Із Слова Мефодия Патарського) 26—28",
+            "bbox_xywh": [
+              150,
+              1326,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 47,
+                "end": 52,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l026",
+            "text": "Г. О изгнаніи Адамови (Крех. Палея) . . . . 28—29",
+            "bbox_xywh": [
+              150,
+              1356,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 21,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 35,
+                "end": 43,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 43,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 49,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l027",
+            "text": "Д. Смерть Адама (Ркп. Яремецького-Білахевича) . . 29—30",
+            "bbox_xywh": [
+              150,
+              1385,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 45,
+                "end": 49,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 49,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 50,
+                "end": 55,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l028",
+            "text": "Е. О сдеяніи св. Тройцы (Крех. Палея) . . . 30",
+            "bbox_xywh": [
+              150,
+              1414,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 23,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 37,
+                "end": 43,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 43,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 44,
+                "end": 46,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l029",
+            "text": "Ж. Слово о главѣ Адамовѣ, како в корени лежала",
+            "bbox_xywh": [
+              150,
+              1444,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 46,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l030",
+            "text": "(Ркп. о. Яремецького-Білахевича) . . . . 31",
+            "bbox_xywh": [
+              150,
+              1473,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 40,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 40,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 41,
+                "end": 43,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l031",
+            "text": "З. О главѣ Адамовѣ, которую принесли дѣмони з дре-",
+            "bbox_xywh": [
+              150,
+              1503,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 50,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "contents-l032",
+            "text": "вомъ (Дрогобицький ркп.) . . . . . 31—32",
+            "bbox_xywh": [
+              150,
+              1532,
+              923,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 4,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 4,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 24,
+                "end": 34,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 34,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              },
+              {
+                "start": 35,
+                "end": 40,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i465-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "contents-l001",
+        "reading": "Від Археоґрафічної комісиї.",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l002",
+        "reading": "Передмова . . . . . . . . . . I—LXVI",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l003",
+        "reading": "I. Індекс книг правдивих і заказаних.",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l004",
+        "reading": "А. Рукопис о. Теодора з Дубівця . . . . . 1—5",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l005",
+        "reading": "Б. Рукопис о. Іллї Яремецького-Білахевича . . 1—6",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l006",
+        "reading": "II. Від сотвореня сьвіта до смерти Христа.",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l007",
+        "reading": "А. Рукопис о. Теодора з Дубівця . . . . . 7—15",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l008",
+        "reading": "Б. Рукопис о. Яремецького-Білахевича . . . . 324—320",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l009",
+        "reading": "III. Сатанаіл і бунт ангелів.",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l010",
+        "reading": "А. О Сотонаилѣ (Крехівська Палея) . . . . 11—13",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l011",
+        "reading": "Б. Слово о сотвореню ангелъ (Рукп. о. Яремецького-",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l012",
+        "reading": "Білахевича) . . . . . . . . . 14",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l013",
+        "reading": "В. Як Бог і Сотона рай садили (Ркп. о. Т. з Дубівця) 15",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l014",
+        "reading": "Г. Теж (Ркп. о. Яремецького-Білахевича) . . . 15—16",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l015",
+        "reading": "Д. Бунт ангелів і сьв. Михаіл (Ркп. о. Ст. Теслевцьо-",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l016",
+        "reading": "вого) . . . . . . . . . . . 325—330",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l017",
+        "reading": "IV. Про рай.",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l018",
+        "reading": "А. Крехівська Палея . . . . . . . . 17—18",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l019",
+        "reading": "Б. Рукопис о. Яремецького-Білахевича . . . . 18",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l020",
+        "reading": "V. Оповіданя про Адама і Еву.",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l021",
+        "reading": "А. Слово о Адамѣ (Ркп. о. Т. з Дубівця) . . . 19—23",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l022",
+        "reading": "Б. Житіє о Адамѣ и Евѣ и о согрѣшеніи их (Дрого-",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l023",
+        "reading": "бицький рукопис) . . . . . . . 23—26",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l024",
+        "reading": "В. Сотворенє сьвіта і перших людей, їх перший гріх",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l025",
+        "reading": "і вигнанє з раю (Із Слова Мефодия Патарського) 26—28",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l026",
+        "reading": "Г. О изгнаніи Адамови (Крех. Палея) . . . . 28—29",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l027",
+        "reading": "Д. Смерть Адама (Ркп. Яремецького-Білахевича) . . 29—30",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l028",
+        "reading": "Е. О сдеяніи св. Тройцы (Крех. Палея) . . . 30",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l029",
+        "reading": "Ж. Слово о главѣ Адамовѣ, како в корени лежала",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l030",
+        "reading": "(Ркп. о. Яремецького-Білахевича) . . . . 31",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l031",
+        "reading": "З. О главѣ Адамовѣ, которую принесли дѣмони з дре-",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l032",
+        "reading": "вомъ (Дрогобицький ркп.) . . . . . 31—32",
+        "reason": "Provisional reading; historical glyphs, column spacing, abbreviations and exact dotted leader typography require collation."
+      },
+      {
+        "line_id": "contents-l008",
+        "reading": "324—320",
+        "reason": "3× original JPEG [790,711,125,36] width 1024 confirms descending printed range; no conjectural correction."
+      }
+    ]
+  }
+}
