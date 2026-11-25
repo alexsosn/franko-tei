@@ -1,0 +1,1208 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 19,
+  "printed_page_observed": "XV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00019.jpg",
+  "source_image_sha256": "522e7bb4ee1400b9915f013407af7f01c123714adc19569c50d2d6095e72125c",
+  "reading": {
+    "reader_id": "gpt62-iv-19-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-11-20-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Source-first physical line transcription from pinned native JPEG, no OCR or peer reading for these pages. Preserve historical glyphs, line-end hyphens, numbering, contextual language, uncertain readings. Geometry estimated; no verified claim.",
+    "raw_response": "XV\n12. Свитокъ изъ Іерусалимской земли, послано отъ самого\nГоспода нашего Ісуса Христа (стор 250—153), се одна з найстар-\nших редакцій Листа небесного; до неї додано ще два уривки по-\nучень про сьвяткованє недїлї, які зрештою не мають звязку з Ли-\nстом небесним.\n12. Під титулом „Бесѣда трехъ святителей“ подано (стор.\n169—178) три тексти відомого під сею назвою апокріфа.\nРівночасно з діссертацією Пипіна почала в Москві під редак-\nцією Тіхонравова виходити спеціяльна часопись, присвячена до-\nслїдам над історією російської лїтератури і рос. старовиною, п. з.\nЛѣтописи русской литературы и древности. Вона виходила недовго\nі неправильно, до р. 1863 вийшло 5 томів, та про те вона дала не ли-\nше силу нового матеріялу, а й цїлий ряд оріґінальних праць, що\nвиразно зазначили методу і напрям дальших дослїдів. Важні тут\nбули особливо працї самого видавця, в яких він, не запускаючи ся\nв широкі мудрованя на взір Буслаєва, а виходячи від певних да-\nних лїтературних памяток, громадив матеріяли для їх порівняного\nстудіованя і сим прокладав дорогу порівняної методи в російській\nнауцї. До таких праць треба зачислити прим. працю про Люціда-\nрій, додану до виданя тексту сеї памятки (1859, кн. I, стор. 33—\n68), такі ж уваги до повісти про Аполона Тирського (тамже стор.\n1—32) та до віршів про Анїку воїна (Прѣніе живота со смертью,\nтамже стор. 183—192), до оповіданя „Слово о вѣрѣ христіянской\nи жидовской“ (т. III, стор. 66—78). Важні тут були й такі річи,\nяк Веселовского рецензія на новий випуск нїмецького журнала\n„Zeitschrift für deutsches Alterthum“, де з приводу друкованих там\nпраць і матеріялів порушено декілька питань з археольоґії, фольк-\nлору та історії письменства, і власне питаня діскутовані в західно-\nевропейській науцї ставлено в безпосереднїй звязок з матеріялами\nславянськими. І понад се „Лѣтописи“ Тіхонравова дали не мало\nпричинків спеціяльно до есхатольоґічних апокріфів і їх відгуків у ро-\nсійськім фольклорі; сюди належать видана Буслаєвим „Повѣсть\nграда Іерусалима“ (II, 34), „Стихъ о Голубиной книгѣ“ (II, 64), Стихъ\nо Антихристѣ (III, 14), уваги Буслаєва до малюнків „О народахъ\nна страшномъ судѣ“ (IV, 16).\nВ тім самім роцї, коли впали „Лѣтописи“ (мабуть їх видавець\nзнеохотив ся до них за їх слабий успіх, бо в остатнїх томах його\nпраць уже не видно), вийшла в Петербурзї двотомова збірка Ті-\nхонравова нз. „Памятники отреченной русской литературы“, як про-\nлоґа до невиданої нїколи розвідки тогож автора „Отреченныя кни-\nги древней Россіи“. В першім томі сеї збірки маємо з апокрі…",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            830,
+            1510,
+            330,
+            220
+          ],
+          "description": "Later blue library stamp overlapping the last three rows; visible readings provisional."
+        }
+      ],
+      "occlusions": [
+        {
+          "kind": "library_stamp",
+          "bbox_xywh": [
+            835,
+            1515,
+            325,
+            215
+          ],
+          "description": "Blue library ownership stamp overlaps right ends of three rows; final row suffix unreadable.",
+          "obscures_source_letters": true,
+          "reconstructed_from_neighbor_page": false,
+          "affected_line_ids": [
+            "preface-line-41"
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1000,
+          92,
+          75,
+          50
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XV",
+            "bbox_xywh": [
+              1000,
+              92,
+              75,
+              49
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          170,
+          970,
+          1460
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "12. Свитокъ изъ Іерусалимской земли, послано отъ самого",
+            "bbox_xywh": [
+              100,
+              170,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 4,
+                "end": 55,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "Господа нашего Ісуса Христа (стор 250—153), се одна з найстар-",
+            "bbox_xywh": [
+              100,
+              205,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 27,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "ших редакцій Листа небесного; до неї додано ще два уривки по-",
+            "bbox_xywh": [
+              100,
+              241,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "учень про сьвяткованє недїлї, які зрештою не мають звязку з Ли-",
+            "bbox_xywh": [
+              100,
+              276,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "стом небесним.",
+            "bbox_xywh": [
+              100,
+              312,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "12. Під титулом „Бесѣда трехъ святителей“ подано (стор.",
+            "bbox_xywh": [
+              100,
+              348,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 17,
+                "end": 40,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 40,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "169—178) три тексти відомого під сею назвою апокріфа.",
+            "bbox_xywh": [
+              100,
+              383,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "Рівночасно з діссертацією Пипіна почала в Москві під редак-",
+            "bbox_xywh": [
+              100,
+              419,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "цією Тіхонравова виходити спеціяльна часопись, присвячена до-",
+            "bbox_xywh": [
+              100,
+              454,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "слїдам над історією російської лїтератури і рос. старовиною, п. з.",
+            "bbox_xywh": [
+              100,
+              490,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "Лѣтописи русской литературы и древности. Вона виходила недовго",
+            "bbox_xywh": [
+              100,
+              526,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 39,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "і неправильно, до р. 1863 вийшло 5 томів, та про те вона дала не ли-",
+            "bbox_xywh": [
+              100,
+              561,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "ше силу нового матеріялу, а й цїлий ряд оріґінальних праць, що",
+            "bbox_xywh": [
+              100,
+              597,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "виразно зазначили методу і напрям дальших дослїдів. Важні тут",
+            "bbox_xywh": [
+              100,
+              632,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "були особливо працї самого видавця, в яких він, не запускаючи ся",
+            "bbox_xywh": [
+              100,
+              668,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "в широкі мудрованя на взір Буслаєва, а виходячи від певних да-",
+            "bbox_xywh": [
+              100,
+              704,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "них лїтературних памяток, громадив матеріяли для їх порівняного",
+            "bbox_xywh": [
+              100,
+              739,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "студіованя і сим прокладав дорогу порівняної методи в російській",
+            "bbox_xywh": [
+              100,
+              775,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "науцї. До таких праць треба зачислити прим. працю про Люціда-",
+            "bbox_xywh": [
+              100,
+              810,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "рій, додану до виданя тексту сеї памятки (1859, кн. I, стор. 33—",
+            "bbox_xywh": [
+              100,
+              846,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "68), такі ж уваги до повісти про Аполона Тирського (тамже стор.",
+            "bbox_xywh": [
+              100,
+              882,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "1—32) та до віршів про Анїку воїна (Прѣніе живота со смертью,",
+            "bbox_xywh": [
+              100,
+              917,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 36,
+                "end": 60,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 60,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "тамже стор. 183—192), до оповіданя „Слово о вѣрѣ христіянской",
+            "bbox_xywh": [
+              100,
+              953,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 36,
+                "end": 61,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "и жидовской“ (т. III, стор. 66—78). Важні тут були й такі річи,",
+            "bbox_xywh": [
+              100,
+              989,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 11,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "як Веселовского рецензія на новий випуск нїмецького журнала",
+            "bbox_xywh": [
+              100,
+              1024,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "„Zeitschrift für deutsches Alterthum“, де з приводу друкованих там",
+            "bbox_xywh": [
+              100,
+              1060,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 1,
+                "end": 36,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 36,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "праць і матеріялів порушено декілька питань з археольоґії, фольк-",
+            "bbox_xywh": [
+              100,
+              1095,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "лору та історії письменства, і власне питаня діскутовані в західно-",
+            "bbox_xywh": [
+              100,
+              1131,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "европейській науцї ставлено в безпосереднїй звязок з матеріялами",
+            "bbox_xywh": [
+              100,
+              1167,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "славянськими. І понад се „Лѣтописи“ Тіхонравова дали не мало",
+            "bbox_xywh": [
+              100,
+              1202,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 26,
+                "end": 34,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 34,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "причинків спеціяльно до есхатольоґічних апокріфів і їх відгуків у ро-",
+            "bbox_xywh": [
+              100,
+              1238,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "сійськім фольклорі; сюди належать видана Буслаєвим „Повѣсть",
+            "bbox_xywh": [
+              100,
+              1273,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 52,
+                "end": 59,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "града Іерусалима“ (II, 34), „Стихъ о Голубиной книгѣ“ (II, 64), Стихъ",
+            "bbox_xywh": [
+              100,
+              1309,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 16,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 29,
+                "end": 52,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 52,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 64,
+                "end": 69,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "о Антихристѣ (III, 14), уваги Буслаєва до малюнків „О народахъ",
+            "bbox_xywh": [
+              100,
+              1345,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 12,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 12,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 52,
+                "end": 62,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "на страшномъ судѣ“ (IV, 16).",
+            "bbox_xywh": [
+              100,
+              1380,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 17,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 17,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "В тім самім роцї, коли впали „Лѣтописи“ (мабуть їх видавець",
+            "bbox_xywh": [
+              100,
+              1416,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 30,
+                "end": 38,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 38,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-37",
+            "text": "знеохотив ся до них за їх слабий успіх, бо в остатнїх томах його",
+            "bbox_xywh": [
+              100,
+              1451,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-38",
+            "text": "праць уже не видно), вийшла в Петербурзї двотомова збірка Ті-",
+            "bbox_xywh": [
+              100,
+              1487,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-39",
+            "text": "хонравова нз. „Памятники отреченной русской литературы“, як про-",
+            "bbox_xywh": [
+              100,
+              1523,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 15,
+                "end": 54,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 54,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-40",
+            "text": "лоґа до невиданої нїколи розвідки тогож автора „Отреченныя кни-",
+            "bbox_xywh": [
+              100,
+              1558,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 48,
+                "end": 63,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-41",
+            "text": "ги древней Россіи“. В першім томі сеї збірки маємо з апокрі…",
+            "bbox_xywh": [
+              100,
+              1594,
+              970,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 0,
+                "end": 17,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-19-image-20261125",
+                "start": 17,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "unreadable_suffix": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-02",
+        "reading": "250—153",
+        "reason": "Descending printed page range retained as seen, not corrected."
+      },
+      {
+        "line_id": "preface-line-01",
+        "reading": "Свитокъ",
+        "reason": "Initial capital and historical spelling provisional."
+      },
+      {
+        "line_id": "preface-line-39",
+        "reading": "хонравова нз. „Памятники отреченной русской литературы“, як про-",
+        "reason": "Overlapping blue ownership stamp; letters near right margin provisional; do not treat as verified."
+      },
+      {
+        "line_id": "preface-line-40",
+        "reading": "лоґа до невиданої нїколи розвідки тогож автора „Отреченныя кни-",
+        "reason": "Overlapping blue ownership stamp; letters near right margin provisional; do not treat as verified."
+      },
+      {
+        "line_id": "preface-line-41",
+        "reading": "апокрі…",
+        "reason": "Blue ownership stamp obscures following printed letters; editorial ellipsis marks unreadable suffix, not printed punctuation. Initial proposed suffix withdrawn on reinspection."
+      }
+    ]
+  }
+}
