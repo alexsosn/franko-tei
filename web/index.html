@@ -82,7 +82,11 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #contentsEntries{list-style:none;padding:4px 10px 12px;margin:0;overflow:auto;overscroll-behavior:contain;flex:1;min-height:0;scrollbar-gutter:stable}
 #contentsEntries li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;margin:0;min-width:0}
 #contentsEntries .contents-destination{display:grid;grid-template-columns:minmax(0,1fr) minmax(62px,88px);align-items:center;gap:10px;width:100%;min-height:44px;text-align:left;border:0;border-radius:4px;background:transparent;padding:6px 8px;line-height:1.4;white-space:normal;overflow-wrap:anywhere;font:14px/1.4 system-ui,sans-serif}
-#contentsEntries .contents-name{min-width:0}
+#contentsEntries .contents-name{min-width:0;display:block}
+#contentsEntries .contents-title-group{min-width:0}
+#contentsEntries .contents-canonical{display:block;color:#525e55;font-size:11px;font-weight:400;line-height:1.35;margin-top:2px}
+#contentsEntries .subentry .contents-canonical{padding-inline-start:12px}
+#contentsEntries .subentry-deep .contents-canonical{padding-inline-start:24px}
 #contentsEntries .contents-meta{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:1px;color:#525e55;font-size:12px;font-weight:400;font-variant-numeric:tabular-nums}
 #contentsEntries .contents-state,#contentsEntries .contents-note-indicator{font-size:11px;line-height:1.25}#contentsEntries .contents-note-indicator{color:#235d55}
 #contentsEntries [data-estimated-scan] .contents-state{color:#78551b}
@@ -95,7 +99,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #contentsEntries .contents-destination[data-current]{box-shadow:inset 2px 0 #527b68}
 #contentsEntries .contents-destination:focus-visible,#contentsPanel button:focus-visible,#contentsPanel summary:focus-visible{outline:2px solid #537c8c;outline-offset:-2px}
 #contentsEntries .source-link{min-height:36px;min-width:40px;font-size:11px;padding:3px 5px;color:#235d55;border:0;background:transparent;align-self:center}
-#contentsEntries .contents-original[hidden],#contentsEntries .contents-ref-detail[hidden]{display:none}
+#contentsEntries li[hidden],#contentsEntries .contents-original[hidden],#contentsEntries .contents-ref-detail[hidden]{display:none}
 #contentsEntries .contents-actions{display:flex;align-items:center;gap:2px;min-height:44px}
 #contentsEntries .contents-ref-toggle{width:40px;min-height:44px;padding:4px;border:0;background:transparent;color:#235d55}
 #contentsEntries .contents-ref-toggle svg{width:17px;height:17px;vertical-align:middle}
@@ -103,7 +107,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #contentsEntries .contents-ref-detail{grid-column:1/-1;margin:0 8px 8px;padding:8px 10px;border-left:2px solid #a7bdb2;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
 #contentsEntries .contents-ref-record+ .contents-ref-record{margin-top:8px;padding-top:8px;border-top:1px solid #d7d9d5}
 #contentsEntries .contents-ref-record p{margin:3px 0}
-#contentsEntries .contents-ref-record a{display:inline-flex;align-items:center;min-height:32px;color:#235d55;text-decoration:underline}
+#contentsEntries .contents-ref-record a{display:inline-flex;flex-wrap:wrap;align-items:center;min-height:32px;color:#235d55;text-decoration:underline}
 #contentsEntries .contents-ref-state{color:#525e55}
 #contentsEntries .contents-ref-original{color:#525e55;margin:0 0 6px}
 #contentsEntries .contents-note{grid-column:1/-1;font-size:12px;color:#525e55;padding:0 8px 6px;overflow-wrap:anywhere}
@@ -299,7 +303,7 @@ const contentsEnglish = {
     "Б. Слово о сотвореню ангелъ (Рукп. о. Яремецького-Білахевича)": "Б. Discourse on the creation of the angels (MS of Fr. Yaremetsky-Bilakhevych)",
     "В. Як Бог і Сотона рай садили (Ркп. о. Т. з Дубівця)": "В. How God and Satan planted Paradise (MS of Fr. T. of Dubivtsi)",
     "Г. Теж (Ркп. о. Яремецького-Білахевича)": "Г. The same (MS of Fr. Yaremetsky-Bilakhevych)",
-    "Д. Бунт ангелів і сьв. Михаіл (Ркп. о. Ст. Теслевцьового)": "Д. The rebellion of the angels and St Michael (MS of Fr. St. Teslevtsovyi)",
+    "Д. Бунт ангелів і сьв. Михаіл (Ркп. о. Ст. Теслевцьового)": "Д. The rebellion of the angels and St Michael (MS of Fr. Stepan Teslevtsovyi)",
     "IV. Про рай.": "IV. On Paradise.",
     "А. Крехівська Палея": "А. Krekhiv Palaea",
     "V. Оповіданя про Адама і Еву.": "V. Tales of Adam and Eve.",
@@ -334,7 +338,7 @@ const contentsEnglish = {
     "Б. Слово о Авраамѣ, єгда вопроситъ во домъ свой святую Тройцу (Ркпс. о. Яремецького-Білахевича)": "Б. Discourse on Abraham when he entertained the Holy Trinity in his home (MS of Fr. Yaremetsky-Bilakhevych)",
     "В. Загадка дочки Лотової (Крех. Палея)": "В. The riddle of Lot's daughter (Krekhiv Palaea)",
     "Г. Указъ о другомъ древѣ крестномъ (Ркп. о. Яремецького-Білахевича)": "Г. Account of the other wood of the Cross (MS of Fr. Yaremetsky-Bilakhevych)",
-    "Д. Слово о святой Тройци, як ся Аврааму Богъ показавъ (Ркпс. о. Ст. Теслевцьового)": "Д. Discourse on the Holy Trinity, how God appeared to Abraham (MS of Fr. St. Teslevtsovyi)",
+    "Д. Слово о святой Тройци, як ся Аврааму Богъ показавъ (Ркпс. о. Ст. Теслевцьового)": "Д. Discourse on the Holy Trinity, how God appeared to Abraham (MS of Fr. Stepan Teslevtsovyi)",
     "XI. Оповіданя про Мелхіседека.": "XI. Tales of Melchizedek.",
     "А. О Мелхіседеци (Крех. Палея)": "А. On Melchizedek (Krekhiv Palaea)",
     "Б. Слово о. Мелхиседецѣ цари Салимском (Ркп. о. Яремецького-Білахевича)": "Б. Discourse on Melchizedek, king of Salem (MS of Fr. Yaremetsky-Bilakhevych)",
@@ -344,7 +348,7 @@ const contentsEnglish = {
     "В. Невѣрніи языци откуду зачаша ся (Ркпс. о. Теодора з Дубівця)": "В. Whence the unbelieving nations originated (MS of Fr. Theodore of Dubivtsi)",
     "Г. О Измаиле (Крех. Палея)": "Г. On Ishmael (Krekhiv Palaea)",
     "Д. Ізмаілтяне (Із Слова Меф. Патарського)": "Д. The Ishmaelites (from the Discourse of Methodius of Patara)",
-    "Е. Уривок оповіданя про Ізмаіла (Ркпс. о. Ст. Теслевцьового)": "Е. Fragment of a tale of Ishmael (MS of Fr. St. Teslevtsovyi)",
+    "Е. Уривок оповіданя про Ізмаіла (Ркпс. о. Ст. Теслевцьового)": "Е. Fragment of a tale of Ishmael (MS of Fr. Stepan Teslevtsovyi)",
     "XIII. Сини Ісаакові.": "XIII. Isaac's sons.",
     "А. Вродженє Ісава і Якова (Ковельська Палея)": "А. Birth of Esau and Jacob (Kovel Palaea)",
     "Б. О лествици (Крех. Палея)": "Б. On the ladder (Krekhiv Palaea)",
@@ -365,7 +369,7 @@ const contentsEnglish = {
     "К. Подорож Якова до Єгипту і стріча з Йосифом (Крех. Палея)": "К. Jacob's journey to Egypt and meeting with Joseph (Krekhiv Palaea)",
     "Л. Яковів заповіт (Крех. Палея)": "Л. Jacob's testament (Krekhiv Palaea)",
     "М. Йосиф оповідає братам свої пригоди (Крех. Палея)": "М. Joseph tells his brothers of his adventures (Krekhiv Palaea)",
-    "Н. Сказаніє о Іосифѣ Прекрасном (Ркпс. о. Ст. Теслевцьового)": "Н. Account of Joseph the Fair (MS of Fr. St. Teslevtsovyi)",
+    "Н. Сказаніє о Іосифѣ Прекрасном (Ркпс. о. Ст. Теслевцьового)": "Н. Account of Joseph the Fair (MS of Fr. Stepan Teslevtsovyi)",
     "XV. Заповіти дванацяти патріархів (Крех. Палея).": "XV. Testaments of the Twelve Patriarchs (Krekhiv Palaea).",
     "1. Заветъ Рувимовъ о благоумьи": "1. Testament of Reuben on prudence",
     "2. Завѣтъ Семионовъ о зависти": "2. Testament of Simeon on envy",
@@ -381,18 +385,18 @@ const contentsEnglish = {
     "12. Завѣт Веньяминовъ о помысле чистомъ": "12. Testament of Benjamin on pure thought",
     "XVI. Оповіданя про Мойсея.": "XVI. Tales of Moses.",
     "А. Житьє святаго великого пророка Мойсея, сказаніє бытья его (Крех. Палея)": "А. Life of the holy great prophet Moses, an account of his life (Krekhiv Palaea)",
-    "Б. Сказаніє о Моисеи, як ся родивъ (Ркпс. о. Ст. Теслевцьового)": "Б. Account of Moses and how he was born (MS of Fr. St. Teslevtsovyi)",
-    "В. Перехід через Червоне море, битва з Аммаликом, гірка вода, вода з каменя, теляча голова і мідяна гадюка (Ркпс. о. Ст. Теслевцьового)": "В. Crossing the Red Sea, battle with Amalek, bitter water, water from the rock, the calf's head and the bronze serpent (MS of Fr. St. Teslevtsovyi)",
+    "Б. Сказаніє о Моисеи, як ся родивъ (Ркпс. о. Ст. Теслевцьового)": "Б. Account of Moses and how he was born (MS of Fr. Stepan Teslevtsovyi)",
+    "В. Перехід через Червоне море, битва з Аммаликом, гірка вода, вода з каменя, теляча голова і мідяна гадюка (Ркпс. о. Ст. Теслевцьового)": "В. Crossing the Red Sea, battle with Amalek, bitter water, water from the rock, the calf's head and the bronze serpent (MS of Fr. Stepan Teslevtsovyi)",
     "Г. Чудо при водах Мерри (Ркпс. о. Т. з Дубівця)": "Г. Miracle at the waters of Marah (MS of Fr. T. of Dubivtsi)",
     "Д. Уривок оповіданя про те саме чудо (Дрогобицький ркпс.)": "Д. Fragment of an account of the same miracle (Drohobych MS)",
     "Е. О 12 камыках, иже были на главѣ святителевѣ насажени (Ркпс. XVII в.)": "Е. On the twelve stones set upon the hierarch's head (17th-century MS)",
-    "Ж. Про Валаама (Ркпс. о. Ст. Теслевцьового)": "Ж. On Balaam (MS of Fr. St. Teslevtsovyi)",
+    "Ж. Про Валаама (Ркпс. о. Ст. Теслевцьового)": "Ж. On Balaam (MS of Fr. Stepan Teslevtsovyi)",
     "З. Про Валаама (Ркпс. о. Т. Поповича Тухлянського)": "З. On Balaam (MS of Fr. T. Popovych of Tukhlia)",
     "XVII. Від Мойсея до Давида.": "XVII. From Moses to David.",
-    "А. Житіє Іова праведнаго (Ркпс. о. Ст. Теслевцьового)": "А. Life of righteous Job (MS of Fr. St. Teslevtsovyi)",
+    "А. Житіє Іова праведнаго (Ркпс. о. Ст. Теслевцьового)": "А. Life of righteous Job (MS of Fr. Stepan Teslevtsovyi)",
     "Б. Гедеон і Ізмаілтяне (Із Слова Меф. Патарського)": "Б. Gideon and the Ishmaelites (from the Discourse of Methodius of Patara)",
     "В. Відривок оповіданя про Самсона (Дрогобицький рукопис)": "В. Fragment of a tale of Samson (Drohobych MS)",
-    "Г. Слово на погребѣ дѣвичом о Єфтаі кроли (Ркпс. о. Ст. Теслевцьового)": "Г. Discourse at a maiden's burial, on King Jephthah (MS of Fr. St. Teslevtsovyi)",
+    "Г. Слово на погребѣ дѣвичом о Єфтаі кроли (Ркпс. о. Ст. Теслевцьового)": "Г. Discourse at a maiden's burial, on King Jephthah (MS of Fr. Stepan Teslevtsovyi)",
     "XVIII. Оповіданя про Давида.": "XVIII. Tales of David.",
     "А. Слово о цару Давиду, како списа Псалтиръ (Ркпс. о. Яремецького-Білахевича)": "А. Discourse on King David and how he compiled the Psalter (MS of Fr. Yaremetsky-Bilakhevych)",
     "В. Відривок тогож оповіданя (Дрогобицький ркпс.)": "В. Fragment of the same tale (Drohobych MS)",
@@ -408,16 +412,16 @@ const contentsEnglish = {
     "Д. Оповіданє про царя Адарияна (Крех. Палея)": "Д. Tale of King Adarian (Krekhiv Palaea)",
     "Е. Соломон і царівна (Крех. Палея)": "Е. Solomon and the princess (Krekhiv Palaea)",
     "Ж. Сказаніє о царю Соломонѣ, како закопа бѣси во єдиной дельвѣ (Іспаський ркпс)": "Ж. Account of King Solomon, how he buried demons in a single vessel (Ispas MS)",
-    "З. Як Соломон із пекла вимудрував ся (Ркпс. о. Ст. Теслевцьового)": "З. How Solomon outwitted his way out of hell (MS of Fr. St. Teslevtsovyi)",
+    "З. Як Соломон із пекла вимудрував ся (Ркпс. о. Ст. Теслевцьового)": "З. How Solomon outwitted his way out of hell (MS of Fr. Stepan Teslevtsovyi)",
     "И. Толкованіє о потири Соломонѣ (Крех. Палея)": "И. Interpretation of Solomon's chalice (Krekhiv Palaea)",
     "XX. Від Соломона до Христа.": "XX. From Solomon to Christ.",
-    "А. Св. славного пророка Іліи (Ркпс. о. Ст. Теслевцьового)": "А. Of the holy glorious prophet Elijah (MS of Fr. St. Teslevtsovyi)",
+    "А. Св. славного пророка Іліи (Ркпс. о. Ст. Теслевцьового)": "А. Of the holy glorious prophet Elijah (MS of Fr. Stepan Teslevtsovyi)",
     "Б. Св. пророка Єлисея (Ркпс. о. Т. з Дубівця)": "Б. Of the holy prophet Elisha (MS of Fr. T. of Dubivtsi)",
     "В. Св. пророка Ісаії (Ркпс. о. Т. з Дубівця)": "В. Of the holy prophet Isaiah (MS of Fr. T. of Dubivtsi)",
     "Г. Смерть Єремії і єго пророцтво про Ісуса (Крех. Палея)": "Г. Death of Jeremiah and his prophecy of Jesus (Krekhiv Palaea)",
     "Д. Страсть св. трехъ отрокъ Ананіи, Азаріи, Мисаила и Данііла пророка (Замойський ркпс.)": "Д. Passion of the three holy youths Hananiah, Azariah and Mishael and the prophet Daniel (Zamość MS)",
-    "Е. Память св. трех отрокъ и св. пророка Данііла (Ркпс о. Ст. Теслевцьового)": "Е. Commemoration of the three holy youths and the holy prophet Daniel (MS of Fr. St. Teslevtsovyi)",
-    "Ж. Св отрок Ананія, Азарія и Мисаила (Ркпс. о. Ст. Теслевцьового)": "Ж. The holy youths Hananiah, Azariah and Mishael (MS of Fr. St. Teslevtsovyi)",
+    "Е. Память св. трех отрокъ и св. пророка Данііла (Ркпс о. Ст. Теслевцьового)": "Е. Commemoration of the three holy youths and the holy prophet Daniel (MS of Fr. Stepan Teslevtsovyi)",
+    "Ж. Св отрок Ананія, Азарія и Мисаила (Ркпс. о. Ст. Теслевцьового)": "Ж. The holy youths Hananiah, Azariah and Mishael (MS of Fr. Stepan Teslevtsovyi)",
     "З. Провиденіє пророка Даніила о Навходоносоре (Крех. Палея)": "З. Vision of the prophet Daniel concerning Nebuchadnezzar (Krekhiv Palaea)",
     "И. Пророк Даніїл і цар Кур Персянин (Крех. Палея)": "И. The prophet Daniel and Cyrus the Persian king (Krekhiv Palaea)",
     "І. Про Сусанну (Крех. Палея)": "І. On Susanna (Krekhiv Palaea)",
@@ -465,14 +469,14 @@ const contentsEnglish = {
     "В. Поученіє на рождество пресв. Богородици (Ркпс Петра Кизикевича)": "В. Instruction on the Nativity of the Most Holy Mother of God (MS of Petro Kyzykevych)",
     "Г. Казаня на рождество пресв. и славной Владичица нашея и присно Дѣвы Маріи (Перемиський ркпс)": "Г. Sermon on the Nativity of our Most Holy and glorious Lady and ever-virgin Mary (Przemyśl MS)",
     "Д. Житіє Господа Бога нашего Ісуса Христа і Матере єго (Дрогобицький ркпс)": "Д. Life of our Lord God Jesus Christ and his mother (Drohobych MS)",
-    "Е. На рождество пресв. Богородици, якъ ся она народила (Ркпс Ст. Теслевцьового)": "Е. On the Nativity of the Most Holy Mother of God, how she was born (MS of St. Teslevtsovyi)",
-    "Ж. На воведеніє пресв. Богородици (Ркпс Ст. Теслевцьового)": "Ж. On the Entry of the Most Holy Mother of God into the Temple (MS of St. Teslevtsovyi)",
+    "Е. На рождество пресв. Богородици, якъ ся она народила (Ркпс Ст. Теслевцьового)": "Е. On the Nativity of the Most Holy Mother of God, how she was born (MS of Stepan Teslevtsovyi)",
+    "Ж. На воведеніє пресв. Богородици (Ркпс Ст. Теслевцьового)": "Ж. On the Entry of the Most Holy Mother of God into the Temple (MS of Stepan Teslevtsovyi)",
     "З. Сказаніє о зачатіи и рождестви пресв. Богородицы (Керестурський ркпс)": "З. Account of the conception and birth of the Most Holy Mother of God (Kerestur MS)",
     "И. На рождество пресв. Богородица поученіє (Угроруське учит. євангеліє)": "И. Instruction on the Nativity of the Most Holy Mother of God (Carpatho-Rusyn Homiliary Gospel)",
     "І. Уведеніє пресв. Богородица (тамже)": "І. Entry of the Most Holy Mother of God into the Temple (ibid.)",
     "К. Родословіє пресв. Богородици от котораго колѣна (Ркпс Яремецького-Білахевича)": "К. Genealogy of the Most Holy Mother of God, from which tribe (MS of Yaremetsky-Bilakhevych)",
     "Л. Сказаніє о Іосифѣ обручнику пресв. Богородици (тамже)": "Л. Account of Joseph, betrothed to the Most Holy Mother of God (ibid.)",
-    "М. Казаня на рождество св. Іоана Крестителя (Ркпс Ст. Теслевцьового)": "М. Sermon on the Nativity of St John the Baptist (MS of St. Teslevtsovyi)",
+    "М. Казаня на рождество св. Іоана Крестителя (Ркпс Ст. Теслевцьового)": "М. Sermon on the Nativity of St John the Baptist (MS of Stepan Teslevtsovyi)",
     "Н. Рождество св. Іоанна Предтечя (Комарнянський Пролог)": "Н. Nativity of St John the Forerunner (Komarno Prologue)",
     "О. Житія св. праведных Богоотецъ Іоакима і Анны (Перемиський ркпс)": "О. Lives of the holy righteous ancestors of God Joachim and Anna (Przemyśl MS)",
     "П. Успеніє св. Анны (Ркпс Т. з Дубівця)": "П. Dormition of St Anna (MS of T. of Dubivtsi)",
@@ -482,13 +486,13 @@ const contentsEnglish = {
     "А. На рождество Господа нашего Ісуса Христа (Угрор. учит. єванг.)": "А. On the Nativity of our Lord Jesus Christ (Carpatho-Rusyn Homiliary Gospel)",
     "Б. Ісусово різдво (Львівський ркпс)": "Б. Jesus' birth (Lviv MS)",
     "В. Казаня о предивном і невімовном рождествѣ Христовом (Ркпс Т. Поповича)": "В. Sermon on the wondrous and ineffable birth of Christ (MS of T. Popovych)",
-    "Г. Часть вторая о рождествѣ Христовом (Ркпс Ст. Теслевцьового)": "Г. Second part on the Nativity of Christ (MS of St. Teslevtsovyi)",
+    "Г. Часть вторая о рождествѣ Христовом (Ркпс Ст. Теслевцьового)": "Г. Second part on the Nativity of Christ (MS of Stepan Teslevtsovyi)",
     "Д. Поученіє на предпразднество Стрѣтенія Ісуса Христа (Перемиський Пролог)": "Д. Instruction for the forefeast of the Presentation of Jesus Christ (Przemyśl Prologue)",
-    "Е. Казаня на Стрѣтеніє Господа нашего Ісуса Христа (Ркпс Ст. Теслевцьового)": "Е. Sermon on the Presentation of our Lord Jesus Christ (MS of St. Teslevtsovyi)",
+    "Е. Казаня на Стрѣтеніє Господа нашего Ісуса Христа (Ркпс Ст. Теслевцьового)": "Е. Sermon on the Presentation of our Lord Jesus Christ (MS of Stepan Teslevtsovyi)",
     "Ж. Память св. отця Симеона богопріємца і Анны пророчицѣ (Перемиський Пролог)": "Ж. Commemoration of holy father Simeon the God-receiver and Anna the Prophetess (Przemyśl Prologue)",
     "З. О Симеонѣ Богопріємци слово (Ркпс Яремецького-Білахевича)": "З. Discourse on Simeon the God-receiver (MS of Yaremetsky-Bilakhevych)",
     "И. Ірод велить убивати дїтей (Львівський ркпс)": "И. Herod orders the children killed (Lviv MS)",
-    "І. О избіеніи дѣтей во виѳлеомскомъ повѣтѣ (Ркпс Ст. Теслевцьового)": "І. On the slaughter of the children in the district of Bethlehem (MS of St. Teslevtsovyi)",
+    "І. О избіеніи дѣтей во виѳлеомскомъ повѣтѣ (Ркпс Ст. Теслевцьового)": "І. On the slaughter of the children in the district of Bethlehem (MS of Stepan Teslevtsovyi)",
     "К. Казанє на Соборъ пресв. Богородицѣ (Ркпс Т. Поповича)": "К. Sermon on the Synaxis of the Most Holy Mother of God (MS of T. Popovych)",
     "Л. Слово о убіеніи св. и славнаго пророка Захарыи (Замойський ркпс)": "Л. Discourse on the killing of the holy and glorious prophet Zechariah (Zamość MS)",
     "М. Памят св. пророка Захаріи отца Іоана прѣдитеча (Перемиський Пролог)": "М. Commemoration of the holy prophet Zechariah, father of John the Forerunner (Przemyśl Prologue)",
@@ -496,7 +500,7 @@ const contentsEnglish = {
     "О. О нравѣ Богородичинѣ, о знаменіи образа и возраста св. Богородица": "О. On the character of the Mother of God and the features of her appearance and stature",
     "IV. Ісусові дитячі лїта.": "IV. Jesus' childhood.",
     "А. Сьв. сїмя в Нафанаіловім саду (Перемиський Пролог)": "А. The Holy Family in Nathanael's garden (Przemyśl Prologue)",
-    "Б. Казаня на соборъ пресв. Богородици (Ркпс Ст. Теслевцьового)": "Б. Sermon on the Synaxis of the Most Holy Mother of God (MS of St. Teslevtsovyi)",
+    "Б. Казаня на соборъ пресв. Богородици (Ркпс Ст. Теслевцьового)": "Б. Sermon on the Synaxis of the Most Holy Mother of God (MS of Stepan Teslevtsovyi)",
     "В. Чуда, котории ся стали, ґды Христос перед Іродом до Єгипту уходил (Сокольський ркпс)": "В. Miracles that occurred when Christ fled from Herod to Egypt (Sokol MS)",
     "Г. Відривок оповіданя про втеку сьв. сїм’ї до Єгипту (Ркпс К. Дух. Акад.)": "Г. Fragment of the story of the Holy Family's flight to Egypt (Kyiv Theological Academy MS)",
     "Д. Слово за два разбойника, како зачаху ся (тамже)": "Д. Discourse on the two robbers and how they originated (ibid.)",
@@ -508,7 +512,7 @@ const contentsEnglish = {
     "І. Незгода в Йосифовій сїм’ї із за Ісуса (Перемиський Пролог)": "І. Discord in Joseph's family on account of Jesus (Przemyśl Prologue)",
     "К. Сказаніє Христова пришествія к мору (Перемиський Пролог)": "К. Account of Christ's coming to the sea (Przemyśl Prologue)",
     "V. Ісусове хрещене і покуса.": "V. Jesus' baptism and temptation.",
-    "А. Казаня на Богоявленіє Ісуса Христа (Ркпс Ст. Теслевцьового)": "А. Sermon on the Theophany of Jesus Christ (MS of St. Teslevtsovyi)",
+    "А. Казаня на Богоявленіє Ісуса Христа (Ркпс Ст. Теслевцьового)": "А. Sermon on the Theophany of Jesus Christ (MS of Stepan Teslevtsovyi)",
     "Б. Казаня на Богоявленіє Господнє (Ркпс Т. Поповича)": "Б. Sermon on the Theophany of the Lord (MS of T. Popovych)",
     "В. Кетъ ше Христосъ отъ шветого Іоана окресцелъ (Ркпс Ф. Шовґоря)": "В. When Christ was baptized by St John (MS of F. Shovhor)",
     "Г. Ісусъ Христово пости, цо 40 дні и 40 ноци посцелъ (тамже)": "Г. The fast of Jesus Christ, who fasted forty days and forty nights (ibid.)",
@@ -524,10 +528,10 @@ const contentsEnglish = {
     "VII. Ісусові муки і смерть.": "VII. Jesus' passion and death.",
     "А. Розмова Ісуса з матїрю перед муками (Ркпс Ф. Шовґоря)": "А. Conversation of Jesus with his mother before the Passion (MS of F. Shovhor)",
     "Б. Диявол спокушує всїх апостолів по черзї, аби зрадили Ісуса (Угрор. учит. єванг.)": "Б. The devil tempts each apostle in turn to betray Jesus (Carpatho-Rusyn Homiliary Gospel)",
-    "В. Пасѣя албо повѣсть душеспасительная о муцѣ Христа Бога нашего (Ркпс. Ст. Теслевцьового)": "В. Passion, or a soul-saving tale of the suffering of Christ our God (MS of St. Teslevtsovyi)",
+    "В. Пасѣя албо повѣсть душеспасительная о муцѣ Христа Бога нашего (Ркпс. Ст. Теслевцьового)": "В. Passion, or a soul-saving tale of the suffering of Christ our God (MS of Stepan Teslevtsovyi)",
     "Г. Исторія святых отецъ и сказаніє, како претерпѣ Христосъ Господь нашего ради спасенія (Ркпс Яремецького-Білахевича)": "Г. History of the holy fathers and account of how Christ the Lord suffered for our salvation (MS of Yaremetsky-Bilakhevych)",
     "Д. Христові муки і сьвята Веронка (Керестурський співанник)": "Д. Christ's Passion and St Veronica (Kerestur Songbook)",
-    "Е. Сотник Локвин (Керестурська Пасия)": "Е. Lokvin the centurion",
+    "Е. Сотник Локвин (Керестурська Пасия)": "Е. Lokvin the centurion (Kerestur Passion)",
     "Ж. Кров Ісусова (Перемиський Пролог)": "Ж. Jesus' blood (Przemyśl Prologue)",
     "З. Тїло Ісусово (Керестурська Пасия)": "З. Jesus' body (Kerestur Passion)",
     "И. Про гвоздї, котрими прибито Ісуса до хреста (Ркпс К. Дух. Акад.)": "И. On the nails with which Jesus was fastened to the Cross (Kyiv Theological Academy MS)",
@@ -540,7 +544,7 @@ const contentsEnglish = {
     "А. Оповіданє Карина і Лисина про Ісусів прихід до пекла (Ркпс Ст. Комаревського)": "А. Account of Carinus and Leucius of Jesus' descent into hell (MS of St. Komarevskyi)",
     "Б. Слово о воскресеніи из мертвых Карина и Левгина, сыновъ великаго законника Симеона, иже сказаша, како Господь до Аду приде и святых изведе (Сокольський рукопис і Ковельська Палея)": "Б. Discourse on the resurrection of Carinus and Leucius, sons of Simeon the great teacher of the Law, who told how the Lord came to Hades and led out the saints (Sokol MS and Kovel Palaea)",
     "В. Повѣсти святых апостолъ о Лазаревѣ воскресеніи, иже отъ Адама къ Лазарю четверодневному (Ркпс К. Дух. Акад.)": "В. Tales of the holy apostles on the raising of Lazarus, from Adam to Lazarus of the four days (Kyiv Theological Academy MS)",
-    "Г. Во святый великій четвертокъ слово св. отца нашего Евсевія о сошествіи во Адъ святого Іоана Предитечи (Ркпс Ст. Теслевцьового)": "Г. For Holy Thursday: discourse of our holy father Eusebius on the descent of St John the Forerunner into Hades (MS of St. Teslevtsovyi)",
+    "Г. Во святый великій четвертокъ слово св. отца нашего Евсевія о сошествіи во Адъ святого Іоана Предитечи (Ркпс Ст. Теслевцьового)": "Г. For Holy Thursday: discourse of our holy father Eusebius on the descent of St John the Forerunner into Hades (MS of Stepan Teslevtsovyi)",
     "Д. Казаня на воскресеніє Христово (тамже)": "Д. Sermon on Christ's resurrection (ibid.)",
     "Е. Казаня на Вознесеніє Христово (Унґварський рукопис)": "Е. Sermon on Christ's ascension (Uzhhorod MS)",
     "IX. Вороги і приятелї Ісусові.": "IX. Jesus' enemies and friends.",
@@ -552,7 +556,7 @@ const contentsEnglish = {
     "Е. Сказаніє о смерти и караню Божіимъ враговъ Божіихъ (Маластівський Пролог)": "Е. Account of the death and punishment by God of God's enemies (Malastiv Prologue)",
     "Ж. Слово о двох разбойниках о Гестѣ и Дизмѣ (Ркпс Яремецького Білахевича)": "Ж. Discourse on the two robbers, Gestas and Dismas (MS of Yaremetsky-Bilakhevych)",
     "З. Сказаніє учителя церковнаго Іеронима святаго о Іюдѣ предателѣ Господа нашего Іисуса Христа (Ркпс Яремецького Білахевича)": "З. Account by St Jerome, teacher of the Church, on Judas, betrayer of our Lord Jesus Christ (MS of Yaremetsky-Bilakhevych)",
-    "И. Оповіданє про Юду Іскаріотського (Ркпс Ст. Теслевцьового)": "И. Tale of Judas Iscariot (MS of St. Teslevtsovyi)",
+    "И. Оповіданє про Юду Іскаріотського (Ркпс Ст. Теслевцьового)": "И. Tale of Judas Iscariot (MS of Stepan Teslevtsovyi)",
     "І. Про Лазаря (Угроруське учительне євангеліє)": "І. On Lazarus (Carpatho-Rusyn Homiliary Gospel)",
     "К. Прихід Марти і Марії сестер Лазаревих, Марії Магдалини, Лонгина і иньш. до Риму. Нешита риза Ісусова і уздоровленє кесаря Тиберия (із рукописної книги „Страсти Господа нашего Ісуса Христа“)": "К. Arrival in Rome of Martha and Mary, sisters of Lazarus, Mary Magdalene, Longinus and others; Jesus' seamless robe and the healing of Emperor Tiberius (from the manuscript The Passion of Our Lord Jesus Christ)",
     "Л. Переписка Пилата з Тибериєм, смерть Пилата і покаранє Жидів (із того-ж ркпсу)": "Л. Correspondence between Pilate and Tiberius, Pilate's death and punishment of the Jews (from the same MS)",
@@ -600,7 +604,7 @@ const contentsEnglish = {
     "А. Сказаніє Полутово о 12 апостолу (Перем. Прол. 1632 р.)": "А. Account of Polutus on the twelve apostles (Przemyśl Prologue, 1632)",
     "Б. Полутово о 12 апостолу, тогожде о 7 апостолѣх (Крехівська Палея)": "Б. Polutus on the twelve apostles, and the same author on seven apostles (Krekhiv Palaea)",
     "В. Соборъ святыхъ апостолъ 12 (Перем. Прол. 1632)": "В. Synaxis of the twelve holy apostles (Przemyśl Prologue, 1632)",
-    "Г. Каталогъ святыхъ апостоловъ (Рукоп. Ст. Самборини)": "Г. Catalogue of the holy apostles (MS of St. Samboryna)",
+    "Г. Каталогъ святыхъ апостоловъ (Рукоп. Ст. Самборини)": "Г. Catalogue of the holy apostles (MS of Stepan Samboryna)",
     "Д. О преданіи апостольском повѣтами (Рукоп. о. Теодора з Дубівця)": "Д. On the apostolic tradition by districts (MS of Fr. Theodore of Dubivtsi)",
     "Е. О пресвятѣй вѣданіє како бысть и чесо ради (Рукоп. бібл. унїв. льв. I. Д. 1)": "Е. Account of the Most Holy One, how and why it came about (Lviv University Library MS I.D.1)",
     "Ж. Събор святых верховних апостолъ 12 (Комарнянський Прольог)": "Ж. Synaxis of the twelve holy chief apostles (Komarno Prologue)",
@@ -615,7 +619,7 @@ const contentsEnglish = {
     "В. Сьвятий Петро і Симон волхв (Унґварський рукоп.)": "В. St Peter and Simon Magus (Uzhhorod MS)",
     "Г. Св. ап. Петра и Павла (Рукоп. Т. з Дубівця)": "Г. Of the holy apostles Peter and Paul (MS of T. of Dubivtsi)",
     "Д. Житіє св. верховных апостолъ Петра и Павла (Рукоп. з Лїтманови Б.)": "Д. Life of the holy chief apostles Peter and Paul (MS from Litmanova B)",
-    "Е. На св. верховных Петра и Павла повѣсть выбранная (Рукоп. Ст. Теслевцьового)": "Е. Selected tale for the feast of the holy chief apostles Peter and Paul (MS of St. Teslevtsovyi)",
+    "Е. На св. верховных Петра и Павла повѣсть выбранная (Рукоп. Ст. Теслевцьового)": "Е. Selected tale for the feast of the holy chief apostles Peter and Paul (MS of Stepan Teslevtsovyi)",
     "III. Оповіданя про сьв. Павла.": "III. Tales of St Paul.",
     "А. Мученіє св. великого первомученика Стефана (Замойський рукоп.)": "А. Martyrdom of the holy great protomartyr Stephen (Zamość MS)",
     "Б. Мученіє св. первомученици и равноапостолныя Ѳеклы (Замойський рукоп.)": "Б. Martyrdom of St Thecla, protomartyr and equal-to-the-apostles (Zamość MS)",
@@ -628,9 +632,9 @@ const contentsEnglish = {
     "Д. Преставленіє св. євгл. Іоанна богослова (Перем. Прольог)": "Д. Repose of St John the Theologian, Evangelist (Przemyśl Prologue)",
     "Е. Слово о Іоаннѣ богословѣ (Перем. Прол.)": "Е. Discourse on John the Theologian (Przemyśl Prologue)",
     "Ж. Св. ап. богосл. Іоанна євгл. в тонже день исходит прах из гроба єго и творит исцѣленіє вшелякое (Рукоп. о. Т. з Дубівця)": "Ж. Of the holy Apostle and Evangelist John the Theologian: on that day dust issues from his tomb and works every kind of healing (MS of Fr. T. of Dubivtsi)",
-    "З. Преставленіє св. Іоанна богослова євгл. ап. Хр. казаня избранное (Рукоп. Ст. Теслевцьового)": "З. Repose of St John the Theologian, Evangelist and Apostle of Christ, selected sermon (MS of St. Teslevtsovyi)",
+    "З. Преставленіє св. Іоанна богослова євгл. ап. Хр. казаня избранное (Рукоп. Ст. Теслевцьового)": "З. Repose of St John the Theologian, Evangelist and Apostle of Christ, selected sermon (MS of Stepan Teslevtsovyi)",
     "И. Житіє св. Іоанна богосл. ап. Хр. и євгл. (Перем. Прол.)": "И. Life of St John the Theologian, Apostle of Christ and Evangelist (Przemyśl Prologue)",
-    "К. Житія св. Іоанна богосл. наперсника Христоваго (Рукоп. Ст. Самборини)": "К. Life of St John the Theologian, who rested on Christ's breast (MS of St. Samboryna)",
+    "К. Житія св. Іоанна богосл. наперсника Христоваго (Рукоп. Ст. Самборини)": "К. Life of St John the Theologian, who rested on Christ's breast (MS of Stepan Samboryna)",
     "Л. Поученіє на преставленіє св. еванг. Іоанна богосл. (Рукоп. Ів. Кузикевича)": "Л. Instruction for the repose of St John the Theologian, Evangelist (MS of Iv. Kuzykevych)",
     "М. Памят св. ап. і єв. Іоанна богосл. иже есть на прѣстѣніє и събраніє маннѣ (Добрянський Прол.)": "М. Commemoration of the holy Apostle and Evangelist John the Theologian, for his repose and the gathering of manna (Dobriany Prologue)",
     "V. Оповіданя про сьв. Тому.": "V. Tales of St Thomas.",
@@ -638,8 +642,8 @@ const contentsEnglish = {
     "Б. Дѣяніє и мученіє св. ап. Фомы (Замойський рукоп.)": "Б. Acts and martyrdom of the holy Apostle Thomas (Zamość MS)",
     "В. Страсть св. ап. Ѳомы (Перем. Прол.)": "В. Passion of the holy Apostle Thomas (Przemyśl Prologue)",
     "Г. Житіє св. и всехвалнаго ап. Хва Ѳомы, писано от Авдея, першого єп. вавилонскаго (Перем. Прол.)": "Г. Life of the holy and all-praised Apostle of Christ Thomas, written by Abdias, first bishop of Babylon (Przemyśl Prologue)",
-    "Д. Казане о сьв. Фомѣ (Рукоп. Ст. Теслевцьового)": "Д. Sermon on St Thomas (MS of St. Teslevtsovyi)",
-    "Е. Житія св. ап. Ѳомы (Рукоп. Ст. Самборини)": "Е. Life of the holy Apostle Thomas (MS of St. Samboryna)",
+    "Д. Казане о сьв. Фомѣ (Рукоп. Ст. Теслевцьового)": "Д. Sermon on St Thomas (MS of Stepan Teslevtsovyi)",
+    "Е. Житія св. ап. Ѳомы (Рукоп. Ст. Самборини)": "Е. Life of the holy Apostle Thomas (MS of Stepan Samboryna)",
     "Ж. Страсть св. ап. Ѳомы (Дорожівська Минея)": "Ж. Passion of the holy Apostle Thomas (Dorozhiv Menaion)",
     "VI. Оповіданя про сьв. Андрія.": "VI. Tales of St Andrew.",
     "А. Повѣсть о съдѣяніи св. ап. Андреа и Матѳеа, и колико пострадаша въ градѣ человѣкоядецъ, и како спасени бышя Господем нашим Ісус Христом, киимъ образом обращени бывше человѣци оныя къ православнои вѣрѣ (Львівський рукоп. унїверс. I. В. 1.)": "А. Tale of the acts of the holy apostles Andrew and Matthew, how much they suffered in the city of the cannibals, how our Lord Jesus Christ saved them and how those people were converted to the Orthodox faith (Lviv University MS I.B.1)",
@@ -665,15 +669,15 @@ const contentsEnglish = {
     "IX. Оповіданя про Якова брата Господнього.": "IX. Tales of James, the brother of the Lord.",
     "А. Св. ап. Якова брата Господнѣ по плъти (Перем. Прольог)": "А. Of the holy Apostle James, brother of the Lord according to the flesh (Przemyśl Prologue)",
     "Б. Житіє св. ап. Якова сына Іосифа обручника, 1-го ап. Ієрусалимского, ведлуг тѣла брата Господня, от лику 70 (Перемиський Прольог)": "Б. Life of the holy Apostle James, son of Joseph the Betrothed, first apostle of Jerusalem, brother of the Lord according to the flesh, of the seventy (Przemyśl Prologue)",
-    "В. Житія св. ап. Іакова брата Господня (Рукопис Ст. Самборини)": "В. Life of the holy Apostle James, brother of the Lord (MS of St. Samboryna)",
+    "В. Житія св. ап. Іакова брата Господня (Рукопис Ст. Самборини)": "В. Life of the holy Apostle James, brother of the Lord (MS of Stepan Samboryna)",
     "X. Оповіданя про иньших апостолів.": "X. Tales of other apostles.",
     "А. Св. ап. Варѳоломея и Варнавы (Рукопис о. Т. з Дубівця)": "А. Of the holy apostles Bartholomew and Barnabas (MS of Fr. T. of Dubivtsi)",
-    "Б. Житія св. ап. Варъѳоломея и Варнавы (Рукопис Ст. Самборини)": "Б. Lives of the holy apostles Bartholomew and Barnabas (MS of St. Samboryna)",
+    "Б. Житія св. ап. Варъѳоломея и Варнавы (Рукопис Ст. Самборини)": "Б. Lives of the holy apostles Bartholomew and Barnabas (MS of Stepan Samboryna)",
     "В. Страсть св. ап. Іакова Альфеова (Перемиський Прольог)": "В. Passion of the holy Apostle James son of Alphaeus (Przemyśl Prologue)",
     "Г. Заколеніє св. ап. Іакова, брата Іоана богословца (Перем. Прольог)": "Г. Slaying of the holy Apostle James, brother of John the Theologian (Przemyśl Prologue)",
     "Д. Св. ап. Іакова брата по плоти Господня (Рукоп. Т. з Дубівця)": "Д. Of the holy Apostle James, brother of the Lord according to the flesh (MS of T. of Dubivtsi)",
     "Е. Страсть св. ап. Іуды сродника Господня по плоти (Комарнянський Прольог)": "Е. Passion of the holy Apostle Jude, kinsman of the Lord according to the flesh (Komarno Prologue)",
-    "Ж. Житія св. Іуды ап. Хва, сродника (Рукопис Ст. Самборини)": "Ж. Life of St Jude, Apostle of Christ and his kinsman (MS of St. Samboryna)",
+    "Ж. Житія св. Іуды ап. Хва, сродника (Рукопис Ст. Самборини)": "Ж. Life of St Jude, Apostle of Christ and his kinsman (MS of Stepan Samboryna)",
     "З. Страсть св. ап. Симона Зилота (Рукопис о. Т. з Дубівця)": "З. Passion of the holy Apostle Simon the Zealot (MS of Fr. T. of Dubivtsi)",
     "І. Св. ап. Наѳанаила, єдиного от 70 (Комарнянський Прольог)": "І. Of the holy Apostle Nathanael, one of the seventy (Komarno Prologue)",
     "К. Перенесеніє мощей ап. Варѳоломея (Маластівський Прольог)": "К. Translation of the relics of the Apostle Bartholomew (Malastiv Prologue)",
@@ -684,7 +688,7 @@ const contentsEnglish = {
     "Г. Памят св. еванг. Луки (Перем. Прольог)": "Г. Commemoration of the holy Evangelist Luke (Przemyśl Prologue)",
     "Д. Слово св. ап. Хва еванг. Луки (Перем. Проль.)": "Д. Discourse of the holy Apostle of Christ and Evangelist Luke (Przemyśl Prologue)",
     "Е. Житіє св. ап. и еванг. Луки з лику 70 апостоловъ (Перемиський Прольог)": "Е. Life of the holy Apostle and Evangelist Luke, of the seventy apostles (Przemyśl Prologue)",
-    "Ж. Памят албо житія св. єв. Хва Луки (Рукоп. Ст. Самборини)": "Ж. Commemoration or Life of the holy Evangelist of Christ Luke (MS of St. Samboryna)",
+    "Ж. Памят албо житія св. єв. Хва Луки (Рукоп. Ст. Самборини)": "Ж. Commemoration or Life of the holy Evangelist of Christ Luke (MS of Stepan Samboryna)",
     "XII. Оповіданя про апостольських учеників.": "XII. Tales of the disciples of the apostles.",
     "А. Агава пророка (Комарн. Прольог)": "А. Of the prophet Agabus (Komarno Prologue)",
     "Б. (а) Св. Акилы и Прескилы жены єго (Перемиський Прольог)": "Б. (а) Of St Aquila and his wife Priscilla (Przemyśl Prologue)",
@@ -698,7 +702,7 @@ const contentsEnglish = {
     "Ж. Страсть св. муч. Архипа ученика Павла ап. и Филимона воина и Афъфія (Перем. Проль.)": "Ж. Passion of the holy martyrs Archippus, disciple of the Apostle Paul, Philemon the soldier and Apphia (Przemyśl Prologue)",
     "З. (а) Памят св. ап. Варнавы єдинаго от 70 (Перем. Прольог 1632 р.)": "З. (а) Commemoration of the holy Apostle Barnabas, one of the seventy (Przemyśl Prologue of 1632)",
     "З. (б) Памят св. ап. Варнавы (Маластівський Прол.)": "З. (б) Commemoration of the holy Apostle Barnabas (Malastiv Prologue)",
-    "З. (в) Житіє св. Варнавы (Рукоп. Ст. Самборини)": "З. (в) Life of St Barnabas (MS of St. Samboryna)",
+    "З. (в) Житіє св. Варнавы (Рукоп. Ст. Самборини)": "З. (в) Life of St Barnabas (MS of Stepan Samboryna)",
     "І. (а) Страсть св. Деонисія Ареопагита єп. Афиньска (Перем. Прол.)": "І. (а) Passion of St Dionysius the Areopagite, bishop of Athens (Przemyśl Prologue)",
     "І. (б) Житіє св. Деонисія Ареопагита и дружины єго Яроѳея и Елиферія и проч. (Львівський рукоп. Оссол. 38)": "І. (б) Life of St Dionysius the Areopagite and his companions Hierotheus, Eleutherius and others (Lviv Ossolineum MS 38)",
     "І. (в) Житіє св. Діонисія Ареопагиты и дружины єго (Перем. Прол.)": "І. (в) Life of St Dionysius the Areopagite and his companions (Przemyśl Prologue)",
@@ -711,7 +715,7 @@ const contentsEnglish = {
     "Н. (б) Св. ап. Родіона іже въ Патрѣ (Перемиський Прольог)": "Н. (б) Of the holy Apostle Rhodion at Patras (Przemyśl Prologue)",
     "О. (а) Памят св. ап. Карпа єдиного от 70 (Добрянський Прол.)": "О. (а) Commemoration of the holy Apostle Carpus, one of the seventy (Dobriany Prologue)",
     "О. (б) Страсть св. ап. Карпа єдинаго от 70 (Перем. Прольог)": "О. (б) Passion of the holy Apostle Carpus, one of the seventy (Przemyśl Prologue)",
-    "П. Житіє Клеопы брата Іакова (Рукоп. Ст. Самборини)": "П. Life of Cleopas, brother of James (MS of St. Samboryna)",
+    "П. Житіє Клеопы брата Іакова (Рукоп. Ст. Самборини)": "П. Life of Cleopas, brother of James (MS of Stepan Samboryna)",
     "Р. (а) Мученіє св. Климента папы римскаго (Замойський рукоп.)": "Р. (а) Martyrdom of St Clement, pope of Rome (Zamość MS)",
     "Р. (б) Св. священномученика Климента архієпископа римскаго (Перем. Прол.)": "Р. (б) Of the holy hieromartyr Clement, archbishop of Rome (Przemyśl Prologue)",
     "Р. (в) Прѣнесеніє мощем св. Климента от глубины моря в Корсунь (Перем. Прол.)": "Р. (в) Translation of the relics of St Clement from the depths of the sea to Cherson (Przemyśl Prologue)",
@@ -723,7 +727,7 @@ const contentsEnglish = {
     "Ф. Памят св. ап. Пармены, єдиного от седми діякон (Маластівський Прол.)": "Ф. Commemoration of the holy Apostle Parmenas, one of the seven deacons (Malastiv Prologue)",
     "Х. Памят св. ап. Патрови, Єрма, Гаія и Филолога (Перем. Прол.)": "Х. Commemoration of the holy apostles Patrobas, Hermas, Gaius and Philologus (Przemyśl Prologue)",
     "Ц. Страсть святою мученицу Перпетуя и Потенціяны свести Нероновы (Перем. Проль.)": "Ц. Passion of the holy martyrs Perpetua and Potentiana, relatives of Nero (Przemyśl Prologue)",
-    "Св. ап. Прохора, Никонора и Пармена (Маластівський Прольог)": "Св. Of the holy apostles Prochorus, Nicanor and Parmenas (Malastiv Prologue)",
+    "Св. ап. Прохора, Никонора и Пармена (Маластівський Прольог)": "Of the holy apostles Prochorus, Nicanor and Parmenas (Malastiv Prologue)",
     "Ш. Памят св. ап. Родіона, Аулумпа, Сосипатра, Терентія, Ареста, Куарта (Перем. Прол.)": "Ш. Commemoration of the holy apostles Rhodion, Olympas, Sosipater, Tertius, Erastus and Quartus (Przemyśl Prologue)",
     "ШШ. Памят св. священномученика Семіона, по плоти ближника Господа нашего (Перем. Прол.)": "ШШ. Commemoration of the holy hieromartyr Simeon, kinsman of our Lord according to the flesh (Przemyśl Prologue)",
     "Щ. Памят св. ап. от 70 Силы и Силуана (Маластівський Прол.)": "Щ. Commemoration of the holy apostles of the seventy Silas and Silvanus (Malastiv Prologue)",
@@ -755,7 +759,7 @@ const contentsEnglish = {
     "Д. Вопрошенія стятыхъ стязаній и разумно. (Рукоп. Г. Білявського)": "Д. Questions concerning sacred disputations and understanding (MS of H. Biliavskyi)",
     "Е. Пытаня и отповѣди. (Боршев. рукоп.)": "Е. Questions and answers (Borshev MS)",
     "Ж. Уривок питань і відповідий. (Сокольський рукоп.)": "Ж. Fragment of questions and answers (Sokol MS)",
-    "З. Статя без титулу. (Рукоп. Ярем. Білах.)": "З. Untitled article (MS of Yaremetsky-Bilakhevych)",
+    "З. Статя без титулу. (Рукоп. Ярем. Білах.)": "З. Untitled text (MS of Yaremetsky-Bilakhevych)",
     "І. Слово о всѣхъ дѣлахъ церковныхъ поучительное учителемъ. (Рукоп. Ярем. Білах.)": "І. Instructional discourse for teachers on all ecclesiastical matters (MS of Yaremetsky-Bilakhevych)",
     "К. Вопрос: аще добро ест по вся дни причащати ся. (Якимчицький Ізмараґд)": "К. Question: whether it is good to receive communion every day (Yakymchytsi Izmaragd)",
     "Л. Вопросы и отвѣты евангельскихъ словесъ явѣ сказана Василієм и Фелогом Григорієм. (Рукоп. Теод. з Дубівця)": "Л. Questions and answers on the Gospel sayings, expounded by Basil and Gregory the Theologian (MS of Theodore of Dubivtsi)",
@@ -783,10 +787,10 @@ const contentsEnglish = {
     "Р. Дванацять пятницъ. (Яйковецький рук.)": "Р. Twelve Fridays (Yaikivtsi MS)",
     "С. Слово о виденіи св. от. Пахомія о срѣдѣ и о пятку. (Якимч. Ізмараґд)": "С. Discourse on the vision of holy father Pachomius concerning Wednesday and Friday (Yakymchytsi Izmaragd)",
     "Т. Слово св. Пахомія о средѣ и о пятку. (тамже)": "Т. Discourse of St Pachomius on Wednesday and Friday (ibid.)",
-    "У. Статя без титулу додана до тогож Слова. (тамже)": "У. Untitled article appended to the same discourse (ibid.)",
+    "У. Статя без титулу додана до тогож Слова. (тамже)": "У. Untitled text appended to the same discourse (ibid.)",
     "Ф. Видѣніє св. от. нашего Дорофея. (тамже)": "Ф. Vision of our holy father Dorotheus (ibid.)",
-    "Х. Слово о святѣй литургіи св. ап. Павла. (Рукоп. Т. з Дубівця)": "Х. Discourse of St Paul the Apostle on the Holy Liturgy (MS of T. of Dubivtsi)",
-    "Ц. Слово о святѣй литоргіи св. ап. Павла от Прелога. (Рук. Георгія Білявського)": "Ц. Discourse of St Paul the Apostle on the Holy Liturgy from the Prologue (MS of Heorhii Biliavskyi)",
+    "Х. Слово о святѣй литургіи св. ап. Павла. (Рукоп. Т. з Дубівця)": "Х. Discourse on the Holy Liturgy of the holy Apostle Paul (MS of T. of Dubivtsi)",
+    "Ц. Слово о святѣй литоргіи св. ап. Павла от Прелога. (Рук. Георгія Білявського)": "Ц. Discourse on the Holy Liturgy of the holy Apostle Paul, from the Prologue (MS of Heorhii Biliavskyi)",
     "Ч. Історія о откровен. Йоанникія Галатовского. (Небо новое)": "Ч. History of the revelation by Ioanykii Haliatovskyi (New Heaven)",
     "Ш. Слово св. препод. отца н. Павла Исповѣдника о св. литургіи. (Рук. Георгія Білявського)": "Ш. Discourse of our venerable holy father Paul the Confessor on the Holy Liturgy (MS of Heorhii Biliavskyi)",
     "Щ. Сіє знаменіє прояви Богъ архистратигом Михайлом. (Рукоп. Т. з Дубівця)": "Щ. This sign God revealed through the Archangel Michael (MS of T. of Dubivtsi)",
@@ -803,9 +807,9 @@ const contentsEnglish = {
     "К₁. Житіє преподобнои Ѳеодоры, яже много въ днехъ своихъ послужи преподобному Василію Новому. (Рукоп. о. Яроцкого)": "К₁. Life of the venerable Theodora, who served the venerable Basil the New for much of her life (MS of Fr. Yarotskyi)",
     "Л. Слово св. от. нашего Кирила о исходѣ души и о 20 митарствах. (Рукоп. Степана Самборини)": "Л. Discourse of our holy father Cyril on the departure of the soul and the twenty tollhouses (MS of Stepan Samboryna)",
     "М. Кирила Александрійскаго слово о сходѣ души от тѣла и о страшномъ второмъ пришествіи Христовомъ. (Ославський рукоп.)": "М. Discourse of Cyril of Alexandria on the departure of the soul from the body and the dread second coming of Christ (Oslav MS)",
-    "Н. Повѣсть преподобнаго отца нашего Макарія. (Рукоп. Ст. Самборини)": "Н. Tale of our venerable father Macarius (MS of St. Samboryna)",
+    "Н. Повѣсть преподобнаго отца нашего Макарія. (Рукоп. Ст. Самборини)": "Н. Tale of our venerable father Macarius (MS of Stepan Samboryna)",
     "О. Слово душеспасительное, которое ознайменное от ангела св. препод. Макарію египетскому о тайнах божих несвѣдомых. (Рукоп. Івана Дашовського)": "О. Soul-saving discourse revealed by an angel to the venerable holy Macarius of Egypt concerning the unknown mysteries of God (MS of Ivan Dashovskyi)",
-    "П. Слово св. Іоана Милостиваго о исходѣ души. (Сваричівський Ізмараґд)": "П. Discourse of St John the Merciful on the departure of the soul (Svarychiv Izmaragd)",
+    "П. Слово св. Іоана Милостиваго о исходѣ души. (Сваричівський Ізмараґд)": "П. Discourse of St John the Almsgiver on the departure of the soul (Svarychiv Izmaragd)",
     "Р. Слово о исходѣ души и о восходѣ на небеса по смерти. (Мединицький Прольог)": "Р. Discourse on the departure of the soul and ascent to heaven after death (Medynychi Prologue)",
     "С. Слово о душах грѣшных блаж. Андрея Христа ради юродиваго. (Рукоп. Нар. Дому, муз. Петр. ч. 165)": "С. Discourse on sinful souls by blessed Andrew the Fool for Christ (People's House MS, Petrushevych collection no. 165)",
     "Т. Слово о исходѣ души, єгда разручается от тѣла на оній вѣкъ. (Рукоп. Ярем. Білахевича)": "Т. Discourse on the departure of the soul when it separates from the body for the next world (MS of Yaremetsky-Bilakhevych)",
@@ -829,7 +833,7 @@ const contentsEnglish = {
     "Н. О страшномъ пришествіи Ісуса Христа. (Бачванський рукоп.)": "Н. On the dread coming of Jesus Christ (Bačka MS)",
     "О. Слово св. Єфрѣма о второмъ пришествіи божіи. (Сваричівський Ізмараґд)": "О. Discourse of St Ephrem on God's second coming (Svarychiv Izmaragd)",
     "П. В неделю мясопустную преп. о. наш. Паладія мниха Слово о второмъ пришествіи Христовѣ и о страшномъ судѣ и о будущей муцѣ и о умиленіи души. (Рукоп. Васил. ман. у Львові ч. XL)": "П. For Meatfare Sunday: discourse of our venerable father Palladius the monk on Christ's second coming, the Last Judgment, future torment and compunction of the soul (Lviv Basilian Monastery MS no. XL)",
-    "Р. Святаго о. наш. Кирила патріарха єрусалимскаго о сконченою свѣта и о Антихристѣ, с катехизму єго от слова пятьнадцятого. (Рукоп. Теодора з Дубівця)": "Р. Of our holy father Cyril, patriarch of Jerusalem, on the end of the world and Antichrist, from the fifteenth discourse of his catechism (MS of Theodore of Dubivtsi)",
+    "Р. Святаго о. наш. Кирила патріарха єрусалимскаго о сконченою свѣта и о Антихристѣ, с катехизму єго от слова пятьнадцятого. (Рукоп. Теодора з Дубівця)": "Р. Of our holy father Cyril, patriarch of Jerusalem, on the end of the world and Antichrist, from his fifteenth Catechetical Lecture (MS of Theodore of Dubivtsi)",
     "С. Слово о послѣдних днех. (Рукоп. Теодора з Дубівця)": "С. Discourse on the last days (MS of Theodore of Dubivtsi)",
     "Т. История албо новина о Антихристѣ. (Рукоп. бібл. Петрушевича ч. 208)": "Т. History or news of Antichrist (Petrushevych Library MS no. 208)",
     "Додатки і поправки. До роздїлу I.": "Additions and corrections. To Section I.",
@@ -1081,7 +1085,7 @@ const contentsWorkRefs = {
     "[465,\"Б. Житіє о Адамѣ і Евѣ і о согрѣшеніи их (Дрогобицький рукопис)\",\"23–26\"]": [
       {
         "provider": "OCP",
-        "id": "Life of Adam and Eve",
+        "id": "CAVT-001",
         "title": "Life of Adam and Eve (Apocalypse of Moses)",
         "relation": "candidate",
         "url": "https://pseudepigrapha.org/reader.html?doc=AdamEve.xml",
@@ -1209,6 +1213,28 @@ const contentsWorkRefs = {
         "relation": "candidate",
         "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/dialogue-of-mary-and-christ-on-the-departure-of-the-soul/",
         "evidence": "Catalogue cites Franko II, 368–369, but TOC title is Five Sorrows of the Mother of God. Check text before asserting identification.",
+        "kind": "bibliography"
+      }
+    ],
+    "[522,\"Д. Слово о препреніи діаволи съ Сыномъ Божіимъ (Ркпс Т. з Дубівця)\",\"196–200, 411\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 395",
+        "title": "Dialogue between Jesus and the Devil",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/dialogue-between-jesus-and-the-devil/",
+        "evidence": "e-Clavis cites Franko II, pp. 196–200, witness J1; the TOC also points to p. 411, not covered by that citation.",
+        "kind": "bibliography"
+      }
+    ],
+    "[522,\"Е. Слово о побѣдѣ діявола, како бесѣдоваху Ісус Христос со діяволомъ на горѣ (Ркпс Ярем.-Білахевича)\",\"200–203\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 395",
+        "title": "Dialogue between Jesus and the Devil",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/dialogue-between-jesus-and-the-devil/",
+        "evidence": "e-Clavis cites Franko II, pp. 200–203, witness L (Jaremetsky-Bilakhevych MS).",
         "kind": "bibliography"
       }
     ]
@@ -1543,6 +1569,19 @@ const contentsWorkRefs = {
         "relation": "edition-match",
         "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/1-apocryphal-apocalypse-of-john/",
         "evidence": "Catalogue explicitly cites Franko IV, 258–264.",
+        "kind": "bibliography"
+      }
+    ]
+  },
+  "5": {
+    "[311,\"2. Св. Іван Хреститель\",\"9–13\"]": [
+      {
+        "provider": "e-Clavis",
+        "id": "ECCA 400",
+        "title": "Decapitation of John the Forerunner",
+        "relation": "edition-match",
+        "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/decapitation-of-john-the-forerunner/",
+        "evidence": "e-Clavis cites the Church Slavonic text of Petrushevych 67, Franko V, pp. 9–13.",
         "kind": "bibliography"
       }
     ]
@@ -6516,7 +6555,7 @@ function appendContentsReferences(li,actions,v,entry,links){
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.7');
  const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1v14');svg.append(path);b.append(svg);
  const detail=document.createElement('div');detail.className='contents-ref-detail';detail.hidden=true;
- detail.id='contents-ref-'+v+'-'+volumeContents[v].entries.indexOf(entry);b.setAttribute('aria-controls',detail.id);
+ detail.id='contents-ref-'+v+'-'+volumeContents[v].entries.indexOf(entry);b.setAttribute('aria-controls',detail.id);b.setAttribute('aria-describedby','contents-name-'+v+'-'+volumeContents[v].entries.indexOf(entry));
  const original=document.createElement('p');original.className='contents-ref-original';const label=document.createElement('span');uiText(label,'Original title');const title=document.createElement('span');title.lang=contentsOriginalLang(entry[1]);title.textContent=': '+entry[1];original.append(label,title);detail.append(original);
  for(const link of links){const record=document.createElement('div');record.className='contents-ref-record';
  const name=document.createElement('strong');name.lang='en';name.textContent=link.title;
@@ -6531,7 +6570,7 @@ function contentsTranslation(v,title){const translations=contentsEnglish[v];retu
 function contentsOriginalLang(title){return title.startsWith('Codex apocryphus,')?'de':/^(O Sybillach|O postawie)/.test(title)?'pl':'uk';}
 function refreshContentsTitles(){const translated=uiLocale==='en';for(const option of $('contentsVolume').options){if(!option.dataset.original)option.dataset.original=option.textContent;option.textContent=translated?(contentsVolumeEnglish[Number(option.value)]||option.dataset.original):option.dataset.original;}for(const name of $('contentsEntries').querySelectorAll('.contents-name')){const english=translated&&name.dataset.english;name.textContent=english||name.dataset.original;name.lang=english?'en':contentsOriginalLang(name.dataset.original);}for(const original of $('contentsEntries').querySelectorAll('.contents-original'))original.hidden=!translated;$('contentsTranslationNote').hidden=!translated;}
 function filterContents(){const query=$('contentsFilter').value.trim().normalize('NFC').toLocaleLowerCase('uk');let visible=0;for(const li of $('contentsEntries').children){li.hidden=!!query&&!li.dataset.filter.includes(query);if(!li.hidden)visible++;}$('contentsEmpty').hidden=visible!==0;uiText($('contentsFilterStatus'),query?visible+' matching entries':'');if(query)$('contentsEntries').scrollTop=0;}
-function renderContents(){const v=$('contentsVolume').value||$('volume').value,d=volumeContents[v],list=$('contentsEntries');$('contentsSources').replaceChildren();list.replaceChildren();if(!d)return;uiText($('contentsTitle'),'Contents — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,anchored=d.entries.filter(e=>e[6]).length;uiText($('contentsStatus'),verified+' / '+d.entries.length+' checked · '+anchored+' exact lines');for(const n of d.sources){const b=document.createElement('button');b.type='button';uiText(b,'Scan '+n);b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}const fragment=document.createDocumentFragment();for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');li.className=depth?'subentry'+(depth>=2?' subentry-deep':''):'contents-section';const english=contentsTranslation(v,title),links=contentsReferences(v,entry);li.dataset.filter=(title+' '+(english??'')+' '+(printed??'')+' '+links.map(x=>x.title+' '+x.id).join(' ')).normalize('NFC').toLocaleLowerCase('uk');const b=document.createElement('button');b.type='button';b.className='contents-destination';const name=document.createElement('span');name.className='contents-name';name.dataset.original=title;name.dataset.english=english??'';name.lang=contentsOriginalLang(title);name.textContent=title;const meta=document.createElement('span');meta.className='contents-meta';const page=document.createElement('span');uiText(page,printed?'p. '+printed:'—');const state=document.createElement('span');state.className='contents-state';if(dest){if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);uiText(state,'unverified');uiAttr(b,'title','Calculated from printed pagination; work start not inspected');}else{b.dataset.scan=String(dest.scan);uiText(state,anchor?'line':'page');if(anchor)b.dataset.line=anchor.line_id;uiAttr(b,'title',anchor?'Open exact heading in its recorded reading':'Open checked scan');}if(v===$('volume').value&&dest.scan===Number($('page').value))b.dataset.current='true';b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');}else{b.disabled=true;uiText(state,'pending');uiAttr(b,'title','Destination pending');}meta.append(page,state);b.append(name,meta);li.append(b);const src=document.createElement('button');src.type='button';src.className='source-link';src.textContent='↗ '+source;uiAttr(src,'aria-label','Open original contents scan '+source+' for '+title);src.onclick=()=>jumpContents(v,source);const actions=document.createElement('span');actions.className='contents-actions';actions.append(src);li.append(actions);appendContentsReferences(li,actions,v,entry,links);if(english){const original=document.createElement('small');original.className='contents-note contents-original';original.lang=contentsOriginalLang(title);original.textContent=title;li.append(original);}if(note){const indicator=document.createElement('span');indicator.className='contents-note-indicator';uiText(indicator,'note');meta.append(indicator);const n=document.createElement('small');n.className='contents-note';n.lang='en';n.textContent=note;li.append(n);}fragment.append(li);}list.append(fragment);refreshContentsTitles();filterContents();list.scrollTop=0;}
+function renderContents(){const v=$('contentsVolume').value||$('volume').value,d=volumeContents[v],list=$('contentsEntries');$('contentsSources').replaceChildren();list.replaceChildren();if(!d)return;uiText($('contentsTitle'),'Contents — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,anchored=d.entries.filter(e=>e[6]).length;uiText($('contentsStatus'),verified+' / '+d.entries.length+' checked · '+anchored+' exact lines');for(const n of d.sources){const b=document.createElement('button');b.type='button';uiText(b,'Scan '+n);b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}const fragment=document.createDocumentFragment();for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');li.className=depth?'subentry'+(depth>=2?' subentry-deep':''):'contents-section';const english=contentsTranslation(v,title),links=contentsReferences(v,entry);li.dataset.filter=(title+' '+(english??'')+' '+(printed??'')+' '+links.map(x=>x.title+' '+x.id).join(' ')).normalize('NFC').toLocaleLowerCase('uk');const b=document.createElement('button');b.type='button';b.className='contents-destination';const name=document.createElement('span');name.className='contents-name';name.id='contents-name-'+v+'-'+d.entries.indexOf(entry);name.dataset.original=title;name.dataset.english=english??'';name.lang=contentsOriginalLang(title);name.textContent=title;const meta=document.createElement('span');meta.className='contents-meta';const page=document.createElement('span');uiText(page,printed?'p. '+printed:'—');const state=document.createElement('span');state.className='contents-state';if(dest){if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);uiText(state,'unverified');uiAttr(b,'title','Calculated from printed pagination; work start not inspected');}else{b.dataset.scan=String(dest.scan);uiText(state,anchor?'line':'page');if(anchor)b.dataset.line=anchor.line_id;uiAttr(b,'title',anchor?'Open exact heading in its recorded reading':'Open checked scan');}if(v===$('volume').value&&dest.scan===Number($('page').value))b.dataset.current='true';b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');}else{b.disabled=true;uiText(state,'pending');uiAttr(b,'title','Destination pending');}meta.append(page,state);const titleGroup=document.createElement('span');titleGroup.className='contents-title-group';titleGroup.append(name);const canonical=[...new Set(links.filter(x=>x.relation==='edition-match').map(x=>x.title))];if(canonical.length){const subtitle=document.createElement('small');subtitle.className='contents-canonical';subtitle.lang='en';subtitle.textContent=canonical.join(' / ');titleGroup.append(subtitle);}b.append(titleGroup,meta);li.append(b);const src=document.createElement('button');src.type='button';src.className='source-link';src.textContent='↗ '+source;uiAttr(src,'aria-label','Open original contents scan '+source+' for '+title);src.onclick=()=>jumpContents(v,source);const actions=document.createElement('span');actions.className='contents-actions';actions.append(src);li.append(actions);appendContentsReferences(li,actions,v,entry,links);if(english){const original=document.createElement('small');original.className='contents-note contents-original';original.lang=contentsOriginalLang(title);original.textContent=title;li.append(original);}if(note){const indicator=document.createElement('span');indicator.className='contents-note-indicator';uiText(indicator,'note');meta.append(indicator);const n=document.createElement('small');n.className='contents-note';n.lang='en';n.textContent=note;li.append(n);}fragment.append(li);}list.append(fragment);refreshContentsTitles();filterContents();list.scrollTop=0;}
 
 function openContents(){$('contentsVolume').replaceChildren(...[...$('volume').options].map(o=>o.cloneNode(true)));$('contentsVolume').value=$('volume').value;$('contentsFilter').value='';$('contentsProvenance').open=false;renderContents();openDialog('contentsPanel','contentsOpen');$('contentsTitle').focus({preventScroll:true});const list=$('contentsEntries');list.scrollTop=0;const hit=list.querySelector('[data-current]');if(hit){const a=hit.getBoundingClientRect(),b=list.getBoundingClientRect();list.scrollTop=Math.max(0,a.top-b.top-(list.clientHeight-a.height)/2);}}
 $('contentsVolume').onchange=()=>{$('contentsFilter').value='';renderContents();};$('contentsFirstScan').onclick=()=>jumpContents($('contentsVolume').value,1);$('contentsFilter').oninput=filterContents;
