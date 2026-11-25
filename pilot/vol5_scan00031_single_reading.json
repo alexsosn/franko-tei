@@ -1,0 +1,287 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 31,
+  "printed_page_observed": "19",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00031.jpg",
+  "source_image_sha256": "c365e29dd437ad36662bcec108f2b835b35d270aab3cf08783d9e47c19b39ba9",
+  "reading": {
+    "reader_id": "gpt62-v5s00031-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-031-040-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned scan directly, no OCR or peer text for these scans accessed. Estimated line geometry and provisional historical typography; all textual rows explicitly uncertain. No verified or diplomatic-completeness claim.",
+    "raw_response": "19\nсто ст҃ый аверкій. хота и искоусити діаволъ въ ѡбразѣ жены,\nприступи ко ст҃моу бл҃венїа хота ѿ него. възрѣвъ же аверкій\nна лице еа, притолкноу ногоу свою ѡ камень десноую, діавол же\nрасмѣавъ са въ свой ѡбраз приложи са и гл҃а ко ст҃моу аверкію:\nне мни ма ѿ тѣхъ соущихъ хоудых бѣсов, иже ты различно раз-\nгониши. аз бо есмь старѣй. се язвоу ѿ мене приялъ еси. и се\nрекъ въниде въ единого юношоу. ѡнь же запрѣти и изгна бѣса\nѿ юношѣ. тако дар прият ѿ б҃а, ко г҃оу ѿиде.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Double end rule",
+          "bbox_xywh": [
+            480,
+            572,
+            230,
+            27
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1030,
+          95,
+          65,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "19",
+            "bbox_xywh": [
+              1030,
+              95,
+              65,
+              45
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "body-1",
+        "kind": "body",
+        "bbox_xywh": [
+          90,
+          167,
+          1000,
+          288
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-1-line-01",
+            "text": "сто ст҃ый аверкій. хота и искоусити діаволъ въ ѡбразѣ жены,",
+            "bbox_xywh": [
+              90,
+              167,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-02",
+            "text": "приступи ко ст҃моу бл҃венїа хота ѿ него. възрѣвъ же аверкій",
+            "bbox_xywh": [
+              90,
+              203,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-03",
+            "text": "на лице еа, притолкноу ногоу свою ѡ камень десноую, діавол же",
+            "bbox_xywh": [
+              90,
+              239,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-04",
+            "text": "расмѣавъ са въ свой ѡбраз приложи са и гл҃а ко ст҃моу аверкію:",
+            "bbox_xywh": [
+              90,
+              275,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-05",
+            "text": "не мни ма ѿ тѣхъ соущихъ хоудых бѣсов, иже ты различно раз-",
+            "bbox_xywh": [
+              90,
+              311,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-06",
+            "text": "гониши. аз бо есмь старѣй. се язвоу ѿ мене приялъ еси. и се",
+            "bbox_xywh": [
+              90,
+              347,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-07",
+            "text": "рекъ въниде въ единого юношоу. ѡнь же запрѣти и изгна бѣса",
+            "bbox_xywh": [
+              90,
+              383,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-08",
+            "text": "ѿ юношѣ. тако дар прият ѿ б҃а, ко г҃оу ѿиде.",
+            "bbox_xywh": [
+              90,
+              419,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00031-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "body-1-line-01",
+        "reading": "сто ст҃ый аверкій. хота и искоусити діаволъ въ ѡбразѣ жены,",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-1-line-02",
+        "reading": "приступи ко ст҃моу бл҃венїа хота ѿ него. възрѣвъ же аверкій",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-1-line-03",
+        "reading": "на лице еа, притолкноу ногоу свою ѡ камень десноую, діавол же",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-1-line-04",
+        "reading": "расмѣавъ са въ свой ѡбраз приложи са и гл҃а ко ст҃моу аверкію:",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-1-line-05",
+        "reading": "не мни ма ѿ тѣхъ соущихъ хоудых бѣсов, иже ты различно раз-",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-1-line-06",
+        "reading": "гониши. аз бо есмь старѣй. се язвоу ѿ мене приялъ еси. и се",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-1-line-07",
+        "reading": "рекъ въниде въ единого юношоу. ѡнь же запрѣти и изгна бѣса",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      },
+      {
+        "line_id": "body-1-line-08",
+        "reading": "ѿ юношѣ. тако дар прият ѿ б҃а, ко г҃оу ѿиде.",
+        "reason": "Provisional direct reading: historical letters, superscripts, titla, accent/breathing marks and word division require source reinspection."
+      }
+    ]
+  }
+}
