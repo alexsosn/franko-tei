@@ -106,7 +106,6 @@ def ledger_at_checkout(repo, revision):
         raise ValueError("checkout must match projection revision")
     # check_repository compares every committed record's bytes; exact path sets
     # additionally reject added records, including ignored/untracked files.
-    ledger = check_repository(repo, revision, revision)
     roots = ("reviews/intake", "reviews/adjudications")
     committed = {p.decode("utf-8") for p in _git(
         repo, "ls-tree", "-r", "-z", "--name-only", revision, "--", *roots
@@ -115,7 +114,7 @@ def ledger_at_checkout(repo, revision):
              for p in (repo/folder).glob("*")}
     if committed != local:
         raise ValueError("ledger checkout contains uncommitted records")
-    return ledger
+    return check_repository(repo, revision, revision)
 
 
 def verified_editorial_tei(repo, path, images_root, revision):
