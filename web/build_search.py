@@ -6,20 +6,44 @@ import re
 import subprocess
 
 from franko_tei.pilot_batch import discover_readings, check_draft_offline
+from franko_tei.review_adjudication import check_repository, project_lines
+from franko_tei.review_bundle import blob_sha
 
 
 def build(pilot, output, ref):
     if not re.fullmatch(r"[a-f0-9]{40}", ref):
         raise ValueError("expected exact source commit SHA")
     entries = {str(v): [] for v in range(1, 6)}
+    repo = pilot.resolve().parent
+    ledger = check_repository(repo, ref)
+    pages, unavailable = [], []
+    affected = {key[0] for key in ledger}
+    seen = set()
     for path in discover_readings(pilot):
-        draft = json.loads(path.read_text(encoding="utf-8"))
+        raw = path.read_bytes()
+        draft = json.loads(raw.decode("utf-8"))
         check_draft_offline(path, draft)
         volume, scan = draft["volume"], draft["scan_page"]
         suffix = path.stem.split("_", 2)[2]
         text = "\n".join(line["text"] for region in draft["reading"]["regions"] for line in region["lines"])
         entries[volume].append(dict(scan=scan, suffix=suffix, text=text))
+        candidate_path = "pilot/" + path.name
+        if candidate_path in affected:
+            seen.add(candidate_path)
+            targets = [value["event"]["target"] for key, value in ledger.items() if key[0] == candidate_path]
+            if any(t["candidate_blob"] != blob_sha(raw) for t in targets):
+                unavailable.append({"path": candidate_path, "reason": "source_blob_changed"})
+                continue
+            rows = project_lines(raw, candidate_path, ledger)
+            accepted = [r for r in rows if r["status"] != "agent_unverified"]
+            pages.append(dict(volume=volume, scan=scan, suffix=suffix, path=candidate_path,
+                              blob=blob_sha(raw), lines=accepted))
+            corrected = "\n".join(r["text"] for r in rows)
+            if corrected != text:
+                entries[volume].append(dict(scan=scan, suffix=suffix, text=corrected, reviewed=True))
+    unavailable.extend({"path": p, "reason": "source_missing"} for p in sorted(affected-seen))
     output.mkdir(parents=True, exist_ok=True)
+    (output / "editorial.json").write_text(json.dumps(dict(ref=ref, pages=pages, unavailable=unavailable), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     for volume, rows in entries.items():
         (output / f"vol{volume}.json").write_text(
             json.dumps(dict(ref=ref, volume=volume, entries=rows), ensure_ascii=False, separators=(",", ":")),
