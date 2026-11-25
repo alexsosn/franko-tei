@@ -1,0 +1,962 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 16,
+  "printed_page_observed": "L",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00016.jpg",
+  "source_image_sha256": "e0d05ffdf6c742a3f5e40d828ffa925946ed24e12a4370f4175e5315e04d757d",
+  "reading": {
+    "reader_id": "gpt62-v3-s00016-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-scans11-20-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read full pinned image directly; retain physical line breaks, historical spelling, folios, anomalous ranges, and contextual language spans. Preserve uncertainty; all geometry estimated. German overview and Ukrainian preface are editorial text, not manuscript witnesses.",
+    "raw_response": "L\n25 Cap. (S. 91—97); 2) Passio Thomae (S. 98—101); 3) Acta Tho-\nmae nach einer abweichenden Redaction — Thomas wird lebendig\ngeschunden und verrichtet Wunder mit seiner Haut (S. 101—111);\n4) Leben des glorreichen Ap. Christi Thomas, geschrieben vom Abdias,\ndem ersten Bischof Babylons — hat trotz dem Titel nichts mit Ab-\ndias zu thun (S. 112—118); 5) eine populäre ung.-ruth. Bearbeitung\nder Acta Thomae, nur fragmentarisch erhalten (S. 118—124); 6) zwei\nMenologien-Artikel über Thomas (S. 124—125 und 303).\nVI. Erzählungen vom Ap. Andreas: 1) Erzählung von den\nBegebenheiten der heil. Ap. Andreas und Matthäus und wie viel sie\ngelitten haben im Lande der Menschenfresser und wie sie errettet\nwurden von unserem Herrn Jesus Christus und auf welche Weise jene\nMenschen bekehrt wurden zum orthodoxen Glauben (S. 126—141);\n2) Vorhersagung der Taufe Russlands vom heil. Ap. Andreas (S. 141\n—142); 3) Leiden und Tod des heil. Ap. Andreas (S. 142—144); 4)\nvier späte populäre Bearbeitungen der Passio (S. 145–155).\nVII. Erzählungen vom heil. Matthäus: 1) Martyrium\ndes heil. Ap. Matthäus (S. 156—163); 2) Leben des heil. Ap. Mat-\nthäus geschrieben vom Abdias, Bischof von Babylon (S. 164—167);\n3) zwei kleinere Menologien-Artikel über Matthäus (S. 167—169).\nVIII. Erzählungen vom Ap. Philippus: 1) Leben des\nheil Ap. Philippus ausgewählt aus heiligen Schriften und enthalten\nim Metaphrastes (S. 170—173); 2) das Wunder des Erzengels Mi-\nchael in Chonae — Fragment über die Thätigkeit des Philippus und\nJohannes in Hierapolis (S. 173—174); 3) Leiden des hl. Ap. Philip-\npus (S. 174 179); 4) Leben des hl. Ap. Philippus von Abdias (S. 180\n—182); 5) drei Menologien Artikel über Philippus (S. 182–184).\nIX. Erzählung vom Jacobus dem Bruder des Herrn:\n1) vom hl. Ap. Jacobus dem Bruder des Herrn nach dem Fleische —\naus den Menologien (S. 185); 2) Leben des heil. Ap. Jacobus — popu-\nläre Darstellung vom Leben und Tode des Jacobus, nach Hegesippus\n(S. 186–189); 3) eine andere populäre Darstellung derselben Legende\n(S. 189–191).\nX. Erzählungen von anderen Aposteln: Kurze Meno-\nlogien-Artikel über Bartholomäus, Jacobus Alphäi, Judas den Bruder\ndes Herrn, Simon Zelotes und Nathanael (S. 192–199).\nXI. Erzählungen von den Evangelisten Marcus und\nLucas: 1) eine Menologium Erzählung vom Marcus (S. 200); 2) Le-\nben des heil. Ap. und Evangelisten Marcus, geschrieben vom Hierony-\nmus und Metaphrastes (S. 201—204); 3) Leben des heil. Ap. und",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          161,
+          114,
+          35,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "L",
+            "bbox_xywh": [
+              161,
+              114,
+              35,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "overview",
+        "kind": "body",
+        "bbox_xywh": [
+          149,
+          178,
+          928,
+          1367
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "overview-line-01",
+            "text": "25 Cap. (S. 91—97); 2) Passio Thomae (S. 98—101); 3) Acta Tho-",
+            "bbox_xywh": [
+              149,
+              178,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 23,
+                "end": 36,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 36,
+                "end": 53,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 53,
+                "end": 62,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-02",
+            "text": "mae nach einer abweichenden Redaction — Thomas wird lebendig",
+            "bbox_xywh": [
+              149,
+              212,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 3,
+                "end": 60,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-03",
+            "text": "geschunden und verrichtet Wunder mit seiner Haut (S. 101—111);",
+            "bbox_xywh": [
+              149,
+              246,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-04",
+            "text": "4) Leben des glorreichen Ap. Christi Thomas, geschrieben vom Abdias,",
+            "bbox_xywh": [
+              149,
+              280,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-05",
+            "text": "dem ersten Bischof Babylons — hat trotz dem Titel nichts mit Ab-",
+            "bbox_xywh": [
+              149,
+              315,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-06",
+            "text": "dias zu thun (S. 112—118); 5) eine populäre ung.-ruth. Bearbeitung",
+            "bbox_xywh": [
+              149,
+              349,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-07",
+            "text": "der Acta Thomae, nur fragmentarisch erhalten (S. 118—124); 6) zwei",
+            "bbox_xywh": [
+              149,
+              383,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 4,
+                "end": 15,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 15,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-08",
+            "text": "Menologien-Artikel über Thomas (S. 124—125 und 303).",
+            "bbox_xywh": [
+              149,
+              417,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-09",
+            "text": "VI. Erzählungen vom Ap. Andreas: 1) Erzählung von den",
+            "bbox_xywh": [
+              149,
+              451,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 53,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-10",
+            "text": "Begebenheiten der heil. Ap. Andreas und Matthäus und wie viel sie",
+            "bbox_xywh": [
+              149,
+              486,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-11",
+            "text": "gelitten haben im Lande der Menschenfresser und wie sie errettet",
+            "bbox_xywh": [
+              149,
+              520,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-12",
+            "text": "wurden von unserem Herrn Jesus Christus und auf welche Weise jene",
+            "bbox_xywh": [
+              149,
+              554,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-13",
+            "text": "Menschen bekehrt wurden zum orthodoxen Glauben (S. 126—141);",
+            "bbox_xywh": [
+              149,
+              588,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-14",
+            "text": "2) Vorhersagung der Taufe Russlands vom heil. Ap. Andreas (S. 141",
+            "bbox_xywh": [
+              149,
+              622,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-15",
+            "text": "—142); 3) Leiden und Tod des heil. Ap. Andreas (S. 142—144); 4)",
+            "bbox_xywh": [
+              149,
+              656,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-16",
+            "text": "vier späte populäre Bearbeitungen der Passio (S. 145–155).",
+            "bbox_xywh": [
+              149,
+              691,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-17",
+            "text": "VII. Erzählungen vom heil. Matthäus: 1) Martyrium",
+            "bbox_xywh": [
+              149,
+              725,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-18",
+            "text": "des heil. Ap. Matthäus (S. 156—163); 2) Leben des heil. Ap. Mat-",
+            "bbox_xywh": [
+              149,
+              759,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-19",
+            "text": "thäus geschrieben vom Abdias, Bischof von Babylon (S. 164—167);",
+            "bbox_xywh": [
+              149,
+              793,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-20",
+            "text": "3) zwei kleinere Menologien-Artikel über Matthäus (S. 167—169).",
+            "bbox_xywh": [
+              149,
+              827,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-21",
+            "text": "VIII. Erzählungen vom Ap. Philippus: 1) Leben des",
+            "bbox_xywh": [
+              149,
+              861,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-22",
+            "text": "heil Ap. Philippus ausgewählt aus heiligen Schriften und enthalten",
+            "bbox_xywh": [
+              149,
+              896,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-23",
+            "text": "im Metaphrastes (S. 170—173); 2) das Wunder des Erzengels Mi-",
+            "bbox_xywh": [
+              149,
+              930,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-24",
+            "text": "chael in Chonae — Fragment über die Thätigkeit des Philippus und",
+            "bbox_xywh": [
+              149,
+              964,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-25",
+            "text": "Johannes in Hierapolis (S. 173—174); 3) Leiden des hl. Ap. Philip-",
+            "bbox_xywh": [
+              149,
+              998,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-26",
+            "text": "pus (S. 174 179); 4) Leben des hl. Ap. Philippus von Abdias (S. 180",
+            "bbox_xywh": [
+              149,
+              1032,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-27",
+            "text": "—182); 5) drei Menologien Artikel über Philippus (S. 182–184).",
+            "bbox_xywh": [
+              149,
+              1066,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-28",
+            "text": "IX. Erzählung vom Jacobus dem Bruder des Herrn:",
+            "bbox_xywh": [
+              149,
+              1101,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 47,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-29",
+            "text": "1) vom hl. Ap. Jacobus dem Bruder des Herrn nach dem Fleische —",
+            "bbox_xywh": [
+              149,
+              1135,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-30",
+            "text": "aus den Menologien (S. 185); 2) Leben des heil. Ap. Jacobus — popu-",
+            "bbox_xywh": [
+              149,
+              1169,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-31",
+            "text": "läre Darstellung vom Leben und Tode des Jacobus, nach Hegesippus",
+            "bbox_xywh": [
+              149,
+              1203,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-32",
+            "text": "(S. 186–189); 3) eine andere populäre Darstellung derselben Legende",
+            "bbox_xywh": [
+              149,
+              1237,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-33",
+            "text": "(S. 189–191).",
+            "bbox_xywh": [
+              149,
+              1271,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-34",
+            "text": "X. Erzählungen von anderen Aposteln: Kurze Meno-",
+            "bbox_xywh": [
+              149,
+              1306,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 48,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-35",
+            "text": "logien-Artikel über Bartholomäus, Jacobus Alphäi, Judas den Bruder",
+            "bbox_xywh": [
+              149,
+              1340,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-36",
+            "text": "des Herrn, Simon Zelotes und Nathanael (S. 192–199).",
+            "bbox_xywh": [
+              149,
+              1374,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-37",
+            "text": "XI. Erzählungen von den Evangelisten Marcus und",
+            "bbox_xywh": [
+              149,
+              1408,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 47,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-38",
+            "text": "Lucas: 1) eine Menologium Erzählung vom Marcus (S. 200); 2) Le-",
+            "bbox_xywh": [
+              149,
+              1442,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-39",
+            "text": "ben des heil. Ap. und Evangelisten Marcus, geschrieben vom Hierony-",
+            "bbox_xywh": [
+              149,
+              1476,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-40",
+            "text": "mus und Metaphrastes (S. 201—204); 3) Leben des heil. Ap. und",
+            "bbox_xywh": [
+              149,
+              1511,
+              928,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00016-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "overview-line-26",
+        "reading": "174 179",
+        "reason": "Range separator extremely faint; retain as space."
+      }
+    ]
+  }
+}
