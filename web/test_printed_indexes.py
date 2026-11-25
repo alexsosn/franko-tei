@@ -16,7 +16,7 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual(data["ref"], "a" * 40)
         self.assertEqual([s["kind"] for s in data["sections"]], ["names", "works", "motifs", "glossary"])
         self.assertEqual([len(s["scans"]) for s in data["sections"]], [15, 6, 22, 4])
-        self.assertEqual([s["structured_scans"] for s in data["sections"]], [list(range(416, 431)), [431], [437], [459, 460, 461, 462]])
+        self.assertEqual([s["structured_scans"] for s in data["sections"]], [list(range(416, 431)), list(range(431, 437)), [437], [459, 460, 461, 462]])
         names, works, motifs, glossary = [s["entries"] for s in data["sections"]]
         abel = next(e for e in names if e["label"] == "Авель")
         self.assertEqual(len(abel["lines"]), 3)
@@ -34,7 +34,27 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual([r["literal"] for r in varilo["refs"]], ["195", "197"])
         self.assertIn("стор. 197", varilo["detail"])
         self.assertEqual(varilo["refs"][1]["role"], "variant")
-        self.assertEqual([len(works), len(motifs), len(glossary)], [33, 17, 189])
+        self.assertEqual([len(motifs), len(glossary)], [17, 189])
+        self.assertEqual(sum(e["source"]["scan"] == 431 for e in works), 33)
+        for scan in range(431, 437):
+            draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)).read_text(encoding="utf-8"))
+            expected = [l["id"] for region in draft["reading"]["regions"] if region["kind"] == "body" for l in region["lines"]]
+            actual = [l["id"] for e in works for s in e.get("segments", [e]) if s["source"]["scan"] == scan for l in s["lines"]]
+            self.assertEqual(actual, expected)
+        zh = next(e for e in works if e["label"].startswith("Житє і Слово"))
+        palea = next(e for e in works if e["label"].startswith("„ Крехівська"))
+        pypin = next(e for e in works if e["label"].startswith("Пыпинъ А. Н. Памятники"))
+        for entry, scans, counts in [(zh, [432, 433], [1, 2]), (palea, [434, 434], [3, 8]), (pypin, [434, 435], [2, 3])]:
+            self.assertEqual([s["source"]["scan"] for s in entry["segments"]], scans)
+            self.assertEqual([len(s["lines"]) for s in entry["segments"]], counts)
+            self.assertEqual(entry["lines"], [l for s in entry["segments"] for l in s["lines"]])
+        self.assertEqual([r["literal"] for r in zh["refs"]], ["32", "279", "293"])
+        self.assertEqual(palea["context"], "Палея")
+        self.assertTrue(palea["segments"][1]["lines"][0]["text"].startswith("Палея Крех."))
+        self.assertEqual(palea["refs"][-1]["literal"], "339")
+        self.assertIn("103", [r["literal"] for r in palea["refs"]])
+        self.assertEqual(next(r for r in pypin["refs"] if r["literal"] == "31 32")["targets"], [])
+        self.assertEqual(next(e for e in works if e["label"].startswith("„ Опыты по исторіи"))["context"], "Веселовскій А. Н.")
         self.assertEqual(len(names), 1038)
         self.assertEqual(sum(e["source"]["scan"] <= 421 for e in names), 429)
         self.assertEqual([sum(e["source"]["scan"] == n for e in names) for n in range(416, 422)], [39, 92, 79, 83, 70, 66])
