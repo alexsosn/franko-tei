@@ -731,6 +731,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 21,
+                "end": 24,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 24,
                 "end": 60,
                 "language": "cu",
                 "script": "Cyrl",
@@ -878,6 +894,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 33,
+                "end": 36,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 36,
                 "end": 57,
                 "language": "cu",
                 "script": "Cyrl",
@@ -899,6 +931,30 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 3,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 53,
+                "end": 56,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 56,
                 "end": 62,
                 "language": "cu",
                 "script": "Cyrl",
@@ -941,6 +997,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 3,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 3,
+                "end": 6,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i394-final-gap-20261125"
+              },
+              {
+                "start": 6,
                 "end": 61,
                 "language": "cu",
                 "script": "Cyrl",
@@ -1130,5 +1202,11 @@
         "reason": "Historical type, abbreviations, accents, titla, editorial bracket restorations, and exact lexical reading provisional."
       }
     ]
+  },
+  "language_annotation": {
+    "source_record_commit": "f54e7b1e89dea9d75398af977f0f3c6996fa42eb",
+    "source_record_blob": "8a32a70e162b0ef389e3a62e85274d363cd8ecbc",
+    "model": "GPT-6.2",
+    "method": "Nonblind contextual annotation pass against the original pinned printed image and exact frozen reading. Explicitly introduced Church Slavonic quotations/formulae distinguished from historical vernacular (uncertain); independent Cyrillic numeral tokens separated from linguistic material; printed editorial abbreviation distinguished only where supported. No recensional or glyph verification claimed."
   }
 }
