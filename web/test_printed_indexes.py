@@ -16,7 +16,7 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual(data["ref"], "a" * 40)
         self.assertEqual([s["kind"] for s in data["sections"]], ["names", "works", "motifs", "glossary"])
         self.assertEqual([len(s["scans"]) for s in data["sections"]], [15, 6, 22, 4])
-        self.assertEqual([s["structured_scans"] for s in data["sections"]], [[416, 417, 418, 419, 420, 421], [431], [437], [459, 460, 461, 462]])
+        self.assertEqual([s["structured_scans"] for s in data["sections"]], [list(range(416, 431)), [431], [437], [459, 460, 461, 462]])
         names, works, motifs, glossary = [s["entries"] for s in data["sections"]]
         abel = next(e for e in names if e["label"] == "Авель")
         self.assertEqual(len(abel["lines"]), 3)
@@ -35,13 +35,34 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertIn("стор. 197", varilo["detail"])
         self.assertEqual(varilo["refs"][1]["role"], "variant")
         self.assertEqual([len(works), len(motifs), len(glossary)], [33, 17, 189])
-        self.assertEqual(len(names), 429)
+        self.assertEqual(sum(e["source"]["scan"] <= 421 for e in names), 429)
         self.assertEqual([sum(e["source"]["scan"] == n for e in names) for n in range(416, 422)], [39, 92, 79, 83, 70, 66])
         self.assertEqual(next(e for e in names if e["label"] == "Армяне 228 229")["refs"], [])
         for scan in range(417, 422):
             draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)).read_text(encoding="utf-8"))
             expected = [l["id"] for region in draft["reading"]["regions"] if region["kind"] == "body" for l in region["lines"]]
             actual = [l["id"] for e in names if e["source"]["scan"] == scan for l in e["lines"]]
+            self.assertEqual(actual, expected)
+        # Cross-column/page entries are single records with literal source segments.
+        joseph = next(e for e in names if e["label"] == "Іосиф, син Яковів")
+        michael = next(e for e in names if e["label"] == "Михаїл архангел")
+        jacob = next(e for e in names if e["source"]["scan"] == 429 and e["label"].endswith("патріарх"))
+        for entry, scans, regions, counts in [
+            (joseph, [422, 422], ["left", "right"], [3, 11]),
+            (michael, [424, 425], ["right", "left-m"], [2, 2]),
+            (jacob, [429, 430, 430], ["right-ya", "left", "right-ya"], [1, 14, 4]),
+        ]:
+            self.assertEqual([s["source"]["scan"] for s in entry["segments"]], scans)
+            self.assertEqual([s["region_id"] for s in entry["segments"]], regions)
+            self.assertEqual([len(s["lines"]) for s in entry["segments"]], counts)
+            self.assertEqual(entry["lines"], [l for s in entry["segments"] for l in s["lines"]])
+        self.assertEqual(joseph["refs"][-1]["literal"], "324")
+        self.assertEqual(michael["refs"][-1]["literal"], "332")
+        self.assertEqual(jacob["refs"][-1]["literal"], "335")
+        for scan in range(422, 431):
+            draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)).read_text(encoding="utf-8"))
+            expected = [l["id"] for region in draft["reading"]["regions"] if region["kind"] == "body" for l in region["lines"]]
+            actual = [l["id"] for e in names for s in e.get("segments", [e]) if s["source"]["scan"] == scan for l in s["lines"]]
             self.assertEqual(actual, expected)
         anna = next(e for e in names if e["label"].startswith("„     мати Богородицї"))
         self.assertEqual(anna["context"], "Анна")
@@ -64,8 +85,10 @@ class PrintedIndexesTest(unittest.TestCase):
                 source = entry["source"]
                 draft = json.loads((ROOT / source["path"]).read_text(encoding="utf-8"))
                 self.assertEqual(source["reader_id"], draft["reading"]["reader_id"])
-                lookup = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
-                self.assertEqual([lookup[l["id"]] for l in entry["lines"]], [l["text"] for l in entry["lines"]])
+                for segment in entry.get("segments", [entry]):
+                    segment_draft = json.loads((ROOT / segment["source"]["path"]).read_text(encoding="utf-8"))
+                    lookup = {l["id"]: l["text"] for region in segment_draft["reading"]["regions"] if region["id"] == segment["region_id"] for l in region["lines"]}
+                    self.assertEqual([lookup[l["id"]] for l in segment["lines"]], [l["text"] for l in segment["lines"]])
                 for ref in entry["refs"]:
                     for target in ref["targets"]:
                         target_draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % target["scan"])).read_text(encoding="utf-8"))
@@ -84,6 +107,16 @@ class PrintedIndexesTest(unittest.TestCase):
             self.assertEqual(data["sections"][0]["entries"], [])
             self.assertEqual(data["sections"][0]["draft_scans"], [416])
             self.assertEqual(data["sections"][1]["draft_scans"], [])
+
+    def test_incomplete_continuation_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot = Path(tmp)
+            for scan in [423, 424, 425]:
+                source = ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)
+                shutil.copyfile(source, pilot / source.name)
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][0]["structured_scans"], [423, 424, 425])
+            (pilot / "vol1_scan00425_single_reading.json").unlink()
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][0]["structured_scans"], [423])
 
     def test_browser_navigation(self):
         from playwright.sync_api import sync_playwright, expect
@@ -105,7 +138,7 @@ class PrintedIndexesTest(unittest.TestCase):
             page.locator("#indexMode").click()
             page.locator("#indexEntries li").first.wait_for()
             self.assertEqual(page.locator("#indexKind option").count(), 4)
-            self.assertIn("6 / 15", page.locator("#indexStatus").inner_text())
+            self.assertIn("15 / 15", page.locator("#indexStatus").inner_text())
             page.locator("#contentsFilter").fill("Авель")
             visible = page.locator("#indexEntries li:visible")
             expected = [e for e in data["sections"][0]["entries"] if "авель" in " ".join([e["context"], e["label"], e["detail"], *[r["literal"] for r in e["refs"]]]).lower()]
