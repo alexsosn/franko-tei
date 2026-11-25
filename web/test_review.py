@@ -328,7 +328,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,78,67,0],['2',140,29,111,0],
+            self.assertEqual(result, [['1',145,89,56,0],['2',140,29,111,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -514,6 +514,17 @@ class ReviewSmoke(unittest.TestCase):
             ('1', 197, 'witness-d-label-l001'),
             ('1', 199, 'section-xiv-l001'),
             ('1', 199, 'witness-a-label-l001'),
+            ('1', 201, 'witness-b-label-l001'),
+            ('1', 202, 'witness-c-label-l001'),
+            ('1', 204, 'witness-g-label-l001'),
+            ('1', 206, 'witness-d-label-l001'),
+            ('1', 211, 'witness-e-label-l001'),
+            ('1', 213, 'witness-zh-label-l001'),
+            ('1', 214, 'witness-z-label-l001'),
+            ('1', 215, 'witness-i-label-l001'),
+            ('1', 216, 'witness-j-label-l001'),
+            ('1', 219, 'witness-k-label-l001'),
+            ('1', 221, 'witness-heading-l001'),
             ('2', 100, 'heading-e-line-01'),
             ('2', 100, 'heading-zh-line-01'),
         }
@@ -570,7 +581,7 @@ class ReviewSmoke(unittest.TestCase):
         self.assertFalse(any(r['kind'] == 'page_number' for r in rec177['reading']['regions']))
         self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 181 and len(e) > 6 and e[6]]), 2)
         # Existing fully annotated readings are reused without rewriting their text or metadata.
-        for scan in (183, 196, 197, 198, 199):
+        for scan in (183, 196, 197, 198, 199, 201, 202, 204, 206, 211, 213, 214, 215, 216, 219, 221):
             reading = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
             for region in reading['regions']:
                 for line in region['lines']:
@@ -593,6 +604,15 @@ class ReviewSmoke(unittest.TestCase):
             record = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
             self.assertIsNone(record['printed_page_observed'])
             self.assertFalse(any(r['kind'] == 'page_number' for r in record['reading']['regions']))
+        # The two printed references beginning at p. 138 are not the same destination.
+        joseph_divination = next(e for e in contents['1']['entries'] if e[1].startswith('Ж. Йосифова ворожба'))
+        joseph_lament = next(e for e in contents['1']['entries'] if e[1].startswith('З. Плач Йосифа, коли побачив'))
+        self.assertEqual((joseph_divination[2], joseph_divination[3]), ('138–139', 213))
+        self.assertEqual((joseph_lament[2], joseph_lament[3]), ('138–140', 214))
+        self.assertIn('139', joseph_lament[5])
+        self.assertIn(('[Плач Йосифа в рові.] ', 'uk', 'Cyrl'), annotated_literals(201))
+        self.assertIn(('Логинъ же сотникъ снємъ убо куресь съ главы своея', 'cu', 'Cyrl'), annotated_literals(206))
+        self.assertIn(('же рече: Не боися, ѡче, я то Венимина [', 'orv', 'Cyrl'), annotated_literals(211))
         rec167 = json.loads((root / 'pilot/vol1_scan00167_single_reading.json').read_text(encoding='utf-8'))
         self.assertIsNone(rec167['printed_page_observed'])
         self.assertFalse(any(r['kind'] == 'page_number' for r in rec167['reading']['regions']))
