@@ -110,22 +110,19 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertGreaterEqual(sum(len(p["readings"]) for p in inventory), 48)
         self.assertTrue(all(page["status"] == "agent_unverified" for page in inventory))
         i20 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 20))
-        self.assertEqual(len(i20["readings"]), 3)
-        self.assertIn("pilot/vol1_scan00020_alternate_reading_01.json",
-                      [r["path"] for r in i20["readings"]])
-        new_reading = json.loads((PILOT / "vol1_scan00020_alternate_reading_01.json").read_text(encoding="utf-8"))
-        self.assertEqual(new_reading["reading"]["model_id"], "GPT-6.2")
+        self.assertEqual(len(i20["readings"]), 2)
         self.assertTrue(all(r["context_independence"] == "single-working-draft"
                             for r in i20["readings"]))
         i52 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 52))
-        self.assertEqual(len(i52["readings"]), 2)
         by_path = {r["path"]: r for r in i52["readings"]}
         self.assertTrue(by_path["pilot/vol1_scan00052_exposed_reading.json"]["prior_text_exposure"])
         self.assertFalse(by_path["pilot/vol1_scan00052_alternate_reading_01.json"]["prior_text_exposure"])
-        for scan in range(20, 62):
-            path = PILOT / f"vol1_scan{scan:05d}_alternate_reading_01.json"
+        for volume, scan in [(1, n) for n in range(20, 62)] + [(2, 100), (3, 130), (4, 100), (5, 100)]:
+            path = PILOT / f"vol{volume}_scan{scan:05d}_alternate_reading_01.json"
             candidate = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(candidate["reading"]["model_id"], "GPT-6.2")
+            page = next(p for p in inventory if (p["volume"], p["scan_page"]) == (str(volume), scan))
+            self.assertIn(f"pilot/{path.name}", {r["path"] for r in page["readings"]})
 
     def test_unreadable_source_suffix_is_explicit_tei_gap_not_page_glyph(self):
         # A real pinned source draft with a documented source obstruction:
