@@ -16,7 +16,7 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual(data["ref"], "a" * 40)
         self.assertEqual([s["kind"] for s in data["sections"]], ["names", "works", "motifs", "glossary"])
         self.assertEqual([len(s["scans"]) for s in data["sections"]], [15, 6, 22, 4])
-        self.assertEqual([s["structured_scans"] for s in data["sections"]], [[416], [431], [437], [459]])
+        self.assertEqual([s["structured_scans"] for s in data["sections"]], [[416], [431], [437], [459, 460, 461, 462]])
         names, works, motifs, glossary = [s["entries"] for s in data["sections"]]
         abel = next(e for e in names if e["label"] == "Авель")
         self.assertEqual(len(abel["lines"]), 3)
@@ -34,6 +34,11 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual([r["literal"] for r in varilo["refs"]], ["195", "197"])
         self.assertIn("стор. 197", varilo["detail"])
         self.assertEqual(varilo["refs"][1]["role"], "variant")
+        self.assertEqual([len(names), len(works), len(motifs), len(glossary)], [39, 33, 17, 189])
+        for label, pages, forms in [("Попава 199, попавица 241", ["199", "241"], ["Попава", "попавица"]), ("Ꙗза 12, яза 148", ["12", "148"], ["Ꙗза", "яза"])]:
+            entry = next(e for e in glossary if e["label"] == label)
+            self.assertEqual([r["literal"] for r in entry["refs"]], pages)
+            self.assertEqual([r["form"] for r in entry["refs"]], forms)
         self.assertEqual(len({e["id"] for s in data["sections"] for e in s["entries"]}), sum(len(s["entries"]) for s in data["sections"]))
         for section in data["sections"]:
             for entry in section["entries"]:
