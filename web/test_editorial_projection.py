@@ -309,12 +309,12 @@ class EditorialProjectionTests(unittest.TestCase):
             overlay=json.loads((output/"editorial.json").read_text())
             published=next(p for p in overlay["pages"] if p["path"]==path)
             self.assertEqual(published["blob"],blob_sha(full_raw))
-            self.assertEqual(len(published["lines"]),2)
+            self.assertEqual(len(published["lines"]),sum(r["status"]!="agent_unverified" for r in rows))
             self.assertTrue(all(r["source_revision"]["projected_commit"]==committed for r in published["lines"]))
             self.assertFalse(any(p["path"]==path for p in overlay["unavailable"]))
             # The Git-backed new projection is unavailable if bytes change
             # outside the allowed language-only derivation.
-            full["reading"]["regions"][0]["lines"][0]["bbox_xywh"][0]+=1
+            full["reading"]["regions"][0]["lines"][0]["bbox_xywh"][2]-=1
             (clone/path).write_bytes(encode(full))
             git("add","--",path)
             git("-c","user.name=Fixture","-c","user.email=fixture@example.invalid","commit","--quiet","-m","stale geometry fixture")
