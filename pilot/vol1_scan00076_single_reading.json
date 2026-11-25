@@ -3,7 +3,7 @@
   "status": "agent_unverified",
   "volume": "1",
   "scan_page": 76,
-  "printed_page_observed": "1",
+  "printed_page_observed": null,
   "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
   "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
   "source_image_path": "vol1/page-00076.jpg",
@@ -45,7 +45,7 @@
     "regions": [
       {
         "id": "folio",
-        "kind": "page_number",
+        "kind": "other",
         "bbox_xywh": [
           924,
           1613,
@@ -1007,6 +1007,11 @@
         "line_id": "series-footer-l001",
         "reading": "Апокріфи старозавітні.",
         "reason": "Provisional printed Old Cyrillic or historical Ukrainian; exact archaic letters, titla, numerical abbreviations, names, brackets and letter spacing need isolated visual corroboration; no harmonization across witnesses."
+      },
+      {
+        "line_id": "folio-l001",
+        "reading": "1",
+        "reason": "Post-capture structural audit: bottom-right numeral beside the series footer is most likely a printer's quire signature, as on scans 66 and 74; following scans show folios 2 and 3 at the top. Logical page 1 is inferred, not an unambiguous observed folio. Preserve the original transcription, line ID and ordering; reclassify only the region and observed folio metadata."
       }
     ]
   }
