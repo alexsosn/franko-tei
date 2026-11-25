@@ -1,0 +1,988 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 62,
+  "printed_page_observed": "LVIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00062.jpg",
+  "source_image_sha256": "60123dc0420ed4b2319dcd3d399022f58cf25e6e03e6a02a2f78d31c7579fab7",
+  "reading": {
+    "reader_id": "gpt62-ii-62-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00061-00070-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original image without OCR or same-page peer text. Physical lines, contextual language spans, printed spelling, notes, estimated geometry and column reading order. Provisional.",
+    "raw_response": "LVIII\nҐмахи пекелнія, вереи вѣчныи крушат ся,\nВрата мѣдная, ужа желѣзная ломят ся;\nСе бо с крестомъ грядетъ Царь славы,\nОтцы вознесѣть въ радость главы;\nТы Аде плачи и горко рыдай,\nЖе Христосъ воскресъ, повѣдай.\nОбширнїйше говорить ся про се в піснї N. 51, але з тексту\nвидно, що автор не мав перед очима старого апокріфа, а користу-\nвав ся тілько самим мотивом входу Ісусового до пекла, обробляючи\nйого по свойому. В піснї на вознесениє (N. 60) бачимо повторенє\nтої самої сцени, як при входї до пекла, що часть ангелів не пізнає\nІсуса і не хоче його пустити:\nВзыде Богъ къ Елеонской горѣ,\nСрѣтаютъ ангелскіи хоры:\n„Кто сей?“ недоумѣютъ,\nДругъ ко другу вопіютъ:\n„Возмите врата князи ваша,\nГрядетъ бо се утѣха наша“ і т. д.\nПор. угроруське слово на вознесениє на стор. 333. В Клеба-\nновецькій піснї на воздвиженє ч. хреста (N. 71) читаємо:\nЛоггінъ темный приведеный Спасу прободе ребра\nИстече кровь дражайшая паче злата и сребра;\nПаде капля єдина на тварь темна Логгіна,\nОчи отворила, благодать явила ему спасительную.\nПіснї на різдво Марії не виявляють у їх авторів знайомости\nз Первоєвангелиєм анї навіть з тими його деталями, які перейшли\nв Минею Димитрія; за те автор унїят з натиском підносить (N. 79),\nщо Марія „Безъ грѣха зачата, во рождествѣ свята“, що її мати „Се\nнеплодна, благородна раждаетъ дщерь избранну, без порока за-\nчату“ (N. 82). В піснї на введенє Марії (N. 88) згадано, що її при-\nняв архієрей Захарія, що її в храмі кормив ангел; те саме чита-\nємо і в піснї N. 92:\nСпѣшитъ во храмъ дѣва Марія,\nПріемлетъ ю Захарія,\nТрилѣствующу отъ Анны,\nПитаему хлѣбомъ манны\nОтъ руку ангелъ.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          90,
+          84,
+          110,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LVIII",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              90,
+              84,
+              110,
+              39
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v1",
+        "kind": "body",
+        "bbox_xywh": [
+          250,
+          160,
+          850,
+          220
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v1-line-01",
+            "text": "Ґмахи пекелнія, вереи вѣчныи крушат ся,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 39,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              160,
+              850,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-02",
+            "text": "Врата мѣдная, ужа желѣзная ломят ся;",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              197,
+              850,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-03",
+            "text": "Се бо с крестомъ грядетъ Царь славы,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              233,
+              850,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-04",
+            "text": "Отцы вознесѣть въ радость главы;",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              270,
+              850,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-05",
+            "text": "Ты Аде плачи и горко рыдай,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              307,
+              850,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-06",
+            "text": "Же Христосъ воскресъ, повѣдай.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 30,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              343,
+              850,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p1",
+        "kind": "body",
+        "bbox_xywh": [
+          92,
+          415,
+          1030,
+          235
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p1-line-01",
+            "text": "Обширнїйше говорить ся про се в піснї N. 51, але з тексту",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              415,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-02",
+            "text": "видно, що автор не мав перед очима старого апокріфа, а користу-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              454,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-03",
+            "text": "вав ся тілько самим мотивом входу Ісусового до пекла, обробляючи",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              493,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-04",
+            "text": "його по свойому. В піснї на вознесениє (N. 60) бачимо повторенє",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              533,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-05",
+            "text": "тої самої сцени, як при входї до пекла, що часть ангелів не пізнає",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              572,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-06",
+            "text": "Ісуса і не хоче його пустити:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              611,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v2",
+        "kind": "body",
+        "bbox_xywh": [
+          322,
+          675,
+          800,
+          236
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v2-line-01",
+            "text": "Взыде Богъ къ Елеонской горѣ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              675,
+              800,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-02",
+            "text": "Срѣтаютъ ангелскіи хоры:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              714,
+              800,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-03",
+            "text": "„Кто сей?“ недоумѣютъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              754,
+              800,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-04",
+            "text": "Другъ ко другу вопіютъ:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              793,
+              800,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-05",
+            "text": "„Возмите врата князи ваша,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              832,
+              800,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-06",
+            "text": "Грядетъ бо се утѣха наша“ і т. д.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 25,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              872,
+              800,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "kind": "body",
+        "bbox_xywh": [
+          92,
+          940,
+          1030,
+          80
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p2-line-01",
+            "text": "Пор. угроруське слово на вознесениє на стор. 333. В Клеба-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              940,
+              1030,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p2-line-02",
+            "text": "новецькій піснї на воздвиженє ч. хреста (N. 71) читаємо:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              980,
+              1030,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v3",
+        "kind": "body",
+        "bbox_xywh": [
+          248,
+          1042,
+          870,
+          155
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v3-line-01",
+            "text": "Логгінъ темный приведеный Спасу прободе ребра",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 45,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              1042,
+              870,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-02",
+            "text": "Истече кровь дражайшая паче злата и сребра;",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              1081,
+              870,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-03",
+            "text": "Паде капля єдина на тварь темна Логгіна,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 40,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              1120,
+              870,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v3-line-04",
+            "text": "Очи отворила, благодать явила ему спасительную.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              1158,
+              870,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "kind": "body",
+        "bbox_xywh": [
+          92,
+          1220,
+          1030,
+          315
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p3-line-01",
+            "text": "Піснї на різдво Марії не виявляють у їх авторів знайомости",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1220,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p3-line-02",
+            "text": "з Первоєвангелиєм анї навіть з тими його деталями, які перейшли",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1259,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p3-line-03",
+            "text": "в Минею Димитрія; за те автор унїят з натиском підносить (N. 79),",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1299,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p3-line-04",
+            "text": "що Марія „Безъ грѣха зачата, во рождествѣ свята“, що її мати „Се",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 10,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 47,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 62,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1338,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p3-line-05",
+            "text": "неплодна, благородна раждаетъ дщерь избранну, без порока за-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1378,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p3-line-06",
+            "text": "чату“ (N. 82). В піснї на введенє Марії (N. 88) згадано, що її при-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 4,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 4,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1417,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p3-line-07",
+            "text": "няв архієрей Захарія, що її в храмі кормив ангел; те саме чита-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1456,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p3-line-08",
+            "text": "ємо і в піснї N. 92:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              92,
+              1496,
+              1030,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v4",
+        "kind": "body",
+        "bbox_xywh": [
+          322,
+          1570,
+          800,
+          190
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v4-line-01",
+            "text": "Спѣшитъ во храмъ дѣва Марія,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1570,
+              800,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-02",
+            "text": "Пріемлетъ ю Захарія,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1608,
+              800,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-03",
+            "text": "Трилѣствующу отъ Анны,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1646,
+              800,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-04",
+            "text": "Питаему хлѣбомъ манны",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1684,
+              800,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v4-line-05",
+            "text": "Отъ руку ангелъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-62-image-20261126",
+                "start": 0,
+                "end": 16,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1722,
+              800,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "v1-line-01",
+        "reading": "Ґмахи",
+        "reason": "Historical initial letter provisional."
+      },
+      {
+        "line_id": "v1-line-01",
+        "reading": "вѣчныи",
+        "reason": "Check final letters of adjective."
+      },
+      {
+        "line_id": "v4-line-03",
+        "reading": "Трилѣствующу",
+        "reason": "Historical spelling provisional."
+      }
+    ]
+  }
+}
