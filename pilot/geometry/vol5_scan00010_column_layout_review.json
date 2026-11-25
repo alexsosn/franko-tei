@@ -1,0 +1,122 @@
+{
+  "schema_version": "layout-review-v0",
+  "status": "segmentation_unchecked",
+  "text_certified": false,
+  "original_first_transcription_incomplete": true,
+  "volume": "5",
+  "scan_page": 10,
+  "printed_page_observed": null,
+  "source_image_path": "vol5/page-00010.jpg",
+  "source_image_sha256": "3b2ada467b3cca0ebbc551ef478e900eaad9dec093b33ee5a8abc05d2bd8757c",
+  "source_asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_image_dimensions": [
+    1190,
+    1701
+  ],
+  "kraken_engine": "kraken 7.1.1",
+  "kraken_segmentation": "default baseline layout, -bl (segmentation only)",
+  "kraken_model_weights_pinned": false,
+  "kraken_candidate_count": 85,
+  "kraken_native_json_sha256": "525e8340cb9f0891cdb9c76bd3df41f31022ef7aca96888074bdcff4e83ce872",
+  "kraken_report_sha256": "fe9d2d705118c3b3e1fe9dab713e4972d5652ec12b88667d32e8b1e2701cd98a",
+  "kraken_candidate_id_prefix": "v5-s00010-k6e4c2c6ac86a-l",
+  "kraken_action_run": "https://github.com/alexsosn/franko-tei/actions/runs/43062662200",
+  "review_context": "single-context image plus independently generated Kraken geometry; not a separate blind reader",
+  "regions": [
+    {
+      "id": "stamp-candidate",
+      "candidate_line_range": [
+        1,
+        1
+      ],
+      "kind": "marginal-mark-or-stamp",
+      "bbox_xywh": [
+        160,
+        1593,
+        29,
+        22
+      ],
+      "geometry_estimated": false,
+      "classification_unverified": true,
+      "remark": "Kraken reports a small left marginal mark after the text; its textual status is unknown; do not silently discard"
+    },
+    {
+      "id": "left-column",
+      "candidate_line_range": [
+        2,
+        38
+      ],
+      "kind": "facsimile-early-print",
+      "bbox_extent_observed_xyxy": [
+        189,
+        152,
+        613,
+        1476
+      ],
+      "geometry_estimated": true,
+      "reading_order_unverified": true,
+      "remark": "37 Kraken candidate lines, including early-print title/body; first manual draft's 7+35 slots are approximate"
+    },
+    {
+      "id": "right-column",
+      "candidate_line_range": [
+        39,
+        79
+      ],
+      "kind": "facsimile-early-print",
+      "bbox_extent_observed_xyxy": [
+        620,
+        69,
+        1052,
+        1483
+      ],
+      "geometry_estimated": true,
+      "reading_order_unverified": true,
+      "remark": "41 Kraken candidate lines; first manual draft's 47 slots are approximate"
+    },
+    {
+      "id": "merged-column-bottom",
+      "candidate_line_range": [
+        80,
+        82
+      ],
+      "kind": "model-undersegmentation",
+      "geometry_estimated": true,
+      "manual_split_required": true,
+      "reading_order_unverified": true,
+      "provisional_divider_x": 615,
+      "combined_bbox_extent_observed_xyxy": [
+        192,
+        1456,
+        1041,
+        1589
+      ],
+      "remark": "Three wide rectangles span BOTH columns, each likely joining left and right physical lines; must split on original image, not count as one transcribed line"
+    },
+    {
+      "id": "franko-caption",
+      "candidate_line_range": [
+        83,
+        85
+      ],
+      "kind": "caption-modern-editorial",
+      "bbox_extent_observed_xyxy": [
+        164,
+        1580,
+        1019,
+        1680
+      ],
+      "geometry_estimated": true,
+      "reading_order_unverified": false,
+      "remark": "Three physical modern Ukrainian caption lines, separate from historical facsimile"
+    }
+  ],
+  "reading_order_policy": "Left old-print column (plus its still-unsplit bottom lines), then right old-print column (plus its still-unsplit bottom lines), then modern Franko caption. Marginal mark inspected separately.",
+  "source_coverage_caveat": "Kraken 85 candidate regions are not necessarily 85 actual textual lines; three double-column merges and one marginal-mark candidate are known. Do not promote any to verified or count undeciphered text as glyphs.",
+  "notes": [
+    "Sampled actual native source JPEG and compared candidate ranges to visually observed two-column reproduction; not independent ground-truth polygons.",
+    "Kraken default model is not pinned to immutable weight SHA; report itself is SHA256 pinned and candidate IDs are tied to this run only.",
+    "No original OCR or external Vita parallel text is being used as transcription truth.",
+    "Existing V/10 ⟦…⟧ markers remain intentionally blocked from source-gated TEI/TF by pilot-tei placeholder guard merged in PR #38."
+  ]
+}
