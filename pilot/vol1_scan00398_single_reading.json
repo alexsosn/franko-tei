@@ -1,0 +1,361 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 398,
+  "printed_page_observed": "323",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00398.jpg",
+  "source_image_sha256": "90399d929d6ab872b9992decd5172bf598a9bc801a0c80c77ef5ae0c51719e97",
+  "reading": {
+    "reader_id": "gpt62-i398-final-gap-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i394-403-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original pinned image reading; retain physical lines, editorial prose, list numerals, headings, witness text and printed folio if visible. Estimated geometry. Exact historical accents, titla and bracket restorations provisional. No same-page embedded OCR or peer reading consulted.",
+    "raw_response": "323\nМихѣа, мз҃. Наум, ми҃. Амвакум, мѳ҃. Авиюд, н҃. Вдад, на҃.\nЄремѣа, нв҃. Варух, нг҃. Софонїи, нд҃. Іоулїа, нє҃. Єзекїа, нѕ҃. Да-\nнил, нз҃. Єздра, ни҃. Аггѣа, нѳ҃. Захарїа, ѯ҃. Малахїа, ѯа҃. Захарїа\nѡц҃ь Іѡановъ, ѯв҃. Семеѡн бгопрїимецъ, ѯг҃. Іѡан кр҃тль, ѯд҃. Єносъ,\nѯє҃. Мефусала, ѯѕ҃. Ламех, ѯз҃. Валаамъ, ѯи҃. Самоил, ѯѳ҃. Авиме-\nлех, о҃. Амосъ, оа҃. Садокъ, ов҃. старець иж[е] в Вефилѣ, ог҃.\nАгавъ иж[е] в дѣанїихъ.\nА се ѡ пр҃рчицах. а҃. Сарра, в҃. Ревекка, г҃. Девора, д҃.\nАда, є҃. Анна, ѕ҃. Іоудиф, з҃. Марїамъ, и҃. Єлисавефь, ѳ҃. Анна\nдщи Фануилева, ї҃. Марїа Бц҃а.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Printed closing floral ornament",
+          "bbox_xywh": [
+            480,
+            697,
+            225,
+            118
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          983,
+          103,
+          59,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "323",
+            "bbox_xywh": [
+              983,
+              103,
+              59,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prophets-list",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          175,
+          953,
+          261
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "prophets-list-l001",
+            "text": "Михѣа, мз҃. Наум, ми҃. Амвакум, мѳ҃. Авиюд, н҃. Вдад, на҃.",
+            "bbox_xywh": [
+              96,
+              175,
+              953,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophets-list-l002",
+            "text": "Єремѣа, нв҃. Варух, нг҃. Софонїи, нд҃. Іоулїа, нє҃. Єзекїа, нѕ҃. Да-",
+            "bbox_xywh": [
+              96,
+              213,
+              953,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 68,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophets-list-l003",
+            "text": "нил, нз҃. Єздра, ни҃. Аггѣа, нѳ҃. Захарїа, ѯ҃. Малахїа, ѯа҃. Захарїа",
+            "bbox_xywh": [
+              96,
+              251,
+              953,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 68,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophets-list-l004",
+            "text": "ѡц҃ь Іѡановъ, ѯв҃. Семеѡн бгопрїимецъ, ѯг҃. Іѡан кр҃тль, ѯд҃. Єносъ,",
+            "bbox_xywh": [
+              96,
+              289,
+              953,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 68,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophets-list-l005",
+            "text": "ѯє҃. Мефусала, ѯѕ҃. Ламех, ѯз҃. Валаамъ, ѯи҃. Самоил, ѯѳ҃. Авиме-",
+            "bbox_xywh": [
+              96,
+              326,
+              953,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophets-list-l006",
+            "text": "лех, о҃. Амосъ, оа҃. Садокъ, ов҃. старець иж[е] в Вефилѣ, ог҃.",
+            "bbox_xywh": [
+              96,
+              364,
+              953,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophets-list-l007",
+            "text": "Агавъ иж[е] в дѣанїихъ.",
+            "bbox_xywh": [
+              96,
+              402,
+              953,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prophetesses-list",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          440,
+          953,
+          113
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "prophetesses-list-l001",
+            "text": "А се ѡ пр҃рчицах. а҃. Сарра, в҃. Ревекка, г҃. Девора, д҃.",
+            "bbox_xywh": [
+              96,
+              440,
+              953,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophetesses-list-l002",
+            "text": "Ада, є҃. Анна, ѕ҃. Іоудиф, з҃. Марїамъ, и҃. Єлисавефь, ѳ҃. Анна",
+            "bbox_xywh": [
+              96,
+              479,
+              953,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "prophetesses-list-l003",
+            "text": "дщи Фануилева, ї҃. Марїа Бц҃а.",
+            "bbox_xywh": [
+              96,
+              518,
+              953,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 30,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i398-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "prophets-list-l001",
+        "reading": "Михѣа, мз҃. Наум, ми҃. Амвакум, мѳ҃. Авиюд, н҃. Вдад, на҃.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophets-list-l002",
+        "reading": "Єремѣа, нв҃. Варух, нг҃. Софонїи, нд҃. Іоулїа, нє҃. Єзекїа, нѕ҃. Да-",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophets-list-l003",
+        "reading": "нил, нз҃. Єздра, ни҃. Аггѣа, нѳ҃. Захарїа, ѯ҃. Малахїа, ѯа҃. Захарїа",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophets-list-l004",
+        "reading": "ѡц҃ь Іѡановъ, ѯв҃. Семеѡн бгопрїимецъ, ѯг҃. Іѡан кр҃тль, ѯд҃. Єносъ,",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophets-list-l005",
+        "reading": "ѯє҃. Мефусала, ѯѕ҃. Ламех, ѯз҃. Валаамъ, ѯи҃. Самоил, ѯѳ҃. Авиме-",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophets-list-l006",
+        "reading": "лех, о҃. Амосъ, оа҃. Садокъ, ов҃. старець иж[е] в Вефилѣ, ог҃.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophets-list-l007",
+        "reading": "Агавъ иж[е] в дѣанїихъ.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophetesses-list-l001",
+        "reading": "А се ѡ пр҃рчицах. а҃. Сарра, в҃. Ревекка, г҃. Девора, д҃.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophetesses-list-l002",
+        "reading": "Ада, є҃. Анна, ѕ҃. Іоудиф, з҃. Марїамъ, и҃. Єлисавефь, ѳ҃. Анна",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      },
+      {
+        "line_id": "prophetesses-list-l003",
+        "reading": "дщи Фануилева, ї҃. Марїа Бц҃а.",
+        "reason": "Historical type, abbreviations, accents, titla, numeral glyphs and exact lexical reading provisional; historical language attribution uncertain."
+      }
+    ]
+  }
+}
