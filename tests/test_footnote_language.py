@@ -30,6 +30,8 @@ class FootnoteLanguageTests(unittest.TestCase):
 
     def test_actual_corrected_pages_have_neutral_labels(self):
         expected = {90: 83, 92: 78, 110: 10, 200: 6, 250: 11, 300: 22}
+        expected.update({181: 15, 182: 2, 183: 32, 184: 32, 185: 48,
+                         186: 27, 187: 15, 188: 16, 189: 19, 190: 7})
         for page, count in expected.items():
             with self.subTest(page=page):
                 path = PILOT / f"vol1_scan{page:05d}_single_reading.json"
