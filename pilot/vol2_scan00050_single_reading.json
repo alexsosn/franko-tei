@@ -1,0 +1,1045 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 50,
+  "printed_page_observed": "XLVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00050.jpg",
+  "source_image_sha256": "855f4196682ebdfd1c2c39148279afa9145f2542ccf8a54019b377b82e004852",
+  "reading": {
+    "reader_id": "gpt62-ii-50-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00041-00050-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image, preserving physical lines, historical spelling, bibliographic switches, notes and folio. No OCR or same-page peer text. Estimated geometry; historical Czech and Polish readings provisional.",
+    "raw_response": "XLVI\nCesarz niebieski dziw widział,\nPanu Bogu cześć, chwałę dał,\nOłtarz mu ku czci zbudował.\nTen cesarz był Octawian,\nNie był mu na świecie równy pan,\nW tenczas wszystkim panował sam.\nToć było boskie zrządzenie:\nW Rzymie w Boże narodzenie\nCiekł olej nad przyrodzenie...\nWinnice tyż są kwitnęli,\nOwoc z siebie słodki dali,\nTo dzieciątko ukazali.\nEngadi winnice byli,\nKtóre wtenczas zakwitnęli,\nJezusa nam przywitali. (Стор. 275—276).\nВ тім самім рукописї находить ся віршована „Koronka panny\nMariey“, а в нїй оповіданє про 7 радостей Богородицї (стор.\n303—306); далї „Pieśń o krzyżu świętym“, а в нїй плач Марії під\nхрестом; далї „Nabożna pieśń o Panie Jezusie“, де оповідає ся про\nІсусові муки знов з додатком;\nPchnęli go w rzekę Cedrową,\nUmaczali go i z głową (стор. 318).\nВ однім співаннику виданім коло 1560 р. пз „Pieśni postne\nstarożytne człowiekowi Chrześciańskiemu należące“ знаходимо пісню\n„O koronce Panny Maryi“, а в нїй оповіданє про сїм болїстей і пять\nрадостей Марії (390—392). Тамже в піснї пз. „Pieśń czwarta\no siedmi słowach Pana Chrysta“ читаємо між иньшим:\nPotym rzekł czartu onemu,\nKtóry przyleciał na krzyż k niemu:\n„A ty czarcie czego stoisz\nAbo się moiey mocy nie boisz?“\n„Jać się Panie twey mocy boię,\nAle patrzę na mękę twoię,\nJuż polecę do braciey swey\nA opowiem im o mocy twey“ (378—379) —\nуступ, як бачимо, майже дословно схожий з тим, який читаємо\nв угро-руській Пасиї в рукописї Ст. Теслевцьового (стор. 324\nотсего тома).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            125,
+            170,
+            230,
+            650
+          ],
+          "description": "Faint show-through and marks to the left of verse; no additional edition text read."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          135,
+          112,
+          95,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XLVI",
+            "bbox_xywh": [
+              135,
+              112,
+              95,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          138,
+          190,
+          987,
+          1533
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "Cesarz niebieski dziw widział,",
+            "bbox_xywh": [
+              360,
+              190,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 30,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "Panu Bogu cześć, chwałę dał,",
+            "bbox_xywh": [
+              360,
+              227,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "Ołtarz mu ku czci zbudował.",
+            "bbox_xywh": [
+              360,
+              265,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "Ten cesarz był Octawian,",
+            "bbox_xywh": [
+              360,
+              322,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "Nie był mu na świecie równy pan,",
+            "bbox_xywh": [
+              360,
+              359,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "W tenczas wszystkim panował sam.",
+            "bbox_xywh": [
+              360,
+              397,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "Toć było boskie zrządzenie:",
+            "bbox_xywh": [
+              360,
+              452,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "W Rzymie w Boże narodzenie",
+            "bbox_xywh": [
+              360,
+              490,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "Ciekł olej nad przyrodzenie...",
+            "bbox_xywh": [
+              360,
+              527,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 30,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "Winnice tyż są kwitnęli,",
+            "bbox_xywh": [
+              360,
+              582,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "Owoc z siebie słodki dali,",
+            "bbox_xywh": [
+              360,
+              619,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "To dzieciątko ukazali.",
+            "bbox_xywh": [
+              360,
+              657,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "Engadi winnice byli,",
+            "bbox_xywh": [
+              360,
+              712,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 20,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "Które wtenczas zakwitnęli,",
+            "bbox_xywh": [
+              360,
+              750,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "Jezusa nam przywitali. (Стор. 275—276).",
+            "bbox_xywh": [
+              360,
+              788,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 22,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "В тім самім рукописї находить ся віршована „Koronka panny",
+            "bbox_xywh": [
+              138,
+              839,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 44,
+                "end": 57,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "Mariey“, а в нїй оповіданє про 7 радостей Богородицї (стор.",
+            "bbox_xywh": [
+              138,
+              876,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 6,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 6,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "303—306); далї „Pieśń o krzyżu świętym“, а в нїй плач Марії під",
+            "bbox_xywh": [
+              138,
+              913,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 16,
+                "end": 38,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 38,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "хрестом; далї „Nabożna pieśń o Panie Jezusie“, де оповідає ся про",
+            "bbox_xywh": [
+              138,
+              951,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 15,
+                "end": 44,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 44,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "Ісусові муки знов з додатком;",
+            "bbox_xywh": [
+              138,
+              988,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "Pchnęli go w rzekę Cedrową,",
+            "bbox_xywh": [
+              360,
+              1033,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "Umaczali go i z głową (стор. 318).",
+            "bbox_xywh": [
+              360,
+              1070,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 21,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 21,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "В однім співаннику виданім коло 1560 р. пз „Pieśni postne",
+            "bbox_xywh": [
+              138,
+              1114,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 44,
+                "end": 57,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "starożytne człowiekowi Chrześciańskiemu należące“ знаходимо пісню",
+            "bbox_xywh": [
+              138,
+              1151,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 48,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 48,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "„O koronce Panny Maryi“, а в нїй оповіданє про сїм болїстей і пять",
+            "bbox_xywh": [
+              138,
+              1189,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 1,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 22,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "радостей Марії (390—392). Тамже в піснї пз. „Pieśń czwarta",
+            "bbox_xywh": [
+              138,
+              1226,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 45,
+                "end": 58,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "o siedmi słowach Pana Chrysta“ читаємо між иньшим:",
+            "bbox_xywh": [
+              138,
+              1264,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 29,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "Potym rzekł czartu onemu,",
+            "bbox_xywh": [
+              360,
+              1309,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "Który przyleciał na krzyż k niemu:",
+            "bbox_xywh": [
+              360,
+              1345,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 34,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "„A ty czarcie czego stoisz",
+            "bbox_xywh": [
+              360,
+              1382,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 1,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "Abo się moiey mocy nie boisz?“",
+            "bbox_xywh": [
+              360,
+              1420,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 29,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "„Jać się Panie twey mocy boię,",
+            "bbox_xywh": [
+              360,
+              1457,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 1,
+                "end": 30,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "Ale patrzę na mękę twoię,",
+            "bbox_xywh": [
+              360,
+              1495,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "Już polecę do braciey swey",
+            "bbox_xywh": [
+              360,
+              1532,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "A opowiem im o mocy twey“ (378—379) —",
+            "bbox_xywh": [
+              360,
+              1570,
+              765,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 24,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "уступ, як бачимо, майже дословно схожий з тим, який читаємо",
+            "bbox_xywh": [
+              138,
+              1618,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-37",
+            "text": "в угро-руській Пасиї в рукописї Ст. Теслевцьового (стор. 324",
+            "bbox_xywh": [
+              138,
+              1656,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-38",
+            "text": "отсего тома).",
+            "bbox_xywh": [
+              138,
+              1693,
+              987,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-50-image-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-10",
+        "reading": "tyż",
+        "reason": "Historical spelling preserved."
+      },
+      {
+        "line_id": "preface-line-31",
+        "reading": "moiey",
+        "reason": "Printed old Polish orthography; preserve."
+      },
+      {
+        "line_id": "preface-line-34",
+        "reading": "braciey",
+        "reason": "Printed historical form provisional."
+      }
+    ]
+  }
+}
