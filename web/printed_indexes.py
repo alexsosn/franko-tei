@@ -23,6 +23,10 @@ SECTIONS = (
      {"left": [2,3,6,7,9,12,14,20,22],
       "right": [2,4,6,8,10,13,15,17,19,20,22]}),
 )
+SOURCE_BLOBS = {416: "4dc041eecb418dc4f16654feb3f4dd98ed592452",
+                431: "e664c2826055e20af0f7696e8e3c4e5f54e2a379",
+                437: "df3dba2453e10ee5ee44b9bfc12edb5304cc409f",
+                459: "70c19e15133c47d635d4b50c5f80a1af06af040e"}
 NUMBER = r"[1-9][0-9]{0,2}"
 TOKEN = NUMBER + r"(?:[—–-]" + NUMBER + r")?"
 TAIL = re.compile(r"\s+(" + TOKEN + r"(?:\s*,\s*" + TOKEN + r")*)\s*,?$")
@@ -109,7 +113,7 @@ def build_printed_indexes(pilot, ref):
     for kind, start, end, reader, partitions in SECTIONS:
         path, draft, blob = files[start]
         reading = draft["reading"]
-        if reading["reader_id"] != reader:
+        if reading["reader_id"] != reader or blob != SOURCE_BLOBS[start]:
             raise ValueError(f"index partition source changed: {path}")
         source = dict(volume="1", scan=start, path="pilot/" + path.name,
                       blob=blob, reader_id=reader, asset_commit=draft["asset_commit"])
