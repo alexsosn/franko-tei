@@ -1,0 +1,959 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 60,
+  "printed_page_observed": "LVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00060.jpg",
+  "source_image_sha256": "4291f1f2f9f28071cbbededb12218103a4b41831d981cfe334c688258a4c3c8d",
+  "reading": {
+    "reader_id": "gpt62-ii-60-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00051-00060-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original image without OCR or same-page peer text. Physical lines, contextual language spans, printed spelling, notes, estimated geometry and column reading order. Provisional.",
+    "raw_response": "LVI\nЧим на Українї були вірші, тим у західнїх частинах Руси,\nв Галичинї і в Білій Руси були „орациї“ або „рациї“, виголошувані\nна різдвянї та великодні сьвята „отроками“ (школярами) по хатах.\nТаких ораций у нас доси звісно мало; вони визначають ся мовою\nне такою чистою як вірші, і складом не гумористичним, а більше\nдидактичним. Апокріфічних елементів у них мало, але знаходять ся\nрозмахи власної фантазиї авторів, як ось приміром у отсїй строфі\nріздвяної орациї, що знаходить ся в рукописї Ілї Яремецького-\nБілахевича:\nКвѣтокъ росквѣтлій, Христосъ Богъ в жлобѣ проквѣтаетъ,\nА нас земних радостю всѣхъ витаєтъ.\nТого Гєрод окрутній шукает забити\nІ дѣтокъ нас невинних не хочет живити.\nАле ми на Герода ізнайдемо штуку,\nТакъ же ему зададут в пеклѣ великую муку.\nЗберѣмо ся і пойдем на него з шаблями,\nА другіе будем бити твердими кіями.\nНехай болше не будет дѣтей забивати, —\nГодѣ ему на свѣтѣ уже пановати.\nТоє ми вам всѣмъ голосим,\nА о коляду уклонне просим.\nНаведемо ще з того самого рукопису з великодної орациї\nуступ, де описано Ісусів вхід до пекла:\nІ Адам бовѣмъ въ пеклѣ тоє днес спѣваетъ,\nҐди сам Христос отъ Ада єго визволяетъ.\nКотрій в темних пекелних муках зоставалъ,\nКотрій з болем великим Збавителя взивалъ.\nОтож єго Синъ божій с пекла вибавляетъ,\nІ пекелніє врата мужне истираетъ.\nУсѣхъ святихъ от вѣка и во гробѣ спящих\nВоводитъ до палацовъ Сіонских свѣтящих,\nНаполняетъ веселя тих, що били в смутку,\nКоторіє в ляментѣ и жалосном скутку.\nВ тотъ день Синъ божій з моцарствомъ виходитъ,\nАдама і всѣхъ бивших со ним производитъ.\nКоторих смокъ пекелній в антиподахъ трималъ,\nТих Синъ божій предвѣчній сам до неба послалъ,\nАби вси тамъ веселя гойне заживали,\nЗ ангелами сполечне Бога вихваляли.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          110,
+          91,
+          110,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LVI",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              110,
+              91,
+              110,
+              39
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p1",
+        "kind": "body",
+        "bbox_xywh": [
+          115,
+          170,
+          1000,
+          345
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p1-line-01",
+            "text": "Чим на Українї були вірші, тим у західнїх частинах Руси,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              170,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-02",
+            "text": "в Галичинї і в Білій Руси були „орациї“ або „рациї“, виголошувані",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              208,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-03",
+            "text": "на різдвянї та великодні сьвята „отроками“ (школярами) по хатах.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              247,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-04",
+            "text": "Таких ораций у нас доси звісно мало; вони визначають ся мовою",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              285,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-05",
+            "text": "не такою чистою як вірші, і складом не гумористичним, а більше",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              323,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-06",
+            "text": "дидактичним. Апокріфічних елементів у них мало, але знаходять ся",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              362,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-07",
+            "text": "розмахи власної фантазиї авторів, як ось приміром у отсїй строфі",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              400,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-08",
+            "text": "різдвяної орациї, що знаходить ся в рукописї Ілї Яремецького-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              438,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p1-line-09",
+            "text": "Білахевича:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              477,
+              1000,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v1",
+        "kind": "body",
+        "bbox_xywh": [
+          190,
+          540,
+          920,
+          450
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v1-line-01",
+            "text": "Квѣтокъ росквѣтлій, Христосъ Богъ в жлобѣ проквѣтаетъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              540,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-02",
+            "text": "А нас земних радостю всѣхъ витаєтъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 35,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              578,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-03",
+            "text": "Того Гєрод окрутній шукает забити",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              615,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-04",
+            "text": "І дѣтокъ нас невинних не хочет живити.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 38,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              653,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-05",
+            "text": "Але ми на Герода ізнайдемо штуку,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              690,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-06",
+            "text": "Такъ же ему зададут в пеклѣ великую муку.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              728,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-07",
+            "text": "Зберѣмо ся і пойдем на него з шаблями,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 38,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              765,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-08",
+            "text": "А другіе будем бити твердими кіями.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 35,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              803,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-09",
+            "text": "Нехай болше не будет дѣтей забивати, —",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 36,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              840,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-10",
+            "text": "Годѣ ему на свѣтѣ уже пановати.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              878,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-11",
+            "text": "Тоє ми вам всѣмъ голосим,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              915,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v1-line-12",
+            "text": "А о коляду уклонне просим.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              953,
+              920,
+              34
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "kind": "body",
+        "bbox_xywh": [
+          115,
+          1020,
+          1000,
+          80
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "p2-line-01",
+            "text": "Наведемо ще з того самого рукопису з великодної орациї",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              1020,
+              1000,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "p2-line-02",
+            "text": "уступ, де описано Ісусів вхід до пекла:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              115,
+              1060,
+              1000,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "v2",
+        "kind": "body",
+        "bbox_xywh": [
+          190,
+          1128,
+          920,
+          610
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "v2-line-01",
+            "text": "І Адам бовѣмъ въ пеклѣ тоє днес спѣваетъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1128,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-02",
+            "text": "Ґди сам Христос отъ Ада єго визволяетъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1166,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-03",
+            "text": "Котрій в темних пекелних муках зоставалъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1204,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-04",
+            "text": "Котрій з болем великим Збавителя взивалъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1242,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-05",
+            "text": "Отож єго Синъ божій с пекла вибавляетъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1281,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-06",
+            "text": "І пекелніє врата мужне истираетъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1319,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-07",
+            "text": "Усѣхъ святихъ от вѣка и во гробѣ спящих",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1357,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-08",
+            "text": "Воводитъ до палацовъ Сіонских свѣтящих,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1395,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-09",
+            "text": "Наполняетъ веселя тих, що били в смутку,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 40,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1433,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-10",
+            "text": "Которіє в ляментѣ и жалосном скутку.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1471,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-11",
+            "text": "В тотъ день Синъ божій з моцарствомъ виходитъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1509,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-12",
+            "text": "Адама і всѣхъ бивших со ним производитъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 40,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1547,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-13",
+            "text": "Которих смокъ пекелній в антиподахъ трималъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1586,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-14",
+            "text": "Тих Синъ божій предвѣчній сам до неба послалъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1624,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-15",
+            "text": "Аби вси тамъ веселя гойне заживали,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 35,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1662,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "v2-line-16",
+            "text": "З ангелами сполечне Бога вихваляли.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-60-image-20261125",
+                "start": 0,
+                "end": 35,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              190,
+              1700,
+              920,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "v1-line-03",
+        "reading": "Гєрод",
+        "reason": "Historical e-type and spelling provisional."
+      },
+      {
+        "line_id": "v2-line-02",
+        "reading": "Ґди",
+        "reason": "Initial letter form provisional."
+      },
+      {
+        "line_id": "v2-line-10",
+        "reading": "Которіє",
+        "reason": "Historical vowel form provisional."
+      }
+    ]
+  }
+}
