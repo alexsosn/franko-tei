@@ -38,12 +38,15 @@
     el('reviewSave').disabled=locked||!imageReady||!literal(s.working,4096)||changed&&!!x.line.unreadable_suffix||s.note!==''&&!literal(s.note,2048);
     el('reviewDefer').disabled=locked||s.note!==''&&!literal(s.note,2048);
     el('reviewUndo').disabled=locked||!event();
+    el('reviewSave').title=tr(changed?'Save correction':'Confirm unchanged');
+    el('reviewDefer').title=tr('Defer');
     el('reviewPrepare').disabled=locked||!s.events.length||dirty()||bytes(json()).length>LIMIT;
     el('reviewEdit').readOnly=locked;el('reviewNote').readOnly=locked;
-    el('reviewLine').disabled=storageFailed;el('reviewPrevious').disabled=storageFailed;el('reviewNext').disabled=storageFailed;
+    const index=entries().findIndex(e=>e.line.id===s.selected);
+    el('reviewLine').disabled=storageFailed;el('reviewPrevious').disabled=storageFailed||index<=0;el('reviewNext').disabled=storageFailed||index>=entries().length-1;
     for(const b of el('reviewCharacters').querySelectorAll('button'))b.disabled=locked;
-    el('reviewProgress').textContent=s.events.length+' / '+MAX+' · '+bytes(json()).length+' / '+LIMIT+' B';
-    el('reviewExport').hidden=!s.locked;el('reviewBundle').value=s.locked?json():'';el('reviewDiscard').disabled=storageFailed||s.locked;
+    el('reviewProgress').textContent=s.events.length+' / '+MAX+' · '+bytes(json()).length+' / '+LIMIT+' B · '+tr(event()?.decision==='confirm'?'Confirmed locally':event()?.decision==='correct'?'Corrected locally':event()?.decision==='defer'?'Deferred locally':'No decision yet');
+    el('reviewExport').hidden=!s.locked||storageFailed;el('reviewBundle').value=s.locked&&!storageFailed?json():'';el('reviewDiscard').disabled=storageFailed||s.locked;
   }
   function paint(){
     const x=entry(),line=x.line;

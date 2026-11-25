@@ -71,6 +71,12 @@ class EditorSmoke(unittest.TestCase):
             self.assertEqual(b["events"][0]["decision"],"correct")
             self.assertEqual(b["events"][0]["note"],"Synthetic browser test")
             expect(page.locator("#reviewSave")).to_be_disabled()
+            page.locator("#reviewClose").click()
+            page.reload()
+            expect(page.locator(".line-text").first).to_be_visible()
+            page.locator("#reviewOpen").click()
+            expect(page.locator("#reviewBundle")).to_have_value(raw.decode())
+            expect(page.locator("#reviewEdit")).to_have_attribute("readonly", "")
             self.assertIn("review-bundle.yml",page.locator("#reviewGitHub").get_attribute("href"))
             browser.close()
 
