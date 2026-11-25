@@ -18,6 +18,22 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e '.[pdf,page-assets]'
       - run: python -m unittest discover -s tests -v
+      - name: Validate editorial ledger when present or changed
+        if: matrix.python-version == '3.12'
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          TRUSTED: ${{ github.event.pull_request.base.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          [[ "$BASE" =~ ^[0-9a-f]{40}$ && "$TRUSTED" =~ ^[0-9a-f]{40}$ ]]
+          # Inspect old paths too, so deleting every record cannot skip validation.
+          git fetch --no-tags --depth=1 origin "$BASE"
+          if [[ -d reviews/intake || -d reviews/adjudications ]] || [[ -n "$(git ls-tree -r --name-only "$BASE" -- reviews/intake reviews/adjudications)" ]]; then
+            if [[ "$(git rev-parse --is-shallow-repository)" == true ]]; then
+              git fetch --no-tags --unshallow origin main
+            fi
+            python -m franko_tei.review_adjudication --check --trusted-commit "$TRUSTED" --previous-commit "$BASE"
+          fi
       - run: franko-tei catalog > /dev/null
       - name: Enforce fail-closed unreleased corpus
         run: |
