@@ -163,7 +163,7 @@ class ReviewSmoke(unittest.TestCase):
         html = APP.read_text(encoding='utf-8')
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
-        self.assertGreaterEqual(len(anchors), 19)
+        self.assertGreaterEqual(len(anchors), 24)
         self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
                          [('89', 141, 'pachomius-vision-heading-line-01'),
                           ('90', 141, 'pachomius-word-heading-line-01'),
@@ -179,7 +179,7 @@ class ReviewSmoke(unittest.TestCase):
         # Complete linguistic coverage for the annotated anchor-page batch.
         for scan in sorted({e[3] for e in anchors}):
             record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
-            if scan in (53, 56, 59, 71, 72, 74, 75, 76, 94, 141, 142, 143, 211, 307, 518):
+            if scan in (53, 56, 59, 63, 67, 68, 71, 72, 74, 75, 76, 77, 90, 94, 141, 142, 143, 211, 307, 518):
                 self.assertIn('language_annotation', record['reading'])
             elif 'language_annotation' not in record['reading']:
                 continue  # future batches use the general corpus validator
@@ -248,6 +248,20 @@ class ReviewSmoke(unittest.TestCase):
             note = next(r for r in rec['regions'] if r['id'] == link['note_region_id'])
             self.assertEqual(note['kind'], 'note')
             self.assertTrue(note['lines'][0]['text'].startswith(link['marker_text']))
+        catechisms = [e for e in contents['4']['entries'] if e[0] == 569 and len(e) > 4 and e[4] == 1]
+        self.assertEqual(len(catechisms), 16)
+        self.assertTrue(all(len(e) > 6 and e[6] for e in catechisms))
+        rec63 = json.loads((root / 'pilot/vol4_scan00063_single_reading.json').read_text(encoding='utf-8'))['reading']
+        self.assertTrue(any(l['id'] == 'biliavsky-cont-line-03' and l['text'].startswith('26.') 
+                            for r in rec63['regions'] for l in r['lines']))
+        rec90 = json.loads((root / 'pilot/vol4_scan00090_single_reading.json').read_text(encoding='utf-8'))['reading']
+        latin_cyrillic = [l['text'][s['start']:s['end']] for r in rec90['regions'] for l in r['lines']
+                          for s in l['language_spans'] if s['language'] == 'la' and s['script'] == 'Cyrl']
+        self.assertIn('локꙋсъ мортисъ', latin_cyrillic)
+        self.assertIn('тенебрарумъ', latin_cyrillic)
+        self.assertTrue(any(s['language'] == 'de' and s['script'] == 'Latn' 
+                            for r in rec90['regions'] for l in r['lines'] for s in l['language_spans']))
+        self.assertEqual(rec90['source_note_links'][0]['marker_line_id'], 'fragment-line-14')
         manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
                     'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
                                  {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
