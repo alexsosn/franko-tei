@@ -179,8 +179,10 @@ class ReviewSmoke(unittest.TestCase):
         # Complete linguistic coverage for the annotated anchor-page batch.
         for scan in sorted({e[3] for e in anchors}):
             record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
-            if 'language_annotation' not in record['reading']:
-                continue  # earlier or future batches use the general corpus validator
+            if scan in (71, 94, 141, 142, 143):
+                self.assertIn('language_annotation', record['reading'])
+            elif 'language_annotation' not in record['reading']:
+                continue  # future batches use the general corpus validator
             for region in record['reading']['regions']:
                 for line in region['lines']:
                     if not any(c.isalpha() for c in line['text']):
