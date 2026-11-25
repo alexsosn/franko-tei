@@ -243,6 +243,26 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertEqual(hits, [('heading', anchor['text'])])
                 actual.add((volume, e[3], anchor['line_id']))
         self.assertTrue(expected <= actual, expected - actual)
+        # Metadata enrichment must cover every linguistic line in these reused drafts.
+        for scan in (82, 86, 89, 90, 92, 93, 94, 98, 101, 103, 104, 105, 106, 108):
+            record = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            reading = record['reading']
+            self.assertIn('prior_reading_blob', reading['language_annotation'])
+            for region in reading['regions']:
+                for line in region['lines']:
+                    if not any(c.isalpha() for c in line['text']):
+                        continue
+                    spans = line['language_spans']
+                    self.assertTrue(spans, (scan, line['id']))
+                    self.assertEqual(spans[0]['start'], 0)
+                    self.assertEqual(spans[-1]['end'], len(line['text']))
+                    self.assertTrue(all(a['end'] == b['start'] for a, b in zip(spans, spans[1:])))
+                    self.assertTrue(all(s['text_version'] == reading['reader_id'] for s in spans))
+        rec90 = json.loads((root / 'pilot/vol1_scan00090_single_reading.json').read_text(encoding='utf-8'))['reading']
+        spans90 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
+                   for r in rec90['regions'] for l in r['lines'] for s in l['language_spans']]
+        self.assertIn(('vac.', 'la', 'Latn'), spans90)
+        self.assertIn(('в текстї хибно ', 'uk', 'Cyrl'), spans90)
         # A two-column page and two sequential witnesses must have distinct anchors.
         self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 76 and len(e) > 6 and e[6]]), 3)
         self.assertEqual(len([e for e in contents['2']['entries'] if e[3] == 100 and len(e) > 6 and e[6]]), 2)
