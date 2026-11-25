@@ -122,7 +122,7 @@ class CorpusBatchContract(unittest.TestCase):
         by_path = {r["path"]: r for r in i52["readings"]}
         self.assertTrue(by_path["pilot/vol1_scan00052_exposed_reading.json"]["prior_text_exposure"])
         self.assertFalse(by_path["pilot/vol1_scan00052_alternate_reading_01.json"]["prior_text_exposure"])
-        for scan in range(50, 62):
+        for scan in range(20, 62):
             path = PILOT / f"vol1_scan{scan:05d}_alternate_reading_01.json"
             candidate = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(candidate["reading"]["model_id"], "GPT-6.2")
