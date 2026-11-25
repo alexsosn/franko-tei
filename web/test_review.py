@@ -286,7 +286,7 @@ class ReviewSmoke(unittest.TestCase):
                         self.assertEqual(url.fragment, ':~:text=' + link['id'])
                     else:
                         self.assertEqual(url.path, '/reader.html')
-                        self.assertEqual(parse_qs(url.query)['doc'], [{'CAVT-001': 'AdamEve.xml', 'CAVT-088': 'TAbr.xml'}[link['id']]])
+                        self.assertEqual(parse_qs(url.query)['doc'], [{'CAVT-001': 'AdamEve.xml', 'CAVT-088': 'TAbr.xml', 'CAVT-132': 'Jub.xml'}[link['id']]])
         self.assertTrue({'CAVT-001', 'CAVT-066', 'CAVT-088', 'CAVT-089', 'CAVT-101', 'CAVT-118'}.issubset(found))
 
     def test_contents_reference_localization_and_multiple_catalogues(self):
