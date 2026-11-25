@@ -62,7 +62,7 @@ class PrintedIndexesTest(unittest.TestCase):
             self.assertEqual(data["sections"][1]["draft_scans"], [])
 
     def test_browser_navigation(self):
-        from playwright.sync_api import sync_playwright
+        from playwright.sync_api import sync_playwright, expect
         import os
         data = build_printed_indexes(ROOT / "pilot", "a" * 40)
         html = (ROOT / "web/index.html").read_text(encoding="utf-8")
@@ -99,7 +99,7 @@ class PrintedIndexesTest(unittest.TestCase):
             page.locator("#indexSources summary").click()
             self.assertEqual(page.locator("#indexSourcePages button").count(), 4)
             page.locator("#contentsVolume").select_option("5")
-            self.assertIn("unavailable", page.locator("#indexStatus").inner_text())
+            expect(page.locator("#indexStatus")).to_contain_text("unavailable")
             self.assertEqual(page.locator("#indexEntries li").count(), 0)
             page.locator("#contentsMode").click()
             self.assertGreater(page.locator("#contentsEntries li").count(), 0)
