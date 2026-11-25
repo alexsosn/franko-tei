@@ -126,6 +126,8 @@ jobs:
               | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null \
               && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/editorial.json?rev=$GITHUB_SHA" \
               | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and (.pages | type == "array")' >/dev/null \
+              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/coverage.json?rev=$GITHUB_SHA" \
+              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and (.volumes | length == 5)' >/dev/null \
               && verify_fonts; then
               echo "Public viewer, fonts and search index match $GITHUB_SHA."
               exit 0
