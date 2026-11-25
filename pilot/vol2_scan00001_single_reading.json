@@ -1,0 +1,143 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 1,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00001.jpg",
+  "source_image_sha256": "c164e8c10456761b50f5656c9feb77c95b6b8ff0d5a91b1fd73c9eae3ce2ccdb",
+  "reading": {
+    "reader_id": "gpt62-ii-1-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00001-00010-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native scan, no OCR/peer text for this page. Printed edition only; subsequent stamps and annotations documented as exclusions. Physical lines and estimated geometry; contextual language spans; unverified.",
+    "raw_response": "ПАМЯТКИ\nукраїнсько-руської мови і лїтератури\nII.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            245,
+            22,
+            115,
+            70
+          ],
+          "description": "Later handwritten accession mark 53, outside printed edition."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "series",
+        "kind": "heading",
+        "bbox_xywh": [
+          195,
+          660,
+          790,
+          171
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-line-01",
+            "text": "ПАМЯТКИ",
+            "bbox_xywh": [
+              380,
+              660,
+              400,
+              60
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-1-image-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "series-line-02",
+            "text": "українсько-руської мови і лїтератури",
+            "bbox_xywh": [
+              195,
+              756,
+              790,
+              75
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-1-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          545,
+          869,
+          70,
+          48
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "II.",
+            "bbox_xywh": [
+              545,
+              869,
+              70,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-1-image-20261125",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-1-image-20261125",
+                "start": 2,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "series-line-02",
+        "reading": "лїтератури",
+        "reason": "Historical display-type letter/diacritic reading provisional; no normalization."
+      }
+    ]
+  }
+}
