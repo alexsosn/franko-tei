@@ -1131,6 +1131,8 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(rows.count(),4)
             self.assertEqual(page.locator(".editorial-toggle,.editorial-details").count(),0)
             self.assertEqual(rows.nth(1).locator(".alternate-toggle").count(),1)
+            self.assertEqual(rows.nth(1).locator(".alternate-diff").count(),0)
+            self.assertEqual(rows.nth(3).locator(".alternate-diff").count(),1)
             self.assertEqual(rows.nth(2).locator("button").count(),0)
             corrected=rows.nth(1).locator(".line-text")
             self.assertEqual(corrected.get_attribute("data-font-mode"),"slavonic")
