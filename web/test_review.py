@@ -366,6 +366,28 @@ class ReviewSmoke(unittest.TestCase):
         for index in (15, 20, 21, 23, 24, 25, 26):
             self.assertFalse(links(index), f'Unsupported work link for II/{index}')
 
+    def test_vol1_final_bibliography(self):
+        import csv
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        audit = APP.parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as source:
+            rows = [r for r in csv.DictReader(source, delimiter='\t') if r['volume'] == '1']
+        self.assertEqual(len(rows), 145)
+        self.assertFalse([r for r in rows if r['status'] == 'pending'])
+        def links(index):
+            key = json.dumps(data['1']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return {link['id']: link for link in refs['1'].get(key, [])}
+        for index in (48, 98, 99):
+            self.assertEqual(links(index)['ECCA 121']['relation'], 'work-family')
+        for index in (128, 129):
+            self.assertEqual(links(index)['CAVT-213']['relation'], 'work-family')
+        for index in (7, 97, 101, 102, 107, 133, 134, 135, 136, 138):
+            self.assertFalse(links(index))
+        self.assertEqual(data['1']['entries'][7][2], '324–320')
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
