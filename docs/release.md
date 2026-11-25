@@ -10,4 +10,4 @@
 - TEI→Text-Fabric/Context-Fabric exporter exists; run end-to-end human-queryable smoke tests against real texts and check losslessness/provenance. None exists yet.
 - Reproducible release manifest, all artifact checksums, explicit text/scans/software licenses, change log and benchmark results.
 
-No release automation is enabled while these gates are incomplete.
+These gates concern a stable scholarly release, not publication of a clearly labeled agent-unverified working corpus or its review viewer. As confirmed by the user on 2026-11-25, agent-only review is acceptable during draft production; do not block full text and provisional markup coverage or working-viewer updates on human proofreading. No stable-release automation is enabled while these gates are incomplete.

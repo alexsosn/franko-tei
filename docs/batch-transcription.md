@@ -2,6 +2,10 @@
 
 The corpus is **not yet a verified research-grade edition**. Existing source-linked page JSONs are frozen first-reader proposals. Schemas and image checks establish provenance and structure only, not philological accuracy.
 
+## Current publication policy
+
+Per the user decision of 2026-11-25, the immediate goal is a complete agent-generated draft of text and provisional markup for all five volumes. Human proofreading is deferred to the review interface. Agent-only, logically distinct batch review plus technical source/structure checks is sufficient for usable `agent_unverified` working-corpus merges and viewer publication. Preserve known uncertainty, conflicting readings and incomplete markup explicitly; do not present them as verified. Exhaustive per-page philological adjudication is reserved for verified promotion, not routine ingestion.
+
 ## One development workstream, many pages
 
 - Select a coherent source range or problem cluster, normally **25–100 pages in one PR** where layout/script permits. Very difficult historical letterforms and large annotations can justify smaller batches. Do not create a GitHub issue, PR, test file or Actions workflow for each page.
