@@ -1,0 +1,924 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 10,
+  "printed_page_observed": "F",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00010.jpg",
+  "source_image_sha256": "5621cc9222bc18e206753187c65d6d365964e1808bacaed642d144e10f463090",
+  "reading": {
+    "reader_id": "gpt62-v3-s00010-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image without OCR or peer readings; preserve physical lines, historical spelling, unusual page ranges, contextual language spans and uncertainty. Later accession marks are separately documented. Approximate geometry, no verified claim.",
+    "raw_response": "F\nkürzere Fragmente: Daniels Prophezeihung, über Susanna, Tod Königs\nBelzazers; Zorobabels Wette mit Darius; eine Namenliste der Prophe-\nten und Prophetinnen (S. 319—323).\nIm Anhang ist besonders eine populäre ungarisch-ruthe-\nnische Erzählung von der Empörung der Engel (S. 325—319), eine\ndergleichen Erzählung von Abrahams Gastfreundschaft (S. 330—333),\ndas Fragment einer Erzählung vom Ismael (S. 333—335) und eine\nvom biblischen Berichte stark abweichende Bearbeitung der Jeptha-\nLegende (S. 335—338) bemerkenswerth. Zum Schluss wurde auch\neine Paläa-Erzählung über Alexanders Zug nach Indien und die Cha-\nrakteristik der Brahmanen, das Fragment irgend einer Alexandreis,\nabgedruckt.\nDen Band beschliessen ein Namen- und Ortsregister, ein Litte-\nraturnachweis, eine Übersicht der in diesen Erzählungen vorkommen-\nden Legenden- und Märchenmotive, und ein Glossar seltener oder alter-\nthümlicher Wörter.\nIII. Inhalt des zweiten Bandes. Die apokryphen Evangelien.\nEinleitung. 1. Inhalt und Charakter dieses Bandes. 2. Die apo-\nkryphen Evangelien. 3. Indices der neutestamentlichen Apokryphen des\nEvangelien-Cyclus. 4. Einfluss der neutestamentlichen Apokryphen des\nEvangelien-Cyclus auf Litteratur und Kunst Westeuropas. 5. Ausgaben\nund wissenschaftliche Bearbeitungen der Apokryphen des Evangelien-\nCyclus. 6. Apokryphe Evangelien bei den Slaven; slavische Indices.\n7. Einfluss apokrypher Evangelien auf die slavische Litteratur und\nKunst. 8. Wissenschaftliche Erforschung der Apokryphen bei den\nSlaven (S. I—LXXVIII).\nI. Prophezeihungen über Jesus: eine Paläa-Erzählung\nvom Hermes Trismegistus (S. 1—2); eine Prophezeihung vom Christo\nim Tempel des heidnischen Gottes Apollo (S. 2—3); Erzählung des\nAphroditianus über das in Persien geschehene Wunder (S. 3—11);\ndie Magier und Herodes (S. 11—13); eine Predigt über den erschie-\nnenen Stern und über das in Persien geschehene Wunder — eine po-\npuläre Bearbeitung des Pseudo-Aproditianus (S. 13—18); die Sage von\nden zwölf Sibyllen, welche über die reine Jungfrau Maria und über die\nMenschwerdung des Gottessohnes prophezeiht haben (S. 18—24); bei-\ngefügt ist auch ein polnischer Text aus dem XVI Jahrh. (S. 24—32);\nhellenische Philosophen, welche theilweise über die hohe Gottheit\nund über Christi Geburt von der reinen Jungfrau prophezeiht haben\n(S. 33—35).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          125,
+          114,
+          42,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "F",
+            "bbox_xywh": [
+              125,
+              114,
+              42,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "contents-summary-one",
+        "kind": "body",
+        "bbox_xywh": [
+          127,
+          184,
+          992,
+          581
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "contents-summary-one-line-01",
+            "text": "kürzere Fragmente: Daniels Prophezeihung, über Susanna, Tod Königs",
+            "bbox_xywh": [
+              127,
+              184,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-02",
+            "text": "Belzazers; Zorobabels Wette mit Darius; eine Namenliste der Prophe-",
+            "bbox_xywh": [
+              127,
+              220,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-03",
+            "text": "ten und Prophetinnen (S. 319—323).",
+            "bbox_xywh": [
+              127,
+              256,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 34,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-04",
+            "text": "Im Anhang ist besonders eine populäre ungarisch-ruthe-",
+            "bbox_xywh": [
+              127,
+              292,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-05",
+            "text": "nische Erzählung von der Empörung der Engel (S. 325—319), eine",
+            "bbox_xywh": [
+              127,
+              329,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-06",
+            "text": "dergleichen Erzählung von Abrahams Gastfreundschaft (S. 330—333),",
+            "bbox_xywh": [
+              127,
+              365,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-07",
+            "text": "das Fragment einer Erzählung vom Ismael (S. 333—335) und eine",
+            "bbox_xywh": [
+              127,
+              401,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-08",
+            "text": "vom biblischen Berichte stark abweichende Bearbeitung der Jeptha-",
+            "bbox_xywh": [
+              127,
+              438,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-09",
+            "text": "Legende (S. 335—338) bemerkenswerth. Zum Schluss wurde auch",
+            "bbox_xywh": [
+              127,
+              474,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-10",
+            "text": "eine Paläa-Erzählung über Alexanders Zug nach Indien und die Cha-",
+            "bbox_xywh": [
+              127,
+              510,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-11",
+            "text": "rakteristik der Brahmanen, das Fragment irgend einer Alexandreis,",
+            "bbox_xywh": [
+              127,
+              547,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-12",
+            "text": "abgedruckt.",
+            "bbox_xywh": [
+              127,
+              583,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-13",
+            "text": "Den Band beschliessen ein Namen- und Ortsregister, ein Litte-",
+            "bbox_xywh": [
+              127,
+              619,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-14",
+            "text": "raturnachweis, eine Übersicht der in diesen Erzählungen vorkommen-",
+            "bbox_xywh": [
+              127,
+              656,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-15",
+            "text": "den Legenden- und Märchenmotive, und ein Glossar seltener oder alter-",
+            "bbox_xywh": [
+              127,
+              692,
+              992,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-one-line-16",
+            "text": "thümlicher Wörter.",
+            "bbox_xywh": [
+              127,
+              728,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-three",
+        "kind": "heading",
+        "bbox_xywh": [
+          220,
+          817,
+          812,
+          44
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-three-line-01",
+            "text": "III. Inhalt des zweiten Bandes. Die apokryphen Evangelien.",
+            "bbox_xywh": [
+              220,
+              817,
+              812,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contents-summary-two",
+        "kind": "body",
+        "bbox_xywh": [
+          126,
+          878,
+          999,
+          816
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "contents-summary-two-line-01",
+            "text": "Einleitung. 1. Inhalt und Charakter dieses Bandes. 2. Die apo-",
+            "bbox_xywh": [
+              126,
+              878,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-02",
+            "text": "kryphen Evangelien. 3. Indices der neutestamentlichen Apokryphen des",
+            "bbox_xywh": [
+              126,
+              915,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-03",
+            "text": "Evangelien-Cyclus. 4. Einfluss der neutestamentlichen Apokryphen des",
+            "bbox_xywh": [
+              126,
+              952,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-04",
+            "text": "Evangelien-Cyclus auf Litteratur und Kunst Westeuropas. 5. Ausgaben",
+            "bbox_xywh": [
+              126,
+              989,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-05",
+            "text": "und wissenschaftliche Bearbeitungen der Apokryphen des Evangelien-",
+            "bbox_xywh": [
+              126,
+              1026,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-06",
+            "text": "Cyclus. 6. Apokryphe Evangelien bei den Slaven; slavische Indices.",
+            "bbox_xywh": [
+              126,
+              1063,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-07",
+            "text": "7. Einfluss apokrypher Evangelien auf die slavische Litteratur und",
+            "bbox_xywh": [
+              126,
+              1100,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-08",
+            "text": "Kunst. 8. Wissenschaftliche Erforschung der Apokryphen bei den",
+            "bbox_xywh": [
+              126,
+              1137,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-09",
+            "text": "Slaven (S. I—LXXVIII).",
+            "bbox_xywh": [
+              126,
+              1174,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 22,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-10",
+            "text": "I. Prophezeihungen über Jesus: eine Paläa-Erzählung",
+            "bbox_xywh": [
+              126,
+              1211,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 51,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-11",
+            "text": "vom Hermes Trismegistus (S. 1—2); eine Prophezeihung vom Christo",
+            "bbox_xywh": [
+              126,
+              1248,
+              999,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-12",
+            "text": "im Tempel des heidnischen Gottes Apollo (S. 2—3); Erzählung des",
+            "bbox_xywh": [
+              126,
+              1286,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-13",
+            "text": "Aphroditianus über das in Persien geschehene Wunder (S. 3—11);",
+            "bbox_xywh": [
+              126,
+              1323,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-14",
+            "text": "die Magier und Herodes (S. 11—13); eine Predigt über den erschie-",
+            "bbox_xywh": [
+              126,
+              1360,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-15",
+            "text": "nenen Stern und über das in Persien geschehene Wunder — eine po-",
+            "bbox_xywh": [
+              126,
+              1397,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-16",
+            "text": "puläre Bearbeitung des Pseudo-Aproditianus (S. 13—18); die Sage von",
+            "bbox_xywh": [
+              126,
+              1434,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-17",
+            "text": "den zwölf Sibyllen, welche über die reine Jungfrau Maria und über die",
+            "bbox_xywh": [
+              126,
+              1471,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-18",
+            "text": "Menschwerdung des Gottessohnes prophezeiht haben (S. 18—24); bei-",
+            "bbox_xywh": [
+              126,
+              1508,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-19",
+            "text": "gefügt ist auch ein polnischer Text aus dem XVI Jahrh. (S. 24—32);",
+            "bbox_xywh": [
+              126,
+              1545,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-20",
+            "text": "hellenische Philosophen, welche theilweise über die hohe Gottheit",
+            "bbox_xywh": [
+              126,
+              1582,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-21",
+            "text": "und über Christi Geburt von der reinen Jungfrau prophezeiht haben",
+            "bbox_xywh": [
+              126,
+              1619,
+              999,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-two-line-22",
+            "text": "(S. 33—35).",
+            "bbox_xywh": [
+              126,
+              1656,
+              999,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00010-20261125",
+                "start": 0,
+                "end": 11,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "contents-summary-one-line-05",
+        "reading": "325—319",
+        "reason": "Anomalous printed range retained, not conjecturally corrected."
+      },
+      {
+        "line_id": "contents-summary-two-line-16",
+        "reading": "Pseudo-Aproditianus",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      }
+    ]
+  }
+}

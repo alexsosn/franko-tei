@@ -1,0 +1,442 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 3,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00003.jpg",
+  "source_image_sha256": "337a96953b2e21c4c2b59d019a45734d56dbc38d8ce327118f0fff8f8598e68f",
+  "reading": {
+    "reader_id": "gpt62-v3-s00003-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image without OCR or peer readings; preserve physical lines, historical spelling, unusual page ranges, contextual language spans and uncertainty. Later accession marks are separately documented. Approximate geometry, no verified claim.",
+    "raw_response": "CODEX APOCRYPHUS\ne manuscriptis ukraino - russicis collectus opera Dr Joannis Franko.\nVol. III. Acta apostolorum apokrypha.\nАПОКРІФИ І ЛЄҐЕНДИ\nЗ УКРАЇНСЬКИХ РУКОПИСІВ\nЗІБРАВ, УПОРЯДКУВАВ І ПОЯСНИВ\nДр. Іван Франко.\nТОМ III.\nАпокріфи новозавітні.\nБ. Апокріфічні дїяня апостолів.\nУ Львові, 1902.\nНакладом Наукового Товариства імени Шевченка.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            819,
+            24,
+            354,
+            74
+          ],
+          "description": "Later handwritten Nr. inw. 223."
+        },
+        {
+          "bbox_xywh": [
+            362,
+            1430,
+            330,
+            126
+          ],
+          "description": "Purple library stamp."
+        },
+        {
+          "bbox_xywh": [
+            720,
+            1453,
+            336,
+            212
+          ],
+          "description": "Faint blue later library stamp."
+        },
+        {
+          "bbox_xywh": [
+            90,
+            311,
+            948,
+            24
+          ],
+          "description": "Decorative double rule."
+        },
+        {
+          "bbox_xywh": [
+            423,
+            1116,
+            312,
+            86
+          ],
+          "description": "Decorative rules."
+        },
+        {
+          "bbox_xywh": [
+            534,
+            1636,
+            78,
+            19
+          ],
+          "description": "Imprint separator."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "latin-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          90,
+          197,
+          948,
+          113
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "latin-title-line-01",
+            "text": "CODEX APOCRYPHUS",
+            "bbox_xywh": [
+              90,
+              197,
+              948,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-02",
+            "text": "e manuscriptis ukraino - russicis collectus opera Dr Joannis Franko.",
+            "bbox_xywh": [
+              90,
+              234,
+              948,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-title-line-03",
+            "text": "Vol. III. Acta apostolorum apokrypha.",
+            "bbox_xywh": [
+              90,
+              272,
+              948,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          89,
+          456,
+          972,
+          288
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-line-01",
+            "text": "АПОКРІФИ І ЛЄҐЕНДИ",
+            "bbox_xywh": [
+              89,
+              456,
+              972,
+              143
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "title-line-02",
+            "text": "З УКРАЇНСЬКИХ РУКОПИСІВ",
+            "bbox_xywh": [
+              89,
+              600,
+              972,
+              143
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editor",
+        "kind": "other",
+        "bbox_xywh": [
+          329,
+          840,
+          522,
+          173
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editor-line-01",
+            "text": "ЗІБРАВ, УПОРЯДКУВАВ І ПОЯСНИВ",
+            "bbox_xywh": [
+              329,
+              840,
+              522,
+              85
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editor-line-02",
+            "text": "Др. Іван Франко.",
+            "bbox_xywh": [
+              329,
+              926,
+              522,
+              86
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          441,
+          1134,
+          282,
+          60
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "ТОМ III.",
+            "bbox_xywh": [
+              441,
+              1134,
+              282,
+              59
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 4,
+                "end": 7,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 7,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "subtitle",
+        "kind": "heading",
+        "bbox_xywh": [
+          284,
+          1296,
+          576,
+          121
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "subtitle-line-01",
+            "text": "Апокріфи новозавітні.",
+            "bbox_xywh": [
+              284,
+              1296,
+              576,
+              59
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "subtitle-line-02",
+            "text": "Б. Апокріфічні дїяня апостолів.",
+            "bbox_xywh": [
+              284,
+              1356,
+              576,
+              60
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imprint",
+        "kind": "other",
+        "bbox_xywh": [
+          162,
+          1587,
+          840,
+          119
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "imprint-line-01",
+            "text": "У Львові, 1902.",
+            "bbox_xywh": [
+              162,
+              1587,
+              840,
+              58
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "imprint-line-02",
+            "text": "Накладом Наукового Товариства імени Шевченка.",
+            "bbox_xywh": [
+              162,
+              1646,
+              840,
+              59
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00003-20261125",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "subtitle-line-02",
+        "reading": "дїяня",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      },
+      {
+        "line_id": "title-line-01",
+        "reading": "ЛЄҐЕНДИ",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      }
+    ]
+  }
+}

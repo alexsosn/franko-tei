@@ -1,0 +1,636 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 5,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00005.jpg",
+  "source_image_sha256": "dc79e80aee781e0e323efe852a5e178209503e6cfd94c8c02c7f71e97797d9c2",
+  "reading": {
+    "reader_id": "gpt62-v3-s00005-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image without OCR or peer readings; preserve physical lines, historical spelling, unusual page ranges, contextual language spans and uncertainty. Later accession marks are separately documented. Approximate geometry, no verified claim.",
+    "raw_response": "Codex Apocryphus\ne manuscriptis ukraino-russicis collectus.\nI. Zweck und Plan der Sammlung.\nIm J. 1895 legte der Schreiber dieser Zeilen der Archäographi-\nschen Commission der Ševčenko-Gesellschaft der Wissenschaften in\nLemberg den Plan zur Publication einer umfassenden Sammlung der\napokryphen Schriften und der auf Grund dieser Apohryphen entstan-\ndenen Legenden vor. Diese Publication sollte einerseits die bisher vor-\nhandenen, in Russland publizierten ähnlichen Sammlungen von Pypin,\nTichonravov, Porfirjev, Popov, Sreznevskij, Speranskij, sowie das in\nAgram und Belgrad auf diesem Felde von Jagić, Daničić, Novaković,\nStojanović und Polivka Geleistete ergänzen, natürlich soweit das dem\nVerfasser erreichbare Material es zuliess, — anderseits aber und haupt-\nsächlich für die Erforschung der ruthenischen (südrussischen oder ukra-\ninisch-russischen) Sprache und Litteratur im XVI—XVIII Jahrhundert\nbisher unbekanntes Material aus Handschriften beitragen.\nDes Verfassers Plan umfasste das ganze Gebiet der apokryphen\nLitteratur, welches in diesem Umfang bisher von keinem früheren He-\nrausgeber auf slavischem Boden berücksichtigt worden war, also\ndie apokryphe Dichtung, welche die alttestamentliche; sowie die neu-\ntestamentliche heil. Geschichte begleitet, sodann die apokryphe Apoca-\nlypsen-Litteratur, apokr. Katechismen, Herrenbriefe, Naturphilosophie,\nExorcismen und Gebete, dann aber auch eine Auswahl späterer Heili-\ngenlegenden, insofern dieselben entweder auch in alten Indices unter\nApokryphen angeführt werden oder sonst für die allgemeine oder die\nruthenische Litteratur- oder Culturgeschichte wichtig sind.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            582,
+            681,
+            126,
+            28
+          ],
+          "description": "Decorative separator below Latin heading."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "latin-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          240,
+          528,
+          816,
+          139
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "latin-heading-line-01",
+            "text": "Codex Apocryphus",
+            "bbox_xywh": [
+              240,
+              528,
+              816,
+              68
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-heading-line-02",
+            "text": "e manuscriptis ukraino-russicis collectus.",
+            "bbox_xywh": [
+              240,
+              597,
+              816,
+              69
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 42,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-one",
+        "kind": "heading",
+        "bbox_xywh": [
+          413,
+          753,
+          564,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-one-line-01",
+            "text": "I. Zweck und Plan der Sammlung.",
+            "bbox_xywh": [
+              413,
+              753,
+              564,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 31,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          156,
+          821,
+          966,
+          824
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "Im J. 1895 legte der Schreiber dieser Zeilen der Archäographi-",
+            "bbox_xywh": [
+              156,
+              821,
+              966,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "schen Commission der Ševčenko-Gesellschaft der Wissenschaften in",
+            "bbox_xywh": [
+              156,
+              856,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "Lemberg den Plan zur Publication einer umfassenden Sammlung der",
+            "bbox_xywh": [
+              156,
+              892,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "apokryphen Schriften und der auf Grund dieser Apohryphen entstan-",
+            "bbox_xywh": [
+              156,
+              928,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "denen Legenden vor. Diese Publication sollte einerseits die bisher vor-",
+            "bbox_xywh": [
+              156,
+              964,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 71,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "handenen, in Russland publizierten ähnlichen Sammlungen von Pypin,",
+            "bbox_xywh": [
+              156,
+              1000,
+              966,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "Tichonravov, Porfirjev, Popov, Sreznevskij, Speranskij, sowie das in",
+            "bbox_xywh": [
+              156,
+              1035,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "Agram und Belgrad auf diesem Felde von Jagić, Daničić, Novaković,",
+            "bbox_xywh": [
+              156,
+              1071,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "Stojanović und Polivka Geleistete ergänzen, natürlich soweit das dem",
+            "bbox_xywh": [
+              156,
+              1107,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "Verfasser erreichbare Material es zuliess, — anderseits aber und haupt-",
+            "bbox_xywh": [
+              156,
+              1143,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 71,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "sächlich für die Erforschung der ruthenischen (südrussischen oder ukra-",
+            "bbox_xywh": [
+              156,
+              1179,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 71,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "inisch-russischen) Sprache und Litteratur im XVI—XVIII Jahrhundert",
+            "bbox_xywh": [
+              156,
+              1215,
+              966,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "bisher unbekanntes Material aus Handschriften beitragen.",
+            "bbox_xywh": [
+              156,
+              1250,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "Des Verfassers Plan umfasste das ganze Gebiet der apokryphen",
+            "bbox_xywh": [
+              156,
+              1286,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "Litteratur, welches in diesem Umfang bisher von keinem früheren He-",
+            "bbox_xywh": [
+              156,
+              1322,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "rausgeber auf slavischem Boden berücksichtigt worden war, also",
+            "bbox_xywh": [
+              156,
+              1358,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "die apokryphe Dichtung, welche die alttestamentliche; sowie die neu-",
+            "bbox_xywh": [
+              156,
+              1394,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "testamentliche heil. Geschichte begleitet, sodann die apokryphe Apoca-",
+            "bbox_xywh": [
+              156,
+              1430,
+              966,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "lypsen-Litteratur, apokr. Katechismen, Herrenbriefe, Naturphilosophie,",
+            "bbox_xywh": [
+              156,
+              1465,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "Exorcismen und Gebete, dann aber auch eine Auswahl späterer Heili-",
+            "bbox_xywh": [
+              156,
+              1501,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "genlegenden, insofern dieselben entweder auch in alten Indices unter",
+            "bbox_xywh": [
+              156,
+              1537,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "Apokryphen angeführt werden oder sonst für die allgemeine oder die",
+            "bbox_xywh": [
+              156,
+              1573,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "ruthenische Litteratur- oder Culturgeschichte wichtig sind.",
+            "bbox_xywh": [
+              156,
+              1609,
+              966,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00005-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-04",
+        "reading": "Apohryphen",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      },
+      {
+        "line_id": "preface-line-17",
+        "reading": "alttestamentliche;",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      }
+    ]
+  }
+}

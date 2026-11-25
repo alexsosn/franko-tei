@@ -1,0 +1,135 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 1,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00001.jpg",
+  "source_image_sha256": "b9d34aebd43204a56c4b4f347ca08cbc9dd13133992b50e044675f4b4e9010e4",
+  "reading": {
+    "reader_id": "gpt62-v3-s00001-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image without OCR or peer readings; preserve physical lines, historical spelling, unusual page ranges, contextual language spans and uncertainty. Later accession marks are separately documented. Approximate geometry, no verified claim.",
+    "raw_response": "ПАМЯТКИ\nукраїнсько=руської мови і лїтератури.\nIII.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            480,
+            48,
+            180,
+            108
+          ],
+          "description": "Later handwritten numeral appears 57; not printed edition text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "half-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          168,
+          708,
+          942,
+          175
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "half-title-line-01",
+            "text": "ПАМЯТКИ",
+            "bbox_xywh": [
+              168,
+              708,
+              942,
+              86
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00001-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "half-title-line-02",
+            "text": "українсько=руської мови і лїтератури.",
+            "bbox_xywh": [
+              168,
+              795,
+              942,
+              87
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00001-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          600,
+          936,
+          78,
+          48
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "III.",
+            "bbox_xywh": [
+              600,
+              936,
+              78,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00001-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "half-title-line-02",
+        "reading": "=",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      }
+    ]
+  }
+}

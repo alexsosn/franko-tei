@@ -1,0 +1,924 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 6,
+  "printed_page_observed": "B",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00006.jpg",
+  "source_image_sha256": "1bf4550e85c4515fc7285360a6b14acdf483b7cc99f4eed0dbb126664154ccd9",
+  "reading": {
+    "reader_id": "gpt62-v3-s00006-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image without OCR or peer readings; preserve physical lines, historical spelling, unusual page ranges, contextual language spans and uncertainty. Later accession marks are separately documented. Approximate geometry, no verified claim.",
+    "raw_response": "B\nWas die Methode der Publication betrifft, so hat es sich der Verf.\nzur Regel gemacht, jeden Text möglichst exact, mit Beibehaltung aller\nSprach- und Schreibart-Schattierungen wiederzugeben, eventuelle Emen-\ndationen des handschriftlichen Textes in Noten kenntlich zu machen,\nund wenn ihm zwei oder mehrere Copieen desselben Textes zu Ge-\nbote stehen, die Varianten nach dem Texte abzudrucken. Jeder Text\nsollte mit einer Note, einem Hinweis auf Provenienz, Verwandtschaft\nmit anderen, Analogien mit ähnlichen oder identischen anderwärts ge-\ndruckten Texten, auf andersprachige Originale, Quellen oder frühere\nBearbeitungen desselben versehen werden. Jeder Band sollte ausser-\ndem eine allgemein orientierende Einleitung und die nötigen Indices\nenthalten.\nDie ursprünglich gefasste und in der Einleitung zum ersten\nBande auch theilweise durchgeführte Absicht, in der Einleitung auch\ndetaillierte Beschreibung der Handschriften zu geben, aus welchen die\nbetreffenden Texte geschöpft wurden, ist in der Folge fallen gelassen,\nweil es dem Verf. zweckmässiger erschien solche Handschriftenbe-\nschreibungen gelegentlich in den Mittheilungen der Š. Ges. der Wiss.\nzu publizieren, was nun zum grossen Theil in der Arbeit des Verf.\n„Das Karpatho-ruthenische Schriftthum in XVI—XVIII Jahrh.“ auch\ngeleistet wurde.\nBisher erschienen drei Bände der Sammlung, welche ungefähr die\nHälfte des für die Publication in Aussicht genommenen und vorberei-\nteten Materials umfassen. Da aber die bisher erschienenen Bände gewis-\nsermassen ein Ganzes bilden und ein Corollar zur kanonischen Bibel\ndes alten und des neuen Testamentes darstellen, so erschien es der\nArchäographischen Commission der Ševčenko-Ges. d. Wiss. ratsam auch\nder weiteren Gelehrtenwelt, welcher das Kirchenslavische und speciell\ndas in ukr -russische Formen gegossene Kirchenslavische nicht geläufig\nist, das in diesen Bänden Gebrachte wenigstens dem Inhalte nach de-\ntaillirt zu skizzieren.\nII. Inhalt des ersten Bandes. Die Apokryphen des alten Testaments.\nVorwort. (S. I--LXVI). 1. Bedeutung der Apokryphen für die\nLitteraturgeschichte. 2. Was sind die Apokryphen und Pseudepigra-\nphen? 3. Stellung der Apokryphen in der alten christlichen Kirche\n— häretische Apokryphen und ihre katholischen Umarbeitungen. 4. Ver-\ndammung der Apokryphen und die ältesten Indices. 6. Die Apokryphen\nin Russland und die Paläa. 7. Einfluss der Apokryphen auf das Schrift-\nthum und die mündliche Tradition des ukr.-ruthenischen Volkes.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          102,
+          114,
+          42,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "B",
+            "bbox_xywh": [
+              102,
+              114,
+              42,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          94,
+          180,
+          960,
+          1100
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "Was die Methode der Publication betrifft, so hat es sich der Verf.",
+            "bbox_xywh": [
+              94,
+              180,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "zur Regel gemacht, jeden Text möglichst exact, mit Beibehaltung aller",
+            "bbox_xywh": [
+              94,
+              215,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "Sprach- und Schreibart-Schattierungen wiederzugeben, eventuelle Emen-",
+            "bbox_xywh": [
+              94,
+              250,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "dationen des handschriftlichen Textes in Noten kenntlich zu machen,",
+            "bbox_xywh": [
+              94,
+              286,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "und wenn ihm zwei oder mehrere Copieen desselben Textes zu Ge-",
+            "bbox_xywh": [
+              94,
+              321,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "bote stehen, die Varianten nach dem Texte abzudrucken. Jeder Text",
+            "bbox_xywh": [
+              94,
+              357,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "sollte mit einer Note, einem Hinweis auf Provenienz, Verwandtschaft",
+            "bbox_xywh": [
+              94,
+              392,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "mit anderen, Analogien mit ähnlichen oder identischen anderwärts ge-",
+            "bbox_xywh": [
+              94,
+              428,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "druckten Texten, auf andersprachige Originale, Quellen oder frühere",
+            "bbox_xywh": [
+              94,
+              463,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "Bearbeitungen desselben versehen werden. Jeder Band sollte ausser-",
+            "bbox_xywh": [
+              94,
+              499,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "dem eine allgemein orientierende Einleitung und die nötigen Indices",
+            "bbox_xywh": [
+              94,
+              534,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "enthalten.",
+            "bbox_xywh": [
+              94,
+              570,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "Die ursprünglich gefasste und in der Einleitung zum ersten",
+            "bbox_xywh": [
+              94,
+              605,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "Bande auch theilweise durchgeführte Absicht, in der Einleitung auch",
+            "bbox_xywh": [
+              94,
+              641,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "detaillierte Beschreibung der Handschriften zu geben, aus welchen die",
+            "bbox_xywh": [
+              94,
+              676,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "betreffenden Texte geschöpft wurden, ist in der Folge fallen gelassen,",
+            "bbox_xywh": [
+              94,
+              712,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "weil es dem Verf. zweckmässiger erschien solche Handschriftenbe-",
+            "bbox_xywh": [
+              94,
+              747,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "schreibungen gelegentlich in den Mittheilungen der Š. Ges. der Wiss.",
+            "bbox_xywh": [
+              94,
+              783,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "zu publizieren, was nun zum grossen Theil in der Arbeit des Verf.",
+            "bbox_xywh": [
+              94,
+              818,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "„Das Karpatho-ruthenische Schriftthum in XVI—XVIII Jahrh.“ auch",
+            "bbox_xywh": [
+              94,
+              854,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "geleistet wurde.",
+            "bbox_xywh": [
+              94,
+              889,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "Bisher erschienen drei Bände der Sammlung, welche ungefähr die",
+            "bbox_xywh": [
+              94,
+              925,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "Hälfte des für die Publication in Aussicht genommenen und vorberei-",
+            "bbox_xywh": [
+              94,
+              960,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "teten Materials umfassen. Da aber die bisher erschienenen Bände gewis-",
+            "bbox_xywh": [
+              94,
+              996,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "sermassen ein Ganzes bilden und ein Corollar zur kanonischen Bibel",
+            "bbox_xywh": [
+              94,
+              1031,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "des alten und des neuen Testamentes darstellen, so erschien es der",
+            "bbox_xywh": [
+              94,
+              1067,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "Archäographischen Commission der Ševčenko-Ges. d. Wiss. ratsam auch",
+            "bbox_xywh": [
+              94,
+              1102,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "der weiteren Gelehrtenwelt, welcher das Kirchenslavische und speciell",
+            "bbox_xywh": [
+              94,
+              1138,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "das in ukr -russische Formen gegossene Kirchenslavische nicht geläufig",
+            "bbox_xywh": [
+              94,
+              1173,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "ist, das in diesen Bänden Gebrachte wenigstens dem Inhalte nach de-",
+            "bbox_xywh": [
+              94,
+              1209,
+              960,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "taillirt zu skizzieren.",
+            "bbox_xywh": [
+              94,
+              1244,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-two",
+        "kind": "heading",
+        "bbox_xywh": [
+          110,
+          1321,
+          924,
+          41
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-two-line-01",
+            "text": "II. Inhalt des ersten Bandes. Die Apokryphen des alten Testaments.",
+            "bbox_xywh": [
+              110,
+              1321,
+              924,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contents-summary",
+        "kind": "body",
+        "bbox_xywh": [
+          89,
+          1376,
+          960,
+          253
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "contents-summary-line-01",
+            "text": "Vorwort. (S. I--LXVI). 1. Bedeutung der Apokryphen für die",
+            "bbox_xywh": [
+              89,
+              1376,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-02",
+            "text": "Litteraturgeschichte. 2. Was sind die Apokryphen und Pseudepigra-",
+            "bbox_xywh": [
+              89,
+              1412,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-03",
+            "text": "phen? 3. Stellung der Apokryphen in der alten christlichen Kirche",
+            "bbox_xywh": [
+              89,
+              1448,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-04",
+            "text": "— häretische Apokryphen und ihre katholischen Umarbeitungen. 4. Ver-",
+            "bbox_xywh": [
+              89,
+              1484,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-05",
+            "text": "dammung der Apokryphen und die ältesten Indices. 6. Die Apokryphen",
+            "bbox_xywh": [
+              89,
+              1520,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-06",
+            "text": "in Russland und die Paläa. 7. Einfluss der Apokryphen auf das Schrift-",
+            "bbox_xywh": [
+              89,
+              1556,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "contents-summary-line-07",
+            "text": "thum und die mündliche Tradition des ukr.-ruthenischen Volkes.",
+            "bbox_xywh": [
+              89,
+              1592,
+              960,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00006-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-29",
+        "reading": "ukr -russische",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      },
+      {
+        "line_id": "contents-summary-line-01",
+        "reading": "I--LXVI",
+        "reason": "Exact printed glyph, spelling or punctuation provisional; retained without normalization."
+      }
+    ]
+  }
+}
