@@ -617,7 +617,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,109,36,0],['2',140,40,100,0],
+            self.assertEqual(result, [['1',145,109,36,0],['2',140,63,77,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -660,6 +660,18 @@ class ReviewSmoke(unittest.TestCase):
                           ('XXXIII–XXXIX', 37), ('XXXIX–LXI', 43), ('LXI–LXIII', 65),
                           ('LXIII–LXXVIII', 67)])
         self.assertTrue(all(len(e) == 6 and 'heading' in e[5] for e in preface))
+        # Actual work openings, including separate texts sharing a physical page.
+        expected = {15: 84, 16: 85, 17: 93, 18: 95, 21: 106, 22: 115,
+                    24: 479, 25: 480, 26: 483, 30: 135, 31: 139, 33: 147,
+                    34: 153, 35: 156, 36: 180, 37: 183, 38: 184, 39: 185,
+                    40: 185, 41: 191, 42: 192, 43: 192, 44: 193}
+        self.assertEqual({i: volume['entries'][i][3] for i in expected}, expected)
+        self.assertTrue(all(e[3] is not None for e in volume['entries'][13:46]))
+        self.assertTrue(all(len(volume['entries'][i]) == 6 for i in expected))
+        self.assertIn('520', volume['entries'][22][5])
+        for i in (34, 35):
+            self.assertIn('p. 98', volume['entries'][i][5])
+        self.assertIn('p. 59', volume['entries'][32][5])
         continuation = next(e for e in items if e[1].startswith('З. О еллинскихъ мудрецехъ'))
         self.assertEqual((continuation[0], continuation[2]), (519, '33–35'))
         self.assertIn('520', continuation[5])
