@@ -717,7 +717,7 @@
         "kind": "body",
         "bbox_xywh": [
           109,
-          840,
+          1133,
           966,
           175
         ],
@@ -728,7 +728,7 @@
             "text": "Рукопис 8-о, записані 4 картки полууставним письмом. Під",
             "bbox_xywh": [
               109,
-              840,
+              1133,
               966,
               31
             ],
@@ -749,7 +749,7 @@
             "text": "титулом підпис: Wiktor Bilik, roko 1861, grudnia 7. Маємо тут най-",
             "bbox_xywh": [
               109,
-              876,
+              1169,
               966,
               31
             ],
@@ -786,7 +786,7 @@
             "text": "новійший тип Листу небесного, перекладений з польського, який",
             "bbox_xywh": [
               109,
-              912,
+              1205,
               966,
               31
             ],
@@ -807,7 +807,7 @@
             "text": "витїснив у значній мірі старші редакції, що були популярні у нас",
             "bbox_xywh": [
               109,
-              948,
+              1241,
               966,
               31
             ],
@@ -828,7 +828,7 @@
             "text": "у XVII—XVIII в.",
             "bbox_xywh": [
               109,
-              984,
+              1277,
               966,
               31
             ],
@@ -851,7 +851,7 @@
         "kind": "heading",
         "bbox_xywh": [
           173,
-          1111,
+          1386,
           852,
           73
         ],
@@ -862,7 +862,7 @@
             "text": "З) Бачванський рукопис XIX. в. Михайла Туринського,",
             "bbox_xywh": [
               173,
-              1111,
+              1386,
               852,
               31
             ],
@@ -883,7 +883,7 @@
             "text": "стор. 11—16.",
             "bbox_xywh": [
               173,
-              1153,
+              1428,
               852,
               31
             ],
@@ -906,7 +906,7 @@
         "kind": "body",
         "bbox_xywh": [
           110,
-          1226,
+          1488,
           969,
           103
         ],
@@ -917,7 +917,7 @@
             "text": "(Лист небесний). Сей листъ бысть оу гроба бж҃аго оу Ієрꙋса-",
             "bbox_xywh": [
               110,
-              1226,
+              1488,
               969,
               31
             ],
@@ -946,7 +946,7 @@
             "text": "лимꙋ, листъ Іс҃а Назарейска цр҃ѧ іꙋдейска. Во имѧ Ѡц҃а и Сн҃а",
             "bbox_xywh": [
               110,
-              1262,
+              1524,
               969,
               31
             ],
@@ -967,7 +967,7 @@
             "text": "и ст҃го Дх҃а. аминь. Тии ст҃ы слова на сей свѣтѣ ѿ самого Гс҃да",
             "bbox_xywh": [
               110,
-              1298,
+              1560,
               969,
               31
             ],
@@ -1138,8 +1138,13 @@
       "date": "2026-11-25",
       "status": "provisional",
       "scope": "First-reading contiguous code-point language/script spans on all linguistic lines.",
-      "policy": "uk historical Ukrainian/Ruthenian tentative, pl Polish Latin-script signature, la Latin editorial insertions. Numeric-only folios untagged. Historic register uncertain; punctuation belongs to adjacent spans.",
+      "policy": "uk historical Ukrainian/Ruthenian tentative, cu Church Slavonic invocation where separately supported, pl Polish Latin-script signature, la Latin editorial insertions. Numeric-only folios untagged. Historic register uncertain; punctuation belongs to adjacent spans.",
       "notes": "Uhniv continuation and Bachva start are provisionally uk in the existing annotation scheme; Bachva witness may specifically represent Pannonian Rusyn, requires dialect review rather than assuming modern Ukrainian. Polish signature preserves roko, not normalized. Latin sic and Ukrainian editorial correction markers distinct."
+    },
+    "geometry_review": {
+      "status": "estimated",
+      "prior_blob": "476e0573aa6c72dd8cce355b8f6412d83f32de3c",
+      "reason": "Corrected overlapping approximate region placement after review; no change to text or line IDs. Positions remain estimates, not measured segmentation."
     }
   }
 }
