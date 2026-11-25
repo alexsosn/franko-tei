@@ -389,7 +389,9 @@ class ReviewSmoke(unittest.TestCase):
         self.assertNotIn('ECCA 121', links(97))
         self.assertNotIn('CAVT-207', links(104))
         self.assertNotIn('ECCA 919', links(13))
-        self.assertEqual([r['index_zero_based'] for r in rows if r['status'] == 'candidate'], ['65'])
+        self.assertFalse([r for r in rows if r['status'] == 'candidate'])
+        self.assertEqual(links(65)['CAVT-132']['relation'], 'work-family')
+        self.assertIn('Anisimova (2023)', links(65)['CAVT-132']['evidence'])
         self.assertEqual(data['1']['entries'][7][2], '324–320')
 
     def test_contents_work_references(self):
