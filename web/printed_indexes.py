@@ -98,6 +98,45 @@ EXTRA_PAGES = {
             "right-yu": [1],
             "right-shch": [1]}),
     ),
+    "works": (
+        (432, "gpt62-i432-first-image-20261125", {
+            "left-v": [3,5,7,8,11,12,15,16,17],
+            "left-g": [1,2,5,6,7,9,10,11,13,17,20,22,23],
+            "left-d": [1,3],
+            "right-d": [2,3,4,6,8,9,10,11,14],
+            "right-e": [1,2,3,4,5,7,8,10,12,15,17,18,23,24],
+            "right-zh": [1,2,3]}),
+        (433, "gpt62-i433-first-image-20261125", {
+            "left-zh": [2,4],
+            "left-z": [2,3,4,5,6,7],
+            "left-i": [2,3,4,5,6,7,8,9,10,11,13,14,15],
+            "left-k": [2,5,6,7,10,12],
+            "right-k": [1,2,3,4,5,6,9,10,11,12,13],
+            "right-l": [1,2,3,4,5,6,7,9,10],
+            "right-m": [1,2,3,7,8,9,10,12,14,15,16,17,18]}),
+        (434, "gpt62-i434-first-image-20261125", {
+            "left-m": [1,2,4],
+            "left-n": [2,3,4,5,6],
+            "left-o": [1,3,4,6,7,9],
+            "left-p": [1,2,3,6,7,10,16,19],
+            "right-p": [8,9,11,13,14,17,21,25,26,28,29,30,31,32,33,34,35,36,37,38,39,40,41,43,44,47,49]}),
+        (435, "gpt62-i435-first-image-20261125", {
+            "left-p": [3,6,8,9,12,13,15,17,22,33,35,36,37,38,39,40,41,42,43],
+            "left-r": [1,2],
+            "right-r": [1,2,5,7,8,10,11,13,17,24,26,27,32,33],
+            "right-s": [1,3,6,7,8,9,10,11,12]}),
+        (436, "gpt62-i436-first-image-20261125", {
+            "left-s": [1,2,6,9,10,11,12,13],
+            "left-t": [1,2,11,13,15,16],
+            "left-u": [1],
+            "left-f": [2,5,6,7],
+            "right-x": [2,4,6,8,9,11,12],
+            "right-theta": [1],
+            "right-ts": [1,4,5,7],
+            "right-ch": [1,2,4],
+            "right-sh": [2],
+            "right-ya": [2,3,5,8]}),
+    ),
     "glossary": (
         (460, "gpt62-i460-first-image-20261125", {
             "left": [2,3,4,6,8,10,11,13,15,18,20,22,24,25,26,28,30,32,35,37,38,40,41,43,44,45,49],
@@ -111,7 +150,76 @@ EXTRA_PAGES = {
     ),
 }
 # Editorial context is separate from the printed ditto glyphs.
-NAME_CONTEXTS = {
+ENTRY_CONTEXTS = {
+    (431, "left-a", 5): "апокріф",
+    (431, "left-a", 6): "Адамів; апокріф",
+    (431, "right-v", 3): "Варнавино; апокр.",
+    (431, "right-v", 14): "Веселовскій А. Н.",
+    (432, "left-v", 4): "Веселовскій А. Н.",
+    (432, "left-v", 6): "Веселовскій А. Н.",
+    (432, "left-v", 13): "Вопросы Іоанна Богослова",
+    (432, "left-v", 17): "книга",
+    (432, "left-g", 21): "Grünbaum M.",
+    (432, "left-d", 2): "Давид",
+    (432, "right-d", 3): "Данїіл",
+    (432, "right-e", 11): "Епіфанїй Кипрський",
+    (432, "right-e", 13): "Епіфанїй Кипрський",
+    (432, "right-e", 16): "Епіфанїй Кипрський",
+    (432, "right-e", 24): "Єфрем Сирин",
+    (433, "left-z", 7): "книга",
+    (433, "left-i", 9): "апокр.",
+    (433, "right-k", 2): "Клїментово; апокр.",
+    (433, "right-k", 4): "Книга",
+    (433, "right-k", 5): "Книга",
+    (433, "right-l", 3): "книга",
+    (433, "right-l", 4): "книга",
+    (433, "right-m", 10): "Минея",
+    (434, "left-m", 2): "Молитви",
+    (434, "left-n", 4): "апокр.",
+    (434, "left-p", 2): "Павла апостола",
+    (434, "left-p", 7): "Палея",
+    (434, "left-p", 8): "Палея",
+    (434, "left-p", 11): "Палея",
+    (434, "left-p", 17): "Палея",
+    (434, "right-p", 9): "Палея",
+    (434, "right-p", 10): "Палея",
+    (434, "right-p", 12): "Палея",
+    (434, "right-p", 14): "Палея",
+    (434, "right-p", 15): "Палея",
+    (434, "right-p", 18): "Палея",
+    (434, "right-p", 22): "Палея",
+    (434, "right-p", 26): "Палея",
+    (434, "right-p", 33): "Паралїпомена",
+    (434, "right-p", 35): "Патерик",
+    (434, "right-p", 36): "Патерик",
+    (434, "right-p", 37): "Патерик",
+    (434, "right-p", 38): "Патерик",
+    (434, "right-p", 39): "Патерик",
+    (435, "left-p", 7): "Пыпинъ А. Н.",
+    (435, "left-p", 16): "Поповъ А. Н.",
+    (435, "left-p", 23): "Порфирьевъ И. Я.",
+    (435, "right-r", 3): "Рукописи",
+    (435, "right-r", 6): "Рукописи",
+    (435, "right-r", 8): "Рукописи",
+    (435, "right-r", 9): "Рукописи",
+    (435, "right-r", 11): "Рукописи",
+    (435, "right-r", 12): "Рукописи",
+    (435, "right-r", 14): "Рукописи",
+    (435, "right-r", 18): "Рукописи",
+    (435, "right-r", 25): "Рукописи",
+    (435, "right-r", 27): "Рукописи",
+    (435, "right-r", 28): "Рукописи",
+    (435, "right-s", 4): "Сборникъ",
+    (435, "right-s", 7): "Сборникъ",
+    (436, "left-s", 11): "книга",
+    (436, "left-s", 12): "книга",
+    (436, "left-t", 12): "Тихонравовъ",
+    (436, "left-f", 3): "Fabricius",
+    (436, "right-x", 3): "Хожденіє",
+    (436, "right-x", 7): "Хожденіє",
+    (436, "right-ya", 3): "Jagić V.",
+    (436, "right-ya", 4): "Jagić V.",
+    (436, "right-ya", 6): "Jagić V.",
     (422, "left", 10): "Індийські",
     (422, "left", 12): "Індия",
     (422, "left", 13): "ефіопська",
@@ -233,6 +341,11 @@ NAME_CONTEXTS = {
     (421, "right", 21): "цар",
 }
 SOURCE_BLOBS.update({
+    432: "28bc37a0cacf67dab695ebbece95c5ffe9abfcb3",
+    433: "0568936619eeec3611cc51a452eaec081aa1b60f",
+    434: "8796bddbeb7e691f8c10fc95c7dc34628a4ec950",
+    435: "ced95ae19de5eef9dcaa6f51a72b1b8f6164a8b2",
+    436: "58992b023ca6428e2030dff97185fa93f823f400",
     422: "f7ec80af0be6a32a8e3ae7a43805145d78437c72",
     423: "0df835d131f7038572d2ac42ee29a033dd97df94",
     424: "3d068c94633b40d8284f0803420f1806e4c7f3fd",
@@ -255,8 +368,13 @@ SOURCE_BLOBS.update({
 # Pairs are atomic: do not expose a truncated article or orphan if either
 # scan's pinned reading is absent or changed.
 CONTINUATIONS = {(422, "right", 1), (425, "left-m", 1),
-                 (430, "left", 1), (430, "right-ya", 1)}
-ATOMIC_PAIRS = ((424, 425), (429, 430))
+                 (430, "left", 1), (430, "right-ya", 1),
+                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1)}
+ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435))
+# Running continuation heading is literal evidence, not part of the numeric tail.
+CONTINUATION_PREFIXES = {(434, "right-p", 1): "Палея Крех. "}
+# Explicit source line break with no printed separator; do not guess missing commas.
+# The source remains literal; the parse uses the joined numeric tail only.
 
 NUMBER = r"[1-9][0-9]{0,2}"
 TOKEN = NUMBER + r"(?:[—–-]" + NUMBER + r")?"
@@ -316,7 +434,7 @@ def parse_entry(kind, lines, targets):
             if other:
                 refs.append(other)
         return label, detail, refs
-    if kind == "names":
+    if kind in ("names", "works"):
         # Some source rows use full stops as separators, or lack punctuation.
         # Split only explicit comma/period boundaries. A damaged token such as
         # "2 9" is not two page references or a guessed 29/209.
@@ -406,7 +524,7 @@ def build_printed_indexes(pilot, ref):
                 previous = 0
                 for stop in ends:
                     part = [{"id": l["id"], "text": l["text"]} for l in lines[previous:stop]]
-                    if kind == "names" and (scan, region_id, previous + 1) in CONTINUATIONS:
+                    if (scan, region_id, previous + 1) in CONTINUATIONS:
                         # A region/page boundary never manufactures a new name.
                         prior = entries[-1] if entries else section["entries"][-1]
                         segments = prior.setdefault("segments", [
@@ -414,14 +532,24 @@ def build_printed_indexes(pilot, ref):
                                  lines=prior["lines"][:])])
                         segments.append(dict(source=source, region_id=region_id, lines=part))
                         prior["lines"].extend(part)
+                        parse_lines = []
+                        for segment in segments:
+                            texts = [l["text"] for l in segment["lines"]]
+                            # Explicit printed running heading; preserve in source.
+                            if (segment["source"]["scan"], segment["region_id"], 1) in CONTINUATION_PREFIXES:
+                                prefix = CONTINUATION_PREFIXES[(segment["source"]["scan"], segment["region_id"], 1)]
+                                if not texts[0].startswith(prefix):
+                                    raise ValueError("changed running continuation heading")
+                                texts[0] = texts[0][len(prefix):]
+                            parse_lines.extend(texts)
                         prior["label"], prior["detail"], prior["refs"] = parse_entry(
-                            kind, [l["text"] for l in prior["lines"]], targets)
+                            kind, parse_lines, targets)
                         previous = stop
                         continue
                     label, detail, refs = parse_entry(kind, [l["text"] for l in part], targets)
                     # Only the explicit Abraham block on the pilot motif page.
                     context = ("Авраам" if kind == "motifs" and label.startswith("„")
-                               else NAME_CONTEXTS.get((scan, region_id, previous + 1), "") if kind == "names" else "")
+                               else ENTRY_CONTEXTS.get((scan, region_id, previous + 1), "") if kind in ("names", "works") else "")
                     entries.append(dict(id=f"v1-{scan}-{part[0]['id']}", source=source,
                                         region_id=region_id, lines=part, label=label,
                                         detail=detail, context=context, refs=refs))
