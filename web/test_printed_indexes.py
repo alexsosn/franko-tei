@@ -35,7 +35,9 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertIn("стор. 197", varilo["detail"])
         self.assertEqual(varilo["refs"][1]["role"], "variant")
         self.assertEqual([len(works), len(motifs), len(glossary)], [33, 17, 189])
-        self.assertEqual(sum(e["source"]["scan"] == 416 for e in names), 39)
+        self.assertEqual(len(names), 429)
+        self.assertEqual([sum(e["source"]["scan"] == n for e in names) for n in range(416, 422)], [39, 92, 79, 83, 70, 66])
+        self.assertEqual(next(e for e in names if e["label"] == "Армяне 228 229")["refs"], [])
         for scan in range(417, 422):
             draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)).read_text(encoding="utf-8"))
             expected = [l["id"] for region in draft["reading"]["regions"] if region["kind"] == "body" for l in region["lines"]]
