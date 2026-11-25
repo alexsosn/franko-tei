@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 import unittest
+import tempfile
+import shutil
 
 from printed_indexes import build_printed_indexes, parse_entry, folio_targets
 
@@ -44,6 +46,77 @@ class PrintedIndexesTest(unittest.TestCase):
                     for target in ref["targets"]:
                         target_draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % target["scan"])).read_text(encoding="utf-8"))
                         self.assertEqual(target_draft["printed_page_observed"], str(target["page"]))
+
+    def test_changed_or_missing_source_is_not_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot = Path(tmp)
+            source = ROOT / "pilot/vol1_scan00416_single_reading.json"
+            target = pilot / source.name
+            shutil.copyfile(source, target)
+            self.assertTrue(build_printed_indexes(pilot, "a" * 40)["sections"][0]["entries"])
+            target.write_bytes(target.read_bytes() + b"\n")
+            data = build_printed_indexes(pilot, "a" * 40)
+            self.assertEqual(data["sections"][0]["structured_scans"], [])
+            self.assertEqual(data["sections"][0]["entries"], [])
+            self.assertEqual(data["sections"][0]["draft_scans"], [416])
+            self.assertEqual(data["sections"][1]["draft_scans"], [])
+
+    def test_browser_navigation(self):
+        from playwright.sync_api import sync_playwright
+        import os
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        html = (ROOT / "web/index.html").read_text(encoding="utf-8")
+        marker = "updateMode();load();"
+        self.assertIn(marker, html)
+        html = html.replace(marker, "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,$('ref').value];};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get("CHROMIUM") or None, args=["--no-sandbox"])
+            page = browser.new_page(viewport={"width": 390, "height": 844})
+            page.route("https://index.test/**", lambda route: route.fulfill(
+                content_type="application/json", body=json.dumps(data)) if route.request.url.endswith("/search/printed-indexes.json")
+                else route.fulfill(content_type="text/html", body=html) if route.request.url=="https://index.test/"
+                else route.abort())
+            page.goto("https://index.test/")
+            page.locator("#contentsOpen").click()
+            page.locator("#indexMode").click()
+            page.locator("#indexEntries li").first.wait_for()
+            self.assertEqual(page.locator("#indexKind option").count(), 4)
+            self.assertIn("1 / 15", page.locator("#indexStatus").inner_text())
+            page.locator("#contentsFilter").fill("Авель")
+            row = page.locator("#indexEntries li:visible")
+            self.assertEqual(row.count(), 1)
+            self.assertEqual(row.locator(".index-label").inner_text(), "Авель")
+            entry = next(e for e in data["sections"][0]["entries"] if e["label"] == "Авель")
+            target = next(t for r in entry["refs"][:8] for t in r["targets"])
+            page.evaluate("$('ref').value='feature/example'")
+            row.locator('button[data-scan="%s"]' % target["scan"]).first.click()
+            self.assertEqual(page.evaluate("window.lastJump"), ["1", str(target["scan"]), "feature/example"])
+            page.locator("#contentsOpen").click()
+            page.locator("#indexEntries li").first.wait_for()
+            page.locator("#indexKind").select_option("glossary")
+            page.locator("#contentsFilter").fill("Варило")
+            self.assertIn("стор. 197", page.locator("#indexEntries li:visible").inner_text())
+            page.locator("#indexSources summary").click()
+            self.assertEqual(page.locator("#indexSourcePages button").count(), 4)
+            page.locator("#contentsVolume").select_option("5")
+            self.assertIn("unavailable", page.locator("#indexStatus").inner_text())
+            self.assertEqual(page.locator("#indexEntries li").count(), 0)
+            page.locator("#contentsMode").click()
+            self.assertGreater(page.locator("#contentsEntries li").count(), 0)
+            self.assertTrue(page.locator("#indexEntries").is_hidden())
+            page.keyboard.press("Escape")
+            page.locator("#languageOpen").click()
+            page.locator('#languagePanel [data-locale="uk"]').click()
+            page.locator("#contentsOpen").click()
+            page.locator("#contentsVolume").select_option("1")
+            page.locator("#indexMode").click()
+            page.locator("#indexEntries li").first.wait_for()
+            self.assertIn("Покажчики", page.locator("#contentsTitle").inner_text())
+            self.assertIn("Імена", page.locator("#indexKind option").first.inner_text())
+            for width, height in [(320, 640), (896, 414), (1280, 800)]:
+                page.set_viewport_size({"width": width, "height": height})
+                self.assertTrue(page.locator("#contentsPanel").evaluate("el => el.scrollWidth <= el.clientWidth"))
+            browser.close()
 
     def test_no_guessed_reference(self):
         self.assertEqual(folio_targets([(10, "3"), (11, "3"), (20, "4"), (21, None), (22, "IV")]), {4: 20})
