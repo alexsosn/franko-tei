@@ -144,7 +144,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #reviewEdit,.review-original{font-family:var(--historic-font),var(--greek-font),serif;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}
 .review-original{padding:6px 8px;border-left:2px solid #999;background:#8881}
 #reviewCrop{position:relative;overflow:hidden;background:#8881;width:100%}
-#reviewImage{display:block;width:100%;height:auto;position:absolute;left:0}#reviewCrop.review-full{max-height:240px;overflow:auto}#reviewCrop.review-full #reviewImage{position:static}
+#reviewImage{display:block;width:100%;height:auto;position:absolute;left:0}#reviewCrop.review-full{max-height:240px;overflow:auto}#reviewCrop.review-full #reviewImage{position:static}#reviewBox{position:absolute;pointer-events:none;border:1px dashed #9b753d;background:transparent}
 #reviewOpen{flex:0 0 auto;min-width:30px;min-height:30px}
 #reviewProgress,#reviewSource,#reviewImageStatus{margin:0;font-size:12px;overflow-wrap:anywhere}
 #reviewBundle{font-family:monospace;font-size:12px}
@@ -174,7 +174,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 <div id="reviewBody" hidden>
 <p id="reviewSource"></p>
 <label for="reviewLine">Source line</label><div class="review-row"><button id="reviewPrevious" type="button" aria-label="Previous line">←</button><select id="reviewLine"></select><button id="reviewNext" type="button" aria-label="Next line">→</button></div>
-<div id="reviewCrop" hidden><img id="reviewImage" alt="Original printed page"></div><a id="reviewFullImage" target="_blank" rel="noopener">Open full image</a><p id="reviewImageStatus" role="status"></p>
+<div id="reviewCrop" hidden><img id="reviewImage" alt="Original printed page"><div id="reviewBox" aria-hidden="true" hidden></div></div><a id="reviewFullImage" target="_blank" rel="noopener">Open full image</a><p id="reviewImageStatus" role="status"></p>
 <div id="reviewOriginal" class="review-original"></div>
 <details id="reviewUncertainty" hidden><summary>Uncertainty notes</summary><div id="reviewReasons"></div></details>
 <label for="reviewEdit">Working reading</label><textarea id="reviewEdit" rows="3" spellcheck="false" autocapitalize="off" autocorrect="off"></textarea>

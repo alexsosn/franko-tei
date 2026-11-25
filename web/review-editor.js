@@ -56,10 +56,11 @@
     for(const note of data.reading.uncertainty_notes??[])if(note.line_id===line.id){const p=document.createElement('p');p.textContent=note.reading+' — '+note.reason;el('reviewReasons').append(p);}
     el('reviewUncertainty').hidden=!el('reviewReasons').childElementCount;
     const img=el('reviewImage'),w=img.naturalWidth,h=img.naturalHeight,b=line.bbox_xywh;
-    el('reviewCrop').classList.remove('review-full');
+    el('reviewCrop').classList.remove('review-full');el('reviewBox').hidden=true;
     if(imageReady&&validBox(b,w,h)){
       const top=Math.max(0,b[1]-b[3]),bottom=Math.min(h,b[1]+2*b[3]);
       el('reviewCrop').style.aspectRatio=w+'/'+(bottom-top);img.style.top=(-100*top/(bottom-top))+'%';el('reviewCrop').hidden=false;
+      Object.assign(el('reviewBox').style,{left:100*b[0]/w+'%',width:100*b[2]/w+'%',top:100*(b[1]-top)/(bottom-top)+'%',height:100*b[3]/(bottom-top)+'%'});el('reviewBox').hidden=false;
     }else if(imageReady){el('reviewCrop').classList.add('review-full');el('reviewCrop').style.aspectRatio='auto';img.style.top='0';el('reviewCrop').hidden=false;}
     else el('reviewCrop').hidden=true;
     controls();
@@ -120,7 +121,7 @@
   }
   el('reviewOpen').onclick=open;
   el('reviewClose').onclick=()=>el('reviewDialog').close();
-  el('reviewDialog').addEventListener('close',()=>serial++);
+  el('reviewDialog').addEventListener('close',()=>{if(!el('reviewDialog').open)serial++;});
   el('reviewLine').onchange=()=>run(()=>select(el('reviewLine').value));
   const move=n=>run(()=>{const list=entries(),i=list.findIndex(x=>x.line.id===session.selected)+n;if(list[i])select(list[i].line.id);});
   el('reviewPrevious').onclick=()=>move(-1);el('reviewNext').onclick=()=>move(1);
