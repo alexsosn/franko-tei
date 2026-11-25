@@ -138,7 +138,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 @media(max-width:760px){#contentsPanel{width:calc(100vw - 16px);max-width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}#contentsEntries{padding-inline:6px}#contentsEntries .contents-destination{grid-template-columns:minmax(0,1fr) minmax(52px,72px);gap:6px;padding-inline:6px}#contentsEntries .subentry .contents-name{padding-inline-start:8px}#contentsEntries .subentry-deep .contents-name{padding-inline-start:16px}}
 @media(max-height:450px){#contentsPanel .dialog-heading{padding-block:5px} .contents-tools{gap:3px;padding-bottom:5px} #contentsSources{max-height:48px}}
 #reviewDialog{max-width:min(680px,96vw);width:680px;max-height:94dvh;overflow:auto}
-#reviewBody{display:grid;gap:8px}#reviewBody[hidden],#reviewExport[hidden],#reviewCrop[hidden]{display:none}
+#reviewBody{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;min-width:0}#reviewBody>*{min-width:0;max-width:100%}#reviewDialog{box-sizing:border-box;overflow-wrap:anywhere}#reviewKeyboardGroup,#reviewLine{max-width:100%;min-width:0}.review-keyboard,.review-row{min-width:0;max-width:100%}#reviewCharacters{min-width:0;max-width:100%;box-sizing:border-box}#reviewBody[hidden],#reviewExport[hidden],#reviewCrop[hidden]{display:none}
 .review-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.review-row button{min-height:36px}.review-row select{min-width:0;flex:1}
 #reviewBody textarea,#reviewNote{width:100%;box-sizing:border-box;font-size:17px}
 #reviewEdit,.review-original{font-family:var(--slavonic-font),"Franko Monomakh","Franko Shafarik",var(--greek-font),serif;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}

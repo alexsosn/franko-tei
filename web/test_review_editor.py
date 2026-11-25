@@ -76,7 +76,7 @@ class EditorSmoke(unittest.TestCase):
             page.locator("#reviewCharacters [data-insert='\u0487']").click()
             expect(edit).to_have_value("а\u0311\u033e\u0486\u0301ꙋ\u2df4\u0487")
             self.assertLessEqual(page.locator("#reviewCharacters").evaluate("e => e.clientHeight"),164)
-            self.assertTrue(page.locator("#reviewDialog").evaluate("e => e.scrollWidth <= e.clientWidth+1"))
+            self.assertTrue(page.locator("#reviewDialog").evaluate("e => e.scrollWidth <= e.clientWidth+1"), page.locator("#reviewDialog").evaluate("e => [e.clientWidth,e.scrollWidth,...Array.from(e.querySelectorAll('*')).filter(x=>x.getBoundingClientRect().right>e.getBoundingClientRect().right+1).map(x=>[x.id,x.tagName,x.getBoundingClientRect().width]).slice(0,15)]"))
             # Replacement preserves the exact raw sequence through export, not NFC.
             replacement=LINE["text"].replace("ὀνόμασι","ὀνόματι")+" "+edit.input_value()
             page.locator("#reviewEdit").fill(replacement+"\ninvalid")
