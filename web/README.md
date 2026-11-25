@@ -14,10 +14,13 @@ The source manifest, images and original OCR are loaded from the pinned asset co
 python -m pip install playwright
 python -m playwright install chromium
 python web/test_review.py
+python web/test_live_review.py
 ```
 
 The synthetic browser test uses a mocked manifest and image: it checks exact mixed-script/whitespace rendering, escaped HTML text, line highlighting, navigation, missing original OCR, source identity mismatch, and manifest-based PNG selection. It does not certify real image accuracy or live GitHub network behavior.
 
+The live test loads actual pinned source scans I/20, I/2 and IV/1 and checks the main-branch draft and OCR display. It requires network access; it is an engineering smoke test, not a scholarly review.
+
 ## Hosting
 
-A static host can serve just index.html. For GitHub Pages, an administrator must enable Pages with GitHub Actions as the source; the optional manual workflow deploys only the viewer HTML, not scans or OCR. Until that workflow succeeds, use the local HTML or local HTTP server.
+A static host can serve just index.html. For GitHub Pages, an administrator must enable Pages with GitHub Actions as the source; the workflow runs synthetic and live browser tests on PRs and deploys only the viewer HTML, not scans or OCR, after those tests pass on changes to the viewer on main. It can also be dispatched manually on main. Until that workflow succeeds, use the local HTML or local HTTP server.
