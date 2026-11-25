@@ -54,14 +54,16 @@ class CorpusBatchContract(unittest.TestCase):
         with TemporaryDirectory() as tmp:
             primary = Path(tmp) / source.name
             alternate = Path(tmp) / "vol1_scan00060_alternate_reading_01.json"
+            second_alternate = Path(tmp) / "vol1_scan00060_alternate_reading_02.json"
+            second_alternate.write_bytes(source.read_bytes())
             primary.write_bytes(source.read_bytes())
             alternate.write_bytes(source.read_bytes())
-            self.assertEqual(set(discover_readings(tmp)), {primary, alternate})
+            self.assertEqual(set(discover_readings(tmp)), {primary, alternate, second_alternate})
             self.assertEqual(check_draft_offline(alternate, payload), payload["reading"]["raw_response"].split("\n"))
-            self.assertEqual(select_readings(tmp, ["pilot/" + alternate.name]), [alternate])
+            self.assertEqual(select_readings(tmp, ["pilot/" + alternate.name, "pilot/" + second_alternate.name]), [alternate, second_alternate])
             inventory = inventory_readings(tmp)
             self.assertEqual(len(inventory), 1)
-            self.assertEqual(len(inventory[0]["readings"]), 2)
+            self.assertEqual(len(inventory[0]["readings"]), 3)
             self.assertEqual(inventory[0]["status"], "agent_unverified")
 
     def test_unknown_page_naming_cannot_silently_bypass_checks(self):
@@ -110,7 +112,7 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertGreaterEqual(sum(len(p["readings"]) for p in inventory), 48)
         self.assertTrue(all(page["status"] == "agent_unverified" for page in inventory))
         i20 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 20))
-        self.assertEqual(len(i20["readings"]), 2)
+        self.assertTrue({"pilot/vol1_scan00020_single_reading.json", "pilot/vol1_scan00020_independent_image_reading_b.json"}.issubset({r["path"] for r in i20["readings"]}))
         self.assertTrue(all(r["context_independence"] == "single-working-draft"
                             for r in i20["readings"]))
         i52 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 52))
