@@ -37,3 +37,7 @@ The live test loads actual pinned source scans I/20, I/2 and IV/1 and checks the
 ## Hosting
 
 A static host must serve index.html and the fonts/ directory. For GitHub Pages, an administrator must enable Pages with GitHub Actions as the source; the workflow runs synthetic and live browser tests on PRs and deploys the viewer HTML, licensed fonts and derived per-volume agent search indexes, not scans or original OCR, after those tests pass on changes to the viewer or pilot readings on main. It can also be dispatched manually on main. Until that workflow succeeds, use the local HTML or local HTTP server.
+
+## Proofreading pilot
+
+Use the pencil button in the text pane. One local batch is pinned to an exact commit and candidate. See [the pilot instructions](../docs/review-browser-pilot.md) and [intake procedure](../docs/review-intake.md). The editor prepares JSON for the public GitHub issue form; opening the form does not submit or accept a decision. Local storage is not a backup. Copy the prepared JSON before discarding a batch. No corpus text is modified by the editor.

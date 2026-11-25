@@ -1,0 +1,893 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 355,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00355.jpg",
+  "source_image_sha256": "cb8de484b87be4db771e39f5edf13b1a66acee9874cefa1b7d85984700a73e87",
+  "reading": {
+    "reader_id": "gpt62-i355-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i350-379-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Pinned original image first. Church Slavonic, provisional historical vernacular orv, Ukrainian editorial prose, German and Russian bibliography distinguished. Physical lines retained, estimated geometry, exact glyphs and numerals provisional. No inferred folio on section opening. No verified claim.",
+    "raw_response": "XIX. Оповіданя про Соломона.\nА. Крехівська Палея, стор. 800—804.\n(П о в ѣ с т ь ѡ К и т о в р а с е). Тогда же убо быс[ть] по-\nтреба Соломону просити¹) ѡ Китоврасе. и ѡсочиша²) же, где\nживет в пустыни далнеи. и по мудрости своей замысли Соло-\nмонъ сковати оуж[е] железно и гривну железну, написа же на ней\nвъ имя бж҃є зароченїє³), и посла же боярина своего лутшаго\nсъ ѡтрокы. и указаше вести вино и медъ, и руна ѡвчая с собою\nвзяша. придоша ж[е] к мѣсту его: ѡли⁴) г҃. кладези, а єго\nнѣс[ть] ту. и по указанїю Соломоню и выльяша г҃. кладязи\nи заткоша жерела ихъ руны ѡвчими, и нальяша два кладязя\nвина, а трет[ї]й мед[у]. сами же съхраниша с[я] на стране, ве-\nдахоу бо, ѡже прити єму воды пити къ кладеземъ. приде пере-\nхотевъ воды пити⁵), и приникъ и виде вино, и ѡвѣщавъ реч[е]:\n„всякъ пыя вино не умудреѣть“. якож[е] перехоте воды и реч[е]:\n„ты єси вино веселяще ср҃дце чл҃комъ“. и выпи вся три кладязя⁶).\nѡнъ ж[е] бояринъ пришедъ ѡвъстегну ѡ шии его уже железно\nи привяза и твердо. и ѡчютитъ ся хоте изяти ся. и реч[е] єму\nбояринъ Соломоновъ: „и имя Гн҃є съ запрещенїєм на тобѣ“.\nѡнъ ж[е] видевъ на собе имя Гн҃є пойде кротко.\nНравъ же его бяше таковъ: не хожаше поутемъ кривымъ,\nно правымъ. и въ Ієрлм҃ъ пришедше треблахоут пред нимъ\nпуть и рушахоут полаты, не ходи бо криво. и придоша ко въдо-\nвицины храмины, и⁷) възпи гл҃щи, молящи с[я] Китовирасу:\n„вдовиця єсмь убога!“ и ѡн же ся ѡгну⁸) ѡколо угла, и не\nсъступа ся с пути и зломи си ребро. и реч[е]: „мягко слово кость\nломитъ, а жестоко слово гнѣвъ въздвизаетъ“.\nВедомъ ж[е] сквозе торгъ, и слыша моужа рекуща: „нѣс[ть]\nли червїя на з҃. лѣт?“ и расмея ся Китовирасъ. и виде другаго",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "section-title rule",
+          "bbox_xywh": [
+            575,
+            500,
+            78,
+            8
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          323,
+          437,
+          612,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-l001",
+            "text": "XIX. Оповіданя про Соломона.",
+            "bbox_xywh": [
+              323,
+              437,
+              612,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              },
+              {
+                "start": 3,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          337,
+          544,
+          566,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-l001",
+            "text": "А. Крехівська Палея, стор. 800—804.",
+            "bbox_xywh": [
+              337,
+              544,
+              566,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kitovras-opening",
+        "kind": "body",
+        "bbox_xywh": [
+          154,
+          611,
+          927,
+          622
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "kitovras-opening-l001",
+            "text": "(П о в ѣ с т ь ѡ К и т о в р а с е). Тогда же убо быс[ть] по-",
+            "bbox_xywh": [
+              154,
+              611,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l002",
+            "text": "треба Соломону просити¹) ѡ Китоврасе. и ѡсочиша²) же, где",
+            "bbox_xywh": [
+              154,
+              646,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l003",
+            "text": "живет в пустыни далнеи. и по мудрости своей замысли Соло-",
+            "bbox_xywh": [
+              154,
+              680,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l004",
+            "text": "монъ сковати оуж[е] железно и гривну железну, написа же на ней",
+            "bbox_xywh": [
+              154,
+              715,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l005",
+            "text": "въ имя бж҃є зароченїє³), и посла же боярина своего лутшаго",
+            "bbox_xywh": [
+              154,
+              750,
+              927,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l006",
+            "text": "съ ѡтрокы. и указаше вести вино и медъ, и руна ѡвчая с собою",
+            "bbox_xywh": [
+              154,
+              784,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l007",
+            "text": "взяша. придоша ж[е] к мѣсту его: ѡли⁴) г҃. кладези, а єго",
+            "bbox_xywh": [
+              154,
+              819,
+              927,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l008",
+            "text": "нѣс[ть] ту. и по указанїю Соломоню и выльяша г҃. кладязи",
+            "bbox_xywh": [
+              154,
+              853,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l009",
+            "text": "и заткоша жерела ихъ руны ѡвчими, и нальяша два кладязя",
+            "bbox_xywh": [
+              154,
+              888,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l010",
+            "text": "вина, а трет[ї]й мед[у]. сами же съхраниша с[я] на стране, ве-",
+            "bbox_xywh": [
+              154,
+              922,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l011",
+            "text": "дахоу бо, ѡже прити єму воды пити къ кладеземъ. приде пере-",
+            "bbox_xywh": [
+              154,
+              957,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l012",
+            "text": "хотевъ воды пити⁵), и приникъ и виде вино, и ѡвѣщавъ реч[е]:",
+            "bbox_xywh": [
+              154,
+              991,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l013",
+            "text": "„всякъ пыя вино не умудреѣть“. якож[е] перехоте воды и реч[е]:",
+            "bbox_xywh": [
+              154,
+              1026,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l014",
+            "text": "„ты єси вино веселяще ср҃дце чл҃комъ“. и выпи вся три кладязя⁶).",
+            "bbox_xywh": [
+              154,
+              1060,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l015",
+            "text": "ѡнъ ж[е] бояринъ пришедъ ѡвъстегну ѡ шии его уже железно",
+            "bbox_xywh": [
+              154,
+              1095,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l016",
+            "text": "и привяза и твердо. и ѡчютитъ ся хоте изяти ся. и реч[е] єму",
+            "bbox_xywh": [
+              154,
+              1129,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l017",
+            "text": "бояринъ Соломоновъ: „и имя Гн҃є съ запрещенїєм на тобѣ“.",
+            "bbox_xywh": [
+              154,
+              1164,
+              927,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-opening-l018",
+            "text": "ѡнъ ж[е] видевъ на собе имя Гн҃є пойде кротко.",
+            "bbox_xywh": [
+              154,
+              1199,
+              927,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 46,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kitovras-journey",
+        "kind": "body",
+        "bbox_xywh": [
+          145,
+          1237,
+          934,
+          249
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "kitovras-journey-l001",
+            "text": "Нравъ же его бяше таковъ: не хожаше поутемъ кривымъ,",
+            "bbox_xywh": [
+              145,
+              1237,
+              934,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-journey-l002",
+            "text": "но правымъ. и въ Ієрлм҃ъ пришедше треблахоут пред нимъ",
+            "bbox_xywh": [
+              145,
+              1272,
+              934,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-journey-l003",
+            "text": "путь и рушахоут полаты, не ходи бо криво. и придоша ко въдо-",
+            "bbox_xywh": [
+              145,
+              1308,
+              934,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-journey-l004",
+            "text": "вицины храмины, и⁷) възпи гл҃щи, молящи с[я] Китовирасу:",
+            "bbox_xywh": [
+              145,
+              1344,
+              934,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-journey-l005",
+            "text": "„вдовиця єсмь убога!“ и ѡн же ся ѡгну⁸) ѡколо угла, и не",
+            "bbox_xywh": [
+              145,
+              1379,
+              934,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-journey-l006",
+            "text": "съступа ся с пути и зломи си ребро. и реч[е]: „мягко слово кость",
+            "bbox_xywh": [
+              145,
+              1415,
+              934,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-journey-l007",
+            "text": "ломитъ, а жестоко слово гнѣвъ въздвизаетъ“.",
+            "bbox_xywh": [
+              145,
+              1451,
+              934,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 43,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kitovras-market",
+        "kind": "body",
+        "bbox_xywh": [
+          144,
+          1489,
+          935,
+          66
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "kitovras-market-l001",
+            "text": "Ведомъ ж[е] сквозе торгъ, и слыша моужа рекуща: „нѣс[ть]",
+            "bbox_xywh": [
+              144,
+              1489,
+              935,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          },
+          {
+            "id": "kitovras-market-l002",
+            "text": "ли червїя на з҃. лѣт?“ и расмея ся Китовирасъ. и виде другаго",
+            "bbox_xywh": [
+              144,
+              1522,
+              935,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i355-first-image-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "kitovras-opening-l001",
+        "reading": "(П о в ѣ с т ь ѡ К и т о в р а с е). Тогда же убо быс[ть] по-",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l002",
+        "reading": "треба Соломону просити¹) ѡ Китоврасе. и ѡсочиша²) же, где",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l003",
+        "reading": "живет в пустыни далнеи. и по мудрости своей замысли Соло-",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l004",
+        "reading": "монъ сковати оуж[е] железно и гривну железну, написа же на ней",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l005",
+        "reading": "въ имя бж҃є зароченїє³), и посла же боярина своего лутшаго",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l006",
+        "reading": "съ ѡтрокы. и указаше вести вино и медъ, и руна ѡвчая с собою",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l007",
+        "reading": "взяша. придоша ж[е] к мѣсту его: ѡли⁴) г҃. кладези, а єго",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l008",
+        "reading": "нѣс[ть] ту. и по указанїю Соломоню и выльяша г҃. кладязи",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l009",
+        "reading": "и заткоша жерела ихъ руны ѡвчими, и нальяша два кладязя",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l010",
+        "reading": "вина, а трет[ї]й мед[у]. сами же съхраниша с[я] на стране, ве-",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l011",
+        "reading": "дахоу бо, ѡже прити єму воды пити къ кладеземъ. приде пере-",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l012",
+        "reading": "хотевъ воды пити⁵), и приникъ и виде вино, и ѡвѣщавъ реч[е]:",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l013",
+        "reading": "„всякъ пыя вино не умудреѣть“. якож[е] перехоте воды и реч[е]:",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l014",
+        "reading": "„ты єси вино веселяще ср҃дце чл҃комъ“. и выпи вся три кладязя⁶).",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l015",
+        "reading": "ѡнъ ж[е] бояринъ пришедъ ѡвъстегну ѡ шии его уже железно",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l016",
+        "reading": "и привяза и твердо. и ѡчютитъ ся хоте изяти ся. и реч[е] єму",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l017",
+        "reading": "бояринъ Соломоновъ: „и имя Гн҃є съ запрещенїєм на тобѣ“.",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l018",
+        "reading": "ѡнъ ж[е] видевъ на собе имя Гн҃є пойде кротко.",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l001",
+        "reading": "Нравъ же его бяше таковъ: не хожаше поутемъ кривымъ,",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l002",
+        "reading": "но правымъ. и въ Ієрлм҃ъ пришедше треблахоут пред нимъ",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l003",
+        "reading": "путь и рушахоут полаты, не ходи бо криво. и придоша ко въдо-",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l004",
+        "reading": "вицины храмины, и⁷) възпи гл҃щи, молящи с[я] Китовирасу:",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l005",
+        "reading": "„вдовиця єсмь убога!“ и ѡн же ся ѡгну⁸) ѡколо угла, и не",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l006",
+        "reading": "съступа ся с пути и зломи си ребро. и реч[е]: „мягко слово кость",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l007",
+        "reading": "ломитъ, а жестоко слово гнѣвъ въздвизаетъ“.",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-market-l001",
+        "reading": "Ведомъ ж[е] сквозе торгъ, и слыша моужа рекуща: „нѣс[ть]",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-market-l002",
+        "reading": "ли червїя на з҃. лѣт?“ и расмея ся Китовирасъ. и виде другаго",
+        "reason": "Historical type: exact titla, breathings, diacritics, apostrophes and glyphs provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l005",
+        "reading": "зароченїє",
+        "reason": "Exact historical form uncertain."
+      },
+      {
+        "line_id": "kitovras-opening-l013",
+        "reading": "умудреѣть",
+        "reason": "Printed vowel sequence provisional."
+      },
+      {
+        "line_id": "kitovras-opening-l015",
+        "reading": "ѡвъстегну",
+        "reason": "Exact glyphs and prefix provisional."
+      },
+      {
+        "line_id": "kitovras-journey-l002",
+        "reading": "треблахоут",
+        "reason": "Exact form uncertain."
+      },
+      {
+        "line_id": "kitovras-market-l002",
+        "reading": "червїя",
+        "reason": "Source may read черевїя; medial letter uncertain."
+      },
+      {
+        "line_id": "kitovras-journey-l004",
+        "reading": "Китовирасу",
+        "reason": "Separate comparison with scan: likely Китоврасу, with no extra и; preserve frozen reading."
+      },
+      {
+        "line_id": "kitovras-market-l002",
+        "reading": "Китовирасъ",
+        "reason": "Separate comparison with scan: likely Китоврасъ; preserve first reading."
+      }
+    ]
+  }
+}
