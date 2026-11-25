@@ -139,6 +139,21 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(refs.get(v, {}).get(key, []), json.loads(row['catalog_refs_json']))
             self.assertEqual(row['translation_review'], 'compared-with-printed-TOC-transcription')
 
+    def test_contents_catalogue_citation_discrepancies(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def links(volume, index):
+            entry = data[volume]['entries'][index]
+            return refs.get(volume, {}).get(json.dumps(entry[:3], ensure_ascii=False, separators=(',', ':')), [])
+        for index, identifier in ((36, 'ECCA 933'), (40, 'ECCA 403'), (70, 'ECCA 888')):
+            link = next(x for x in links('3', index) if x['id'] == identifier)
+            self.assertEqual(link['relation'], 'candidate')
+            self.assertIn('page', link['evidence'])
+        self.assertEqual(next(x for x in links('2', 85) if x['id'] == 'ECCA 489')['relation'], 'work-family')
+        self.assertTrue(any(x['id'] == 'ECCA 919' and x['relation'] == 'candidate' for x in links('1', 13)))
+
     def test_contents_work_references(self):
         import json
         html = APP.read_text(encoding='utf-8')
