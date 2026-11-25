@@ -89,6 +89,24 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(title and printed)
             self.assertTrue(scan is None or 1 <= scan <= 526)
 
+    def test_volume_three_contents_records(self):
+        import json
+        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        volume = data['3']
+        items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
+        self.assertEqual(volume['sources'], list(range(439, 447)))
+        self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
+                         [21, 20, 17, 16, 18, 22, 22, 16])
+        self.assertEqual(sum(e[4] == 2 for e in items), 13)
+        for printed in ('160–154', '154–255', '295–207', '211–233', '259–259'):
+            self.assertTrue(any(e[2] == printed for e in items), printed)
+        self.assertTrue(any(e[2] == '' and e[1].startswith('Ж. Събор') for e in items))
+        self.assertTrue(any(e[2] == '192–193, 304' for e in items))
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, volume['sources'])
+            self.assertTrue(title)
+            self.assertTrue(scan is None or 1 <= scan <= 446)
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
