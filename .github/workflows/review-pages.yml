@@ -31,6 +31,7 @@ jobs:
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_fonts.py
       - run: python web/test_review.py
+      - run: python web/test_review_editor.py
       - run: python web/test_live_review.py
   package:
     needs: browser
