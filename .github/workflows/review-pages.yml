@@ -26,9 +26,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - run: pip install -e . playwright
+      - run: pip install -e . playwright fonttools brotli
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
+      - run: python web/test_fonts.py
       - run: python web/test_review.py
       - run: python web/test_live_review.py
   package:
@@ -47,6 +48,7 @@ jobs:
       - run: |
           mkdir -p _site
           cp web/index.html _site/index.html
+          cp -R web/fonts _site/fonts
           python web/build_search.py --output _site/search
       - uses: actions/upload-pages-artifact@v5
         id: upload
