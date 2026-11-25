@@ -328,7 +328,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,107,38,0],['2',140,29,111,0],
+            self.assertEqual(result, [['1',145,109,36,0],['2',140,29,111,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -547,6 +547,8 @@ class ReviewSmoke(unittest.TestCase):
             ('1', 329, 'witness-g-heading-l001'),
             ('1', 330, 'witness-d-heading-l001'),
             ('1', 330, 'witness-e-heading-l001'),
+            ('1', 332, 'witness-zh-heading-l001'),
+            ('1', 335, 'witness-z-heading-l001'),
             ('2', 100, 'heading-e-line-01'),
             ('2', 100, 'heading-zh-line-01'),
         }
@@ -603,7 +605,7 @@ class ReviewSmoke(unittest.TestCase):
         self.assertFalse(any(r['kind'] == 'page_number' for r in rec177['reading']['regions']))
         self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 181 and len(e) > 6 and e[6]]), 2)
         # Existing fully annotated readings are reused without rewriting their text or metadata.
-        for scan in (183, 196, 197, 198, 199, 201, 202, 204, 206, 211, 213, 214, 215, 216, 219, 221, 230, 232, 249, 252, 255, 262, 270, 272, 275, 278, 281, 284, 287, 293, 300, 320, 326, 329, 330):
+        for scan in (183, 196, 197, 198, 199, 201, 202, 204, 206, 211, 213, 214, 215, 216, 219, 221, 230, 232, 249, 252, 255, 262, 270, 272, 275, 278, 281, 284, 287, 293, 300, 320, 326, 329, 330, 332, 335):
             reading = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
             for region in reading['regions']:
                 for line in region['lines']:
@@ -659,6 +661,10 @@ class ReviewSmoke(unittest.TestCase):
         self.assertIn(('[кінця', 'uk', 'Cyrl'), annotated_literals(330))
         self.assertIn(('нема].', 'uk', 'Cyrl'), annotated_literals(330))
         self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 330 and len(e) > 6 and e[6]]), 2)
+        self.assertIn(('Περὶ τῶν ιβ. λίθων τῶν ὄντων', 'grc', 'Grek'), annotated_literals(332))
+        self.assertIn(('І. Я. П о р ф и р ь е в ъ, Апокр. сказ.', 'ru', 'Cyrl'), annotated_literals(332))
+        self.assertIn(('[з боку', 'uk', 'Cyrl'), annotated_literals(335))
+        self.assertIn(('[sic !]', 'la', 'Latn'), annotated_literals(335))
         asher = next(e for e in contents['1']['entries'] if e[3] == 284 and len(e) > 6 and e[6])
         self.assertEqual(asher[6]['line_id'], 'asher-heading-l001')
         self.assertIn(('доброумьи.', 'cu', 'Cyrl'), annotated_literals(284))
