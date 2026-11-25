@@ -110,7 +110,11 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertGreaterEqual(sum(len(p["readings"]) for p in inventory), 48)
         self.assertTrue(all(page["status"] == "agent_unverified" for page in inventory))
         i20 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 20))
-        self.assertEqual(len(i20["readings"]), 2)
+        self.assertEqual(len(i20["readings"]), 3)
+        self.assertIn("pilot/vol1_scan00020_alternate_reading_01.json",
+                      [r["path"] for r in i20["readings"]])
+        new_reading = json.loads((PILOT / "vol1_scan00020_alternate_reading_01.json").read_text(encoding="utf-8"))
+        self.assertEqual(new_reading["reading"]["model_id"], "GPT-6.2")
         self.assertTrue(all(r["context_independence"] == "single-working-draft"
                             for r in i20["readings"]))
         i52 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 52))
