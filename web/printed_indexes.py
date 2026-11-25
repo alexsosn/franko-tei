@@ -111,10 +111,18 @@ def build_printed_indexes(pilot, ref):
                             for scan, (_, d, _) in files.items() if 76 <= scan <= 415)
     sections = []
     for kind, start, end, reader, partitions in SECTIONS:
+        draft_scans = [n for n in range(start, end + 1) if n in files]
+        section = dict(volume="1", kind=kind, scans=list(range(start, end + 1)),
+                       draft_scans=draft_scans, structured_scans=[], entries=[])
+        sections.append(section)
+        # A changed/missing reading must not publish stale partitions or block
+        # unrelated reader deployments. Re-segment explicitly against new bytes.
+        if start not in files:
+            continue
         path, draft, blob = files[start]
         reading = draft["reading"]
         if reading["reader_id"] != reader or blob != SOURCE_BLOBS[start]:
-            raise ValueError(f"index partition source changed: {path}")
+            continue
         source = dict(volume="1", scan=start, path="pilot/" + path.name,
                       blob=blob, reader_id=reader, asset_commit=draft["asset_commit"])
         entries = []
@@ -142,7 +150,5 @@ def build_printed_indexes(pilot, ref):
                 previous = stop
         if seen_regions != set(partitions):
             raise ValueError(f"missing index regions: {path}")
-        sections.append(dict(volume="1", kind=kind, scans=list(range(start, end + 1)),
-                             draft_scans=[n for n in range(start, end + 1) if n in files],
-                             structured_scans=[start], entries=entries))
+        section.update(structured_scans=[start], entries=entries)
     return dict(schema_version=1, ref=ref, status="agent_unverified", sections=sections)
