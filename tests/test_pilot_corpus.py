@@ -177,6 +177,40 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertGreaterEqual(len(gaps), 1)
         self.assertEqual(len(lines), len(data["reading"]["raw_response"].splitlines()))
 
+    def test_embedded_ocr_exposure_is_explicit_and_fail_closed(self):
+        # Synthetic provenance mutation of a real source record, not historical validation.
+        from franko_tei.pilot_tei import render_pilot_tei
+        source = PILOT / "vol1_scan00052_exposed_reading.json"
+        payload = json.loads(source.read_text(encoding="utf-8"))
+        reading = payload["reading"]
+        reading["source_original_ocr_visible"] = True
+        reading["peer_readings_visible"] = False
+        reading["external_text_exposure"] = {
+            "kind": "embedded_pdf_ocr",
+            "url": "https://example.org/synthetic-ocr.txt",
+            "timing": "before_first_reading",
+            "note": "Synthetic regression: prior embedded OCR exposure.",
+        }
+        self.assertEqual(check_draft_offline(source, payload), reading["raw_response"].splitlines())
+        xml = render_pilot_tei(payload, 1190, 1800)
+        self.assertIn("embedded_pdf_ocr", xml)
+        for key, value in [
+            ("source_original_ocr_visible", False),
+            ("peer_readings_visible", True),
+        ]:
+            bad = copy.deepcopy(payload)
+            bad["reading"][key] = value
+            with self.assertRaises(ValueError):
+                check_draft_offline(source, bad)
+        bad = copy.deepcopy(payload)
+        bad["reading"]["external_text_exposure"]["kind"] = "third_party_ocr"
+        with self.assertRaises(ValueError):
+            check_draft_offline(source, bad)
+        bad = copy.deepcopy(payload)
+        bad["schema_version"] = "single-image-draft-v0"
+        with self.assertRaises(ValueError):
+            check_draft_offline(source, bad)
+
     def test_first_reader_metadata_not_mistaken_for_independent_verification(self):
         source = PILOT / "vol1_scan00052_exposed_reading.json"
         payload = json.loads(source.read_text(encoding="utf-8"))
