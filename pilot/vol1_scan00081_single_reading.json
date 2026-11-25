@@ -1,0 +1,781 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 81,
+  "printed_page_observed": "6",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00081.jpg",
+  "source_image_sha256": "884956de9c8137899029d55fc2522d4eacb3e878e3934ad6e9822ac1579f3391",
+  "reading": {
+    "reader_id": "gpt62-i81-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i81-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned original printed JPEG, no embedded OCR or peer page reading shown; surrounding project context visible, not isolated corroboration. Preserve all physical lines, title, observed folio only, source brackets, notes, incomplete boundaries and separate witness column. Glyphs and geometry approximate; source hash claimed by manifest, native-byte and XML checks pending CI.",
+    "raw_response": "6\nфоніе ѡбавленіе. Ѡ древѣ\nкр҃тнѣмъ. что Хта҃ в пепи ста-\nвили. И какъ Хс҃ плугом ѡрал,\nто Іеремѣй попъ болгарскій со-\nлгалъ. Сꙋтже і ѡ мученицѣхъ\nлжею складено, а не тако, ꙗко-\nже в Мѣнеяхъ и в Пролозѣхъ\nписано. Геѡргіево мученіе, еже\nрече ѡ Дадіана цр҃я умучен.\nНикитино мученіе, налицающе\nего цр҃ева сн҃а. Єѵстратіево му-\nченіе. Ипатіево мученіе, что\nседмію оумиралъ и седмію ѡ-\nжилъ. Климента Анкирскаго\nмученіе. И инѣхъ многих лжею\nскладено. Соуть же и ина между\nбж҃ественными писаніи ложная\nоученія написана ѿ иныхъ на\nпакость невѣжам, в них же\nложнія мл҃тви ѡ трясавицах\nи ѡ нежитѣх и ѡ недузѣхъ,\nимже єретици исказили цр҃ков-\nная преданія и апостолская\nправила, пишуще ложная сло-\nвеса.\nПодаємо сї два українсько-руські індекси як малий причинок до до-\nсить уже обширної лїтератури про сю тему, гл. К а л а й д о в и ч ъ, Іоаннъ\nЕкзархъ Болгарскій, Москва 1824, приложеніе, стор. 208—212; А. Н.\nП ы п и н ъ, Для объясненія статьи о ложныхъ книгахъ, друковано в Лѣ-\nтописи занятій Археографической комиссіи, 1861 г. вып. I. стор. 1—45;\nИ. С р е з н е в с к і й, Свѣдѣнія и замѣтки о малоизвѣстныхъ и неизвѣст-\nныхъ памятникахъ N. LV. Пандекты Никона Черногорца, друковано\nв Сборникѣ отд. русскаго языка и словесности имп. Академіи Наукъ, т. XII.\nСпб. 1874, стор. 217—296 і осібно; V. J a g i ć, Opisi i izvodi iz neko-\nliko južno-slovinskih rukopisa, N. IX. Slovenski tekstovi kanona o knji-\ngama staroga i novoga zavjeta podjedno z indeksom lažnih knjiga,\nдруковано в Starine, na sviet izdaje Jugoslovenska Akademija znano-\nsti i umjetnosti, knjiga IX. U Zagrebu 1877, стор. 91—116. Про зна-\nчінє індексу і наших текстів в порівнаню з иншими досі звісними гляди\nпередмову.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            176,
+            174,
+            480,
+            930
+          ],
+          "description": "Blank left witness column before the full-width editorial bibliography."
+        },
+        {
+          "bbox_xywh": [
+            545,
+            1685,
+            222,
+            18
+          ],
+          "description": "Decorative closing rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          174,
+          107,
+          30,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "6",
+            "bbox_xywh": [
+              174,
+              107,
+              30,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "b-rejected-continuation",
+        "kind": "body",
+        "bbox_xywh": [
+          685,
+          173,
+          465,
+          928
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "b-rejected-continuation-l001",
+            "text": "фоніе ѡбавленіе. Ѡ древѣ",
+            "bbox_xywh": [
+              685,
+              173,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l002",
+            "text": "кр҃тнѣмъ. что Хта҃ в пепи ста-",
+            "bbox_xywh": [
+              685,
+              210,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l003",
+            "text": "вили. И какъ Хс҃ плугом ѡрал,",
+            "bbox_xywh": [
+              685,
+              247,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l004",
+            "text": "то Іеремѣй попъ болгарскій со-",
+            "bbox_xywh": [
+              685,
+              284,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l005",
+            "text": "лгалъ. Сꙋтже і ѡ мученицѣхъ",
+            "bbox_xywh": [
+              685,
+              322,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l006",
+            "text": "лжею складено, а не тако, ꙗко-",
+            "bbox_xywh": [
+              685,
+              359,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l007",
+            "text": "же в Мѣнеяхъ и в Пролозѣхъ",
+            "bbox_xywh": [
+              685,
+              396,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l008",
+            "text": "писано. Геѡргіево мученіе, еже",
+            "bbox_xywh": [
+              685,
+              433,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l009",
+            "text": "рече ѡ Дадіана цр҃я умучен.",
+            "bbox_xywh": [
+              685,
+              470,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l010",
+            "text": "Никитино мученіе, налицающе",
+            "bbox_xywh": [
+              685,
+              508,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l011",
+            "text": "его цр҃ева сн҃а. Єѵстратіево му-",
+            "bbox_xywh": [
+              685,
+              545,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l012",
+            "text": "ченіе. Ипатіево мученіе, что",
+            "bbox_xywh": [
+              685,
+              582,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l013",
+            "text": "седмію оумиралъ и седмію ѡ-",
+            "bbox_xywh": [
+              685,
+              619,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l014",
+            "text": "жилъ. Климента Анкирскаго",
+            "bbox_xywh": [
+              685,
+              656,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l015",
+            "text": "мученіе. И инѣхъ многих лжею",
+            "bbox_xywh": [
+              685,
+              694,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l016",
+            "text": "складено. Соуть же и ина между",
+            "bbox_xywh": [
+              685,
+              731,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l017",
+            "text": "бж҃ественными писаніи ложная",
+            "bbox_xywh": [
+              685,
+              768,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l018",
+            "text": "оученія написана ѿ иныхъ на",
+            "bbox_xywh": [
+              685,
+              805,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l019",
+            "text": "пакость невѣжам, в них же",
+            "bbox_xywh": [
+              685,
+              842,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l020",
+            "text": "ложнія мл҃тви ѡ трясавицах",
+            "bbox_xywh": [
+              685,
+              880,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l021",
+            "text": "и ѡ нежитѣх и ѡ недузѣхъ,",
+            "bbox_xywh": [
+              685,
+              917,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l022",
+            "text": "имже єретици исказили цр҃ков-",
+            "bbox_xywh": [
+              685,
+              954,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l023",
+            "text": "ная преданія и апостолская",
+            "bbox_xywh": [
+              685,
+              991,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l024",
+            "text": "правила, пишуще ложная сло-",
+            "bbox_xywh": [
+              685,
+              1028,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "b-rejected-continuation-l025",
+            "text": "веса.",
+            "bbox_xywh": [
+              685,
+              1066,
+              465,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-bibliography",
+        "kind": "body",
+        "bbox_xywh": [
+          181,
+          1134,
+          970,
+          556
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-bibliography-l001",
+            "text": "Подаємо сї два українсько-руські індекси як малий причинок до до-",
+            "bbox_xywh": [
+              181,
+              1134,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l002",
+            "text": "сить уже обширної лїтератури про сю тему, гл. К а л а й д о в и ч ъ, Іоаннъ",
+            "bbox_xywh": [
+              181,
+              1171,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l003",
+            "text": "Екзархъ Болгарскій, Москва 1824, приложеніе, стор. 208—212; А. Н.",
+            "bbox_xywh": [
+              181,
+              1208,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l004",
+            "text": "П ы п и н ъ, Для объясненія статьи о ложныхъ книгахъ, друковано в Лѣ-",
+            "bbox_xywh": [
+              181,
+              1246,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l005",
+            "text": "тописи занятій Археографической комиссіи, 1861 г. вып. I. стор. 1—45;",
+            "bbox_xywh": [
+              181,
+              1283,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l006",
+            "text": "И. С р е з н е в с к і й, Свѣдѣнія и замѣтки о малоизвѣстныхъ и неизвѣст-",
+            "bbox_xywh": [
+              181,
+              1320,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l007",
+            "text": "ныхъ памятникахъ N. LV. Пандекты Никона Черногорца, друковано",
+            "bbox_xywh": [
+              181,
+              1357,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l008",
+            "text": "в Сборникѣ отд. русскаго языка и словесности имп. Академіи Наукъ, т. XII.",
+            "bbox_xywh": [
+              181,
+              1394,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l009",
+            "text": "Спб. 1874, стор. 217—296 і осібно; V. J a g i ć, Opisi i izvodi iz neko-",
+            "bbox_xywh": [
+              181,
+              1432,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l010",
+            "text": "liko južno-slovinskih rukopisa, N. IX. Slovenski tekstovi kanona o knji-",
+            "bbox_xywh": [
+              181,
+              1469,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l011",
+            "text": "gama staroga i novoga zavjeta podjedno z indeksom lažnih knjiga,",
+            "bbox_xywh": [
+              181,
+              1506,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l012",
+            "text": "друковано в Starine, na sviet izdaje Jugoslovenska Akademija znano-",
+            "bbox_xywh": [
+              181,
+              1543,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l013",
+            "text": "sti i umjetnosti, knjiga IX. U Zagrebu 1877, стор. 91—116. Про зна-",
+            "bbox_xywh": [
+              181,
+              1580,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l014",
+            "text": "чінє індексу і наших текстів в порівнаню з иншими досі звісними гляди",
+            "bbox_xywh": [
+              181,
+              1618,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-bibliography-l015",
+            "text": "передмову.",
+            "bbox_xywh": [
+              181,
+              1655,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "b-rejected-continuation-l001",
+        "reading": "фоніе ѡбавленіе. Ѡ древѣ",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l002",
+        "reading": "кр҃тнѣмъ. что Хта҃ в пепи ста-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l003",
+        "reading": "вили. И какъ Хс҃ плугом ѡрал,",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l004",
+        "reading": "то Іеремѣй попъ болгарскій со-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l005",
+        "reading": "лгалъ. Сꙋтже і ѡ мученицѣхъ",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l006",
+        "reading": "лжею складено, а не тако, ꙗко-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l007",
+        "reading": "же в Мѣнеяхъ и в Пролозѣхъ",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l008",
+        "reading": "писано. Геѡргіево мученіе, еже",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l009",
+        "reading": "рече ѡ Дадіана цр҃я умучен.",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l010",
+        "reading": "Никитино мученіе, налицающе",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l011",
+        "reading": "его цр҃ева сн҃а. Єѵстратіево му-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l012",
+        "reading": "ченіе. Ипатіево мученіе, что",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l013",
+        "reading": "седмію оумиралъ и седмію ѡ-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l014",
+        "reading": "жилъ. Климента Анкирскаго",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l015",
+        "reading": "мученіе. И инѣхъ многих лжею",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l016",
+        "reading": "складено. Соуть же и ина между",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l017",
+        "reading": "бж҃ественными писаніи ложная",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l018",
+        "reading": "оученія написана ѿ иныхъ на",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l019",
+        "reading": "пакость невѣжам, в них же",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l020",
+        "reading": "ложнія мл҃тви ѡ трясавицах",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l021",
+        "reading": "и ѡ нежитѣх и ѡ недузѣхъ,",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l022",
+        "reading": "имже єретици исказили цр҃ков-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l023",
+        "reading": "ная преданія и апостолская",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l024",
+        "reading": "правила, пишуще ложная сло-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "b-rejected-continuation-l025",
+        "reading": "веса.",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l001",
+        "reading": "Подаємо сї два українсько-руські індекси як малий причинок до до-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l002",
+        "reading": "сить уже обширної лїтератури про сю тему, гл. К а л а й д о в и ч ъ, Іоаннъ",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l003",
+        "reading": "Екзархъ Болгарскій, Москва 1824, приложеніе, стор. 208—212; А. Н.",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l004",
+        "reading": "П ы п и н ъ, Для объясненія статьи о ложныхъ книгахъ, друковано в Лѣ-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l005",
+        "reading": "тописи занятій Археографической комиссіи, 1861 г. вып. I. стор. 1—45;",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l006",
+        "reading": "И. С р е з н е в с к і й, Свѣдѣнія и замѣтки о малоизвѣстныхъ и неизвѣст-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l007",
+        "reading": "ныхъ памятникахъ N. LV. Пандекты Никона Черногорца, друковано",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l008",
+        "reading": "в Сборникѣ отд. русскаго языка и словесности имп. Академіи Наукъ, т. XII.",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l009",
+        "reading": "Спб. 1874, стор. 217—296 і осібно; V. J a g i ć, Opisi i izvodi iz neko-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l010",
+        "reading": "liko južno-slovinskih rukopisa, N. IX. Slovenski tekstovi kanona o knji-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l011",
+        "reading": "gama staroga i novoga zavjeta podjedno z indeksom lažnih knjiga,",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l012",
+        "reading": "друковано в Starine, na sviet izdaje Jugoslovenska Akademija znano-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l013",
+        "reading": "sti i umjetnosti, knjiga IX. U Zagrebu 1877, стор. 91—116. Про зна-",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l014",
+        "reading": "чінє індексу і наших текстів в порівнаню з иншими досі звісними гляди",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      },
+      {
+        "line_id": "editorial-bibliography-l015",
+        "reading": "передмову.",
+        "reason": "Provisional printed source reading. Exact Old Cyrillic glyphs, titla, supralinear signs, numerals, brackets, multilingual bibliography, spelling and tracking require isolated visual rereading. No normalization or harmonization."
+      }
+    ]
+  }
+}
