@@ -256,3 +256,68 @@ class AdjudicationTests(unittest.TestCase):
                 apparatus_mapping(old,new)
         self.assertEqual(apparatus_mapping("и слово⁵)", "иное слово⁵)"),
                          [{"literal":"⁵)","source_start":7,"source_end":9,"start":10,"end":12}])
+
+    def test_actual_annotation_only_revision_preserves_accepted_line(self):
+        from pathlib import Path
+        from franko_tei.review_adjudication import check_repository, StaleEditorialSource
+        from franko_tei.review_bundle import git_source_loader, blob_sha
+        from franko_tei.footnote_audit import audit_reading
+        import subprocess
+        root=Path(__file__).resolve().parents[1]
+        ref=subprocess.check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip()
+        ledger=check_repository(root,ref)
+        path="pilot/vol1_scan00104_single_reading.json"
+        entry=ledger[(path,"witness-e-death-adam-l003")]
+        old=git_source_loader(root,ref)(entry["source_commit"],path)
+        original=json.loads(old)
+        revised=copy.deepcopy(original)
+        line=next(l for r in revised["reading"]["regions"] for l in r["lines"] if l["id"]=="witness-e-death-adam-l003")
+        span=line["language_spans"][0]
+        marker=line["text"].index("⁵)")
+        line["language_spans"]=[dict(span,end=marker),dict(span,start=marker,end=marker+2,language="zxx",script="Zyyy",uncertain=False),dict(span,start=marker+2)]
+        revised["reading"]["footnote_marker_annotation"]={
+            "source_record_commit":entry["source_commit"],"source_record_blob":blob_sha(old),
+            "method":"Separate printed superscript apparatus label ranges from existing cu/chu spans; no text changes or note targets inferred.",
+            "status":"agent_unverified","marker_count":1}
+        raw=encode(revised)
+        rev="a"*40
+        def loader(commit,p):
+            if p!=path: raise ValueError("wrong path")
+            if commit==rev:return raw
+            if commit==entry["source_commit"]:return old
+            raise ValueError("untrusted revision")
+        with self.assertRaises(ValueError):
+            project_lines(raw,path,ledger)
+        rows=project_lines(raw,path,ledger,source_loader=loader,projection_commit=rev)
+        row=next(r for r in rows if r["line_id"]==line["id"])
+        self.assertIn("Сиѳъ",row["text"])
+        self.assertEqual(row["language_spans"],[])
+        self.assertEqual(row["source_revision"]["accepted_blob"],blob_sha(old))
+        self.assertEqual(row["source_revision"]["projected_blob"],blob_sha(raw))
+        self.assertEqual(row["source_revision"]["projected_commit"],rev)
+        self.assertEqual(row["source_revision"]["kind"],"footnote_language_only")
+        # Revisions must bind the current bytes as well as historical ones.
+        with self.assertRaises(StaleEditorialSource):
+            project_lines(raw+b" ",path,ledger,source_loader=loader,projection_commit=rev)
+        def rejected(change):
+            bad=copy.deepcopy(revised)
+            change(bad)
+            encoded=encode(bad)
+            def bad_loader(commit,p):
+                if commit==rev:return encoded
+                return loader(commit,p)
+            with self.assertRaises(StaleEditorialSource):
+                project_lines(encoded,path,ledger,source_loader=bad_loader,projection_commit=rev)
+        rejected(lambda d:d["reading"].pop("footnote_marker_annotation"))
+        rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(marker_count=2))
+        rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(source_record_blob="0"*40))
+        rejected(lambda d:d["reading"].update(instructions="changed"))
+        rejected(lambda d:d["reading"]["regions"][0]["lines"][0]["bbox_xywh"].__setitem__(0,1))
+        rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(text="changed"))
+        rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(id="changed"))
+        rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(language_spans=[]))
+        rejected(lambda d:d["reading"]["uncertainty_notes"].clear())
+        rejected(lambda d:d.update(source_image_sha256="0"*64))
+        # A reformat-only revision remains stale, even with trusted bytes.
+        with self.assertRaises(StaleEditorialSource):
+            project_lines(old+b" ",path,ledger,source_loader=lambda c,p: old+b" " if c==rev else old,projection_commit=rev)
