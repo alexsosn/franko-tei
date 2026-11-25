@@ -123,8 +123,14 @@ class ReviewSmoke(unittest.TestCase):
                          [16, 25, 17, 19, 20, 6])
         self.assertEqual(len(items), 103)
         self.assertEqual(sum(e[0] == 572 and e[1].startswith('Б.') for e in items), 2)
-        for printed in ('225', '366'):
-            self.assertTrue(any(e[2] == printed for e in items))
+        self.assertEqual(sum(e[3] is not None for e in items), 31)
+        for source, printed, scan in [(572, '225', 307), (574, '366', 518), (571, '139', 211)]:
+            self.assertEqual(next(e[3] for e in items if e[0] == source and e[2] == printed), scan)
+        self.assertEqual(next(e[3] for e in items if e[0] == 570 and e[1].startswith('Т.')), 141)
+        self.assertEqual(next(e[3] for e in items if e[0] == 570 and e[1].startswith('У.')), 142)
+        self.assertEqual(sum(e[3] == 94 for e in items), 2)
+        self.assertEqual(sum(e[3] == 71 for e in items), 2)
+        self.assertEqual([e[3] for e in volume['entries'] if e[1].startswith('До роздїлу')], [500, 514, 523])
         self.assertTrue(any(e[1].startswith('Ѳ. Wimja Otca') for e in items))
         for source, title, printed, scan, *_ in items:
             self.assertIn(source, volume['sources'])
