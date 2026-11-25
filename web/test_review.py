@@ -80,6 +80,11 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollHeight > el.clientHeight && el.clientWidth >= el.scrollWidth'))
             self.assertEqual(page.locator('#contentsEntries .contents-destination').first.evaluate('el => getComputedStyle(el).borderTopStyle'), 'none')
             self.assertTrue(page.locator('#contentsEntries .contents-destination').first.evaluate('el => el.getBoundingClientRect().height >= 40'))
+            if os.environ.get('CI'):
+                import base64
+                shot = base64.b64encode(page.screenshot(type='jpeg', quality=70)).decode('ascii')
+                for i in range(0, len(shot), 2048):
+                    print('CONTENTS_MOBILE_SHOT ' + shot[i:i+2048], flush=True)
             page.locator('#contentsFilter').fill('Еноха')
             self.assertTrue(0 < page.locator('#contentsEntries .contents-destination:visible').count() < 145)
             page.locator('#contentsFilter').fill('zzzzzzzzzz')
@@ -91,6 +96,7 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#contentsProvenance summary').click()
             self.assertEqual(page.locator('#contentsSources button:visible').count(), 2)
             self.assertTrue(page.locator('#contentsEntries .source-link').first.is_visible())
+            self.assertTrue(page.locator('#contentsEntries .contents-note-indicator').first.is_visible())
             page.locator('#contentsSources button').first.click()
             self.assertEqual(page.evaluate('window.lastJump')[:2], ['5','311'])
             page.locator('#settingsOpen').click()
@@ -112,6 +118,34 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#uiLocale').select_option('en')
             self.assertEqual(page.locator('html').get_attribute('lang'), 'en')
             self.assertEqual(page.locator('#settingsTitle').inner_text(), 'Reader settings')
+            browser.close()
+
+    def test_contents_desktop_layout(self):
+        html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':1280,'height':800})
+            page.set_content(html)
+            page.locator('#contentsOpen').click()
+            panel = page.locator('#contentsPanel')
+            bounds = panel.bounding_box()
+            self.assertTrue(550 < bounds['width'] < 800)
+            self.assertTrue(bounds['y'] >= 0 and bounds['y'] + bounds['height'] <= 800)
+            self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.scrollHeight > el.clientHeight && el.scrollWidth <= el.clientWidth'))
+            page.locator('#contentsEntries').evaluate('el => el.scrollTop = el.scrollHeight')
+            self.assertTrue(page.locator('#contentsFilter').is_visible())
+            page.keyboard.press('Escape')
+            self.assertTrue(page.locator('#contentsOpen').evaluate('el => el === document.activeElement'))
+            page.locator('#settingsOpen').click()
+            page.locator('#uiLocale').select_option('uk')
+            page.locator('#settingsClose').click()
+            page.locator('#contentsOpen').click()
+            self.assertIn('Зміст', page.locator('#contentsTitle').inner_text())
+            if os.environ.get('CI'):
+                import base64
+                shot = base64.b64encode(page.screenshot(type='jpeg', quality=65)).decode('ascii')
+                for i in range(0, len(shot), 2048):
+                    print('CONTENTS_DESKTOP_SHOT ' + shot[i:i+2048], flush=True)
             browser.close()
 
     def test_locale_persists_and_preserves_source_text(self):
