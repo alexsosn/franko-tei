@@ -26,7 +26,10 @@ class ReviewSmoke(unittest.TestCase):
                 location.hash = 'v=1&p=1';
                 window.fetch = async url => {
                     if(url.endsWith('/manifest.json')) return new Response(JSON.stringify(fixture.manifest));
-                    if(url.endsWith('page-00001.txt')) return new Response('ѣ  ἀ\\n');
+                    if(url.endsWith('page-00001.txt')) {
+                        if(window.delayOldOCR) await new Promise(resolve => {window.releaseOldOCR=resolve});
+                        return new Response('ѣ  ἀ\\n');
+                    }
                     if(url.endsWith('page-00002.txt')) return new Response('');
                     if(url.endsWith('vol1_scan00001_single_reading.json')) return new Response(JSON.stringify(fixture.draft1));
                     if(url.endsWith('vol1_scan00002_single_reading.json')) return new Response(JSON.stringify(fixture.draft2));
@@ -49,6 +52,16 @@ class ReviewSmoke(unittest.TestCase):
             self.assertFalse(page.locator('#highlight').is_visible())
             self.assertTrue(page.locator('#next').is_disabled())
             self.assertIn('page-00002.png', page.locator('#source').get_attribute('href'))
+            # A slow request from the previous scan must not repopulate the new one.
+            page.evaluate('window.delayOldOCR = true')
+            page.locator('#prev').click()
+            page.wait_for_function('typeof window.releaseOldOCR === "function"')
+            page.locator('#next').click()
+            page.get_by_text('Empty original OCR', exact=False).wait_for()
+            page.evaluate('window.releaseOldOCR()')
+            page.wait_for_timeout(200)
+            self.assertEqual(page.locator('#ocr').text_content(), '')
+            self.assertIn('Empty original OCR', page.locator('#ocrStatus').text_content())
             browser.close()
 
 if __name__ == '__main__':
