@@ -1,0 +1,561 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 114,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00114.jpg",
+  "source_image_sha256": "81c473939e88c2956250aa1fda6951eb42bbbdd68851fdf57e3f3c477ac69dfa",
+  "reading": {
+    "reader_id": "gpt62-i114-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i114-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG without embedded OCR or peer page text. Surrounding project context visible; not isolated corroboration. Preserve physical rows, observed folio only, source headings, editorial brackets, parenthesized question marks and apparatus. Historical glyphs, breathings, accent coverage and geometry approximate. Manifest SHA pending native-byte/XML checks.",
+    "raw_response": "VII. Книга Еноха.\nІз полтавського рукопису ігумена Геннадія з поч. XVII в.\nК н и г а  ѡ  т а и н а х ъ  Є н о х о в и х ъ  с н҃ а  Я р е д о в а  м у ж а\nм у д р а  и́  б г҃ о л ю б и в а. Ѡ житїи и́ ѡ сн҃ѣ Єноховѣ. Бысть\nмужъ [у Попова хибно: м у д р ъ] мудръ и́ великохудожникъ, его\nвозлюбы и́ пріятъ его Гд҃ь, да видит вышняя житїя, мудраго\nі велика и́ недомыслимаго и́ непремѣннаго цр҃твїя Бга҃ вседержи-\nтеля, предивнаго и́ славнаго и́ свѣтлаго и́ многоѡчитаго стоя-\nнїя слугъ Гд҃нь и́ непостижимаго прст҃ола Гд҃ня, и́ степень и́ ѡк-\nавленій воинствъ безплотных, и́ несказаннаго служенїя стїхїи\nмножества, и́ различнаго видѣнїя, и́ неисповѣдимаго пѣнїя хе-\nрувимскаго воинства, и́ свѣта безмѣрна самовидецъ быти.\nВъ время ѡно рече: егда исполнишася лѣт р҃ѯ҃є҃, родих сн҃а\nмоего Мафусала. По семъ же живъ лѣт с҃ и́ исполнихъ всѣхъ\nлѣтъ живота моего т҃ѯ҃є҃ лѣтъ. Въ а҃ дн҃ь перваго мц҃а азъ бѣхъ\nв' дому моем єдинъ и́ почивах на ѡдрѣ моемъ и́ спах. І єгда\nспах, в'зыиде велика скорбь в' ср҃дце мое, и́ бѣ плачася ѡчима\nмоима во снѣ, и́ не можахъ разумѣти что есть скорбь сїя\nили что ми будетъ. и́ явиша ми ся два мужа превелика зѣло,\nꙗко николиже видѣх таковїя на земли. и́ быша им лица ꙗко\nслн҃це свѣтящася, ѡчи же их ꙗко свѣща горяща, и́ ѿ устъ их\nѡгнь исходяи, ѡдѣянїем и́ пѣнїемъ раздаянїя (?), видомъ ба-\nгры. Крыла ихъ свѣтлѣиши злата, руцѣ их бѣлѣйши снѣга.\nстояше во возглавїи ѡдра моего, и́ возваша мя именем моимъ.\nазъ же востах ѿ сна моего, и́ видѣх явѣ мужа ѡны, стояще\nс҃ мнѣ а҃ прямо (?), азъ же поклонихся имъ и́ оужасохся и́ измѣ-\nнися видѣнїе лица моего ѿ страха. и́ рѣша ко мнѣ мужи ѡни:",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            105,
+            81,
+            953,
+            418
+          ],
+          "description": "Blank upper opening-page margin, no printed folio observed."
+        },
+        {
+          "bbox_xywh": [
+            525,
+            600,
+            74,
+            13
+          ],
+          "description": "Decorative rule below title."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          374,
+          536,
+          385,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-l001",
+            "text": "VII. Книга Еноха.",
+            "bbox_xywh": [
+              374,
+              536,
+              385,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          139,
+          635,
+          883,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-label-l001",
+            "text": "Із полтавського рукопису ігумена Геннадія з поч. XVII в.",
+            "bbox_xywh": [
+              139,
+              635,
+              883,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "enoch-opening",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          701,
+          929,
+          345
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "enoch-opening-l001",
+            "text": "К н и г а  ѡ  т а и н а х ъ  Є н о х о в и х ъ  с н҃ а  Я р е д о в а  м у ж а",
+            "bbox_xywh": [
+              95,
+              701,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l002",
+            "text": "м у д р а  и́  б г҃ о л ю б и в а. Ѡ житїи и́ ѡ сн҃ѣ Єноховѣ. Бысть",
+            "bbox_xywh": [
+              95,
+              735,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l003",
+            "text": "мужъ [у Попова хибно: м у д р ъ] мудръ и́ великохудожникъ, его",
+            "bbox_xywh": [
+              95,
+              770,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l004",
+            "text": "возлюбы и́ пріятъ его Гд҃ь, да видит вышняя житїя, мудраго",
+            "bbox_xywh": [
+              95,
+              805,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l005",
+            "text": "і велика и́ недомыслимаго и́ непремѣннаго цр҃твїя Бга҃ вседержи-",
+            "bbox_xywh": [
+              95,
+              840,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l006",
+            "text": "теля, предивнаго и́ славнаго и́ свѣтлаго и́ многоѡчитаго стоя-",
+            "bbox_xywh": [
+              95,
+              874,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l007",
+            "text": "нїя слугъ Гд҃нь и́ непостижимаго прст҃ола Гд҃ня, и́ степень и́ ѡк-",
+            "bbox_xywh": [
+              95,
+              909,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l008",
+            "text": "авленій воинствъ безплотных, и́ несказаннаго служенїя стїхїи",
+            "bbox_xywh": [
+              95,
+              944,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l009",
+            "text": "множества, и́ различнаго видѣнїя, и́ неисповѣдимаго пѣнїя хе-",
+            "bbox_xywh": [
+              95,
+              979,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-opening-l010",
+            "text": "рувимскаго воинства, и́ свѣта безмѣрна самовидецъ быти.",
+            "bbox_xywh": [
+              95,
+              1013,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "enoch-vision",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          1053,
+          930,
+          521
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "enoch-vision-l001",
+            "text": "Въ время ѡно рече: егда исполнишася лѣт р҃ѯ҃є҃, родих сн҃а",
+            "bbox_xywh": [
+              95,
+              1053,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l002",
+            "text": "моего Мафусала. По семъ же живъ лѣт с҃ и́ исполнихъ всѣхъ",
+            "bbox_xywh": [
+              95,
+              1088,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l003",
+            "text": "лѣтъ живота моего т҃ѯ҃є҃ лѣтъ. Въ а҃ дн҃ь перваго мц҃а азъ бѣхъ",
+            "bbox_xywh": [
+              95,
+              1123,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l004",
+            "text": "в' дому моем єдинъ и́ почивах на ѡдрѣ моемъ и́ спах. І єгда",
+            "bbox_xywh": [
+              95,
+              1157,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l005",
+            "text": "спах, в'зыиде велика скорбь в' ср҃дце мое, и́ бѣ плачася ѡчима",
+            "bbox_xywh": [
+              95,
+              1192,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l006",
+            "text": "моима во снѣ, и́ не можахъ разумѣти что есть скорбь сїя",
+            "bbox_xywh": [
+              95,
+              1227,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l007",
+            "text": "или что ми будетъ. и́ явиша ми ся два мужа превелика зѣло,",
+            "bbox_xywh": [
+              95,
+              1262,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l008",
+            "text": "ꙗко николиже видѣх таковїя на земли. и́ быша им лица ꙗко",
+            "bbox_xywh": [
+              95,
+              1297,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l009",
+            "text": "слн҃це свѣтящася, ѡчи же их ꙗко свѣща горяща, и́ ѿ устъ их",
+            "bbox_xywh": [
+              95,
+              1332,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l010",
+            "text": "ѡгнь исходяи, ѡдѣянїем и́ пѣнїемъ раздаянїя (?), видомъ ба-",
+            "bbox_xywh": [
+              95,
+              1367,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l011",
+            "text": "гры. Крыла ихъ свѣтлѣиши злата, руцѣ их бѣлѣйши снѣга.",
+            "bbox_xywh": [
+              95,
+              1401,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l012",
+            "text": "стояше во возглавїи ѡдра моего, и́ возваша мя именем моимъ.",
+            "bbox_xywh": [
+              95,
+              1436,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l013",
+            "text": "азъ же востах ѿ сна моего, и́ видѣх явѣ мужа ѡны, стояще",
+            "bbox_xywh": [
+              95,
+              1471,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l014",
+            "text": "с҃ мнѣ а҃ прямо (?), азъ же поклонихся имъ и́ оужасохся и́ измѣ-",
+            "bbox_xywh": [
+              95,
+              1506,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "enoch-vision-l015",
+            "text": "нися видѣнїе лица моего ѿ страха. и́ рѣша ко мнѣ мужи ѡни:",
+            "bbox_xywh": [
+              95,
+              1541,
+              930,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "section-title-l001",
+        "reading": "VII. Книга Еноха.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "witness-label-l001",
+        "reading": "Із полтавського рукопису ігумена Геннадія з поч. XVII в.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l001",
+        "reading": "К н и г а  ѡ  т а и н а х ъ  Є н о х о в и х ъ  с н҃ а  Я р е д о в а  м у ж а",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l002",
+        "reading": "м у д р а  и́  б г҃ о л ю б и в а. Ѡ житїи и́ ѡ сн҃ѣ Єноховѣ. Бысть",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l003",
+        "reading": "мужъ [у Попова хибно: м у д р ъ] мудръ и́ великохудожникъ, его",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l004",
+        "reading": "возлюбы и́ пріятъ его Гд҃ь, да видит вышняя житїя, мудраго",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l005",
+        "reading": "і велика и́ недомыслимаго и́ непремѣннаго цр҃твїя Бга҃ вседержи-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l006",
+        "reading": "теля, предивнаго и́ славнаго и́ свѣтлаго и́ многоѡчитаго стоя-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l007",
+        "reading": "нїя слугъ Гд҃нь и́ непостижимаго прст҃ола Гд҃ня, и́ степень и́ ѡк-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l008",
+        "reading": "авленій воинствъ безплотных, и́ несказаннаго служенїя стїхїи",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l009",
+        "reading": "множества, и́ различнаго видѣнїя, и́ неисповѣдимаго пѣнїя хе-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-opening-l010",
+        "reading": "рувимскаго воинства, и́ свѣта безмѣрна самовидецъ быти.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l001",
+        "reading": "Въ время ѡно рече: егда исполнишася лѣт р҃ѯ҃є҃, родих сн҃а",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l002",
+        "reading": "моего Мафусала. По семъ же живъ лѣт с҃ и́ исполнихъ всѣхъ",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l003",
+        "reading": "лѣтъ живота моего т҃ѯ҃є҃ лѣтъ. Въ а҃ дн҃ь перваго мц҃а азъ бѣхъ",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l004",
+        "reading": "в' дому моем єдинъ и́ почивах на ѡдрѣ моемъ и́ спах. І єгда",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l005",
+        "reading": "спах, в'зыиде велика скорбь в' ср҃дце мое, и́ бѣ плачася ѡчима",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l006",
+        "reading": "моима во снѣ, и́ не можахъ разумѣти что есть скорбь сїя",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l007",
+        "reading": "или что ми будетъ. и́ явиша ми ся два мужа превелика зѣло,",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l008",
+        "reading": "ꙗко николиже видѣх таковїя на земли. и́ быша им лица ꙗко",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l009",
+        "reading": "слн҃це свѣтящася, ѡчи же их ꙗко свѣща горяща, и́ ѿ устъ их",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l010",
+        "reading": "ѡгнь исходяи, ѡдѣянїем и́ пѣнїемъ раздаянїя (?), видомъ ба-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l011",
+        "reading": "гры. Крыла ихъ свѣтлѣиши злата, руцѣ их бѣлѣйши снѣга.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l012",
+        "reading": "стояше во возглавїи ѡдра моего, и́ возваша мя именем моимъ.",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l013",
+        "reading": "азъ же востах ѿ сна моего, и́ видѣх явѣ мужа ѡны, стояще",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l014",
+        "reading": "с҃ мнѣ а҃ прямо (?), азъ же поклонихся имъ и́ оужасохся и́ измѣ-",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      },
+      {
+        "line_id": "enoch-vision-l015",
+        "reading": "нися видѣнїе лица моего ѿ страха. и́ рѣша ко мнѣ мужи ѡни:",
+        "reason": "Provisional direct reading. Exact historical spelling, glyphs, titla, accents, numeral labels, names and editorial punctuation require isolated visual rereading; no parallel-text emendation."
+      }
+    ]
+  }
+}
