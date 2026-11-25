@@ -1,0 +1,5 @@
+# Volume I scan 415 — non-edition leaf
+
+The complete native image was inspected in the pinned asset revision [e871f325](https://github.com/alexsosn/franko-tei/blob/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol1/page-00415.jpg) on 2026-11-25. Image SHA256 claimed by the source manifest: `f026d8f174bac9653a4a6d32f72620cc940e067a87f1bc8c6d1d0da1c07d14a9`. This is a blank leaf separating the end of the narrative text from the indexes. Specks and faint background discoloration are visible; no original printed words or folio are visible. The nonempty embedded OCR byte count is not evidence of visible text. Do not invent a reading record to satisfy coverage.
+
+Together with I/2, I/3 and I/7 (see [front matter audit](vol1-front-matter-audit.md)), this is a documented source-image exclusion from edition text. The viewer may still count these four physical scans as lacking a reading because its first-reading schema does not support empty page records. This audit does not verify any textual page or claim rights to rehost scans.

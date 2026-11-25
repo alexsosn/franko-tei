@@ -1,0 +1,827 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 339,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00339.jpg",
+  "source_image_sha256": "7600de8cc3c406131ecf8f75ac742a6b19652eb2527f6aabcfd310f48988e335",
+  "reading": {
+    "reader_id": "gpt62-i339-final-gap-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-i-final-gaps-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original pinned image reading; all physical lines, printed folio when visible, headings, manuscript text and Franko commentary. Estimated geometry. Exact historical accentuation, titla, and mixed-language attribution provisional. No same-page embedded OCR or peer reading consulted.",
+    "raw_response": "XVII. Від Мойсея до Давида.\nА. Рукопис о. Стефана Теслевцьового стор. 292—296.\n(Жытїє Іѡва праведнаго из жывотовъ ст҃ых\nописанный ѿ Семїѡна Метафраста, як малъ тер'-\nпѣти напасти й кар'ности из допущенꙗ бж҃ого).\nОу Авсидійской сторонѣ был єдин чл҃къ, которому было ймꙗ\nІѡвъ, й был вел'ми побожный, прав'дивый й бл҃гочестивый, жыл\nна свѣтѣ побожне й мавъ оу себе сн҃овъ сѣмъ а дѣвокъ тры,\nмал' са оу богатствѣ добре, бар'зо был богатъ во всяких до-\nстат'кахъ, мавъ своихъ ѡвецъ сѣмъ тисячъ, вер'блюдов тры\nтисячи, воловъ до ѡранꙗ пат' сотъ, ѡслат пат' сотъ, й челяди\nбыло многоє множество, коней было пат' сотъ, коровъ пат'\nсотъ. И той чл҃вкъ слав'ный был велми й в повазѣ был великой,\nѿ востока сл҃нца й до запада не было такого чл҃вка богатого як\nІѡвъ. Схожовали са сн҃ове єго на каждый дн҃ь єдинъ до дру-\nгого, пили, ѣли, веселили са, гойновали оу роскоши великой\nй в' достат'ках'. Оу єдиного стар'шого брата тры сестры каж-\nдый дн҃ь веселили са вшитки оу єдно. А ѡц҃ъ их Іѡвъ давалъ\nза них Гу҃ Бу҃ нбсному ѡфѣру за ихъ ѡчищенїє. „Може то —\nмовит — сн҃ове мой даколи [sic!] оу пан'ствѣ що злоє помы-\nслили й Бу҃ изгрѣшили“. И тоє чинил Іѡвъ на каждый дн҃ь за\nсвоихъ дѣтей, за грѣхи их, абы то которой дитинѣ дша не\nпропала.\nЇ єдиного дн҃е пришли аг҃глы бж҃їи й стали перед Бг҃омъ,\nй там пришол из аг҃глами й Сотона. И рек Бг҃ъ ко дїаволу:\n„А ты Сотоно откол ходишъ й чого сюда пришол?“ И рекъ\nдїаволъ: „Ги҃ Бе҃, ѡбыйшолєм оусю зем'лю й пришолємъ под-\nнбсную“. И рек єму Бг҃ъ: „Чи знайшо́л' ты що оу моєго чл҃ка",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Printed divider below section title",
+          "bbox_xywh": [
+            579,
+            540,
+            76,
+            6
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          331,
+          479,
+          576,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-heading-l001",
+            "text": "XVII. Від Мойсея до Давида.",
+            "bbox_xywh": [
+              331,
+              479,
+              576,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          236,
+          580,
+          769,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-l001",
+            "text": "А. Рукопис о. Стефана Теслевцьового стор. 292—296.",
+            "bbox_xywh": [
+              236,
+              580,
+              769,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "job-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          165,
+          648,
+          913,
+          103
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "job-heading-l001",
+            "text": "(Жытїє Іѡва праведнаго из жывотовъ ст҃ых",
+            "bbox_xywh": [
+              165,
+              648,
+              913,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 40,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-heading-l002",
+            "text": "описанный ѿ Семїѡна Метафраста, як малъ тер'-",
+            "bbox_xywh": [
+              165,
+              683,
+              913,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 45,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-heading-l003",
+            "text": "пѣти напасти й кар'ности из допущенꙗ бж҃ого).",
+            "bbox_xywh": [
+              165,
+              718,
+              913,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 45,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "job-body",
+        "kind": "body",
+        "bbox_xywh": [
+          152,
+          747,
+          924,
+          793
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "job-body-l001",
+            "text": "Оу Авсидійской сторонѣ был єдин чл҃къ, которому было ймꙗ",
+            "bbox_xywh": [
+              152,
+              747,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l002",
+            "text": "Іѡвъ, й был вел'ми побожный, прав'дивый й бл҃гочестивый, жыл",
+            "bbox_xywh": [
+              152,
+              782,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l003",
+            "text": "на свѣтѣ побожне й мавъ оу себе сн҃овъ сѣмъ а дѣвокъ тры,",
+            "bbox_xywh": [
+              152,
+              816,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l004",
+            "text": "мал' са оу богатствѣ добре, бар'зо был богатъ во всяких до-",
+            "bbox_xywh": [
+              152,
+              851,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l005",
+            "text": "стат'кахъ, мавъ своихъ ѡвецъ сѣмъ тисячъ, вер'блюдов тры",
+            "bbox_xywh": [
+              152,
+              886,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l006",
+            "text": "тисячи, воловъ до ѡранꙗ пат' сотъ, ѡслат пат' сотъ, й челяди",
+            "bbox_xywh": [
+              152,
+              920,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l007",
+            "text": "было многоє множество, коней было пат' сотъ, коровъ пат'",
+            "bbox_xywh": [
+              152,
+              955,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l008",
+            "text": "сотъ. И той чл҃вкъ слав'ный был велми й в повазѣ был великой,",
+            "bbox_xywh": [
+              152,
+              989,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l009",
+            "text": "ѿ востока сл҃нца й до запада не было такого чл҃вка богатого як",
+            "bbox_xywh": [
+              152,
+              1024,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l010",
+            "text": "Іѡвъ. Схожовали са сн҃ове єго на каждый дн҃ь єдинъ до дру-",
+            "bbox_xywh": [
+              152,
+              1058,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l011",
+            "text": "гого, пили, ѣли, веселили са, гойновали оу роскоши великой",
+            "bbox_xywh": [
+              152,
+              1093,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l012",
+            "text": "й в' достат'ках'. Оу єдиного стар'шого брата тры сестры каж-",
+            "bbox_xywh": [
+              152,
+              1128,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l013",
+            "text": "дый дн҃ь веселили са вшитки оу єдно. А ѡц҃ъ их Іѡвъ давалъ",
+            "bbox_xywh": [
+              152,
+              1162,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l014",
+            "text": "за них Гу҃ Бу҃ нбсному ѡфѣру за ихъ ѡчищенїє. „Може то —",
+            "bbox_xywh": [
+              152,
+              1197,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l015",
+            "text": "мовит — сн҃ове мой даколи [sic!] оу пан'ствѣ що злоє помы-",
+            "bbox_xywh": [
+              152,
+              1231,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              },
+              {
+                "start": 26,
+                "end": 32,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              },
+              {
+                "start": 32,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l016",
+            "text": "слили й Бу҃ изгрѣшили“. И тоє чинил Іѡвъ на каждый дн҃ь за",
+            "bbox_xywh": [
+              152,
+              1266,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l017",
+            "text": "своихъ дѣтей, за грѣхи их, абы то которой дитинѣ дша не",
+            "bbox_xywh": [
+              152,
+              1300,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l018",
+            "text": "пропала.",
+            "bbox_xywh": [
+              152,
+              1335,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 8,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l019",
+            "text": "Ї єдиного дн҃е пришли аг҃глы бж҃їи й стали перед Бг҃омъ,",
+            "bbox_xywh": [
+              152,
+              1370,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l020",
+            "text": "й там пришол из аг҃глами й Сотона. И рек Бг҃ъ ко дїаволу:",
+            "bbox_xywh": [
+              152,
+              1404,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l021",
+            "text": "„А ты Сотоно откол ходишъ й чого сюда пришол?“ И рекъ",
+            "bbox_xywh": [
+              152,
+              1439,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 53,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l022",
+            "text": "дїаволъ: „Ги҃ Бе҃, ѡбыйшолєм оусю зем'лю й пришолємъ под-",
+            "bbox_xywh": [
+              152,
+              1473,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          },
+          {
+            "id": "job-body-l023",
+            "text": "нбсную“. И рек єму Бг҃ъ: „Чи знайшо́л' ты що оу моєго чл҃ка",
+            "bbox_xywh": [
+              152,
+              1508,
+              924,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i339-final-gap-20261125"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "job-heading-l001",
+        "reading": "(Жытїє Іѡва праведнаго из жывотовъ ст҃ых",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-heading-l002",
+        "reading": "описанный ѿ Семїѡна Метафраста, як малъ тер'-",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-heading-l003",
+        "reading": "пѣти напасти й кар'ности из допущенꙗ бж҃ого).",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l001",
+        "reading": "Оу Авсидійской сторонѣ был єдин чл҃къ, которому было ймꙗ",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l002",
+        "reading": "Іѡвъ, й был вел'ми побожный, прав'дивый й бл҃гочестивый, жыл",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l003",
+        "reading": "на свѣтѣ побожне й мавъ оу себе сн҃овъ сѣмъ а дѣвокъ тры,",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l004",
+        "reading": "мал' са оу богатствѣ добре, бар'зо был богатъ во всяких до-",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l005",
+        "reading": "стат'кахъ, мавъ своихъ ѡвецъ сѣмъ тисячъ, вер'блюдов тры",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l006",
+        "reading": "тисячи, воловъ до ѡранꙗ пат' сотъ, ѡслат пат' сотъ, й челяди",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l007",
+        "reading": "было многоє множество, коней было пат' сотъ, коровъ пат'",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l008",
+        "reading": "сотъ. И той чл҃вкъ слав'ный был велми й в повазѣ был великой,",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l009",
+        "reading": "ѿ востока сл҃нца й до запада не было такого чл҃вка богатого як",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l010",
+        "reading": "Іѡвъ. Схожовали са сн҃ове єго на каждый дн҃ь єдинъ до дру-",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l011",
+        "reading": "гого, пили, ѣли, веселили са, гойновали оу роскоши великой",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l012",
+        "reading": "й в' достат'ках'. Оу єдиного стар'шого брата тры сестры каж-",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l013",
+        "reading": "дый дн҃ь веселили са вшитки оу єдно. А ѡц҃ъ их Іѡвъ давалъ",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l014",
+        "reading": "за них Гу҃ Бу҃ нбсному ѡфѣру за ихъ ѡчищенїє. „Може то —",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l015",
+        "reading": "мовит — сн҃ове мой даколи [sic!] оу пан'ствѣ що злоє помы-",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l016",
+        "reading": "слили й Бу҃ изгрѣшили“. И тоє чинил Іѡвъ на каждый дн҃ь за",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l017",
+        "reading": "своихъ дѣтей, за грѣхи их, абы то которой дитинѣ дша не",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l018",
+        "reading": "пропала.",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l019",
+        "reading": "Ї єдиного дн҃е пришли аг҃глы бж҃їи й стали перед Бг҃омъ,",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l020",
+        "reading": "й там пришол из аг҃глами й Сотона. И рек Бг҃ъ ко дїаволу:",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l021",
+        "reading": "„А ты Сотоно откол ходишъ й чого сюда пришол?“ И рекъ",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l022",
+        "reading": "дїаволъ: „Ги҃ Бе҃, ѡбыйшолєм оусю зем'лю й пришолємъ под-",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      },
+      {
+        "line_id": "job-body-l023",
+        "reading": "нбсную“. И рек єму Бг҃ъ: „Чи знайшо́л' ты що оу моєго чл҃ка",
+        "reason": "Exact historical glyphs, accents, titla and mixed Ruthenian/Church Slavonic language attribution provisional."
+      }
+    ]
+  }
+}
