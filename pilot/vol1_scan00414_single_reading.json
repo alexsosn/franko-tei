@@ -239,6 +239,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 22,
+                "end": 25,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 25,
                 "end": 58,
                 "language": "cu",
                 "script": "Cyrl",
@@ -302,6 +318,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 10,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 10,
+                "end": 13,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 13,
                 "end": 57,
                 "language": "cu",
                 "script": "Cyrl",
@@ -386,6 +418,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 35,
+                "end": 38,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 38,
                 "end": 61,
                 "language": "cu",
                 "script": "Cyrl",
@@ -428,6 +476,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 36,
+                "end": 39,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-i414-first-image-20261125"
+              },
+              {
+                "start": 39,
                 "end": 63,
                 "language": "cu",
                 "script": "Cyrl",
@@ -885,5 +949,14 @@
         "reason": "Punctuation and spacing of initials provisional."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "d1c0b6cf999c667495c9cd38c712ed14bf16e97a",
+    "source_record_blob": "ae7ba1d972bca6f0ec5bd2f7fa8498b208ee49fd",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Nonblind contextual review of frozen reading against pinned original image. Distinguish embedded scriptural question or standalone Cyrillic numerals from surrounding text; no numeral value normalization, no recension or glyph verification."
   }
 }
