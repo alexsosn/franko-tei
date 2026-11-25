@@ -4,12 +4,18 @@ on:
     paths:
       - 'web/**'
       - 'pilot/**'
+      - 'reviews/**'
+      - 'src/franko_tei/review_adjudication.py'
+      - 'src/franko_tei/review_bundle.py'
       - '.github/workflows/review-pages.yml'
   push:
     branches: [main]
     paths:
       - 'web/**'
       - 'pilot/**'
+      - 'reviews/**'
+      - 'src/franko_tei/review_adjudication.py'
+      - 'src/franko_tei/review_bundle.py'
       - '.github/workflows/review-pages.yml'
   workflow_dispatch:
 permissions:
@@ -118,6 +124,8 @@ jobs:
               && cmp -s web/review-editor.js "$RUNNER_TEMP/published-review.js" \
               && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/vol1.json?rev=$GITHUB_SHA" \
               | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null \
+              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/editorial.json?rev=$GITHUB_SHA" \
+              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and (.pages | type == "array")' >/dev/null \
               && verify_fonts; then
               echo "Public viewer, fonts and search index match $GITHUB_SHA."
               exit 0
