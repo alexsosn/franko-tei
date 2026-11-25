@@ -26,6 +26,7 @@ class ReviewSmoke(unittest.TestCase):
             alternate['reading']['model_id'] = 'GPT-6.2'
             alternate['reading']['model_version'] = 'test-snapshot'
             alternate['reading']['regions'][0]['lines'][0]['text'] = 'alternate ἀ'
+            alternate['reading']['regions'][0]['lines'][0]['language_spans'] = [{'start': 0, 'end': 10, 'language': 'uk', 'script': 'Latn', 'uncertain': False}, {'start': 10, 'end': 12, 'language': 'grc', 'script': 'Grek', 'uncertain': True}]
             alternate['reading']['uncertainty_notes'] = [{'line_id':'l1','reading':'ἀ','reason':'alternate note'}]
             second = draft(1)
             second['reading']['reader_id'] = 'synthetic-legacy'
@@ -60,7 +61,25 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertEqual(page.locator(control + ' svg').get_attribute('aria-hidden'), 'true')
             self.assertEqual(page.locator('#searchOpen').text_content().strip(), 'Search corpus')
             self.assertEqual(page.locator('#searchGo').text_content().strip(), 'Search')
+            page.locator('#candidate .line-text').first.wait_for()
+            self.assertEqual(page.locator('#choice').input_value(), '1')
+            self.assertEqual(page.locator('#candidate .line-text').first.text_content(), 'alternate ἀ')
+            self.assertEqual(page.locator('.language-span:visible').count(), 0)
+            page.locator('#showLanguages').check()
+            self.assertEqual(page.locator('.language-span[data-language="grc"]').text_content(), 'ἀ')
+            self.assertEqual(page.locator('.language-span[data-language="grc"]').get_attribute('data-uncertain'), 'true')
+            self.assertEqual(page.locator('#candidate .line-text').first.text_content(), 'alternate ἀ')
+            self.assertEqual(page.locator('#candidate mark').first.text_content(), 'ἀ')
+            page.locator('#showLanguages').uncheck()
+            self.assertEqual(page.locator('.language-span:visible').count(), 0)
+            page.locator('#scan').wait_for()
+            page.locator('#scan').click(position={'x': 5, 'y': page.locator('#scan').bounding_box()['height'] * .8})
+            self.assertEqual(page.locator('#candidate .line-text').nth(1).get_attribute('aria-pressed'), 'true')
+            self.assertTrue(page.locator('#candidate .line-text').nth(1).evaluate('(el) => document.activeElement === el'))
+            page.locator('#choice').select_option('0')
             page.locator('#candidate').get_by_text('ѣ <script>ἀ</script>', exact=False).wait_for()
+            self.assertNotEqual(page.locator('#candidate .line-text').first.evaluate('(el) => el.tagName'), 'BUTTON')
+            self.assertEqual(page.locator('#candidate .line-text').first.evaluate('(el) => getComputedStyle(el).userSelect'), 'text')
             self.assertEqual(page.locator('#choice option').all_text_contents(), ['GPT-6 · single reading', 'GPT-6.2 (test-snapshot) · alternate reading 01', 'GPT-6 · alternate reading 02'])
             self.assertEqual(page.evaluate("candidateLabel('single_reading', {})"), 'Unknown model · single reading')
             self.assertEqual(page.evaluate("candidateLabel('single_reading', {model_id:'GPT-6',model_version:'GPT-6'})"), 'GPT-6 · single reading')
