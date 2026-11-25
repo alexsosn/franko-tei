@@ -28,6 +28,37 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#searchVolume option")).to_have_text(["All volumes", *titles])
             expect(page.locator("#choice option").filter(has_text="GPT-6 · single reading")).to_have_count(1)
             expect(page.locator("#choice option").filter(has_text="GPT-6 · independent image reading b")).to_have_count(1)
+            expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
+            # Real self-hosted font faces must load, rather than silently fall back.
+            page.locator("#settingsOpen").click()
+            page.locator("#fontSettings summary").click()
+            for selector, values, sample in [
+                ("#slavonicFont", [("shafarik", "Franko Shafarik"), ("monomakh", "Franko Monomakh")], "ꙗꙖꙑб҃ъ"),
+                ("#greekFont", [("gentium", "Franko Gentium"), ("garamond", "Franko Garamond")], "Ἐν ἀρχῇ ἄ"),
+            ]:
+                for value, family in values:
+                    page.locator(selector).select_option(value)
+                    assert page.evaluate("""async ([family, sample]) => {
+                        const faces = await document.fonts.load('21px "' + family + '"', sample);
+                        return faces.length > 0 && faces.every(face => face.status === 'loaded');
+                    }""", [family, sample]), family
+            page.reload()
+            expect(page.locator("#choice option:checked")).to_contain_text("GPT-6.2")
+            page.locator("#settingsOpen").click()
+            page.locator("#fontSettings summary").click()
+            expect(page.locator("#slavonicFont")).to_have_value("monomakh")
+            expect(page.locator("#greekFont")).to_have_value("garamond")
+            page.locator("#resetFonts").click()
+            page.locator("#fontSettings summary").click()
+            page.locator("#showLanguages").check()
+            page.locator("#settingsClose").click()
+            expect(page.locator(".languages-on .language-span[data-language='grc']").first).to_be_visible()
+            expect(page.locator("#languageLegend")).to_contain_text("Ancient Greek")
+            page.locator("#settingsOpen").click()
+            page.locator("#showLanguages").uncheck()
+            page.locator("#settingsClose").click()
+            expect(page.locator("#languageLegend")).to_be_hidden()
+            page.locator("#choice").select_option(label="GPT-6 · single reading")
             first_note = page.locator(".uncertainty-toggle").first
             expect(page.locator(".uncertainty-reasons").first).to_be_hidden()
             expect(page.locator("#candidate mark").first).to_be_visible()
@@ -53,8 +84,10 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             page.locator("#searchGo").click()
             expect(page.locator("#searchStatus")).to_contain_text("580 original OCR pages (0 nonempty)")
             expect(page.locator("#searchResults button")).to_have_count(0)
-            page.locator("#searchOpen").click()
+            page.locator("#searchClose").click()
+            page.locator("#settingsOpen").click()
             page.locator("#mode").select_option("both")
+            page.locator("#settingsClose").click()
             expect(page.locator("#ocr")).to_contain_text("XI")
             page.locator("#candidate .line-text").first.click()
             expect(page.locator("#highlight")).to_be_visible()

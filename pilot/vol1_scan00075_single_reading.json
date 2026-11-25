@@ -64,7 +64,16 @@
               36
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
           }
         ]
       },
@@ -89,7 +98,16 @@
               34
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
           },
           {
             "id": "acknowledgements-l002",
@@ -101,7 +119,16 @@
               34
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
           },
           {
             "id": "acknowledgements-l003",
@@ -113,7 +140,16 @@
               34
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
           },
           {
             "id": "acknowledgements-l004",
@@ -125,7 +161,16 @@
               34
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
           },
           {
             "id": "acknowledgements-l005",
@@ -137,7 +182,16 @@
               34
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
           }
         ]
       },
@@ -162,7 +216,16 @@
               34
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
           }
         ]
       },
@@ -187,7 +250,16 @@
               34
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "text_version": "gpt62-i75-first-image-20261125",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
           }
         ]
       }
@@ -229,5 +301,14 @@
         "reason": "Historical Ukrainian spelling, names and punctuation remain provisional."
       }
     ]
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "7ba4fb131d78bb93f327353709f52c5eb653faef",
+    "source_record_blob": "d9549ec662f3c3b465936f57979e3691bf7fe0e8",
+    "scope": "All lines of this reading; contextual language attribution with explicit uncertainty, separate from transcription.",
+    "status": "agent_unverified",
+    "method": "Contextual annotation of frozen candidate. Church Slavonic source texts, Ukrainian editorial prose and insertions, Russian and Croatian bibliography, Latin citations. Anomalous Greek/Latin code points within historical Cyrillic words retained as und with observed script; not evidence of Greek or Latin language. No recension inference or independent textual adjudication."
   }
 }

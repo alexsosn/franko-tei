@@ -9,6 +9,10 @@
 5. TEI export in initial implementation is intentionally **partial page-based staging**. It uses `<pb>` and `<lb>` with PDF links, not a complete critical edition. Later milestone adds `<div type=work>`, `<app>`, `<lem>`, `<rdg>`, `listWit`, `msDesc`, explicit `<note>`, nontext `<gap>` and language spans only as evidence supports. TEI P5 guide: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html ; https://guidelines.tei-c.de/en/html/TC.html
 6. Rights: printed originals are historical, but current digital scans may have terms. Do not commit scan PDFs; document rights before bulk rehosting. This repository's software MIT license does not assert a CC/public-domain status for the scans.
 
+## Working draft versus verified edition
+
+At the current stage (user decision 2026-11-25), agents produce the entire text and provisional markup first. Independent review may be agent-only; usable source-linked `agent_unverified` drafts can be merged and shown in the review interface without human proofreading or exhaustive per-page adjudication. Unresolved readings, gaps, alternatives and incomplete classification stay explicit. Later researchers can correct drafts via the interface. The strict verified-release JSONL contract below is separate and must not block ordinary draft ingestion or viewer publication.
+
 ## Working JSONL format
 
 One JSON per scan page, ordered by `scan_page`. Required fields:

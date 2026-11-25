@@ -1,0 +1,768 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 10,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00010.jpg",
+  "source_image_sha256": "31e7dc5d666c32bf6e8c32fe30dc022cb02e0d0c94e1cfa700f13032ba0cacd0",
+  "reading": {
+    "reader_id": "gpt62-i10-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned source image without embedded OCR or prior candidate. Transcribe printed edition; later accession marks and digital overlays excluded from edition text and documented separately in front-matter audit. Physical line geometry estimated (especially title blocks with widely separated display lines); language spans contextual, full code-point coverage. No verified claim.",
+    "raw_response": "ПЕРЕДМОВА.\nI. Ми привикли думати, що з 1798 роком, роком виданя Ене-\nїди Котляревського, розпочинаєть ся нова доба в нашому письмен-\nстві, доба національна, що її властиво годить ся звати українсько-\nруською. В головному сей погляд без сумнїву вірний; справдї від\nчасу Котляревського наше письменство приймає характер ново-\nчасної лїтератури, стає чим раз близше реального житя, чим раз\nвідповіднїйше до єго потреб. І мовою і способом вислову воно на-\nближуєть ся чим раз більше до живого народа, обхоплює всї єго\nверстви, входить чим раз глубше в душу народню, двигає думку,\nпіднимає ідеали, збільшує засоби духової сили для боротьби за ті\nідеали.\nТа проте ми не повинні забувати, що й перед Котляревським\nу нас було письменство і були писателї, було духове житє, були\nлюде, що сяк чи так вибігали думкою поза тїсний круг буденних,\nматеріяльних інтересів, сяк чи так шукали якихсь ідеалів і доріг\nдля їх осягненя. Певна річ, письменські проби тих людей були\nскромні; мало в них творчої сили, мало оріґінальности. Вірні ду-\nховому складови старої Руси вони любили ходити утертими стеж-\nками і хоч може прінціпіально й не цурали ся новини, та для їх\nневеличкої осьвіти, для тїсного кругозору їх поглядів і інтересів\nвона була недосяжна. Доволї з них, коли в тім тїснім кружку, се-\nред якого вони жили і для якого трудили ся, вони здужали збе-\nрегти бодай зерно традициї, роздути бодай промінчик сьвітла.\nЗагально відомо, як неприхильною була доля до памяток на-\nшого письменства. Починаючи з самого XVI віку можна сказати,\nщо все найкраще, що в ньому було, не мало щастя до друку,\nа через те й не могло мати такого впливу, який би мало\nАпокріфи старозавітні.\n1",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "preface-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          295,
+          510,
+          477,
+          67
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-heading-line-01",
+            "text": "ПЕРЕДМОВА.",
+            "bbox_xywh": [
+              295,
+              510,
+              477,
+              63
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface-opening",
+        "kind": "body",
+        "bbox_xywh": [
+          64,
+          631,
+          939,
+          378
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-opening-line-01",
+            "text": "I. Ми привикли думати, що з 1798 роком, роком виданя Ене-",
+            "bbox_xywh": [
+              64,
+              631,
+              939,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 1,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-02",
+            "text": "їди Котляревського, розпочинаєть ся нова доба в нашому письмен-",
+            "bbox_xywh": [
+              64,
+              666,
+              939,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-03",
+            "text": "стві, доба національна, що її властиво годить ся звати українсько-",
+            "bbox_xywh": [
+              64,
+              700,
+              939,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-04",
+            "text": "руською. В головному сей погляд без сумнїву вірний; справдї від",
+            "bbox_xywh": [
+              64,
+              734,
+              939,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-05",
+            "text": "часу Котляревського наше письменство приймає характер ново-",
+            "bbox_xywh": [
+              64,
+              769,
+              939,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-06",
+            "text": "часної лїтератури, стає чим раз близше реального житя, чим раз",
+            "bbox_xywh": [
+              64,
+              803,
+              939,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-07",
+            "text": "відповіднїйше до єго потреб. І мовою і способом вислову воно на-",
+            "bbox_xywh": [
+              64,
+              837,
+              939,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-08",
+            "text": "ближуєть ся чим раз більше до живого народа, обхоплює всї єго",
+            "bbox_xywh": [
+              64,
+              872,
+              939,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-09",
+            "text": "верстви, входить чим раз глубше в душу народню, двигає думку,",
+            "bbox_xywh": [
+              64,
+              906,
+              939,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-10",
+            "text": "піднимає ідеали, збільшує засоби духової сили для боротьби за ті",
+            "bbox_xywh": [
+              64,
+              940,
+              939,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-opening-line-11",
+            "text": "ідеали.",
+            "bbox_xywh": [
+              64,
+              975,
+              939,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface-tradition",
+        "kind": "body",
+        "bbox_xywh": [
+          64,
+          1015,
+          941,
+          419
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-tradition-line-01",
+            "text": "Та проте ми не повинні забувати, що й перед Котляревським",
+            "bbox_xywh": [
+              64,
+              1015,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-02",
+            "text": "у нас було письменство і були писателї, було духове житє, були",
+            "bbox_xywh": [
+              64,
+              1050,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-03",
+            "text": "люде, що сяк чи так вибігали думкою поза тїсний круг буденних,",
+            "bbox_xywh": [
+              64,
+              1085,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-04",
+            "text": "матеріяльних інтересів, сяк чи так шукали якихсь ідеалів і доріг",
+            "bbox_xywh": [
+              64,
+              1120,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-05",
+            "text": "для їх осягненя. Певна річ, письменські проби тих людей були",
+            "bbox_xywh": [
+              64,
+              1155,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-06",
+            "text": "скромні; мало в них творчої сили, мало оріґінальности. Вірні ду-",
+            "bbox_xywh": [
+              64,
+              1190,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-07",
+            "text": "ховому складови старої Руси вони любили ходити утертими стеж-",
+            "bbox_xywh": [
+              64,
+              1225,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-08",
+            "text": "ками і хоч може прінціпіально й не цурали ся новини, та для їх",
+            "bbox_xywh": [
+              64,
+              1260,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-09",
+            "text": "невеличкої осьвіти, для тїсного кругозору їх поглядів і інтересів",
+            "bbox_xywh": [
+              64,
+              1295,
+              941,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-10",
+            "text": "вона була недосяжна. Доволї з них, коли в тім тїснім кружку, се-",
+            "bbox_xywh": [
+              64,
+              1329,
+              941,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-11",
+            "text": "ред якого вони жили і для якого трудили ся, вони здужали збе-",
+            "bbox_xywh": [
+              64,
+              1364,
+              941,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-tradition-line-12",
+            "text": "регти бодай зерно традициї, роздути бодай промінчик сьвітла.",
+            "bbox_xywh": [
+              64,
+              1399,
+              941,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface-printing",
+        "kind": "body",
+        "bbox_xywh": [
+          65,
+          1439,
+          941,
+          136
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-printing-line-01",
+            "text": "Загально відомо, як неприхильною була доля до памяток на-",
+            "bbox_xywh": [
+              65,
+              1439,
+              941,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-printing-line-02",
+            "text": "шого письменства. Починаючи з самого XVI віку можна сказати,",
+            "bbox_xywh": [
+              65,
+              1473,
+              941,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 37,
+                "end": 40,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 40,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-printing-line-03",
+            "text": "що все найкраще, що в ньому було, не мало щастя до друку,",
+            "bbox_xywh": [
+              65,
+              1507,
+              941,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-printing-line-04",
+            "text": "а через те й не могло мати такого впливу, який би мало",
+            "bbox_xywh": [
+              65,
+              1541,
+              941,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "series-footer",
+        "kind": "other",
+        "bbox_xywh": [
+          135,
+          1582,
+          230,
+          28
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-footer-line-01",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              135,
+              1582,
+              230,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "quire-signature",
+        "kind": "other",
+        "bbox_xywh": [
+          919,
+          1579,
+          26,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "quire-signature-line-01",
+            "text": "1",
+            "bbox_xywh": [
+              919,
+              1579,
+              26,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i10-first-image-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-tradition-line-08",
+        "reading": "прінціпіально",
+        "reason": "Exact printed historical spelling provisional."
+      }
+    ]
+  }
+}

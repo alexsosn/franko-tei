@@ -3,6 +3,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
+import unicodedata
 from tempfile import TemporaryDirectory
 
 from franko_tei.pilot_batch import (
@@ -26,6 +27,40 @@ class CorpusBatchContract(unittest.TestCase):
                 self.assertGreater(len(lines), 1)
                 self.assertEqual(payload["reading"]["raw_response"], "\n".join(lines))
                 self.assertEqual(payload["status"], "agent_unverified")
+
+    def test_completed_contextual_annotations_cover_exact_codepoints(self):
+        # Data acceptance for explicit completed annotation passes only.
+        # Legacy/ongoing draft readings may still be partially annotated.
+        annotated = 0
+        for path in discover_readings(PILOT):
+            data = json.loads(path.read_text(encoding="utf-8"))
+            annotation = data.get("language_annotation")
+            if annotation is None:
+                continue
+            annotated += 1
+            with self.subTest(path=path.name):
+                self.assertEqual(annotation["schema_version"],
+                                 "contextual-language-annotation-v1")
+                self.assertEqual(annotation["status"], "agent_unverified")
+                self.assertRegex(annotation["source_record_commit"], r"^[0-9a-f]{40}$")
+                self.assertRegex(annotation["source_record_blob"], r"^[0-9a-f]{40}$")
+                for region in data["reading"]["regions"]:
+                    for line in region["lines"]:
+                        text = line["text"]
+                        previous = 0
+                        for span in line["language_spans"]:
+                            self.assertEqual(span["start"], previous)
+                            self.assertGreater(span["end"], previous)
+                            self.assertTrue(span["language"])
+                            self.assertTrue(span["script"])
+                            if span["language"] == "und":
+                                self.assertTrue(span["uncertain"])
+                            if previous:
+                                self.assertFalse(unicodedata.category(
+                                    text[previous]).startswith("M"))
+                            previous = span["end"]
+                        self.assertEqual(previous, len(text))
+        self.assertGreater(annotated, 0)
 
     def test_changed_page_selection_is_precise_but_core_changes_scan_all(self):
         all_paths = discover_readings(PILOT)
@@ -116,8 +151,15 @@ class CorpusBatchContract(unittest.TestCase):
         self.assertTrue(all(r["context_independence"] == "single-working-draft"
                             for r in i20["readings"]))
         i52 = next(p for p in inventory if (p["volume"], p["scan_page"]) == ("1", 52))
-        self.assertEqual(len(i52["readings"]), 1)
-        self.assertTrue(i52["readings"][0]["prior_text_exposure"])
+        by_path = {r["path"]: r for r in i52["readings"]}
+        self.assertTrue(by_path["pilot/vol1_scan00052_exposed_reading.json"]["prior_text_exposure"])
+        self.assertFalse(by_path["pilot/vol1_scan00052_alternate_reading_01.json"]["prior_text_exposure"])
+        for volume, scan in [(1, n) for n in range(20, 62)] + [(2, 100), (3, 130), (4, 100), (5, 100)]:
+            path = PILOT / f"vol{volume}_scan{scan:05d}_alternate_reading_01.json"
+            candidate = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(candidate["reading"]["model_id"], "GPT-6.2")
+            page = next(p for p in inventory if (p["volume"], p["scan_page"]) == (str(volume), scan))
+            self.assertIn(f"pilot/{path.name}", {r["path"] for r in page["readings"]})
 
     def test_unreadable_source_suffix_is_explicit_tei_gap_not_page_glyph(self):
         # A real pinned source draft with a documented source obstruction:
