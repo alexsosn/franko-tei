@@ -50,7 +50,7 @@ def editor_identity(editor):
     return editor["id"], editor["login"]
 
 
-def adjudicate(record, event_id, outcome, editor, reason, approved_digest, source_loader):
+def adjudicate(record, event_id, outcome, editor, reason, approved_digest, source_loader, *, agent=None):
     validate_intake(record, source_loader)
     match(SHA256, approved_digest, "approved intake digest")
     require(intake_digest(record) == approved_digest, "intake digest mismatch")
@@ -62,7 +62,17 @@ def adjudicate(record, event_id, outcome, editor, reason, approved_digest, sourc
     literal(reason, "editor reason", 2048)
     editor_id, login = editor_identity(editor)
     contributor = record["submitter"]["github_user_id"]
-    require(editor_id != contributor, "self-adjudication forbidden")
+    if agent is None:
+        require(editor_id != contributor, "self-adjudication forbidden")
+    else:
+        # The authenticated account is only the publication operator.
+        # Agent metadata is an explicit attestation, not proof of independence.
+        fields(agent, {"model", "context_id", "image_sha256"}, "agent review")
+        literal(agent["model"], "agent model", 128)
+        identifier(agent["context_id"], "agent review context ID")
+        match(SHA256, agent["image_sha256"], "reviewed image digest")
+        require(agent["image_sha256"] == event["target"]["image_sha256"],
+                "agent review image does not match target")
     if outcome == "accept":
         require(event["decision"] != "defer", "deferred line cannot be accepted")
         # First slice restricts corrections to plain body lines; structural
@@ -77,6 +87,12 @@ def adjudicate(record, event_id, outcome, editor, reason, approved_digest, sourc
             require(not any(link["marker_line_id"] == line["id"]
                             for link in source["reading"].get("source_note_links", [])),
                     "source note marker requires structural review")
+    if agent is not None:
+        return {"schema_version": "franko-review-agent-adjudication-v1",
+                "bundle_id": record["bundle"]["bundle_id"], "event_id": event_id,
+                "intake_sha256": approved_digest, "outcome": outcome,
+                "contributor_id": contributor, "operator_id": editor_id,
+                "operator_login": login, "agent": copy.deepcopy(agent), "reason": reason}
     return {"schema_version": "franko-review-adjudication-v1",
             "bundle_id": record["bundle"]["bundle_id"], "event_id": event_id,
             "intake_sha256": approved_digest, "outcome": outcome,
@@ -98,15 +114,21 @@ def validate_ledger(intakes, decisions, source_loader):
         bundles[record["bundle"]["bundle_id"]] = record
     accepted, seen, bases = {}, set(), {}
     for d in decisions:
-        fields(d, {"schema_version", "bundle_id", "event_id", "intake_sha256",
-                   "outcome", "contributor_id", "adjudicator_id", "adjudicator_login",
-                   "reason"}, "adjudication")
+        common = {"schema_version", "bundle_id", "event_id", "intake_sha256",
+                  "outcome", "contributor_id", "reason"}
+        require(isinstance(d, dict), "invalid adjudication")
+        is_agent = d.get("schema_version") == "franko-review-agent-adjudication-v1"
+        fields(d, common | ({"operator_id", "operator_login", "agent"} if is_agent
+                             else {"adjudicator_id", "adjudicator_login"}), "adjudication")
+        if is_agent:
+            require(isinstance(d["agent"], dict), "missing agent metadata")
         identifier(d["bundle_id"], "bundle ID")
         require(d["bundle_id"] in bundles, "missing intake")
         record = bundles[d["bundle_id"]]
-        editor = {"id": d["adjudicator_id"], "login": d["adjudicator_login"], "type": "User"}
+        editor = {"id": d["operator_id" if is_agent else "adjudicator_id"],
+                  "login": d["operator_login" if is_agent else "adjudicator_login"], "type": "User"}
         expected = adjudicate(record, d["event_id"], d["outcome"], editor, d["reason"],
-                              d["intake_sha256"], source_loader)
+                              d["intake_sha256"], source_loader, agent=d["agent"] if is_agent else None)
         require(type(d["contributor_id"]) is int and d == expected, "invalid adjudication")
         require(d["event_id"] not in seen, "duplicate adjudication")
         seen.add(d["event_id"])
@@ -154,9 +176,14 @@ def project_lines(raw, path, ledger):
                         and target["region_id"] == region["id"], "stale accepted source")
                 corrected = event["decision"] == "correct"
                 row.update(status="accepted_correction" if corrected else "accepted_confirmation",
-                           contributor_id=decision["contributor_id"], adjudicator_id=decision["adjudicator_id"],
+                           contributor_id=decision["contributor_id"],
                            event_id=event["event_id"], bundle_id=decision["bundle_id"],
                            source_commit=entry["source_commit"], issue_url=entry["submitter"]["issue_url"])
+                if decision["schema_version"] == "franko-review-agent-adjudication-v1":
+                    row.update(review_kind="agent", operator_id=decision["operator_id"],
+                               operator_login=decision["operator_login"], agent=copy.deepcopy(decision["agent"]))
+                else:
+                    row.update(review_kind="human", adjudicator_id=decision["adjudicator_id"])
                 if corrected:
                     row.update(text=event["replacement"], language_spans=[],
                                language_status="needs_reannotation",
@@ -222,13 +249,17 @@ def main(argv=None):
     parser.add_argument("--trusted-commit", help="Trusted main commit for check only")
     parser.add_argument("--previous-commit", help="Preserve ledger bytes from this commit in check mode")
     parser.add_argument("--repo", type=Path, default=Path("."))
+    parser.add_argument("--agent-model", help="Attest independent agent source review (not human verification)")
+    parser.add_argument("--agent-context-id", help="Locally assigned review context UUIDv4")
+    parser.add_argument("--agent-image-sha256", help="Exact inspected source image SHA256")
     parser.add_argument("--write", action="store_true", help="Otherwise preview only")
     args = parser.parse_args(argv)
     repo = args.repo.resolve()
+    agent_values = (args.agent_model, args.agent_context_id, args.agent_image_sha256)
     if args.check:
         require(not args.write and args.bundle_id is None and args.event_id is None and args.outcome is None
                 and args.reason is None and args.approve_intake_sha256 is None
-                and args.trusted_commit is not None, "invalid check arguments")
+                and args.trusted_commit is not None and all(v is None for v in agent_values), "invalid check arguments")
         ledger = check_repository(repo, args.trusted_commit, args.previous_commit)
         print(f"Validated editorial ledger: {len(ledger)} accepted lines")
         return 0
@@ -251,8 +282,12 @@ def main(argv=None):
         f"repos/{REPO}/collaborators/{login}/permission"], timeout=30))
     require(permission.get("permission") in ("admin", "write", "maintain")
             and permission.get("user", {}).get("id") == editor["id"], "repository editor permission required")
+    agent = None
+    if any(v is not None for v in agent_values):
+        require(all(v is not None for v in agent_values), "all three agent review fields required")
+        agent = dict(zip(("model", "context_id", "image_sha256"), agent_values))
     d = adjudicate(candidates[0], args.event_id, args.outcome, editor, args.reason,
-                   args.approve_intake_sha256, loader)
+                   args.approve_intake_sha256, loader, agent=agent)
     validate_ledger(intakes, decisions + [d], loader)
     print(json.dumps(d, ensure_ascii=False, indent=2))
     if args.write:
