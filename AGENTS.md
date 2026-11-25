@@ -4,6 +4,10 @@ Read `README.md`, `docs/agent-loop.md`, `docs/transcription.md`, and open GitHub
 
 Mission: produce a **source-verifiable** five-volume diplomatic electronic edition of Ivan Franko's *Апокріфи і лєґенди з українських рукописів* (1896–1910), TEI P5 first, then Text-Fabric/Context-Fabric. Respect the difference between Franko's printed edition and the medieval/early modern manuscripts he transcribed.
 
+## Current editorial phase — user decision (2026-11-25)
+
+Prioritize complete agent-produced diplomatic text **and provisional structural/language markup across all five volumes**. Human researcher capacity is insufficient for page-by-page proofreading during ingestion. No human review, human-approved gold text, or exhaustive multi-agent adjudication of every glyph is a prerequisite for merging or publishing a usable working draft. All review at this stage may be performed by agents; a logically distinct adversarial review of each batch, grounded in actual scans and data, remains required. Preserve alternatives, provenance, uncertainty and gaps. Publish drafts explicitly as `agent_unverified` in the comparison/review interface so researchers can later inspect and correct text and markup in place. Keep source/structural checks and the separate verified-promotion/research-grade release requirements; never imply draft publication establishes textual accuracy.
+
 ## Non-negotiable gates for every ticket
 
 1. **Research**: read actual source scans/metadata, code and relevant TEI documentation; capture evidence and uncertainties in ticket or PR. Avoid speculative complexity. Opening a needed research issue is allowed.
@@ -20,9 +24,13 @@ Work on the highest-priority unblocked issue; prioritize complete first-hand rea
 ## Batch transcription and checks (after workflow consolidation)
 
 - **Never create per-page GitHub workflows or boilerplate tests.** Use the single `.github/workflows/pilot-source-batch.yml` and `tests/test_pilot_corpus.py`; run `python -m unittest discover -s tests -v` for all historical regressions.
-- Frozen unverified reading records are in `pilot/vol{volume}_scan{scan:05d}_single_reading.json`. Keep the explicit `single-exposed-draft-v1` suffix for known OCR exposure and the existing `independent_image_reading_b` records separate. Do not change original frozen characters to make validation pass.
+- Frozen unverified reading records are in `pilot/vol{volume}_scan{scan:05d}_single_reading.json`. Keep the explicit `single-exposed-draft-v1` suffix for known OCR exposure and the existing `independent_image_reading_b` records separate. Use `_alternate_reading_01.json` or `_alternate_reading_02.json` for additional preserved candidates without claiming independent reading; add further version slots through shared discovery and viewer tests when needed. Do not change original frozen characters to make validation pass. Usable, source-linked `agent_unverified` candidates may merge into main after structural validation and an adversarial engineering/data review, including unresolved readings and alternative versions. Independent philological adjudication gates verified promotion and research releases, not inclusion in the working corpus.
 - The batch source smoke checks original JPEG and manifest SHA, TEI P5 4.12 Relax NG and PAGE XML 2019 XSD where export is supported. A TEI `<gap>` for an unreadable image suffix is **not** a printed PAGE glyph, so such pages receive a clearly labeled TEI-only structural pass. None of these checks establishes historical character accuracy.
 - See [batch development guide](docs/batch-transcription.md). Text production and genuinely independent source-reading review have priority over workflow plumbing.
+
+## Language annotation during draft ingestion
+
+Follow [contextual language annotation](docs/language-annotation.md). Include contextual language and script spans during first reading or in a separate annotation-only pass; cover every lexical range, including mixed-language citations and apparatus, and explicitly mark unresolved language. Prefer cu for Church Slavonic; use orv only provisionally for historical Ruthenian with evidence and uncertainty. Do not infer language or recension from script alone. Preserve Unicode code points, combining marks, source reading and exact line IDs. Coordinate with other transcription/contents branches: annotate their new pages in their own branch, and restrict retrospective edits to nonoverlapping existing main candidates. A usable draft may still merge with incomplete spans; prioritize filling them in batches.
 
 ## Available local page source (11 November 2026)
 
@@ -47,9 +55,9 @@ Specialist CRNN models accept line crops, not full-page images.
 
 ## User-approved agent-first pilot priority (GitHub #11, 2026-11-11)
 
-Prioritize six real-image development pages: I/20, II/100, III/130,
-IV/100, V/100 and V/10. Keep I/21, II/101, III/131, IV/101, V/101
-and V/11 untouched as frozen holdout until evaluation protocol is fixed.
+Historical evaluation protocol (not a gate for ordinary draft ingestion or an active restriction on corpus coverage): prioritize six real-image development pages: I/20, II/100, III/130,
+IV/100, V/100 and V/10. Originally designated holdouts were I/21, II/101, III/131, IV/101, V/101
+and V/11; any page already read or exposed is ineligible for a new blind holdout claim. Select genuinely untouched samples for subsequent evaluation.
 Use two genuinely separate blind image-only reader contexts, then an
 independent image-inspecting review context; no mandatory human gate.
 Persist full first responses, exact instructions, run/model/context

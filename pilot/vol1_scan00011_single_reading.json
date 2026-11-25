@@ -1,0 +1,991 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 11,
+  "printed_page_observed": "II",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00011.jpg",
+  "source_image_sha256": "bd96730b020058b7d23156bcf7cd63bd45d21fb7b19cabf29cc27d7da395ef76",
+  "reading": {
+    "reader_id": "gpt62-i11-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned source image without embedded OCR or prior candidate. Printed physical lines preserved; later marks separated. Geometry estimated, contextual language spans covering all code points. Historical glyphs and accents provisional. No verified claim.",
+    "raw_response": "II\nбувши надрукованим. Не попали в друк анї огнисті твори Івана\nВишенського, справедливо названі одним переписувачем „Книга\nЗлото“, анї знаменита Палїнодия Копистенського, анї наші лїто-\nписї старі й козацькі, анї більшіна драм і інтермедий, анї много,\nмного иньших праць, що довгі лїта лежали в рукописах присипані\nпилом або зберегали ся по курних хатах мужицьких та дяківських,\nпогорджені та зневажені тими нечисленними інтелїґентами, що\nз давен давна любили бігати на службу чужим богам і в погордї\nдо власного народа і єго питомого духового розвою нераз випере-\nджували й чужинцїв.\nРозвій осьвіти і національного почутя в остатньому віцї зро-\nдив і у нас між иньшим також пошану до тих памяток давнього\nдухового житя нашої нациї, зродив бажанє зібрати те, що ще мо-\nжна зібрати, що не затратилось в довгих лихолїтях знищене або\nвивезене на чужину, а на підставі того зібраного материялу вник-\nнути як мога в глуб душі тих давнїх поколїнь, що в тих скром-\nних письменських пробах знаходили собі інтерес і вдоволенє. І цї-\nкава річ, що чим більше призбируєть ся у нас тих памяток, чим\nдокладнїйше ми з ними познайомлюємось, тим яснїйше виринає\nі зазначуєть ся у нас думка про одноцїльність, непереривну суцїль-\nність лїтературної традициї і духових інтересів на протягу нашої\nдовговікової істориї. Піднесене думки про ту однотяглість і суцїль-\nність, обоснованє її подрібними та богатими фактами — отсе ва-\nжний здобуток новочасних праць історико-лїтературних у нас і на\nВкраїнї. Такі працї, хоч нераз на перший погляд дрібні і антиквар-\nські, в результатї дають тривкий і широкий підклад для нашого\nдальшого розвою і мусять швидше чи пізнїйше в широких і що\nраз ширших масах нашого народа відродити те почутя національ-\nної суцїльности та солїдарности, що проривало ся в великих хви-\nлях XVII віку, та не могло довго встояти ся. Чуючи себе нациєю\nсуцїльною і солїдарною в духових і економічних інтересах ми\nзнайдемо тодї в собі самих, в нашій солїдарности той огонь і за-\nпал до працї, котрого нам тепер так часто не стає, знайдемо\nі всї цїлою сутню відчуємо той спільний ідеал, котрого брак так\nмногих з поміж нас гонить на поклони чужим богам.\nУважаючи пізнанє нашої минувшини як в обсягу матеріяль-\nних фактів, так і в обсягу духової, лїтературної працї одним з\nконечних причинків до нашого ренесансу національного і бажаючи\nдокинути й свою цеглину до тої спільної будови, я предложив\nз початком 1895 року фільольоґічній секциї Наукового тов. імени\nШевченка плян видати в рядї задуманих тою секциєю „Памяток“",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          187,
+          72,
+          36,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "II",
+            "bbox_xywh": [
+              187,
+              72,
+              36,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "printing-continuation",
+        "kind": "body",
+        "bbox_xywh": [
+          183,
+          138,
+          934,
+          336
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "printing-continuation-line-01",
+            "text": "бувши надрукованим. Не попали в друк анї огнисті твори Івана",
+            "bbox_xywh": [
+              183,
+              138,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-02",
+            "text": "Вишенського, справедливо названі одним переписувачем „Книга",
+            "bbox_xywh": [
+              183,
+              172,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-03",
+            "text": "Злото“, анї знаменита Палїнодия Копистенського, анї наші лїто-",
+            "bbox_xywh": [
+              183,
+              206,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-04",
+            "text": "писї старі й козацькі, анї більшіна драм і інтермедий, анї много,",
+            "bbox_xywh": [
+              183,
+              239,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-05",
+            "text": "много иньших праць, що довгі лїта лежали в рукописах присипані",
+            "bbox_xywh": [
+              183,
+              273,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-06",
+            "text": "пилом або зберегали ся по курних хатах мужицьких та дяківських,",
+            "bbox_xywh": [
+              183,
+              306,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-07",
+            "text": "погорджені та зневажені тими нечисленними інтелїґентами, що",
+            "bbox_xywh": [
+              183,
+              340,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-08",
+            "text": "з давен давна любили бігати на службу чужим богам і в погордї",
+            "bbox_xywh": [
+              183,
+              374,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-09",
+            "text": "до власного народа і єго питомого духового розвою нераз випере-",
+            "bbox_xywh": [
+              183,
+              407,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "printing-continuation-line-10",
+            "text": "джували й чужинцїв.",
+            "bbox_xywh": [
+              183,
+              441,
+              934,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "national-tradition",
+        "kind": "body",
+        "bbox_xywh": [
+          180,
+          477,
+          940,
+          855
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "national-tradition-line-01",
+            "text": "Розвій осьвіти і національного почутя в остатньому віцї зро-",
+            "bbox_xywh": [
+              180,
+              477,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-02",
+            "text": "див і у нас між иньшим також пошану до тих памяток давнього",
+            "bbox_xywh": [
+              180,
+              511,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-03",
+            "text": "духового житя нашої нациї, зродив бажанє зібрати те, що ще мо-",
+            "bbox_xywh": [
+              180,
+              545,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-04",
+            "text": "жна зібрати, що не затратилось в довгих лихолїтях знищене або",
+            "bbox_xywh": [
+              180,
+              579,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-05",
+            "text": "вивезене на чужину, а на підставі того зібраного материялу вник-",
+            "bbox_xywh": [
+              180,
+              614,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-06",
+            "text": "нути як мога в глуб душі тих давнїх поколїнь, що в тих скром-",
+            "bbox_xywh": [
+              180,
+              648,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-07",
+            "text": "них письменських пробах знаходили собі інтерес і вдоволенє. І цї-",
+            "bbox_xywh": [
+              180,
+              682,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-08",
+            "text": "кава річ, що чим більше призбируєть ся у нас тих памяток, чим",
+            "bbox_xywh": [
+              180,
+              716,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-09",
+            "text": "докладнїйше ми з ними познайомлюємось, тим яснїйше виринає",
+            "bbox_xywh": [
+              180,
+              750,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-10",
+            "text": "і зазначуєть ся у нас думка про одноцїльність, непереривну суцїль-",
+            "bbox_xywh": [
+              180,
+              784,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-11",
+            "text": "ність лїтературної традициї і духових інтересів на протягу нашої",
+            "bbox_xywh": [
+              180,
+              819,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-12",
+            "text": "довговікової істориї. Піднесене думки про ту однотяглість і суцїль-",
+            "bbox_xywh": [
+              180,
+              853,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-13",
+            "text": "ність, обоснованє її подрібними та богатими фактами — отсе ва-",
+            "bbox_xywh": [
+              180,
+              887,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-14",
+            "text": "жний здобуток новочасних праць історико-лїтературних у нас і на",
+            "bbox_xywh": [
+              180,
+              921,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-15",
+            "text": "Вкраїнї. Такі працї, хоч нераз на перший погляд дрібні і антиквар-",
+            "bbox_xywh": [
+              180,
+              955,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-16",
+            "text": "ські, в результатї дають тривкий і широкий підклад для нашого",
+            "bbox_xywh": [
+              180,
+              990,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-17",
+            "text": "дальшого розвою і мусять швидше чи пізнїйше в широких і що",
+            "bbox_xywh": [
+              180,
+              1024,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-18",
+            "text": "раз ширших масах нашого народа відродити те почутя національ-",
+            "bbox_xywh": [
+              180,
+              1058,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-19",
+            "text": "ної суцїльности та солїдарности, що проривало ся в великих хви-",
+            "bbox_xywh": [
+              180,
+              1092,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-20",
+            "text": "лях XVII віку, та не могло довго встояти ся. Чуючи себе нациєю",
+            "bbox_xywh": [
+              180,
+              1126,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 4,
+                "end": 8,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 8,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-21",
+            "text": "суцїльною і солїдарною в духових і економічних інтересах ми",
+            "bbox_xywh": [
+              180,
+              1161,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-22",
+            "text": "знайдемо тодї в собі самих, в нашій солїдарности той огонь і за-",
+            "bbox_xywh": [
+              180,
+              1195,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-23",
+            "text": "пал до працї, котрого нам тепер так часто не стає, знайдемо",
+            "bbox_xywh": [
+              180,
+              1229,
+              940,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-24",
+            "text": "і всї цїлою сутню відчуємо той спільний ідеал, котрого брак так",
+            "bbox_xywh": [
+              180,
+              1263,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "national-tradition-line-25",
+            "text": "многих з поміж нас гонить на поклони чужим богам.",
+            "bbox_xywh": [
+              180,
+              1297,
+              940,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "collection-plan",
+        "kind": "body",
+        "bbox_xywh": [
+          183,
+          1336,
+          936,
+          211
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "collection-plan-line-01",
+            "text": "Уважаючи пізнанє нашої минувшини як в обсягу матеріяль-",
+            "bbox_xywh": [
+              183,
+              1336,
+              936,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "collection-plan-line-02",
+            "text": "них фактів, так і в обсягу духової, лїтературної працї одним з",
+            "bbox_xywh": [
+              183,
+              1371,
+              936,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "collection-plan-line-03",
+            "text": "конечних причинків до нашого ренесансу національного і бажаючи",
+            "bbox_xywh": [
+              183,
+              1406,
+              936,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "collection-plan-line-04",
+            "text": "докинути й свою цеглину до тої спільної будови, я предложив",
+            "bbox_xywh": [
+              183,
+              1441,
+              936,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "collection-plan-line-05",
+            "text": "з початком 1895 року фільольоґічній секциї Наукового тов. імени",
+            "bbox_xywh": [
+              183,
+              1476,
+              936,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "collection-plan-line-06",
+            "text": "Шевченка плян видати в рядї задуманих тою секциєю „Памяток“",
+            "bbox_xywh": [
+              183,
+              1512,
+              936,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i11-first-image-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "printing-continuation-line-04",
+        "reading": "більшіна",
+        "reason": "Printed spelling appears більшіна; verify enlarged type."
+      },
+      {
+        "line_id": "national-tradition-line-11",
+        "reading": "традициї",
+        "reason": "Historical spelling and diaeresis provisional."
+      }
+    ]
+  }
+}

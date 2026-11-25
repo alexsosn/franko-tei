@@ -1,0 +1,319 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 9,
+  "printed_page_observed": "II",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00009.jpg",
+  "source_image_sha256": "d19ee4c12967106163d10993a57eb518b52076bd198a2d71b77eda43ba44519c",
+  "reading": {
+    "reader_id": "gpt62-i9-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-front-matter-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned source image without embedded OCR or prior candidate. Transcribe printed edition; later accession marks and digital overlays excluded from edition text and documented separately in front-matter audit. Physical line geometry estimated (especially title blocks with widely separated display lines); language spans contextual, full code-point coverage. No verified claim.",
+    "raw_response": "II\nматичної лїтератури українсько - руської XVII—XVIII в.\n(памяток друкованих і недрукованих), деякі старі друки,\nне повторені потім, XVI—XVII в., з новійшої лїтератури\nдрукуєть ся ювилейний том писань Ів. Котляревського.\nМожна лише пожадати, щоби комісия мала матеріяльну\nспромогу як скорше прийти до висловленого ще з початку\nбажання: видавати що року один том материялів історич-\nних і один том материялів лїтературних.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "decorative end ornament",
+          "bbox_xywh": [
+            499,
+            524,
+            214,
+            32
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          168,
+          74,
+          34,
+          34
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "II",
+            "bbox_xywh": [
+              168,
+              74,
+              34,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commission-conclusion",
+        "kind": "body",
+        "bbox_xywh": [
+          165,
+          136,
+          898,
+          265
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commission-conclusion-line-01",
+            "text": "матичної лїтератури українсько - руської XVII—XVIII в.",
+            "bbox_xywh": [
+              165,
+              136,
+              898,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 41,
+                "end": 45,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 45,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 46,
+                "end": 51,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 51,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-conclusion-line-02",
+            "text": "(памяток друкованих і недрукованих), деякі старі друки,",
+            "bbox_xywh": [
+              165,
+              170,
+              898,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-conclusion-line-03",
+            "text": "не повторені потім, XVI—XVII в., з новійшої лїтератури",
+            "bbox_xywh": [
+              165,
+              203,
+              898,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 20,
+                "end": 23,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 23,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 24,
+                "end": 28,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 28,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-conclusion-line-04",
+            "text": "друкуєть ся ювилейний том писань Ів. Котляревського.",
+            "bbox_xywh": [
+              165,
+              236,
+              898,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-conclusion-line-05",
+            "text": "Можна лише пожадати, щоби комісия мала матеріяльну",
+            "bbox_xywh": [
+              165,
+              269,
+              898,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-conclusion-line-06",
+            "text": "спромогу як скорше прийти до висловленого ще з початку",
+            "bbox_xywh": [
+              165,
+              302,
+              898,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-conclusion-line-07",
+            "text": "бажання: видавати що року один том материялів історич-",
+            "bbox_xywh": [
+              165,
+              335,
+              898,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commission-conclusion-line-08",
+            "text": "них і один том материялів лїтературних.",
+            "bbox_xywh": [
+              165,
+              368,
+              898,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-i9-first-image-20261125",
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": []
+  }
+}

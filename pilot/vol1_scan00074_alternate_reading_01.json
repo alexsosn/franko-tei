@@ -1,0 +1,879 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 74,
+  "printed_page_observed": "LXV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00074.jpg",
+  "source_image_sha256": "ebdebaa69e2b35d85999cf15772f091f0313f4cf1d3336e96347335039cfb876",
+  "reading": {
+    "reader_id": "gpt6-first-image-native-vol1scan74-20261118",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "same-chatgpt-context-vol1-scans62-100-20261118",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Original pinned printed Volume I scan 74 native image first-reader text. No PDF OCR or same-page peer transcript used. Preserve 41 printed body rows (2 previous manuscript item + 28 catalogue manuscript items + 11 closing preface), distinct folio LXV and physically distinct footer series label and printer signature 9. Source line positions and geometry estimated. The numbered manuscript descriptions are Franko's list, not directly inspected medieval witnesses; dates/proper names must be independently checked. Raw draft unverified, no CER or claimed blind review.",
+    "raw_response": "LXV\nего докладнїйший опис і зміст у передмові до другого тому сеї\nзбірки.\n3. Рукописна збірка о. Теодора з Дубівця, в моїм\nпосїданю, походить також з XVII. а може і з XVI. в., in quarto,\nбез початку і кінця, містить богато статей апокріфічного, легендо-\nвого, проповідницького та полемічного змісту. Рукопис писаний\nдвома руками, не дуже дрібним полуставом, що по троха перехо-\nдить в курсив, а декуди курсивом. Докладнїйший опис подам у пе-\nредмові до другого тому.\n4. Рукописна збірка попа Стефана Теслевцьового,\nписана на Угорщинї при кінці XVII. або з початку XVIII. в., опи-\nсана буде докладно в „Записках Наук. Тов. ім. Шевченка“.\n5. Рукопис о. Яремецького-Білахевича, описаний\nмною по троха в Київской Старинѣ і в „Житю і Слові“. Писаний\nодною рукою він датований, так що ми можемо докладно знати,\nде і коли писані були поодинокі статї. Детальний опис подам\nу „Записках Наук. Тов. ім. Шевченка“.\n6. Рукопис о. Теодора Поповича Тухлянського, описаний д-ром\nО. Калитовським у Зорі 1885 р.\n7. Рукопис Іспаський, описаний мною в Житю і Слові\n(т. I, 1894 р.)\n8) Уривки Дрогобицького рукопису описані мною\nв „Зорі“ 1886.\n9. Замойський рукопис, що знаходить ся в бібліотеці\nльвівського університету, буде описаний в передмові до другого\nтому отсєї збірки.\n10. Так само до другого тому лишаю опис Ковельської\nПалеї, що знаходить ся в надворній бібліотеці у Віднї, бо в дру-\nгім томі менї прийдеть ся користувати ся сим рукописом для ви-\nданя двох важних новозавітних апокріфів.\nКінчаючи отсю передмову я розстаю ся з працею, що мало не\nчерез два роки завдавала менї богато труду та заразом була відпо-\nчивком серед важких обставин того духового і товариського житя,\nв яких менї доводилось жити. Я чую добре її хиби, та надїюсь, що\nсправедлива критика, витикаючи їх, зверне увагу й на ті тїсні гра-\nницї, в яких з гори знаходила ся моя змога — зробити сю книгу\nлїпшою, повнїйшою і більше відповідною вимогам сучасного видав-\nництва наукового. В кінці складаю тут щиру подяку всїм тим, що\nпричинили ся до виконаня отсєї працї, а поперед усього Впр. проф.\nМ. Грушевському за виданє в Тов. ім. Шевченка накладу на\nдрук книги, а товаришам М. Єндиву, учителеви в Голїградах за\nАпокріфи старозавітні.\n9",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          927,
+          59,
+          166,
+          89
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "LXV",
+            "bbox_xywh": [
+              960,
+              83,
+              104,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "vol2-preface-continuation",
+        "kind": "body",
+        "bbox_xywh": [
+          85,
+          140,
+          1040,
+          88
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "vol2-preface-continuation-l001",
+            "text": "его докладнїйший опис і зміст у передмові до другого тому сеї",
+            "bbox_xywh": [
+              107,
+              155,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "vol2-preface-continuation-l002",
+            "text": "збірки.",
+            "bbox_xywh": [
+              107,
+              189,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "manuscript-catalogue",
+        "kind": "body",
+        "bbox_xywh": [
+          85,
+          208,
+          1040,
+          972
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "manuscript-catalogue-l001",
+            "text": "3. Рукописна збірка о. Теодора з Дубівця, в моїм",
+            "bbox_xywh": [
+              107,
+              223,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l002",
+            "text": "посїданю, походить також з XVII. а може і з XVI. в., in quarto,",
+            "bbox_xywh": [
+              107,
+              257,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l003",
+            "text": "без початку і кінця, містить богато статей апокріфічного, легендо-",
+            "bbox_xywh": [
+              107,
+              291,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l004",
+            "text": "вого, проповідницького та полемічного змісту. Рукопис писаний",
+            "bbox_xywh": [
+              107,
+              325,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l005",
+            "text": "двома руками, не дуже дрібним полуставом, що по троха перехо-",
+            "bbox_xywh": [
+              107,
+              359,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l006",
+            "text": "дить в курсив, а декуди курсивом. Докладнїйший опис подам у пе-",
+            "bbox_xywh": [
+              107,
+              393,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l007",
+            "text": "редмові до другого тому.",
+            "bbox_xywh": [
+              107,
+              427,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l008",
+            "text": "4. Рукописна збірка попа Стефана Теслевцьового,",
+            "bbox_xywh": [
+              107,
+              461,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l009",
+            "text": "писана на Угорщинї при кінці XVII. або з початку XVIII. в., опи-",
+            "bbox_xywh": [
+              107,
+              495,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l010",
+            "text": "сана буде докладно в „Записках Наук. Тов. ім. Шевченка“.",
+            "bbox_xywh": [
+              107,
+              529,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l011",
+            "text": "5. Рукопис о. Яремецького-Білахевича, описаний",
+            "bbox_xywh": [
+              107,
+              563,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l012",
+            "text": "мною по троха в Київской Старинѣ і в „Житю і Слові“. Писаний",
+            "bbox_xywh": [
+              107,
+              597,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l013",
+            "text": "одною рукою він датований, так що ми можемо докладно знати,",
+            "bbox_xywh": [
+              107,
+              631,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l014",
+            "text": "де і коли писані були поодинокі статї. Детальний опис подам",
+            "bbox_xywh": [
+              107,
+              665,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l015",
+            "text": "у „Записках Наук. Тов. ім. Шевченка“.",
+            "bbox_xywh": [
+              107,
+              699,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l016",
+            "text": "6. Рукопис о. Теодора Поповича Тухлянського, описаний д-ром",
+            "bbox_xywh": [
+              107,
+              733,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l017",
+            "text": "О. Калитовським у Зорі 1885 р.",
+            "bbox_xywh": [
+              107,
+              767,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l018",
+            "text": "7. Рукопис Іспаський, описаний мною в Житю і Слові",
+            "bbox_xywh": [
+              107,
+              801,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l019",
+            "text": "(т. I, 1894 р.)",
+            "bbox_xywh": [
+              107,
+              835,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l020",
+            "text": "8) Уривки Дрогобицького рукопису описані мною",
+            "bbox_xywh": [
+              107,
+              869,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l021",
+            "text": "в „Зорі“ 1886.",
+            "bbox_xywh": [
+              107,
+              903,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l022",
+            "text": "9. Замойський рукопис, що знаходить ся в бібліотеці",
+            "bbox_xywh": [
+              107,
+              937,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l023",
+            "text": "львівського університету, буде описаний в передмові до другого",
+            "bbox_xywh": [
+              107,
+              971,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l024",
+            "text": "тому отсєї збірки.",
+            "bbox_xywh": [
+              107,
+              1005,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l025",
+            "text": "10. Так само до другого тому лишаю опис Ковельської",
+            "bbox_xywh": [
+              107,
+              1039,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l026",
+            "text": "Палеї, що знаходить ся в надворній бібліотеці у Віднї, бо в дру-",
+            "bbox_xywh": [
+              107,
+              1073,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l027",
+            "text": "гім томі менї прийдеть ся користувати ся сим рукописом для ви-",
+            "bbox_xywh": [
+              107,
+              1107,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "manuscript-catalogue-l028",
+            "text": "даня двох важних новозавітних апокріфів.",
+            "bbox_xywh": [
+              107,
+              1141,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "closing-preface",
+        "kind": "body",
+        "bbox_xywh": [
+          85,
+          1160,
+          1040,
+          394
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "closing-preface-l001",
+            "text": "Кінчаючи отсю передмову я розстаю ся з працею, що мало не",
+            "bbox_xywh": [
+              107,
+              1175,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l002",
+            "text": "через два роки завдавала менї богато труду та заразом була відпо-",
+            "bbox_xywh": [
+              107,
+              1209,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l003",
+            "text": "чивком серед важких обставин того духового і товариського житя,",
+            "bbox_xywh": [
+              107,
+              1243,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l004",
+            "text": "в яких менї доводилось жити. Я чую добре її хиби, та надїюсь, що",
+            "bbox_xywh": [
+              107,
+              1277,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l005",
+            "text": "справедлива критика, витикаючи їх, зверне увагу й на ті тїсні гра-",
+            "bbox_xywh": [
+              107,
+              1311,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l006",
+            "text": "ницї, в яких з гори знаходила ся моя змога — зробити сю книгу",
+            "bbox_xywh": [
+              107,
+              1345,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l007",
+            "text": "лїпшою, повнїйшою і більше відповідною вимогам сучасного видав-",
+            "bbox_xywh": [
+              107,
+              1379,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l008",
+            "text": "ництва наукового. В кінці складаю тут щиру подяку всїм тим, що",
+            "bbox_xywh": [
+              107,
+              1413,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l009",
+            "text": "причинили ся до виконаня отсєї працї, а поперед усього Впр. проф.",
+            "bbox_xywh": [
+              107,
+              1447,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l010",
+            "text": "М. Грушевському за виданє в Тов. ім. Шевченка накладу на",
+            "bbox_xywh": [
+              107,
+              1481,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-preface-l011",
+            "text": "друк книги, а товаришам М. Єндиву, учителеви в Голїградах за",
+            "bbox_xywh": [
+              107,
+              1515,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "printer-footer",
+        "kind": "other",
+        "bbox_xywh": [
+          173,
+          1600,
+          862,
+          80
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-caption",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              189,
+              1621,
+              314,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "printer-signature",
+            "text": "9",
+            "bbox_xywh": [
+              963,
+              1621,
+              35,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "vol2-preface-continuation-l001",
+        "reading": "его докладнїйший опис і зміст у передмо",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "vol2-preface-continuation-l002",
+        "reading": "збірки.",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l001",
+        "reading": "3. Рукописна збірка о. Теодора з Дубівц",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l002",
+        "reading": "посїданю, походить також з XVII. а може",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l003",
+        "reading": "без початку і кінця, містить богато ста",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l004",
+        "reading": "вого, проповідницького та полемічного з",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l005",
+        "reading": "двома руками, не дуже дрібним полуставо",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l006",
+        "reading": "дить в курсив, а декуди курсивом. Докла",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l007",
+        "reading": "редмові до другого тому.",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l008",
+        "reading": "4. Рукописна збірка попа Стефана Теслев",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l009",
+        "reading": "писана на Угорщинї при кінці XVII. або ",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l010",
+        "reading": "сана буде докладно в „Записках Наук. То",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l011",
+        "reading": "5. Рукопис о. Яремецького-Білахевича, о",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l012",
+        "reading": "мною по троха в Київской Старинѣ і в „Ж",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l013",
+        "reading": "одною рукою він датований, так що ми мо",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l014",
+        "reading": "де і коли писані були поодинокі статї. ",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l015",
+        "reading": "у „Записках Наук. Тов. ім. Шевченка“.",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l016",
+        "reading": "6. Рукопис о. Теодора Поповича Тухлянсь",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l017",
+        "reading": "О. Калитовським у Зорі 1885 р.",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l018",
+        "reading": "7. Рукопис Іспаський, описаний мною в Ж",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l019",
+        "reading": "(т. I, 1894 р.)",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l020",
+        "reading": "8) Уривки Дрогобицького рукопису описан",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l021",
+        "reading": "в „Зорі“ 1886.",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l022",
+        "reading": "9. Замойський рукопис, що знаходить ся ",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l023",
+        "reading": "львівського університету, буде описаний",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l024",
+        "reading": "тому отсєї збірки.",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l025",
+        "reading": "10. Так само до другого тому лишаю опис",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l026",
+        "reading": "Палеї, що знаходить ся в надворній бібл",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l027",
+        "reading": "гім томі менї прийдеть ся користувати с",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l028",
+        "reading": "даня двох важних новозавітних апокріфів",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l001",
+        "reading": "Кінчаючи отсю передмову я розстаю ся з ",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l002",
+        "reading": "через два роки завдавала менї богато тр",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l003",
+        "reading": "чивком серед важких обставин того духов",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l004",
+        "reading": "в яких менї доводилось жити. Я чую добр",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l005",
+        "reading": "справедлива критика, витикаючи їх, звер",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l006",
+        "reading": "ницї, в яких з гори знаходила ся моя зм",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l007",
+        "reading": "лїпшою, повнїйшою і більше відповідною ",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l008",
+        "reading": "ництва наукового. В кінці складаю тут щ",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l009",
+        "reading": "причинили ся до виконаня отсєї працї, а",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l010",
+        "reading": "М. Грушевському за виданє в Тов. ім. Ше",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "closing-preface-l011",
+        "reading": "друк книги, а товаришам М. Єндиву, учит",
+        "reason": "Source-image-first draft of Franko historical Ukrainian. Printed manuscript names, years, Latin bibliographical terminology, punctuation and line-end hyphenation still require independent comparison with the original scan. Text is not a verified reading."
+      },
+      {
+        "line_id": "manuscript-catalogue-l008",
+        "reading": "Теслевцьового",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "manuscript-catalogue-l011",
+        "reading": "Яремецького-Білахевича",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "manuscript-catalogue-l016",
+        "reading": "Тухлянського",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "manuscript-catalogue-l012",
+        "reading": "Київской Старинѣ",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "manuscript-catalogue-l022",
+        "reading": "Замойський",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "manuscript-catalogue-l025",
+        "reading": "Ковельської",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "closing-preface-l010",
+        "reading": "М. Грушевському",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "closing-preface-l011",
+        "reading": "М. Єндиву",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "manuscript-catalogue-l009",
+        "reading": "XVII. або з початку XVIII",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      },
+      {
+        "line_id": "manuscript-catalogue-l002",
+        "reading": "in quarto",
+        "reason": "Unverified historical spelling, proper name, manuscript date or Latin bibliographic form. A different printed form may materially affect identification."
+      }
+    ]
+  }
+}

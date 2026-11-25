@@ -22,7 +22,7 @@ from .pilot_tei import (
 
 _READING_RE = re.compile(
     r"^vol([1-5])_scan([0-9]{5})_"
-    r"(single_reading|exposed_reading|independent_image_reading_b)\.json$"
+    r"(single_reading|exposed_reading|independent_image_reading_b|alternate_reading_0[12])\.json$"
 )
 _SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 _CORE_PATHS = frozenset({

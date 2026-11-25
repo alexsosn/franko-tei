@@ -2,14 +2,22 @@
 
 The corpus is **not yet a verified research-grade edition**. Existing source-linked page JSONs are frozen first-reader proposals. Schemas and image checks establish provenance and structure only, not philological accuracy.
 
+## Current publication policy
+
+Per the user decision of 2026-11-25, the immediate goal is a complete agent-generated draft of text and provisional markup for all five volumes. Human proofreading is deferred to the review interface. Agent-only, logically distinct batch review plus technical source/structure checks is sufficient for usable `agent_unverified` working-corpus merges and viewer publication. Preserve known uncertainty, conflicting readings and incomplete markup explicitly; do not present them as verified. Exhaustive per-page philological adjudication is reserved for verified promotion, not routine ingestion.
+
 ## One development workstream, many pages
 
 - Select a coherent source range or problem cluster, normally **25–100 pages in one PR** where layout/script permits. Very difficult historical letterforms and large annotations can justify smaller batches. Do not create a GitHub issue, PR, test file or Actions workflow for each page.
 - Before transcription, inspect the original image, source manifest, printed folio and content regions. Preserve full physical lines and the initial reading with explicit uncertainty notes. Never silently reconstruct from surrounding pages or trust the embedded PDF OCR as a diplomatic reference.
-- Add frozen candidate files to `pilot/` using the pattern `vol{volume}_scan{scan:05d}_single_reading.json`. Use the documented `_exposed_reading.json` suffix if earlier OCR/peer text was visible, and the existing `_independent_image_reading_b.json` for a genuinely separately recorded additional candidate. The suffix by itself **does not** establish blind independence.
+- Add frozen candidate files to `pilot/` using the pattern `vol{volume}_scan{scan:05d}_single_reading.json`. Use the documented `_exposed_reading.json` suffix if earlier OCR/peer text was visible, and the existing `_independent_image_reading_b.json` for a genuinely separately recorded additional candidate. The suffix by itself **does not** establish blind independence. Use `_alternate_reading_01.json` or `_alternate_reading_02.json` for a competing frozen first-pass version without claiming blindness. Preserve the exact original JSON and its source branch/commit. Further slots can be added to shared discovery and viewer tests when necessary. Usable unverified drafts may merge after source/structure checks and engineering review; textual adjudication is required for verified promotion, not working-corpus inclusion.
 - Per-page status, image hash, context provenance, physical lines, nontext coverage and unresolved glyphs live in the JSON. Keep historical source audits and genuinely useful source-specific tests. **Do not** add another page-specific workflow or copy a full test module for each new reading.
 - A change to the *code or its validation behavior* follows research → plan → red-first TDD → implementation → tests → adversarial code review. Adding ordinary page text under the existing schema is tested by the shared suite and pinned-source CI, without manufacturing a missing-file red build.
 - Independent review is still necessary for promotion: two isolated image-first readings and a third source-adjudicating reviewer, with explicit resolution of old letters, titla and possible word-level hallucinations. Green CI and the same-context engineering review cannot upgrade `agent_unverified`.
+
+The I/62–77 alternate candidate files are exact Git blobs from PR #121, commit `bddd322817a20d6b623b87733412390b0f8361d1`; the primary files come from PR #122. Both are unverified and neither filename grants priority or independence. The historical source audit is preserved separately.
+
+The second numbered alternate slot preserves four earlier working candidates (I/20, II/100, III/130, V/100), copied byte-for-byte from PR #30 at `c22034352571df2dee89ff9c2914a19fc4d216a4`. See [the archive note](../pilot/image_first/ARCHIVE.md) for original Markdown and same-context reinspection records. The historical V/10 incomplete facsimile material remains outside active corpus discovery.
 
 ## Commands
 

@@ -1,0 +1,234 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 75,
+  "printed_page_observed": "LXVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00075.jpg",
+  "source_image_sha256": "7f461453987a821e4982223821d58d4187839671774769aa93d4226d2eaa04ac",
+  "reading": {
+    "reader_id": "gpt6-image-first-volume1-page75-20261119",
+    "model_id": "GPT-6",
+    "model_version": null,
+    "context_id": "single-chatgpt-context-vol1-scans62-100-20261119",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Original printed Volume I scan 75 (LXVI), native image directly visually read before same-page PDF OCR or peer reading. 5 physical text rows conclude Franko's acknowledgments, with a separate centered dateline and a right-aligned italic signature. Unlike ordinary dense source pages, most of this image is intentionally blank, with a decorative rule/ornament. Record true printed text positions, not fictitious additional 41 lines. All boxes are estimated and source copy must receive isolated second-reader visual review. Physical scan 76 is a different two-column printed index and should not be joined to this preface. No accuracy/CER or independent-review assertion.",
+    "raw_response": "LXVI\nдоставленє менї рукопису о. Яремецького-Білахевича, о. М. Зубриць-\nкому в Мшанци за доставленє менї рукопису Дрогобицького, В. Гна-\nтюкови за доставленє менї рукопису о. Ст. Теслевцьового і селяни-\nнови Гулейчукови з Іспаса над Черемошем за доставленє менї\nІспаського рукопису.\nЛьвів 9. сїчня 1897.\nДр. Іван Франко.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            515,
+            581,
+            252,
+            45
+          ],
+          "description": "Centered decorative printer's rule and circular ornament; no legible alphabetic text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          158,
+          62,
+          140,
+          83
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "LXVI",
+            "bbox_xywh": [
+              176,
+              78,
+              100,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "closing-acknowledgments",
+        "kind": "body",
+        "bbox_xywh": [
+          151,
+          132,
+          1031,
+          210
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "closing-acknowledgments-l001",
+            "text": "доставленє менї рукопису о. Яремецького-Білахевича, о. М. Зубриць-",
+            "bbox_xywh": [
+              166,
+              143,
+              992,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-acknowledgments-l002",
+            "text": "кому в Мшанци за доставленє менї рукопису Дрогобицького, В. Гна-",
+            "bbox_xywh": [
+              166,
+              178,
+              992,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-acknowledgments-l003",
+            "text": "тюкови за доставленє менї рукопису о. Ст. Теслевцьового і селяни-",
+            "bbox_xywh": [
+              166,
+              213,
+              992,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-acknowledgments-l004",
+            "text": "нови Гулейчукови з Іспаса над Черемошем за доставленє менї",
+            "bbox_xywh": [
+              166,
+              248,
+              992,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "closing-acknowledgments-l005",
+            "text": "Іспаського рукопису.",
+            "bbox_xywh": [
+              166,
+              283,
+              992,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "dateline",
+        "kind": "other",
+        "bbox_xywh": [
+          296,
+          333,
+          338,
+          58
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "dateline-l001",
+            "text": "Львів 9. сїчня 1897.",
+            "bbox_xywh": [
+              308,
+              347,
+              308,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "author-signature",
+        "kind": "other",
+        "bbox_xywh": [
+          780,
+          385,
+          321,
+          67
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "author-signature-l001",
+            "text": "Др. Іван Франко.",
+            "bbox_xywh": [
+              794,
+              401,
+              280,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "closing-acknowledgments-l001",
+        "reading": "Яремецького-Білахевича",
+        "reason": "Personal name and exact historical orthography need independent source comparison."
+      },
+      {
+        "line_id": "closing-acknowledgments-l001",
+        "reading": "Зубриць-",
+        "reason": "Source-visible line-final surname hyphen retained, exact letters require an isolated visual proofread."
+      },
+      {
+        "line_id": "closing-acknowledgments-l002",
+        "reading": "Мшанци",
+        "reason": "Historical local form and letters in a proper place name not independently adjudicated."
+      },
+      {
+        "line_id": "closing-acknowledgments-l002",
+        "reading": "В. Гна-",
+        "reason": "Split proper name; preserve original physical line boundary and punctuation."
+      },
+      {
+        "line_id": "closing-acknowledgments-l003",
+        "reading": "Теслевцьового",
+        "reason": "Potentially doubtful surname and old spelling; compare with source."
+      },
+      {
+        "line_id": "closing-acknowledgments-l004",
+        "reading": "Гулейчукови",
+        "reason": "Another proper name with possible reading error. Historical-script proofread still missing."
+      },
+      {
+        "line_id": "closing-acknowledgments-l005",
+        "reading": "Іспаського рукопису.",
+        "reason": "Printed ending of acknowledgments, source spelling provisional."
+      },
+      {
+        "line_id": "dateline-l001",
+        "reading": "Львів 9. сїчня 1897.",
+        "reason": "Exact date punctuation, historical ї and source type spacing not independently checked."
+      },
+      {
+        "line_id": "author-signature-l001",
+        "reading": "Др. Іван Франко.",
+        "reason": "Printed italicized signature is transcribed as plain text; the italic typography is not yet encoded."
+      }
+    ]
+  }
+}
