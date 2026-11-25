@@ -1,0 +1,475 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 91,
+  "printed_page_observed": "16",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00091.jpg",
+  "source_image_sha256": "cec5ca1fc17c01cdad164ebccfbe0e1ece0b899b062b5a6bfd94c840a7834fac",
+  "reading": {
+    "reader_id": "gpt62-i91-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i91-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG, without embedded OCR or peer page reading; surrounding project context visible, not isolated corroboration. Preserve physical lines, observed folio only, source brackets, separate apparatus, printer furniture and later handwriting as distinct regions. Superscript note markers literal approximations, no semantic links asserted. Glyphs and geometry approximate; manifest SHA pending native-byte/XML checks.",
+    "raw_response": "16\nАналоґічний текст находить ся також в рукописї о. Теодора з Ду-\nбівця, стор. 103; відміни єго супроти тексту о. Білахевича зведені\nв примітках. Текст аналоґічний до В. і Г., тілько з виразним початком\n„Тако егда насади Господь виноградъ“, без чого наші тексти ро-\nблять ся темні, напечатаний в збірцї Пипіна (А. Н. П ы п и н ъ, Отре-\nченныя книги, в виданю „Памятники старинной русской литературы из-\nдаваемые графомъ Григоріемъ Кушелевымъ-Безбородко“, выпускъ III.,\nС. Петербургъ, 1862), стор. 7, по рукопису XVII. в. із Румянцівського\nмузея ч. 380.\nЗведені тут апокріфічні леґенди про Сатанаїла і бунт ангелів мають\nбез сумнїву дуалїстичний характер, хоча не менше виразно видно в них\nзмаганє прислонити сей дуалїзм акцентованєм ангельського початку Са-\nтанаїла і діяволів. Тексти з більше різким дуалїстичним характером за-\nховали ся у Великорусів, особливо у раскольників; один такий текст по\nСоловецькому рукопису XVII. в. напечатав П о р ф и р ь е в ъ, op. cit. стор.\n87—89. Дуалїстичні леґенди о сотвореню сьвіта були в остатнїх роках\nпредметом вельми широких і важних дослїдів А. Н. В е с е л о в с ь к о г о,\nРазысканія въ области русскихъ духовныхъ стиховъ гл. XI—XV і М.\nД р а г о м а н о в а, „Забѣлѣжки върху славянскитѣ религиозно-етически ле-\nгенди, II. Дуалистическото миротворение“ (Сборникъ за народни умотво-\nрения, наука и книжнина, издава министерството на народното просвѣ-\nщение, кн. VIII, 257—314 і кн. X, 3—68).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            526,
+            1037,
+            234,
+            18
+          ],
+          "description": "Decorative closing rule."
+        },
+        {
+          "bbox_xywh": [
+            158,
+            1074,
+            993,
+            630
+          ],
+          "description": "Blank lower page; isolated scan marks not text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          181,
+          85,
+          41,
+          34
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-l001",
+            "text": "16",
+            "bbox_xywh": [
+              181,
+              85,
+              41,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-comparison",
+        "kind": "body",
+        "bbox_xywh": [
+          178,
+          153,
+          958,
+          315
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-comparison-l001",
+            "text": "Аналоґічний текст находить ся також в рукописї о. Теодора з Ду-",
+            "bbox_xywh": [
+              178,
+              153,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l002",
+            "text": "бівця, стор. 103; відміни єго супроти тексту о. Білахевича зведені",
+            "bbox_xywh": [
+              178,
+              188,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l003",
+            "text": "в примітках. Текст аналоґічний до В. і Г., тілько з виразним початком",
+            "bbox_xywh": [
+              178,
+              223,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l004",
+            "text": "„Тако егда насади Господь виноградъ“, без чого наші тексти ро-",
+            "bbox_xywh": [
+              178,
+              259,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l005",
+            "text": "блять ся темні, напечатаний в збірцї Пипіна (А. Н. П ы п и н ъ, Отре-",
+            "bbox_xywh": [
+              178,
+              294,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l006",
+            "text": "ченныя книги, в виданю „Памятники старинной русской литературы из-",
+            "bbox_xywh": [
+              178,
+              329,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l007",
+            "text": "даваемые графомъ Григоріемъ Кушелевымъ-Безбородко“, выпускъ III.,",
+            "bbox_xywh": [
+              178,
+              365,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l008",
+            "text": "С. Петербургъ, 1862), стор. 7, по рукопису XVII. в. із Румянцівського",
+            "bbox_xywh": [
+              178,
+              400,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-comparison-l009",
+            "text": "музея ч. 380.",
+            "bbox_xywh": [
+              178,
+              435,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-dualism",
+        "kind": "body",
+        "bbox_xywh": [
+          178,
+          473,
+          958,
+          457
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-dualism-l001",
+            "text": "Зведені тут апокріфічні леґенди про Сатанаїла і бунт ангелів мають",
+            "bbox_xywh": [
+              178,
+              473,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l002",
+            "text": "без сумнїву дуалїстичний характер, хоча не менше виразно видно в них",
+            "bbox_xywh": [
+              178,
+              508,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l003",
+            "text": "змаганє прислонити сей дуалїзм акцентованєм ангельського початку Са-",
+            "bbox_xywh": [
+              178,
+              544,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l004",
+            "text": "танаїла і діяволів. Тексти з більше різким дуалїстичним характером за-",
+            "bbox_xywh": [
+              178,
+              579,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l005",
+            "text": "ховали ся у Великорусів, особливо у раскольників; один такий текст по",
+            "bbox_xywh": [
+              178,
+              614,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l006",
+            "text": "Соловецькому рукопису XVII. в. напечатав П о р ф и р ь е в ъ, op. cit. стор.",
+            "bbox_xywh": [
+              178,
+              650,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l007",
+            "text": "87—89. Дуалїстичні леґенди о сотвореню сьвіта були в остатнїх роках",
+            "bbox_xywh": [
+              178,
+              685,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l008",
+            "text": "предметом вельми широких і важних дослїдів А. Н. В е с е л о в с ь к о г о,",
+            "bbox_xywh": [
+              178,
+              720,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l009",
+            "text": "Разысканія въ области русскихъ духовныхъ стиховъ гл. XI—XV і М.",
+            "bbox_xywh": [
+              178,
+              756,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l010",
+            "text": "Д р а г о м а н о в а, „Забѣлѣжки върху славянскитѣ религиозно-етически ле-",
+            "bbox_xywh": [
+              178,
+              791,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l011",
+            "text": "генди, II. Дуалистическото миротворение“ (Сборникъ за народни умотво-",
+            "bbox_xywh": [
+              178,
+              827,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l012",
+            "text": "рения, наука и книжнина, издава министерството на народното просвѣ-",
+            "bbox_xywh": [
+              178,
+              862,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-dualism-l013",
+            "text": "щение, кн. VIII, 257—314 і кн. X, 3—68).",
+            "bbox_xywh": [
+              178,
+              897,
+              958,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-comparison-l001",
+        "reading": "Аналоґічний текст находить ся також в рукописї о. Теодора з Ду-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l002",
+        "reading": "бівця, стор. 103; відміни єго супроти тексту о. Білахевича зведені",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l003",
+        "reading": "в примітках. Текст аналоґічний до В. і Г., тілько з виразним початком",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l004",
+        "reading": "„Тако егда насади Господь виноградъ“, без чого наші тексти ро-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l005",
+        "reading": "блять ся темні, напечатаний в збірцї Пипіна (А. Н. П ы п и н ъ, Отре-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l006",
+        "reading": "ченныя книги, в виданю „Памятники старинной русской литературы из-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l007",
+        "reading": "даваемые графомъ Григоріемъ Кушелевымъ-Безбородко“, выпускъ III.,",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l008",
+        "reading": "С. Петербургъ, 1862), стор. 7, по рукопису XVII. в. із Румянцівського",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-comparison-l009",
+        "reading": "музея ч. 380.",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l001",
+        "reading": "Зведені тут апокріфічні леґенди про Сатанаїла і бунт ангелів мають",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l002",
+        "reading": "без сумнїву дуалїстичний характер, хоча не менше виразно видно в них",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l003",
+        "reading": "змаганє прислонити сей дуалїзм акцентованєм ангельського початку Са-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l004",
+        "reading": "танаїла і діяволів. Тексти з більше різким дуалїстичним характером за-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l005",
+        "reading": "ховали ся у Великорусів, особливо у раскольників; один такий текст по",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l006",
+        "reading": "Соловецькому рукопису XVII. в. напечатав П о р ф и р ь е в ъ, op. cit. стор.",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l007",
+        "reading": "87—89. Дуалїстичні леґенди о сотвореню сьвіта були в остатнїх роках",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l008",
+        "reading": "предметом вельми широких і важних дослїдів А. Н. В е с е л о в с ь к о г о,",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l009",
+        "reading": "Разысканія въ области русскихъ духовныхъ стиховъ гл. XI—XV і М.",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l010",
+        "reading": "Д р а г о м а н о в а, „Забѣлѣжки върху славянскитѣ религиозно-етически ле-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l011",
+        "reading": "генди, II. Дуалистическото миротворение“ (Сборникъ за народни умотво-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l012",
+        "reading": "рения, наука и книжнина, издава министерството на народното просвѣ-",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      },
+      {
+        "line_id": "editorial-dualism-l013",
+        "reading": "щение, кн. VIII, 257—314 і кн. X, 3—68).",
+        "reason": "Provisional printed source reading; historical spelling, titla, glyphs, names and typography require isolated visual verification."
+      }
+    ]
+  }
+}
