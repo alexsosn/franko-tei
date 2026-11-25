@@ -1,0 +1,19 @@
+name: Text review bundle (pilot)
+description: Submit a small batch of source-pinned proofreading decisions for editorial review.
+title: "[Review] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a public submission. Your GitHub account will be credited for accepted contributions.
+        Submit only your own decisions, no personal information or secrets.
+        A proposal is pending until independently reviewed; it is not a verified edition.
+        Pilot limit: 25 decisions, 32 KiB of JSON. Keep a local copy.
+  - type: textarea
+    id: bundle
+    attributes:
+      label: Review bundle
+      description: Paste the exact exported JSON (no additional Markdown fences).
+      render: json
+    validations:
+      required: true
