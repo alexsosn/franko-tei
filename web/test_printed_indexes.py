@@ -35,6 +35,7 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertIn("стор. 197", varilo["detail"])
         self.assertEqual(varilo["refs"][1]["role"], "variant")
         self.assertEqual([len(motifs), len(glossary)], [17, 189])
+        self.assertEqual(len(works), 272)
         self.assertEqual(sum(e["source"]["scan"] == 431 for e in works), 33)
         for scan in range(431, 437):
             draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)).read_text(encoding="utf-8"))
@@ -138,6 +139,17 @@ class PrintedIndexesTest(unittest.TestCase):
             self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][0]["structured_scans"], [423, 424, 425])
             (pilot / "vol1_scan00425_single_reading.json").unlink()
             self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][0]["structured_scans"], [423])
+
+    def test_works_continuation_pair_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot = Path(tmp)
+            for scan in [431, 432, 433, 434, 435, 436]:
+                source = ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)
+                shutil.copyfile(source, pilot / source.name)
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][1]["structured_scans"], list(range(431, 437)))
+            (pilot / "vol1_scan00432_single_reading.json").unlink()
+            (pilot / "vol1_scan00435_single_reading.json").unlink()
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][1]["structured_scans"], [431, 436])
 
     def test_browser_navigation(self):
         from playwright.sync_api import sync_playwright, expect
