@@ -8,6 +8,8 @@ import argparse
 import copy
 import hashlib
 import json
+import re
+import unicodedata
 from pathlib import Path
 import subprocess
 
@@ -50,6 +52,58 @@ def editor_identity(editor):
     return editor["id"], editor["login"]
 
 
+# Printed superscript numerals (including ranges and incomplete range ends).
+# These are lexical evidence only, not inferred links to apparatus notes.
+_SUPER_DIGITS = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+_MARKER = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+(?:[—–-][⁰¹²³⁴⁵⁶⁷⁸⁹]+)?[)—–-]?")
+_WITNESS_LABEL = re.compile(r"^[А-ЯІЇЄҐ]\. Рукопис\b")
+_WITNESS_PAGES = re.compile(r" стор\. [0-9]+(?:—[0-9]+)?\.$")
+
+
+def _markers(text):
+    result = []
+    for match in _MARKER.finditer(text):
+        # Include the immediate preceding nonspace token and any intervening
+        # whitespace. A changed attachment is a structural edit, not a typo.
+        prefix = text[:match.start()]
+        anchor = re.search(r"\S+\s*$", prefix)
+        require(anchor is not None, "unanchored apparatus marker")
+        result.append((match.group(), anchor.group(), match.start(), match.end()))
+    return result
+
+
+def apparatus_mapping(original, replacement):
+    before, after = _markers(original), _markers(replacement)
+    require([(m[0], m[1]) for m in before] == [(m[0], m[1]) for m in after],
+            "apparatus marker or attached token changed")
+    # Repeated identical attachments are ambiguous without explicit linkage.
+    require(len({(m[0], m[1]) for m in before}) == len(before),
+            "ambiguous repeated apparatus attachment")
+    return [{"literal": a[0], "source_start": a[2], "source_end": a[3],
+             "start": b[2], "end": b[3]} for a, b in zip(before, after)]
+
+
+def _validate_correction(source, region, line, replacement):
+    require(not line.get("unreadable_suffix"), "gap correction requires structural review")
+    require(not any(link["marker_line_id"] == line["id"]
+                    for link in source["reading"].get("source_note_links", [])),
+            "linked source note marker requires structural review")
+    if region["kind"] == "heading":
+        # Narrow pilot: single-line printed witness labels only, with exact
+        # siglum, page reference, punctuation and numeric tokens preserved.
+        old, new = line["text"], replacement
+        prefix, suffix = _WITNESS_LABEL.match(old), _WITNESS_PAGES.search(old)
+        require(len(region["lines"]) == 1 and prefix and suffix
+                and new.startswith(prefix.group()) and new.endswith(suffix.group()),
+                "non-witness heading requires structural review")
+        structural = lambda s: [c for c in s if c.isnumeric() or unicodedata.category(c).startswith("P")]
+        require(structural(old) == structural(new), "witness label punctuation or numerals changed")
+        require(not _markers(old) and not _markers(new), "heading apparatus requires structural review")
+    else:
+        require(region["kind"] == "body", "non-body correction requires structural review")
+        apparatus_mapping(line["text"], replacement)
+
+
 def adjudicate(record, event_id, outcome, editor, reason, approved_digest, source_loader, *, agent=None):
     validate_intake(record, source_loader)
     match(SHA256, approved_digest, "approved intake digest")
@@ -82,11 +136,7 @@ def adjudicate(record, event_id, outcome, editor, reason, approved_digest, sourc
         region = next(r for r in source["reading"]["regions"] if r["id"] == target["region_id"])
         line = next(l for l in region["lines"] if l["id"] == target["line_id"])
         if event["decision"] == "correct":
-            require(region["kind"] == "body", "non-body correction requires structural review")
-            require(not line.get("unreadable_suffix"), "gap correction requires structural review")
-            require(not any(link["marker_line_id"] == line["id"]
-                            for link in source["reading"].get("source_note_links", [])),
-                    "source note marker requires structural review")
+            _validate_correction(source, region, line, event["replacement"])
     if agent is not None:
         return {"schema_version": "franko-review-agent-adjudication-v1",
                 "bundle_id": record["bundle"]["bundle_id"], "event_id": event_id,
@@ -185,6 +235,9 @@ def project_lines(raw, path, ledger):
                 else:
                     row.update(review_kind="human", adjudicator_id=decision["adjudicator_id"])
                 if corrected:
+                    mapping = apparatus_mapping(line["text"], event["replacement"])
+                    if mapping:
+                        row.update(apparatus_status="unlinked_markers_preserved", apparatus_markers=mapping)
                     row.update(text=event["replacement"], language_spans=[],
                                language_status="needs_reannotation",
                                uncertainty_status="source_notes_need_reassessment")
