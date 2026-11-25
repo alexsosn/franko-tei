@@ -103,6 +103,7 @@
   async function open(){
     const id=++serial,active=candidates[Number(el('choice').value)],ref=el('ref').value.trim(),selected=renderedLines.find(r=>r.btn.getAttribute('aria-pressed')==='true')?.line.id;
     el('reviewBody').hidden=true;el('reviewRecovery').hidden=true;imageReady=false;storageFailed=false;el('reviewCrop').hidden=true;
+    const previousImage=el('reviewImage');previousImage.onload=null;previousImage.onerror=null;previousImage.removeAttribute('src');el('reviewFullImage').removeAttribute('href');
     el('reviewDialog').showModal();status('Loading pinned reading…');
     try{
       stored=null;
@@ -145,7 +146,7 @@
       el('reviewSource').textContent='Volume '+v+' · scan '+n+' · '+d.reading.reader_id+' · '+commit.slice(0,12);
       el('reviewLine').replaceChildren(...list.map(({line,region},i)=>new Option((i+1)+' · '+region.kind+' · '+line.text.slice(0,32),line.id)));
       const img=el('reviewImage');el('reviewFullImage').href=asset(image.path);
-      const ready=()=>{if(id!==serial||!el('reviewDialog').open)return;imageReady=img.naturalWidth===p.width&&img.naturalHeight===p.height&&img.naturalWidth>0;uiText(el('reviewImageStatus'),imageReady?'Scan available; line geometry is approximate.':'Image unavailable; confirmation and correction disabled.');paint();};
+      const ready=()=>{if(id!==serial||!el('reviewDialog').open)return;imageReady=img.complete&&img.currentSrc===el('reviewFullImage').href&&img.naturalWidth===p.width&&img.naturalHeight===p.height&&img.naturalWidth>0;uiText(el('reviewImageStatus'),imageReady?'Scan available; line geometry is approximate.':'Image unavailable; confirmation and correction disabled.');paint();};
       img.onload=ready;img.onerror=ready;img.src=asset(image.path);
       el('reviewBody').hidden=false;paint();if(img.complete)ready();
       status(s.locked?'Prepared locally; not submitted.':'Draft saved locally.');
