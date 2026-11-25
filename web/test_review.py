@@ -137,6 +137,24 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(title and printed)
             self.assertTrue(scan is None or 1 <= scan <= 580)
 
+    def test_contents_line_anchor_identity(self):
+        # Synthetic identity fixtures, no claim about historic characters.
+        html = APP.read_text(encoding='utf-8')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page()
+            page.set_content(html.replace('updateMode();load();', 'updateMode();'))
+            result = page.evaluate("""() => {
+                const a={suffix:'single_reading',reader_id:'reader-a',line_id:'head-1',text:'Heading'};
+                const c=(reader,text,suffix='single_reading')=>({suffix,data:{reading:{reader_id:reader,regions:[{kind:'heading',lines:[{id:'head-1',text}]}]}}});
+                return [contentsAnchorIndex(a,[c('reader-b','Heading'),c('reader-a','Heading')]),
+                        contentsAnchorIndex(a,[c('reader-a','Changed')]),
+                        contentsAnchorIndex(a,[c('reader-a','Heading','alternate_reading_01')]),
+                        contentsAnchorIndex(a,[c('reader-a','Heading'),c('reader-a','Heading')])];
+            }""")
+            self.assertEqual(result, [1, -1, -1, -1])
+            browser.close()
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
