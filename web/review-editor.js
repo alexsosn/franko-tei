@@ -52,18 +52,6 @@
   // A native textarea cannot style ranges; choose a full historical/Greek
   // face only when every non-whitespace character is covered by that group.
   // Never apply source offsets to the edited value.
-  function reviewFontMode(line,ranges){
-    const group=s=>s.script==='Cyrl'&&['cu','chu','orv'].includes(s.language)?'slavonic':s.script==='Grek'?'greek':'plain';
-    const ordered=[...ranges].sort((a,b)=>a.start-b.start);
-    if(!ordered.length)return 'plain';
-    const mode=group(ordered[0]);if(mode==='plain')return mode;
-    let end=0;
-    for(const s of ordered){
-      if(group(s)!==mode||line.text.slice(end,s.start).trim())return 'plain';
-      end=s.end;
-    }
-    return line.text.slice(end).trim()?'plain':mode;
-  }
   function paintOriginal(line){
     const original=el('reviewOriginal'),ranges=languageRanges(line).sort((a,b)=>a.start-b.start);
     original.replaceChildren();
@@ -75,7 +63,7 @@
       span.textContent=line.text.slice(r.start,r.end);original.append(span);end=r.end;
     }
     original.append(document.createTextNode(line.text.slice(end)));
-    el('reviewEdit').dataset.fontMode=reviewFontMode(line,ranges);
+    el('reviewEdit').dataset.fontMode=sourceFontMode(line,ranges);
   }
   function paint(){
     const x=entry(),line=x.line;

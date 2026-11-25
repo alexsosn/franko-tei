@@ -1121,17 +1121,22 @@ class ReviewSmoke(unittest.TestCase):
             page.set_content(html)
             page.evaluate("""([line,region,review])=>{
                 renderLine(line,region,[]);
-                renderLine({...line,id:'corrected',text:review.text,language_spans:[]},region,[],[],review);
+                renderLine({...line,id:'corrected',text:review.text,language_spans:[]},region,[],[],review,line);
                 renderLine({...line,id:'confirmed'},region,[],[],{...review,status:'accepted_confirmation',text:line.text});
                 renderLine({...line,id:'combined',text:review.text,language_spans:[]},region,
                     [{reading:line.text,reason:'Source note'}],
-                    [{label:'Other reading',reader:'other',text:line.text+'!'}],review);
+                    [{label:'Other reading',reader:'other',text:line.text+'!'}],review,line);
             }""",[line,region,review])
             rows=page.locator("#candidate .line-row")
             self.assertEqual(rows.count(),4)
             self.assertEqual(page.locator(".editorial-toggle,.editorial-details").count(),0)
             self.assertEqual(rows.nth(1).locator(".alternate-toggle").count(),1)
             self.assertEqual(rows.nth(2).locator("button").count(),0)
+            corrected=rows.nth(1).locator(".line-text")
+            self.assertEqual(corrected.get_attribute("data-font-mode"),"slavonic")
+            self.assertIn("Franko Monomakh",corrected.evaluate("e=>getComputedStyle(e).fontFamily"))
+            self.assertEqual(corrected.locator(".language-span").count(),0)
+            self.assertEqual(page.evaluate("sourceFontMode({text:'аѣ',language_spans:[{start:0,end:1,language:'uk',script:'Cyrl'},{start:1,end:2,language:'cu',script:'Cyrl'}]})"),"plain")
             self.assertEqual(rows.nth(3).locator("button").count(),2)
             self.assertEqual(page.locator(".alternate-reasons:visible").count(),0)
             self.assertEqual(page.locator(".variant-diff:visible").count(),0)
@@ -1152,6 +1157,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertIn(review["contributor_login"],panel.inner_text())
             self.assertEqual(panel.locator("a").get_attribute("href"),review["issue_url"])
             self.assertEqual(panel.locator(".alt-text").text_content(),line["text"])
+            self.assertIn("Franko Monomakh",panel.locator(".alt-text").evaluate("e=>getComputedStyle(e).fontFamily"))
             self.assertNotIn(review["source_commit"],panel.inner_text())
             self.assertNotIn("Internal adjudication",panel.inner_text())
             self.assertNotIn("Approximate geometry match",panel.inner_text())
