@@ -50,6 +50,11 @@ class ReviewSmoke(unittest.TestCase):
                 Object.defineProperty(HTMLImageElement.prototype,'src',{get:src.get,set(value){src.set.call(this,fixture.png)}});
             }''', fixture)
             page.set_content(APP.read_text(encoding='utf-8'))
+            for control in ['#searchOpen', '#searchGo']:
+                self.assertEqual(page.locator(control + ' svg').count(), 1)
+                self.assertEqual(page.locator(control + ' svg').get_attribute('aria-hidden'), 'true')
+            self.assertEqual(page.locator('#searchOpen').text_content().strip(), 'Search corpus')
+            self.assertEqual(page.locator('#searchGo').text_content().strip(), 'Search')
             page.locator('#candidate').get_by_text('ѣ <script>ἀ</script>', exact=False).wait_for()
             self.assertEqual(page.locator('#choice option').all_text_contents(), ['GPT-6 · single reading', 'GPT-6.2 (test-snapshot) · alternate reading 01'])
             self.assertEqual(page.evaluate("candidateLabel('single_reading', {})"), 'Unknown model · single reading')
