@@ -69,6 +69,17 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#scan")).to_be_visible()
             expect(page.locator("#ocrStatus")).to_contain_text("Empty original OCR")
             expect(page.locator("#ocr")).to_have_text("")
+            # Actual exposed reading I/52 contains whole-line and partial uncertainty notes.
+            page.goto(base + "#v=1&p=52&ref=main")
+            expect(page.locator("#choice option").filter(has_text="exposed reading")).to_have_count(1)
+            page.locator("#choice").select_option(label="GPT-6 · exposed reading")
+            whole_flag = page.get_by_role("button", name="Uncertainty notes for main-line-01", exact=True)
+            whole_row = page.locator(".line-row").filter(has=whole_flag)
+            expect(whole_row.locator(".line-text")).to_have_text("19) О царь Ѧдаріанѣ.")
+            expect(whole_row.locator("mark")).to_have_count(0)
+            assert whole_flag.bounding_box()["x"] < whole_row.locator(".line-text").bounding_box()["x"]
+            whole_flag.click()
+            expect(whole_row.locator("xpath=following-sibling::div[contains(@class,'uncertainty-reasons')][1]")).to_contain_text("rare old Cyrillic personal name")
             browser.close()
     finally:
         server.shutdown()
