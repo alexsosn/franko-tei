@@ -1,0 +1,439 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 2,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00002.jpg",
+  "source_image_sha256": "c1451d3fd47bdc594995be7e81701eabba8ebe5b67db4e8092614387d2b7a748",
+  "reading": {
+    "reader_id": "gpt62-ii-2-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00001-00010-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native scan, no OCR/peer text for this page. Printed edition only; subsequent stamps and annotations documented as exclusions. Physical lines and estimated geometry; contextual language spans; unverified.",
+    "raw_response": "MONUMENTA LINGUAE NECNON LITTERARUM\nUKRAINO-RUSSICARUM (RUTHENICARUM)\na collegio archaeographico Societatis Scientiarum Ševčenkianae edita.\nVOL. II.\nПАМЯТКИ\nУКРАЇНСЬКО-РУСЬКОЇ МОВИ І ЛЇТЕРАТУРИ\nвидає\nАРХЕОҐРАФІЧНА КОМІСИЯ\nНАУКОВОГО ТОВАРИСТВА ІМЕНИ ШЕВЧЕНКА.\nТОМ II.\nУ ЛЬВОВІ, 1899.\nЗ друкарнї Наукового Товариства імени Шевченка\nпід зарядом К. Беднарського.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            130,
+            332,
+            940,
+            25
+          ],
+          "description": "Decorative rule."
+        },
+        {
+          "bbox_xywh": [
+            445,
+            1160,
+            300,
+            90
+          ],
+          "description": "Decorative rules above and below volume number."
+        },
+        {
+          "bbox_xywh": [
+            535,
+            1505,
+            130,
+            20
+          ],
+          "description": "Decorative rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "latin-series",
+        "kind": "heading",
+        "bbox_xywh": [
+          130,
+          172,
+          950,
+          160
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "latin-series-line-01",
+            "text": "MONUMENTA LINGUAE NECNON LITTERARUM",
+            "bbox_xywh": [
+              130,
+              172,
+              950,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 35,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-series-line-02",
+            "text": "UKRAINO-RUSSICARUM (RUTHENICARUM)",
+            "bbox_xywh": [
+              255,
+              213,
+              680,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-series-line-03",
+            "text": "a collegio archaeographico Societatis Scientiarum Ševčenkianae edita.",
+            "bbox_xywh": [
+              135,
+              252,
+              940,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "latin-series-line-04",
+            "text": "VOL. II.",
+            "bbox_xywh": [
+              520,
+              293,
+              150,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 5,
+                "end": 7,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 7,
+                "end": 8,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "series-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          140,
+          470,
+          940,
+          233
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-title-line-01",
+            "text": "ПАМЯТКИ",
+            "bbox_xywh": [
+              400,
+              470,
+              400,
+              70
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "series-title-line-02",
+            "text": "УКРАЇНСЬКО-РУСЬКОЇ МОВИ І ЛЇТЕРАТУРИ",
+            "bbox_xywh": [
+              140,
+              590,
+              940,
+              113
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "publisher",
+        "kind": "other",
+        "bbox_xywh": [
+          275,
+          751,
+          660,
+          227
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "publisher-line-01",
+            "text": "видає",
+            "bbox_xywh": [
+              530,
+              751,
+              130,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 5,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "publisher-line-02",
+            "text": "АРХЕОҐРАФІЧНА КОМІСИЯ",
+            "bbox_xywh": [
+              420,
+              820,
+              360,
+              48
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 21,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "publisher-line-03",
+            "text": "НАУКОВОГО ТОВАРИСТВА ІМЕНИ ШЕВЧЕНКА.",
+            "bbox_xywh": [
+              275,
+              903,
+              660,
+              75
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "volume",
+        "kind": "heading",
+        "bbox_xywh": [
+          490,
+          1175,
+          220,
+          55
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "volume-line-01",
+            "text": "ТОМ II.",
+            "bbox_xywh": [
+              490,
+              1175,
+              220,
+              55
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 4,
+                "end": 6,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 6,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "imprint",
+        "kind": "other",
+        "bbox_xywh": [
+          245,
+          1440,
+          735,
+          175
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "imprint-line-01",
+            "text": "У ЛЬВОВІ, 1899.",
+            "bbox_xywh": [
+              450,
+              1440,
+              300,
+              60
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "imprint-line-02",
+            "text": "З друкарнї Наукового Товариства імени Шевченка",
+            "bbox_xywh": [
+              245,
+              1532,
+              735,
+              45
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "imprint-line-03",
+            "text": "під зарядом К. Беднарського.",
+            "bbox_xywh": [
+              450,
+              1578,
+              320,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-2-image-20261125",
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "series-title-line-02",
+        "reading": "ЛЇТЕРАТУРИ",
+        "reason": "Historical display-type letter/diacritic reading provisional; no normalization."
+      },
+      {
+        "line_id": "publisher-line-02",
+        "reading": "АРХЕОҐРАФІЧНА",
+        "reason": "Historical display-type letter/diacritic reading provisional; no normalization."
+      }
+    ]
+  }
+}
