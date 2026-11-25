@@ -113,6 +113,8 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #indexEntries li{border-bottom:1px solid #eceeea;padding:8px 0;overflow-wrap:anywhere}
 #indexEntries .index-label{font-weight:600}
 #indexEntries .index-detail{font-size:13px;margin-top:3px}
+#indexEntries .index-source{display:none;margin-top:4px;font-size:12px;min-height:32px}
+#contentsPanel:has(#indexSources[open]) #indexEntries .index-source{display:inline-block}
 #indexEntries .index-context{font-size:12px;color:#525e55}
 #indexEntries .index-refs{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-top:4px}
 #indexEntries .index-refs button{min-height:36px;padding:4px 9px;color:#235d55}
@@ -7948,6 +7950,7 @@ function drawPrintedIndex(d,v){
     if(e.refs.length){const refs=document.createElement('div');refs.className='index-refs';for(const r of e.refs.slice(0,8))appendIndexRef(refs,r);
       if(e.refs.length>8){const more=document.createElement('details'),summary=document.createElement('summary');summary.textContent=indexText('+'+(e.refs.length-8)+' more','Ще '+(e.refs.length-8));const rest=document.createElement('div');rest.className='index-refs';for(const r of e.refs.slice(8))appendIndexRef(rest,r);more.append(summary,rest);refs.append(more);}
       li.append(refs);}
+    const source=document.createElement("button");source.type="button";source.className="index-source";source.textContent=indexText("Source scan ","Скан джерела ")+e.source.scan;source.onclick=()=>jumpContents(v,e.source.scan);li.append(source);
     fragment.append(li);
   }
   list.append(fragment);filterPrintedIndexes();list.scrollTop=0;
