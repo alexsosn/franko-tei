@@ -34,6 +34,9 @@ class EditorSmoke(unittest.TestCase):
                     return r.fulfill(content_type="text/html",body=(ROOT/"web/index.html").read_text())
                 if u=="https://reader.test/review-editor.js":
                     return r.fulfill(content_type="text/javascript",body=(ROOT/"web/review-editor.js").read_text())
+                # Synthetic search-only index: raw combining sequence, not a source reading.
+                if u.endswith("/search/vol1.json"):
+                    return r.fulfill(json={"volume":"1","ref":REV,"entries":[{"scan":20,"suffix":"single_reading","text":"а\u0311ѳ"}]})
                 if u.endswith("/commits/main"):
                     return r.fulfill(json={"sha":REV})
                 if u.endswith("/manifest.json"):
@@ -48,6 +51,30 @@ class EditorSmoke(unittest.TestCase):
             page.route("https://**/*",route)
             page.goto("https://reader.test/")
             expect(page.locator(".line-text").first).to_be_visible()
+            page.locator("#searchOpen").click()
+            page.locator("#searchKeyboard summary").click()
+            query=page.locator("#query")
+            query.fill("аб")
+            query.evaluate("e => e.setSelectionRange(1,1)")
+            page.locator("#searchCharacters [data-insert='\u0311']").click()
+            expect(query).to_have_value("а\u0311б")
+            query.evaluate("e => e.setSelectionRange(2,3)")
+            page.locator("#searchKeyboardGroup").select_option("letters")
+            page.locator("#searchCharacters [data-insert='ѳ']").click()
+            expect(query).to_have_value("а\u0311ѳ")
+            self.assertEqual(query.evaluate("e => e.selectionStart"),3)
+            for group in ("marks","letters","superscripts","greek"):
+                page.locator("#searchKeyboardGroup").select_option(group)
+                search_keys=page.locator("#searchCharacters button").evaluate_all("bs => bs.map(b => b.dataset.insert)")
+                page.locator("#reviewKeyboardGroup").evaluate("(e,g) => {e.value=g;e.dispatchEvent(new Event('change'))}",group)
+                self.assertEqual(search_keys,page.locator("#reviewCharacters button").evaluate_all("bs => bs.map(b => b.dataset.insert)"))
+            page.locator("#reviewKeyboardGroup").evaluate("e => {e.value='marks';e.dispatchEvent(new Event('change'))}")
+            page.locator("#searchSource").select_option("agent")
+            page.locator("#searchVolume").select_option("1")
+            query.press("Enter")
+            expect(page.locator("#searchResults mark")).to_have_text("а\u0311ѳ")
+            self.assertTrue(page.locator("#searchPanel").evaluate("e => e.scrollWidth <= e.clientWidth+1"))
+            page.locator("#searchClose").click()
             page.locator("#reviewOpen").click()
             expect(page.locator("#reviewLine option").first).to_be_attached()
             page.locator("#reviewLine").select_option(LINE["id"])
@@ -117,6 +144,17 @@ class EditorSmoke(unittest.TestCase):
             expect(page.locator("#reviewBundle")).to_have_value(raw.decode())
             expect(page.locator("#reviewEdit")).to_have_attribute("readonly", "")
             self.assertIn("review-bundle.yml",page.locator("#reviewGitHub").get_attribute("href"))
+            # A locked proofreading session must not disable the search palette.
+            page.locator("#reviewClose").click()
+            page.locator("#searchOpen").click()
+            page.locator("#searchKeyboard").evaluate("e => e.open=true")
+            page.locator("#searchKeyboardGroup").select_option("marks")
+            expect(page.locator("#searchCharacters [data-insert='\u0311']")).to_be_enabled()
+            query.fill("а")
+            page.locator("#searchCharacters [data-insert='\u0311']").click()
+            expect(query).to_have_value("а\u0311")
+            page.locator("#searchClose").click()
+            page.locator("#reviewOpen").click()
             # Even a whitespace-only change in the pinned JSON changes its Git blob.
             old=page.evaluate("localStorage.getItem('franko-review-session-v1')")
             page.locator("#reviewClose").click()
