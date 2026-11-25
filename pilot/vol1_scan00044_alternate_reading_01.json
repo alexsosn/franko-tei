@@ -1,0 +1,916 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 44,
+  "printed_page_observed": "XXXV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00044.jpg",
+  "source_image_sha256": "36fc618fd3f217ecd93e2eddfb946bdc167c6f362fc09e6bea12894a55ac60e3",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v1s00044",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-reread-20261125-I44",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Complete source-image reading composed before fetching earlier candidate text; only model metadata may have been inspected to select pages. Estimated line geometry and source metadata reused after transcription. Unresolved historical letterforms and quotation language classification remain provisional. No independent review.",
+    "raw_response": "XXXV\nапокріфічнім євангелию Нікодимовім. До старого завіту відносить\nся там епізод с Соломоном, аналоґічний с приведеним у нас опові-\nданєм (283—294). У Пасхальній драмі Люципер горює по виходї\nХриста з пекла с праведними душами:\nТилько зъ едного страху ледви сижу,\nА по старому предъ собою едного праведника вижу.\nПитаю ся я тебе, Соломоне, чему ти ся тутъ зосталъ?\nПодобно мнѣ тебе Христосъ даровалъ.\nСоломонъ до Люципера мовитъ:\nЮжъ повторне Христосъ по мене прийде:\nСтрашный былъ его первый приходъ,\nЕще другій страшнѣйшій буде.\nЛюциперъ мовитъ до слугъ своихъ:\nСлуги мои, узмѣте,\nЦаря Соломона изъ пекла выпровадѣте!\nНе жалую его,\nАнѣ Христа того,\nНехай сюда більше не приходитъ,\nПекломъ нашимъ и нами не тривожитъ.\nВ моїй розвідцї доданій до тексту сеї драми (Кіевская Ста-\nрина 1896, т. LIV, стор. 25—29) я, не знаючи ще тексту оповіданя\nв рукописї Ст. Теслевцьового, а тільки порівнюючи драматичну\nсцену з віршею і з єї рефлексами в устах укр. люду в Харківщинї\nі на Угорській Руси, а надто вказуючи на те, що така леґенда про\nСоломона незвісна доси в крузї Соломонівських леґенд, а що на-\nтомість у старих західно-европейських драмах є епізоди, хоч і без\nімени Соломона, аналоґічні з отсею сценою (anima infelix, що хоче\nвкрутити ся між праведників, та її лишають у пеклї; Іван Хре-\nститель, що лишає ся в пеклї, та чорти його виганяють; якийсь\nпіп, що дурить чортів, буцїм то Христос задля него ще раз прийде\nруйнувати пекло), що мусїли дати зміст отсеї сцени, висказав до-\nгадку, що до імени Соломона отсе оповіданє приложене було вла-\nсне у нас, на Вкраїнї, і то поперед усего в драмі. Віднайденє ста-\nрого прозового оповіданя сего змісту по моїй думцї не то що не\nсуперечить тій догадцї, а тільки доказує, що Пасхальна драма\nз епізодом про Соломона вже в кінцї XVII. в. була звісна на Угор-\nській Руси, що доволї правдоподібне з того огляду, що текст драми,\nвіднайдений мною в новочаснім списку в калуськім повітї, мусїв\nвід давна знаходити ся на нашім Підгірю, що з давна мало часті\nзвязки з Угорською Русю.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            80,
+            1600,
+            1040,
+            109
+          ],
+          "description": "Blank lower margin after the final original source text row, no separate source footnote/signature."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          906,
+          73,
+          149,
+          57
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XXXV",
+            "bbox_xywh": [
+              914,
+              78,
+              133,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "nicodemus_paschal_intro",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          142,
+          1056,
+          142
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-01",
+            "text": "апокріфічнім євангелию Нікодимовім. До старого завіту відносить",
+            "bbox_xywh": [
+              80,
+              147,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-02",
+            "text": "ся там епізод с Соломоном, аналоґічний с приведеним у нас опові-",
+            "bbox_xywh": [
+              80,
+              181,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-03",
+            "text": "данєм (283—294). У Пасхальній драмі Люципер горює по виходї",
+            "bbox_xywh": [
+              80,
+              215,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-04",
+            "text": "Христа з пекла с праведними душами:",
+            "bbox_xywh": [
+              80,
+              249,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lucifer_solomon_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          217,
+          280,
+          896,
+          143
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-05",
+            "text": "Тилько зъ едного страху ледви сижу,",
+            "bbox_xywh": [
+              225,
+              285,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-06",
+            "text": "А по старому предъ собою едного праведника вижу.",
+            "bbox_xywh": [
+              225,
+              319,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-07",
+            "text": "Питаю ся я тебе, Соломоне, чему ти ся тутъ зосталъ?",
+            "bbox_xywh": [
+              225,
+              354,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-08",
+            "text": "Подобно мнѣ тебе Христосъ даровалъ.",
+            "bbox_xywh": [
+              225,
+              388,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "solomon_label",
+        "kind": "heading",
+        "bbox_xywh": [
+          217,
+          425,
+          896,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-09",
+            "text": "Соломонъ до Люципера мовитъ:",
+            "bbox_xywh": [
+              225,
+              430,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "solomon_response",
+        "kind": "body",
+        "bbox_xywh": [
+          217,
+          465,
+          896,
+          114
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-10",
+            "text": "Южъ повторне Христосъ по мене прийде:",
+            "bbox_xywh": [
+              225,
+              470,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-11",
+            "text": "Страшный былъ его первый приходъ,",
+            "bbox_xywh": [
+              225,
+              507,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-12",
+            "text": "Еще другій страшнѣйшій буде.",
+            "bbox_xywh": [
+              225,
+              544,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "lucifer_label",
+        "kind": "heading",
+        "bbox_xywh": [
+          217,
+          578,
+          896,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-13",
+            "text": "Люциперъ мовитъ до слугъ своихъ:",
+            "bbox_xywh": [
+              225,
+              583,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "lucifer_servants_verses",
+        "kind": "body",
+        "bbox_xywh": [
+          217,
+          620,
+          896,
+          223
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-14",
+            "text": "Слуги мои, узмѣте,",
+            "bbox_xywh": [
+              225,
+              625,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-15",
+            "text": "Царя Соломона изъ пекла выпровадѣте!",
+            "bbox_xywh": [
+              225,
+              663,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-16",
+            "text": "Не жалую его,",
+            "bbox_xywh": [
+              225,
+              698,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-17",
+            "text": "Анѣ Христа того,",
+            "bbox_xywh": [
+              225,
+              736,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-18",
+            "text": "Нехай сюда більше не приходитъ,",
+            "bbox_xywh": [
+              225,
+              773,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-19",
+            "text": "Пекломъ нашимъ и нами не тривожитъ.",
+            "bbox_xywh": [
+              225,
+              808,
+              880,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "franko_scholarship",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          846,
+          1056,
+          718
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "main-line-20",
+            "text": "В моїй розвідцї доданій до тексту сеї драми (Кіевская Ста-",
+            "bbox_xywh": [
+              80,
+              851,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-21",
+            "text": "рина 1896, т. LIV, стор. 25—29) я, не знаючи ще тексту оповіданя",
+            "bbox_xywh": [
+              80,
+              884,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-22",
+            "text": "в рукописї Ст. Теслевцьового, а тільки порівнюючи драматичну",
+            "bbox_xywh": [
+              80,
+              918,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-23",
+            "text": "сцену з віршею і з єї рефлексами в устах укр. люду в Харківщинї",
+            "bbox_xywh": [
+              80,
+              951,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-24",
+            "text": "і на Угорській Руси, а надто вказуючи на те, що така леґенда про",
+            "bbox_xywh": [
+              80,
+              986,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-25",
+            "text": "Соломона незвісна доси в крузї Соломонівських леґенд, а що на-",
+            "bbox_xywh": [
+              80,
+              1018,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-26",
+            "text": "томість у старих західно-европейських драмах є епізоди, хоч і без",
+            "bbox_xywh": [
+              80,
+              1055,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-27",
+            "text": "імени Соломона, аналоґічні з отсею сценою (anima infelix, що хоче",
+            "bbox_xywh": [
+              80,
+              1088,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-28",
+            "text": "вкрутити ся між праведників, та її лишають у пеклї; Іван Хре-",
+            "bbox_xywh": [
+              80,
+              1121,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-29",
+            "text": "ститель, що лишає ся в пеклї, та чорти його виганяють; якийсь",
+            "bbox_xywh": [
+              80,
+              1155,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-30",
+            "text": "піп, що дурить чортів, буцїм то Христос задля него ще раз прийде",
+            "bbox_xywh": [
+              80,
+              1188,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-31",
+            "text": "руйнувати пекло), що мусїли дати зміст отсеї сцени, висказав до-",
+            "bbox_xywh": [
+              80,
+              1224,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-32",
+            "text": "гадку, що до імени Соломона отсе оповіданє приложене було вла-",
+            "bbox_xywh": [
+              80,
+              1257,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-33",
+            "text": "сне у нас, на Вкраїнї, і то поперед усего в драмі. Віднайденє ста-",
+            "bbox_xywh": [
+              80,
+              1290,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-34",
+            "text": "рого прозового оповіданя сего змісту по моїй думцї не то що не",
+            "bbox_xywh": [
+              80,
+              1324,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-35",
+            "text": "суперечить тій догадцї, а тільки доказує, що Пасхальна драма",
+            "bbox_xywh": [
+              80,
+              1357,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-36",
+            "text": "з епізодом про Соломона вже в кінцї XVII. в. була звісна на Угор-",
+            "bbox_xywh": [
+              80,
+              1390,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "main-line-37",
+            "text": "ській Руси, що доволї правдоподібне з того огляду, що текст драми,",
+            "bbox_xywh": [
+              80,
+              1425,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-38",
+            "text": "віднайдений мною в новочаснім списку в калуськім повітї, мусїв",
+            "bbox_xywh": [
+              80,
+              1460,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-39",
+            "text": "від давна знаходити ся на нашім Підгірю, що з давна мало часті",
+            "bbox_xywh": [
+              80,
+              1493,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "main-line-40",
+            "text": "звязки з Угорською Русю.",
+            "bbox_xywh": [
+              80,
+              1529,
+              1040,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v1s00044",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "main-line-01",
+        "reading": "євангелию",
+        "reason": "Historical ending"
+      },
+      {
+        "line_id": "main-line-02",
+        "reading": "аналоґічний",
+        "reason": "Exact typeface letter ґ/г"
+      },
+      {
+        "line_id": "main-line-05",
+        "reading": "Тилько зъ едного страху ледви сижу,",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-06",
+        "reading": "А по старому предъ собою едного праведника вижу.",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-07",
+        "reading": "Питаю ся я тебе, Соломоне, чему ти ся тутъ зосталъ?",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-08",
+        "reading": "Подобно мнѣ тебе Христосъ даровалъ.",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-09",
+        "reading": "Соломонъ до Люципера мовитъ:",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-10",
+        "reading": "Южъ повторне Христосъ по мене прийде:",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-11",
+        "reading": "Страшный былъ его первый приходъ,",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-12",
+        "reading": "Еще другій страшнѣйшій буде.",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-13",
+        "reading": "Люциперъ мовитъ до слугъ своихъ:",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-14",
+        "reading": "Слуги мои, узмѣте,",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-15",
+        "reading": "Царя Соломона изъ пекла выпровадѣте!",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-16",
+        "reading": "Не жалую его,",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-17",
+        "reading": "Анѣ Христа того,",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-18",
+        "reading": "Нехай сюда більше не приходитъ,",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-19",
+        "reading": "Пекломъ нашимъ и нами не тривожитъ.",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      },
+      {
+        "line_id": "main-line-20",
+        "reading": "В моїй розвідцї доданій до тексту сеї драми (Кіевская Ста-",
+        "reason": "Historical Cyrillic quotation: exact orthography and punctuation remain provisional; mixed historical language classification not assigned."
+      }
+    ]
+  }
+}
