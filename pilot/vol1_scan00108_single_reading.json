@@ -1,0 +1,664 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 108,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "3c71000db6770bc2010be1b7680d89890cb76a2201c7bbca91f080aac9d26a83",
+  "source_image_path": "vol1/page-00108.jpg",
+  "source_image_sha256": "b94f076d78be7cdbde522e07dde227d666fc632f4483f3c3dad799a98ed0a9d0",
+  "reading": {
+    "reader_id": "gpt62-i108-first-image-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chatgpt-i108-batch-working-draft-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct first reading of pinned printed JPEG, without embedded OCR or peer page text. Surrounding project context visible; not isolated corroboration. Preserve physical rows, observed folio only, bibliographic typography, separate witnesses, editorial brackets and literal superscript apparatus markers. Historical glyphs and geometry approximate; manifest SHA pending native-byte/XML checks.",
+    "raw_response": "VI. Від Адама до Ноя.\nА. Із Крехівської Палеї стор. 104.\n(Дїти Адамові). Быс[ть] всѣхъ лѣть Адамовѣхъ иж[е] житъ\nрожь Сифа лѣт з҃ сот. и́ род[и] сн҃ы и́ дщери. и́ быс[ть] всѣхъ\nлѣт Адамовых лѣт ц҃ сот и́ л҃. Роди же Адам г҃ сн҃ы: Каина,\nАвела, Сифа, и́ две дщери: Зару, Асоуаму. и́ по повеленію бїю\nдасть имена всѣм зверем и́ скотом и́ гадом и рыбамъ и пти-\nцам и́ своим чадом. Адама ж[е] создаде Гь҃ и́ имя дал, також\nи́ Євзѣ. Авель ж[е] оубіенъ быв ѿ брата своего Каина, Каинъ же\nпоят вторую сестру свою Асѡаму. а инде гл҃ть дщери Адами\nпервую Каламану, а вторую Адеверу.\nВ Коломенськім і Ковельськім списках Палеї сего уступу, крім\nпершого реченя, нема. Ті самі подробицї має коротенький текст у П о р-\nф и р ь є в а, Сказ. о ветхозав. лиц. и соб. по ркп. солов. библ., стор.\n247—248, винятий з руського перекладу Хронїки Георгія Амартола.\nБ. Із Крехівської Палеї, стор. 98—99.\n(О Каінї). И род[и] Адам¹) сн҃а²) и́ нарече имя ему Каинъ.\nсей быс[ть] перваг[о] грѣх[а]³) плодъ. аще бо не бы Адам престу-\nпилъ⁴) чрезъ повеленіе, не бы Каинъ оубилъ⁵) брата своего, не\nбы потопъ⁶) на землю былъ⁷). но ѡ семъ разумѣими, як[о] кто\nимает възлюбленную дв҃у⁸), то по своей⁹) воли хощетъ¹⁰) съ-\nчтати (sic) мужу ея. дв҃ца же вѣсть и́ разумѣетъ, ꙗко съ-\nчтати с[а] еи судом Ѡца своег[о]. но не вся¹¹) суть полня-\nющи¹²) законъ. не терпяще до Ѡца своего повеленія. но аще ко-\nторая снабдитъ чьсть ѡца своего, то¹³) ѿшедши ѿ¹⁴) пазухы\nѠца своег[о] любима имъ бывает и плод ея бл҃внъ бывает ро-\nдителма¹⁵). несмысленна¹⁶) ж[е] аще и́ вѣсть¹⁷) на бракъ, но не\nдождетъ целомудрія Ѡца своег[о] и¹⁸) бл҃гвенія, но за¹⁹) распа-\nАпокріфи старозавітні.\n5",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            114,
+            76,
+            932,
+            326
+          ],
+          "description": "Blank upper opening-page margin; no printed folio observed."
+        },
+        {
+          "bbox_xywh": [
+            518,
+            491,
+            81,
+            13
+          ],
+          "description": "Decorative rule below heading."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          329,
+          434,
+          473,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-l001",
+            "text": "VI. Від Адама до Ноя.",
+            "bbox_xywh": [
+              329,
+              434,
+              473,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          282,
+          517,
+          556,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-label-l001",
+            "text": "А. Із Крехівської Палеї стор. 104.",
+            "bbox_xywh": [
+              282,
+              517,
+              556,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-a-children",
+        "kind": "body",
+        "bbox_xywh": [
+          93,
+          577,
+          933,
+          312
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-children-l001",
+            "text": "(Дїти Адамові). Быс[ть] всѣхъ лѣть Адамовѣхъ иж[е] житъ",
+            "bbox_xywh": [
+              93,
+              577,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l002",
+            "text": "рожь Сифа лѣт з҃ сот. и́ род[и] сн҃ы и́ дщери. и́ быс[ть] всѣхъ",
+            "bbox_xywh": [
+              93,
+              612,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l003",
+            "text": "лѣт Адамовых лѣт ц҃ сот и́ л҃. Роди же Адам г҃ сн҃ы: Каина,",
+            "bbox_xywh": [
+              93,
+              647,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l004",
+            "text": "Авела, Сифа, и́ две дщери: Зару, Асоуаму. и́ по повеленію бїю",
+            "bbox_xywh": [
+              93,
+              681,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l005",
+            "text": "дасть имена всѣм зверем и́ скотом и́ гадом и рыбамъ и пти-",
+            "bbox_xywh": [
+              93,
+              716,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l006",
+            "text": "цам и́ своим чадом. Адама ж[е] создаде Гь҃ и́ имя дал, також",
+            "bbox_xywh": [
+              93,
+              751,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l007",
+            "text": "и́ Євзѣ. Авель ж[е] оубіенъ быв ѿ брата своего Каина, Каинъ же",
+            "bbox_xywh": [
+              93,
+              786,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l008",
+            "text": "поят вторую сестру свою Асѡаму. а инде гл҃ть дщери Адами",
+            "bbox_xywh": [
+              93,
+              821,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-a-children-l009",
+            "text": "первую Каламану, а вторую Адеверу.",
+            "bbox_xywh": [
+              93,
+              856,
+              933,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-a",
+        "kind": "body",
+        "bbox_xywh": [
+          93,
+          901,
+          931,
+          139
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-a-l001",
+            "text": "В Коломенськім і Ковельськім списках Палеї сего уступу, крім",
+            "bbox_xywh": [
+              93,
+              901,
+              931,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-a-l002",
+            "text": "першого реченя, нема. Ті самі подробицї має коротенький текст у П о р-",
+            "bbox_xywh": [
+              93,
+              936,
+              931,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-a-l003",
+            "text": "ф и р ь є в а, Сказ. о ветхозав. лиц. и соб. по ркп. солов. библ., стор.",
+            "bbox_xywh": [
+              93,
+              971,
+              931,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "editorial-a-l004",
+            "text": "247—248, винятий з руського перекладу Хронїки Георгія Амартола.",
+            "bbox_xywh": [
+              93,
+              1007,
+              931,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-label",
+        "kind": "heading",
+        "bbox_xywh": [
+          271,
+          1102,
+          582,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-label-l001",
+            "text": "Б. Із Крехівської Палеї, стор. 98—99.",
+            "bbox_xywh": [
+              271,
+              1102,
+              582,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "witness-b-cain",
+        "kind": "body",
+        "bbox_xywh": [
+          94,
+          1171,
+          929,
+          417
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-b-cain-l001",
+            "text": "(О Каінї). И род[и] Адам¹) сн҃а²) и́ нарече имя ему Каинъ.",
+            "bbox_xywh": [
+              94,
+              1171,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l002",
+            "text": "сей быс[ть] перваг[о] грѣх[а]³) плодъ. аще бо не бы Адам престу-",
+            "bbox_xywh": [
+              94,
+              1206,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l003",
+            "text": "пилъ⁴) чрезъ повеленіе, не бы Каинъ оубилъ⁵) брата своего, не",
+            "bbox_xywh": [
+              94,
+              1241,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l004",
+            "text": "бы потопъ⁶) на землю былъ⁷). но ѡ семъ разумѣими, як[о] кто",
+            "bbox_xywh": [
+              94,
+              1276,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l005",
+            "text": "имает възлюбленную дв҃у⁸), то по своей⁹) воли хощетъ¹⁰) съ-",
+            "bbox_xywh": [
+              94,
+              1311,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l006",
+            "text": "чтати (sic) мужу ея. дв҃ца же вѣсть и́ разумѣетъ, ꙗко съ-",
+            "bbox_xywh": [
+              94,
+              1345,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l007",
+            "text": "чтати с[а] еи судом Ѡца своег[о]. но не вся¹¹) суть полня-",
+            "bbox_xywh": [
+              94,
+              1380,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l008",
+            "text": "ющи¹²) законъ. не терпяще до Ѡца своего повеленія. но аще ко-",
+            "bbox_xywh": [
+              94,
+              1415,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l009",
+            "text": "торая снабдитъ чьсть ѡца своего, то¹³) ѿшедши ѿ¹⁴) пазухы",
+            "bbox_xywh": [
+              94,
+              1450,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l010",
+            "text": "Ѡца своег[о] любима имъ бывает и плод ея бл҃внъ бывает ро-",
+            "bbox_xywh": [
+              94,
+              1485,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l011",
+            "text": "дителма¹⁵). несмысленна¹⁶) ж[е] аще и́ вѣсть¹⁷) на бракъ, но не",
+            "bbox_xywh": [
+              94,
+              1520,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          },
+          {
+            "id": "witness-b-cain-l012",
+            "text": "дождетъ целомудрія Ѡца своег[о] и¹⁸) бл҃гвенія, но за¹⁹) распа-",
+            "bbox_xywh": [
+              94,
+              1555,
+              929,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "series-footer",
+        "kind": "other",
+        "bbox_xywh": [
+          163,
+          1600,
+          255,
+          22
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "series-footer-l001",
+            "text": "Апокріфи старозавітні.",
+            "bbox_xywh": [
+              163,
+              1600,
+              255,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "quire-signature",
+        "kind": "other",
+        "bbox_xywh": [
+          938,
+          1593,
+          26,
+          23
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "quire-signature-l001",
+            "text": "5",
+            "bbox_xywh": [
+              938,
+              1593,
+              26,
+              23
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "section-title-l001",
+        "reading": "VI. Від Адама до Ноя.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-label-l001",
+        "reading": "А. Із Крехівської Палеї стор. 104.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l001",
+        "reading": "(Дїти Адамові). Быс[ть] всѣхъ лѣть Адамовѣхъ иж[е] житъ",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l002",
+        "reading": "рожь Сифа лѣт з҃ сот. и́ род[и] сн҃ы и́ дщери. и́ быс[ть] всѣхъ",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l003",
+        "reading": "лѣт Адамовых лѣт ц҃ сот и́ л҃. Роди же Адам г҃ сн҃ы: Каина,",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l004",
+        "reading": "Авела, Сифа, и́ две дщери: Зару, Асоуаму. и́ по повеленію бїю",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l005",
+        "reading": "дасть имена всѣм зверем и́ скотом и́ гадом и рыбамъ и пти-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l006",
+        "reading": "цам и́ своим чадом. Адама ж[е] создаде Гь҃ и́ имя дал, також",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l007",
+        "reading": "и́ Євзѣ. Авель ж[е] оубіенъ быв ѿ брата своего Каина, Каинъ же",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l008",
+        "reading": "поят вторую сестру свою Асѡаму. а инде гл҃ть дщери Адами",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-a-children-l009",
+        "reading": "первую Каламану, а вторую Адеверу.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "editorial-a-l001",
+        "reading": "В Коломенськім і Ковельськім списках Палеї сего уступу, крім",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "editorial-a-l002",
+        "reading": "першого реченя, нема. Ті самі подробицї має коротенький текст у П о р-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "editorial-a-l003",
+        "reading": "ф и р ь є в а, Сказ. о ветхозав. лиц. и соб. по ркп. солов. библ., стор.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "editorial-a-l004",
+        "reading": "247—248, винятий з руського перекладу Хронїки Георгія Амартола.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-label-l001",
+        "reading": "Б. Із Крехівської Палеї, стор. 98—99.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l001",
+        "reading": "(О Каінї). И род[и] Адам¹) сн҃а²) и́ нарече имя ему Каинъ.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l002",
+        "reading": "сей быс[ть] перваг[о] грѣх[а]³) плодъ. аще бо не бы Адам престу-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l003",
+        "reading": "пилъ⁴) чрезъ повеленіе, не бы Каинъ оубилъ⁵) брата своего, не",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l004",
+        "reading": "бы потопъ⁶) на землю былъ⁷). но ѡ семъ разумѣими, як[о] кто",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l005",
+        "reading": "имает възлюбленную дв҃у⁸), то по своей⁹) воли хощетъ¹⁰) съ-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l006",
+        "reading": "чтати (sic) мужу ея. дв҃ца же вѣсть и́ разумѣетъ, ꙗко съ-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l007",
+        "reading": "чтати с[а] еи судом Ѡца своег[о]. но не вся¹¹) суть полня-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l008",
+        "reading": "ющи¹²) законъ. не терпяще до Ѡца своего повеленія. но аще ко-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l009",
+        "reading": "торая снабдитъ чьсть ѡца своего, то¹³) ѿшедши ѿ¹⁴) пазухы",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l010",
+        "reading": "Ѡца своег[о] любима имъ бывает и плод ея бл҃внъ бывает ро-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l011",
+        "reading": "дителма¹⁵). несмысленна¹⁶) ж[е] аще и́ вѣсть¹⁷) на бракъ, но не",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "witness-b-cain-l012",
+        "reading": "дождетъ целомудрія Ѡца своег[о] и¹⁸) бл҃гвенія, но за¹⁹) распа-",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "series-footer-l001",
+        "reading": "Апокріфи старозавітні.",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      },
+      {
+        "line_id": "quire-signature-l001",
+        "reading": "5",
+        "reason": "Provisional direct printed reading. Historical spelling, multilingual bibliographic details, archaic letters, titla, numeral labels, bracket contents and typographic spacing require isolated visual rereading; no normalization."
+      }
+    ]
+  }
+}
