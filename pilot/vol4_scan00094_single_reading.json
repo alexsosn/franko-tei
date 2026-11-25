@@ -1,0 +1,976 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 94,
+  "printed_page_observed": "42",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00094.jpg",
+  "source_image_sha256": "cbf186021be25655684a451d11747a7939cd8ac1db88b7ed9bac12360b03359b",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v4s00094",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-pr143-contents-anchor-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full visual reading of the pinned printed scan, including folio, editorial text, headings and physical lines. Prior TOC titles and target locations were visible; no page OCR or peer page transcription consulted. Approximate coordinates and provisional historical Unicode representation, with uncertainty notes. Not blind or verified.",
+    "raw_response": "42\nН. Сокольський рукопис стор. 303.\n(Словеса избранная). 1. Ѡтець мѧ роди, аз же родиⷯ себѣ\nженꙋ, жена же моѧ роди мнѣ дитѧ, дитѧ жⷵ мое роди Ѡцꙋ моемꙋ\nматер, и то реклъ Адаⷨ.\nТолкованіє. Ѡтець еⷭт Бг҃ъ, иже создал Адама, и вы-\nнѧвши ѿ него ребро, создалъ ємꙋ женꙋ, ѡ нейже рече: родиⷯ себѣ\nженꙋ, а жена моѧ роди дитѧ, из неѧ же роди сѧ Бц҃а. Тоеⷤ рече:\nдитѧ мое роди Ѡцꙋ моемꙋ мт҃ръ, то еⷭт Преⷭтꙋю Бц҃ꙋ.\n2. Що еⷭт Гогъ и Магогъ? Гогъ еⷭт Антихрист, а Ма-\nгогъ войско єгѡ.\nНа долинѣ Іѡсафатовои страшный сꙋд бꙋдет в’ недѣлю, але\nБг҃ъ вѣсть, в’ѧкꙋю.\nТамже стор. 356.\n3. Ѡ небахъ ѧк много их еⷭт. Повѣдаюⷮ филосоѳове и а-\nстрологове, же ѡдинадицать небъ знайдꙋєⷮ сѧ. Первше еⷭт нб҃о\nнайнизшее, на которомъ мⷭць; дрꙋгое нб҃о еⷭт, на котороⷨ пла-\nнета еⷭт Меркꙋрꙋшъ; третее нб҃о еⷭт, на котороⷨ планета Венера,\nчетвертоє нб҃о (кінця не стає).\nОба отсї уривки, се частини Люцідарія дечому відмінного\nвід того, який надруковано висше. Початкова загадка першого\nуривка відповідає питаню 45 нашого тексту Г і пит. 8 тексту Д,\nоба відривки Бесѣды трехъ святителей. Другий уривок пор. наш\nЛюцидар пит. 18.\nО. Плїсниський Василіянський рукопис XVII в.\n(Банкет дꙋховний, без початку).\nщо в діалогу теразнѣйшом маєм,\nпребачте тераз, васмосцѡв жадаєм\nкволи дѣток, котріє сут в школѣ.\nБудем розмовляти и родичом кволѣ,\nбы на нас были потом бачнѣйшіє\nи до своих домов пріємнѣйшіє.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          159,
+          101,
+          52,
+          28
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "42",
+            "bbox_xywh": [
+              159,
+              101,
+              52,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "slovesa-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          361,
+          207,
+          524,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "slovesa-heading-line-01",
+            "text": "Н. Сокольський рукопис стор. 303.",
+            "bbox_xywh": [
+              361,
+              207,
+              524,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "slovesa",
+        "kind": "body",
+        "bbox_xywh": [
+          158,
+          281,
+          946,
+          382
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "slovesa-line-01",
+            "text": "(Словеса избранная). 1. Ѡтець мѧ роди, аз же родиⷯ себѣ",
+            "bbox_xywh": [
+              158,
+              281,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-02",
+            "text": "женꙋ, жена же моѧ роди мнѣ дитѧ, дитѧ жⷵ мое роди Ѡцꙋ моемꙋ",
+            "bbox_xywh": [
+              158,
+              316,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-03",
+            "text": "матер, и то реклъ Адаⷨ.",
+            "bbox_xywh": [
+              158,
+              352,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-04",
+            "text": "Толкованіє. Ѡтець еⷭт Бг҃ъ, иже создал Адама, и вы-",
+            "bbox_xywh": [
+              158,
+              387,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 51,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-05",
+            "text": "нѧвши ѿ него ребро, создалъ ємꙋ женꙋ, ѡ нейже рече: родиⷯ себѣ",
+            "bbox_xywh": [
+              158,
+              422,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-06",
+            "text": "женꙋ, а жена моѧ роди дитѧ, из неѧ же роди сѧ Бц҃а. Тоеⷤ рече:",
+            "bbox_xywh": [
+              158,
+              458,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-07",
+            "text": "дитѧ мое роди Ѡцꙋ моемꙋ мт҃ръ, то еⷭт Преⷭтꙋю Бц҃ꙋ.",
+            "bbox_xywh": [
+              158,
+              493,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 51,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-08",
+            "text": "2. Що еⷭт Гогъ и Магогъ? Гогъ еⷭт Антихрист, а Ма-",
+            "bbox_xywh": [
+              158,
+              528,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-09",
+            "text": "гогъ войско єгѡ.",
+            "bbox_xywh": [
+              158,
+              563,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-10",
+            "text": "На долинѣ Іѡсафатовои страшный сꙋд бꙋдет в’ недѣлю, але",
+            "bbox_xywh": [
+              158,
+              599,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-line-11",
+            "text": "Бг҃ъ вѣсть, в’ѧкꙋю.",
+            "bbox_xywh": [
+              158,
+              634,
+              946,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "slovesa-cont-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          494,
+          735,
+          265,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "slovesa-cont-heading-line-01",
+            "text": "Тамже стор. 356.",
+            "bbox_xywh": [
+              494,
+              735,
+              265,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "slovesa-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          158,
+          802,
+          948,
+          170
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "slovesa-cont-line-01",
+            "text": "3. Ѡ небахъ ѧк много их еⷭт. Повѣдаюⷮ филосоѳове и а-",
+            "bbox_xywh": [
+              158,
+              802,
+              948,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-cont-line-02",
+            "text": "стрологове, же ѡдинадицать небъ знайдꙋєⷮ сѧ. Первше еⷭт нб҃о",
+            "bbox_xywh": [
+              158,
+              837,
+              948,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-cont-line-03",
+            "text": "найнизшее, на которомъ мⷭць; дрꙋгое нб҃о еⷭт, на котороⷨ пла-",
+            "bbox_xywh": [
+              158,
+              873,
+              948,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-cont-line-04",
+            "text": "нета еⷭт Меркꙋрꙋшъ; третее нб҃о еⷭт, на котороⷨ планета Венера,",
+            "bbox_xywh": [
+              158,
+              908,
+              948,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "slovesa-cont-line-05",
+            "text": "четвертоє нб҃о (кінця не стає).",
+            "bbox_xywh": [
+              158,
+              943,
+              948,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 15,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          158,
+          1015,
+          949,
+          170
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "Оба отсї уривки, се частини Люцідарія дечому відмінного",
+            "bbox_xywh": [
+              158,
+              1015,
+              949,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "від того, який надруковано висше. Початкова загадка першого",
+            "bbox_xywh": [
+              158,
+              1050,
+              949,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "уривка відповідає питаню 45 нашого тексту Г і пит. 8 тексту Д,",
+            "bbox_xywh": [
+              158,
+              1086,
+              949,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-04",
+            "text": "оба відривки Бесѣды трехъ святителей. Другий уривок пор. наш",
+            "bbox_xywh": [
+              158,
+              1121,
+              949,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 13,
+                "end": 36,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 36,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-05",
+            "text": "Люцидар пит. 18.",
+            "bbox_xywh": [
+              158,
+              1156,
+              949,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "banket-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          265,
+          1268,
+          723,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "banket-heading-line-01",
+            "text": "О. Плїсниський Василіянський рукопис XVII в.",
+            "bbox_xywh": [
+              265,
+              1268,
+              723,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "banket-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          230,
+          1346,
+          546,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "banket-title-line-01",
+            "text": "(Банкет дꙋховний, без початку).",
+            "bbox_xywh": [
+              230,
+              1346,
+              546,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 1,
+                "end": 16,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 16,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "banket",
+        "kind": "body",
+        "bbox_xywh": [
+          301,
+          1413,
+          531,
+          205
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "banket-line-01",
+            "text": "що в діалогу теразнѣйшом маєм,",
+            "bbox_xywh": [
+              301,
+              1413,
+              531,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "banket-line-02",
+            "text": "пребачте тераз, васмосцѡв жадаєм",
+            "bbox_xywh": [
+              301,
+              1448,
+              531,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "banket-line-03",
+            "text": "кволи дѣток, котріє сут в школѣ.",
+            "bbox_xywh": [
+              301,
+              1483,
+              531,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "banket-line-04",
+            "text": "Будем розмовляти и родичом кволѣ,",
+            "bbox_xywh": [
+              301,
+              1518,
+              531,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "banket-line-05",
+            "text": "бы на нас были потом бачнѣйшіє",
+            "bbox_xywh": [
+              301,
+              1554,
+              531,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "banket-line-06",
+            "text": "и до своих домов пріємнѣйшіє.",
+            "bbox_xywh": [
+              301,
+              1589,
+              531,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00094",
+                "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "slovesa-line-01",
+        "reading": "(Словеса избранная). 1. Ѡтець мѧ роди, аз же родиⷯ себѣ",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-02",
+        "reading": "женꙋ, жена же моѧ роди мнѣ дитѧ, дитѧ жⷵ мое роди Ѡцꙋ моемꙋ",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-03",
+        "reading": "матер, и то реклъ Адаⷨ.",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-04",
+        "reading": "Толкованіє. Ѡтець еⷭт Бг҃ъ, иже создал Адама, и вы-",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-05",
+        "reading": "нѧвши ѿ него ребро, создалъ ємꙋ женꙋ, ѡ нейже рече: родиⷯ себѣ",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-06",
+        "reading": "женꙋ, а жена моѧ роди дитѧ, из неѧ же роди сѧ Бц҃а. Тоеⷤ рече:",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-07",
+        "reading": "дитѧ мое роди Ѡцꙋ моемꙋ мт҃ръ, то еⷭт Преⷭтꙋю Бц҃ꙋ.",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-08",
+        "reading": "2. Що еⷭт Гогъ и Магогъ? Гогъ еⷭт Антихрист, а Ма-",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-09",
+        "reading": "гогъ войско єгѡ.",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-10",
+        "reading": "На долинѣ Іѡсафатовои страшный сꙋд бꙋдет в’ недѣлю, але",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-line-11",
+        "reading": "Бг҃ъ вѣсть, в’ѧкꙋю.",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-cont-line-01",
+        "reading": "3. Ѡ небахъ ѧк много их еⷭт. Повѣдаюⷮ филосоѳове и а-",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-cont-line-02",
+        "reading": "стрологове, же ѡдинадицать небъ знайдꙋєⷮ сѧ. Первше еⷭт нб҃о",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-cont-line-03",
+        "reading": "найнизшее, на которомъ мⷭць; дрꙋгое нб҃о еⷭт, на котороⷨ пла-",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-cont-line-04",
+        "reading": "нета еⷭт Меркꙋрꙋшъ; третее нб҃о еⷭт, на котороⷨ планета Венера,",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "slovesa-cont-line-05",
+        "reading": "четвертоє нб҃о (кінця не стає).",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "banket-title-line-01",
+        "reading": "(Банкет дꙋховний, без початку).",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "banket-line-01",
+        "reading": "що в діалогу теразнѣйшом маєм,",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "banket-line-02",
+        "reading": "пребачте тераз, васмосцѡв жадаєм",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "banket-line-03",
+        "reading": "кволи дѣток, котріє сут в школѣ.",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "banket-line-04",
+        "reading": "Будем розмовляти и родичом кволѣ,",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "banket-line-05",
+        "reading": "бы на нас были потом бачнѣйшіє",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      },
+      {
+        "line_id": "banket-line-06",
+        "reading": "и до своих домов пріємнѣйшіє.",
+        "reason": "Provisional historical-script reading: superscript letters, titla, diacritics and exact historical glyphs need enlarged independent comparison; Unicode encoding is approximate."
+      }
+    ],
+    "language_annotation": {
+      "annotator": "GPT-6.2",
+      "date": "2026-11-25",
+      "status": "provisional",
+      "prior_reading_commit": "7de68120743b81aa012299abec86f1ac2621fecb",
+      "prior_reading_blob": "c38f4a44506f4addae594483cb8948cd8992cc69",
+      "scope": "Language/script metadata only; frozen source characters, line IDs, geometry, raw_response and uncertainty notes unchanged.",
+      "policy": "Code-point spans over frozen reader_id. cu = Church Slavonic (including mixed local forms when dominant); uk = Ukrainian, with uncertain=true for provisional historical Ruthenian/early Ukrainian attribution; ru = Russian bibliography; la = Latin editorial formula. Numeral-only folio/sheet lines remain untagged. Script labels refer to the linguistic writing system, not every punctuation or numeral code point. Language uncertainty is separate from glyph uncertainty.",
+      "notes": "Slovesa contains a mixed Church Slavonic and vernacular register; first riddle/explanation provisionally cu, Gog/Magog and Lucidarius excerpts provisionally uk. Banket has historical Ukrainian and Polish-influenced forms (тераз, васмосцѡв, кволи); no separate Polish switch asserted without stronger evidence."
+    }
+  }
+}

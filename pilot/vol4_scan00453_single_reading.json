@@ -1,0 +1,758 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 453,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00453.jpg",
+  "source_image_sha256": "a59456da319a341456eaa63234fecf67910e8665670785db7a77f87ac785ef89",
+  "reading": {
+    "reader_id": "gpt62-single-20261125-v4s00453",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-pr143-remaining-checked-headings-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Full visual reading of pinned original page including headings, manuscript text, commentary and printer furniture. TOC titles known; no original OCR or peer page reading used. Provisional glyphs and estimated geometry. Not blind or verified.",
+    "raw_response": "Додатки і поправки.\nВже значна часть отсього тому була надрукована, коли менї\nявила ся можливість користувати ся інтересною збіркою рукописів\nо. А. Петрушевича, що тепер зложена в Народнїм у Львові і ска-\nтальоґована здебільшого д. Свистуном. Отсе причина, що доповненя\nдо сього тома виходять такі просторі.\nДо роздїлу I.\n(Катехізми на апокріфічні теми).\nП. Рукопис Народного Дому XVIII в. (Муз. о. Петрушевича\nч. 213, к. 23—27).\n(Вопроси ст҃го Василїа Великагѡ и Григорїа Бг҃о-\nслова).\n1. Вопроⷭ: Колко Адам лежалъ мертвъ, гди єго Гс҃дь злѣ-\nпил з глини?\nѠвѣт: л҃. лѣт лежал.\n2. Вопрос: Что рек Адам, гди єго Бг҃ъ ѡживилъ?\nѠвѣт: Рек алилꙋа.\n3. Вопрос: Что єⷭт алилꙋа?\nѠвѣт: Хвалю тебе Бж҃е.\n4. Вопрос: Что рече Адам, єгда ѡживи єго Бг҃ъ?\nѠвѣт: Рече: бл҃свено црⷭтво ѡца и сн҃а и ст҃го Дх҃а всегда,\nнинѣ и присно и во вѣки вѣком. амин.\n5. Вопрос: Кто не рожден та умер, и кто родил сѧ и не\nумерлъ, але мусит умерати?\nПамятки т. IV.\n51",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "supplements-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          387,
+          507,
+          436,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "supplements-heading-line-01",
+            "text": "Додатки і поправки.",
+            "bbox_xywh": [
+              387,
+              507,
+              436,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          137,
+          646,
+          932,
+          170
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "Вже значна часть отсього тому була надрукована, коли менї",
+            "bbox_xywh": [
+              137,
+              646,
+              932,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "явила ся можливість користувати ся інтересною збіркою рукописів",
+            "bbox_xywh": [
+              137,
+              681,
+              932,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "о. А. Петрушевича, що тепер зложена в Народнїм у Львові і ска-",
+            "bbox_xywh": [
+              137,
+              716,
+              932,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-04",
+            "text": "тальоґована здебільшого д. Свистуном. Отсе причина, що доповненя",
+            "bbox_xywh": [
+              137,
+              751,
+              932,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-05",
+            "text": "до сього тома виходять такі просторі.",
+            "bbox_xywh": [
+              137,
+              786,
+              932,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          512,
+          856,
+          181,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-heading-line-01",
+            "text": "До роздїлу I.",
+            "bbox_xywh": [
+              512,
+              856,
+              181,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          316,
+          904,
+          565,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-title-line-01",
+            "text": "(Катехізми на апокріфічні теми).",
+            "bbox_xywh": [
+              316,
+              904,
+              565,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vasil-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          153,
+          985,
+          895,
+          69
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "vasil-heading-line-01",
+            "text": "П. Рукопис Народного Дому XVIII в. (Муз. о. Петрушевича",
+            "bbox_xywh": [
+              153,
+              985,
+              895,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "vasil-heading-line-02",
+            "text": "ч. 213, к. 23—27).",
+            "bbox_xywh": [
+              153,
+              1024,
+              895,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vasil",
+        "kind": "body",
+        "bbox_xywh": [
+          137,
+          1097,
+          936,
+          485
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "vasil-line-01",
+            "text": "(Вопроси ст҃го Василїа Великагѡ и Григорїа Бг҃о-",
+            "bbox_xywh": [
+              137,
+              1097,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-02",
+            "text": "слова).",
+            "bbox_xywh": [
+              137,
+              1132,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 7,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-03",
+            "text": "1. Вопроⷭ: Колко Адам лежалъ мертвъ, гди єго Гс҃дь злѣ-",
+            "bbox_xywh": [
+              137,
+              1167,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-04",
+            "text": "пил з глини?",
+            "bbox_xywh": [
+              137,
+              1202,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-05",
+            "text": "Ѡвѣт: л҃. лѣт лежал.",
+            "bbox_xywh": [
+              137,
+              1237,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-06",
+            "text": "2. Вопрос: Что рек Адам, гди єго Бг҃ъ ѡживилъ?",
+            "bbox_xywh": [
+              137,
+              1272,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-07",
+            "text": "Ѡвѣт: Рек алилꙋа.",
+            "bbox_xywh": [
+              137,
+              1307,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-08",
+            "text": "3. Вопрос: Что єⷭт алилꙋа?",
+            "bbox_xywh": [
+              137,
+              1342,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-09",
+            "text": "Ѡвѣт: Хвалю тебе Бж҃е.",
+            "bbox_xywh": [
+              137,
+              1377,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-10",
+            "text": "4. Вопрос: Что рече Адам, єгда ѡживи єго Бг҃ъ?",
+            "bbox_xywh": [
+              137,
+              1412,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-11",
+            "text": "Ѡвѣт: Рече: бл҃свено црⷭтво ѡца и сн҃а и ст҃го Дх҃а всегда,",
+            "bbox_xywh": [
+              137,
+              1447,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 12,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-12",
+            "text": "нинѣ и присно и во вѣки вѣком. амин.",
+            "bbox_xywh": [
+              137,
+              1482,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 36,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-13",
+            "text": "5. Вопрос: Кто не рожден та умер, и кто родил сѧ и не",
+            "bbox_xywh": [
+              137,
+              1517,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "vasil-line-14",
+            "text": "умерлъ, але мусит умерати?",
+            "bbox_xywh": [
+              137,
+              1552,
+              936,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          215,
+          1595,
+          153,
+          27
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "Памятки т. IV.",
+            "bbox_xywh": [
+              215,
+              1595,
+              153,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-single-20261125-v4s00453",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sheet-number",
+        "kind": "other",
+        "bbox_xywh": [
+          993,
+          1584,
+          34,
+          28
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "sheet-number-line-01",
+            "text": "51",
+            "bbox_xywh": [
+              993,
+              1584,
+              34,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "vasil-line-01",
+        "reading": "(Вопроси ст҃го Василїа Великагѡ и Григорїа Бг҃о-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-02",
+        "reading": "слова).",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-03",
+        "reading": "1. Вопроⷭ: Колко Адам лежалъ мертвъ, гди єго Гс҃дь злѣ-",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-04",
+        "reading": "пил з глини?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-05",
+        "reading": "Ѡвѣт: л҃. лѣт лежал.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-06",
+        "reading": "2. Вопрос: Что рек Адам, гди єго Бг҃ъ ѡживилъ?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-07",
+        "reading": "Ѡвѣт: Рек алилꙋа.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-08",
+        "reading": "3. Вопрос: Что єⷭт алилꙋа?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-09",
+        "reading": "Ѡвѣт: Хвалю тебе Бж҃е.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-10",
+        "reading": "4. Вопрос: Что рече Адам, єгда ѡживи єго Бг҃ъ?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-11",
+        "reading": "Ѡвѣт: Рече: бл҃свено црⷭтво ѡца и сн҃а и ст҃го Дх҃а всегда,",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-12",
+        "reading": "нинѣ и присно и во вѣки вѣком. амин.",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-13",
+        "reading": "5. Вопрос: Кто не рожден та умер, и кто родил сѧ и не",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      },
+      {
+        "line_id": "vasil-line-14",
+        "reading": "умерлъ, але мусит умерати?",
+        "reason": "Provisional visual reading: exact historical glyphs, titla, superscript letters and punctuation need independent enlarged comparison."
+      }
+    ],
+    "language_annotation": {
+      "annotator": "GPT-6.2",
+      "date": "2026-11-25",
+      "status": "provisional",
+      "scope": "First-reading code-point language/script spans on all linguistic lines.",
+      "policy": "cu Church Slavonic; uk Ukrainian including tentative historical Ruthenian; ru Russian bibliography. Numeric-only folio/sheet numbers untagged. Historic language attribution uncertain.",
+      "notes": "Supplement starts with editorial Ukrainian; mixed vernacular catechism tentatively historical Ukrainian, liturgical formula and title Church Slavonic. No front-side folio numeral."
+    }
+  }
+}

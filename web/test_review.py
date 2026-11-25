@@ -9,6 +9,479 @@ COMMIT = 'e871f32537e81f81896f6ce9a6658aba667db9c5'
 PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aH1sAAAAASUVORK5CYII='
 
 class ReviewSmoke(unittest.TestCase):
+    def test_volume_one_contents_records(self):
+        # Edition-specific regression checks; source scan and printed folio are distinct.
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        entries = data['1']['entries']
+        items = [entry for entry in entries if len(entry) > 4 and entry[4] == 1]
+        self.assertEqual(len(items), 118)
+        self.assertEqual([sum(entry[0] == n for entry in items) for n in range(465, 470)], [19, 27, 34, 28, 10])
+        reversed_range = next(e for e in items if e[2] == '324–320')
+        self.assertEqual(reversed_range[0], 465)
+        self.assertEqual(reversed_range[3], 399)
+        self.assertIn('325', reversed_range[5])
+        continuation = next(e for e in items if e[1].startswith('В. Перехід через Червоне море'))
+        self.assertEqual(continuation[0], 467)
+        self.assertEqual(continuation[2], '251–254')
+        self.assertIn('гірка вода', continuation[1])
+        self.assertTrue(any(e[0] == 469 and e[2] == '338–339' for e in items))
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, data['1']['sources'])
+            self.assertTrue(title and printed)
+            self.assertTrue(scan is None or 1 <= scan <= 469)
+
+    def test_contents_navigation(self):
+        # Isolate click handling from remote loading (covered by the other smoke tests).
+        html = APP.read_text(encoding='utf-8')
+        marker = 'updateMode();load();'
+        self.assertIn(marker, html)
+        html = html.replace(marker, "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,$('ref').value,$('mode').value];if($('contentsPanel').open)renderContents();};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width': 390, 'height': 844})
+            page.set_content(html)
+            page.locator('#volume').select_option('1')
+            page.evaluate("$('ref').value='feature/example'")
+            page.evaluate("$('mode').value='both';updateMode()")
+            page.locator('#contentsOpen:visible, #contentsOpenMobile:visible').click()
+            page.locator('#contentsEntries button[data-scan="399"]').click()
+            self.assertEqual(page.evaluate('window.lastJump'), ['1', '399', 'feature/example', 'both'])
+            self.assertTrue(page.locator('#contentsPanel').is_hidden())
+            page.locator('#contentsOpen:visible, #contentsOpenMobile:visible').click()
+            page.locator('#contentsSources button').filter(has_text='469').click()
+            self.assertEqual(page.evaluate('window.lastJump')[:2], ['1', '469'])
+            page.locator('#volume').select_option('5')
+            page.locator('#contentsOpen:visible, #contentsOpenMobile:visible').click()
+            self.assertIn('Volume 5', page.locator('#contentsTitle').inner_text())
+            self.assertEqual(page.locator('#contentsSources button').count(), 2)
+            page.locator('#contentsSources button').first.focus()
+            page.keyboard.press('Enter')
+            self.assertEqual(page.evaluate('window.lastJump')[:2], ['5', '311'])
+            browser.close()
+
+    def test_all_volume_contents_destinations(self):
+        # A calculated page is deliberately not a verified work start or line anchor.
+        html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
+            "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,pendingContentsEstimate];pendingContentsEstimate=false;if($('contentsPanel').open)renderContents();};load();")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':390,'height':844})
+            page.set_content(html)
+            result = page.evaluate("""() => Object.entries(volumeContents).map(([v,d])=>{
+                const ds=d.entries.map(e=>contentsDestination(v,e));
+                return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
+                        ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
+            })""")
+            self.assertEqual(result, [['1',145,57,88,0],['2',140,29,111,0],
+                                      ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
+            self.assertEqual(page.evaluate("""() => [
+                contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
+                contentsDestination('3',[439,'example','LIX–LXVIII',null,1]),
+                contentsDestination('1',[465,'bad','9999',null,1]),
+                contentsDestination('2',[519,'bad','IIII',null,1]),
+                contentsDestination('3',[439,'bad','',null,1]),
+                contentsDestination('4',[570,'known','90',141,1])
+            ]"""), [{'scan':29,'kind':'estimated'},{'scan':77,'kind':'estimated'},
+                      None,None,None,{'scan':141,'kind':'verified'}])
+            for v, count in [('1',145),('2',140),('3',170),('4',112),('5',48)]:
+                page.locator('#volume').select_option(v)
+                if page.locator('#contentsPanel').is_hidden():
+                    page.locator('#contentsOpen:visible, #contentsOpenMobile:visible').click()
+                self.assertEqual(page.locator('#contentsEntries button[data-scan], #contentsEntries button[data-estimated-scan]').count(), count)
+                b = page.locator('#contentsEntries button[data-estimated-scan]').first
+                scan = b.get_attribute('data-estimated-scan')
+                self.assertIn('unverified', b.inner_text())
+                b.click()
+                self.assertEqual(page.evaluate('window.lastJump'), [v, scan, True])
+                self.assertTrue(page.locator('#contentsPanel').is_hidden())
+            browser.close()
+
+    def test_volume_two_contents_records(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        volume = data['2']
+        items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
+        self.assertEqual(len(items), 129)
+        self.assertEqual(volume['sources'], list(range(519, 526)))
+        self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
+                         [21, 19, 21, 19, 16, 17, 16])
+        self.assertEqual(sum(e[4] == 2 for e in items), 4)
+        continuation = next(e for e in items if e[1].startswith('З. О еллинскихъ мудрецехъ'))
+        self.assertEqual((continuation[0], continuation[2]), (519, '33–35'))
+        self.assertIn('520', continuation[5])
+        reversed_range = next(e for e in items if e[2] == '194–169')
+        self.assertIn('Printed', reversed_range[5])
+        self.assertEqual(reversed_range[3], 276)
+        misprinted_start = next(e for e in items if e[2] == '50–65 і 402')
+        self.assertEqual(misprinted_start[3], 141)
+        self.assertIn('scan 484', misprinted_start[5])
+        self.assertTrue(any(e[2] == '154–156 і 403–408' for e in items))
+        self.assertTrue(any(e[1] == 'O Sybillach' for e in items))
+        self.assertTrue(any(e[1].startswith('O postawie Jezusa Chrystusa') for e in items))
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, volume['sources'])
+            self.assertTrue(title and printed)
+            self.assertTrue(scan is None or 1 <= scan <= 526)
+
+    def test_volume_three_contents_records(self):
+        import json
+        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        volume = data['3']
+        items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
+        self.assertEqual(volume['sources'], list(range(439, 447)))
+        self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
+                         [21, 20, 17, 16, 18, 22, 21, 16])
+        self.assertEqual(sum(e[4] == 2 for e in items), 13)
+        for printed in ('160–154', '154–255', '295–207', '211–233', '259–259'):
+            self.assertTrue(any(e[2] == printed for e in items), printed)
+        self.assertTrue(any(e[2] == '' and e[1].startswith('Ж. Събор') for e in items))
+        self.assertTrue(any(e[2] == '192–193, 304' for e in items))
+        self.assertEqual(len(items), 151)
+        self.assertEqual(sum(e[3] is not None for e in items), 25)
+        for printed, scan in [('160–154', 236), ('154–255', 240), ('295–207', 291), ('211–233', 317), ('259–259', 342), ('14–15', 98)]:
+            self.assertEqual(next(e[3] for e in items if e[2] == printed), scan)
+        self.assertEqual(next(e[3] for e in items if e[1].startswith('Ж. Събор')), 95)
+        self.assertEqual(sum(e[3] == 299 for e in items), 2)
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, volume['sources'])
+            self.assertTrue(title)
+            self.assertTrue(scan is None or 1 <= scan <= 446)
+
+    def test_volume_four_contents_records(self):
+        import json
+        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        volume = data['4']
+        items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
+        self.assertEqual(volume['sources'], list(range(569, 575)))
+        self.assertEqual([sum(e[0] == n for e in items) for n in volume['sources']],
+                         [16, 25, 17, 19, 20, 6])
+        self.assertEqual(len(items), 103)
+        self.assertEqual(sum(e[0] == 572 and e[1].startswith('Б.') for e in items), 2)
+        self.assertEqual(sum(e[3] is not None for e in items), 40)
+        for source, printed, scan in [(572, '225', 307), (574, '366', 518), (571, '139', 211)]:
+            self.assertEqual(next(e[3] for e in items if e[0] == source and e[2] == printed), scan)
+        self.assertEqual(next(e[3] for e in items if e[0] == 570 and e[1].startswith('Т.')), 141)
+        self.assertEqual(next(e[3] for e in items if e[0] == 570 and e[1].startswith('У.')), 142)
+        self.assertEqual(sum(e[3] == 94 for e in items), 2)
+        self.assertEqual(sum(e[3] == 71 for e in items), 2)
+        self.assertEqual([e[3] for e in volume['entries'] if e[1].startswith('До роздїлу')], [500, 514, 523])
+        self.assertTrue(any(e[1].startswith('Ѳ. Wimja Otca') for e in items))
+        for source, title, printed, scan, *_ in items:
+            self.assertIn(source, volume['sources'])
+            self.assertTrue(title and printed)
+            self.assertTrue(scan is None or 1 <= scan <= 580)
+
+    def test_contents_line_anchor_identity(self):
+        # Synthetic identity fixtures, no claim about historic characters.
+        html = APP.read_text(encoding='utf-8')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page()
+            page.set_content(html.replace('updateMode();load();', 'updateMode();'))
+            result = page.evaluate("""() => {
+                const a={suffix:'single_reading',reader_id:'reader-a',line_id:'head-1',text:'Heading'};
+                const c=(reader,text,suffix='single_reading')=>({suffix,data:{reading:{reader_id:reader,regions:[{kind:'heading',lines:[{id:'head-1',text}]}]}}});
+                return [contentsAnchorIndex(a,[c('reader-b','Heading'),c('reader-a','Heading')]),
+                        contentsAnchorIndex(a,[c('reader-a','Changed')]),
+                        contentsAnchorIndex(a,[c('reader-a','Heading','alternate_reading_01')]),
+                        contentsAnchorIndex(a,[c('reader-a','Heading'),c('reader-a','Heading')])];
+            }""")
+            self.assertEqual(result, [1, -1, -1, -1])
+            browser.close()
+
+    def test_contents_reuses_existing_readings(self):
+        import json
+        root = Path(__file__).resolve().parents[1]
+        contents = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        expected = {
+            ('1', 8, 'commission-heading-line-01'),
+            ('1', 76, 'section-title-l001'),
+            ('1', 76, 'witness-a-label-l001'),
+            ('1', 76, 'witness-b-label-l001'),
+            ('1', 82, 'section-title-l001'),
+            ('1', 82, 'witness-label-l001'),
+            ('1', 86, 'section-title-l001'),
+            ('1', 86, 'witness-a-label-l001'),
+            ('1', 89, 'witness-b-label-l001'),
+            ('1', 90, 'witness-c-label-l001'),
+            ('1', 90, 'witness-d-label-l001'),
+            ('1', 92, 'section-title-l001'),
+            ('1', 92, 'witness-a-label-l001'),
+            ('1', 93, 'witness-b-label-l001'),
+            ('1', 94, 'section-title-l001'),
+            ('1', 94, 'witness-a-label-l001'),
+            ('1', 98, 'witness-b-label-l001'),
+            ('1', 101, 'witness-c-label-l001'),
+            ('1', 103, 'witness-d-label-l001'),
+            ('1', 104, 'witness-e-label-l001'),
+            ('1', 105, 'witness-f-label-l001'),
+            ('1', 106, 'witness-g-label-l001'),
+            ('1', 106, 'witness-h-label-l001'),
+            ('1', 108, 'section-title-l001'),
+            ('1', 108, 'witness-a-label-l001'),
+            ('1', 108, 'witness-b-label-l001'),
+            ('2', 100, 'heading-e-line-01'),
+            ('2', 100, 'heading-zh-line-01'),
+        }
+        actual = set()
+        # Validate all anchors, not just those from the original IV pilot.
+        for volume, data in contents.items():
+            for e in data['entries']:
+                if len(e) < 7 or not e[6]:
+                    continue
+                anchor = e[6]
+                self.assertIsNotNone(e[3])
+                record = json.loads((root / f"pilot/vol{volume}_scan{e[3]:05d}_{anchor['suffix']}.json").read_text(encoding='utf-8'))
+                self.assertEqual(record['volume'], volume)
+                self.assertEqual(record['scan_page'], e[3])
+                self.assertEqual(record['reading']['reader_id'], anchor['reader_id'])
+                hits = [(r['kind'], l['text']) for r in record['reading']['regions']
+                        for l in r['lines'] if l['id'] == anchor['line_id']]
+                self.assertEqual(hits, [('heading', anchor['text'])])
+                actual.add((volume, e[3], anchor['line_id']))
+        self.assertTrue(expected <= actual, expected - actual)
+        # Metadata enrichment must cover every linguistic line in these reused drafts.
+        for scan in (82, 86, 89, 90, 92, 93, 94, 98, 101, 103, 104, 105, 106, 108):
+            record = json.loads((root / f'pilot/vol1_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            reading = record['reading']
+            self.assertIn('prior_reading_blob', reading['language_annotation'])
+            for region in reading['regions']:
+                for line in region['lines']:
+                    if not any(c.isalpha() for c in line['text']):
+                        continue
+                    spans = line['language_spans']
+                    self.assertTrue(spans, (scan, line['id']))
+                    self.assertEqual(spans[0]['start'], 0)
+                    self.assertEqual(spans[-1]['end'], len(line['text']))
+                    self.assertTrue(all(a['end'] == b['start'] for a, b in zip(spans, spans[1:])))
+                    self.assertTrue(all(s['text_version'] == reading['reader_id'] for s in spans))
+        rec90 = json.loads((root / 'pilot/vol1_scan00090_single_reading.json').read_text(encoding='utf-8'))['reading']
+        spans90 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
+                   for r in rec90['regions'] for l in r['lines'] for s in l['language_spans']]
+        self.assertIn(('vac.', 'la', 'Latn'), spans90)
+        self.assertIn(('в текстї хибно ', 'uk', 'Cyrl'), spans90)
+        # A two-column page and two sequential witnesses must have distinct anchors.
+        self.assertEqual(len([e for e in contents['1']['entries'] if e[3] == 76 and len(e) > 6 and e[6]]), 3)
+        self.assertEqual(len([e for e in contents['2']['entries'] if e[3] == 100 and len(e) > 6 and e[6]]), 2)
+
+    def test_contents_line_navigation_real_reading_fixture(self):
+        # Real candidate records; synthetic transport/image dimensions only.
+        import json
+        root = Path(__file__).resolve().parents[1]
+        draft = json.loads((root / 'pilot/vol4_scan00071_single_reading.json').read_text(encoding='utf-8'))
+        html = APP.read_text(encoding='utf-8')
+        contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        anchors = [e for e in contents['4']['entries'] if len(e) > 6]
+        self.assertGreaterEqual(len(anchors), 48)
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
+                         [('89', 141, 'pachomius-vision-heading-line-01'),
+                          ('90', 141, 'pachomius-word-heading-line-01'),
+                          ('89', 142, 'untitled-heading-line-01'),
+                          ('91', 143, 'dorotheus-heading-line-01')])
+        for e in anchors:
+            a = e[6]
+            d = json.loads((root / f"pilot/vol4_scan{e[3]:05d}_{a['suffix']}.json").read_text(encoding='utf-8'))
+            self.assertEqual(d['reading']['reader_id'], a['reader_id'])
+            hits = [l for region in d['reading']['regions'] if region['kind'] == 'heading'
+                    for l in region['lines'] if l['id'] == a['line_id']]
+            self.assertEqual([l['text'] for l in hits], [a['text']])
+        # Complete linguistic coverage for the annotated anchor-page batch.
+        for scan in sorted({e[3] for e in anchors}):
+            record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            if scan in (53, 56, 59, 63, 67, 68, 71, 72, 74, 75, 76, 77, 90, 94, 101, 105, 108, 113, 115, 116, 119, 121, 123, 127, 141, 142, 143, 156, 205, 211, 301, 307, 453, 500, 514, 518, 523):
+                self.assertIn('language_annotation', record['reading'])
+            elif 'language_annotation' not in record['reading']:
+                continue  # future batches use the general corpus validator
+            for region in record['reading']['regions']:
+                for line in region['lines']:
+                    if not any(c.isalpha() for c in line['text']):
+                        continue
+                    spans = line['language_spans']
+                    self.assertTrue(spans, (scan, line['id']))
+                    self.assertEqual(spans[0]['start'], 0)
+                    self.assertEqual(spans[-1]['end'], len(line['text']))
+                    self.assertTrue(all(a['end'] == b['start'] for a, b in zip(spans, spans[1:])))
+                    self.assertTrue(all(s['text_version'] == record['reading']['reader_id'] for s in spans))
+        annotated = json.loads((root / 'pilot/vol4_scan00142_single_reading.json').read_text(encoding='utf-8'))
+        lines = {l['id']: l for r in annotated['reading']['regions'] for l in r['lines']}
+        self.assertEqual([(lines['untitled-line-14']['text'][s['start']:s['end']], s['script'])
+                          for s in lines['untitled-line-14']['language_spans'] if s['language'] == 'la'], [('[sic!]', 'Latn')])
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (211, 307, 518)],
+                         [('139', 211, 'revelation-heading-line-01'),
+                          ('225', 307, 'daniel-heading-line-01'),
+                          ('366', 518, 'macarius-heading-line-01')])
+        daniel = json.loads((root / 'pilot/vol4_scan00307_single_reading.json').read_text(encoding='utf-8'))
+        note_lines = [l for r in daniel['reading']['regions'] if r['kind'] == 'note' for l in r['lines']]
+        self.assertEqual(len(note_lines), 3)
+        greek = [(l['text'][s['start']:s['end']], s['script']) for l in note_lines
+                 for s in l['language_spans'] if s['language'] == 'grc']
+        self.assertEqual(greek, [('ἔτη ἓξ καὶ πέντε. καὶ φυτευθήσονται.', 'Grek')])
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (72, 74, 75, 76)],
+                         [('20', 72, 'teacher-heading-line-01'),
+                          ('22', 74, 'communion-heading-line-01'),
+                          ('23', 75, 'gospel-heading-line-01'),
+                          ('24', 76, 'souls-heading-line-01')])
+        communion = next(e for e in anchors if e[3] == 74)
+        self.assertIn('Якимчицький', communion[1])
+        self.assertIn('Комарнянський', communion[6]['text'])
+        self.assertIn('witness identification pending', communion[5])
+        for scan, marker_id in [(72, 'creation-line-07'), (75, 'gospel-line-37')]:
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            self.assertEqual(len(rec['source_note_links']), 1)
+            link = rec['source_note_links'][0]
+            self.assertEqual(link['marker_line_id'], marker_id)
+            line = next(l for r in rec['regions'] for l in r['lines'] if l['id'] == marker_id)
+            start = link['marker_start']
+            self.assertEqual(line['text'][start:start + len(link['marker_text'])], link['marker_text'])
+            note = next(r for r in rec['regions'] if r['id'] == link['note_region_id'])
+            self.assertEqual(note['kind'], 'note')
+            self.assertTrue(note['lines'][0]['text'].startswith(link['marker_text']))
+        first = [e for e in anchors if e[3] in (53, 56, 59)]
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in first],
+                         [('1', 53, 'section-heading-line-01'),
+                          ('1', 53, 'gregory-heading-line-01'),
+                          ('4', 56, 'kalush-heading-line-01'),
+                          ('7', 59, 'biliavsky-heading-line-01')])
+        first_page = json.loads((root / 'pilot/vol4_scan00053_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(first_page['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in first_page['reading']['regions']))
+        self.assertEqual([e[4] for e in first[:2]], [0, 1])
+        for scan, marker_id in [(53, 'gregory-line-03'), (56, 'gregory-cont-line-01')]:
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            self.assertEqual(len(rec['source_note_links']), 1)
+            link = rec['source_note_links'][0]
+            self.assertEqual(link['marker_line_id'], marker_id)
+            line = next(l for r in rec['regions'] for l in r['lines'] if l['id'] == marker_id)
+            start = link['marker_start']
+            self.assertEqual(line['text'][start:start + len(link['marker_text'])], link['marker_text'])
+            note = next(r for r in rec['regions'] if r['id'] == link['note_region_id'])
+            self.assertEqual(note['kind'], 'note')
+            self.assertTrue(note['lines'][0]['text'].startswith(link['marker_text']))
+        catechisms = [e for e in contents['4']['entries'] if e[0] == 569 and len(e) > 4 and e[4] == 1]
+        self.assertEqual(len(catechisms), 16)
+        self.assertTrue(all(len(e) > 6 and e[6] for e in catechisms))
+        rec63 = json.loads((root / 'pilot/vol4_scan00063_single_reading.json').read_text(encoding='utf-8'))['reading']
+        self.assertTrue(any(l['id'] == 'biliavsky-cont-line-03' and l['text'].startswith('26.') 
+                            for r in rec63['regions'] for l in r['lines']))
+        rec90 = json.loads((root / 'pilot/vol4_scan00090_single_reading.json').read_text(encoding='utf-8'))['reading']
+        latin_cyrillic = [l['text'][s['start']:s['end']] for r in rec90['regions'] for l in r['lines']
+                          for s in l['language_spans'] if s['language'] == 'la' and s['script'] == 'Cyrl']
+        self.assertIn('локꙋсъ мортисъ', latin_cyrillic)
+        self.assertIn('тенебрарумъ', latin_cyrillic)
+        self.assertTrue(any(s['language'] == 'de' and s['script'] == 'Latn' 
+                            for r in rec90['regions'] for l in r['lines'] for s in l['language_spans']))
+        self.assertEqual(rec90['source_note_links'][0]['marker_line_id'], 'fragment-line-14')
+        starts = [e for e in anchors if e[3] in (101, 156, 205)]
+        self.assertEqual([(e[3], e[4], e[6]['line_id']) for e in starts],
+                         [(101, 0, 'section-heading-line-01'),
+                          (101, 1, 'epistle-heading-line-01'),
+                          (156, 0, 'section-heading-line-01'),
+                          (156, 1, 'abraham-heading-line-01'),
+                          (205, 1, 'revelation-biliavsky-heading-line-01')])
+        for scan in (101, 156):
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            self.assertIsNone(rec['printed_page_observed'])
+            self.assertFalse(any(r['kind'] == 'page_number' for r in rec['reading']['regions']))
+        linked = [e for e in contents['4']['entries'] if e[3] is not None]
+        self.assertGreaterEqual(len(linked), 48)
+        self.assertTrue(all(len(e) > 6 and e[6] for e in linked if e[1] != 'Передмова'))
+        isaiah = next(e for e in anchors if e[3] == 301 and e[4] == 1)
+        self.assertTrue(isaiah[1].startswith('Б.'))
+        self.assertTrue(isaiah[6]['text'].startswith('А.'))
+        for scan in (301, 453):
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            self.assertIsNone(rec['printed_page_observed'])
+            self.assertFalse(any(r['kind'] == 'page_number' for r in rec['reading']['regions']))
+        rec514 = json.loads((root / 'pilot/vol4_scan00514_single_reading.json').read_text(encoding='utf-8'))['reading']
+        lines514 = {l['id']: l for r in rec514['regions'] for l in r['lines']}
+        self.assertEqual([s['language'] for s in lines514['editorial-line-04']['language_spans']], ['uk', 'cu'])
+        self.assertEqual([s['language'] for s in lines514['editorial-line-08']['language_spans']], ['cu', 'uk'])
+        epistles = [e for e in anchors if e[3] in (105, 108, 113)]
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in epistles],
+                         [('53', 105, 'second-epistle-heading-line-01'),
+                          ('56', 108, 'biliavsky-heading-line-01'),
+                          ('61', 113, 'yarem-heading-line-01')])
+        rec105 = json.loads((root / 'pilot/vol4_scan00105_single_reading.json').read_text(encoding='utf-8'))['reading']
+        spans105 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
+                    for r in rec105['regions'] for l in r['lines'] for s in l['language_spans']]
+        self.assertEqual(spans105.count(('[sic!]', 'la', 'Latn')), 4)
+        self.assertTrue(any('[ . . . ]' in l['text'] for r in rec105['regions'] for l in r['lines']))
+        next_epistles = [e for e in anchors if e[3] in (115, 116, 119)]
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in next_epistles],
+                         [('63', 115, 'drohobych-heading-line-01'),
+                          ('64', 116, 'kalush-heading-line-01'),
+                          ('67', 119, 'uhniv-heading-line-01')])
+        for scan in (115, 119):
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            latin = [l['text'][s['start']:s['end']] for r in rec['regions'] for l in r['lines']
+                     for s in l['language_spans'] if s['language'] == 'la']
+            self.assertEqual(latin, ['[sic!]'])
+        rec119 = json.loads((root / 'pilot/vol4_scan00119_single_reading.json').read_text(encoding='utf-8'))['reading']
+        self.assertIn('1632', rec119['raw_response'])
+        later_epistles = [e for e in anchors if e[3] in (121, 123, 127)]
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in later_epistles],
+                         [('69', 121, 'bachva-heading-line-01'),
+                          ('71', 123, 'yaikovtsi-heading-line-01'),
+                          ('75', 127, 'lviv-heading-line-01')])
+        rec121 = json.loads((root / 'pilot/vol4_scan00121_single_reading.json').read_text(encoding='utf-8'))['reading']
+        spans121 = [(l['text'][s['start']:s['end']], s['language'], s['script'])
+                    for r in rec121['regions'] for l in r['lines'] for s in l['language_spans']]
+        self.assertIn(('Wiktor Bilik, roko 1861, grudnia 7.', 'pl', 'Latn'), spans121)
+        self.assertIn(('[sic!]', 'la', 'Latn'), spans121)
+        rec127 = json.loads((root / 'pilot/vol4_scan00127_single_reading.json').read_text(encoding='utf-8'))['reading']
+        self.assertIn('1903', rec127['raw_response'])
+        self.assertEqual(sum(l['text'].count('†') for r in rec127['regions'] for l in r['lines']), 3)
+        manifest = {'volume':'4','page_count':580,'pages':[{'scan_page':71,'width':1190,'height':1783,
+                    'artifacts':[{'role':'page_image','path':draft['source_image_path'],'sha256':draft['source_image_sha256']},
+                                 {'role':'embedded_ocr','path':'original_ocr/vol4/page-00071.txt'}]}]}
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':390,'height':844})
+            page.evaluate("""fixture => {
+                location.hash='v=4&p=71';
+                window.fetch=async url=>{
+                    if(url.endsWith('/manifest.json'))return new Response(JSON.stringify(fixture.manifest));
+                    if(url.endsWith('.txt'))return new Response('');
+                    if(url.endsWith('vol4_scan00071_single_reading.json')&&!url.includes('/missing/'))
+                        return new Response(JSON.stringify(fixture.draft));
+                    return new Response('',{status:404});
+                };
+                const src=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,'src');
+                Object.defineProperty(HTMLImageElement.prototype,'src',{get:src.get,set(value){
+                    src.set.call(this,'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="1190" height="1783"></svg>'));
+                }});
+            }""", {'manifest':manifest,'draft':draft})
+            page.set_content(html)
+            for line in ['questions-heading-line-01','untitled-heading-line-01']:
+                page.locator('#contentsOpen:visible, #contentsOpenMobile:visible').click()
+                page.locator(f'#contentsEntries button[data-scan="71"][data-line="{line}"]').click()
+                page.locator(f'#candidate [data-line-id="{line}"][aria-pressed="true"]').wait_for()
+                self.assertIn(line, page.locator('#lineinfo').text_content())
+                self.assertEqual(page.locator('#candidate [aria-pressed="true"]').count(), 1)
+            page.evaluate("$('ref').value='missing'")
+            page.locator('#contentsOpen:visible, #contentsOpenMobile:visible').click()
+            page.locator('#contentsEntries button[data-line="questions-heading-line-01"]').click()
+            page.locator('#notice').get_by_text('Exact contents heading is unavailable in this ref; opened the scan only.').wait_for()
+            self.assertEqual(page.locator('#candidate [aria-pressed="true"]').count(), 0)
+            self.assertTrue(page.locator('#highlight').is_hidden())
+            browser.close()
+
+    def test_preface_anchors_reuse_existing_readings(self):
+        import json
+        root = Path(__file__).resolve().parents[1]
+        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        for v, scan in [('1', 10), ('5', 11)]:
+            entry = next(e for e in data[v]['entries'] if e[1] == 'Передмова')
+            self.assertEqual(entry[3], scan)
+            anchor = entry[6]
+            d = json.loads((root / f"pilot/vol{v}_scan{scan:05d}_{anchor['suffix']}.json").read_text(encoding='utf-8'))
+            self.assertEqual(d['reading']['reader_id'], anchor['reader_id'])
+            self.assertEqual([l['text'] for r in d['reading']['regions'] if r['kind'] == 'heading'
+                              for l in r['lines'] if l['id'] == anchor['line_id']], [anchor['text']])
+
     def test_comparison(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])

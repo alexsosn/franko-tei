@@ -64,10 +64,11 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 .line-text .variant-diff .language-span,.line-text .language-span .variant-diff{box-shadow:inset 0 -3px #b39acb}
 .search-match{background:#d6e9f5!important;color:inherit;box-shadow:inset 0 -2px #4d83a3;border-radius:2px}
 .alternate-reasons .alt-text{font:18px/1.75 var(--historic-font),var(--greek-fallback),"Franko Gentium","Franko Shafarik",serif;white-space:pre-wrap;overflow-wrap:anywhere}
+#contentsPanel{width:min(760px,calc(100vw - 20px))}#contentsSources{display:flex;gap:6px;flex-wrap:wrap}#contentsEntries{padding-left:1.4em;margin:8px 0}#contentsEntries li{margin:7px 0;overflow-wrap:anywhere}#contentsEntries button{white-space:normal;text-align:left;max-width:100%}#contentsEntries .subentry{margin-left:.8em}#contentsEntries .subentry-deep{margin-left:1.6em}#contentsEntries .source-link{font-size:12px;padding:2px 5px;margin-left:6px}#contentsEntries small{display:block;color:#59625a}#contentsEntries button[data-estimated-scan]{border-style:dashed}#contentsOpenMobile{display:none}@media(max-width:1000px){#contentsOpen span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}#contentsOpen{min-width:36px;padding:5px}}@media(max-width:760px){#contentsOpen{display:none}#contentsOpenMobile{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex:0 0 auto;padding:3px 8px}}
 </style>
-<header><nav class="mainbar" aria-label="Reader navigation"><h1>Franko</h1><label class="volume-control"><span class="sr-only">Volume</span><select id="volume"><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><div class="page-controls"><button id="prev" aria-label="Previous scan" title="Previous scan">←</button><label><span class="sr-only">Scan number</span><input id="page" type="number" min="1" value="20" inputmode="numeric"></label><span id="total"></span><button id="next" aria-label="Next scan" title="Next scan">→</button><button id="go" aria-label="Go / reload" title="Go / reload">↻</button></div><button id="searchOpen" aria-label="Search corpus" title="Search corpus" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search corpus</span></button><button id="settingsOpen" aria-label="Reader settings" title="Reader settings" aria-haspopup="dialog" aria-controls="readerSettings" aria-expanded="false"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="10" cy="18" r="2" fill="white"/></svg><span>Settings</span></button></nav><nav id="mobilePanes" aria-label="Reader pane"><button id="showScan" aria-pressed="false">Scan</button><button id="showText" aria-pressed="true">Text</button></nav><p id="notice" role="status" hidden></p></header>
+<header><nav class="mainbar" aria-label="Reader navigation"><h1>Franko</h1><label class="volume-control"><span class="sr-only">Volume</span><select id="volume"><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><div class="page-controls"><button id="prev" aria-label="Previous scan" title="Previous scan">←</button><label><span class="sr-only">Scan number</span><input id="page" type="number" min="1" value="20" inputmode="numeric"></label><span id="total"></span><button id="next" aria-label="Next scan" title="Next scan">→</button><button id="go" aria-label="Go / reload" title="Go / reload">↻</button></div><button id="contentsOpen" type="button" aria-label="Contents · Зміст" title="Contents · Зміст" aria-haspopup="dialog" aria-expanded="false" aria-controls="contentsPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 6h14M5 12h14M5 18h14"/><path d="M2 6h.01M2 12h.01M2 18h.01"/></svg><span>Зміст</span></button><button id="searchOpen" aria-label="Search corpus" title="Search corpus" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search corpus</span></button><button id="settingsOpen" aria-label="Reader settings" title="Reader settings" aria-haspopup="dialog" aria-controls="readerSettings" aria-expanded="false"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="10" cy="18" r="2" fill="white"/></svg><span>Settings</span></button></nav><nav id="mobilePanes" aria-label="Reader pane"><button id="showScan" aria-pressed="false">Scan</button><button id="showText" aria-pressed="true">Text</button><button id="contentsOpenMobile" type="button" aria-label="Contents · Зміст" title="Contents · Зміст" aria-haspopup="dialog" aria-expanded="false" aria-controls="contentsPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 6h14M5 12h14M5 18h14"/><path d="M2 6h.01M2 12h.01M2 18h.01"/></svg><span>Зміст</span></button></nav><p id="notice" role="status" hidden></p></header>
 <dialog id="readerSettings" aria-labelledby="settingsTitle"><div class="dialog-heading"><h2 id="settingsTitle">Reader settings</h2><button id="settingsClose" type="button" aria-label="Close settings">✕</button></div><div class="setting-fields"><label>View <select id="mode"><option value="draft">Agent readings</option><option value="ocr">Original PDF OCR</option><option value="both">Both</option></select></label><button id="autoReading" type="button" title="Reset explicit reading preference">Auto (latest)</button><label class="check-label"><input id="showLanguages" type="checkbox"> Highlight languages</label></div><details id="fontSettings"><summary>Reading fonts</summary><nav><label>Church Slavonic <select id="slavonicFont"><option value="monomakh">Monomakh (ustav / poluustav)</option><option value="shafarik">Shafarik (academic)</option><option value="notosans">Noto Sans (modern sans-serif)</option><option value="firaslav">FiraSlav (editing monospace)</option></select></label><label>Greek <select id="greekFont"><option value="gentium">Gentium Plus</option><option value="garamond">EB Garamond</option></select></label><button id="resetFonts" type="button">Reset fonts</button></nav><div class="font-sample" id="slavonicSample" lang="cu">ꙗ Ꙗ ꙑ ѣ ѧ ѫ ѿ б҃ъ гдⷭ҇ь</div><div class="font-sample" id="greekSample" lang="grc">Ἐν ἀρχῇ ἦν ὁ λόγος · ἄ</div><small>Fonts affect display only, not the transcription. Unannotated characters use script-aware fallback.</small></details><details id="advancedSettings"><summary>Source &amp; branch</summary><label>Reading ref <input id="ref" value="main" list="refs" spellcheck="false" title="Git branch or commit containing pilot readings"></label><datalist id="refs"><option value="main"><option value="transcription/vol1-scans-62-100"><option value="transcription/vol1-scans-101-140"></datalist></label><button id="applyRef" type="button">Load ref</button><p id="status" role="status">Loading…</p><small>Physical scan index, not printed pagination. All OCR and draft readings are unverified. Images load from the pinned source repository; dimensions and draft metadata are checked, not downloaded byte hashes.</small></details></dialog>
-<dialog id="searchPanel" aria-labelledby="searchTitle"><div class="dialog-heading"><h2 id="searchTitle">Search corpus</h2><button id="searchClose" type="button" aria-label="Close search">✕</button></div><nav><input id="query" type="search" placeholder="Search full text" aria-label="Search text"><label>Volume <select id="searchVolume"><option value="all">All volumes</option><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><label>Source <select id="searchSource"><option value="both">Both</option><option value="agent">Agent readings</option><option value="ocr">Original OCR</option></select></label><label><input id="caseSensitive" type="checkbox"> Case sensitive</label><button id="searchGo"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button></nav><p id="searchStatus" role="status">Search uses literal text and flexible whitespace; spelling and diacritics are preserved.</p><div id="searchResults"></div><button id="searchMore" hidden>Show more results</button></dialog>
+<dialog id="contentsPanel" aria-labelledby="contentsTitle"><div class="dialog-heading"><h2 id="contentsTitle">Contents · Зміст</h2><button id="contentsClose" type="button" aria-label="Close contents">✕</button></div><p id="contentsStatus" class="muted"></p><p>Original contents scans:</p><nav id="contentsSources"></nav><ol id="contentsEntries"></ol></dialog><dialog id="searchPanel" aria-labelledby="searchTitle"><div class="dialog-heading"><h2 id="searchTitle">Search corpus</h2><button id="searchClose" type="button" aria-label="Close search">✕</button></div><nav><input id="query" type="search" placeholder="Search full text" aria-label="Search text"><label>Volume <select id="searchVolume"><option value="all">All volumes</option><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><label>Source <select id="searchSource"><option value="both">Both</option><option value="agent">Agent readings</option><option value="ocr">Original OCR</option></select></label><label><input id="caseSensitive" type="checkbox"> Case sensitive</label><button id="searchGo"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button></nav><p id="searchStatus" role="status">Search uses literal text and flexible whitespace; spelling and diacritics are preserved.</p><div id="searchResults"></div><button id="searchMore" hidden>Show more results</button></dialog>
 <main><section id="imagePane" class="panel reader-pane" aria-label="Original scan"><nav class="pane-bar"><h2>Scan</h2><button id="minus" aria-label="Zoom out" title="Zoom out">−</button><button id="fit">Fit width</button><button id="plus" aria-label="Zoom in" title="Zoom in">+</button><a id="source" target="_blank" rel="noopener" title="Open full image" aria-label="Open full image">↗ <span>Full image</span></a></nav><div class="scroller" id="imageScroll"><div id="canvas"><img id="scan" alt="Original printed page" draggable="false" hidden><div id="highlight" hidden></div></div><p id="imageError" class="error"></p></div><p id="lineinfo" role="status" class="muted" hidden></p></section><section id="textPane" class="panel reader-pane" aria-label="Text candidates"><nav class="pane-bar"><h2>Text</h2><select id="choice" aria-label="Reading candidate"></select><small id="readingKind">Unverified</small></nav><div id="textscroll"><div id="languageLegend" hidden aria-label="Language legend"></div><section id="draftSection"><details id="readingInfo"><summary id="readingSummary">Reading details</summary><p id="draftStatus" role="status"></p></details><div id="candidate"></div><details id="notes" hidden><summary>Source provenance</summary><pre id="noteText"></pre><a id="readingSource" target="_blank" rel="noopener">Original reading JSON</a></details></section><section id="ocrSection" hidden><h2>Original PDF OCR · unchecked</h2><p id="ocrStatus" role="status"></p><pre id="ocr"></pre></section></div></section></main>
 <script>
 'use strict';
@@ -75,6 +76,4895 @@ const $ = id => document.getElementById(id);
 const PIN = 'e871f32537e81f81896f6ce9a6658aba667db9c5';
 const ROOT = 'https://raw.githubusercontent.com/alexsosn/franko-tei/';
 const counts = [0,469,526,446,580,316];
+const volumeContents = {
+  "1": {
+    "sources": [
+      465,
+      466,
+      467,
+      468,
+      469
+    ],
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
+    "entries": [
+      [
+        465,
+        "Від Археоґрафічної комісиї.",
+        "",
+        8,
+        0,
+        "Original scan heading reads Від Комісиї Археоґрафічної; unnumbered start inspected.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i8-first-image-20261125",
+          "line_id": "commission-heading-line-01",
+          "text": "Від Комісиї Археоґрафічної."
+        }
+      ],
+      [
+        465,
+        "Передмова",
+        "I–LXVI",
+        10,
+        0,
+        "Preface heading inspected; Roman p. I has no visible folio numeral.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i10-first-image-20261125",
+          "line_id": "preface-heading-line-01",
+          "text": "ПЕРЕДМОВА."
+        }
+      ],
+      [
+        465,
+        "I. Індекс книг правдивих і заказаних.",
+        "1",
+        76,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i76-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "I. Індекс книг правдивих і заказаних."
+        }
+      ],
+      [
+        465,
+        "А. Рукопис о. Теодора з Дубівця",
+        "1–5",
+        76,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i76-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Рукопис о. Теодора з Ду-"
+        }
+      ],
+      [
+        465,
+        "Б. Рукопис о. Ілї Яремецького-Білахевича",
+        "1–6",
+        76,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i76-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Рукопис о. Ілії Яремецького"
+        }
+      ],
+      [
+        465,
+        "II. Від сотвореня сьвіта до смерти Христа.",
+        "7",
+        82,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i82-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "II. Від сотвореня сьвіта до смерти Христа."
+        }
+      ],
+      [
+        465,
+        "А. Рукопис о. Теодора з Дубівця",
+        "7–15",
+        82,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i82-first-image-20261125",
+          "line_id": "witness-label-l001",
+          "text": "Рукопис о. Теодора з Дубовець, XVII. в. (стор. 117—123.)"
+        }
+      ],
+      [
+        465,
+        "Б. Рукопис о. Яремецького-Білахевича",
+        "324–320",
+        399,
+        1,
+        "Printed range is reversed; actual text begins on scan 399 (p. 324) and continues on p. 325."
+      ],
+      [
+        465,
+        "III. Сатанаіл і бунт ангелів.",
+        "11",
+        86,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i86-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "III. С а т а н а ї л  і  б у н т  а н г е л і в."
+        }
+      ],
+      [
+        465,
+        "А. О Сотонаилѣ (Крехівська Палея)",
+        "11–13",
+        86,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i86-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Крехівська Палея, стор. 36—39."
+        }
+      ],
+      [
+        465,
+        "Б. Слово о сотвореню ангелъ (Рукп. о. Яремецького-Білахевича)",
+        "14",
+        89,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i89-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Рукопис о. Ілї Яремецького-Білахевича стр. 149—150."
+        }
+      ],
+      [
+        465,
+        "В. Як Бог і Сотона рай садили (Ркп. о. Т. з Дубівця)",
+        "15",
+        90,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i90-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Рукопис XVII. в. о. Теодора з Дубівця ст. 116."
+        }
+      ],
+      [
+        465,
+        "Г. Теж (Ркп. о. Яремецького-Білахевича)",
+        "15–16",
+        90,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i90-first-image-20261125",
+          "line_id": "witness-d-label-l001",
+          "text": "Г. Рукопис Білахевича стор. 108—109."
+        }
+      ],
+      [
+        465,
+        "Д. Бунт ангелів і сьв. Михаіл (Ркп. о. Ст. Теслевцьового)",
+        "325–330",
+        400,
+        1
+      ],
+      [
+        465,
+        "IV. Про рай.",
+        "17",
+        92,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i92-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "IV. П р о  р а й."
+        }
+      ],
+      [
+        465,
+        "А. Крехівська Палея",
+        "17–18",
+        92,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i92-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Крехівська Палея, стор. 68—69."
+        }
+      ],
+      [
+        465,
+        "Б. Рукопис о. Яремецького-Білахевича",
+        "18",
+        93,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i93-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Рукопис о. Білахевича, стор. 408."
+        }
+      ],
+      [
+        465,
+        "V. Оповіданя про Адама і Еву.",
+        "19",
+        94,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i94-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "V. Оповіданя о Адамі і Еві."
+        }
+      ],
+      [
+        465,
+        "А. Слово о Адамѣ (Ркп. о. Т. з Дубівця)",
+        "19–23",
+        94,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i94-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Рукопис о. Теодора з Дубівця стор. 108—116."
+        }
+      ],
+      [
+        465,
+        "Б. Житіє о Адамѣ і Евѣ і о согрѣшеніи их (Дрогобицький рукопис)",
+        "23–26",
+        98,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i98-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Дрогобицький рукопис 1743 р."
+        }
+      ],
+      [
+        465,
+        "В. Сотворенє сьвіта і перших людей, їх перший гріх і вигнанє з раю (Із Слова Мефодия Патарського)",
+        "26–28",
+        101,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i101-first-image-20261125",
+          "line_id": "witness-c-label-l001",
+          "text": "В. Із Слова св. Меѳодія Патарського. Ркп. XVII. в. стор. 1—7."
+        }
+      ],
+      [
+        465,
+        "Г. О изгнаніи Адамови (Крех. Палея)",
+        "28–29",
+        103,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i103-first-image-20261125",
+          "line_id": "witness-d-label-l001",
+          "text": "Г. Із Крехівської Палеї, стор. 82—83."
+        }
+      ],
+      [
+        465,
+        "Д. Смерть Адама (Ркп. Яремецького-Білахевича)",
+        "29–30",
+        104,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i104-first-image-20261125",
+          "line_id": "witness-e-label-l001",
+          "text": "Д. Рукопис о. Ілї Білахевича стор. 106—110."
+        }
+      ],
+      [
+        465,
+        "Е. О сдеяніи св. Тройцы (Крех. Палея)",
+        "30",
+        105,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i105-first-image-20261125",
+          "line_id": "witness-f-label-l001",
+          "text": "Е. Крехівська Палея, стор. 104—105."
+        }
+      ],
+      [
+        465,
+        "Ж. Слово о главѣ Адамовѣ, како в корени лежала (Ркп. о. Яремецького-Білахевича)",
+        "31",
+        106,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i106-first-image-20261125",
+          "line_id": "witness-g-label-l001",
+          "text": "Ж. Рукопис о. Ілї Білахевича (стор. 80)."
+        }
+      ],
+      [
+        465,
+        "З. О главѣ Адамовѣ, которую принесли дѣмони з древомъ (Дрогобицький ркп.)",
+        "31–32",
+        106,
+        1,
+        "Provisional reading of the word которую.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i106-first-image-20261125",
+          "line_id": "witness-h-label-l001",
+          "text": "З. Дрогобицький рукопис XVIII в. (стор. 5.)"
+        }
+      ],
+      [
+        466,
+        "VI. Від Адама до Ноя.",
+        "33",
+        108,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i108-first-image-20261125",
+          "line_id": "section-title-l001",
+          "text": "VI. Від Адама до Ноя."
+        }
+      ],
+      [
+        466,
+        "А. Дїти Адамові (Крех. Палея)",
+        "33",
+        108,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i108-first-image-20261125",
+          "line_id": "witness-a-label-l001",
+          "text": "А. Із Крехівської Палеї стор. 104."
+        }
+      ],
+      [
+        466,
+        "Б. Про Каіна (Крех. Палея)",
+        "33–34",
+        108,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-i108-first-image-20261125",
+          "line_id": "witness-b-label-l001",
+          "text": "Б. Із Крехівської Палеї, стор. 98—99."
+        }
+      ],
+      [
+        466,
+        "В. Каін, Авель і Сиф (Із Слова Меф. Патарського)",
+        "34–35",
+        null,
+        1
+      ],
+      [
+        466,
+        "Г. Про Сифа (Крех. Палея)",
+        "35–36",
+        null,
+        1
+      ],
+      [
+        466,
+        "Д. Сифові потомки (Із Слова Меф. Патарського)",
+        "36",
+        null,
+        1
+      ],
+      [
+        466,
+        "Е. Про Еноха (Крех. Палея)",
+        "36–37",
+        null,
+        1
+      ],
+      [
+        466,
+        "Ж. Про Ламеха (Крех. Палея)",
+        "37–38",
+        null,
+        1
+      ],
+      [
+        466,
+        "VII. Книга Еноха (Із полтавського ркп. ігумена Геннадия)",
+        "39–64",
+        114
+      ],
+      [
+        466,
+        "VIII. Про Ноя і потопу сьвіта.",
+        "65",
+        140
+      ],
+      [
+        466,
+        "А. Потопа сьвіта (Крех. Палея)",
+        "65–68",
+        140,
+        1
+      ],
+      [
+        466,
+        "Б. Ной і єго жінка та Сатана (Із Слова Меф. Патарського)",
+        "68–71",
+        null,
+        1
+      ],
+      [
+        466,
+        "В. По потопі сьвіта і Пророчество Ноєво (Крех. Палея)",
+        "72–73",
+        null,
+        1
+      ],
+      [
+        466,
+        "IX. Від Ноя до Авраама.",
+        "74",
+        149
+      ],
+      [
+        466,
+        "А. Мунт і Неврот і перші війни (Із Слова Мефодия Патарського)",
+        "74–77",
+        149,
+        1
+      ],
+      [
+        466,
+        "Б. Євер і стовп Вавилонський (Крех. Палея)",
+        "77–78",
+        null,
+        1
+      ],
+      [
+        466,
+        "В. Серух і Нахор (Крех. Палея)",
+        "78–79",
+        null,
+        1
+      ],
+      [
+        466,
+        "Г. Арот і Марот (Ковельська Палея)",
+        "79",
+        null,
+        1
+      ],
+      [
+        466,
+        "X. Оповіданя про Авраама.",
+        "80",
+        155
+      ],
+      [
+        466,
+        "А. Книги о Аврааме праотци и патриарсе (Крех. Палея)",
+        "80–86",
+        155,
+        1
+      ],
+      [
+        466,
+        "Б. Слово о Авраамѣ, єгда вопроситъ во домъ свой святую Тройцу (Ркпс. о. Яремецького-Білахевича)",
+        "86–90",
+        null,
+        1
+      ],
+      [
+        466,
+        "В. Загадка дочки Лотової (Крех. Палея)",
+        "90",
+        null,
+        1
+      ],
+      [
+        466,
+        "Г. Указъ о другомъ древѣ крестномъ (Ркп. о. Яремецького-Білахевича)",
+        "90–91",
+        null,
+        1
+      ],
+      [
+        466,
+        "Д. Слово о святой Тройци, як ся Аврааму Богъ показавъ (Ркпс. о. Ст. Теслевцьового)",
+        "330–333",
+        null,
+        1
+      ],
+      [
+        466,
+        "XI. Оповіданя про Мелхіседека.",
+        "92",
+        167
+      ],
+      [
+        466,
+        "А. О Мелхіседеци (Крех. Палея)",
+        "92–97",
+        167,
+        1
+      ],
+      [
+        466,
+        "Б. Слово о. Мелхиседецѣ цари Салимском (Ркп. о. Яремецького-Білахевича)",
+        "97–101",
+        null,
+        1
+      ],
+      [
+        466,
+        "XII. Авраамові сини.",
+        "102",
+        177
+      ],
+      [
+        466,
+        "А. О Исацѣ (Крех. Палея)",
+        "102–104",
+        177,
+        1
+      ],
+      [
+        466,
+        "Б. Слово о Агарѣ и о сыну ея Исмаилу (Ркпс. о. Яремецького-Білахевича)",
+        "104–105",
+        null,
+        1
+      ],
+      [
+        466,
+        "В. Невѣрніи языци откуду зачаша ся (Ркпс. о. Теодора з Дубівця)",
+        "105–106",
+        null,
+        1
+      ],
+      [
+        466,
+        "Г. О Измаиле (Крех. Палея)",
+        "106",
+        null,
+        1
+      ],
+      [
+        466,
+        "Д. Ізмаілтяне (Із Слова Меф. Патарського)",
+        "106–107",
+        null,
+        1
+      ],
+      [
+        466,
+        "Е. Уривок оповіданя про Ізмаіла (Ркпс. о. Ст. Теслевцьового)",
+        "333–335",
+        null,
+        1
+      ],
+      [
+        467,
+        "XIII. Сини Ісаакові.",
+        "108",
+        183
+      ],
+      [
+        467,
+        "А. Вродженє Ісава і Якова (Ковельська Палея)",
+        "108",
+        183,
+        1
+      ],
+      [
+        467,
+        "Б. О лествици (Крех. Палея)",
+        "108–120",
+        183,
+        1
+      ],
+      [
+        467,
+        "В. Три палицї Яковові (Крех. Палея)",
+        "121",
+        null,
+        1
+      ],
+      [
+        467,
+        "Г. О брани Іаковли съ ангеломъ (Крех. Палея)",
+        "121–122",
+        null,
+        1
+      ],
+      [
+        467,
+        "Д. Бытьє Исава сына Исаакова",
+        "122–123",
+        null,
+        1
+      ],
+      [
+        467,
+        "XIV. Патріархи в Єгиптї.",
+        "124",
+        199
+      ],
+      [
+        467,
+        "А. Повесть о прекраснем Іосифе, єгоже продаша братіа зависти ради (Крех. Палея)",
+        "124–126",
+        199,
+        1
+      ],
+      [
+        467,
+        "Б. Плач Йосифа в рові (Ркпс. о. Т. з Дубівця)",
+        "126–127",
+        null,
+        1
+      ],
+      [
+        467,
+        "В. Брати продають Йосифа в неволю; плач Йосифа на гробі матери (Крех. Палея)",
+        "127–129",
+        null,
+        1
+      ],
+      [
+        467,
+        "Г. Плач Якова над Йосифовим плащем (Крех. Палея)",
+        "129–131",
+        null,
+        1
+      ],
+      [
+        467,
+        "Д. Йосиф і Пентефриєва жінка (Крех. Палея)",
+        "131–135",
+        null,
+        1
+      ],
+      [
+        467,
+        "Е. Як Йосиф дав себе пізнати братам (Іспаський ркпс.)",
+        "136–138",
+        null,
+        1
+      ],
+      [
+        467,
+        "Ж. Йосифова ворожба (Крех. Палея)",
+        "138–139",
+        null,
+        1
+      ],
+      [
+        467,
+        "З. Плач Йосифа, коли побачив Вениамина (Ркпс. о. Т. з Дубівця)",
+        "138–140",
+        null,
+        1
+      ],
+      [
+        467,
+        "И. Плач Вениамина посудженого за крадїж (Ркпс. о. Т. з Дубівця)",
+        "140–141",
+        null,
+        1
+      ],
+      [
+        467,
+        "І. Йосифове привитанє з братами (Крех. Палея)",
+        "141–144",
+        null,
+        1
+      ],
+      [
+        467,
+        "К. Подорож Якова до Єгипту і стріча з Йосифом (Крех. Палея)",
+        "144–146",
+        null,
+        1
+      ],
+      [
+        467,
+        "Л. Яковів заповіт (Крех. Палея)",
+        "146–155",
+        null,
+        1
+      ],
+      [
+        467,
+        "М. Йосиф оповідає братам свої пригоди (Крех. Палея)",
+        "155–157",
+        null,
+        1
+      ],
+      [
+        467,
+        "Н. Сказаніє о Іосифѣ Прекрасном (Ркпс. о. Ст. Теслевцьового)",
+        "157–173",
+        null,
+        1
+      ],
+      [
+        467,
+        "XV. Заповіти дванацяти патріархів (Крех. Палея).",
+        "174",
+        249
+      ],
+      [
+        467,
+        "1. Заветъ Рувимовъ о благоумьи",
+        "174–177",
+        249,
+        1
+      ],
+      [
+        467,
+        "2. Завѣтъ Семионовъ о зависти",
+        "177–180",
+        null,
+        1
+      ],
+      [
+        467,
+        "3. Завѣт Левгин о жречестве и о прозорьстве",
+        "180–187",
+        null,
+        1
+      ],
+      [
+        467,
+        "4. Завѣт Іюдин о мужестве",
+        "187–195",
+        null,
+        1
+      ],
+      [
+        467,
+        "5. Завѣтъ Сахаровъ о доброумьи",
+        "195–197",
+        null,
+        1
+      ],
+      [
+        467,
+        "6. Завѣтъ Заулоновъ о милосердіи и о милостини",
+        "197–200",
+        null,
+        1
+      ],
+      [
+        467,
+        "7. Завѣт Данов о ярости и о лжи",
+        "200–203",
+        null,
+        1
+      ],
+      [
+        467,
+        "8. Завѣтъ Нефталимовъ о естественей благости",
+        "203–206",
+        null,
+        1
+      ],
+      [
+        467,
+        "9. Завѣт Гадовъ о ненависти",
+        "206–209",
+        null,
+        1
+      ],
+      [
+        467,
+        "10. Завѣт Асировъ о двою лицю и о злобѣ и о доброумьи",
+        "209–212",
+        null,
+        1
+      ],
+      [
+        467,
+        "11. Завѣт Іосифль о премудрости",
+        "212–218",
+        null,
+        1
+      ],
+      [
+        467,
+        "12. Завѣт Веньяминовъ о помысле чистомъ",
+        "218–224",
+        null,
+        1
+      ],
+      [
+        467,
+        "XVI. Оповіданя про Мойсея.",
+        "225",
+        300
+      ],
+      [
+        467,
+        "А. Житьє святаго великого пророка Мойсея, сказаніє бытья его (Крех. Палея)",
+        "225–245",
+        300,
+        1
+      ],
+      [
+        467,
+        "Б. Сказаніє о Моисеи, як ся родивъ (Ркпс. о. Ст. Теслевцьового)",
+        "245–251",
+        null,
+        1
+      ],
+      [
+        467,
+        "В. Перехід через Червоне море, битва з Аммаликом, гірка вода, вода з каменя, теляча голова і мідяна гадюка (Ркпс. о. Ст. Теслевцьового)",
+        "251–254",
+        null,
+        1,
+        "Title continues on TOC scan 468."
+      ],
+      [
+        468,
+        "Г. Чудо при водах Мерри (Ркпс. о. Т. з Дубівця)",
+        "254–255",
+        null,
+        1
+      ],
+      [
+        468,
+        "Д. Уривок оповіданя про те саме чудо (Дрогобицький ркпс.)",
+        "255",
+        null,
+        1
+      ],
+      [
+        468,
+        "Е. О 12 камыках, иже были на главѣ святителевѣ насажени (Ркпс. XVII в.)",
+        "255–257",
+        null,
+        1
+      ],
+      [
+        468,
+        "Ж. Про Валаама (Ркпс. о. Ст. Теслевцьового)",
+        "257–260",
+        null,
+        1
+      ],
+      [
+        468,
+        "З. Про Валаама (Ркпс. о. Т. Поповича Тухлянського)",
+        "260–263",
+        null,
+        1
+      ],
+      [
+        468,
+        "XVII. Від Мойсея до Давида.",
+        "264",
+        339
+      ],
+      [
+        468,
+        "А. Житіє Іова праведнаго (Ркпс. о. Ст. Теслевцьового)",
+        "264–267",
+        339,
+        1
+      ],
+      [
+        468,
+        "Б. Гедеон і Ізмаілтяне (Із Слова Меф. Патарського)",
+        "268–270",
+        null,
+        1
+      ],
+      [
+        468,
+        "В. Відривок оповіданя про Самсона (Дрогобицький рукопис)",
+        "270–271",
+        null,
+        1
+      ],
+      [
+        468,
+        "Г. Слово на погребѣ дѣвичом о Єфтаі кроли (Ркпс. о. Ст. Теслевцьового)",
+        "335–338",
+        null,
+        1
+      ],
+      [
+        468,
+        "XVIII. Оповіданя про Давида.",
+        "272",
+        347
+      ],
+      [
+        468,
+        "А. Слово о цару Давиду, како списа Псалтиръ (Ркпс. о. Яремецького-Білахевича)",
+        "272–273",
+        347,
+        1
+      ],
+      [
+        468,
+        "В. Відривок тогож оповіданя (Дрогобицький ркпс.)",
+        "273–274",
+        null,
+        1
+      ],
+      [
+        468,
+        "В. Указъ сій о составленіи псалтырнѣмъ (Ркпс. о. Т. з Дубівця)",
+        "274–275",
+        null,
+        1
+      ],
+      [
+        468,
+        "Г. Поученіє, како псалтырь почитает ся (Ркпс. о. Т. з Дубівця)",
+        "275–276",
+        null,
+        1
+      ],
+      [
+        468,
+        "Д. Про пророка Нафана (Крех. Палея)",
+        "276–277",
+        null,
+        1
+      ],
+      [
+        468,
+        "Е. Слово о Сивидлѣ пророчици и о Давидѣ цару (Ркпс. о. Яремецького-Білахевича)",
+        "277–279",
+        null,
+        1
+      ],
+      [
+        468,
+        "XIX. Оповіданя про Соломона.",
+        "280",
+        355
+      ],
+      [
+        468,
+        "А. Повѣсть о. Китоврасе (Крех. Палея)",
+        "280–282",
+        355,
+        1
+      ],
+      [
+        468,
+        "Б. Двоголовий слуга Соломонів і єго сини (Крех. Палея)",
+        "282–283",
+        null,
+        1
+      ],
+      [
+        468,
+        "В. О Ужицкой царици (Крех. Палея)",
+        "283–285",
+        null,
+        1
+      ],
+      [
+        468,
+        "Г. Судове Соломони (Крех. Палея)",
+        "285–288",
+        null,
+        1
+      ],
+      [
+        468,
+        "Д. Оповіданє про царя Адарияна (Крех. Палея)",
+        "289",
+        null,
+        1
+      ],
+      [
+        468,
+        "Е. Соломон і царівна (Крех. Палея)",
+        "290–291",
+        null,
+        1
+      ],
+      [
+        468,
+        "Ж. Сказаніє о царю Соломонѣ, како закопа бѣси во єдиной дельвѣ (Іспаський ркпс)",
+        "291–293",
+        null,
+        1
+      ],
+      [
+        468,
+        "З. Як Соломон із пекла вимудрував ся (Ркпс. о. Ст. Теслевцьового)",
+        "293–294",
+        null,
+        1
+      ],
+      [
+        468,
+        "И. Толкованіє о потири Соломонѣ (Крех. Палея)",
+        "294–295",
+        null,
+        1
+      ],
+      [
+        468,
+        "XX. Від Соломона до Христа.",
+        "296",
+        371
+      ],
+      [
+        468,
+        "А. Св. славного пророка Іліи (Ркпс. о. Ст. Теслевцьового)",
+        "296–303",
+        371,
+        1
+      ],
+      [
+        468,
+        "Б. Св. пророка Єлисея (Ркпс. о. Т. з Дубівця)",
+        "303–304",
+        null,
+        1
+      ],
+      [
+        468,
+        "В. Св. пророка Ісаії (Ркпс. о. Т. з Дубівця)",
+        "304–305",
+        null,
+        1
+      ],
+      [
+        468,
+        "Г. Смерть Єремії і єго пророцтво про Ісуса (Крех. Палея)",
+        "305–306",
+        null,
+        1
+      ],
+      [
+        469,
+        "Д. Страсть св. трехъ отрокъ Ананіи, Азаріи, Мисаила и Данііла пророка (Замойський ркпс.)",
+        "307–312",
+        null,
+        1
+      ],
+      [
+        469,
+        "Е. Память св. трех отрокъ и св. пророка Данііла (Ркпс о. Ст. Теслевцьового)",
+        "312–315",
+        null,
+        1
+      ],
+      [
+        469,
+        "Ж. Св отрок Ананія, Азарія и Мисаила (Ркпс. о. Ст. Теслевцьового)",
+        "315–319",
+        null,
+        1
+      ],
+      [
+        469,
+        "З. Провиденіє пророка Даніила о Навходоносоре (Крех. Палея)",
+        "319–320",
+        null,
+        1
+      ],
+      [
+        469,
+        "И. Пророк Даніїл і цар Кур Персянин (Крех. Палея)",
+        "320",
+        null,
+        1
+      ],
+      [
+        469,
+        "І. Про Сусанну (Крех. Палея)",
+        "320–321",
+        null,
+        1
+      ],
+      [
+        469,
+        "К. Смерть царя Валтасара (Крех. Палея)",
+        "321–322",
+        null,
+        1
+      ],
+      [
+        469,
+        "Л. Як Зоровавель одержав дозвіл вивести Жидів із неволї (Крех. Палея)",
+        "322",
+        null,
+        1
+      ],
+      [
+        469,
+        "М. А се о пророцѣх і о пророчицах (Крех. Палея)",
+        "322–323",
+        null,
+        1
+      ],
+      [
+        469,
+        "Н. Александер В у Рахманів (Крех. Палея)",
+        "338–339",
+        null,
+        1
+      ],
+      [
+        469,
+        "Показчик імен осіб і місць згаданих в текстах сего тому.",
+        "341–355",
+        null
+      ],
+      [
+        469,
+        "Показчик писателїв і творів наведених у сьому томі",
+        "356–361",
+        null
+      ],
+      [
+        469,
+        "Показчик лєгендових і казочних мотивів і т. п. в текстах сего тому",
+        "362–383",
+        null
+      ],
+      [
+        469,
+        "Показчик неясних або рідше вживаних слів у текстах сего тому",
+        "384–387",
+        null
+      ],
+      [
+        469,
+        "Важнїйші похибки друкарські.",
+        "388",
+        null
+      ]
+    ]
+  },
+  "2": {
+    "sources": [
+      519,
+      520,
+      521,
+      522,
+      523,
+      524,
+      525
+    ],
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
+    "entries": [
+      [
+        519,
+        "Передмова",
+        "I–LXXVIII",
+        5,
+        0,
+        "Preface heading inspected; Roman p. I has no visible folio numeral."
+      ],
+      [
+        519,
+        "I. Зміст і характер отсего тома",
+        "I–II",
+        5,
+        1,
+        "Section heading inspected on the preface opening."
+      ],
+      [
+        519,
+        "II. Апокріфічні євангелия",
+        "II–IV",
+        null,
+        1
+      ],
+      [
+        519,
+        "III. Індекси новозавітних апокріфів євангельського круга",
+        "V–VI",
+        null,
+        1
+      ],
+      [
+        519,
+        "IV. Вплив новозавітних апокріфів єв. круга на лїтературу і штуку західної Европи",
+        "VI–XVII",
+        null,
+        1
+      ],
+      [
+        519,
+        "V. Виданя і наукові обробленя апокріфів євангельського круга",
+        "XVII–XX",
+        null,
+        1
+      ],
+      [
+        519,
+        "VI. Апокріфічні євангелия у Словян; словянські індекси",
+        "XX–XXIV",
+        null,
+        1
+      ],
+      [
+        519,
+        "VII. Вплив апокріфічних євангелий на словянську лїтературу і штуку",
+        "XXIV–XXV",
+        null,
+        1
+      ],
+      [
+        519,
+        "А. Пасії",
+        "XXV–XXXII",
+        null,
+        2
+      ],
+      [
+        519,
+        "Б. Збірки лєгенд і хронографи",
+        "XXXIII–XXXIX",
+        null,
+        2
+      ],
+      [
+        519,
+        "В. Поетичні переробки",
+        "XXXIX–LXI",
+        null,
+        2
+      ],
+      [
+        519,
+        "Г. Малярство",
+        "LXI–LXIII",
+        null,
+        2
+      ],
+      [
+        519,
+        "VIII. Наукові дослїди над апокріфами у Словян",
+        "LXIII–LXXVIII",
+        null,
+        1
+      ],
+      [
+        519,
+        "I. Пророцтва про Ісуса.",
+        "1",
+        83
+      ],
+      [
+        519,
+        "А. Оповіданє про Гермеса Трісмеґіста (Крех. Палея)",
+        "1–2",
+        83,
+        1
+      ],
+      [
+        519,
+        "Б. Прореченіє о Христѣ въ кумирници єлинскаго бога Аполона (Замойський рукопис)",
+        "2–3",
+        null,
+        1
+      ],
+      [
+        519,
+        "В. Сказаніє Афродитияна о бывшемъ чюдеси въ персцѣ земли (Замойський рукопис)",
+        "3–11",
+        null,
+        1
+      ],
+      [
+        519,
+        "Г. Волхви і Ірод (Львівський рукопис)",
+        "11–13",
+        null,
+        1
+      ],
+      [
+        519,
+        "Д. Казаня о явшей ся звѣздѣ и о чудѣ бывшем в Персидѣ в божници Персидскои о полнощи (Ркпс. Теодора Поповича)",
+        "13–18",
+        null,
+        1
+      ],
+      [
+        519,
+        "Е. О царехъ Перскых како прійдоша со дари (Ркпс Яремецького-Білахевича)",
+        "18",
+        100,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt6-single-20261111-v2s00100",
+          "line_id": "heading-e-line-01",
+          "text": "Е. Рукопис о. Яремецького Білахевича, стор. 392."
+        }
+      ],
+      [
+        519,
+        "Ж. Сказаніє о двунадесятихъ Сивиллах (Ркпс Від. надв. біблїот.)",
+        "18–24",
+        100,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt6-single-20261111-v2s00100",
+          "line_id": "heading-zh-line-01",
+          "text": "Ж. Рукопис віденської надв. бібліотеки ч. 88, XVII в."
+        }
+      ],
+      [
+        519,
+        "O Sybillach",
+        "24–32",
+        null,
+        1
+      ],
+      [
+        519,
+        "З. О еллинскихъ мудрецехъ, иже отчасти пророчествоваху о превишнемъ Божествѣ и о рождествѣ Христовѣ отъ пречистія Богородица (Ркпс Яремецького-Білахевича)",
+        "33–35",
+        null,
+        1,
+        "Title continues on TOC scan 520."
+      ],
+      [
+        520,
+        "И. Гермес Трісмеґіст і Пітаґор (Крехівський рукопис)",
+        "395–397",
+        477,
+        1
+      ],
+      [
+        520,
+        "І. Пророцтво Аполлона про Ісуса (Крехівський рукопис)",
+        "397",
+        null,
+        1
+      ],
+      [
+        520,
+        "К. Чуда пресвятои Богородици межи Сибѣллями (Галятовского „Небо новое“)",
+        "398–401",
+        null,
+        1
+      ],
+      [
+        520,
+        "Л. О єллинскихъ философѣхъ (Рукпс Від. надв. біблїот.)",
+        "401–402",
+        null,
+        1
+      ],
+      [
+        520,
+        "II. Ісусові родичі.",
+        "36",
+        118
+      ],
+      [
+        520,
+        "А. Слово на рождество пресв. Богородица (Львівський рукопис)",
+        "36–50",
+        118,
+        1
+      ],
+      [
+        520,
+        "Б. Про різдво Богородицї (Ркпс Йосифа Григора)",
+        "50–53",
+        132,
+        1
+      ],
+      [
+        520,
+        "В. Поученіє на рождество пресв. Богородици (Ркпс Петра Кизикевича)",
+        "53–57",
+        null,
+        1
+      ],
+      [
+        520,
+        "Г. Казаня на рождество пресв. и славной Владичица нашея и присно Дѣвы Маріи (Перемиський ркпс)",
+        "57–59",
+        null,
+        1
+      ],
+      [
+        520,
+        "Д. Житіє Господа Бога нашего Ісуса Христа і Матере єго (Дрогобицький ркпс)",
+        "50–65 і 402",
+        141,
+        1,
+        "Printed start 50 is erroneous; actual start p. 59 (scan 141), confirmed also by the supplement on p. 402 (scan 484)."
+      ],
+      [
+        520,
+        "Е. На рождество пресв. Богородици, якъ ся она народила (Ркпс Ст. Теслевцьового)",
+        "65–71",
+        null,
+        1
+      ],
+      [
+        520,
+        "Ж. На воведеніє пресв. Богородици (Ркпс Ст. Теслевцьового)",
+        "71–74",
+        null,
+        1
+      ],
+      [
+        520,
+        "З. Сказаніє о зачатіи и рождестви пресв. Богородицы (Керестурський ркпс)",
+        "74–98",
+        null,
+        1
+      ],
+      [
+        520,
+        "И. На рождество пресв. Богородица поученіє (Угроруське учит. євангеліє)",
+        "98–100",
+        null,
+        1
+      ],
+      [
+        520,
+        "І. Уведеніє пресв. Богородица (тамже)",
+        "101–102",
+        null,
+        1
+      ],
+      [
+        520,
+        "К. Родословіє пресв. Богородици от котораго колѣна (Ркпс Яремецького-Білахевича)",
+        "102–103",
+        null,
+        1
+      ],
+      [
+        520,
+        "Л. Сказаніє о Іосифѣ обручнику пресв. Богородици (тамже)",
+        "103",
+        null,
+        1
+      ],
+      [
+        520,
+        "М. Казаня на рождество св. Іоана Крестителя (Ркпс Ст. Теслевцьового)",
+        "103–109",
+        null,
+        1
+      ],
+      [
+        520,
+        "Н. Рождество св. Іоанна Предтечя (Комарнянський Пролог)",
+        "109–110",
+        null,
+        1
+      ],
+      [
+        520,
+        "О. Житія св. праведных Богоотецъ Іоакима і Анны (Перемиський ркпс)",
+        "110",
+        null,
+        1
+      ],
+      [
+        521,
+        "П. Успеніє св. Анны (Ркпс Т. з Дубівця)",
+        "110–111",
+        null,
+        1
+      ],
+      [
+        521,
+        "Р. Успеніє св. Анны (Ркпс Я. Казиницького)",
+        "111",
+        null,
+        1
+      ],
+      [
+        521,
+        "С. Із казаня „О житіи честнаго пророка и предтечи и крестителя Господня Іоанна“ (Ркпс із с. Лїтманової)",
+        "403",
+        485,
+        1
+      ],
+      [
+        521,
+        "III. Ісусове різдво.",
+        "112",
+        194
+      ],
+      [
+        521,
+        "А. На рождество Господа нашего Ісуса Христа (Угрор. учит. єванг.)",
+        "112–116",
+        194,
+        1
+      ],
+      [
+        521,
+        "Б. Ісусово різдво (Львівський ркпс)",
+        "116–117",
+        null,
+        1
+      ],
+      [
+        521,
+        "В. Казаня о предивном і невімовном рождествѣ Христовом (Ркпс Т. Поповича)",
+        "117–123",
+        null,
+        1
+      ],
+      [
+        521,
+        "Г. Часть вторая о рождествѣ Христовом (Ркпс Ст. Теслевцьового)",
+        "123–131",
+        null,
+        1
+      ],
+      [
+        521,
+        "Д. Поученіє на предпразднество Стрѣтенія Ісуса Христа (Перемиський Пролог)",
+        "131–132",
+        null,
+        1
+      ],
+      [
+        521,
+        "Е. Казаня на Стрѣтеніє Господа нашего Ісуса Христа (Ркпс Ст. Теслевцьового)",
+        "132–136",
+        null,
+        1
+      ],
+      [
+        521,
+        "Ж. Память св. отця Симеона богопріємца і Анны пророчицѣ (Перемиський Пролог)",
+        "136–137",
+        null,
+        1
+      ],
+      [
+        521,
+        "З. О Симеонѣ Богопріємци слово (Ркпс Яремецького-Білахевича)",
+        "137",
+        null,
+        1
+      ],
+      [
+        521,
+        "И. Ірод велить убивати дїтей (Львівський ркпс)",
+        "137–138",
+        null,
+        1
+      ],
+      [
+        521,
+        "І. О избіеніи дѣтей во виѳлеомскомъ повѣтѣ (Ркпс Ст. Теслевцьового)",
+        "138–143",
+        null,
+        1
+      ],
+      [
+        521,
+        "К. Казанє на Соборъ пресв. Богородицѣ (Ркпс Т. Поповича)",
+        "143–146",
+        null,
+        1
+      ],
+      [
+        521,
+        "Л. Слово о убіеніи св. и славнаго пророка Захарыи (Замойський ркпс)",
+        "146–149",
+        null,
+        1
+      ],
+      [
+        521,
+        "М. Памят св. пророка Захаріи отца Іоана прѣдитеча (Перемиський Пролог)",
+        "149–150",
+        null,
+        1
+      ],
+      [
+        521,
+        "Н. Слово о дѣвицах старого закону (Ркпс Т. з Дубівця)",
+        "150",
+        null,
+        1
+      ],
+      [
+        521,
+        "О. О нравѣ Богородичинѣ, о знаменіи образа и возраста св. Богородица",
+        "151",
+        null,
+        1
+      ],
+      [
+        521,
+        "IV. Ісусові дитячі лїта.",
+        "152",
+        234
+      ],
+      [
+        521,
+        "А. Сьв. сїмя в Нафанаіловім саду (Перемиський Пролог)",
+        "152–153",
+        234,
+        1
+      ],
+      [
+        521,
+        "Б. Казаня на соборъ пресв. Богородици (Ркпс Ст. Теслевцьового)",
+        "153–154 і 403",
+        null,
+        1
+      ],
+      [
+        521,
+        "В. Чуда, котории ся стали, ґды Христос перед Іродом до Єгипту уходил (Сокольський ркпс)",
+        "154–156 і 403–408",
+        null,
+        1
+      ],
+      [
+        522,
+        "Г. Відривок оповіданя про втеку сьв. сїм’ї до Єгипту (Ркпс К. Дух. Акад.)",
+        "156–157",
+        null,
+        1
+      ],
+      [
+        522,
+        "Д. Слово за два разбойника, како зачаху ся (тамже)",
+        "157–158",
+        null,
+        1
+      ],
+      [
+        522,
+        "Е. Сьв. сїм’я між розбійниками (Ркпс Т. з Дубівця)",
+        "158–159",
+        null,
+        1
+      ],
+      [
+        522,
+        "Ж. Слово человѣческое о младенствѣ Ісус Христовѣ царском (Іспаський ркпс)",
+        "159–164",
+        null,
+        1
+      ],
+      [
+        522,
+        "З. Чудо о Господѣ нашемъ Іисусѣ Христѣ (Ркпс Румянцівського Музея)",
+        "164–169",
+        null,
+        1
+      ],
+      [
+        522,
+        "И. Слово о Господѣ нашемъ Ісусѣ Христѣ (Ркпс Яремецького-Білахевича)",
+        "169–172",
+        null,
+        1
+      ],
+      [
+        522,
+        "Відривки білоруського євангелия Томи",
+        "408–409",
+        null,
+        1
+      ],
+      [
+        522,
+        "І. Незгода в Йосифовій сїм’ї із за Ісуса (Перемиський Пролог)",
+        "172",
+        null,
+        1
+      ],
+      [
+        522,
+        "К. Сказаніє Христова пришествія к мору (Перемиський Пролог)",
+        "172–173, 409–410",
+        null,
+        1
+      ],
+      [
+        522,
+        "V. Ісусове хрещене і покуса.",
+        "174",
+        256
+      ],
+      [
+        522,
+        "А. Казаня на Богоявленіє Ісуса Христа (Ркпс Ст. Теслевцьового)",
+        "174–184",
+        256,
+        1
+      ],
+      [
+        522,
+        "Б. Казаня на Богоявленіє Господнє (Ркпс Т. Поповича)",
+        "184–191",
+        null,
+        1
+      ],
+      [
+        522,
+        "В. Кетъ ше Христосъ отъ шветого Іоана окресцелъ (Ркпс Ф. Шовґоря)",
+        "191–194",
+        null,
+        1
+      ],
+      [
+        522,
+        "Г. Ісусъ Христово пости, цо 40 дні и 40 ноци посцелъ (тамже)",
+        "194–169",
+        276,
+        1,
+        "Printed range is reversed; actual start p. 194 (scan 276) confirmed; end not checked."
+      ],
+      [
+        522,
+        "Д. Слово о препреніи діаволи съ Сыномъ Божіимъ (Ркпс Т. з Дубівця)",
+        "196–200, 411",
+        null,
+        1
+      ],
+      [
+        522,
+        "Е. Слово о побѣдѣ діявола, како бесѣдоваху Ісус Христос со діяволомъ на горѣ (Ркпс Ярем.-Білахевича)",
+        "200–203",
+        null,
+        1
+      ],
+      [
+        522,
+        "VI. Ісус учитель і чудотворець.",
+        "204",
+        286
+      ],
+      [
+        522,
+        "А. О знаменіи Господа нашего Ісус Христа (Рукописний уривок)",
+        "204–205",
+        286,
+        1
+      ],
+      [
+        522,
+        "O postawie Jezusa Chrystusa (Сокольський рукопис)",
+        "205–206",
+        null,
+        1
+      ],
+      [
+        522,
+        "Б. Посланіє Авгаря царя къ Господу нашему Ісусу Христу (Ркпс К. Дух. Акад.)",
+        "206–209, 411–412",
+        null,
+        1
+      ],
+      [
+        522,
+        "В. Єже от Єдеса пренесеніє во Константин град нерукотвореннаго образа Ісуса Христа (Ркпс Я. Казиницького)",
+        "210",
+        null,
+        1
+      ],
+      [
+        523,
+        "Г. Синакзаръ слова божия на Преображеніє (Ркпс Ф. Шовґоря)",
+        "211–213",
+        null,
+        1
+      ],
+      [
+        523,
+        "Д. Кетъ на двоимье сутъ сталъ за Христа, Жидзи тримали з вельома судами (Ркпс Ф. Шовґоря)",
+        "213–218",
+        null,
+        1
+      ],
+      [
+        523,
+        "VII. Ісусові муки і смерть.",
+        "219",
+        301
+      ],
+      [
+        523,
+        "А. Розмова Ісуса з матїрю перед муками (Ркпс Ф. Шовґоря)",
+        "219–220",
+        301,
+        1
+      ],
+      [
+        523,
+        "Б. Диявол спокушує всїх апостолів по черзї, аби зрадили Ісуса (Угрор. учит. єванг.)",
+        "220–221",
+        null,
+        1
+      ],
+      [
+        523,
+        "В. Пасѣя албо повѣсть душеспасительная о муцѣ Христа Бога нашего (Ркпс. Ст. Теслевцьового)",
+        "222–236",
+        null,
+        1
+      ],
+      [
+        523,
+        "Г. Исторія святых отецъ и сказаніє, како претерпѣ Христосъ Господь нашего ради спасенія (Ркпс Яремецького-Білахевича)",
+        "236–237",
+        null,
+        1
+      ],
+      [
+        523,
+        "Д. Христові муки і сьвята Веронка (Керестурський співанник)",
+        "237–239",
+        null,
+        1
+      ],
+      [
+        523,
+        "Е. Сотник Локвин (Керестурська Пасия)",
+        "239–240",
+        null,
+        1
+      ],
+      [
+        523,
+        "Ж. Кров Ісусова (Перемиський Пролог)",
+        "240",
+        null,
+        1
+      ],
+      [
+        523,
+        "З. Тїло Ісусово (Керестурська Пасия)",
+        "240–241",
+        null,
+        1
+      ],
+      [
+        523,
+        "И. Про гвоздї, котрими прибито Ісуса до хреста (Ркпс К. Дух. Акад.)",
+        "241–242",
+        null,
+        1
+      ],
+      [
+        523,
+        "І. Слово св. Григорія Богословца о крестѣ честнѣ и о два разбойника (Ркпс Т. з Дубівця)",
+        "242–246",
+        null,
+        1
+      ],
+      [
+        523,
+        "К. Слово о снятію с креста тѣла Господа нашего Ісусъ Христа през Іосифа, а при том ляментъ або плачъ пресв. Богородици (Ркпс Яремецького Білахевича)",
+        "246–252",
+        null,
+        1
+      ],
+      [
+        523,
+        "Л. Чьтенія въскресная. Дѣянія святыя Тройца, сътворено Карином и Лицѣошемъ (Ркпс Ст. Комаревського)",
+        "252–273",
+        null,
+        1
+      ],
+      [
+        523,
+        "М. Слово о муцѣ Господа Спаса нашего Ісусъ Христа и о погрѣбеніи тѣла Господня и о воскресеніи Муисея великого законодавца, дѣяніє святыя Тройца (Ковельська Палея)",
+        "273–292",
+        null,
+        1
+      ],
+      [
+        523,
+        "Н. Слово о плачи Пресв. Богородици под крестомъ Господнимъ и о снятіи тѣла Ісус Христа (Ркпс Київ. Михайлівського манаст.)",
+        "412–415",
+        null,
+        1
+      ],
+      [
+        523,
+        "VIII. Ісусів прихід до пекла, воскресене і вознесене.",
+        "293",
+        375
+      ],
+      [
+        524,
+        "А. Оповіданє Карина і Лисина про Ісусів прихід до пекла (Ркпс Ст. Комаревського)",
+        "293–304",
+        375,
+        1
+      ],
+      [
+        524,
+        "Б. Слово о воскресеніи из мертвых Карина и Левгина, сыновъ великаго законника Симеона, иже сказаша, како Господь до Аду приде и святых изведе (Сокольський рукопис і Ковельська Палея)",
+        "305–314",
+        null,
+        1
+      ],
+      [
+        524,
+        "В. Повѣсти святых апостолъ о Лазаревѣ воскресеніи, иже отъ Адама къ Лазарю четверодневному (Ркпс К. Дух. Акад.)",
+        "315–317",
+        null,
+        1
+      ],
+      [
+        524,
+        "Г. Во святый великій четвертокъ слово св. отца нашего Евсевія о сошествіи во Адъ святого Іоана Предитечи (Ркпс Ст. Теслевцьового)",
+        "317–327",
+        null,
+        1
+      ],
+      [
+        524,
+        "Д. Казаня на воскресеніє Христово (тамже)",
+        "327–331",
+        null,
+        1
+      ],
+      [
+        524,
+        "Е. Казаня на Вознесеніє Христово (Унґварський рукопис)",
+        "331–334",
+        null,
+        1
+      ],
+      [
+        524,
+        "IX. Вороги і приятелї Ісусові.",
+        "335",
+        417
+      ],
+      [
+        524,
+        "А. Пилатів лист до кесаря Клявдия (Ркпс Ст. Комаревського)",
+        "335–336",
+        417,
+        1
+      ],
+      [
+        524,
+        "Б. Пилатів лист до кесаря Клявдия (Ковельська Палея)",
+        "336–337",
+        null,
+        1
+      ],
+      [
+        524,
+        "В. Пилат і пресв. Богородиця (Ркпс. Теод. Поповича)",
+        "337–338",
+        null,
+        1
+      ],
+      [
+        524,
+        "Г. Покаранє Жидів (Унґварський ркпс)",
+        "338–339",
+        null,
+        1
+      ],
+      [
+        524,
+        "Д. Чотири Іроди (тамже)",
+        "339–340",
+        null,
+        1
+      ],
+      [
+        524,
+        "Е. Сказаніє о смерти и караню Божіимъ враговъ Божіихъ (Маластівський Пролог)",
+        "340–341",
+        null,
+        1
+      ],
+      [
+        524,
+        "Ж. Слово о двох разбойниках о Гестѣ и Дизмѣ (Ркпс Яремецького Білахевича)",
+        "342–343",
+        null,
+        1
+      ],
+      [
+        524,
+        "З. Сказаніє учителя церковнаго Іеронима святаго о Іюдѣ предателѣ Господа нашего Іисуса Христа (Ркпс Яремецького Білахевича)",
+        "343–346",
+        null,
+        1
+      ],
+      [
+        524,
+        "И. Оповіданє про Юду Іскаріотського (Ркпс Ст. Теслевцьового)",
+        "346–348",
+        null,
+        1
+      ],
+      [
+        524,
+        "І. Про Лазаря (Угроруське учительне євангеліє)",
+        "348–349",
+        null,
+        1
+      ],
+      [
+        524,
+        "К. Прихід Марти і Марії сестер Лазаревих, Марії Магдалини, Лонгина і иньш. до Риму. Нешита риза Ісусова і уздоровленє кесаря Тиберия (із рукописної книги „Страсти Господа нашего Ісуса Христа“)",
+        "349–353",
+        null,
+        1
+      ],
+      [
+        525,
+        "Л. Переписка Пилата з Тибериєм, смерть Пилата і покаранє Жидів (із того-ж ркпсу)",
+        "353–358",
+        null,
+        1
+      ],
+      [
+        525,
+        "М. Житіє Маріи Магдалыни (Ркпс Київського Михайлівського манаст.)",
+        "358–362",
+        null,
+        1
+      ],
+      [
+        525,
+        "Н. Святыя мироносицѣ и равноапостолнія Маріи Магдалины (Ркпс Якова Казиницького)",
+        "362",
+        null,
+        1
+      ],
+      [
+        525,
+        "О. Святыя Вероникыя бывшія кровоточивыя, иже ицѣлѣ прикоснувши ся подолцѣ ризъ Господа нашего Ісуса Христа, бѣ же отъ Панеады (Комарнянський Пролог)",
+        "362–364",
+        null,
+        1
+      ],
+      [
+        525,
+        "П. Пренесеніє нерукотворенаго образа въ царскій градъ (Маластівський Пролог)",
+        "364–366",
+        null,
+        1
+      ],
+      [
+        525,
+        "Р. Страсть святаго мученика Логина сотника бывшаго при Христовѣ распятіи (Перемиський Пролог)",
+        "366",
+        null,
+        1
+      ],
+      [
+        525,
+        "С. Страсть святыя мученицѣ Фетиніи Самаряныня і сына єя Іосифа (Перемиський Пролог)",
+        "367",
+        null,
+        1
+      ],
+      [
+        525,
+        "Т. Слово о рождествѣ Ісус Христовѣ (Ркпс із села Лїтманової)",
+        "415–418",
+        null,
+        1
+      ],
+      [
+        525,
+        "У. Слово како Марѳа осуди Пилата пред царем Августом (Ркпс К. Михайлівського манастиря)",
+        "418–420",
+        null,
+        1
+      ],
+      [
+        525,
+        "X. Смерть Марії Богородицї.",
+        "368",
+        450
+      ],
+      [
+        525,
+        "А. Пять болїстей Богородицї (Ркпс Павла Кизикевича)",
+        "368–369",
+        450,
+        1
+      ],
+      [
+        525,
+        "Б. Сїм радостей Богородицї (Ркпс Ф. Шовґоря)",
+        "369–370",
+        null,
+        1
+      ],
+      [
+        525,
+        "В. Житіє святыя Богородица списано Епифанієм єпископом Кипрскым (Перемиський Пролог)",
+        "370–383",
+        null,
+        1
+      ],
+      [
+        525,
+        "Г. Успеніє пресвятія славнія владичица нашея Богородица (Ркпс Я. Казиницького)",
+        "384–386",
+        null,
+        1
+      ],
+      [
+        525,
+        "Д. Всечестное и преславное успеніє владичица нашеа Богородица (Маластівський Пролог)",
+        "387–389",
+        null,
+        1
+      ],
+      [
+        525,
+        "Е. І еще повѣм вам о том внебовзятю Богородица (Староміське учительне євангеліє)",
+        "389–390",
+        null,
+        1
+      ],
+      [
+        525,
+        "Ж. Казаня на Успеніє пресвятыя Богородица (Унґварський рукопис)",
+        "390–394",
+        null,
+        1
+      ]
+    ]
+  },
+  "3": {
+    "sources": [
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446
+    ],
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
+    "entries": [
+      [
+        439,
+        "Codex apocryphus, Plan der Sammlung, Inhalt der bisher erschienenen drei Bände",
+        "A–M",
+        5,
+        0,
+        "German introduction heading inspected; alphabetic pagination begins here."
+      ],
+      [
+        439,
+        "Передмова",
+        "I–LXVIII",
+        19,
+        0,
+        "Preface heading inspected; Roman p. I has no visible folio numeral."
+      ],
+      [
+        439,
+        "I. Вступ",
+        "I–IV",
+        19,
+        1,
+        "Section heading inspected on the preface opening."
+      ],
+      [
+        439,
+        "II. Жерела апокр. апост. актів",
+        "IV–IX",
+        null,
+        1
+      ],
+      [
+        439,
+        "III. Найстарші згадки про апокр. апост. акти. Індекси",
+        "IX–XV",
+        null,
+        1
+      ],
+      [
+        439,
+        "IV. Реєстри апостолів і учеників",
+        "XV–XXII",
+        null,
+        1
+      ],
+      [
+        439,
+        "V. Спільні постанови апостолів, подїл сьвіта жеребом",
+        "XXII–XXV",
+        null,
+        1
+      ],
+      [
+        439,
+        "VI. Уваги про поодинокі оповіданя:",
+        "",
+        43,
+        1,
+        "No printed reference in TOC; heading inspected on p. XXV."
+      ],
+      [
+        439,
+        "1. Оповіданя про ап. Петра",
+        "XXV–XXVII",
+        43,
+        2,
+        "Subsection heading inspected on p. XXV."
+      ],
+      [
+        439,
+        "2. Оповіданя про ап. Павла",
+        "XXVII–XXX",
+        null,
+        2
+      ],
+      [
+        439,
+        "3. Оповіданя про ап. Ивана Богослова",
+        "XXXI–XXXVII",
+        null,
+        2
+      ],
+      [
+        439,
+        "4. Оповіданя про ап. Тому",
+        "XXXVII–XLI",
+        null,
+        2
+      ],
+      [
+        439,
+        "5. Оповіданя про ап. Андрія",
+        "XLII–XLIV",
+        null,
+        2
+      ],
+      [
+        439,
+        "6. Оповіданя про ап. Матвія",
+        "XLIV–XLV",
+        null,
+        2
+      ],
+      [
+        439,
+        "7. Оповіданя про ап. Филипа",
+        "XLV–XLVI",
+        null,
+        2
+      ],
+      [
+        439,
+        "8. Оповіданя про Якова брата божого",
+        "XLVI–XLVII",
+        null,
+        2
+      ],
+      [
+        439,
+        "9. Оповіданя про ап. Варфоломея",
+        "XLVI–XLIX",
+        null,
+        2
+      ],
+      [
+        439,
+        "10. Оповіданя про ев. Марка",
+        "XLIX–LI",
+        null,
+        2
+      ],
+      [
+        439,
+        "11. Оповіданя про ев. Луку",
+        "LI–LII",
+        null,
+        2
+      ],
+      [
+        439,
+        "12. Реєстри учеників",
+        "LII–LVII",
+        null,
+        2
+      ],
+      [
+        439,
+        "13. Оповіданя про смерть сьв. Стефана",
+        "LVII–LIX",
+        null,
+        2
+      ],
+      [
+        439,
+        "VII. Відгуки апокріфічних ап. дїянь у пізнїйшій лїтературі",
+        "LIX–LXVIII",
+        null,
+        1
+      ],
+      [
+        439,
+        "I. Реєстри апостолів.",
+        "1",
+        87
+      ],
+      [
+        439,
+        "А. Сказаніє Полутово о 12 апостолу (Перем. Прол. 1632 р.)",
+        "1–3",
+        87,
+        1
+      ],
+      [
+        440,
+        "Б. Полутово о 12 апостолу, тогожде о 7 апостолѣх (Крехівська Палея)",
+        "3–5",
+        null,
+        1
+      ],
+      [
+        440,
+        "В. Соборъ святыхъ апостолъ 12 (Перем. Прол. 1632)",
+        "5–6",
+        null,
+        1
+      ],
+      [
+        440,
+        "Г. Каталогъ святыхъ апостоловъ (Рукоп. Ст. Самборини)",
+        "6–7",
+        null,
+        1
+      ],
+      [
+        440,
+        "Д. О преданіи апостольском повѣтами (Рукоп. о. Теодора з Дубівця)",
+        "7",
+        null,
+        1
+      ],
+      [
+        440,
+        "Е. О пресвятѣй вѣданіє како бысть и чесо ради (Рукоп. бібл. унїв. льв. I. Д. 1)",
+        "7–8",
+        null,
+        1
+      ],
+      [
+        440,
+        "Ж. Събор святых верховних апостолъ 12 (Комарнянський Прольог)",
+        "",
+        95,
+        1,
+        "No printed page reference on contents scan; actual start p. 9 (scan 95)."
+      ],
+      [
+        440,
+        "Ѕ. Слово от канона святыхъ апостолъ о рабѣх, да не обидят господій своих (Перем. Прол. 1632)",
+        "10–11",
+        null,
+        1
+      ],
+      [
+        440,
+        "З. О апостолѣхъ. Ипполитово о 12 апостолъ (Рукоп. Оссол. 41)",
+        "270–272",
+        null,
+        1
+      ],
+      [
+        440,
+        "І. Святого апостола Петра и Павла и инѣх 12-тих съписа и изъясни святый Епифаніє Кипрьскый (Апостол бібл. Павлїковських)",
+        "275–279",
+        null,
+        1
+      ],
+      [
+        440,
+        "Л. Память святых апостолъ 12 Софронія Єрусалимського (Добрянський Прольог)",
+        "279–287",
+        null,
+        1
+      ],
+      [
+        440,
+        "М. Із Апостольських Конституцій (Рукоп. Оссол. 41)",
+        "287–301",
+        null,
+        1
+      ],
+      [
+        440,
+        "II. Оповіданя про ап. Петра.",
+        "14",
+        98,
+        0,
+        "Printed contents gives 14–15 for item A; actual section opens on p. 12 (scan 98)."
+      ],
+      [
+        440,
+        "А. Слово прѣнія Петрова съ Симоном влъхвом (Комарнянський Прольог)",
+        "14–15",
+        98,
+        1,
+        "Printed 14–15; actual start is scan 98 (p. 12)."
+      ],
+      [
+        440,
+        "Б. О началѣ мнихом святого Климента папы римскаго (Ковельська Палея)",
+        "14–18, 301–302",
+        null,
+        1
+      ],
+      [
+        440,
+        "В. Сьвятий Петро і Симон волхв (Унґварський рукоп.)",
+        "18–19",
+        null,
+        1
+      ],
+      [
+        440,
+        "Г. Св. ап. Петра и Павла (Рукоп. Т. з Дубівця)",
+        "19–20",
+        null,
+        1
+      ],
+      [
+        440,
+        "Д. Житіє св. верховных апостолъ Петра и Павла (Рукоп. з Лїтманови Б.)",
+        "20–25",
+        null,
+        1
+      ],
+      [
+        440,
+        "Е. На св. верховных Петра и Павла повѣсть выбранная (Рукоп. Ст. Теслевцьового)",
+        "25–27",
+        null,
+        1
+      ],
+      [
+        440,
+        "III. Оповіданя про сьв. Павла.",
+        "28",
+        114
+      ],
+      [
+        440,
+        "А. Мученіє св. великого первомученика Стефана (Замойський рукоп.)",
+        "28–33",
+        114,
+        1
+      ],
+      [
+        440,
+        "Б. Мученіє св. первомученици и равноапостолныя Ѳеклы (Замойський рукоп.)",
+        "33–45",
+        null,
+        1
+      ],
+      [
+        440,
+        "В. Страданіє мученицѣ Феклы (Перем. Прольог)",
+        "47–48",
+        null,
+        1
+      ],
+      [
+        441,
+        "IV. Оповіданя про сьв. Івана Богослова.",
+        "49",
+        135
+      ],
+      [
+        441,
+        "А. Преставленіє Іоанна богослова (Рукп. Оссол. 38)",
+        "49–56",
+        135,
+        1
+      ],
+      [
+        441,
+        "Б. Прохора в потребах самого седмаго поставленнаго... списаніє єдинаго апостола Іоанна богослова (Рукоп. уривок XVII в.)",
+        "56–61",
+        null,
+        1
+      ],
+      [
+        441,
+        "В. Із Похвалы св. апостола и евангелиста Іоанна богослова (Замойський рукоп.)",
+        "61–64",
+        null,
+        1
+      ],
+      [
+        441,
+        "Г. Слово Анастасія игумена Синайскія горы о покаяніи и о розбойницѣ, єгоже спасе Іоанъ Ѳеологъ (Перем. Прол.)",
+        "64–65",
+        null,
+        1
+      ],
+      [
+        441,
+        "Д. Преставленіє св. євгл. Іоанна богослова (Перем. Прольог)",
+        "66–67",
+        null,
+        1
+      ],
+      [
+        441,
+        "Е. Слово о Іоаннѣ богословѣ (Перем. Прол.)",
+        "67",
+        null,
+        1
+      ],
+      [
+        441,
+        "Ж. Св. ап. богосл. Іоанна євгл. в тонже день исходит прах из гроба єго и творит исцѣленіє вшелякое (Рукоп. о. Т. з Дубівця)",
+        "68",
+        null,
+        1
+      ],
+      [
+        441,
+        "З. Преставленіє св. Іоанна богослова євгл. ап. Хр. казаня избранное (Рукоп. Ст. Теслевцьового)",
+        "68–74",
+        null,
+        1
+      ],
+      [
+        441,
+        "И. Житіє св. Іоанна богосл. ап. Хр. и євгл. (Перем. Прол.)",
+        "75–81",
+        null,
+        1
+      ],
+      [
+        441,
+        "К. Житія св. Іоанна богосл. наперсника Христоваго (Рукоп. Ст. Самборини)",
+        "82–84",
+        null,
+        1
+      ],
+      [
+        441,
+        "Л. Поученіє на преставленіє св. еванг. Іоанна богосл. (Рукоп. Ів. Кузикевича)",
+        "85–90",
+        null,
+        1
+      ],
+      [
+        441,
+        "М. Памят св. ап. і єв. Іоанна богосл. иже есть на прѣстѣніє и събраніє маннѣ (Добрянський Прол.)",
+        "302–303",
+        null,
+        1
+      ],
+      [
+        441,
+        "V. Оповіданя про сьв. Тому.",
+        "91",
+        177
+      ],
+      [
+        441,
+        "А. Дѣянія св. ап. Фомы въ Индеи, како полату създа цареви (Львівський рукоп. Оссол. 38)",
+        "91–98",
+        177,
+        1
+      ],
+      [
+        441,
+        "Б. Дѣяніє и мученіє св. ап. Фомы (Замойський рукоп.)",
+        "98–101",
+        null,
+        1
+      ],
+      [
+        441,
+        "В. Страсть св. ап. Ѳомы (Перем. Прол.)",
+        "101–111",
+        null,
+        1
+      ],
+      [
+        441,
+        "Г. Житіє св. и всехвалнаго ап. Хва Ѳомы, писано от Авдея, першого єп. вавилонскаго (Перем. Прол.)",
+        "112–118",
+        null,
+        1
+      ],
+      [
+        441,
+        "Д. Казане о сьв. Фомѣ (Рукоп. Ст. Теслевцьового)",
+        "118–124",
+        null,
+        1
+      ],
+      [
+        442,
+        "Е. Житія св. ап. Ѳомы (Рукоп. Ст. Самборини)",
+        "124–125",
+        null,
+        1
+      ],
+      [
+        442,
+        "Ж. Страсть св. ап. Ѳомы (Дорожівська Минея)",
+        "303",
+        null,
+        1
+      ],
+      [
+        442,
+        "VI. Оповіданя про сьв. Андрія.",
+        "126",
+        212
+      ],
+      [
+        442,
+        "А. Повѣсть о съдѣяніи св. ап. Андреа и Матѳеа, и колико пострадаша въ градѣ человѣкоядецъ, и како спасени бышя Господем нашим Ісус Христом, киимъ образом обращени бывше человѣци оныя къ православнои вѣрѣ (Львівський рукоп. унїверс. I. В. 1.)",
+        "126–141",
+        212,
+        1
+      ],
+      [
+        442,
+        "Б. Проявленіє крещенія рускаго от св. Андрѣя, како пришед в Русію и благослови мѣсто и крестъ постави, идѣже есть нынѣ градъ Кіевъ. (Замойський рукоп.)",
+        "141–142",
+        null,
+        1
+      ],
+      [
+        442,
+        "В. Страсть и успеніє св. ап. Андрея первозваннаго (Рукоп. Оссол. 38)",
+        "142–145",
+        null,
+        1
+      ],
+      [
+        442,
+        "Г. Оповіданє про смерть сьв. Андрія (Перемиський Прольог)",
+        "145–149",
+        null,
+        1
+      ],
+      [
+        442,
+        "Д. Св. ап. Андрея брата Петрова (Перемиський Прольог)",
+        "149–150, 304",
+        null,
+        1
+      ],
+      [
+        442,
+        "Е. Житіє св. ап. Андрея первозванного, пострадавша в Ахаи в градѣ Паѳрасѣ (Рукоп. із Лїтманової А.)",
+        "160–154",
+        236,
+        1,
+        "Printed 160–154; actual start p. 150 (scan 236)."
+      ],
+      [
+        442,
+        "Ж. Житія св. Андрея, брата св. ап. Петра (Рукоп. Степана Самборини)",
+        "154–255",
+        240,
+        1,
+        "Printed 154–255; actual text spans pp. 154–155 (scans 240–241)."
+      ],
+      [
+        442,
+        "VII. Оповіданя про сьв. Матвія.",
+        "156",
+        242
+      ],
+      [
+        442,
+        "А. Мученіє св. ап. Матѳея евангелиста (Львівський рукоп. Оссол. 38)",
+        "156–164",
+        242,
+        1
+      ],
+      [
+        442,
+        "Б. Житіє св. всехвалного ап. Хва и еванг. Матѳея писанное от Авдея єп. Вавилонскаго (Перем. Прольог)",
+        "164–167",
+        null,
+        1
+      ],
+      [
+        442,
+        "В. Памят св. ап. еванг. Матѳея (Перем. Прольог)",
+        "167–168",
+        null,
+        1
+      ],
+      [
+        442,
+        "Г. Св. ап. Матѳея еванг. (Рукоп. Т. з Дубівця)",
+        "168–169",
+        null,
+        1
+      ],
+      [
+        442,
+        "VIII. Оповіданя про сьв. Филипа.",
+        "170",
+        256
+      ],
+      [
+        442,
+        "А. Житіє св. ап. Филипа избранно от писаній святыхъ и положено єсть въ Метофрестѣ (Львівський рукоп. Оссол. 38)",
+        "170–173",
+        256,
+        1
+      ],
+      [
+        442,
+        "Б. Чудо преславного архангела Михаила в Хонѣхъ, і Архипа поломонаря (Львівський рукопис Оссол. 38)",
+        "173–174",
+        null,
+        1
+      ],
+      [
+        442,
+        "В. Мученіє св. ап. Филипа (Рукоп. Оссол. 38)",
+        "174–179",
+        null,
+        1
+      ],
+      [
+        443,
+        "Г. Житіє св. ап. Хва Филиппа, писано от Авдея єп. вавилонскаго (Перем. Прольог)",
+        "180–182",
+        null,
+        1
+      ],
+      [
+        443,
+        "Д. Страсть св. ап. Филипа, єдинаго от дванадесят апостолъ (Перем. Прольог)",
+        "182–183",
+        null,
+        1
+      ],
+      [
+        443,
+        "Е. Святой Маріамїи, сестры св. ап. Филипа (Перем. Прольог)",
+        "183–184",
+        null,
+        1
+      ],
+      [
+        443,
+        "Ж. Святыя мученица Еромионіи дъщери Филипа (Перемиський Прольог)",
+        "184",
+        null,
+        1
+      ],
+      [
+        443,
+        "IX. Оповіданя про Якова брата Господнього.",
+        "185",
+        271
+      ],
+      [
+        443,
+        "А. Св. ап. Якова брата Господнѣ по плъти (Перем. Прольог)",
+        "185",
+        271,
+        1
+      ],
+      [
+        443,
+        "Б. Житіє св. ап. Якова сына Іосифа обручника, 1-го ап. Ієрусалимского, ведлуг тѣла брата Господня, от лику 70 (Перемиський Прольог)",
+        "186–189",
+        null,
+        1
+      ],
+      [
+        443,
+        "В. Житія св. ап. Іакова брата Господня (Рукопис Ст. Самборини)",
+        "189–191",
+        null,
+        1
+      ],
+      [
+        443,
+        "X. Оповіданя про иньших апостолів.",
+        "192",
+        278
+      ],
+      [
+        443,
+        "А. Св. ап. Варѳоломея и Варнавы (Рукопис о. Т. з Дубівця)",
+        "192–193, 304",
+        278,
+        1
+      ],
+      [
+        443,
+        "Б. Житія св. ап. Варъѳоломея и Варнавы (Рукопис Ст. Самборини)",
+        "193",
+        null,
+        1
+      ],
+      [
+        443,
+        "В. Страсть св. ап. Іакова Альфеова (Перемиський Прольог)",
+        "193–194",
+        null,
+        1
+      ],
+      [
+        443,
+        "Г. Заколеніє св. ап. Іакова, брата Іоана богословца (Перем. Прольог)",
+        "194–195",
+        null,
+        1
+      ],
+      [
+        443,
+        "Д. Св. ап. Іакова брата по плоти Господня (Рукоп. Т. з Дубівця)",
+        "195",
+        null,
+        1
+      ],
+      [
+        443,
+        "Е. Страсть св. ап. Іуды сродника Господня по плоти (Комарнянський Прольог)",
+        "195–196",
+        null,
+        1
+      ],
+      [
+        443,
+        "Ж. Житія св. Іуды ап. Хва, сродника (Рукопис Ст. Самборини)",
+        "196–197",
+        null,
+        1
+      ],
+      [
+        443,
+        "З. Страсть св. ап. Симона Зилота (Рукопис о. Т. з Дубівця)",
+        "197",
+        null,
+        1
+      ],
+      [
+        443,
+        "І. Св. ап. Наѳанаила, єдиного от 70 (Комарнянський Прольог)",
+        "198–199",
+        null,
+        1
+      ],
+      [
+        443,
+        "К. Перенесеніє мощей ап. Варѳоломея (Маластівський Прольог)",
+        "304–306",
+        null,
+        1
+      ],
+      [
+        443,
+        "XI. Оповіданя про євангелистів Марка і Луку",
+        "200",
+        286
+      ],
+      [
+        443,
+        "А. Св. ап. і єв. Маръка (Комарн. Прольог)",
+        "200–201",
+        286,
+        1
+      ],
+      [
+        444,
+        "Б. Св. ап. еванг. Марка житіє писаное от Іеронима и от Метафраста (Перемиський Прольог)",
+        "201–205",
+        null,
+        1
+      ],
+      [
+        444,
+        "В. Житіє св. ап. і еванг. Луки (Рукоп. Оссол. 38)",
+        "295–207",
+        291,
+        1,
+        "Printed 295–207; actual start p. 205 (scan 291)."
+      ],
+      [
+        444,
+        "Г. Памят св. еванг. Луки (Перем. Прольог)",
+        "207–208",
+        null,
+        1
+      ],
+      [
+        444,
+        "Д. Слово св. ап. Хва еванг. Луки (Перем. Проль.)",
+        "208–209",
+        null,
+        1
+      ],
+      [
+        444,
+        "Е. Житіє св. ап. и еванг. Луки з лику 70 апостоловъ (Перемиський Прольог)",
+        "209–211",
+        null,
+        1
+      ],
+      [
+        444,
+        "Ж. Памят албо житія св. єв. Хва Луки (Рукоп. Ст. Самборини)",
+        "211–212",
+        null,
+        1
+      ],
+      [
+        444,
+        "XII. Оповіданя про апостольських учеників.",
+        "213",
+        299
+      ],
+      [
+        444,
+        "А. Агава пророка (Комарн. Прольог)",
+        "213",
+        299,
+        1
+      ],
+      [
+        444,
+        "Б. (а) Св. Акилы и Прескилы жены єго (Перемиський Прольог)",
+        "213–214",
+        299,
+        1
+      ],
+      [
+        444,
+        "Б. (б) Память муч. Акили и Прескилы (Минея з р. 1492)",
+        "214–215",
+        null,
+        1
+      ],
+      [
+        444,
+        "В. (а) Мученіє св. ап. Ананія (Львівський рукопис Оссол. 38)",
+        "215–217",
+        null,
+        1
+      ],
+      [
+        444,
+        "В. (б) Страсть св. ап. Ананія єп. Дамаскинска (Перемиський Прольог)",
+        "217–218",
+        null,
+        1
+      ],
+      [
+        444,
+        "Г. Память св. ап. Андроника и Уніє (Маластівський Прольог)",
+        "218",
+        null,
+        1
+      ],
+      [
+        444,
+        "Д. Св. ап. Аристарха, Пуда, Трофима мученых при Неронѣ (Перем. Прол.)",
+        "219",
+        null,
+        1
+      ],
+      [
+        444,
+        "Е. (а) Страсть св. ап. Аристоула єдинаго от 70 (Перемиський Прольог)",
+        "219–220",
+        null,
+        1
+      ],
+      [
+        444,
+        "Е. (б) Св. ап. Аристоула єдинаго от 70 (Потелицький Прольог)",
+        "220",
+        null,
+        1
+      ],
+      [
+        444,
+        "Ж. Страсть св. муч. Архипа ученика Павла ап. и Филимона воина и Афъфія (Перем. Проль.)",
+        "221",
+        null,
+        1
+      ],
+      [
+        444,
+        "З. (а) Памят св. ап. Варнавы єдинаго от 70 (Перем. Прольог 1632 р.)",
+        "221–222",
+        null,
+        1
+      ],
+      [
+        444,
+        "З. (б) Памят св. ап. Варнавы (Маластівський Прол.)",
+        "222–223",
+        null,
+        1
+      ],
+      [
+        444,
+        "З. (в) Житіє св. Варнавы (Рукоп. Ст. Самборини)",
+        "223–224",
+        null,
+        1
+      ],
+      [
+        444,
+        "І. (а) Страсть св. Деонисія Ареопагита єп. Афиньска (Перем. Прол.)",
+        "224–225",
+        null,
+        1
+      ],
+      [
+        444,
+        "І. (б) Житіє св. Деонисія Ареопагита и дружины єго Яроѳея и Елиферія и проч. (Львівський рукоп. Оссол. 38)",
+        "225–230",
+        null,
+        1
+      ],
+      [
+        444,
+        "І. (в) Житіє св. Діонисія Ареопагиты и дружины єго (Перем. Прол.)",
+        "307–311",
+        null,
+        1
+      ],
+      [
+        445,
+        "К. (а) Страсть св. муч. Євтихія, ученика св. Іоанна богослова (Перем. Прол.)",
+        "230–231",
+        null,
+        1
+      ],
+      [
+        445,
+        "К. (б) Память св. Євстихія (Добрянський Прол.)",
+        "231",
+        317,
+        1
+      ],
+      [
+        445,
+        "Л. (а) Память св. ап. Іассона и Сосипатра (Маластівський Прол.)",
+        "211–233",
+        317,
+        1,
+        "Printed 211–233; actual start p. 231 (scan 317)."
+      ],
+      [
+        445,
+        "Л. (б) Страсть св. ап. Іассона и Сосипатра, іж бяста ученика Павла ап. (Перем. Прол.)",
+        "233–234",
+        null,
+        1
+      ],
+      [
+        445,
+        "М. Св. мучениц Ины, Пины, Римы, пострадавших въ Готѣхъ (Перем. Прол.)",
+        "234",
+        null,
+        1
+      ],
+      [
+        445,
+        "Н. (а) Памят св. ап. Иродіона и Агава и Руфа и Флегонта (Добрянський Прол.)",
+        "234–235",
+        null,
+        1
+      ],
+      [
+        445,
+        "Н. (б) Св. ап. Родіона іже въ Патрѣ (Перемиський Прольог)",
+        "235–236",
+        null,
+        1
+      ],
+      [
+        445,
+        "О. (а) Памят св. ап. Карпа єдиного от 70 (Добрянський Прол.)",
+        "236",
+        null,
+        1
+      ],
+      [
+        445,
+        "О. (б) Страсть св. ап. Карпа єдинаго от 70 (Перем. Прольог)",
+        "237",
+        null,
+        1
+      ],
+      [
+        445,
+        "П. Житіє Клеопы брата Іакова (Рукоп. Ст. Самборини)",
+        "237–238",
+        null,
+        1
+      ],
+      [
+        445,
+        "Р. (а) Мученіє св. Климента папы римскаго (Замойський рукоп.)",
+        "238–246, 312",
+        null,
+        1
+      ],
+      [
+        445,
+        "Р. (б) Св. священномученика Климента архієпископа римскаго (Перем. Прол.)",
+        "245–246, 312",
+        null,
+        1
+      ],
+      [
+        445,
+        "Р. (в) Прѣнесеніє мощем св. Климента от глубины моря в Корсунь (Перем. Прол.)",
+        "312–313",
+        null,
+        1
+      ],
+      [
+        445,
+        "С. Памят св. Маріамии сестры св. ап. Филипа (Минея 1492)",
+        "245–247",
+        null,
+        1
+      ],
+      [
+        445,
+        "Т. (а) Страсть св. мученика Онисима, ученика св. ап. Павла (Перем. Прол.)",
+        "247–248",
+        null,
+        1
+      ],
+      [
+        445,
+        "Т. (б) Памят св. мученика Онисима, ученика св. ап. Павла (Минея 1492)",
+        "248",
+        null,
+        1
+      ],
+      [
+        445,
+        "У. Страсть св. мученикъ Онисифора и Прѣфирія (Комарнянський Прол.)",
+        "248–249",
+        null,
+        1
+      ],
+      [
+        445,
+        "УУ. Памят св. священномученика Панкратія єп. Таврономійскаго (Добрянський Прол.)",
+        "313–314",
+        null,
+        1
+      ],
+      [
+        445,
+        "Ф. Памят св. ап. Пармены, єдиного от седми діякон (Маластівський Прол.)",
+        "249",
+        null,
+        1
+      ],
+      [
+        445,
+        "Х. Памят св. ап. Патрови, Єрма, Гаія и Филолога (Перем. Прол.)",
+        "250",
+        null,
+        1
+      ],
+      [
+        445,
+        "Ц. Страсть святою мученицу Перпетуя и Потенціяны свести Нероновы (Перем. Проль.)",
+        "250–252",
+        null,
+        1
+      ],
+      [
+        446,
+        "Св. ап. Прохора, Никонора и Пармена (Маластівський Прольог)",
+        "252–253, 314",
+        null,
+        1,
+        "Item label not clearly legible in scan."
+      ],
+      [
+        446,
+        "Ш. Памят св. ап. Родіона, Аулумпа, Сосипатра, Терентія, Ареста, Куарта (Перем. Прол.)",
+        "253–254",
+        null,
+        1
+      ],
+      [
+        446,
+        "ШШ. Памят св. священномученика Семіона, по плоти ближника Господа нашего (Перем. Прол.)",
+        "315",
+        null,
+        1
+      ],
+      [
+        446,
+        "Щ. Памят св. ап. от 70 Силы и Силуана (Маластівський Прол.)",
+        "254",
+        null,
+        1
+      ],
+      [
+        446,
+        "Ѯ. Св. ап. от 70 Софонія, Аполоса, Кифы, Тифика, Ипарфидита (Перем. Прол.)",
+        "255",
+        null,
+        1
+      ],
+      [
+        446,
+        "Ѱ. Памят св. ап. Стахія и Урвана (Перем. Прол.)",
+        "256",
+        342,
+        1
+      ],
+      [
+        446,
+        "Ѵ. (а). Св. славнаго і всехвалнаго прѣвомученика архидіякона Стефана (Рукоп. Оссол. 38)",
+        "259–259",
+        342,
+        1,
+        "Printed 259–259; actual start p. 256 (scan 342)."
+      ],
+      [
+        446,
+        "Ѵ. (б). Пренесеніє мощем св. прѣвомученика архидіакона Стефана (Добрянський Прол.)",
+        "316–318",
+        null,
+        1
+      ],
+      [
+        446,
+        "Ъ. Св. ап. Тимона, єдинаго от 70 [уч. и от. 7] діакон (Перем. Прол.)",
+        "259",
+        345,
+        1
+      ],
+      [
+        446,
+        "Ъ. Св. ап. Тимоѳея єп. Ефескаго (Перем. Прол.)",
+        "260",
+        null,
+        1
+      ],
+      [
+        446,
+        "Ь. (а) Св. ап. Тита (Маластівський Прол.)",
+        "260–261",
+        null,
+        1
+      ],
+      [
+        446,
+        "Ь. (б) Св. ап. Тита єп. Критскаго (Рукоп. Т. з Дубівця)",
+        "261–262",
+        null,
+        1
+      ],
+      [
+        446,
+        "Ы. Св. ап. Фадеа иж от Едеса града (Маластівський Прольог)",
+        "262",
+        null,
+        1
+      ],
+      [
+        446,
+        "Ю. Страсть св. прѣвомученицѣ Феклы (Перем. Прол.)",
+        "262–263",
+        null,
+        1
+      ],
+      [
+        446,
+        "Л. Памят св. ап. Филиппа от седми діаконъ (Перем. Прольог)",
+        "263",
+        null,
+        1
+      ],
+      [
+        446,
+        "Я. Памят св. мучениця Хвы Фотини Самарѣнины, еиже бесѣдова Хс на студенци, и иже съ нею мучивших ся (Минея 1492 р., Оссол. рукоп. 368)",
+        "264–269",
+        null,
+        1
+      ],
+      [
+        446,
+        "Додатки і поправки",
+        "270–318",
+        null
+      ],
+      [
+        446,
+        "Додаток до тому II, стор. 74–98",
+        "319–323",
+        null
+      ],
+      [
+        446,
+        "Показчик письменників і творів наведених у II. і III. томах „Памяток“",
+        "325–332",
+        null
+      ],
+      [
+        446,
+        "Показчик імен власних і назв у III томі",
+        "333–352",
+        null
+      ],
+      [
+        446,
+        "Зміст",
+        "353–360",
+        439
+      ]
+    ]
+  },
+  "4": {
+    "sources": [
+      569,
+      570,
+      571,
+      572,
+      573,
+      574
+    ],
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
+    "entries": [
+      [
+        569,
+        "Передмова",
+        "I–XVI",
+        9,
+        0,
+        "Preface heading inspected; the printed TOC range I–XVI is inconsistent with the observed continuation on pp. XVII–XXXIV; start only verified."
+      ],
+      [
+        569,
+        "I. Катехізми на апокріфічні теми.",
+        "1",
+        53,
+        0,
+        "Printed page 1 is supplied by the contents; no folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00053",
+          "line_id": "section-heading-line-01",
+          "text": "I. Катехізми на апокріфічні теми."
+        }
+      ],
+      [
+        569,
+        "А. Вопросы и отвѣты Григорія богослова и Василія. (рукоп. Оссол. ч. 41)",
+        "1",
+        53,
+        1,
+        "Printed page 1 is supplied by the contents; no folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00053",
+          "line_id": "gregory-heading-line-01",
+          "text": "А. Рукопис XVI в. (Оссол. ч. 41) стор. 367—369."
+        }
+      ],
+      [
+        569,
+        "Б. Вопросы святыхъ отецъ. (Калуський рукоп.)",
+        "4",
+        56,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00056",
+          "line_id": "kalush-heading-line-01",
+          "text": "Б. Калуський рукопис XVIII. в. стор. 10—16."
+        }
+      ],
+      [
+        569,
+        "В. Вопросы. (без початку, рукоп. Г. Білявського)",
+        "7",
+        59,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00059",
+          "line_id": "biliavsky-heading-line-01",
+          "text": "В. Рукопис Георгія Білявського з XVIII в., стор. 483—488."
+        }
+      ],
+      [
+        569,
+        "Г. Вопроситъ св. Василій, отповѣдає св. Григорій богословъ. (Рукоп. Ярем. Білах.)",
+        "11",
+        63,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00063",
+          "line_id": "bila-heading-line-01",
+          "text": "Г. Рукопис Ілї Яремецького-Білахевича, стор. 174—177."
+        }
+      ],
+      [
+        569,
+        "Д. Вопрошенія стятыхъ стязаній и разумно. (Рукоп. Г. Білявського)",
+        "15",
+        67,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00067",
+          "line_id": "disputations-heading-line-01",
+          "text": "Д. Рукопис Георгія Білявського стор. 489—490."
+        }
+      ],
+      [
+        569,
+        "Е. Пытаня и отповѣди. (Боршев. рукоп.)",
+        "16",
+        68,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00068",
+          "line_id": "borshev-heading-line-01",
+          "text": "Е. Боршевицький рукопис 1713 року."
+        }
+      ],
+      [
+        569,
+        "Ж. Уривок питань і відповідий. (Сокольський рукоп.)",
+        "19",
+        71,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00071",
+          "line_id": "questions-heading-line-01",
+          "text": "Ж. Сокольський рукопис стор. 293."
+        }
+      ],
+      [
+        569,
+        "З. Статя без титулу. (Рукоп. Ярем. Білах.)",
+        "19",
+        71,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00071",
+          "line_id": "untitled-heading-line-01",
+          "text": "З. Рукопис Ілї Яремецького-Білахевича, стор. 218."
+        }
+      ],
+      [
+        569,
+        "І. Слово о всѣхъ дѣлахъ церковныхъ поучительное учителемъ. (Рукоп. Ярем. Білах.)",
+        "20",
+        72,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00072",
+          "line_id": "teacher-heading-line-01",
+          "text": "І. Рукопис Ілї Яремецького-Білахевича, стор. 166—168."
+        }
+      ],
+      [
+        569,
+        "К. Вопрос: аще добро ест по вся дни причащати ся. (Якимчицький Ізмараґд)",
+        "22",
+        74,
+        1,
+        "TOC identifies the manuscript as Якимчицький Ізмараґд; the heading on printed p. 22 reads Комарнянський Ізмараґд. Both retained; witness identification pending.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00074",
+          "line_id": "communion-heading-line-01",
+          "text": "К. Комарнянський Ізмараґд XVII в. стор. 200."
+        }
+      ],
+      [
+        569,
+        "Л. Вопросы и отвѣты евангельскихъ словесъ явѣ сказана Василієм и Фелогом Григорієм. (Рукоп. Теод. з Дубівця)",
+        "23",
+        75,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00075",
+          "line_id": "gospel-heading-line-01",
+          "text": "Л. Рукопис о. Теодора з Дубівця стор. 167—169."
+        }
+      ],
+      [
+        569,
+        "М. Розмова про душі померших. (Рукоп. тойже)",
+        "24",
+        76,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00076",
+          "line_id": "souls-heading-line-01",
+          "text": "М. Рукопис о. Теодора з Дубівця стор. 146—147."
+        }
+      ],
+      [
+        569,
+        "Н. Люцидар ознаймуючий о речах сотворенных на небеси и на земли, з грецкого на рускій преложен. (Сокольський рук.)",
+        "25",
+        77,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00077",
+          "line_id": "lucidarius-heading-line-01",
+          "text": "Н. Сокольський рукопис стор. 338—356."
+        }
+      ],
+      [
+        569,
+        "О. Уривок із Люцідарія. (Боршевицький рук.)",
+        "38",
+        90,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00090",
+          "line_id": "fragment-heading-line-01",
+          "text": "О. Боршевицький рукопис із 1713 р."
+        }
+      ],
+      [
+        569,
+        "П. Словеса избранная. (Сокольський рук.)",
+        "42",
+        94,
+        1,
+        "Printed label П; body labels this text Н (scan 94).",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00094",
+          "line_id": "slovesa-heading-line-01",
+          "text": "Н. Сокольський рукопис стор. 303."
+        }
+      ],
+      [
+        569,
+        "Р. Банкет духовный. (Плїсниський рукоп.)",
+        "42",
+        94,
+        1,
+        "Printed label Р; body labels this text О (scan 94).",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00094",
+          "line_id": "banket-heading-line-01",
+          "text": "О. Плїсниський Василіянський рукопис XVII в."
+        }
+      ],
+      [
+        570,
+        "II. Апокалїпси про празники і обряди.",
+        "49",
+        101,
+        0,
+        "Printed page 49 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00101",
+          "line_id": "section-heading-line-01",
+          "text": "II. Апокалїпси про празники і обряди."
+        }
+      ],
+      [
+        570,
+        "А. Ефистолія о недѣли. (Рукоп. Т. з Дубівця)",
+        "49",
+        101,
+        1,
+        "Printed page 49 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00101",
+          "line_id": "epistle-heading-line-01",
+          "text": "А. Рукопис о. Теодора з Дубівця стор. 169—176."
+        }
+      ],
+      [
+        570,
+        "Б. Друга епістолія. (Страшевицька Минея)",
+        "53",
+        105,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00105",
+          "line_id": "second-epistle-heading-line-01",
+          "text": "Б. Страшевицька Минея XVI в. (Оссол. ч. 3617)."
+        }
+      ],
+      [
+        570,
+        "В. Слово по вся неделя. Сія епістолія и посланіє до Ієрусалима сыномъ человѣческимъ. (Рук. Георгія Білявського)",
+        "56",
+        108,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00108",
+          "line_id": "biliavsky-heading-line-01",
+          "text": "В. Рукопис Георгія Білявського з XVIII в. стор. 529—539."
+        }
+      ],
+      [
+        570,
+        "Г. Слово о святой недели, сіє єсть епистолія, приказаніє Господнє. (Рукоп. Ярем. Білах.)",
+        "61",
+        113,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00113",
+          "line_id": "yarem-heading-line-01",
+          "text": "Г. Рукопис Ілї Яремецького-Білахевича, стор. 111—113."
+        }
+      ],
+      [
+        570,
+        "Д. Лист небесний. (Уривок, Дрогобицький рук.)",
+        "63",
+        115,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00115",
+          "line_id": "drohobych-heading-line-01",
+          "text": "Д. Дрогобицький рукопис стор. 2—4."
+        }
+      ],
+      [
+        570,
+        "Е. Друга епістолія про недїлю, уривок. (Калуський рук.)",
+        "64",
+        116,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00116",
+          "line_id": "kalush-heading-line-01",
+          "text": "Е. Калуський рукопис стор. 27—33."
+        }
+      ],
+      [
+        570,
+        "Ж. Обвѣщеніє листу от святаго отца Пѣуса VII папи римскаго в року 1632. (Угнївський рукоп.)",
+        "67",
+        119,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00119",
+          "line_id": "uhniv-heading-line-01",
+          "text": "Ж. Угнївський рукопис XIX в."
+        }
+      ],
+      [
+        570,
+        "З. Лист небесний. (Бачв. рукоп.)",
+        "69",
+        121,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00121",
+          "line_id": "bachva-heading-line-01",
+          "text": "З) Бачванський рукопис XIX. в. Михайла Туринського,"
+        }
+      ],
+      [
+        570,
+        "І. Лист небесний. (Яйковецький рукоп.)",
+        "71",
+        123,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00123",
+          "line_id": "yaikovtsi-heading-line-01",
+          "text": "І. Яйковецький рукопис XIX в."
+        }
+      ],
+      [
+        570,
+        "К. Лист Божій. (Львівський друк 1903 р.)",
+        "75",
+        127,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00127",
+          "line_id": "lviv-heading-line-01",
+          "text": "К. Львівський друк 1903 р. стор. 3—10."
+        }
+      ],
+      [
+        570,
+        "Л. Сон Богородицї. (Яйковецький рукоп.)",
+        "79",
+        null,
+        1
+      ],
+      [
+        570,
+        "М. Сон Богородицї. (Бачванський рукоп.)",
+        "80",
+        null,
+        1
+      ],
+      [
+        570,
+        "Н. Слово о 12 пятницахъ и о градѣ Шпалѣ року Божія 1600, еже єсть на ползу христіяномъ. (Рукоп. Ярем. Білах.)",
+        "81",
+        null,
+        1
+      ],
+      [
+        570,
+        "О. Слово святаго Алиферія еже єст душам христіянским. (Рукоп. І. Кузикевича)",
+        "84",
+        null,
+        1
+      ],
+      [
+        570,
+        "П. Дванацять пятницъ. (Угнївський рук.)",
+        "86",
+        null,
+        1
+      ],
+      [
+        570,
+        "Р. Дванацять пятницъ. (Яйковецький рук.)",
+        "87",
+        null,
+        1
+      ],
+      [
+        570,
+        "С. Слово о виденіи св. от. Пахомія о срѣдѣ и о пятку. (Якимч. Ізмараґд)",
+        "89",
+        141,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00141",
+          "line_id": "pachomius-vision-heading-line-01",
+          "text": "С. Якимчицький Ізмараґд XVII в. стор. 178—179."
+        }
+      ],
+      [
+        570,
+        "Т. Слово св. Пахомія о средѣ и о пятку. (тамже)",
+        "90",
+        141,
+        1,
+        "Printed p. 90; heading starts on p. 89 (scan 141).",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00141",
+          "line_id": "pachomius-word-heading-line-01",
+          "text": "Т. Тамже стор. 191—193."
+        }
+      ],
+      [
+        570,
+        "У. Статя без титулу додана до тогож Слова. (тамже)",
+        "89",
+        142,
+        1,
+        "Printed p. 89; heading starts on p. 90 (scan 142).",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00142",
+          "line_id": "untitled-heading-line-01",
+          "text": "У. Якимчицький Ізмараґд XVII в. стор. 193."
+        }
+      ],
+      [
+        570,
+        "Ф. Видѣніє св. от. нашего Дорофея. (тамже)",
+        "91",
+        143,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00143",
+          "line_id": "dorotheus-heading-line-01",
+          "text": "Ф. Якимчицький Ізмараґд XVII в. стор. 62—63."
+        }
+      ],
+      [
+        570,
+        "Х. Слово о святѣй литургіи св. ап. Павла. (Рукоп. Т. з Дубівця)",
+        "92",
+        null,
+        1
+      ],
+      [
+        570,
+        "Ц. Слово о святѣй литоргіи св. ап. Павла от Прелога. (Рук. Георгія Білявського)",
+        "95",
+        null,
+        1
+      ],
+      [
+        570,
+        "Ч. Історія о откровен. Йоанникія Галатовского. (Небо новое)",
+        "98",
+        null,
+        1
+      ],
+      [
+        570,
+        "Ш. Слово св. препод. отца н. Павла Исповѣдника о св. литургіи. (Рук. Георгія Білявського)",
+        "99",
+        null,
+        1
+      ],
+      [
+        570,
+        "Щ. Сіє знаменіє прояви Богъ архистратигом Михайлом. (Рукоп. Т. з Дубівця)",
+        "102",
+        null,
+        1
+      ],
+      [
+        571,
+        "III. Апокалїпси про загробове житє.",
+        "104",
+        156,
+        0,
+        "Printed page 104 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00156",
+          "line_id": "section-heading-line-01",
+          "text": "III. Апокалїпси про загробове житє."
+        }
+      ],
+      [
+        571,
+        "А. Слово о святомъ Авраамѣ, єгда яви ся єму Архистратигъ Михаилъ. (Унгварський рукоп.)",
+        "104",
+        156,
+        1,
+        "Printed page 104 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00156",
+          "line_id": "abraham-heading-line-01",
+          "text": "А. Унґварський рукопис XVIII в. стор. 392—401."
+        }
+      ],
+      [
+        571,
+        "Б. Видѣніє еже видѣ святыи Исаія пророкъ сынъ Амосовъ. (Рукоп. моск. Успенського собора)",
+        "109",
+        null,
+        1
+      ],
+      [
+        571,
+        "В. Слово от видѣнія Павла апостола. (Сваричівський Ізмараґд)",
+        "117",
+        null,
+        1
+      ],
+      [
+        571,
+        "Д. Слово пресвятыя Богородицы велми душеполезно о покои всего мира. (Збірник Троїцкої Сергієвої Лаври)",
+        "124",
+        null,
+        1
+      ],
+      [
+        571,
+        "Е. Откровеніє мукъ тяжкихъ. (Рукоп. Ярем. Білахевича)",
+        "135",
+        null,
+        1
+      ],
+      [
+        571,
+        "Ж. Открытіє мукъ пресвятыи Богородици, иж оглядала, где мучат ся грѣшнии. (Рукоп. Георгія Білявського)",
+        "153",
+        205,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00205",
+          "line_id": "revelation-biliavsky-heading-line-01",
+          "text": "Ж. Рукопис Георгія Білявського, XVIII в. стор. 36—48."
+        }
+      ],
+      [
+        571,
+        "З. Слово о откровеніи мук, єгда ходила пресв. Богородица з Михаилом, где мучит ся родъ христіянскій. (Рукоп. І. Кузикевича)",
+        "139",
+        211,
+        1,
+        "Printed p. 139; actual start p. 159 (scan 211).",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00211",
+          "line_id": "revelation-heading-line-01",
+          "text": "З. Рукопис Івана Кузикевича, XVIII в., стор. 161—179."
+        }
+      ],
+      [
+        571,
+        "И. Сіє слово барзъ потребно о покои всего мира. (Рукоп. бачванський)",
+        "163",
+        null,
+        1
+      ],
+      [
+        571,
+        "К. Съказаніє отця нашего Агапия, чьсо ради оставляютъ роды и домы своя и жены и дѣти. (Рукоп. Успенського собора)",
+        "172",
+        null,
+        1
+      ],
+      [
+        571,
+        "К₁. Житіє преподобнои Ѳеодоры, яже много въ днехъ своихъ послужи преподобному Василію Новому. (Рукоп. о. Яроцкого)",
+        "178",
+        null,
+        1
+      ],
+      [
+        571,
+        "Л. Слово св. от. нашего Кирила о исходѣ души и о 20 митарствах. (Рукоп. Степана Самборини)",
+        "196",
+        null,
+        1
+      ],
+      [
+        571,
+        "М. Кирила Александрійскаго слово о сходѣ души от тѣла и о страшномъ второмъ пришествіи Христовомъ. (Ославський рукоп.)",
+        "202",
+        null,
+        1
+      ],
+      [
+        571,
+        "Н. Повѣсть преподобнаго отца нашего Макарія. (Рукоп. Ст. Самборини)",
+        "213",
+        null,
+        1
+      ],
+      [
+        571,
+        "О. Слово душеспасительное, которое ознайменное от ангела св. препод. Макарію египетскому о тайнах божих несвѣдомых. (Рукоп. Івана Дашовського)",
+        "218",
+        null,
+        1
+      ],
+      [
+        571,
+        "П. Слово св. Іоана Милостиваго о исходѣ души. (Сваричівський Ізмараґд)",
+        "227",
+        null,
+        1
+      ],
+      [
+        571,
+        "Р. Слово о исходѣ души и о восходѣ на небеса по смерти. (Мединицький Прольог)",
+        "228",
+        null,
+        1
+      ],
+      [
+        571,
+        "С. Слово о душах грѣшных блаж. Андрея Христа ради юродиваго. (Рукоп. Нар. Дому, муз. Петр. ч. 165)",
+        "229",
+        null,
+        1
+      ],
+      [
+        572,
+        "Т. Слово о исходѣ души, єгда разручается от тѣла на оній вѣкъ. (Рукоп. Ярем. Білахевича)",
+        "231",
+        null,
+        1
+      ],
+      [
+        572,
+        "У. Слово Нифонта, яко въ послѣднемъ издыханіи слъзами и милостинею угодилъ Богу. (Перемиський Прол.)",
+        "233",
+        null,
+        1
+      ],
+      [
+        572,
+        "Ф. Размышление о геенѣ огненной. (Бачванський рукоп.)",
+        "234",
+        null,
+        1
+      ],
+      [
+        572,
+        "Х. Краткое описаніє о чистцу св. Патрикія. (Рукоп. Ів. Прислопського)",
+        "235",
+        null,
+        1
+      ],
+      [
+        572,
+        "Ч. Слово св. Патрикія епископа о исходящим от земля огни въ различных мѣстѣх. (Минея бібл. Петруш.)",
+        "247",
+        null,
+        1
+      ],
+      [
+        572,
+        "IV. Апокалїпси про конець сьвіта.",
+        "249",
+        301,
+        0,
+        "Printed page 249 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00301",
+          "line_id": "section-heading-line-01",
+          "text": "IV. Апокалїпси про конець сьвіта."
+        }
+      ],
+      [
+        572,
+        "Б. Пророчество Исаино сына Амосова о послѣдныхъ днехъ. (Сваричівський Ізмараґд)",
+        "249",
+        301,
+        1,
+        "Printed label Б; body labels this item А. Printed page 249 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00301",
+          "line_id": "isaiah-heading-line-01",
+          "text": "А. Сваричівський Ізмараґд XVI в. Бібліот. Нар. Дому у Львові"
+        }
+      ],
+      [
+        572,
+        "Б. Слово стго пророка Исаіа о послѣдних днех. (Рукоп. Г. Білявського)",
+        "252",
+        null,
+        1
+      ],
+      [
+        572,
+        "В. Послѣднее видѣніє св. пророка Данила. (Сваричівський Ізмараґд)",
+        "225",
+        307,
+        1,
+        "Printed p. 225; actual start p. 255 (scan 307).",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00307",
+          "line_id": "daniel-heading-line-01",
+          "text": "В. Сваричівський Ізмараґд XVI в. в бібл. Нар. Дому."
+        }
+      ],
+      [
+        572,
+        "Г. Слово св. Іоанна богослова о вознесеніи Господа нашего Ісуса Христа. (Іспаський рукопис)",
+        "258",
+        null,
+        1
+      ],
+      [
+        572,
+        "Д. Уривок Слова Мефодія Патарського „о судном дни и о послѣдних лѣтѣх“. (Рукоп. Петр. ч. 148)",
+        "264",
+        null,
+        1
+      ],
+      [
+        572,
+        "Е. Слово св. от. Мефодія о початку свѣта и о послѣдныхъ днехъ. (Рукоп. в моїм посїданю)",
+        "271",
+        null,
+        1
+      ],
+      [
+        572,
+        "Ж. Слово св. Мефодія епископа Ієрусалимского о царствѣ Михаиловѣ и о царствіи Антихристовомъ и о остатных днех. (Рукоп. П. Свідзїньского)",
+        "281",
+        null,
+        1
+      ],
+      [
+        572,
+        "З. О послѣдных днехъ. (Рукоп. Степана Теслевцьового)",
+        "292",
+        null,
+        1
+      ],
+      [
+        572,
+        "І. Уривки тогож твору. (Рукоп. Нар. Дому ч. 126)",
+        "321",
+        null,
+        1
+      ],
+      [
+        572,
+        "К. История о женѣ Мандонѣ, царици безбожнои и бестиальнои. (Рукоп. Т. Поповича Тухлянського)",
+        "326",
+        null,
+        1
+      ],
+      [
+        572,
+        "Л. Иже въ святых отца нашего Ипполита ... папы римскаго слово о скончанію мира и о Антихристѣ и о втором пришествіи Господа нашего Ісуса Христа, в неделю мясопустную. (Рукоп. Оссол. ч. 92)",
+        "334",
+        null,
+        1
+      ],
+      [
+        572,
+        "М. Иже во святыхъ от. наш. Иполита папы римскаго разрѣшеніє неизреченнаго открѣвенія Іоанна богословца. (Рукоп. Оссол. ч. 92)",
+        "356",
+        null,
+        1
+      ],
+      [
+        572,
+        "Н. О страшномъ пришествіи Ісуса Христа. (Бачванський рукоп.)",
+        "357",
+        null,
+        1
+      ],
+      [
+        572,
+        "О. Слово св. Єфрѣма о второмъ пришествіи божіи. (Сваричівський Ізмараґд)",
+        "360",
+        null,
+        1
+      ],
+      [
+        573,
+        "П. В неделю мясопустную преп. о. наш. Паладія мниха Слово о второмъ пришествіи Христовѣ и о страшномъ судѣ и о будущей муцѣ и о умиленіи души. (Рукоп. Васил. ман. у Львові ч. XL)",
+        "371",
+        null,
+        1
+      ],
+      [
+        573,
+        "Р. Святаго о. наш. Кирила патріарха єрусалимскаго о сконченою свѣта и о Антихристѣ, с катехизму єго от слова пятьнадцятого. (Рукоп. Теодора з Дубівця)",
+        "388",
+        null,
+        1
+      ],
+      [
+        573,
+        "С. Слово о послѣдних днех. (Рукоп. Теодора з Дубівця)",
+        "396",
+        null,
+        1
+      ],
+      [
+        573,
+        "Т. История албо новина о Антихристѣ. (Рукоп. бібл. Петрушевича ч. 208)",
+        "397",
+        null,
+        1
+      ],
+      [
+        573,
+        "Додатки і поправки. До роздїлу I.",
+        "401",
+        453,
+        0,
+        "Printed page 401 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00453",
+          "line_id": "supplements-heading-line-01",
+          "text": "Додатки і поправки."
+        }
+      ],
+      [
+        573,
+        "П. Вопросы св. Василія Великаго и Григорія богослова. (Рукоп. Петруш. ч. 213)",
+        "401",
+        453,
+        1,
+        "Printed page 401 is supplied by the contents; no front-side folio numeral is visible on the target scan.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00453",
+          "line_id": "vasil-heading-line-01",
+          "text": "П. Рукопис Народного Дому XVIII в. (Муз. о. Петрушевича"
+        }
+      ],
+      [
+        573,
+        "Р. Вопрошенія св. Григорія и отвѣты св. Василія. (Рукоп. о. Місковича)",
+        "407",
+        null,
+        1
+      ],
+      [
+        573,
+        "С. Вопросы при посѣдженю. (Рукоп. Павла Свідзїнського)",
+        "410",
+        null,
+        1
+      ],
+      [
+        573,
+        "Т. Питаня і відповіди без титулу. (Рукоп. Павла Свідзїнського)",
+        "412",
+        null,
+        1
+      ],
+      [
+        573,
+        "У. Питаня і відповіди на ріжних картках. (Рукоп. Павла Свідзїнського)",
+        "413",
+        null,
+        1
+      ],
+      [
+        573,
+        "Ф. Вопрошенія Антіоха князя и отвѣты блаж. Аѳанасія епископа о полезных. (Рукоп. о. Місковича)",
+        "414",
+        null,
+        1
+      ],
+      [
+        573,
+        "Х. А се от книгъ Пополита вопросъ. (Рукоп. о Місковича)",
+        "416",
+        null,
+        1
+      ],
+      [
+        573,
+        "Ч. Слово св. Іоанна Златоустаго о Адамѣ. (Рукоп. тойже)",
+        "418",
+        null,
+        1
+      ],
+      [
+        573,
+        "Ш. Въ началѣ сотвори Богъ небо и землю. (Рукоп. бібл. Петруш. ч. 193)",
+        "420",
+        null,
+        1
+      ],
+      [
+        573,
+        "Щ. Въпросы и отвѣты от тлъкованія Палеи. (Рукоп. Місковича)",
+        "428",
+        null,
+        1
+      ],
+      [
+        573,
+        "До роздїлу II.",
+        "448",
+        500,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00500",
+          "line_id": "section-heading-line-01",
+          "text": "До роздїлу II."
+        }
+      ],
+      [
+        573,
+        "Ѯ. О спаденномъ камени со небесе епистолія сія. (Рукоп. бібл. Петруш. ч. 168)",
+        "448",
+        500,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00500",
+          "line_id": "stone-heading-line-01",
+          "text": "Ѯ. Рукопис бібл. Нар. Дому у Львові (муз. о. А. Петрушевича,"
+        }
+      ],
+      [
+        573,
+        "Ѱ. Лист небесний. (Берлинський рукоп.)",
+        "453",
+        null,
+        1
+      ],
+      [
+        573,
+        "Ѳ. Wimja Otca i Syna i Swiataho Ducha. (Лист небесний, Стратинський рукоп.)",
+        "455",
+        null,
+        1
+      ],
+      [
+        573,
+        "Ѵ. Сонъ пресвятои Богородици. (Співанник із Сернок)",
+        "458",
+        null,
+        1
+      ],
+      [
+        573,
+        "Ѣ. Сонъ пресвятои Богородици. (Берлинський рукоп.)",
+        "459",
+        null,
+        1
+      ],
+      [
+        573,
+        "Ю. Слово како подобает христіяномъ стояти въ церквѣ. (Рукоп. бібл. Петруш. ч. 213)",
+        "460",
+        null,
+        1
+      ],
+      [
+        574,
+        "До роздїлу III.",
+        "462",
+        514,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00514",
+          "line_id": "section-heading-line-01",
+          "text": "До роздїлу III."
+        }
+      ],
+      [
+        574,
+        "До тексту К. про візію сьв. Агапія",
+        "462",
+        514,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00514",
+          "line_id": "agapius-heading-line-01",
+          "text": "До тексту К, візія сьв. Агапія."
+        }
+      ],
+      [
+        574,
+        "До тексту К₁. Візія Теодори про митарства, проложна статя. (Рукоп. Васил. ман. у Львові ч. XL)",
+        "463",
+        null,
+        1
+      ],
+      [
+        574,
+        "До тексту М. Хід душі через митарства. (Рукоп. Васил. ман. у Львові ч. XL)",
+        "464",
+        null,
+        1
+      ],
+      [
+        574,
+        "Ш. Слово св. от. наш. авва Макарія пустыннаго жителя. (Рукоп. Т. з Дубівця)",
+        "366",
+        518,
+        1,
+        "Printed p. 366; actual start p. 466 (scan 518).",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00518",
+          "line_id": "macarius-heading-line-01",
+          "text": "Ш. Рукопис о. Теодора з Дубівця, ст. 147—154."
+        }
+      ],
+      [
+        574,
+        "Щ. Діялоґ про рай і пекло. (Рукоп. бібл. Петруш. ч. 134)",
+        "469",
+        null,
+        1
+      ],
+      [
+        574,
+        "До роздїлу IV.",
+        "471",
+        523,
+        0,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00523",
+          "line_id": "section-heading-line-01",
+          "text": "До роздїлу IV."
+        }
+      ],
+      [
+        574,
+        "У. Уривок откровенія Методія Патарського. (Рукоп. Наук. тов. ім. Шевченка)",
+        "471",
+        523,
+        1,
+        null,
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v4s00523",
+          "line_id": "methodius-heading-line-01",
+          "text": "У. Рукописна картка XVI в., бібл. Наук. Тов. імени Шевченка."
+        }
+      ]
+    ]
+  },
+  "5": {
+    "sources": [
+      311,
+      312
+    ],
+    "coverage": "All listed titles have page destinations; calculated destinations remain unverified.",
+    "entries": [
+      [
+        311,
+        "Передмова",
+        "I",
+        11,
+        0,
+        "Preface heading inspected; no visible folio numeral.",
+        {
+          "suffix": "single_reading",
+          "reader_id": "gpt62-single-20261125-v5s00011",
+          "line_id": "preface-heading-line-01",
+          "text": "Передмова."
+        }
+      ],
+      [
+        311,
+        "I. Апостольські сучасники і ученики",
+        "1",
+        13
+      ],
+      [
+        311,
+        "1. Житіє Марії Магдалини",
+        "1–8",
+        13,
+        1
+      ],
+      [
+        311,
+        "2. Св. Іван Хреститель",
+        "9–13",
+        null,
+        1
+      ],
+      [
+        311,
+        "3. Юда врадник",
+        "14–15",
+        null,
+        1
+      ],
+      [
+        311,
+        "4. Св. Конон, проложне житіє",
+        "16–17",
+        null,
+        1
+      ],
+      [
+        311,
+        "5. Св. Аверкій, проложне житіє",
+        "18–19",
+        null,
+        1
+      ],
+      [
+        311,
+        "6. Житіє св. Аверкія, друга редакція",
+        "20–21",
+        null,
+        1
+      ],
+      [
+        311,
+        "7. Св. Ірина, проложне житіє",
+        "22–24",
+        null,
+        1
+      ],
+      [
+        311,
+        "8. Іринино мученіє",
+        "25–44",
+        null,
+        1
+      ],
+      [
+        311,
+        "9. Страсть св. Антіпи, єпіскопа арнасійського",
+        "44",
+        null,
+        1
+      ],
+      [
+        311,
+        "Доповненє до I. розділу",
+        "45",
+        57
+      ],
+      [
+        311,
+        "4. б. Св. Конон Ісаврійський",
+        "45–46",
+        57,
+        1
+      ],
+      [
+        311,
+        "4. в. Повне житіє Конона Ісаврійського",
+        "47–60",
+        null,
+        1
+      ],
+      [
+        311,
+        "II. Мученики перших віків",
+        "61",
+        73
+      ],
+      [
+        311,
+        "1. Св. Іпатій, проложне житіє",
+        "61–63",
+        73,
+        1
+      ],
+      [
+        311,
+        "2. Муки св. Іпатія, переклад старосербського повного житія",
+        "63–78",
+        null,
+        1
+      ],
+      [
+        311,
+        "3. Мученє св. Ґеорґія, перша апокріфічна редакція",
+        "79–85",
+        null,
+        1
+      ],
+      [
+        311,
+        "4. Мученє св. Георгія, друга апокріфічна редакція",
+        "86–96",
+        null,
+        1
+      ],
+      [
+        311,
+        "5. Мученє св. Георгія, найстарша редакція",
+        "96–114",
+        null,
+        1
+      ],
+      [
+        311,
+        "6. Чудо св. Георгія про змія і царівну, галицька редакція",
+        "114–116",
+        null,
+        1
+      ],
+      [
+        311,
+        "7. Чудо св. Георгія про змія і царівну, угроруська редакція",
+        "116–119",
+        null,
+        1
+      ],
+      [
+        311,
+        "8. Житє і муки св. Никити",
+        "119–125",
+        null,
+        1
+      ],
+      [
+        311,
+        "9. Житє і муки св. Никити, покутська редакція",
+        "125–130",
+        null,
+        1
+      ],
+      [
+        311,
+        "10. Память св. мученика Никити, угроруська редакція",
+        "131–137",
+        null,
+        1
+      ],
+      [
+        311,
+        "11. Житє св. Климента Анкирського",
+        "138–144",
+        null,
+        1
+      ],
+      [
+        311,
+        "12. Мученє св. Теодора Тірона",
+        "144–149",
+        null,
+        1
+      ],
+      [
+        311,
+        "13. Муки св. Теодора Тірона, популярна перерібка",
+        "149–153",
+        null,
+        1
+      ],
+      [
+        312,
+        "14. Чудо св. Теодора Тірона, проложна статя",
+        "154–157",
+        null,
+        1
+      ],
+      [
+        312,
+        "15. Чудо св. Теодора Тірона в коливом",
+        "157–159",
+        null,
+        1
+      ],
+      [
+        312,
+        "16. Память св. Дросіди",
+        "159–161",
+        null,
+        1
+      ],
+      [
+        312,
+        "17. Мученє св. Мирини",
+        "162–176",
+        null,
+        1
+      ],
+      [
+        312,
+        "18. Муки св. Юліянії",
+        "176–186",
+        null,
+        1
+      ],
+      [
+        312,
+        "19. Муки св. Варвари і Юліянії",
+        "186–190",
+        null,
+        1
+      ],
+      [
+        312,
+        "III. Найстарші аскети",
+        "191",
+        203
+      ],
+      [
+        312,
+        "1. Житіє св. Антонія Єгипетського",
+        "191–197",
+        203,
+        1
+      ],
+      [
+        312,
+        "2. » св. Макарія Єгипетського",
+        "197–199",
+        null,
+        1
+      ],
+      [
+        312,
+        "3. » св. Макарія Александрійського",
+        "200–206",
+        null,
+        1
+      ],
+      [
+        312,
+        "4. » Марка Афінейського",
+        "206–214",
+        null,
+        1
+      ],
+      [
+        312,
+        "5. » св. Сави Освященного",
+        "214–239",
+        null,
+        1
+      ],
+      [
+        312,
+        "6. » Епіфанія Кипрського",
+        "240–248",
+        null,
+        1
+      ],
+      [
+        312,
+        "7. » Петра Афонського",
+        "249–265",
+        null,
+        1
+      ],
+      [
+        312,
+        "8. » Марії Єгиптянки",
+        "266–283",
+        null,
+        1
+      ],
+      [
+        312,
+        "9. » Марії Єгиптянки, популярна перерібка",
+        "283–288",
+        null,
+        1
+      ],
+      [
+        312,
+        "10. » св. Марини монаха",
+        "288–293",
+        null,
+        1
+      ],
+      [
+        312,
+        "Доповненя до першої части",
+        "294",
+        306
+      ],
+      [
+        312,
+        "I. До повного житія Конона Ісаврійського",
+        "294–296",
+        306,
+        1
+      ],
+      [
+        312,
+        "II. Початок житія Петра Афонського",
+        "296–297",
+        null,
+        1
+      ]
+    ]
+  }
+};
+
 const suffixes = ['single_reading','exposed_reading','independent_image_reading_b','alternate_reading_01','alternate_reading_02'];
 const manifests = new Map();
 let generation=0, zoom=100, current=null, candidates=[], controller=null, activeScan=20, renderedLines=[], preferredReading=null;
@@ -84,7 +4974,7 @@ function readingPreference(c){const r=c.data.reading;return {model:r.model_id,ve
 function modelParts(c){const r=c.data.reading;const m=String(r.model_version||'').match(/^GPT-(\d+(?:\.\d+)*)(?:\s|$)/i)||String(r.model_id||'').match(/^GPT-(\d+(?:\.\d+)*)(?:\s|$)/i);return m?m[1].split('.').map(Number):[];}
 function newer(a,b){const x=modelParts(a),y=modelParts(b);if(!x.length||!y.length)return x.length-y.length;for(let i=0;i<Math.max(x.length,y.length);i++){const d=(x[i]||0)-(y[i]||0);if(d)return d;}return 0;}
 function preferredIndex(list,preference){if(preference){const matches=list.map((c,i)=>({c,i})).filter(({c})=>c.data.reading.model_id===preference.model);for(const test of [c=>c.suffix===preference.suffix&&c.data.reading.model_version===preference.version,c=>c.data.reading.model_version===preference.version,c=>true]){const match=matches.find(({c})=>test(c));if(match)return match.i;}}return list.reduce((best,c,i)=>newer(c,list[best])>0?i:best,0);}
-const message=(id,value)=>{$(id).textContent=value;if(id==='status'){const error=/^(Invalid|Unable)/.test(value);$('notice').hidden=!error;$('notice').textContent=error?value:'';}if(id==='lineinfo')$('lineinfo').hidden=value.startsWith('Select a draft');if(id==='draftStatus'){const ok=value.startsWith('Unverified ·');const detail=$('readingInfo');$('readingSummary').textContent='Reading details';detail.open=!ok||/errors:|Unmatched uncertainty/.test(value);}};
+const message=(id,value)=>{$(id).textContent=value;if(id==='status'){const error=/^(Invalid|Unable)/.test(value),warning=value.match(/(?:Unverified contents destination; check the heading\.|Exact contents heading is unavailable in this ref; opened the scan only\.)/);$('notice').hidden=!error&&!warning;$('notice').textContent=error?value:warning?.[0]??'';}if(id==='lineinfo')$('lineinfo').hidden=value.startsWith('Select a draft');if(id==='draftStatus'){const ok=value.startsWith('Unverified ·');const detail=$('readingInfo');$('readingSummary').textContent='Reading details';detail.open=!ok||/errors:|Unmatched uncertainty/.test(value);}};
 function setPane(pane){document.body.dataset.pane=pane;$('showScan').setAttribute('aria-pressed',String(pane==='scan'));$('showText').setAttribute('aria-pressed',String(pane==='text'));}
 function narrowReader(){return window.matchMedia('(max-width:760px)').matches;}
 function openDialog(id,trigger){const dialog=$(id);if(!dialog.open)dialog.showModal();$(trigger).setAttribute('aria-expanded','true');}
@@ -123,17 +5013,29 @@ function updateLanguageLegend(){const active=$('showLanguages').checked&&$('mode
 function graphemes(text){return Array.from(new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(text),x=>({text:x.segment,start:x.index,end:x.index+x.segment.length}));}
 function diffRanges(a,b){const x=graphemes(a),y=graphemes(b),n=x.length,m=y.length;const ranges=(items,keep)=>{const result=[];for(let i=0;i<items.length;i++){if(keep.has(i))continue;const {start,end}=items[i];if(result.length&&result.at(-1)[1]===start)result.at(-1)[1]=end;else result.push([start,end]);}return result;};if(n*m>1000000)return [a===b||!a?[]:[[0,a.length]],a===b||!b?[]:[[0,b.length]]];const dp=Array.from({length:n+1},()=>new Uint32Array(m+1));for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)dp[i][j]=x[i].text===y[j].text?1+dp[i+1][j+1]:Math.max(dp[i+1][j],dp[i][j+1]);const ax=new Set(),by=new Set();let i=0,j=0;while(i<n&&j<m){if(x[i].text===y[j].text){ax.add(i++);by.add(j++);}else if(dp[i+1][j]>=dp[i][j+1])i++;else j++;}return [ranges(x,ax),ranges(y,by)];}
 function appendDiff(parent,text,ranges){let start=0;for(const [a,b] of ranges){parent.append(document.createTextNode(text.slice(start,a)));const span=document.createElement('span');span.className='variant-diff';span.textContent=text.slice(a,b);parent.append(span);start=b;}parent.append(document.createTextNode(text.slice(start)));}
-function renderLine(line,region,notes,alternates=[]){const row=document.createElement('div');row.className='line-row';const gutter=document.createElement('div');gutter.className='line-gutter';row.append(gutter);const btn=document.createElement('div');btn.tabIndex=0;btn.className='line-text';btn.setAttribute('role','button');btn.setAttribute('aria-pressed','false');btn.onclick=()=>{const selection=window.getSelection();if(selection&&!selection.isCollapsed&&selection.containsNode($('candidate'),true))return;mark(line,btn,region);};btn.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();mark(line,btn,region);}};row.append(btn);const rendered={line,btn,region,search:[],diff:[]};renderedLines.push(rendered);const anchored=notes.map(note=>({note,ranges:rangesFor(line.text,note.reading)}));const spans=anchored.flatMap(n=>n.ranges);const languages=languageRanges(line);function paint(){btn.replaceChildren();const points=[...new Set([0,line.text.length,...spans.flat(),...languages.flatMap(s=>[s.start,s.end]),...rendered.diff.flat(),...rendered.search.flat()])].sort((a,b)=>a-b);const segments=points.slice(1).map((end,i)=>({value:line.text.slice(points[i],end),covered:spans.some(([a,b])=>a<=points[i]&&b>=end),language:languages.find(s=>s.start<=points[i]&&s.end>=end),diff:rendered.diff.some(([a,b])=>a<=points[i]&&b>=end),search:rendered.search.some(([a,b])=>a<=points[i]&&b>=end)}));const whole=segments.every(s=>s.covered||!s.value.trim());for(const {value,covered,language,diff,search} of segments){let node=document.createTextNode(value);if(language){const span=document.createElement('span');span.className='language-span';span.dataset.language=language.language;span.dataset.script=String(language.script??'');span.lang=language.language;span.dataset.uncertain=String(language.uncertain===true);span.title=languageStyle(language.language)[0]+' · '+language.language+(language.script?' / '+language.script:'')+(language.uncertain?' · uncertain':'');span.style.setProperty('--lang-color',languageStyle(language.language)[1]);span.append(node);node=span;}if(!whole&&covered){const m=document.createElement('mark');m.append(node);node=m;}if(diff||search){const span=document.createElement('span');span.className=[diff?'variant-diff':'',search?'search-match':''].filter(Boolean).join(' ');span.append(node);node=span;}btn.append(node);}}rendered.paint=paint;paint();
+function renderLine(line,region,notes,alternates=[]){const row=document.createElement('div');row.className='line-row';const gutter=document.createElement('div');gutter.className='line-gutter';row.append(gutter);const btn=document.createElement('div');btn.tabIndex=0;btn.className='line-text';btn.dataset.lineId=line.id;btn.setAttribute('role','button');btn.setAttribute('aria-pressed','false');btn.onclick=()=>{const selection=window.getSelection();if(selection&&!selection.isCollapsed&&selection.containsNode($('candidate'),true))return;mark(line,btn,region);};btn.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();mark(line,btn,region);}};row.append(btn);const rendered={line,btn,region,search:[],diff:[]};renderedLines.push(rendered);const anchored=notes.map(note=>({note,ranges:rangesFor(line.text,note.reading)}));const spans=anchored.flatMap(n=>n.ranges);const languages=languageRanges(line);function paint(){btn.replaceChildren();const points=[...new Set([0,line.text.length,...spans.flat(),...languages.flatMap(s=>[s.start,s.end]),...rendered.diff.flat(),...rendered.search.flat()])].sort((a,b)=>a-b);const segments=points.slice(1).map((end,i)=>({value:line.text.slice(points[i],end),covered:spans.some(([a,b])=>a<=points[i]&&b>=end),language:languages.find(s=>s.start<=points[i]&&s.end>=end),diff:rendered.diff.some(([a,b])=>a<=points[i]&&b>=end),search:rendered.search.some(([a,b])=>a<=points[i]&&b>=end)}));const whole=segments.every(s=>s.covered||!s.value.trim());for(const {value,covered,language,diff,search} of segments){let node=document.createTextNode(value);if(language){const span=document.createElement('span');span.className='language-span';span.dataset.language=language.language;span.dataset.script=String(language.script??'');span.lang=language.language;span.dataset.uncertain=String(language.uncertain===true);span.title=languageStyle(language.language)[0]+' · '+language.language+(language.script?' / '+language.script:'')+(language.uncertain?' · uncertain':'');span.style.setProperty('--lang-color',languageStyle(language.language)[1]);span.append(node);node=span;}if(!whole&&covered){const m=document.createElement('mark');m.append(node);node=m;}if(diff||search){const span=document.createElement('span');span.className=[diff?'variant-diff':'',search?'search-match':''].filter(Boolean).join(' ');span.append(node);node=span;}btn.append(node);}}rendered.paint=paint;paint();
 $('candidate').append(row);if(alternates.length){btn.classList.add('alternate-diff');const toggle=document.createElement('button');toggle.type='button';toggle.className='alternate-toggle';toggle.textContent='≠ '+alternates.length;toggle.title='Show approximate alternate line readings';toggle.setAttribute('aria-label','Alternate readings for '+line.id);toggle.setAttribute('aria-expanded','false');const details=document.createElement('div');details.className='alternate-reasons';details.hidden=true;const hint=document.createElement('small');hint.textContent='Approximate geometry match; compare the original image. Purple highlights show differences; the active line combines differences against all expanded alternatives. Not an adjudicated alignment.';details.append(hint);let comparisons=null;toggle.onclick=()=>{details.hidden=!details.hidden;toggle.setAttribute('aria-expanded',String(!details.hidden));if(!details.hidden){if(!comparisons){comparisons=alternates.map(alt=>({alt,ranges:diffRanges(line.text,alt.text)}));for(const {alt,ranges} of comparisons){const p=document.createElement('p');const name=document.createElement('strong');name.textContent=alt.label+' · '+alt.reader;const text=document.createElement('span');text.className='alt-text';appendDiff(text,alt.text,ranges[1]);p.append(name,document.createTextNode('\n'),text);details.append(p);}}rendered.diff=comparisons.flatMap(c=>c.ranges[0]);}else rendered.diff=[];paint();};gutter.append(toggle);$('candidate').append(details);}if(!notes.length)return;const toggle=document.createElement('button');toggle.type='button';toggle.className='uncertainty-toggle';toggle.textContent='⚑ '+notes.length;toggle.title='Show uncertainty reasons';toggle.setAttribute('aria-label','Uncertainty notes for '+line.id);toggle.setAttribute('aria-expanded','false');const reasons=document.createElement('div');reasons.className='uncertainty-reasons';reasons.hidden=true;for(const {note,ranges} of anchored){const p=document.createElement('p');const label=document.createElement('strong');label.textContent=String(note.reading??'Unanchored reading');p.append(label,document.createTextNode(' — '));const reason=document.createElement('span');reason.textContent=String(note.reason??'No reason supplied');p.append(reason);if(ranges.length!==1){const warning=document.createElement('small');warning.textContent=ranges.length?' (Multiple exact occurrences; location ambiguous.)':' (Literal not found in line; no highlight.)';p.append(warning);}reasons.append(p);}toggle.onclick=()=>{reasons.hidden=!reasons.hidden;toggle.setAttribute('aria-expanded',String(!reasons.hidden));};gutter.prepend(toggle);$('candidate').append(reasons);}
 function renderCandidate(){renderedLines=[];clearHighlight();$('candidate').replaceChildren();$('notes').hidden=true;const c=candidates[Number($('choice').value)];if(!c){updateLanguageLegend();return;}const d=c.data,r=d.reading;message('draftStatus','Unverified · '+candidateLabel(c.suffix,r)+' · '+r.reader_id+' · printed folio '+(d.printed_page_observed??'unknown')+' · '+r.context_independence+' · '+candidates.length+' candidate(s); purple bars indicate approximate differing lines');const byLine=new Map();for(const note of r.uncertainty_notes??[]){if(!note||typeof note.line_id!=='string')continue;const list=byLine.get(note.line_id)??[];list.push(note);byLine.set(note.line_id,list);}for(const region of r.regions){const h=document.createElement('h3');h.textContent=region.kind;$('candidate').append(h);for(const line of region.lines){renderLine(line,region,byLine.get(line.id)??[],alternateMatches(line,c));byLine.delete(line.id);}}if(byLine.size)message('draftStatus',$('draftStatus').textContent+' · Unmatched uncertainty line IDs: '+[...byLine.keys()].join(', ')+' (see original JSON).');$('notes').hidden=false;message('noteText',JSON.stringify({original_ocr_visible:r.source_original_ocr_visible,peer_readings_visible:r.peer_readings_visible,source_image_sha256:d.source_image_sha256},null,2));$('readingSource').href=c.url;updateLanguageLegend();}
 function checkDraft(d,v,n,image){if(d.volume!==v||d.scan_page!==n||d.asset_commit!==PIN||d.source_image_path!==image.path||d.source_image_sha256!==image.sha256)throw Error('Source identity mismatch');if(d.status!=='agent_unverified'||!['single-image-draft-v0','single-exposed-draft-v1'].includes(d.schema_version)||!d.reading||!Array.isArray(d.reading.regions)||!d.reading.regions.every(r=>Array.isArray(r.lines)&&r.lines.every(l=>typeof l.text==='string')))throw Error('Unsupported draft schema');}
-async function load(){const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;current=null;candidates=[];renderedLines=[];$('choice').replaceChildren();$('candidate').replaceChildren();updateLanguageLegend();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
+async function load(){const anchor=pendingContentsAnchor,estimated=pendingContentsEstimate;pendingContentsAnchor=null;pendingContentsEstimate=false;let anchorIndex=-1,anchorApplied=false;const applyAnchor=()=>{if(!anchor||anchorApplied||anchorIndex<0||$('scan').hidden||Number($('choice').value)!==anchorIndex||$('mode').value==='ocr')return;const hit=renderedLines.find(x=>x.line.id===anchor.line_id);if(hit){anchorApplied=true;mark(hit.line,hit.btn,hit.region);if(narrowReader())setPane('text');hit.btn.scrollIntoView({block:'center',inline:'nearest'});}};if($('contentsPanel').open)renderContents();const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;current=null;candidates=[];renderedLines=[];$('choice').replaceChildren();$('candidate').replaceChildren();updateLanguageLegend();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
 if(!/^[A-Za-z0-9][A-Za-z0-9._/-]*$/.test(ref)||ref.split('/').some(x=>!x||x==='.'||x==='..')){message('status','Invalid reading ref. Enter a branch name or commit SHA.');return;}
-try{let manifest=manifests.get(v);if(!manifest){manifest=await(await get(asset('vol'+v+'/manifest.json'),signal)).json();if(id!==generation)return;if(manifest.volume!==v||!Array.isArray(manifest.pages)||!Number.isInteger(manifest.page_count)||manifest.page_count<1)throw Error('Invalid volume manifest');manifests.set(v,manifest);}n=Math.min(n,manifest.page_count);$('page').value=n;activeScan=n;$('page').max=manifest.page_count;message('total','/ '+manifest.page_count);$('prev').disabled=n<=1;$('next').disabled=n>=manifest.page_count;const page=manifest.pages.find(p=>p.scan_page===n);if(!page)throw Error('Scan missing from manifest');const image=page.artifacts.find(a=>a.role==='page_image');const ocr=page.artifacts.find(a=>a.role==='embedded_ocr');if(!image||!ocr||!['jpg','png'].some(ext=>image.path==='vol'+v+'/page-'+pad(n)+'.'+ext)||ocr.path!=='original_ocr/vol'+v+'/page-'+pad(n)+'.txt'||!(page.width>0&&page.height>0))throw Error('Invalid source manifest entry');current={page,image};history.replaceState(null,'','#'+new URLSearchParams({v,p:String(n),ref}));message('status','Volume '+v+' · scan '+n+' / '+manifest.page_count+' · reading ref: '+ref);$('source').href=asset(image.path);$('scan').onload=()=>{if(id!==generation)return;if($('scan').naturalWidth!==page.width||$('scan').naturalHeight!==page.height){message('imageError','Image dimensions differ from manifest.');return;}$('scan').hidden=false;};$('scan').onerror=()=>{if(id===generation)message('imageError','Image could not be loaded. Try Open full image or reload.');};$('scan').src=asset(image.path);
+try{let manifest=manifests.get(v);if(!manifest){manifest=await(await get(asset('vol'+v+'/manifest.json'),signal)).json();if(id!==generation)return;if(manifest.volume!==v||!Array.isArray(manifest.pages)||!Number.isInteger(manifest.page_count)||manifest.page_count<1)throw Error('Invalid volume manifest');manifests.set(v,manifest);}n=Math.min(n,manifest.page_count);$('page').value=n;activeScan=n;$('page').max=manifest.page_count;message('total','/ '+manifest.page_count);$('prev').disabled=n<=1;$('next').disabled=n>=manifest.page_count;const page=manifest.pages.find(p=>p.scan_page===n);if(!page)throw Error('Scan missing from manifest');const image=page.artifacts.find(a=>a.role==='page_image');const ocr=page.artifacts.find(a=>a.role==='embedded_ocr');if(!image||!ocr||!['jpg','png'].some(ext=>image.path==='vol'+v+'/page-'+pad(n)+'.'+ext)||ocr.path!=='original_ocr/vol'+v+'/page-'+pad(n)+'.txt'||!(page.width>0&&page.height>0))throw Error('Invalid source manifest entry');current={page,image};history.replaceState(null,'','#'+new URLSearchParams({v,p:String(n),ref}));message('status','Volume '+v+' · scan '+n+' / '+manifest.page_count+' · reading ref: '+ref+(estimated?' · Unverified contents destination; check the heading.':''));$('source').href=asset(image.path);$('scan').onload=()=>{if(id!==generation)return;if($('scan').naturalWidth!==page.width||$('scan').naturalHeight!==page.height){message('imageError','Image dimensions differ from manifest.');return;}$('scan').hidden=false;applyAnchor();};$('scan').onerror=()=>{if(id===generation)message('imageError','Image could not be loaded. Try Open full image or reload.');};$('scan').src=asset(image.path);
 const ocrTask=(async()=>{try{const value=await(await get(asset(ocr.path),signal)).text();if(id!==generation)return;message('ocr',value);message('ocrStatus',value.trim()?'Original extraction; no spatial line alignment.':'Empty original OCR (no non-whitespace text).');}catch(e){if(id===generation)message('ocrStatus','OCR unavailable: '+e.message);}})();
-const draftTask=(async()=>{const results=await Promise.all(suffixes.map(async suffix=>{const path='pilot/vol'+v+'_scan'+pad(n)+'_'+suffix+'.json';const url=readURL(ref,path);try{const response=await get(url,signal,true);if(!response)return null;const data=await response.json();checkDraft(data,v,n,image);return {data,url,suffix};}catch(e){return {error:suffix+': '+e.message};}}));if(id!==generation)return;const errors=results.filter(r=>r?.error).map(r=>r.error);candidates=results.filter(r=>r?.data);for(const [i,c] of candidates.entries())$('choice').add(new Option(candidateLabel(c.suffix,c.data.reading),i));if(candidates.length){$('choice').value=String(preferredIndex(candidates,preferredReading));renderCandidate();if(errors.length)message('draftStatus',$('draftStatus').textContent+' · Other candidate errors: '+errors.join('; '));}else{message('draftStatus',errors.length?errors.join('; '):'No draft found at this ref (404). Check the ref or switch to original PDF OCR.');if(!errors.length&&$('mode').value==='draft'){$('mode').value='both';updateMode();}}})();await Promise.all([ocrTask,draftTask]);
+const draftTask=(async()=>{const results=await Promise.all(suffixes.map(async suffix=>{const path='pilot/vol'+v+'_scan'+pad(n)+'_'+suffix+'.json';const url=readURL(ref,path);try{const response=await get(url,signal,true);if(!response)return null;const data=await response.json();checkDraft(data,v,n,image);return {data,url,suffix};}catch(e){return {error:suffix+': '+e.message};}}));if(id!==generation)return;const errors=results.filter(r=>r?.error).map(r=>r.error);candidates=results.filter(r=>r?.data);for(const [i,c] of candidates.entries())$('choice').add(new Option(candidateLabel(c.suffix,c.data.reading),i));if(candidates.length){anchorIndex=contentsAnchorIndex(anchor,candidates);$('choice').value=String(anchorIndex>=0?anchorIndex:preferredIndex(candidates,preferredReading));renderCandidate();if(anchor&&anchorIndex<0)message('status',$('status').textContent+' · Exact contents heading is unavailable in this ref; opened the scan only.');applyAnchor();if(errors.length)message('draftStatus',$('draftStatus').textContent+' · Other candidate errors: '+errors.join('; '));}else{if(anchor)message('status',$('status').textContent+' · Exact contents heading is unavailable in this ref; opened the scan only.');message('draftStatus',errors.length?errors.join('; '):'No draft found at this ref (404). Check the ref or switch to original PDF OCR.');if(!errors.length&&$('mode').value==='draft'){$('mode').value='both';updateMode();}}})();await Promise.all([ocrTask,draftTask]);
 }catch(e){if(id===generation){message('status','Unable to load page: '+e.message);message('draftStatus','Page not loaded.');message('ocrStatus','Page not loaded.');}}}
 $('go').onclick=load;$('volume').onchange=()=>{$('page').value=1;load();};$('page').onkeydown=e=>{if(e.key==='Enter')load();};$('ref').onkeydown=e=>{if(e.key==='Enter'){closeDialog('readerSettings');load();}};$('prev').onclick=()=>{$('page').value=activeScan-1;load();};$('next').onclick=()=>{$('page').value=activeScan+1;load();};$('minus').onclick=()=>setZoom(zoom-25);$('plus').onclick=()=>setZoom(zoom+25);$('fit').onclick=()=>setZoom(100);$('mode').onchange=updateMode;$('choice').onchange=()=>{const c=candidates[Number($('choice').value)];if(c)savePreference(readingPreference(c));renderCandidate();};$('autoReading').onclick=()=>{savePreference(null);if(candidates.length){$('choice').value=String(preferredIndex(candidates,null));renderCandidate();}};$('showLanguages').onchange=updateLanguageLegend;
+
+function closeContents(){closeDialog('contentsPanel');for(const id of ['contentsOpen','contentsOpenMobile'])$(id).setAttribute('aria-expanded','false');}
+let pendingContentsAnchor=null,pendingContentsEstimate=false;
+// Main-text offsets are corroborated by inspected starts and folios. Roman offsets are separate; never infer the IV/V prefaces from the main offset.
+const contentsPagination={1:{arabic:75},2:{arabic:82,roman:4,romanMax:78},3:{arabic:86,roman:18,romanMax:68},4:{arabic:52},5:{arabic:12}};
+function contentsRoman(value){if(!/^(?=[IVXLCDM]+$)M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/.test(value))return null;const digits={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};return [...value].reduce((n,c,i)=>n+(digits[c]<(digits[value[i+1]]??0)?-digits[c]:digits[c]),0);}
+function contentsDestination(v,entry){const d=volumeContents[v],p=contentsPagination[v];if(!d||!p||!Array.isArray(entry))return null;const scan=entry[3];if(scan!==null)return Number.isInteger(scan)&&scan>=1&&scan<=counts[Number(v)]?{scan,kind:'verified'}:null;const printed=entry[2];if(typeof printed!=='string')return null;let n=null;const a=printed.match(/^([1-9][0-9]*)(?=$|[–, і])/);if(a)n=Number(a[1])+p.arabic;else{const r=printed.match(/^([IVXLCDM]+)(?=$|[–, і])/);if(r&&p.roman!==undefined){const folio=contentsRoman(r[1]);if(folio!==null&&folio<=p.romanMax)n=folio+p.roman;}}return Number.isSafeInteger(n)&&n>=1&&n<d.sources[0]&&n<=counts[Number(v)]?{scan:n,kind:'estimated'}:null;}
+function contentsAnchorIndex(anchor,available){if(!anchor)return -1;const hits=[];for(const [i,c] of available.entries()){const r=c.data.reading;if(c.suffix!==anchor.suffix||r.reader_id!==anchor.reader_id)continue;const lines=r.regions.flatMap(region=>region.lines.map(line=>({region,line}))).filter(x=>x.line.id===anchor.line_id);if(lines.length===1&&lines[0].region.kind==='heading'&&lines[0].line.text===anchor.text)hits.push(i);}return hits.length===1?hits[0]:-1;}
+function jumpContents(v,n,anchor=null,estimated=false){if($('volume').value!==v||!Number.isInteger(n)||n<1||n>counts[Number(v)])return;closeContents();$('page').value=String(n);pendingContentsAnchor=anchor;pendingContentsEstimate=estimated;if(anchor&&$('mode').value==='ocr'){$('mode').value='both';updateMode();}load();}
+function renderContents(){const v=$('volume').value,d=volumeContents[v];$('contentsSources').replaceChildren();$('contentsEntries').replaceChildren();if(!d)return;message('contentsTitle','Contents · Зміст — Volume '+v);const verified=d.entries.filter(e=>contentsDestination(v,e)?.kind==='verified').length,estimated=d.entries.filter(e=>contentsDestination(v,e)?.kind==='estimated').length;message('contentsStatus',verified+' inspected page destinations · '+estimated+' unverified calculated destinations. Exact line anchors open their recorded reading. Calculated links use the printed start page and volume-specific offset; check the heading against the scan. Printed references may contain errors.');for(const n of d.sources){const b=document.createElement('button');b.type='button';b.textContent='Scan '+n;b.onclick=()=>jumpContents(v,n);$('contentsSources').append(b);}for(const entry of d.entries){const [source,title,printed,scan,depth,note,anchor]=entry;const dest=contentsDestination(v,entry);const li=document.createElement('li');if(depth){li.className='subentry';if(depth===2)li.classList.add('subentry-deep');}const label=title+(printed?' · p. '+printed:'');if(dest){const b=document.createElement('button');b.type='button';if(dest.kind==='estimated'){b.dataset.estimatedScan=String(dest.scan);b.textContent=label+' · unverified scan '+dest.scan;b.title='Calculated from printed pagination; work start not inspected';}else{b.dataset.scan=String(dest.scan);b.textContent=label;if(anchor){b.dataset.line=anchor.line_id;b.title='Open exact heading in its recorded reading';}}b.onclick=()=>jumpContents(v,dest.scan,dest.kind==='verified'?(anchor??null):null,dest.kind==='estimated');li.append(b);}else {const t=document.createElement('span');t.textContent=label+' (destination pending)';li.append(t);}const b=document.createElement('button');b.type='button';b.className='source-link';b.textContent='TOC '+source;b.setAttribute('aria-label','Open original contents scan '+source+' for '+title);b.onclick=()=>jumpContents(v,source);li.append(b);if(note){const t=document.createElement('small');t.textContent=' · '+note;li.append(t);}$('contentsEntries').append(li);}}
+function openContents(){renderContents();openDialog('contentsPanel',narrowReader()?'contentsOpenMobile':'contentsOpen');}
+$('contentsOpen').onclick=openContents;$('contentsOpenMobile').onclick=openContents;$('contentsClose').onclick=closeContents;$('contentsPanel').addEventListener('close',()=>{for(const id of ['contentsOpen','contentsOpenMobile'])$(id).setAttribute('aria-expanded','false');});
 
 // Search indexes are page records, never an inferred combined edition.
 let searchGeneration=0, searchController=null, searchHits=[], shownHits=0;
