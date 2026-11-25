@@ -1,13 +1,16 @@
 """Review intake contract tests; real source text, synthetic decisions/identity."""
 import copy
+from contextlib import redirect_stdout
+import io
 import hashlib
 import json
 from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
-from franko_tei.review_bundle import validate_bundle, make_intake, read_bundle, git_source_loader, issue_bundle, assert_new
+from franko_tei.review_bundle import validate_bundle, make_intake, read_bundle, git_source_loader, issue_bundle, assert_new, main
 
 ROOT = Path(__file__).resolve().parents[1]
 PATH = "pilot/vol1_scan00020_single_reading.json"
@@ -152,3 +155,53 @@ class ReviewBundleTests(unittest.TestCase):
         raw = encode(b)
         self.assertEqual(read_bundle(raw), b)
         self.assertEqual(validate_bundle(read_bundle(raw), load_source), b)
+
+    def test_cli_preview_approve_and_replay(self):
+        # Real git repository and real Franko source; only the GitHub
+        # response is synthetic. No actual issue or correction is published.
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            def git(*args):
+                return subprocess.check_output(["git", "-C", tmp, *args]).decode().strip()
+            git("init", "-q")
+            git("config", "user.name", "Fixture")
+            git("config", "user.email", "fixture@example.invalid")
+            p = repo / PATH
+            p.parent.mkdir()
+            p.write_bytes(RAW)
+            git("add", ".")
+            git("commit", "-qm", "source")
+            commit = git("rev-parse", "HEAD")
+            git("update-ref", "refs/remotes/origin/main", commit)
+            b = fixture()
+            b["source_commit"] = commit
+            raw = encode(b)
+            digest = hashlib.sha256(raw).hexdigest()
+            i = issue()
+            i["body"] = "### Review bundle\n\n```json\n" + raw.decode() + "\n```\n"
+            real_check_output = subprocess.check_output
+            def transport(args, **kwargs):
+                if args[0] == "gh":
+                    self.assertEqual(args, ["gh", "api", "--hostname", "github.com",
+                                            "repos/alexsosn/franko-tei/issues/42"])
+                    return encode(i)
+                return real_check_output(args, **kwargs)
+            args = ["42", "--repo", tmp]
+            with patch("franko_tei.review_bundle.subprocess.check_output", side_effect=transport), redirect_stdout(io.StringIO()) as output:
+                self.assertEqual(main(args), 0)
+                self.assertIn(digest, output.getvalue())
+                self.assertFalse((repo / "reviews").exists())
+                with self.assertRaises(ValueError):
+                    main(args + ["--approve-sha256", "0"*64])
+                self.assertFalse((repo / "reviews").exists())
+                self.assertEqual(main(args + ["--approve-sha256", digest]), 0)
+                records = list((repo / "reviews/intake").glob("*.json"))
+                self.assertEqual(len(records), 1)
+                record = json.loads(records[0].read_text(encoding="utf-8"))
+                self.assertEqual(record["submitter"]["github_user_id"], 1234)
+                self.assertEqual(record["bundle"], b)
+                self.assertEqual(record["status"], "pending_adjudication")
+                self.assertEqual(p.read_bytes(), RAW)
+                with self.assertRaises(ValueError):
+                    main(args + ["--approve-sha256", digest])
+                self.assertEqual(len(list((repo / "reviews/intake").glob("*.json"))), 1)
