@@ -788,8 +788,16 @@
               {
                 "text_version": "gpt62-single-20261125-v4s00123",
                 "start": 16,
-                "end": 57,
+                "end": 17,
                 "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-single-20261125-v4s00123",
+                "start": 17,
+                "end": 57,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true
               }
@@ -1018,8 +1026,10 @@
       "date": "2026-11-25",
       "status": "provisional",
       "scope": "First-reading contiguous code-point language/script spans on all linguistic lines.",
-      "policy": "uk historical Ukrainian/Ruthenian tentative, pl Polish Latin-script signature, la Latin editorial insertions. Numeric-only folios untagged. Historic register uncertain; punctuation belongs to adjacent spans.",
-      "notes": "Bachva continuation exhibits vernacular forms (што, єденъ, сановали) and may represent Pannonian Rusyn; existing historical uk label explicitly uncertain pending dialect review. Yaikovtsi start also provisional uk; Latin sic separate."
+      "policy": "uk historical Ukrainian/Ruthenian tentative, cu Church Slavonic invocation, pl Polish Latin-script signature, la Latin editorial insertions. Numeric-only folios untagged. Historic register uncertain; punctuation belongs to adjacent spans.",
+      "notes": "Bachva continuation exhibits vernacular forms (што, єденъ, сановали) and may represent Pannonian Rusyn; existing historical uk label explicitly uncertain pending dialect review. Yaikovtsi start also provisional uk; Latin sic separate. The standard opening Trinitarian invocation is tentatively tagged cu separately from the surrounding vernacular; mixed orthographic features remain uncertain.",
+      "prior_reading_blob": "57f0d1868b550b57403c83ce5a9e088a989ce9b0",
+      "annotation_review": "Language metadata only; physical line text and IDs unchanged."
     }
   }
 }
