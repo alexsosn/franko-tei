@@ -262,10 +262,67 @@ class EditorialProjectionTests(unittest.TestCase):
         rejected(lambda d:d["reading"]["regions"][0]["lines"][0]["bbox_xywh"].__setitem__(0,1))
         rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(text="changed"))
         rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(id="changed"))
-        rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(language_spans=[]))
+        rejected(lambda d:next(l for r in d["reading"]["regions"] for l in r["lines"] if l["id"]==line["id"]).update(language_spans=[]))
         rejected(lambda d:next(l for r in d["reading"]["regions"] for l in r["lines"] if l["id"]==line["id"])["language_spans"][0].update(language="uk"))
         rejected(lambda d:d["reading"]["uncertainty_notes"].clear())
         rejected(lambda d:d.update(source_image_sha256="0"*64))
+        # Actual Git-backed roundtrip, including all 122 standard markers on
+        # this page. Use a detached temporary clone; never alter the corpus
+        # checkout or the genuine accepted records.
+        from franko_tei.footnote_audit import audit_reading
+        full=copy.deepcopy(original)
+        findings=list(audit_reading(full))
+        self.assertEqual(len(findings),122)
+        for region in full["reading"]["regions"]:
+            for item in region["lines"]:
+                markers=[(m["start"],m["end"]) for m in findings if m["line"]==item["id"]]
+                if not markers: continue
+                updated=[]
+                for span in item["language_spans"]:
+                    points=sorted({span["start"],span["end"]} |
+                                  {n for pair in markers for n in pair if span["start"]<n<span["end"]})
+                    for a,b in zip(points,points[1:]):
+                        part=dict(span,start=a,end=b)
+                        if (a,b) in markers:
+                            part.update(language="zxx",script="Zyyy",uncertain=False)
+                        updated.append(part)
+                item["language_spans"]=updated
+        full["reading"]["footnote_marker_annotation"]=dict(revised["reading"]["footnote_marker_annotation"],marker_count=122)
+        self.assertEqual(list(audit_reading(full)),[])
+        with tempfile.TemporaryDirectory() as tmp:
+            clone=Path(tmp)/"repo"
+            subprocess.run(["git","clone","--quiet","--shared","--no-checkout",str(root),str(clone)],check=True)
+            def git(*args):
+                return subprocess.check_output(["git","-C",str(clone),*args],text=True).strip()
+            git("checkout","--quiet","--detach",ref)
+            full_raw=encode(full)
+            (clone/path).write_bytes(full_raw)
+            git("add","--",path)
+            git("-c","user.name=Fixture","-c","user.email=fixture@example.invalid","commit","--quiet","-m","annotation-only fixture")
+            committed=git("rev-parse","HEAD")
+            actual_loader=git_source_loader(clone,committed)
+            self.assertEqual(actual_loader(committed,path),full_raw)
+            projected=project_lines(full_raw,path,ledger,source_loader=actual_loader,projection_commit=committed)
+            self.assertEqual([r["text"] for r in projected],[r["text"] for r in rows])
+            output=Path(tmp)/"search"
+            build(clone/"pilot",output,committed)
+            overlay=json.loads((output/"editorial.json").read_text())
+            published=next(p for p in overlay["pages"] if p["path"]==path)
+            self.assertEqual(published["blob"],blob_sha(full_raw))
+            self.assertEqual(len(published["lines"]),2)
+            self.assertTrue(all(r["source_revision"]["projected_commit"]==committed for r in published["lines"]))
+            self.assertFalse(any(p["path"]==path for p in overlay["unavailable"]))
+            # The Git-backed new projection is unavailable if bytes change
+            # outside the allowed language-only derivation.
+            full["reading"]["regions"][0]["lines"][0]["bbox_xywh"][0]+=1
+            (clone/path).write_bytes(encode(full))
+            git("add","--",path)
+            git("-c","user.name=Fixture","-c","user.email=fixture@example.invalid","commit","--quiet","-m","stale geometry fixture")
+            stale_ref=git("rev-parse","HEAD")
+            build(clone/"pilot",output,stale_ref)
+            overlay=json.loads((output/"editorial.json").read_text())
+            self.assertIn({"path":path,"reason":"source_blob_changed"},overlay["unavailable"])
+            self.assertFalse(any(p["path"]==path for p in overlay["pages"]))
         # A reformat-only revision remains stale, even with trusted bytes.
         with self.assertRaises(StaleEditorialSource):
             project_lines(old+b" ",path,ledger,source_loader=lambda c,p: old+b" " if c==rev else old,projection_commit=rev)
