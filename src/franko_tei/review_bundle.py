@@ -91,7 +91,7 @@ def read_bundle(raw):
                 depth -= 1
                 require(depth >= 0, "invalid JSON nesting")
         result = json.loads(text, object_pairs_hook=unique_pairs,
-                            parse_constant=reject_constant)
+                            parse_constant=reject_constant, parse_float=reject_constant)
         require(isinstance(result, dict), "bundle must be a JSON object")
         return result
     except (UnicodeError, RecursionError) as exc:
@@ -236,6 +236,8 @@ def assert_new(record, previous):
                  e["decision"], e["replacement"]) for e in b["events"]}
     for old in previous:
         b = old["bundle"]
+        require(old["submitter"]["issue_id"] != record["submitter"]["issue_id"],
+                "issue already received; submit a new issue")
         require(b["bundle_id"] != bundle["bundle_id"]
                 and old["bundle_sha256"] != record["bundle_sha256"], "bundle already received")
         require(not ids.intersection(e["event_id"] for e in b["events"]), "event already received")

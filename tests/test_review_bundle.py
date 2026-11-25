@@ -83,7 +83,7 @@ class ReviewBundleTests(unittest.TestCase):
         with self.assertRaises(ValueError): validate_bundle(b, load_source)
 
     def test_bounded_strict_json(self):
-        for raw in (b'{"a":1,"a":2}', b'{"x":NaN}', b'\xff', b'x'*262145, b'['*2000+b']'*2000):
+        for raw in (b'{"a":1,"a":2}', b'{"x":NaN}', b'{"x":1e9999}', b'\xff', b'x'*262145, b'['*2000+b']'*2000):
             with self.subTest(size=len(raw)):
                 with self.assertRaises(ValueError): read_bundle(raw)
 
@@ -136,9 +136,19 @@ class ReviewBundleTests(unittest.TestCase):
         raw = encode(b)
         renamed = issue()
         renamed["user"]["login"] = "renamed-reader"
+        renamed.update(id=123457, number=43, html_url="https://github.com/alexsosn/franko-tei/issues/43")
+        edited_issue = make_intake(raw, issue(), hashlib.sha256(raw).hexdigest(), load_source)
+        with self.assertRaises(ValueError): assert_new(edited_issue, [first])
         second = make_intake(raw, renamed, hashlib.sha256(raw).hexdigest(), load_source)
         with self.assertRaises(ValueError): assert_new(second, [first])
         renamed["user"]["id"] = 5678
         third = make_intake(raw, renamed, hashlib.sha256(raw).hexdigest(), load_source)
         assert_new(third, [first])
         self.assertEqual(third["status"], "pending_adjudication")
+
+    def test_json_brackets_inside_literal(self):
+        b = fixture()
+        b["events"][0]["note"] = 'literal brackets [{[ and quote " and backslash \\'
+        raw = encode(b)
+        self.assertEqual(read_bundle(raw), b)
+        self.assertEqual(validate_bundle(read_bundle(raw), load_source), b)
