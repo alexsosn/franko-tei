@@ -47,3 +47,40 @@ published revision, independently adjudicated overlay and TEI/TF projection;
 then contributor counts. The first real test must use a test branch/fixture,
 not merge a hypothetical reading. No claim that native form serialization
 has been tested live. See #182 for scope.
+
+
+## Editorial TEI projection
+
+For a trusted, full-history checkout of the desired main-history commit, with
+the pinned native image and its exact manifest under `images/` (or another
+local asset directory):
+
+```sh
+python -m franko_tei.review_tei \
+  --revision "$(git rev-parse HEAD)" \
+  --candidate pilot/vol1_scan00104_single_reading.json \
+  --images /path/to/native-assets \
+  --output build/editorial/vol1-scan00104.xml
+```
+
+The new file is a **provisional editorial reading**, not a replacement for the
+immutable candidate or a verified edition. The exporter reads the candidate
+blob from Git, checks the accepted ledger at the exact checkout, rejects
+uncommitted ledger records and stale candidate blobs, authenticates the pinned
+manifest, and checks the native image digest. It refuses overwriting output.
+A correction changes only the text after its original physical line break:
+facsimile zones, printed folios and untouched line annotations are preserved.
+The corrected line has no inherited language spans; old uncertainty notes
+are retained as source-reading notes needing reassessment. Confirmations leave
+text and spans unchanged. Line-linked `editorial-review` notes preserve the
+original literal and the review status, submitter ID, review kind, reason,
+source candidate and exact Git links to intake/adjudication records. These
+are editorial provenance, not variants in Franko's manuscript sources.
+Rejected and pending proposals remain in the ledger, not the reading.
+
+This narrow export supports existing accepted non-structural edits. It does
+not re-annotate corrected text, promote a page to verified, export a complete
+volume, or change the existing frozen-draft TF converter. TF projection of
+these notes and accepted readings is a separate follow-up. Source-image and
+TEI P5 Relax NG smoke tests use actual I/104 and IV/68; the unit tests on I/20
+use explicitly synthetic review decisions.
