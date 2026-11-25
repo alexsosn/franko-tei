@@ -1,5 +1,7 @@
 """Actual frozen text, mocked transport and synthetic decisions; no corpus changes."""
 import json
+import struct
+import zlib
 from pathlib import Path
 import unittest
 from playwright.sync_api import sync_playwright, expect
@@ -11,15 +13,18 @@ RAW = (ROOT / PATH).read_bytes()
 SOURCE = json.loads(RAW)
 REV = "a" * 40
 LINE = next(l for r in SOURCE["reading"]["regions"] for l in r["lines"] if l["id"] == "early-apocrypha-context-line-01")
-PNG = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aH1sAAAAASUVORK5CYII="
+W,H=1300,2000
+def png():
+    def chunk(kind, payload):
+        return struct.pack(">I",len(payload))+kind+payload+struct.pack(">I",zlib.crc32(kind+payload))
+    return b"\x89PNG\r\n\x1a\n"+chunk(b"IHDR",struct.pack(">IIBBBBB",W,H,8,0,0,0,0))+chunk(b"IDAT",zlib.compress((b"\0"+b"\xee"*W)*H))+chunk(b"IEND",b"")
 
 class EditorSmoke(unittest.TestCase):
     def test_export(self):
-        import base64
         with sync_playwright() as p:
             browser = p.chromium.launch(args=["--no-sandbox"])
             page = browser.new_page(viewport={"width":390,"height":844})
-            manifest = {"volume":"1","page_count":469,"pages":[{"scan_page":20,"width":1,"height":1,"artifacts":[
+            manifest = {"volume":"1","page_count":469,"pages":[{"scan_page":20,"width":W,"height":H,"artifacts":[
                 {"role":"page_image","path":SOURCE["source_image_path"],"sha256":SOURCE["source_image_sha256"]},
                 {"role":"embedded_ocr","path":"original_ocr/vol1/page-00020.txt"}]}]}
             def route(r):
@@ -35,7 +40,7 @@ class EditorSmoke(unittest.TestCase):
                 if u.endswith("/"+PATH):
                     return r.fulfill(body=RAW,content_type="application/json")
                 if u.endswith("/"+SOURCE["source_image_path"]):
-                    return r.fulfill(body=base64.b64decode(PNG),content_type="image/png")
+                    return r.fulfill(body=png(),content_type="image/png")
                 if u.endswith("page-00020.txt"):
                     return r.fulfill(body="OCR")
                 return r.fulfill(status=404,body="")
@@ -46,6 +51,8 @@ class EditorSmoke(unittest.TestCase):
             expect(page.locator("#reviewLine option").first).to_be_attached()
             page.locator("#reviewLine").select_option(LINE["id"])
             expect(page.locator("#reviewOriginal")).to_have_text(LINE["text"])
+            expect(page.locator("#reviewCrop")).to_be_visible()
+            expect(page.locator("#reviewSave")).to_be_enabled()
             replacement=LINE["text"].replace("ὀνόμασι","ὀνόματι")
             page.locator("#reviewEdit").fill(replacement)
             page.locator("#reviewNote").fill("Synthetic browser test")
@@ -54,6 +61,7 @@ class EditorSmoke(unittest.TestCase):
             expect(page.locator(".line-text").first).to_be_visible()
             page.locator("#reviewOpen").click()
             expect(page.locator("#reviewEdit")).to_have_value(replacement)
+            expect(page.locator("#reviewSave")).to_be_enabled()
             page.locator("#reviewSave").click()
             page.locator("#reviewPrepare").click()
             raw=page.locator("#reviewBundle").input_value().encode()

@@ -18,7 +18,7 @@
   function persist(){
     if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab. Reopen without overwriting.');
     const next=JSON.stringify(session);
-    localStorage.setItem(KEY,next);stored=next;
+    try{localStorage.setItem(KEY,next);}catch(e){storageFailed=true;throw Error('Local storage failed. Copy your current edit before closing.');}stored=next;
   }
   async function hash(raw){
     const prefix=bytes('blob '+raw.byteLength+'\0'),all=new Uint8Array(prefix.length+raw.byteLength);
@@ -43,7 +43,7 @@
     el('reviewLine').disabled=storageFailed;el('reviewPrevious').disabled=storageFailed;el('reviewNext').disabled=storageFailed;
     for(const b of el('reviewCharacters').querySelectorAll('button'))b.disabled=locked;
     el('reviewProgress').textContent=s.events.length+' / '+MAX+' · '+bytes(json()).length+' / '+LIMIT+' B';
-    el('reviewExport').hidden=!s.locked;el('reviewBundle').value=s.locked?json():'';
+    el('reviewExport').hidden=!s.locked;el('reviewBundle').value=s.locked?json():'';el('reviewDiscard').disabled=storageFailed||s.locked;
   }
   function paint(){
     const x=entry(),line=x.line;
@@ -65,7 +65,7 @@
     const e=session.events.find(e=>e.target.line_id===id);
     session.selected=id;session.working=e?.decision==='correct'?e.replacement:x.line.text;session.note=e?.note??'';persist();paint();
   }
-  function run(fn){if(storageFailed)return;try{fn();}catch(e){status(e.message);if(localStorage.getItem(KEY)!==stored){storageFailed=true;controls();}}}
+  function run(fn){if(storageFailed)return;try{fn();}catch(e){status(e.message);try{if(localStorage.getItem(KEY)!==stored)storageFailed=true;}catch(_){storageFailed=true;}if(storageFailed)controls();}}
   function record(decision){
     if(session.locked||decision!=='defer'&&!imageReady)fail('Cannot record this decision.');
     if(decision==='defer'&&dirty()&&session.working!==entry().line.text&&!confirm(tr('Discard the unrecorded edit for this line?')))return;
@@ -102,7 +102,7 @@
       if(!list.length||list.some(x=>typeof x.region.id!=='string'||typeof x.line.id!=='string')||new Set(list.map(x=>x.line.id)).size!==list.length)fail('Invalid source line identities.');
       if(!s){const x=list.find(x=>x.line.id===selected)??list[0];s={id:uuid(),commit,path,blob,selected:x.line.id,working:x.line.text,note:'',events:[],locked:false};}
       session=s;
-      if(!entry()||!s.events.every(valid)||new Set(s.events.map(e=>e.target.line_id)).size!==s.events.length||new Set(s.events.map(e=>e.event_id)).size!==s.events.length||bytes(json()).length>LIMIT)fail('Invalid local events; draft preserved.');
+      if(!entry()||s.locked&&dirty()||!s.events.every(valid)||new Set(s.events.map(e=>e.target.line_id)).size!==s.events.length||new Set(s.events.map(e=>e.event_id)).size!==s.events.length||bytes(json()).length>LIMIT)fail('Invalid local events; draft preserved.');
       persist();
       el('reviewSource').textContent='Volume '+v+' · scan '+n+' · '+d.reading.reader_id+' · '+commit.slice(0,12);
       el('reviewLine').replaceChildren(...list.map(({line,region},i)=>new Option((i+1)+' · '+region.kind+' · '+line.text.slice(0,32),line.id)));
@@ -123,8 +123,10 @@
   for(const char of ['ѣ','ѧ','ѫ','ꙗ','ꙑ','ѿ','ѡ','҃','҇','́','̀','̓','̔']){const b=document.createElement('button');b.type='button';b.textContent=/\p{M}/u.test(char)?'◌'+char:char;b.title='U+'+char.codePointAt(0).toString(16).toUpperCase();b.onclick=()=>{const input=el('reviewEdit');input.setRangeText(char,input.selectionStart,input.selectionEnd,'end');input.focus();input.dispatchEvent(new Event('input'));};el('reviewCharacters').append(b);}
   el('reviewSave').onclick=()=>run(()=>record(session.working===entry().line.text?'confirm':'correct'));
   el('reviewDefer').onclick=()=>run(()=>record('defer'));
-  el('reviewUndo').onclick=()=>run(()=>{session.events=session.events.filter(e=>e.target.line_id!==session.selected);session.working=entry().line.text;session.note='';persist();paint();});
+  el('reviewUndo').onclick=()=>run(()=>{if(dirty()&&!confirm(tr('Discard the unrecorded edit for this line?')))return;session.events=session.events.filter(e=>e.target.line_id!==session.selected);session.working=entry().line.text;session.note='';persist();paint();});
   el('reviewPrepare').onclick=()=>run(()=>{if(el('reviewPrepare').disabled)return;session.locked=true;persist();controls();status('Prepared locally; not submitted.');el('reviewBundle').focus();el('reviewBundle').select();});
   el('reviewCopy').onclick=async()=>{try{await navigator.clipboard.writeText(el('reviewBundle').value);status('Copied.');}catch(e){el('reviewBundle').focus();el('reviewBundle').select();status('Select and copy the JSON manually.');}};
-  el('reviewReset').onclick=()=>run(()=>{if(!confirm(tr('Have you saved or submitted this bundle? Remove the local batch?')))return;if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(KEY);el('reviewDialog').close();});
+  function clearDraft(question){run(()=>{if(!confirm(tr(question)))return;if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(KEY);el('reviewDialog').close();});}
+  el('reviewReset').onclick=()=>clearDraft('Have you saved or submitted this bundle? Remove the local batch?');
+  el('reviewDiscard').onclick=()=>clearDraft('Discard this local draft and all its decisions?');
 })();
