@@ -11,6 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 PATH = "pilot/vol1_scan00020_single_reading.json"
 RAW = (ROOT / PATH).read_bytes()
 SOURCE = json.loads(RAW)
+PATH92 = "pilot/vol1_scan00092_single_reading.json"
+RAW92 = (ROOT / PATH92).read_bytes()
+SOURCE92 = json.loads(RAW92)
 REV = "a" * 40
 LINE = next(l for r in SOURCE["reading"]["regions"] for l in r["lines"] if l["id"] == "early-apocrypha-context-line-01")
 W,H=1300,2000
@@ -27,7 +30,10 @@ class EditorSmoke(unittest.TestCase):
             changed = False
             manifest = {"volume":"1","page_count":469,"pages":[{"scan_page":20,"width":W,"height":H,"artifacts":[
                 {"role":"page_image","path":SOURCE["source_image_path"],"sha256":SOURCE["source_image_sha256"]},
-                {"role":"embedded_ocr","path":"original_ocr/vol1/page-00020.txt"}]}]}
+                {"role":"embedded_ocr","path":"original_ocr/vol1/page-00020.txt"}]},
+                {"scan_page":92,"width":W,"height":H,"artifacts":[
+                    {"role":"page_image","path":SOURCE92["source_image_path"],"sha256":SOURCE92["source_image_sha256"]},
+                    {"role":"embedded_ocr","path":"original_ocr/vol1/page-00092.txt"}]}]}
             def route(r):
                 u=r.request.url
                 if u=="https://reader.test/":
@@ -43,9 +49,11 @@ class EditorSmoke(unittest.TestCase):
                     return r.fulfill(json=manifest)
                 if u.endswith("/"+PATH):
                     return r.fulfill(body=RAW+(b" " if changed and ("/"+REV+"/") in u else b""),content_type="application/json")
-                if u.endswith("/"+SOURCE["source_image_path"]):
+                if u.endswith("/"+PATH92):
+                    return r.fulfill(body=RAW92,content_type="application/json")
+                if u.endswith("/"+SOURCE["source_image_path"]) or u.endswith("/"+SOURCE92["source_image_path"]):
                     return r.fulfill(body=png(),content_type="image/png")
-                if u.endswith("page-00020.txt"):
+                if u.endswith(("page-00020.txt","page-00092.txt")):
                     return r.fulfill(body="OCR")
                 return r.fulfill(status=404,body="")
             page.route("https://**/*",route)
@@ -123,6 +131,38 @@ class EditorSmoke(unittest.TestCase):
             page.locator("#reviewEdit").fill(replacement)
             page.locator("#reviewNote").fill("Synthetic browser test")
             page.locator("#reviewClose").click()
+            # Reproduce the legacy global draft on a different scan, as in #273.
+            legacy=page.evaluate("""() => {
+                const prefix='franko-review-session-v1';
+                const key=Object.keys(localStorage).find(k=>k===prefix||k.startsWith(prefix+':'));
+                const raw=localStorage.getItem(key);
+                localStorage.setItem(prefix,raw);
+                if(key!==prefix)localStorage.removeItem(key);
+                return raw;
+            }""")
+            ref92="6b40c9d2aba5c9f0e8e57f9839c86bfdceea7b4f"
+            def open92(ref):
+                page.goto("https://reader.test/#v=1&p=92&ref="+ref)
+                page.reload()
+                expect(page.locator(".line-text").first).to_be_visible()
+                page.locator("#reviewOpen").click()
+                expect(page.locator("#reviewSource")).to_contain_text("scan 92")
+                expect(page.locator("#reviewSource")).to_contain_text(ref[:12])
+                self.assertTrue(page.locator("#reviewFullImage").get_attribute("href").endswith("/vol1/page-00092.jpg"))
+                expect(page.locator("#reviewOriginal")).to_have_text(SOURCE92["reading"]["regions"][0]["lines"][0]["text"])
+                expect(page.locator("#reviewSave")).to_be_enabled()
+            open92(ref92)
+            expect(page.locator("#reviewNote")).to_have_value("")
+            page.locator("#reviewNote").fill("Separate synthetic draft")
+            page.locator("#reviewClose").click()
+            open92(REV)
+            expect(page.locator("#reviewNote")).to_have_value("")
+            page.locator("#reviewClose").click()
+            open92(ref92)
+            expect(page.locator("#reviewNote")).to_have_value("Separate synthetic draft")
+            self.assertEqual(page.evaluate("localStorage.getItem('franko-review-session-v1')"),legacy)
+            page.locator("#reviewClose").click()
+            page.goto("https://reader.test/#v=1&p=20&ref=main")
             page.reload()
             expect(page.locator(".line-text").first).to_be_visible()
             page.locator("#reviewOpen").click()

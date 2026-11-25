@@ -1,8 +1,8 @@
-/* One pinned local proofreading batch. No credentials or network writes. */
+/* Pinned local proofreading batches, scoped to the selected source. No credentials or network writes. */
 (() => {
   const KEY='franko-review-session-v1', LIMIT=32768, MAX=25;
   const sha=/^[0-9a-f]{40}$/, uid=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/, pathPattern=/^pilot\/vol[1-5]_scan[0-9]{5}_(single_reading|exposed_reading|independent_image_reading_b|alternate_reading_0[12])\.json$/;
-  let session, data, stored, serial=0, imageReady=false, storageFailed=false;
+  let session, data, stored, key, serial=0, imageReady=false, storageFailed=false;
   const el=id=>document.getElementById(id);
   const tr=s=>translateUI(s);
   const status=s=>uiText(el('reviewStatus'),s);
@@ -16,9 +16,9 @@
   const dirty=()=>session.working!==(event()?.decision==='correct'?event().replacement:entry().line.text)||session.note!==(event()?.note??'');
   const literal=(s,max)=>typeof s==='string'&&s.trim()&&[...s].length<=max&&![...s].some(c=>{let n=c.codePointAt(0);return /[\r\n\u0085\u2028\u2029⟦⟧]/u.test(c)||!(n===9||n>=32&&n<=0xd7ff||n>=0xe000&&n<=0xfffd||n>=0x10000&&n<=0x10ffff);});
   function persist(){
-    if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab. Reopen without overwriting.');
+    if(localStorage.getItem(key)!==stored)fail('Local draft changed in another tab. Reopen without overwriting.');
     const next=JSON.stringify(session);
-    try{localStorage.setItem(KEY,next);}catch(e){storageFailed=true;throw Error('Local storage failed. Copy your current edit before closing.');}stored=next;
+    try{localStorage.setItem(key,next);}catch(e){storageFailed=true;throw Error('Local storage failed. Copy your current edit before closing.');}stored=next;
   }
   async function hash(raw){
     const prefix=bytes('blob '+raw.byteLength+'\0'),all=new Uint8Array(prefix.length+raw.byteLength);
@@ -88,7 +88,7 @@
     const e=session.events.find(e=>e.target.line_id===id);
     session.selected=id;session.working=e?.decision==='correct'?e.replacement:x.line.text;session.note=e?.note??'';persist();paint();
   }
-  function run(fn){if(storageFailed)return;try{fn();}catch(e){status(e.message);try{if(localStorage.getItem(KEY)!==stored)storageFailed=true;}catch(_){storageFailed=true;}if(storageFailed)controls();}}
+  function run(fn){if(storageFailed)return;try{fn();}catch(e){status(e.message);try{if(localStorage.getItem(key)!==stored)storageFailed=true;}catch(_){storageFailed=true;}if(storageFailed)controls();}}
   function record(decision){
     if(session.locked||decision!=='defer'&&!imageReady)fail('Cannot record this decision.');
     if(decision==='defer'&&dirty()&&session.working!==entry().line.text&&!confirm(tr('Discard the unrecorded edit for this line?')))return;
@@ -103,15 +103,31 @@
   async function open(){
     const id=++serial,active=candidates[Number(el('choice').value)],ref=el('ref').value.trim(),selected=renderedLines.find(r=>r.btn.getAttribute('aria-pressed')==='true')?.line.id;
     el('reviewBody').hidden=true;el('reviewRecovery').hidden=true;imageReady=false;storageFailed=false;el('reviewCrop').hidden=true;
+    const previousImage=el('reviewImage');previousImage.onload=null;previousImage.onerror=null;previousImage.removeAttribute('src');el('reviewFullImage').removeAttribute('href');
     el('reviewDialog').showModal();status('Loading pinned reading…');
     try{
-      stored=localStorage.getItem(KEY);let s=stored?JSON.parse(stored):null,commit,path;
-      if(s){commit=s.commit;path=s.path;if(!uid.test(s.id)||!sha.test(s.blob)||!Array.isArray(s.events)||s.events.length>MAX||typeof s.working!=='string'||typeof s.note!=='string'||typeof s.locked!=='boolean')fail('Invalid local draft; preserved.');}
-      else{
-        if(!active)fail('No reading is available.');
-        commit=ref==='main'?(await(await get('https://api.github.com/repos/alexsosn/franko-tei/commits/main')).json()).sha:ref;
-        path='pilot/vol'+active.data.volume+'_scan'+pad(active.data.scan_page)+'_'+active.suffix+'.json';
+      stored=null;
+      if(!active)fail('No reading is available.');
+      const path='pilot/vol'+active.data.volume+'_scan'+pad(active.data.scan_page)+'_'+active.suffix+'.json';
+      if(!pathPattern.test(path)||ref!=='main'&&!sha.test(ref))fail('Review requires main or an exact commit SHA.');
+      // A batch belongs to the selected candidate and reading ref. Keep legacy
+      // drafts under their original key: switching pages never overwrites them.
+      key=KEY+':'+ref+':'+path;
+      stored=localStorage.getItem(key);
+      if(stored===null){
+        const legacy=localStorage.getItem(KEY);
+        if(legacy!==null){
+          let previous;
+          try{previous=JSON.parse(legacy);}catch(e){key=KEY;stored=legacy;fail('Invalid local draft; preserved.');}
+          if(!previous||typeof previous.path!=='string'||typeof previous.commit!=='string'){key=KEY;stored=legacy;fail('Invalid local draft; preserved.');}
+          if(previous.path===path&&(ref==='main'||previous.commit===ref)){key=KEY;stored=legacy;}
+        }
       }
+      let s=stored!==null?JSON.parse(stored):null,commit;
+      if(stored!==null){
+        if(!s||s.path!==path||ref!=='main'&&s.commit!==ref||!uid.test(s.id)||!sha.test(s.blob)||!Array.isArray(s.events)||s.events.length>MAX||typeof s.working!=='string'||typeof s.note!=='string'||typeof s.locked!=='boolean')fail('Invalid local draft; preserved.');
+        commit=s.commit;
+      }else commit=ref==='main'?(await(await get('https://api.github.com/repos/alexsosn/franko-tei/commits/main')).json()).sha:ref;
       if(!sha.test(commit)||!pathPattern.test(path))fail('Review requires main or an exact commit SHA.');
       const raw=await(await get(readURL(commit,path),undefined,false,'force-cache')).arrayBuffer(),blob=await hash(raw),d=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(raw));
       const v=d.volume,n=d.scan_page;
@@ -130,7 +146,7 @@
       el('reviewSource').textContent='Volume '+v+' · scan '+n+' · '+d.reading.reader_id+' · '+commit.slice(0,12);
       el('reviewLine').replaceChildren(...list.map(({line,region},i)=>new Option((i+1)+' · '+region.kind+' · '+line.text.slice(0,32),line.id)));
       const img=el('reviewImage');el('reviewFullImage').href=asset(image.path);
-      const ready=()=>{if(id!==serial||!el('reviewDialog').open)return;imageReady=img.naturalWidth===p.width&&img.naturalHeight===p.height&&img.naturalWidth>0;uiText(el('reviewImageStatus'),imageReady?'Scan available; line geometry is approximate.':'Image unavailable; confirmation and correction disabled.');paint();};
+      const ready=()=>{if(id!==serial||!el('reviewDialog').open)return;imageReady=img.complete&&img.currentSrc===el('reviewFullImage').href&&img.naturalWidth===p.width&&img.naturalHeight===p.height&&img.naturalWidth>0;uiText(el('reviewImageStatus'),imageReady?'Scan available; line geometry is approximate.':'Image unavailable; confirmation and correction disabled.');paint();};
       img.onload=ready;img.onerror=ready;img.src=asset(image.path);
       el('reviewBody').hidden=false;paint();if(img.complete)ready();
       status(s.locked?'Prepared locally; not submitted.':'Draft saved locally.');
@@ -196,9 +212,9 @@
   el('reviewUndo').onclick=()=>run(()=>{if(dirty()&&!confirm(tr('Discard the unrecorded edit for this line?')))return;session.events=session.events.filter(e=>e.target.line_id!==session.selected);session.working=entry().line.text;session.note='';persist();paint();});
   el('reviewPrepare').onclick=()=>run(()=>{if(el('reviewPrepare').disabled)return;session.locked=true;persist();controls();status('Prepared locally; not submitted.');el('reviewBundle').focus();el('reviewBundle').select();});
   el('reviewCopy').onclick=async()=>{try{await navigator.clipboard.writeText(el('reviewBundle').value);status('Copied.');}catch(e){el('reviewBundle').focus();el('reviewBundle').select();status('Select and copy the JSON manually.');}};
-  function clearDraft(question){run(()=>{if(!confirm(tr(question)))return;if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(KEY);el('reviewDialog').close();});}
+  function clearDraft(question){run(()=>{if(!confirm(tr(question)))return;if(localStorage.getItem(key)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(key);el('reviewDialog').close();});}
   el('reviewRecover').onclick=()=>{if(!stored)return;const url=URL.createObjectURL(new Blob([stored],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='franko-local-review-recovery.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
-  el('reviewRecoverDiscard').onclick=()=>{try{if(!confirm(tr('Discard this local draft and all its decisions?')))return;if(localStorage.getItem(KEY)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(KEY);el('reviewDialog').close();}catch(e){status(e.message);}};
+  el('reviewRecoverDiscard').onclick=()=>{try{if(!confirm(tr('Discard this local draft and all its decisions?')))return;if(localStorage.getItem(key)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(key);el('reviewDialog').close();}catch(e){status(e.message);}};
   el('reviewReset').onclick=()=>clearDraft('Have you saved or submitted this bundle? Remove the local batch?');
   el('reviewDiscard').onclick=()=>clearDraft('Discard this local draft and all its decisions?');
 })();

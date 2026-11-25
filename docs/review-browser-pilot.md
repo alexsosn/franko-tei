@@ -2,7 +2,7 @@
 
 Refs #175 #176 #183 #190.
 
-One local session pinned to one exact commit and candidate blob. Re-fetch exact
+Each local batch is pinned to one exact commit and candidate blob. Re-fetch exact
 commit bytes before opening or resuming; never silently migrate to a newer
 reading. Use GitHub's public commit API only when main is selected, and the
 existing native review issue form for submission. No account tokens. 
@@ -11,19 +11,22 @@ confirm/correct/defer decisions, local draft recovery and explicit JSON export.
 Test browser-generated JSON using the existing Python validator on actual I/20.
 No publication, adjudication or credit in this step.
 
-The pilot uses a single origin-local session (localStorage, at most 25 decisions
-and 32 KiB exported JSON). The pencil in the text pane opens a dialog, with a
+The pilot uses origin-local sessions scoped to the candidate path and selected
+reading ref (localStorage; at most 25 decisions and 32 KiB exported JSON per batch). The pencil in the text pane opens a dialog, with a
 source crop (estimated box, contextual neighboring lines) and full scan link,
 original literal, uncertainty notes, native editor, historical symbols, note,
-save/confirm-and-next, defer and undo. Reopening resumes the pinned candidate
-even if the reader has moved. Preparing freezes the batch; copy JSON to the
+save/confirm-and-next, defer and undo. Reopening the same candidate and ref resumes its pinned batch. Changing the
+page, volume, candidate or explicit ref opens the corresponding batch instead.
+Legacy single-key drafts remain intact and resume only on their matching candidate
+and compatible ref. Return to that source to recover them. A batch opened from
+main continues to use its originally pinned commit even as main advances. Preparing freezes the batch; copy JSON to the
 public GitHub form. Only after saving/submitting externally should the user
 clear the batch. A draft can also be explicitly discarded with confirmation.
 No automatic submission, proof of inspection, acceptance or user credit.
 Image dimensions are checked, not image byte hashes; source crop is approximate.
 Exact Git blob hash is computed from the fetched original candidate bytes.
 The production CLI still decides trusted commit ancestry. The browser test
-uses actual frozen text and a synthetic image; no scholarly decisions.
+uses actual frozen I/20 and I/92 text and synthetic images; no scholarly decisions.
 
 If the exact pinned candidate is unavailable or its Git blob changes, the
 editor refuses to reopen the session, preserves the local data, and offers

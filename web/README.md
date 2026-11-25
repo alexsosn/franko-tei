@@ -48,7 +48,7 @@ A static host must serve index.html and the fonts/ directory. For GitHub Pages, 
 
 ## Proofreading pilot
 
-Use the pencil button in the text pane. One local batch is pinned to an exact commit and candidate. See [the pilot instructions](../docs/review-browser-pilot.md) and [intake procedure](../docs/review-intake.md). The editor prepares JSON for the public GitHub issue form; opening the form does not submit or accept a decision. Local storage is not a backup. Copy the prepared JSON before discarding a batch. No corpus text is modified by the editor.
+Use the pencil button in the text pane. Each local batch is pinned to an exact commit and candidate; reopening another page or candidate starts or resumes its own batch. Return to the original candidate and reading ref to resume earlier edits. See [the pilot instructions](../docs/review-browser-pilot.md) and [intake procedure](../docs/review-intake.md). The editor prepares JSON for the public GitHub issue form; opening the form does not submit or accept a decision. Local storage is not a backup. Copy the prepared JSON before discarding a batch. No corpus text is modified by the editor.
 
 ## Published editorial reading
 
