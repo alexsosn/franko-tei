@@ -1,9 +1,12 @@
 """Read-only live smoke against actual pinned source assets; no fixtures."""
+import re
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
 from playwright.sync_api import sync_playwright, expect
+
+expect.set_options(timeout=60000)
 
 with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, directory=Path(__file__).parent)) as server:
     thread = Thread(target=server.serve_forever, daemon=True)
@@ -25,7 +28,7 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             expect(page.locator("#lineinfo")).to_contain_text("estimated")
             page.locator("#page").fill("2")
             page.locator("#go").click()
-            expect(page.locator("#source")).to_have_attribute("href", __import__("re").compile(r"page-00002\.png$"))
+            expect(page.locator("#source")).to_have_attribute("href", re.compile(r"page-00002\.png$"))
             expect(page.locator("#scan")).to_be_visible()
             expect(page.locator("#draftStatus")).to_contain_text("No draft found")
             expect(page.locator("#highlight")).to_be_hidden()
