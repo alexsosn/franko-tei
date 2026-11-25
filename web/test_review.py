@@ -163,7 +163,7 @@ class ReviewSmoke(unittest.TestCase):
         html = APP.read_text(encoding='utf-8')
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
-        self.assertGreaterEqual(len(anchors), 15)
+        self.assertGreaterEqual(len(anchors), 19)
         self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in anchors if e[3] in (141, 142, 143)],
                          [('89', 141, 'pachomius-vision-heading-line-01'),
                           ('90', 141, 'pachomius-word-heading-line-01'),
@@ -179,7 +179,7 @@ class ReviewSmoke(unittest.TestCase):
         # Complete linguistic coverage for the annotated anchor-page batch.
         for scan in sorted({e[3] for e in anchors}):
             record = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
-            if scan in (71, 72, 74, 75, 76, 94, 141, 142, 143, 211, 307, 518):
+            if scan in (53, 56, 59, 71, 72, 74, 75, 76, 94, 141, 142, 143, 211, 307, 518):
                 self.assertIn('language_annotation', record['reading'])
             elif 'language_annotation' not in record['reading']:
                 continue  # future batches use the general corpus validator
@@ -217,6 +217,27 @@ class ReviewSmoke(unittest.TestCase):
         self.assertIn('Комарнянський', communion[6]['text'])
         self.assertIn('witness identification pending', communion[5])
         for scan, marker_id in [(72, 'creation-line-07'), (75, 'gospel-line-37')]:
+            rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
+            self.assertEqual(len(rec['source_note_links']), 1)
+            link = rec['source_note_links'][0]
+            self.assertEqual(link['marker_line_id'], marker_id)
+            line = next(l for r in rec['regions'] for l in r['lines'] if l['id'] == marker_id)
+            start = link['marker_start']
+            self.assertEqual(line['text'][start:start + len(link['marker_text'])], link['marker_text'])
+            note = next(r for r in rec['regions'] if r['id'] == link['note_region_id'])
+            self.assertEqual(note['kind'], 'note')
+            self.assertTrue(note['lines'][0]['text'].startswith(link['marker_text']))
+        first = [e for e in anchors if e[3] in (53, 56, 59)]
+        self.assertEqual([(e[2], e[3], e[6]['line_id']) for e in first],
+                         [('1', 53, 'section-heading-line-01'),
+                          ('1', 53, 'gregory-heading-line-01'),
+                          ('4', 56, 'kalush-heading-line-01'),
+                          ('7', 59, 'biliavsky-heading-line-01')])
+        first_page = json.loads((root / 'pilot/vol4_scan00053_single_reading.json').read_text(encoding='utf-8'))
+        self.assertIsNone(first_page['printed_page_observed'])
+        self.assertFalse(any(r['kind'] == 'page_number' for r in first_page['reading']['regions']))
+        self.assertEqual([e[4] for e in first[:2]], [0, 1])
+        for scan, marker_id in [(53, 'gregory-line-03'), (56, 'gregory-cont-line-01')]:
             rec = json.loads((root / f'pilot/vol4_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))['reading']
             self.assertEqual(len(rec['source_note_links']), 1)
             link = rec['source_note_links'][0]
