@@ -1,0 +1,915 @@
+{
+  "schema_version": "single-exposed-draft-v1",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 13,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00013.jpg",
+  "source_image_sha256": "2873b8084b102584a7c9ea5265e03fc7118e3c8d6b5e9b5b11e9a93f69f34f65",
+  "reading": {
+    "reader_id": "gpt62-v5s00013-ocr-exposed-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-011-020-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": true,
+    "peer_readings_visible": false,
+    "external_text_exposure": {
+      "kind": "embedded_pdf_ocr",
+      "url": "https://github.com/alexsosn/franko-tei/blob/e871f32537e81f81896f6ce9a6658aba667db9c5/images/original_ocr/vol5/page-00013.txt",
+      "timing": "before_first_reading",
+      "note": "Embedded text layer was retrieved in the preceding turn, before this reading. Source JPEG is the primary evidence; no blind claim."
+    },
+    "instructions": "Read the pinned scan directly, retaining printed physical rows and tentative historic glyphs. Earlier embedded OCR was seen. Do not silently resolve uncertainties or claim independent text. Geometry estimated; accents and superscripts incompletely recovered. Footer number 1 classified after comparison with V/21 footer signature 2 and V/22 printed folio 10; not a directly observed folio. Existing region and line IDs retained.",
+    "raw_response": "I. Апостольські сучасники і ученики.\nI. Житіє Марії Магдалини. Копія з рукопису Михайлівського\nЗолотоверхого ман. у Київі.\nМⷭца тоⷤ кв҃. днь. житіє мр҃іи магдалыни из-\nбранъ ѡ многиⷯ писаній ст҃ыⷯ.\nОтѣшеніе грѣшникоⷨ, ѡбраⷥ кающиⷨсѧ, оучител'ница\nблоуⷣникоⷨ, изрѧдна всѣⷯ добродѣтель къ истин'номѹ дѹханію,\nв'сѣмъ сн҃оⷨ и д'щеремъ храмѹ х҃ва, даетъ нн҃ѣ бл҃женнаѧ не-\nвѣста и стаѧ грѣшница магдалыни. еѧже начало сквръно, конеⷰ\nже изрѧдеⷩ. ѡ житіѧ бѣсовска и съ быⷮ в'ней ѡбитеⷧ чⷵтоты и чер'-\nто, ст҃ыѧ троⷣица. и ѡ съсѹда скврънаго быⷮ чаша къ пітію цр҃ѧ\nвысокаго достойнъ трапезѣ его, възненавидѣна въ единоⷨ\nградѣ, събыⷭтсѧ чюдна оученіеⷨ в'семѹ мирѹ. быⷭ магдалына\nчеⷭтныⷯ родитель ѡ сн҃оⷨ інлевь. ѡ виданіи града ближнаго іе-\nрслимѹ, сестра искръна мар'ѳы и лазара. яже лѣⷮ своиⷯ дошедши\nродителем же еѧ скоро ѡ сего вѣкоу прешедшиⷨ, имѣли множѣ-\nство из'ѡбиліѧ мірска ѡставиша. лѣпотѹ телеснѹю выш'ше иныⷯ\nимоуще, і ѡ похотѣніѧ телеснаго и съвѣта чл҃чскаго злаго, и ска-\nзател'наго н'рава, и къ зломѹ ѡбычаю приклонена и ко жизни\nи пищи времен'нѣй и простран'но житіє в'да себе. попоущающи\nсквръной плъти похоти его, внѣмже всѧка дша и добродѣтель\nпогибаетъ. раⷥлично ядѹще, ѡдѣаніемъ многоцѣнныⷨ оукра-\nсившисѧ и преⷣ ѡчима чл҃чскыми яв'лятиⷭ, и сама в лѣпотѣ своей\nнадѣашесѧ ѡчи свои на тъщетоу і оуши къ злыⷨ бесѣдаⷨ зайти.\nі языкъ гл҃оⷨ многиⷨ подати, ко ликованію и бесѣдѣ съвѣтнѣй\nт'щевѣ быти, ѡ мл҃твѣ же и постѣ николиже не радити. сіѧ\nпол'за ей быⷭ къ вреженію и погѹбленію наслѣдіѧ вѣчнаго.\nи сице помалѹ оукрадашесⷭ блоуⷣ и бестѹдіе, первѣе тайно, и по-\nПАМЯТКИ VI.\n1",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative double rule below section heading.",
+          "bbox_xywh": [
+            520,
+            552,
+            115,
+            20
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section",
+        "kind": "heading",
+        "bbox_xywh": [
+          175,
+          485,
+          840,
+          50
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-line-01",
+            "text": "I. Апостольські сучасники і ученики.",
+            "bbox_xywh": [
+              175,
+              485,
+              840,
+              50
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 1,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "work",
+        "kind": "heading",
+        "bbox_xywh": [
+          110,
+          625,
+          950,
+          85
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "work-line-01",
+            "text": "I. Житіє Марії Магдалини. Копія з рукопису Михайлівського",
+            "bbox_xywh": [
+              110,
+              625,
+              950,
+              43
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 1,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "work-line-02",
+            "text": "Золотоверхого ман. у Київі.",
+            "bbox_xywh": [
+              110,
+              668,
+              950,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "incipit",
+        "kind": "heading",
+        "bbox_xywh": [
+          105,
+          737,
+          960,
+          70
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "incipit-line-01",
+            "text": "Мⷭца тоⷤ кв҃. днь. житіє мр҃іи магдалыни из-",
+            "bbox_xywh": [
+              105,
+              737,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 44,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "incipit-line-02",
+            "text": "бранъ ѡ многиⷯ писаній ст҃ыⷯ.",
+            "bbox_xywh": [
+              105,
+              772,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 29,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body",
+        "kind": "body",
+        "bbox_xywh": [
+          105,
+          810,
+          960,
+          806
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-line-01",
+            "text": "Отѣшеніе грѣшникоⷨ, ѡбраⷥ кающиⷨсѧ, оучител'ница",
+            "bbox_xywh": [
+              105,
+              810,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-02",
+            "text": "блоуⷣникоⷨ, изрѧдна всѣⷯ добродѣтель къ истин'номѹ дѹханію,",
+            "bbox_xywh": [
+              105,
+              845,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-03",
+            "text": "в'сѣмъ сн҃оⷨ и д'щеремъ храмѹ х҃ва, даетъ нн҃ѣ бл҃женнаѧ не-",
+            "bbox_xywh": [
+              105,
+              880,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-04",
+            "text": "вѣста и стаѧ грѣшница магдалыни. еѧже начало сквръно, конеⷰ",
+            "bbox_xywh": [
+              105,
+              915,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-05",
+            "text": "же изрѧдеⷩ. ѡ житіѧ бѣсовска и съ быⷮ в'ней ѡбитеⷧ чⷵтоты и чер'-",
+            "bbox_xywh": [
+              105,
+              950,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-06",
+            "text": "то, ст҃ыѧ троⷣица. и ѡ съсѹда скврънаго быⷮ чаша къ пітію цр҃ѧ",
+            "bbox_xywh": [
+              105,
+              985,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-07",
+            "text": "высокаго достойнъ трапезѣ его, възненавидѣна въ единоⷨ",
+            "bbox_xywh": [
+              105,
+              1020,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-08",
+            "text": "градѣ, събыⷭтсѧ чюдна оученіеⷨ в'семѹ мирѹ. быⷭ магдалына",
+            "bbox_xywh": [
+              105,
+              1055,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-09",
+            "text": "чеⷭтныⷯ родитель ѡ сн҃оⷨ інлевь. ѡ виданіи града ближнаго іе-",
+            "bbox_xywh": [
+              105,
+              1090,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-10",
+            "text": "рслимѹ, сестра искръна мар'ѳы и лазара. яже лѣⷮ своиⷯ дошедши",
+            "bbox_xywh": [
+              105,
+              1125,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-11",
+            "text": "родителем же еѧ скоро ѡ сего вѣкоу прешедшиⷨ, имѣли множѣ-",
+            "bbox_xywh": [
+              105,
+              1160,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-12",
+            "text": "ство из'ѡбиліѧ мірска ѡставиша. лѣпотѹ телеснѹю выш'ше иныⷯ",
+            "bbox_xywh": [
+              105,
+              1195,
+              960,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-13",
+            "text": "имоуще, і ѡ похотѣніѧ телеснаго и съвѣта чл҃чскаго злаго, и ска-",
+            "bbox_xywh": [
+              105,
+              1231,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-14",
+            "text": "зател'наго н'рава, и къ зломѹ ѡбычаю приклонена и ко жизни",
+            "bbox_xywh": [
+              105,
+              1266,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-15",
+            "text": "и пищи времен'нѣй и простран'но житіє в'да себе. попоущающи",
+            "bbox_xywh": [
+              105,
+              1301,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-16",
+            "text": "сквръной плъти похоти его, внѣмже всѧка дша и добродѣтель",
+            "bbox_xywh": [
+              105,
+              1336,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-17",
+            "text": "погибаетъ. раⷥлично ядѹще, ѡдѣаніемъ многоцѣнныⷨ оукра-",
+            "bbox_xywh": [
+              105,
+              1371,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-18",
+            "text": "сившисѧ и преⷣ ѡчима чл҃чскыми яв'лятиⷭ, и сама в лѣпотѣ своей",
+            "bbox_xywh": [
+              105,
+              1406,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-19",
+            "text": "надѣашесѧ ѡчи свои на тъщетоу і оуши къ злыⷨ бесѣдаⷨ зайти.",
+            "bbox_xywh": [
+              105,
+              1441,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-20",
+            "text": "і языкъ гл҃оⷨ многиⷨ подати, ко ликованію и бесѣдѣ съвѣтнѣй",
+            "bbox_xywh": [
+              105,
+              1476,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-21",
+            "text": "т'щевѣ быти, ѡ мл҃твѣ же и постѣ николиже не радити. сіѧ",
+            "bbox_xywh": [
+              105,
+              1511,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-22",
+            "text": "пол'за ей быⷭ къ вреженію и погѹбленію наслѣдіѧ вѣчнаго.",
+            "bbox_xywh": [
+              105,
+              1546,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-23",
+            "text": "и сице помалѹ оукрадашесⷭ блоуⷣ и бестѹдіе, первѣе тайно, и по-",
+            "bbox_xywh": [
+              105,
+              1581,
+              960,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          180,
+          1628,
+          140,
+          24
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "ПАМЯТКИ VI.",
+            "bbox_xywh": [
+              180,
+              1628,
+              140,
+              24
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00013-ocr-exposed-20261125",
+                "start": 8,
+                "end": 11,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "folio",
+        "kind": "other",
+        "bbox_xywh": [
+          965,
+          1624,
+          30,
+          28
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "1",
+            "bbox_xywh": [
+              965,
+              1624,
+              30,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "section-line-01",
+        "reading": "I. Апостольські сучасники і ученики.",
+        "reason": "Provisional editorial title/series signature, exact typography and spelling to be checked."
+      },
+      {
+        "line_id": "work-line-01",
+        "reading": "I. Житіє Марії Магдалини. Копія з рукопису Михайлівського",
+        "reason": "Provisional editorial title/series signature, exact typography and spelling to be checked."
+      },
+      {
+        "line_id": "work-line-02",
+        "reading": "Золотоверхого ман. у Київі.",
+        "reason": "Provisional editorial title/series signature, exact typography and spelling to be checked."
+      },
+      {
+        "line_id": "incipit-line-01",
+        "reading": "Мⷭца тоⷤ кв҃. днь. житіє мр҃іи магдалыни из-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "incipit-line-02",
+        "reading": "бранъ ѡ многиⷯ писаній ст҃ыⷯ.",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-01",
+        "reading": "Отѣшеніе грѣшникоⷨ, ѡбраⷥ кающиⷨсѧ, оучител'ница",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-02",
+        "reading": "блоуⷣникоⷨ, изрѧдна всѣⷯ добродѣтель къ истин'номѹ дѹханію,",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-03",
+        "reading": "в'сѣмъ сн҃оⷨ и д'щеремъ храмѹ х҃ва, даетъ нн҃ѣ бл҃женнаѧ не-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-04",
+        "reading": "вѣста и стаѧ грѣшница магдалыни. еѧже начало сквръно, конеⷰ",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-05",
+        "reading": "же изрѧдеⷩ. ѡ житіѧ бѣсовска и съ быⷮ в'ней ѡбитеⷧ чⷵтоты и чер'-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-06",
+        "reading": "то, ст҃ыѧ троⷣица. и ѡ съсѹда скврънаго быⷮ чаша къ пітію цр҃ѧ",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-07",
+        "reading": "высокаго достойнъ трапезѣ его, възненавидѣна въ единоⷨ",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-08",
+        "reading": "градѣ, събыⷭтсѧ чюдна оученіеⷨ в'семѹ мирѹ. быⷭ магдалына",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-09",
+        "reading": "чеⷭтныⷯ родитель ѡ сн҃оⷨ інлевь. ѡ виданіи града ближнаго іе-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-10",
+        "reading": "рслимѹ, сестра искръна мар'ѳы и лазара. яже лѣⷮ своиⷯ дошедши",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-11",
+        "reading": "родителем же еѧ скоро ѡ сего вѣкоу прешедшиⷨ, имѣли множѣ-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-12",
+        "reading": "ство из'ѡбиліѧ мірска ѡставиша. лѣпотѹ телеснѹю выш'ше иныⷯ",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-13",
+        "reading": "имоуще, і ѡ похотѣніѧ телеснаго и съвѣта чл҃чскаго злаго, и ска-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-14",
+        "reading": "зател'наго н'рава, и къ зломѹ ѡбычаю приклонена и ко жизни",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-15",
+        "reading": "и пищи времен'нѣй и простран'но житіє в'да себе. попоущающи",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-16",
+        "reading": "сквръной плъти похоти его, внѣмже всѧка дша и добродѣтель",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-17",
+        "reading": "погибаетъ. раⷥлично ядѹще, ѡдѣаніемъ многоцѣнныⷨ оукра-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-18",
+        "reading": "сившисѧ и преⷣ ѡчима чл҃чскыми яв'лятиⷭ, и сама в лѣпотѣ своей",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-19",
+        "reading": "надѣашесѧ ѡчи свои на тъщетоу і оуши къ злыⷨ бесѣдаⷨ зайти.",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-20",
+        "reading": "і языкъ гл҃оⷨ многиⷨ подати, ко ликованію и бесѣдѣ съвѣтнѣй",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-21",
+        "reading": "т'щевѣ быти, ѡ мл҃твѣ же и постѣ николиже не радити. сіѧ",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-22",
+        "reading": "пол'за ей быⷭ къ вреженію и погѹбленію наслѣдіѧ вѣчнаго.",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "body-line-23",
+        "reading": "и сице помалѹ оукрадашесⷭ блоуⷣ и бестѹдіе, первѣе тайно, и по-",
+        "reason": "Provisional visual reading; superscripts, titla, accents and breathings incompletely resolved; lexical glyphs and spacing uncertain. Embedded OCR had been seen before transcription; do not treat this candidate as independent."
+      },
+      {
+        "line_id": "signature-line-01",
+        "reading": "ПАМЯТКИ VI.",
+        "reason": "Provisional editorial title/series signature, exact typography and spelling to be checked."
+      }
+    ]
+  }
+}
