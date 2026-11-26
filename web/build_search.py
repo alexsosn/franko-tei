@@ -93,7 +93,17 @@ def build(pilot, output, ref):
     for volume, rows in entries.items():
         # Load annotations only on demand; ordinary literal search keeps its
         # original compact payload and record contract.
-        literal = [{k: v for k, v in row.items() if k != "annotation"} for row in rows]
+        available = {(p["scan"], p["suffix"]) for p in pages if p["volume"] == volume}
+        stale = {p["path"] for p in unavailable}
+        literal = []
+        for row in rows:
+            entry = {k: v for k, v in row.items() if k != "annotation"}
+            a = row["annotation"]
+            path = f'pilot/vol{volume}_scan{row["scan"]:05d}_{row["suffix"]}.json'
+            entry.update(model_id=a["model_id"], model_version=a["model_version"],
+                         editorial=("available" if (row["scan"], row["suffix"]) in available
+                                    else "unavailable" if path in stale else "none"))
+            literal.append(entry)
         annotations = [{k: v for k, v in row.items() if k != "text"} for row in rows]
         (output / f"vol{volume}.json").write_text(
             json.dumps(dict(ref=ref, volume=volume, entries=literal), ensure_ascii=False, separators=(",", ":")),
