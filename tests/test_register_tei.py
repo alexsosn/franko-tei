@@ -86,6 +86,25 @@ class RegisterTeiTests(unittest.TestCase):
                     for ref in e.get("ana","").split():
                         self.assertIn(ref[1:], ids)
 
+    def test_authorial_erratum_link_does_not_replace_text(self):
+        raw, a, w, h = inputs(34)
+        root = ET.fromstring(render_register_tei(raw, a, w, h))
+        link, = root.findall(".//"+tag("linkGrp")+"/"+tag("link"))
+        self.assertEqual(link.get("type"), "authorial-erratum")
+        self.assertEqual(link.get("target").split(), [
+            "#v3-s00034-register-r6-c4",
+            "vol3-s00086.xml#lb-v3-s00086-postscript-line-01",
+            "vol3-s00086.xml#lb-v3-s00086-postscript-line-02",
+            "vol3-s00086.xml#lb-v3-s00086-postscript-line-03"])
+        source = json.loads((ROOT/"pilot/vol3_scan00086_single_reading.json").read_bytes())
+        witness = ET.fromstring(render_pilot_tei(source, 2000, 3000))
+        anchors = {e.get(ID) for e in witness.iter(tag("lb"))}
+        for target in link.get("target").split()[1:]:
+            self.assertIn(target.split("#")[1], anchors)
+        cell = next(e for e in root.iter(tag("cell"))
+                    if e.get(ID) == "v3-s00034-register-r6-c4")
+        self.assertEqual("".join(cell.itertext()), "6. Андрій")
+
     def test_reject_bad_source_and_overlay(self):
         raw, a, w, h = inputs(34)
         for mutate in (
