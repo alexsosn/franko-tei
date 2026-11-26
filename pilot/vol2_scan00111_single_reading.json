@@ -1,0 +1,994 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 111,
+  "printed_page_observed": "29",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00111.jpg",
+  "source_image_sha256": "d5898618ab5389dde419688f28411b2843267b218b86c7e1947e485ee02cb149",
+  "reading": {
+    "reader_id": "gpt62-ii-111-image-harmonized-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00111-00120-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading; physical lines and contextual language spans under the harmonization guide. Historical accentuation, titla, breathings and glyph shapes are incomplete/provisional; geometry estimated, not measured baselines.",
+    "raw_response": "29\nWeyzrał P. Bog z wysokosci\nNa ciche ludzie w niskosci,\nA tak wieku ostatniego\nPosle na swiat sprawcę swego.\nTen się z żydowki narodzi,\nŁaską występki nadgrodzi.\nNa drugim mieyscu:\nGdym też nieco rozmyslała,\nPannę-m wielkiey czci widziała,\nKtora godna daru swego\nZ przeyrzenia Pana wiecznego.\nTak uważy swą sługę Pan,\nIż iey żywot nawiedzi sam,\nA ten rodzay znamieniły\nW Boskiey sprawie tak zakryły,\nIż się to za dziw okaże\nPannę bydz w takiey powadze.\n8. Sibilla Frigia, z Frygiey, gdzie była Troia, była przed Bożym\nnarodzeniem lata 1248, stara, sroga, żałosna, z nagiemi ramiony, roz-\npuściwszy włosy, twarz zchyliwszy palcem ukazuie, daiąc się powoli,\ntak mówi: Flagellabit Deus potentes terrae etc. to iest:\nPan Bog na ziemi mocarze\nDla ich chardosci pokarze;\nRada Boska mocą sprawi,\nRod swoy na ziemi obiawi.\nNa drugim mieyscu:\nWidziałam wszech naywysznego\nNa swiat bardzo gniewliwego:\nMiał ludzie złosliwe strawic,\nZas się z nimi chce poprawic.\nZnowu na drugim mieyscu:\nPosle do Panny Anieła,\nAby go z wiarą przyięła.\nTak się Bogu podobało:\nGdy On wezmie z Panny ciało,\nMa ie za swe ofiarowac,\nUpadłe ludzie ratowac.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          990,
+          113,
+          41,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "29",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              990,
+              113,
+              41,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "helespont-verse",
+        "kind": "body",
+        "bbox_xywh": [
+          301,
+          180,
+          438,
+          211
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "helespont-verse-line-01",
+            "text": "Weyzrał P. Bog z wysokosci",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              301,
+              180,
+              438,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-line-02",
+            "text": "Na ciche ludzie w niskosci,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              301,
+              215,
+              438,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-line-03",
+            "text": "A tak wieku ostatniego",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              301,
+              250,
+              438,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-line-04",
+            "text": "Posle na swiat sprawcę swego.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              301,
+              285,
+              438,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-line-05",
+            "text": "Ten się z żydowki narodzi,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              301,
+              320,
+              438,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-line-06",
+            "text": "Łaską występki nadgrodzi.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              301,
+              355,
+              438,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-intro-1",
+        "kind": "body",
+        "bbox_xywh": [
+          378,
+          410,
+          240,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-intro-1-line-01",
+            "text": "Na drugim mieyscu:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              378,
+              410,
+              240,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "helespont-verse-2",
+        "kind": "body",
+        "bbox_xywh": [
+          303,
+          453,
+          444,
+          349
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "helespont-verse-2-line-01",
+            "text": "Gdym też nieco rozmyslała,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              453,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-02",
+            "text": "Pannę-m wielkiey czci widziała,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              487,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-03",
+            "text": "Ktora godna daru swego",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              522,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-04",
+            "text": "Z przeyrzenia Pana wiecznego.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              557,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-05",
+            "text": "Tak uważy swą sługę Pan,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              592,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-06",
+            "text": "Iż iey żywot nawiedzi sam,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              627,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-07",
+            "text": "A ten rodzay znamieniły",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              662,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-08",
+            "text": "W Boskiey sprawie tak zakryły,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 30,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              697,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-09",
+            "text": "Iż się to za dziw okaże",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              732,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "helespont-verse-2-line-10",
+            "text": "Pannę bydz w takiey powadze.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              303,
+              767,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "phrygia-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          86,
+          840,
+          960,
+          138
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "phrygia-prose-line-01",
+            "text": "8. Sibilla Frigia, z Frygiey, gdzie była Troia, była przed Bożym",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 2,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              86,
+              840,
+              960,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-prose-line-02",
+            "text": "narodzeniem lata 1248, stara, sroga, żałosna, z nagiemi ramiony, roz-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 69,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              86,
+              874,
+              960,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-prose-line-03",
+            "text": "puściwszy włosy, twarz zchyliwszy palcem ukazuie, daiąc się powoli,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              86,
+              909,
+              960,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-prose-line-04",
+            "text": "tak mówi: Flagellabit Deus potentes terrae etc. to iest:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 10,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 10,
+                "end": 47,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 47,
+                "end": 56,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              86,
+              943,
+              960,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "phrygia-verse-1",
+        "kind": "body",
+        "bbox_xywh": [
+          307,
+          1015,
+          395,
+          137
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "phrygia-verse-1-line-01",
+            "text": "Pan Bog na ziemi mocarze",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1015,
+              395,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-1-line-02",
+            "text": "Dla ich chardosci pokarze;",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1049,
+              395,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-1-line-03",
+            "text": "Rada Boska mocą sprawi,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1083,
+              395,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-1-line-04",
+            "text": "Rod swoy na ziemi obiawi.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1117,
+              395,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-intro-2",
+        "kind": "body",
+        "bbox_xywh": [
+          381,
+          1175,
+          240,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-intro-2-line-01",
+            "text": "Na drugim mieyscu:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              381,
+              1175,
+              240,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "phrygia-verse-2",
+        "kind": "body",
+        "bbox_xywh": [
+          307,
+          1215,
+          440,
+          138
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "phrygia-verse-2-line-01",
+            "text": "Widziałam wszech naywysznego",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1215,
+              440,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-2-line-02",
+            "text": "Na swiat bardzo gniewliwego:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1249,
+              440,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-2-line-03",
+            "text": "Miał ludzie złosliwe strawic,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1284,
+              440,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-2-line-04",
+            "text": "Zas się z nimi chce poprawic.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              307,
+              1318,
+              440,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-intro-3",
+        "kind": "body",
+        "bbox_xywh": [
+          385,
+          1376,
+          323,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-intro-3-line-01",
+            "text": "Znowu na drugim mieyscu:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              385,
+              1376,
+              323,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "phrygia-verse-3",
+        "kind": "body",
+        "bbox_xywh": [
+          308,
+          1416,
+          444,
+          215
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "phrygia-verse-3-line-01",
+            "text": "Posle do Panny Anieła,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              308,
+              1416,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-3-line-02",
+            "text": "Aby go z wiarą przyięła.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              308,
+              1451,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-3-line-03",
+            "text": "Tak się Bogu podobało:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              308,
+              1487,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-3-line-04",
+            "text": "Gdy On wezmie z Panny ciało,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              308,
+              1523,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-3-line-05",
+            "text": "Ma ie za swe ofiarowac,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              308,
+              1559,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "phrygia-verse-3-line-06",
+            "text": "Upadłe ludzie ratowac.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-111-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              308,
+              1595,
+              444,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "helespont-verse-2-line-07",
+        "reading": "znamieniły",
+        "reason": "Historical spelling uncertain."
+      },
+      {
+        "line_id": "helespont-verse-2-line-10",
+        "reading": "bydz",
+        "reason": "Historical spelling retained."
+      }
+    ],
+    "source_note_links": []
+  }
+}
