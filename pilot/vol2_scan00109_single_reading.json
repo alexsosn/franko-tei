@@ -1,0 +1,963 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 109,
+  "printed_page_observed": "27",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00109.jpg",
+  "source_image_sha256": "bbe24d692305ba8595dd20500fcabed864077ef404fa9a42fc7cefb41a98c18c",
+  "reading": {
+    "reader_id": "gpt62-ii-109-image-harmonized-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00101-00110-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading; physical lines and contextual language spans under the harmonization guide. Historical accentuation, titla, breathings and glyph shapes are incomplete/provisional; printed historical Ruthenian attribution provisional. Geometry estimated, not measured baselines.",
+    "raw_response": "27\nMiey go kazdy na dobrey pamięci.\nBoską sprawą z Panny się narodzi,\nSwoim wiernym swe serca ochłodzi.\n4. Sibilla Chimica albo Kimeria, o którey Gunius poeta łaciński\npisał, była rodem z włoskiey ziemie, według niektórych w piątym\nwieku świata, chodziła w barwie niebieskiey, to iest modrey, włosy\nrozpuściwszy. Tak mówi: In teneris annis, facie presignis, honore —\nto iest:\nBędzie Panna w młodym lecie\nGodna wielbienia na swiecie.\nZ nas wszech godnosc będzie miała,\nKrola w ręku piastowała.\nKtoremu przyniosą dary\nTrzey krolowie pełni wiary,\nChwałę y czesc iemu daiąc,\nPrzez Ducha S. znaiąc,\nGdzie każde stworzenie iego\nBędzie się weselic z tego.\n5. Sibilla Samia, od wyspu Samu tak rzeczona. Ta naydawniey\nbyła na świecie, według niektórych w starym wieku świata, to iest\nprzed Bożym narodzeniem około dwu tysiącu lat, za czasu Trysme[gi]-\nsta filozofa uczonego pogańskiego. Ta chodziła cudnie ubrana w sub-\nstelnym odzieniu y w zawiciu, miecz goły pod nogami maiąc na znak,\niż się miał na świecie rozmóc. O tey to pisał Eratostenes historyk, iż\no niey znalazł w Samickich xięgach wiele, co się zciągało na W. Ale-\nxandra y na ine monarchie. Między inemi proroctwy też to pisała:\nHaec veniet dies et nascetur ex paupercula, to iest:\nOto przeydzie bogaty Pan\nNarodzi się z ubogiey dziewki nam.\nZwierzęta mu chwałę będą dawac,\nNiebo, ziemia z Anioły wyznawac.\nWedług pism żydowskich Prorokow\nUkaże się w swym ciele z obłokow.\nFortunni to ludzie w ten czas będą,\nKtorzy na iego kazaniu siędą,\nA cielesnym okiem oglądaią,\nDziwną sprawę Boską w nim uznaią.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          963,
+          115,
+          43,
+          34
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "27",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              963,
+              115,
+              43,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-delphic-verse-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          270,
+          181,
+          516,
+          100
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-delphic-verse-cont-line-01",
+            "text": "Miey go kazdy na dobrey pamięci.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              181,
+              516,
+              30
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-verse-cont-line-02",
+            "text": "Boską sprawą z Panny się narodzi,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              214,
+              516,
+              30
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-verse-cont-line-03",
+            "text": "Swoim wiernym swe serca ochłodzi.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              247,
+              516,
+              30
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-cimmerian-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          50,
+          323,
+          965,
+          169
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-cimmerian-prose-line-01",
+            "text": "4. Sibilla Chimica albo Kimeria, o którey Gunius poeta łaciński",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 2,
+                "end": 63,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              50,
+              323,
+              965,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-prose-line-02",
+            "text": "pisał, była rodem z włoskiey ziemie, według niektórych w piątym",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              50,
+              356,
+              965,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-prose-line-03",
+            "text": "wieku świata, chodziła w barwie niebieskiey, to iest modrey, włosy",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              50,
+              390,
+              965,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-prose-line-04",
+            "text": "rozpuściwszy. Tak mówi: In teneris annis, facie presignis, honore —",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 24,
+                "end": 65,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 65,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              50,
+              424,
+              965,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-prose-line-05",
+            "text": "to iest:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 8,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              50,
+              458,
+              965,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-cimmerian-verse",
+        "kind": "body",
+        "bbox_xywh": [
+          270,
+          509,
+          522,
+          354
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-cimmerian-verse-line-01",
+            "text": "Będzie Panna w młodym lecie",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              509,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-02",
+            "text": "Godna wielbienia na swiecie.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              544,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-03",
+            "text": "Z nas wszech godnosc będzie miała,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 34,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              579,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-04",
+            "text": "Krola w ręku piastowała.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              615,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-05",
+            "text": "Ktoremu przyniosą dary",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              650,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-06",
+            "text": "Trzey krolowie pełni wiary,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              686,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-07",
+            "text": "Chwałę y czesc iemu daiąc,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              721,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-08",
+            "text": "Przez Ducha S. znaiąc,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              756,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-09",
+            "text": "Gdzie każde stworzenie iego",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              792,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-cimmerian-verse-line-10",
+            "text": "Będzie się weselic z tego.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              270,
+              827,
+              522,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-samian-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          52,
+          897,
+          963,
+          319
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-samian-prose-line-01",
+            "text": "5. Sibilla Samia, od wyspu Samu tak rzeczona. Ta naydawniey",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 2,
+                "end": 59,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              897,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-02",
+            "text": "była na świecie, według niektórych w starym wieku świata, to iest",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              932,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-03",
+            "text": "przed Bożym narodzeniem około dwu tysiącu lat, za czasu Trysme[gi]-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              967,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-04",
+            "text": "sta filozofa uczonego pogańskiego. Ta chodziła cudnie ubrana w sub-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              1003,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-05",
+            "text": "stelnym odzieniu y w zawiciu, miecz goły pod nogami maiąc na znak,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              1038,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-06",
+            "text": "iż się miał na świecie rozmóc. O tey to pisał Eratostenes historyk, iż",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 70,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              1074,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-07",
+            "text": "o niey znalazł w Samickich xięgach wiele, co się zciągało na W. Ale-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 68,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              1109,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-08",
+            "text": "xandra y na ine monarchie. Między inemi proroctwy też to pisała:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              1145,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-prose-line-09",
+            "text": "Haec veniet dies et nascetur ex paupercula, to iest:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 43,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 43,
+                "end": 52,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              52,
+              1180,
+              963,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-samian-verse",
+        "kind": "body",
+        "bbox_xywh": [
+          275,
+          1252,
+          528,
+          355
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-samian-verse-line-01",
+            "text": "Oto przeydzie bogaty Pan",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1252,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-02",
+            "text": "Narodzi się z ubogiey dziewki nam.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 34,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1287,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-03",
+            "text": "Zwierzęta mu chwałę będą dawac,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1323,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-04",
+            "text": "Niebo, ziemia z Anioły wyznawac.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1358,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-05",
+            "text": "Według pism żydowskich Prorokow",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1394,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-06",
+            "text": "Ukaże się w swym ciele z obłokow.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1429,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-07",
+            "text": "Fortunni to ludzie w ten czas będą,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 35,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1465,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-08",
+            "text": "Ktorzy na iego kazaniu siędą,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1500,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-09",
+            "text": "A cielesnym okiem oglądaią,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1536,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-samian-verse-line-10",
+            "text": "Dziwną sprawę Boską w nim uznaią.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-109-image-harmonized-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              275,
+              1571,
+              528,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "polish-cimmerian-prose-line-01",
+        "reading": "Gunius",
+        "reason": "Proper name provisional."
+      },
+      {
+        "line_id": "polish-cimmerian-prose-line-04",
+        "reading": "presignis",
+        "reason": "Literal historical Latin spelling provisional."
+      },
+      {
+        "line_id": "polish-samian-prose-line-03",
+        "reading": "Trysme[gi]-",
+        "reason": "Printed editorial brackets retained."
+      }
+    ],
+    "source_note_links": []
+  }
+}
