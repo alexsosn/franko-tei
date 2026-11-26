@@ -1,0 +1,959 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 60,
+  "printed_page_observed": "8",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00060.jpg",
+  "source_image_sha256": "74306f3fb4dc6d307b51fc6b4be4befec2b6829d50ee7cfe11d439e8f90d9076",
+  "reading": {
+    "reader_id": "gpt62-iv-60-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-51-64-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Source-first native JPEG transcription; preserve physical rows, abbreviations, printed markers, historical glyphs and uncertainty. Dense Church Slavonic type: provisional Unicode approximations of superscripts and accents; not a glyph-complete edition. Estimated geometry.",
+    "raw_response": "8\n13. Въпроⷭ: Колко мужій бл҃говѣщенїеⷨ бж҃їим родиша сѧ на\nземли?\nѾвѣт: з҃. а҃. Сифъ, в҃. Єнохъ, г҃. Ісаакъ, д҃. Самуилонъ,\nє҃. Самоилъ, ѕ҃. Бц҃а, з҃. Іѡан крⷭтител.\n14. Въпроⷭ. Кто сѫт д҃. рози на земли?\nѾвѣт: Востоⷦ, запад, сѣвер, югъ.\n15. Въпроⷭ: На колко частій раздѣли сѧ море?\nѾвѣт. На ві҃. путій.\n16. Въпроⷭ: Древан ключ, а водан замок: заѧцъ пробѣже,\nа ловецъ оутопе.\nѾвѣт: Древан ключ єⷭт Мойсеѡвъ жезлъ, а водан замок\n— море; Мойсей съ жиды пройде, а фараѡн оутопе.\n17. Въпроⷭ: Кто солгав сп҃се сѧ?\nѾвѣт: Петръ, кды реⷦ: не вѣм чл҃ка того Ха҃.\n18. Въпроⷭ: Кто правдоу реклъ погибе?\nѾвѣт: Іюда продаⷭ Га҃ и рече: єгоже аз лобжоу, тогоⷤ\nимѣте.\n19. Въпроⷭ: Коего ради пр҃вдника град сп҃сет сѧ ѿ см҃рти?\nѾвѣт: Сигор град, и Лот избѣжав из Содома и вънииде\nвъ Сидон [sic!] град.\n20. Въпроⷭ: Кто не оумре и не возсмердѣ и не истлѣ и не\nпогребен?\nѾвѣт: В Содомѣ жена Лотова.\n21. Въпроⷭ: Где стѫдень из теплоⷨ измѣшает сѧ?\nѾвѣт: Въ Содомѣ, в Гоморѣ град и оуглїє горащое.\n22. Въпроⷭ: Колко лѣт ѿ А҆дама до потопа?\nѾвѣт: ҂в҃. и см҃в.\n23. Въпроⷭ: Колко потоп вода стоѧла на земли?\nѾвѣт: гі҃. мц҃їй.\n24. Въпроⷭ: Кто научиⷧ кланѧти сѧ Боу҃ на въсток и погрѣ-\nбают сѧ?\nѾвѣт: Мойсей на горѣ Синастѣй\n25. Въпроⷭ: Кто Куѡ и Леввит?\nѾвѣт: Куѡ законъ бж҃їй, а Леввит законъ ветхій.\n26. Въпроⷭ: Кто избавиⷧ пр҃вднаго мужа ѿ см҃рти?\nѾвѣт: Овенъ Ісаака сн҃а А҆враамова.\n27. [Въпроⷭ: . . . . . . . . . . . .].\n[Ѿвѣт:] Въ Содомѣ прⷪрочествова пес Лотов.\n28. Въпроⷭ: Кто єсть є҃. земля а двѣ тмѣ морстѣ?\nѾвѣт: є҃. земля єсть є҃. хлѣб, а двѣ тмѣ — двѣ рыбѣ.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          145,
+          90,
+          75,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "8",
+            "bbox_xywh": [
+              145,
+              90,
+              75,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "catechism",
+        "kind": "body",
+        "bbox_xywh": [
+          160,
+          183,
+          925,
+          1440
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "catechism-line-01",
+            "text": "13. Въпроⷭ: Колко мужій бл҃говѣщенїеⷨ бж҃їим родиша сѧ на",
+            "bbox_xywh": [
+              160,
+              183,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-02",
+            "text": "земли?",
+            "bbox_xywh": [
+              160,
+              219,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 6,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-03",
+            "text": "Ѿвѣт: з҃. а҃. Сифъ, в҃. Єнохъ, г҃. Ісаакъ, д҃. Самуилонъ,",
+            "bbox_xywh": [
+              160,
+              255,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-04",
+            "text": "є҃. Самоилъ, ѕ҃. Бц҃а, з҃. Іѡан крⷭтител.",
+            "bbox_xywh": [
+              160,
+              291,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 41,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-05",
+            "text": "14. Въпроⷭ. Кто сѫт д҃. рози на земли?",
+            "bbox_xywh": [
+              160,
+              327,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-06",
+            "text": "Ѿвѣт: Востоⷦ, запад, сѣвер, югъ.",
+            "bbox_xywh": [
+              160,
+              363,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-07",
+            "text": "15. Въпроⷭ: На колко частій раздѣли сѧ море?",
+            "bbox_xywh": [
+              160,
+              399,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 44,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-08",
+            "text": "Ѿвѣт. На ві҃. путій.",
+            "bbox_xywh": [
+              160,
+              435,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-09",
+            "text": "16. Въпроⷭ: Древан ключ, а водан замок: заѧцъ пробѣже,",
+            "bbox_xywh": [
+              160,
+              471,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-10",
+            "text": "а ловецъ оутопе.",
+            "bbox_xywh": [
+              160,
+              507,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 16,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-11",
+            "text": "Ѿвѣт: Древан ключ єⷭт Мойсеѡвъ жезлъ, а водан замок",
+            "bbox_xywh": [
+              160,
+              543,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 51,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-12",
+            "text": "— море; Мойсей съ жиды пройде, а фараѡн оутопе.",
+            "bbox_xywh": [
+              160,
+              579,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-13",
+            "text": "17. Въпроⷭ: Кто солгав сп҃се сѧ?",
+            "bbox_xywh": [
+              160,
+              615,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-14",
+            "text": "Ѿвѣт: Петръ, кды реⷦ: не вѣм чл҃ка того Ха҃.",
+            "bbox_xywh": [
+              160,
+              651,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 44,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-15",
+            "text": "18. Въпроⷭ: Кто правдоу реклъ погибе?",
+            "bbox_xywh": [
+              160,
+              687,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 37,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-16",
+            "text": "Ѿвѣт: Іюда продаⷭ Га҃ и рече: єгоже аз лобжоу, тогоⷤ",
+            "bbox_xywh": [
+              160,
+              723,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-17",
+            "text": "имѣте.",
+            "bbox_xywh": [
+              160,
+              759,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 6,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-18",
+            "text": "19. Въпроⷭ: Коего ради пр҃вдника град сп҃сет сѧ ѿ см҃рти?",
+            "bbox_xywh": [
+              160,
+              795,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-19",
+            "text": "Ѿвѣт: Сигор град, и Лот избѣжав из Содома и вънииде",
+            "bbox_xywh": [
+              160,
+              831,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 51,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-20",
+            "text": "въ Сидон [sic!] град.",
+            "bbox_xywh": [
+              160,
+              867,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 9,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 9,
+                "end": 15,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 15,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-21",
+            "text": "20. Въпроⷭ: Кто не оумре и не возсмердѣ и не истлѣ и не",
+            "bbox_xywh": [
+              160,
+              903,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-22",
+            "text": "погребен?",
+            "bbox_xywh": [
+              160,
+              939,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 9,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-23",
+            "text": "Ѿвѣт: В Содомѣ жена Лотова.",
+            "bbox_xywh": [
+              160,
+              975,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-24",
+            "text": "21. Въпроⷭ: Где стѫдень из теплоⷨ измѣшает сѧ?",
+            "bbox_xywh": [
+              160,
+              1011,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 46,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-25",
+            "text": "Ѿвѣт: Въ Содомѣ, в Гоморѣ град и оуглїє горащое.",
+            "bbox_xywh": [
+              160,
+              1047,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-26",
+            "text": "22. Въпроⷭ: Колко лѣт ѿ А҆дама до потопа?",
+            "bbox_xywh": [
+              160,
+              1083,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 41,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-27",
+            "text": "Ѿвѣт: ҂в҃. и см҃в.",
+            "bbox_xywh": [
+              160,
+              1119,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-28",
+            "text": "23. Въпроⷭ: Колко потоп вода стоѧла на земли?",
+            "bbox_xywh": [
+              160,
+              1155,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 45,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-29",
+            "text": "Ѿвѣт: гі҃. мц҃їй.",
+            "bbox_xywh": [
+              160,
+              1191,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-30",
+            "text": "24. Въпроⷭ: Кто научиⷧ кланѧти сѧ Боу҃ на въсток и погрѣ-",
+            "bbox_xywh": [
+              160,
+              1227,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-31",
+            "text": "бают сѧ?",
+            "bbox_xywh": [
+              160,
+              1263,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 8,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-32",
+            "text": "Ѿвѣт: Мойсей на горѣ Синастѣй",
+            "bbox_xywh": [
+              160,
+              1299,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-33",
+            "text": "25. Въпроⷭ: Кто Куѡ и Леввит?",
+            "bbox_xywh": [
+              160,
+              1335,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-34",
+            "text": "Ѿвѣт: Куѡ законъ бж҃їй, а Леввит законъ ветхій.",
+            "bbox_xywh": [
+              160,
+              1371,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-35",
+            "text": "26. Въпроⷭ: Кто избавиⷧ пр҃вднаго мужа ѿ см҃рти?",
+            "bbox_xywh": [
+              160,
+              1407,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-36",
+            "text": "Ѿвѣт: Овенъ Ісаака сн҃а А҆враамова.",
+            "bbox_xywh": [
+              160,
+              1443,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 35,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-37",
+            "text": "27. [Въпроⷭ: . . . . . . . . . . . .].",
+            "bbox_xywh": [
+              160,
+              1479,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-38",
+            "text": "[Ѿвѣт:] Въ Содомѣ прⷪрочествова пес Лотов.",
+            "bbox_xywh": [
+              160,
+              1515,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 42,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-39",
+            "text": "28. Въпроⷭ: Кто єсть є҃. земля а двѣ тмѣ морстѣ?",
+            "bbox_xywh": [
+              160,
+              1551,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "catechism-line-40",
+            "text": "Ѿвѣт: є҃. земля єсть є҃. хлѣб, а двѣ тмѣ — двѣ рыбѣ.",
+            "bbox_xywh": [
+              160,
+              1587,
+              925,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-60-image-20261126",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "catechism-line-03",
+        "reading": "Самуилонъ",
+        "reason": "Provisional numerical/letter form; requires glyph-level collation."
+      },
+      {
+        "line_id": "catechism-line-27",
+        "reading": "҂в҃. и см҃в.",
+        "reason": "Provisional numerical/letter form; requires glyph-level collation."
+      },
+      {
+        "line_id": "catechism-line-33",
+        "reading": "Куѡ",
+        "reason": "Provisional numerical/letter form; requires glyph-level collation."
+      },
+      {
+        "line_id": "catechism-line-39",
+        "reading": "двѣ тмѣ",
+        "reason": "Provisional numerical/letter form; requires glyph-level collation."
+      },
+      {
+        "line_id": "catechism-line-32",
+        "reading": "Синастѣй",
+        "reason": "Provisional numerical/letter form; requires glyph-level collation."
+      }
+    ]
+  }
+}
