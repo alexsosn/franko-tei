@@ -70,6 +70,38 @@ class PrintedIndexesTest(unittest.TestCase):
             if review["status"] != "attested":
                 self.assertNotIn("anchor", t)
 
+    def test_second_glossary_left_column_mentions(self):
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        entries = [e for e in data["sections"][3]["entries"]
+                   if e["source"]["scan"] == 460 and e["region_id"] == "left"]
+        self.assertEqual(len(entries), 27)
+        reviews = [target["mention_review"] for e in entries for r in e["refs"] for target in r["targets"]]
+        self.assertEqual(len(reviews), 27)
+        from collections import Counter
+        self.assertEqual(Counter(x["status"] for x in reviews),
+                         {"attested": 19, "not_found": 6, "reading_conflict": 2})
+        by_label = {e["label"]: e for e in entries}
+        gon = by_label["Гоньзнути"]["refs"][0]["targets"][0]
+        self.assertEqual([x["line_id"] for x in gon["mention_review"]["lines"]], ["jacob-sariel-end-l005", "jacob-sariel-end-l006"])
+        self.assertEqual(gon["anchor"]["line_id"], "jacob-sariel-end-l005")
+        vessel = by_label["Дельва"]["refs"][0]["targets"][0]
+        self.assertEqual(len(vessel["mention_review"]["lines"]), 5)
+        spell = by_label["Въшерщети"]["refs"][0]["targets"][0]
+        self.assertEqual([x["region_kind"] for x in spell["mention_review"]["lines"]], ["body", "note"])
+        self.assertNotIn("anchor", by_label["Друговици"]["refs"][0]["targets"][0])
+        self.assertNotIn("anchor", by_label["Згрѣба"]["refs"][0]["targets"][0])
+        self.assertEqual(by_label["Заполець"]["refs"][0]["targets"][0]["scan"], 222)
+        self.assertEqual(by_label["Заполець"]["refs"][0]["targets"][0]["mention_review"]["status"], "not_found")
+        for entry in entries:
+            for ref in entry["refs"]:
+                for target in ref["targets"]:
+                    review = target["mention_review"]
+                    draft = json.loads((ROOT / review["path"]).read_text(encoding="utf-8"))
+                    lines = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
+                    for line in review["lines"]:
+                        self.assertEqual(lines[line["line_id"]], line["text"])
+                    self.assertEqual("anchor" in target, review["status"] == "attested")
+
     def test_glossary_review_stale_target_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             pilot = Path(tmp)
