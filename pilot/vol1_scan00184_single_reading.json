@@ -412,6 +412,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i184-first-image-20261125"
+              },
+              {
+                "start": 32,
+                "end": 34,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i184-first-image-20261125"
+              },
+              {
+                "start": 34,
                 "end": 35,
                 "language": "cu",
                 "script": "Cyrl",
@@ -1412,6 +1428,14 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i184-first-image-20261125"
+              },
+              {
+                "start": 2,
                 "end": 47,
                 "language": "uk",
                 "script": "Cyrl",
@@ -1626,7 +1650,15 @@
       "method": "Separate printed superscript apparatus label ranges from existing cu/chu spans; no text changes or note targets inferred.",
       "status": "agent_unverified",
       "marker_count": 32
-    }
+    },
+    "source_note_links": [
+      {
+        "marker_line_id": "jacob-ladder-continuation-l009",
+        "marker_text": "*)",
+        "marker_start": 32,
+        "note_region_id": "editorial-omission"
+      }
+    ]
   },
   "language_annotation": {
     "schema_version": "contextual-language-annotation-v1",
