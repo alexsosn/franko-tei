@@ -78,6 +78,26 @@ class EditorialProjectionTests(unittest.TestCase):
                 self.assertNotIn(literal,original["text"])
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
 
+    def test_new_facsimile_pages_are_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            expected={("2",19):("preface-line-40","Karlsruhe 1846, 2 томи;"),
+                      ("4",19):("preface-line-41","апокріфів на-"),
+                      ("1",418):("index-a-l014","Ахатис камінь 215")}
+            for (volume,scan),(line_id,literal) in expected.items():
+                page=next(p for p in overlay["pages"] if p["volume"]==volume and p["scan"]==scan)
+                row=next(r for r in page["lines"] if r["line_id"]==line_id)
+                self.assertIn(literal,row["text"])
+                self.assertEqual(row["language_spans"][-1]["end"],len(row["text"]))
+                self.assertEqual(page["blob"],blob_sha((ROOT/page["path"]).read_bytes()))
+                rows=json.loads((output/f"vol{volume}.json").read_text())["entries"]
+                self.assertTrue(any(x.get("reviewed") and x["scan"]==scan and literal in x["text"] for x in rows))
+            indexes=json.loads((output/"printed-indexes.json").read_text())
+            entry=next(e for e in indexes["sections"][0]["entries"] if e["label"]=="Ахатис камінь")
+            self.assertEqual([r["literal"] for r in entry["refs"]],["215"])
+
     def test_supplementary_rejects_mismatched_evidence(self):
         import copy
         import shutil

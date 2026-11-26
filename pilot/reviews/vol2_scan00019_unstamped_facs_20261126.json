@@ -1,0 +1,80 @@
+{
+  "schema_version": "supplementary-photo-collation-audit-v2",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 19,
+  "printed_page": "XV",
+  "source": {
+    "path": "pilot/vol2_scan00019_single_reading.json",
+    "blob": "fa27590a23c6c040dd7a3feabeca60291d7da077"
+  },
+  "pinned_image": {
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "path": "vol2/page-00019.jpg",
+    "sha256": "e21944a94de7c23e9413894cf5e1b78d059f7e653bff39c2e508e22c8016f715"
+  },
+  "photographs": [
+    {
+      "filename": "IMG_83889618-B34E-4C88-B447-8F1804A5D47A.jpeg",
+      "sha256": "240dcce8c4c1bfa646181fcd7316a12849c8b979e14abae1f4ab6a43db860d85",
+      "dimensions": [
+        1080,
+        1440
+      ]
+    }
+  ],
+  "provenance": "User-supplied photographs of matching printed edition, 2026-11-26; partial lower-page views except I/418 overview. Photographs not redistributed. Not independent witnesses or verified diplomatic transcriptions.",
+  "notes": "Bibliographic suffix 1846, 2 томи; fully visible. Last line confirmed.",
+  "rows": [
+    {
+      "line_id": "preface-line-40",
+      "region_id": "preface",
+      "original": "1841; йогож Schauspiele des Mittelalters, Karlsruhe 184…",
+      "photo_reading": "1841; йогож Schauspiele des Mittelalters, Karlsruhe 1846, 2 томи;",
+      "obscured_on_pinned_scan": true,
+      "status": "correction",
+      "language_spans": [
+        {
+          "start": 0,
+          "end": 12,
+          "language": "uk",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-ii-19-image-20261125"
+        },
+        {
+          "start": 12,
+          "end": 52,
+          "language": "de",
+          "script": "Latn",
+          "uncertain": true,
+          "text_version": "gpt62-ii-19-image-20261125"
+        },
+        {
+          "start": 52,
+          "end": 58,
+          "language": "zxx",
+          "script": "Zyyy",
+          "uncertain": true,
+          "text_version": "gpt62-ii-19-image-20261125"
+        },
+        {
+          "start": 58,
+          "end": 65,
+          "language": "uk",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-ii-19-image-20261125"
+        }
+      ]
+    },
+    {
+      "line_id": "preface-line-41",
+      "region_id": "preface",
+      "original": "K. Weinhold, Weihnachtsspiele und Lieder aus Süddeutschland",
+      "photo_reading": "K. Weinhold, Weihnachtsspiele und Lieder aus Süddeutschland",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    }
+  ]
+}

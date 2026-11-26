@@ -1,0 +1,98 @@
+{
+  "schema_version": "supplementary-photo-collation-audit-v2",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 19,
+  "printed_page": "XV",
+  "source": {
+    "path": "pilot/vol4_scan00019_single_reading.json",
+    "blob": "6cf25917cdb88220044b60743f6d8ddb18744181"
+  },
+  "pinned_image": {
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "path": "vol4/page-00019.jpg",
+    "sha256": "522e7bb4ee1400b9915f013407af7f01c123714adc19569c50d2d6095e72125c"
+  },
+  "photographs": [
+    {
+      "filename": "IMG_B266A577-80CC-49F4-9E14-DDB357CBEF1C.jpeg",
+      "sha256": "ac42e074b873f61edff8ced192cb3b65725cf9272b74657cd16392f7e5c28df7",
+      "dimensions": [
+        1080,
+        1440
+      ]
+    }
+  ],
+  "provenance": "User-supplied photographs of matching printed edition, 2026-11-26; partial lower-page views except I/418 overview. Photographs not redistributed. Not independent witnesses or verified diplomatic transcriptions.",
+  "notes": "Final suffix recovered. The penultimate sentence prints як при- / лоґа. Abbreviation нз. retained from draft pending glyph review.",
+  "rows": [
+    {
+      "line_id": "preface-line-39",
+      "region_id": "preface",
+      "original": "хонравова нз. „Памятники отреченной русской литературы“, як про-",
+      "photo_reading": "хонравова нз. „Памятники отреченной русской литературы“, як при-",
+      "obscured_on_pinned_scan": false,
+      "status": "correction",
+      "language_spans": [
+        {
+          "start": 0,
+          "end": 15,
+          "language": "uk",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-iv-19-image-20261125"
+        },
+        {
+          "start": 15,
+          "end": 54,
+          "language": "ru",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-iv-19-image-20261125"
+        },
+        {
+          "start": 54,
+          "end": 64,
+          "language": "uk",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-iv-19-image-20261125"
+        }
+      ]
+    },
+    {
+      "line_id": "preface-line-40",
+      "region_id": "preface",
+      "original": "лоґа до невиданої нїколи розвідки тогож автора „Отреченныя кни-",
+      "photo_reading": "лоґа до невиданої нїколи розвідки тогож автора „Отреченныя кни-",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    },
+    {
+      "line_id": "preface-line-41",
+      "region_id": "preface",
+      "original": "ги древней Россіи“. В першім томі сеї збірки маємо з апокрі…",
+      "photo_reading": "ги древней Россіи“. В першім томі сеї збірки маємо з апокріфів на-",
+      "obscured_on_pinned_scan": true,
+      "status": "correction",
+      "language_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "language": "ru",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-iv-19-image-20261125"
+        },
+        {
+          "start": 17,
+          "end": 66,
+          "language": "uk",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-iv-19-image-20261125"
+        }
+      ]
+    }
+  ]
+}
