@@ -442,6 +442,22 @@ class ReviewSmoke(unittest.TestCase):
         self.assertIn('Anisimova (2023)', links(65)['CAVT-132']['evidence'])
         self.assertEqual(data['1']['entries'][7][2], '324–320')
 
+    def test_vol2_marian_nativity_bibliography(self):
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        def links(index):
+            key = json.dumps(data['2']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return {link['id']: link for link in refs['2'].get(key, [])}
+        self.assertEqual(links(28)['ECCA 611']['relation'], 'edition-match')
+        for index in (29, 30, 31, 33, 34, 35, 36, 37, 41):
+            self.assertEqual(links(index)['ECCA 611']['relation'], 'work-family')
+        self.assertEqual(links(35)['ECCA 545']['relation'], 'work-family')
+        self.assertEqual(links(35)['ECCA 932']['relation'], 'work-family')
+        for index in (38, 39, 40, 42, 43, 44, 45):
+            self.assertNotIn('ECCA 611', links(index))
+
     def test_contents_work_references(self):
         import json
         html = reader_html()
