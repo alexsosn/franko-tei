@@ -240,8 +240,8 @@ def validate_single_draft(payload, images_root):
             raise ValueError('source note marker offset must be a nonnegative integer')
         source_line = lines_by_id.get(marker_id)
         note_region = regions_by_id.get(note_id)
-        if source_line is None or source_line[0]['kind'] != 'body':
-            raise ValueError('source note marker must identify a body line')
+        if source_line is None or source_line[0]['kind'] not in {'body', 'heading'}:
+            raise ValueError('source note marker must identify a body or heading line')
         if note_region is None or note_region['kind'] != 'note':
             raise ValueError('source note link must target an existing note region')
         if marker_id in seen_marker_lines or note_id in seen_target_notes:
