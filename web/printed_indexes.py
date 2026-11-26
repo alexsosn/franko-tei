@@ -1040,7 +1040,8 @@ MOTIF_EDITORIAL = {
     "v1-456-motifs-s-l025": ("235", 285, 360, "598615576266d8ac04638e6a380e7dfbf3b2e0e4", "solomon-inheritance-l001"),
     "v1-456-motifs-t-l002": ("351", 331, 406, "846e8d740b5fa3e4db792c6e73175928cff661ec", "abraham-body-l024"),
     "v1-457-motifs-f-l005": ("222", 225, 300, "2c17b484068c5fe7253afca57af0190ed74d3fed", "pharaoh-dream-l013"),
-    "v1-458-motifs-l001": ("199", 109, 184, "299130f2bb80160e50e6d5f0aa9742d773c629cd", "jacob-ladder-continuation-l004"),
+    # I/184 language-span-only update; text, folio, geometry and line identity unchanged.
+    "v1-458-motifs-l001": ("199", 109, 184, "9214a14547e1ab22d61c55a077383a5a135cd2c7", "jacob-ladder-continuation-l004"),
 }
 
 
