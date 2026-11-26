@@ -81,7 +81,7 @@
         "lines": [
           {
             "id": "body-cont-line-01",
-            "text": "нощ'ныя любодѣанїа, потом же нач[а] тат'бы. конечно еже[е] на",
+            "text": "нощ'ныя любодѣанїа, потом же нач[а] тат'бы. конечно еж[е] на",
             "bbox_xywh": [
               121,
               191,
@@ -92,11 +92,11 @@
             "language_spans": [
               {
                 "text_version": "gpt62-v3-s00151-20261126",
-                "start": 0,
-                "end": 61,
                 "language": "cu",
                 "script": "Cyrl",
-                "uncertain": true
+                "uncertain": true,
+                "start": 0,
+                "end": 60
               }
             ]
           },
@@ -790,7 +790,7 @@
           },
           {
             "id": "body-cont-line-34",
-            "text": "всѣ[м] сп҃сти ся Бъ҃ нш҃.",
+            "text": "въсѣ[м] сп҃сти ся Бъ҃ нш҃.",
             "bbox_xywh": [
               121,
               1356,
@@ -801,11 +801,11 @@
             "language_spans": [
               {
                 "text_version": "gpt62-v3-s00151-20261126",
-                "start": 0,
-                "end": 25,
                 "language": "cu",
                 "script": "Cyrl",
-                "uncertain": true
+                "uncertain": true,
+                "start": 0,
+                "end": 26
               }
             ]
           }
@@ -960,7 +960,7 @@
       },
       {
         "id": "signature",
-        "kind": "footer",
+        "kind": "other",
         "bbox_xywh": [
           196,
           1669,
@@ -994,7 +994,7 @@
       },
       {
         "id": "sheet",
-        "kind": "footer",
+        "kind": "other",
         "bbox_xywh": [
           1035,
           1663,
@@ -1030,7 +1030,7 @@
     "uncertainty_notes": [
       {
         "line_id": "body-cont-line-01",
-        "reading": "еже[е]",
+        "reading": "еж[е]",
         "reason": "Provisional historical glyph sequence; exact letterforms and diacritics require enlarged collation."
       },
       {
