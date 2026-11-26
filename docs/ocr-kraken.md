@@ -15,6 +15,8 @@ Previous real run [43032729997](https://github.com/alexsosn/franko-tei/actions/r
 
 To reproduce on an image checkout:
 
+Use a separate CPython 3.13 virtual environment for the pinned Kraken 7.1.x experiment (the package requires Python <3.14). The core pipeline targets Python 3.15.
+
 ```bash
 python -m pip install -e .
 python -m pip install 'kraken==7.1.0' 'huggingface_hub>=0.34,<2'

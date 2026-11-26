@@ -22,6 +22,8 @@ The second numbered alternate slot preserves four earlier working candidates (I/
 
 ## Commands
 
+Use CPython 3.15 (latest maintenance release) for the core pipeline. The package requires Python 3.13 or newer; CI targets 3.13, 3.14 and 3.15 with the PDF, page-image, XML and Text-Fabric dependencies. The browser workflow uses 3.14 for the Playwright stack. Experimental Kraken 7.1.x workflows use 3.13 because the pinned releases require Python below 3.14; use a separate virtual environment for those experiments. Use the latest patch release in each minor series.
+
 Install the library and XML validator:
 
 ```bash
