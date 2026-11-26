@@ -344,6 +344,10 @@ class NumberedApparatusTests(unittest.TestCase):
             m = label_pattern.match(first["literal"])
             self.assertIsNotNone(m)
             self.assertEqual(m.group(), entry["label"])
+            if "body_pair_evidence" in entry:
+                self.assertTrue(occurrence_labels)
+                self.assertNotIn("—", entry["label"])
+                self.assertTrue(entry["body_pair_evidence"].strip())
             numbers = entry["label"][:-1].translate(self.DIGITS).split("—")
             self.assertTrue(all(int(n) == entry["number"] for n in numbers))
             seen_labels.append((first["scan_page"], first["line_id"], first["start"],
@@ -388,7 +392,15 @@ class NumberedApparatusTests(unittest.TestCase):
                 else:
                     self.assertNotIn("disambiguation", link)
                 role = link["role"]
-                if "—" in entry["label"]:
+                if "body_pair_evidence" in entry:
+                    self.assertIn(role, ("range_start", "range_end"))
+                    # Explicit printed dash at the start; bare closing
+                    # marker or closing parenthesis at the end.
+                    if role == "range_start":
+                        self.assertTrue(marker["literal"].endswith("—"))
+                    else:
+                        self.assertFalse(marker["literal"].endswith("—"))
+                elif "—" in entry["label"]:
                     self.assertIn(role, ("range_start", "range_end"))
                     # Some printed starts have a bare number or a closing
                     # parenthesis; the role is separate from the literal.
@@ -407,7 +419,9 @@ class NumberedApparatusTests(unittest.TestCase):
                              [eid for eid in entries if eid not in targets])
             incomplete = []
             for eid, observed_roles in roles.items():
-                if "—" in entries[eid]["label"]:
+                if "body_pair_evidence" in entries[eid]:
+                    self.assertEqual(observed_roles, ["range_start", "range_end"])
+                elif "—" in entries[eid]["label"]:
                     if repeated and (observed_roles == ["range_start"] or
                                      occurrence_labels and observed_roles == ["range_end"]):
                         incomplete.append(eid)
@@ -417,6 +431,8 @@ class NumberedApparatusTests(unittest.TestCase):
                     self.assertEqual(observed_roles, ["repeated_reference"] * len(observed_roles))
                 else:
                     self.assertEqual(observed_roles, ["single"])
+            self.assertTrue(all(eid in roles for eid, e in entries.items()
+                                if "body_pair_evidence" in e))
             if repeated:
                 self.assertEqual(block["incomplete_range_entry_ids"],
                                  [eid for eid in entries if eid in incomplete])
