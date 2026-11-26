@@ -106,15 +106,17 @@ class ReviewSmoke(unittest.TestCase):
             selector.select_option('printed')
             self.assertTrue(number.is_visible())
             self.assertEqual(number.input_value(), '')  # unnumbered scan
-            for volume, label, scan in [('1','1',76),('1','LXVI',75),('1','147',222),
+            for volume, label, scan in [('1','1',76),('1','LXVI',75),('1','147',222),('1','389',464),
                                         ('2','436',518),('2','ii',6),('3','360',446),
-                                        ('3','X',28),('4','1',53),('4','XXXVIII',42),
+                                        ('3','X',28),('4','1',53),('4','XXXVIII',42),('4','XLVII',51),('4','522',574),
                                         ('5','297',309),('5','I',11)]:
                 page.evaluate('(v) => setReaderVolume(v)', volume)
                 number.fill(label)
                 number.press('Enter')
                 self.assertEqual(page.locator('#page').input_value(), str(scan))
                 self.assertEqual(number.input_value(), label.upper())
+            for volume, label in [('1','340'),('3','324'),('4','516'),('4','XLVIII')]:
+                self.assertIsNone(page.evaluate('([v,n]) => pageJumpScan(v,n)', [volume,label]))
             for invalid in ('0','-1','1.5','IIII','II','298','garbage'):
                 number.fill(invalid)
                 page.locator('#go').click()
