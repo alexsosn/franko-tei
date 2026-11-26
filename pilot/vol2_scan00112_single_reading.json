@@ -1,0 +1,1032 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 112,
+  "printed_page_observed": "30",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00112.jpg",
+  "source_image_sha256": "a5c4d9b50885a92b82f7bcfac2bb440163f3a6e920369e68390440dea43a34ea",
+  "reading": {
+    "reader_id": "gpt62-ii-112-image-harmonized-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00111-00120-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading; physical lines and contextual language spans under the harmonization guide. Historical accentuation, titla, breathings and glyph shapes are incomplete/provisional; geometry estimated, not measured baselines.",
+    "raw_response": "30\n9. Sibilla Europea. Ta się w Europie narodziła przed Bożym nar.\nroku 133, była wzrostu cudnego, płci rumianney, wdzięczney twarzy,\nw zawiciu subtelnym w złotogłowie chodziła. Pisze tak: Virginis aeter-\nnum veniet de corpore Verbum, to iest:\nPrzydzie na swiat Słowo wieczne,\nWiernym swoim pożyteczne.\nZ nieba od Boga posłany\nPrzez żywot cnotliwey Panny.\nPrzeydzie gory, wielkie wały,\nPobędzie tu czas niemały,\nBędzie w ubostwie krolował,\nBy się swoich uratował.\nTak wierzę y wiedziec dawam,\nBoga w ciele bydz wyznawam.\n10. Sybilla Tyburtina, naypoślednieysza, ta była z Włoch rodem,\niedno przed Bożym nar. w Rzymie była lat XIX za Octawiana Cesa-\nrza. O tey to Solinus pisze: gdy Rzymianie za Boga chcieli chwalić\nCesarza Octawiana, iż za niego pokoy był po wszytkim świecie y drugi\nkościoł iemu pokoyu ku chwale chcieli zbudować, wezwał do siebie\nSybille Tyburtyny, powiedział iey tę rzecz, którą sobie wzięła do trze-\nciego dnia na odpowiedź, a w onych trzech dniach pościeła, modły\nczynieła, prosiła P. Boga aby dał uznanie prawdziwe Cesarzowi. A gdy\nprzyszedł 3 dzień, wiodła Cesarza na osobne mieysce, kazała mu wey-\nzreć w niebo, gdzie tam uyrzał Pannę piastuiąc dzieciątko. Rzekła mu:\nhaec ara est Filii Dei. Cesarz padł, zdumiał się, a gdy wstał, zapowie-\ndział wszytkim Rzymianąm, aby tey rzeczy dali pokoy, co umyśleli.\nPytali potym Rzymianie Tyburtyny, długo li kościoł pokoia, ktory był\nJanusowi boszkowi zbudowali, będzie stał? Odpowiedziała: poki Panna\nnie porodzi. Oni potym rozumieli, iż na wiekiy napisali na kościele:\nKościoł wiecznego pokoia, ale potym upadł, gdy się Chrystus narodził.\nNa tym mieyscu dziś w Rzymie, na którym mieyscu Oktawian widział\nPannę Maryą z dzieciątkiem stoi kościoł, ktory zowią Marya [sic. зам.\nara] caeli. Tę Sybillę piszą chodzić w czerwonym odzieniu a skórę\nkozłową nosić na plecach, skrywszy włosy; czynieła to na przyście Jana\nwedług niektorych domysłu. Między inemi proroctwy też to pisała:\nVerax ipse Deus dedit mihi haec numina fandi\nCarmine quod potui sanctam monstrare puellam.\nPan Bog prawdy dał mi tę wymowę,\nŻem przez swoię obiawiła głowę",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          100,
+          133,
+          48,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "30",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              100,
+              133,
+              48,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "europa-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          99,
+          205,
+          1054,
+          151
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "europa-prose-line-01",
+            "text": "9. Sibilla Europea. Ta się w Europie narodziła przed Bożym nar.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 2,
+                "end": 63,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              99,
+              205,
+              1054,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-prose-line-02",
+            "text": "roku 133, była wzrostu cudnego, płci rumianney, wdzięczney twarzy,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              99,
+              242,
+              1054,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-prose-line-03",
+            "text": "w zawiciu subtelnym w złotogłowie chodziła. Pisze tak: Virginis aeter-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 55,
+                "end": 70,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              99,
+              280,
+              1054,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-prose-line-04",
+            "text": "num veniet de corpore Verbum, to iest:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 29,
+                "end": 38,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              99,
+              318,
+              1054,
+              34
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "europa-verse",
+        "kind": "body",
+        "bbox_xywh": [
+          336,
+          394,
+          533,
+          387
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "europa-verse-line-01",
+            "text": "Przydzie na swiat Słowo wieczne,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              394,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-02",
+            "text": "Wiernym swoim pożyteczne.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              432,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-03",
+            "text": "Z nieba od Boga posłany",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              471,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-04",
+            "text": "Przez żywot cnotliwey Panny.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              510,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-05",
+            "text": "Przeydzie gory, wielkie wały,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              548,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-06",
+            "text": "Pobędzie tu czas niemały,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              587,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-07",
+            "text": "Będzie w ubostwie krolował,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              626,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-08",
+            "text": "By się swoich uratował.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              664,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-09",
+            "text": "Tak wierzę y wiedziec dawam,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              703,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "europa-verse-line-10",
+            "text": "Boga w ciele bydz wyznawam.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              336,
+              742,
+              533,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "tiburtina-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          109,
+          825,
+          1049,
+          822
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "tiburtina-prose-line-01",
+            "text": "10. Sybilla Tyburtina, naypoślednieysza, ta była z Włoch rodem,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 3,
+                "end": 63,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              825,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-02",
+            "text": "iedno przed Bożym nar. w Rzymie była lat XIX za Octawiana Cesa-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              864,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-03",
+            "text": "rza. O tey to Solinus pisze: gdy Rzymianie za Boga chcieli chwalić",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              903,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-04",
+            "text": "Cesarza Octawiana, iż za niego pokoy był po wszytkim świecie y drugi",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 68,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              942,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-05",
+            "text": "kościoł iemu pokoyu ku chwale chcieli zbudować, wezwał do siebie",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              981,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-06",
+            "text": "Sybille Tyburtyny, powiedział iey tę rzecz, którą sobie wzięła do trze-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 71,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1020,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-07",
+            "text": "ciego dnia na odpowiedź, a w onych trzech dniach pościeła, modły",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1059,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-08",
+            "text": "czynieła, prosiła P. Boga aby dał uznanie prawdziwe Cesarzowi. A gdy",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 68,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1099,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-09",
+            "text": "przyszedł 3 dzień, wiodła Cesarza na osobne mieysce, kazała mu wey-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1138,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-10",
+            "text": "zreć w niebo, gdzie tam uyrzał Pannę piastuiąc dzieciątko. Rzekła mu:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 69,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1177,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-11",
+            "text": "haec ara est Filii Dei. Cesarz padł, zdumiał się, a gdy wstał, zapowie-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 23,
+                "end": 71,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1216,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-12",
+            "text": "dział wszytkim Rzymianąm, aby tey rzeczy dali pokoy, co umyśleli.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1255,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-13",
+            "text": "Pytali potym Rzymianie Tyburtyny, długo li kościoł pokoia, ktory był",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 68,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1294,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-14",
+            "text": "Janusowi boszkowi zbudowali, będzie stał? Odpowiedziała: poki Panna",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1333,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-15",
+            "text": "nie porodzi. Oni potym rozumieli, iż na wiekiy napisali na kościele:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 68,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1373,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-16",
+            "text": "Kościoł wiecznego pokoia, ale potym upadł, gdy się Chrystus narodził.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 69,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1412,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-17",
+            "text": "Na tym mieyscu dziś w Rzymie, na którym mieyscu Oktawian widział",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1451,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-18",
+            "text": "Pannę Maryą z dzieciątkiem stoi kościoł, ktory zowią Marya [sic. зам.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 59,
+                "end": 64,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 64,
+                "end": 65,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 65,
+                "end": 69,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1490,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-19",
+            "text": "ara] caeli. Tę Sybillę piszą chodzić w czerwonym odzieniu a skórę",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 11,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 11,
+                "end": 65,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1529,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-20",
+            "text": "kozłową nosić na plecach, skrywszy włosy; czynieła to na przyście Jana",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 70,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1568,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-prose-line-21",
+            "text": "według niektorych domysłu. Między inemi proroctwy też to pisała:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              109,
+              1607,
+              1049,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "tiburtina-verse-latin",
+        "kind": "body",
+        "bbox_xywh": [
+          269,
+          1671,
+          731,
+          74
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "tiburtina-verse-latin-line-01",
+            "text": "Verax ipse Deus dedit mihi haec numina fandi",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 44,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              269,
+              1671,
+              731,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-verse-latin-line-02",
+            "text": "Carmine quod potui sanctam monstrare puellam.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 45,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              269,
+              1708,
+              731,
+              34
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "tiburtina-verse",
+        "kind": "body",
+        "bbox_xywh": [
+          269,
+          1749,
+          638,
+          81
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "tiburtina-verse-line-01",
+            "text": "Pan Bog prawdy dał mi tę wymowę,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              269,
+              1749,
+              638,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "tiburtina-verse-line-02",
+            "text": "Żem przez swoię obiawiła głowę",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-112-image-harmonized-20261126",
+                "start": 0,
+                "end": 30,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              269,
+              1789,
+              638,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "tiburtina-prose-line-15",
+        "reading": "wiekiy",
+        "reason": "Printed spelling provisional."
+      },
+      {
+        "line_id": "tiburtina-prose-line-18",
+        "reading": "Marya",
+        "reason": "Printed correction retained."
+      }
+    ],
+    "source_note_links": []
+  }
+}
