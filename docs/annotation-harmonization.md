@@ -202,6 +202,13 @@ a complete corpus-wide audit.
   target cannot be established. Never renumber the original label. Scope
   headings may themselves repeat a printed letter (IX.C and the following
   Kovel witness); use exact source heading anchors, not the letter alone.
+  A printed article may have a single label although its body markers are
+  explicitly paired. In [X.A](../pilot/structure/vol1_section_x_a_apparatus.json),
+  article 55) has body markers 55— and bare 55 before a closing bracket.
+  Preserve both literals and record body_pair_evidence on the article,
+  with exact range_start and range_end occurrences. Require evidence for
+  both endpoints; a repeated closed marker alone does not establish a range.
+  Keep editorial asterisks separate even where adjacent to a numbered marker.
   Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
