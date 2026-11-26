@@ -14,6 +14,7 @@ from franko_tei.pilot_tei import TEI, XML, extract_transcribed_lines
 from franko_tei.review_adjudication import project_lines
 from franko_tei.review_tei import ledger_at_checkout, verified_editorial_tei
 from franko_tei.review_bundle import git_source_loader
+from franko_tei.pilot_tf import build_tf_graph, verify_graph_roundtrip
 
 ROOT=Path(__file__).resolve().parents[1]
 REF=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
@@ -41,14 +42,16 @@ def main():
             schema.assertValid(etree.fromstring(xml.encode("utf-8")))
             assert extract_transcribed_lines(xml)==[r["text"] for r in rows]
             root=ET.fromstring(xml)
-            notes={n.get(ID):n for n in root.findall(".//t:note[@type='editorial-review']",NS)}
-            assert len(notes)==len(accepted)
+            assert not root.findall(".//t:note[@type='editorial-review']",NS)
+            assert not root.findall(".//t:note[@type='agent-reading-uncertainty']",NS)
+            assert root.find(".//t:editionStmt/t:edition",NS).get("n")==REF
             for row in accepted:
-                n=notes["review-"+row["event_id"]]
-                assert n.find("t:quote",NS).text==row["original"]
-                assert n.find("t:seg[@type='review-kind']",NS).text==row["review_kind"]
-                assert n.find("t:ref[@type='review-issue']",NS).get("target")==row["issue_url"]
-                assert n.get("subtype")==row["status"]
+                for forbidden in (row["event_id"],row["bundle_id"],row["issue_url"]):
+                    assert forbidden not in xml
+            graph=build_tf_graph(xml)
+            assert verify_graph_roundtrip(graph)==[r["text"] for r in rows]
+            assert set(graph.node_features.get("noteText",{}).values()) <= {
+                "Reading requires verification against the printed source."}
             if "00104" in path:
                 assert any("Сиѳъ" in r["text"] and "Сидъ" in r["original"]
                            for r in accepted), "actual Seth correction missing"

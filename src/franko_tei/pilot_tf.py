@@ -216,7 +216,7 @@ def build_tf_graph(xml):
     notes=[]
     for note in page.findall(tag('note')):
         nid=_required_id(note,'agent uncertainty',seen)
-        if note.get('type')!='agent-reading-uncertainty' or not note.get('corresp','').startswith('#'):
+        if note.get('type') not in {'agent-reading-uncertainty','transcription-uncertainty'} or not note.get('corresp','').startswith('#'):
             raise ValueError('invalid uncertainty note')
         reference=note.get('corresp')[1:]
         if reference not in line_by_id or not (note.text or '').strip():

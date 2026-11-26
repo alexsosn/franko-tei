@@ -1,4 +1,4 @@
-"""Separate, provisional editorial TEI; frozen candidate XML remains immutable."""
+"""Current diplomatic working TEI; editorial history stays in Git."""
 import argparse
 import json
 from pathlib import Path
@@ -9,17 +9,17 @@ from .pilot_tei import (XML, tag, xml_id, _sub, render_pilot_tei,
                         extract_transcribed_lines, validate_single_draft)
 from .pilot_tf_batch import _verify_pinned_manifest
 from .review_adjudication import check_repository, project_lines
-from .review_bundle import REPO, SHA, PATH, match, git_source_loader
+from .review_bundle import SHA, PATH, match, git_source_loader
 
 ID = "{"+XML+"}id"
-WEB = "https://github.com/" + REPO
 
 
 def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_loader=None):
     """Project a validated ledger; the lower-level serializer does not check images.
 
-    Source notes on corrected lines retain their original literal and identity,
-    but are explicitly about the source reading, not offsets into the new text.
+    The output contains selected text, source anchors and unresolved reading
+    indicators, not an event log. Frozen candidates and the Git ledger remain
+    unchanged. A line-level uncertainty does not assert a specific glyph.
     """
     match(SHA, revision, "editorial projection revision")
     rows = project_lines(raw, path, ledger, source_loader=source_loader, projection_commit=revision)
@@ -27,9 +27,7 @@ def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_l
     original = render_pilot_tei(source, width, height)
     if extract_transcribed_lines(original) != [r["original"] for r in rows]:
         raise ValueError("frozen TEI text roundtrip failed")
-    accepted = [r for r in rows if r["status"] != "agent_unverified"]
-    if not accepted:
-        return original
+    accepted = [r for r in rows if r["status"] == "accepted_correction"]
     root = ET.fromstring(original)
     page = root.find("./"+tag("text")+"/"+tag("body")+"/"+tag("div"))
     prefix = f'lb-v{source["volume"]}-s{source["scan_page"]:05d}-'
@@ -47,55 +45,53 @@ def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_l
     for row in accepted:
         ident = prefix+row["line_id"]
         parent, lb = anchors[ident]
-        entry = ledger[(path, row["line_id"])]
-        if row["status"] == "accepted_correction":
-            siblings = list(parent)
-            for child in siblings[siblings.index(lb)+1:]:
-                if child.tag == tag("lb"):
-                    break
-                if child.tag != tag("seg") or child.get("type") != "language-attribution" or len(child):
-                    raise ValueError("correction would remove structural markup")
-                parent.remove(child)
-            lb.tail = row["text"]
-            for note in page.findall(tag("note")):
-                if (note.get("type") == "agent-reading-uncertainty"
-                        and note.get("corresp") == "#"+ident):
-                    note.set("subtype", "source-reading-needs-reassessment")
-        note = _sub(page, "note", attrs={
-            "type": "editorial-review", "subtype": row["status"],
-            "corresp": "#"+ident,
-            "source": WEB+"/blob/"+row["source_commit"]+"/"+path,
-        })
-        xml_id(note, "review-"+row["event_id"])
-        _sub(note, "quote", row["original"], {"type":"frozen-source-reading"})
-        _sub(note, "seg", row["review_kind"], {"type":"review-kind"})
-        _sub(note, "seg", str(row["contributor_id"]), {"type":"contributor-github-id"})
-        _sub(note, "seg", row["language_status"], {"type":"language-status"})
-        _sub(note, "seg", row["uncertainty_status"], {"type":"uncertainty-status"})
-        _sub(note, "ref", "Submitted review", {
-            "type":"review-issue", "target":row["issue_url"]})
-        _sub(note, "ref", row["bundle_id"], {
-            "type":"intake-record", "target":WEB+"/blob/"+revision+
-            "/reviews/intake/"+row["bundle_id"]+".json"})
-        _sub(note, "ref", row["event_id"], {
-            "type":"adjudication-record", "target":WEB+"/blob/"+revision+
-            "/reviews/adjudications/"+row["event_id"]+".json"})
-        if "source_revision" in row:
-            provenance = row["source_revision"]
-            _sub(note, "ref", "Annotation-only source revision", {
-                "type": "annotation-source-revision",
-                "target": WEB+"/blob/"+provenance["projected_commit"]+"/"+path})
-            _sub(note, "seg", provenance["accepted_blob"], {"type":"accepted-source-blob"})
-            _sub(note, "seg", provenance["projected_blob"], {"type":"projected-source-blob"})
-        _sub(note, "seg", entry["adjudication"]["reason"], {"type":"review-reason"})
+        siblings = list(parent)
+        for child in siblings[siblings.index(lb)+1:]:
+            if child.tag == tag("lb"):
+                break
+            if child.tag != tag("seg") or child.get("type") != "language-attribution" or len(child):
+                raise ValueError("correction would remove structural markup")
+            parent.remove(child)
+        lb.tail = row["text"]
+
+    # Keep unresolved source-line locations, not obsolete literals, model
+    # rationales, confirmation events or contributor metadata.
+    uncertain = set()
+    for note in page.findall(tag("note")):
+        if note.get("type") == "agent-reading-uncertainty":
+            anchor = note.get("corresp")
+            if not anchor or anchor[1:] not in anchors or not anchor.startswith("#"):
+                raise ValueError("uncertainty lacks physical line anchor")
+            uncertain.add(anchor)
+            page.remove(note)
+    for anchor in sorted(uncertain):
+        n = _sub(page, "note", "Reading requires verification against the printed source.",
+                 {"type": "transcription-uncertainty", "corresp": anchor})
+        xml_id(n, "uncertainty-"+anchor[1:])
+
+    # A single snapshot identifier suffices to reconstruct the edition from
+    # Git; no per-line history or model-specific workflow data is exported.
     header = root.find(tag("teiHeader"))
+    fd = header.find(tag("fileDesc"))
+    title_stmt = fd.find(tag("titleStmt"))
+    title_stmt.find(tag("title")).text = (
+        f'Franko, Апокріфи і лєґенди — vol. {source["volume"]}, '
+        f'scan {source["scan_page"]} (provisional diplomatic text)')
+    for child in title_stmt.findall(tag("respStmt")):
+        title_stmt.remove(child)
+    edition_stmt = ET.Element(tag("editionStmt"))
+    _sub(edition_stmt, "edition", "Current diplomatic working text", {"n": revision})
+    fd.insert(list(fd).index(title_stmt)+1, edition_stmt)
+    fd.find(tag("publicationStmt")).find(tag("p")).text = (
+        "Unreleased working text (agent_unverified); not a verified edition.")
     encoding = header.find(tag("encodingDesc"))
-    _sub(encoding, "p", "Provisional editorial projection from accepted line decisions. "
-         "Original literals remain in editorial-review notes; corrected language "
-         "spans are withheld and source uncertainty needs reassessment. "
-         "Acceptance is not page verification. See immutable ledger records.")
-    _sub(header.find(tag("revisionDesc")), "change",
-         "Projected accepted line decisions from Git revision "+revision+".")
+    encoding.clear()
+    _sub(encoding, "p", "Diplomatic physical-line transcription of the printed edition. "
+         "Geometry is estimated; unresolved readings are indicated by line. "
+         "Language ranges requiring reassessment are not asserted.")
+    revision_desc = header.find(tag("revisionDesc"))
+    if revision_desc is not None:
+        header.remove(revision_desc)
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n'+ET.tostring(root, encoding="unicode")+'\n'
     if extract_transcribed_lines(xml) != [r["text"] for r in rows]:
         raise ValueError("editorial TEI text roundtrip failed")
