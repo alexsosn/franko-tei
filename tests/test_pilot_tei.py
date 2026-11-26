@@ -292,7 +292,7 @@ class PilotTeiTests(unittest.TestCase):
         self.assertEqual(ref.get('target'),'#'+note.get('{http://www.w3.org/XML/1998/namespace}id'))
         self.assertEqual(extract_transcribed_lines(xml),
                          ['48','Сторінка (с. 64)*) і далі','*) окрема примітка'])
-        for kind in ('note','footer'):
+        for kind in ('note','other'):
             bad=copy.deepcopy(data)
             bad['reading']['regions'][1]['kind']=kind
             with self.subTest(kind=kind),self.assertRaisesRegex(ValueError,'note|marker'):
