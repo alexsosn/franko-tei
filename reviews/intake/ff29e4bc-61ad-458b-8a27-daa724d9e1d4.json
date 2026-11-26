@@ -1,0 +1,132 @@
+{
+  "schema_version": "franko-review-intake-v1",
+  "status": "pending_adjudication",
+  "submitter": {
+    "github_user_id": 3265391,
+    "login_at_intake": "alexsosn",
+    "issue_id": 6637071211,
+    "issue_number": 411,
+    "issue_url": "https://github.com/alexsosn/franko-tei/issues/411"
+  },
+  "bundle_sha256": "18b0e1db4bbd783fd056e8a857a8b619a08f2c8167a7f9bc5f9fc26ab77fb30c",
+  "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"ff29e4bc-61ad-458b-8a27-daa724d9e1d4\",\"source_commit\":\"04226c881da3709c818e96edc01f6bb9d611d01e\",\"events\":[{\"event_id\":\"0ecf39bd-4c54-4d01-a1a8-ec3bd46281b0\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00317_single_reading.json\",\"candidate_blob\":\"205c99e8703f1cb71bb694ecfa0dacff38a6bcb2\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"5ff74c05539e2e5642a8a23d91e85e57f891ae48761c14136ec6000b05829ac6\",\"reader_id\":\"gpt62-i317-first-image-20261125\",\"region_id\":\"eighth-stone\",\"line_id\":\"eighth-stone-l001\",\"original\":\"Осмый убо камень афатисъ³²²), синь ес[ть]. обретаютъ же\"},\"decision\":\"correct\",\"replacement\":\"Осмый убо камень афатисъ³²²), усинь ес[ть]. обретаютъ же\",\"note\":\"Facsimile p242 line after афатисъ footnote 322 reads усинь; compare glossary I462 right-l035.\"},{\"event_id\":\"f0b2d8ca-c15c-47ca-8050-4c978e57b0ac\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00317_single_reading.json\",\"candidate_blob\":\"205c99e8703f1cb71bb694ecfa0dacff38a6bcb2\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"5ff74c05539e2e5642a8a23d91e85e57f891ae48761c14136ec6000b05829ac6\",\"reader_id\":\"gpt62-i317-first-image-20261125\",\"region_id\":\"eleventh-stone\",\"line_id\":\"eleventh-stone-l002\",\"original\":\"его зевръ³³⁶) есть, бываетъ ж[е] при врезе горы наречаемыя\"},\"decision\":\"correct\",\"replacement\":\"его зекръ³³⁶) есть, бываетъ ж[е] при врезе горы наречаемыя\",\"note\":\"Facsimile p242 shows зекръ before marker 336; attached-token correction requires structural review.\"},{\"event_id\":\"671761c2-9caf-48f4-a74b-3ba14168f900\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00095_single_reading.json\",\"candidate_blob\":\"ee0a66fb061444f5b9e65fcb34a77796bf6269d6\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"66d41cd27ba0716341780c34575106c9dc5573d99c37a4648de84ca706681eda\",\"reader_id\":\"gpt62-i95-first-image-20261125\",\"region_id\":\"witness-a-adam-eve-continuation\",\"line_id\":\"witness-a-adam-eve-continuation-l028\",\"original\":\"вол'чец и́ згрѣва сел'ное.⁸²) и́ паки пріидохом въ Єдем и́ плака-\"},\"decision\":\"correct\",\"replacement\":\"вол'чец и́ згрѣба сел'ное.⁸²) и́ паки пріидохом въ Єдем и́ плака-\",\"note\":\"Facsimile p20 reads згрѣба сел'ное, matching glossary I460 left-l046.\"},{\"event_id\":\"89f1a4e8-a976-4f17-999e-9f73e34f18d8\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00394_single_reading.json\",\"candidate_blob\":\"38566f1ddfed36b129269f81e88409b21d9031fe\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"e2c3e53e0398ceb9d9282a3da2792908fb2735edff83ab4a50b4c63173597f00\",\"reader_id\":\"gpt62-i394-final-gap-20261125\",\"region_id\":\"daniel-body\",\"line_id\":\"daniel-body-l006\",\"original\":\"желанныя, семена земленая зовла суще, й кощь й скудобрадъ\"},\"decision\":\"correct\",\"replacement\":\"желанныя, семена земленая зобла суще, й кощь й скудобрадъ\",\"note\":\"Facsimile p319 reads зобла, not зовла; targeted consonant correction only, cf. glossary Зобати.\"},{\"event_id\":\"ae45172c-05a6-4710-a0af-fd751a281e8d\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00383_single_reading.json\",\"candidate_blob\":\"0ad07cb37db342c9e054dd540237ef609cad09cc\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"fddd25a61d1a5b3d21ff614f9dbf85810c650586ae743f295b391efd33eedc50\",\"reader_id\":\"gpt62-i383-first-image-20261125\",\"region_id\":\"three-youths-captivity\",\"line_id\":\"three-youths-captivity-l006\",\"original\":\"браздами предняя⁴⁴) ихъ ведаше⁴⁵) якож[е] ѡслы ильскы, а со\"},\"decision\":\"correct\",\"replacement\":\"браздами предняя⁴⁴) ихъ ведаше⁴⁵) якож[е] ѡслы имьскы, а со\",\"note\":\"Facsimile p308 reads ѡслы имьскы, cf. glossary Имьскъ.\"},{\"event_id\":\"d7b9b164-0e22-4ffb-b5a3-4fe87f4780f1\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00144_single_reading.json\",\"candidate_blob\":\"6dfa76212368d336d4c70655e0d382aeb8a0b58d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"fc65081df6f2cd5c9c24549f2b1316431334e06327be36a432a344c1acff5f82\",\"reader_id\":\"gpt62-i144-first-image-20261125\",\"region_id\":\"witness-b-flood-continuation\",\"line_id\":\"witness-b-flood-continuation-l032\",\"original\":\"И показа ему древо не гнїющее клеутнонъ³²), и рече ему: в сем\"},\"decision\":\"correct\",\"replacement\":\"И показа ему древо не гнїющее клехтнонъ³²), и рече ему: в сем\",\"note\":\"Facsimile p69 reads клехтнонъ before marker 32; attached-token correction requires structural review.\"},{\"event_id\":\"0712267d-2ae9-471c-9e03-be1d98423e8b\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00117_single_reading.json\",\"candidate_blob\":\"1a04bc97189129b53ceaeb5dada25733e9d9d90c\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"9ff18a905b9552391563ce75705933c0085dac5e47442fb8cbdf113b550d0c21\",\"reader_id\":\"gpt62-i117-first-image-20261125\",\"region_id\":\"enoch-punishment-continuation\",\"line_id\":\"enoch-punishment-continuation-l005\",\"original\":\"сту́день и́ ледъ, жа́жда и́ за́влость, а оужници лю́ти зѣло,\"},\"decision\":\"correct\",\"replacement\":\"сту́день и́ ледъ, жа́жда и́ за́блость, а оужници лю́ти зѣло,\",\"note\":\"Facsimile p42 reads за́блость after жажда; cf. glossary I460 right-l007.\"}]}",
+  "bundle": {
+    "schema_version": "franko-review-bundle-v1",
+    "bundle_id": "ff29e4bc-61ad-458b-8a27-daa724d9e1d4",
+    "source_commit": "04226c881da3709c818e96edc01f6bb9d611d01e",
+    "events": [
+      {
+        "event_id": "0ecf39bd-4c54-4d01-a1a8-ec3bd46281b0",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00317_single_reading.json",
+          "candidate_blob": "205c99e8703f1cb71bb694ecfa0dacff38a6bcb2",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "5ff74c05539e2e5642a8a23d91e85e57f891ae48761c14136ec6000b05829ac6",
+          "reader_id": "gpt62-i317-first-image-20261125",
+          "region_id": "eighth-stone",
+          "line_id": "eighth-stone-l001",
+          "original": "Осмый убо камень афатисъ³²²), синь ес[ть]. обретаютъ же"
+        },
+        "decision": "correct",
+        "replacement": "Осмый убо камень афатисъ³²²), усинь ес[ть]. обретаютъ же",
+        "note": "Facsimile p242 line after афатисъ footnote 322 reads усинь; compare glossary I462 right-l035."
+      },
+      {
+        "event_id": "f0b2d8ca-c15c-47ca-8050-4c978e57b0ac",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00317_single_reading.json",
+          "candidate_blob": "205c99e8703f1cb71bb694ecfa0dacff38a6bcb2",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "5ff74c05539e2e5642a8a23d91e85e57f891ae48761c14136ec6000b05829ac6",
+          "reader_id": "gpt62-i317-first-image-20261125",
+          "region_id": "eleventh-stone",
+          "line_id": "eleventh-stone-l002",
+          "original": "его зевръ³³⁶) есть, бываетъ ж[е] при врезе горы наречаемыя"
+        },
+        "decision": "correct",
+        "replacement": "его зекръ³³⁶) есть, бываетъ ж[е] при врезе горы наречаемыя",
+        "note": "Facsimile p242 shows зекръ before marker 336; attached-token correction requires structural review."
+      },
+      {
+        "event_id": "671761c2-9caf-48f4-a74b-3ba14168f900",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00095_single_reading.json",
+          "candidate_blob": "ee0a66fb061444f5b9e65fcb34a77796bf6269d6",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "66d41cd27ba0716341780c34575106c9dc5573d99c37a4648de84ca706681eda",
+          "reader_id": "gpt62-i95-first-image-20261125",
+          "region_id": "witness-a-adam-eve-continuation",
+          "line_id": "witness-a-adam-eve-continuation-l028",
+          "original": "вол'чец и́ згрѣва сел'ное.⁸²) и́ паки пріидохом въ Єдем и́ плака-"
+        },
+        "decision": "correct",
+        "replacement": "вол'чец и́ згрѣба сел'ное.⁸²) и́ паки пріидохом въ Єдем и́ плака-",
+        "note": "Facsimile p20 reads згрѣба сел'ное, matching glossary I460 left-l046."
+      },
+      {
+        "event_id": "89f1a4e8-a976-4f17-999e-9f73e34f18d8",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00394_single_reading.json",
+          "candidate_blob": "38566f1ddfed36b129269f81e88409b21d9031fe",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "e2c3e53e0398ceb9d9282a3da2792908fb2735edff83ab4a50b4c63173597f00",
+          "reader_id": "gpt62-i394-final-gap-20261125",
+          "region_id": "daniel-body",
+          "line_id": "daniel-body-l006",
+          "original": "желанныя, семена земленая зовла суще, й кощь й скудобрадъ"
+        },
+        "decision": "correct",
+        "replacement": "желанныя, семена земленая зобла суще, й кощь й скудобрадъ",
+        "note": "Facsimile p319 reads зобла, not зовла; targeted consonant correction only, cf. glossary Зобати."
+      },
+      {
+        "event_id": "ae45172c-05a6-4710-a0af-fd751a281e8d",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00383_single_reading.json",
+          "candidate_blob": "0ad07cb37db342c9e054dd540237ef609cad09cc",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "fddd25a61d1a5b3d21ff614f9dbf85810c650586ae743f295b391efd33eedc50",
+          "reader_id": "gpt62-i383-first-image-20261125",
+          "region_id": "three-youths-captivity",
+          "line_id": "three-youths-captivity-l006",
+          "original": "браздами предняя⁴⁴) ихъ ведаше⁴⁵) якож[е] ѡслы ильскы, а со"
+        },
+        "decision": "correct",
+        "replacement": "браздами предняя⁴⁴) ихъ ведаше⁴⁵) якож[е] ѡслы имьскы, а со",
+        "note": "Facsimile p308 reads ѡслы имьскы, cf. glossary Имьскъ."
+      },
+      {
+        "event_id": "d7b9b164-0e22-4ffb-b5a3-4fe87f4780f1",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00144_single_reading.json",
+          "candidate_blob": "6dfa76212368d336d4c70655e0d382aeb8a0b58d",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "fc65081df6f2cd5c9c24549f2b1316431334e06327be36a432a344c1acff5f82",
+          "reader_id": "gpt62-i144-first-image-20261125",
+          "region_id": "witness-b-flood-continuation",
+          "line_id": "witness-b-flood-continuation-l032",
+          "original": "И показа ему древо не гнїющее клеутнонъ³²), и рече ему: в сем"
+        },
+        "decision": "correct",
+        "replacement": "И показа ему древо не гнїющее клехтнонъ³²), и рече ему: в сем",
+        "note": "Facsimile p69 reads клехтнонъ before marker 32; attached-token correction requires structural review."
+      },
+      {
+        "event_id": "0712267d-2ae9-471c-9e03-be1d98423e8b",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00117_single_reading.json",
+          "candidate_blob": "1a04bc97189129b53ceaeb5dada25733e9d9d90c",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "9ff18a905b9552391563ce75705933c0085dac5e47442fb8cbdf113b550d0c21",
+          "reader_id": "gpt62-i117-first-image-20261125",
+          "region_id": "enoch-punishment-continuation",
+          "line_id": "enoch-punishment-continuation-l005",
+          "original": "сту́день и́ ледъ, жа́жда и́ за́влость, а оужници лю́ти зѣло,"
+        },
+        "decision": "correct",
+        "replacement": "сту́день и́ ледъ, жа́жда и́ за́блость, а оужници лю́ти зѣло,",
+        "note": "Facsimile p42 reads за́блость after жажда; cf. glossary I460 right-l007."
+      }
+    ]
+  }
+}
