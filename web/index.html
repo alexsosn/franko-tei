@@ -8060,7 +8060,13 @@ function appendIndexTarget(node,page,scan,literal){
 function appendIndexRef(node,ref){
   const targets=new Map(ref.targets.map(t=>[t.page,t.scan]));
   const pages=[...targets.keys(),...ref.missing].sort((a,b)=>a-b);
-  if(pages.length===1){appendIndexTarget(node,pages[0],targets.get(pages[0]),ref.literal);return;}
+  if(pages.length===1){appendIndexTarget(node,pages[0],targets.get(pages[0]),ref.literal);
+    if(ref.role==='editorial_citation'&&typeof ref.printed_literal==='string'){
+      const label=indexText('Printed index reads ','У покажчику читається ')+ref.printed_literal+indexText('; cited text attested on page ','; цитований текст засвідчено на сторінці ')+ref.literal;
+      node.lastElementChild.title=label;node.lastElementChild.setAttribute('aria-label',ref.literal+' — '+label);
+    }
+    return;
+  }
   if(!pages.length){appendIndexTarget(node,null,undefined,ref.literal);return;}
   const d=document.createElement('details'),s=document.createElement('summary');s.textContent=ref.literal;
   const group=document.createElement('div');group.className='index-refs';
