@@ -374,7 +374,15 @@ class NumberedApparatusTests(unittest.TestCase):
                    marker["end"], marker["literal"])
             markers.append(key)
             if paired and link["status"] != "resolved":
-                self.assertEqual(link["status"], "unresolved_marker_mismatch")
+                number = int(marker["literal"].rstrip(")—").translate(self.DIGITS))
+                if link["status"] == "unresolved_missing_entry":
+                    self.assertTrue(occurrence_labels)
+                    self.assertNotIn(number, label_counts,
+                                     "missing-entry status requires an absent article number")
+                else:
+                    self.assertEqual(link["status"], "unresolved_marker_mismatch")
+                    self.assertIn(number, label_counts,
+                                  "marker mismatch differs from a missing printed entry")
                 self.assertIsNone(link["target_entry_id"])
                 self.assertEqual(link["role"], "unresolved")
                 self.assertTrue(link["reason"].strip())
@@ -804,3 +812,63 @@ class NumberedApparatusTests(unittest.TestCase):
         self.check_block(wrong, sources, paired=True, repeated=True, occurrence_labels=True)
         with self.assertRaises(AssertionError):
             self.check_x_a_special_cases(wrong)
+
+
+    def test_section_x_b_missing_printed_entry(self):
+        block = json.loads((ROOT / "pilot/structure/vol1_section_x_b_apparatus.json")
+                           .read_text(encoding="utf-8"))
+        self.check_block(block, self.load_sources(block), paired=True, repeated=True,
+                         occurrence_labels=True)
+        self.assertEqual(block["id"], "v1-section-x-b")
+        self.assertEqual([p["scan_page"] for p in block["pages"]], [161, 162, 163, 164, 165])
+        self.assertEqual([p["body_region_ids"] for p in block["pages"]], [
+            ["witness-b-hospitality"], ["witness-b-hospitality-continuation", "witness-b-lot"],
+            ["witness-b-lot-continuation"], [], []])
+        self.assertEqual([p["apparatus_region_ids"] for p in block["pages"]], [
+            [], [], ["witness-b-apparatus-start"], ["witness-b-apparatus-end"], []])
+        self.assertEqual(block["scope"]["heading"]["region_id"], "witness-b-label")
+        self.assertEqual(block["scope"]["next_heading"]["region_id"], "witness-c-label")
+        entries = {e["number"]: e for e in block["entries"]}
+        self.assertEqual(list(entries), list(range(1, 100)))
+        self.assertEqual(len(block["links"]), 130)
+        self.assertEqual(sum(l["status"] == "resolved" for l in block["links"]), 126)
+        self.assertEqual(block["unlinked_entry_ids"], [entries[n]["id"] for n in (12, 42)])
+        self.assertEqual(block["incomplete_range_entry_ids"], [])
+        self.assertEqual([l["marker"]["literal"] for l in block["links"]
+                          if l["status"] == "unresolved_marker_mismatch"], ["¹²)", "⁴²)"])
+        missing = [l for l in block["links"] if l["status"] == "unresolved_missing_entry"]
+        self.assertEqual([l["marker"]["literal"] for l in missing], ["¹⁰⁰)", "¹⁰⁰)"])
+        self.assertEqual([l["marker"]["line_id"] for l in missing],
+                         ["witness-b-lot-continuation-l005", "witness-b-lot-continuation-l006"])
+        self.assertTrue(all(l["target_entry_id"] is None for l in missing))
+        self.assertTrue(entries[99]["fragments"][-1]["literal"].endswith("Далї vacat."))
+        self.assertEqual(sorted({f["scan_page"] for f in entries[19]["fragments"]}), [163, 164])
+        self.assertEqual([l["role"] for l in block["links"]
+                          if l["target_entry_id"] == entries[91]["id"]],
+                         ["repeated_reference", "repeated_reference"])
+
+    def test_missing_entry_adversarial_mutations(self):
+        import copy
+        block = json.loads((ROOT / "pilot/structure/vol1_section_x_b_apparatus.json")
+                           .read_text(encoding="utf-8"))
+        sources = self.load_sources(block)
+        self.check_block(block, sources, paired=True, repeated=True, occurrence_labels=True)
+        def missing(b):
+            return next(l for l in b["links"] if l["status"] == "unresolved_missing_entry")
+        def mismatch(b):
+            return next(l for l in b["links"] if l["status"] == "unresolved_marker_mismatch")
+        mutations = [
+            lambda b: missing(b).update(target_entry_id=b["entries"][-1]["id"]),
+            lambda b: missing(b).update(status="resolved", role="single",
+                                        target_entry_id=b["entries"][-1]["id"]),
+            lambda b: missing(b).update(status="unresolved_marker_mismatch"),
+            lambda b: mismatch(b).update(status="unresolved_missing_entry"),
+            lambda b: b["links"].remove(missing(b)),
+            lambda b: b["entries"][-1]["fragments"].pop(),
+            lambda b: missing(b).update(reason=""),
+        ]
+        for change in mutations:
+            bad = copy.deepcopy(block)
+            change(bad)
+            with self.assertRaises(AssertionError):
+                self.check_block(bad, sources, paired=True, repeated=True, occurrence_labels=True)

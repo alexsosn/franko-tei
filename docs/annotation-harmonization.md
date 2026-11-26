@@ -209,6 +209,14 @@ a complete corpus-wide audit.
   with exact range_start and range_end occurrences. Require evidence for
   both endpoints; a repeated closed marker alone does not establish a range.
   Keep editorial asterisks separate even where adjacent to a numbered marker.
+  Distinguish a disputed stored marker from a visibly printed marker with
+  no corresponding article. In [X.Б](../pilot/structure/vol1_section_x_b_apparatus.json)
+  both printed 100) occurrences have no article 100 in the complete
+  apparatus, which ends at 99 and Далї vacat. Record each occurrence
+  separately as unresolved_missing_entry, with null target and a source
+  reason. Do not invent an article, attach to the previous number, or
+  infer an omitted passage from proximity. Use unresolved_marker_mismatch
+  for a disputed stored marker whose number has an article in the block.
   Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
