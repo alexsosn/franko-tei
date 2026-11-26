@@ -1,0 +1,986 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 91,
+  "printed_page_observed": "79",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00091.jpg",
+  "source_image_sha256": "ce16f4326c3784d2a06018d6f63d4b4ece08851cc2dfa5fb9dee30d60cb5b4cd",
+  "reading": {
+    "reader_id": "gpt62-v5s00091-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-v5-091-100-20261126",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct reading of pinned image, with observed line order, approximate visually estimated boxes, contextual language spans and specific uncertainty; draft, not independently verified. Ukrainian body is Franko's translation; editorial source statement separated physically.",
+    "raw_response": "79\nIII. Мученє святого Георгія. Рукопис із Волї Якубової\nXVIII віку.\nМс҃ца апрѣлѧ въ к҃г. дн҃ь мꙋчение ст҃го великого\nмч҃нка Геѡргіѧ і мт҃ре его Полихроніѧ.\n(Початку сего мученя в рукописї з Якубової Волї нема\nі для того подаємо його в перекладї із рукопису XV віку Мос-\nковської Синодальної бібліотеки ч. 321, к. 447—454, опублїкова-\nного Тіхонравовим у другім томі „Памятниковъ отреченной\nрусской литературы“, ст. 100—111).\n[Споконвіку ненависник людський і злий дорадник діявол, бо-\nрючи ся з усїми, що хотять жити благовірно о Христї, поставляв\nкнязїв і царів, як диких звірів, що хапали проповідників доброї\nвіри. Був одного часу князь родом із Персян, на імя Дадіян, по-\nмістний князь Татрока, Антії, Персарменїї і ще й Палестинської\nкраїни. Він вислав до Діосполя і Галилеї наказ у свої підвладні\nкнязївства, щоб усї покланяли ся поганим ідолам.\nБув один муж у Діосполї сенатор іменем Герон, і був язич-\nник і що день приносив жертву поганим ідолам; жінка-ж його, на\nімя Полїхронія, була христіянка і ненастанно молила Бога і по-\nтайно складала жертви і співала піснї Христу Богу, не виявляючи\nсвойого христіянства, боячи ся гнїву свойого мужа. Тодї почавши\nвід ідолослужителя вродила святого хлопчика і мученика Христо-\nвого Георгія. Коли-ж родив ся святий хлопець і був вихований\nу всякій добрій вірі і цїломудрію, за старанєм своєї матери сподо-\nбив ся доступити святого хрещеня потайно від свойого батька свя-\nтими мужами епископом і попом, і служив Господу Богу нашому\nІсусу Христу з матірю своєю.\nОтець його Герон намовив царя і поставив кумир, і одного\nдня мовив до свого сина: „Сину, ходїмо в храм великих богів\nі принеси їм зо мною жертву і кадило, щоб дали тобі житє. Бо-ж\nвони створили тїло і честь твою“. Батько не знав, що син його\nхристіянин.\nПочувши сї слова свого батька святий Георгій зітхнув і ска-\nзав: „Не можу йти в храм твоїх богів, анї принести їм жертви.\nНе блуди, отче, і не слухай демонів, але послухай мене і я по-\nкажу тобі Бога правдивого, живого, якому кланяючи ся будемо\nспасені. Бо той сотворив небо й землю, море і все, що в них,\nі дає житє всякій тварі і всїм, що творять його волю, як учать",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1012,
+          75,
+          47,
+          27
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "79",
+            "bbox_xywh": [
+              1012,
+              75,
+              47,
+              27
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          152,
+          182,
+          838,
+          73
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-line-01",
+            "text": "III. Мученє святого Георгія. Рукопис із Волї Якубової",
+            "bbox_xywh": [
+              152,
+              182,
+              838,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "title-line-02",
+            "text": "XVIII віку.",
+            "bbox_xywh": [
+              152,
+              221,
+              838,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rubric",
+        "kind": "heading",
+        "bbox_xywh": [
+          93,
+          292,
+          968,
+          66
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "rubric-line-01",
+            "text": "Мс҃ца апрѣлѧ въ к҃г. дн҃ь мꙋчение ст҃го великого",
+            "bbox_xywh": [
+              93,
+              292,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "rubric-line-02",
+            "text": "мч҃нка Геѡргіѧ і мт҃ре его Полихроніѧ.",
+            "bbox_xywh": [
+              93,
+              327,
+              968,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 38,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commentary",
+        "kind": "body",
+        "bbox_xywh": [
+          92,
+          391,
+          969,
+          174
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commentary-line-01",
+            "text": "(Початку сего мученя в рукописї з Якубової Волї нема",
+            "bbox_xywh": [
+              92,
+              391,
+              969,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-02",
+            "text": "і для того подаємо його в перекладї із рукопису XV віку Мос-",
+            "bbox_xywh": [
+              92,
+              427,
+              969,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-03",
+            "text": "ковської Синодальної бібліотеки ч. 321, к. 447—454, опублїкова-",
+            "bbox_xywh": [
+              92,
+              463,
+              969,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-04",
+            "text": "ного Тіхонравовим у другім томі „Памятниковъ отреченной",
+            "bbox_xywh": [
+              92,
+              498,
+              969,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              },
+              {
+                "start": 33,
+                "end": 55,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-05",
+            "text": "русской литературы“, ст. 100—111).",
+            "bbox_xywh": [
+              92,
+              532,
+              969,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              },
+              {
+                "start": 18,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-1",
+        "kind": "body",
+        "bbox_xywh": [
+          94,
+          574,
+          973,
+          245
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-1-line-01",
+            "text": "[Споконвіку ненависник людський і злий дорадник діявол, бо-",
+            "bbox_xywh": [
+              94,
+              574,
+              973,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-02",
+            "text": "рючи ся з усїми, що хотять жити благовірно о Христї, поставляв",
+            "bbox_xywh": [
+              94,
+              610,
+              973,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-03",
+            "text": "князїв і царів, як диких звірів, що хапали проповідників доброї",
+            "bbox_xywh": [
+              94,
+              645,
+              973,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-04",
+            "text": "віри. Був одного часу князь родом із Персян, на імя Дадіян, по-",
+            "bbox_xywh": [
+              94,
+              682,
+              973,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-05",
+            "text": "містний князь Татрока, Антії, Персарменїї і ще й Палестинської",
+            "bbox_xywh": [
+              94,
+              716,
+              973,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-06",
+            "text": "країни. Він вислав до Діосполя і Галилеї наказ у свої підвладні",
+            "bbox_xywh": [
+              94,
+              751,
+              973,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-07",
+            "text": "князївства, щоб усї покланяли ся поганим ідолам.",
+            "bbox_xywh": [
+              94,
+              787,
+              973,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 48,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-2",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          823,
+          979,
+          392
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-2-line-01",
+            "text": "Був один муж у Діосполї сенатор іменем Герон, і був язич-",
+            "bbox_xywh": [
+              97,
+              823,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-02",
+            "text": "ник і що день приносив жертву поганим ідолам; жінка-ж його, на",
+            "bbox_xywh": [
+              97,
+              859,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-03",
+            "text": "імя Полїхронія, була христіянка і ненастанно молила Бога і по-",
+            "bbox_xywh": [
+              97,
+              895,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-04",
+            "text": "тайно складала жертви і співала піснї Христу Богу, не виявляючи",
+            "bbox_xywh": [
+              97,
+              931,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-05",
+            "text": "свойого христіянства, боячи ся гнїву свойого мужа. Тодї почавши",
+            "bbox_xywh": [
+              97,
+              966,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-06",
+            "text": "від ідолослужителя вродила святого хлопчика і мученика Христо-",
+            "bbox_xywh": [
+              97,
+              1002,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-07",
+            "text": "вого Георгія. Коли-ж родив ся святий хлопець і був вихований",
+            "bbox_xywh": [
+              97,
+              1038,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-08",
+            "text": "у всякій добрій вірі і цїломудрію, за старанєм своєї матери сподо-",
+            "bbox_xywh": [
+              97,
+              1073,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-09",
+            "text": "бив ся доступити святого хрещеня потайно від свойого батька свя-",
+            "bbox_xywh": [
+              97,
+              1109,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-10",
+            "text": "тими мужами епископом і попом, і служив Господу Богу нашому",
+            "bbox_xywh": [
+              97,
+              1146,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-11",
+            "text": "Ісусу Христу з матірю своєю.",
+            "bbox_xywh": [
+              97,
+              1182,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-3",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          1216,
+          979,
+          175
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-3-line-01",
+            "text": "Отець його Герон намовив царя і поставив кумир, і одного",
+            "bbox_xywh": [
+              100,
+              1216,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-02",
+            "text": "дня мовив до свого сина: „Сину, ходїмо в храм великих богів",
+            "bbox_xywh": [
+              100,
+              1251,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-03",
+            "text": "і принеси їм зо мною жертву і кадило, щоб дали тобі житє. Бо-ж",
+            "bbox_xywh": [
+              100,
+              1287,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-04",
+            "text": "вони створили тїло і честь твою“. Батько не знав, що син його",
+            "bbox_xywh": [
+              100,
+              1323,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-05",
+            "text": "христіянин.",
+            "bbox_xywh": [
+              100,
+              1358,
+              979,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-4",
+        "kind": "body",
+        "bbox_xywh": [
+          101,
+          1394,
+          982,
+          212
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-4-line-01",
+            "text": "Почувши сї слова свого батька святий Георгій зітхнув і ска-",
+            "bbox_xywh": [
+              101,
+              1394,
+              982,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-02",
+            "text": "зав: „Не можу йти в храм твоїх богів, анї принести їм жертви.",
+            "bbox_xywh": [
+              101,
+              1430,
+              982,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-03",
+            "text": "Не блуди, отче, і не слухай демонів, але послухай мене і я по-",
+            "bbox_xywh": [
+              101,
+              1465,
+              982,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-04",
+            "text": "кажу тобі Бога правдивого, живого, якому кланяючи ся будемо",
+            "bbox_xywh": [
+              101,
+              1501,
+              982,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-05",
+            "text": "спасені. Бо той сотворив небо й землю, море і все, що в них,",
+            "bbox_xywh": [
+              101,
+              1536,
+              982,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-06",
+            "text": "і дає житє всякій тварі і всїм, що творять його волю, як учать",
+            "bbox_xywh": [
+              101,
+              1573,
+              982,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00091-20261126"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "rubric-line-01",
+        "reading": "Мс҃ца апрѣлѧ въ к҃г. дн҃ь мꙋчение ст҃го великого",
+        "reason": "Exact superscript letters/titla and abbreviated month/day signs remain provisional; recheck enlarged."
+      },
+      {
+        "line_id": "rubric-line-02",
+        "reading": "мч҃нка Геѡргіѧ і мт҃ре его Полихроніѧ.",
+        "reason": "Check historical letterforms and titla, especially maternal abbreviation and name ending."
+      },
+      {
+        "line_id": "body-1-line-05",
+        "reading": "містний князь Татрока, Антії, Персарменїї і ще й Палестинської",
+        "reason": "Check geographic names and historical orthography in this line."
+      }
+    ],
+    "source_note_links": []
+  }
+}
