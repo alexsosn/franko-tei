@@ -96,7 +96,34 @@ class EditorialProjectionTests(unittest.TestCase):
                 self.assertTrue(any(x.get("reviewed") and x["scan"]==scan and literal in x["text"] for x in rows))
             indexes=json.loads((output/"printed-indexes.json").read_text())
             entry=next(e for e in indexes["sections"][0]["entries"] if e["label"]=="Ахатис камінь")
-            self.assertEqual([r["literal"] for r in entry["refs"]],["215"])
+            self.assertEqual([r["literal"] for r in entry["refs"]],["245"])
+            self.assertEqual(entry["refs"][0]["printed_literal"],"215")
+            self.assertEqual(entry["refs"][0]["role"],"editorial_citation")
+            self.assertEqual(entry["refs"][0]["targets"],[{"page":245,"scan":320}])
+            self.assertEqual(entry["refs"][0]["evidence"]["line_id"],"moses-apparatus-l021")
+            self.assertIn("ахатисъ",entry["refs"][0]["evidence"]["text"])
+
+    def test_achatis_target_fails_closed_when_cited_source_changes(self):
+        import shutil
+        from build_search import supplementary_partial_pages
+        from printed_indexes import build_printed_indexes
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot=Path(tmp)
+            for name in ("vol1_scan00418_single_reading.json","vol1_scan00320_single_reading.json"):
+                shutil.copyfile(ROOT/"pilot"/name,pilot/name)
+            rel="reviews/vol1_scan00418_unstamped_facs_20261126.json"
+            (pilot/"reviews").mkdir()
+            shutil.copyfile(ROOT/"pilot"/rel,pilot/rel)
+            supplements={p["path"]:p for p in supplementary_partial_pages(pilot,REF)}
+            def ref():
+                entries=build_printed_indexes(pilot,REF,supplements)["sections"][0]["entries"]
+                return next(e for e in entries if e["label"]=="Ахатис камінь")["refs"][0]
+            self.assertEqual(ref()["targets"],[{"page":245,"scan":320}])
+            path=pilot/"vol1_scan00320_single_reading.json"
+            path.write_bytes(path.read_bytes()+b" ")
+            self.assertEqual(ref()["targets"],[])
+            self.assertEqual(ref()["role"],"unresolved")
+            self.assertEqual(ref()["literal"],"215")
 
     def test_i34_and_iv18_photo_readings(self):
         with tempfile.TemporaryDirectory() as tmp:

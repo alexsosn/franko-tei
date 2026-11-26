@@ -48,7 +48,7 @@
     }
   ],
   "provenance": "User-supplied photographs of matching printed edition, 2026-11-26; partial lower-page views except I/418 overview. Photographs not redistributed. Not independent witnesses or verified diplomatic transcriptions.",
-  "notes": "Ахатис камінь 215 confirmed in close-up and overview. Digits in Бон син Хусів 10? and Висуя 1?1, 192 are damaged in this reproduction too; no new guess or verified status. Existing 100 and 191 remain provisional.",
+  "notes": "The numeral for Ахатис камінь looks like 215 in both overview and close-up, but the middle digit may be damaged. Direct inspection of the cited pages shows ахатисъ twice on printed 245 (scan 320, apparatus), not on printed 215 (scan 290). Preserve the provisional photographed literal separately; navigation should point to the attested 245, never silently interpret the ambiguous printed digit. The damaged digits in Бон and Висуя are corroborated by the actual cited pages 100 and 191 respectively (scans 175 and 266), which contain the named entities. No new claim of visual legibility.",
   "rows": [
     {
       "line_id": "index-a-l014",
@@ -92,5 +92,17 @@
       "obscured_on_pinned_scan": false,
       "status": "collation_only"
     }
-  ]
+  ],
+  "citation_crosscheck": {
+    "line_id": "index-a-l014",
+    "photo_literal": "215",
+    "target_page": 245,
+    "target_scan": 320,
+    "target_path": "pilot/vol1_scan00320_single_reading.json",
+    "target_blob": "e8b772faa8d2ac06d1596639a3142d84f5076865",
+    "target_line_id": "moses-apparatus-l021",
+    "target_text": "Данъ ³²²) ахатисъ ³²³) ахъ ³²⁴) ахатисъ ³²⁵) амеѳусей, по грецьки ἀμέθυστος ³²⁶) vac.",
+    "target_image_sha256": "b916d20679b8d325cda059c4668dcfdd3483e2f24e4650e2142b2ad32b1fddf4",
+    "reason": "The named stone occurs in variants on printed 245, whereas direct inspection of printed 215 shows Joseph narrative with no such name. This is a source-backed navigation decision, not a diplomatic emendation of the printed index numeral."
+  }
 }

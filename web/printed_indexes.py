@@ -353,6 +353,46 @@ def read_draft(path):
     return data, blob
 
 
+def reconcile_achatis_reference(pilot, files, targets, entry):
+    """Distinguish the photographed numeral from the attested destination.
+
+    Only this exact reviewed entry qualifies. Never guess a page from an
+    ambiguous digit, or expose a stale reference after the source changes.
+    """
+    if (entry["source"]["scan"] != 418 or entry["source"]["blob"] != SOURCE_BLOBS[418]
+            or entry["label"] != "Ахатис камінь" or entry["refs"][0]["literal"] != "215"
+            or entry["supplementary_reading"][0]["line_id"] != "index-a-l014"
+            or entry["supplementary_reading"][0]["text"] != "Ахатис камінь 215"):
+        return
+    unresolved = dict(literal="215", volume="1", role="unresolved", targets=[], missing=[])
+    entry["refs"] = [unresolved]
+    path = pilot / "reviews/vol1_scan00418_unstamped_facs_20261126.json"
+    if not path.is_file() or 320 not in files or targets.get(245) != 320:
+        return
+    evidence = json.loads(path.read_text(encoding="utf-8")).get("citation_crosscheck", {})
+    target_path, target, blob = files[320]
+    if (evidence.get("line_id"), evidence.get("photo_literal"),
+            evidence.get("target_page"), evidence.get("target_scan"),
+            evidence.get("target_path"), evidence.get("target_blob"),
+            evidence.get("target_line_id")) != (
+            "index-a-l014", "215", 245, 320, "pilot/vol1_scan00320_single_reading.json",
+            "e8b772faa8d2ac06d1596639a3142d84f5076865", "moses-apparatus-l021"):
+        return
+    if (target_path.name != "vol1_scan00320_single_reading.json" or blob != evidence["target_blob"]
+            or target["printed_page_observed"] != "245"
+            or target["source_image_sha256"] != evidence.get("target_image_sha256")):
+        return
+    lines = [line["text"] for region in target["reading"]["regions"]
+             for line in region["lines"] if line["id"] == evidence["target_line_id"]]
+    if lines != [evidence.get("target_text")] or lines[0].count("ахатисъ") != 2:
+        return
+    ref = make_ref("245", targets, "editorial_citation")
+    ref["printed_literal"] = "215"
+    ref["evidence"] = dict(path=evidence["target_path"], blob=blob,
+                           line_id=evidence["target_line_id"], text=lines[0])
+    entry["refs"] = [ref]
+
+
 def build_printed_indexes(pilot, ref, supplements=None):
     supplements = supplements or {}
     files = {}
@@ -435,6 +475,8 @@ def build_printed_indexes(pilot, ref, supplements=None):
                                         detail=detail, context=context, refs=refs))
                     if effective != [l["text"] for l in part]:
                         entries[-1]["supplementary_reading"] = [dict(line_id=l["id"], text=corrections[l["id"]]["text"], evidence_url=corrections[l["id"]]["evidence_url"]) for l in part if l["id"] in corrections]
+                        if scan == 418 and part[0]["id"] == "index-a-l014":
+                            reconcile_achatis_reference(pilot, files, targets, entries[-1])
                     previous = stop
             if seen_regions != set(partitions):
                 raise ValueError(f"missing index regions: {path}")
