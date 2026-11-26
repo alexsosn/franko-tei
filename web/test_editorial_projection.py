@@ -98,6 +98,34 @@ class EditorialProjectionTests(unittest.TestCase):
             entry=next(e for e in indexes["sections"][0]["entries"] if e["label"]=="Ахатис камінь")
             self.assertEqual([r["literal"] for r in entry["refs"]],["215"])
 
+    def test_i34_and_iv18_photo_readings(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            pages={(p["volume"],p["scan"]):p for p in overlay["pages"]}
+            i34=pages["1",34]
+            self.assertEqual(i34["suffix"],"alternate_reading_01")
+            rows={r["line_id"]:r for r in i34["lines"]}
+            self.assertIn("любочисльникъ",rows["main-line-23"]["text"])
+            self.assertNotIn("...",rows["main-line-23"]["text"])
+            self.assertIn("Ѱал-",rows["main-line-27"]["text"])
+            self.assertIn("Мооусинъ",rows["main-line-27"]["text"])
+            numerals=[r["text"][s["start"]:s["end"]] for r in rows.values()
+                      for s in r["language_spans"] if s["language"]=="zxx"]
+            self.assertEqual(len(numerals),13)
+            note=pages["4",18]
+            first=next(r for r in note["lines"] if r["line_id"]=="note-1-line-01")
+            self.assertTrue(first["text"].startswith("⁴) Про сей"))
+            self.assertIn("фолькльор",first["text"])
+            original=json.loads((ROOT/note["path"]).read_text())
+            body=next(l for reg in original["reading"]["regions"] for l in reg["lines"] if l["id"]=="preface-line-05")
+            self.assertTrue(body["text"].endswith("¹)."))
+            self.assertEqual(original["reading"]["source_note_links"][0]["marker_text"],"¹)")
+            for (volume,scan),literal in [(("1",34),"любочисльникъ"),(("4",18),"⁴) Про сей")]:
+                entries=json.loads((output/f"vol{volume}.json").read_text())["entries"]
+                self.assertTrue(any(x.get("reviewed") and x["scan"]==scan and literal in x["text"] for x in entries))
+
     def test_partial_facsimile_fails_closed(self):
         import copy
         import shutil
@@ -235,7 +263,7 @@ class EditorialProjectionTests(unittest.TestCase):
                         return checkedEditorial(copy,d,p.blob,p.path)===null;
                     }""",[reviewed,source,mutation]),mutation)
                 for supplement in overlay["pages"]:
-                    if (supplement["volume"],supplement["scan"]) not in {("2",19),("4",19),("1",418)}:
+                    if (supplement["volume"],supplement["scan"]) not in {("2",19),("4",19),("1",418),("1",34),("4",18)}:
                         continue
                     draft=json.loads((ROOT/supplement["path"]).read_text())
                     self.assertTrue(page.evaluate("""([p,d])=>{

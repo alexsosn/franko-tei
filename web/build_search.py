@@ -111,7 +111,10 @@ def supplementary_page(pilot, ref):
 # page identity are explicit; do not auto-publish arbitrary audit files.
 PHOTO_PAGES = {("2", 19): ("XV", {"preface-line-40"}),
                ("4", 19): ("XV", {"preface-line-39", "preface-line-41"}),
-               ("1", 418): ("343", {"index-a-l014"})}
+               ("1", 418): ("343", {"index-a-l014"}),
+               ("1", 34): ("XXV", {f"main-line-{n:02d}" for n in
+                                     (1, 15, 21, 23, 25, 26, 27, 28, 29, 36, 37, 38, 39, 40)}),
+               ("4", 18): ("XIV", {f"note-1-line-{n:02d}" for n in range(1, 5)})}
 
 
 def supplementary_partial_pages(pilot, ref):
@@ -128,10 +131,11 @@ def supplementary_partial_pages(pilot, ref):
                 "supplementary-photo-collation-audit-v2", "agent_unverified", volume, scan, folio):
             raise ValueError("invalid supplementary page identity")
         photos = [p["sha256"] for p in audit["photographs"]]
-        if len(photos) != (4 if scan == 418 else 1) or len(set(photos)) != len(photos) or any(
+        if len(photos) != ({("1", 418): 4, ("1", 34): 5}.get((volume, scan), 1)) or len(set(photos)) != len(photos) or any(
                 not re.fullmatch(r"[a-f0-9]{64}", digest) for digest in photos):
             raise ValueError("invalid supplementary photograph digests")
-        path = f"pilot/{stem}_single_reading.json"
+        suffix = "alternate_reading_01" if (volume, scan) == ("1", 34) else "single_reading"
+        path = f"pilot/{stem}_{suffix}.json"
         raw = (pilot / Path(path).name).read_bytes()
         blob = blob_sha(raw)
         if audit["source"] != dict(path=path, blob=blob):
@@ -148,6 +152,15 @@ def supplementary_partial_pages(pilot, ref):
         covered = {identifier for area in reading["coverage"].get("occlusions", [])
                    if area["kind"] == "library_stamp" and area["obscures_source_letters"] is True
                    for identifier in area["affected_line_ids"]}
+        note_page = (volume, scan) == ("4", 18)
+        if note_page:
+            links = reading.get("source_note_links", [])
+            if (len(links) != 1 or links[0]["marker_line_id"] != "preface-line-05"
+                    or links[0]["marker_text"] != "¹)" or links[0]["note_region_id"] != "note-1"
+                    or not lines["note-1-line-01"][1]["text"].startswith("¹)")
+                    or not any(o == {"line_id": "note-1-line-01", "source": "supplementary photo", "literal": "⁴)"}
+                               for o in audit.get("observations", []))):
+                raise ValueError("unexpected original note link or photo label")
         changes, seen, recovered = [], set(), set()
         for row in audit["rows"]:
             identifier = row["line_id"]
@@ -165,10 +178,12 @@ def supplementary_partial_pages(pilot, ref):
                 if literal != line["text"] or obscured:
                     raise ValueError("invalid confirmation-only row")
                 continue
-            if (row["status"] != "correction" or region["kind"] != "body" or identifier not in required
+            if (row["status"] != "correction" or region["kind"] != ("note" if note_page else "body") or identifier not in required
                     or not isinstance(literal, str) or not literal.strip() or literal == line["text"]
                     or any(ch in literal for ch in ("\n", "\r", "\x00", "…"))):
                 raise ValueError("invalid supplementary correction")
+            if note_page and identifier == "note-1-line-01" and not literal.startswith("⁴) "):
+                raise ValueError("supplementary note must retain printed 4) label")
             if obscured:
                 prefix = line["text"].removesuffix("…")
                 if (identifier not in covered or not line["text"].endswith("…")
@@ -181,7 +196,8 @@ def supplementary_partial_pages(pilot, ref):
                 if (span["start"] != end or type(span["end"]) is not int or not end < span["end"] <= len(literal)
                         or span["text_version"] != reading["reader_id"] or span["uncertain"] is not True
                         or (span["language"], span["script"]) not in
-                        {("uk", "Cyrl"), ("ru", "Cyrl"), ("de", "Latn"), ("zxx", "Zyyy")}):
+                        {("uk", "Cyrl"), ("ru", "Cyrl"), ("de", "Latn"), ("zxx", "Zyyy"),
+                         ("cu", "Cyrl"), ("la", "Latn"), ("zxx", "Cyrl")}):
                     raise ValueError("invalid supplementary span")
                 end = span["end"]
             if end != len(literal):
@@ -192,7 +208,7 @@ def supplementary_partial_pages(pilot, ref):
                                 evidence_url=f"https://github.com/alexsosn/franko-tei/blob/{ref}/pilot/{evidence_path}"))
         if recovered != covered or {row["line_id"] for row in changes} != required:
             raise ValueError("incomplete supplementary recovery")
-        pages.append(dict(volume=volume, scan=scan, suffix="single_reading",
+        pages.append(dict(volume=volume, scan=scan, suffix=suffix,
                           path=path, blob=blob, lines=changes))
     return pages
 
