@@ -270,6 +270,17 @@ def render_register_tei(raw, annotation, width, height):
             cell = _element(row,"cell",row.get(ID)+f"-c{j}",attrs)
             append_lines(cell,ids)
     require(not parts,"unassigned physical lines")
+    if apostle:
+        # Franko's printed P.S. (III/86, LXVIII) corrects the repeated
+        # Andrew at entry 6 in the fourth column. Link, never substitute.
+        stand = ET.Element(tag("standOff"))
+        root.insert(list(root).index(root.find(tag("text"))),stand)
+        links = ET.SubElement(stand,tag("linkGrp"),{"type":"printed-errata"})
+        _element(links,"link",prefix+"-register-authorial-erratum",{
+            "type":"authorial-erratum",
+            "target":" ".join(["#"+table_id+"-r6-c4"] + [
+                f"vol3-s00086.xml#lb-v3-s00086-postscript-line-{i:02d}"
+                for i in range(1,4)])})
     return '<?xml version="1.0" encoding="UTF-8"?>\n'+ET.tostring(root,encoding="unicode")+"\n"
 
 
