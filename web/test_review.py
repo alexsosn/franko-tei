@@ -261,7 +261,7 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(link['relation'], 'candidate')
             self.assertIn('page', link['evidence'])
         self.assertEqual(next(x for x in links('2', 85) if x['id'] == 'ECCA 489')['relation'], 'work-family')
-        self.assertTrue(any(x['id'] == 'ECCA 919' and x['relation'] == 'candidate' for x in links('1', 13)))
+        self.assertFalse(any(x['id'] == 'ECCA 919' for x in links('1', 13)))
 
     def test_contents_hagiography_reference_scope(self):
         import json
@@ -310,7 +310,8 @@ class ReviewSmoke(unittest.TestCase):
         for index in (130, 132):
             self.assertEqual(rows['1', index]['status'], 'edition-match')
             self.assertIn('Somov', rows['1', index]['evidence_or_caveat'])
-        self.assertEqual(rows['1', 131]['status'], 'candidate')
+        self.assertEqual(rows['1', 131]['status'], 'title-supported')
+        self.assertIn('reordered retelling', rows['1', 131]['evidence_or_caveat'])
         self.assertEqual(json.loads(rows['1', 131]['catalog_refs_json']), [])
 
     def test_contents_ocp_public_destinations(self):
@@ -333,7 +334,7 @@ class ReviewSmoke(unittest.TestCase):
                         self.assertEqual(url.fragment, ':~:text=' + link['id'])
                     else:
                         self.assertEqual(url.path, '/reader.html')
-                        self.assertEqual(parse_qs(url.query)['doc'], [{'CAVT-001': 'AdamEve.xml', 'CAVT-088': 'TAbr.xml'}[link['id']]])
+                        self.assertEqual(parse_qs(url.query)['doc'], [{'CAVT-001': 'AdamEve.xml', 'CAVT-088': 'TAbr.xml', 'CAVT-132': 'Jub.xml'}[link['id']]])
         self.assertTrue({'CAVT-001', 'CAVT-066', 'CAVT-088', 'CAVT-089', 'CAVT-101', 'CAVT-118'}.issubset(found))
 
     def test_contents_reference_localization_and_multiple_catalogues(self):
@@ -388,12 +389,11 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(adam['ECCA 309']['relation'], 'work-family')
         self.assertEqual(adam['CAVT-001']['relation'], 'candidate')
         self.assertIn('burial', adam['ECCA 309']['evidence'])
-        for index in (126, 127):
+        for index in (126, 127, 128, 129):
             link = links(index)['CAVT-213']
             self.assertEqual(link['relation'], 'work-family')
             self.assertEqual(link['kind'], 'catalog')
             self.assertTrue(link['titleUk'] and link['evidenceUk'])
-        self.assertEqual(links(128)['CAVT-213']['relation'], 'candidate')
         for index in (32, 63, 64):
             self.assertNotIn('CAVT-066' if index == 32 else 'CAVT-101', links(index))
 
@@ -413,6 +413,34 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(links(32)['ECCA 545']['relation'], 'work-family')
         for index in (15, 20, 21, 23, 24, 25, 26):
             self.assertFalse(links(index), f'Unsupported work link for II/{index}')
+
+    def test_vol1_final_bibliography(self):
+        import csv
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as source:
+            rows = [r for r in csv.DictReader(source, delimiter='\t') if r['volume'] == '1']
+        self.assertEqual(len(rows), 145)
+        self.assertFalse([r for r in rows if r['status'] == 'pending'])
+        def links(index):
+            key = json.dumps(data['1']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return {link['id']: link for link in refs['1'].get(key, [])}
+        for index in (11, 12, 22, 24, 25, 48, 98, 99):
+            self.assertEqual(links(index)['ECCA 121']['relation'], 'work-family')
+        for index in (128, 129):
+            self.assertEqual(links(index)['CAVT-213']['relation'], 'work-family')
+        self.assertNotIn('CAVT-001', links(22))
+        self.assertNotIn('CAVT-213', links(138))
+        self.assertNotIn('ECCA 121', links(97))
+        self.assertNotIn('CAVT-207', links(104))
+        self.assertNotIn('ECCA 919', links(13))
+        self.assertFalse([r for r in rows if r['status'] == 'candidate'])
+        self.assertEqual(links(65)['CAVT-132']['relation'], 'work-family')
+        self.assertIn('Anisimova (2023)', links(65)['CAVT-132']['evidence'])
+        self.assertEqual(data['1']['entries'][7][2], '324–320')
 
     def test_contents_work_references(self):
         import json
