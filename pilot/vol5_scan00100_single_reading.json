@@ -43,7 +43,16 @@
               30
             ],
             "geometry_estimated": true,
-            "language_spans": []
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt6-single-20261111-v5s00100"
+              }
+            ]
           }
         ]
       },
@@ -1127,5 +1136,14 @@
     "context_id": "chat-single-context-2026-11-11-V100",
     "run_id": null,
     "post_freeze_note_revision": "Targeted uncertainty loci revised in same context after raw first response had been frozen in commit fd6cb470; baseline blanket notes and exact unedited raw text remain available in that commit. Source OCR was seen only after raw first pass. This note revision is not independent textual review."
+  },
+  "language_annotation": {
+    "schema_version": "contextual-language-annotation-v1",
+    "annotator_model": "GPT-6.2",
+    "source_record_commit": "7546588ec4e0ab422b6924974c7bf9c93d9425fd",
+    "source_record_blob": "ff47620cbcbb16be9fbcb3ab13590fa5cd049bfc",
+    "scope": "Fill missing language spans of this frozen candidate, including nonlinguistic folio. All lines inspected against the pinned source image; existing spans retained.",
+    "status": "agent_unverified",
+    "method": "Annotation-only pass; sustained Church Slavonic narrative in the second redaction of the martyrdom of George. Prior candidate visible. No new blind transcription, no recension assignment."
   }
 }
