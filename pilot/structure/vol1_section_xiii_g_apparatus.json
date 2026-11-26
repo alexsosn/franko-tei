@@ -1,0 +1,138 @@
+{
+  "schema_version": "printed-apparatus-annotation-v1",
+  "id": "v1-section-xiii-g",
+  "kind": "printed_numbered_apparatus",
+  "volume": "1",
+  "status": "agent_unverified",
+  "description": "XIII.Г, Krekhiv Paleia, Jacob wrestling with the angel, I/196–197. Three numbered body references on I/196 link to the distinct articles on I/197. The editorial asterisk on I/196 is separate from the numbered apparatus. Source-bound ordered exact fragments and marker occurrences; no inferred lemma or normalized witness identity. Original candidate files unchanged; no TEI/TF/viewer projection.",
+  "scope": {
+    "heading": {
+      "scan_page": 196,
+      "region_id": "witness-g-label",
+      "lines": [
+        "Г. Крехівська Палея стор. 208—209."
+      ]
+    },
+    "next_heading": {
+      "scan_page": 197,
+      "region_id": "witness-d-label",
+      "lines": [
+        "Д. Крехівська Палея стор. 211—212."
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scan_page": 196,
+      "printed_page": "121",
+      "source_pilot_path": "pilot/vol1_scan00196_single_reading.json",
+      "source_record_commit": "342cbb1dd2e5b5a6a0857a97fdbf88094305f07d",
+      "source_record_blob": "e784cd27d856d67877ff61081230b78ec1211b2a",
+      "source_reader_id": "gpt62-i196-first-image-20261125",
+      "source_image_sha256": "be32cec946e93b3a8a6af51a14adc64f8f4c708667030a690d5470651b13256f",
+      "body_region_ids": [
+        "jacob-wrestling"
+      ],
+      "apparatus_region_ids": []
+    },
+    {
+      "scan_page": 197,
+      "printed_page": "122",
+      "source_pilot_path": "pilot/vol1_scan00197_single_reading.json",
+      "source_record_commit": "342cbb1dd2e5b5a6a0857a97fdbf88094305f07d",
+      "source_record_blob": "44299b50b2be7a851e73b579530b5087c48a1225",
+      "source_reader_id": "gpt62-i197-first-image-20261125",
+      "source_image_sha256": "cc1e10ecb064b67dd002202755fa3d01b5425bee9f869eaf643ec6da7e8ca0b5",
+      "body_region_ids": [
+        "jacob-wrestling-end"
+      ],
+      "apparatus_region_ids": [
+        "witness-g-apparatus"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "v1-section-xiii-g-entry-001-01",
+      "number": 1,
+      "label": "¹)",
+      "fragments": [
+        {
+          "scan_page": 197,
+          "line_id": "witness-g-apparatus-l001",
+          "start": 0,
+          "end": 18,
+          "literal": "¹) Кол. изъранилъ "
+        }
+      ]
+    },
+    {
+      "id": "v1-section-xiii-g-entry-002-01",
+      "number": 2,
+      "label": "²)",
+      "fragments": [
+        {
+          "scan_page": 197,
+          "line_id": "witness-g-apparatus-l001",
+          "start": 18,
+          "end": 31,
+          "literal": "²) требоваше "
+        }
+      ]
+    },
+    {
+      "id": "v1-section-xiii-g-entry-003-01",
+      "number": 3,
+      "label": "³)",
+      "fragments": [
+        {
+          "scan_page": 197,
+          "line_id": "witness-g-apparatus-l001",
+          "start": 31,
+          "end": 51,
+          "literal": "³) Решта в Кол. vac."
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "marker": {
+        "scan_page": 196,
+        "line_id": "jacob-wrestling-l008",
+        "start": 29,
+        "end": 31,
+        "literal": "¹)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v1-section-xiii-g-entry-001-01",
+      "role": "single"
+    },
+    {
+      "marker": {
+        "scan_page": 196,
+        "line_id": "jacob-wrestling-l009",
+        "start": 40,
+        "end": 42,
+        "literal": "²)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v1-section-xiii-g-entry-002-01",
+      "role": "single"
+    },
+    {
+      "marker": {
+        "scan_page": 196,
+        "line_id": "jacob-wrestling-l012",
+        "start": 8,
+        "end": 10,
+        "literal": "³)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v1-section-xiii-g-entry-003-01",
+      "role": "single"
+    }
+  ],
+  "unlinked_entry_ids": [],
+  "incomplete_range_entry_ids": []
+}
