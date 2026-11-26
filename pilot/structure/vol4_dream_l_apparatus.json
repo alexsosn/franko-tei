@@ -1,0 +1,126 @@
+{
+  "schema_version": "printed-apparatus-annotation-v1",
+  "id": "v4-dream-l",
+  "kind": "printed_numbered_apparatus",
+  "volume": "4",
+  "status": "agent_unverified",
+  "description": "The source-observed paired marker ¹— ... ¹) on IV/131 targets one printed label ¹- ¹), Z. vac.; both endpoints are exact literals. The second marker is single. Scope is witness Л, delimited by heading М on IV/132. No normalized witness identity or inferred expanded lemma; no projection claim.",
+  "scope": {
+    "heading": {
+      "scan_page": 131,
+      "region_id": "witness-heading",
+      "lines": [
+        "Л. Яйковецький рукопис XIX в."
+      ]
+    },
+    "next_heading": {
+      "scan_page": 132,
+      "region_id": "witness-heading",
+      "lines": [
+        "М. Бачванський рукопис Михайла Туринського XIX в.",
+        "стор. 10—11."
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scan_page": 131,
+      "printed_page": "79",
+      "source_pilot_path": "pilot/vol4_scan00131_single_reading.json",
+      "source_record_commit": "eca9e0d8012e15e755aa7ca2b77c224670cfb309",
+      "source_record_blob": "0cda0ba2bc84961c77ee68130b678008b62bf193",
+      "source_reader_id": "gpt62-iv-131-image-20261126",
+      "source_image_sha256": "003b1273f6ce998c6880c3b770ad0acc9e669db81f67ccee0313de70c76f0950",
+      "body_region_ids": [
+        "dream-block-01",
+        "dream-block-02",
+        "dream-block-03",
+        "dream-block-04"
+      ],
+      "apparatus_region_ids": [
+        "footnotes"
+      ]
+    },
+    {
+      "scan_page": 132,
+      "printed_page": "80",
+      "source_pilot_path": "pilot/vol4_scan00132_single_reading.json",
+      "source_record_commit": "eca9e0d8012e15e755aa7ca2b77c224670cfb309",
+      "source_record_blob": "0111ffdb2455cced5ee1883546e4c7ea6f53fa80",
+      "source_reader_id": "gpt62-iv-132-image-20261126",
+      "source_image_sha256": "c080213bab9f1f8bc3d1ef6e7c56c21a6a90eddb4b2058f37abe010b7641541c",
+      "body_region_ids": [],
+      "apparatus_region_ids": []
+    }
+  ],
+  "entries": [
+    {
+      "id": "v4-dream-l-entry-001",
+      "number": 1,
+      "label": "¹- ¹)",
+      "fragments": [
+        {
+          "scan_page": 131,
+          "line_id": "footnotes-line-01",
+          "start": 0,
+          "end": 15,
+          "literal": "¹- ¹) З.- vac. "
+        }
+      ]
+    },
+    {
+      "id": "v4-dream-l-entry-002",
+      "number": 2,
+      "label": "²)",
+      "fragments": [
+        {
+          "scan_page": 131,
+          "line_id": "footnotes-line-01",
+          "start": 15,
+          "end": 36,
+          "literal": "²) З. ѿткнꙋла зо снꙋ."
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "marker": {
+        "scan_page": 131,
+        "line_id": "dream-line-03",
+        "start": 4,
+        "end": 6,
+        "literal": "¹—"
+      },
+      "status": "resolved",
+      "target_entry_id": "v4-dream-l-entry-001",
+      "role": "range_start"
+    },
+    {
+      "marker": {
+        "scan_page": 131,
+        "line_id": "dream-line-04",
+        "start": 37,
+        "end": 39,
+        "literal": "¹)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v4-dream-l-entry-001",
+      "role": "range_end"
+    },
+    {
+      "marker": {
+        "scan_page": 131,
+        "line_id": "dream-line-05",
+        "start": 7,
+        "end": 9,
+        "literal": "²)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v4-dream-l-entry-002",
+      "role": "single"
+    }
+  ],
+  "unlinked_entry_ids": [],
+  "incomplete_range_entry_ids": []
+}
