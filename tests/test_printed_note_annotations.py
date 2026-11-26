@@ -40,7 +40,21 @@ class PrintedNoteAnnotationsTests(unittest.TestCase):
                     self.assertIn("киноваром",target["lines"][0]["text"])
                     self.assertEqual(link["printed_rendition"],"letter_spaced")
                     self.assertEqual(link["manuscript_rendition"],"cinnabar_reported_by_franko")
-                    self.assertEqual(link["range_status"],"terminal_fragment_only")
+                    self.assertEqual(link["range_status"],"printed_extent_provisional")
+                    self.assertIn(link["start_boundary_status"],{"visually_clear","uncertain"})
+                    fragments=link["extent_fragments"]
+                    self.assertIn(len(fragments),{1,2})
+                    self.assertEqual(fragments[-1]["line_id"],anchor["line_id"])
+                    self.assertEqual(fragments[-1]["end"],anchor["start"])
+                    ordered=[l["id"] for r in regions.values() for l in r["lines"]]
+                    for i, part in enumerate(fragments):
+                        self.assertEqual(lines[part["line_id"]][part["start"]:part["end"]],part["literal"])
+                        self.assertLess(part["start"],part["end"])
+                        if i:
+                            self.assertEqual(ordered.index(part["line_id"]),ordered.index(fragments[i-1]["line_id"])+1)
+                            self.assertEqual(fragments[i-1]["end"],len(lines[fragments[i-1]["line_id"]]))
+                            self.assertEqual(part["start"],0)
+                    self.assertLessEqual(fragments[-1]["start"],link["observed_fragment"]["start"])
                     extent = link["observed_fragment"]
                     self.assertEqual(extent["line_id"],anchor["line_id"])
                     self.assertEqual(extent["end"],anchor["start"])
@@ -66,3 +80,34 @@ class PrintedNoteAnnotationsTests(unittest.TestCase):
         self.assertEqual(line["text"][:title["end"]],title["literal"])
         self.assertEqual(line["text"][title["body_start"]:].split()[0],"Іяковъ")
         self.assertEqual(title["heading_region_id"],"joseph-title")
+
+    def test_extent_starts_and_cross_line_continuity(self):
+        a=json.loads((ROOT / "pilot/structure/vol1_joseph_rubrics_232_235.json").read_text(encoding="utf-8"))
+        expected={
+            (232,"joseph-family-l017"):("joseph-family-l016","А до того", "visually_clear"),
+            (233,"dreams-l006"):("dreams-l006","Ано вашѣ", "visually_clear"),
+            (233,"dreams-l015"):("dreams-l015","оузяло сл҃нце", "uncertain"),
+            (233,"dreams-l026"):("dreams-l026","миналъ лагодне", "uncertain"),
+            (233,"journey-l007"):("journey-l006","братію свою", "visually_clear"),
+            (234,"narrative-l007"):("narrative-l006","порвав-", "visually_clear"),
+            (234,"narrative-l021"):("narrative-l020","не", "uncertain"),
+            (234,"narrative-l030"):("narrative-l030","ме, і ѡн", "uncertain"),
+            (235,"narrative-l004"):("narrative-l003","нѣколи не бу-", "uncertain"),
+            (235,"narrative-l013"):("narrative-l012","еслибыс знав", "uncertain"),
+            (235,"narrative-l023"):("narrative-l022","Оувидѣв-", "uncertain"),
+            (235,"narrative-l035"):("narrative-l035","Видѣвши", "visually_clear"),
+        }
+        seen=set()
+        for p in a["pages"]:
+            for link in p["links"]:
+                if link["kind"]!="reported_manuscript_rubric":
+                    self.assertNotIn("extent_fragments",link)
+                    continue
+                key=(p["scan_page"],link["marker"]["line_id"])
+                start=link["extent_fragments"][0]
+                line,prefix,status=expected[key]
+                self.assertEqual(start["line_id"],line)
+                self.assertTrue(start["literal"].startswith(prefix))
+                self.assertEqual(link["start_boundary_status"],status)
+                seen.add(key)
+        self.assertEqual(seen,set(expected))

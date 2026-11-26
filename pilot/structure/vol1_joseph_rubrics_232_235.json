@@ -4,7 +4,7 @@
   "kind": "printed_note_and_rendition",
   "volume": "1",
   "status": "agent_unverified",
-  "description": "Page-local note references in the Teslevets Joseph witness. Printed spacing is observable; manuscript cinnabar is reported by Franko, not directly inspected. Terminal fragments are conservative observed subsets and must not be interpreted as full rubric boundaries; spelling follows the frozen transcription, not a new glyph verification.",
+  "description": "Page-local note references in the Teslevets Joseph witness. Printed spacing is observable; manuscript cinnabar is reported by Franko, not directly inspected. Extent fragments are proposed ranges from facsimile collation, including physical line breaks. Visually clear and uncertain initial boundaries are distinguished; all remain provisional. Earlier conservative observed fragments are retained. Spelling follows the frozen transcription, not a new glyph verification.",
   "title_continuation": {
     "scan_page": 232,
     "heading_region_id": "joseph-title",
@@ -45,13 +45,28 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "joseph-family-l017",
             "start": 0,
             "end": 20,
             "literal": "ный, вѣрный во всемъ"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "joseph-family-l016",
+              "start": 27,
+              "end": 55,
+              "literal": "А до того был тихій и покор-"
+            },
+            {
+              "line_id": "joseph-family-l017",
+              "start": 0,
+              "end": 20,
+              "literal": "ный, вѣрный во всемъ"
+            }
+          ],
+          "start_boundary_status": "visually_clear"
         }
       ]
     },
@@ -75,13 +90,22 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "dreams-l006",
             "start": 23,
             "end": 41,
             "literal": "единадцать сноповъ"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "dreams-l006",
+              "start": 7,
+              "end": 41,
+              "literal": "Ано вашѣ вшитки единадцать сноповъ"
+            }
+          ],
+          "start_boundary_status": "visually_clear"
         },
         {
           "kind": "reported_manuscript_rubric",
@@ -94,13 +118,22 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "dreams-l015",
             "start": 31,
             "end": 47,
             "literal": "единайцять ясных"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "dreams-l015",
+              "start": 0,
+              "end": 47,
+              "literal": "оузяло сл҃нце и мс҃ць и звѣздъ единайцять ясных"
+            }
+          ],
+          "start_boundary_status": "uncertain"
         },
         {
           "kind": "lexical_gloss",
@@ -123,13 +156,22 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "dreams-l026",
             "start": 30,
             "end": 43,
             "literal": "еще болше его"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "dreams-l026",
+              "start": 0,
+              "end": 43,
+              "literal": "миналъ лагодне. І ѿ того часу еще болше его"
+            }
+          ],
+          "start_boundary_status": "uncertain"
         },
         {
           "kind": "lexical_gloss",
@@ -152,13 +194,28 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "journey-l007",
             "start": 0,
             "end": 19,
             "literal": "и вертай ся, дѣтино"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "journey-l006",
+              "start": 18,
+              "end": 50,
+              "literal": "братію свою, що ся з ними чинит,"
+            },
+            {
+              "line_id": "journey-l007",
+              "start": 0,
+              "end": 19,
+              "literal": "и вертай ся, дѣтино"
+            }
+          ],
+          "start_boundary_status": "visually_clear"
         }
       ]
     },
@@ -182,13 +239,28 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "narrative-l007",
             "start": 7,
             "end": 37,
             "literal": "за волосы ꙗко лютый звѣръ ꙗгня"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "narrative-l006",
+              "start": 50,
+              "end": 57,
+              "literal": "порвав-"
+            },
+            {
+              "line_id": "narrative-l007",
+              "start": 0,
+              "end": 37,
+              "literal": "ши его за волосы ꙗко лютый звѣръ ꙗгня"
+            }
+          ],
+          "start_boundary_status": "visually_clear"
         },
         {
           "kind": "reported_manuscript_rubric",
@@ -201,13 +273,28 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "narrative-l021",
             "start": 15,
             "end": 48,
             "literal": "закаменѣлый ср҃дца на него маючи."
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "narrative-l020",
+              "start": 54,
+              "end": 56,
+              "literal": "не"
+            },
+            {
+              "line_id": "narrative-l021",
+              "start": 0,
+              "end": 48,
+              "literal": "жалуют Іѡсифа, закаменѣлый ср҃дца на него маючи."
+            }
+          ],
+          "start_boundary_status": "uncertain"
         },
         {
           "kind": "reported_manuscript_rubric",
@@ -220,13 +307,22 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "narrative-l030",
             "start": 25,
             "end": 43,
             "literal": "и меншій нам грѣхъ"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "narrative-l030",
+              "start": 0,
+              "end": 43,
+              "literal": "ме, і ѡн там сам оумрет, и меншій нам грѣхъ"
+            }
+          ],
+          "start_boundary_status": "uncertain"
         }
       ]
     },
@@ -250,13 +346,28 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "narrative-l004",
             "start": 4,
             "end": 32,
             "literal": "видѣти лице мое и оутѣшатися"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "narrative-l003",
+              "start": 42,
+              "end": 55,
+              "literal": "нѣколи не бу-"
+            },
+            {
+              "line_id": "narrative-l004",
+              "start": 0,
+              "end": 32,
+              "literal": "деш видѣти лице мое и оутѣшатися"
+            }
+          ],
+          "start_boundary_status": "uncertain"
         },
         {
           "kind": "reported_manuscript_rubric",
@@ -269,13 +380,28 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "narrative-l013",
             "start": 20,
             "end": 33,
             "literal": "И так плакавъ"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "narrative-l012",
+              "start": 40,
+              "end": 52,
+              "literal": "еслибыс знав"
+            },
+            {
+              "line_id": "narrative-l013",
+              "start": 0,
+              "end": 33,
+              "literal": "такую мою погибел“. И так плакавъ"
+            }
+          ],
+          "start_boundary_status": "uncertain"
         },
         {
           "kind": "reported_manuscript_rubric",
@@ -288,13 +414,28 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "narrative-l023",
             "start": 25,
             "end": 35,
             "literal": "купили его"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "narrative-l022",
+              "start": 50,
+              "end": 58,
+              "literal": "Оувидѣв-"
+            },
+            {
+              "line_id": "narrative-l023",
+              "start": 0,
+              "end": 35,
+              "literal": "ши купцѣ ѡрока красного, купили его"
+            }
+          ],
+          "start_boundary_status": "uncertain"
         },
         {
           "kind": "reported_manuscript_rubric",
@@ -307,13 +448,22 @@
           "note_region_id": "rubric-note",
           "printed_rendition": "letter_spaced",
           "manuscript_rendition": "cinnabar_reported_by_franko",
-          "range_status": "terminal_fragment_only",
+          "range_status": "printed_extent_provisional",
           "observed_fragment": {
             "line_id": "narrative-l035",
             "start": 18,
             "end": 30,
             "literal": "иж то Іѡсифъ"
-          }
+          },
+          "extent_fragments": [
+            {
+              "line_id": "narrative-l035",
+              "start": 0,
+              "end": 30,
+              "literal": "Видѣвши то купцѣ, иж то Іѡсифъ"
+            }
+          ],
+          "start_boundary_status": "visually_clear"
         }
       ]
     }
