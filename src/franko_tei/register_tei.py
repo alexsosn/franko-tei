@@ -9,7 +9,7 @@ import json
 import re
 from xml.etree import ElementTree as ET
 
-from .pilot_tei import XML, tag, xml_id, render_pilot_tei
+from .pilot_tei import XML, tag, xml_id, render_pilot_tei, validate_single_draft
 
 ID = "{"+XML+"}id"
 KINDS = {
@@ -40,6 +40,9 @@ def _source_page(raw, annotation):
             payload["status"] == annotation["status"] == "agent_unverified" and
             annotation["kind"] == "comparative_register", "invalid source/annotation status")
     apostle = scan == 34
+    require(annotation["id"] == ("vol3-preface-canonical-apostle-register" if apostle
+                                 else "vol3-preface-seventy-disciples-comparison"),
+            "unexpected logical register ID")
     if apostle:
         require(annotation["schema_version"] == "printed-apostle-register-annotation-v1",
                 "wrong apostle annotation schema")
@@ -193,6 +196,11 @@ def render_register_tei(raw, annotation, width, height):
     prefix = f"v3-s{scan:05d}"
     root = ET.fromstring(render_pilot_tei(payload,width,height))
     div = root.find(".//"+tag("body")+"/"+tag("div"))
+    bibl = root.find(".//"+tag("sourceDesc")+"/"+tag("bibl"))
+    for name,value in (("Frozen-source-git-blob",page["source_record_blob"]),
+                       ("Frozen-source-commit",page["source_record_commit"]),
+                       ("Frozen-source-reader",page["source_reader_id"])):
+        ET.SubElement(bibl,tag("idno"),{"type":name}).text = value
     enc = root.find(".//"+tag("encodingDesc"))
     declaration = ET.SubElement(enc,tag("classDecl"))
     taxonomy = _element(declaration,"taxonomy",prefix+"-register-vocabulary",{})
@@ -263,6 +271,13 @@ def render_register_tei(raw, annotation, width, height):
             append_lines(cell,ids)
     require(not parts,"unassigned physical lines")
     return '<?xml version="1.0" encoding="UTF-8"?>\n'+ET.tostring(root,encoding="unicode")+"\n"
+
+
+def render_source_gated_register_tei(raw, annotation, images_root):
+    """Check original JPEG/manifest and render with verified image dimensions."""
+    payload = json.loads(raw)
+    measured = validate_single_draft(payload,images_root)
+    return render_register_tei(raw,annotation,measured["width"],measured["height"])
 
 
 def extract_register_source_lines(xml):
