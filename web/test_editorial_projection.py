@@ -47,6 +47,37 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
             self.assertTrue(any(p["volume"]=="4" and p["scan"]==68 for p in overlay["pages"]))
 
+    def test_unstamped_facsimile_is_published_and_searchable(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            page=next(p for p in overlay["pages"] if p["scan"]==24 and p["volume"]=="1")
+            self.assertEqual(page["suffix"],"alternate_reading_01")
+            raw=(ROOT/page["path"]).read_bytes()
+            self.assertEqual(page["blob"],blob_sha(raw))
+            rows={r["line_id"]:r for r in page["lines"]}
+            expected={"palaea-line-04":"зволених до читаня, але по просту канонїчних. Під назвою Палеї",
+                      "palaea-line-05":"звісні були в старій Руси два твори, що не мають іс собою нїчого"}
+            for identifier, literal in expected.items():
+                row=rows[identifier]
+                self.assertEqual(row["status"],"supplementary_correction")
+                self.assertEqual(row["text"],literal)
+                self.assertTrue(row["original"].endswith("…"))
+                self.assertTrue(row["obscured_on_pinned_scan"])
+                self.assertEqual(row["language_spans"][0]["end"],len(literal))
+                self.assertEqual(row["language_spans"][0]["language"],"uk")
+                self.assertNotIn("contributor_id",row)
+            entries=json.loads((output/"vol1.json").read_text())["entries"]
+            matches=[x for x in entries if x["scan"]==24 and x["suffix"]==page["suffix"]]
+            self.assertEqual(len(matches),2)
+            corrected=next(x for x in matches if x.get("reviewed"))
+            original=next(x for x in matches if not x.get("reviewed"))
+            for literal in expected.values():
+                self.assertIn(literal,corrected["text"])
+                self.assertNotIn(literal,original["text"])
+            self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
+
     def test_coverage_snapshot_counts_physical_scans_not_search_versions(self):
         from franko_tei.pilot_batch import discover_readings
         from collections import Counter
