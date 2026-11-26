@@ -74,6 +74,16 @@ class EditorialTEITests(unittest.TestCase):
         with self.assertRaises(ValueError):
             render_editorial_tei(RAW,PATH,ledger,W,H,"main")
 
+    def test_export_cannot_bypass_accepted_base_by_selecting_peer(self):
+        from franko_tei.review_tei import render_editorial_tei
+        from pathlib import Path
+        r=record()
+        ledger=validate_ledger([r],[decision(r)],load_source)
+        alt="pilot/vol1_scan00020_alternate_reading_01.json"
+        raw=(Path(__file__).resolve().parents[1]/alt).read_bytes()
+        with self.assertRaisesRegex(ValueError,"accepted.*candidate"):
+            render_editorial_tei(raw,alt,ledger,W,H,REV)
+
     def test_checkout_rejects_extra_or_modified_review_records(self):
         import hashlib
         import subprocess

@@ -40,8 +40,8 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
           set -euo pipefail
-          if ! git diff --quiet "$BASE" HEAD -- src/franko_tei/review_tei.py tests/test_review_tei.py tests/live_review_tei.py reviews; then
-            python -m pip install 'lxml>=5,<7'
+          if ! git diff --quiet "$BASE" HEAD -- src/franko_tei/review_tei.py src/franko_tei/review_tf.py src/franko_tei/pilot_tf.py src/franko_tei/pilot_tf_batch.py tests/test_review_tei.py tests/live_review_tei.py reviews; then
+            python -m pip install 'lxml>=5,<7' -e '.[tf]'
             python tests/live_review_tei.py
           fi
       - run: franko-tei catalog > /dev/null
