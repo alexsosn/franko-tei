@@ -450,7 +450,8 @@ class ReviewSmoke(unittest.TestCase):
         def links(index):
             key = json.dumps(data['2']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
             return {link['id']: link for link in refs['2'].get(key, [])}
-        self.assertEqual(links(28)['ECCA 611']['relation'], 'edition-match')
+        self.assertEqual(links(28)['ECCA 611']['relation'], 'work-family')
+        self.assertIn('does not directly cite', links(28)['ECCA 611']['evidence'])
         for index in (29, 30, 31, 33, 34, 35, 36, 37, 41):
             self.assertEqual(links(index)['ECCA 611']['relation'], 'work-family')
         self.assertEqual(links(35)['ECCA 545']['relation'], 'work-family')
