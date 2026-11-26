@@ -18,7 +18,7 @@
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
     "instructions": "Read pinned original image without OCR or same-page peer text. Physical lines, contextual language spans, printed spelling, notes, estimated geometry. Historical typography provisional; preserve apparatus markers separately.",
-    "raw_response": "LXXVIII\nрелїґійних поглядів та вірувань, чи загалом розвій нар. духового\nжитя. Пізнанє того, що внесли апокріфи в наше народнє житє,\nє конче потрібне для пізнаня самої сути народности.\nНа сьому ми й закінчуємо свою передмову. Деякі детальні\nрозвідки, обіцяні в примітках до поодиноких текстів (стор. 98\nі 274 нота 1), а також опис рукописів, із яких узято більшість тек-\nстів сего тома, лишаємо до иньшої нагоди.",
+    "raw_response": "LXXVIII\nрелїґійних поглядів та вірувань, чи загалом розвій нар. духового\nжитя. Пізнанє того, що внесли апокріфи в наше народнє житє,\nє конче потрібне для пізнаня самої сути народности.\nНа сьому ми й закінчуємо свою передмову. Деякі детальні\nрозвідки, обіцяні в примітках до поодиноких текстів (стор. 98\nі 274 нота 1), а також опис рукописів, із яких узято більшину тек-\nстів сего тома, лишаємо до иньшої нагоди.",
     "coverage": {
       "entire_image_inspected": true,
       "nontext_areas": [
@@ -195,12 +195,12 @@
           },
           {
             "id": "preface-end-line-06",
-            "text": "і 274 нота 1), а також опис рукописів, із яких узято більшість тек-",
+            "text": "і 274 нота 1), а також опис рукописів, із яких узято більшину тек-",
             "language_spans": [
               {
                 "text_version": "gpt62-ii-82-image-20261126",
                 "start": 0,
-                "end": 67,
+                "end": 66,
                 "language": "uk",
                 "script": "Cyrl",
                 "uncertain": false
@@ -238,6 +238,12 @@
         ]
       }
     ],
-    "uncertainty_notes": []
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-end-line-06",
+        "reading": "більшину",
+        "reason": "Printed word provisionally read as більшину; verify exact letters."
+      }
+    ]
   }
 }
