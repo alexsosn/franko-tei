@@ -77,7 +77,7 @@ def _zones(surface):
     return zones
 
 
-def _get_text_lines(ab, seen):
+def _get_text_lines(ab, seen, allow_source_notes=False):
     if ab.text and ab.text.strip():
         raise ValueError('unanchored transcription text before line break')
     lines=[]; current=None
@@ -95,13 +95,24 @@ def _get_text_lines(ab, seen):
             if current is None:
                 raise ValueError('segment without physical line anchor')
             if list(child):
-                raise ValueError('nested markup in pilot language span is not supported')
+                if (not allow_source_notes or len(child) != 1
+                        or child[0].tag != tag('ref')
+                        or child[0].get('type') != 'source-footnote-reference'
+                        or len(child[0]) or not child[0].text
+                        or not child[0].get('target','').startswith('#')):
+                    raise ValueError('nested markup in pilot language span is not supported')
+                ref=child[0]
+                _required_id(ref,'source note reference',seen)
+                if 'note_target' in current:
+                    raise ValueError('multiple source note references per line')
+                current['note_target']=ref.get('target')[1:]
             sid=_required_id(child,'language span',seen)
             if child.get('type')!='language-attribution':
                 raise ValueError('unexpected language span type')
-            if not child.text:
+            literal=''.join(child.itertext())
+            if not literal:
                 raise ValueError('empty language span')
-            current['parts'].append({'text':child.text,'seg':{
+            current['parts'].append({'text':literal,'seg':{
                 'id':sid,'lang':child.get(LANG), 'script':child.get('subtype'),
                 'uncertain':int(child.get('cert')=='low')}})
             if child.tail:
@@ -134,7 +145,7 @@ def _read_source(root):
     return image_sha,pdf_sha
 
 
-def build_tf_graph(xml):
+def build_tf_graph(xml, *, allow_source_notes=False):
     root=ET.fromstring(xml)
     if root.tag!=tag('TEI'):
         raise ValueError('expected TEI P5 namespace')
@@ -169,7 +180,7 @@ def build_tf_graph(xml):
             raise ValueError('unanchored transcription text after a page element')
         if child.tag==tag('pb') and (child.text or len(child)):
             raise ValueError('physical page break must not contain transcription text')
-    children=[ch for ch in page if ch.tag==tag('ab')]
+    children=[ch for ch in page if ch.tag==tag('ab') or (allow_source_notes and ch.tag==tag('note') and ch.get('type')=='source-footnote')]
     if not children or any(ch.tag not in (tag('ab'),tag('pb'),tag('note')) for ch in page):
         raise ValueError('unsupported page structure')
     # First collect glyph slots, then allocate non-slot nodes in type groups.
@@ -177,14 +188,14 @@ def build_tf_graph(xml):
     line_by_id={}; page_slots=[]
     for ab in children:
         region_id=_required_id(ab,'region',seen)
-        kind=ab.get('type')
+        kind='note' if ab.tag==tag('note') else ab.get('type')
         if not kind or not ab.get('facs','').startswith('#'):
             raise ValueError('region type/facsimile reference required')
         zone_id=ab.get('facs')[1:]
         if zone_id not in zones or zones[zone_id]['parent'] is not None:
             raise ValueError('region facsimile zone must be a top-level zone')
         region_slots=[]
-        for line in _get_text_lines(ab,seen):
+        for line in _get_text_lines(ab,seen,allow_source_notes):
             line_zone=line['facs'][1:] if line['facs'] and line['facs'].startswith('#') else None
             if line_zone not in zones or zones[line_zone]['parent'] != zone_id:
                 raise ValueError('physical line facsimile zone must belong to its region parent')
@@ -204,7 +215,7 @@ def build_tf_graph(xml):
             line_slots=set(range(begin,end+1))
             if not line_slots:
                 raise ValueError('line with zero slots')
-            line_entries.append({'id':line['id'],'slots':line_slots,'zone':zones[line_zone]})
+            line_entries.append({'id':line['id'],'slots':line_slots,'zone':zones[line_zone], 'note_target':line.get('note_target')})
             line_by_id[line['id']]=line_slots
             region_slots.extend(range(begin,end+1))
         if not region_slots:
@@ -214,7 +225,13 @@ def build_tf_graph(xml):
     if not page_slots or len(page_slots)!=len(glyph):
         raise ValueError('source slots are not contiguous')
     notes=[]
+    note_ids={ab.get(ID) for ab in children if ab.tag==tag('note')}
+    linked_targets=[entry['note_target'] for entry in line_entries if entry['note_target'] is not None]
+    if set(linked_targets)!=note_ids or len(linked_targets)!=len(note_ids):
+        raise ValueError('source footnote target missing or ambiguous')
     for note in page.findall(tag('note')):
+        if allow_source_notes and note.get('type')=='source-footnote':
+            continue
         nid=_required_id(note,'agent uncertainty',seen)
         if note.get('type')!='agent-reading-uncertainty' or not note.get('corresp','').startswith('#'):
             raise ValueError('invalid uncertainty note')
@@ -248,6 +265,7 @@ def build_tf_graph(xml):
     for entry in line_entries:
         n=non_slot('line',entry)
         feature('lineId',n,entry['id'])
+        feature('sourceNoteTarget',n,entry['note_target'])
         for key in ('x','y','w','h'):
             feature(key,n,entry['zone'][key])
         feature('geometryEstimated',n,int(entry['zone']['estimated']))

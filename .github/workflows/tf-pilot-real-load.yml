@@ -2,6 +2,10 @@ name: "Real pilot TEI to Text-Fabric: Unicode and provenance roundtrip"
 on:
   pull_request:
     paths:
+      - src/franko_tei/supplementary.py
+      - tests/test_supplementary_export.py
+      - tests/live_supplementary_export.py
+      - pilot/reviews/*_unstamped_facs_*.json
       - src/franko_tei/pilot_tf.py
       - src/franko_tei/pilot_tei.py
       - pilot/vol4_scan00100_single_reading.json
@@ -17,6 +21,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -65,6 +71,10 @@ jobs:
           assert 'ѣ' in ''.join(seen) and 'ї' in ''.join(seen)
           print('PASS: actual Text-Fabric API loaded 13 lines, 1 page; exact Unicode/source roundtrip and queries')
           PY
+      - name: Source-gated supplementary TEI P5 and real TF load
+        run: |
+          python -m pip install 'lxml>=5,<7'
+          python tests/live_supplementary_export.py
       - name: Store experimental TF features only, not images
         uses: actions/upload-artifact@v4
         with:
