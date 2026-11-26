@@ -273,6 +273,45 @@ class AdjudicationTests(unittest.TestCase):
             with self.subTest(old=old, new=new), self.assertRaises(ValueError):
                 apparatus_mapping(old, new)
 
+    def test_fixed_position_glossary_marker_spelling(self):
+        from franko_tei.review_adjudication import apparatus_mapping
+        for old, new, marker in (
+            ("его зевръ³³⁶) есть, бываетъ ж[е] при врезе горы наречаемыя",
+             "его зекръ³³⁶) есть, бываетъ ж[е] при врезе горы наречаемыя", "³³⁶)"),
+            ("И показа ему древо не гнїющее клеутнонъ³²), и рече ему: в сем",
+             "И показа ему древо не гнїющее клехтнонъ³²), и рече ему: в сем", "³²)"),
+            ("створю, ꙗко умножи ся прелесть варна⁵) на земли, то ти не бы",
+             "створю, ꙗко умножи ся прелесть варил⁵) на земли, то ти не бы", "⁵)"),
+        ):
+            with self.subTest(old=old):
+                mapping = apparatus_mapping(old, new)
+                self.assertEqual(len(mapping), 1)
+                m = mapping[0]
+                self.assertEqual(m["literal"], marker)
+                self.assertEqual(m["source_start"], m["start"])
+                self.assertEqual(m["source_end"], m["end"])
+                self.assertEqual(old[m["start"]:m["end"]], marker)
+                self.assertEqual(new[m["start"]:m["end"]], marker)
+
+    def test_fixed_position_spelling_refuses_structural_changes(self):
+        from franko_tei.review_adjudication import apparatus_mapping
+        for old, new in (
+            ("его зевръ³³⁶) есть", "его зекръ³³⁷) есть"),
+            ("его зевръ³³⁶) есть", "его зекр³³⁶) есть"),
+            ("его зевръ³³⁶) есть", "его зекръ ³³⁶) есть"),
+            ("его зевръ³³⁶) есть", "его зекръ³³⁶) естъ"),
+            ("зевръ³³⁶) зевръ", "зекръ³³⁶) зевръ"),
+            ("зевръ³³⁶) зекръ", "зекръ³³⁶) зекръ"),
+            ("зевръ³³⁶) зекръ", "зевръ зекръ³³⁶)"),
+            ("его зевръ³³⁶) есть", "его зе,ръ³³⁶) есть"),
+            ("его зевръ³³⁶) есть", "его зеkръ³³⁶) есть"),
+            ("его зевръ³³⁶) есть", "его з҃връ³³⁶) есть"),
+            ("зевръ³³⁶) варна⁵)", "зекръ³³⁶) варил⁵)"),
+            ("его зевръ³³⁶) есть", "его другъ³³⁶) есть"),
+        ):
+            with self.subTest(old=old, new=new), self.assertRaises(ValueError):
+                apparatus_mapping(old, new)
+
     def test_apparatus_anchor_ambiguity(self):
         from franko_tei.review_adjudication import apparatus_mapping
         for old,new in (("Адам⁵) Адам", "Адам Адам⁵)"),
