@@ -96,7 +96,12 @@ class EditorialProjectionTests(unittest.TestCase):
                 self.assertTrue(any(x.get("reviewed") and x["scan"]==scan and literal in x["text"] for x in rows))
             indexes=json.loads((output/"printed-indexes.json").read_text())
             entry=next(e for e in indexes["sections"][0]["entries"] if e["label"]=="Ахатис камінь")
-            self.assertEqual([r["literal"] for r in entry["refs"]],["215"])
+            self.assertEqual([r["literal"] for r in entry["refs"]],["245"])
+            self.assertEqual(entry["refs"][0]["printed_literal"],"215")
+            self.assertEqual(entry["refs"][0]["role"],"editorial_citation")
+            self.assertEqual(entry["refs"][0]["targets"],[{"page":245,"scan":320}])
+            self.assertEqual(entry["refs"][0]["evidence"]["line_id"],"moses-apparatus-l021")
+            self.assertIn("ахатисъ",entry["refs"][0]["evidence"]["text"])
 
     def test_i34_and_iv18_photo_readings(self):
         with tempfile.TemporaryDirectory() as tmp:
