@@ -159,6 +159,14 @@ a complete corpus-wide audit.
   from same number alone. Record ambiguous/dangling links separately.
   Existing code restrictions on multiple markers and cross-page cases
   must be addressed by #170/#281, not by falsifying a single link.
+- When one physical note region contains several distinct printed notes,
+  identify logical entries separately using ordered literal line fragments
+  and volume/scan-qualified IDs. See the [I/157–216 source annotation](../pilot/structure/vol1_editorial_note_entries.json)
+  and #366. Each marker occurrence targets a logical entry, not the entire
+  physical region. Record mismatching labels and unlinked entries explicitly;
+  never force a target by matching a suffix of a longer asterisk marker.
+  This source-bound overlay is provisional annotation only; do not duplicate
+  it in candidate links or claim it is already projected to TEI/TF/viewer.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
   sigla and reported readings; resolve witness identity only with
