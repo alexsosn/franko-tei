@@ -98,6 +98,38 @@ class EditorialProjectionTests(unittest.TestCase):
             entry=next(e for e in indexes["sections"][0]["entries"] if e["label"]=="Ахатис камінь")
             self.assertEqual([r["literal"] for r in entry["refs"]],["215"])
 
+    def test_partial_facsimile_fails_closed(self):
+        import copy
+        import shutil
+        from build_search import supplementary_partial_pages
+        rel="reviews/vol2_scan00019_unstamped_facs_20261126.json"
+        audit=json.loads((ROOT/"pilot"/rel).read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot=Path(tmp)
+            source=audit["source"]["path"]
+            shutil.copyfile(ROOT/source,pilot/Path(source).name)
+            dest=pilot/rel
+            dest.parent.mkdir()
+            def put(d):
+                dest.write_text(json.dumps(d,ensure_ascii=False),encoding="utf-8")
+            put(audit)
+            self.assertEqual(len(supplementary_partial_pages(pilot,REF)),1)
+            for mutate in (
+                lambda d:d["source"].update(blob="0"*40),
+                lambda d:d["pinned_image"].update(sha256="0"*64),
+                lambda d:d["photographs"].clear(),
+                lambda d:d["rows"].pop(0),
+                lambda d:d["rows"][0].update(original="different"),
+                lambda d:d["rows"][0].update(obscured_on_pinned_scan=False),
+                lambda d:d["rows"][0].update(photo_reading="invented text"),
+                lambda d:d["rows"][0]["language_spans"][1].update(start=0),
+            ):
+                damaged=copy.deepcopy(audit)
+                mutate(damaged)
+                put(damaged)
+                with self.assertRaises(ValueError):
+                    supplementary_partial_pages(pilot,REF)
+
     def test_supplementary_rejects_mismatched_evidence(self):
         import copy
         import shutil
@@ -202,6 +234,19 @@ class EditorialProjectionTests(unittest.TestCase):
                         }
                         return checkedEditorial(copy,d,p.blob,p.path)===null;
                     }""",[reviewed,source,mutation]),mutation)
+                for supplement in overlay["pages"]:
+                    if (supplement["volume"],supplement["scan"]) not in {("2",19),("4",19),("1",418)}:
+                        continue
+                    draft=json.loads((ROOT/supplement["path"]).read_text())
+                    self.assertTrue(page.evaluate("""([p,d])=>{
+                        const checked=checkedEditorial(p,d,p.blob,p.path);
+                        return checked!==null&&checked.size===p.lines.length;
+                    }""",[supplement,draft]))
+                    self.assertTrue(page.evaluate("""([p,d])=>{
+                        p=structuredClone(p);
+                        p.lines[0].language_spans[0].end=0;
+                        return checkedEditorial(p,d,p.blob,p.path)===null;
+                    }""",[supplement,draft]))
                 stale=True
                 page.reload()
                 expect(page.locator("#editorialNotice")).to_contain_text("source")
