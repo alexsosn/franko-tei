@@ -8189,6 +8189,10 @@ function appendIndexRef(node,ref){
   }
   if(!pages.length){appendIndexTarget(node,null,undefined,ref.literal);return;}
   const d=document.createElement('details'),s=document.createElement('summary');s.textContent=ref.literal;
+  if(ref.role==='editorial_citation'&&typeof ref.printed_literal==='string'){
+    s.title=ref.printed_literal?indexText('Printed index reads ','У покажчику читається ')+ref.printed_literal:indexText('No number in source index; destination attested in text','Номер у покажчику відсутній; місце засвідчено в тексті');
+    s.setAttribute('aria-label',ref.literal+' — '+s.title);
+  }
   const group=document.createElement('div');group.className='index-refs';
   for(const p of pages)appendIndexTarget(group,p,targets.get(p)?.scan,String(p),targets.get(p));
   d.append(s,group);node.append(d);
