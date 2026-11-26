@@ -147,6 +147,22 @@
               {
                 "text_version": "gpt62-i153-first-image-20261125",
                 "start": 0,
+                "end": 26,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-i153-first-image-20261125",
+                "start": 26,
+                "end": 28,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i153-first-image-20261125",
+                "start": 28,
                 "end": 60,
                 "language": "cu",
                 "script": "Cyrl",
@@ -1577,6 +1593,14 @@
               {
                 "text_version": "gpt62-i153-first-image-20261125",
                 "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-i153-first-image-20261125",
+                "start": 2,
                 "end": 73,
                 "language": "uk",
                 "script": "Cyrl",
@@ -1835,6 +1859,14 @@
       "scope": "Language/script metadata only; text, geometry, line IDs, raw response and uncertainty notes unchanged.",
       "policy": "Contiguous Unicode code-point intervals; cu historical Church Slavonic dominant register uncertain; uk editorial Ukrainian; ru Russian bibliographical titles provisionally; la Latin citations and apparatus terms; de German bibliographical titles; null manuscript sigla and isolated Latin-script names. Numeric-only furniture remains untagged.",
       "notes": "Church Slavonic variants, Ukrainian apparatus instructions and omission footnote, Latin vac. and nullable sigla separated."
-    }
+    },
+    "source_note_links": [
+      {
+        "marker_line_id": "witness-b-babel-end-l004",
+        "marker_text": "*)",
+        "marker_start": 26,
+        "note_region_id": "editorial-omission"
+      }
+    ]
   }
 }
