@@ -1,0 +1,160 @@
+{
+  "schema_version": "printed-manuscript-damage-annotation-v1",
+  "id": "vol1-teslevets-joseph-manuscript-damage-245",
+  "kind": "printed_editorial_interventions",
+  "volume": "1",
+  "scan_page": 245,
+  "printed_page": "170",
+  "status": "agent_unverified",
+  "source_pilot_path": "pilot/vol1_scan00245_single_reading.json",
+  "source_record_commit": "90c813c4c107618e450e36e2f5285981a7dda368",
+  "source_record_blob": "bb010d2266baa1be2b7c3d86bd2a6cd1c94e0f5a",
+  "source_reader_id": "gpt62-i245-first-image-20261125",
+  "source_image_sha256": "02e54d6c9007a9b53c9061e3a154d0c05671bc1e3b300375f985d1fcf9b40fea",
+  "description": "Printed evidence on p.170. Franko explains dotted places as faded or crumbled manuscript material and specifies a completely unreadable cinnabar line for the separate double-asterisk note. Dot counts in the working transcription are approximate and do not measure lost characters. The general note applies to dotted places on this page; only the marked occurrence carries its literal reference. Bracketed readable text and sic remain separate printed interventions, without conjectural restoration or assigning their authorship. The manuscript itself was not inspected.",
+  "interventions": [
+    {
+      "printed_span": {
+        "line_id": "narrative-l005",
+        "start": 9,
+        "end": 15,
+        "literal": "[ровъ]"
+      },
+      "kind": "printed_bracketed_text"
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l006",
+        "start": 8,
+        "end": 22,
+        "literal": "[............]"
+      },
+      "kind": "reported_manuscript_loss",
+      "dot_span": {
+        "start": 9,
+        "end": 21,
+        "literal": "............"
+      },
+      "note_region_id": "lacuna-note",
+      "extent_status": "unknown"
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l007",
+        "start": 0,
+        "end": 25,
+        "literal": "[.......................]"
+      },
+      "kind": "reported_manuscript_loss",
+      "dot_span": {
+        "start": 1,
+        "end": 24,
+        "literal": "......................."
+      },
+      "note_region_id": "lacuna-note",
+      "extent_status": "unknown",
+      "marker": {
+        "start": 25,
+        "end": 27,
+        "literal": "*)"
+      }
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l015",
+        "start": 16,
+        "end": 22,
+        "literal": "[sic!]"
+      },
+      "kind": "printed_sic"
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l022",
+        "start": 12,
+        "end": 15,
+        "literal": "[А]"
+      },
+      "kind": "printed_bracketed_text"
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l023",
+        "start": 4,
+        "end": 8,
+        "literal": "[по]"
+      },
+      "kind": "printed_bracketed_text"
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l023",
+        "start": 52,
+        "end": 58,
+        "literal": "[своє]"
+      },
+      "kind": "printed_bracketed_text"
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l024",
+        "start": 41,
+        "end": 49,
+        "literal": "[......]"
+      },
+      "kind": "reported_manuscript_loss",
+      "dot_span": {
+        "start": 42,
+        "end": 48,
+        "literal": "......"
+      },
+      "note_region_id": "lacuna-note",
+      "extent_status": "unknown"
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l025",
+        "start": 25,
+        "end": 49,
+        "literal": "[арка .................]"
+      },
+      "kind": "reported_manuscript_loss",
+      "dot_span": {
+        "start": 31,
+        "end": 48,
+        "literal": "................."
+      },
+      "note_region_id": "lacuna-note",
+      "extent_status": "unknown",
+      "bracketed_text_span": {
+        "start": 26,
+        "end": 30,
+        "literal": "арка"
+      }
+    },
+    {
+      "printed_span": {
+        "line_id": "narrative-l030",
+        "start": 56,
+        "end": 67,
+        "literal": "[**)......]"
+      },
+      "kind": "reported_faded_rubric",
+      "dot_span": {
+        "start": 60,
+        "end": 66,
+        "literal": "......"
+      },
+      "note_region_id": "cinnabar-note",
+      "reported_extent": {
+        "unit": "manuscript_line",
+        "quantity": 1
+      },
+      "marker": {
+        "start": 57,
+        "end": 60,
+        "literal": "**)"
+      }
+    }
+  ]
+}
