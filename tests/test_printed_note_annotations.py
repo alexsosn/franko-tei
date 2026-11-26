@@ -414,3 +414,59 @@ class NumberedApparatusTests(unittest.TestCase):
         note["lines"][-1]["text"] += "!"
         with self.assertRaises(AssertionError):
             self.check_block(block, bad)
+
+
+    def test_noah_c_paired_and_unresolved_markers(self):
+        block = json.loads((ROOT / "pilot/structure/vol1_noah_c_apparatus.json").read_text(
+            encoding="utf-8"))
+        sources = self.load_sources(block)
+        self.check_block(block, sources, paired=True)
+        self.assertEqual(block["id"], "v1-noah-viii-c")
+        self.assertEqual([p["scan_page"] for p in block["pages"]], [147, 148, 149])
+        self.assertEqual([p["body_region_ids"] for p in block["pages"]], [
+            ["witness-c-covenant", "witness-c-vineyard", "witness-c-prophecy"],
+            ["witness-c-prophecy-end"], []])
+        self.assertEqual([p["apparatus_region_ids"] for p in block["pages"]],
+                         [[], ["witness-c-apparatus"], []])
+        self.assertEqual(block["scope"]["heading"]["region_id"], "witness-c-label")
+        self.assertEqual(block["scope"]["next_heading"]["region_id"], "section-ix")
+        self.assertEqual([e["number"] for e in block["entries"]], list(range(1, 25)))
+        self.assertEqual(block["entries"][4]["label"], "⁵—⁵)")
+        self.assertEqual(len(block["links"]), 24)
+        pair = [l for l in block["links"] if l["target_entry_id"] ==
+                block["entries"][4]["id"]]
+        self.assertEqual([l["role"] for l in pair], ["range_start", "range_end"])
+        self.assertEqual([l["marker"]["literal"] for l in pair], ["⁵—", "⁵)"])
+        bare = next(l for l in block["links"] if l["marker"]["literal"] == "¹²")
+        self.assertEqual(bare["target_entry_id"], block["entries"][11]["id"])
+        self.assertEqual(bare["role"], "single")
+        self.assertEqual(block["unlinked_entry_ids"],
+                         [block["entries"][9]["id"], block["entries"][15]["id"]])
+        unresolved = [l for l in block["links"] if l["status"] != "resolved"]
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["marker"]["literal"], "¹⁰)")
+        self.assertIsNone(unresolved[0]["target_entry_id"])
+
+    def test_paired_apparatus_adversarial_mutations(self):
+        import copy
+        block = json.loads((ROOT / "pilot/structure/vol1_noah_c_apparatus.json").read_text(
+            encoding="utf-8"))
+        sources = self.load_sources(block)
+        self.check_block(block, sources, paired=True)
+        def pair_end(b):
+            return next(l for l in b["links"] if l["role"] == "range_end")
+        def unresolved(b):
+            return next(l for l in b["links"] if l["status"] != "resolved")
+        mutations = [
+            lambda b: pair_end(b).update(role="range_start"),
+            lambda b: pair_end(b).update(target_entry_id=b["entries"][3]["id"]),
+            lambda b: unresolved(b).update(target_entry_id=b["entries"][9]["id"]),
+            lambda b: b["unlinked_entry_ids"].pop(),
+            lambda b: b["entries"][4].update(label="⁵)"),
+            lambda b: b["links"].pop(),
+        ]
+        for change in mutations:
+            bad = copy.deepcopy(block)
+            change(bad)
+            with self.assertRaises(AssertionError):
+                self.check_block(bad, sources, paired=True)
