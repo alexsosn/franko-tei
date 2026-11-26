@@ -374,7 +374,15 @@ class NumberedApparatusTests(unittest.TestCase):
                    marker["end"], marker["literal"])
             markers.append(key)
             if paired and link["status"] != "resolved":
-                self.assertEqual(link["status"], "unresolved_marker_mismatch")
+                number = int(marker["literal"].rstrip(")—").translate(self.DIGITS))
+                if link["status"] == "unresolved_missing_entry":
+                    self.assertTrue(occurrence_labels)
+                    self.assertNotIn(number, label_counts,
+                                     "missing-entry status requires an absent article number")
+                else:
+                    self.assertEqual(link["status"], "unresolved_marker_mismatch")
+                    self.assertIn(number, label_counts,
+                                  "marker mismatch differs from a missing printed entry")
                 self.assertIsNone(link["target_entry_id"])
                 self.assertEqual(link["role"], "unresolved")
                 self.assertTrue(link["reason"].strip())
