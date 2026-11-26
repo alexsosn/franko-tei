@@ -1,0 +1,987 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 97,
+  "printed_page_observed": "11",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00097.jpg",
+  "source_image_sha256": "fbe7d48d555ae7a1e6773ccfaa9dee1c209529842db2adddc56b97fd0ea291b2",
+  "reading": {
+    "reader_id": "gpt62-v3-s00097-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-91-100-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical Cyrillic and textual gaps, language spans and editorial notes; Arabic footnote references outside CU. Exact diacritics and glyphs provisional; estimated geometry.",
+    "raw_response": "11\nдимо твір пз. „Климентово ученіе“ або „Климентово учительство“,\nпід яким треба розуміти збірку канонїчних постанов і приписів,\nбуцїм то апостольських, списаних апостольським учеником Климен-\nтом і звісних у лїтературі під назвою „Апостольські конституції“\nта „Апостольські канони“. Сей твір, зложений остаточно в V в. по\nХр., має в собі части далеко давнїйші, хоч сумнївно, чи містить\nтакож деякі останки безпосередньої апостольської традиції. Див.\nFr. Xav. Funk, Die Apostolischen Konstitutionen. Rottenberg 1891,\nа також Hans Achelis, Apostolische Konstitutionen und Kanones\n(Realencyklop. f. pr. Th. und K. I, 734—741). Отсей уступ винятий із\nтзв. Канона сьв. апостолів, доданого до VIII кн. Конституцій. Чи\nбули ті „Конституції“ в повнї перекладені на церковно-славянську\nмову, не знаємо. До нас, здаєть ся, не дійшов (бодай доси не від-\nнайдений) анї один повний рукопис такого перекладу. Та з другого\nбоку за істнованєм такого перекладу промовляє не тільки те, що\nна апостольські устави часто покликаєть ся наш Іван Вишенський\nпри кінцї XVI в., але також поміщені в Рязанській Кормчій „Во-\nпросы Іоанна мниха молчальника къ патріарху Николѣ цареград-\nскому“, де в пунктї 19-тім читаємо: „Вопросъ: Аще подобаетъ\nиже Климентомъ исписаныя книги апостольскія 8-ры почитати и\nхранити? також и святаго Нифонта житіе? Отвѣтъ: Ни, понеже\nвъ различныхъ мѣстѣхъ развращено есть святаго Нифонта житіе,\nнѣ прияхомъ его, яко не предано бысть. Апостольскія же заповѣди\nКлиментомъ исписаные подобаетъ чести, но не предъ всѣми, мно-\nгыхъ ради немощи, рекше неразумія“ (Пыпинъ, Для объясне-\nнія статьи о ложныхъ книгахъ. Лѣтоп. I, 18). Правда, і тут можна\nби сказати, що статя в Рязанській Кормчій перекладена з грець-\nкого, так що згадка про апостольські заповіді в 8 книгах списані\nбуцїм то Климентом зовсїм іще не доказує істнованя церковно-\nславянського перекладу всего твору. Так само Іван Вишенський,\nживучи на Афонї, міг сяк чи так познайомити ся з сим апокріфом\nу грецькім оріґіналї. Та про те нема сумнїву, що деякі части того\nтвору були звісні і в церковно-славянськім перекладї, і, як бачимо,\nвиривки з него війшли навіть у склад Прольоґа, хоча в друкованих\nПрольоґах не знаходять ся, а також у склад Кормчих книг та Но-\nмоканонів.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            459,
+            1543,
+            302,
+            13
+          ],
+          "description": "Printed decorative tailpiece."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1051,
+          100,
+          44,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "11",
+            "bbox_xywh": [
+              1051,
+              100,
+              44,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          132,
+          168,
+          972,
+          1278
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "димо твір пз. „Климентово ученіе“ або „Климентово учительство“,",
+            "bbox_xywh": [
+              132,
+              168,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 15,
+                "end": 32,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 32,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 39,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 61,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "під яким треба розуміти збірку канонїчних постанов і приписів,",
+            "bbox_xywh": [
+              132,
+              203,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "буцїм то апостольських, списаних апостольським учеником Климен-",
+            "bbox_xywh": [
+              132,
+              239,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-04",
+            "text": "том і звісних у лїтературі під назвою „Апостольські конституції“",
+            "bbox_xywh": [
+              132,
+              274,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-05",
+            "text": "та „Апостольські канони“. Сей твір, зложений остаточно в V в. по",
+            "bbox_xywh": [
+              132,
+              310,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-06",
+            "text": "Хр., має в собі части далеко давнїйші, хоч сумнївно, чи містить",
+            "bbox_xywh": [
+              132,
+              345,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-07",
+            "text": "також деякі останки безпосередньої апостольської традиції. Див.",
+            "bbox_xywh": [
+              132,
+              381,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-08",
+            "text": "Fr. Xav. Funk, Die Apostolischen Konstitutionen. Rottenberg 1891,",
+            "bbox_xywh": [
+              132,
+              416,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 64,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-09",
+            "text": "а також Hans Achelis, Apostolische Konstitutionen und Kanones",
+            "bbox_xywh": [
+              132,
+              452,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 8,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-10",
+            "text": "(Realencyklop. f. pr. Th. und K. I, 734—741). Отсей уступ винятий із",
+            "bbox_xywh": [
+              132,
+              487,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 1,
+                "end": 43,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 43,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-11",
+            "text": "тзв. Канона сьв. апостолів, доданого до VIII кн. Конституцій. Чи",
+            "bbox_xywh": [
+              132,
+              523,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-12",
+            "text": "були ті „Конституції“ в повнї перекладені на церковно-славянську",
+            "bbox_xywh": [
+              132,
+              558,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-13",
+            "text": "мову, не знаємо. До нас, здаєть ся, не дійшов (бодай доси не від-",
+            "bbox_xywh": [
+              132,
+              594,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-14",
+            "text": "найдений) анї один повний рукопис такого перекладу. Та з другого",
+            "bbox_xywh": [
+              132,
+              629,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-15",
+            "text": "боку за істнованєм такого перекладу промовляє не тільки те, що",
+            "bbox_xywh": [
+              132,
+              665,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-16",
+            "text": "на апостольські устави часто покликаєть ся наш Іван Вишенський",
+            "bbox_xywh": [
+              132,
+              700,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-17",
+            "text": "при кінцї XVI в., але також поміщені в Рязанській Кормчій „Во-",
+            "bbox_xywh": [
+              132,
+              736,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 59,
+                "end": 62,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-18",
+            "text": "просы Іоанна мниха молчальника къ патріарху Николѣ цареград-",
+            "bbox_xywh": [
+              132,
+              771,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-19",
+            "text": "скому“, де в пунктї 19-тім читаємо: „Вопросъ: Аще подобаетъ",
+            "bbox_xywh": [
+              132,
+              807,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 5,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 5,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 37,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-20",
+            "text": "иже Климентомъ исписаныя книги апостольскія 8-ры почитати и",
+            "bbox_xywh": [
+              132,
+              842,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-21",
+            "text": "хранити? також и святаго Нифонта житіе? Отвѣтъ: Ни, понеже",
+            "bbox_xywh": [
+              132,
+              878,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-22",
+            "text": "въ различныхъ мѣстѣхъ развращено есть святаго Нифонта житіе,",
+            "bbox_xywh": [
+              132,
+              913,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-23",
+            "text": "нѣ прияхомъ его, яко не предано бысть. Апостольскія же заповѣди",
+            "bbox_xywh": [
+              132,
+              949,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-24",
+            "text": "Климентомъ исписаные подобаетъ чести, но не предъ всѣми, мно-",
+            "bbox_xywh": [
+              132,
+              984,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-25",
+            "text": "гыхъ ради немощи, рекше неразумія“ (Пыпинъ, Для объясне-",
+            "bbox_xywh": [
+              132,
+              1020,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 33,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 36,
+                "end": 56,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-26",
+            "text": "нія статьи о ложныхъ книгахъ. Лѣтоп. I, 18). Правда, і тут можна",
+            "bbox_xywh": [
+              132,
+              1055,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 36,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 36,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-27",
+            "text": "би сказати, що статя в Рязанській Кормчій перекладена з грець-",
+            "bbox_xywh": [
+              132,
+              1091,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-28",
+            "text": "кого, так що згадка про апостольські заповіді в 8 книгах списані",
+            "bbox_xywh": [
+              132,
+              1126,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-29",
+            "text": "буцїм то Климентом зовсїм іще не доказує істнованя церковно-",
+            "bbox_xywh": [
+              132,
+              1162,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-30",
+            "text": "славянського перекладу всего твору. Так само Іван Вишенський,",
+            "bbox_xywh": [
+              132,
+              1197,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-31",
+            "text": "живучи на Афонї, міг сяк чи так познайомити ся з сим апокріфом",
+            "bbox_xywh": [
+              132,
+              1233,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-32",
+            "text": "у грецькім оріґіналї. Та про те нема сумнїву, що деякі части того",
+            "bbox_xywh": [
+              132,
+              1268,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-33",
+            "text": "твору були звісні і в церковно-славянськім перекладї, і, як бачимо,",
+            "bbox_xywh": [
+              132,
+              1304,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-34",
+            "text": "виривки з него війшли навіть у склад Прольоґа, хоча в друкованих",
+            "bbox_xywh": [
+              132,
+              1339,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-35",
+            "text": "Прольоґах не знаходять ся, а також у склад Кормчих книг та Но-",
+            "bbox_xywh": [
+              132,
+              1375,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-36",
+            "text": "моканонів.",
+            "bbox_xywh": [
+              132,
+              1410,
+              972,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00097-20261126",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-line-01",
+        "reading": "димо твір пз. „Климентово ученіе“ або „Климентово учительство“,",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      },
+      {
+        "line_id": "editorial-line-19",
+        "reading": "скому“, де в пунктї 19-тім читаємо: „Вопросъ: Аще подобаетъ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      },
+      {
+        "line_id": "editorial-line-20",
+        "reading": "иже Климентомъ исписаныя книги апостольскія 8-ры почитати и",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      },
+      {
+        "line_id": "editorial-line-21",
+        "reading": "хранити? також и святаго Нифонта житіе? Отвѣтъ: Ни, понеже",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      },
+      {
+        "line_id": "editorial-line-22",
+        "reading": "въ различныхъ мѣстѣхъ развращено есть святаго Нифонта житіе,",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      },
+      {
+        "line_id": "editorial-line-23",
+        "reading": "нѣ прияхомъ его, яко не предано бысть. Апостольскія же заповѣди",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      },
+      {
+        "line_id": "editorial-line-24",
+        "reading": "Климентомъ исписаные подобаетъ чести, но не предъ всѣми, мно-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      },
+      {
+        "line_id": "editorial-line-25",
+        "reading": "гыхъ ради немощи, рекше неразумія“ (Пыпинъ, Для объясне-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters and accents require independent collation. Printed lacunae retained where present."
+      }
+    ]
+  }
+}
