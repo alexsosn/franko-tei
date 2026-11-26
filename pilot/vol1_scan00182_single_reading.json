@@ -101,6 +101,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 46,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              },
+              {
+                "start": 46,
+                "end": 49,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i182-first-image-20261125"
+              },
+              {
+                "start": 49,
                 "end": 57,
                 "language": "cu",
                 "script": "Cyrl",
@@ -122,6 +138,22 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 4,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i182-first-image-20261125"
+              },
+              {
+                "start": 4,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i182-first-image-20261125"
+              },
+              {
+                "start": 7,
                 "end": 38,
                 "language": "cu",
                 "script": "Cyrl",
@@ -592,7 +624,14 @@
         "reading": "Ізмаїла з матірю.",
         "reason": "Provisional direct image reading; historical glyphs, titla, numerals and typography need independent verification. Language annotation provisional, mixed lines left unresolved."
       }
-    ]
+    ],
+    "footnote_marker_annotation": {
+      "source_record_commit": "aeb1476f577dd1a85b0858590f0435ef86e6b88f",
+      "source_record_blob": "d44ea722f705791b1fd1ef6ccff1c586600841d3",
+      "method": "Separate printed superscript apparatus label ranges from existing cu/chu spans; no text changes or note targets inferred.",
+      "status": "agent_unverified",
+      "marker_count": 2
+    }
   },
   "language_annotation": {
     "schema_version": "contextual-language-annotation-v1",
