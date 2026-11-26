@@ -62,8 +62,15 @@ lines with unlinked printed superscript numerals, the exact ordered
 marker literals and preceding attached tokens must remain unchanged;
 ambiguous repeated attachments are refused. The projection includes
 original and corrected half-open code-point offsets and
-unlinked_markers_preserved, never inferred apparatus links. Changes
-to the attached token itself still need explicit structural review. A different candidate or a new
+unlinked_markers_preserved, never inferred apparatus links. Changes to the attached token itself still need explicit structural review,
+except for relocation of exactly one U+0483 combining titlo directly between
+Cyrillic letters of the same otherwise identical token. This narrow exception
+comes from I/104 l002 (#213): `смр҃ть,³)` → `см҃рть,³)` on the native print.
+The verifier requires a unique token boundary in both lines even after
+removing titlo for comparison; changed base letters, punctuation, whitespace,
+other marks, titlo insertion/deletion, and duplicate normalized anchors are
+refused. Explicitly linked markers still require structural review. No
+normalization is applied to the selected text. A different candidate or a new
 blob never silently inherits these decisions.
 
 The current slice supplies the shared projection contract, not a new
