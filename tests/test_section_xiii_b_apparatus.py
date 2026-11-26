@@ -42,8 +42,7 @@ class SectionXIIIBApparatusTests(unittest.TestCase):
                          [7, 13, 16, 17, 19, 26, 34, 41, 51, 52, 53, 56, 61, 74, 80, 162])
         def roles(n):
             return [l["role"] for l in block["links"] if l["target_entry_id"] == es[n]["id"]]
-        for n in (41, 56):
-            self.assertEqual(roles(n), ["range_endpoint_unknown"])
+        self.check_unknown_endpoints(block)
         self.assertEqual(roles(5), ["repeated_reference"] * 5)
         self.assertEqual(roles(147), ["single"])
         self.assertEqual([l["marker"]["literal"] for l in block["links"]
@@ -57,6 +56,13 @@ class SectionXIIIBApparatusTests(unittest.TestCase):
         text68 = " ".join(f["literal"] for f in es[68]["fragments"])
         self.assertIn("(op. cit. 140)", text68)
         self.assertIn("(IV Царств, XVII, 30)", text68)
+
+    def check_unknown_endpoints(self, block):
+        entries = {e["number"]: e for e in block["entries"]}
+        for number in (41, 56):
+            links = [l for l in block["links"]
+                     if l["target_entry_id"] == entries[number]["id"]]
+            self.assertEqual([l["role"] for l in links], ["range_endpoint_unknown"])
 
     def test_baseline_adversarial_mutations(self):
         block = self.load_block()
@@ -81,4 +87,5 @@ class SectionXIIIBApparatusTests(unittest.TestCase):
         unknown(bad).update(role="range_end")
         # A direction can be structurally valid but not source-supported.
         self.check_block(bad)
-        self.assertNotEqual(bad["links"], block["links"])
+        with self.assertRaises(AssertionError):
+            self.check_unknown_endpoints(bad)
