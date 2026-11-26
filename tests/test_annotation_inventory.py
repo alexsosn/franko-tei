@@ -149,6 +149,10 @@ class AnnotationInventoryTest(unittest.TestCase):
         primary = {v: {k: m["by_suffix"]["single_reading"][k] for k in keys}
                    for v, m in report["volumes"].items() if "single_reading" in m["by_suffix"]}
         print("ANNOTATION_INVENTORY_PRIMARY " + json.dumps(primary, sort_keys=True))
+        # Read-only repair queue derived from the same real corpus snapshot.
+        queue = {r["path"]: r["metrics"]["lexical_missing"] for r in candidates
+                 if r["metrics"]["lexical_missing"]}
+        print("ANNOTATION_INVENTORY_REPAIR_QUEUE " + json.dumps(queue, sort_keys=True))
 
 
 if __name__ == "__main__":
