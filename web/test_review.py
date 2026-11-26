@@ -1369,6 +1369,65 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#searchOpen').text_content().strip(), 'Search corpus')
             self.assertEqual(page.locator('#searchGo').text_content().strip(), 'Search')
             page.locator('#candidate .line-text').first.wait_for()
+            # A missing draft is a per-page fallback, not a settings change.
+            self.assertEqual(page.locator('#mode').input_value(), 'draft')
+            self.assertTrue(page.locator('#ocrSection').is_hidden())
+            page.evaluate("""() => {
+                window.noSecondDraft=true;
+                window.originalFetch=window.fetch;
+                window.fetch=(url,...args)=>{
+                    if(window.auditedSecond && String(url).endsWith('page-00002.txt')) return Promise.resolve(new Response('OCR noise'));
+                    if(window.noSecondDraft && String(url).includes('vol1_scan00002_')) return Promise.resolve(new Response('',{status:404}));
+                    return window.originalFetch(url,...args);
+                };
+            }""")
+            page.locator('#next').click()
+            page.locator('#ocrSection').wait_for()
+            self.assertTrue(page.locator('#draftSection').is_hidden())
+            self.assertEqual(page.locator('#mode').input_value(), 'draft')
+            page.locator('#prev').click()
+            page.locator('#candidate .line-text').first.wait_for()
+            self.assertTrue(page.locator('#ocrSection').is_hidden())
+            self.assertEqual(page.locator('#mode').input_value(), 'draft')
+            # Match the real, source-audited I/2 image identity. A reviewed textless scan
+            # is different from the preceding unreviewed synthetic scan.
+            page.evaluate("""() => {
+                window.auditedSecond=true;
+                manifests.get('1').pages[1].artifacts[0].sha256='feb852a2babb3b27e1765e7f281394a1713fa976d50dda1009b88b2cfc09f432';
+            }""")
+            page.locator('#next').click()
+            page.locator('#noEditionText').wait_for()
+            self.assertTrue(page.locator('#ocrSection').is_hidden())
+            self.assertTrue(page.locator('#draftSection').is_hidden())
+            self.assertTrue(page.locator('#reviewOpen').is_hidden())
+            self.assertEqual(page.locator('#mode').input_value(), 'draft')
+            page.locator('#settingsOpen').click()
+            page.locator('#mode').select_option('ocr')
+            page.locator('#settingsDone').click()
+            page.locator('#ocr').wait_for()
+            self.assertEqual(page.locator('#ocr').text_content(), 'OCR noise')
+            page.locator('#settingsOpen').click()
+            page.locator('#mode').select_option('draft')
+            page.locator('#settingsDone').click()
+            page.locator('#noEditionText').wait_for()
+            page.locator('#prev').click()
+            page.locator('#candidate .line-text').first.wait_for()
+            self.assertTrue(page.locator('#noEditionText').is_hidden())
+            page.evaluate("""() => {
+                window.auditedSecond=false;
+                window.noSecondDraft=false;
+                manifests.get('1').pages[1].artifacts[0].sha256='a'.repeat(64);
+            }""")
+            # Rejected source identity must also fall back without concealing the error.
+            page.locator('#next').click()
+            page.locator('#ocrSection').wait_for()
+            page.locator('#draftFallbackError').wait_for()
+            self.assertIn('Source identity mismatch', page.locator('#draftFallbackError').text_content())
+            self.assertEqual(page.locator('#mode').input_value(), 'draft')
+            page.locator('#prev').click()
+            page.locator('#candidate .line-text').first.wait_for()
+            self.assertTrue(page.locator('#ocrSection').is_hidden())
+            self.assertTrue(page.locator('#draftFallbackError').is_hidden())
             # Reader-first layout: test real viewport geometry, not CSS declarations.
             for width, height in [(1280,720), (896,414), (390,844), (320,568)]:
                 page.set_viewport_size({'width':width,'height':height})
@@ -1589,6 +1648,10 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#searchResults button').first.click()
             page.locator('#ocr .search-match').wait_for()
             self.assertEqual(page.locator('#ocr .search-match').text_content(), 'ѣ  ἀ')
+            self.assertEqual(page.locator('#mode').input_value(), 'draft')
+            page.locator('#go').click()
+            page.locator('#candidate .line-text').first.wait_for()
+            self.assertTrue(page.locator('#ocrSection').is_hidden())
             page.locator('#searchOpen').click()
             page.locator('#searchSource').select_option('agent')
             page.locator('#searchVolume').select_option('1')
@@ -1607,10 +1670,14 @@ class ReviewSmoke(unittest.TestCase):
             self.assertIn('estimated', page.locator('#lineinfo').text_content())
             page.locator('#next').click()
             page.get_by_text('Empty original OCR', exact=False).wait_for()
-            page.get_by_text('Source identity mismatch', exact=False).wait_for()
+            # Both mode exposes the draft diagnostic, not its hidden OCR-fallback copy.
+            page.locator('#draftStatus').filter(has_text='Source identity mismatch').wait_for()
+            self.assertTrue(page.locator('#draftFallbackError').is_hidden())
             self.assertFalse(page.locator('#highlight').is_visible())
             self.assertTrue(page.locator('#next').is_disabled())
             self.assertIn('page-00002.png', page.locator('#source').get_attribute('href'))
+            self.assertEqual(page.locator('#mode').input_value(), 'both')
+            self.assertTrue(page.locator('#draftSection').is_visible())
             # A slow request from the previous scan must not repopulate the new one.
             page.evaluate('window.delayOldOCR = true')
             page.locator('#prev').click()
