@@ -63,7 +63,7 @@ def project_search_entry(draft, suffix, candidate_blob, changes=()):
                   annotation=dict(candidate_blob=candidate_blob, reader_id=reader_id,
                                   model_id=reading["model_id"],
                                   model_version=reading["model_version"],
-                                  printed_page=draft["printed_page_observed"],
+                                  printed_page=draft.get("printed_page_observed"),
                                   lines=anchors))
     if corrected:
         result["reviewed"] = True
