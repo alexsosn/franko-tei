@@ -300,6 +300,36 @@ index entry, (6) resolved citations across volumes, (7) normalized word
 search with exact diplomatic text/facsimile backreference. Query acceptance
 must distinguish incomplete layers and no-match results.
 
+## Read-only candidate inventory
+
+Run from the repository root:
+
+```bash
+python -m franko_tei.annotation_inventory > build/annotation-inventory.json
+python -m franko_tei.annotation_inventory --summary-json
+```
+
+Create the output directory first. The report reuses existing offline
+candidate discovery/validation, includes exact file SHA256 and reader ID,
+and aggregates by volume and fixed ten-scan range. Each group includes
+separate suffix strata (single, alternate, exposed and B readings). All-
+candidate counts are not counts of the currently displayed or accepted
+editorial text. Scan counts deduplicate physical page IDs. The denominator
+for lexical coverage is Unicode Letter/Mark code points outside page-number
+regions; unresolved (`und` or null), uncertain, legacy `chu`, missing script
+and `zxx` counts are separate diagnostics, not disjoint categories. A zero
+lexical denominator gives null coverage. Combining-mark boundaries are
+flagged, not automatically changed. Note link and region counts do not
+measure recall: no observed marker inventory yet exists. Metadata location
+reports presence, not a certified annotation pass.
+
+This first slice scans all frozen candidates in the checkout, not all
+manifest pages; absent scans cannot yet be classified as blank or missing.
+It neither applies accepted text edits nor predicts the viewer's preferred
+candidate. Manifest reconciliation, editorial projection, structural
+applicability/recall and repair queue are follow-up steps. The original
+inventory and CI source-image gates remain unchanged.
+
 ## Rollout and review
 
 Documentation-only proposal: no source files, export code, or validators
