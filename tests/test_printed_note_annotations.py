@@ -582,3 +582,61 @@ class NumberedApparatusTests(unittest.TestCase):
             change(bad)
             with self.assertRaises(AssertionError):
                 self.check_block(bad, sources, paired=True, repeated=True)
+
+
+    def test_section_ix_apparatus_scopes(self):
+        for suffix, total, markers, resolved, unlinked, incomplete in [
+                ("a", 57, 59, 58, 3, 0), ("b", 28, 29, 27, 3, 1),
+                ("c", 9, 12, 12, 0, 0)]:
+            with self.subTest(witness=suffix):
+                block = json.loads((ROOT / f"pilot/structure/vol1_section_ix_{suffix}_apparatus.json"
+                                    ).read_text(encoding="utf-8"))
+                self.check_block(block, self.load_sources(block), paired=True, repeated=True,
+                                 occurrence_labels=True)
+                self.assertEqual(block["id"], f"v1-section-ix-{suffix}")
+                self.assertEqual(len(block["entries"]), total)
+                self.assertEqual(len(block["links"]), markers)
+                self.assertEqual(sum(l["status"] == "resolved" for l in block["links"]), resolved)
+                self.assertEqual(len(block["unlinked_entry_ids"]), unlinked)
+                self.assertEqual(len(block["incomplete_range_entry_ids"]), incomplete)
+                if suffix == "b":
+                    duplicate = [e for e in block["entries"] if e["number"] == 18]
+                    self.assertEqual(len(duplicate), 2)
+                    self.assertNotEqual(duplicate[0]["id"], duplicate[1]["id"])
+                    self.assertIn("приближениемъ", duplicate[0]["fragments"][0]["literal"])
+                    self.assertIn("язык", duplicate[1]["fragments"][0]["literal"])
+                    self.assertIn(duplicate[1]["id"], block["unlinked_entry_ids"])
+                    linked = [l for l in block["links"]
+                              if l["target_entry_id"] == duplicate[0]["id"]]
+                    self.assertEqual(len(linked), 1)
+                    self.assertEqual(linked[0]["marker"]["line_id"], "witness-b-babel-l020")
+                    self.assertTrue(linked[0]["disambiguation"].strip())
+                    self.assertEqual(block["incomplete_range_entry_ids"],
+                                     [block["entries"][0]["id"]])
+                if suffix == "c":
+                    self.assertEqual(block["scope"]["next_heading"]["region_id"], "witness-d-label")
+                    self.assertTrue(block["scope"]["heading"]["lines"][0].startswith("В."))
+                    self.assertTrue(block["scope"]["next_heading"]["lines"][0].startswith("В."))
+
+    def test_duplicate_apparatus_adversarial_mutations(self):
+        import copy
+        block = json.loads((ROOT / "pilot/structure/vol1_section_ix_b_apparatus.json")
+                           .read_text(encoding="utf-8"))
+        sources = self.load_sources(block)
+        self.check_block(block, sources, paired=True, repeated=True, occurrence_labels=True)
+        duplicates = [e for e in block["entries"] if e["number"] == 18]
+        def duplicate_link(b):
+            return next(l for l in b["links"] if l["target_entry_id"] == duplicates[0]["id"])
+        mutations = [
+            lambda b: duplicate_link(b).pop("disambiguation"),
+            lambda b: b["entries"][b["entries"].index(duplicates[1])].update(id=duplicates[0]["id"]),
+            lambda b: next(l for l in b["links"] if l["status"] != "resolved").update(
+                target_entry_id=duplicates[1]["id"]),
+            lambda b: b["unlinked_entry_ids"].remove(duplicates[1]["id"]),
+            lambda b: b["incomplete_range_entry_ids"].clear(),
+        ]
+        for change in mutations:
+            bad = copy.deepcopy(block)
+            change(bad)
+            with self.assertRaises(AssertionError):
+                self.check_block(bad, sources, paired=True, repeated=True, occurrence_labels=True)
