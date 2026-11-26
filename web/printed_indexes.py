@@ -1083,6 +1083,37 @@ def reconcile_motif_reference(files, targets, entry):
 # itself is already pinned by SOURCE_BLOBS; each destination is separately
 # pinned. Keep negative/conflicting observations separate from attestations.
 GLOSSARY_MENTION_REVIEWS = {
+    ("v1-461-left-l001", "110"): (110, "b8debdc372be7ad0dcc8d8c441b272e0d0c4063a", "attested", ["jacob-sariel-l027"], "могуты племенъ земных; not the verb възмогуть"),
+    ("v1-461-left-l003", "284"): (284, "548acb4cfd8c1f3d175a810f4898b9bcb5c45d6d", "attested", ["salt-riddle-l002","salt-riddle-l003"], "мыски; мыска, in the mule riddle"),
+    ("v1-461-left-l004", "126"): (126, "9ce3facee020fd0cf58f89324a19b794b598aff4", "reading_conflict", ["joseph-lament-in-pit-l003"], "Draft незрѣлными in the phrase съ въздыханїи незрѣлными; index Нежрѣленъ. Check omitted consonant against facsimile."),
+    ("v1-461-left-l007", "130"): (130, "f5459796ea083d6c27f655406f9d99c8c99104dc", "attested", ["jacob-lament-continuation-l012"], "непщуя"),
+    ("v1-461-left-l008", "8"): (8, "770cc948a813c9f3cf868fe2d1bd3f5072fa84cd", "attested", ["creation-continuation-l002"], "не растаан'но; source spacing retained"),
+    ("v1-461-left-l011", "66"): (66, "032cee85230a5807d7c4a2f2e136eb6d7eca51e4", "attested", ["noah-ark-l014"], "ногъ или слонъ; animal context, not a body part"),
+    ("v1-461-left-l012", "138"): (138, "628fd3230a1ef536a9763d8ddc6488c5840a8b8d", "reading_conflict", ["joseph-reunion-continuation-l009"], "Draft нѣга и нам до ѡца без него versus Нѣлга; context supports inability but consonant missing."),
+    ("v1-461-left-l015", "256"): (256, "26936be7a321657501e1845c750aa024fb54755f", "attested", ["stones-l024"], "нѹдама"),
+    ("v1-461-left-l017", "12"): (12, "c27fc69f5897903f8e45de15dc026fda2b19f925", "attested", ["satanail-witness-a-continuation-l019"], "ѡбавляют"),
+    ("v1-461-left-l018", "12"): (12, "c27fc69f5897903f8e45de15dc026fda2b19f925", "attested", ["satanail-witness-a-continuation-l016","satanail-witness-a-continuation-l017"], "ѡбавни- / ком"),
+    ("v1-461-left-l019", "283"): (283, "5c22aaabaa7fe0cf87e8d7fb92d310cc54e2a9d7", "not_found", [], "No matching Обадати in cited draft; pp282/284 screened, nearby horn riddle not proof of word occurrence."),
+    ("v1-461-left-l021", "156"): (156, "6b14822820b1f6298a187733a146c71c9ef8cad2", "attested", ["imprisonment-l004"], "ѡбади мя"),
+    ("v1-461-left-l022", "175"): (175, "768be23f0db0afccca9ca7eb06a012268d7f18d8", "reading_conflict", ["spirits-continuation-l022"], "Draft ѡблаженіє versus Обаженіе; initial cluster differs; do not identify without image."),
+    ("v1-461-left-l023", "189"): (189, "8aed8e1d1be5cf3d6594547843d4f84822c04d8d", "reading_conflict", ["judah-further-battles-l015"], "Draft г҃. стѣны их ѡворихом versus Оборити; likely context but different consonant."),
+    ("v1-461-left-l025", "53"): (53, "915cd7c08cbb33446bc6f03daef2bf71c4914ac1", "attested", ["enoch-address-l014","enoch-address-l015"], "ѡбѣтїе twice"),
+    ("v1-461-left-l027", "24"): (24, "54e3f226a8b8536c21930f9b3e5ea87fce64e5bc", "reading_conflict", ["witness-b-apparatus-continuation-l028"], "Apparatus reads ѡглянѣло; the index has Огланѣти, glossed огладнѣти. Verify variants and meaning against print."),
+    ("v1-461-left-l029", "174"): (174, "97a067336bc6fa0652b63dc3692fdb3749518217", "attested", ["reuben-address-l015"], "ѡлоу, after вина ни"),
+    ("v1-461-left-l030", "142"): (142, "92128ab338de95004e6cd5d2b6a9397453406b33", "attested", ["joseph-embraces-benjamin-l024"], "душа бо ми ѡмарися"),
+    ("v1-461-left-l032", "286"): (286, "2c9e8dc4beb1968e7948edebc670d91f4953f484", "reading_conflict", ["solomon-bone-test-l012"], "Draft ѡнышнїи [sic!] versus Оньший; preserve discrepancy."),
+    ("v1-461-left-l034", "72"): (72, "d8f6143d6ca4b4dff95d628da59272c95213aa4a", "attested", ["witness-c-vineyard-l007"], "ѡпакы"),
+    ("v1-461-left-l035", "176"): (176, "b09717d3027997cf405bd574a112cd27328e9e68", "reading_conflict", ["reuben-continuation-l002"], "Draft ѡпастье всеи versus Опастко; similar context and stem, different ending."),
+    ("v1-461-left-l037", "42"): (42, "1a04bc97189129b53ceaeb5dada25733e9d9d90c", "attested", ["enoch-solar-creatures-l004"], "ѡпа́ши, matches index's explicit variant опашь; same occurrence as adjacent Опашь, not independent spelling"),
+    ("v1-461-left-l038", "42"): (42, "1a04bc97189129b53ceaeb5dada25733e9d9d90c", "attested", ["enoch-solar-creatures-l004"], "ѡпа́ши"),
+    ("v1-461-left-l039", "77"): (77, "174981a415f9241381bbee0e9aab594c41a5f877", "attested", ["editorial-a-end-l002"], "ѡсклаби ся in quoted narrative"),
+    ("v1-461-left-l041", "240"): (240, "a6954635b1a97b7096b9d835ef1692ee0dc8bec2", "attested", ["second-stone-l003"], "по врачебней ослѣ"),
+    ("v1-461-left-l043", "132"): (132, "6400c4962e986a0b7d5693c278c64c76627c5567", "attested", ["potiphar-wife-l017"], "ѡслабу"),
+    ("v1-461-left-l044", "184"): (183, "b4565c00715c6040158d0e62c55f971232e9cc71", "attested", ["levi-ordination-l004"], "ѡстежь наперсную (p183); no occurrence on cited p184, both drafts inspected"),
+    ("v1-461-left-l045", "227"): (227, "9f2c022715c14c508988ff53d0196b21ed623907", "reading_conflict", ["moses-crown-test-l030"], "Draft да ухавим ся ег[о] versus Охабити ся; likely contextual counterpart, uncertain consonant."),
+    ("v1-461-left-l047", "288"): (288, "8d5a76d60b397e8fbd76a7df6cada95acd349e0d", "reading_conflict", ["solomon-three-travellers-end-l026"], "Draft ѡхвочь versus Охочь; extra consonant requires image check."),
+    ("v1-461-left-l048", "42"): (42, "1a04bc97189129b53ceaeb5dada25733e9d9d90c", "attested", ["enoch-fourth-heaven-l011","enoch-solar-creatures-l006"], "пазят; па́зятъ, two lines"),
+    ("v1-461-left-l049", "12"): (12, "c27fc69f5897903f8e45de15dc026fda2b19f925", "attested", ["satanail-witness-a-continuation-l038"], "платиною"),
     ("v1-460-right-l001", "242"): (242, "205c99e8703f1cb71bb694ecfa0dacff38a6bcb2", "reading_conflict", ["eleventh-stone-l002"], "Draft зевръ versus index Зекръ; colour of the eleventh stone, but consonant differs."),
     ("v1-460-right-l002", "205"): (205, "6d9572016803739a0fa6b56c00c2a0e0a10253d1", "attested", ["naphtali-visions-l019"], "зима люта и буря вѣтряна"),
     ("v1-460-right-l003", "319"): (319, "38566f1ddfed36b129269f81e88409b21d9031fe", "reading_conflict", ["daniel-body-l006"], "Draft семена земленая зовла суще; context suggests eating seeds but index Зобати is not literally attested."),
@@ -1188,11 +1219,18 @@ def review_glossary_mentions(files, targets, entry):
         if len(evidence) != len(line_ids):
             continue
         if str(page) != citation["literal"]:
-            # The only changed destination in this slice: source p238
-            # was inspected too. If either reading changes, fail closed.
-            old_scan = targets.get(238)
-            if (entry["id"] != "v1-459-left-l008" or citation["literal"] != "238"
-                    or old_scan not in files or files[old_scan][2] != "55399194398600e093ee9b4a863baa545e1f574e"):
+            # Explicitly reviewed original destinations; both original
+            # and corrected page must retain the inspected draft bytes.
+            originals = {
+                ("v1-459-left-l008", "238"): (238, "55399194398600e093ee9b4a863baa545e1f574e"),
+                ("v1-461-left-l044", "184"): (184, "5dda36ef5c08ff416b3fb202ab1f5b201c4cf11a"),
+            }
+            original_spec = originals.get((entry["id"], citation["literal"]))
+            if original_spec is None:
+                continue
+            original_page, original_blob = original_spec
+            old_scan = targets.get(original_page)
+            if old_scan not in files or files[old_scan][2] != original_blob:
                 continue
             original = citation
             citation = make_ref(str(page), targets, "editorial_citation")

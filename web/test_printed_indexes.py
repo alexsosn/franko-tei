@@ -132,6 +132,52 @@ class PrintedIndexesTest(unittest.TestCase):
                         self.assertEqual(lines[line["line_id"]], line["text"])
                     self.assertEqual("anchor" in dest, review["status"] == "attested")
 
+    def test_third_glossary_left_column_mentions(self):
+        from collections import Counter
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        entries = [e for e in data["sections"][3]["entries"]
+                   if e["source"]["scan"] == 461 and e["region_id"] == "left"]
+        self.assertEqual(len(entries), 31)
+        reviews = [target["mention_review"] for e in entries for r in e["refs"] for target in r["targets"]]
+        self.assertEqual(len(reviews), 31)
+        self.assertEqual(Counter(x["status"] for x in reviews),
+                         {"attested": 21, "reading_conflict": 9, "not_found": 1})
+        by_label = {e["label"]: e for e in entries}
+        def target(label):
+            return by_label[label]["refs"][0]["targets"][0]
+        self.assertEqual([x["line_id"] for x in target("Обавникъ")["mention_review"]["lines"]],
+                         ["satanail-witness-a-continuation-l016", "satanail-witness-a-continuation-l017"])
+        self.assertEqual(len(target("Обѣтіе")["mention_review"]["lines"]), 2)
+        self.assertEqual(len(target("Пазити")["mention_review"]["lines"]), 2)
+        ref = by_label["Остежь"]["refs"][0]
+        self.assertEqual((ref["printed_literal"], ref["literal"], ref["role"]), ("184", "183", "editorial_citation"))
+        self.assertEqual(target("Остежь")["anchor"]["line_id"], "levi-ordination-l004")
+        self.assertEqual(target("Огланѣти")["mention_review"]["status"], "reading_conflict")
+        self.assertEqual(target("Обадати")["mention_review"]["status"], "not_found")
+        for entry in entries:
+            for ref in entry["refs"]:
+                for dest in ref["targets"]:
+                    review = dest["mention_review"]
+                    draft = json.loads((ROOT / review["path"]).read_text(encoding="utf-8"))
+                    lines = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
+                    for line in review["lines"]:
+                        self.assertEqual(lines[line["line_id"]], line["text"])
+                    self.assertEqual("anchor" in dest, review["status"] == "attested")
+
+    def test_glossary_ostezh_stale_original_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot = Path(tmp)
+            for scan in [461, 258, 259]:
+                source = ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)
+                shutil.copyfile(source, pilot / source.name)
+            def ostezh():
+                return next(e for e in build_printed_indexes(pilot, "a" * 40)["sections"][3]["entries"] if e["label"] == "Остежь")["refs"][0]
+            self.assertEqual(ostezh()["literal"], "183")
+            path = pilot / "vol1_scan00259_single_reading.json"
+            path.write_bytes(path.read_bytes() + b"\n")
+            self.assertEqual(ostezh()["literal"], "184")
+            self.assertNotIn("anchor", ostezh()["targets"][0])
+
     def test_glossary_review_stale_target_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             pilot = Path(tmp)
