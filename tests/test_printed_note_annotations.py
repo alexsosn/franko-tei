@@ -267,7 +267,7 @@ class NumberedApparatusTests(unittest.TestCase):
             (ROOT / p["source_pilot_path"]).read_text(encoding="utf-8"))
             for p in block["pages"]}
 
-    def check_block(self, block, sources):
+    def check_block(self, block, sources, *, paired=False):
         self.assertEqual(block["schema_version"], "printed-apparatus-annotation-v1")
         self.assertEqual(block["status"], "agent_unverified")
         self.assertEqual(block["volume"], "1")
@@ -317,9 +317,12 @@ class NumberedApparatusTests(unittest.TestCase):
         expected = [(scan, lid, i) for (scan, lid), raw in apparatus.items()
                     for i in range(len(raw))]
         actual, entries = [], {}
+        # Paired notation is a single printed apparatus label, not two entries.
+        label_pattern = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+(?:—[⁰¹²³⁴⁵⁶⁷⁸⁹]+)?\)") if paired else self.LABEL
+        marker_pattern = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+[)—]?") if paired else self.LABEL
         note_labels = [(scan, lid, m.start(), m.end(), m.group())
                        for (scan, lid), raw in apparatus.items()
-                       for m in self.LABEL.finditer(raw)]
+                       for m in label_pattern.finditer(raw)]
         seen_labels = []
         for entry in block["entries"]:
             self.assertNotIn(entry["id"], entries)
@@ -328,10 +331,11 @@ class NumberedApparatusTests(unittest.TestCase):
             fragments = entry["fragments"]
             self.assertTrue(fragments)
             first = fragments[0]
-            m = self.LABEL.match(first["literal"])
+            m = label_pattern.match(first["literal"])
             self.assertIsNotNone(m)
             self.assertEqual(m.group(), entry["label"])
-            self.assertEqual(int(entry["label"][:-1].translate(self.DIGITS)), entry["number"])
+            numbers = entry["label"][:-1].translate(self.DIGITS).split("—")
+            self.assertTrue(all(int(n) == entry["number"] for n in numbers))
             seen_labels.append((first["scan_page"], first["line_id"], first["start"],
                                 first["start"] + len(entry["label"]), entry["label"]))
             for f in fragments:
@@ -347,20 +351,47 @@ class NumberedApparatusTests(unittest.TestCase):
         self.assertEqual(seen_labels, note_labels, "every printed entry start must be retained")
         expected_markers = [(scan, lid, m.start(), m.end(), m.group())
                             for (scan, lid), raw in body.items()
-                            for m in self.LABEL.finditer(raw)]
+                            for m in marker_pattern.finditer(raw)]
         markers, targets = [], []
+        roles = {}
         for link in block["links"]:
             marker = link["marker"]
             key = (marker["scan_page"], marker["line_id"], marker["start"],
                    marker["end"], marker["literal"])
             markers.append(key)
+            if paired and link["status"] != "resolved":
+                self.assertEqual(link["status"], "unresolved_marker_mismatch")
+                self.assertIsNone(link["target_entry_id"])
+                self.assertEqual(link["role"], "unresolved")
+                self.assertTrue(link["reason"].strip())
+                continue
             self.assertEqual(link["status"], "resolved")
             self.assertIn(link["target_entry_id"], entries)
             entry = entries[link["target_entry_id"]]
-            self.assertEqual(entry["label"], marker["literal"])
+            if paired:
+                self.assertNotIn("reason", link)
+                number = int(marker["literal"].rstrip(")—").translate(self.DIGITS))
+                self.assertEqual(number, entry["number"])
+                role = link["role"]
+                if "—" in entry["label"]:
+                    self.assertIn(role, ("range_start", "range_end"))
+                    self.assertTrue(marker["literal"].endswith("—" if role == "range_start" else ")"))
+                else:
+                    self.assertEqual(role, "single")
+                    self.assertFalse(marker["literal"].endswith("—"))
+                roles.setdefault(entry["id"], []).append(role)
+            else:
+                self.assertEqual(entry["label"], marker["literal"])
             targets.append(entry["id"])
         self.assertEqual(markers, expected_markers)
-        self.assertEqual(targets, list(entries), "one-to-one order is observed in this scope")
+        if paired:
+            self.assertEqual(block["unlinked_entry_ids"],
+                             [eid for eid in entries if eid not in targets])
+            for eid, observed_roles in roles.items():
+                self.assertEqual(observed_roles, ["range_start", "range_end"]
+                                 if "—" in entries[eid]["label"] else ["single"])
+        else:
+            self.assertEqual(targets, list(entries), "one-to-one order is observed in this scope")
 
     def test_noah_a_complete_numbered_apparatus(self):
         block = self.load_fixture()
@@ -414,3 +445,59 @@ class NumberedApparatusTests(unittest.TestCase):
         note["lines"][-1]["text"] += "!"
         with self.assertRaises(AssertionError):
             self.check_block(block, bad)
+
+
+    def test_noah_c_paired_and_unresolved_markers(self):
+        block = json.loads((ROOT / "pilot/structure/vol1_noah_c_apparatus.json").read_text(
+            encoding="utf-8"))
+        sources = self.load_sources(block)
+        self.check_block(block, sources, paired=True)
+        self.assertEqual(block["id"], "v1-noah-viii-c")
+        self.assertEqual([p["scan_page"] for p in block["pages"]], [147, 148, 149])
+        self.assertEqual([p["body_region_ids"] for p in block["pages"]], [
+            ["witness-c-covenant", "witness-c-vineyard", "witness-c-prophecy"],
+            ["witness-c-prophecy-end"], []])
+        self.assertEqual([p["apparatus_region_ids"] for p in block["pages"]],
+                         [[], ["witness-c-apparatus"], []])
+        self.assertEqual(block["scope"]["heading"]["region_id"], "witness-c-label")
+        self.assertEqual(block["scope"]["next_heading"]["region_id"], "section-ix")
+        self.assertEqual([e["number"] for e in block["entries"]], list(range(1, 25)))
+        self.assertEqual(block["entries"][4]["label"], "⁵—⁵)")
+        self.assertEqual(len(block["links"]), 24)
+        pair = [l for l in block["links"] if l["target_entry_id"] ==
+                block["entries"][4]["id"]]
+        self.assertEqual([l["role"] for l in pair], ["range_start", "range_end"])
+        self.assertEqual([l["marker"]["literal"] for l in pair], ["⁵—", "⁵)"])
+        bare = next(l for l in block["links"] if l["marker"]["literal"] == "¹²")
+        self.assertEqual(bare["target_entry_id"], block["entries"][11]["id"])
+        self.assertEqual(bare["role"], "single")
+        self.assertEqual(block["unlinked_entry_ids"],
+                         [block["entries"][9]["id"], block["entries"][15]["id"]])
+        unresolved = [l for l in block["links"] if l["status"] != "resolved"]
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["marker"]["literal"], "¹⁰)")
+        self.assertIsNone(unresolved[0]["target_entry_id"])
+
+    def test_paired_apparatus_adversarial_mutations(self):
+        import copy
+        block = json.loads((ROOT / "pilot/structure/vol1_noah_c_apparatus.json").read_text(
+            encoding="utf-8"))
+        sources = self.load_sources(block)
+        self.check_block(block, sources, paired=True)
+        def pair_end(b):
+            return next(l for l in b["links"] if l["role"] == "range_end")
+        def unresolved(b):
+            return next(l for l in b["links"] if l["status"] != "resolved")
+        mutations = [
+            lambda b: pair_end(b).update(role="range_start"),
+            lambda b: pair_end(b).update(target_entry_id=b["entries"][3]["id"]),
+            lambda b: unresolved(b).update(target_entry_id=b["entries"][9]["id"]),
+            lambda b: b["unlinked_entry_ids"].pop(),
+            lambda b: b["entries"][4].update(label="⁵)"),
+            lambda b: b["links"].pop(),
+        ]
+        for change in mutations:
+            bad = copy.deepcopy(block)
+            change(bad)
+            with self.assertRaises(AssertionError):
+                self.check_block(bad, sources, paired=True)
