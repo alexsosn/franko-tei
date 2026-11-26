@@ -1,0 +1,956 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 12,
+  "printed_page_observed": "H",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00012.jpg",
+  "source_image_sha256": "6e4cb01c8752b477967512835dfe6e21e566a592ee53f68548dc6ef5189ab82b",
+  "reading": {
+    "reader_id": "gpt62-v3-s00012-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-scans11-20-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read full pinned image directly; retain physical line breaks, historical spelling, folios, anomalous ranges, and contextual language spans. Preserve uncertainty; all geometry estimated. German overview and Ukrainian preface are editorial text, not manuscript witnesses.",
+    "raw_response": "H\ndes Propheten Zacharias, eine Bearbeitung der Cap. XXII—XXIV des\nProtevangeliums mit Hinzufügung einer dort nicht vorkommenden Le-\ngende über die Rettung und die Kindheit des Johannes (S. 146—149);\nzwei Fragmente aus dem Epiphanius Monachus über die Virginität und\ndie Prosopographie der Gottesmutter (S. 150—151).\nIV. Die Kindheit Jesu. 1. Die heil. Familie im Garten Natha-\nnaels, eine auf Grund des Evang. Joh. I, 44–52 entstandene Legende,\nwonach Jesus den Nathanael zuerst im Garten desselben während sei-\nner Flucht nach Ägypten gesehen haben soll (S. 152–153); fünf klei-\nnere Texte enthalten populäre Bearbeitungen verschiedener Cap. der\nKindheitsevangelien über die während Jesu Flucht nach Ägypten ge-\nschehenen Wunder (S. 153—159); drei z. Th. verschiedene und frag-\nmentarische Recensionen des sog. Thomas-Evangeliums über die Kind-\nheit Jesu (S. 159—172); zwei Textfragmente, wo von einem Zwist in\nder Familie Josephs wegen Jesu und von Jesu Ankunft zum Meere\nauf Grund unbekannter Quellen berichtet wird (S. 172—173).\nV. Die Taufe und die Versuchung Jesu. Zwei populäre\nung. ruthenische, zum Theil in die Versform übergehende Erzählungen\nvon der Taufe Jesu, wo von Adams Fall, Contract mit dem Teufel,\nVerbergen desselben im Jordan, Auffindung und Vernichtung desselben\ndurch Jesum erzählt wird (S. 174—191); zwei Fragmente aus einer\nKeresturer Passion über die Taufe und das Fasten Christi (S. 191—\n195); zwei Recensionen eines Sermo über eine Disputation des Teu-\nfels mit dem Gottessohn (S. 196—203).\nVI. Jesus als Lehrer und Wunderthäter. 1) Eine Pro-\nsopographie Jesu, — in der Note hiezu ein polnischer Text des sog.\nLentulusbriefes aus einer ruth. Handschrift des XVII Jahrh. (S. 204—\n206); Sendschreiben Abgars an Jesum und Jesu Antwort (S. 206—\n209); Translation des Bildes Jesu von Edessa nach Konstantinopel (S.\n210); zwei Fragmente aus einer Keresturer Passion über Jesu Trans-\nfiguration, über die Conspiration der Juden gegen Jesum und über\nJesu Vorhersagung seines Martertodes (S. 211–218).\nVII. Die Passion und der Tod Jesu: 1) Ein Gespräch Jesu\nmit seiner Mutter vor der Passion (S. 219—220); 2) Wie der Teufel\ndie Jünger nach der Reise versuchte, damit sie Jesum verrathen (S.\n220—221); 3) Passion oder seelenheilkräftige Erzählung über die\nMartern unseres Herrn Jesu Christi — eine populäre ungarisch-ruthe-\nnische Bearbeitung der Leidensgeschichte aus dem XVIII Jahrh. (S.\n222—235); 3) Paphnutius Vision über die Zahl der Wunden Christi\nbei der Passion (S. 236—237); 4) Christus patiens und die heilige\nVeronke, ein geistliches Gedicht aus Kerestur (S. 237—239); 5) vier",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          162,
+          111,
+          37,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "H",
+            "bbox_xywh": [
+              162,
+              111,
+              37,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "overview",
+        "kind": "body",
+        "bbox_xywh": [
+          163,
+          178,
+          931,
+          1396
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "overview-line-01",
+            "text": "des Propheten Zacharias, eine Bearbeitung der Cap. XXII—XXIV des",
+            "bbox_xywh": [
+              163,
+              178,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-02",
+            "text": "Protevangeliums mit Hinzufügung einer dort nicht vorkommenden Le-",
+            "bbox_xywh": [
+              163,
+              212,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-03",
+            "text": "gende über die Rettung und die Kindheit des Johannes (S. 146—149);",
+            "bbox_xywh": [
+              163,
+              246,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-04",
+            "text": "zwei Fragmente aus dem Epiphanius Monachus über die Virginität und",
+            "bbox_xywh": [
+              163,
+              280,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-05",
+            "text": "die Prosopographie der Gottesmutter (S. 150—151).",
+            "bbox_xywh": [
+              163,
+              314,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 49,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-06",
+            "text": "IV. Die Kindheit Jesu. 1. Die heil. Familie im Garten Natha-",
+            "bbox_xywh": [
+              163,
+              348,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-07",
+            "text": "naels, eine auf Grund des Evang. Joh. I, 44–52 entstandene Legende,",
+            "bbox_xywh": [
+              163,
+              382,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-08",
+            "text": "wonach Jesus den Nathanael zuerst im Garten desselben während sei-",
+            "bbox_xywh": [
+              163,
+              416,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-09",
+            "text": "ner Flucht nach Ägypten gesehen haben soll (S. 152–153); fünf klei-",
+            "bbox_xywh": [
+              163,
+              450,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-10",
+            "text": "nere Texte enthalten populäre Bearbeitungen verschiedener Cap. der",
+            "bbox_xywh": [
+              163,
+              484,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-11",
+            "text": "Kindheitsevangelien über die während Jesu Flucht nach Ägypten ge-",
+            "bbox_xywh": [
+              163,
+              518,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-12",
+            "text": "schehenen Wunder (S. 153—159); drei z. Th. verschiedene und frag-",
+            "bbox_xywh": [
+              163,
+              552,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-13",
+            "text": "mentarische Recensionen des sog. Thomas-Evangeliums über die Kind-",
+            "bbox_xywh": [
+              163,
+              587,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-14",
+            "text": "heit Jesu (S. 159—172); zwei Textfragmente, wo von einem Zwist in",
+            "bbox_xywh": [
+              163,
+              621,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-15",
+            "text": "der Familie Josephs wegen Jesu und von Jesu Ankunft zum Meere",
+            "bbox_xywh": [
+              163,
+              655,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-16",
+            "text": "auf Grund unbekannter Quellen berichtet wird (S. 172—173).",
+            "bbox_xywh": [
+              163,
+              689,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-17",
+            "text": "V. Die Taufe und die Versuchung Jesu. Zwei populäre",
+            "bbox_xywh": [
+              163,
+              723,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 51,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-18",
+            "text": "ung. ruthenische, zum Theil in die Versform übergehende Erzählungen",
+            "bbox_xywh": [
+              163,
+              757,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-19",
+            "text": "von der Taufe Jesu, wo von Adams Fall, Contract mit dem Teufel,",
+            "bbox_xywh": [
+              163,
+              791,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-20",
+            "text": "Verbergen desselben im Jordan, Auffindung und Vernichtung desselben",
+            "bbox_xywh": [
+              163,
+              825,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-21",
+            "text": "durch Jesum erzählt wird (S. 174—191); zwei Fragmente aus einer",
+            "bbox_xywh": [
+              163,
+              859,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-22",
+            "text": "Keresturer Passion über die Taufe und das Fasten Christi (S. 191—",
+            "bbox_xywh": [
+              163,
+              893,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-23",
+            "text": "195); zwei Recensionen eines Sermo über eine Disputation des Teu-",
+            "bbox_xywh": [
+              163,
+              927,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-24",
+            "text": "fels mit dem Gottessohn (S. 196—203).",
+            "bbox_xywh": [
+              163,
+              961,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 37,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-25",
+            "text": "VI. Jesus als Lehrer und Wunderthäter. 1) Eine Pro-",
+            "bbox_xywh": [
+              163,
+              995,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 51,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-26",
+            "text": "sopographie Jesu, — in der Note hiezu ein polnischer Text des sog.",
+            "bbox_xywh": [
+              163,
+              1029,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-27",
+            "text": "Lentulusbriefes aus einer ruth. Handschrift des XVII Jahrh. (S. 204—",
+            "bbox_xywh": [
+              163,
+              1063,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-28",
+            "text": "206); Sendschreiben Abgars an Jesum und Jesu Antwort (S. 206—",
+            "bbox_xywh": [
+              163,
+              1097,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-29",
+            "text": "209); Translation des Bildes Jesu von Edessa nach Konstantinopel (S.",
+            "bbox_xywh": [
+              163,
+              1131,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-30",
+            "text": "210); zwei Fragmente aus einer Keresturer Passion über Jesu Trans-",
+            "bbox_xywh": [
+              163,
+              1165,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-31",
+            "text": "figuration, über die Conspiration der Juden gegen Jesum und über",
+            "bbox_xywh": [
+              163,
+              1199,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-32",
+            "text": "Jesu Vorhersagung seines Martertodes (S. 211–218).",
+            "bbox_xywh": [
+              163,
+              1233,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-33",
+            "text": "VII. Die Passion und der Tod Jesu: 1) Ein Gespräch Jesu",
+            "bbox_xywh": [
+              163,
+              1267,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-34",
+            "text": "mit seiner Mutter vor der Passion (S. 219—220); 2) Wie der Teufel",
+            "bbox_xywh": [
+              163,
+              1302,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-35",
+            "text": "die Jünger nach der Reise versuchte, damit sie Jesum verrathen (S.",
+            "bbox_xywh": [
+              163,
+              1336,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-36",
+            "text": "220—221); 3) Passion oder seelenheilkräftige Erzählung über die",
+            "bbox_xywh": [
+              163,
+              1370,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-37",
+            "text": "Martern unseres Herrn Jesu Christi — eine populäre ungarisch-ruthe-",
+            "bbox_xywh": [
+              163,
+              1404,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-38",
+            "text": "nische Bearbeitung der Leidensgeschichte aus dem XVIII Jahrh. (S.",
+            "bbox_xywh": [
+              163,
+              1438,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-39",
+            "text": "222—235); 3) Paphnutius Vision über die Zahl der Wunden Christi",
+            "bbox_xywh": [
+              163,
+              1472,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-40",
+            "text": "bei der Passion (S. 236—237); 4) Christus patiens und die heilige",
+            "bbox_xywh": [
+              163,
+              1506,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 33,
+                "end": 49,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 49,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-41",
+            "text": "Veronke, ein geistliches Gedicht aus Kerestur (S. 237—239); 5) vier",
+            "bbox_xywh": [
+              163,
+              1540,
+              931,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00012-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "overview-line-39",
+        "reading": "3)",
+        "reason": "Repeated item number retained."
+      },
+      {
+        "line_id": "overview-line-41",
+        "reading": "Veronke",
+        "reason": "Name spelling provisional."
+      }
+    ]
+  }
+}

@@ -1,0 +1,760 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 19,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00019.jpg",
+  "source_image_sha256": "025739946ef38a0717fe526786560a07f7cb0eb3745711f0f21d882babea3a2a",
+  "reading": {
+    "reader_id": "gpt62-v3-s00019-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-scans11-20-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read full pinned image directly; retain physical line breaks, historical spelling, folios, anomalous ranges, and contextual language spans. Preserve uncertainty; all geometry estimated. German overview and Ukrainian preface are editorial text, not manuscript witnesses.",
+    "raw_response": "ПЕРЕДМОВА.\nI. Вступ. Апокріфічні дїяня (акти) апостолів мали в славян-\nській науцї менше щастя, як старозавітні апокріфи і навіть як\nапокріфічні євангелії; їм присьвячено менше спеціяльних праць,\nнавіть публїкація їх текстів була якась скупа; в збірках Пипіна,\nТіхонравова та Порфірєва їм присьвячено мало місця; дуже мало\nпівденно - славянських текстів було опублїковано в загребських\n„Starin“-ах та болгарськім „Сборникъ“-у. З новійших учених один\nлише проф. Спєранский присьвятив спеціяльну працю дїяням апо-\nстолів Андрія й Матвія у краю людожерцїв, а другий М. Петров-\nський розібрав з великим ученим апаратом але з малим резуль-\nтатом усї лєґенди про проповідь апостолів над берегами Чорного\nморя. Отся книжка являєть ся про те першою на славянськім\nґрунтї систематичною збіркою апокріфічних апостольських дїянь.\nХоча з натури своєї партикулярна, бо матеріял для неї я взяв із\nсамих лише галицько- та угорсько-руських рукописів, вона про те,\nдумаю, дасть добре понятє про весь обсяг і характер тої просторої\nлїтератури, на скілько вона була звісна нашим прадїдам. В нотах\nдоданих до тексту, як і в отсїй передмові я хочу подати все по-\nтрібне для тих, хто би бажав заняти ся дальшою працею на сьому\nполї, де, як усякий може переконати ся хоч би з отсеї збірки, так\nобмеженої що до свойого матеріялу, можна ще віднайти не одно\nнове й важне для науки.\nВ західній Европі вихідною точкою для наукової працї на\nсьому полї служить тепер майстерна чотиритомова розвідка Лїп-\nсіуса „Die apokryphen Apostelgeschichten und Apostellegenden“, якої\nперший том вийшов 1883 а остатнїй аж 1890 року. Збираючи до\nПамятки т. III.\n1",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            532,
+            692,
+            126,
+            30
+          ],
+          "description": "Decorative divider."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "title",
+        "kind": "heading",
+        "bbox_xywh": [
+          337,
+          596,
+          517,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "title-line-01",
+            "text": "ПЕРЕДМОВА.",
+            "bbox_xywh": [
+              337,
+              596,
+              517,
+              63
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          770,
+          1005,
+          959
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "I. Вступ. Апокріфічні дїяня (акти) апостолів мали в славян-",
+            "bbox_xywh": [
+              95,
+              770,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "ській науцї менше щастя, як старозавітні апокріфи і навіть як",
+            "bbox_xywh": [
+              95,
+              807,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "апокріфічні євангелії; їм присьвячено менше спеціяльних праць,",
+            "bbox_xywh": [
+              95,
+              844,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "навіть публїкація їх текстів була якась скупа; в збірках Пипіна,",
+            "bbox_xywh": [
+              95,
+              881,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "Тіхонравова та Порфірєва їм присьвячено мало місця; дуже мало",
+            "bbox_xywh": [
+              95,
+              918,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "південно - славянських текстів було опублїковано в загребських",
+            "bbox_xywh": [
+              95,
+              954,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "„Starin“-ах та болгарськім „Сборникъ“-у. З новійших учених один",
+            "bbox_xywh": [
+              95,
+              991,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 1,
+                "end": 7,
+                "language": "hr",
+                "script": "Latn",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 7,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 28,
+                "end": 36,
+                "language": "bg",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 36,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "лише проф. Спєранский присьвятив спеціяльну працю дїяням апо-",
+            "bbox_xywh": [
+              95,
+              1028,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "столів Андрія й Матвія у краю людожерцїв, а другий М. Петров-",
+            "bbox_xywh": [
+              95,
+              1065,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "ський розібрав з великим ученим апаратом але з малим резуль-",
+            "bbox_xywh": [
+              95,
+              1102,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "татом усї лєґенди про проповідь апостолів над берегами Чорного",
+            "bbox_xywh": [
+              95,
+              1139,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "моря. Отся книжка являєть ся про те першою на славянськім",
+            "bbox_xywh": [
+              95,
+              1176,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "ґрунтї систематичною збіркою апокріфічних апостольських дїянь.",
+            "bbox_xywh": [
+              95,
+              1213,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "Хоча з натури своєї партикулярна, бо матеріял для неї я взяв із",
+            "bbox_xywh": [
+              95,
+              1250,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "самих лише галицько- та угорсько-руських рукописів, вона про те,",
+            "bbox_xywh": [
+              95,
+              1286,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "думаю, дасть добре понятє про весь обсяг і характер тої просторої",
+            "bbox_xywh": [
+              95,
+              1323,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "лїтератури, на скілько вона була звісна нашим прадїдам. В нотах",
+            "bbox_xywh": [
+              95,
+              1360,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "доданих до тексту, як і в отсїй передмові я хочу подати все по-",
+            "bbox_xywh": [
+              95,
+              1397,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "трібне для тих, хто би бажав заняти ся дальшою працею на сьому",
+            "bbox_xywh": [
+              95,
+              1434,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "полї, де, як усякий може переконати ся хоч би з отсеї збірки, так",
+            "bbox_xywh": [
+              95,
+              1471,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "обмеженої що до свойого матеріялу, можна ще віднайти не одно",
+            "bbox_xywh": [
+              95,
+              1508,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "нове й важне для науки.",
+            "bbox_xywh": [
+              95,
+              1545,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "В західній Европі вихідною точкою для наукової працї на",
+            "bbox_xywh": [
+              95,
+              1582,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "сьому полї служить тепер майстерна чотиритомова розвідка Лїп-",
+            "bbox_xywh": [
+              95,
+              1618,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "сіуса „Die apokryphen Apostelgeschichten und Apostellegenden“, якої",
+            "bbox_xywh": [
+              95,
+              1655,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 7,
+                "end": 60,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 60,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "перший том вийшов 1883 а остатнїй аж 1890 року. Збираючи до",
+            "bbox_xywh": [
+              95,
+              1692,
+              1005,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          178,
+          1733,
+          168,
+          34
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "Памятки т. III.",
+            "bbox_xywh": [
+              178,
+              1733,
+              168,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "quire-number",
+        "kind": "other",
+        "bbox_xywh": [
+          1001,
+          1727,
+          29,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "quire-number-line-01",
+            "text": "1",
+            "bbox_xywh": [
+              1001,
+              1727,
+              29,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00019-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-08",
+        "reading": "Спєранский",
+        "reason": "Proper name and historic vowels provisional."
+      },
+      {
+        "line_id": "preface-line-11",
+        "reading": "лєґенди",
+        "reason": "Historical glyph choice provisional."
+      }
+    ]
+  }
+}

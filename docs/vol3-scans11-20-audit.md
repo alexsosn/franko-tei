@@ -1,0 +1,5 @@
+# Volume III scans 11–20 (working draft)
+
+All ten pinned native JPEGs inspected. Scans 11–17 are the German editorial overview (folios G–M); scan 18 is an unnumbered blank verso with faint reverse show-through and folded upper corner, not printed text; scan 19 opens the Ukrainian preface (no printed folio visible; bottom quire mark 1 is not a folio); scan 20 is printed II. The source hash for blank scan 18 is 3e018422630164a7c2c7de117fdf23d1aa5a5737c520d6890f76befcc49e3233. No fictitious reading JSON for the blank leaf under the existing nonempty contract. Its viewer coverage may therefore remain uncounted.
+
+Nine source-linked records, 337 physical lines, 17 explicit uncertainty notes. German and Ukrainian prose, contextual Latin titles and German citation, provisional Croatian/Bulgarian publication-title language. Geometry estimated, line boxes broad. No OCR layer or peer reading for these pages consulted. No new scan redistribution. Use existing shared offline and original-image TEI/PAGE checks; no software change.

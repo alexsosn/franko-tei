@@ -1,0 +1,441 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 17,
+  "printed_page_observed": "M",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00017.jpg",
+  "source_image_sha256": "f0e4b393ab6806c78a37fe4d4df4e3279eb9431de448a48d4cd3b018c6d9f2b3",
+  "reading": {
+    "reader_id": "gpt62-v3-s00017-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-scans11-20-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read full pinned image directly; retain physical line breaks, historical spelling, folios, anomalous ranges, and contextual language spans. Preserve uncertainty; all geometry estimated. German overview and Ukrainian preface are editorial text, not manuscript witnesses.",
+    "raw_response": "M\nEvang. Lucas (S. 205—206); 4) noch drei Menologien-Artikel und eine\npopuläre Bearbeitung der Lucas-Acten (S. 207—212).\nXII. Erzählungen von Apostel-Jüngern — eine Anzahl\nkürzerer oder ausführlicherer Texte über die Jünger (S. 213—269).\nBemerkenswerther unter ihnen sind: Martyrium des Ananias in Eleuthe-\nropolis (S. 215—217); Leben des heil. Dionysius des Areopagiten und\nseiner Freunde Hierotheus, Eleutherius u. A. (S. 224—230 und 307 –\n311); Andenken der heil. Jason und Sosipatros (S. 231–233); die\nheil. Märtyrerinnen Ina, Pina und Rima, welche bei den Gothen ge-\nlitten haben (S. 234); Passio des heil. Klemens des Papstes (S. 238 –\n246); Passio der heil. Perpetua und Potentiana, der Schwiegertochter\nNero’s (S. 250—252); die Pilatus Episoden aus der Passio Stephani\nProtomartyris (S. 256—258); Andenken der heil. Märtyrerin Photina\nder Samariterin, mit welcher Christus beim Brunnen gesprochen hatte\n(S. 264–269).\nZusätze und Berichtigungen (S. 270–323). Indices (S 324—350).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            450,
+            848,
+            306,
+            26
+          ],
+          "description": "Decorative closing rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1046,
+          113,
+          42,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "M",
+            "bbox_xywh": [
+              1046,
+              113,
+              42,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "overview",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          185,
+          999,
+          576
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "overview-line-01",
+            "text": "Evang. Lucas (S. 205—206); 4) noch drei Menologien-Artikel und eine",
+            "bbox_xywh": [
+              100,
+              185,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-02",
+            "text": "populäre Bearbeitung der Lucas-Acten (S. 207—212).",
+            "bbox_xywh": [
+              100,
+              221,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-03",
+            "text": "XII. Erzählungen von Apostel-Jüngern — eine Anzahl",
+            "bbox_xywh": [
+              100,
+              257,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-04",
+            "text": "kürzerer oder ausführlicherer Texte über die Jünger (S. 213—269).",
+            "bbox_xywh": [
+              100,
+              293,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-05",
+            "text": "Bemerkenswerther unter ihnen sind: Martyrium des Ananias in Eleuthe-",
+            "bbox_xywh": [
+              100,
+              329,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-06",
+            "text": "ropolis (S. 215—217); Leben des heil. Dionysius des Areopagiten und",
+            "bbox_xywh": [
+              100,
+              365,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-07",
+            "text": "seiner Freunde Hierotheus, Eleutherius u. A. (S. 224—230 und 307 –",
+            "bbox_xywh": [
+              100,
+              401,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-08",
+            "text": "311); Andenken der heil. Jason und Sosipatros (S. 231–233); die",
+            "bbox_xywh": [
+              100,
+              437,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-09",
+            "text": "heil. Märtyrerinnen Ina, Pina und Rima, welche bei den Gothen ge-",
+            "bbox_xywh": [
+              100,
+              473,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-10",
+            "text": "litten haben (S. 234); Passio des heil. Klemens des Papstes (S. 238 –",
+            "bbox_xywh": [
+              100,
+              509,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-11",
+            "text": "246); Passio der heil. Perpetua und Potentiana, der Schwiegertochter",
+            "bbox_xywh": [
+              100,
+              545,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 68,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-12",
+            "text": "Nero’s (S. 250—252); die Pilatus Episoden aus der Passio Stephani",
+            "bbox_xywh": [
+              100,
+              581,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 50,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 50,
+                "end": 65,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-13",
+            "text": "Protomartyris (S. 256—258); Andenken der heil. Märtyrerin Photina",
+            "bbox_xywh": [
+              100,
+              617,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 13,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-14",
+            "text": "der Samariterin, mit welcher Christus beim Brunnen gesprochen hatte",
+            "bbox_xywh": [
+              100,
+              653,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-15",
+            "text": "(S. 264–269).",
+            "bbox_xywh": [
+              100,
+              689,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-16",
+            "text": "Zusätze und Berichtigungen (S. 270–323). Indices (S 324—350).",
+            "bbox_xywh": [
+              100,
+              725,
+              999,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00017-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "overview-line-16",
+        "reading": "350",
+        "reason": "Final digit damaged/faint; tentative zero."
+      },
+      {
+        "line_id": "overview-line-13",
+        "reading": "Märtyrerin",
+        "reason": "Damaged last letters; tentative."
+      }
+    ]
+  }
+}

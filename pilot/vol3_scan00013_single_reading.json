@@ -1,0 +1,988 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 13,
+  "printed_page_observed": "I",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00013.jpg",
+  "source_image_sha256": "09249f32525eaa53e681dc99ec33ce0a896d0c553af682e2003dfd759a05f7f3",
+  "reading": {
+    "reader_id": "gpt62-v3-s00013-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-scans11-20-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read full pinned image directly; retain physical line breaks, historical spelling, folios, anomalous ranges, and contextual language spans. Preserve uncertainty; all geometry estimated. German overview and Ukrainian preface are editorial text, not manuscript witnesses.",
+    "raw_response": "I\nkurze Texte über den Centurio Longinus, über das Blut Christi, über\nden Leib Christi und über die Nägel, womit Christus ans Kreuz ge-\nschlagen wurde (S. 239—242); 6) Sermo Gregorii Theologi vom Kreuze\nund den zwei Räubern (S. 242–246): 7) Christi Kreuzabnahme und\nBeweinung durch Maria, Johannes den Jünger, Maria Magdalena und\nJoseph von Arimatheia (S. 246—253); 8) zwei Varianten des Evange-\nliums Nicodemi, speciell des ersten Theils desselben, der sog. Acta Pi-\nlati; eine derselben führt den Titel: „Sonntags-Legende. Geschehnisse\nder heil. Dreifaltigkeit, vollbracht von Karinus und Lycius“; die andere:\n„Sermo über die Marter unseres Heilands Jesu Christi und über die\nBeerdigung des Leibes des Herrn und über die Auferstehung Moses\ndes grossen Gesetzgebers. Geschehnisse der heiligen Dreifaltigkeit“ (S.\n252—292).\nVIII. Jesu Höllenfahrt, Auferstehung und Himmel-\nfahrt: 1) Des Karinus und Lisinus Erzählung über Jesu Höllenfahrt\n(S. 293—304); 2) Sermo von der Auferstehung des Karinus und Leu-\nginus, der Söhne des Gesetzeskundigen Symeon (S. 305–304) — zwei\nVarianten des zweiten Theils des Nikodemus-Evangeliums aus ruth.\nHandschriften des XVII Jahrh.; 3) Erzählung der heil. Apostel von\nLazars Auferstehung, ein altrussisches Gedicht über ein, theilweise dem\nNicodemus-Evangelium entlehntes Thema (S. 315—316); 4) des Euse-\nbius von Alexandrien Sermo über die Höllenfahrt Johannes des Täu-\nfers — eine populäre Bearbeitung dieser alten Prunkrede (S. 317—\n326); 5) Predigt über die Auferstehung Christi — populäre Bearbei-\ntung einiger Theile des Nicodemus-Evangeliums (S. 327—331); 6) Pre-\ndigt über die Himmelfahrt Christi — mit verschiedenen, dem Nicode-\nmus-Evangelium entlehnten apokryphen Details (S. 331—334).\nIX. Feinde und Freunde Jesu: 1) des Pilatus Brief an\nCäsar Claudius — zwei Varianten der apokr. Anaphora Pilati (S. 335\n—337); 2) Pilatus und die Mutter Gottes — eine kleine, unbekannt\nwoher genommene Erzählung von einem Sterne auf dem Kopfe Marias\nund von der Bekehrung des Pilatus; 3) die Bestrafung der Juden —\nsie werden blind geboren und brauchen Blut von Christenkindern, um\nihren blinden Kindern das Gesicht zu verschaffen (S. 338–339); 4) Die\nvier Herodes (S. 339–340); 5) Sermo von den Todesarten und Gottes-\nstrafen über die Gottesfeinde (S. 340—341); 6) Sage von den beiden\nRäubern Gestas und Dismas, wie sie gewachsen und zu beiden Seiten\nChristi gekreuzigt wurden (S. 342—343); 7) Sage des Kirchenlehrers\nHieromynus vom Judas dem Verräther Christi (S. 343—346); 8) eine\npopuläre ung. ruthenische Bearbeitung dieser Sage, vielfach abweichend\nvon der vorhergehenden (S. 346--348); 9) vom Lazarus (S. 348–349);",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1083,
+          115,
+          34,
+          39
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "I",
+            "bbox_xywh": [
+              1083,
+              115,
+              34,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "overview",
+        "kind": "body",
+        "bbox_xywh": [
+          116,
+          186,
+          996,
+          1484
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "overview-line-01",
+            "text": "kurze Texte über den Centurio Longinus, über das Blut Christi, über",
+            "bbox_xywh": [
+              116,
+              186,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-02",
+            "text": "den Leib Christi und über die Nägel, womit Christus ans Kreuz ge-",
+            "bbox_xywh": [
+              116,
+              222,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-03",
+            "text": "schlagen wurde (S. 239—242); 6) Sermo Gregorii Theologi vom Kreuze",
+            "bbox_xywh": [
+              116,
+              258,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 32,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 32,
+                "end": 55,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 55,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-04",
+            "text": "und den zwei Räubern (S. 242–246): 7) Christi Kreuzabnahme und",
+            "bbox_xywh": [
+              116,
+              294,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-05",
+            "text": "Beweinung durch Maria, Johannes den Jünger, Maria Magdalena und",
+            "bbox_xywh": [
+              116,
+              331,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-06",
+            "text": "Joseph von Arimatheia (S. 246—253); 8) zwei Varianten des Evange-",
+            "bbox_xywh": [
+              116,
+              367,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-07",
+            "text": "liums Nicodemi, speciell des ersten Theils desselben, der sog. Acta Pi-",
+            "bbox_xywh": [
+              116,
+              403,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 63,
+                "end": 71,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-08",
+            "text": "lati; eine derselben führt den Titel: „Sonntags-Legende. Geschehnisse",
+            "bbox_xywh": [
+              116,
+              439,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 4,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 4,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-09",
+            "text": "der heil. Dreifaltigkeit, vollbracht von Karinus und Lycius“; die andere:",
+            "bbox_xywh": [
+              116,
+              476,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 73,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-10",
+            "text": "„Sermo über die Marter unseres Heilands Jesu Christi und über die",
+            "bbox_xywh": [
+              116,
+              512,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-11",
+            "text": "Beerdigung des Leibes des Herrn und über die Auferstehung Moses",
+            "bbox_xywh": [
+              116,
+              548,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-12",
+            "text": "des grossen Gesetzgebers. Geschehnisse der heiligen Dreifaltigkeit“ (S.",
+            "bbox_xywh": [
+              116,
+              584,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 71,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-13",
+            "text": "252—292).",
+            "bbox_xywh": [
+              116,
+              620,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 9,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-14",
+            "text": "VIII. Jesu Höllenfahrt, Auferstehung und Himmel-",
+            "bbox_xywh": [
+              116,
+              657,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 48,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-15",
+            "text": "fahrt: 1) Des Karinus und Lisinus Erzählung über Jesu Höllenfahrt",
+            "bbox_xywh": [
+              116,
+              693,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-16",
+            "text": "(S. 293—304); 2) Sermo von der Auferstehung des Karinus und Leu-",
+            "bbox_xywh": [
+              116,
+              729,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-17",
+            "text": "ginus, der Söhne des Gesetzeskundigen Symeon (S. 305–304) — zwei",
+            "bbox_xywh": [
+              116,
+              765,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-18",
+            "text": "Varianten des zweiten Theils des Nikodemus-Evangeliums aus ruth.",
+            "bbox_xywh": [
+              116,
+              801,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-19",
+            "text": "Handschriften des XVII Jahrh.; 3) Erzählung der heil. Apostel von",
+            "bbox_xywh": [
+              116,
+              838,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-20",
+            "text": "Lazars Auferstehung, ein altrussisches Gedicht über ein, theilweise dem",
+            "bbox_xywh": [
+              116,
+              874,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 71,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-21",
+            "text": "Nicodemus-Evangelium entlehntes Thema (S. 315—316); 4) des Euse-",
+            "bbox_xywh": [
+              116,
+              910,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-22",
+            "text": "bius von Alexandrien Sermo über die Höllenfahrt Johannes des Täu-",
+            "bbox_xywh": [
+              116,
+              946,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-23",
+            "text": "fers — eine populäre Bearbeitung dieser alten Prunkrede (S. 317—",
+            "bbox_xywh": [
+              116,
+              982,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-24",
+            "text": "326); 5) Predigt über die Auferstehung Christi — populäre Bearbei-",
+            "bbox_xywh": [
+              116,
+              1019,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-25",
+            "text": "tung einiger Theile des Nicodemus-Evangeliums (S. 327—331); 6) Pre-",
+            "bbox_xywh": [
+              116,
+              1055,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-26",
+            "text": "digt über die Himmelfahrt Christi — mit verschiedenen, dem Nicode-",
+            "bbox_xywh": [
+              116,
+              1091,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-27",
+            "text": "mus-Evangelium entlehnten apokryphen Details (S. 331—334).",
+            "bbox_xywh": [
+              116,
+              1127,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-28",
+            "text": "IX. Feinde und Freunde Jesu: 1) des Pilatus Brief an",
+            "bbox_xywh": [
+              116,
+              1163,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-29",
+            "text": "Cäsar Claudius — zwei Varianten der apokr. Anaphora Pilati (S. 335",
+            "bbox_xywh": [
+              116,
+              1200,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 43,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 43,
+                "end": 58,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 58,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-30",
+            "text": "—337); 2) Pilatus und die Mutter Gottes — eine kleine, unbekannt",
+            "bbox_xywh": [
+              116,
+              1236,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-31",
+            "text": "woher genommene Erzählung von einem Sterne auf dem Kopfe Marias",
+            "bbox_xywh": [
+              116,
+              1272,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-32",
+            "text": "und von der Bekehrung des Pilatus; 3) die Bestrafung der Juden —",
+            "bbox_xywh": [
+              116,
+              1308,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-33",
+            "text": "sie werden blind geboren und brauchen Blut von Christenkindern, um",
+            "bbox_xywh": [
+              116,
+              1344,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-34",
+            "text": "ihren blinden Kindern das Gesicht zu verschaffen (S. 338–339); 4) Die",
+            "bbox_xywh": [
+              116,
+              1381,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 69,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-35",
+            "text": "vier Herodes (S. 339–340); 5) Sermo von den Todesarten und Gottes-",
+            "bbox_xywh": [
+              116,
+              1417,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-36",
+            "text": "strafen über die Gottesfeinde (S. 340—341); 6) Sage von den beiden",
+            "bbox_xywh": [
+              116,
+              1453,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-37",
+            "text": "Räubern Gestas und Dismas, wie sie gewachsen und zu beiden Seiten",
+            "bbox_xywh": [
+              116,
+              1489,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-38",
+            "text": "Christi gekreuzigt wurden (S. 342—343); 7) Sage des Kirchenlehrers",
+            "bbox_xywh": [
+              116,
+              1526,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-39",
+            "text": "Hieromynus vom Judas dem Verräther Christi (S. 343—346); 8) eine",
+            "bbox_xywh": [
+              116,
+              1562,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-40",
+            "text": "populäre ung. ruthenische Bearbeitung dieser Sage, vielfach abweichend",
+            "bbox_xywh": [
+              116,
+              1598,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-41",
+            "text": "von der vorhergehenden (S. 346--348); 9) vom Lazarus (S. 348–349);",
+            "bbox_xywh": [
+              116,
+              1634,
+              996,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00013-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "overview-line-17",
+        "reading": "305–304",
+        "reason": "Descending range appears in print; not corrected."
+      },
+      {
+        "line_id": "overview-line-39",
+        "reading": "Hieromynus",
+        "reason": "Printed name appears transposed; retain."
+      }
+    ]
+  }
+}

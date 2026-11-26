@@ -1,0 +1,988 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 15,
+  "printed_page_observed": "K",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00015.jpg",
+  "source_image_sha256": "c13c8389e544bfc3c8e29cabaa0ae913412676895f2a7b25342cc2b95ed878eb",
+  "reading": {
+    "reader_id": "gpt62-v3-s00015-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-scans11-20-20261125",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read full pinned image directly; retain physical line breaks, historical spelling, folios, anomalous ranges, and contextual language spans. Preserve uncertainty; all geometry estimated. German overview and Ukrainian preface are editorial text, not manuscript witnesses.",
+    "raw_response": "K\nsten, wo Paul, Markus und Lukas in die Zwölfzahl aufgenommen sind\n(S. 5, 9—10); 3) ein Catalog der 12 Apostel — Fragment (S. 7—8);\n4) Von den Aposteln, Hippolyts, umfasst auch die 70 Jünger (S. 270—\n272); 5) die durch Legenden vom Petrus und Paulus erweiterte Liste\ndes Pseudo-Epiphanius (S. 272—275); 6) die Jüngerliste des Pseudo-\nDorotheus (S. 275—279); 7) die erweiterte Apostelliste des Pseudo-\nSophronius (S. 279—287); 8) zwei Fragmente über die Welttheilung\nund über den Anfang des Trisagion (S. 7—8); 9) ein Wort aus dem\nCanon der heil. Apostel über die Sclaven (S. 10); 10) aus den Apo-\nstolischen Constitutionen, Fragmente aus den „Antworten des Anasta-\nsius Sinaites (S. 287—301).\nII. Erzählungen vom Ap. Petrus: 1) Das Wort über den\nStreit Petri mit dem Simon Magus (S. 12—13); 2) über den Anfang\nder Mönche vom heil. Clemens dem Papst von Rom (S. 14–17);\n3) Sankt Peter und Simon Magus, eine populäre Bearbeitung (S. 18—\n19); 4) zwei populäre, auf Grund apokrypher Akten gearbeitete Pre-\ndigten zum Lobe Petri (S. 20—26).\nIII. Erzählungen vom Ap. Paulus: 1) Passio Stephani\nProtomartyris — die Rolle Pauls dabei wird abweichend von den Apo-\nstelacten dargestellt, die Pilatus-Episoden weggelassen (S. 28—33);\n2) Passio der heil. Thekla (S. 33—34); 3) folgen noch zwei populäre\nBearbeitungen der Thekla-Legende (S. 45—47 und S. 262–263); 4)\nAnkunft Pauls nach Rom — Fragment der Peter-Pauls-Akten über den\nTod Dioskors und die Bestrafung von Puteoli (S. 47–48).\nIV. Erzählungen vom Ap. Johannes dem Theologen:\n1) die Menäen-Vita, abgekürzter Pseudo-Prochorus (S. 49—56); 2)\nPseudo-Prochorus über die Verfassung des Evangeliums und der Apo-\ncalypse sowie den Tod des Johannes (S. 56—61); 3) Apokryphes aus\neinem „Lob des Johannes“: der unter die Räuber gerathene Jüngling,\ndie Vernichtung des Artemis-Tempels, Johannis Tod (S. 64—64); 4)\ndes Anastasius Sinaites Erzählung von dem unter die Räuber gerathe-\nnen Jüngling (S. 64—65); 5) drei kurze Menologien-Artikel über Jo-\nhannes (S. 66—68); 6) eine populäre ung.-ruthenische Bearbeitung\ndes Pseudo-Prochorus (S. 68–74); 7) eine ruth. Übersetzung der pol-\nnischen Vita Johannis von P. Skarga (S. 75–81); 8) noch zwei po-\npuläre Bearbeitungen, theils auf dem Ps.-Prochorus, theils auf dem Ab-\ndias basirt, mit Beimengung noch späterer Legenden, z. B. über die\nAnkunft der Mutter Gottes mit dem Johannes auf den Athosberg (S.\n82—90).\nV. Erzählungen vom Ap. Thomas: 1) Acta Thomae,\netwas abgekürzt im Vergleich mit dem griechischen Text, nur die ersten",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1060,
+          120,
+          38,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "K",
+            "bbox_xywh": [
+              1060,
+              120,
+              38,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "overview",
+        "kind": "body",
+        "bbox_xywh": [
+          124,
+          190,
+          980,
+          1461
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "overview-line-01",
+            "text": "sten, wo Paul, Markus und Lukas in die Zwölfzahl aufgenommen sind",
+            "bbox_xywh": [
+              124,
+              190,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-02",
+            "text": "(S. 5, 9—10); 3) ein Catalog der 12 Apostel — Fragment (S. 7—8);",
+            "bbox_xywh": [
+              124,
+              225,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-03",
+            "text": "4) Von den Aposteln, Hippolyts, umfasst auch die 70 Jünger (S. 270—",
+            "bbox_xywh": [
+              124,
+              261,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-04",
+            "text": "272); 5) die durch Legenden vom Petrus und Paulus erweiterte Liste",
+            "bbox_xywh": [
+              124,
+              296,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-05",
+            "text": "des Pseudo-Epiphanius (S. 272—275); 6) die Jüngerliste des Pseudo-",
+            "bbox_xywh": [
+              124,
+              332,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-06",
+            "text": "Dorotheus (S. 275—279); 7) die erweiterte Apostelliste des Pseudo-",
+            "bbox_xywh": [
+              124,
+              368,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-07",
+            "text": "Sophronius (S. 279—287); 8) zwei Fragmente über die Welttheilung",
+            "bbox_xywh": [
+              124,
+              403,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-08",
+            "text": "und über den Anfang des Trisagion (S. 7—8); 9) ein Wort aus dem",
+            "bbox_xywh": [
+              124,
+              439,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-09",
+            "text": "Canon der heil. Apostel über die Sclaven (S. 10); 10) aus den Apo-",
+            "bbox_xywh": [
+              124,
+              475,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-10",
+            "text": "stolischen Constitutionen, Fragmente aus den „Antworten des Anasta-",
+            "bbox_xywh": [
+              124,
+              510,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-11",
+            "text": "sius Sinaites (S. 287—301).",
+            "bbox_xywh": [
+              124,
+              546,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 27,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-12",
+            "text": "II. Erzählungen vom Ap. Petrus: 1) Das Wort über den",
+            "bbox_xywh": [
+              124,
+              582,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-13",
+            "text": "Streit Petri mit dem Simon Magus (S. 12—13); 2) über den Anfang",
+            "bbox_xywh": [
+              124,
+              617,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-14",
+            "text": "der Mönche vom heil. Clemens dem Papst von Rom (S. 14–17);",
+            "bbox_xywh": [
+              124,
+              653,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-15",
+            "text": "3) Sankt Peter und Simon Magus, eine populäre Bearbeitung (S. 18—",
+            "bbox_xywh": [
+              124,
+              688,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-16",
+            "text": "19); 4) zwei populäre, auf Grund apokrypher Akten gearbeitete Pre-",
+            "bbox_xywh": [
+              124,
+              724,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-17",
+            "text": "digten zum Lobe Petri (S. 20—26).",
+            "bbox_xywh": [
+              124,
+              760,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 33,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-18",
+            "text": "III. Erzählungen vom Ap. Paulus: 1) Passio Stephani",
+            "bbox_xywh": [
+              124,
+              795,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 36,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 36,
+                "end": 51,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-19",
+            "text": "Protomartyris — die Rolle Pauls dabei wird abweichend von den Apo-",
+            "bbox_xywh": [
+              124,
+              831,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 13,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 13,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-20",
+            "text": "stelacten dargestellt, die Pilatus-Episoden weggelassen (S. 28—33);",
+            "bbox_xywh": [
+              124,
+              867,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-21",
+            "text": "2) Passio der heil. Thekla (S. 33—34); 3) folgen noch zwei populäre",
+            "bbox_xywh": [
+              124,
+              902,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-22",
+            "text": "Bearbeitungen der Thekla-Legende (S. 45—47 und S. 262–263); 4)",
+            "bbox_xywh": [
+              124,
+              938,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-23",
+            "text": "Ankunft Pauls nach Rom — Fragment der Peter-Pauls-Akten über den",
+            "bbox_xywh": [
+              124,
+              974,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-24",
+            "text": "Tod Dioskors und die Bestrafung von Puteoli (S. 47–48).",
+            "bbox_xywh": [
+              124,
+              1009,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-25",
+            "text": "IV. Erzählungen vom Ap. Johannes dem Theologen:",
+            "bbox_xywh": [
+              124,
+              1045,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 47,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-26",
+            "text": "1) die Menäen-Vita, abgekürzter Pseudo-Prochorus (S. 49—56); 2)",
+            "bbox_xywh": [
+              124,
+              1080,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-27",
+            "text": "Pseudo-Prochorus über die Verfassung des Evangeliums und der Apo-",
+            "bbox_xywh": [
+              124,
+              1116,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-28",
+            "text": "calypse sowie den Tod des Johannes (S. 56—61); 3) Apokryphes aus",
+            "bbox_xywh": [
+              124,
+              1152,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-29",
+            "text": "einem „Lob des Johannes“: der unter die Räuber gerathene Jüngling,",
+            "bbox_xywh": [
+              124,
+              1187,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-30",
+            "text": "die Vernichtung des Artemis-Tempels, Johannis Tod (S. 64—64); 4)",
+            "bbox_xywh": [
+              124,
+              1223,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-31",
+            "text": "des Anastasius Sinaites Erzählung von dem unter die Räuber gerathe-",
+            "bbox_xywh": [
+              124,
+              1259,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-32",
+            "text": "nen Jüngling (S. 64—65); 5) drei kurze Menologien-Artikel über Jo-",
+            "bbox_xywh": [
+              124,
+              1294,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-33",
+            "text": "hannes (S. 66—68); 6) eine populäre ung.-ruthenische Bearbeitung",
+            "bbox_xywh": [
+              124,
+              1330,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-34",
+            "text": "des Pseudo-Prochorus (S. 68–74); 7) eine ruth. Übersetzung der pol-",
+            "bbox_xywh": [
+              124,
+              1366,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-35",
+            "text": "nischen Vita Johannis von P. Skarga (S. 75–81); 8) noch zwei po-",
+            "bbox_xywh": [
+              124,
+              1401,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 8,
+                "end": 21,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 21,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-36",
+            "text": "puläre Bearbeitungen, theils auf dem Ps.-Prochorus, theils auf dem Ab-",
+            "bbox_xywh": [
+              124,
+              1437,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-37",
+            "text": "dias basirt, mit Beimengung noch späterer Legenden, z. B. über die",
+            "bbox_xywh": [
+              124,
+              1472,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 66,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-38",
+            "text": "Ankunft der Mutter Gottes mit dem Johannes auf den Athosberg (S.",
+            "bbox_xywh": [
+              124,
+              1508,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-39",
+            "text": "82—90).",
+            "bbox_xywh": [
+              124,
+              1544,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 7,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-40",
+            "text": "V. Erzählungen vom Ap. Thomas: 1) Acta Thomae,",
+            "bbox_xywh": [
+              124,
+              1579,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 34,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 34,
+                "end": 45,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 45,
+                "end": 46,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "overview-line-41",
+            "text": "etwas abgekürzt im Vergleich mit dem griechischen Text, nur die ersten",
+            "bbox_xywh": [
+              124,
+              1615,
+              980,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00015-20261125",
+                "start": 0,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "overview-line-30",
+        "reading": "64—64",
+        "reason": "Printed repeated number retained."
+      },
+      {
+        "line_id": "overview-line-36",
+        "reading": "Ab-",
+        "reason": "Hyphen faint, line break retained."
+      }
+    ]
+  }
+}
