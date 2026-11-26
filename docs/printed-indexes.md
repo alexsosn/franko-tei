@@ -1,12 +1,12 @@
 # Printed indexes: provisional navigation pilot
 
-Refs #233, #234, #235, #238. At cb65d640ae0271d20d92c6c1d3ce6cd0a47c66bc, all 47 Volume I index scans have image-first agent drafts in main. This pilot uses 31 frozen page records and does not change their text or images.
+Refs #233, #234, #235, #238. At cb65d640ae0271d20d92c6c1d3ce6cd0a47c66bc, all 47 Volume I index scans have image-first agent drafts in main. This pilot uses 37 frozen page records and does not change their text or images.
 
 | Section | Printed pages | Physical scans | Structured pilot |
 | --- | --- | --- | --- |
 | Names and places | 341–355 | 416–430 | 416–430 |
 | Authors and works | 356–361 | 431–436 | 431–436 |
-| Motifs | 362–383 | 437–458 | 437–442 |
+| Motifs | 362–383 | 437–458 | 437–448 |
 | Glossary | 384–387 | 459–462 | 459–462 |
 
 Section boundaries follow previous contents research and draft evidence, not new image collation. Partitions in web/printed_indexes.py explicitly specify inclusive region end-line ordinals against exact blob SHA and reader ID. Source paths, blob, asset commit, region and literal line IDs/text are retained in the generated projection. A missing or changed blob suppresses the affected page, or both pages of a continued entry, rather than silently reusing obsolete boundaries. The source scans remain accessible.
@@ -26,3 +26,5 @@ Reference-completeness pass: structured article counts do not measure verified r
 The first full audit found 21 missing citation occurrences, all folios 147/247. Scan 222 is recorded as 247 but continues the Jacob testament from 146 (scan 221) to 148 (223); the actual 247 (322) continues Moses between 246 (321) and 248 (323). A six-blob-pinned exception permits estimated page 147 and the directly recorded page 247 without altering the literal readings. If any evidence changes, the exception fails closed. Regression now requires zero missing, unresolved or unlinked articles for all currently structured pages, using the same supplementary overlay as production. This still does not certify every cited mention or resolve the unstructured motif pages.
 
 Motif scans 438–442 add 106 articles, 230 literal body lines, 68 explicit ditto contexts, 114 citation tokens covering 128 page occurrences. Ambрам continues across 439/440; both pages must match their pinned source. I442 has adjacent full ranges `258—259 261—262`, preserved as literal with a recovered separator. The zero-missing/no-ref/unresolved audit applies to this new slice as well. Total 1622 articles, 31/47 pages, motif coverage 6/22 pages. Not image-verified or mention-complete.
+
+Motif scans 443–448 add 125 articles and 277 literal body lines, 90 ditto contexts. Continued entries bridge 443–444, 444–445 and 447–448; eligibility is transitive over overlapping page pairs. I443 Darius article has no printed number in its draft, and I442 parallel Belshazzar article cites 320–321. Actual story is directly attested on 321–322 (scan396 `belshazzar-body-l005`, scan397 `belshazzar-body-l001`). Both receive source-pinned editorial range and exact line anchors; original numeric token or absence remains recorded. 1747 entries on 37/47 pages, pending tests. No fresh visual collation.
