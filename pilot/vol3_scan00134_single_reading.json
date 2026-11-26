@@ -1,0 +1,546 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 134,
+  "printed_page_observed": "48",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00134.jpg",
+  "source_image_sha256": "2ea3e1219e4fb89ff5295130b4b01c21b68cdbeaaad42ec7e4e31e1f03d8b288",
+  "reading": {
+    "reader_id": "gpt62-v3-s00134-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-132-141-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct image reading; preserve physical lines, printed historical forms, omission signs and apparatus. Exclude Arabic references from CU. Diacritics and geometry provisional.",
+    "raw_response": "48\nве оумолиша цр҃я, да бы послалъ оубити Павла. пославъ цр҃ь на\nвся поути стрѣщи таковаго моужа, бѣ бо знаем: чрънѫ брадѫ\nимѣя и . . . главѫ сивѫ и низок тѣлом. и пришедши близ къ\nРимѫ влѣзе въ корабль. бы҃ Диоскор нѣкто имѣя образ Пав-\nловъ и главою и брадою, и влѣзе въ град Потиюль. и мнѣвши\nлюдїе, яко Павелъ е, и оусѣкоша главоу его и послаша въ Рим\nкъ цр҃ю. Павелъ же моля ся о градѣ, въ немже оубиша Диоско-\nра, и погроуженъ бы҃ съ людми въ море. и пришед къ Рим Па-\nвелъ оучаше вѣрѣ Хв҃ѣ, крⷭ҇ти женѫ Агриповѫ кесаря. Агрипа же\nгнѣвъ имѣя на Павла жены ради и шед съ Жиды къ Нероноу\nнавади на Павла. и оусѣчен бывъ Павелъ мечем въ в҃-е лѣто по\nст҃ѣмъ Петрѣ.\nСе оповіданє — коротенький витяг із просторого старославян-\nського апокріфа „Мученіе святаго апостола Павла“, зрештою з де-\nякими відмінами супроти того тексту, з якого витяги в грецькім\nперекладї Соколова опублїкув Лїпсіус (Die apokryphen Apostelge-\nschichten und Apostellegenden, Ergänzungsheft, стор. 49—52).",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            476,
+            969,
+            295,
+            15
+          ],
+          "description": "Printed decorative tailpiece; show-through below not edition text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          161,
+          137,
+          47,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "48",
+            "bbox_xywh": [
+              161,
+              137,
+              47,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "text",
+        "kind": "body",
+        "bbox_xywh": [
+          158,
+          202,
+          950,
+          405
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "text-line-01",
+            "text": "ве оумолиша цр҃я, да бы послалъ оубити Павла. пославъ цр҃ь на",
+            "bbox_xywh": [
+              158,
+              202,
+              950,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-02",
+            "text": "вся поути стрѣщи таковаго моужа, бѣ бо знаем: чрънѫ брадѫ",
+            "bbox_xywh": [
+              158,
+              235,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-03",
+            "text": "имѣя и . . . главѫ сивѫ и низок тѣлом. и пришедши близ къ",
+            "bbox_xywh": [
+              158,
+              269,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-04",
+            "text": "Римѫ влѣзе въ корабль. бы҃ Диоскор нѣкто имѣя образ Пав-",
+            "bbox_xywh": [
+              158,
+              303,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-05",
+            "text": "ловъ и главою и брадою, и влѣзе въ град Потиюль. и мнѣвши",
+            "bbox_xywh": [
+              158,
+              337,
+              950,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-06",
+            "text": "людїе, яко Павелъ е, и оусѣкоша главоу его и послаша въ Рим",
+            "bbox_xywh": [
+              158,
+              370,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-07",
+            "text": "къ цр҃ю. Павелъ же моля ся о градѣ, въ немже оубиша Диоско-",
+            "bbox_xywh": [
+              158,
+              404,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-08",
+            "text": "ра, и погроуженъ бы҃ съ людми въ море. и пришед къ Рим Па-",
+            "bbox_xywh": [
+              158,
+              438,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-09",
+            "text": "велъ оучаше вѣрѣ Хв҃ѣ, крⷭ҇ти женѫ Агриповѫ кесаря. Агрипа же",
+            "bbox_xywh": [
+              158,
+              472,
+              950,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-10",
+            "text": "гнѣвъ имѣя на Павла жены ради и шед съ Жиды къ Нероноу",
+            "bbox_xywh": [
+              158,
+              505,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-11",
+            "text": "навади на Павла. и оусѣчен бывъ Павелъ мечем въ в҃-е лѣто по",
+            "bbox_xywh": [
+              158,
+              539,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-12",
+            "text": "ст҃ѣмъ Петрѣ.",
+            "bbox_xywh": [
+              158,
+              573,
+              950,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 13,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          161,
+          647,
+          945,
+          168
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "Се оповіданє — коротенький витяг із просторого старославян-",
+            "bbox_xywh": [
+              161,
+              647,
+              945,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "ського апокріфа „Мученіе святаго апостола Павла“, зрештою з де-",
+            "bbox_xywh": [
+              161,
+              680,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 17,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 47,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "якими відмінами супроти того тексту, з якого витяги в грецькім",
+            "bbox_xywh": [
+              161,
+              714,
+              945,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-04",
+            "text": "перекладї Соколова опублїкув Лїпсіус (Die apokryphen Apostelge-",
+            "bbox_xywh": [
+              161,
+              747,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 38,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 38,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-05",
+            "text": "schichten und Apostellegenden, Ergänzungsheft, стор. 49—52).",
+            "bbox_xywh": [
+              161,
+              781,
+              945,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 0,
+                "end": 45,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00134-20261126",
+                "start": 45,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "text-line-01",
+        "reading": "ве оумолиша цр҃я, да бы послалъ оубити Павла. пославъ цр҃ь на",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-02",
+        "reading": "вся поути стрѣщи таковаго моужа, бѣ бо знаем: чрънѫ брадѫ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-03",
+        "reading": "имѣя и . . . главѫ сивѫ и низок тѣлом. и пришедши близ къ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-04",
+        "reading": "Римѫ влѣзе въ корабль. бы҃ Диоскор нѣкто имѣя образ Пав-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-05",
+        "reading": "ловъ и главою и брадою, и влѣзе въ град Потиюль. и мнѣвши",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-06",
+        "reading": "людїе, яко Павелъ е, и оусѣкоша главоу его и послаша въ Рим",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-07",
+        "reading": "къ цр҃ю. Павелъ же моля ся о градѣ, въ немже оубиша Диоско-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-08",
+        "reading": "ра, и погроуженъ бы҃ съ людми въ море. и пришед къ Рим Па-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-09",
+        "reading": "велъ оучаше вѣрѣ Хв҃ѣ, крⷭ҇ти женѫ Агриповѫ кесаря. Агрипа же",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-10",
+        "reading": "гнѣвъ имѣя на Павла жены ради и шед съ Жиды къ Нероноу",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-11",
+        "reading": "навади на Павла. и оусѣчен бывъ Павелъ мечем въ в҃-е лѣто по",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-12",
+        "reading": "ст҃ѣмъ Петрѣ.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "editorial-line-02",
+        "reading": "ського апокріфа „Мученіе святаго апостола Павла“, зрештою з де-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      }
+    ]
+  }
+}
