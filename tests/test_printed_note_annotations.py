@@ -267,8 +267,10 @@ class NumberedApparatusTests(unittest.TestCase):
             (ROOT / p["source_pilot_path"]).read_text(encoding="utf-8"))
             for p in block["pages"]}
 
-    def check_block(self, block, sources, *, paired=False, repeated=False):
+    def check_block(self, block, sources, *, paired=False, repeated=False,
+                    occurrence_labels=False):
         self.assertTrue(not repeated or paired)
+        self.assertTrue(not occurrence_labels or repeated)
         self.assertEqual(block["schema_version"], "printed-apparatus-annotation-v1")
         self.assertEqual(block["status"], "agent_unverified")
         self.assertEqual(block["volume"], "1")
@@ -325,7 +327,14 @@ class NumberedApparatusTests(unittest.TestCase):
                        for (scan, lid), raw in apparatus.items()
                        for m in label_pattern.finditer(raw)]
         seen_labels = []
+        label_counts = {}
         for entry in block["entries"]:
+            number = entry["number"]
+            label_counts[number] = label_counts.get(number, 0) + 1
+            if occurrence_labels:
+                self.assertEqual(entry["id"], f"{block['id']}-entry-{number:03d}-{label_counts[number]:02d}")
+            else:
+                self.assertEqual(label_counts[number], 1)
             self.assertNotIn(entry["id"], entries)
             entries[entry["id"]] = entry
             self.assertTrue(entry["id"].startswith(block["id"] + "-"))
@@ -373,6 +382,11 @@ class NumberedApparatusTests(unittest.TestCase):
                 self.assertNotIn("reason", link)
                 number = int(marker["literal"].rstrip(")—").translate(self.DIGITS))
                 self.assertEqual(number, entry["number"])
+                if occurrence_labels and label_counts[number] > 1:
+                    self.assertTrue(link.get("disambiguation", "").strip(),
+                                    "duplicate printed number requires explicit source evidence")
+                else:
+                    self.assertNotIn("disambiguation", link)
                 role = link["role"]
                 if "—" in entry["label"]:
                     self.assertIn(role, ("range_start", "range_end"))
@@ -394,7 +408,8 @@ class NumberedApparatusTests(unittest.TestCase):
             incomplete = []
             for eid, observed_roles in roles.items():
                 if "—" in entries[eid]["label"]:
-                    if repeated and observed_roles == ["range_start"]:
+                    if repeated and (observed_roles == ["range_start"] or
+                                     occurrence_labels and observed_roles == ["range_end"]):
                         incomplete.append(eid)
                     else:
                         self.assertEqual(observed_roles, ["range_start", "range_end"])
@@ -586,7 +601,7 @@ class NumberedApparatusTests(unittest.TestCase):
 
     def test_section_ix_apparatus_scopes(self):
         for suffix, total, markers, resolved, unlinked, incomplete in [
-                ("a", 57, 59, 58, 3, 0), ("b", 28, 29, 27, 3, 1),
+                ("a", 57, 59, 58, 3, 0), ("b", 28, 29, 27, 4, 1),
                 ("c", 9, 12, 12, 0, 0)]:
             with self.subTest(witness=suffix):
                 block = json.loads((ROOT / f"pilot/structure/vol1_section_ix_{suffix}_apparatus.json"
@@ -599,6 +614,30 @@ class NumberedApparatusTests(unittest.TestCase):
                 self.assertEqual(sum(l["status"] == "resolved" for l in block["links"]), resolved)
                 self.assertEqual(len(block["unlinked_entry_ids"]), unlinked)
                 self.assertEqual(len(block["incomplete_range_entry_ids"]), incomplete)
+                expected = {
+                    "a": ([149, 150, 152], [["babel", "munt-nimrod"], ["first-wars"], []],
+                          [[], ["witness-a-apparatus"], []], "witness-a-label", "witness-b-label",
+                          [54], [52, 53, 54]),
+                    "b": ([152, 153], [["witness-b-eber", "witness-b-babel"], ["witness-b-babel-end"]],
+                          [[], ["witness-b-apparatus"]], "witness-b-label", "witness-c-label",
+                          [3, 20], [3, 7, 18, 20]),
+                    "c": ([153, 154], [["witness-c-serug-nahor"], []],
+                          [[], ["witness-c-apparatus"]], "witness-c-label", "witness-d-label",
+                          [], []),
+                }[suffix]
+                scans, body, apparatus, start, end, disputed, missing = expected
+                self.assertEqual([p["scan_page"] for p in block["pages"]], scans)
+                self.assertEqual([p["body_region_ids"] for p in block["pages"]], body)
+                self.assertEqual([p["apparatus_region_ids"] for p in block["pages"]], apparatus)
+                self.assertEqual(block["scope"]["heading"]["region_id"], start)
+                self.assertEqual(block["scope"]["next_heading"]["region_id"], end)
+                self.assertEqual([e["number"] for e in block["entries"]],
+                                 list(range(1, 22)) + [18] + list(range(22, 28))
+                                 if suffix == "b" else list(range(1, total + 1)))
+                self.assertEqual([int(l["marker"]["literal"].rstrip(")—").translate(self.DIGITS))
+                                  for l in block["links"] if l["status"] != "resolved"], disputed)
+                self.assertEqual(sorted(e["number"] for e in block["entries"]
+                                        if e["id"] in block["unlinked_entry_ids"]), missing)
                 if suffix == "b":
                     duplicate = [e for e in block["entries"] if e["number"] == 18]
                     self.assertEqual(len(duplicate), 2)
