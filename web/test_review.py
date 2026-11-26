@@ -1777,6 +1777,32 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.get_by_text('Multiple exact occurrences', exact=False).is_visible())
             self.assertTrue(page.get_by_text('Literal not found in line', exact=False).is_visible())
             page.locator('.uncertainty-toggle').nth(1).click()
+            # Current reading search shares the reader's saved preference and
+            # editorial priority, without duplicating alternate candidate hits.
+            self.assertEqual(page.locator('#searchSource').input_value(), 'current')
+            self.assertEqual(page.evaluate("""() => {
+                const raw=(scan,suffix,model,version,editorial='none')=>({scan,suffix,text:suffix,
+                    model_id:model,model_version:version,editorial});
+                const a=raw(1,'single_reading','GPT-6',null,'available');
+                const b=raw(1,'alternate_reading_01','GPT-6.2','GPT-6.2');
+                const c=raw(2,'single_reading','GPT-6',null);
+                const d=raw(2,'alternate_reading_01','GPT-6.2','GPT-6.2');
+                const edited={...a,text:'corrected',reviewed:true};
+                const rows=[d,b,edited,c,a];
+                return selectCurrentSearchRows(rows,null).map(r=>[r.scan,r.text,r.viewEditorial]);
+            }"""), [[1,'corrected',True],[2,'alternate_reading_01',False]])
+            self.assertEqual(page.evaluate("""() => {
+                const a={scan:1,suffix:'single_reading',text:'confirmed',model_id:'GPT-6',
+                    model_version:null,editorial:'available'};
+                const b={scan:2,suffix:'single_reading',text:'older',model_id:'GPT-6',
+                    model_version:null,editorial:'none'};
+                const c={...b,suffix:'alternate_reading_01',text:'newer',model_id:'GPT-6.2'};
+                return selectCurrentSearchRows([c,b,a],{model:'GPT-6'}).map(r=>[r.text,r.viewEditorial]);
+            }"""), [['confirmed',True],['older',False]])
+            self.assertTrue(page.evaluate("""() => {
+                try {selectCurrentSearchRows([{scan:1,suffix:'single_reading',text:'legacy'}],null);}
+                catch(e){return true;} return false;
+            }"""))
             # A slow OCR volume must not block results from the agent index.
             page.evaluate("""() => {indexCache.clear(); const original=window.fetch;
                 window.fetch=async (url,...args)=>{if(String(url).includes('original_ocr/vol1/full.txt'))
