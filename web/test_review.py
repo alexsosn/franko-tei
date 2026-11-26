@@ -503,8 +503,9 @@ class ReviewSmoke(unittest.TestCase):
             return {link['id']: link for link in refs['2'].get(key, [])}
         for index in range(47, 75):
             self.assertNotEqual(rows[index]['status'], 'pending')
-        for index in (47, 49, 50):
-            self.assertEqual(links(index)['ECCA 974']['relation'], 'work-family')
+        self.assertEqual(links(47)['ECCA 974']['relation'], 'work-family')
+        for index in (49, 50):
+            self.assertNotIn('ECCA 974', links(index))  # earlier separated Persian story is not this excerpt
         self.assertNotIn('ECCA 611', links(47))  # source material omitted by Franko
         for index in (49, 50, 55, 59):
             self.assertEqual(links(index)['ECCA 611']['relation'], 'work-family')
