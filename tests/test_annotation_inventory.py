@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
+import unicodedata
 
 from franko_tei.annotation_inventory import measure_reading, build_inventory
 
@@ -19,16 +20,26 @@ def synthetic_span(start, end, language, uncertain=False):
 
 
 class AnnotationInventoryTest(unittest.TestCase):
-    def test_real_primary_and_alternate_are_not_equivalent(self):
-        def read(suffix):
-            return json.loads((PILOT / f"vol1_scan00060_{suffix}.json").read_text(
+    def test_real_primary_and_alternate_metrics_match_source(self):
+        # Do not freeze missing coverage as a requirement: these actual
+        # records can be enriched later. Compute expected offsets independently.
+        for suffix in ("single_reading", "alternate_reading_01"):
+            payload = json.loads((PILOT / f"vol1_scan00060_{suffix}.json").read_text(
                 encoding="utf-8"))
-        primary = measure_reading(read("single_reading"))
-        alternate = measure_reading(read("alternate_reading_01"))
-        self.assertEqual(primary["lexical_covered"], 0)
-        self.assertGreater(primary["lexical_total"], 0)
-        self.assertEqual(alternate["lexical_covered"], alternate["lexical_total"])
-        self.assertEqual(alternate["annotation_metadata"], "top_level")
+            total = covered = 0
+            for region in payload["reading"]["regions"]:
+                if region["kind"] == "page_number":
+                    continue
+                for line in region["lines"]:
+                    for i, char in enumerate(line["text"]):
+                        if unicodedata.category(char)[0] in "LM":
+                            total += 1
+                            covered += any(s["start"] <= i < s["end"]
+                                           for s in line["language_spans"])
+            actual = measure_reading(payload)
+            self.assertGreater(total, 0)
+            self.assertEqual((actual["lexical_total"], actual["lexical_covered"]),
+                             (total, covered))
 
     def test_synthetic_unicode_denominators_and_aliases(self):
         # Cyrillic letter + combining titlo, astral letter, digit, space.
@@ -84,6 +95,27 @@ class AnnotationInventoryTest(unittest.TestCase):
         self.assertEqual(report["ranges"]["1:51-60"]["candidate_count"], 2)
         self.assertIsNone(report["manifest_scan_count"])
         self.assertEqual(report["text_basis"], "frozen_candidates_not_selected_editorial_text")
+
+    def test_complete_live_corpus_inventory(self):
+        report = build_inventory(PILOT)
+        candidates = report["candidates"]
+        self.assertEqual(report["candidate_count"], len(candidates))
+        self.assertEqual(report["scan_count_with_reading"], len({
+            (r["volume"], r["scan_page"]) for r in candidates}))
+        self.assertEqual(report["lexical_total"], report["lexical_covered"] + report["lexical_missing"])
+        self.assertEqual(sum(v["lexical_total"] for v in report["volumes"].values()),
+                         report["lexical_total"])
+        self.assertEqual(sum(v["candidate_count"] for v in report["ranges"].values()),
+                         len(candidates))
+        # Compact CI evidence; no candidate text or manually maintained totals.
+        keys = ("scan_count_with_reading", "candidate_count", "lexical_total",
+                "lexical_covered", "lexical_missing", "lexical_unresolved",
+                "candidates_with_missing_lexical_coverage", "annotation_metadata")
+        summary = {v: {k: m[k] for k in keys} for v, m in report["volumes"].items()}
+        print("ANNOTATION_INVENTORY_SUMMARY " + json.dumps(summary, sort_keys=True))
+        primary = {v: {k: m["by_suffix"]["single_reading"][k] for k in keys}
+                   for v, m in report["volumes"].items() if "single_reading" in m["by_suffix"]}
+        print("ANNOTATION_INVENTORY_PRIMARY " + json.dumps(primary, sort_keys=True))
 
 
 if __name__ == "__main__":
