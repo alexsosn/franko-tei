@@ -278,6 +278,26 @@ class PilotTeiTests(unittest.TestCase):
                          ['48','Сторінка (с. 64)*) і далі','*) окрема примітка'])
         self.assertEqual(data['status'],'agent_unverified')
 
+    def test_source_footnote_in_printed_heading_preserves_structure(self):
+        data=self._synthetic_source_footnote()
+        data['reading']['regions'][1]['kind']='heading'
+        validate_single_draft(data,self.root)
+        xml=render_pilot_tei(data,1190,1794)
+        tree=ET.fromstring(xml)
+        heading=next(x for x in tree.iter(f'{{{TEI}}}ab') if x.get('type')=='heading')
+        ref=next(x for x in heading.iter(f'{{{TEI}}}ref')
+                 if x.get('type')=='source-footnote-reference')
+        note=next(x for x in tree.iter(f'{{{TEI}}}note') if x.get('type')=='source-footnote')
+        self.assertEqual(ref.text,'*)')
+        self.assertEqual(ref.get('target'),'#'+note.get('{http://www.w3.org/XML/1998/namespace}id'))
+        self.assertEqual(extract_transcribed_lines(xml),
+                         ['48','Сторінка (с. 64)*) і далі','*) окрема примітка'])
+        for kind in ('note','footer'):
+            bad=copy.deepcopy(data)
+            bad['reading']['regions'][1]['kind']=kind
+            with self.subTest(kind=kind),self.assertRaisesRegex(ValueError,'note|marker'):
+                validate_single_draft(bad,self.root)
+
     def test_source_footnote_fail_closed_on_invalid_targets_and_markers(self):
         for mode in ('missing-target','wrong-offset','repeated-marker',
                      'missing-note-glyph','duplicate-link','wrong-region-kind'):
