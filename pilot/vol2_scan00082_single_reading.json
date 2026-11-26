@@ -1,0 +1,249 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 82,
+  "printed_page_observed": "LXXVIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00082.jpg",
+  "source_image_sha256": "bff74d04a8626e017a2d5f27f07374712b6ee727a5a8963b0403dfb67ff8efee",
+  "reading": {
+    "reader_id": "gpt62-ii-82-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00081-00090-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original image without OCR or same-page peer text. Physical lines, contextual language spans, printed spelling, notes, estimated geometry. Historical typography provisional; preserve apparatus markers separately.",
+    "raw_response": "LXXVIII\nрелїґійних поглядів та вірувань, чи загалом розвій нар. духового\nжитя. Пізнанє того, що внесли апокріфи в наше народнє житє,\nє конче потрібне для пізнаня самої сути народности.\nНа сьому ми й закінчуємо свою передмову. Деякі детальні\nрозвідки, обіцяні в примітках до поодиноких текстів (стор. 98\nі 274 нота 1), а також опис рукописів, із яких узято більшину тек-\nстів сего тома, лишаємо до иньшої нагоди.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            437,
+            620,
+            330,
+            30
+          ],
+          "description": "Printed decorative closing rule."
+        },
+        {
+          "bbox_xywh": [
+            295,
+            124,
+            25,
+            23
+          ],
+          "description": "Small dark stray mark above text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          102,
+          90,
+          140,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LXXVIII",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 7,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              102,
+              90,
+              140,
+              42
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "preface-end",
+        "kind": "body",
+        "bbox_xywh": [
+          105,
+          168,
+          1030,
+          270
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-end-line-01",
+            "text": "релїґійних поглядів та вірувань, чи загалом розвій нар. духового",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              105,
+              168,
+              1030,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "preface-end-line-02",
+            "text": "житя. Пізнанє того, що внесли апокріфи в наше народнє житє,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              105,
+              207,
+              1030,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "preface-end-line-03",
+            "text": "є конче потрібне для пізнаня самої сути народности.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              105,
+              245,
+              1030,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "preface-end-line-04",
+            "text": "На сьому ми й закінчуємо свою передмову. Деякі детальні",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              105,
+              284,
+              1030,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "preface-end-line-05",
+            "text": "розвідки, обіцяні в примітках до поодиноких текстів (стор. 98",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              105,
+              322,
+              1030,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "preface-end-line-06",
+            "text": "і 274 нота 1), а також опис рукописів, із яких узято більшину тек-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              105,
+              361,
+              1030,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "preface-end-line-07",
+            "text": "стів сего тома, лишаємо до иньшої нагоди.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-82-image-20261126",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              105,
+              399,
+              1030,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-end-line-06",
+        "reading": "більшину",
+        "reason": "Printed word provisionally read as більшину; verify exact letters."
+      }
+    ]
+  }
+}
