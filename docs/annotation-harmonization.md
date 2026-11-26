@@ -182,6 +182,15 @@ a complete corpus-wide audit.
   keep the absent delimiter literal. Record unresolved_marker_mismatch with
   null target and a specific reason; list unlinked entry IDs explicitly.
   Do not silently restore missing numbers or claim an inferred lemma extent.
+  Distinguish repeated references to a single printed entry from a paired
+  range label. In [Noah VIII.B](../pilot/structure/vol1_noah_b_apparatus.json),
+  31 separate references to 8 (vac.) share one entry ID and have
+  repeated_reference roles; do not infer a continuous omitted passage.
+  A printed paired start may be bare or have a closing parenthesis; keep
+  the literal unchanged. When only one start is securely linked, record
+  its entry in incomplete_range_entry_ids; no complete range or end is
+  implied. Entries with no secure marker belong in unlinked_entry_ids.
+  Do not infer the missing occurrence from the apparatus text or sequence.
   Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
