@@ -1079,10 +1079,37 @@ def reconcile_motif_reference(files, targets, entry):
     entry["refs"] = [ref]
 
 
-# Manual mention-level review of the first glossary page. The source entry
+# Manual mention-level review of glossary articles. The source entry
 # itself is already pinned by SOURCE_BLOBS; each destination is separately
 # pinned. Keep negative/conflicting observations separate from attestations.
 GLOSSARY_MENTION_REVIEWS = {
+    ("v1-460-left-l001", "94"): (94, "06583a9513955ca5615c9f42053ef28a49ae3d14", "not_found", [], "Cited page has вълѡвъ and воловъ, not the indexed adjective; recheck image."),
+    ("v1-460-left-l003", "71"): (71, "dc52e638c6260922fa4e37e8cdcd149d6bc0669a", "attested", ["witness-b-apparatus-l004"], "въплашати его (variant in apparatus)"),
+    ("v1-460-left-l004", "283"): (283, "5c22aaabaa7fe0cf87e8d7fb92d310cc54e2a9d7", "attested", ["two-headed-servant-end-l015","servant-apparatus-l002"], "вшерше; variant възсерше. Context and apparatus support the indexed lexeme; spelling differs."),
+    ("v1-460-left-l005", "205"): (205, "6d9572016803739a0fa6b56c00c2a0e0a10253d1", "attested", ["naphtali-visions-l006"], "вѣи"),
+    ("v1-460-left-l007", "95"): (95, "becbedfddbd645472e1eeb4af97b1bd738c6216e", "attested", ["melchizedek-sacrifice-l038"], "вѣршье дубовоє"),
+    ("v1-460-left-l009", "175"): (175, "768be23f0db0afccca9ca7eb06a012268d7f18d8", "attested", ["spirits-continuation-l029"], "глумите (verb form)"),
+    ("v1-460-left-l011", "56"): (56, "f4c3834d40c411527cdcd76c4a82d4147768115f", "not_found", [], "No matching word on p56 in current draft; nearby pp55/57 also checked."),
+    ("v1-460-left-l012", "59"): (59, "90de959d3a44e15cc7f7627c37aed2c027271236", "attested", ["methuselah-request-continuation-l001"], "годѣ"),
+    ("v1-460-left-l014", "25"): (25, "2792810a2c92e3e14711f30799efd02ee9b3ee05", "not_found", [], "No matching word in current apparatus reading; nearby pp24/26 also checked."),
+    ("v1-460-left-l016", "40"): (40, "0ab41b4436dbe0711bd438209eb4abac34a4bbce", "not_found", [], "No matching word in current cited-page reading; nearby pp39/41 also checked."),
+    ("v1-460-left-l019", "111"): (111, "63aa0a1e402e54d4e88d0917d10e6739e34c08ea", "attested", ["jacob-sariel-end-l005","jacob-sariel-end-l006"], "гонь- / знутъ (split word)"),
+    ("v1-460-left-l021", "204"): (204, "5c75b798a27b4431aa2d019dca1db628030c1bd2", "attested", ["naphtali-continuation-l012"], "гонѣть"),
+    ("v1-460-left-l023", "42"): (42, "1a04bc97189129b53ceaeb5dada25733e9d9d90c", "attested", ["enoch-punishment-continuation-l006"], "гру́жны (index itself suggests грозенъ)"),
+    ("v1-460-left-l025", "173"): (173, "e9d5f4a278c23bacc7a18dd94dd729a540d76f62", "not_found", [], "No matching word in current draft; nearby pp172/174 also checked."),
+    ("v1-460-left-l026", "291"): (291, "d0002ff3ecb516f269c2e07590535f3e39d274d9", "attested", ["solomon-demons-opening-l002","solomon-demons-challenge-l005","solomon-demons-challenge-l007","solomon-demons-sealing-l003","solomon-demons-sealing-l004"], "делвѣ; делву (five evidenced lines)"),
+    ("v1-460-left-l027", "12"): (12, "c27fc69f5897903f8e45de15dc026fda2b19f925", "reading_conflict", ["satanail-witness-a-continuation-l018"], "Current draft другоициж[е], compare index Друговици; check spelling and word boundary in image."),
+    ("v1-460-left-l029", "308"): (308, "0ad07cb37db342c9e054dd540237ef609cad09cc", "attested", ["three-youths-captivity-l005"], "дражданаа"),
+    ("v1-460-left-l031", "321"): (321, "dc158de3ca4c7583e4ca2892414244a64b648ecd", "attested", ["belshazzar-body-l001"], "драхлу"),
+    ("v1-460-left-l033", "44"): (44, "0acdfc09e67eff05f57f6fc2793ff3323a3efc49", "attested", ["enoch-lunar-gates-continuation-l012"], "епа́кти"),
+    ("v1-460-left-l036", "133"): (133, "f919e06f96f7787169273e68fb06f2cb639353d9", "attested", ["joseph-flight-l005"], "етеръ"),
+    ("v1-460-left-l038", "183"): (183, "b4565c00715c6040158d0e62c55f971232e9cc71", "attested", ["levi-ordination-l004","levi-ordination-l016"], "ефудъ; ефуду"),
+    ("v1-460-left-l039", "214"): (214, "b68be53484bf09579f5bc5b69cf8a79caefe7c93", "attested", ["joseph-l021"], "женима"),
+    ("v1-460-left-l041", "65"): (65, "a641f34dd7657d1a681d152ef712603228324739", "attested", ["noah-iniquity-l008"], "жироваше"),
+    ("v1-460-left-l042", "282"): (282, "fa7b2666258a5ebe422b8209543ce99f023c5933", "attested", ["kitovras-end-l006","kitovras-end-l007"], "жюковину (two occurrences)"),
+    ("v1-460-left-l044", "228"): (228, "ce883a2b70b8168f649594928df821011041773c", "attested", ["moses-flight-l019"], "загутья́нъ"),
+    ("v1-460-left-l045", "147"): (147, "057d06e0ad6b78e4bcf26ececf4ff3c4281859e6", "not_found", [], "Cited page has заполни, not Заполець; nearby pp146/148 checked. Do not equate distinct forms."),
+    ("v1-460-left-l046", "20"): (20, "ee0a66fb061444f5b9e65fcb34a77796bf6269d6", "reading_conflict", ["witness-a-adam-eve-continuation-l028"], "Current draft згрѣва сел'ное, index Згрѣба; verify consonant against image."),
     ("v1-459-left-l001", "39"): (39, "e52bbec8c037981ea4211c5c52af02dd6e35326a", "attested", ["enoch-vision-l010","enoch-vision-l011"], "ба- / гры (word split across two lines)"),
     ("v1-459-left-l003", "52"): (52, "d2d1b7c27e456929976a480a17cdf7417ce9ca19", "attested", ["enoch-flood-l002"], "б л а д о т в о́ р ц ы (spaced type)"),
     ("v1-459-left-l004", "176"): (176, "b09717d3027997cf405bd574a112cd27328e9e68", "attested", ["reuben-exhortation-l011","reuben-exhortation-l015"], "бодрыя; бодрыи (two occurrences)"),
@@ -1108,7 +1135,7 @@ GLOSSARY_MENTION_REVIEWS = {
 
 
 def review_glossary_mentions(files, targets, entry):
-    if entry["source"]["scan"] != 459 or entry["source"]["blob"] != SOURCE_BLOBS[459]:
+    if entry["source"]["blob"] != SOURCE_BLOBS.get(entry["source"]["scan"]):
         return
     for i, citation in enumerate(entry["refs"]):
         spec = GLOSSARY_MENTION_REVIEWS.get((entry["id"], citation["literal"]))
