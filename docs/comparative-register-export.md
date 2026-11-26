@@ -1,7 +1,7 @@
 # Comparative register export contract (proposal, #300)
 
-Status: research and acceptance fixtures only. No production export, source
-correction, or new verification claim. Based on #321 and #322, which already
+Status: research, acceptance fixtures and opt-in experimental TEI projection.
+No production export, source correction, or new verification claim. Based on #321 and #322, which already
 annotate the four facsimile-derived drafts. Do not change their schemas.
 
 ## Existing contracts
@@ -80,6 +80,28 @@ link in standOff or an explicit note reference; retain both source
 readings, without inserting a second copy of the postscript or
 overwriting the table. Do not treat it as an agent correction.
 
+### Experimental TEI implementation
+
+`franko_tei.register_tei.render_source_gated_register_tei(raw, annotation, images_root)`
+checks the native JPEG and frozen source blob, then re-parents existing
+physical inline XML into semantic cells. `extract_register_source_lines`
+reconstructs the exact original ordering via unchanged facsimile zones.
+The baseline pilot renderer and ordinary pages remain unchanged.
+The pure renderer is for fixture testing; its dimensions are caller supplied.
+Standalone files must be named `vol3-s00034.xml`, etc.; the three disciple
+fragments link to their immediate neighbors. The authorial erratum link
+targets the three postscript line IDs in the ordinary TEI fragment
+`vol3-s00086.xml`, without copying the postscript or changing the table.
+A future combined edition must scope taxonomy IDs and rewrite the relative
+fragment links. This is not yet a corpus export command.
+
+Run `python -m unittest discover -s tests -p test_register_tei.py -v`
+for fixed oracles, full inline/facsimile equality and negative cases.
+`python tests/live_register_tei.py` additionally downloads pinned assets,
+checks TEI P5 4.12.0 RNG, resolves the inter-document links against actual
+source-derived fragments and rejects a tampered JPEG. Schematron and the
+PAGE/TF projections are separate remaining gates.
+
 ## PAGE 2019-07-15
 
 The XSD has TableRegion and nested TextRegion with Roles/TableCellRole
@@ -98,7 +120,7 @@ empty cell region without fake TextLine. Do not duplicate the original
 column regions as additional textual copies. Preserve existing source
 JSON hash and image/reader provenance; PAGE alone remains a projection,
 not a reversible archive. Validate against pinned PAGE XSD and TEI P5
-4.12.0 RNG plus project constraints; do not claim schema validation yet.
+4.12.0 RNG plus project constraints; do not claim PAGE or Schematron validation yet.
 
 ## Text-Fabric 13.1.1
 
