@@ -589,7 +589,7 @@ def reconcile_achatis_reference(pilot, files, targets, entry):
     ref["printed_literal"] = "215"
     ref["evidence"] = dict(path=evidence["target_path"], blob=blob,
                            line_id=evidence["target_line_id"], text=lines[0])
-    ref["targets"][0]["anchor"] = dict(suffix="single_reading", reader_id=target["reading"]["reader_id"], line_id=evidence["target_line_id"], text=lines[0], region_kind="apparatus")
+    ref["targets"][0]["anchor"] = dict(suffix="single_reading", reader_id=target["reading"]["reader_id"], line_id=evidence["target_line_id"], text=lines[0], region_kind="note")
     entry["refs"] = [ref]
 
 
