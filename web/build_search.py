@@ -107,6 +107,96 @@ def supplementary_page(pilot, ref):
                 path=expected[1], blob=candidates[1]["blob"], lines=changes)
 
 
+# Additional reviewed photo records. The record path, expected line IDs and
+# page identity are explicit; do not auto-publish arbitrary audit files.
+PHOTO_PAGES = {("2", 19): ("XV", {"preface-line-40"}),
+               ("4", 19): ("XV", {"preface-line-39", "preface-line-41"}),
+               ("1", 418): ("343", {"index-a-l014"})}
+
+
+def supplementary_partial_pages(pilot, ref):
+    pages = []
+    for (volume, scan), (folio, required) in PHOTO_PAGES.items():
+        stem = f"vol{volume}_scan{scan:05d}"
+        evidence_path = f"reviews/{stem}_unstamped_facs_20261126.json"
+        audit_path = pilot / evidence_path
+        if not audit_path.is_file():
+            continue
+        audit = json.loads(audit_path.read_text(encoding="utf-8"))
+        if (audit["schema_version"], audit["status"], audit["volume"],
+                audit["scan_page"], audit["printed_page"]) != (
+                "supplementary-photo-collation-audit-v2", "agent_unverified", volume, scan, folio):
+            raise ValueError("invalid supplementary page identity")
+        photos = [p["sha256"] for p in audit["photographs"]]
+        if len(photos) != (4 if scan == 418 else 1) or len(set(photos)) != len(photos) or any(
+                not re.fullmatch(r"[a-f0-9]{64}", digest) for digest in photos):
+            raise ValueError("invalid supplementary photograph digests")
+        path = f"pilot/{stem}_single_reading.json"
+        raw = (pilot / Path(path).name).read_bytes()
+        blob = blob_sha(raw)
+        if audit["source"] != dict(path=path, blob=blob):
+            raise ValueError("supplementary source blob changed")
+        draft = json.loads(raw)
+        check_draft_offline(Path(path), draft)
+        if (draft["volume"], draft["scan_page"], draft["printed_page_observed"]) != (volume, scan, folio):
+            raise ValueError("supplementary source page mismatch")
+        if audit["pinned_image"] != dict(asset_commit=draft["asset_commit"],
+                                        path=draft["source_image_path"], sha256=draft["source_image_sha256"]):
+            raise ValueError("supplementary pinned image mismatch")
+        reading = draft["reading"]
+        lines = {l["id"]: (reg, l) for reg in reading["regions"] for l in reg["lines"]}
+        covered = {identifier for area in reading["coverage"].get("occlusions", [])
+                   if area["kind"] == "library_stamp" and area["obscures_source_letters"] is True
+                   for identifier in area["affected_line_ids"]}
+        changes, seen, recovered = [], set(), set()
+        for row in audit["rows"]:
+            identifier = row["line_id"]
+            if identifier not in lines or identifier in seen:
+                raise ValueError("unknown or duplicate supplementary line")
+            seen.add(identifier)
+            region, line = lines[identifier]
+            obscured = line.get("unreadable_suffix") is True
+            if (row["region_id"] != region["id"] or row["original"] != line["text"]
+                    or type(row["obscured_on_pinned_scan"]) is not bool
+                    or row["obscured_on_pinned_scan"] != obscured):
+                raise ValueError("supplementary row source mismatch")
+            literal = row["photo_reading"]
+            if row["status"] == "collation_only":
+                if literal != line["text"] or obscured:
+                    raise ValueError("invalid confirmation-only row")
+                continue
+            if (row["status"] != "correction" or region["kind"] != "body" or identifier not in required
+                    or not isinstance(literal, str) or not literal.strip() or literal == line["text"]
+                    or any(ch in literal for ch in ("\n", "\r", "\x00", "…"))):
+                raise ValueError("invalid supplementary correction")
+            if obscured:
+                prefix = line["text"].removesuffix("…")
+                if (identifier not in covered or not line["text"].endswith("…")
+                        or not literal.startswith(prefix) or len(literal) <= len(prefix)):
+                    raise ValueError("invalid stamp recovery")
+                recovered.add(identifier)
+            spans = row["language_spans"]
+            end = 0
+            for span in spans:
+                if (span["start"] != end or type(span["end"]) is not int or not end < span["end"] <= len(literal)
+                        or span["text_version"] != reading["reader_id"] or span["uncertain"] is not True
+                        or (span["language"], span["script"]) not in
+                        {("uk", "Cyrl"), ("ru", "Cyrl"), ("de", "Latn"), ("zxx", "Zyyy")}):
+                    raise ValueError("invalid supplementary span")
+                end = span["end"]
+            if end != len(literal):
+                raise ValueError("incomplete supplementary spans")
+            changes.append(dict(line_id=identifier, region_id=region["id"], original=line["text"],
+                                text=literal, status="supplementary_correction", language_spans=spans,
+                                obscured_on_pinned_scan=obscured, photograph_sha256=photos,
+                                evidence_url=f"https://github.com/alexsosn/franko-tei/blob/{ref}/pilot/{evidence_path}"))
+        if recovered != covered or {row["line_id"] for row in changes} != required:
+            raise ValueError("incomplete supplementary recovery")
+        pages.append(dict(volume=volume, scan=scan, suffix="single_reading",
+                          path=path, blob=blob, lines=changes))
+    return pages
+
+
 def build(pilot, output, ref):
     if not re.fullmatch(r"[a-f0-9]{40}", ref):
         raise ValueError("expected exact source commit SHA")
@@ -115,9 +205,12 @@ def build(pilot, output, ref):
     ledger = check_repository(repo, ref)
     source_loader = git_source_loader(repo, ref)
     pages, unavailable = [], []
-    supplement = supplementary_page(pilot, ref)
+    supplements = {p['path']: p for p in supplementary_partial_pages(pilot, ref)}
+    first_supplement = supplementary_page(pilot, ref)
+    if first_supplement:
+        supplements[first_supplement['path']] = first_supplement
     affected = {key[0] for key in ledger}
-    if supplement and supplement['path'] in affected:
+    if supplements.keys() & affected:
         raise ValueError('supplementary and contributor projections require explicit reconciliation')
     seen = set()
     for path in discover_readings(pilot):
@@ -129,7 +222,8 @@ def build(pilot, output, ref):
         text = "\n".join(line["text"] for region in draft["reading"]["regions"] for line in region["lines"])
         entries[volume].append(dict(scan=scan, suffix=suffix, text=text))
         candidate_path = "pilot/" + path.name
-        if supplement and candidate_path == supplement['path']:
+        supplement = supplements.get(candidate_path)
+        if supplement:
             pages.append(supplement)
             replacements = {r['line_id']: r['text'] for r in supplement['lines']}
             corrected = '\n'.join(replacements.get(line['id'], line['text'])
@@ -168,7 +262,7 @@ def build(pilot, output, ref):
                                multiple=sorted(n for n,c in counts.items() if c > 1))
     output.mkdir(parents=True, exist_ok=True)
     (output / "printed-indexes.json").write_text(
-        json.dumps(build_printed_indexes(pilot, ref), ensure_ascii=False, separators=(",", ":")), encoding="utf-8",
+        json.dumps(build_printed_indexes(pilot, ref, supplements), ensure_ascii=False, separators=(",", ":")), encoding="utf-8",
     )
     (output / "coverage.json").write_text(
         json.dumps(dict(ref=ref, asset_commit=PINNED_ASSET_COMMIT, volumes=volumes),
