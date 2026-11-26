@@ -1,0 +1,1153 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 93,
+  "printed_page_observed": "41",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00093.jpg",
+  "source_image_sha256": "b63af01956b9c6d330d7ffa698481a5670a75c7a14c0689e5a38bc47f254eacf",
+  "reading": {
+    "reader_id": "gpt62-iv-93-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-83-93-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Image-first full physical line transcription of the Borshevytsky manuscript Lucidarius extract (identified by adjacent scan 90 and closing editorial commentary). Provisional historical Ruthenian orv (uncertain) based on sustained vernacular syntax and lexicon, not script alone; Franko commentary uk. Approximate rendering of historical type: accents, titla, superscript letter placement and monograph uk need later glyph collation; estimated boxes, no precise baselines. Preserve printed question numbering and labels including gaps 20 and 28; semantic turn overlay not yet encoded. Working draft only. Separate source reinspection before PR submission retained the first-pass version in branch commit history and corrected documented glyph readings. Visibly indented question/answer blocks have separate physical body regions; logical cross-page turn IDs are deferred. Arabic printed question labels are zxx/Zyyy; Roman numerals in commentary retain contextual uk with Latn script. The closing liturgical formula in IV/89 is provisionally cu, uncertain.",
+    "raw_response": "41\n32. Оу. Якъ званно діавола, которїй знадилъ Адама и Євꙋ\nв раю?\nМ. Ієвꙋсъ Калисѡнъ, то єсть єдинъ.\n33. Оу. Повѣджъ менѣ ѡ сотвореню свѣта.\nМ. Свѣтъ єсть право ѡкрꙋглій, а єсть оувесь ѡблитый\nморемъ, которїй плаваетъ въ мори, якъ жолтокъ въ яйци.\n34. Оу. Чимъ земля ꙋтвержденна, ижъ не можетъ ꙋто-\nнꙋти, поневажъ плавать въ морї якъ въ яйци жолтокъ?\nМ. Землѣ не держить нѣхто [и] нѣчого инного, толко\nсамъ Бг҃ъ. якъ много єсть водъ ѡколо землѣ течетъ, такъ\nхто бы былъ въ ѡблакахъ, не здалъ бы сѧ ємꙋ свѣтъ нѣчого\nширшїй якъ пѣнязъ, бо всѣ жродла идꙋть зъ моря, и всѧ засъ\nдо моря рѣки текꙋть.\n35. Оу. На колко части свѣтъ раздѣленъ?\nМ. На штыри части. а҃.-я зовет сѧ Азія, в҃.-я Європїя,\nг҃-я зовет сѧ Африга, д҃.-я зовет сѧ Офрига.\n36. Оу. Повѣджъ же ми ѡ той части, которая зовет сѧ\nАзія.\nМ. Азія починает сѧ где сл҃нце сходить, а въ раю єсть\nєдина стꙋдня, с той стꙋднѣ чотыри рѣки текꙋть: а҃. Тисонъ,\nв҃. Зєѡнъ, г҃. Тигръ, д҃. Єфрафтъ.\n37. Оу. Кꙋдїй текꙋть тїи рѣки?\nМ. Тисонъ течеть скрозь Индию, а течеть черезъ єдинꙋ\nгорꙋ, которꙋю зовꙋть Атласъ, а ѡдъ той течеть скрозь Ма-\nринскꙋю землю оу Червоноє море. Тигръ и Єфрафтъ текꙋть\nскрозь єднꙋ горꙋ, которꙋю зовꙋть Патрꙋсиа, а ѡдъ той течеть\nскрозь єдинꙋ землю, которая зовет сѧ Арвенія, а тыи воды\nтекꙋть ѡчевисте єдиною землею ажъ до тыхъ горъ, которїи сꙋть\nіменованніи.\nПередруковуємо тут той шматок Люцідарія, який із Борше-\nвицького рукопису опублїкував д. Н. Вахнянин у Правдї 1869 р.\nстор. 190, 285—286. Текст сього рукопису був, як бачимо, декуди\nдокладнїйший від Сокольського, хоч декуди й скупійший, бо прим.\nу нашім відривку бракує йому питань 20 і 28 з відповідями\nдо них.\nПамятки т. IV.\n6",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1018,
+          96,
+          47,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "41",
+            "bbox_xywh": [
+              1018,
+              96,
+              47,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-01",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          157,
+          982,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-01",
+            "text": "32. Оу. Якъ званно діавола, которїй знадилъ Адама и Євꙋ",
+            "bbox_xywh": [
+              91,
+              157,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 3,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-02",
+            "text": "в раю?",
+            "bbox_xywh": [
+              91,
+              197,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 6,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-02",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          237,
+          982,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-03",
+            "text": "М. Ієвꙋсъ Калисѡнъ, то єсть єдинъ.",
+            "bbox_xywh": [
+              91,
+              237,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 34,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-03",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          276,
+          982,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-04",
+            "text": "33. Оу. Повѣджъ менѣ ѡ сотвореню свѣта.",
+            "bbox_xywh": [
+              91,
+              276,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 3,
+                "end": 39,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-04",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          316,
+          982,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-05",
+            "text": "М. Свѣтъ єсть право ѡкрꙋглій, а єсть оувесь ѡблитый",
+            "bbox_xywh": [
+              91,
+              316,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-06",
+            "text": "моремъ, которїй плаваетъ въ мори, якъ жолтокъ въ яйци.",
+            "bbox_xywh": [
+              91,
+              356,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-05",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          396,
+          982,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-07",
+            "text": "34. Оу. Чимъ земля ꙋтвержденна, ижъ не можетъ ꙋто-",
+            "bbox_xywh": [
+              91,
+              396,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 3,
+                "end": 50,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-08",
+            "text": "нꙋти, поневажъ плавать въ морї якъ въ яйци жолтокъ?",
+            "bbox_xywh": [
+              91,
+              436,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-06",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          476,
+          982,
+          191
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-09",
+            "text": "М. Землѣ не держить нѣхто [и] нѣчого инного, толко",
+            "bbox_xywh": [
+              91,
+              476,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 50,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-10",
+            "text": "самъ Бг҃ъ. якъ много єсть водъ ѡколо землѣ течетъ, такъ",
+            "bbox_xywh": [
+              91,
+              515,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-11",
+            "text": "хто бы былъ въ ѡблакахъ, не здалъ бы сѧ ємꙋ свѣтъ нѣчого",
+            "bbox_xywh": [
+              91,
+              555,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-12",
+            "text": "ширшїй якъ пѣнязъ, бо всѣ жродла идꙋть зъ моря, и всѧ засъ",
+            "bbox_xywh": [
+              91,
+              595,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-13",
+            "text": "до моря рѣки текꙋть.",
+            "bbox_xywh": [
+              91,
+              635,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-07",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          675,
+          982,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-14",
+            "text": "35. Оу. На колко части свѣтъ раздѣленъ?",
+            "bbox_xywh": [
+              91,
+              675,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 3,
+                "end": 39,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-08",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          715,
+          982,
+          71
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-15",
+            "text": "М. На штыри части. а҃.-я зовет сѧ Азія, в҃.-я Європїя,",
+            "bbox_xywh": [
+              91,
+              715,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-16",
+            "text": "г҃-я зовет сѧ Африга, д҃.-я зовет сѧ Офрига.",
+            "bbox_xywh": [
+              91,
+              754,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 44,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-09",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          794,
+          982,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-17",
+            "text": "36. Оу. Повѣджъ же ми ѡ той части, которая зовет сѧ",
+            "bbox_xywh": [
+              91,
+              794,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 3,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-18",
+            "text": "Азія.",
+            "bbox_xywh": [
+              91,
+              834,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 5,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-10",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          874,
+          982,
+          111
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-19",
+            "text": "М. Азія починает сѧ где сл҃нце сходить, а въ раю єсть",
+            "bbox_xywh": [
+              91,
+              874,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-20",
+            "text": "єдина стꙋдня, с той стꙋднѣ чотыри рѣки текꙋть: а҃. Тисонъ,",
+            "bbox_xywh": [
+              91,
+              914,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-21",
+            "text": "в҃. Зєѡнъ, г҃. Тигръ, д҃. Єфрафтъ.",
+            "bbox_xywh": [
+              91,
+              953,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 34,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-11",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          993,
+          982,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-22",
+            "text": "37. Оу. Кꙋдїй текꙋть тїи рѣки?",
+            "bbox_xywh": [
+              91,
+              993,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 3,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-block-12",
+        "kind": "body",
+        "bbox_xywh": [
+          91,
+          1033,
+          982,
+          271
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "fragment-line-23",
+            "text": "М. Тисонъ течеть скрозь Индию, а течеть черезъ єдинꙋ",
+            "bbox_xywh": [
+              91,
+              1033,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 52,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-24",
+            "text": "горꙋ, которꙋю зовꙋть Атласъ, а ѡдъ той течеть скрозь Ма-",
+            "bbox_xywh": [
+              91,
+              1073,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-25",
+            "text": "ринскꙋю землю оу Червоноє море. Тигръ и Єфрафтъ текꙋть",
+            "bbox_xywh": [
+              91,
+              1113,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-26",
+            "text": "скрозь єднꙋ горꙋ, которꙋю зовꙋть Патрꙋсиа, а ѡдъ той течеть",
+            "bbox_xywh": [
+              91,
+              1153,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-27",
+            "text": "скрозь єдинꙋ землю, которая зовет сѧ Арвенія, а тыи воды",
+            "bbox_xywh": [
+              91,
+              1192,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-28",
+            "text": "текꙋть ѡчевисте єдиною землею ажъ до тыхъ горъ, которїи сꙋть",
+            "bbox_xywh": [
+              91,
+              1232,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "fragment-line-29",
+            "text": "іменованніи.",
+            "bbox_xywh": [
+              91,
+              1272,
+              982,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 12,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commentary",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          1358,
+          976,
+          223
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commentary-line-01",
+            "text": "Передруковуємо тут той шматок Люцідарія, який із Борше-",
+            "bbox_xywh": [
+              97,
+              1358,
+              976,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-02",
+            "text": "вицького рукопису опублїкував д. Н. Вахнянин у Правдї 1869 р.",
+            "bbox_xywh": [
+              97,
+              1396,
+              976,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-03",
+            "text": "стор. 190, 285—286. Текст сього рукопису був, як бачимо, декуди",
+            "bbox_xywh": [
+              97,
+              1434,
+              976,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-04",
+            "text": "докладнїйший від Сокольського, хоч декуди й скупійший, бо прим.",
+            "bbox_xywh": [
+              97,
+              1473,
+              976,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-05",
+            "text": "у нашім відривку бракує йому питань 20 і 28 з відповідями",
+            "bbox_xywh": [
+              97,
+              1511,
+              976,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-06",
+            "text": "до них.",
+            "bbox_xywh": [
+              97,
+              1549,
+              976,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footer",
+        "kind": "other",
+        "bbox_xywh": [
+          173,
+          1615,
+          154,
+          22
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "footer-line-01",
+            "text": "Памятки т. IV.",
+            "bbox_xywh": [
+              173,
+              1615,
+              154,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 11,
+                "end": 14,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          989,
+          1601,
+          20,
+          25
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "6",
+            "bbox_xywh": [
+              989,
+              1601,
+              20,
+              25
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-93-image-20261126",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "fragment-line-03",
+        "reading": "Ієвꙋсъ Калисѡнъ",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-05",
+        "reading": "оувесь",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-12",
+        "reading": "пѣнязъ",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-12",
+        "reading": "жродла",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-16",
+        "reading": "Африга",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-16",
+        "reading": "Офрига",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-21",
+        "reading": "Зєѡнъ",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-21",
+        "reading": "Єфрафтъ",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-24",
+        "reading": "Ма-",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-26",
+        "reading": "Патрꙋсиа",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-27",
+        "reading": "Арвенія",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      },
+      {
+        "line_id": "fragment-line-28",
+        "reading": "ѡчевисте",
+        "reason": "Doubtful historical glyphs, abbreviated form or name; compare native source, no normalization."
+      }
+    ]
+  }
+}
