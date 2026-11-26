@@ -1,12 +1,12 @@
 # Printed indexes: provisional navigation pilot
 
-Refs #233, #234, #235, #238. At cb65d640ae0271d20d92c6c1d3ce6cd0a47c66bc, all 47 Volume I index scans have image-first agent drafts in main. This pilot uses 37 frozen page records and does not change their text or images.
+Refs #233, #234, #235, #238. At cb65d640ae0271d20d92c6c1d3ce6cd0a47c66bc, all 47 Volume I index scans have image-first agent drafts in main. This pilot uses 47 frozen page records and does not change their text or images.
 
 | Section | Printed pages | Physical scans | Structured pilot |
 | --- | --- | --- | --- |
 | Names and places | 341–355 | 416–430 | 416–430 |
 | Authors and works | 356–361 | 431–436 | 431–436 |
-| Motifs | 362–383 | 437–458 | 437–448 |
+| Motifs | 362–383 | 437–458 | 437–458 |
 | Glossary | 384–387 | 459–462 | 459–462 |
 
 Section boundaries follow previous contents research and draft evidence, not new image collation. Partitions in web/printed_indexes.py explicitly specify inclusive region end-line ordinals against exact blob SHA and reader ID. Source paths, blob, asset commit, region and literal line IDs/text are retained in the generated projection. A missing or changed blob suppresses the affected page, or both pages of a continued entry, rather than silently reusing obsolete boundaries. The source scans remain accessible.
@@ -28,3 +28,5 @@ The first full audit found 21 missing citation occurrences, all folios 147/247. 
 Motif scans 438–442 add 106 articles, 230 literal body lines, 68 explicit ditto contexts, 114 citation tokens covering 128 page occurrences. Ambрам continues across 439/440; both pages must match their pinned source. I442 has adjacent full ranges `258—259 261—262`, preserved as literal with a recovered separator. The zero-missing/no-ref/unresolved audit applies to this new slice as well. Total 1622 articles, 31/47 pages, motif coverage 6/22 pages. Not image-verified or mention-complete.
 
 Motif scans 443–448 add 125 articles and 277 literal body lines, 90 ditto contexts. Continued entries bridge 443–444, 444–445 and 447–448; eligibility is transitive over overlapping page pairs. I443 Darius article has no printed number in its draft, and I442 parallel Belshazzar article cites 320–321. Actual story is directly attested on 321–322 (scan396 `belshazzar-body-l005`, scan397 `belshazzar-body-l001`). Both receive source-pinned editorial range and exact line anchors; original numeric token or absence remains recorded. 1747 entries on 37/47 pages, pending tests. No fresh visual collation.
+
+Final motif slice 449–458 adds 205 articles, 418 literal body lines, 130 ditto contexts, 234 printed citation tokens (287 page occurrences), two cross-page continuations. Heaven's two groups `40—44` and `44—46` remain in one article. Four source-pinned editorial corrections: Solomon inheritance 235→285, Abraham calf 351→331, Pharaoh midwives 222→225, Jacob ladder 199→109. Each corrected target has an exact evidence line; original printed literals preserved. All 47 pages and 1952 articles are now structured (1038 names, 272 works, 453 motifs, 189 glossary), pending final CI. Zero-gap audit checks every current entry's page references and crossrefs; it does not mean every cited page has an independently confirmed exact mention. Fresh image collation and comprehensive mention-level validation remain separate research tasks.
