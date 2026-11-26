@@ -27,7 +27,11 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             assert landing.evaluate("generation") == 0
             landing.locator("#contentsFirstScan").click()
             expect(landing.locator("#contentsPanel")).to_be_hidden()
+            # On narrow screens the text and scan panes are mutually exclusive.
+            expect(landing.locator("#candidate .line-text").first).to_be_visible()
+            landing.locator("#showScan").click()
             expect(landing.locator("#scan")).to_be_visible()
+            landing.locator("#showText").click()
             expect(landing.locator("#candidate .line-text").first).to_be_visible()
             expect(landing.locator("#page")).to_have_value("1")
             assert "p=1&" in landing.url
