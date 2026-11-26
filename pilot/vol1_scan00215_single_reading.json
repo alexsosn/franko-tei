@@ -806,10 +806,18 @@
             "language_spans": [
               {
                 "start": 0,
-                "end": 9,
+                "end": 7,
                 "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true,
+                "text_version": "gpt62-i215-first-image-20261125"
+              },
+              {
+                "start": 7,
+                "end": 9,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
                 "text_version": "gpt62-i215-first-image-20261125"
               }
             ]
@@ -895,6 +903,14 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i215-first-image-20261125"
+              },
+              {
+                "start": 2,
                 "end": 41,
                 "language": "uk",
                 "script": "Cyrl",
@@ -1113,6 +1129,14 @@
         "line_id": "editorial-footnote-l001",
         "reading": "*) Натяк на те, про що згадано в Біблїї (Бития XXXI, 19).",
         "reason": "Provisional image reading; historical glyphs, names, punctuation and typography need reinspection."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "benjamin-accusation-l016",
+        "marker_text": "*)",
+        "marker_start": 7,
+        "note_region_id": "editorial-footnote"
       }
     ]
   }
