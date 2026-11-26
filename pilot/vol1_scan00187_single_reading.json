@@ -464,6 +464,22 @@
               },
               {
                 "start": 8,
+                "end": 14,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-i187-first-image-20261125"
+              },
+              {
+                "start": 14,
+                "end": 16,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i187-first-image-20261125"
+              },
+              {
+                "start": 16,
                 "end": 46,
                 "language": "cu",
                 "script": "Cyrl",
@@ -1135,6 +1151,14 @@
             "language_spans": [
               {
                 "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-i187-first-image-20261125"
+              },
+              {
+                "start": 2,
                 "end": 27,
                 "language": "uk",
                 "script": "Cyrl",
@@ -1357,7 +1381,15 @@
       "method": "Separate printed superscript apparatus label ranges from existing cu/chu spans; no text changes or note targets inferred.",
       "status": "agent_unverified",
       "marker_count": 15
-    }
+    },
+    "source_note_links": [
+      {
+        "marker_line_id": "palaea-exegesis-continuation-l013",
+        "marker_text": "*)",
+        "marker_start": 14,
+        "note_region_id": "editorial-footnote"
+      }
+    ]
   },
   "language_annotation": {
     "schema_version": "contextual-language-annotation-v1",
