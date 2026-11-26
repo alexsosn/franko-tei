@@ -175,6 +175,13 @@ a complete corpus-wide audit.
   lemma extents. A complete unique sequence may support exact links after
   source inspection. Repeated, paired, missing or discrepant labels require
   separate evidence; do not force the simple one-to-one rule onto them.
+  For an observed paired label, preserve the complete printed entry label
+  and link both exact body marker occurrences with ordered range_start and
+  range_end roles (see [Noah VIII.C](../pilot/structure/vol1_noah_c_apparatus.json)).
+  A bare superscript may link when the number and context are source-supported;
+  keep the absent delimiter literal. Record unresolved_marker_mismatch with
+  null target and a specific reason; list unlinked entry IDs explicitly.
+  Do not silently restore missing numbers or claim an inferred lemma extent.
   Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
