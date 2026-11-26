@@ -74,7 +74,9 @@ class Vol1Page61Tests(unittest.TestCase):
                 self.assertIs(line["geometry_estimated"], True)
                 a, b, c, d = line["bbox_xywh"]
                 self.assertTrue(x <= a and y <= b and a+c <= x+w and b+d <= y+h, line["id"])
-                self.assertEqual(line["language_spans"], [])
+                # Retrospective contextual annotation is required here.
+                # The shared corpus contract checks exact Unicode coverage.
+                self.assertTrue(line["language_spans"])
 
     def test_unverified_tei_unicode_roundtrip_and_negative_status(self):
         xml = render_pilot_tei(self.payload, 1190, 1738)
