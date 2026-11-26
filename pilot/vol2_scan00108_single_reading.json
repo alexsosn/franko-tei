@@ -1,0 +1,966 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 108,
+  "printed_page_observed": "26",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00108.jpg",
+  "source_image_sha256": "f7b2b071c8aa6e1ccd93b30084377b6657aa17c8889791fb4b2e5af2fa45d0ea",
+  "reading": {
+    "reader_id": "gpt62-ii-108-image-harmonized-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00101-00110-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading; physical lines and contextual language spans under the harmonization guide. Historical accentuation, titla, breathings and glyph shapes are incomplete/provisional; printed historical Ruthenian attribution provisional. Geometry estimated, not measured baselines.",
+    "raw_response": "26\n2. Sibilla Libica. Przeto rzeczona Libica, iż była z Libity z Afryki,\ntegoż czasu kiedy y Persica, którą mianuie poeta Euripides. Była\nwieku średniego, chodziła w wieńcu zielonego kwiecia, w płaszczu bia-\nłym poczciwym, zawsze wesoła z daru Boskiego, iż miał posłać ta-\nkiego, który z czartowskiey mocy lud wyiąć miał. Między inemi pro-\nroctwy tak pisze: Ecce dies, venit quo Aeternus tempore princeps,\nto iest:\nOto przeydzie dzien swiatłosci,\nRozpędzi wszytkie ciemnosci,\nKtorego czasu wieczny Pan\nDla wszech ludzi będzie posłan.\nNa widok swiatu obiawi,\nSam się za wszytkich zastawi,\nNisko się swiatu ukorzy,\nNieme im usta otworzy.\nBędzie chowan według ciała,\nA Panna go będzie miała,\nSwymi piersiami karmiła, —\nTaiemnosc Boska sprawiła.\nKtorego koscioł zacmiony\nBędzie przezen naprawiony,\nA będzie trwał aż na wieki,\nTo mu uznał człowiek wszelki.\n3. Sibilla Delphica. Do tego rzeczona, bo się w kościele Salomo-\nnowym u Delfu urodziła (wszakże nie ta, która ludziąm dawała przesz\nczarta odpowiedzi). Była w trzecim wieku świata, ieszcze przed tro-\niańską walką, którą bitwę troiańską pierwy dostatecznie obiawiła, nisz\nsię stała, y królestwo troiańskie bydź skażone. O tey też Kryzyppus\npisał w swoich xięgach, gdzie pisze o Boskich rzeczach. Będąc młoda\nchodziła w czarnym stroiu, myślącz, obwiązawszy włosy około głowy,\nróg w ręku trzymaiąc. Piszą tak drudzy, iż gdy był Atticus do niey\nposłał, żeby była iego małżanką, posłał iey też kubek złoty w dary,\nwzgardziła iego małżeństwem. Między inemi pismy też to pisała\ngrecką rzeczą: Ex servo nascetur Deus, ipsum tunc cognosce Domi-\nnum, to iest:\nO człowiecze, poznay Pana swego!\nPrzydzie Prorok — dzien zbawienia twego.\nTen wszytek swiat nauką oswieci —",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          130,
+          108,
+          43,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "26",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              130,
+              108,
+              43,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-libyan-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          134,
+          180,
+          989,
+          267
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-libyan-prose-line-01",
+            "text": "2. Sibilla Libica. Przeto rzeczona Libica, iż była z Libity z Afryki,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 2,
+                "end": 69,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              134,
+              180,
+              989,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-prose-line-02",
+            "text": "tegoż czasu kiedy y Persica, którą mianuie poeta Euripides. Była",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              134,
+              218,
+              989,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-prose-line-03",
+            "text": "wieku średniego, chodziła w wieńcu zielonego kwiecia, w płaszczu bia-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 69,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              134,
+              256,
+              989,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-prose-line-04",
+            "text": "łym poczciwym, zawsze wesoła z daru Boskiego, iż miał posłać ta-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              134,
+              294,
+              989,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-prose-line-05",
+            "text": "kiego, który z czartowskiey mocy lud wyiąć miał. Między inemi pro-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              134,
+              332,
+              989,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-prose-line-06",
+            "text": "roctwy tak pisze: Ecce dies, venit quo Aeternus tempore princeps,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 18,
+                "end": 65,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              134,
+              370,
+              989,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-prose-line-07",
+            "text": "to iest:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 8,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              134,
+              408,
+              989,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-libyan-verse",
+        "kind": "body",
+        "bbox_xywh": [
+          358,
+          462,
+          515,
+          614
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-libyan-verse-line-01",
+            "text": "Oto przeydzie dzien swiatłosci,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              462,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-02",
+            "text": "Rozpędzi wszytkie ciemnosci,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 28,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              500,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-03",
+            "text": "Ktorego czasu wieczny Pan",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              538,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-04",
+            "text": "Dla wszech ludzi będzie posłan.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              577,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-05",
+            "text": "Na widok swiatu obiawi,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              615,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-06",
+            "text": "Sam się za wszytkich zastawi,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              653,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-07",
+            "text": "Nisko się swiatu ukorzy,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              692,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-08",
+            "text": "Nieme im usta otworzy.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              730,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-09",
+            "text": "Będzie chowan według ciała,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              769,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-10",
+            "text": "A Panna go będzie miała,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              807,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-11",
+            "text": "Swymi piersiami karmiła, —",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              845,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-12",
+            "text": "Taiemnosc Boska sprawiła.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              884,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-13",
+            "text": "Ktorego koscioł zacmiony",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              922,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-14",
+            "text": "Będzie przezen naprawiony,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              960,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-15",
+            "text": "A będzie trwał aż na wieki,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              999,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-libyan-verse-line-16",
+            "text": "To mu uznał człowiek wszelki.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              358,
+              1037,
+              515,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-delphic-prose",
+        "kind": "body",
+        "bbox_xywh": [
+          135,
+          1129,
+          985,
+          465
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-delphic-prose-line-01",
+            "text": "3. Sibilla Delphica. Do tego rzeczona, bo się w kościele Salomo-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 2,
+                "end": 64,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1129,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-02",
+            "text": "nowym u Delfu urodziła (wszakże nie ta, która ludziąm dawała przesz",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1167,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-03",
+            "text": "czarta odpowiedzi). Była w trzecim wieku świata, ieszcze przed tro-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1206,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-04",
+            "text": "iańską walką, którą bitwę troiańską pierwy dostatecznie obiawiła, nisz",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 70,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1245,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-05",
+            "text": "się stała, y królestwo troiańskie bydź skażone. O tey też Kryzyppus",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1284,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-06",
+            "text": "pisał w swoich xięgach, gdzie pisze o Boskich rzeczach. Będąc młoda",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1322,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-07",
+            "text": "chodziła w czarnym stroiu, myślącz, obwiązawszy włosy około głowy,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1361,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-08",
+            "text": "róg w ręku trzymaiąc. Piszą tak drudzy, iż gdy był Atticus do niey",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1400,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-09",
+            "text": "posłał, żeby była iego małżanką, posłał iey też kubek złoty w dary,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1439,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-10",
+            "text": "wzgardziła iego małżeństwem. Między inemi pismy też to pisała",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1477,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-11",
+            "text": "grecką rzeczą: Ex servo nascetur Deus, ipsum tunc cognosce Domi-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 15,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 15,
+                "end": 64,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1516,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-prose-line-12",
+            "text": "num, to iest:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 4,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 4,
+                "end": 13,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1555,
+              985,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "polish-delphic-verse",
+        "kind": "body",
+        "bbox_xywh": [
+          322,
+          1630,
+          658,
+          115
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "polish-delphic-verse-line-01",
+            "text": "O człowiecze, poznay Pana swego!",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 32,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1630,
+              658,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-verse-line-02",
+            "text": "Przydzie Prorok — dzien zbawienia twego.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 40,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1668,
+              658,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "polish-delphic-verse-line-03",
+            "text": "Ten wszytek swiat nauką oswieci —",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-108-image-harmonized-20261126",
+                "start": 0,
+                "end": 33,
+                "language": "pl",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              322,
+              1706,
+              658,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "polish-delphic-prose-line-02",
+        "reading": "przesz",
+        "reason": "Printed historical form retained."
+      },
+      {
+        "line_id": "polish-delphic-prose-line-05",
+        "reading": "Kryzyppus",
+        "reason": "Historical proper name provisional."
+      }
+    ],
+    "source_note_links": []
+  }
+}
