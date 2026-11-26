@@ -1,0 +1,876 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 135,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00135.jpg",
+  "source_image_sha256": "5bab75261d80eec8269f78e6f76466d4b81559496ebea232029cfe6de8a54d62",
+  "reading": {
+    "reader_id": "gpt62-v3-s00135-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-132-141-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct image reading; preserve physical lines, printed historical forms, omission signs and apparatus. Exclude Arabic references from CU. Diacritics and geometry provisional.",
+    "raw_response": "IV. Оповіданя про сьв. Івана богослова.\nА. Львівський рукопис XVI в. (Оссол. 38) к. 309—313.\n(Мц҃а септ. въ кѕ҃. Преставленїе Іѡанна бг҃осло-\nва, дѣвственика и на пръсѣх възлюбленномоу Сло-\nвоу възлегше.) Отч҃ескомоу прѣдстал еси възлюбленномоу Сло-\nвоу паче всѣх оучн҃къ, възлюбленныи болшїй, къ Боу҃ же прїиде\nгромов сн҃ъ. Бл҃ви ѡч҃е.\nСъ бяше сн҃ъ Зеведеѡвъ и Соломїе, яже бѣаше дщи Іѡси-\nфа обрѫчника. ибо Іѡсифъ д҃. сны имѣаше: Іакова, Симеѡна,\nІѫдѫ и Осїю, и дщери Естир и Марѳоу и Соломїю. яже бѣа-\nше жена Зеведеѡва, мт҃и же Іѡанова. понеже Гь҃ нашь Іс҃ Хс҃ оу-\nжика бѣаше Іѡаннови, яко брат Соломїин дщери Іѡсифовы, тъ\nбѣаше иже на пръсѣх Хв҃ых възлегыи, яко възлюблен ѕѣло. и\nвъ прѣданїи, на распятїи оу крⷭ҇та, оу гроба иже съ Петромъ\nпръвѣе прїиде, и Бц҃ю въ своя си прїят и даже до оуспенїа еа\nслоужаше еи.\nИ по оуспенїи же бывшем жеребїемъ ст҃ыми апⷭ҇лы, камо\n[ко]ждо пойдет еже проповѣдати, и спаде жрѣбїй Іѡанноу [да] пой-\nде въ Асїю. и скръбѣ же Іѡанъ ѡ сем, провидѣв еже по морю на-\nпасти, иже прорече оучн҃коу своемоу Прохороу. и оуже м҃. днїй и\nм҃. нощїй сътвори въ мори влънами носимь, за еже оскорбѣти\nемоу жрѣбїи ради. въ мѣстѣ нѣкоторым Мармарь именемъ въ\nАсїи¹) на брезѣ прѣставъ, вънже и Прохора обрете оутроудив-\nша и того в корабли, и оуже ѿ Селевкыа тоужде за м҃. днїй\nпришедша, идѣже оклеветанїа подяша, яко волхвы еста.\n¹) В рукоп. въ Анїи.\nПамятки т. III.\n7",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            547,
+            603,
+            111,
+            7
+          ],
+          "description": "Printed wavy heading rule."
+        },
+        {
+          "bbox_xywh": [
+            118,
+            1588,
+            229,
+            5
+          ],
+          "description": "Footnote rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          176,
+          533,
+          840,
+          46
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-line-01",
+            "text": "IV. Оповіданя про сьв. Івана богослова.",
+            "bbox_xywh": [
+              176,
+              533,
+              840,
+              45
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 3,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "subheading",
+        "kind": "heading",
+        "bbox_xywh": [
+          165,
+          661,
+          853,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "subheading-line-01",
+            "text": "А. Львівський рукопис XVI в. (Оссол. 38) к. 309—313.",
+            "bbox_xywh": [
+              165,
+              661,
+              853,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "text",
+        "kind": "body",
+        "bbox_xywh": [
+          114,
+          730,
+          955,
+          835
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "text-line-01",
+            "text": "(Мц҃а септ. въ кѕ҃. Преставленїе Іѡанна бг҃осло-",
+            "bbox_xywh": [
+              114,
+              730,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-02",
+            "text": "ва, дѣвственика и на пръсѣх възлюбленномоу Сло-",
+            "bbox_xywh": [
+              114,
+              766,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-03",
+            "text": "воу възлегше.) Отч҃ескомоу прѣдстал еси възлюбленномоу Сло-",
+            "bbox_xywh": [
+              114,
+              802,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-04",
+            "text": "воу паче всѣх оучн҃къ, възлюбленныи болшїй, къ Боу҃ же прїиде",
+            "bbox_xywh": [
+              114,
+              838,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-05",
+            "text": "громов сн҃ъ. Бл҃ви ѡч҃е.",
+            "bbox_xywh": [
+              114,
+              875,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-06",
+            "text": "Съ бяше сн҃ъ Зеведеѡвъ и Соломїе, яже бѣаше дщи Іѡси-",
+            "bbox_xywh": [
+              114,
+              911,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-07",
+            "text": "фа обрѫчника. ибо Іѡсифъ д҃. сны имѣаше: Іакова, Симеѡна,",
+            "bbox_xywh": [
+              114,
+              947,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-08",
+            "text": "Іѫдѫ и Осїю, и дщери Естир и Марѳоу и Соломїю. яже бѣа-",
+            "bbox_xywh": [
+              114,
+              984,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-09",
+            "text": "ше жена Зеведеѡва, мт҃и же Іѡанова. понеже Гь҃ нашь Іс҃ Хс҃ оу-",
+            "bbox_xywh": [
+              114,
+              1020,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-10",
+            "text": "жика бѣаше Іѡаннови, яко брат Соломїин дщери Іѡсифовы, тъ",
+            "bbox_xywh": [
+              114,
+              1056,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-11",
+            "text": "бѣаше иже на пръсѣх Хв҃ых възлегыи, яко възлюблен ѕѣло. и",
+            "bbox_xywh": [
+              114,
+              1093,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-12",
+            "text": "въ прѣданїи, на распятїи оу крⷭ҇та, оу гроба иже съ Петромъ",
+            "bbox_xywh": [
+              114,
+              1129,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-13",
+            "text": "пръвѣе прїиде, и Бц҃ю въ своя си прїят и даже до оуспенїа еа",
+            "bbox_xywh": [
+              114,
+              1165,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-14",
+            "text": "слоужаше еи.",
+            "bbox_xywh": [
+              114,
+              1201,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 12,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-15",
+            "text": "И по оуспенїи же бывшем жеребїемъ ст҃ыми апⷭ҇лы, камо",
+            "bbox_xywh": [
+              114,
+              1238,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-16",
+            "text": "[ко]ждо пойдет еже проповѣдати, и спаде жрѣбїй Іѡанноу [да] пой-",
+            "bbox_xywh": [
+              114,
+              1274,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-17",
+            "text": "де въ Асїю. и скръбѣ же Іѡанъ ѡ сем, провидѣв еже по морю на-",
+            "bbox_xywh": [
+              114,
+              1310,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-18",
+            "text": "пасти, иже прорече оучн҃коу своемоу Прохороу. и оуже м҃. днїй и",
+            "bbox_xywh": [
+              114,
+              1347,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-19",
+            "text": "м҃. нощїй сътвори въ мори влънами носимь, за еже оскорбѣти",
+            "bbox_xywh": [
+              114,
+              1383,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-20",
+            "text": "емоу жрѣбїи ради. въ мѣстѣ нѣкоторым Мармарь именемъ въ",
+            "bbox_xywh": [
+              114,
+              1419,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-21",
+            "text": "Асїи¹) на брезѣ прѣставъ, вънже и Прохора обрете оутроудив-",
+            "bbox_xywh": [
+              114,
+              1456,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 4,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 4,
+                "end": 6,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 6,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-22",
+            "text": "ша и того в корабли, и оуже ѿ Селевкыа тоужде за м҃. днїй",
+            "bbox_xywh": [
+              114,
+              1492,
+              955,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-23",
+            "text": "пришедша, идѣже оклеветанїа подяша, яко волхвы еста.",
+            "bbox_xywh": [
+              114,
+              1528,
+              955,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          187,
+          1610,
+          343,
+          34
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "apparatus-line-01",
+            "text": "¹) В рукоп. въ Анїи.",
+            "bbox_xywh": [
+              187,
+              1610,
+              343,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 2,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 12,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "printer-mark",
+        "kind": "other",
+        "bbox_xywh": [
+          187,
+          1659,
+          180,
+          26
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "printer-mark-line-01",
+            "text": "Памятки т. III.",
+            "bbox_xywh": [
+              187,
+              1659,
+              180,
+              25
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          1001,
+          1641,
+          29,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "7",
+            "bbox_xywh": [
+              1001,
+              1641,
+              29,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00135-20261126",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "text-line-01",
+        "reading": "(Мц҃а септ. въ кѕ҃. Преставленїе Іѡанна бг҃осло-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-02",
+        "reading": "ва, дѣвственика и на пръсѣх възлюбленномоу Сло-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-03",
+        "reading": "воу възлегше.) Отч҃ескомоу прѣдстал еси възлюбленномоу Сло-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-04",
+        "reading": "воу паче всѣх оучн҃къ, възлюбленныи болшїй, къ Боу҃ же прїиде",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-05",
+        "reading": "громов сн҃ъ. Бл҃ви ѡч҃е.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-06",
+        "reading": "Съ бяше сн҃ъ Зеведеѡвъ и Соломїе, яже бѣаше дщи Іѡси-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-07",
+        "reading": "фа обрѫчника. ибо Іѡсифъ д҃. сны имѣаше: Іакова, Симеѡна,",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-08",
+        "reading": "Іѫдѫ и Осїю, и дщери Естир и Марѳоу и Соломїю. яже бѣа-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-09",
+        "reading": "ше жена Зеведеѡва, мт҃и же Іѡанова. понеже Гь҃ нашь Іс҃ Хс҃ оу-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-10",
+        "reading": "жика бѣаше Іѡаннови, яко брат Соломїин дщери Іѡсифовы, тъ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-11",
+        "reading": "бѣаше иже на пръсѣх Хв҃ых възлегыи, яко възлюблен ѕѣло. и",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-12",
+        "reading": "въ прѣданїи, на распятїи оу крⷭ҇та, оу гроба иже съ Петромъ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-13",
+        "reading": "пръвѣе прїиде, и Бц҃ю въ своя си прїят и даже до оуспенїа еа",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-14",
+        "reading": "слоужаше еи.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-15",
+        "reading": "И по оуспенїи же бывшем жеребїемъ ст҃ыми апⷭ҇лы, камо",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-16",
+        "reading": "[ко]ждо пойдет еже проповѣдати, и спаде жрѣбїй Іѡанноу [да] пой-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-17",
+        "reading": "де въ Асїю. и скръбѣ же Іѡанъ ѡ сем, провидѣв еже по морю на-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-18",
+        "reading": "пасти, иже прорече оучн҃коу своемоу Прохороу. и оуже м҃. днїй и",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-19",
+        "reading": "м҃. нощїй сътвори въ мори влънами носимь, за еже оскорбѣти",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-20",
+        "reading": "емоу жрѣбїи ради. въ мѣстѣ нѣкоторым Мармарь именемъ въ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-21",
+        "reading": "Асїи¹) на брезѣ прѣставъ, вънже и Прохора обрете оутроудив-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-22",
+        "reading": "ша и того в корабли, и оуже ѿ Селевкыа тоужде за м҃. днїй",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-23",
+        "reading": "пришедша, идѣже оклеветанїа подяша, яко волхвы еста.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "apparatus-line-01",
+        "reading": "¹) В рукоп. въ Анїи.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      }
+    ]
+  }
+}
