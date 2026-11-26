@@ -15,7 +15,7 @@ from .pilot_tei import (tag, XML, _sub, render_pilot_tei, extract_transcribed_li
 from .agent_evidence import validate_language_spans
 from .pilot_tf import build_tf_graph, verify_graph_roundtrip
 from .pilot_tf_batch import _verify_pinned_manifest, merge_pilot_graphs
-from .review_adjudication import check_repository
+from .review_tei import ledger_at_checkout
 
 # This reviewed evidence record is deliberately allowlisted. It is not a
 # contributor decision, a new frozen candidate, or proof of image verification.
@@ -322,12 +322,12 @@ def export_supplementary(repo, revision, images, output):
         paths.extend([f"pilot/reviews/{stem}_unstamped_facs_20261126.json",
                       f"pilot/{stem}_{suffix}.json"])
     for path in paths:
-        if (repo/path).read_bytes() != git("show", revision+":"+path):
+        if (repo/path).is_symlink() or (repo/path).read_bytes() != git("show", revision+":"+path):
             raise ValueError("supplementary checkout differs from committed source")
     pages = supplementary_pages(repo/"pilot", revision)
     if len(pages) != len(PHOTO_PAGES)+1:
         raise ValueError("missing supplementary pages")
-    ledger = check_repository(repo, revision, revision)
+    ledger = ledger_at_checkout(repo, revision)
     if pages.keys() & {key[0] for key in ledger}:
         raise ValueError("supplementary and contributor projections require explicit reconciliation")
     if output.exists():
