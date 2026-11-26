@@ -98,6 +98,45 @@ EXTRA_PAGES = {
             "right-yu": [1],
             "right-shch": [1]}),
     ),
+    "works": (
+        (432, "gpt62-i432-first-image-20261125", {
+            "left-v": [3,5,7,8,11,12,15,16,17],
+            "left-g": [1,2,5,6,7,9,10,11,13,17,20,22,23],
+            "left-d": [1,3],
+            "right-d": [2,3,4,6,8,9,10,11,14],
+            "right-e": [1,2,3,4,5,7,8,10,12,15,17,18,23,24],
+            "right-zh": [1,2,3]}),
+        (433, "gpt62-i433-first-image-20261125", {
+            "left-zh": [2,4],
+            "left-z": [2,3,4,5,6,7],
+            "left-i": [2,3,4,5,6,7,8,9,10,11,13,14,15],
+            "left-k": [2,5,6,7,10,12],
+            "right-k": [1,2,3,4,5,6,9,10,11,12,13],
+            "right-l": [1,2,3,4,5,6,7,9,10],
+            "right-m": [1,2,3,7,8,9,10,12,14,15,16,17,18]}),
+        (434, "gpt62-i434-first-image-20261125", {
+            "left-m": [1,2,4],
+            "left-n": [2,3,4,5,6],
+            "left-o": [1,3,4,6,7,9],
+            "left-p": [1,2,3,6,7,10,16,19],
+            "right-p": [8,9,11,13,14,17,21,25,26,28,29,30,31,32,33,34,35,36,37,38,39,40,41,43,44,47,49]}),
+        (435, "gpt62-i435-first-image-20261125", {
+            "left-p": [3,6,8,9,12,13,15,17,22,33,35,36,37,38,39,40,41,42,43],
+            "left-r": [1,2],
+            "right-r": [1,2,5,7,8,10,11,13,17,24,26,27,32,33],
+            "right-s": [1,3,6,7,8,9,10,11,12]}),
+        (436, "gpt62-i436-first-image-20261125", {
+            "left-s": [1,2,6,9,10,11,12,13],
+            "left-t": [1,2,11,13,15,16],
+            "left-u": [1],
+            "left-f": [2,5,6,7],
+            "right-x": [2,4,6,8,9,11,12],
+            "right-theta": [1],
+            "right-ts": [1,4,5,7],
+            "right-ch": [1,2,4],
+            "right-sh": [2],
+            "right-ya": [2,3,5,8]}),
+    ),
     "glossary": (
         (460, "gpt62-i460-first-image-20261125", {
             "left": [2,3,4,6,8,10,11,13,15,18,20,22,24,25,26,28,30,32,35,37,38,40,41,43,44,45,49],
@@ -111,7 +150,76 @@ EXTRA_PAGES = {
     ),
 }
 # Editorial context is separate from the printed ditto glyphs.
-NAME_CONTEXTS = {
+ENTRY_CONTEXTS = {
+    (431, "left-a", 5): "апокріф",
+    (431, "left-a", 6): "Адамів; апокріф",
+    (431, "right-v", 3): "Варнавино; апокр.",
+    (431, "right-v", 14): "Веселовскій А. Н.",
+    (432, "left-v", 4): "Веселовскій А. Н.",
+    (432, "left-v", 6): "Веселовскій А. Н.",
+    (432, "left-v", 13): "Вопросы Іоанна Богослова",
+    (432, "left-v", 17): "книга",
+    (432, "left-g", 21): "Grünbaum M.",
+    (432, "left-d", 2): "Давид",
+    (432, "right-d", 3): "Данїіл",
+    (432, "right-e", 11): "Епіфанїй Кипрський",
+    (432, "right-e", 13): "Епіфанїй Кипрський",
+    (432, "right-e", 16): "Епіфанїй Кипрський",
+    (432, "right-e", 24): "Єфрем Сирин",
+    (433, "left-z", 7): "книга",
+    (433, "left-i", 9): "апокр.",
+    (433, "right-k", 2): "Клїментово; апокр.",
+    (433, "right-k", 4): "Книга",
+    (433, "right-k", 5): "Книга",
+    (433, "right-l", 3): "книга",
+    (433, "right-l", 4): "книга",
+    (433, "right-m", 10): "Минея",
+    (434, "left-m", 2): "Молитви",
+    (434, "left-n", 4): "апокр.",
+    (434, "left-p", 2): "Павла апостола",
+    (434, "left-p", 7): "Палея",
+    (434, "left-p", 8): "Палея",
+    (434, "left-p", 11): "Палея",
+    (434, "left-p", 17): "Палея",
+    (434, "right-p", 9): "Палея",
+    (434, "right-p", 10): "Палея",
+    (434, "right-p", 12): "Палея",
+    (434, "right-p", 14): "Палея",
+    (434, "right-p", 15): "Палея",
+    (434, "right-p", 18): "Палея",
+    (434, "right-p", 22): "Палея",
+    (434, "right-p", 26): "Палея",
+    (434, "right-p", 33): "Паралїпомена",
+    (434, "right-p", 35): "Патерик",
+    (434, "right-p", 36): "Патерик",
+    (434, "right-p", 37): "Патерик",
+    (434, "right-p", 38): "Патерик",
+    (434, "right-p", 39): "Патерик",
+    (435, "left-p", 7): "Пыпинъ А. Н.",
+    (435, "left-p", 16): "Поповъ А. Н.",
+    (435, "left-p", 23): "Порфирьевъ И. Я.",
+    (435, "right-r", 3): "Рукописи",
+    (435, "right-r", 6): "Рукописи",
+    (435, "right-r", 8): "Рукописи",
+    (435, "right-r", 9): "Рукописи",
+    (435, "right-r", 11): "Рукописи",
+    (435, "right-r", 12): "Рукописи",
+    (435, "right-r", 14): "Рукописи",
+    (435, "right-r", 18): "Рукописи",
+    (435, "right-r", 25): "Рукописи",
+    (435, "right-r", 27): "Рукописи",
+    (435, "right-r", 28): "Рукописи",
+    (435, "right-s", 4): "Сборникъ",
+    (435, "right-s", 7): "Сборникъ",
+    (436, "left-s", 11): "книга",
+    (436, "left-s", 12): "книга",
+    (436, "left-t", 12): "Тихонравовъ",
+    (436, "left-f", 3): "Fabricius",
+    (436, "right-x", 3): "Хожденіє",
+    (436, "right-x", 7): "Хожденіє",
+    (436, "right-ya", 3): "Jagić V.",
+    (436, "right-ya", 4): "Jagić V.",
+    (436, "right-ya", 6): "Jagić V.",
     (422, "left", 10): "Індийські",
     (422, "left", 12): "Індия",
     (422, "left", 13): "ефіопська",
@@ -233,6 +341,11 @@ NAME_CONTEXTS = {
     (421, "right", 21): "цар",
 }
 SOURCE_BLOBS.update({
+    432: "28bc37a0cacf67dab695ebbece95c5ffe9abfcb3",
+    433: "0568936619eeec3611cc51a452eaec081aa1b60f",
+    434: "8796bddbeb7e691f8c10fc95c7dc34628a4ec950",
+    435: "ced95ae19de5eef9dcaa6f51a72b1b8f6164a8b2",
+    436: "58992b023ca6428e2030dff97185fa93f823f400",
     422: "f7ec80af0be6a32a8e3ae7a43805145d78437c72",
     423: "0df835d131f7038572d2ac42ee29a033dd97df94",
     424: "3d068c94633b40d8284f0803420f1806e4c7f3fd",
@@ -255,8 +368,13 @@ SOURCE_BLOBS.update({
 # Pairs are atomic: do not expose a truncated article or orphan if either
 # scan's pinned reading is absent or changed.
 CONTINUATIONS = {(422, "right", 1), (425, "left-m", 1),
-                 (430, "left", 1), (430, "right-ya", 1)}
-ATOMIC_PAIRS = ((424, 425), (429, 430))
+                 (430, "left", 1), (430, "right-ya", 1),
+                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1)}
+ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435))
+# Running continuation heading is literal evidence, not part of the numeric tail.
+CONTINUATION_PREFIXES = {(434, "right-p", 1): "Палея Крех. "}
+# Explicit source line break with no printed separator; do not guess missing commas.
+# The source remains literal; the parse uses the joined numeric tail only.
 
 NUMBER = r"[1-9][0-9]{0,2}"
 TOKEN = NUMBER + r"(?:[—–-]" + NUMBER + r")?"
@@ -272,6 +390,26 @@ def folio_targets(observations):
             if 1 <= page <= 340:
                 candidates[page].add(scan)
     return {p: next(iter(scans)) for p, scans in candidates.items() if len(scans) == 1}
+
+
+def complete_folio_targets(observations):
+    """Recover only bounded missing folios; never override a conflicting number."""
+    observations = list(observations)
+    targets = folio_targets(observations)
+    estimated = set()
+    by_scan = dict(observations)
+    anchors = sorted((scan, page) for page, scan in targets.items())
+    for (left, first), (right, last) in zip(anchors, anchors[1:]):
+        if right - left != last - first or right - left < 2:
+            continue
+        if not all(scan in by_scan and by_scan[scan] is None for scan in range(left + 1, right)):
+            continue
+        for scan in range(left + 1, right):
+            page = first + scan - left
+            if page not in targets:
+                targets[page] = scan
+                estimated.add(page)
+    return targets, estimated
 
 
 def make_ref(literal, targets, role="citation"):
@@ -316,7 +454,7 @@ def parse_entry(kind, lines, targets):
             if other:
                 refs.append(other)
         return label, detail, refs
-    if kind == "names":
+    if kind in ("names", "works"):
         # Some source rows use full stops as separators, or lack punctuation.
         # Split only explicit comma/period boundaries. A damaged token such as
         # "2 9" is not two page references or a guessed 29/209.
@@ -344,6 +482,55 @@ def parse_entry(kind, lines, targets):
     if not label:
         return joined, "", []
     return label, "", refs
+
+
+# Explicit source-entry links, not fuzzy matches on modernized names.
+CROSSREFS = {
+    "v1-416-index-right-l013": ["v1-416-index-right-l027"],
+    "v1-418-index-b-l002": ["v1-418-index-v-right-l021"],
+    "v1-421-left-z-l017": ["v1-418-index-v-right-l031"],
+    "v1-421-right-l032": ["v1-421-right-l048"],
+    "v1-423-right-l-l001": ["v1-423-right-l-l002"],
+    "v1-424-left-m-l021": ["v1-424-left-m-l019"],
+    "v1-424-left-m-l022": ["v1-424-left-m-l019"],
+    "v1-424-right-l019": ["v1-424-right-l033"],
+    "v1-425-right-n-l006": ["v1-425-right-n-l005"],
+    "v1-425-right-n-l007": ["v1-425-right-n-l005"],
+    "v1-428-right-f-l024": ["v1-425-right-n-l027"],
+    "v1-432-left-g-l006": ["v1-431-left-a-l009"],
+    "v1-433-left-z-l004": ["v1-435-right-r-l006"],
+    "v1-433-left-i-l010": ["v1-435-right-r-l008"],
+    "v1-434-left-o-l002": ["v1-432-right-e-l011"],
+    "v1-435-left-p-l007": ["v1-434-right-p-l048"],
+    "v1-435-left-p-l013": ["v1-435-right-r-l009"],
+    "v1-435-right-s-l009": ["v1-432-right-e-l019", "v1-432-right-e-l024"],
+    "v1-460-right-l009": ["v1-460-right-l001"],
+}
+
+
+def link_audit(data):
+    """Separate article coverage, unresolved citations and unanchored mentions."""
+    report = []
+    for section in data["sections"]:
+        missing, unresolved, no_refs = [], [], []
+        pages, estimated, anchored = 0, 0, 0
+        for entry in section["entries"]:
+            ident = dict(id=entry["id"], label=entry["label"])
+            if not entry["refs"] and not entry.get("crossrefs"):
+                no_refs.append(ident)
+            for ref in entry["refs"]:
+                pages += len(ref["targets"])
+                estimated += sum(bool(t.get("estimated")) for t in ref["targets"])
+                anchored += sum(bool(t.get("line_id")) for t in ref["targets"])
+                if ref["missing"]:
+                    missing.append(dict(**ident, literal=ref["literal"], pages=ref["missing"]))
+                if ref["role"] == "unresolved":
+                    unresolved.append(dict(**ident, literal=ref["literal"]))
+        report.append(dict(kind=section["kind"], entries=len(section["entries"]),
+                           linked_pages=pages, estimated_pages=estimated,
+                           line_anchors=anchored, missing=missing, unresolved=unresolved,
+                           no_refs=no_refs, crossrefs=sum(len(e.get("crossrefs", [])) for e in section["entries"])))
+    return report
 
 
 def read_draft(path):
@@ -404,8 +591,16 @@ def build_printed_indexes(pilot, ref, supplements=None):
         if path.name != f"vol1_scan{scan:05d}_single_reading.json" or scan in files:
             raise ValueError(f"duplicate or mismatched scan: {path}")
         files[scan] = (path, data, blob)
-    targets = folio_targets((scan, d["printed_page_observed"])
-                            for scan, (_, d, _) in files.items() if 76 <= scan <= 415)
+    def observed(d):
+        printed = d["printed_page_observed"]
+        if printed is None:
+            folios = [l["text"] for r in d["reading"]["regions"] if r["id"] == "folio"
+                      for l in r["lines"] if re.fullmatch(NUMBER, l["text"])]
+            if len(folios) == 1:
+                return folios[0]
+        return printed
+    targets, estimated = complete_folio_targets((scan, observed(d))
+                                                for scan, (_, d, _) in files.items() if 76 <= scan <= 415)
     sections = []
     for kind, start, end, reader, partitions in SECTIONS:
         draft_scans = [n for n in range(start, end + 1) if n in files]
@@ -416,7 +611,7 @@ def build_printed_indexes(pilot, ref, supplements=None):
         eligible = {scan for scan, reader, _ in page_specs
                     if scan in files and files[scan][1]["reading"]["reader_id"] == reader
                     and files[scan][2] == SOURCE_BLOBS[scan]}
-        if kind == "names":
+        if kind in ("names", "works"):
             for pair in ATOMIC_PAIRS:
                 if not set(pair) <= eligible:
                     eligible.difference_update(pair)
@@ -447,7 +642,7 @@ def build_printed_indexes(pilot, ref, supplements=None):
                 previous = 0
                 for stop in ends:
                     part = [{"id": l["id"], "text": l["text"]} for l in lines[previous:stop]]
-                    if kind == "names" and (scan, region_id, previous + 1) in CONTINUATIONS:
+                    if (scan, region_id, previous + 1) in CONTINUATIONS:
                         # A region/page boundary never manufactures a new name.
                         prior = entries[-1] if entries else section["entries"][-1]
                         segments = prior.setdefault("segments", [
@@ -455,8 +650,20 @@ def build_printed_indexes(pilot, ref, supplements=None):
                                  lines=prior["lines"][:])])
                         segments.append(dict(source=source, region_id=region_id, lines=part))
                         prior["lines"].extend(part)
+                        parse_lines = []
+                        for i, segment in enumerate(segments):
+                            texts = [l["text"] for l in segment["lines"]]
+                            # Only the actual continuation, never an initial article
+                            # elsewhere in this same region (e.g. Pypin).
+                            key = (segment["source"]["scan"], segment["region_id"], 1)
+                            if i and key in CONTINUATION_PREFIXES:
+                                prefix = CONTINUATION_PREFIXES[key]
+                                if not texts[0].startswith(prefix):
+                                    raise ValueError("changed running continuation heading")
+                                texts[0] = texts[0][len(prefix):]
+                            parse_lines.extend(texts)
                         prior["label"], prior["detail"], prior["refs"] = parse_entry(
-                            kind, [l["text"] for l in prior["lines"]], targets)
+                            kind, parse_lines, targets)
                         previous = stop
                         continue
                     # Keep literal source lines for provenance/anchors, but use
@@ -469,7 +676,7 @@ def build_printed_indexes(pilot, ref, supplements=None):
                     label, detail, refs = parse_entry(kind, effective, targets)
                     # Only the explicit Abraham block on the pilot motif page.
                     context = ("Авраам" if kind == "motifs" and label.startswith("„")
-                               else NAME_CONTEXTS.get((scan, region_id, previous + 1), "") if kind == "names" else "")
+                               else ENTRY_CONTEXTS.get((scan, region_id, previous + 1), "") if kind in ("names", "works") else "")
                     entries.append(dict(id=f"v1-{scan}-{part[0]['id']}", source=source,
                                         region_id=region_id, lines=part, label=label,
                                         detail=detail, context=context, refs=refs))
@@ -482,4 +689,15 @@ def build_printed_indexes(pilot, ref, supplements=None):
                 raise ValueError(f"missing index regions: {path}")
             section["structured_scans"].append(scan)
             section["entries"].extend(entries)
-    return dict(schema_version=1, ref=ref, status="agent_unverified", sections=sections)
+    for section in sections:
+        by_id = {e["id"]: e for e in section["entries"]}
+        for entry in section["entries"]:
+            entry["crossrefs"] = [dict(id=ident, label=by_id[ident]["label"])
+                                  for ident in CROSSREFS.get(entry["id"], []) if ident in by_id]
+            for citation in entry["refs"]:
+                for target in citation["targets"]:
+                    if target["page"] in estimated:
+                        target["estimated"] = True
+    result = dict(schema_version=1, ref=ref, status="agent_unverified", sections=sections)
+    result["link_audit"] = link_audit(result)
+    return result
