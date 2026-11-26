@@ -191,6 +191,17 @@ a complete corpus-wide audit.
   its entry in incomplete_range_entry_ids; no complete range or end is
   implied. Entries with no secure marker belong in unlinked_entry_ids.
   Do not infer the missing occurrence from the apparatus text or sequence.
+  An incomplete pair can also retain only a secure closing marker; identify
+  it as range_end and list the entry in incomplete_range_entry_ids.
+  Distinguish duplicate printed article labels from repeated body markers.
+  In [IX.B](../pilot/structure/vol1_section_ix_b_apparatus.json), two printed
+  articles numbered 18 have different text. Give each article its own
+  scope-qualified ID including the occurrence ordinal, in source order.
+  Resolve a reference to a duplicate label only with explicit local source
+  evidence (disambiguation); leave the other occurrence unlinked if its
+  target cannot be established. Never renumber the original label. Scope
+  headings may themselves repeat a printed letter (IX.C and the following
+  Kovel witness); use exact source heading anchors, not the letter alone.
   Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
