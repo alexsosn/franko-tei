@@ -232,6 +232,32 @@ class PrintedIndexesTest(unittest.TestCase):
                         self.assertEqual(lines[line["line_id"]], line["text"])
                     self.assertEqual("anchor" in dest, review["status"] == "attested")
 
+    def test_complete_glossary_mention_review(self):
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        entries = data["sections"][3]["entries"]
+        self.assertEqual(len(entries), 189)
+        targets = [t for e in entries for r in e["refs"] for t in r["targets"]]
+        self.assertEqual(len(targets), 192)
+        for t in targets:
+            self.assertIn("mention_review", t)
+            review = t["mention_review"]
+            draft = json.loads((ROOT / review["path"]).read_text(encoding="utf-8"))
+            lines = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
+            for line in review["lines"]:
+                self.assertEqual(lines[line["line_id"]], line["text"])
+            self.assertEqual("anchor" in t, review["status"] == "attested")
+        right = [e for e in entries if e["source"]["scan"] == 462 and e["region_id"] == "right"]
+        self.assertEqual(len(right), 31)
+        by_id = {e["id"]: e for e in right}
+        split = by_id["v1-462-right-l038"]["refs"][0]["targets"][0]
+        self.assertEqual([x["line_id"] for x in split["mention_review"]["lines"]],
+                         ["judah-family-continuation-l029", "judah-family-continuation-l030"])
+        stork = by_id["v1-462-right-l004"]["refs"][0]["targets"][0]
+        self.assertEqual(len(stork["mention_review"]["lines"]), 5)
+        pair = by_id["v1-462-right-l045"]["refs"]
+        self.assertEqual([r["literal"] for r in pair], ["12", "148"])
+        self.assertTrue(all("anchor" not in r["targets"][0] for r in pair))
+
     def test_glossary_review_stale_target_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             pilot = Path(tmp)
