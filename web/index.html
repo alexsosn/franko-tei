@@ -8098,7 +8098,7 @@ let pendingContentsAnchor=null,pendingContentsEstimate=false;
 const contentsPagination={1:{arabic:75},2:{arabic:82,roman:4,romanMax:78},3:{arabic:86,roman:18,romanMax:68},4:{arabic:52},5:{arabic:12}};
 function contentsRoman(value){if(!/^(?=[IVXLCDM]+$)M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/.test(value))return null;const digits={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};return [...value].reduce((n,c,i)=>n+(digits[c]<(digits[value[i+1]]??0)?-digits[c]:digits[c]),0);}
 function contentsDestination(v,entry){const d=volumeContents[v],p=contentsPagination[v];if(!d||!p||!Array.isArray(entry))return null;const scan=entry[3];if(scan!==null)return Number.isInteger(scan)&&scan>=1&&scan<=counts[Number(v)]?{scan,kind:'verified'}:null;const printed=entry[2];if(typeof printed!=='string')return null;let n=null;const a=printed.match(/^([1-9][0-9]*)(?=$|[–, і])/);if(a)n=Number(a[1])+p.arabic;else{const r=printed.match(/^([IVXLCDM]+)(?=$|[–, і])/);if(r&&p.roman!==undefined){const folio=contentsRoman(r[1]);if(folio!==null&&folio<=p.romanMax)n=folio+p.roman;}}return Number.isSafeInteger(n)&&n>=1&&n<d.sources[0]&&n<=counts[Number(v)]?{scan:n,kind:'estimated'}:null;}
-function contentsAnchorIndex(anchor,available){if(!anchor)return -1;const hits=[];for(const [i,c] of available.entries()){const r=c.data.reading;if(c.suffix!==anchor.suffix||r.reader_id!==anchor.reader_id)continue;const lines=r.regions.flatMap(region=>region.lines.map(line=>({region,line}))).filter(x=>x.line.id===anchor.line_id);if(lines.length===1&&lines[0].region.kind==='heading'&&lines[0].line.text===anchor.text)hits.push(i);}return hits.length===1?hits[0]:-1;}
+function contentsAnchorIndex(anchor,available){if(!anchor)return -1;const hits=[];for(const [i,c] of available.entries()){const r=c.data.reading;if(c.suffix!==anchor.suffix||r.reader_id!==anchor.reader_id)continue;const lines=r.regions.flatMap(region=>region.lines.map(line=>({region,line}))).filter(x=>x.line.id===anchor.line_id);if(lines.length===1&&lines[0].region.kind===(anchor.region_kind||'heading')&&lines[0].line.text===anchor.text)hits.push(i);}return hits.length===1?hits[0]:-1;}
 function jumpContents(v,n,anchor=null,estimated=false){if(!Object.hasOwn(volumeContents,v)||!Number.isInteger(n)||n<1||n>counts[Number(v)])return;initialContents=false;closeContents();setReaderVolume(v);$('page').value=String(n);pendingContentsAnchor=anchor;pendingContentsEstimate=estimated;load({source:anchor&&$('mode').value==='ocr'?'draft':null});}
 const contentsVolumeEnglish = ['','I — Old Testament apocrypha','II — New Testament apocrypha: A. Apocryphal Gospels','III — New Testament apocrypha: B. Apocryphal Acts of the Apostles','IV — Eschatological apocrypha','V — Legends of saints. Part one'];
 function contentsReferences(v,entry){const records=contentsWorkRefs[v],key=JSON.stringify(entry.slice(0,3));return records&&Object.hasOwn(records,key)?records[key]:[];}
@@ -8160,6 +8160,7 @@ function validatePrintedIndexes(d){
     for(const e of s.entries){
       if(typeof e.label!=='string'||typeof e.detail!=='string'||typeof e.context!=='string'||!s.structured_scans.includes(e.source?.scan)||!Array.isArray(e.refs))throw Error('Invalid entry');
       if(e.segments!==undefined&&(!Array.isArray(e.segments)||e.segments.length<2||!e.segments.every(sg=>s.structured_scans.includes(sg.source?.scan)&&typeof sg.region_id==="string"&&Array.isArray(sg.lines))))throw Error("Invalid continuation");
+      if(e.crossrefs!==undefined&&(!Array.isArray(e.crossrefs)||!e.crossrefs.every(x=>typeof x.label==="string"&&s.entries.some(z=>z.id===x.id))))throw Error("Invalid index cross-reference");
       for(const r of e.refs){
         if(r.volume!=='1'||typeof r.literal!=='string'||!Array.isArray(r.targets)||!Array.isArray(r.missing)||
            !r.targets.every(t=>Number.isInteger(t.page)&&t.page>=1&&t.page<=340&&Number.isInteger(t.scan)&&t.scan>=76&&t.scan<=415))throw Error('Invalid reference');
@@ -8168,26 +8169,28 @@ function validatePrintedIndexes(d){
   }
   return d;
 }
-function appendIndexTarget(node,page,scan,literal){
+function appendIndexTarget(node,page,scan,literal,target){
   if(scan===undefined){const t=document.createElement('span');t.className='index-unresolved';t.textContent=literal;t.title=indexText('No unique folio observation','Немає однозначно зафіксованої сторінки');node.append(t);return;}
   const b=document.createElement('button');b.type='button';b.textContent=literal;b.dataset.scan=String(scan);
   b.title=indexText('Open cited page (folio recorded in draft)','Відкрити цитовану сторінку (номер зафіксовано в чернетці)');
-  b.onclick=()=>jumpContents('1',scan);node.append(b);
+  if(target?.estimated)b.title=indexText('Page inferred from neighbouring folios; check the scan','Сторінку визначено за сусідніми номерами; звірте скан');
+  b.onclick=()=>jumpContents('1',scan,target?.anchor||null);node.append(b);
 }
 function appendIndexRef(node,ref){
-  const targets=new Map(ref.targets.map(t=>[t.page,t.scan]));
+  const targets=new Map(ref.targets.map(t=>[t.page,t]));
   const pages=[...targets.keys(),...ref.missing].sort((a,b)=>a-b);
-  if(pages.length===1){appendIndexTarget(node,pages[0],targets.get(pages[0]),ref.literal);
+  if(pages.length===1){appendIndexTarget(node,pages[0],targets.get(pages[0])?.scan,ref.literal,targets.get(pages[0]));
     if(ref.role==='editorial_citation'&&typeof ref.printed_literal==='string'){
       const label=indexText('Printed index reads ','У покажчику читається ')+ref.printed_literal+indexText('; cited text attested on page ','; цитований текст засвідчено на сторінці ')+ref.literal;
       node.lastElementChild.title=label;node.lastElementChild.setAttribute('aria-label',ref.literal+' — '+label);
     }
+    if(ref.role==='separator_recovered'&&typeof ref.printed_literal==='string')node.lastElementChild.title=indexText('Recovered separator in ','Відновлений роздільник у ')+ref.printed_literal;
     return;
   }
   if(!pages.length){appendIndexTarget(node,null,undefined,ref.literal);return;}
   const d=document.createElement('details'),s=document.createElement('summary');s.textContent=ref.literal;
   const group=document.createElement('div');group.className='index-refs';
-  for(const p of pages)appendIndexTarget(group,p,targets.get(p),String(p));
+  for(const p of pages)appendIndexTarget(group,p,targets.get(p)?.scan,String(p),targets.get(p));
   d.append(s,group);node.append(d);
 }
 function filterPrintedIndexes(){
@@ -8219,10 +8222,14 @@ function drawPrintedIndex(d,v){
     if(e.context){const c=document.createElement('div');c.className='index-context';c.textContent=e.context;li.append(c);}
     const label=document.createElement('div');label.className='index-label';label.textContent=e.label;li.append(label);
     if(e.detail){const detail=document.createElement('div');detail.className='index-detail';detail.textContent=e.detail;li.append(detail);}
+    if(e.crossrefs?.length){const cross=document.createElement('div');cross.className='index-refs';
+      for(const link of e.crossrefs){const button=document.createElement('button');button.type='button';button.textContent=indexText('See: ','Див.: ')+link.label;button.dataset.indexEntry=link.id;
+        button.onclick=()=>{const destination=[...list.children].find(el=>el.dataset.entry===link.id);if(!destination)return;$('contentsFilter').value='';filterPrintedIndexes();destination.scrollIntoView({block:'center'});destination.tabIndex=-1;destination.focus({preventScroll:true});};cross.append(button);}li.append(cross);}
+
     if(e.refs.length){const refs=document.createElement('div');refs.className='index-refs';for(const r of e.refs.slice(0,8))appendIndexRef(refs,r);
       if(e.refs.length>8){const more=document.createElement('details'),summary=document.createElement('summary');summary.textContent=indexText('+'+(e.refs.length-8)+' more','Ще '+(e.refs.length-8));const rest=document.createElement('div');rest.className='index-refs';for(const r of e.refs.slice(8))appendIndexRef(rest,r);more.append(summary,rest);refs.append(more);}
       li.append(refs);}
-    for(const scan of new Set((e.segments||[e]).map(sg=>sg.source.scan))){const source=document.createElement("button");source.type="button";source.className="index-source";source.textContent=indexText("Source scan ","Скан джерела ")+scan;source.onclick=()=>jumpContents(v,scan);li.append(source);}
+    for(const scan of new Set((e.segments||[e]).map(sg=>sg.source.scan))){const source=document.createElement("button");source.type="button";source.className="index-source";source.textContent=indexText("Source scan ","Скан джерела ")+scan;const sg=(e.segments||[e]).find(s=>s.source.scan===scan);source.onclick=()=>jumpContents(v,scan,sg?.lines?.length?{suffix:"single_reading",reader_id:sg.source.reader_id,line_id:sg.lines[0].id,text:sg.lines[0].text,region_kind:"body"}:null);li.append(source);}
     fragment.append(li);
   }
   list.append(fragment);filterPrintedIndexes();list.scrollTop=0;
