@@ -143,6 +143,7 @@ class LogicalNoteEntriesTests(unittest.TestCase):
         for entry in page["entries"]:
             self.assertNotIn(entry["id"], entries)
             entries[entry["id"]] = entry
+            self.assertTrue(entry["id"].startswith(f"v1-s{page['scan_page']:05d}-"))
             region = regions[entry["note_region_id"]]
             self.assertEqual(region["kind"], "note")
             lines = {l["id"]: l["text"] for l in region["lines"]}
@@ -206,6 +207,8 @@ class LogicalNoteEntriesTests(unittest.TestCase):
         self.assertEqual(fixture["volume"], "1")
         self.assertEqual([p["scan_page"] for p in fixture["pages"]],
                          [157, 188, 199, 200, 204, 211, 216])
+        ids = [e["id"] for page in fixture["pages"] for e in page["entries"]]
+        self.assertEqual(len(ids), len(set(ids)), "note IDs must be unique across pages")
         for page, count in zip(fixture["pages"], [2, 2, 4, 3, 2, 2, 2]):
             with self.subTest(scan=page["scan_page"]):
                 source = self.load_source(page)
