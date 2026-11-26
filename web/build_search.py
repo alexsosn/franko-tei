@@ -8,6 +8,7 @@ import subprocess
 from printed_indexes import build_printed_indexes
 
 from franko_tei.pilot_batch import discover_readings, check_draft_offline
+from franko_tei.search_annotations import project_search_entry
 from franko_tei.review_adjudication import check_repository, project_lines, StaleEditorialSource
 from franko_tei.review_bundle import blob_sha, git_source_loader
 from franko_tei.pilot_tei import PINNED_ASSET_COMMIT
@@ -41,16 +42,14 @@ def build(pilot, output, ref):
         check_draft_offline(path, draft)
         volume, scan = draft["volume"], draft["scan_page"]
         suffix = path.stem.split("_", 2)[2]
-        text = "\n".join(line["text"] for region in draft["reading"]["regions"] for line in region["lines"])
-        entries[volume].append(dict(scan=scan, suffix=suffix, text=text))
+        raw_entry = project_search_entry(draft, suffix, blob_sha(raw))
+        entries[volume].append(raw_entry)
         candidate_path = "pilot/" + path.name
         supplement = supplements.get(candidate_path)
         if supplement:
             pages.append(supplement)
-            replacements = {r['line_id']: r['text'] for r in supplement['lines']}
-            corrected = '\n'.join(replacements.get(line['id'], line['text'])
-                                  for region in draft['reading']['regions'] for line in region['lines'])
-            entries[volume].append(dict(scan=scan, suffix=suffix, text=corrected, reviewed=True))
+            entries[volume].append(project_search_entry(draft, suffix, blob_sha(raw),
+                                                       supplement['lines']))
         if candidate_path in affected:
             seen.add(candidate_path)
             try:
@@ -64,9 +63,9 @@ def build(pilot, output, ref):
                         for r in rows if r["status"] != "agent_unverified"]
             pages.append(dict(volume=volume, scan=scan, suffix=suffix, path=candidate_path,
                               blob=blob_sha(raw), lines=accepted))
-            corrected = "\n".join(r["text"] for r in rows)
-            if corrected != text:
-                entries[volume].append(dict(scan=scan, suffix=suffix, text=corrected, reviewed=True))
+            projected = project_search_entry(draft, suffix, blob_sha(raw), accepted)
+            if projected.get("reviewed"):
+                entries[volume].append(projected)
     unavailable.extend({"path": p, "reason": "source_missing"} for p in sorted(affected-seen))
     volumes = {}
     for volume, rows in entries.items():
@@ -92,8 +91,18 @@ def build(pilot, output, ref):
     )
     (output / "editorial.json").write_text(json.dumps(dict(ref=ref, pages=pages, unavailable=unavailable), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     for volume, rows in entries.items():
+        # Load annotations only on demand; ordinary literal search keeps its
+        # original compact payload and record contract.
+        literal = [{k: v for k, v in row.items() if k != "annotation"} for row in rows]
+        annotations = [{k: v for k, v in row.items() if k != "text"} for row in rows]
         (output / f"vol{volume}.json").write_text(
-            json.dumps(dict(ref=ref, volume=volume, entries=rows), ensure_ascii=False, separators=(",", ":")),
+            json.dumps(dict(ref=ref, volume=volume, entries=literal), ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8",
+        )
+        (output / f"annotation-vol{volume}.json").write_text(
+            json.dumps(dict(schema_version="search-annotation-v1", ref=ref, volume=volume,
+                            offset_unit="unicode_code_point", entries=annotations),
+                       ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8",
         )
 
