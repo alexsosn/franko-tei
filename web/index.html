@@ -8742,6 +8742,11 @@ function appendIndexTarget(node,page,scan,literal,target){
   const b=document.createElement('button');b.type='button';b.textContent=literal;b.dataset.scan=String(scan);
   b.title=indexText('Open cited page (folio recorded in draft)','Відкрити цитовану сторінку (номер зафіксовано в чернетці)');
   if(target?.estimated)b.title=indexText('Page inferred from neighbouring folios; check the scan','Сторінку визначено за сусідніми номерами; звірте скан');
+  const review=target?.mention_review?.status;
+  if(review==='attested')b.title+=' · '+indexText('Word attested in draft; open matching line','Слово засвідчено в чернетці; відкрити відповідний рядок');
+  else if(review==='reading_conflict')b.title+=' · '+indexText('Conflicting reading; check facsimile','Розбіжність у читанні; звірте факсиміле');
+  else if(review==='not_found')b.title+=' · '+indexText('Word not found in current draft; check facsimile','Слово не знайдено в поточній чернетці; звірте факсиміле');
+  if(review)b.setAttribute('aria-label',literal+' — '+b.title);
   b.onclick=()=>jumpContents('1',scan,target?.anchor||null);node.append(b);
 }
 function appendIndexRef(node,ref){
@@ -8750,7 +8755,7 @@ function appendIndexRef(node,ref){
   if(pages.length===1){appendIndexTarget(node,pages[0],targets.get(pages[0])?.scan,ref.literal,targets.get(pages[0]));
     if(ref.role==='editorial_citation'&&typeof ref.printed_literal==='string'){
       const label=indexText('Printed index reads ','У покажчику читається ')+ref.printed_literal+indexText('; cited text attested on page ','; цитований текст засвідчено на сторінці ')+ref.literal;
-      node.lastElementChild.title=label;node.lastElementChild.setAttribute('aria-label',ref.literal+' — '+label);
+      node.lastElementChild.title=label+(targets.get(pages[0])?.mention_review?' · '+node.lastElementChild.title:'');node.lastElementChild.setAttribute('aria-label',ref.literal+' — '+node.lastElementChild.title);
     }
     if(ref.role==='separator_recovered'&&typeof ref.printed_literal==='string')node.lastElementChild.title=indexText('Recovered separator in ','Відновлений роздільник у ')+ref.printed_literal;
     return;
