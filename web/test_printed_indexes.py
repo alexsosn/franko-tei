@@ -205,6 +205,33 @@ class PrintedIndexesTest(unittest.TestCase):
                         self.assertEqual(lines[line["line_id"]], line["text"])
                     self.assertEqual("anchor" in dest, review["status"] == "attested")
 
+    def test_fourth_glossary_left_column_mentions(self):
+        from collections import Counter
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        entries = [e for e in data["sections"][3]["entries"]
+                   if e["source"]["scan"] == 462 and e["region_id"] == "left"]
+        self.assertEqual(len(entries), 26)
+        reviews = [target["mention_review"] for e in entries for r in e["refs"] for target in r["targets"]]
+        self.assertEqual(len(reviews), 26)
+        self.assertEqual(Counter(x["status"] for x in reviews),
+                         {"attested": 20, "reading_conflict": 4, "not_found": 2})
+        by_label = {e["label"]: e for e in entries}
+        def target(label):
+            return by_label[label]["refs"][0]["targets"][0]
+        self.assertEqual(len(target("Самовѣченъ")["mention_review"]["lines"]), 2)
+        self.assertEqual(len(target("Скалва")["mention_review"]["lines"]), 3)
+        self.assertEqual(target("Свикливъ")["mention_review"]["status"], "reading_conflict")
+        self.assertEqual(target("Скѹпь")["mention_review"]["status"], "not_found")
+        for entry in entries:
+            for ref in entry["refs"]:
+                for dest in ref["targets"]:
+                    review = dest["mention_review"]
+                    draft = json.loads((ROOT / review["path"]).read_text(encoding="utf-8"))
+                    lines = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
+                    for line in review["lines"]:
+                        self.assertEqual(lines[line["line_id"]], line["text"])
+                    self.assertEqual("anchor" in dest, review["status"] == "attested")
+
     def test_glossary_review_stale_target_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             pilot = Path(tmp)
