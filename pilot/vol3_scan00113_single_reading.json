@@ -1,0 +1,308 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 113,
+  "printed_page_observed": "27",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00113.jpg",
+  "source_image_sha256": "706202d50eefa4ac38bff85b2a9c6ac1d464eecb08bd5620323a6303c93e70e7",
+  "reading": {
+    "reader_id": "gpt62-v3-s00113-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-111-120-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical Cyrillic, editorial notes and neutral footnote references. Exact historical diacritics and language classification provisional; geometry estimated.",
+    "raw_response": "27\nу Римі (чи то одним тягом, чи за двома наворотами) цїлих 25 лїт,\nзначить, прибув у-перве до Риму в р. 40 по Хр., отже за часів Ка-\nлїґулї. Иньші (Рібадінейра з покликом на старих істориків, див. Flos\nSanctorum 300) датують його прихід на р. 44 або 45 (за Клявдия), так\nщо його пробуванє в Римі було-б не довше 20 лїт. Иньші врештї\n(J. de Voragine) велять йому прибути до Риму і бороти ся з Симо-\nном уже по пожежі Риму, отже власне в 64 р., за Нерона. Най-\nправдоподібнїйшою являєть ся думка, що сьв. Петро зовсїм не був\nу Римі.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            460,
+            699,
+            304,
+            19
+          ],
+          "description": "Printed decorative tailpiece."
+        },
+        {
+          "bbox_xywh": [
+            102,
+            556,
+            988,
+            1100
+          ],
+          "description": "Reverse-side show-through, excluded from transcription."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1050,
+          119,
+          46,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "27",
+            "bbox_xywh": [
+              1050,
+              119,
+              46,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          125,
+          184,
+          970,
+          327
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "у Римі (чи то одним тягом, чи за двома наворотами) цїлих 25 лїт,",
+            "bbox_xywh": [
+              125,
+              184,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "значить, прибув у-перве до Риму в р. 40 по Хр., отже за часів Ка-",
+            "bbox_xywh": [
+              125,
+              220,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "лїґулї. Иньші (Рібадінейра з покликом на старих істориків, див. Flos",
+            "bbox_xywh": [
+              125,
+              256,
+              970,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 64,
+                "end": 68,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-04",
+            "text": "Sanctorum 300) датують його прихід на р. 44 або 45 (за Клявдия), так",
+            "bbox_xywh": [
+              125,
+              293,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 13,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 13,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-05",
+            "text": "що його пробуванє в Римі було-б не довше 20 лїт. Иньші врештї",
+            "bbox_xywh": [
+              125,
+              329,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-06",
+            "text": "(J. de Voragine) велять йому прибути до Риму і бороти ся з Симо-",
+            "bbox_xywh": [
+              125,
+              365,
+              970,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 1,
+                "end": 15,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 15,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-07",
+            "text": "ном уже по пожежі Риму, отже власне в 64 р., за Нерона. Най-",
+            "bbox_xywh": [
+              125,
+              402,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-08",
+            "text": "правдоподібнїйшою являєть ся думка, що сьв. Петро зовсїм не був",
+            "bbox_xywh": [
+              125,
+              438,
+              970,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-09",
+            "text": "у Римі.",
+            "bbox_xywh": [
+              125,
+              474,
+              970,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00113-20261126",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": []
+  }
+}
