@@ -5,12 +5,34 @@ import unittest
 import tempfile
 import shutil
 
-from printed_indexes import build_printed_indexes, parse_entry, folio_targets
+from printed_indexes import build_printed_indexes, parse_entry, folio_targets, complete_folio_targets, link_audit
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class PrintedIndexesTest(unittest.TestCase):
+    def test_folio_evidence(self):
+        # Page 19 has no printed folio in the reading; its immediate
+        # neighbours explicitly say 18 and 20.
+        targets, estimated = complete_folio_targets([(93, "18"), (94, None), (95, "20")])
+        self.assertEqual(targets, {18: 93, 19: 94, 20: 95})
+        self.assertEqual(estimated, {19})
+        self.assertNotIn(19, complete_folio_targets([(93, "18"), (95, "20")])[0])
+        self.assertNotIn(19, complete_folio_targets([(93, "18"), (94, "17"), (95, "20")])[0])
+        self.assertNotIn(19, complete_folio_targets([(93, "18"), (94, None), (95, "21")])[0])
+
+    def test_link_audit(self):
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        report = link_audit(data)
+        print("PRINTED_INDEX_LINK_AUDIT " + json.dumps(report, ensure_ascii=False))
+        names = data["sections"][0]["entries"]
+        abel = next(e for e in names if e["label"] == "Авель")
+        p19 = next(r for r in abel["refs"] if r["literal"] == "19")
+        self.assertEqual(p19["targets"], [{"page": 19, "scan": 94, "estimated": True}])
+        self.assertEqual(p19["missing"], [])
+        self.assertTrue(any(e.get("crossrefs") for e in names))
+        self.assertEqual(sum(r["entries"] for r in report), sum(len(s["entries"]) for s in data["sections"]))
+
     def test_real_pilot(self):
         data = build_printed_indexes(ROOT / "pilot", "a" * 40)
         self.assertEqual(data["ref"], "a" * 40)
@@ -93,7 +115,8 @@ class PrintedIndexesTest(unittest.TestCase):
                 for ref in entry["refs"]:
                     for target in ref["targets"]:
                         target_draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % target["scan"])).read_text(encoding="utf-8"))
-                        self.assertEqual(target_draft["printed_page_observed"], str(target["page"]))
+                        if not target.get("estimated"):
+                            self.assertTrue(target_draft["printed_page_observed"] == str(target["page"]) or any(region["id"] == "folio" and [l["text"] for l in region["lines"]] == [str(target["page"])] for region in target_draft["reading"]["regions"]))
 
     def test_changed_or_missing_source_is_not_published(self):
         with tempfile.TemporaryDirectory() as tmp:
