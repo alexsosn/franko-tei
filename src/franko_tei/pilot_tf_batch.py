@@ -195,6 +195,14 @@ def save_pilot_tf_batch(pairs, images_root, output):
     if output.exists():
         raise FileExistsError(f"refusing to overwrite {output}")
     graph = verify_source_gated_batch(pairs, images_root)
+    return _save_graph(graph, output)
+
+
+def _save_graph(graph, output):
+    """Atomic shared writer for already source-gated graphs."""
+    output = Path(output)
+    if output.exists():
+        raise FileExistsError(f"refusing to overwrite {output}")
     from tf.fabric import Fabric
 
     output.parent.mkdir(parents=True, exist_ok=True)

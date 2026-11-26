@@ -233,7 +233,7 @@ def build_tf_graph(xml, *, allow_source_notes=False):
         if allow_source_notes and note.get('type')=='source-footnote':
             continue
         nid=_required_id(note,'agent uncertainty',seen)
-        if note.get('type')!='agent-reading-uncertainty' or not note.get('corresp','').startswith('#'):
+        if note.get('type') not in {'agent-reading-uncertainty','transcription-uncertainty'} or not note.get('corresp','').startswith('#'):
             raise ValueError('invalid uncertainty note')
         reference=note.get('corresp')[1:]
         if reference not in line_by_id or not (note.text or '').strip():

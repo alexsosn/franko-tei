@@ -33,26 +33,24 @@ class EditorialTEITests(unittest.TestCase):
         lb_id="lb-v1-s00020-"+LINE["id"]
         self.assertFalse(any(n.get(ID,"").startswith("seg-v1-s00020-"+LINE["id"]+"-")
                              for n in root.findall(".//t:seg",NS)))
-        notes=root.findall(".//t:note[@type='editorial-review']",NS)
-        self.assertEqual(len(notes),1)
-        note=notes[0]
-        self.assertEqual(note.get("corresp"),"#"+lb_id)
-        self.assertEqual(note.get("subtype"),"accepted_correction")
-        self.assertEqual(note.find("t:quote",NS).text,target["original"])
-        self.assertEqual(note.find("t:ref[@type='review-issue']",NS).get("target"),target["issue_url"])
-        self.assertEqual(note.find("t:ref[@type='adjudication-record']",NS).get("target"),
-                         "https://github.com/alexsosn/franko-tei/blob/"+REV+
-                         "/reviews/adjudications/"+target["event_id"]+".json")
-        self.assertEqual(note.find("t:seg[@type='review-kind']",NS).text,"human")
+        self.assertEqual(root.findall(".//t:note[@type='editorial-review']",NS),[])
+        self.assertEqual(root.findall(".//t:note[@type='agent-reading-uncertainty']",NS),[])
         self.assertIn("agent_unverified","".join(root.find(".//t:publicationStmt",NS).itertext()))
-        for old_note in original.findall(".//t:note[@type='agent-reading-uncertainty']",NS):
-            new_note=next(n for n in root.findall(".//t:note[@type='agent-reading-uncertainty']",NS)
-                          if n.get(ID)==old_note.get(ID))
-            self.assertEqual(new_note.text,old_note.text)
-            if old_note.get("corresp")=="#"+lb_id:
-                self.assertEqual(new_note.get("subtype"),"source-reading-needs-reassessment")
-            else:
-                self.assertEqual(new_note.attrib,old_note.attrib)
+        self.assertEqual(root.find(".//t:editionStmt/t:edition",NS).get("n"),REV)
+        for forbidden in (target["event_id"],target["issue_url"],target["bundle_id"],
+                          "frozen-source-reading","contributor-github-id","review-reason",
+                          "intake-record","adjudication-record"):
+            self.assertNotIn(forbidden,xml)
+        expected={n.get("corresp") for n in original.findall(".//t:note[@type='agent-reading-uncertainty']",NS)}
+        notes=root.findall(".//t:note[@type='transcription-uncertainty']",NS)
+        self.assertEqual({n.get("corresp") for n in notes},expected)
+        self.assertEqual(len(notes),len(expected))
+        self.assertTrue(all(n.text=="Reading requires verification against the printed source." for n in notes))
+        from franko_tei.pilot_tf import build_tf_graph, verify_graph_roundtrip
+        graph=build_tf_graph(xml)
+        self.assertEqual(verify_graph_roundtrip(graph),[r["text"] for r in rows])
+        self.assertEqual(set(graph.node_features.get("noteText",{}).values()),
+                         {"Reading requires verification against the printed source."})
 
     def test_confirmation_preserves_spans_rejected_is_unchanged_and_stale_fails(self):
         from franko_tei.review_tei import render_editorial_tei
@@ -61,19 +59,30 @@ class EditorialTEITests(unittest.TestCase):
         r=record(b)
         base=render_pilot_tei(SOURCE,W,H)
         for ledger in ({},validate_ledger([r],[decision(r,"reject")],load_source)):
-            self.assertEqual(render_editorial_tei(RAW,PATH,ledger,W,H,REV),base)
+            self.assertEqual(extract_transcribed_lines(render_editorial_tei(RAW,PATH,ledger,W,H,REV)),
+                             extract_transcribed_lines(base))
         ledger=validate_ledger([r],[decision(r)],load_source)
         xml=render_editorial_tei(RAW,PATH,ledger,W,H,REV)
         root,original=ET.fromstring(xml),ET.fromstring(base)
         self.assertEqual(extract_transcribed_lines(xml),extract_transcribed_lines(base))
         self.assertEqual([ET.tostring(n) for n in root.findall(".//t:seg[@type='language-attribution']",NS)],
                          [ET.tostring(n) for n in original.findall(".//t:seg[@type='language-attribution']",NS)])
-        self.assertEqual(root.find(".//t:note[@type='editorial-review']",NS).get("subtype"),
-                         "accepted_confirmation")
+        self.assertEqual(xml,render_editorial_tei(RAW,PATH,{},W,H,REV))
+        self.assertIsNone(root.find(".//t:note[@type='editorial-review']",NS))
         with self.assertRaises(ValueError):
             render_editorial_tei(RAW+b" ",PATH,ledger,W,H,REV)
         with self.assertRaises(ValueError):
             render_editorial_tei(RAW,PATH,ledger,W,H,"main")
+
+    def test_export_cannot_bypass_accepted_base_by_selecting_peer(self):
+        from franko_tei.review_tei import render_editorial_tei
+        from pathlib import Path
+        r=record()
+        ledger=validate_ledger([r],[decision(r)],load_source)
+        alt="pilot/vol1_scan00020_alternate_reading_01.json"
+        raw=(Path(__file__).resolve().parents[1]/alt).read_bytes()
+        with self.assertRaisesRegex(ValueError,"accepted.*candidate"):
+            render_editorial_tei(raw,alt,ledger,W,H,REV)
 
     def test_checkout_rejects_extra_or_modified_review_records(self):
         import hashlib

@@ -115,6 +115,41 @@ Corrected rows still have empty language spans pending reannotation.
 This is direct compatibility only; accepting new decisions against a
 different blob and chaining annotation revisions remain separate work.
 The reader/search builder and source-gated editorial TEI exporter use the
-same verifier; TEI review notes retain links to both revisions and their
-blob IDs. The TF integration remains separate. No source candidate is
+same verifier; detailed links and blob IDs stay in the internal projection,
+not scholarly TEI. No source candidate is
 rewritten by this verifier.
+
+## Scholarly export contract (owner direction, #176 / #5 / #6)
+
+The default `review_tei` serializer emits one current diplomatic working
+text, including accepted corrections, with source/page/line anchors and
+existing genuine printed apparatus. It does not emit editorial-review notes,
+old readings, event/issue/account IDs, reviewer rationale, or model-specific
+workflow history. A single edition-level Git revision identifies the
+reproducible snapshot. Unresolved source-reading locations are retained as
+concise transcription-uncertainty notes, with no assertion about which glyph
+is wrong; the full diagnostic detail remains in frozen Git records.
+Confirmation alone does not change the exported text or line metadata.
+Corrected language spans remain withheld until reannotated; no stale offsets.
+Frozen pilot XML and the ledger retain their original purpose and are not
+modified. This page-level projection remains unverified and is not a released
+research corpus. TF graph conversion checks exact selected physical-line text;
+full multi-volume structure, witness apparatus, philology and themes are
+separate scientific modeling tasks, not editorial log features.
+
+To write a genuine TF subset from the same source-gated selected text:
+
+```sh
+python -m pip install -e '.[tf]'
+franko-current-tf --revision "$(git rev-parse HEAD)" --images images \\
+  --candidate pilot/vol1_scan00104_single_reading.json \\
+  --candidate pilot/vol4_scan00068_single_reading.json --output local/current-tf
+```
+
+Use a trusted full-history checkout and pinned native images/manifests.
+At least two explicit pages, one candidate per scan; where accepted decisions
+exist, a different candidate is refused. A single corpus-level revision in
+TF otext metadata identifies the source snapshot. This is a page/region/line,
+character and existing language-span pilot. Linked source-footnote refs,
+gaps and richer nested markup remain unsupported by the existing TF parser
+and fail closed until modeled; do not claim full corpus coverage.

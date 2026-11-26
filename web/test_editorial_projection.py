@@ -491,20 +491,22 @@ class EditorialProjectionTests(unittest.TestCase):
         self.assertEqual(row["source_revision"]["projected_blob"],blob_sha(raw))
         self.assertEqual(row["source_revision"]["projected_commit"],rev)
         self.assertEqual(row["source_revision"]["kind"],"footnote_language_only")
-        # Lower-level serializer preserves original literal and distinct source
-        # revisions; native image validation is a separate live smoke gate.
+        # Scholarly serializer contains selected text and one edition revision;
+        # detailed source compatibility remains in the validated projection.
         boxes=[r["bbox_xywh"] for r in revised["reading"]["regions"]]
         width=max(b[0]+b[2] for b in boxes)+1
         height=max(b[1]+b[3] for b in boxes)+1
         xml=render_editorial_tei(raw,path,ledger,width,height,rev,source_loader=loader)
         self.assertEqual(extract_transcribed_lines(xml),[r["text"] for r in rows])
-        notes=ET.fromstring(xml).findall(".//t:note[@type='editorial-review']",{"t":TEI})
-        note=next(n for n in notes if n.find("t:quote",{"t":TEI}).text==line["text"])
+        root_xml=ET.fromstring(xml)
         ns={"t":TEI}
-        self.assertEqual(note.find("t:ref[@type='annotation-source-revision']",ns).get("target"),
-                         "https://github.com/alexsosn/franko-tei/blob/"+rev+"/"+path)
-        self.assertEqual(note.find("t:seg[@type='accepted-source-blob']",ns).text,blob_sha(old))
-        self.assertEqual(note.find("t:seg[@type='projected-source-blob']",ns).text,blob_sha(raw))
+        self.assertEqual(root_xml.find(".//t:editionStmt/t:edition",ns).get("n"),rev)
+        self.assertEqual(root_xml.findall(".//t:note[@type='editorial-review']",ns),[])
+        self.assertNotIn(row["event_id"],xml)
+        self.assertNotIn(row["issue_url"],xml)
+        # Exact revision provenance remains in the validated internal projection.
+        self.assertEqual(row["source_revision"]["accepted_blob"],blob_sha(old))
+        self.assertEqual(row["source_revision"]["projected_blob"],blob_sha(raw))
         # Revisions must bind the current bytes as well as historical ones.
         with self.assertRaises(StaleEditorialSource):
             project_lines(raw+b" ",path,ledger,source_loader=loader,projection_commit=rev)
