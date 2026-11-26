@@ -34,7 +34,25 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertEqual(line["language_status"],"needs_reannotation")
             self.assertEqual(line["issue_url"],"https://github.com/alexsosn/franko-tei/issues/213")
             self.assertEqual([m["literal"] for m in line["apparatus_markers"]],["⁵)","⁶)","⁶)"])
-            self.assertNotIn("witness-e-death-adam-l002",rows)
+            first=rows["witness-e-death-adam-l001"]
+            self.assertIn("бꙗ҆́ше",first["text"])
+            self.assertIn("бяше",first["original"])
+            self.assertEqual(first["status"],"accepted_correction")
+            self.assertEqual(first["review_kind"],"agent")
+            self.assertEqual(first["language_spans"],[])
+            self.assertEqual([m["literal"] for m in first["apparatus_markers"]],["¹)"])
+            second=rows["witness-e-death-adam-l002"]
+            self.assertIn("прибли́жи сꙗ емꙋ см҃рть,³)",second["text"])
+            self.assertIn("разболѣ сѧ",second["text"])
+            self.assertIn("смр҃ть,³)",second["original"])
+            self.assertEqual(second["status"],"accepted_correction")
+            self.assertEqual(second["language_spans"],[])
+            self.assertEqual([m["literal"] for m in second["apparatus_markers"]],["²)","³)","⁴,","⁴)"])
+            for m in second["apparatus_markers"]:
+                self.assertEqual(second["original"][m["source_start"]:m["source_end"]],m["literal"])
+                self.assertEqual(second["text"][m["start"]:m["end"]],m["literal"])
+            iv=next(p for p in overlay["pages"] if p["volume"]=="4" and p["scan"]==68)
+            self.assertNotIn("disputations-cont-line-04",{r["line_id"] for r in iv["lines"]})
             entries=json.loads((output/"vol1.json").read_text())["entries"]
             matches=[r for r in entries if r["scan"]==104 and r["suffix"]=="single_reading"]
             self.assertEqual(len(matches),2)

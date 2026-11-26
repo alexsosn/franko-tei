@@ -246,6 +246,33 @@ class AdjudicationTests(unittest.TestCase):
         self.assertEqual(m["start"],m["source_start"]+2)
         self.assertEqual(row["text"][m["start"]:m["end"]],"¹)")
 
+    def test_single_titlo_relocation_on_actual_marker_anchor(self):
+        from franko_tei.review_adjudication import apparatus_mapping
+        old = "Єгдаже²) приближи ся ему смр҃ть,³) разболѣ ся велми⁴, Адам⁴)."
+        new = "Єгдаже²) прибли́жи сꙗ емꙋ см҃рть,³) разболѣ сѧ велми⁴, Адам⁴)."
+        mapping = apparatus_mapping(old, new)
+        self.assertEqual([m["literal"] for m in mapping], ["²)", "³)", "⁴,", "⁴)"])
+        for m in mapping:
+            self.assertEqual(old[m["source_start"]:m["source_end"]], m["literal"])
+            self.assertEqual(new[m["start"]:m["end"]], m["literal"])
+
+    def test_titlo_relocation_refuses_other_attachment_changes(self):
+        from franko_tei.review_adjudication import apparatus_mapping
+        for old, new in (
+            ("смр҃ть,³)", "смртъ҃,³)"),       # base letters changed
+            ("смр҃ть,³)", "смрть,³)"),        # titlo removed
+            ("смрть,³)", "см҃рть,³)"),        # titlo added
+            ("смр҃ть,³)", "см҃рть³)"),        # punctuation changed
+            ("смр҃ть,³)", "см҃р҃ть,³)"),       # duplicate titlo
+            ("смр҃ть,³)", "смрть,҃³)"),       # detached from letter
+            ("смр҃ть,³)", "см҃рть,⁴)"),        # changed marker
+            ("смр҃ть,³) см҃рть,", "смрть, см҃рть,³)"),  # ambiguous normalized anchors
+            ("смр҃ть,³) смрть,", "см҃рть,³) смрть,"),   # same spelling elsewhere
+            ("смр҃ть,³)", "см҃рть,³) смрть,"),         # new ambiguous occurrence
+        ):
+            with self.subTest(old=old, new=new), self.assertRaises(ValueError):
+                apparatus_mapping(old, new)
+
     def test_apparatus_anchor_ambiguity(self):
         from franko_tei.review_adjudication import apparatus_mapping
         for old,new in (("Адам⁵) Адам", "Адам Адам⁵)"),

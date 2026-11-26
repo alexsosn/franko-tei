@@ -102,6 +102,36 @@ class PrintedIndexesTest(unittest.TestCase):
                         self.assertEqual(lines[line["line_id"]], line["text"])
                     self.assertEqual("anchor" in target, review["status"] == "attested")
 
+    def test_second_glossary_right_column_mentions(self):
+        from collections import Counter
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        entries = [e for e in data["sections"][3]["entries"]
+                   if e["source"]["scan"] == 460 and e["region_id"] == "right"]
+        self.assertEqual(len(entries), 31)
+        reviews = [target["mention_review"] for e in entries for r in e["refs"] for target in r["targets"]]
+        self.assertEqual(len(reviews), 31)
+        self.assertEqual(Counter(x["status"] for x in reviews),
+                         {"attested": 21, "reading_conflict": 7, "not_found": 3})
+        by_label = {e["label"]: e for e in entries}
+        def target(label):
+            return by_label[label]["refs"][0]["targets"][0]
+        self.assertEqual([x["line_id"] for x in target("Комканїе")["mention_review"]["lines"]],
+                         ["levi-ordination-l012", "levi-ordination-l013"])
+        self.assertEqual(target("Котець")["anchor"]["line_id"], "noah-flood-continuation-l002")
+        self.assertEqual(len(target("Кокотъ")["mention_review"]["lines"]), 4)
+        self.assertEqual(len(target("Котыга")["mention_review"]["lines"]), 2)
+        self.assertEqual(target("Зекръ")["mention_review"]["status"], "reading_conflict")
+        self.assertEqual(target("Кликонъ")["mention_review"]["status"], "not_found")
+        for entry in entries:
+            for ref in entry["refs"]:
+                for dest in ref["targets"]:
+                    review = dest["mention_review"]
+                    draft = json.loads((ROOT / review["path"]).read_text(encoding="utf-8"))
+                    lines = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
+                    for line in review["lines"]:
+                        self.assertEqual(lines[line["line_id"]], line["text"])
+                    self.assertEqual("anchor" in dest, review["status"] == "attested")
+
     def test_glossary_review_stale_target_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             pilot = Path(tmp)

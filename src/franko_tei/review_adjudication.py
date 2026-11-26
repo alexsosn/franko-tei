@@ -72,19 +72,44 @@ def _markers(text):
     return result
 
 
+_TITLO = "\u0483"
+
+
+def _single_letter_titlo(anchor):
+    """One titlo directly attached to a Cyrillic letter, not punctuation."""
+    if anchor.count(_TITLO) != 1:
+        return False
+    i = anchor.index(_TITLO)
+    return (i > 0 and unicodedata.category(anchor[i - 1]).startswith("L")
+            and "CYRILLIC" in unicodedata.name(anchor[i - 1], ""))
+
+
 def apparatus_mapping(original, replacement):
     before, after = _markers(original), _markers(replacement)
-    require([(m[0], m[1]) for m in before] == [(m[0], m[1]) for m in after],
+    require([m[0] for m in before] == [m[0] for m in after],
             "apparatus marker or attached token changed")
     # Repeated identical attachments are ambiguous without explicit linkage.
-    require(len({(m[0], m[1]) for m in before}) == len(before),
+    require(len({(m[0], m[1]) for m in before}) == len(before)
+            and len({(m[0], m[1]) for m in after}) == len(after),
             "ambiguous repeated apparatus attachment")
-    for marker, anchor, _, _ in before:
-        # A marker could otherwise be moved between identical unmarked words.
-        # Count occurrences of the exact anchor at a token boundary; refuse
-        # ambiguous repeated words rather than guessing correspondence.
+    for a, b in zip(before, after):
+        anchor, new_anchor = a[1], b[1]
+        old_text, new_text = original, replacement
+        if anchor != new_anchor:
+            # I/104: relocating exactly one combining titlo within the
+            # same Cyrillic token does not change the attachment identity.
+            # No base letter, whitespace, punctuation, or other mark may
+            # change. Explicitly linked markers still require separate review.
+            require(_single_letter_titlo(anchor) and _single_letter_titlo(new_anchor)
+                    and anchor.replace(_TITLO, "") == new_anchor.replace(_TITLO, ""),
+                    "apparatus marker or attached token changed")
+            anchor = anchor.replace(_TITLO, "")
+            # Refuse even a competing spelling that differs only in titlo
+            # placement or absence. Do not select among identical anchors.
+            old_text = original.replace(_TITLO, "")
+            new_text = replacement.replace(_TITLO, "")
         pattern = re.compile(r"(?<!\S)" + re.escape(anchor) + r"(?=$|\s|[⁰¹²³⁴⁵⁶⁷⁸⁹])")
-        require(len(pattern.findall(original)) == len(pattern.findall(replacement)) == 1,
+        require(len(pattern.findall(old_text)) == len(pattern.findall(new_text)) == 1,
                 "ambiguous repeated apparatus anchor")
     return [{"literal": a[0], "source_start": a[2], "source_end": a[3],
              "start": b[2], "end": b[3]} for a, b in zip(before, after)]
