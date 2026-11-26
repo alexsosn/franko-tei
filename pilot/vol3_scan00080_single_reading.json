@@ -1,0 +1,990 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 80,
+  "printed_page_observed": "LXII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00080.jpg",
+  "source_image_sha256": "bc4eea6d8a296935cde0638a13e8fde77c0e816c972479caf1912eba8e3ec8be",
+  "reading": {
+    "reader_id": "gpt62-v3-s00080-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-preface-71-80-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical spellings, language spans and source anomalies. Geometry estimated; agent-unverified.",
+    "raw_response": "LXII\nвла послужив основою містерії (Istoria Petri et Pauli, mystère en\nlangue provençale du XV siècle, publ. d’après les manuscrits originaux\npar P. Guillaume. 1847).\nДля середньовікової Европи і для лїтератур на новочасних\nмовах мала велике значінє та перерібка апостольських апокріфічних\nдїянь, що війшла в склад тзв. Золотої Лєґенди (Legenda Aurea)\nнаписаної коло 1290 р. Яковом епископом ґенуенським, прозваним\nJacobus de Voragine. Може не зайвим буде тут подати огляд і ха-\nрактеристику тих лєґенд його книги, що доторкають ся до нашої\nтеми. Ідемо за порядком, у якому йдуть лєґенди самої збірки.\nМаємо тут:\n1. Оповіданє про ап. Андрія: пригода Андрія й Ма-\nтвія в краю людожерцїв, названім тут краєм Мірмідонів; автор\nсупроти сього оповіданя бавить ся в критика і каже: „Те, що\nпередають про увільненє Матвія і вздоровленє його очий, по мойому\nне заслугує на віру; бо се-ж не приносило би великої чести такому\nевангелистови, коли-б ми вірили, що він не міг сам упросити собі\nвздоровленя, яке так легко упросив Андрій“. Далї йдуть епізоди\nз Псевдо-Авдїя, в тім числї й оповіданє про смерть Андрія в Па-\nтрах (Максімілля тут жінка проконсуля, а проконсуль названий\nЕґеєм). Із Григорія Турського подано лєґенду, що „з гробу Андріє-\nвого сиплеть ся порох подібний до манни, який віщує врожай“ —\nте, що в иньших текстах (у нас стор. 64, 68, 74, 90) сказано про\nгріб сьв. Івана. Нарештї з того-ж Гр. Турського (De gloria marty-\nrum) подано дві пізнїйші лєґенди про чуда зроблені ап. Андрієм\nуже по смерти.\n2. Оповіданє про ап. Тому: в Кесарії Томі являєть ся\nХристос і велить йому йти до Індії; Тома зразу не хоче, потім\nзгоджуєть ся і Христос нараює його післанцеви індийського царя\nяк славного будівничого (отже обминено мотиви подїлу сьвіта апо-\nстолами і проданя Томи Христом у неволю); епізод у Андраполї\n(не названім) з цитатом із Авґустина про неправдивість сього опо-\nвіданя і про те, що його вживають Манїхеї; пригоди Томи у Ґун-\nдофора; проповідь Томи про 12 ступнїв чесноти, якої ми не стрі-\nчаємо в иньших звісних нам апокріфах; епізод з Карізієм і Міґдо-\nнїєю і смерть апостола, оповідана відмінно від наших текстів, за\nПсевдо-Авдїєм: король велить поставити апостола на розпечених\nшинах, потім кинути його в огонь, а нарештї сам пробиває його\nмечем. На кінцї оповідаєть ся про перенесенє тїла ап. Томи до\nЕдесси та чудо з увільненєм сього міста від ворогів.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          140,
+          136,
+          94,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LXII",
+            "bbox_xywh": [
+              140,
+              136,
+              94,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          135,
+          204,
+          945,
+          1448
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "вла послужив основою містерії (Istoria Petri et Pauli, mystère en",
+            "bbox_xywh": [
+              135,
+              204,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 31,
+                "end": 65,
+                "language": "fr",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "langue provençale du XV siècle, publ. d’après les manuscrits originaux",
+            "bbox_xywh": [
+              135,
+              240,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 70,
+                "language": "fr",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "par P. Guillaume. 1847).",
+            "bbox_xywh": [
+              135,
+              276,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "fr",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 22,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "Для середньовікової Европи і для лїтератур на новочасних",
+            "bbox_xywh": [
+              135,
+              312,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "мовах мала велике значінє та перерібка апостольських апокріфічних",
+            "bbox_xywh": [
+              135,
+              348,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "дїянь, що війшла в склад тзв. Золотої Лєґенди (Legenda Aurea)",
+            "bbox_xywh": [
+              135,
+              385,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 47,
+                "end": 60,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 60,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "написаної коло 1290 р. Яковом епископом ґенуенським, прозваним",
+            "bbox_xywh": [
+              135,
+              421,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "Jacobus de Voragine. Може не зайвим буде тут подати огляд і ха-",
+            "bbox_xywh": [
+              135,
+              457,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 19,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 19,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "рактеристику тих лєґенд його книги, що доторкають ся до нашої",
+            "bbox_xywh": [
+              135,
+              493,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "теми. Ідемо за порядком, у якому йдуть лєґенди самої збірки.",
+            "bbox_xywh": [
+              135,
+              529,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "Маємо тут:",
+            "bbox_xywh": [
+              135,
+              566,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "1. Оповіданє про ап. Андрія: пригода Андрія й Ма-",
+            "bbox_xywh": [
+              135,
+              602,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "твія в краю людожерцїв, названім тут краєм Мірмідонів; автор",
+            "bbox_xywh": [
+              135,
+              638,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "супроти сього оповіданя бавить ся в критика і каже: „Те, що",
+            "bbox_xywh": [
+              135,
+              674,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "передають про увільненє Матвія і вздоровленє його очий, по мойому",
+            "bbox_xywh": [
+              135,
+              710,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "не заслугує на віру; бо се-ж не приносило би великої чести такому",
+            "bbox_xywh": [
+              135,
+              747,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "евангелистови, коли-б ми вірили, що він не міг сам упросити собі",
+            "bbox_xywh": [
+              135,
+              783,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "вздоровленя, яке так легко упросив Андрій“. Далї йдуть епізоди",
+            "bbox_xywh": [
+              135,
+              819,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "з Псевдо-Авдїя, в тім числї й оповіданє про смерть Андрія в Па-",
+            "bbox_xywh": [
+              135,
+              855,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "трах (Максімілля тут жінка проконсуля, а проконсуль названий",
+            "bbox_xywh": [
+              135,
+              891,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "Еґеєм). Із Григорія Турського подано лєґенду, що „з гробу Андріє-",
+            "bbox_xywh": [
+              135,
+              928,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "вого сиплеть ся порох подібний до манни, який віщує врожай“ —",
+            "bbox_xywh": [
+              135,
+              964,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "те, що в иньших текстах (у нас стор. 64, 68, 74, 90) сказано про",
+            "bbox_xywh": [
+              135,
+              1000,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "гріб сьв. Івана. Нарештї з того-ж Гр. Турського (De gloria marty-",
+            "bbox_xywh": [
+              135,
+              1036,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 49,
+                "end": 65,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "rum) подано дві пізнїйші лєґенди про чуда зроблені ап. Андрієм",
+            "bbox_xywh": [
+              135,
+              1072,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 3,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "уже по смерти.",
+            "bbox_xywh": [
+              135,
+              1109,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "2. Оповіданє про ап. Тому: в Кесарії Томі являєть ся",
+            "bbox_xywh": [
+              135,
+              1145,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "Христос і велить йому йти до Індії; Тома зразу не хоче, потім",
+            "bbox_xywh": [
+              135,
+              1181,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-29",
+            "text": "згоджуєть ся і Христос нараює його післанцеви індийського царя",
+            "bbox_xywh": [
+              135,
+              1217,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-30",
+            "text": "як славного будівничого (отже обминено мотиви подїлу сьвіта апо-",
+            "bbox_xywh": [
+              135,
+              1253,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-31",
+            "text": "столами і проданя Томи Христом у неволю); епізод у Андраполї",
+            "bbox_xywh": [
+              135,
+              1290,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-32",
+            "text": "(не названім) з цитатом із Авґустина про неправдивість сього опо-",
+            "bbox_xywh": [
+              135,
+              1326,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-33",
+            "text": "віданя і про те, що його вживають Манїхеї; пригоди Томи у Ґун-",
+            "bbox_xywh": [
+              135,
+              1362,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-34",
+            "text": "дофора; проповідь Томи про 12 ступнїв чесноти, якої ми не стрі-",
+            "bbox_xywh": [
+              135,
+              1398,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-35",
+            "text": "чаємо в иньших звісних нам апокріфах; епізод з Карізієм і Міґдо-",
+            "bbox_xywh": [
+              135,
+              1434,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-36",
+            "text": "нїєю і смерть апостола, оповідана відмінно від наших текстів, за",
+            "bbox_xywh": [
+              135,
+              1471,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-37",
+            "text": "Псевдо-Авдїєм: король велить поставити апостола на розпечених",
+            "bbox_xywh": [
+              135,
+              1507,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-38",
+            "text": "шинах, потім кинути його в огонь, а нарештї сам пробиває його",
+            "bbox_xywh": [
+              135,
+              1543,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-39",
+            "text": "мечем. На кінцї оповідаєть ся про перенесенє тїла ап. Томи до",
+            "bbox_xywh": [
+              135,
+              1579,
+              945,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-40",
+            "text": "Едесси та чудо з увільненєм сього міста від ворогів.",
+            "bbox_xywh": [
+              135,
+              1615,
+              945,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00080-20261126",
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-03",
+        "reading": "1847",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "preface-line-13",
+        "reading": "Мірмідонів",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "preface-line-20",
+        "reading": "Максімілля",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "preface-line-35",
+        "reading": "Карізієм",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "preface-line-35",
+        "reading": "Міґдо-",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      }
+    ]
+  }
+}
