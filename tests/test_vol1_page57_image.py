@@ -67,7 +67,9 @@ class Vol1Page57Tests(unittest.TestCase):
                 self.assertTrue(line["geometry_estimated"])
                 a, b, c, d = line["bbox_xywh"]
                 self.assertTrue(x <= a and y <= b and a+c <= x+w and b+d <= y+h)
-                self.assertEqual(line["language_spans"], [])
+                # Retrospective contextual annotation is permitted and required here.
+                # Exact code-point coverage is checked by CorpusBatchContract.
+                self.assertTrue(line["language_spans"])
 
     def test_no_tei_text_loss_or_invented_critical_apparatus(self):
         xml = render_pilot_tei(self.payload, 1190, 1746)
