@@ -22,7 +22,9 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertNotIn(19, complete_folio_targets([(93, "18"), (94, None), (95, "21")])[0])
 
     def test_link_audit(self):
-        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        from build_search import supplementary_partial_pages
+        supplements = {p["path"]: p for p in supplementary_partial_pages(ROOT / "pilot", "a" * 40)}
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40, supplements)
         report = link_audit(data)
         print("PRINTED_INDEX_LINK_AUDIT " + json.dumps(report, ensure_ascii=False))
         names = data["sections"][0]["entries"]
@@ -31,6 +33,11 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual(p19["targets"], [{"page": 19, "scan": 94, "estimated": True}])
         self.assertEqual(p19["missing"], [])
         self.assertTrue(any(e.get("crossrefs") for e in names))
+        anna = next(e for e in names if e["label"] == "Анна архиєрей")
+        self.assertEqual(anna["refs"][0]["targets"], [{"page": 147, "scan": 222, "estimated": True}])
+        women = next(e for e in names if e["label"] == "Жидівки")
+        self.assertEqual(next(r for r in women["refs"] if r["literal"] == "247")["targets"], [{"page": 247, "scan": 322}])
+        self.assertTrue(all(not r["missing"] and not r["unresolved"] and not r["no_refs"] for r in report), report)
         self.assertEqual(sum(r["entries"] for r in report), sum(len(s["entries"]) for s in data["sections"]))
 
     def test_real_pilot(self):
