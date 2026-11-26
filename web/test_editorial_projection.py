@@ -99,7 +99,8 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertEqual([r["literal"] for r in entry["refs"]],["245"])
             self.assertEqual(entry["refs"][0]["printed_literal"],"215")
             self.assertEqual(entry["refs"][0]["role"],"editorial_citation")
-            self.assertEqual(entry["refs"][0]["targets"],[{"page":245,"scan":320}])
+            self.assertEqual([{k:v for k,v in target.items() if k != "anchor"} for target in entry["refs"][0]["targets"]],[{"page":245,"scan":320}])
+            self.assertEqual(entry["refs"][0]["targets"][0]["anchor"]["line_id"],"moses-apparatus-l021")
             self.assertEqual(entry["refs"][0]["evidence"]["line_id"],"moses-apparatus-l021")
             self.assertIn("ахатисъ",entry["refs"][0]["evidence"]["text"])
 
@@ -118,7 +119,7 @@ class EditorialProjectionTests(unittest.TestCase):
             def ref():
                 entries=build_printed_indexes(pilot,REF,supplements)["sections"][0]["entries"]
                 return next(e for e in entries if e["label"]=="Ахатис камінь")["refs"][0]
-            self.assertEqual(ref()["targets"],[{"page":245,"scan":320}])
+            self.assertEqual([{k:v for k,v in target.items() if k != "anchor"} for target in ref()["targets"]],[{"page":245,"scan":320}])
             path=pilot/"vol1_scan00320_single_reading.json"
             path.write_bytes(path.read_bytes()+b" ")
             self.assertEqual(ref()["targets"],[])
