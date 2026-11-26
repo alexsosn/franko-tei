@@ -252,3 +252,165 @@ class LogicalNoteEntriesTests(unittest.TestCase):
         note["lines"][-1]["text"] += "!"
         with self.assertRaises(AssertionError):
             self.check_page(page, bad_source)
+
+
+class NumberedApparatusTests(unittest.TestCase):
+    LABEL = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+\)")
+    DIGITS = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹", "0123456789")
+
+    def load_fixture(self):
+        path = ROOT / "pilot/structure/vol1_noah_a_apparatus.json"
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def load_sources(self, block):
+        return {p["scan_page"]: json.loads(
+            (ROOT / p["source_pilot_path"]).read_text(encoding="utf-8"))
+            for p in block["pages"]}
+
+    def check_block(self, block, sources):
+        self.assertEqual(block["schema_version"], "printed-apparatus-annotation-v1")
+        self.assertEqual(block["status"], "agent_unverified")
+        self.assertEqual(block["volume"], "1")
+        pages = block["pages"]
+        scans = [p["scan_page"] for p in pages]
+        self.assertEqual(scans, sorted(set(scans)))
+        self.assertEqual(set(scans), set(sources))
+        body, apparatus, regions = {}, {}, {}
+        for page in pages:
+            scan = page["scan_page"]
+            source = sources[scan]
+            self.assertEqual(source["volume"], block["volume"])
+            self.assertEqual(source["scan_page"], scan)
+            self.assertEqual(source["printed_page_observed"], page["printed_page"])
+            self.assertEqual(source["reading"]["reader_id"], page["source_reader_id"])
+            self.assertEqual(source["source_image_sha256"], page["source_image_sha256"])
+            self.assertEqual(page["source_pilot_path"],
+                             f"pilot/vol{block['volume']}_scan{scan:05d}_single_reading.json")
+            self.assertRegex(page["source_record_commit"], r"^[0-9a-f]{40}$")
+            self.assertRegex(page["source_record_blob"], r"^[0-9a-f]{40}$")
+            rs = {r["id"]: r for r in source["reading"]["regions"]}
+            for field, kind, output in [("body_region_ids", "body", body),
+                                        ("apparatus_region_ids", "note", apparatus)]:
+                ids = page[field]
+                self.assertEqual(ids, [r["id"] for r in source["reading"]["regions"]
+                                       if r["id"] in ids])
+                for rid in ids:
+                    region = rs[rid]
+                    self.assertEqual(region["kind"], kind)
+                    for line in region["lines"]:
+                        key = (scan, line["id"])
+                        self.assertNotIn(key, output)
+                        output[key] = line["text"]
+            regions[scan] = rs
+
+        def check_boundary(anchor):
+            region = regions[anchor["scan_page"]][anchor["region_id"]]
+            self.assertEqual(region["kind"], "heading")
+            self.assertEqual([l["text"] for l in region["lines"]], anchor["lines"])
+        check_boundary(block["scope"]["heading"])
+        check_boundary(block["scope"]["next_heading"])
+        # Scope boundaries refer to separate witness blocks.
+        self.assertNotEqual(block["scope"]["heading"], block["scope"]["next_heading"])
+
+        # Flatten physical code-point coordinates, not text: no newline is
+        # fabricated and line-final hyphens/spacing remain literal.
+        expected = [(scan, lid, i) for (scan, lid), raw in apparatus.items()
+                    for i in range(len(raw))]
+        actual, entries = [], {}
+        note_labels = [(scan, lid, m.start(), m.end(), m.group())
+                       for (scan, lid), raw in apparatus.items()
+                       for m in self.LABEL.finditer(raw)]
+        seen_labels = []
+        for entry in block["entries"]:
+            self.assertNotIn(entry["id"], entries)
+            entries[entry["id"]] = entry
+            self.assertTrue(entry["id"].startswith(block["id"] + "-"))
+            fragments = entry["fragments"]
+            self.assertTrue(fragments)
+            first = fragments[0]
+            m = self.LABEL.match(first["literal"])
+            self.assertIsNotNone(m)
+            self.assertEqual(m.group(), entry["label"])
+            self.assertEqual(int(entry["label"][:-1].translate(self.DIGITS)), entry["number"])
+            seen_labels.append((first["scan_page"], first["line_id"], first["start"],
+                                first["start"] + len(entry["label"]), entry["label"]))
+            for f in fragments:
+                key = (f["scan_page"], f["line_id"])
+                self.assertIn(key, apparatus)
+                raw = apparatus[key]
+                self.assertIs(type(f["start"]), int)
+                self.assertIs(type(f["end"]), int)
+                self.assertTrue(0 <= f["start"] < f["end"] <= len(raw))
+                self.assertEqual(raw[f["start"]:f["end"]], f["literal"])
+                actual.extend((*key, i) for i in range(f["start"], f["end"]))
+        self.assertEqual(actual, expected, "apparatus partition must preserve exact ordered text")
+        self.assertEqual(seen_labels, note_labels, "every printed entry start must be retained")
+        expected_markers = [(scan, lid, m.start(), m.end(), m.group())
+                            for (scan, lid), raw in body.items()
+                            for m in self.LABEL.finditer(raw)]
+        markers, targets = [], []
+        for link in block["links"]:
+            marker = link["marker"]
+            key = (marker["scan_page"], marker["line_id"], marker["start"],
+                   marker["end"], marker["literal"])
+            markers.append(key)
+            self.assertEqual(link["status"], "resolved")
+            self.assertIn(link["target_entry_id"], entries)
+            entry = entries[link["target_entry_id"]]
+            self.assertEqual(entry["label"], marker["literal"])
+            targets.append(entry["id"])
+        self.assertEqual(markers, expected_markers)
+        self.assertEqual(targets, list(entries), "one-to-one order is observed in this scope")
+
+    def test_noah_a_complete_numbered_apparatus(self):
+        block = self.load_fixture()
+        sources = self.load_sources(block)
+        self.check_block(block, sources)
+        self.assertEqual(block["id"], "v1-noah-viii-a")
+        self.assertEqual([p["scan_page"] for p in block["pages"]], [140, 141, 142, 143])
+        self.assertEqual([p["body_region_ids"] for p in block["pages"]], [
+            ["noah-generations", "noah-giants", "noah-iniquity"],
+            ["noah-ark", "noah-summoning", "noah-flood-start"],
+            ["noah-flood-continuation"], []])
+        self.assertEqual([p["apparatus_region_ids"] for p in block["pages"]], [
+            [], [], ["noah-apparatus-start"], ["noah-apparatus-continuation"]])
+        self.assertEqual(block["scope"]["heading"]["region_id"], "witness-a-heading")
+        self.assertEqual(block["scope"]["next_heading"]["region_id"], "witness-b-label")
+        self.assertEqual([e["number"] for e in block["entries"]], list(range(1, 64)))
+        self.assertEqual([e["fragments"][0]["scan_page"] for e in block["entries"]],
+                         [142] * 7 + [143] * 56)
+        self.assertEqual([l["marker"]["scan_page"] for l in block["links"]],
+                         [140] * 27 + [141] * 22 + [142] * 14)
+        # Real multiline cases, including editorial prose inside the apparatus.
+        entries = {e["number"]: e for e in block["entries"]}
+        self.assertEqual(len(entries[3]["fragments"]), 2)
+        self.assertEqual(len(entries[46]["fragments"]), 3)
+        self.assertEqual(len(entries[49]["fragments"]), 3)
+        self.assertIn("vacat", "".join(f["literal"] for f in entries[46]["fragments"]))
+        self.assertIn("після", "".join(f["literal"] for f in entries[49]["fragments"]))
+
+    def test_numbered_apparatus_adversarial_mutations(self):
+        import copy
+        block = self.load_fixture()
+        sources = self.load_sources(block)
+        self.check_block(block, sources)
+        mutations = [
+            lambda b: b["entries"][2]["fragments"].pop(),
+            lambda b: b["entries"][3]["fragments"].append(b["entries"][2]["fragments"][0]),
+            lambda b: b["entries"][0].update(label="²)"),
+            lambda b: b["links"][0].update(target_entry_id=b["entries"][1]["id"]),
+            lambda b: b["links"][0]["marker"].update(scan_page=143),
+            lambda b: b["links"].pop(),
+            lambda b: b["entries"].reverse(),
+        ]
+        for change in mutations:
+            bad = copy.deepcopy(block)
+            change(bad)
+            with self.assertRaises(AssertionError):
+                self.check_block(bad, sources)
+        bad = copy.deepcopy(sources)
+        note = next(r for r in bad[143]["reading"]["regions"]
+                    if r["id"] == "noah-apparatus-continuation")
+        note["lines"][-1]["text"] += "!"
+        with self.assertRaises(AssertionError):
+            self.check_block(block, bad)
