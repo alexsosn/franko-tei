@@ -1,0 +1,483 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 51,
+  "printed_page_observed": "XLVII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "0cd1f650293f06540be30377a0f058d9e73175827b96da1bd8f58bbd51a9b677",
+  "source_image_path": "vol4/page-00051.jpg",
+  "source_image_sha256": "315214bdf514469b9a097ac10425686bee2147cc36868d51cb03efb15691af13",
+  "reading": {
+    "reader_id": "gpt62-iv-51-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol4-51-64-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Source-first native JPEG transcription; preserve physical rows, abbreviations, printed markers, historical glyphs and uncertainty. Dense Church Slavonic type: provisional Unicode approximations of superscripts and accents; not a glyph-complete edition. Estimated geometry.",
+    "raw_response": "XLVII\n(Polivka, Zur Visio S. Pauli, т. XVI, стор. 611—615); він же об-\nробив також апокріф про смерть Авраама (Die apokryphische Erzäh-\nlung vom Tode Abrahams, т. XVIII, стор. 112—125). Др. Іван\nМільчетич подав причинок про Люцідарій у Хорватів та його по-\nрівнанє з чеським (Ivan Milčetić, Ueber den kroatischen und böh-\nmischen Lucidarius, т. XIX. стор. 556 - 563), а Є. Калужняцкий ін-\nтересну статю про видїнє Анфілога (Die Legende von der Visio An-\nphilogs, т. XXV, стор. 101—108), де вказав грецьке жерело русько-\nго оповіданя. На се саме оповіданє звернув увагу проф. Веселов-\nский у своїй працї „Zur Frage über die Heimat vom heiligen Gral“\n(т. XXIII, стор. 421—385). Статя Райка Нахтіґаля про „Бесѣду\nтрехъ святителей“ була вже згадана висше.\nНадїю ся, що й моя збірка буде імпульсом і дасть матеріял\nдо дальших праць над сими апокріфами.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            440,
+            730,
+            305,
+            20
+          ],
+          "description": "Decorative closing rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          965,
+          90,
+          110,
+          45
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "XLVII",
+            "bbox_xywh": [
+              965,
+              90,
+              110,
+              44
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 5,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface-end",
+        "kind": "body",
+        "bbox_xywh": [
+          105,
+          161,
+          960,
+          485
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-end-line-01",
+            "text": "(Polivka, Zur Visio S. Pauli, т. XVI, стор. 611—615); він же об-",
+            "bbox_xywh": [
+              105,
+              161,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 1,
+                "end": 28,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 28,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-02",
+            "text": "робив також апокріф про смерть Авраама (Die apokryphische Erzäh-",
+            "bbox_xywh": [
+              105,
+              195,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 40,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 40,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-03",
+            "text": "lung vom Tode Abrahams, т. XVIII, стор. 112—125). Др. Іван",
+            "bbox_xywh": [
+              105,
+              230,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 22,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-04",
+            "text": "Мільчетич подав причинок про Люцідарій у Хорватів та його по-",
+            "bbox_xywh": [
+              105,
+              264,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-05",
+            "text": "рівнанє з чеським (Ivan Milčetić, Ueber den kroatischen und böh-",
+            "bbox_xywh": [
+              105,
+              299,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 19,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-06",
+            "text": "mischen Lucidarius, т. XIX. стор. 556 - 563), а Є. Калужняцкий ін-",
+            "bbox_xywh": [
+              105,
+              334,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 18,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-07",
+            "text": "тересну статю про видїнє Анфілога (Die Legende von der Visio An-",
+            "bbox_xywh": [
+              105,
+              368,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 35,
+                "end": 64,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-08",
+            "text": "philogs, т. XXV, стор. 101—108), де вказав грецьке жерело русько-",
+            "bbox_xywh": [
+              105,
+              403,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 7,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 7,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-09",
+            "text": "го оповіданя. На се саме оповіданє звернув увагу проф. Веселов-",
+            "bbox_xywh": [
+              105,
+              438,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-10",
+            "text": "ский у своїй працї „Zur Frage über die Heimat vom heiligen Gral“",
+            "bbox_xywh": [
+              105,
+              472,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 20,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 63,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-11",
+            "text": "(т. XXIII, стор. 421—385). Статя Райка Нахтіґаля про „Бесѣду",
+            "bbox_xywh": [
+              105,
+              507,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 54,
+                "end": 60,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-12",
+            "text": "трехъ святителей“ була вже згадана висше.",
+            "bbox_xywh": [
+              105,
+              542,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 16,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 16,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-13",
+            "text": "Надїю ся, що й моя збірка буде імпульсом і дасть матеріял",
+            "bbox_xywh": [
+              105,
+              576,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-end-line-14",
+            "text": "до дальших праць над сими апокріфами.",
+            "bbox_xywh": [
+              105,
+              611,
+              960,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-iv-51-image-20261126",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-end-line-11",
+        "reading": "421—385",
+        "reason": "Descending printed page range retained."
+      }
+    ]
+  }
+}
