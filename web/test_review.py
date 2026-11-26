@@ -109,25 +109,25 @@ class ReviewSmoke(unittest.TestCase):
             for volume, label, scan in [('1','1',76),('1','LXVI',75),('1','147',222),
                                         ('2','436',518),('2','ii',6),('3','360',446),
                                         ('3','X',28),('4','1',53),('4','XXXVIII',42),
-                                        ('5','297',309),('5','II',12)]:
+                                        ('5','297',309),('5','I',11)]:
                 page.evaluate('(v) => setReaderVolume(v)', volume)
                 number.fill(label)
                 number.press('Enter')
                 self.assertEqual(page.locator('#page').input_value(), str(scan))
                 self.assertEqual(number.input_value(), label.upper())
-            for invalid in ('0','-1','1.5','IIII','298','garbage'):
+            for invalid in ('0','-1','1.5','IIII','II','298','garbage'):
                 number.fill(invalid)
                 page.locator('#go').click()
-                self.assertEqual(page.locator('#page').input_value(), '12')
+                self.assertEqual(page.locator('#page').input_value(), '11')
                 self.assertEqual(number.get_attribute('aria-invalid'), 'true')
             selector.select_option('scan')
-            self.assertEqual(page.locator('#page').input_value(), '12')
+            self.assertEqual(page.locator('#page').input_value(), '11')
             page.locator('#page').fill('13')
             page.locator('#go').click()
             selector.select_option('printed')
             self.assertEqual(number.input_value(), '1')
             page.locator('#prev').click()
-            self.assertEqual(number.input_value(), 'II')
+            self.assertEqual(number.input_value(), '')  # unnumbered scan 12
             for width in (320,390,768,1280):
                 page.set_viewport_size({'width':width,'height':700})
                 self.assertTrue(page.locator('.mainbar').evaluate('el => el.scrollWidth <= el.clientWidth'))
