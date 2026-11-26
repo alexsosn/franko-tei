@@ -8,7 +8,7 @@ Franko TEI is a digital scholarly edition in development of *Апокріфи і
 
 ## The historical edition
 
-Apocrypha are writings associated with biblical figures and events that lie outside the biblical canon. Franko's collection is a major achievement of Ukrainian and Slavic philology: it brings together texts transmitted in Ukrainian manuscript collections, with introductions, source descriptions, variant readings and comparative commentary. It is a resource for studying the circulation and reception of biblical traditions, the history of Slavic Christianity, historical languages and the relationship between written and oral culture. Franko's editorial methods and the collection's international scholarly reception are discussed by the [Krypiakevych Institute of Ukrainian Studies](https://www.inst-ukr.lviv.ua/uk/publications/materials/documents/?newsid=424) and [Yaroslava Melnyk](https://publications.lnu.edu.ua/collections/index.php/ukrliterary/article/view/4701).
+Apocrypha are writings associated with biblical figures and events that lie outside the biblical canon. Franko's collection is a major achievement of Ukrainian and Slavic philology: it brings together texts transmitted in Ukrainian manuscript collections, with introductions, source descriptions, variant readings and comparative commentary. It is a resource for studying the circulation and reception of biblical traditions, the history of Slavic Christianity, historical languages and the relationship between written and oral culture. See the [Krypiakevych Institute of Ukrainian Studies](https://www.inst-ukr.lviv.ua/uk/publications/materials/documents/?newsid=424) on the collection's international scholarly reception and [Yaroslava Melnyk](https://publications.lnu.edu.ua/collections/index.php/ukrliterary/article/view/4701) on Franko's editorial methods.
 
 | Volume | Subject |
 | --- | --- |
@@ -28,7 +28,7 @@ The [web application](https://alexsosn.github.io/franko-tei/) works in English a
 - Inspect alternative readings, marked uncertainties and language highlighting; choose fonts for historical Cyrillic and Greek.
 - Proofread lines using the built-in editor and character keyboard, then submit proposed corrections through GitHub for review.
 
-**Status: working draft.** Transcription and structural/language annotation are under way across all five volumes. See **Contents → Draft coverage** in the reader for the published snapshot. Drafts are agent-produced and not yet fully verified; navigation, indexes and bibliography are being refined. No complete, verified TEI or Fabric corpus has been released.
+**Status: working draft.** Transcription and structural/language annotation are under way across all five volumes. See **Contents → Draft coverage** in the reader for the published snapshot. Drafts are produced by AI agents and not yet fully verified; navigation, indexes and bibliography are being refined. No complete, verified TEI or Fabric corpus has been released.
 
 ## The planned research corpus
 
