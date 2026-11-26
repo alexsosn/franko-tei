@@ -47,6 +47,148 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
             self.assertTrue(any(p["volume"]=="4" and p["scan"]==68 for p in overlay["pages"]))
 
+    def test_unstamped_facsimile_is_published_and_searchable(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            page=next(p for p in overlay["pages"] if p["scan"]==24 and p["volume"]=="1")
+            self.assertEqual(page["suffix"],"alternate_reading_01")
+            raw=(ROOT/page["path"]).read_bytes()
+            self.assertEqual(page["blob"],blob_sha(raw))
+            rows={r["line_id"]:r for r in page["lines"]}
+            expected={"palaea-line-04":"зволених до читаня, але по просту канонїчних. Під назвою Палеї",
+                      "palaea-line-05":"звісні були в старій Руси два твори, що не мають іс собою нїчого"}
+            for identifier, literal in expected.items():
+                row=rows[identifier]
+                self.assertEqual(row["status"],"supplementary_correction")
+                self.assertEqual(row["text"],literal)
+                self.assertTrue(row["original"].endswith("…"))
+                self.assertTrue(row["obscured_on_pinned_scan"])
+                self.assertEqual(row["language_spans"][0]["end"],len(literal))
+                self.assertEqual(row["language_spans"][0]["language"],"uk")
+                self.assertNotIn("contributor_id",row)
+            entries=json.loads((output/"vol1.json").read_text())["entries"]
+            matches=[x for x in entries if x["scan"]==24 and x["suffix"]==page["suffix"]]
+            self.assertEqual(len(matches),2)
+            corrected=next(x for x in matches if x.get("reviewed"))
+            original=next(x for x in matches if not x.get("reviewed"))
+            for literal in expected.values():
+                self.assertIn(literal,corrected["text"])
+                self.assertNotIn(literal,original["text"])
+            self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
+
+    def test_supplementary_rejects_mismatched_evidence(self):
+        import copy
+        import shutil
+        from build_search import supplementary_page, SUPPLEMENTARY_AUDIT
+        audit=json.loads((ROOT/"pilot"/SUPPLEMENTARY_AUDIT).read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot=Path(tmp)
+            for c in audit["compared_candidates"]:
+                shutil.copyfile(ROOT/c["path"],pilot/Path(c["path"]).name)
+            dest=pilot/SUPPLEMENTARY_AUDIT
+            dest.parent.mkdir()
+            def put(d):
+                dest.write_text(json.dumps(d,ensure_ascii=False),encoding="utf-8")
+            put(audit)
+            self.assertEqual(len(supplementary_page(pilot,REF)["lines"]),4)
+            for mutate in (
+                lambda d:d["compared_candidates"][1].update(blob="0"*40),
+                lambda d:d["pinned_image"].update(sha256="0"*64),
+                lambda d:d["photographs"].pop(),
+                lambda d:d["photographs"][0].update(sha256=d["photographs"][1]["sha256"]),
+                lambda d:d["rows"].pop(),
+                lambda d:d["rows"][-1].update(line_id="other"),
+                lambda d:d["rows"][-1].update(obscured_on_pinned_scan=False),
+                lambda d:d["rows"][-1].update(photo_reading="invented text"),
+                lambda d:d["rows"][-1].update(photo_reading=d["rows"][-1]["alternate_reading"]),
+            ):
+                damaged=copy.deepcopy(audit)
+                mutate(damaged)
+                put(damaged)
+                with self.assertRaises(ValueError):
+                    supplementary_page(pilot,REF)
+
+    def test_browser_supplementary_default_original_and_search(self):
+        from playwright.sync_api import sync_playwright, expect
+        from test_review_editor import png, W, H
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            reviewed=next(p for p in overlay["pages"] if p["volume"]=="1" and p["scan"]==24)
+            raw=(ROOT/reviewed["path"]).read_bytes()
+            source=json.loads(raw)
+            first=(ROOT/"pilot/vol1_scan00024_single_reading.json").read_bytes()
+            manifest={"volume":"1","page_count":469,"pages":[{"scan_page":24,"width":W,"height":H,"artifacts":[
+                {"role":"page_image","path":source["source_image_path"],"sha256":source["source_image_sha256"]},
+                {"role":"embedded_ocr","path":"original_ocr/vol1/page-00024.txt"}]}]}
+            stale=False
+            with sync_playwright() as p:
+                browser=p.chromium.launch(args=["--no-sandbox"])
+                page=browser.new_page(viewport={"width":390,"height":844})
+                errors=[]
+                page.on("pageerror",lambda e:errors.append(str(e)))
+                def route(r):
+                    u=r.request.url
+                    if u=="https://reader.test/":
+                        return r.fulfill(content_type="text/html",body=(ROOT/"web/index.html").read_text())
+                    if u=="https://reader.test/review-editor.js":
+                        return r.fulfill(content_type="text/javascript",body=(ROOT/"web/review-editor.js").read_text())
+                    if u.startswith("https://reader.test/search/"):
+                        path=output/u.rsplit("/",1)[1]
+                        if path.is_file():return r.fulfill(content_type="application/json",body=path.read_bytes())
+                    if u.endswith("/manifest.json"):return r.fulfill(json=manifest)
+                    if u.endswith("/"+reviewed["path"]):return r.fulfill(content_type="application/json",body=raw+(b" " if stale else b""))
+                    if u.endswith("/pilot/vol1_scan00024_single_reading.json"):return r.fulfill(content_type="application/json",body=first)
+                    if u.endswith("/"+source["source_image_path"]):return r.fulfill(content_type="image/png",body=png())
+                    if u.endswith("/page-00024.txt"):return r.fulfill(body="OCR")
+                    return r.fulfill(status=404,body="")
+                page.route("https://**/*",route)
+                page.goto("https://reader.test/#v=1&p=24&ref=main")
+                line=page.locator(".line-text[data-line-id='palaea-line-05']")
+                expect(line).to_have_text("звісні були в старій Руси два твори, що не мають іс собою нїчого")
+                expect(line.locator(".language-span")).to_have_attribute("data-language","uk")
+                expect(page.locator(".line-text[data-line-id='palaea-line-04']")).to_contain_text("Під назвою Палеї")
+                line.locator("xpath=..").locator(".alternate-toggle").click()
+                panel=page.locator(".alternate-reasons:visible")
+                expect(panel).to_contain_text("Supplementary facsimile · provisional")
+                expect(panel.locator("a")).to_have_attribute("href",reviewed["lines"][-1]["evidence_url"])
+                line.locator("xpath=..").locator(".alternate-toggle").click()
+                page.locator("#readingSummary").click()
+                page.locator("#editorialView").uncheck()
+                expect(line).to_contain_text("мають …")
+                page.locator("#searchOpen").click()
+                page.locator("#searchSource").select_option("agent")
+                page.locator("#searchVolume").select_option("1")
+                page.locator("#query").fill("іс собою нїчого")
+                page.locator("#searchGo").click()
+                hit=page.locator("#searchResults button").filter(has_text="scan 24").filter(has_text="Editorial")
+                expect(hit).to_have_count(1)
+                hit.click()
+                expect(line.locator(".search-match")).to_have_text("іс собою нїчого")
+                expect(page.locator("#editorialView")).to_be_checked()
+                # Invalid client payloads must not silently show a partial repair.
+                for mutation in range(4):
+                    self.assertTrue(page.evaluate("""([p,d,mutation])=>{
+                        const copy=structuredClone(p);
+                        const row=copy.lines.find(r=>r.line_id==='palaea-line-05');
+                        switch(mutation){
+                            case 0:row.original='wrong';break;
+                            case 1:row.photograph_sha256=[];break;
+                            case 2:copy.lines=copy.lines.filter(r=>r!==row);break;
+                            case 3:row.evidence_url='https://example.com';break;
+                        }
+                        return checkedEditorial(copy,d,p.blob,p.path)===null;
+                    }""",[reviewed,source,mutation]),mutation)
+                stale=True
+                page.reload()
+                expect(page.locator("#editorialNotice")).to_contain_text("source")
+                expect(line).not_to_contain_text("іс собою нїчого")
+                self.assertFalse(errors,errors)
+                browser.close()
+
     def test_coverage_snapshot_counts_physical_scans_not_search_versions(self):
         from franko_tei.pilot_batch import discover_readings
         from collections import Counter
