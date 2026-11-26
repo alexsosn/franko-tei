@@ -10,11 +10,12 @@ from .pilot_tei import (XML, tag, xml_id, _sub, render_pilot_tei,
 from .pilot_tf_batch import _verify_pinned_manifest
 from .review_adjudication import check_repository, project_lines
 from .review_bundle import SHA, PATH, match, git_source_loader
+from .native_collation import load_native_collation
 
 ID = "{"+XML+"}id"
 
 
-def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_loader=None):
+def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_loader=None, collation=None):
     """Project a validated ledger; the lower-level serializer does not check images.
 
     The output contains selected text, source anchors and unresolved reading
@@ -27,12 +28,13 @@ def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_l
     if any(other != path and other.split("_", 2)[:2] == page_key
            for other, _ in ledger):
         raise ValueError("accepted decisions belong to another candidate on this page")
-    rows = project_lines(raw, path, ledger, source_loader=source_loader, projection_commit=revision)
+    rows = project_lines(raw, path, ledger, source_loader=source_loader,
+                         projection_commit=revision, collation=collation)
     source = json.loads(raw.decode("utf-8"))
     original = render_pilot_tei(source, width, height)
     if extract_transcribed_lines(original) != [r["original"] for r in rows]:
         raise ValueError("frozen TEI text roundtrip failed")
-    accepted = [r for r in rows if r["status"] == "accepted_correction"]
+    accepted = [r for r in rows if r["status"] in {"accepted_correction", "native_collation"}]
     root = ET.fromstring(original)
     page = root.find("./"+tag("text")+"/"+tag("body")+"/"+tag("div"))
     prefix = f'lb-v{source["volume"]}-s{source["scan_page"]:05d}-'
@@ -131,17 +133,19 @@ def verified_editorial_tei(repo, path, images_root, revision):
     match(PATH, path, "candidate path")
     ledger = ledger_at_checkout(repo, revision)
     loader = git_source_loader(repo, revision)
-    return _verified_editorial_page(path, images_root, revision, ledger, loader)
+    return _verified_editorial_page(path, images_root, revision, ledger, loader,
+                                    collation=load_native_collation(repo, revision, path))
 
 
-def _verified_editorial_page(path, images_root, revision, ledger, loader):
+def _verified_editorial_page(path, images_root, revision, ledger, loader, *, collation=None):
     match(PATH, path, "candidate path")
     raw = loader(revision, path)
     source = json.loads(raw.decode("utf-8"))
     _verify_pinned_manifest(source["volume"], images_root)
     dimensions = validate_single_draft(source, images_root)
     return render_editorial_tei(raw, path, ledger, dimensions["width"],
-                                dimensions["height"], revision, source_loader=loader)
+                                dimensions["height"], revision, source_loader=loader,
+                                collation=collation)
 
 
 def main(argv=None):
