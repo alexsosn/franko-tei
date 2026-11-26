@@ -1,0 +1,759 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 83,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00083.jpg",
+  "source_image_sha256": "02a6714fb6ef9deed1c3ee2fb0f6c5fb3ee7c42bad414ac084b1a3d39704d82c",
+  "reading": {
+    "reader_id": "gpt62-ii-83-image-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00081-00090-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned original image without OCR or same-page peer text. Physical lines, contextual language spans, printed spelling, notes, estimated geometry. Historical typography provisional; preserve apparatus markers separately.",
+    "raw_response": "I. Пророцтва про Ісуса.\nА. Крехівська Палея, стор. 1133—1134.\n[Оповіданє про Гермеса Трісмеґіста] ... и Халдѣемь и Персом\nдаж[е] и до Вавилона, також[е] и Асією и Європією и Скуфією\nрекше Козары, на всѧ воевавъ примучи а҃. При том быс[ть] Єрміє\nтреславныи.\nѠ Єремїи. По см҃рти ж[е] Дыєвѣ сн҃а Кронова цр҃ствова\nвъ Италіи сн҃ъ єго Єремїи лѣ[т] ле҃. бѣ ж[е] мужь хитръ и оумоу\nоученъ, иже изъобрѣте руду златую прьвѣє і ковати злато.\nІ разумѣ яко завидѧт єму братїа єго, иж[е] ѿ многых сут\nженъ, яже имѣ Пикъ оц҃ь єго, и хотѧт и оубити. бѣ бо ихъ\nболѣ о҃., многых бо женъ примѣси сѧ Пикъ оц҃ь єго. а Єремѣи\nбѣ єму ѿ прьвыѧ жены. Єремѣи же разумѣвъ нань творѧщу\nсѧ братїю, ѿиде взем злата много и иде въ Єгипет къ ко-\nлѣну Хамову. І прїаша и съ чт҃їю. І живѧше ту в велицѣ чт҃и,\nризу ж[е] носѧ злату, влъхвоваше, повѣдаше имъ хотѧщее бы-\nти. бѣ ж[е] и хитръ бесѣдам, муж дивенъ и мдр҃ъ і тревеликъ\nнарицаєм Єгиптѧны, иж[е] сказа г҃. великы силы сущиа. сказаєт\nбо в различных своих словесѣх єже къ Асклипїю ѡ бж҃твѣ\nсице.\nЄремїи ѡ ст҃ѣи Тр҃ци. „Аще не бы строєнїє къ мнѣ\nбыло тако всѣх Га҃ ѿкрыти ти слово се, ни вам бы любо было\nтако, да ѡ немже прашаєте. не достоино бо скверным тайны\nповѣдати, но [зам. ни] оушима слышати точїю. бѣ свѣт разоумныи\nпреж[е] свѣта разумнаг[о]. І бѣ пр҃но оумъ, разум свѣтелъ, а иного\nничто ж[е] не бѣ. сего єдиньство присно в собѣ сыи, своим\nоумом и съвѣтомъ всѧ ѿдрьжай. развѣ сего ни аг҃гли ни\nАпокріфи новозавітні. А.\n1",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            475,
+            617,
+            135,
+            13
+          ],
+          "description": "Printed rule beneath section heading."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "section",
+        "kind": "heading",
+        "bbox_xywh": [
+          280,
+          548,
+          530,
+          55
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "section-line-01",
+            "text": "I. Пророцтва про Ісуса.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              280,
+              548,
+              530,
+              52
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "witness-a",
+        "kind": "heading",
+        "bbox_xywh": [
+          215,
+          676,
+          670,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-a-line-01",
+            "text": "А. Крехівська Палея, стор. 1133—1134.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              215,
+              676,
+              670,
+              49
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "hermes",
+        "kind": "body",
+        "bbox_xywh": [
+          46,
+          750,
+          990,
+          924
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "hermes-line-01",
+            "text": "[Оповіданє про Гермеса Трісмеґіста] ... и Халдѣемь и Персом",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 35,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              750,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-02",
+            "text": "даж[е] и до Вавилона, також[е] и Асією и Європією и Скуфією",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              787,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-03",
+            "text": "рекше Козары, на всѧ воевавъ примучи а҃. При том быс[ть] Єрміє",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              824,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-04",
+            "text": "треславныи.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 11,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              861,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-05",
+            "text": "Ѡ Єремїи. По см҃рти ж[е] Дыєвѣ сн҃а Кронова цр҃ствова",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              898,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-06",
+            "text": "въ Италіи сн҃ъ єго Єремїи лѣ[т] ле҃. бѣ ж[е] мужь хитръ и оумоу",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              935,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-07",
+            "text": "оученъ, иже изъобрѣте руду златую прьвѣє і ковати злато.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              972,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-08",
+            "text": "І разумѣ яко завидѧт єму братїа єго, иж[е] ѿ многых сут",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1009,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-09",
+            "text": "женъ, яже имѣ Пикъ оц҃ь єго, и хотѧт и оубити. бѣ бо ихъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1046,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-10",
+            "text": "болѣ о҃., многых бо женъ примѣси сѧ Пикъ оц҃ь єго. а Єремѣи",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1083,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-11",
+            "text": "бѣ єму ѿ прьвыѧ жены. Єремѣи же разумѣвъ нань творѧщу",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1120,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-12",
+            "text": "сѧ братїю, ѿиде взем злата много и иде въ Єгипет къ ко-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1157,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-13",
+            "text": "лѣну Хамову. І прїаша и съ чт҃їю. І живѧше ту в велицѣ чт҃и,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1194,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-14",
+            "text": "ризу ж[е] носѧ злату, влъхвоваше, повѣдаше имъ хотѧщее бы-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1230,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-15",
+            "text": "ти. бѣ ж[е] и хитръ бесѣдам, муж дивенъ и мдр҃ъ і тревеликъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1267,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-16",
+            "text": "нарицаєм Єгиптѧны, иж[е] сказа г҃. великы силы сущиа. сказаєт",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1304,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-17",
+            "text": "бо в различных своих словесѣх єже къ Асклипїю ѡ бж҃твѣ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1341,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-18",
+            "text": "сице.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 5,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1378,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-19",
+            "text": "Єремїи ѡ ст҃ѣи Тр҃ци. „Аще не бы строєнїє къ мнѣ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 48,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1415,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-20",
+            "text": "было тако всѣх Га҃ ѿкрыти ти слово се, ни вам бы любо было",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1452,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-21",
+            "text": "тако, да ѡ немже прашаєте. не достоино бо скверным тайны",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1489,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-22",
+            "text": "повѣдати, но [зам. ни] оушима слышати точїю. бѣ свѣт разоумныи",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 13,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 13,
+                "end": 22,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 22,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1526,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-23",
+            "text": "преж[е] свѣта разумнаг[о]. І бѣ пр҃но оумъ, разум свѣтелъ, а иного",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1563,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-24",
+            "text": "ничто ж[е] не бѣ. сего єдиньство присно в собѣ сыи, своим",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1600,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "hermes-line-25",
+            "text": "оумом и съвѣтомъ всѧ ѿдрьжай. развѣ сего ни аг҃гли ни",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              46,
+              1637,
+              990,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          125,
+          1685,
+          300,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "Апокріфи новозавітні. А.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              125,
+              1685,
+              300,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "sheet",
+        "kind": "other",
+        "bbox_xywh": [
+          960,
+          1665,
+          35,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "sheet-line-01",
+            "text": "1",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-83-image-20261126",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              960,
+              1665,
+              35,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "hermes-line-05",
+        "reading": "Ѡ Єремїи",
+        "reason": "Historical glyphs, accentuation, titla and superscript letter placement in the entire Church Slavonic excerpt are provisional."
+      },
+      {
+        "line_id": "hermes-line-06",
+        "reading": "ле҃",
+        "reason": "Numeral and titlo provisional."
+      },
+      {
+        "line_id": "hermes-line-10",
+        "reading": "о҃.",
+        "reason": "Numeral provisional."
+      },
+      {
+        "line_id": "hermes-line-25",
+        "reading": "ѿдрьжай",
+        "reason": "Historical letterform provisional."
+      }
+    ]
+  }
+}
