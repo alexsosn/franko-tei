@@ -1,0 +1,84 @@
+{
+  "schema_version": "supplementary-photo-collation-audit-v2",
+  "status": "agent_unverified",
+  "volume": "4",
+  "scan_page": 18,
+  "printed_page": "XIV",
+  "source": {
+    "path": "pilot/vol4_scan00018_single_reading.json",
+    "blob": "710305cf8f9dc624eec9de19ae91aaf984c2aa5f"
+  },
+  "pinned_image": {
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "path": "vol4/page-00018.jpg",
+    "sha256": "de15f83d0aaba0318f175a8fb895b36e293d198cbadfd9b6f0b322353a6f493d"
+  },
+  "photographs": [
+    {
+      "filename": "IMG_8876810F-0BFD-425A-A733-5FF7E7C8F55C.jpeg",
+      "sha256": "638456a7246d7fa68d871a8d5caac038509c28378b54d212e833f81e6d6e6b18",
+      "dimensions": [
+        1080,
+        1440
+      ]
+    }
+  ],
+  "provenance": "User-supplied photographs of matching printed edition, 2026-11-26; partial lower-page views except I/418 overview. Photographs not redistributed. Not independent witnesses or verified diplomatic transcriptions.",
+  "notes": "Photo clearly shows printed footnote marker 4); the pinned scan's body marker in preface-line-05 is visibly 1). Preserve the distinction: this is an apparent printed numbering discrepancy, not grounds to silently renumber the body. The note reads фолькльор / фолькльорних. Current note link assumes matching printed markers, so these changes are recorded but not projected pending support for distinct source and note labels. Main text of the footnote otherwise substantially agrees.",
+  "rows": [
+    {
+      "line_id": "note-1-line-01",
+      "region_id": "note-1",
+      "original": "¹) Про сей вплив апокріфів на український фольклор диви крім принагідних",
+      "photo_reading": "¹) Про сей вплив апокріфів на український фольклор диви крім принагідних",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    },
+    {
+      "line_id": "note-1-line-02",
+      "region_id": "note-1",
+      "original": "уваг М. Драгоманова в його фольклорних розвідках, особливо в статї про дуалїзм",
+      "photo_reading": "уваг М. Драгоманова в його фольклорних розвідках, особливо в статї про дуалїзм",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    },
+    {
+      "line_id": "note-1-line-03",
+      "region_id": "note-1",
+      "original": "у нар. віруванях, статю проф. М. Сумцова „Очерки исторіи южнорусскихъ апокрифи-",
+      "photo_reading": "у нар. віруванях, статю проф. М. Сумцова „Очерки исторіи южнорусскихъ апокрифи-",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    },
+    {
+      "line_id": "note-1-line-04",
+      "region_id": "note-1",
+      "original": "ческихъ сказаній и пѣсень“, друковану в „Кіевской Старинѣ“ 1887 р.",
+      "photo_reading": "ческихъ сказаній и пѣсень“, друковану в „Кіевской Старинѣ“ 1887 р.",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    }
+  ],
+  "observations": [
+    {
+      "line_id": "preface-line-05",
+      "source": "pinned scan",
+      "literal": "¹)"
+    },
+    {
+      "line_id": "note-1-line-01",
+      "source": "supplementary photo",
+      "literal": "⁴)"
+    },
+    {
+      "line_id": "note-1-line-01",
+      "source": "supplementary photo",
+      "literal": "фолькльор"
+    },
+    {
+      "line_id": "note-1-line-02",
+      "source": "supplementary photo",
+      "literal": "фолькльорних"
+    }
+  ]
+}

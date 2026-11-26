@@ -353,7 +353,8 @@ def read_draft(path):
     return data, blob
 
 
-def build_printed_indexes(pilot, ref):
+def build_printed_indexes(pilot, ref, supplements=None):
+    supplements = supplements or {}
     files = {}
     for path in sorted(pilot.glob("vol1_scan*_single_reading.json")):
         data, blob = read_draft(path)
@@ -418,13 +419,22 @@ def build_printed_indexes(pilot, ref):
                             kind, [l["text"] for l in prior["lines"]], targets)
                         previous = stop
                         continue
-                    label, detail, refs = parse_entry(kind, [l["text"] for l in part], targets)
+                    # Keep literal source lines for provenance/anchors, but use
+                    # the same validated supplementary projection as the reader
+                    # when deriving the navigation label and references.
+                    supplement = supplements.get(source["path"])
+                    corrections = ({r["line_id"]: r for r in supplement["lines"]}
+                                   if supplement and supplement["blob"] == blob else {})
+                    effective = [corrections[l["id"]]["text"] if l["id"] in corrections else l["text"] for l in part]
+                    label, detail, refs = parse_entry(kind, effective, targets)
                     # Only the explicit Abraham block on the pilot motif page.
                     context = ("Авраам" if kind == "motifs" and label.startswith("„")
                                else NAME_CONTEXTS.get((scan, region_id, previous + 1), "") if kind == "names" else "")
                     entries.append(dict(id=f"v1-{scan}-{part[0]['id']}", source=source,
                                         region_id=region_id, lines=part, label=label,
                                         detail=detail, context=context, refs=refs))
+                    if effective != [l["text"] for l in part]:
+                        entries[-1]["supplementary_reading"] = [dict(line_id=l["id"], text=corrections[l["id"]]["text"], evidence_url=corrections[l["id"]]["evidence_url"]) for l in part if l["id"] in corrections]
                     previous = stop
             if seen_regions != set(partitions):
                 raise ValueError(f"missing index regions: {path}")

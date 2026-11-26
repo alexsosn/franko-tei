@@ -7893,15 +7893,28 @@ function checkedEditorial(page,data,blob,path){
   for(const r of page.lines){
     const source=lines.get(r.line_id);
     if(r.status==='supplementary_correction'){
-      if(!source||source.region.kind!=='body'||source.region.id!==r.region_id||source.line.text!==r.original||reviewed.has(r.line_id)||
+      const legacy=path==='pilot/vol1_scan00024_alternate_reading_01.json';
+      const specs={'pilot/vol1_scan00024_alternate_reading_01.json':[2,'1',24],
+        'pilot/vol2_scan00019_single_reading.json':[1,'2',19],
+        'pilot/vol4_scan00019_single_reading.json':[1,'4',19],
+        'pilot/vol1_scan00418_single_reading.json':[4,'1',418]};
+      const spec=specs[path];
+      const stem=path.slice(6).replace(/_(?:single_reading|alternate_reading_01)\.json$/,'');
+      const evidenceSuffix='/pilot/reviews/'+stem+'_unstamped_facs_20261126.json';
+      if(!spec||data.volume!==spec[1]||data.scan_page!==spec[2]||!source||source.region.kind!=='body'||source.region.id!==r.region_id||source.line.text!==r.original||reviewed.has(r.line_id)||
          typeof r.text!=='string'||!r.text.trim()||r.text===r.original||/[\r\n…]/.test(r.text)||
          typeof r.obscured_on_pinned_scan!=='boolean'||r.obscured_on_pinned_scan!==(source.line.unreadable_suffix===true)||
          (r.obscured_on_pinned_scan&&(!r.original.endsWith('…')||!r.text.startsWith(r.original.slice(0,-1))||r.text.length<=r.original.length-1))||
-         !Array.isArray(r.photograph_sha256)||r.photograph_sha256.length!==2||new Set(r.photograph_sha256).size!==2||!r.photograph_sha256.every(s=>/^[a-f0-9]{64}$/.test(s))||
-         typeof r.evidence_url!=='string'||!/^https:\/\/github\.com\/alexsosn\/franko-tei\/blob\/[a-f0-9]{40}\/pilot\/reviews\/vol1_scan00024_unstamped_facs_20261126\.json$/.test(r.evidence_url)||
-         !Array.isArray(r.language_spans)||r.language_spans.length!==1||
-         r.language_spans[0].start!==0||r.language_spans[0].end!==Array.from(r.text).length||r.language_spans[0].script!=='Cyrl'||
-         !['uk','ru'].includes(r.language_spans[0].language)||r.language_spans[0].uncertain!==true)return null;
+         !Array.isArray(r.photograph_sha256)||r.photograph_sha256.length!==spec[0]||new Set(r.photograph_sha256).size!==spec[0]||!r.photograph_sha256.every(s=>/^[a-f0-9]{64}$/.test(s))||
+         typeof r.evidence_url!=='string'||!/^https:\/\/github\.com\/alexsosn\/franko-tei\/blob\/[a-f0-9]{40}\//.test(r.evidence_url)||r.evidence_url.slice('https://github.com/alexsosn/franko-tei/blob/'.length+40)!==evidenceSuffix||
+         !Array.isArray(r.language_spans)||!r.language_spans.length||(legacy&&r.language_spans.length!==1))return null;
+      let end=0;
+      for(const span of r.language_spans){
+        if(span.start!==end||!Number.isInteger(span.end)||span.end<=end||span.end>Array.from(r.text).length||span.uncertain!==true||span.text_version!==data.reading.reader_id||
+          !['uk:Cyrl','ru:Cyrl','de:Latn','zxx:Zyyy'].includes(span.language+':'+span.script))return null;
+        end=span.end;
+      }
+      if(end!==Array.from(r.text).length)return null;
       reviewed.set(r.line_id,r);continue;
     }
     if(!source||source.region.id!==r.region_id||source.line.text!==r.original||reviewed.has(r.line_id)||
@@ -7914,7 +7927,10 @@ function checkedEditorial(page,data,blob,path){
     reviewed.set(r.line_id,r);
   }
   if([...reviewed.values()].some(r=>r.status==='supplementary_correction')){
-    if(data.volume!=='1'||data.scan_page!==24||path!=='pilot/vol1_scan00024_alternate_reading_01.json'||
+    const required={'pilot/vol2_scan00019_single_reading.json':['preface-line-40'],
+      'pilot/vol4_scan00019_single_reading.json':['preface-line-39','preface-line-41'],
+      'pilot/vol1_scan00418_single_reading.json':['index-a-l014']}[path];
+    if((required&&(reviewed.size!==required.length||required.some(id=>!reviewed.has(id))))||
        [...reviewed.values()].some(r=>r.status!=='supplementary_correction')||
        [...lines.values()].some(({line})=>line.unreadable_suffix===true&&!reviewed.has(line.id)))return null;
   }

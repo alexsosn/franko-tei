@@ -78,6 +78,58 @@ class EditorialProjectionTests(unittest.TestCase):
                 self.assertNotIn(literal,original["text"])
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
 
+    def test_new_facsimile_pages_are_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            expected={("2",19):("preface-line-40","Karlsruhe 1846, 2 томи;"),
+                      ("4",19):("preface-line-41","апокріфів на-"),
+                      ("1",418):("index-a-l014","Ахатис камінь 215")}
+            for (volume,scan),(line_id,literal) in expected.items():
+                page=next(p for p in overlay["pages"] if p["volume"]==volume and p["scan"]==scan)
+                row=next(r for r in page["lines"] if r["line_id"]==line_id)
+                self.assertIn(literal,row["text"])
+                self.assertEqual(row["language_spans"][-1]["end"],len(row["text"]))
+                self.assertEqual(page["blob"],blob_sha((ROOT/page["path"]).read_bytes()))
+                rows=json.loads((output/f"vol{volume}.json").read_text())["entries"]
+                self.assertTrue(any(x.get("reviewed") and x["scan"]==scan and literal in x["text"] for x in rows))
+            indexes=json.loads((output/"printed-indexes.json").read_text())
+            entry=next(e for e in indexes["sections"][0]["entries"] if e["label"]=="Ахатис камінь")
+            self.assertEqual([r["literal"] for r in entry["refs"]],["215"])
+
+    def test_partial_facsimile_fails_closed(self):
+        import copy
+        import shutil
+        from build_search import supplementary_partial_pages
+        rel="reviews/vol2_scan00019_unstamped_facs_20261126.json"
+        audit=json.loads((ROOT/"pilot"/rel).read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot=Path(tmp)
+            source=audit["source"]["path"]
+            shutil.copyfile(ROOT/source,pilot/Path(source).name)
+            dest=pilot/rel
+            dest.parent.mkdir()
+            def put(d):
+                dest.write_text(json.dumps(d,ensure_ascii=False),encoding="utf-8")
+            put(audit)
+            self.assertEqual(len(supplementary_partial_pages(pilot,REF)),1)
+            for mutate in (
+                lambda d:d["source"].update(blob="0"*40),
+                lambda d:d["pinned_image"].update(sha256="0"*64),
+                lambda d:d["photographs"].clear(),
+                lambda d:d["rows"].pop(0),
+                lambda d:d["rows"][0].update(original="different"),
+                lambda d:d["rows"][0].update(obscured_on_pinned_scan=False),
+                lambda d:d["rows"][0].update(photo_reading="invented text"),
+                lambda d:d["rows"][0]["language_spans"][1].update(start=0),
+            ):
+                damaged=copy.deepcopy(audit)
+                mutate(damaged)
+                put(damaged)
+                with self.assertRaises(ValueError):
+                    supplementary_partial_pages(pilot,REF)
+
     def test_supplementary_rejects_mismatched_evidence(self):
         import copy
         import shutil
@@ -182,6 +234,19 @@ class EditorialProjectionTests(unittest.TestCase):
                         }
                         return checkedEditorial(copy,d,p.blob,p.path)===null;
                     }""",[reviewed,source,mutation]),mutation)
+                for supplement in overlay["pages"]:
+                    if (supplement["volume"],supplement["scan"]) not in {("2",19),("4",19),("1",418)}:
+                        continue
+                    draft=json.loads((ROOT/supplement["path"]).read_text())
+                    self.assertTrue(page.evaluate("""([p,d])=>{
+                        const checked=checkedEditorial(p,d,p.blob,p.path);
+                        return checked!==null&&checked.size===p.lines.length;
+                    }""",[supplement,draft]))
+                    self.assertTrue(page.evaluate("""([p,d])=>{
+                        p=structuredClone(p);
+                        p.lines[0].language_spans[0].end=0;
+                        return checkedEditorial(p,d,p.blob,p.path)===null;
+                    }""",[supplement,draft]))
                 stale=True
                 page.reload()
                 expect(page.locator("#editorialNotice")).to_contain_text("source")

@@ -1,0 +1,96 @@
+{
+  "schema_version": "supplementary-photo-collation-audit-v2",
+  "status": "agent_unverified",
+  "volume": "1",
+  "scan_page": 418,
+  "printed_page": "343",
+  "source": {
+    "path": "pilot/vol1_scan00418_single_reading.json",
+    "blob": "2f9210d9d0f69d99f61c585cbb923361019861a1"
+  },
+  "pinned_image": {
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "path": "vol1/page-00418.jpg",
+    "sha256": "beeb0b34832b0524dc7645ecd93b82756f64443b6579de4472bc997324216627"
+  },
+  "photographs": [
+    {
+      "filename": "IMG_ED2B7560-E17B-4C4B-884E-DABE5B08B346.jpeg",
+      "sha256": "9af3d18addba87f788cf64497a5982996bc164fe30d6d55bd0ad67bed8d07fd1",
+      "dimensions": [
+        1080,
+        1440
+      ]
+    },
+    {
+      "filename": "IMG_5094BEB9-3065-4DEB-BF59-25A03C7D78D2.jpeg",
+      "sha256": "1c516fae4f9148f5e9297ead87314cb7c0ca8e8f2ccf14b4052fddc6b606a96d",
+      "dimensions": [
+        1080,
+        1440
+      ]
+    },
+    {
+      "filename": "IMG_F1C67A76-9FAB-4108-B801-21F2F95FC2A2.jpeg",
+      "sha256": "3e79349375fcbd8a07fb2d04c22db3e36e43e6baed8d4f972cab8b03d7d313ae",
+      "dimensions": [
+        1080,
+        1440
+      ]
+    },
+    {
+      "filename": "IMG_B2515622-1630-4F4F-8638-7595F73A2E0B.jpeg",
+      "sha256": "80242b766411c6e87bffbb0286f0642af536317efb9084d0236d98ffe9b57fd0",
+      "dimensions": [
+        1080,
+        1440
+      ]
+    }
+  ],
+  "provenance": "User-supplied photographs of matching printed edition, 2026-11-26; partial lower-page views except I/418 overview. Photographs not redistributed. Not independent witnesses or verified diplomatic transcriptions.",
+  "notes": "Ахатис камінь 215 confirmed in close-up and overview. Digits in Бон син Хусів 10? and Висуя 1?1, 192 are damaged in this reproduction too; no new guess or verified status. Existing 100 and 191 remain provisional.",
+  "rows": [
+    {
+      "line_id": "index-a-l014",
+      "region_id": "index-a",
+      "original": "Ахатис камінь 245",
+      "photo_reading": "Ахатис камінь 215",
+      "obscured_on_pinned_scan": false,
+      "status": "correction",
+      "language_spans": [
+        {
+          "start": 0,
+          "end": 14,
+          "language": "uk",
+          "script": "Cyrl",
+          "uncertain": true,
+          "text_version": "gpt62-i418-first-image-20261125"
+        },
+        {
+          "start": 14,
+          "end": 17,
+          "language": "zxx",
+          "script": "Zyyy",
+          "uncertain": true,
+          "text_version": "gpt62-i418-first-image-20261125"
+        }
+      ]
+    },
+    {
+      "line_id": "index-b-l006",
+      "region_id": "index-b",
+      "original": "Бон син Хусів 100",
+      "photo_reading": "Бон син Хусів 100",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    },
+    {
+      "line_id": "index-v-right-l032",
+      "region_id": "index-v-right",
+      "original": "191, 192",
+      "photo_reading": "191, 192",
+      "obscured_on_pinned_scan": false,
+      "status": "collation_only"
+    }
+  ]
+}
