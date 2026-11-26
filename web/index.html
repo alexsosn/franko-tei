@@ -8111,15 +8111,15 @@ function contentsRoman(value){if(!/^(?=[IVXLCDM]+$)M{0,3}(CM|CD|D?C{0,3})(XC|XL|
 // Navigation labels are logical pagination of the pinned printed edition, not
 // a transcription of the folio on every image. Bounds are source-backed; do
 // not use an unrestricted offset on wrappers or blank inter-section versos.
-// I: 388 at scan 463; 391 and 394 at 466/469. II: 436 and 443 at 518/525.
+// I: 388 at scan 463; 464 is the unnumbered errata (logical 389); 391 and 394 at 466/469. II: 436 and 443 at 518/525.
 // III: 360 at 446; IV: XLVII at 51, 515 at 567, 522 at 574.
 // V: I at 11 (contents), 297 at 309; scan 12 is an unnumbered verso.
 // Arabic offsets are shared with contents navigation; TOC reference misprints
 // are not used to resolve page numbers.
 const pageJumpRanges={
-  1:{arabicMax:394,arabicGaps:[389],romanOffset:9,romanMin:1,romanMax:66},
+  1:{arabicMax:394,arabicGaps:[340],romanOffset:9,romanMin:1,romanMax:66},
   2:{arabicMax:443,arabicGaps:[],romanOffset:4,romanMin:1,romanMax:78},
-  3:{arabicMax:360,arabicGaps:[],romanOffset:18,romanMin:1,romanMax:68},
+  3:{arabicMax:360,arabicGaps:[324],romanOffset:18,romanMin:1,romanMax:68},
   4:{arabicMax:522,arabicGaps:[516],romanOffset:4,romanMin:5,romanMax:47},
   5:{arabicMax:297,arabicGaps:[],romanOffset:10,romanMin:1,romanMax:1}
 };
