@@ -1,0 +1,940 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 90,
+  "printed_page_observed": "78",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00090.jpg",
+  "source_image_sha256": "3d85ff4441534892083ba1cab6eb0c80e4a4b41ec5a523d737621e84e61fb3f4",
+  "reading": {
+    "reader_id": "gpt62-v5s00090-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-v5-081-090-20261126",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct reading of pinned page image, without embedded OCR or another page candidate. Physical line ends and printed editorial lacuna wording retained; estimated geometry and provisional language/script spans. Not a verified edition.",
+    "raw_response": "78\nмолитву святого Іпатія за весь світ і за тих, що лю-\nблять його:\n„Господи Боже, що сотворив небо і землю і море і все, що є\nв них і з ангельського воїнства зробив собі поклонників і создав\nчоловіка на свій образ і на свою подобу, і не згордувавши його\nгріхопаденєм дав вчоловічити ся твойому Христу на спасеніє люд-\nського роду, сам сьогоднї владико-чоловіколюбче приглянь на мене\nпокірного і вислухай мене, Господи Ісусе Христе. Де хто приведе\nімя твоє, вислухай його Господи і помилуй усїх¹), і буде твоя\nслава на небі і на земли в безконечні віки“.\nІ глянувши очима своїми на небо промовив блаженний Іпатій\nзаливаючи ся слезами: „Господи, в руки твої віддаю дух мій“.\nСвяте тїло його тутже було забрано ангелами, а мечник по-\nбачивши, що стало ся, закричав мовлячи: „І я христіянин, Гос-\nподи, спаси мене!“ І своїм власним мечем зробив собі смерть.\nОттак скінчив ся божий священомученик Іпатій місяця марта\n31 дня. Слава совершителю, мученику Іпатію.\nЗ обох поміщених тут статей про житє святого Іпатія бачимо,\nщо вони творять дві окремі редакції. Проложна статя, яка кладе\nжитє і мученє Іпатія на IV столїтє і чинить його учасником пер-\nшого нїкейського собора р. 325, а його замученє приписує напа-\nдови сектярів Новаціянів, відповідає мабуть дїйсним історичним\nфактам. Просторе житіє, яке ми тут подали в перекладї із серб-\nської версії, користуючись виданєм Тіхонравова, являєть ся досить\nхибним і недбалим перекладом грецького просторого оповіданя, до-\nконаного в дусї ґностичної секти з усїми вибриками ґностичної фан-\nтазії. Із історичного Іпатія в тій ґностичній перерібцї лишив ся\nтілько епізод про дракона в цїсарській палатї в Константинополї,\nхоч і сей має инше закінченє, як у проложній статї. Просторий\nгрецький текст містить ся, як довідуємо ся із Лямбецієвого Com-\nmentarius Bibliothecae Caesareae Viennensis liber VIII, Nr. 36, p. 803,\nв надворній бібліотецї у Віднї. Див. A. Dictionary of Christian Bio-\ngraphy, vol. III, ст. 185.\n¹) Далї текстї загадкові слова: и даи бысера оустроень.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Printed footnote rule",
+          "bbox_xywh": [
+            119,
+            1412,
+            219,
+            5
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          97,
+          93,
+          41,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "78",
+            "bbox_xywh": [
+              97,
+              93,
+              41,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "body-1",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          167,
+          1007,
+          44
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-1-line-01",
+            "text": "молитву святого Іпатія за весь світ і за тих, що лю-",
+            "bbox_xywh": [
+              95,
+              167,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 52,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-02",
+            "text": "блять його:",
+            "bbox_xywh": [
+              95,
+              189,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 11,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-2",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          211,
+          1007,
+          172
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-2-line-01",
+            "text": "„Господи Боже, що сотворив небо і землю і море і все, що є",
+            "bbox_xywh": [
+              95,
+              211,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-02",
+            "text": "в них і з ангельського воїнства зробив собі поклонників і создав",
+            "bbox_xywh": [
+              95,
+              233,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-03",
+            "text": "чоловіка на свій образ і на свою подобу, і не згордувавши його",
+            "bbox_xywh": [
+              95,
+              254,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-04",
+            "text": "гріхопаденєм дав вчоловічити ся твойому Христу на спасеніє люд-",
+            "bbox_xywh": [
+              95,
+              276,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-05",
+            "text": "ського роду, сам сьогоднї владико-чоловіколюбче приглянь на мене",
+            "bbox_xywh": [
+              95,
+              297,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-06",
+            "text": "покірного і вислухай мене, Господи Ісусе Христе. Де хто приведе",
+            "bbox_xywh": [
+              95,
+              319,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-07",
+            "text": "імя твоє, вислухай його Господи і помилуй усїх¹), і буде твоя",
+            "bbox_xywh": [
+              95,
+              340,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              },
+              {
+                "start": 46,
+                "end": 48,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              },
+              {
+                "start": 48,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-08",
+            "text": "слава на небі і на земли в безконечні віки“.",
+            "bbox_xywh": [
+              95,
+              362,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-3",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          383,
+          1007,
+          42
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-3-line-01",
+            "text": "І глянувши очима своїми на небо промовив блаженний Іпатій",
+            "bbox_xywh": [
+              95,
+              383,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-02",
+            "text": "заливаючи ся слезами: „Господи, в руки твої віддаю дух мій“.",
+            "bbox_xywh": [
+              95,
+              404,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-4",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          426,
+          1007,
+          64
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-4-line-01",
+            "text": "Святе тїло його тутже було забрано ангелами, а мечник по-",
+            "bbox_xywh": [
+              95,
+              426,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-02",
+            "text": "бачивши, що стало ся, закричав мовлячи: „І я христіянин, Гос-",
+            "bbox_xywh": [
+              95,
+              447,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-03",
+            "text": "поди, спаси мене!“ І своїм власним мечем зробив собі смерть.",
+            "bbox_xywh": [
+              95,
+              469,
+              1007,
+              21
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-5",
+        "kind": "body",
+        "bbox_xywh": [
+          95,
+          490,
+          1007,
+          44
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-5-line-01",
+            "text": "Оттак скінчив ся божий священомученик Іпатій місяця марта",
+            "bbox_xywh": [
+              95,
+              490,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-02",
+            "text": "31 дня. Слава совершителю, мученику Іпатію.",
+            "bbox_xywh": [
+              95,
+              512,
+              1007,
+              22
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commentary",
+        "kind": "body",
+        "bbox_xywh": [
+          100,
+          580,
+          1005,
+          644
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commentary-line-01",
+            "text": "З обох поміщених тут статей про житє святого Іпатія бачимо,",
+            "bbox_xywh": [
+              100,
+              580,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-02",
+            "text": "що вони творять дві окремі редакції. Проложна статя, яка кладе",
+            "bbox_xywh": [
+              100,
+              620,
+              1005,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-03",
+            "text": "житє і мученє Іпатія на IV столїтє і чинить його учасником пер-",
+            "bbox_xywh": [
+              100,
+              661,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-04",
+            "text": "шого нїкейського собора р. 325, а його замученє приписує напа-",
+            "bbox_xywh": [
+              100,
+              701,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-05",
+            "text": "дови сектярів Новаціянів, відповідає мабуть дїйсним історичним",
+            "bbox_xywh": [
+              100,
+              741,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-06",
+            "text": "фактам. Просторе житіє, яке ми тут подали в перекладї із серб-",
+            "bbox_xywh": [
+              100,
+              781,
+              1005,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-07",
+            "text": "ської версії, користуючись виданєм Тіхонравова, являєть ся досить",
+            "bbox_xywh": [
+              100,
+              822,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-08",
+            "text": "хибним і недбалим перекладом грецького просторого оповіданя, до-",
+            "bbox_xywh": [
+              100,
+              862,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-09",
+            "text": "конаного в дусї ґностичної секти з усїми вибриками ґностичної фан-",
+            "bbox_xywh": [
+              100,
+              902,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-10",
+            "text": "тазії. Із історичного Іпатія в тій ґностичній перерібцї лишив ся",
+            "bbox_xywh": [
+              100,
+              942,
+              1005,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-11",
+            "text": "тілько епізод про дракона в цїсарській палатї в Константинополї,",
+            "bbox_xywh": [
+              100,
+              983,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-12",
+            "text": "хоч і сей має инше закінченє, як у проложній статї. Просторий",
+            "bbox_xywh": [
+              100,
+              1023,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-13",
+            "text": "грецький текст містить ся, як довідуємо ся із Лямбецієвого Com-",
+            "bbox_xywh": [
+              100,
+              1063,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              },
+              {
+                "start": 59,
+                "end": 63,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-14",
+            "text": "mentarius Bibliothecae Caesareae Viennensis liber VIII, Nr. 36, p. 803,",
+            "bbox_xywh": [
+              100,
+              1103,
+              1005,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 71,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-15",
+            "text": "в надворній бібліотецї у Віднї. Див. A. Dictionary of Christian Bio-",
+            "bbox_xywh": [
+              100,
+              1144,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              },
+              {
+                "start": 37,
+                "end": 68,
+                "language": "en",
+                "script": "Latn",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-16",
+            "text": "graphy, vol. III, ст. 185.",
+            "bbox_xywh": [
+              100,
+              1184,
+              1005,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 17,
+                "language": "en",
+                "script": "Latn",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              },
+              {
+                "start": 17,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "note-1",
+        "kind": "note",
+        "bbox_xywh": [
+          191,
+          1446,
+          669,
+          41
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "note-1-line-01",
+            "text": "¹) Далї текстї загадкові слова: и даи бысера оустроень.",
+            "bbox_xywh": [
+              191,
+              1446,
+              669,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              },
+              {
+                "start": 2,
+                "end": 32,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              },
+              {
+                "start": 32,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00090-20261126"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "note-1-line-01",
+        "reading": "¹) Далї текстї загадкові слова: и даи бысера оустроень.",
+        "reason": "Provisional direct image reading of historical Cyrillic quotation; exact glyphs, titla and word division require enlarged independent collation."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "body-2-line-07",
+        "marker_text": "¹)",
+        "marker_start": 46,
+        "note_region_id": "note-1"
+      }
+    ]
+  }
+}
