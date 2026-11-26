@@ -267,7 +267,8 @@ class NumberedApparatusTests(unittest.TestCase):
             (ROOT / p["source_pilot_path"]).read_text(encoding="utf-8"))
             for p in block["pages"]}
 
-    def check_block(self, block, sources, *, paired=False):
+    def check_block(self, block, sources, *, paired=False, repeated=False):
+        self.assertTrue(not repeated or paired)
         self.assertEqual(block["schema_version"], "printed-apparatus-annotation-v1")
         self.assertEqual(block["status"], "agent_unverified")
         self.assertEqual(block["volume"], "1")
@@ -375,9 +376,12 @@ class NumberedApparatusTests(unittest.TestCase):
                 role = link["role"]
                 if "—" in entry["label"]:
                     self.assertIn(role, ("range_start", "range_end"))
-                    self.assertTrue(marker["literal"].endswith("—" if role == "range_start" else ")"))
+                    # Some printed starts have a bare number or a closing
+                    # parenthesis; the role is separate from the literal.
+                    if role == "range_end" or not repeated:
+                        self.assertTrue(marker["literal"].endswith("—" if role == "range_start" else ")"))
                 else:
-                    self.assertEqual(role, "single")
+                    self.assertIn(role, ("single", "repeated_reference") if repeated else ("single",))
                     self.assertFalse(marker["literal"].endswith("—"))
                 roles.setdefault(entry["id"], []).append(role)
             else:
@@ -387,9 +391,22 @@ class NumberedApparatusTests(unittest.TestCase):
         if paired:
             self.assertEqual(block["unlinked_entry_ids"],
                              [eid for eid in entries if eid not in targets])
+            incomplete = []
             for eid, observed_roles in roles.items():
-                self.assertEqual(observed_roles, ["range_start", "range_end"]
-                                 if "—" in entries[eid]["label"] else ["single"])
+                if "—" in entries[eid]["label"]:
+                    if repeated and observed_roles == ["range_start"]:
+                        incomplete.append(eid)
+                    else:
+                        self.assertEqual(observed_roles, ["range_start", "range_end"])
+                elif repeated and len(observed_roles) > 1:
+                    self.assertEqual(observed_roles, ["repeated_reference"] * len(observed_roles))
+                else:
+                    self.assertEqual(observed_roles, ["single"])
+            if repeated:
+                self.assertEqual(block["incomplete_range_entry_ids"],
+                                 [eid for eid in entries if eid in incomplete])
+            else:
+                self.assertNotIn("incomplete_range_entry_ids", block)
         else:
             self.assertEqual(targets, list(entries), "one-to-one order is observed in this scope")
 
