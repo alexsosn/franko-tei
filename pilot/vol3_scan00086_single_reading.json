@@ -1,0 +1,936 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 86,
+  "printed_page_observed": "LXVIII",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00086.jpg",
+  "source_image_sha256": "4d32ec0fa46e179ce8851d88c8a821c302356a2bde133e6f800261b5c42a6344",
+  "reading": {
+    "reader_id": "gpt62-v3-s00086-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-81-90-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical spelling, stanza boundaries, language spans and printed anomalies. Geometry estimated; agent-unverified.",
+    "raw_response": "LXVIII\nґендою про Фавста, а через неї і з Ґетевою траґедією, та звязок\nактів Теклї (дївчина від першої хвилї віддаєть ся безповоротно\nмаґічному впливови мужчини, почувши його мову) з траґедією\nГенріха Кляйста „Kätchen von Heilbronn“. Таких анальоґій, певно\nне припадкових, можна би мабуть знайти далеко більше.\nЛишалось би ще сказати декілька слів про вплив апокріфічних\nап. дїянь на малярство та різьбу пізнїйших часів, та я не можу\nтут дати нїчого понад те, що вже зібрано давнїйшими істориками\nхристиянської штуки в західній Европі та в Росиї. Тому й відсилаю\nцїкавих до загальнозвісних праць Крауса (S. Krauss, Geschichte\nder christlichen Kunst) та Децеля (Heinrich Detzel, Christliche\nIkonographie, ein Handbuch zur Verständniss der christlichen Kunst.\nFreiburg in Br., Bd. II, 1896), де спеціяльно присьвячено іконоґрафії\nапостолів просторий роздїл (стор. 95—168). Що до греко-славян-\nської іконоґрафії спеціяльної працї присьвяченої сїй темі я не знаю,\nта все таки дещо цїнне знайде ся в працях Кондакова про греко-\nвизантийські мінятури, Дідрона про греко-латинський подлинник,¹)\nУспенского²) та Буслаева (Историческіе очерки³) та в виданях росий-\nських подлинників. Наші іконостаси та мальовані на них обовязково\nапостоли, а також иньші малюнки сього циклю, фрески по стїнах,\nмінятюри в рукописах та ілюстрації в старих друках дожидають іще\nзбирачів та дослїдників.\nЛьвів д. 25 лютого 1903.\nP. S. В таблицї на стор. XVI у рубрицї четвертій через не-\nдогляд покладено два рази Андрія (ч. 1 і 6); під ч. 6 повинно\nзамісь того стояти „(два неназвані ученики)“.\n¹) Didron, Manuel d’iconographie chrétiene grecque et latine, Paris 1845\nа також доповнений нїмецький переклад Шефера.\n²) В. П. Успенскій, Очерки по исторіик иконописанія. Санктпетербургъ 1899,\nдив. особливо стор. 72, 73, 75, і далї.\n³) Ѳ. Буслаевъ, Историческіе очерки русской словесности и искуства, томъ\nII. Санктпетербургъ 1861, див. особливо стор. 126, 224, 226.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            492,
+            1296,
+            235,
+            38
+          ],
+          "description": "Printed decorative tailpiece."
+        },
+        {
+          "bbox_xywh": [
+            133,
+            1464,
+            150,
+            5
+          ],
+          "description": "Footnote rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          139,
+          127,
+          96,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LXVIII",
+            "bbox_xywh": [
+              139,
+              127,
+              96,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          136,
+          194,
+          973,
+          781
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "ґендою про Фавста, а через неї і з Ґетевою траґедією, та звязок",
+            "bbox_xywh": [
+              136,
+              194,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "актів Теклї (дївчина від першої хвилї віддаєть ся безповоротно",
+            "bbox_xywh": [
+              136,
+              229,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "маґічному впливови мужчини, почувши його мову) з траґедією",
+            "bbox_xywh": [
+              136,
+              265,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "Генріха Кляйста „Kätchen von Heilbronn“. Таких анальоґій, певно",
+            "bbox_xywh": [
+              136,
+              300,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 17,
+                "end": 38,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 38,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "не припадкових, можна би мабуть знайти далеко більше.",
+            "bbox_xywh": [
+              136,
+              336,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "Лишалось би ще сказати декілька слів про вплив апокріфічних",
+            "bbox_xywh": [
+              136,
+              371,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "ап. дїянь на малярство та різьбу пізнїйших часів, та я не можу",
+            "bbox_xywh": [
+              136,
+              407,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "тут дати нїчого понад те, що вже зібрано давнїйшими істориками",
+            "bbox_xywh": [
+              136,
+              442,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "християнської штуки в західній Европі та в Росиї. Тому й відсилаю",
+            "bbox_xywh": [
+              136,
+              478,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "цїкавих до загальнозвісних праць Крауса (S. Krauss, Geschichte",
+            "bbox_xywh": [
+              136,
+              513,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 41,
+                "end": 62,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "der christlichen Kunst) та Децеля (Heinrich Detzel, Christliche",
+            "bbox_xywh": [
+              136,
+              549,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 22,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 35,
+                "end": 63,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "Ikonographie, ein Handbuch zur Verständniss der christlichen Kunst.",
+            "bbox_xywh": [
+              136,
+              584,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "Freiburg in Br., Bd. II, 1896), де спеціяльно присьвячено іконоґрафії",
+            "bbox_xywh": [
+              136,
+              620,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 29,
+                "end": 69,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "апостолів просторий роздїл (стор. 95—168). Що до греко-славян-",
+            "bbox_xywh": [
+              136,
+              655,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "ської іконоґрафії спеціяльної працї присьвяченої сїй темі я не знаю,",
+            "bbox_xywh": [
+              136,
+              691,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 68,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "та все таки дещо цїнне знайде ся в працях Кондакова про греко-",
+            "bbox_xywh": [
+              136,
+              726,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "византийські мінятури, Дідрона про греко-латинський подлинник,¹)",
+            "bbox_xywh": [
+              136,
+              762,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "Успенского²) та Буслаева (Историческіе очерки³) та в виданях росий-",
+            "bbox_xywh": [
+              136,
+              797,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 26,
+                "end": 45,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 45,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "ських подлинників. Наші іконостаси та мальовані на них обовязково",
+            "bbox_xywh": [
+              136,
+              833,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "апостоли, а також иньші малюнки сього циклю, фрески по стїнах,",
+            "bbox_xywh": [
+              136,
+              868,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "мінятюри в рукописах та ілюстрації в старих друках дожидають іще",
+            "bbox_xywh": [
+              136,
+              904,
+              973,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "збирачів та дослїдників.",
+            "bbox_xywh": [
+              136,
+              939,
+              973,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "date",
+        "kind": "body",
+        "bbox_xywh": [
+          210,
+          1012,
+          368,
+          37
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "date-line-01",
+            "text": "Львів д. 25 лютого 1903.",
+            "bbox_xywh": [
+              210,
+              1012,
+              368,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "postscript",
+        "kind": "body",
+        "bbox_xywh": [
+          134,
+          1111,
+          969,
+          104
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "postscript-line-01",
+            "text": "P. S. В таблицї на стор. XVI у рубрицї четвертій через не-",
+            "bbox_xywh": [
+              134,
+              1111,
+              969,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 5,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 5,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "postscript-line-02",
+            "text": "догляд покладено два рази Андрія (ч. 1 і 6); під ч. 6 повинно",
+            "bbox_xywh": [
+              134,
+              1145,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "postscript-line-03",
+            "text": "замісь того стояти „(два неназвані ученики)“.",
+            "bbox_xywh": [
+              134,
+              1180,
+              969,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          127,
+          1489,
+          981,
+          184
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "apparatus-line-01",
+            "text": "¹) Didron, Manuel d’iconographie chrétiene grecque et latine, Paris 1845",
+            "bbox_xywh": [
+              127,
+              1489,
+              981,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 3,
+                "end": 72,
+                "language": "fr",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-02",
+            "text": "а також доповнений нїмецький переклад Шефера.",
+            "bbox_xywh": [
+              127,
+              1519,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-03",
+            "text": "²) В. П. Успенскій, Очерки по исторіик иконописанія. Санктпетербургъ 1899,",
+            "bbox_xywh": [
+              127,
+              1550,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 3,
+                "end": 73,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 73,
+                "end": 74,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-04",
+            "text": "див. особливо стор. 72, 73, 75, і далї.",
+            "bbox_xywh": [
+              127,
+              1581,
+              981,
+              29
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 39,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-05",
+            "text": "³) Ѳ. Буслаевъ, Историческіе очерки русской словесности и искуства, томъ",
+            "bbox_xywh": [
+              127,
+              1611,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 3,
+                "end": 72,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-06",
+            "text": "II. Санктпетербургъ 1861, див. особливо стор. 126, 224, 226.",
+            "bbox_xywh": [
+              127,
+              1642,
+              981,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "ru",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00086-20261126",
+                "start": 24,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-04",
+        "reading": "Kätchen",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "preface-line-10",
+        "reading": "S. Krauss",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "apparatus-line-01",
+        "reading": "chrétiene",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "apparatus-line-03",
+        "reading": "исторіик",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "apparatus-line-05",
+        "reading": "искуства",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      }
+    ]
+  }
+}

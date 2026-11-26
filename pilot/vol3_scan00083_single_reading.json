@@ -1,0 +1,973 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 83,
+  "printed_page_observed": "LXV",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00083.jpg",
+  "source_image_sha256": "ed7c546079ab3449d600812c608b834919c7317341d343ff5ee5e4c8ebfaae93",
+  "reading": {
+    "reader_id": "gpt62-v3-s00083-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-81-90-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical spelling, stanza boundaries, language spans and printed anomalies. Geometry estimated; agent-unverified.",
+    "raw_response": "LXV\n17. Оповіданє про сьв. Діонїзія: його астрономічні\nстудії; навернений Павлом; дїяльність у Парижі, мучеництво,\nчудо з головою, яку тїло несло по її відрубаню.\n18. Оповіданє про сьв. Луку: символи чотирьох еванге-\nлистів; Лука родом з Антіохії, лїкар, написав евангеліє в Ахаї; про\nЛуку маляра анї про його смерть нема нїчого.\n19. Оповіданє про Симона й Юду. Симон Кананїт\nі Юда-Тадей, брати Якова Алфеєвого, сини Марії Клеопової. Юда\nбув посланий з листом Ісусовим до Авгаря; далї йде текст листу\nй лєґенда про вздоровленє Авгаря; відси Юда йде до Месопотамії\nі сходить ся з Симоном у Персії, де оба вони борють ся з волхвами\nЗароєсом і Арфаксом, яких Матвій прогнав із Етіопії, нарештї ги-\nнуть убиті жерцями.\n20. Оповіданє про сьв. Климента — на основі Псевдо-\nКлиментин та пізнїйшої пассії.\nНа основі Золотої Лєґенди написана старонїмецька поема „Ве-\nликий Пассіонал“,¹) де оброблено зрештою лиш 75 оповідань, в тім\nчислї з нашого циклю лише оповіданя про сьв. Стефана (оба зве-\nдені в одно), про Петронїлю дочку Петрову, про Діонїзія та Кли-\nмента; з апостолів нема нїкого.\nВ нашім давнїйшім письменстві апокріфічні апостольські дїяня\nне мали такого впливу, як апокріфічні евангелія. Що у нас були\nпопулярні перерібки тих лєґенд, се бачимо хоч би зі збірки текстів\nпоміщених у отсьому томі. До них додамо тут іще хиба те, що\nз наших апокріфічних оповідань перейшло в піснї „Богогласника“.\nОтже маємо там (вид. 1790 р.) під ч. 162 пісню сьвятому Андрі-\nєви первозванному, де про апостольську проповідь його читаємо\nось що:\nПріемлетъ крестъ свой на рамо,\nГрядетъ сѣмо и овамо:\nВо страны Виѳинійскія,\nВо грады Македонскія,\nВсюду гласитъ Христа,\nЯко Бога иста.\n¹) Das Passional. Eine Legenden-Sammlung des dreizehnten Jahrhunderts.\nZum ersten Male herausgegeben und mit einem Glossar versehen von Fr. Karl Köpke.\nQuedlinburg und Leipzig 1852.\nПамятки т. III.\nIX",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            113,
+            1529,
+            154,
+            4
+          ],
+          "description": "Footnote rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1026,
+          110,
+          96,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LXV",
+            "bbox_xywh": [
+              1026,
+              110,
+              96,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "preface",
+        "kind": "body",
+        "bbox_xywh": [
+          106,
+          182,
+          990,
+          1045
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-line-01",
+            "text": "17. Оповіданє про сьв. Діонїзія: його астрономічні",
+            "bbox_xywh": [
+              106,
+              182,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-02",
+            "text": "студії; навернений Павлом; дїяльність у Парижі, мучеництво,",
+            "bbox_xywh": [
+              106,
+              219,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-03",
+            "text": "чудо з головою, яку тїло несло по її відрубаню.",
+            "bbox_xywh": [
+              106,
+              256,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-04",
+            "text": "18. Оповіданє про сьв. Луку: символи чотирьох еванге-",
+            "bbox_xywh": [
+              106,
+              293,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 53,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-05",
+            "text": "листів; Лука родом з Антіохії, лїкар, написав евангеліє в Ахаї; про",
+            "bbox_xywh": [
+              106,
+              331,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-06",
+            "text": "Луку маляра анї про його смерть нема нїчого.",
+            "bbox_xywh": [
+              106,
+              368,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 44,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-07",
+            "text": "19. Оповіданє про Симона й Юду. Симон Кананїт",
+            "bbox_xywh": [
+              106,
+              405,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-08",
+            "text": "і Юда-Тадей, брати Якова Алфеєвого, сини Марії Клеопової. Юда",
+            "bbox_xywh": [
+              106,
+              443,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-09",
+            "text": "був посланий з листом Ісусовим до Авгаря; далї йде текст листу",
+            "bbox_xywh": [
+              106,
+              480,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-10",
+            "text": "й лєґенда про вздоровленє Авгаря; відси Юда йде до Месопотамії",
+            "bbox_xywh": [
+              106,
+              517,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-11",
+            "text": "і сходить ся з Симоном у Персії, де оба вони борють ся з волхвами",
+            "bbox_xywh": [
+              106,
+              555,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-12",
+            "text": "Зароєсом і Арфаксом, яких Матвій прогнав із Етіопії, нарештї ги-",
+            "bbox_xywh": [
+              106,
+              592,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-13",
+            "text": "нуть убиті жерцями.",
+            "bbox_xywh": [
+              106,
+              629,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 19,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-14",
+            "text": "20. Оповіданє про сьв. Климента — на основі Псевдо-",
+            "bbox_xywh": [
+              106,
+              667,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 51,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-15",
+            "text": "Климентин та пізнїйшої пассії.",
+            "bbox_xywh": [
+              106,
+              704,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-16",
+            "text": "На основі Золотої Лєґенди написана старонїмецька поема „Ве-",
+            "bbox_xywh": [
+              106,
+              741,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-17",
+            "text": "ликий Пассіонал“,¹) де оброблено зрештою лиш 75 оповідань, в тім",
+            "bbox_xywh": [
+              106,
+              779,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-18",
+            "text": "числї з нашого циклю лише оповіданя про сьв. Стефана (оба зве-",
+            "bbox_xywh": [
+              106,
+              816,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-19",
+            "text": "дені в одно), про Петронїлю дочку Петрову, про Діонїзія та Кли-",
+            "bbox_xywh": [
+              106,
+              853,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-20",
+            "text": "мента; з апостолів нема нїкого.",
+            "bbox_xywh": [
+              106,
+              891,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-21",
+            "text": "В нашім давнїйшім письменстві апокріфічні апостольські дїяня",
+            "bbox_xywh": [
+              106,
+              928,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-22",
+            "text": "не мали такого впливу, як апокріфічні евангелія. Що у нас були",
+            "bbox_xywh": [
+              106,
+              965,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-23",
+            "text": "популярні перерібки тих лєґенд, се бачимо хоч би зі збірки текстів",
+            "bbox_xywh": [
+              106,
+              1003,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-24",
+            "text": "поміщених у отсьому томі. До них додамо тут іще хиба те, що",
+            "bbox_xywh": [
+              106,
+              1040,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-25",
+            "text": "з наших апокріфічних оповідань перейшло в піснї „Богогласника“.",
+            "bbox_xywh": [
+              106,
+              1077,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-26",
+            "text": "Отже маємо там (вид. 1790 р.) під ч. 162 пісню сьвятому Андрі-",
+            "bbox_xywh": [
+              106,
+              1115,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-27",
+            "text": "єви первозванному, де про апостольську проповідь його читаємо",
+            "bbox_xywh": [
+              106,
+              1152,
+              990,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-line-28",
+            "text": "ось що:",
+            "bbox_xywh": [
+              106,
+              1189,
+              990,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "verse-1",
+        "kind": "body",
+        "bbox_xywh": [
+          333,
+          1267,
+          510,
+          222
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-1-line-01",
+            "text": "Пріемлетъ крестъ свой на рамо,",
+            "bbox_xywh": [
+              333,
+              1267,
+              510,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 30,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-02",
+            "text": "Грядетъ сѣмо и овамо:",
+            "bbox_xywh": [
+              333,
+              1304,
+              510,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-03",
+            "text": "Во страны Виѳинійскія,",
+            "bbox_xywh": [
+              333,
+              1341,
+              510,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-04",
+            "text": "Во грады Македонскія,",
+            "bbox_xywh": [
+              333,
+              1378,
+              510,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-05",
+            "text": "Всюду гласитъ Христа,",
+            "bbox_xywh": [
+              333,
+              1415,
+              510,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-06",
+            "text": "Яко Бога иста.",
+            "bbox_xywh": [
+              333,
+              1452,
+              510,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 14,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          108,
+          1559,
+          990,
+          98
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "apparatus-line-01",
+            "text": "¹) Das Passional. Eine Legenden-Sammlung des dreizehnten Jahrhunderts.",
+            "bbox_xywh": [
+              108,
+              1559,
+              990,
+              31
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 3,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 3,
+                "end": 70,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-02",
+            "text": "Zum ersten Male herausgegeben und mit einem Glossar versehen von Fr. Karl Köpke.",
+            "bbox_xywh": [
+              108,
+              1591,
+              990,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 80,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "apparatus-line-03",
+            "text": "Quedlinburg und Leipzig 1852.",
+            "bbox_xywh": [
+              108,
+              1624,
+              990,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 29,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "printer-mark",
+        "kind": "other",
+        "bbox_xywh": [
+          187,
+          1670,
+          162,
+          26
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "printer-mark-line-01",
+            "text": "Памятки т. III.",
+            "bbox_xywh": [
+              187,
+              1670,
+              162,
+              25
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signature",
+        "kind": "other",
+        "bbox_xywh": [
+          1016,
+          1659,
+          41,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "signature-line-01",
+            "text": "IX",
+            "bbox_xywh": [
+              1016,
+              1659,
+              41,
+              28
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00083-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "preface-line-12",
+        "reading": "Зароєсом",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "verse-1-line-03",
+        "reading": "Виѳинійскія",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "verse-1-line-06",
+        "reading": "иста.",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      }
+    ]
+  }
+}

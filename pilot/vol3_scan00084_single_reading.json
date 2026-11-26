@@ -1,0 +1,923 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 84,
+  "printed_page_observed": "LXVI",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00084.jpg",
+  "source_image_sha256": "6e78c517e9dff2d1b16e2e5a758582c338c7e6705a7216b8c0f0e8308e979713",
+  "reading": {
+    "reader_id": "gpt62-v3-s00084-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-81-90-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical spelling, stanza boundaries, language spans and printed anomalies. Geometry estimated; agent-unverified.",
+    "raw_response": "LXVI\nПретерпѣ же тамо многа\nЗа проповѣдь Христа Бога:\nБивши каменьми метаху,\nПерсти, зубы исторгаху,\nНо се здравъ яви ся,\nОтъ язвъ исцѣли ся.\nВизантію прохождаетъ,\nПервый вѣры научаетъ,\nМногихъ на путь правъ настави,\nПресвитеры имъ постави,\nДостиже Евксина\nВъ честь Божія Сына.\nПостиглъ страны Россійскія,\nВшедъ на горы Кіевскія,\nНа нихже крестъ водружаетъ,\nРоссіи провѣщаваеть:\nБожіей сіяти\nВо ней благодати.\nКреста истинный рачитель,\nКрестной тайны поучитель\nВ Ахаіи научаше,\nВѣрныхъ словомъ утверждаше,\nНа крестѣ распя ся,\nЛюбезно сконча ся.\nЯк бачимо, оповіданє про Андрієві пригоди в краю людожер-\nцїв відгукнуло ся в другій цитованій тут строфі досить невиразно.\nПісня про Стефана (ч. 178) не має нїяких апокріфічних де-\nталїв. Пісня про Івана Богослова (ч. 88) знає про нього лиш ось\nякі апокріфічні деталї:\nЖилъ долго на свѣтѣ,\nВ стодвадцятомъ лѣтѣ\nВелитъ гробъ копати,\nНо долгъ смерти дати\nПрійдетъ в часъ Антихриста.\nНе о много більше апокріфічного знає й слїдуюча пісня про\nсього апостола:",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          126,
+          124,
+          96,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "LXVI",
+            "bbox_xywh": [
+              126,
+              124,
+              96,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "verse-1",
+        "kind": "body",
+        "bbox_xywh": [
+          336,
+          190,
+          434,
+          205
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-1-line-01",
+            "text": "Претерпѣ же тамо многа",
+            "bbox_xywh": [
+              336,
+              190,
+              434,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-02",
+            "text": "За проповѣдь Христа Бога:",
+            "bbox_xywh": [
+              336,
+              224,
+              434,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-03",
+            "text": "Бивши каменьми метаху,",
+            "bbox_xywh": [
+              336,
+              258,
+              434,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-04",
+            "text": "Персти, зубы исторгаху,",
+            "bbox_xywh": [
+              336,
+              292,
+              434,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-05",
+            "text": "Но се здравъ яви ся,",
+            "bbox_xywh": [
+              336,
+              326,
+              434,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-1-line-06",
+            "text": "Отъ язвъ исцѣли ся.",
+            "bbox_xywh": [
+              336,
+              360,
+              434,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "verse-2",
+        "kind": "body",
+        "bbox_xywh": [
+          336,
+          429,
+          548,
+          206
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-2-line-01",
+            "text": "Византію прохождаетъ,",
+            "bbox_xywh": [
+              336,
+              429,
+              548,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-2-line-02",
+            "text": "Первый вѣры научаетъ,",
+            "bbox_xywh": [
+              336,
+              463,
+              548,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 21,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-2-line-03",
+            "text": "Многихъ на путь правъ настави,",
+            "bbox_xywh": [
+              336,
+              497,
+              548,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 30,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-2-line-04",
+            "text": "Пресвитеры имъ постави,",
+            "bbox_xywh": [
+              336,
+              532,
+              548,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-2-line-05",
+            "text": "Достиже Евксина",
+            "bbox_xywh": [
+              336,
+              566,
+              548,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 15,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-2-line-06",
+            "text": "Въ честь Божія Сына.",
+            "bbox_xywh": [
+              336,
+              600,
+              548,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "verse-3",
+        "kind": "body",
+        "bbox_xywh": [
+          342,
+          672,
+          510,
+          205
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-3-line-01",
+            "text": "Постиглъ страны Россійскія,",
+            "bbox_xywh": [
+              342,
+              672,
+              510,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-3-line-02",
+            "text": "Вшедъ на горы Кіевскія,",
+            "bbox_xywh": [
+              342,
+              706,
+              510,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-3-line-03",
+            "text": "На нихже крестъ водружаетъ,",
+            "bbox_xywh": [
+              342,
+              740,
+              510,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-3-line-04",
+            "text": "Россіи провѣщаваеть:",
+            "bbox_xywh": [
+              342,
+              774,
+              510,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-3-line-05",
+            "text": "Божіей сіяти",
+            "bbox_xywh": [
+              342,
+              808,
+              510,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 12,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-3-line-06",
+            "text": "Во ней благодати.",
+            "bbox_xywh": [
+              342,
+              842,
+              510,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 17,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "verse-4",
+        "kind": "body",
+        "bbox_xywh": [
+          342,
+          912,
+          527,
+          210
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-4-line-01",
+            "text": "Креста истинный рачитель,",
+            "bbox_xywh": [
+              342,
+              912,
+              527,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 25,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-4-line-02",
+            "text": "Крестной тайны поучитель",
+            "bbox_xywh": [
+              342,
+              947,
+              527,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 24,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-4-line-03",
+            "text": "В Ахаіи научаше,",
+            "bbox_xywh": [
+              342,
+              982,
+              527,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 16,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-4-line-04",
+            "text": "Вѣрныхъ словомъ утверждаше,",
+            "bbox_xywh": [
+              342,
+              1017,
+              527,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-4-line-05",
+            "text": "На крестѣ распя ся,",
+            "bbox_xywh": [
+              342,
+              1052,
+              527,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 19,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-4-line-06",
+            "text": "Любезно сконча ся.",
+            "bbox_xywh": [
+              342,
+              1087,
+              527,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface-1",
+        "kind": "body",
+        "bbox_xywh": [
+          122,
+          1154,
+          970,
+          188
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-1-line-01",
+            "text": "Як бачимо, оповіданє про Андрієві пригоди в краю людожер-",
+            "bbox_xywh": [
+              122,
+              1154,
+              970,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-1-line-02",
+            "text": "цїв відгукнуло ся в другій цитованій тут строфі досить невиразно.",
+            "bbox_xywh": [
+              122,
+              1191,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-1-line-03",
+            "text": "Пісня про Стефана (ч. 178) не має нїяких апокріфічних де-",
+            "bbox_xywh": [
+              122,
+              1229,
+              970,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-1-line-04",
+            "text": "талїв. Пісня про Івана Богослова (ч. 88) знає про нього лиш ось",
+            "bbox_xywh": [
+              122,
+              1266,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-1-line-05",
+            "text": "які апокріфічні деталї:",
+            "bbox_xywh": [
+              122,
+              1304,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "verse-5",
+        "kind": "body",
+        "bbox_xywh": [
+          378,
+          1371,
+          432,
+          178
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-5-line-01",
+            "text": "Жилъ долго на свѣтѣ,",
+            "bbox_xywh": [
+              378,
+              1371,
+              432,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-5-line-02",
+            "text": "В стодвадцятомъ лѣтѣ",
+            "bbox_xywh": [
+              378,
+              1406,
+              432,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-5-line-03",
+            "text": "Велитъ гробъ копати,",
+            "bbox_xywh": [
+              378,
+              1442,
+              432,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-5-line-04",
+            "text": "Но долгъ смерти дати",
+            "bbox_xywh": [
+              378,
+              1477,
+              432,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 20,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "verse-5-line-05",
+            "text": "Прійдетъ в часъ Антихриста.",
+            "bbox_xywh": [
+              378,
+              1513,
+              432,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 27,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "preface-2",
+        "kind": "body",
+        "bbox_xywh": [
+          125,
+          1582,
+          972,
+          70
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "preface-2-line-01",
+            "text": "Не о много більше апокріфічного знає й слїдуюча пісня про",
+            "bbox_xywh": [
+              125,
+              1582,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "preface-2-line-02",
+            "text": "сього апостола:",
+            "bbox_xywh": [
+              125,
+              1617,
+              972,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00084-20261126",
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "verse-3-line-04",
+        "reading": "провѣщаваеть",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "verse-2-line-05",
+        "reading": "Евксина",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "verse-5-line-02",
+        "reading": "стодвадцятомъ",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      },
+      {
+        "line_id": "verse-5-line-05",
+        "reading": "Прійдетъ",
+        "reason": "Provisional historical spelling, source glyph or printed anomaly; no silent normalization."
+      }
+    ]
+  }
+}
