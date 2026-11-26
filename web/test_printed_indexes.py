@@ -40,6 +40,51 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertTrue(all(not r["missing"] and not r["unresolved"] and not r["no_refs"] for r in report), report)
         self.assertEqual(sum(r["entries"] for r in report), sum(len(s["entries"]) for s in data["sections"]))
 
+    def test_glossary_mention_review(self):
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        entries = [e for e in data["sections"][3]["entries"] if e["source"]["scan"] == 459]
+        refs = [(e, r, t) for e in entries for r in e["refs"] for t in r["targets"]]
+        self.assertEqual(len(entries), 20)
+        self.assertEqual(len(refs), 21)
+        self.assertTrue(all(t.get("mention_review") for e, r, t in refs))
+        by_label = {e["label"]: e for e in entries}
+        bra = by_label["Брачина"]["refs"][0]
+        self.assertEqual((bra["printed_literal"], bra["literal"], bra["role"]), ("238", "239", "editorial_citation"))
+        self.assertEqual(bra["targets"][0]["anchor"]["line_id"], "tabernacle-l005")
+        bagr = by_label["Багръ"]["refs"][0]["targets"][0]
+        self.assertEqual([x["line_id"] for x in bagr["mention_review"]["lines"]], ["enoch-vision-l010", "enoch-vision-l011"])
+        self.assertEqual(bagr["anchor"]["line_id"], "enoch-vision-l010")
+        bodr = by_label["Бодръ"]["refs"][0]["targets"][0]
+        self.assertEqual(len(bodr["mention_review"]["lines"]), 2)
+        varilo = by_label["Варило"]["refs"]
+        self.assertEqual(varilo[0]["targets"][0]["mention_review"]["status"], "reading_conflict")
+        self.assertNotIn("anchor", varilo[0]["targets"][0])
+        self.assertEqual(varilo[1]["targets"][0]["anchor"]["line_id"], "issachar-apparatus-l002")
+        self.assertEqual(by_label["Букъ"]["refs"][0]["targets"][0]["mention_review"]["status"], "not_found")
+        for e, r, t in refs:
+            review = t["mention_review"]
+            draft = json.loads((ROOT / review["path"]).read_text(encoding="utf-8"))
+            lines = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
+            for line in review["lines"]:
+                self.assertEqual(lines[line["line_id"]], line["text"])
+            if review["status"] != "attested":
+                self.assertNotIn("anchor", t)
+
+    def test_glossary_review_stale_target_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot = Path(tmp)
+            for scan in [459, 114, 313, 314]:
+                source = ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)
+                shutil.copyfile(source, pilot / source.name)
+            def brachina():
+                return next(e for e in build_printed_indexes(pilot, "a" * 40)["sections"][3]["entries"] if e["label"] == "Брачина")["refs"][0]
+            self.assertEqual(brachina()["literal"], "239")
+            path = pilot / "vol1_scan00314_single_reading.json"
+            path.write_bytes(path.read_bytes() + b"\n")
+            self.assertEqual(brachina()["literal"], "238")
+            self.assertNotIn("anchor", brachina()["targets"][0])
+            self.assertNotIn("mention_review", brachina()["targets"][0])
+
     def test_real_pilot(self):
         data = build_printed_indexes(ROOT / "pilot", "a" * 40)
         self.assertEqual(data["ref"], "a" * 40)
