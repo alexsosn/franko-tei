@@ -912,6 +912,8 @@ def link_audit(data):
     for section in data["sections"]:
         missing, unresolved, no_refs = [], [], []
         pages, estimated, anchored = 0, 0, 0
+        mention_counts = defaultdict(int)
+        mention_exceptions = []
         for entry in section["entries"]:
             ident = dict(id=entry["id"], label=entry["label"])
             if not entry["refs"] and not entry.get("crossrefs"):
@@ -920,13 +922,20 @@ def link_audit(data):
                 pages += len(ref["targets"])
                 estimated += sum(bool(t.get("estimated")) for t in ref["targets"])
                 anchored += sum(bool(t.get("anchor")) for t in ref["targets"])
+                for target in ref["targets"]:
+                    review = target.get("mention_review")
+                    if review:
+                        mention_counts[review["status"]] += 1
+                        if review["status"] != "attested":
+                            mention_exceptions.append(dict(**ident, page=target["page"], status=review["status"], note=review["note"]))
                 if ref["missing"]:
                     missing.append(dict(**ident, literal=ref["literal"], pages=ref["missing"]))
                 if ref["role"] == "unresolved":
                     unresolved.append(dict(**ident, literal=ref["literal"]))
         report.append(dict(kind=section["kind"], entries=len(section["entries"]),
                            linked_pages=pages, estimated_pages=estimated,
-                           line_anchors=anchored, missing=missing, unresolved=unresolved,
+                           line_anchors=anchored, mention_review=dict(mention_counts), mention_exceptions=mention_exceptions,
+                           missing=missing, unresolved=unresolved,
                            no_refs=no_refs, crossrefs=sum(len(e.get("crossrefs", [])) for e in section["entries"])))
     return report
 
@@ -1070,6 +1079,80 @@ def reconcile_motif_reference(files, targets, entry):
     entry["refs"] = [ref]
 
 
+# Manual mention-level review of the first glossary page. The source entry
+# itself is already pinned by SOURCE_BLOBS; each destination is separately
+# pinned. Keep negative/conflicting observations separate from attestations.
+GLOSSARY_MENTION_REVIEWS = {
+    ("v1-459-left-l001", "39"): (39, "e52bbec8c037981ea4211c5c52af02dd6e35326a", "attested", ["enoch-vision-l010","enoch-vision-l011"], "ба- / гры (word split across two lines)"),
+    ("v1-459-left-l003", "52"): (52, "d2d1b7c27e456929976a480a17cdf7417ce9ca19", "attested", ["enoch-flood-l002"], "б л а д о т в о́ р ц ы (spaced type)"),
+    ("v1-459-left-l004", "176"): (176, "b09717d3027997cf405bd574a112cd27328e9e68", "attested", ["reuben-exhortation-l011","reuben-exhortation-l015"], "бодрыя; бодрыи (two occurrences)"),
+    ("v1-459-left-l007", "63"): (63, "49637c442518962820ba85e4965f70f99353355b", "attested", ["enoch-colophon-l012"], "бравїя"),
+    ("v1-459-left-l008", "238"): (239, "a082132a80faebe611eadb3f81349869f965b888", "attested", ["tabernacle-l005"], "брачину (same line as Виса; no occurrence in draft of cited p238)"),
+    ("v1-459-left-l010", "107"): (107, "2f6175ac753d060741c7e2f74b600c66fcd919ae", "not_found", [], "No matching word in current cited-page reading; recheck facsimile."),
+    ("v1-459-left-l013", "21"): (21, "ee1e6de5b8ef51739de48d93c70a2126f23cd15c", "attested", ["witness-a-adam-eve-continuation-l016","witness-a-adam-eve-continuation-l026","witness-a-adam-eve-continuation-l027"], "бѣлингъ; бѣ- / лингъ (the index gives Бѣлигъ; sign agreed between Adam and Eve)"),
+    ("v1-459-left-l015", "195"): (195, "171099c509adba8af78987aa50101c031d1c28f4", "reading_conflict", ["issachar-opening-l015"], "Index quotation прелесть варил; current body draft reads прелесть варна. Reinspect image."),
+    ("v1-459-left-l015", "197"): (197, "30adf32dbdd1934efcc6304ecdc0c1395e1ab510", "attested", ["issachar-apparatus-l002"], "прелесть варила (explicit variant)"),
+    ("v1-459-left-l021", "188"): (188, "e088a1c6fb131cc43bdd4963e057456cfd84fe1e", "attested", ["judah-youth-l017"], "варивъ"),
+    ("v1-459-right-l001", "190"): (190, "77a7f275a4d15c1aa8fe9204723f5ffb473a5ae2", "attested", ["judah-family-continuation-l006"], "виничне (lexical correspondence; spelling differs from index Виничие)"),
+    ("v1-459-right-l003", "239"): (239, "a082132a80faebe611eadb3f81349869f965b888", "attested", ["tabernacle-l005"], "вису; index gloss quotes кису, a conflicting initial letter; preserve both"),
+    ("v1-459-right-l005", "140"): (140, "4e2296f1aed5881256ee723d0cc6fe649a4019cf", "not_found", [], "No matching word in current cited-page reading; recheck facsimile."),
+    ("v1-459-right-l007", "236"): (236, "1ed6b1698d8a957fa0ee488b023f9ea8106b7c6c", "attested", ["pharaoh-petison-end-l007"], "волчби"),
+    ("v1-459-right-l009", "182"): (182, "22a01b9a5dae2eb3907369a5c39cad0378ddb8ff", "attested", ["levi-angel-l027"], "врежа"),
+    ("v1-459-right-l011", "19"): (19, "223061661d3db30f32d51b4e95d79acf77c0a4c5", "not_found", [], "No matching word in current cited-page reading; recheck facsimile."),
+    ("v1-459-right-l014", "212"): (212, "0a9c841b7cd29620a32433da36718169b65bd6d4", "attested", ["joseph-opening-l023"], "врѣжаетъ"),
+    ("v1-459-right-l016", "187"): (187, "69a107d7e5351c745e8a8734941e5c98203850e6", "not_found", [], "No matching word in current cited-page reading; recheck facsimile."),
+    ("v1-459-right-l018", "217"): (217, "5b0f0be67c424f675c6f0e5d47b41c88b5507131", "reading_conflict", ["joseph-l027"], "Current draft бꙋсиннꙋ, not Вѹсиненъ; textile context supports checking the initial letter in image."),
+    ("v1-459-right-l020", "183"): (183, "b4565c00715c6040158d0e62c55f971232e9cc71", "reading_conflict", ["levi-ordination-l016"], "Current draft учину, not Вѹчина; possible initial-letter or word-boundary discrepancy; inspect image."),
+    ("v1-459-right-l021", "182"): (182, "22a01b9a5dae2eb3907369a5c39cad0378ddb8ff", "attested", ["levi-angel-l007"], "възбнувъ"),
+}
+
+
+def review_glossary_mentions(files, targets, entry):
+    if entry["source"]["scan"] != 459 or entry["source"]["blob"] != SOURCE_BLOBS[459]:
+        return
+    for i, citation in enumerate(entry["refs"]):
+        spec = GLOSSARY_MENTION_REVIEWS.get((entry["id"], citation["literal"]))
+        if spec is None:
+            continue
+        page, blob, status, line_ids, note = spec
+        scan = targets.get(page)
+        if scan not in files or files[scan][2] != blob:
+            continue
+        path, draft, _ = files[scan]
+        evidence = []
+        for line_id in line_ids:
+            hits = [(region, line) for region in draft["reading"]["regions"]
+                    for line in region["lines"] if line["id"] == line_id]
+            if len(hits) != 1 or hits[0][0]["kind"] not in ("body", "note", "heading"):
+                break
+            region, line = hits[0]
+            evidence.append(dict(line_id=line_id, text=line["text"], region_kind=region["kind"]))
+        if len(evidence) != len(line_ids):
+            continue
+        if str(page) != citation["literal"]:
+            # The only changed destination in this slice: source p238
+            # was inspected too. If either reading changes, fail closed.
+            old_scan = targets.get(238)
+            if (entry["id"] != "v1-459-left-l008" or citation["literal"] != "238"
+                    or old_scan not in files or files[old_scan][2] != "55399194398600e093ee9b4a863baa545e1f574e"):
+                continue
+            original = citation
+            citation = make_ref(str(page), targets, "editorial_citation")
+            citation["printed_literal"] = original["literal"]
+            citation["original_destination_evidence"] = dict(path="pilot/" + files[old_scan][0].name, blob=files[old_scan][2])
+            entry["refs"][i] = citation
+        target = next((t for t in citation["targets"] if t["page"] == page and t["scan"] == scan), None)
+        if target is None:
+            continue
+        target["mention_review"] = dict(status=status, path="pilot/" + path.name,
+                                        blob=blob, lines=evidence, note=note)
+        if status == "attested" and evidence:
+            first = evidence[0]
+            target["anchor"] = dict(suffix="single_reading", reader_id=draft["reading"]["reader_id"],
+                                    line_id=first["line_id"], text=first["text"],
+                                    region_kind=first["region_kind"])
+
+
 def build_printed_indexes(pilot, ref, supplements=None):
     supplements = supplements or {}
     files = {}
@@ -1204,6 +1287,8 @@ def build_printed_indexes(pilot, ref, supplements=None):
             reconcile_ishmael_reference(files, targets, entry)
             reconcile_darius_reference(files, targets, entry)
             reconcile_motif_reference(files, targets, entry)
+            if section["kind"] == "glossary":
+                review_glossary_mentions(files, targets, entry)
             entry["crossrefs"] = [dict(id=ident, label=by_id[ident]["label"])
                                   for ident in CROSSREFS.get(entry["id"], []) if ident in by_id]
             for citation in entry["refs"]:
