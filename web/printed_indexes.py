@@ -636,8 +636,23 @@ def build_printed_indexes(pilot, ref, supplements=None):
             if len(folios) == 1:
                 return folios[0]
         return printed
-    targets, estimated = complete_folio_targets((scan, observed(d))
-                                                for scan, (_, d, _) in files.items() if 76 <= scan <= 415)
+    observations = {scan: observed(d) for scan, (_, d, _) in files.items() if 76 <= scan <= 415}
+    # Scan 222 says 247 in the current draft. Its Jacob testament text
+    # continues directly from 146 into 148; actual 247 (scan 322) is in
+    # the Moses narrative and has neighbours 246/248. Preserve both
+    # recorded folios; allow only this exact evidence-pinned exception.
+    evidence = {
+        221: ("146", "dade7e4824ed53cba87990f2852a987745d5ff74"),
+        222: ("247", "057d06e0ad6b78e4bcf26ececf4ff3c4281859e6"),
+        223: ("148", "c45e9c7cd4f00ae6d0178074477f675bf0e39eec"),
+        321: ("246", "adb444890764aee426f2bcd1ccea335b4177493b"),
+        322: ("247", "65050f593b365479157c010bb06bd67b3cd73478"),
+        323: ("248", "6df2f8e15a4bc8b09c0112e0f043d735bfd1ad28"),
+    }
+    if all(scan in files and observations.get(scan) == page and files[scan][2] == blob
+           for scan, (page, blob) in evidence.items()):
+        observations[222] = None
+    targets, estimated = complete_folio_targets(observations.items())
     sections = []
     for kind, start, end, reader, partitions in SECTIONS:
         draft_scans = [n for n in range(start, end + 1) if n in files]
