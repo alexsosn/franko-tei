@@ -93,6 +93,49 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#readerSettings #uiLocale').count(), 0)
             browser.close()
 
+    def test_printed_page_navigation(self):
+        html = reader_html().replace('updateMode();load();', 'updateMode();load=()=>{activeScan=Number($(\'page\').value);syncPageJump();};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.set_content(html)
+            selector = page.locator('#pageNumbering')
+            number = page.locator('#printedPage')
+            self.assertEqual(selector.input_value(), 'scan')
+            self.assertEqual(page.locator('#go').inner_text(), 'Go')
+            selector.select_option('printed')
+            self.assertTrue(number.is_visible())
+            self.assertEqual(number.input_value(), '')  # unnumbered scan
+            for volume, label, scan in [('1','1',76),('1','LXVI',75),('1','147',222),
+                                        ('2','436',518),('2','ii',6),('3','360',446),
+                                        ('3','X',28),('4','1',53),('4','XXXVIII',42),
+                                        ('5','297',309),('5','II',12)]:
+                page.evaluate('(v) => setReaderVolume(v)', volume)
+                number.fill(label)
+                number.press('Enter')
+                self.assertEqual(page.locator('#page').input_value(), str(scan))
+                self.assertEqual(number.input_value(), label.upper())
+            for invalid in ('0','-1','1.5','IIII','298','garbage'):
+                number.fill(invalid)
+                page.locator('#go').click()
+                self.assertEqual(page.locator('#page').input_value(), '12')
+                self.assertEqual(number.get_attribute('aria-invalid'), 'true')
+            selector.select_option('scan')
+            self.assertEqual(page.locator('#page').input_value(), '12')
+            page.locator('#page').fill('13')
+            page.locator('#go').click()
+            selector.select_option('printed')
+            self.assertEqual(number.input_value(), '1')
+            page.locator('#prev').click()
+            self.assertEqual(number.input_value(), 'II')
+            for width in (320,390,768,1280):
+                page.set_viewport_size({'width':width,'height':700})
+                self.assertTrue(page.locator('.mainbar').evaluate('el => el.scrollWidth <= el.clientWidth'))
+            self.choose_locale(page, 'uk')
+            self.assertEqual(selector.locator('option[value=printed]').inner_text(), 'Сторінки')
+            self.assertEqual(page.locator('#go').inner_text(), 'Перейти')
+            browser.close()
+
     def test_volume_one_contents_records(self):
         # Edition-specific regression checks; source scan and printed folio are distinct.
         import json
