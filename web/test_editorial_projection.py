@@ -44,6 +44,41 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertIn(line["original"],original["text"])
             self.assertNotIn(line["text"],original["text"])
             self.assertEqual(len(corrected["text"].split("\n")),len(original["text"].split("\n")))
+            # Annotation assets must join one-to-one with the existing literal
+            # index at the exact same revision, without duplicating text.
+            for volume in map(str, range(1, 6)):
+                literals=json.loads((output/f"vol{volume}.json").read_text())
+                annotations=json.loads((output/f"annotation-vol{volume}.json").read_text())
+                self.assertEqual((annotations["ref"],annotations["volume"]), (REF,volume))
+                self.assertEqual(annotations["offset_unit"],"unicode_code_point")
+                key=lambda x:(x["scan"],x["suffix"],x.get("reviewed",False))
+                self.assertEqual([key(r) for r in literals["entries"]],
+                                 [key(r) for r in annotations["entries"]])
+                self.assertEqual(len({key(r) for r in annotations["entries"]}),
+                                 len(annotations["entries"]))
+                for literal, ann in zip(literals["entries"],annotations["entries"]):
+                    self.assertNotIn("annotation",literal)
+                    self.assertNotIn("text",ann)
+                    text=literal["text"]
+                    cursor=0
+                    lines=ann["annotation"]["lines"]
+                    for i, anchor in enumerate(lines):
+                        self.assertEqual(anchor["start"],cursor)
+                        self.assertGreaterEqual(anchor["end"],cursor)
+                        cursor=anchor["end"]
+                        if i+1<len(lines):
+                            self.assertEqual(text[cursor:cursor+1],"\n")
+                            cursor+=1
+                    self.assertEqual(cursor,len(text))
+            metadata=json.loads((output/"annotation-vol1.json").read_text())["entries"]
+            reviewed=next(r for r in metadata if r["scan"]==104 and
+                          r["suffix"]=="single_reading" and r.get("reviewed"))
+            self.assertEqual(reviewed["annotation"]["candidate_blob"],page["blob"])
+            anchor=next(a for a in reviewed["annotation"]["lines"]
+                        if a["line_id"]=="witness-e-death-adam-l003")
+            self.assertEqual(corrected["text"][anchor["start"]:anchor["end"]],line["text"])
+            self.assertEqual(anchor["language_status"],"needs_reannotation")
+            self.assertEqual(anchor["language_spans"],[])
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
             self.assertTrue(any(p["volume"]=="4" and p["scan"]==68 for p in overlay["pages"]))
 
@@ -76,6 +111,15 @@ class EditorialProjectionTests(unittest.TestCase):
             for literal in expected.values():
                 self.assertIn(literal,corrected["text"])
                 self.assertNotIn(literal,original["text"])
+            metadata=json.loads((output/"annotation-vol1.json").read_text())["entries"]
+            reviewed=next(r for r in metadata if r["scan"]==24 and
+                          r["suffix"]==page["suffix"] and r.get("reviewed"))
+            self.assertEqual(reviewed["annotation"]["candidate_blob"],page["blob"])
+            for identifier, literal in expected.items():
+                anchor=next(a for a in reviewed["annotation"]["lines"] if a["line_id"]==identifier)
+                self.assertEqual(corrected["text"][anchor["start"]:anchor["end"]],literal)
+                self.assertEqual(anchor["language_status"],"supplementary_annotation")
+                self.assertEqual(anchor["language_spans"],rows[identifier]["language_spans"])
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
 
     def test_new_facsimile_pages_are_published(self):
