@@ -1,0 +1,800 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 114,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00114.jpg",
+  "source_image_sha256": "8fd31eec2ce692e913fe1c1dbdcfe93fb75ea26ca382aa3a48259e75dabc3d05",
+  "reading": {
+    "reader_id": "gpt62-v3-s00114-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-111-120-20261126",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Read pinned native image directly; preserve physical lines, historical Cyrillic, editorial notes and neutral footnote references. Exact historical diacritics and language classification provisional; geometry estimated.",
+    "raw_response": "III. Оповіданя про сьв. Павла.\nА. Замойський рукопис стор. 850—860.\nМцⷭ҇а декабрѧ кд҃. мч҃ніе ст҃го великого перво-\nмч҃нка Стефана. Ги҃ блⷭ҇ви Ѡче.) Памяти добры предлежа-\nщаа, възлюбленїи, поноудих ся написати Хв҃ѣ цр҃кви ст҃го мч҃нка\nСтефана в на҃ бывшее житїе, абїе же за миръ мл҃тва и прїатїе\nмоукъ и съвершенїе вѣнецъ и даръ побѣдный горнаго званїа.\nБы҃ бо во ѡно время по Га҃ нашего Іс҃а Ха҃ плотномоу пришествїю\nи по стрⷭ҇техъ крⷭ҇тных и по см҃рти и по воскрⷭ҇нїи же и по восше-\nствїи и ко Ѡц҃ю пришествїи, мимошедшим двѣма лѣтома, бы҃\nвъзысканїа велика зѣло межю Іюдѣи съ Иеллины ѿ Іс҃ѣ Наза-\nраниниѣ, како ся роди и како жити плотїю и како ли распятъ\nбысть и оумре и въскрⷭ҇се се первенецъ ѿ мр҃твых. ѡво бо гл҃ахоу,\nяко пр҃рокъ ся яви, а дроузїи гл҃ахоу, яко Сн҃ъ Бж҃їи бѣ тои.\nи кличь великъ бѣ в народѣ, събраша бо ся еллинстїи моужїе\nхоудожнїи, мдр҃ыи ѿ Ефїѡпїа и Фиваиды и ѿ Александреа, Іе-\nрл҃ма и ѿ Асїа же и Маоутринїа и Ваоулона, и ѿ ча҃ перваго до\nча҃ д҃-го кличь восхождаша, яко се громъ бы҃ великъ. Тогда ставъ\nСтефанъ на мѣстѣ висоцѣ, моужь книженъ и моудръ, чт҃нъ\nвсѣмъ людемъ, рода Авраамля, племени Веньамина, и потрясъ\nроукою, гласомъ же*) великимъ рече: „Братье старїи [и] оунїи,\nслышите ѿ мене нн҃ѣ; воскоую оумножисте вашь кличь, еда ся\nсъбра всь Іерл҃мъ? но бл҃жнъ чл҃вкъ тои, иже не ста на двое ѿ\nХт҃ѣ Іс҃е Сн҃а Бг҃а живаго. то бо є иже и хищренїемъ чл҃колюбь-\nствїа сшед с нб҃си грѣхъ наших дѣля и гроубости дѣля людь-\n*) В рукоп. через помилку чл҃мъ жереломъ.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            565,
+            598,
+            111,
+            6
+          ],
+          "description": "Printed heading rule."
+        },
+        {
+          "bbox_xywh": [
+            161,
+            1555,
+            214,
+            5
+          ],
+          "description": "Footnote rule."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          304,
+          529,
+          632,
+          48
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "heading-line-01",
+            "text": "III. Оповіданя про сьв. Павла.",
+            "bbox_xywh": [
+              304,
+              529,
+              632,
+              47
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "subheading",
+        "kind": "heading",
+        "bbox_xywh": [
+          326,
+          650,
+          596,
+          46
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "subheading-line-01",
+            "text": "А. Замойський рукопис стор. 850—860.",
+            "bbox_xywh": [
+              326,
+              650,
+              596,
+              45
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 36,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "text",
+        "kind": "body",
+        "bbox_xywh": [
+          152,
+          718,
+          947,
+          808
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "text-line-01",
+            "text": "Мцⷭ҇а декабрѧ кд҃. мч҃ніе ст҃го великого перво-",
+            "bbox_xywh": [
+              152,
+              718,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 47,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-02",
+            "text": "мч҃нка Стефана. Ги҃ блⷭ҇ви Ѡче.) Памяти добры предлежа-",
+            "bbox_xywh": [
+              152,
+              753,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-03",
+            "text": "щаа, възлюбленїи, поноудих ся написати Хв҃ѣ цр҃кви ст҃го мч҃нка",
+            "bbox_xywh": [
+              152,
+              788,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-04",
+            "text": "Стефана в на҃ бывшее житїе, абїе же за миръ мл҃тва и прїатїе",
+            "bbox_xywh": [
+              152,
+              823,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-05",
+            "text": "моукъ и съвершенїе вѣнецъ и даръ побѣдный горнаго званїа.",
+            "bbox_xywh": [
+              152,
+              858,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-06",
+            "text": "Бы҃ бо во ѡно время по Га҃ нашего Іс҃а Ха҃ плотномоу пришествїю",
+            "bbox_xywh": [
+              152,
+              893,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-07",
+            "text": "и по стрⷭ҇техъ крⷭ҇тных и по см҃рти и по воскрⷭ҇нїи же и по восше-",
+            "bbox_xywh": [
+              152,
+              928,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 66,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-08",
+            "text": "ствїи и ко Ѡц҃ю пришествїи, мимошедшим двѣма лѣтома, бы҃",
+            "bbox_xywh": [
+              152,
+              963,
+              947,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-09",
+            "text": "възысканїа велика зѣло межю Іюдѣи съ Иеллины ѿ Іс҃ѣ Наза-",
+            "bbox_xywh": [
+              152,
+              999,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-10",
+            "text": "раниниѣ, како ся роди и како жити плотїю и како ли распятъ",
+            "bbox_xywh": [
+              152,
+              1034,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-11",
+            "text": "бысть и оумре и въскрⷭ҇се се первенецъ ѿ мр҃твых. ѡво бо гл҃ахоу,",
+            "bbox_xywh": [
+              152,
+              1069,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 65,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-12",
+            "text": "яко пр҃рокъ ся яви, а дроузїи гл҃ахоу, яко Сн҃ъ Бж҃їи бѣ тои.",
+            "bbox_xywh": [
+              152,
+              1104,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-13",
+            "text": "и кличь великъ бѣ в народѣ, събраша бо ся еллинстїи моужїе",
+            "bbox_xywh": [
+              152,
+              1139,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-14",
+            "text": "хоудожнїи, мдр҃ыи ѿ Ефїѡпїа и Фиваиды и ѿ Александреа, Іе-",
+            "bbox_xywh": [
+              152,
+              1174,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-15",
+            "text": "рл҃ма и ѿ Асїа же и Маоутринїа и Ваоулона, и ѿ ча҃ перваго до",
+            "bbox_xywh": [
+              152,
+              1209,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-16",
+            "text": "ча҃ д҃-го кличь восхождаша, яко се громъ бы҃ великъ. Тогда ставъ",
+            "bbox_xywh": [
+              152,
+              1244,
+              947,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-17",
+            "text": "Стефанъ на мѣстѣ висоцѣ, моужь книженъ и моудръ, чт҃нъ",
+            "bbox_xywh": [
+              152,
+              1280,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 54,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-18",
+            "text": "всѣмъ людемъ, рода Авраамля, племени Веньамина, и потрясъ",
+            "bbox_xywh": [
+              152,
+              1315,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-19",
+            "text": "роукою, гласомъ же*) великимъ рече: „Братье старїи [и] оунїи,",
+            "bbox_xywh": [
+              152,
+              1350,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 18,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 18,
+                "end": 20,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 20,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-20",
+            "text": "слышите ѿ мене нн҃ѣ; воскоую оумножисте вашь кличь, еда ся",
+            "bbox_xywh": [
+              152,
+              1385,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-21",
+            "text": "събра всь Іерл҃мъ? но бл҃жнъ чл҃вкъ тои, иже не ста на двое ѿ",
+            "bbox_xywh": [
+              152,
+              1420,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-22",
+            "text": "Хт҃ѣ Іс҃е Сн҃а Бг҃а живаго. то бо є иже и хищренїемъ чл҃колюбь-",
+            "bbox_xywh": [
+              152,
+              1455,
+              947,
+              34
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "text-line-23",
+            "text": "ствїа сшед с нб҃си грѣхъ наших дѣля и гроубости дѣля людь-",
+            "bbox_xywh": [
+              152,
+              1490,
+              947,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apparatus",
+        "kind": "note",
+        "bbox_xywh": [
+          227,
+          1579,
+          500,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "apparatus-line-01",
+            "text": "*) В рукоп. через помилку чл҃мъ жереломъ.",
+            "bbox_xywh": [
+              227,
+              1579,
+              500,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 2,
+                "end": 26,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v3-s00114-20261126",
+                "start": 26,
+                "end": 41,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "text-line-01",
+        "reading": "Мцⷭ҇а декабрѧ кд҃. мч҃ніе ст҃го великого перво-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-02",
+        "reading": "мч҃нка Стефана. Ги҃ блⷭ҇ви Ѡче.) Памяти добры предлежа-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-03",
+        "reading": "щаа, възлюбленїи, поноудих ся написати Хв҃ѣ цр҃кви ст҃го мч҃нка",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-04",
+        "reading": "Стефана в на҃ бывшее житїе, абїе же за миръ мл҃тва и прїатїе",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-05",
+        "reading": "моукъ и съвершенїе вѣнецъ и даръ побѣдный горнаго званїа.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-06",
+        "reading": "Бы҃ бо во ѡно время по Га҃ нашего Іс҃а Ха҃ плотномоу пришествїю",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-07",
+        "reading": "и по стрⷭ҇техъ крⷭ҇тных и по см҃рти и по воскрⷭ҇нїи же и по восше-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-08",
+        "reading": "ствїи и ко Ѡц҃ю пришествїи, мимошедшим двѣма лѣтома, бы҃",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-09",
+        "reading": "възысканїа велика зѣло межю Іюдѣи съ Иеллины ѿ Іс҃ѣ Наза-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-10",
+        "reading": "раниниѣ, како ся роди и како жити плотїю и како ли распятъ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-11",
+        "reading": "бысть и оумре и въскрⷭ҇се се первенецъ ѿ мр҃твых. ѡво бо гл҃ахоу,",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-12",
+        "reading": "яко пр҃рокъ ся яви, а дроузїи гл҃ахоу, яко Сн҃ъ Бж҃їи бѣ тои.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-13",
+        "reading": "и кличь великъ бѣ в народѣ, събраша бо ся еллинстїи моужїе",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-14",
+        "reading": "хоудожнїи, мдр҃ыи ѿ Ефїѡпїа и Фиваиды и ѿ Александреа, Іе-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-15",
+        "reading": "рл҃ма и ѿ Асїа же и Маоутринїа и Ваоулона, и ѿ ча҃ перваго до",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-16",
+        "reading": "ча҃ д҃-го кличь восхождаша, яко се громъ бы҃ великъ. Тогда ставъ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-17",
+        "reading": "Стефанъ на мѣстѣ висоцѣ, моужь книженъ и моудръ, чт҃нъ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-18",
+        "reading": "всѣмъ людемъ, рода Авраамля, племени Веньамина, и потрясъ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-19",
+        "reading": "роукою, гласомъ же*) великимъ рече: „Братье старїи [и] оунїи,",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-20",
+        "reading": "слышите ѿ мене нн҃ѣ; воскоую оумножисте вашь кличь, еда ся",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-21",
+        "reading": "събра всь Іерл҃мъ? но бл҃жнъ чл҃вкъ тои, иже не ста на двое ѿ",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-22",
+        "reading": "Хт҃ѣ Іс҃е Сн҃а Бг҃а живаго. то бо є иже и хищренїемъ чл҃колюбь-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "text-line-23",
+        "reading": "ствїа сшед с нб҃си грѣхъ наших дѣля и гроубости дѣля людь-",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      },
+      {
+        "line_id": "apparatus-line-01",
+        "reading": "*) В рукоп. через помилку чл҃мъ жереломъ.",
+        "reason": "Provisional diplomatic reading; exact historical glyphs, titla, superscript letters, accents and historical vernacular classification require further collation."
+      }
+    ]
+  }
+}
