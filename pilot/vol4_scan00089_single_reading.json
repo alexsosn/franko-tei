@@ -17,7 +17,7 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Image-first full physical line transcription of the Lucidarius dialogue and its editorial commentary. Provisional historical Ruthenian orv (uncertain) based on sustained vernacular syntax and lexicon, not script alone; Franko commentary uk. Approximate rendering of historical type: accents, titla, superscript letter placement and monograph uk need later glyph collation; estimated boxes, no precise baselines. Preserve printed question numbering and labels; semantic turn overlay not yet encoded. Working draft only.",
+    "instructions": "Image-first full physical line transcription of the Lucidarius dialogue and its editorial commentary. Provisional historical Ruthenian orv (uncertain) based on sustained vernacular syntax and lexicon, not script alone; Franko commentary uk. Approximate rendering of historical type: accents, titla, superscript letter placement and monograph uk need later glyph collation; estimated boxes, no precise baselines. Preserve printed question numbering and labels; semantic turn overlay not yet encoded. Working draft only. Separate source reinspection before PR submission retained the first-pass version in branch commit history and corrected documented glyph readings. Visibly indented question/answer blocks have separate physical body regions; logical cross-page turn IDs are deferred. Arabic printed question labels are zxx/Zyyy; Roman numerals in commentary retain contextual uk with Latn script. The closing liturgical formula in IV/89 is provisionally cu, uncertain.",
     "raw_response": "37\n64 Ꙋчен. Як сотворен єⷭ мозокъ ꙋ чл҃кꙋ?\nМаистер. Мозок на троє роздѣлен: ѡдна чаⷭ владнеⷮ смы-\nслом, а дрꙋгая розꙋмом, третяя памятю, почтивостью, и такъ єⷭ\nчл҃къ головы здоровоє.\n65. Ꙋчен. Як пазногти?\nМаистер. Ѿ росы, котрая идет ѿ ср҃дца.\n66. Ꙋчен. Про що люде сивиют?\nМаистер. Якъ дѣти маютъ бѣлше волоси, гды до лѣт\nприходят, переменяют сѧ, такъ и сивыє волоси з вилгости припа-\nдают водалꙋгъ натꙋры и прироженя малого.\n67. Ꙋчен. То южес ми повѣдалъ, як каждая речь маеⷮ по-\nчаток. Повѣж ми, який конецъ возмеⷮ?\nМаистер. Гды чл҃къ ꙋмирает, дша идеⷮ до раю справедли-\nвая, а грѣшная до мꙋкъ вѣчных, а предсе конца не возмꙋть\nправедныи в радости, а грѣшныи в мꙋках.\n68. Ꙋчен. Що сѧ бꙋдеⷮ дѣяти ꙋ сꙋдный день?\nМаистер. Тогды нб҃о новоє бꙋдеⷮ и земля чистая бꙋдеⷮ якъ\nкрышталъ, бо ѡгнем ѡчистиⷮ сѧ. Тогды аг҃глы вострꙋбятъ, а мер-\nтвыи востанꙋт, и кождий ѡ своих дѣлех или прославиⷮ сѧ или\nѡсꙋдиⷮ сѧ.\n69. Ꙋчен. Якъ великꙋю милоⷭ бꙋдꙋт мѣти побожныє дши\nѿ Бг҃а во ден сꙋдный?\nМаистер. Побожныє дши бꙋдꙋт подобныи аг҃глом нбⷭнымъ.\nбо ѡ жадной пожадливости мыслиты не бꙋдꙋт и ѡден дрꙋгого\nлюбити бꙋдеⷮ, не бꙋдꙋт бояти сѧ смерти. але радоⷭ вѣчнꙋю бꙋ-\nдꙋт мѣти. Котороє радости рачъ и нас домѣстити црⷭтвꙋющїй\nХс҃, сѣдяй в непристꙋпной славѣ во єдином бж҃ествѣ со безна-\nчальным Ѿцем и со пресвятым бл҃гимъ и животворящим дх҃ом всегда\nи нн҃ѣ и во вѣки вѣком. Аминь.\nПрототип Люцідарія був зложений при дворі бруншвіцького\nкнязя Генриха Льва при кінці XII в. по нїмецьки в цїли популя-\nризації всеї суми тодїшнього знаня серед простого народа. У XIII\nі XIV віцї здобув собі Люцідарій значне розширене по Нїмеччинї,\nв Данїї та Нїдерляндах; при кінці XIV віку його перекладено на\nчеську мову, в XV в. на польську, а відси на нашу. В першій по-\nловинї XVI в. вчений теольоґ Максим Грек (ум. 1553 р.) уважив\nконечним остро полемізувати з ним, і се найдавнїйший слїд його\nрозширеня на Руси. Найдавнїйші руські рукописи Люцідарія сяга-\nють початку XVII в. Їх богато, та всї вони ріжнять ся лише біль-\nшим або меншим укороченєм супротив нїмецького прототипа. Одну",
     "coverage": {
       "entire_image_inspected": true,
@@ -59,13 +59,13 @@
         ]
       },
       {
-        "id": "lucidarius",
+        "id": "lucidarius-block-01",
         "kind": "body",
         "bbox_xywh": [
           96,
           174,
           965,
-          1020
+          32
         ],
         "geometry_estimated": true,
         "lines": [
@@ -83,13 +83,34 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 2,
                 "end": 39,
                 "language": "orv",
                 "script": "Cyrl",
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-02",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          209,
+          965,
+          103
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-02",
             "text": "Маистер. Мозок на троє роздѣлен: ѡдна чаⷭ владнеⷮ смы-",
@@ -152,7 +173,20 @@
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-03",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          315,
+          965,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-05",
             "text": "65. Ꙋчен. Як пазногти?",
@@ -167,13 +201,34 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 3,
                 "end": 22,
                 "language": "orv",
                 "script": "Cyrl",
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-04",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          350,
+          965,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-06",
             "text": "Маистер. Ѿ росы, котрая идет ѿ ср҃дца.",
@@ -194,7 +249,20 @@
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-05",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          386,
+          965,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-07",
             "text": "66. Ꙋчен. Про що люде сивиют?",
@@ -209,13 +277,34 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 3,
                 "end": 29,
                 "language": "orv",
                 "script": "Cyrl",
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-06",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          421,
+          965,
+          103
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-08",
             "text": "Маистер. Якъ дѣти маютъ бѣлше волоси, гды до лѣт",
@@ -278,7 +367,20 @@
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-07",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          527,
+          965,
+          67
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-11",
             "text": "67. Ꙋчен. То южес ми повѣдалъ, як каждая речь маеⷮ по-",
@@ -293,6 +395,14 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 3,
                 "end": 54,
                 "language": "orv",
                 "script": "Cyrl",
@@ -320,7 +430,20 @@
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-08",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          597,
+          965,
+          103
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-13",
             "text": "Маистер. Гды чл҃къ ꙋмирает, дша идеⷮ до раю справедли-",
@@ -383,7 +506,20 @@
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-09",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          703,
+          965,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-16",
             "text": "68. Ꙋчен. Що сѧ бꙋдеⷮ дѣяти ꙋ сꙋдный день?",
@@ -398,13 +534,34 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 3,
                 "end": 42,
                 "language": "orv",
                 "script": "Cyrl",
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-10",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          739,
+          965,
+          137
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-17",
             "text": "Маистер. Тогды нб҃о новоє бꙋдеⷮ и земля чистая бꙋдеⷮ якъ",
@@ -488,7 +645,20 @@
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-11",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          880,
+          965,
+          67
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-21",
             "text": "69. Ꙋчен. Якъ великꙋю милоⷭ бꙋдꙋт мѣти побожныє дши",
@@ -503,6 +673,14 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 3,
                 "end": 51,
                 "language": "orv",
                 "script": "Cyrl",
@@ -530,7 +708,20 @@
                 "uncertain": true
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "id": "lucidarius-block-12",
+        "kind": "body",
+        "bbox_xywh": [
+          96,
+          950,
+          965,
+          244
+        ],
+        "geometry_estimated": true,
+        "lines": [
           {
             "id": "lucidarius-line-23",
             "text": "Маистер. Побожныє дши бꙋдꙋт подобныи аг҃глом нбⷭнымъ.",
@@ -608,8 +799,16 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
-                "end": 57,
+                "end": 47,
                 "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 47,
+                "end": 57,
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true
               }
@@ -630,7 +829,7 @@
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
                 "end": 60,
-                "language": "orv",
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true
               }
@@ -651,7 +850,7 @@
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
                 "end": 63,
-                "language": "orv",
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true
               }
@@ -672,7 +871,7 @@
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
                 "end": 30,
-                "language": "orv",
+                "language": "cu",
                 "script": "Cyrl",
                 "uncertain": true
               }
@@ -726,6 +925,22 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 29,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 29,
+                "end": 32,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 32,
                 "end": 62,
                 "language": "uk",
                 "script": "Cyrl",
@@ -747,9 +962,17 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
-                "end": 64,
+                "end": 60,
                 "language": "uk",
                 "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 60,
+                "end": 64,
+                "language": "uk",
+                "script": "Latn",
                 "uncertain": false
               }
             ]
@@ -768,6 +991,22 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 2,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 2,
+                "end": 5,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 5,
                 "end": 63,
                 "language": "uk",
                 "script": "Cyrl",
@@ -789,6 +1028,22 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 34,
+                "end": 37,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 37,
                 "end": 62,
                 "language": "uk",
                 "script": "Cyrl",
@@ -810,6 +1065,22 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 15,
+                "end": 17,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 17,
                 "end": 63,
                 "language": "uk",
                 "script": "Cyrl",
@@ -831,6 +1102,22 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 7,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 7,
+                "end": 10,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 10,
                 "end": 61,
                 "language": "uk",
                 "script": "Cyrl",
@@ -894,6 +1181,22 @@
               {
                 "text_version": "gpt62-iv-89-image-20261126",
                 "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 12,
+                "end": 16,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-iv-89-image-20261126",
+                "start": 16,
                 "end": 64,
                 "language": "uk",
                 "script": "Cyrl",
