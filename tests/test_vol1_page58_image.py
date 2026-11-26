@@ -75,7 +75,9 @@ class Vol1Page58Tests(unittest.TestCase):
                 a, b, c, d = line["bbox_xywh"]
                 self.assertTrue(x <= a and y <= b and a+c <= x+w and b+d <= y+h,
                                 line["id"])
-                self.assertEqual(line["language_spans"], [])
+                # Retrospective contextual annotation is permitted and required here.
+                # Exact code-point coverage is checked by CorpusBatchContract.
+                self.assertTrue(line["language_spans"])
 
     def test_tei_exact_text_roundtrip_does_not_certify_manuscript(self):
         xml = render_pilot_tei(self.payload, 1190, 1740)
