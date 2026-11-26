@@ -96,6 +96,39 @@ class AnnotationInventoryTest(unittest.TestCase):
         self.assertIsNone(report["manifest_scan_count"])
         self.assertEqual(report["text_basis"], "frozen_candidates_not_selected_editorial_text")
 
+    def test_invalid_scan_and_conflicting_image_are_not_counted(self):
+        source = json.loads((PILOT / "vol1_scan00060_single_reading.json").read_text(
+            encoding="utf-8"))
+        with TemporaryDirectory() as tmp:
+            dst = Path(tmp)
+            primary = dst / "vol1_scan00060_single_reading.json"
+            primary.write_text(json.dumps(source), encoding="utf-8")
+            alternate = dst / "vol1_scan00060_alternate_reading_01.json"
+            altered = dict(source, source_image_sha256="0" * 64)
+            alternate.write_text(json.dumps(altered), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "conflicting source images"):
+                build_inventory(dst)
+            alternate.unlink()
+            primary.unlink()
+            altered = dict(source, scan_page=0, source_image_path="vol1/page-00000.jpg")
+            (dst / "vol1_scan00000_single_reading.json").write_text(
+                json.dumps(altered), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "positive physical scan"):
+                build_inventory(dst)
+
+    def test_invalid_intervals_and_note_link_container_are_rejected(self):
+        payload = {"reading": {"regions": [
+            {"kind": "body", "geometry_estimated": True,
+             "lines": [synthetic_line("аб", [synthetic_span(0, 2, "uk"),
+                                            synthetic_span(1, 2, "uk")])]}],
+            "uncertainty_notes": []}}
+        with self.assertRaisesRegex(ValueError, "overlapping"):
+            measure_reading(payload)
+        payload["reading"]["regions"][0]["lines"][0]["language_spans"] = []
+        payload["reading"]["source_note_links"] = "not a list"
+        with self.assertRaisesRegex(ValueError, "source_note_links"):
+            measure_reading(payload)
+
     def test_complete_live_corpus_inventory(self):
         report = build_inventory(PILOT)
         candidates = report["candidates"]
