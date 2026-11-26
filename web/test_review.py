@@ -1670,7 +1670,9 @@ class ReviewSmoke(unittest.TestCase):
             self.assertIn('estimated', page.locator('#lineinfo').text_content())
             page.locator('#next').click()
             page.get_by_text('Empty original OCR', exact=False).wait_for()
-            page.get_by_text('Source identity mismatch', exact=False).wait_for()
+            # Both mode exposes the draft diagnostic, not its hidden OCR-fallback copy.
+            page.locator('#draftStatus').filter(has_text='Source identity mismatch').wait_for()
+            self.assertTrue(page.locator('#draftFallbackError').is_hidden())
             self.assertFalse(page.locator('#highlight').is_visible())
             self.assertTrue(page.locator('#next').is_disabled())
             self.assertIn('page-00002.png', page.locator('#source').get_attribute('href'))
