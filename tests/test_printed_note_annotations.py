@@ -344,6 +344,10 @@ class NumberedApparatusTests(unittest.TestCase):
             m = label_pattern.match(first["literal"])
             self.assertIsNotNone(m)
             self.assertEqual(m.group(), entry["label"])
+            if "body_pair_evidence" in entry:
+                self.assertTrue(occurrence_labels)
+                self.assertNotIn("—", entry["label"])
+                self.assertTrue(entry["body_pair_evidence"].strip())
             numbers = entry["label"][:-1].translate(self.DIGITS).split("—")
             self.assertTrue(all(int(n) == entry["number"] for n in numbers))
             seen_labels.append((first["scan_page"], first["line_id"], first["start"],
@@ -388,7 +392,15 @@ class NumberedApparatusTests(unittest.TestCase):
                 else:
                     self.assertNotIn("disambiguation", link)
                 role = link["role"]
-                if "—" in entry["label"]:
+                if "body_pair_evidence" in entry:
+                    self.assertIn(role, ("range_start", "range_end"))
+                    # Explicit printed dash at the start; bare closing
+                    # marker or closing parenthesis at the end.
+                    if role == "range_start":
+                        self.assertTrue(marker["literal"].endswith("—"))
+                    else:
+                        self.assertFalse(marker["literal"].endswith("—"))
+                elif "—" in entry["label"]:
                     self.assertIn(role, ("range_start", "range_end"))
                     # Some printed starts have a bare number or a closing
                     # parenthesis; the role is separate from the literal.
@@ -407,7 +419,9 @@ class NumberedApparatusTests(unittest.TestCase):
                              [eid for eid in entries if eid not in targets])
             incomplete = []
             for eid, observed_roles in roles.items():
-                if "—" in entries[eid]["label"]:
+                if "body_pair_evidence" in entries[eid]:
+                    self.assertEqual(observed_roles, ["range_start", "range_end"])
+                elif "—" in entries[eid]["label"]:
                     if repeated and (observed_roles == ["range_start"] or
                                      occurrence_labels and observed_roles == ["range_end"]):
                         incomplete.append(eid)
@@ -417,6 +431,8 @@ class NumberedApparatusTests(unittest.TestCase):
                     self.assertEqual(observed_roles, ["repeated_reference"] * len(observed_roles))
                 else:
                     self.assertEqual(observed_roles, ["single"])
+            self.assertTrue(all(eid in roles for eid, e in entries.items()
+                                if "body_pair_evidence" in e))
             if repeated:
                 self.assertEqual(block["incomplete_range_entry_ids"],
                                  [eid for eid in entries if eid in incomplete])
@@ -692,3 +708,99 @@ class NumberedApparatusTests(unittest.TestCase):
         self.check_block(wrong, sources, paired=True, repeated=True, occurrence_labels=True)
         with self.assertRaises(AssertionError):
             self.check_ix_b_duplicate(wrong)
+
+
+    def test_section_x_a_and_g_apparatus(self):
+        for suffix, total, markers, scans, body, apparatus, start, end in [
+            ("a", 62, 81, [155, 156, 157, 158, 159, 160, 161],
+             [["abraham-idols"], ["abraham-idols-continuation", "abraham-reflection"],
+              ["abraham-barisat-continuation"],
+              ["abraham-elements", "abraham-burning-idols", "abraham-call"],
+              ["abraham-call-end", "abraham-dialogue", "abraham-wisdom", "abraham-death"], [], []],
+             [[], [], [], [], ["witness-a-apparatus-start"], ["witness-a-apparatus-end"], []],
+             "witness-a-label", "witness-b-label"),
+            ("g", 9, 13, [165, 166, 167], [["witness-g-cross-tree"], [], []],
+             [[], ["witness-g-apparatus"], []], "witness-g-label", "section-xi"),
+        ]:
+            with self.subTest(witness=suffix):
+                block = json.loads((ROOT / f"pilot/structure/vol1_section_x_{suffix}_apparatus.json"
+                                    ).read_text(encoding="utf-8"))
+                self.check_block(block, self.load_sources(block), paired=True, repeated=True,
+                                 occurrence_labels=True)
+                self.assertEqual(block["id"], f"v1-section-x-{suffix}")
+                self.assertEqual([p["scan_page"] for p in block["pages"]], scans)
+                self.assertEqual([p["body_region_ids"] for p in block["pages"]], body)
+                self.assertEqual([p["apparatus_region_ids"] for p in block["pages"]], apparatus)
+                self.assertEqual(block["scope"]["heading"]["region_id"], start)
+                self.assertEqual(block["scope"]["next_heading"]["region_id"], end)
+                self.assertEqual(len(block["entries"]), total)
+                self.assertEqual(len(block["links"]), markers)
+                self.assertTrue(all(l["status"] == "resolved" for l in block["links"]))
+                self.assertEqual(block["unlinked_entry_ids"], [])
+                self.assertEqual(block["incomplete_range_entry_ids"], [])
+                self.assertEqual([e["number"] for e in block["entries"]],
+                                 list(range(1, 50)) + [49] + list(range(50, 62))
+                                 if suffix == "a" else list(range(1, 10)))
+                if suffix == "a":
+                    self.check_x_a_special_cases(block)
+                    entry31 = next(e for e in block["entries"] if e["number"] == 31)
+                    self.assertEqual(sorted({f["scan_page"] for f in entry31["fragments"]}),
+                                     [159, 160])
+                else:
+                    for n in (5, 6, 8, 9):
+                        eid = next(e["id"] for e in block["entries"] if e["number"] == n)
+                        self.assertEqual([l["role"] for l in block["links"]
+                                          if l["target_entry_id"] == eid],
+                                         ["repeated_reference"] * 2)
+
+    def check_x_a_special_cases(self, block):
+        duplicate = [e for e in block["entries"] if e["number"] == 49]
+        self.assertEqual(len(duplicate), 2)
+        for e, word, line in zip(duplicate, ("Зоухиемъ", "искореневалъ"),
+                                 ("abraham-barisat-continuation-l027",
+                                  "abraham-barisat-continuation-l030")):
+            self.assertIn(word, e["fragments"][0]["literal"])
+            links = [l for l in block["links"] if l["target_entry_id"] == e["id"]]
+            self.assertEqual(len(links), 1)
+            self.assertEqual(links[0]["marker"]["line_id"], line)
+            self.assertTrue(links[0]["disambiguation"].strip())
+        entry55 = next(e for e in block["entries"] if e["number"] == 55)
+        self.assertEqual(entry55["label"], "⁵⁵)")
+        self.assertTrue(entry55["body_pair_evidence"].strip())
+        pair = [l for l in block["links"] if l["target_entry_id"] == entry55["id"]]
+        self.assertEqual([l["role"] for l in pair], ["range_start", "range_end"])
+        self.assertEqual([l["marker"]["literal"] for l in pair], ["⁵⁵—", "⁵⁵"])
+        self.assertEqual([l["marker"]["line_id"] for l in pair],
+                         ["abraham-barisat-continuation-l037",
+                          "abraham-barisat-continuation-l038"])
+
+    def test_section_x_a_adversarial_mutations(self):
+        import copy
+        block = json.loads((ROOT / "pilot/structure/vol1_section_x_a_apparatus.json")
+                           .read_text(encoding="utf-8"))
+        sources = self.load_sources(block)
+        self.check_block(block, sources, paired=True, repeated=True, occurrence_labels=True)
+        self.check_x_a_special_cases(block)
+        def entry55(b):
+            return next(e for e in b["entries"] if e["number"] == 55)
+        def end55(b):
+            return next(l for l in b["links"] if l["target_entry_id"] == entry55(b)["id"]
+                        and l["role"] == "range_end")
+        for change in (
+                lambda b: entry55(b).pop("body_pair_evidence"),
+                lambda b: entry55(b).update(body_pair_evidence=""),
+                lambda b: end55(b).update(role="range_start"),
+                lambda b: end55(b)["marker"].update(literal="⁵⁵)"),
+                lambda b: end55(b).update(target_entry_id=b["entries"][0]["id"])):
+            bad = copy.deepcopy(block)
+            change(bad)
+            with self.assertRaises(AssertionError):
+                self.check_block(bad, sources, paired=True, repeated=True, occurrence_labels=True)
+        wrong = copy.deepcopy(block)
+        ids = [e["id"] for e in wrong["entries"] if e["number"] == 49]
+        for link in wrong["links"]:
+            if link["target_entry_id"] in ids:
+                link["target_entry_id"] = ids[1 - ids.index(link["target_entry_id"])]
+        self.check_block(wrong, sources, paired=True, repeated=True, occurrence_labels=True)
+        with self.assertRaises(AssertionError):
+            self.check_x_a_special_cases(wrong)
