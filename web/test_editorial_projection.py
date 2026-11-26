@@ -263,7 +263,7 @@ class EditorialProjectionTests(unittest.TestCase):
                         return checkedEditorial(copy,d,p.blob,p.path)===null;
                     }""",[reviewed,source,mutation]),mutation)
                 for supplement in overlay["pages"]:
-                    if (supplement["volume"],supplement["scan"]) not in {("2",19),("4",19),("1",418)}:
+                    if (supplement["volume"],supplement["scan"]) not in {("2",19),("4",19),("1",418),("1",34),("4",18)}:
                         continue
                     draft=json.loads((ROOT/supplement["path"]).read_text())
                     self.assertTrue(page.evaluate("""([p,d])=>{

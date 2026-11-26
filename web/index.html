@@ -7897,11 +7897,13 @@ function checkedEditorial(page,data,blob,path){
       const specs={'pilot/vol1_scan00024_alternate_reading_01.json':[2,'1',24],
         'pilot/vol2_scan00019_single_reading.json':[1,'2',19],
         'pilot/vol4_scan00019_single_reading.json':[1,'4',19],
-        'pilot/vol1_scan00418_single_reading.json':[4,'1',418]};
+        'pilot/vol1_scan00418_single_reading.json':[4,'1',418],
+        'pilot/vol1_scan00034_alternate_reading_01.json':[5,'1',34],
+        'pilot/vol4_scan00018_single_reading.json':[1,'4',18]};
       const spec=specs[path];
       const stem=path.slice(6).replace(/_(?:single_reading|alternate_reading_01)\.json$/,'');
       const evidenceSuffix='/pilot/reviews/'+stem+'_unstamped_facs_20261126.json';
-      if(!spec||data.volume!==spec[1]||data.scan_page!==spec[2]||!source||source.region.kind!=='body'||source.region.id!==r.region_id||source.line.text!==r.original||reviewed.has(r.line_id)||
+      if(!spec||data.volume!==spec[1]||data.scan_page!==spec[2]||!source||source.region.kind!==(path==='pilot/vol4_scan00018_single_reading.json'?'note':'body')||source.region.id!==r.region_id||source.line.text!==r.original||reviewed.has(r.line_id)||
          typeof r.text!=='string'||!r.text.trim()||r.text===r.original||/[\r\n…]/.test(r.text)||
          typeof r.obscured_on_pinned_scan!=='boolean'||r.obscured_on_pinned_scan!==(source.line.unreadable_suffix===true)||
          (r.obscured_on_pinned_scan&&(!r.original.endsWith('…')||!r.text.startsWith(r.original.slice(0,-1))||r.text.length<=r.original.length-1))||
@@ -7911,7 +7913,7 @@ function checkedEditorial(page,data,blob,path){
       let end=0;
       for(const span of r.language_spans){
         if(span.start!==end||!Number.isInteger(span.end)||span.end<=end||span.end>Array.from(r.text).length||span.uncertain!==true||span.text_version!==data.reading.reader_id||
-          !['uk:Cyrl','ru:Cyrl','de:Latn','zxx:Zyyy'].includes(span.language+':'+span.script))return null;
+          !['uk:Cyrl','ru:Cyrl','de:Latn','zxx:Zyyy','cu:Cyrl','la:Latn','zxx:Cyrl'].includes(span.language+':'+span.script))return null;
         end=span.end;
       }
       if(end!==Array.from(r.text).length)return null;
@@ -7929,7 +7931,12 @@ function checkedEditorial(page,data,blob,path){
   if([...reviewed.values()].some(r=>r.status==='supplementary_correction')){
     const required={'pilot/vol2_scan00019_single_reading.json':['preface-line-40'],
       'pilot/vol4_scan00019_single_reading.json':['preface-line-39','preface-line-41'],
-      'pilot/vol1_scan00418_single_reading.json':['index-a-l014']}[path];
+      'pilot/vol1_scan00418_single_reading.json':['index-a-l014'],
+      'pilot/vol1_scan00034_alternate_reading_01.json':[1,15,21,23,25,26,27,28,29,36,37,38,39,40].map(n=>'main-line-'+String(n).padStart(2,'0')),
+      'pilot/vol4_scan00018_single_reading.json':[1,2,3,4].map(n=>'note-1-line-0'+n)}[path];
+    if(path==='pilot/vol4_scan00018_single_reading.json'&&
+       (!reviewed.get('note-1-line-01')?.text.startsWith('⁴) ')||
+        !data.reading.source_note_links?.some(l=>l.marker_line_id==='preface-line-05'&&l.marker_text==='¹)'&&l.note_region_id==='note-1')))return null;
     if((required&&(reviewed.size!==required.length||required.some(id=>!reviewed.has(id))))||
        [...reviewed.values()].some(r=>r.status!=='supplementary_correction')||
        [...lines.values()].some(({line})=>line.unreadable_suffix===true&&!reviewed.has(line.id)))return null;
