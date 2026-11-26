@@ -57,7 +57,7 @@ class EditorSmoke(unittest.TestCase):
                     return r.fulfill(body="OCR")
                 return r.fulfill(status=404,body="")
             page.route("https://**/*",route)
-            page.goto("https://reader.test/")
+            page.goto("https://reader.test/#v=1&p=20&ref=main")
             expect(page.locator(".line-text").first).to_be_visible()
             page.locator("#searchOpen").click()
             page.locator("#searchKeyboard summary").click()

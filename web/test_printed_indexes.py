@@ -124,7 +124,7 @@ class PrintedIndexesTest(unittest.TestCase):
         import os
         data = build_printed_indexes(ROOT / "pilot", "a" * 40)
         html = (ROOT / "web/index.html").read_text(encoding="utf-8")
-        marker = "updateMode();load();"
+        marker = "updateMode();startReader();"
         self.assertIn(marker, html)
         html = html.replace(marker, "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,$('ref').value];};load();")
         with sync_playwright() as p:

@@ -8,14 +8,62 @@ APP = Path(os.environ.get('FRANKO_REVIEW_HTML', Path(__file__).with_name('index.
 COMMIT = 'e871f32537e81f81896f6ce9a6658aba667db9c5'
 PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aH1sAAAAASUVORK5CYII='
 
+def reader_html():
+    # Existing focused tests exercise the reader after startup, not the
+    # landing dialog. The startup regression above uses the untouched app.
+    return APP.read_text(encoding='utf-8').replace('updateMode();startReader();', 'updateMode();load();')
+
+
 class ReviewSmoke(unittest.TestCase):
     def choose_locale(self, page, locale):
         page.locator('#languageOpen').click()
         page.locator(f'#languagePanel [data-locale="{locale}"]').click()
         self.assertTrue(page.locator('#languagePanel').is_hidden())
 
+    def test_startup_contents_without_scan(self):
+        # Use the actual, unmodified startup path. Failed network requests are
+        # intentional: landing on contents needs no source fetch at all.
+        html = APP.read_text(encoding='utf-8')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            for fragment, volume in (('', '1'), ('#v=3&ref=feature/test', '3'), ('#v=2&p=invalid', '2')):
+                page = browser.new_page(viewport={'width': 390, 'height': 844})
+                page.route('**/*', lambda route: route.fulfill(content_type='text/html', body=html)
+                           if route.request.resource_type == 'document' else route.abort())
+                page.goto('https://startup.test/' + fragment)
+                panel = page.locator('#contentsPanel')
+                panel.wait_for()
+                self.assertEqual(page.locator('#contentsVolume').input_value(), volume)
+                self.assertEqual(page.locator('#page').input_value(), '1')
+                self.assertEqual(page.evaluate('generation'), 0)
+                self.assertEqual(page.evaluate('location.hash'), fragment)
+                self.assertTrue(page.locator('#contentsTitle').evaluate('el => el === document.activeElement'))
+                self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'true')
+                page.locator('#contentsVolume').select_option('4')
+                if fragment:
+                    page.keyboard.press('Escape')
+                else:
+                    page.locator('#contentsFirstScan').click()
+                panel.wait_for(state='hidden')
+                page.wait_for_function('generation === 1')
+                self.assertEqual(page.locator('#volume').input_value(), '4')
+                self.assertEqual(page.locator('#page').input_value(), '1')
+                self.assertEqual(page.locator('#ref').input_value(), 'feature/test' if 'ref=' in fragment else 'main')
+                self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'false')
+                page.close()
+            page = browser.new_page()
+            page.route('**/*', lambda route: route.fulfill(content_type='text/html', body=html)
+                       if route.request.resource_type == 'document' else route.abort())
+            page.goto('https://startup.test/#v=3&p=72&ref=feature/test')
+            page.wait_for_function('generation === 1')
+            self.assertTrue(page.locator('#contentsPanel').is_hidden())
+            self.assertEqual(page.locator('#volume').input_value(), '3')
+            self.assertEqual(page.locator('#page').input_value(), '72')
+            self.assertEqual(page.locator('#ref').input_value(), 'feature/test')
+            browser.close()
+
     def test_toolbar_language_switcher(self):
-        html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
+        html = reader_html().replace('updateMode();load();', "updateMode();load=()=>{};load();")
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
@@ -48,7 +96,7 @@ class ReviewSmoke(unittest.TestCase):
     def test_volume_one_contents_records(self):
         # Edition-specific regression checks; source scan and printed folio are distinct.
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         entries = data['1']['entries']
         items = [entry for entry in entries if len(entry) > 4 and entry[4] == 1]
@@ -70,7 +118,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_navigation(self):
         # Isolate click handling from remote loading (covered by the other smoke tests).
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         marker = 'updateMode();load();'
         self.assertIn(marker, html)
         html = html.replace(marker, "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,$('ref').value,$('mode').value];if($('contentsPanel').open)renderContents();};load();")
@@ -100,7 +148,7 @@ class ReviewSmoke(unittest.TestCase):
             browser.close()
 
     def test_contents_compact_localized_navigation(self):
-        html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
+        html = reader_html().replace('updateMode();load();',
             "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,pendingContentsEstimate];pendingContentsEstimate=false;};load();")
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
@@ -149,7 +197,7 @@ class ReviewSmoke(unittest.TestCase):
             browser.close()
 
     def test_contents_page_alignment_and_quiet_rows(self):
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             for width in (320, 760, 1200):
@@ -178,7 +226,7 @@ class ReviewSmoke(unittest.TestCase):
     def test_contents_audit_agrees_with_embedded_data(self):
         import csv
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         def embedded(name):
             return json.loads(html.split('const ' + name + ' = ', 1)[1].split(';\n', 1)[0])
         data = embedded('volumeContents')
@@ -202,7 +250,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_catalogue_citation_discrepancies(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         def links(volume, index):
@@ -217,7 +265,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_hagiography_reference_scope(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         def link(volume, index, identifier):
@@ -231,7 +279,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_ocp_edition_vs_composite(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         def link(volume, index, identifier):
@@ -268,7 +316,7 @@ class ReviewSmoke(unittest.TestCase):
     def test_contents_ocp_public_destinations(self):
         import json
         from urllib.parse import urlsplit, parse_qs
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         found = set()
         for records in refs.values():
@@ -290,7 +338,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_reference_localization_and_multiple_catalogues(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         for records in refs.values():
             for links in records.values():
@@ -330,7 +378,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_palaea_and_prophets_comparative_references(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         def links(index):
@@ -351,7 +399,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_vol2_prophecy_derivations(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         def links(index):
@@ -368,7 +416,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_work_references(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
         for volume, records in refs.items():
@@ -415,7 +463,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_english_contents_translation(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         translations = json.loads(html.split('const contentsEnglish = ', 1)[1].split(';\n', 1)[0])
         for volume, record in data.items():
@@ -454,7 +502,7 @@ class ReviewSmoke(unittest.TestCase):
             browser.close()
 
     def test_single_contents_toolbar(self):
-        html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
+        html = reader_html().replace('updateMode();load();',
             "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value];};load();")
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
@@ -488,7 +536,7 @@ class ReviewSmoke(unittest.TestCase):
             browser.close()
 
     def test_settings_layout_and_staged_source(self):
-        html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
+        html = reader_html().replace('updateMode();load();',
             "updateMode();load=()=>{window.lastRef=$('ref').value;};load();")
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
@@ -557,7 +605,7 @@ class ReviewSmoke(unittest.TestCase):
             browser.close()
 
     def test_contents_desktop_layout(self):
-        html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
+        html = reader_html().replace('updateMode();load();', "updateMode();load=()=>{};load();")
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':1280,'height':800})
@@ -587,7 +635,7 @@ class ReviewSmoke(unittest.TestCase):
             browser.close()
 
     def test_locale_persists_and_preserves_source_text(self):
-        html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
+        html = reader_html().replace('updateMode();load();', "updateMode();load=()=>{};load();")
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width': 390, 'height': 844})
@@ -623,7 +671,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_all_volume_contents_destinations(self):
         # A calculated page is deliberately not a verified work start or line anchor.
-        html = APP.read_text(encoding='utf-8').replace('updateMode();load();',
+        html = reader_html().replace('updateMode();load();',
             "updateMode();load=()=>{window.lastJump=[$('volume').value,$('page').value,pendingContentsEstimate];pendingContentsEstimate=false;if($('contentsPanel').open)renderContents();};load();")
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
@@ -660,7 +708,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_volume_two_contents_records(self):
         import json
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         volume = data['2']
         items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
@@ -696,7 +744,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_volume_three_contents_records(self):
         import json
-        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        data = json.loads(reader_html().split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         volume = data['3']
         items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
         self.assertEqual(volume['sources'], list(range(439, 447)))
@@ -720,7 +768,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_volume_four_contents_records(self):
         import json
-        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        data = json.loads(reader_html().split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         volume = data['4']
         items = [e for e in volume['entries'] if len(e) > 4 and e[4] > 0]
         self.assertEqual(volume['sources'], list(range(569, 575)))
@@ -744,7 +792,7 @@ class ReviewSmoke(unittest.TestCase):
 
     def test_contents_line_anchor_identity(self):
         # Synthetic identity fixtures, no claim about historic characters.
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page()
@@ -763,7 +811,7 @@ class ReviewSmoke(unittest.TestCase):
     def test_contents_reuses_existing_readings(self):
         import json
         root = Path(__file__).resolve().parents[1]
-        contents = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        contents = json.loads(reader_html().split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         expected = {
             ('1', 8, 'commission-heading-line-01'),
             ('1', 76, 'section-title-l001'),
@@ -1024,7 +1072,7 @@ class ReviewSmoke(unittest.TestCase):
         import json
         root = Path(__file__).resolve().parents[1]
         draft = json.loads((root / 'pilot/vol4_scan00071_single_reading.json').read_text(encoding='utf-8'))
-        html = APP.read_text(encoding='utf-8')
+        html = reader_html()
         contents = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         anchors = [e for e in contents['4']['entries'] if len(e) > 6]
         self.assertGreaterEqual(len(anchors), 48)
@@ -1224,7 +1272,7 @@ class ReviewSmoke(unittest.TestCase):
     def test_preface_anchors_reuse_existing_readings(self):
         import json
         root = Path(__file__).resolve().parents[1]
-        data = json.loads(APP.read_text(encoding='utf-8').split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        data = json.loads(reader_html().split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
         for v, scan in [('1', 10), ('5', 11)]:
             entry = next(e for e in data[v]['entries'] if e[1] == 'Передмова')
             self.assertEqual(entry[3], scan)
@@ -1247,7 +1295,7 @@ class ReviewSmoke(unittest.TestCase):
                     contributor_id=intake["submitter"]["github_user_id"],contributor_login=intake["submitter"]["login_at_intake"],
                     issue_url=intake["submitter"]["issue_url"],source_commit=intake["bundle"]["source_commit"],
                     review_reason="Internal adjudication log must not be inserted into the reader.")
-        html=APP.read_text(encoding="utf-8").replace("updateMode();load();","updateMode();load=()=>{};load();")
+        html=reader_html().replace("updateMode();load();","updateMode();load=()=>{};load();")
         with sync_playwright() as p:
             browser=p.chromium.launch(executable_path=os.environ.get("CHROMIUM") or None,args=["--no-sandbox"])
             page=browser.new_page(viewport={"width":390,"height":844})
@@ -1362,7 +1410,7 @@ class ReviewSmoke(unittest.TestCase):
                 const src = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,'src');
                 Object.defineProperty(HTMLImageElement.prototype,'src',{get:src.get,set(value){src.set.call(this,fixture.png)}});
             }''', fixture)
-            page.set_content(APP.read_text(encoding='utf-8'))
+            page.set_content(reader_html())
             for control in ['#searchOpen', '#searchGo']:
                 self.assertEqual(page.locator(control + ' svg').count(), 1)
                 self.assertEqual(page.locator(control + ' svg').get_attribute('aria-hidden'), 'true')
