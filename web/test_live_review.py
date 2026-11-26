@@ -212,6 +212,17 @@ with ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, dir
             editorial.locator("#editorialView").check()
             expect(heading).to_contain_text("Іллі")
             editorial.close()
+            # New actual review issues: default corrected reading on both
+            # exact source and authenticated initial-language revision.
+            for volume,scan,line_id,expected in [
+                (1,127,"enoch-flood-l002","б л ѧ д о т в о́ р ц ы"),
+                (2,80,"preface-line-01","покаранє Жидів"),
+            ]:
+                reviewed=browser.new_page(viewport={"width":390,"height":844})
+                reviewed.set_default_timeout(60000)
+                reviewed.goto(base+f"#v={volume}&p={scan}&ref=main")
+                expect(reviewed.locator(f".line-text[data-line-id='{line_id}']")).to_contain_text(expected)
+                reviewed.close()
             browser.close()
     finally:
         server.shutdown()

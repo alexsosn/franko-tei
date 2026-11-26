@@ -1,0 +1,100 @@
+{
+  "schema_version": "franko-review-intake-v1",
+  "status": "pending_adjudication",
+  "submitter": {
+    "github_user_id": 3265391,
+    "login_at_intake": "alexsosn",
+    "issue_id": 6630995307,
+    "issue_number": 369,
+    "issue_url": "https://github.com/alexsosn/franko-tei/issues/369"
+  },
+  "bundle_sha256": "d001c83f40ba6fba11f683d14e77a202254528c5a46182b511dc0616ae74eb71",
+  "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"5d691672-7b61-455d-aa6a-25de26b34e93\",\"source_commit\":\"dee356cf87947751bd6cef92d9ade2f14643160c\",\"events\":[{\"event_id\":\"6b0e2025-7c3f-49b9-9c72-04a7a3e8ae0f\",\"target\":{\"candidate_path\":\"pilot/vol2_scan00080_single_reading.json\",\"candidate_blob\":\"1b837bedd75a01c6ea08d3726599f6a29746b69c\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4\",\"reader_id\":\"gpt62-ii-80-image-20261126\",\"region_id\":\"folio\",\"line_id\":\"folio-line-01\",\"original\":\"LXXVI\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"e651330d-47eb-4be3-a686-4e4747d8ac01\",\"target\":{\"candidate_path\":\"pilot/vol2_scan00080_single_reading.json\",\"candidate_blob\":\"1b837bedd75a01c6ea08d3726599f6a29746b69c\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4\",\"reader_id\":\"gpt62-ii-80-image-20261126\",\"region_id\":\"preface\",\"line_id\":\"preface-line-01\",\"original\":\"Марти і Марії до Риму і покаране Жидів, з доданєм варіянтів\"},\"decision\":\"correct\",\"replacement\":\"Марти і Марії до Риму і покаранє Жидів, з доданєм варіянтів\",\"note\":null},{\"event_id\":\"205a89d3-22cf-42ef-8cb0-10be31c14eec\",\"target\":{\"candidate_path\":\"pilot/vol2_scan00080_single_reading.json\",\"candidate_blob\":\"1b837bedd75a01c6ea08d3726599f6a29746b69c\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4\",\"reader_id\":\"gpt62-ii-80-image-20261126\",\"region_id\":\"preface\",\"line_id\":\"preface-line-02\",\"original\":\"із иньших друкованих давнїйше текстів (стор. 113—135). Знаходимо\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"669d85a8-6460-4293-b184-3f112148c6e1\",\"target\":{\"candidate_path\":\"pilot/vol2_scan00080_single_reading.json\",\"candidate_blob\":\"1b837bedd75a01c6ea08d3726599f6a29746b69c\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4\",\"reader_id\":\"gpt62-ii-80-image-20261126\",\"region_id\":\"preface\",\"line_id\":\"preface-line-03\",\"original\":\"тут текст найблизший із усїх звісних доси до того, який надруко-\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"31236724-483c-49c0-a90c-5558ba4035ed\",\"target\":{\"candidate_path\":\"pilot/vol2_scan00080_single_reading.json\",\"candidate_blob\":\"1b837bedd75a01c6ea08d3726599f6a29746b69c\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4\",\"reader_id\":\"gpt62-ii-80-image-20261126\",\"region_id\":\"preface\",\"line_id\":\"preface-line-04\",\"original\":\"ваний нами із книги „Страсти Господа нашего“ на стор. 349—357.\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null}]}",
+  "bundle": {
+    "schema_version": "franko-review-bundle-v1",
+    "bundle_id": "5d691672-7b61-455d-aa6a-25de26b34e93",
+    "source_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+    "events": [
+      {
+        "event_id": "6b0e2025-7c3f-49b9-9c72-04a7a3e8ae0f",
+        "target": {
+          "candidate_path": "pilot/vol2_scan00080_single_reading.json",
+          "candidate_blob": "1b837bedd75a01c6ea08d3726599f6a29746b69c",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4",
+          "reader_id": "gpt62-ii-80-image-20261126",
+          "region_id": "folio",
+          "line_id": "folio-line-01",
+          "original": "LXXVI"
+        },
+        "decision": "confirm",
+        "replacement": null,
+        "note": null
+      },
+      {
+        "event_id": "e651330d-47eb-4be3-a686-4e4747d8ac01",
+        "target": {
+          "candidate_path": "pilot/vol2_scan00080_single_reading.json",
+          "candidate_blob": "1b837bedd75a01c6ea08d3726599f6a29746b69c",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4",
+          "reader_id": "gpt62-ii-80-image-20261126",
+          "region_id": "preface",
+          "line_id": "preface-line-01",
+          "original": "Марти і Марії до Риму і покаране Жидів, з доданєм варіянтів"
+        },
+        "decision": "correct",
+        "replacement": "Марти і Марії до Риму і покаранє Жидів, з доданєм варіянтів",
+        "note": null
+      },
+      {
+        "event_id": "205a89d3-22cf-42ef-8cb0-10be31c14eec",
+        "target": {
+          "candidate_path": "pilot/vol2_scan00080_single_reading.json",
+          "candidate_blob": "1b837bedd75a01c6ea08d3726599f6a29746b69c",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4",
+          "reader_id": "gpt62-ii-80-image-20261126",
+          "region_id": "preface",
+          "line_id": "preface-line-02",
+          "original": "із иньших друкованих давнїйше текстів (стор. 113—135). Знаходимо"
+        },
+        "decision": "confirm",
+        "replacement": null,
+        "note": null
+      },
+      {
+        "event_id": "669d85a8-6460-4293-b184-3f112148c6e1",
+        "target": {
+          "candidate_path": "pilot/vol2_scan00080_single_reading.json",
+          "candidate_blob": "1b837bedd75a01c6ea08d3726599f6a29746b69c",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4",
+          "reader_id": "gpt62-ii-80-image-20261126",
+          "region_id": "preface",
+          "line_id": "preface-line-03",
+          "original": "тут текст найблизший із усїх звісних доси до того, який надруко-"
+        },
+        "decision": "confirm",
+        "replacement": null,
+        "note": null
+      },
+      {
+        "event_id": "31236724-483c-49c0-a90c-5558ba4035ed",
+        "target": {
+          "candidate_path": "pilot/vol2_scan00080_single_reading.json",
+          "candidate_blob": "1b837bedd75a01c6ea08d3726599f6a29746b69c",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "08ec34312819325c382365610d7421295a4a56c4c5e862a082fe1741ade911d4",
+          "reader_id": "gpt62-ii-80-image-20261126",
+          "region_id": "preface",
+          "line_id": "preface-line-04",
+          "original": "ваний нами із книги „Страсти Господа нашего“ на стор. 349—357."
+        },
+        "decision": "confirm",
+        "replacement": null,
+        "note": null
+      }
+    ]
+  }
+}

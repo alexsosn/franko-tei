@@ -223,11 +223,60 @@ def _source_json(raw):
     return json.loads(raw.decode("utf-8"), object_pairs_hook=unique_pairs, parse_constant=reject_constant)
 
 
+def _verified_contextual_revision(raw, path, relevant, source_loader, projection_commit,
+                                  base_blob, current):
+    """Prove initial contextual annotation of previously unannotated lines.
+
+    The explicit source metadata and trusted history bind the exact pre-
+    annotation blob. An annotation is not permission to change source text,
+    identities, geometry, provenance, uncertainty, or existing spans.
+    """
+    metadata = current.get("language_annotation")
+    fields(metadata, {"schema_version", "annotator_model", "source_record_commit",
+                      "source_record_blob", "scope", "status", "method"},
+           "contextual language annotation")
+    require(metadata["schema_version"] == "contextual-language-annotation-v1"
+            and metadata["source_record_blob"] == base_blob
+            and metadata["status"] == "agent_unverified",
+            "invalid contextual annotation provenance")
+    for field in ("annotator_model", "scope", "method"):
+        literal(metadata[field], "contextual annotation " + field)
+    match(SHA, metadata["source_record_commit"], "annotation source commit")
+    old_raw = source_loader(metadata["source_record_commit"], path)
+    require(blob_sha(old_raw) == base_blob, "annotation base blob mismatch")
+    for commit in {e["source_commit"] for e in relevant.values()}:
+        require(source_loader(commit, path) == old_raw, "accepted historical source mismatch")
+    old = _source_json(old_raw)
+    check_draft_offline(path, old)
+    check_draft_offline(path, current)
+    require("language_annotation" not in old, "not an initial contextual annotation")
+    expected = copy.deepcopy(old)
+    expected["language_annotation"] = copy.deepcopy(metadata)
+    old_lines = {l["id"]: l for r in expected["reading"]["regions"] for l in r["lines"]}
+    changed = 0
+    for region in current["reading"]["regions"]:
+        for line in region["lines"]:
+            before = old_lines[line["id"]]
+            if _canonical(before["language_spans"]) == _canonical(line["language_spans"]):
+                continue
+            require(before["language_spans"] == [] and line["language_spans"],
+                    "existing language spans changed")
+            before["language_spans"] = copy.deepcopy(line["language_spans"])
+            changed += 1
+    require(changed > 0, "no initial language spans added")
+    require(_canonical(expected) == _canonical(current),
+            "non-annotation source content changed")
+    return {"kind": "initial_contextual_language_only", "accepted_blob": base_blob,
+            "projected_blob": blob_sha(raw), "projected_commit": projection_commit,
+            "annotation_source_commit": metadata["source_record_commit"]}
+
+
 def _verified_annotation_revision(raw, path, relevant, source_loader, projection_commit):
     """Prove a direct, explicitly attested annotation-only derivation.
 
-    Only exact printed label ranges, split out of a single old cu/chu span,
-    are supported. No arbitrary reannotation or new source content is allowed.
+    Exact printed label ranges split out of a single old cu/chu span and
+    initial contextual spans on previously unannotated lines are supported.
+    No arbitrary reannotation or new source content is allowed.
     Both candidate versions must come from the caller's trusted Git history.
     """
     try:
@@ -240,6 +289,9 @@ def _verified_annotation_revision(raw, path, relevant, source_loader, projection
         base_blob = next(iter(base_blobs))
         current = _source_json(raw)
         metadata = current["reading"].get("footnote_marker_annotation")
+        if metadata is None:
+            return _verified_contextual_revision(raw, path, relevant, source_loader,
+                                                projection_commit, base_blob, current)
         fields(metadata, {"source_record_commit", "source_record_blob", "method",
                           "status", "marker_count"}, "footnote annotation")
         require(metadata["source_record_blob"] == base_blob

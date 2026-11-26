@@ -1,0 +1,36 @@
+{
+  "schema_version": "franko-review-intake-v1",
+  "status": "pending_adjudication",
+  "submitter": {
+    "github_user_id": 3265391,
+    "login_at_intake": "alexsosn",
+    "issue_id": 6614245129,
+    "issue_number": 277,
+    "issue_url": "https://github.com/alexsosn/franko-tei/issues/277"
+  },
+  "bundle_sha256": "52fbb6d2cadd51849275b7ff829535b6dee1167e306c97ca35b3bc3deb95f398",
+  "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"eacc6005-133e-4140-9753-844b3b02447d\",\"source_commit\":\"6b40c9d2aba5c9f0e8e57f9839c86bfdceea7b4f\",\"events\":[{\"event_id\":\"8933e591-53d0-4ec1-8041-6d92b9116cb5\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00127_single_reading.json\",\"candidate_blob\":\"f3e9e656b1fe6845ac80d46547b2df31f499d360\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"1de02e6e18cc61daa28f360deae04fd47563ffbcb6d15d70fa5a77394cfd4195\",\"reader_id\":\"gpt62-i127-first-image-20261125\",\"region_id\":\"enoch-flood\",\"line_id\":\"enoch-flood-l002\",\"original\":\"д о м с к ї и  б л а д о т в о́ р ц ы, и  т о г о  р а́ д ы  н а в о́ д и т  п о-\"},\"decision\":\"correct\",\"replacement\":\"д о м с к ї и  б л ѧ д о т в о́ р ц ы, и  т о г о  р а́ д ы  н а в о́ д и т  п о-\",\"note\":null}]}",
+  "bundle": {
+    "schema_version": "franko-review-bundle-v1",
+    "bundle_id": "eacc6005-133e-4140-9753-844b3b02447d",
+    "source_commit": "6b40c9d2aba5c9f0e8e57f9839c86bfdceea7b4f",
+    "events": [
+      {
+        "event_id": "8933e591-53d0-4ec1-8041-6d92b9116cb5",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00127_single_reading.json",
+          "candidate_blob": "f3e9e656b1fe6845ac80d46547b2df31f499d360",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "1de02e6e18cc61daa28f360deae04fd47563ffbcb6d15d70fa5a77394cfd4195",
+          "reader_id": "gpt62-i127-first-image-20261125",
+          "region_id": "enoch-flood",
+          "line_id": "enoch-flood-l002",
+          "original": "д о м с к ї и  б л а д о т в о́ р ц ы, и  т о г о  р а́ д ы  н а в о́ д и т  п о-"
+        },
+        "decision": "correct",
+        "replacement": "д о м с к ї и  б л ѧ д о т в о́ р ц ы, и  т о г о  р а́ д ы  н а в о́ д и т  п о-",
+        "note": null
+      }
+    ]
+  }
+}
