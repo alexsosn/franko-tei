@@ -489,6 +489,37 @@ class ReviewSmoke(unittest.TestCase):
         for index in (38, 39, 40, 42, 43, 44, 45):
             self.assertNotIn('ECCA 611', links(index))
 
+    def test_vol2_nativity_and_flight_sources(self):
+        import csv
+        import json
+        html = APP.read_text(encoding='utf-8')
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        audit = Path(__file__).resolve().parent.parent / 'docs' / 'contents-english-title-audit.tsv'
+        with audit.open(encoding='utf-8', newline='') as source:
+            rows = {int(r['index_zero_based']): r for r in csv.DictReader(source, delimiter='\t', quoting=csv.QUOTE_NONE) if r['volume'] == '2'}
+        def links(index):
+            key = json.dumps(data['2']['entries'][index][:3], ensure_ascii=False, separators=(',', ':'))
+            return {link['id']: link for link in refs['2'].get(key, [])}
+        for index in range(47, 75):
+            self.assertNotEqual(rows[index]['status'], 'pending')
+        for index in (47, 49, 50):
+            self.assertEqual(links(index)['ECCA 974']['relation'], 'work-family')
+        self.assertNotIn('ECCA 611', links(47))  # source material omitted by Franko
+        for index in (49, 50, 55, 59):
+            self.assertEqual(links(index)['ECCA 611']['relation'], 'work-family')
+        for index in (60, 61):
+            self.assertEqual(links(index)['ECCA 635']['relation'], 'work-family')
+        for index in (64, 65, 66):
+            self.assertEqual(links(index)['ECCA 545']['relation'], 'work-family')
+        for index in (67, 68):
+            self.assertEqual(links(index)['ECCA 121']['relation'], 'work-family')
+            self.assertEqual(links(index)['ECCA 596']['relation'], 'candidate')
+        for index in (48, 51, 52, 53, 54, 56, 57, 63, 73, 74):
+            self.assertFalse(links(index))
+        self.assertEqual(links(58)['ECCA 509']['relation'], 'edition-match')
+        self.assertNotIn('ECCA 509', links(59))
+
     def test_contents_work_references(self):
         import json
         html = reader_html()
