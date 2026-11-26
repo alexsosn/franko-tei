@@ -1020,7 +1020,7 @@
         "lines": [
           {
             "id": "note-1-line-01",
-            "text": "¹) В рукоп. ѹбо.",
+            "text": "¹) В рукоп. ѡбо.",
             "bbox_xywh": [
               244,
               1544,
@@ -1031,27 +1031,27 @@
             "language_spans": [
               {
                 "text_version": "gpt62-v3-s00142-20261126",
-                "start": 0,
-                "end": 2,
                 "language": "zxx",
                 "script": "Zyyy",
-                "uncertain": false
+                "uncertain": false,
+                "start": 0,
+                "end": 2
               },
               {
                 "text_version": "gpt62-v3-s00142-20261126",
-                "start": 2,
-                "end": 12,
                 "language": "uk",
                 "script": "Cyrl",
-                "uncertain": false
+                "uncertain": false,
+                "start": 2,
+                "end": 12
               },
               {
                 "text_version": "gpt62-v3-s00142-20261126",
-                "start": 12,
-                "end": 16,
                 "language": "cu",
                 "script": "Cyrl",
-                "uncertain": true
+                "uncertain": true,
+                "start": 12,
+                "end": 16
               }
             ]
           }
@@ -1078,6 +1078,11 @@
         "line_id": "witness-b-line-07",
         "reading": "Іѡан'нокы",
         "reason": "Provisional historical glyph sequence; exact letterforms and diacritics require enlarged collation."
+      },
+      {
+        "line_id": "note-1-line-01",
+        "reading": "ѡбо",
+        "reason": "Provisional omega/uk glyph reading in small-type note; enlarged collation needed."
       }
     ],
     "source_note_links": [
