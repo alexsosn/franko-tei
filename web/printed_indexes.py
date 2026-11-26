@@ -151,6 +151,54 @@ EXTRA_PAGES = {
         (442, "gpt62-i442-first-image-20261125", {
             "motifs-v": [5,10,11,12,16,20,21,22,23],
             "motifs-g": [3,5,7,10,12,13,15,17,18,20]}),
+
+        (443, "gpt62-i443-first-image-20261125", {
+            "motifs": [3,6,9,11,12,14,15,17,19,20,22,24,25,27,31,36,39,41,42,44,45,46,47]}),
+        (444, "gpt62-i444-first-image-20261125", {
+            "motifs-d": [1,4,6,7,9,10,12,14,15,18,20,22,24,27,31,34,35,38],
+            "motifs-e": [2,4,6,7]}),
+        (445, "gpt62-i445-first-image-20261125", {
+            "motifs": [1,3,4,7,10,12,13,17,19,21,24,26,27,29,31,33,36,38,40,42,44,46,47,49]}),
+        (446, "gpt62-i446-first-image-20261125", {
+            "motifs-e": [2,4,7],
+            "motifs-zh": [2,7,8,10,12,13],
+            "motifs-z": [5,6,9,12,14,15,16,17,18,20]}),
+        (447, "gpt62-i447-first-image-20261125", {
+            "motifs": [2,5,8,9,12,14,15,17,18,22,23,24,25,29,33,36,39,44,47]}),
+        (448, "gpt62-i448-first-image-20261125", {
+            "motifs": [2,6,8,10,12,14,16,19,20,23,27,32,34,38,40,42,43,45,46,48,49]}),
+
+        (449, "gpt62-i449-first-image-20261125", {
+            "motifs-i": [3,4,5,7,8,9,11,13,15,16],
+            "motifs-k": [1,4,5,7,10,12,14,16,18,20,22,24,26,29]}),
+        (450, "gpt62-i450-first-image-20261125", {
+            "motifs-k": [2,4,6,7,8,9,10],
+            "motifs-l": [4,5,6,9,10,11,12,14,15,17,19,21,24,25,27,28,30,31,32,34]}),
+        (451, "gpt62-i451-first-image-20261125", {
+            "motifs": [2,4,6,9,13,16,18,19,21,23,24,25,26,28,30,31,32,34,37,39,42,45,47]}),
+        (452, "gpt62-i452-first-image-20261125", {
+            "motifs-m": [2,4,7,13,15,17,19,20,23,25,28,29,32,33,35,37],
+            "motifs-n": [1,3,5,7,8]}),
+        (453, "gpt62-i453-first-image-20261125", {
+            "motifs-n": [3,11,12,14,18,20,23,25,27,30],
+            "motifs-o": [2,3,6,8,9],
+            "motifs-p": [2]}),
+        (454, "gpt62-i454-first-image-20261125", {
+            "motifs-p": [5,7,11,13,16],
+            "motifs-r": [3,5,6,8,10,11,15,16,18,19],
+            "motifs-s": [2,3,5,6]}),
+        (455, "gpt62-i455-first-image-20261125", {
+            "motifs": [2,5,7,9,10,12,13,17,18,20,23,25,27,28,29,31,32,33,34,36,38,41,43,45,47,49]}),
+        (456, "gpt62-i456-first-image-20261125", {
+            "motifs-s": [2,5,9,12,15,16,17,19,21,24,26,28,30,31,33,34,35,36,37,40,41,43],
+            "motifs-t": [1,3]}),
+        (457, "gpt62-i457-first-image-20261125", {
+            "motifs-t": [2,4,7,8,11,14],
+            "motifs-f": [4,6,11,13,15,17],
+            "motifs-x": [2,6,8],
+            "motifs-ts": [2]}),
+        (458, "gpt62-i458-first-image-20261125", {
+            "motifs": [1,2,3,5,8,9,11,12,14,16,19]}),
     ),
     "glossary": (
         (460, "gpt62-i460-first-image-20261125", {
@@ -166,6 +214,226 @@ EXTRA_PAGES = {
 }
 # Editorial context is separate from the printed ditto glyphs.
 ENTRY_CONTEXTS = {
+    (449, "motifs-i", 6): "Іюда",
+    (449, "motifs-i", 8): "Іюда",
+    (449, "motifs-i", 9): "Іюда",
+    (449, "motifs-i", 10): "Іюда",
+    (449, "motifs-i", 12): "Іюда",
+    (449, "motifs-i", 14): "Іюда",
+    (449, "motifs-i", 16): "Іюда",
+    (449, "motifs-k", 2): "Каін",
+    (449, "motifs-k", 5): "Каін",
+    (449, "motifs-k", 6): "Каін",
+    (449, "motifs-k", 13): "Китоврас",
+    (449, "motifs-k", 15): "Китоврас",
+    (449, "motifs-k", 17): "Китоврас",
+    (449, "motifs-k", 19): "Китоврас",
+    (449, "motifs-k", 21): "Китоврас",
+    (449, "motifs-k", 23): "Китоврас",
+    (449, "motifs-k", 25): "Китоврас",
+    (449, "motifs-k", 27): "Китоврас",
+    (450, "motifs-k", 8): "Кровосумішка",
+    (450, "motifs-k", 9): "Кровосумішка",
+    (450, "motifs-k", 10): "Кровосумішка",
+    (450, "motifs-l", 6): "Лев",
+    (450, "motifs-l", 10): "Левгій",
+    (450, "motifs-l", 11): "Левгій",
+    (450, "motifs-l", 12): "Левгій",
+    (450, "motifs-l", 13): "Левгій",
+    (450, "motifs-l", 22): "Лот",
+    (450, "motifs-l", 25): "Лот",
+    (450, "motifs-l", 28): "Лотові дочки",
+    (450, "motifs-l", 31): "Люципер",
+    (450, "motifs-l", 32): "Люципер",
+    (451, "motifs", 7): "Мелхіседек",
+    (451, "motifs", 10): "Мелхіседек",
+    (451, "motifs", 14): "Мелхіседек",
+    (451, "motifs", 17): "Мелхіседек",
+    (451, "motifs", 19): "Мелхіседек",
+    (451, "motifs", 20): "Мелхіседек",
+    (451, "motifs", 24): "Михаїл",
+    (451, "motifs", 25): "Михаїл",
+    (451, "motifs", 26): "Михаїл",
+    (451, "motifs", 27): "Михаїл",
+    (451, "motifs", 29): "Михаїл",
+    (451, "motifs", 33): "Мойсей",
+    (451, "motifs", 35): "Мойсей",
+    (451, "motifs", 38): "Мойсей",
+    (451, "motifs", 40): "Мойсей",
+    (451, "motifs", 43): "Мойсей",
+    (451, "motifs", 46): "Мойсей",
+    (452, "motifs-m", 3): "Мойсей",
+    (452, "motifs-m", 5): "Мойсей",
+    (452, "motifs-m", 8): "Мойсей",
+    (452, "motifs-m", 14): "Мойсей",
+    (452, "motifs-m", 16): "Мойсей",
+    (452, "motifs-m", 18): "Мойсей",
+    (452, "motifs-m", 20): "Мойсей",
+    (452, "motifs-m", 21): "Мойсей",
+    (452, "motifs-m", 24): "Мойсей",
+    (452, "motifs-m", 26): "Мойсей",
+    (452, "motifs-m", 29): "Мойсей",
+    (452, "motifs-m", 30): "Мойсей",
+    (452, "motifs-n", 2): "Навуходоносор",
+    (452, "motifs-n", 4): "Навуходоносор",
+    (452, "motifs-n", 6): "Навуходоносор",
+    (453, "motifs-n", 13): "Нефталим",
+    (453, "motifs-n", 15): "Нефталим",
+    (453, "motifs-n", 24): "Ной",
+    (453, "motifs-n", 26): "Ной",
+    (453, "motifs-o", 3): "Огонь",
+    (454, "motifs-r", 4): "Рахиль",
+    (454, "motifs-r", 6): "Рахиль",
+    (454, "motifs-r", 9): "Рахмани",
+    (454, "motifs-r", 16): "Рувим",
+    (454, "motifs-r", 17): "Рувим",
+    (454, "motifs-r", 19): "Рувим",
+    (454, "motifs-s", 3): "Самсон",
+    (455, "motifs", 8): "Сатанаіл",
+    (455, "motifs", 10): "Сатанаіл",
+    (455, "motifs", 11): "Сатанаіл",
+    (455, "motifs", 13): "Сатанаіл",
+    (455, "motifs", 18): "Семеон",
+    (455, "motifs", 19): "Семеон",
+    (455, "motifs", 26): "Сивидла",
+    (455, "motifs", 28): "Сивидла",
+    (455, "motifs", 30): "Сиф",
+    (455, "motifs", 32): "Сиф",
+    (455, "motifs", 33): "Сиф",
+    (455, "motifs", 34): "Сиф",
+    (455, "motifs", 35): "Сиф",
+    (455, "motifs", 44): "Соломон",
+    (455, "motifs", 46): "Соломон",
+    (455, "motifs", 48): "Соломон",
+    (456, "motifs-s", 1): "Соломон",
+    (456, "motifs-s", 3): "Соломон",
+    (456, "motifs-s", 6): "Соломон",
+    (456, "motifs-s", 10): "Соломон",
+    (456, "motifs-s", 13): "Соломон",
+    (456, "motifs-s", 16): "Соломон",
+    (456, "motifs-s", 17): "Соломон",
+    (456, "motifs-s", 18): "Соломон",
+    (456, "motifs-s", 20): "Соломон",
+    (456, "motifs-s", 22): "Соломон",
+    (456, "motifs-s", 25): "Соломон",
+    (456, "motifs-s", 27): "Соломон",
+    (456, "motifs-s", 29): "Соломон",
+    (456, "motifs-s", 31): "Соломон",
+    (456, "motifs-s", 35): "Сонце",
+    (456, "motifs-s", 36): "Сонце",
+    (456, "motifs-s", 37): "Сонце",
+    (456, "motifs-s", 41): "Сотона",
+    (457, "motifs-t", 3): "Три отроки",
+    (457, "motifs-t", 5): "Три отроки",
+    (457, "motifs-t", 8): "Три отроки",
+    (457, "motifs-t", 9): "Три отроки",
+    (457, "motifs-t", 12): "Три отроки",
+    (457, "motifs-f", 5): "Фараон",
+    (457, "motifs-f", 7): "Фараон",
+    (457, "motifs-f", 12): "Фараон",
+    (457, "motifs-f", 14): "Фараон",
+    (457, "motifs-f", 16): "Фараон",
+    (457, "motifs-x", 7): "Хрестове дерево",
+    (458, "motifs", 2): "Яков",
+    (458, "motifs", 3): "Яков",
+    (458, "motifs", 4): "Яков",
+    (458, "motifs", 6): "Яков",
+    (458, "motifs", 9): "Яков",
+    (458, "motifs", 10): "Яков",
+    (458, "motifs", 12): "Яков",
+    (458, "motifs", 13): "Яков",
+    (458, "motifs", 15): "Яков",
+    (458, "motifs", 17): "Яков",
+    (443, "motifs", 4): "Давид",
+    (443, "motifs", 7): "Давид",
+    (443, "motifs", 12): "Дан",
+    (443, "motifs", 13): "Дан",
+    (443, "motifs", 16): "Даниїл",
+    (443, "motifs", 18): "Даниїл",
+    (443, "motifs", 20): "Даниїл",
+    (443, "motifs", 21): "Даниїл",
+    (443, "motifs", 23): "Даниїл",
+    (443, "motifs", 25): "Даниїл",
+    (443, "motifs", 26): "Даниїл",
+    (443, "motifs", 32): "Дарий",
+    (443, "motifs", 40): "Демони",
+    (443, "motifs", 42): "Демони",
+    (443, "motifs", 43): "Демони",
+    (443, "motifs", 45): "Демони",
+    (443, "motifs", 46): "Демони",
+    (443, "motifs", 47): "Демони",
+    (444, "motifs-d", 2): "Демони",
+    (444, "motifs-d", 5): "Демони",
+    (444, "motifs-d", 7): "Демони",
+    (444, "motifs-d", 8): "Демони",
+    (444, "motifs-d", 10): "Демони",
+    (444, "motifs-d", 11): "Демони",
+    (444, "motifs-d", 13): "Демони",
+    (444, "motifs-d", 15): "Демони",
+    (444, "motifs-d", 21): "Диявол",
+    (444, "motifs-d", 23): "Диявол",
+    (444, "motifs-d", 25): "Диявол",
+    (444, "motifs-d", 28): "Диявол",
+    (444, "motifs-d", 32): "Диявол",
+    (444, "motifs-e", 3): "Ева",
+    (444, "motifs-e", 5): "Ева",
+    (444, "motifs-e", 7): "Ева",
+    (445, "motifs", 2): "Ева",
+    (445, "motifs", 4): "Ева",
+    (445, "motifs", 8): "Єгиптяне",
+    (445, "motifs", 11): "Єгиптяне",
+    (445, "motifs", 13): "Єгиптяне",
+    (445, "motifs", 14): "Єгиптяне",
+    (445, "motifs", 22): "Єлисей",
+    (445, "motifs", 25): "Єлисей",
+    (445, "motifs", 27): "Єлисей",
+    (445, "motifs", 30): "Енох",
+    (445, "motifs", 32): "Енох",
+    (445, "motifs", 34): "Енох",
+    (445, "motifs", 37): "Енох",
+    (445, "motifs", 39): "Енох",
+    (445, "motifs", 41): "Енох",
+    (445, "motifs", 43): "Енох",
+    (445, "motifs", 45): "Енох",
+    (445, "motifs", 47): "Енох",
+    (445, "motifs", 48): "Енох",
+    (446, "motifs-e", 3): "Єремія",
+    (446, "motifs-zh", 3): "Жаби",
+    (446, "motifs-zh", 13): "Жінка",
+    (446, "motifs-z", 7): "Заулон",
+    (446, "motifs-z", 10): "Заулон",
+    (446, "motifs-z", 16): "Земля",
+    (446, "motifs-z", 18): "Змія",
+    (447, "motifs", 3): "Ізмаїл",
+    (447, "motifs", 6): "Ізмаїл",
+    (447, "motifs", 13): "Ілия",
+    (447, "motifs", 15): "Ілия",
+    (447, "motifs", 16): "Ілия",
+    (447, "motifs", 18): "Ілия",
+    (447, "motifs", 19): "Ілия",
+    (447, "motifs", 23): "Ілия",
+    (447, "motifs", 24): "Ілия",
+    (447, "motifs", 25): "Ілия",
+    (447, "motifs", 34): "Йосиф",
+    (447, "motifs", 37): "Йосиф",
+    (447, "motifs", 40): "Йосиф",
+    (447, "motifs", 45): "Йосиф",
+    (448, "motifs", 3): "Йосиф",
+    (448, "motifs", 7): "Йосиф",
+    (448, "motifs", 9): "Йосиф",
+    (448, "motifs", 11): "Йосиф",
+    (448, "motifs", 13): "Йосиф",
+    (448, "motifs", 15): "Йосиф",
+    (448, "motifs", 17): "Йосиф",
+    (448, "motifs", 20): "Йосиф",
+    (448, "motifs", 21): "Йосиф",
+    (448, "motifs", 24): "Йосиф",
+    (448, "motifs", 28): "Йосиф",
+    (448, "motifs", 33): "Йосиф",
+    (448, "motifs", 35): "Йосиф",
+    (448, "motifs", 43): "Ісаак",
+    (448, "motifs", 46): "Ісав і Яков",
+    (448, "motifs", 49): "Ісав",
     (438, "motifs", 4): "Адам",
     (438, "motifs", 5): "Адам",
     (438, "motifs", 6): "Адам",
@@ -424,6 +692,22 @@ ENTRY_CONTEXTS = {
     (421, "right", 21): "цар",
 }
 SOURCE_BLOBS.update({
+    449: "f3bec1abe99f059d7af5d7906274bf48dc76e2e3",
+    450: "5fcc6710f90cb569ab52c85ce4fa2418b2c3ad6e",
+    451: "6d8dfb85565ff051054755c614a5a8743b6f7c28",
+    452: "882b0bd52a26e8c2b1bc59a94f04ca2cf93609de",
+    453: "dc3564ddc9a7d88bdd92f5b15ad6ef3616da5c1e",
+    454: "c5951c7eac6ca0ea8a8dab8535437c5f4bd6a509",
+    455: "c1dbad57365486867e41f34e649875f5d1faeef2",
+    456: "90bd14a54099d53e7e90f1221bf926a0f4d3aa98",
+    457: "3f4a2f6c33eae9489eb0bd61105531279e5abe64",
+    458: "cbd27abd2c5ee361a96f70779dbbfd798521084c",
+    443: "ee98bf07de67afe7a54f811ee5525372fb0259a4",
+    444: "5aa350401906e658af4414ef092a45f3b81afc0a",
+    445: "92ac1209f2403226e7eca952243e5e58556ba71f",
+    446: "c87dce1d07212e812a3eb9f241ecaa41a37e1498",
+    447: "7c6bb7da27062451db2947fca797c0d7e130c4d0",
+    448: "8616a6185c04afece72044e60670490fb17ab81e",
     438: "bbdf5472ce6638754bd4729e46d43ba94da0a468",
     439: "6a24cebe457567c7953a30481566d70c471f30a1",
     440: "7194df7663ca8b387ac0ac2fdc6cf2afe90c6a31",
@@ -457,8 +741,8 @@ SOURCE_BLOBS.update({
 # scan's pinned reading is absent or changed.
 CONTINUATIONS = {(422, "right", 1), (425, "left-m", 1),
                  (430, "left", 1), (430, "right-ya", 1),
-                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1), (440, "motifs", 1)}
-ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435), (439, 440))
+                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1), (440, "motifs", 1), (444, "motifs-d", 1), (445, "motifs", 1), (448, "motifs", 1), (452, "motifs-m", 1), (453, "motifs-n", 1)}
+ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435), (439, 440), (443, 444), (444, 445), (447, 448), (451, 452), (452, 453))
 # Running continuation heading is literal evidence, not part of the numeric tail.
 CONTINUATION_PREFIXES = {(434, "right-p", 1): "Палея Крех. "}
 # Explicit source line break with no printed separator; do not guess missing commas.
@@ -571,6 +855,12 @@ def parse_entry(kind, lines, targets):
                     refs.append(dict(literal=token, volume="1", role="unresolved",
                                      targets=[], missing=[]))
             return label, "", refs
+    # I453 Heaven is one article with two separately printed citation groups.
+    if kind == "motifs" and joined.startswith("Небо зложене з 10 поверхів:") and len(lines) == 8:
+        first, _, a = parse_entry(kind, lines[:5], targets)
+        second, _, b = parse_entry(kind, lines[5:], targets)
+        if [r["literal"] for r in a+b] == ["40—44", "44—46"]:
+            return first + " " + second, "", a+b
     # The source on I442 has two complete adjacent page ranges, with no comma.
     if kind == "motifs" and joined.endswith("258—259 261—262"):
         label = re.sub(r"(?:\s+\.)+\s*$", "", joined[:-len("258—259 261—262")].rstrip())
@@ -712,6 +1002,73 @@ def reconcile_ishmael_reference(files, targets, entry):
             entry["refs"][i] = corrected
 
 
+def reconcile_darius_reference(files, targets, entry):
+    # The source text spans pp.321–322; the parallel motif on I442 gives
+    # 320–321, and I443 has no numeral. Preserve both source readings.
+    printed = {"v1-442-motifs-v-l006": "320—321", "v1-443-motifs-l028": ""}
+    if entry["id"] not in printed:
+        return
+    literal = printed[entry["id"]]
+    if ([r["literal"] for r in entry["refs"]] != ([literal] if literal else [])
+            or targets.get(321) != 396 or targets.get(322) != 397):
+        return
+    evidence = [(396, "dc158de3ca4c7583e4ca2892414244a64b648ecd", "belshazzar-body-l005"),
+                (397, "27882c2c25acdcb4c07616a52e2835df284e7113", "belshazzar-body-l001")]
+    anchors = []
+    for scan, blob, line_id in evidence:
+        if scan not in files or files[scan][2] != blob:
+            return
+        path, draft, _ = files[scan]
+        hits = [(r, l) for r in draft["reading"]["regions"] for l in r["lines"]
+                if r["id"] == "belshazzar-body" and l["id"] == line_id]
+        if len(hits) != 1:
+            return
+        region, line = hits[0]
+        anchors.append(dict(suffix="single_reading", reader_id=draft["reading"]["reader_id"],
+                            line_id=line_id, text=line["text"], region_kind=region["kind"]))
+    ref = make_ref("321—322", targets, "editorial_citation")
+    ref["printed_literal"] = literal
+    ref["evidence"] = [dict(path="pilot/" + files[scan][0].name, blob=blob, line_id=line_id)
+                       for scan, blob, line_id in evidence]
+    for target, anchor in zip(ref["targets"], anchors):
+        target["anchor"] = anchor
+    entry["refs"] = [ref]
+
+
+# Four explicit index numerals contradict the actual attested text.
+MOTIF_EDITORIAL = {
+    "v1-456-motifs-s-l025": ("235", 285, 360, "598615576266d8ac04638e6a380e7dfbf3b2e0e4", "solomon-inheritance-l001"),
+    "v1-456-motifs-t-l002": ("351", 331, 406, "846e8d740b5fa3e4db792c6e73175928cff661ec", "abraham-body-l024"),
+    "v1-457-motifs-f-l005": ("222", 225, 300, "2c17b484068c5fe7253afca57af0190ed74d3fed", "pharaoh-dream-l013"),
+    "v1-458-motifs-l001": ("199", 109, 184, "299130f2bb80160e50e6d5f0aa9742d773c629cd", "jacob-ladder-continuation-l004"),
+}
+
+
+def reconcile_motif_reference(files, targets, entry):
+    if entry["id"] not in MOTIF_EDITORIAL:
+        return
+    literal, page, scan, blob, line_id = MOTIF_EDITORIAL[entry["id"]]
+    if targets.get(page) != scan or scan not in files or files[scan][2] != blob:
+        return
+    if literal == "351":
+        if entry["refs"] or not entry["label"].endswith(" 351"):
+            return
+        entry["label"] = re.sub(r"(?:\s+\.)+\s*$", "", entry["label"][:-4].rstrip())
+    elif [r["literal"] for r in entry["refs"]] != [literal]:
+        return
+    path, draft, _ = files[scan]
+    hits = [(r, l) for r in draft["reading"]["regions"] for l in r["lines"] if l["id"] == line_id]
+    if len(hits) != 1:
+        return
+    region, line = hits[0]
+    ref = make_ref(str(page), targets, "editorial_citation")
+    ref["printed_literal"] = literal
+    ref["evidence"] = dict(path="pilot/" + path.name, blob=blob, line_id=line_id, text=line["text"])
+    ref["targets"][0]["anchor"] = dict(suffix="single_reading", reader_id=draft["reading"]["reader_id"],
+                                       line_id=line_id, text=line["text"], region_kind=region["kind"])
+    entry["refs"] = [ref]
+
+
 def build_printed_indexes(pilot, ref, supplements=None):
     supplements = supplements or {}
     files = {}
@@ -759,9 +1116,13 @@ def build_printed_indexes(pilot, ref, supplements=None):
                     if scan in files and files[scan][1]["reading"]["reader_id"] == reader
                     and files[scan][2] == SOURCE_BLOBS[scan]}
         if kind in ("names", "works", "motifs"):
-            for pair in ATOMIC_PAIRS:
-                if not set(pair) <= eligible:
-                    eligible.difference_update(pair)
+            changed = True
+            while changed:
+                before = eligible.copy()
+                for pair in ATOMIC_PAIRS:
+                    if not set(pair) <= eligible:
+                        eligible.difference_update(pair)
+                changed = before != eligible
         for scan, reader, partitions in page_specs:
             # A changed/missing reading must not publish stale partitions or block
             # unrelated reader deployments. Re-segment explicitly against new bytes.
@@ -840,6 +1201,8 @@ def build_printed_indexes(pilot, ref, supplements=None):
         by_id = {e["id"]: e for e in section["entries"]}
         for entry in section["entries"]:
             reconcile_ishmael_reference(files, targets, entry)
+            reconcile_darius_reference(files, targets, entry)
+            reconcile_motif_reference(files, targets, entry)
             entry["crossrefs"] = [dict(id=ident, label=by_id[ident]["label"])
                                   for ident in CROSSREFS.get(entry["id"], []) if ident in by_id]
             for citation in entry["refs"]:

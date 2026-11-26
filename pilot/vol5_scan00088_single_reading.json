@@ -1,0 +1,1008 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 88,
+  "printed_page_observed": "76",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00088.jpg",
+  "source_image_sha256": "8db6358ff10a727a5481ac55e7e17cc560b4a48bc21f85de813f15cfd70119b3",
+  "reading": {
+    "reader_id": "gpt62-v5s00088-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-v5-081-090-20261126",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct reading of pinned page image, without embedded OCR or another page candidate. Physical line ends and printed editorial lacuna wording retained; estimated geometry and provisional language/script spans. Not a verified edition.",
+    "raw_response": "76\nІ мовив до нього Іпатій: „Мій Христос знївечить тебе і зітре\nтвою память із землї до решти“.\nПочувши се цар велїв продовбати камінь і вложити йому на\nголову тамже і налляти з верху олова, і так само на ноги, і вине-\nсти його на верх високої гори і зіпхнути в долину. Коли він ко-\nтив ся в низ, хтось малий відвалив камінь, що був на його голові,\nі відкинув назад і побив 110 мужів, а другий з боку розбив царські\nшатра (кортини) і побив 300 мужів. Бачучи цар, що стало ся, велїв\nкинути його в темницю, [святий же] молив ся мовлячи: „Господи\nБоже мій, отче всякої плоти, що своєю смертю потоптав і осоро-\nмив діявола і дарував житє свойому народу, зглянь ся на мене\nі помилуй мене, вибави мене від сїти ловецької і від бунтовничих\nслів і дай менї ласку перед собою, щоб я побідив отсю змієву\nглубину“.\nКоли святий молив ся оттак, прийшов діявол в видї ангела.\nІ мовив до нього святий Іпатій:\n„Хто ти такий?“\nБіс відповів: „Я ангел божий“.\nСвятий мовив до нього: „Чого приходиш до мене, началь-\nниче бісів?“\nБіс відповів: „Приходжу виняти тебе із рук [ворогів] і по-\nцїлувати тебе“.\nІ мовив до нього святий: „Війди і поцїлуй!“\nІ коли біс війшов, він задержав його і звязав і положив при\nдверех темницї і знайшовши зелїзну дощечку почав бити його\nі промовляти:\n„Скажи менї, хто ти такий і хто послав тебе сюди?“\nБіс відповів: „Помилуй мене, чоловіче божий, і попусти менї\nтроха, і скажу тобі все. Я Сатана, той сам, що спокушав Сина бо-\nжого в пустинї і довів Адама до вигнаня з раю, і наробив незлї-\nченого зла. Коли прикажеш, то розповім тобі все, лиш пусти мене“.\nСвятий Іпатій сказав: „Завтра підемо оба разом до царя,\nнехай побачить твоє паскудне лице“.\nВ завтрї послав цар, щоб привели його. І пішов святий тяг-\nнучи біса за волосє. А біс благав його мовлячи:\n„Не роби менї сорому і помилуй мене! Христіяни все ми-\nлостиві, а ти чого так дуже прогнївав ся на мене?“\nКолиж прийшли до царя, побачивши його цар промовив: „Хто\nсе такий з тобою?“\nІ відмовив святий: „Се отець твій, діявол, якому ти кла-\nняєш ся як Богу“. [В текстї пропуск].",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          98,
+          87,
+          42,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "76",
+            "bbox_xywh": [
+              98,
+              87,
+              42,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "body-1",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          156,
+          1016,
+          78
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-1-line-01",
+            "text": "І мовив до нього Іпатій: „Мій Христос знївечить тебе і зітре",
+            "bbox_xywh": [
+              97,
+              156,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-02",
+            "text": "твою память із землї до решти“.",
+            "bbox_xywh": [
+              97,
+              195,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-2",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          234,
+          1016,
+          472
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-2-line-01",
+            "text": "Почувши се цар велїв продовбати камінь і вложити йому на",
+            "bbox_xywh": [
+              97,
+              234,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-02",
+            "text": "голову тамже і налляти з верху олова, і так само на ноги, і вине-",
+            "bbox_xywh": [
+              97,
+              273,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-03",
+            "text": "сти його на верх високої гори і зіпхнути в долину. Коли він ко-",
+            "bbox_xywh": [
+              97,
+              313,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-04",
+            "text": "тив ся в низ, хтось малий відвалив камінь, що був на його голові,",
+            "bbox_xywh": [
+              97,
+              352,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-05",
+            "text": "і відкинув назад і побив 110 мужів, а другий з боку розбив царські",
+            "bbox_xywh": [
+              97,
+              391,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-06",
+            "text": "шатра (кортини) і побив 300 мужів. Бачучи цар, що стало ся, велїв",
+            "bbox_xywh": [
+              97,
+              431,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-07",
+            "text": "кинути його в темницю, [святий же] молив ся мовлячи: „Господи",
+            "bbox_xywh": [
+              97,
+              470,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-08",
+            "text": "Боже мій, отче всякої плоти, що своєю смертю потоптав і осоро-",
+            "bbox_xywh": [
+              97,
+              509,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-09",
+            "text": "мив діявола і дарував житє свойому народу, зглянь ся на мене",
+            "bbox_xywh": [
+              97,
+              549,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-10",
+            "text": "і помилуй мене, вибави мене від сїти ловецької і від бунтовничих",
+            "bbox_xywh": [
+              97,
+              588,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-11",
+            "text": "слів і дай менї ласку перед собою, щоб я побідив отсю змієву",
+            "bbox_xywh": [
+              97,
+              627,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-12",
+            "text": "глубину“.",
+            "bbox_xywh": [
+              97,
+              667,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 9,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-3",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          707,
+          1016,
+          667
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-3-line-01",
+            "text": "Коли святий молив ся оттак, прийшов діявол в видї ангела.",
+            "bbox_xywh": [
+              97,
+              707,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-02",
+            "text": "І мовив до нього святий Іпатій:",
+            "bbox_xywh": [
+              97,
+              746,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-03",
+            "text": "„Хто ти такий?“",
+            "bbox_xywh": [
+              97,
+              785,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-04",
+            "text": "Біс відповів: „Я ангел божий“.",
+            "bbox_xywh": [
+              97,
+              825,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 30,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-05",
+            "text": "Святий мовив до нього: „Чого приходиш до мене, началь-",
+            "bbox_xywh": [
+              97,
+              864,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-06",
+            "text": "ниче бісів?“",
+            "bbox_xywh": [
+              97,
+              903,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-07",
+            "text": "Біс відповів: „Приходжу виняти тебе із рук [ворогів] і по-",
+            "bbox_xywh": [
+              97,
+              942,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-08",
+            "text": "цїлувати тебе“.",
+            "bbox_xywh": [
+              97,
+              982,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 15,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-09",
+            "text": "І мовив до нього святий: „Війди і поцїлуй!“",
+            "bbox_xywh": [
+              97,
+              1021,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-10",
+            "text": "І коли біс війшов, він задержав його і звязав і положив при",
+            "bbox_xywh": [
+              97,
+              1060,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-11",
+            "text": "дверех темницї і знайшовши зелїзну дощечку почав бити його",
+            "bbox_xywh": [
+              97,
+              1099,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-12",
+            "text": "і промовляти:",
+            "bbox_xywh": [
+              97,
+              1139,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 13,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-13",
+            "text": "„Скажи менї, хто ти такий і хто послав тебе сюди?“",
+            "bbox_xywh": [
+              97,
+              1178,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-14",
+            "text": "Біс відповів: „Помилуй мене, чоловіче божий, і попусти менї",
+            "bbox_xywh": [
+              97,
+              1217,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-15",
+            "text": "троха, і скажу тобі все. Я Сатана, той сам, що спокушав Сина бо-",
+            "bbox_xywh": [
+              97,
+              1256,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-16",
+            "text": "жого в пустинї і довів Адама до вигнаня з раю, і наробив незлї-",
+            "bbox_xywh": [
+              97,
+              1296,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-17",
+            "text": "ченого зла. Коли прикажеш, то розповім тобі все, лиш пусти мене“.",
+            "bbox_xywh": [
+              97,
+              1335,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-4",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          1374,
+          1016,
+          79
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-4-line-01",
+            "text": "Святий Іпатій сказав: „Завтра підемо оба разом до царя,",
+            "bbox_xywh": [
+              97,
+              1374,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-02",
+            "text": "нехай побачить твоє паскудне лице“.",
+            "bbox_xywh": [
+              97,
+              1414,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 35,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-5",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          1453,
+          1016,
+          156
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-5-line-01",
+            "text": "В завтрї послав цар, щоб привели його. І пішов святий тяг-",
+            "bbox_xywh": [
+              97,
+              1453,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-02",
+            "text": "нучи біса за волосє. А біс благав його мовлячи:",
+            "bbox_xywh": [
+              97,
+              1492,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-03",
+            "text": "„Не роби менї сорому і помилуй мене! Христіяни все ми-",
+            "bbox_xywh": [
+              97,
+              1531,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-04",
+            "text": "лостиві, а ти чого так дуже прогнївав ся на мене?“",
+            "bbox_xywh": [
+              97,
+              1570,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-6",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          1609,
+          1016,
+          79
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-6-line-01",
+            "text": "Колиж прийшли до царя, побачивши його цар промовив: „Хто",
+            "bbox_xywh": [
+              97,
+              1609,
+              1016,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-6-line-02",
+            "text": "се такий з тобою?“",
+            "bbox_xywh": [
+              97,
+              1649,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-7",
+        "kind": "body",
+        "bbox_xywh": [
+          97,
+          1689,
+          1016,
+          78
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-7-line-01",
+            "text": "І відмовив святий: „Се отець твій, діявол, якому ти кла-",
+            "bbox_xywh": [
+              97,
+              1689,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 56,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-7-line-02",
+            "text": "няєш ся як Богу“. [В текстї пропуск].",
+            "bbox_xywh": [
+              97,
+              1728,
+              1016,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": true,
+                "text_version": "gpt62-v5s00088-20261126"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [],
+    "source_note_links": []
+  }
+}

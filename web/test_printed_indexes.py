@@ -45,7 +45,7 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual(data["ref"], "a" * 40)
         self.assertEqual([s["kind"] for s in data["sections"]], ["names", "works", "motifs", "glossary"])
         self.assertEqual([len(s["scans"]) for s in data["sections"]], [15, 6, 22, 4])
-        self.assertEqual([s["structured_scans"] for s in data["sections"]], [list(range(416, 431)), list(range(431, 437)), list(range(437, 443)), [459, 460, 461, 462]])
+        self.assertEqual([s["structured_scans"] for s in data["sections"]], [list(range(416, 431)), list(range(431, 437)), list(range(437, 459)), [459, 460, 461, 462]])
         names, works, motifs, glossary = [s["entries"] for s in data["sections"]]
         abel = next(e for e in names if e["label"] == "Авель")
         self.assertEqual(len(abel["lines"]), 3)
@@ -63,8 +63,8 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual([r["literal"] for r in varilo["refs"]], ["195", "197"])
         self.assertIn("стор. 197", varilo["detail"])
         self.assertEqual(varilo["refs"][1]["role"], "variant")
-        self.assertEqual([len(motifs), len(glossary)], [123, 189])
-        for scan in range(437, 443):
+        self.assertEqual([len(motifs), len(glossary)], [453, 189])
+        for scan in range(437, 459):
             draft = json.loads((ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)).read_text(encoding="utf-8"))
             expected = [l["id"] for region in draft["reading"]["regions"] if region["kind"] == "body" for l in region["lines"]]
             actual = [l["id"] for e in motifs for s in e.get("segments", [e]) if s["source"]["scan"] == scan for l in s["lines"]]
@@ -73,6 +73,42 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual([s["source"]["scan"] for s in ambram["segments"]], [439, 440])
         self.assertEqual([len(s["lines"]) for s in ambram["segments"]], [2, 2])
         self.assertEqual(ambram["refs"][0]["literal"], "226")
+        for prefix, scans, counts, last_page in [
+            ("„ замісць відпавших демонів", [443, 444], [1, 1], "12"),
+            ("„ маючи умовлений", [444, 445], [1, 1], "21"),
+            ("„ плаче побачивши Веніямина", [447, 448], [3, 2], "169—173"),
+        ]:
+            entry = next(e for e in motifs if e["label"].startswith(prefix))
+            self.assertEqual([s["source"]["scan"] for s in entry["segments"]], scans)
+            self.assertEqual([len(s["lines"]) for s in entry["segments"]], counts)
+            self.assertEqual(entry["refs"][-1]["literal"], last_page)
+        darius = next(e for e in motifs if e["label"].startswith("Дарий сторожить"))
+        belshazzar = next(e for e in motifs if e["label"].startswith("Валтасар син"))
+        for e, printed in [(darius, ""), (belshazzar, "320—321")]:
+            ref = e["refs"][0]
+            self.assertEqual(ref["literal"], "321—322")
+            self.assertEqual(ref["printed_literal"], printed)
+            self.assertEqual([t["anchor"]["line_id"] for t in ref["targets"]], ["belshazzar-body-l005", "belshazzar-body-l001"])
+        heaven = next(e for e in motifs if e["label"].startswith("Небо зложене"))
+        self.assertEqual([r["literal"] for r in heaven["refs"]], ["40—44", "44—46"])
+        for prefix, printed, corrected, line in [
+            ("„ розсуджує трьох братів", "235", "285", "solomon-inheritance-l001"),
+            ("Теля, котрим Авраам", "351", "331", "abraham-body-l024"),
+            ("„ велить бабам жидівським", "222", "225", "pharaoh-dream-l013"),
+            ("Яков бачить у снї драбину", "199", "109", "jacob-ladder-continuation-l004"),
+        ]:
+            entry = next(e for e in motifs if e["label"].startswith(prefix))
+            ref = entry["refs"][0]
+            self.assertEqual(ref["printed_literal"], printed)
+            self.assertEqual(ref["literal"], corrected)
+            self.assertEqual(ref["targets"][0]["anchor"]["line_id"], line)
+        for prefix, scans, last in [
+            ("„ пристав до царя Киканоса", [451, 452], "228—230"),
+            ("Натан пророк спішив", [452, 453], "276—277"),
+        ]:
+            entry = next(e for e in motifs if e["label"].startswith(prefix))
+            self.assertEqual([s["source"]["scan"] for s in entry["segments"]], scans)
+            self.assertEqual(entry["refs"][-1]["literal"], last)
         balaam = next(e for e in motifs if e["label"].startswith("Валаам другого дня"))
         self.assertEqual([r["literal"] for r in balaam["refs"]], ["258—259", "261—262"])
         self.assertEqual(next(e for e in motifs if e["label"].startswith("„ вигнавши його"))["context"], "Адам")
@@ -203,6 +239,16 @@ class PrintedIndexesTest(unittest.TestCase):
             self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][2]["structured_scans"], [438, 439, 440, 441])
             (pilot / "vol1_scan00440_single_reading.json").unlink()
             self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][2]["structured_scans"], [438, 441])
+
+    def test_overlapping_continuation_chain_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot = Path(tmp)
+            for scan in [450, 451, 452, 453, 454]:
+                source = ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)
+                shutil.copyfile(source, pilot / source.name)
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][2]["structured_scans"], list(range(450, 455)))
+            (pilot / "vol1_scan00453_single_reading.json").unlink()
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][2]["structured_scans"], [450, 454])
 
     def test_browser_navigation(self):
         from playwright.sync_api import sync_playwright, expect

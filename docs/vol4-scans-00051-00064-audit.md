@@ -1,0 +1,13 @@
+# Volume IV scans 51–64 — ten previously unreviewed physical scans (2026-11-26)
+
+## Research and plan
+Pinned [original images and manifest](https://github.com/alexsosn/franko-tei/tree/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol4). Main inventory, open PRs and volume-specific branches checked; #325 merged after three green workflows. Selected 51, 52, 54, 55, 57, 58, 60, 61, 62, 64. Existing readings 53, 56, 59, 63 unchanged. Volume IV lacks embedded OCR. Existing corpus and pinned-image TEI/PAGE workflows are acceptance gates. Data-only batch.
+
+## Coverage
+Nine text-bearing drafts, 348 physical rows, 389 language spans, 43 explicit uncertainty notes, 2 linked footnotes. 315 rows have Church Slavonic spans, overwhelmingly provisional. End of preface (XLVII), Basil/Gregory dialogue and numbered apocryphal catechisms (printed 2,3,5,6,8,9,10,12). Printed brackets and ellipsis retained. Superscripts, titla, ligatures and accents are approximate Unicode readings, not an exhaustive diplomatic representation: some historical diacritics omitted and some uk/digraph forms provisionally represented; no glyph-complete or verified claim. Geometry estimated. No source images redistributed. Image hashes from manifest, independent byte validation delegated to CI.
+
+## Blank scan 52
+[Native image](https://github.com/alexsosn/franko-tei/blob/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol4/page-00052.jpg), manifest SHA256 672c4e04d9bfd751e06221a03ef20434dc1b03e51920aea4e6ab1745f4d0696a. Entire leaf inspected: faint show-through and specks, no edition text or folio. No artificial nonempty reading record. Current schema requires nonempty rows; viewer may still count this leaf as missing a reading (as with I/415). This is an explicit coverage exclusion, not verified text.
+
+## Adversarial review
+Reopened scans 57, 60 and 64 at original display detail. Reassessed unusual names, Cyrillic numbers, abbreviations; retained printed Сифъ on IV/60 (not a silent replacement by modern Сет). Replaced first proposal Самуилонъ with provisional Самѱонъ and Киѡ for Куѡ; reviewed lower blurred IV/64, retained uncertainty. Original proposals in parent commit b92a41af8385015cadf3893e334a60199aefe7ef. Footnote labels in both body and note split into zxx spans to avoid Church Slavonic language contamination. Checked all nine stored drafts for page/folio identity, unique IDs, raw equality, region/line containment, complete Unicode codepoint span coverage and combining-mark boundaries, literal uncertainty anchors and exact footnote links. Same-context logically separate review, not blind independent reading. No local Python suite or native image-byte rehash; require CI before merge.

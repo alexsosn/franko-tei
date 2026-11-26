@@ -1,0 +1,786 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 26,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00026.jpg",
+  "source_image_sha256": "d552768c7d5989af8fcf5070dc548f17d9a32015bac3f47690c50cda114fedea",
+  "reading": {
+    "reader_id": "gpt62-v5s00026-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-021-030-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Visual first-pass reading of this specific pinned scan; no embedded OCR or peer reading for this page accessed. Retain historical forms, physical lines, separate editorial and manuscript text, observed folio only. Prior context had OCR exposure for V/13–14, no blind independence claim. Geometry approximate; accents and supralinear letters not fully recovered. Agent-unverified. Pre-publication adversarial rereading corrected a source glyph hypothesis; initial candidate preserved in preceding branch commit.",
+    "raw_response": "III. Юда зрадник.\nЗбірник Василіянського манаст. у Львові ч. XII, стор. 258\nі Боринська Минея стор. 235.\nІюда же иже и прѣдатель, ѡ немже рече Папїа оучн҃икъ\nІѡанна бл҃говѣстника1), въ четвертый повѣдал словес, бѧше зрѧ-\nщих великъ нечеⷵтію оуказъ. егда еще живъ бѧше в мирѣ сем,\nимже поутемь колесници прихожахѫ, Іюда же тоужде съ вели-\nкою ноуждею едва протѧснаше сѧ главнаго ради ѡтока. вѣж'ди\nже ѡчію его толико израстоша сѧ, якож емѫ ни весма свѣт\nвъзмощи видѣти. ѡчи же емѫ яко ни враческомѫ зерцалѫ\nявити сѧ, велію бо зѣло глоубинѹ имѣхоу ѡ внѣшняго възо-\nра. поглѧд же его въсѧко неоудобьствіа и зла исполненъ. тай-\nныѧ же оуды, рекше срамна истѧ, всѧкого бо стоуда и безѡбра-\nзіа исполнь. по всемѫж телеси явѣ тещи гною и червію кипѣти\nвъ досадоу ноужною. по многых же моуках и мч҃ніах въ сво-\nемъ емоу селе сконча сѧ. якожъ ѡ тогда пѹсто и ненаселено оу-\nстависѧ село ѡно даже и до дн҃есь. якоже и досели не мощи ни\nпойти мѣсто ѡно никомоу смрада ради, аще не рѫкама ноздри\nзаградить. в толицѣ тѣло его на земли соуда подъять, яко же\nи въ боудоущемъ горшаа.\nСей текст — уривок із більшої цїлости, як сказано в перших\nйого рядках, узятий із книги Папія Єрапольського, христіянського\nписьменника II віку по Хр., що мала заголовок: „Поясненє слів\nГосподних“ і складала ся з пяти частин; наш текст узятий із чет-\n1) Вас. зб. єѵг҃листа.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative heading rule",
+          "bbox_xywh": [
+            551,
+            632,
+            125,
+            18
+          ]
+        },
+        {
+          "description": "Later oval library stamp overlaps lower margin and footnote; not edition text.",
+          "bbox_xywh": [
+            55,
+            1620,
+            280,
+            255
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "work",
+        "kind": "heading",
+        "bbox_xywh": [
+          396,
+          550,
+          415,
+          52
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "work-line-01",
+            "text": "III. Юда зрадник.",
+            "bbox_xywh": [
+              396,
+              550,
+              415,
+              52
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 3,
+                "end": 17,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "source",
+        "kind": "other",
+        "bbox_xywh": [
+          160,
+          711,
+          950,
+          92
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "source-line-01",
+            "text": "Збірник Василіянського манаст. у Львові ч. XII, стор. 258",
+            "bbox_xywh": [
+              160,
+              711,
+              950,
+              46
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 43,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 43,
+                "end": 46,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 46,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "source-line-02",
+            "text": "і Боринська Минея стор. 235.",
+            "bbox_xywh": [
+              160,
+              757,
+              950,
+              46
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body",
+        "kind": "body",
+        "bbox_xywh": [
+          136,
+          826,
+          990,
+          665
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-line-01",
+            "text": "Іюда же иже и прѣдатель, ѡ немже рече Папїа оучн҃икъ",
+            "bbox_xywh": [
+              136,
+              826,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-02",
+            "text": "Іѡанна бл҃говѣстника1), въ четвертый повѣдал словес, бѧше зрѧ-",
+            "bbox_xywh": [
+              136,
+              865,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-03",
+            "text": "щих великъ нечеⷵтію оуказъ. егда еще живъ бѧше в мирѣ сем,",
+            "bbox_xywh": [
+              136,
+              904,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-04",
+            "text": "имже поутемь колесници прихожахѫ, Іюда же тоужде съ вели-",
+            "bbox_xywh": [
+              136,
+              943,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-05",
+            "text": "кою ноуждею едва протѧснаше сѧ главнаго ради ѡтока. вѣж'ди",
+            "bbox_xywh": [
+              136,
+              982,
+              990,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-06",
+            "text": "же ѡчію его толико израстоша сѧ, якож емѫ ни весма свѣт",
+            "bbox_xywh": [
+              136,
+              1022,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-07",
+            "text": "възмощи видѣти. ѡчи же емѫ яко ни враческомѫ зерцалѫ",
+            "bbox_xywh": [
+              136,
+              1061,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 52,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-08",
+            "text": "явити сѧ, велію бо зѣло глоубинѹ имѣхоу ѡ внѣшняго възо-",
+            "bbox_xywh": [
+              136,
+              1100,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-09",
+            "text": "ра. поглѧд же его въсѧко неоудобьствіа и зла исполненъ. тай-",
+            "bbox_xywh": [
+              136,
+              1139,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-10",
+            "text": "ныѧ же оуды, рекше срамна истѧ, всѧкого бо стоуда и безѡбра-",
+            "bbox_xywh": [
+              136,
+              1178,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-11",
+            "text": "зіа исполнь. по всемѫж телеси явѣ тещи гною и червію кипѣти",
+            "bbox_xywh": [
+              136,
+              1217,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-12",
+            "text": "въ досадоу ноужною. по многых же моуках и мч҃ніах въ сво-",
+            "bbox_xywh": [
+              136,
+              1256,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-13",
+            "text": "емъ емоу селе сконча сѧ. якожъ ѡ тогда пѹсто и ненаселено оу-",
+            "bbox_xywh": [
+              136,
+              1295,
+              990,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-14",
+            "text": "стависѧ село ѡно даже и до дн҃есь. якоже и досели не мощи ни",
+            "bbox_xywh": [
+              136,
+              1335,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-15",
+            "text": "пойти мѣсто ѡно никомоу смрада ради, аще не рѫкама ноздри",
+            "bbox_xywh": [
+              136,
+              1374,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-16",
+            "text": "заградить. в толицѣ тѣло его на земли соуда подъять, яко же",
+            "bbox_xywh": [
+              136,
+              1413,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-17",
+            "text": "и въ боудоущемъ горшаа.",
+            "bbox_xywh": [
+              136,
+              1452,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "other",
+        "bbox_xywh": [
+          140,
+          1521,
+          990,
+          153
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "Сей текст — уривок із більшої цїлости, як сказано в перших",
+            "bbox_xywh": [
+              140,
+              1521,
+              990,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "його рядках, узятий із книги Папія Єрапольського, христіянського",
+            "bbox_xywh": [
+              140,
+              1559,
+              990,
+              39
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "письменника II віку по Хр., що мала заголовок: „Поясненє слів",
+            "bbox_xywh": [
+              140,
+              1598,
+              990,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 12,
+                "end": 14,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 14,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-line-04",
+            "text": "Господних“ і складала ся з пяти частин; наш текст узятий із чет-",
+            "bbox_xywh": [
+              140,
+              1636,
+              990,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "note-1",
+        "kind": "note",
+        "bbox_xywh": [
+          211,
+          1726,
+          290,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "note-1-line-01",
+            "text": "1) Вас. зб. єѵг҃листа.",
+            "bbox_xywh": [
+              211,
+              1726,
+              290,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00026-20261125",
+                "start": 12,
+                "end": 22,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "body-line-01",
+        "reading": "Іюда же иже и прѣдатель, ѡ немже рече Папїа оучн҃икъ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-02",
+        "reading": "Іѡанна бл҃говѣстника1), въ четвертый повѣдал словес, бѧше зрѧ-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-03",
+        "reading": "щих великъ нечеⷵтію оуказъ. егда еще живъ бѧше в мирѣ сем,",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-04",
+        "reading": "имже поутемь колесници прихожахѫ, Іюда же тоужде съ вели-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-05",
+        "reading": "кою ноуждею едва протѧснаше сѧ главнаго ради ѡтока. вѣж'ди",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-06",
+        "reading": "же ѡчію его толико израстоша сѧ, якож емѫ ни весма свѣт",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-07",
+        "reading": "възмощи видѣти. ѡчи же емѫ яко ни враческомѫ зерцалѫ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-08",
+        "reading": "явити сѧ, велію бо зѣло глоубинѹ имѣхоу ѡ внѣшняго възо-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-09",
+        "reading": "ра. поглѧд же его въсѧко неоудобьствіа и зла исполненъ. тай-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-10",
+        "reading": "ныѧ же оуды, рекше срамна истѧ, всѧкого бо стоуда и безѡбра-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-11",
+        "reading": "зіа исполнь. по всемѫж телеси явѣ тещи гною и червію кипѣти",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-12",
+        "reading": "въ досадоу ноужною. по многых же моуках и мч҃ніах въ сво-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-13",
+        "reading": "емъ емоу селе сконча сѧ. якожъ ѡ тогда пѹсто и ненаселено оу-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-14",
+        "reading": "стависѧ село ѡно даже и до дн҃есь. якоже и досели не мощи ни",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-15",
+        "reading": "пойти мѣсто ѡно никомоу смрада ради, аще не рѫкама ноздри",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-16",
+        "reading": "заградить. в толицѣ тѣло его на земли соуда подъять, яко же",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-17",
+        "reading": "и въ боудоущемъ горшаа.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "note-1-line-01",
+        "reading": "1) Вас. зб. єѵг҃листа.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative. Rereading small printed variant under library stamp; exact abbreviation still uncertain."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "body-line-02",
+        "marker_text": "1)",
+        "marker_start": 20,
+        "note_region_id": "note-1"
+      }
+    ]
+  }
+}
