@@ -1,0 +1,731 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 27,
+  "printed_page_observed": "15",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00027.jpg",
+  "source_image_sha256": "ef51414751eb9373f3a381653fb08f18bcb1d154001f20a527925b58d4645c21",
+  "reading": {
+    "reader_id": "gpt62-v5s00027-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-021-030-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Visual first-pass reading of this specific pinned scan; no embedded OCR or peer reading for this page accessed. Retain historical forms, physical lines, separate editorial and manuscript text, observed folio only. Prior context had OCR exposure for V/13–14, no blind independence claim. Geometry approximate; accents and supralinear letters not fully recovered. Agent-unverified.",
+    "raw_response": "15\nвертої частини. Подаємо його у перекладї з нашого, декуди до пов-\nної безмисности переплутаного тексту, а з грецького оріґіналу, що\nзберіг ся лише в уривках; наш текст частина третього уривка.\nЧитаємо там: Аполлїнїй каже: не в озері вмер Іюда, але пережив\nдовго, поки був похоронений. Се вказують Дїяня апостолів, що по-\nвісившись трепав ся, поки з нього не вийшли кишки. Се ширше\nподає Папій ученик Іванів у четвертій книзї своїх Господнїх слів,\nмовлячи ось як: „Великий приклад безбожности на сьому світї був\nІюда, ходячи з тїлом так напухлим, що куди легко проїздив дра-\nбинний віз, він ледви міг пропхати ся, така величінь голови, і не\nсамої голови, була у нього. А повіки його очий так були розпухли,\nщо сам не бачив світла, а очий його анї через лїкарське зеркало\nне можна було добачити — так глибоко лежали вони від зверхньої\nпокриви. Соромні члени його якимось робом споганені видавали ся\nще соромнїйшими і більшими, а по його тїлї тік гній і кублили ся\nхробаки до купи з відпадками. Та по многих муках і болїстях\nумер, кажуть, у свойому селї, а те село задля смороду і доси опу-\nщене і не має нїяких жильцїв. І нїхто аж до нинїшнього дня не\nможе пройти біля того місця, не затикаючи ніздрів руками. Таким\nсопухом напоїло його тїло всю околичну землю“.\nЯк бачимо1), автентичний текст Папія, особливо в початку,\nдуже мало згоджуєть ся з нашою верзією, і тільки з оріґіналу мо-\nжна догадати ся, що значать і з чим вяжуть ся такі слова, як\n„въ четвертый повѣдал словесъ... бѧше зрѧщих“ і т. д. Се оче-\nвидні останки пропусків, між якими повипадали цїлі слова.\n1) Див. Franciscus Xaverius Funk, Opera patrum apostolicorum volu-\nmen II, Tübingen 1881, стор. 289—291.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative closing rule",
+          "bbox_xywh": [
+            450,
+            1200,
+            245,
+            28
+          ]
+        },
+        {
+          "description": "Later library stamp overlapping bibliography; visible underlying letters provisional.",
+          "bbox_xywh": [
+            880,
+            1530,
+            300,
+            288
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          1030,
+          96,
+          48,
+          38
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "15",
+            "bbox_xywh": [
+              1030,
+              96,
+              48,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": []
+          }
+        ]
+      },
+      {
+        "id": "editorial-1",
+        "kind": "other",
+        "bbox_xywh": [
+          70,
+          165,
+          1005,
+          733
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-1-line-01",
+            "text": "вертої частини. Подаємо його у перекладї з нашого, декуди до пов-",
+            "bbox_xywh": [
+              70,
+              165,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-02",
+            "text": "ної безмисности переплутаного тексту, а з грецького оріґіналу, що",
+            "bbox_xywh": [
+              70,
+              202,
+              1005,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-03",
+            "text": "зберіг ся лише в уривках; наш текст частина третього уривка.",
+            "bbox_xywh": [
+              70,
+              238,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-04",
+            "text": "Читаємо там: Аполлїнїй каже: не в озері вмер Іюда, але пережив",
+            "bbox_xywh": [
+              70,
+              275,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-05",
+            "text": "довго, поки був похоронений. Се вказують Дїяня апостолів, що по-",
+            "bbox_xywh": [
+              70,
+              312,
+              1005,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-06",
+            "text": "вісившись трепав ся, поки з нього не вийшли кишки. Се ширше",
+            "bbox_xywh": [
+              70,
+              348,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-07",
+            "text": "подає Папій ученик Іванів у четвертій книзї своїх Господнїх слів,",
+            "bbox_xywh": [
+              70,
+              385,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-08",
+            "text": "мовлячи ось як: „Великий приклад безбожности на сьому світї був",
+            "bbox_xywh": [
+              70,
+              422,
+              1005,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-09",
+            "text": "Іюда, ходячи з тїлом так напухлим, що куди легко проїздив дра-",
+            "bbox_xywh": [
+              70,
+              458,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-10",
+            "text": "бинний віз, він ледви міг пропхати ся, така величінь голови, і не",
+            "bbox_xywh": [
+              70,
+              495,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-11",
+            "text": "самої голови, була у нього. А повіки його очий так були розпухли,",
+            "bbox_xywh": [
+              70,
+              532,
+              1005,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-12",
+            "text": "що сам не бачив світла, а очий його анї через лїкарське зеркало",
+            "bbox_xywh": [
+              70,
+              568,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-13",
+            "text": "не можна було добачити — так глибоко лежали вони від зверхньої",
+            "bbox_xywh": [
+              70,
+              605,
+              1005,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-14",
+            "text": "покриви. Соромні члени його якимось робом споганені видавали ся",
+            "bbox_xywh": [
+              70,
+              641,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-15",
+            "text": "ще соромнїйшими і більшими, а по його тїлї тік гній і кублили ся",
+            "bbox_xywh": [
+              70,
+              678,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-16",
+            "text": "хробаки до купи з відпадками. Та по многих муках і болїстях",
+            "bbox_xywh": [
+              70,
+              715,
+              1005,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-17",
+            "text": "умер, кажуть, у свойому селї, а те село задля смороду і доси опу-",
+            "bbox_xywh": [
+              70,
+              751,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-18",
+            "text": "щене і не має нїяких жильцїв. І нїхто аж до нинїшнього дня не",
+            "bbox_xywh": [
+              70,
+              788,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-19",
+            "text": "може пройти біля того місця, не затикаючи ніздрів руками. Таким",
+            "bbox_xywh": [
+              70,
+              825,
+              1005,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-1-line-20",
+            "text": "сопухом напоїло його тїло всю околичну землю“.",
+            "bbox_xywh": [
+              70,
+              861,
+              1005,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 46,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "editorial-2",
+        "kind": "body",
+        "bbox_xywh": [
+          75,
+          901,
+          1000,
+          183
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-2-line-01",
+            "text": "Як бачимо1), автентичний текст Папія, особливо в початку,",
+            "bbox_xywh": [
+              75,
+              901,
+              1000,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-02",
+            "text": "дуже мало згоджуєть ся з нашою верзією, і тільки з оріґіналу мо-",
+            "bbox_xywh": [
+              75,
+              938,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-03",
+            "text": "жна догадати ся, що значать і з чим вяжуть ся такі слова, як",
+            "bbox_xywh": [
+              75,
+              974,
+              1000,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-04",
+            "text": "„въ четвертый повѣдал словесъ... бѧше зрѧщих“ і т. д. Се оче-",
+            "bbox_xywh": [
+              75,
+              1011,
+              1000,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 1,
+                "end": 44,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 44,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "editorial-2-line-05",
+            "text": "видні останки пропусків, між якими повипадали цїлі слова.",
+            "bbox_xywh": [
+              75,
+              1047,
+              1000,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "note-1",
+        "kind": "note",
+        "bbox_xywh": [
+          75,
+          1610,
+          1000,
+          64
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "note-1-line-01",
+            "text": "1) Див. Franciscus Xaverius Funk, Opera patrum apostolicorum volu-",
+            "bbox_xywh": [
+              75,
+              1610,
+              1000,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 8,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 8,
+                "end": 66,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "note-1-line-02",
+            "text": "men II, Tübingen 1881, стор. 289—291.",
+            "bbox_xywh": [
+              75,
+              1642,
+              1000,
+              32
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 0,
+                "end": 22,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00027-20261125",
+                "start": 22,
+                "end": 37,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "editorial-2-line-04",
+        "reading": "„въ четвертый повѣдал словесъ... бѧше зрѧщих“ і т. д. Се оче-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "note-1-line-01",
+        "reading": "apostolicorum volu-",
+        "reason": "Library stamp partially overlaps printed bibliographic text; reading provisional."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "editorial-2-line-01",
+        "marker_text": "1)",
+        "marker_start": 9,
+        "note_region_id": "note-1"
+      }
+    ]
+  }
+}

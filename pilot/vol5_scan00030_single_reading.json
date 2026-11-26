@@ -1,0 +1,784 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 30,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00030.jpg",
+  "source_image_sha256": "7bf57d47b5ea0d1b1a2582958f322be41595f10f5913e91a7ae86d1f0af3ddc2",
+  "reading": {
+    "reader_id": "gpt62-v5s00030-20261125",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-v5-021-030-20261125",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Visual first-pass reading of this specific pinned scan; no embedded OCR or peer reading for this page accessed. Retain historical forms, physical lines, separate editorial and manuscript text, observed folio only. Prior context had OCR exposure for V/13–14, no blind independence claim. Geometry approximate; accents and supralinear letters not fully recovered. Agent-unverified.",
+    "raw_response": "V. Святий Аверкій.\nРукопис Василіянського манастиря у Львові ч. XIV,\nстор. 56—57.\nМⷭца тогож, въ кв҃. дн҃ь. ст҃го Аверкіа, еп҃па еро-\nпольска, бл҃ви ѡ ст҃ый.\nСт҃ый аверкій ѡц҃ь наш бѣ въ лѣта Марка Янтонина. епⷭпъ\nбыⷭ въ Єраполій, сщ҃ен ѡ ст҃ых апⷭлъ. бѣ же чюдотворец славен.\nи бѣсы ѡ чл҃вѣкъ ѡгоняше, и съкрѹши идолы въ Єраполій. и вес\nград наоучи вѣровати х҃ви. хотѧже бѣс искоусити его и в'ниде\nвъ дщер цр҃коу и рече: аще с тоѧ мѧ проженет, то оувѣдаю яко\nсила бж҃іа въ нем есть. многим въльхвом и врачем прилежаще\nемоу и не изгнаша его. рече же бѣс: аще не прійдет аверкій еп҃пь\nѡ ераполіа, не изыйдоу. написаніа же ради цр҃ева прійде въ Рим\nаверкій. повелѣ слѹзѣ в'ъліати в'ѡдѹ въ един мѣх. и вино\nи масло древяное. и то и едва что въсхожаше аверкій излива-\nющомоу слоузѣ, вино чⷵто или водѹ или масло изъ единого\nмѣха. егда ли слоуга таи ст҃го изліати себѣ хотѣ, и исхо-\nдаша смѣшенїа1). пришед же въ Рим дщер цр҃евоу исцѣливъ. ви-\nдѣвъ же каменен стапъ велій близ цр҃евы палаты въ трьвища\nстоѧщь, повелѣ бѣсоу възѧти и и нести въ ераполіж рекъ: яко\nты сътвори въ Рим потроудити сѧ, азъ ти повелѣваю нести\nсій камень и положити на горѣ на гробѣ моемъ. иже и сътво-\nри бѣс повеленіем ст҃го. и ина многа сътвори чюдеса. въ ѡкроуж-\nных градѣх и селѣх больныѧ исцѣли. ѡбратиже сѧ въ свое мѣ-\n1) Реченє неясне, пор. II. редакції рядки 1—4 на стор. 21.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "description": "Decorative heading rule",
+          "bbox_xywh": [
+            545,
+            594,
+            135,
+            20
+          ]
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "work",
+        "kind": "heading",
+        "bbox_xywh": [
+          395,
+          523,
+          455,
+          58
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "work-line-01",
+            "text": "V. Святий Аверкій.",
+            "bbox_xywh": [
+              395,
+              523,
+              455,
+              58
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 1,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 1,
+                "end": 18,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "source",
+        "kind": "other",
+        "bbox_xywh": [
+          215,
+          682,
+          815,
+          83
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "source-line-01",
+            "text": "Рукопис Василіянського манастиря у Львові ч. XIV,",
+            "bbox_xywh": [
+              215,
+              682,
+              815,
+              42
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 45,
+                "end": 48,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 48,
+                "end": 49,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "id": "source-line-02",
+            "text": "стор. 56—57.",
+            "bbox_xywh": [
+              215,
+              724,
+              815,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 12,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "incipit",
+        "kind": "heading",
+        "bbox_xywh": [
+          135,
+          793,
+          970,
+          81
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "incipit-line-01",
+            "text": "Мⷭца тогож, въ кв҃. дн҃ь. ст҃го Аверкіа, еп҃па еро-",
+            "bbox_xywh": [
+              135,
+              793,
+              970,
+              41
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 51,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "incipit-line-02",
+            "text": "польска, бл҃ви ѡ ст҃ый.",
+            "bbox_xywh": [
+              135,
+              834,
+              970,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body",
+        "kind": "body",
+        "bbox_xywh": [
+          135,
+          878,
+          970,
+          705
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-line-01",
+            "text": "Ст҃ый аверкій ѡц҃ь наш бѣ въ лѣта Марка Янтонина. епⷭпъ",
+            "bbox_xywh": [
+              135,
+              878,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-02",
+            "text": "быⷭ въ Єраполій, сщ҃ен ѡ ст҃ых апⷭлъ. бѣ же чюдотворец славен.",
+            "bbox_xywh": [
+              135,
+              915,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-03",
+            "text": "и бѣсы ѡ чл҃вѣкъ ѡгоняше, и съкрѹши идолы въ Єраполій. и вес",
+            "bbox_xywh": [
+              135,
+              952,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-04",
+            "text": "град наоучи вѣровати х҃ви. хотѧже бѣс искоусити его и в'ниде",
+            "bbox_xywh": [
+              135,
+              989,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-05",
+            "text": "въ дщер цр҃коу и рече: аще с тоѧ мѧ проженет, то оувѣдаю яко",
+            "bbox_xywh": [
+              135,
+              1026,
+              970,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-06",
+            "text": "сила бж҃іа въ нем есть. многим въльхвом и врачем прилежаще",
+            "bbox_xywh": [
+              135,
+              1064,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-07",
+            "text": "емоу и не изгнаша его. рече же бѣс: аще не прійдет аверкій еп҃пь",
+            "bbox_xywh": [
+              135,
+              1101,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 64,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-08",
+            "text": "ѡ ераполіа, не изыйдоу. написаніа же ради цр҃ева прійде въ Рим",
+            "bbox_xywh": [
+              135,
+              1138,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 62,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-09",
+            "text": "аверкій. повелѣ слѹзѣ в'ъліати в'ѡдѹ въ един мѣх. и вино",
+            "bbox_xywh": [
+              135,
+              1175,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 56,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-10",
+            "text": "и масло древяное. и то и едва что въсхожаше аверкій излива-",
+            "bbox_xywh": [
+              135,
+              1212,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-11",
+            "text": "ющомоу слоузѣ, вино чⷵто или водѹ или масло изъ единого",
+            "bbox_xywh": [
+              135,
+              1249,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-12",
+            "text": "мѣха. егда ли слоуга таи ст҃го изліати себѣ хотѣ, и исхо-",
+            "bbox_xywh": [
+              135,
+              1286,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-13",
+            "text": "даша смѣшенїа1). пришед же въ Рим дщер цр҃евоу исцѣливъ. ви-",
+            "bbox_xywh": [
+              135,
+              1323,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 60,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-14",
+            "text": "дѣвъ же каменен стапъ велій близ цр҃евы палаты въ трьвища",
+            "bbox_xywh": [
+              135,
+              1360,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 57,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-15",
+            "text": "стоѧщь, повелѣ бѣсоу възѧти и и нести въ ераполіж рекъ: яко",
+            "bbox_xywh": [
+              135,
+              1397,
+              970,
+              38
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 59,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-16",
+            "text": "ты сътвори въ Рим потроудити сѧ, азъ ти повелѣваю нести",
+            "bbox_xywh": [
+              135,
+              1435,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 55,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-17",
+            "text": "сій камень и положити на горѣ на гробѣ моемъ. иже и сътво-",
+            "bbox_xywh": [
+              135,
+              1472,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-18",
+            "text": "ри бѣс повеленіем ст҃го. и ина многа сътвори чюдеса. въ ѡкроуж-",
+            "bbox_xywh": [
+              135,
+              1509,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 63,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "id": "body-line-19",
+            "text": "ных градѣх и селѣх больныѧ исцѣли. ѡбратиже сѧ въ свое мѣ-",
+            "bbox_xywh": [
+              135,
+              1546,
+              970,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 58,
+                "language": "cu",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "note-1",
+        "kind": "note",
+        "bbox_xywh": [
+          232,
+          1640,
+          700,
+          40
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "note-1-line-01",
+            "text": "1) Реченє неясне, пор. II. редакції рядки 1—4 на стор. 21.",
+            "bbox_xywh": [
+              232,
+              1640,
+              700,
+              40
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 0,
+                "end": 23,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 23,
+                "end": 25,
+                "language": "zxx",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-v5s00030-20261125",
+                "start": 25,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "incipit-line-01",
+        "reading": "Мⷭца тогож, въ кв҃. дн҃ь. ст҃го Аверкіа, еп҃па еро-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "incipit-line-02",
+        "reading": "польска, бл҃ви ѡ ст҃ый.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-01",
+        "reading": "Ст҃ый аверкій ѡц҃ь наш бѣ въ лѣта Марка Янтонина. епⷭпъ",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-02",
+        "reading": "быⷭ въ Єраполій, сщ҃ен ѡ ст҃ых апⷭлъ. бѣ же чюдотворец славен.",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-03",
+        "reading": "и бѣсы ѡ чл҃вѣкъ ѡгоняше, и съкрѹши идолы въ Єраполій. и вес",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-04",
+        "reading": "град наоучи вѣровати х҃ви. хотѧже бѣс искоусити его и в'ниде",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-05",
+        "reading": "въ дщер цр҃коу и рече: аще с тоѧ мѧ проженет, то оувѣдаю яко",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-06",
+        "reading": "сила бж҃іа въ нем есть. многим въльхвом и врачем прилежаще",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-07",
+        "reading": "емоу и не изгнаша его. рече же бѣс: аще не прійдет аверкій еп҃пь",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-08",
+        "reading": "ѡ ераполіа, не изыйдоу. написаніа же ради цр҃ева прійде въ Рим",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-09",
+        "reading": "аверкій. повелѣ слѹзѣ в'ъліати в'ѡдѹ въ един мѣх. и вино",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-10",
+        "reading": "и масло древяное. и то и едва что въсхожаше аверкій излива-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-11",
+        "reading": "ющомоу слоузѣ, вино чⷵто или водѹ или масло изъ единого",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-12",
+        "reading": "мѣха. егда ли слоуга таи ст҃го изліати себѣ хотѣ, и исхо-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-13",
+        "reading": "даша смѣшенїа1). пришед же въ Рим дщер цр҃евоу исцѣливъ. ви-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-14",
+        "reading": "дѣвъ же каменен стапъ велій близ цр҃евы палаты въ трьвища",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-15",
+        "reading": "стоѧщь, повелѣ бѣсоу възѧти и и нести въ ераполіж рекъ: яко",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-16",
+        "reading": "ты сътвори въ Рим потроудити сѧ, азъ ти повелѣваю нести",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-17",
+        "reading": "сій камень и положити на горѣ на гробѣ моемъ. иже и сътво-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-18",
+        "reading": "ри бѣс повеленіем ст҃го. и ина многа сътвори чюдеса. въ ѡкроуж-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      },
+      {
+        "line_id": "body-line-19",
+        "reading": "ных градѣх и селѣх больныѧ исцѣли. ѡбратиже сѧ въ свое мѣ-",
+        "reason": "Tentative visual reading of historical type; exact supralinear letters, titla, accents/breathings, glyph identity and spacing remain uncertain. Source image is authoritative."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "body-line-13",
+        "marker_text": "1)",
+        "marker_start": 13,
+        "note_region_id": "note-1"
+      }
+    ]
+  }
+}
