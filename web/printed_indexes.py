@@ -151,6 +151,22 @@ EXTRA_PAGES = {
         (442, "gpt62-i442-first-image-20261125", {
             "motifs-v": [5,10,11,12,16,20,21,22,23],
             "motifs-g": [3,5,7,10,12,13,15,17,18,20]}),
+
+        (443, "gpt62-i443-first-image-20261125", {
+            "motifs": [3,6,9,11,12,14,15,17,19,20,22,24,25,27,31,36,39,41,42,44,45,46,47]}),
+        (444, "gpt62-i444-first-image-20261125", {
+            "motifs-d": [1,4,6,7,9,10,12,14,15,18,20,22,24,27,31,34,35,38],
+            "motifs-e": [2,4,6,7]}),
+        (445, "gpt62-i445-first-image-20261125", {
+            "motifs": [1,3,4,7,10,12,13,17,19,21,24,26,27,29,31,33,36,38,40,42,44,46,47,49]}),
+        (446, "gpt62-i446-first-image-20261125", {
+            "motifs-e": [2,4,7],
+            "motifs-zh": [2,7,8,10,12,13],
+            "motifs-z": [5,6,9,12,14,15,16,17,18,20]}),
+        (447, "gpt62-i447-first-image-20261125", {
+            "motifs": [2,5,8,9,12,14,15,17,18,22,23,24,25,29,33,36,39,44,47]}),
+        (448, "gpt62-i448-first-image-20261125", {
+            "motifs": [2,6,8,10,12,14,16,19,20,23,27,32,34,38,40,42,43,45,46,48,49]}),
     ),
     "glossary": (
         (460, "gpt62-i460-first-image-20261125", {
@@ -166,6 +182,96 @@ EXTRA_PAGES = {
 }
 # Editorial context is separate from the printed ditto glyphs.
 ENTRY_CONTEXTS = {
+    (443, "motifs", 4): "Давид",
+    (443, "motifs", 7): "Давид",
+    (443, "motifs", 12): "Дан",
+    (443, "motifs", 13): "Дан",
+    (443, "motifs", 16): "Даниїл",
+    (443, "motifs", 18): "Даниїл",
+    (443, "motifs", 20): "Даниїл",
+    (443, "motifs", 21): "Даниїл",
+    (443, "motifs", 23): "Даниїл",
+    (443, "motifs", 25): "Даниїл",
+    (443, "motifs", 26): "Даниїл",
+    (443, "motifs", 32): "Дарий",
+    (443, "motifs", 40): "Демони",
+    (443, "motifs", 42): "Демони",
+    (443, "motifs", 43): "Демони",
+    (443, "motifs", 45): "Демони",
+    (443, "motifs", 46): "Демони",
+    (443, "motifs", 47): "Демони",
+    (444, "motifs-d", 2): "Демони",
+    (444, "motifs-d", 5): "Демони",
+    (444, "motifs-d", 7): "Демони",
+    (444, "motifs-d", 8): "Демони",
+    (444, "motifs-d", 10): "Демони",
+    (444, "motifs-d", 11): "Демони",
+    (444, "motifs-d", 13): "Демони",
+    (444, "motifs-d", 15): "Демони",
+    (444, "motifs-d", 21): "Диявол",
+    (444, "motifs-d", 23): "Диявол",
+    (444, "motifs-d", 25): "Диявол",
+    (444, "motifs-d", 28): "Диявол",
+    (444, "motifs-d", 32): "Диявол",
+    (444, "motifs-e", 3): "Ева",
+    (444, "motifs-e", 5): "Ева",
+    (444, "motifs-e", 7): "Ева",
+    (445, "motifs", 2): "Ева",
+    (445, "motifs", 4): "Ева",
+    (445, "motifs", 8): "Єгиптяне",
+    (445, "motifs", 11): "Єгиптяне",
+    (445, "motifs", 13): "Єгиптяне",
+    (445, "motifs", 14): "Єгиптяне",
+    (445, "motifs", 22): "Єлисей",
+    (445, "motifs", 25): "Єлисей",
+    (445, "motifs", 27): "Єлисей",
+    (445, "motifs", 30): "Енох",
+    (445, "motifs", 32): "Енох",
+    (445, "motifs", 34): "Енох",
+    (445, "motifs", 37): "Енох",
+    (445, "motifs", 39): "Енох",
+    (445, "motifs", 41): "Енох",
+    (445, "motifs", 43): "Енох",
+    (445, "motifs", 45): "Енох",
+    (445, "motifs", 47): "Енох",
+    (445, "motifs", 48): "Енох",
+    (446, "motifs-e", 3): "Єремія",
+    (446, "motifs-zh", 3): "Жаби",
+    (446, "motifs-zh", 13): "Жінка",
+    (446, "motifs-z", 7): "Заулон",
+    (446, "motifs-z", 10): "Заулон",
+    (446, "motifs-z", 16): "Земля",
+    (446, "motifs-z", 18): "Змія",
+    (447, "motifs", 3): "Ізмаїл",
+    (447, "motifs", 6): "Ізмаїл",
+    (447, "motifs", 13): "Ілия",
+    (447, "motifs", 15): "Ілия",
+    (447, "motifs", 16): "Ілия",
+    (447, "motifs", 18): "Ілия",
+    (447, "motifs", 19): "Ілия",
+    (447, "motifs", 23): "Ілия",
+    (447, "motifs", 24): "Ілия",
+    (447, "motifs", 25): "Ілия",
+    (447, "motifs", 34): "Йосиф",
+    (447, "motifs", 37): "Йосиф",
+    (447, "motifs", 40): "Йосиф",
+    (447, "motifs", 45): "Йосиф",
+    (448, "motifs", 3): "Йосиф",
+    (448, "motifs", 7): "Йосиф",
+    (448, "motifs", 9): "Йосиф",
+    (448, "motifs", 11): "Йосиф",
+    (448, "motifs", 13): "Йосиф",
+    (448, "motifs", 15): "Йосиф",
+    (448, "motifs", 17): "Йосиф",
+    (448, "motifs", 20): "Йосиф",
+    (448, "motifs", 21): "Йосиф",
+    (448, "motifs", 24): "Йосиф",
+    (448, "motifs", 28): "Йосиф",
+    (448, "motifs", 33): "Йосиф",
+    (448, "motifs", 35): "Йосиф",
+    (448, "motifs", 43): "Ісаак",
+    (448, "motifs", 46): "Ісав і Яков",
+    (448, "motifs", 49): "Ісав",
     (438, "motifs", 4): "Адам",
     (438, "motifs", 5): "Адам",
     (438, "motifs", 6): "Адам",
@@ -424,6 +530,12 @@ ENTRY_CONTEXTS = {
     (421, "right", 21): "цар",
 }
 SOURCE_BLOBS.update({
+    443: "ee98bf07de67afe7a54f811ee5525372fb0259a4",
+    444: "5aa350401906e658af4414ef092a45f3b81afc0a",
+    445: "92ac1209f2403226e7eca952243e5e58556ba71f",
+    446: "c87dce1d07212e812a3eb9f241ecaa41a37e1498",
+    447: "7c6bb7da27062451db2947fca797c0d7e130c4d0",
+    448: "8616a6185c04afece72044e60670490fb17ab81e",
     438: "bbdf5472ce6638754bd4729e46d43ba94da0a468",
     439: "6a24cebe457567c7953a30481566d70c471f30a1",
     440: "7194df7663ca8b387ac0ac2fdc6cf2afe90c6a31",
@@ -457,8 +569,8 @@ SOURCE_BLOBS.update({
 # scan's pinned reading is absent or changed.
 CONTINUATIONS = {(422, "right", 1), (425, "left-m", 1),
                  (430, "left", 1), (430, "right-ya", 1),
-                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1), (440, "motifs", 1)}
-ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435), (439, 440))
+                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1), (440, "motifs", 1), (444, "motifs-d", 1), (445, "motifs", 1), (448, "motifs", 1)}
+ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435), (439, 440), (443, 444), (444, 445), (447, 448))
 # Running continuation heading is literal evidence, not part of the numeric tail.
 CONTINUATION_PREFIXES = {(434, "right-p", 1): "Палея Крех. "}
 # Explicit source line break with no printed separator; do not guess missing commas.
@@ -712,6 +824,39 @@ def reconcile_ishmael_reference(files, targets, entry):
             entry["refs"][i] = corrected
 
 
+def reconcile_darius_reference(files, targets, entry):
+    # The source text spans pp.321–322; the parallel motif on I442 gives
+    # 320–321, and I443 has no numeral. Preserve both source readings.
+    printed = {"v1-442-motifs-v-l006": "320—321", "v1-443-motifs-l028": ""}
+    if entry["id"] not in printed:
+        return
+    literal = printed[entry["id"]]
+    if ([r["literal"] for r in entry["refs"]] != ([literal] if literal else [])
+            or targets.get(321) != 396 or targets.get(322) != 397):
+        return
+    evidence = [(396, "dc158de3ca4c7583e4ca2892414244a64b648ecd", "belshazzar-body-l005"),
+                (397, "27882c2c25acdcb4c07616a52e2835df284e7113", "belshazzar-body-l001")]
+    anchors = []
+    for scan, blob, line_id in evidence:
+        if scan not in files or files[scan][2] != blob:
+            return
+        path, draft, _ = files[scan]
+        hits = [(r, l) for r in draft["reading"]["regions"] for l in r["lines"]
+                if r["id"] == "belshazzar-body" and l["id"] == line_id]
+        if len(hits) != 1:
+            return
+        region, line = hits[0]
+        anchors.append(dict(suffix="single_reading", reader_id=draft["reading"]["reader_id"],
+                            line_id=line_id, text=line["text"], region_kind=region["kind"]))
+    ref = make_ref("321—322", targets, "editorial_citation")
+    ref["printed_literal"] = literal
+    ref["evidence"] = [dict(path="pilot/" + files[scan][0].name, blob=blob, line_id=line_id)
+                       for scan, blob, line_id in evidence]
+    for target, anchor in zip(ref["targets"], anchors):
+        target["anchor"] = anchor
+    entry["refs"] = [ref]
+
+
 def build_printed_indexes(pilot, ref, supplements=None):
     supplements = supplements or {}
     files = {}
@@ -759,9 +904,13 @@ def build_printed_indexes(pilot, ref, supplements=None):
                     if scan in files and files[scan][1]["reading"]["reader_id"] == reader
                     and files[scan][2] == SOURCE_BLOBS[scan]}
         if kind in ("names", "works", "motifs"):
-            for pair in ATOMIC_PAIRS:
-                if not set(pair) <= eligible:
-                    eligible.difference_update(pair)
+            changed = True
+            while changed:
+                before = eligible.copy()
+                for pair in ATOMIC_PAIRS:
+                    if not set(pair) <= eligible:
+                        eligible.difference_update(pair)
+                changed = before != eligible
         for scan, reader, partitions in page_specs:
             # A changed/missing reading must not publish stale partitions or block
             # unrelated reader deployments. Re-segment explicitly against new bytes.
@@ -840,6 +989,7 @@ def build_printed_indexes(pilot, ref, supplements=None):
         by_id = {e["id"]: e for e in section["entries"]}
         for entry in section["entries"]:
             reconcile_ishmael_reference(files, targets, entry)
+            reconcile_darius_reference(files, targets, entry)
             entry["crossrefs"] = [dict(id=ident, label=by_id[ident]["label"])
                                   for ident in CROSSREFS.get(entry["id"], []) if ident in by_id]
             for citation in entry["refs"]:
