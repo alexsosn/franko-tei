@@ -167,6 +167,15 @@ a complete corpus-wide audit.
   never force a target by matching a suffix of a longer asterisk marker.
   This source-bound overlay is provisional annotation only; do not duplicate
   it in candidate links or claim it is already projected to TEI/TF/viewer.
+- For numbered critical apparatus, scope numbering to the actual printed
+  witness/passage block, including cross-page continuations. See the
+  [Noah VIII.A example](../pilot/structure/vol1_noah_a_apparatus.json) and #371.
+  Preserve exact ordered fragments of each entry, including separators and
+  line-final hyphens; keep source marker occurrences distinct from inferred
+  lemma extents. A complete unique sequence may support exact links after
+  source inspection. Repeated, paired, missing or discrepant labels require
+  separate evidence; do not force the simple one-to-one rule onto them.
+  Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
   sigla and reported readings; resolve witness identity only with
