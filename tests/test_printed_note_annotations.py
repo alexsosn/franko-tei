@@ -639,23 +639,26 @@ class NumberedApparatusTests(unittest.TestCase):
                 self.assertEqual(sorted(e["number"] for e in block["entries"]
                                         if e["id"] in block["unlinked_entry_ids"]), missing)
                 if suffix == "b":
-                    duplicate = [e for e in block["entries"] if e["number"] == 18]
-                    self.assertEqual(len(duplicate), 2)
-                    self.assertNotEqual(duplicate[0]["id"], duplicate[1]["id"])
-                    self.assertIn("приближениемъ", duplicate[0]["fragments"][0]["literal"])
-                    self.assertIn("язык", duplicate[1]["fragments"][0]["literal"])
-                    self.assertIn(duplicate[1]["id"], block["unlinked_entry_ids"])
-                    linked = [l for l in block["links"]
-                              if l["target_entry_id"] == duplicate[0]["id"]]
-                    self.assertEqual(len(linked), 1)
-                    self.assertEqual(linked[0]["marker"]["line_id"], "witness-b-babel-l020")
-                    self.assertTrue(linked[0]["disambiguation"].strip())
+                    self.check_ix_b_duplicate(block)
                     self.assertEqual(block["incomplete_range_entry_ids"],
                                      [block["entries"][0]["id"]])
                 if suffix == "c":
                     self.assertEqual(block["scope"]["next_heading"]["region_id"], "witness-d-label")
                     self.assertTrue(block["scope"]["heading"]["lines"][0].startswith("В."))
                     self.assertTrue(block["scope"]["next_heading"]["lines"][0].startswith("В."))
+
+    def check_ix_b_duplicate(self, block):
+        """Independent local evidence distinguishes the two printed 18s."""
+        duplicate = [e for e in block["entries"] if e["number"] == 18]
+        self.assertEqual(len(duplicate), 2)
+        self.assertNotEqual(duplicate[0]["id"], duplicate[1]["id"])
+        self.assertIn("приближениемъ", duplicate[0]["fragments"][0]["literal"])
+        self.assertIn("язык", duplicate[1]["fragments"][0]["literal"])
+        self.assertIn(duplicate[1]["id"], block["unlinked_entry_ids"])
+        linked = [l for l in block["links"] if l["target_entry_id"] == duplicate[0]["id"]]
+        self.assertEqual(len(linked), 1)
+        self.assertEqual(linked[0]["marker"]["line_id"], "witness-b-babel-l020")
+        self.assertTrue(linked[0]["disambiguation"].strip())
 
     def test_duplicate_apparatus_adversarial_mutations(self):
         import copy
@@ -679,3 +682,13 @@ class NumberedApparatusTests(unittest.TestCase):
             change(bad)
             with self.assertRaises(AssertionError):
                 self.check_block(bad, sources, paired=True, repeated=True, occurrence_labels=True)
+        # Swapping equal printed labels and fixing the accounting would pass
+        # a number-only check. The real source-specific guard must reject it.
+        wrong = copy.deepcopy(block)
+        duplicate_link(wrong)["target_entry_id"] = duplicates[1]["id"]
+        wrong["unlinked_entry_ids"] = [e["id"] for e in wrong["entries"]
+                                      if not any(l["target_entry_id"] == e["id"]
+                                                 for l in wrong["links"])]
+        self.check_block(wrong, sources, paired=True, repeated=True, occurrence_labels=True)
+        with self.assertRaises(AssertionError):
+            self.check_ix_b_duplicate(wrong)
