@@ -802,7 +802,7 @@ class ReviewSmoke(unittest.TestCase):
                 return [v,ds.length,ds.filter(x=>x?.kind==='verified').length,
                         ds.filter(x=>x?.kind==='estimated').length,ds.filter(x=>!x).length];
             })""")
-            self.assertEqual(result, [['1',145,145,0,0],['2',140,40,100,0],
+            self.assertEqual(result, [['1',145,145,0,0],['2',140,110,30,0],
                                       ['3',170,40,130,0],['4',112,49,63,0],['5',48,11,37,0]])
             self.assertEqual(page.evaluate("""() => [
                 contentsDestination('2',[519,'example','XXV–XXXII',null,2]),
@@ -850,7 +850,48 @@ class ReviewSmoke(unittest.TestCase):
                           ('XX–XXIV', 24), ('XXIV–XXV', 28), ('XXV–XXXII', 29),
                           ('XXXIII–XXXIX', 37), ('XXXIX–LXI', 43), ('LXI–LXIII', 65),
                           ('LXIII–LXXVIII', 67)])
-        self.assertTrue(all(len(e) == 6 and 'heading' in e[5] for e in preface))
+        self.assertTrue(all(len(e) == 7 and 'heading' in e[5] for e in preface))
+        # Actual work openings, including separate texts sharing a physical page.
+        expected = {15: 84, 16: 85, 17: 93, 18: 95, 21: 106, 22: 115,
+                    24: 479, 25: 480, 26: 483, 30: 135, 31: 139, 33: 147,
+                    34: 153, 35: 156, 36: 180, 37: 183, 38: 184, 39: 185,
+                    40: 185, 41: 191, 42: 192, 43: 192, 44: 193}
+        self.assertEqual({i: volume['entries'][i][3] for i in expected}, expected)
+        self.assertTrue(all(e[3] is not None for e in volume['entries'][13:46]))
+        # Nativity and childhood: physical starts verified on the pinned scans.
+        later = {48: 198, 49: 199, 50: 205, 51: 213, 52: 214, 53: 218,
+                 54: 219, 55: 219, 56: 220, 57: 225, 58: 228, 59: 231,
+                 60: 232, 61: 233, 64: 235, 65: 236, 66: 238, 67: 239,
+                 68: 240, 69: 241, 70: 246, 71: 251, 72: 490, 73: 254, 74: 254}
+        self.assertEqual({i: volume['entries'][i][3] for i in later}, later)
+        self.assertTrue(all(e[3] is not None for e in volume['entries'][13:75]))
+        self.assertTrue(all(len(volume['entries'][i]) == 6 for i in later))
+        self.assertIn('scan 491', volume['entries'][72][5])
+        self.assertIn('scan 485', volume['entries'][64][5])
+        self.assertIn('scan 491', volume['entries'][74][5])
+        self.assertTrue(all(len(volume['entries'][i]) == 6 for i in expected))
+        self.assertIn('520', volume['entries'][22][5])
+        for i in (34, 35):
+            self.assertIn('p. 98', volume['entries'][i][5])
+        self.assertIn('p. 59', volume['entries'][32][5])
+        # Sections V–VII: source-image checked beginnings, including unnumbered Polish excerpt.
+        passion = {77:266, 78:273, 80:278, 81:282, 84:287, 85:288,
+                   86:292, 87:293, 88:295, 91:302, 92:304, 93:318,
+                   94:319, 95:321, 96:322, 97:322, 98:323, 99:324,
+                   100:328, 101:334, 102:355, 103:494}
+        self.assertEqual({i: volume['entries'][i][3] for i in passion}, passion)
+        self.assertTrue(all(e[3] is not None for e in volume['entries'][:104]))
+        self.assertTrue(all(len(volume['entries'][i]) == 6 for i in passion))
+        self.assertIn('Polish', volume['entries'][84][5])
+        self.assertIn('Sokol', volume['entries'][93][5])
+        self.assertEqual(volume['entries'][79][2], '194–169')
+        self.assertIn('196', volume['entries'][79][5])
+        preface_ids = ['preface-title-line-01', 'preface-line-01', 'preface-line-08',
+                       'preface-line-01', 'preface-line-40', 'preface-line-19',
+                       'preface-line-13', 'preface-line-19', 'preface-line-26',
+                       'preface-line-01', 'preface-line-11', 'p4-line-01', 'preface-line-12']
+        self.assertEqual([e[6]['line_id'] for e in volume['entries'][:13]], preface_ids)
+        self.assertEqual([e[6].get('region_kind', 'heading') for e in volume['entries'][:13]], ['heading'] + ['body'] * 12)
         continuation = next(e for e in items if e[1].startswith('З. О еллинскихъ мудрецехъ'))
         self.assertEqual((continuation[0], continuation[2]), (519, '33–35'))
         self.assertIn('520', continuation[5])
@@ -925,13 +966,17 @@ class ReviewSmoke(unittest.TestCase):
             page.set_content(html.replace('updateMode();load();', 'updateMode();'))
             result = page.evaluate("""() => {
                 const a={suffix:'single_reading',reader_id:'reader-a',line_id:'head-1',text:'Heading'};
-                const c=(reader,text,suffix='single_reading')=>({suffix,data:{reading:{reader_id:reader,regions:[{kind:'heading',lines:[{id:'head-1',text}]}]}}});
+                const c=(reader,text,suffix='single_reading',kind='heading')=>({suffix,data:{reading:{reader_id:reader,regions:[{kind,lines:[{id:'head-1',text}]}]}}});
                 return [contentsAnchorIndex(a,[c('reader-b','Heading'),c('reader-a','Heading')]),
                         contentsAnchorIndex(a,[c('reader-a','Changed')]),
                         contentsAnchorIndex(a,[c('reader-a','Heading','alternate_reading_01')]),
-                        contentsAnchorIndex(a,[c('reader-a','Heading'),c('reader-a','Heading')])];
+                        contentsAnchorIndex(a,[c('reader-a','Heading'),c('reader-a','Heading')]),
+                        contentsAnchorIndex({...a,region_kind:'body'},[c('reader-a','Heading','single_reading','body')]),
+                        contentsAnchorIndex(a,[c('reader-a','Heading','single_reading','body')]),
+                        contentsAnchorIndex({...a,region_kind:'body'},[c('reader-a','Heading')]),
+                        contentsAnchorIndex({...a,region_kind:'note'},[c('reader-a','Heading','single_reading','note')])];
             }""")
-            self.assertEqual(result, [1, -1, -1, -1])
+            self.assertEqual(result, [1, -1, -1, -1, 0, -1, -1, -1])
             browser.close()
 
     def test_contents_reuses_existing_readings(self):
@@ -1054,7 +1099,9 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertEqual(record['reading']['reader_id'], anchor['reader_id'])
                 hits = [(r['kind'], l['text']) for r in record['reading']['regions']
                         for l in r['lines'] if l['id'] == anchor['line_id']]
-                self.assertEqual(hits, [('heading', anchor['text'])])
+                kind = anchor.get('region_kind', 'heading')
+                self.assertIn(kind, ('heading', 'body'))
+                self.assertEqual(hits, [(kind, anchor['text'])])
                 actual.add((volume, e[3], anchor['line_id']))
         self.assertTrue(expected <= actual, expected - actual)
         # Metadata enrichment must cover every linguistic line in these reused drafts.
