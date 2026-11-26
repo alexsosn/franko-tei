@@ -1101,7 +1101,7 @@ GLOSSARY_MENTION_REVIEWS = {
     ("v1-460-right-l028", "281"): (281, "f050bf4518a108633a55a6093aceb4d13dc7648d", "attested", ["shamir-l002","shamir-l006","shamir-l008","shamir-l009"], "кокоть; кокот (four occurrences)"),
     ("v1-460-right-l029", "183"): (183, "b4565c00715c6040158d0e62c55f971232e9cc71", "attested", ["levi-ordination-l012","levi-ordination-l013"], "ком- / канія, split across two lines"),
     ("v1-460-right-l031", "106"): (106, "ed959c63522958f8ac390ed767a417dbd7ba016c", "attested", ["witness-d-ishmaelites-l002"], "корнилъ; lexical interpretation remains unclear"),
-    ("v1-460-right-l032", "67"): (67, "4c868122c80a9f5b5bbb56e67056e44114222512", "attested", ["noah-flood-continuation-l002"], "котцех (inflected form)"),
+    ("v1-460-right-l032", "67"): (67, "4c868122c80a9f3b5bbb56e67056e44114222512", "attested", ["noah-flood-continuation-l002"], "котцех (inflected form)"),
     ("v1-460-right-l034", "199"): (199, "32ec4b99b36b589549c350ea56701f81b002f066", "attested", ["zebulun-narrative-continuation-l008","zebulun-narrative-continuation-l012"], "котыгу (two occurrences)"),
     ("v1-460-right-l036", "319"): (319, "38566f1ddfed36b129269f81e88409b21d9031fe", "attested", ["daniel-body-l006"], "кощь"),
     ("v1-460-right-l037", "175"): (175, "768be23f0db0afccca9ca7eb06a012268d7f18d8", "not_found", [], "Draft горчинѣ is a different word; no Кручина form. Nearby pp174/176 screened."),
