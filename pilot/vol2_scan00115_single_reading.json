@@ -17,7 +17,7 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Direct original-image reading; physical lines and contextual language spans under the harmonization guide. Historical accentuation, titla, breathings and glyph shapes are incomplete/provisional; geometry estimated, not measured baselines.",
+    "instructions": "Direct original-image reading; physical lines and contextual language spans under the harmonization guide. Historical accentuation, titla, breathings and glyph shapes are incomplete/provisional; geometry estimated, not measured baselines. Draft-stage source reinspection corrections retained in branch commit history; no independent reader-context claim.",
     "raw_response": "33\nЗ. Рукопис о. Яремецького Білахевича, стор. 395—398.\n(Ѡ елинскихъ мудрѣцехъ, иже ѿ часты про-\nрочествоваху ѡ превышнем Бж҃ествѣ и ѡ рожде-\nствѣ Хв҃ѣ ѿ пречистїа Бц҃и). Подвигше бо ся человѣ-\nческія вещи изъобрѣсти, таже воздушная и вышшая, тѣмъ же\nи Бг҃ъ проявляше симъ ѿ части коснути ся истиннѣ.\nВалаамъ волхвъ прорече ѡ Хт҃ѣ: „Возсіяетъ звѣзда ѿ\nІакова и востанет чл҃вкъ ѿ Іиз҃лѧ и языци нань уповаютъ.\nпоспа яко левъ і яко скименъ, и кто возставитъ й“. Левъ бо\nегда родит ся, скименъ, мертвъ лежитъ три дни, и паки воста-\nетъ и царствуетъ над всѣми звѣрми. Тако и Хс҃ во гробѣ по-\nлежа три дни и воста и воцри ся над всѣми языки. И паки левъ\nспитъ єдним окомъ, а другим зрит. Тако и Хс҃ усну плотію\nпо человѣчеству, а бж҃еством вся зрит.\nФикидыдъ рече: „Єдино три и три єдино безплотно образно\nєсть Тройца“.\nЄрмій Тревеликій рече: „Заклинаю тя нбо҃, великаго Бга\nдѣло, заклинаю тя гласом Очим, иже провѣща прежде, єгда\nвесь миръ утвердити. Заклинаю тя во єдинороднаго єго Слова\nи Дх҃а“. Той же: „Бг҃а разумѣти єсть неудобно, сказати же не-\nвозможнѣ. Єсть бо трисоставенъ и несказаненъ существом, не\nимущъ во человѣцехъ уподобленія“. Сей Єрмій ѿ древних цр҃ей\nпо раздѣленіи языкъ во скорѣ бысть, прежде Авраама великаго.\nСей повелѣ во своемъ цр҃твіи мужу єдину жену держати, и до-\nбродѣтели єго ради спадоша єму желѣзная клѣща с небесе, ими\nже коваша орудія на противники.\nАристотель рече: „Неусыпно єстество бж҃іяго существа и не\nимущи начала, ѿ него же все крѣпкое существит ся слово“. Той\nже: „Аз бо грѣшенъ быти не уко омыщу ся; Хту҃ же во адъ\nсходящу ни єдинъ прежде мене вѣрова. Неизглаголанно зачатіє\nв три лица совокупити ся имать“.\nІстуйкъ рече: „Почтем Мрію яко добрѣ сокрывшую талантъ\nтаинство, ѿ нея бо хощет родити ся Хртосъ“.\nФилидосъ рече: „Прежде Бг҃ъ, таже Слово и Дх҃ъ с ним“.\nПлатонъ рече: „Бг҃ъ понеже бл҃гъ єсть и бл҃гословенію убо\nвиновенъ, злым же никако же“. Той же Платонъ рече: „Аполонъ\nнѣсть Бг҃ъ, но єсть Бг҃ъ на небесехъ, ємуже снити на землю\nі воплотити ся ѿ дв҃и чистїя, в него и азъ вѣрую. И по четы-\nрехъ стѣхъ лѣтъ по бж҃ественнѣмъ єго рождествѣ мою кость\nосіяетъ сл҃нце“.\nАпокріфи новозавітні. А.\n5",
     "coverage": {
       "entire_image_inspected": true,
@@ -76,14 +76,6 @@
               {
                 "text_version": "gpt62-ii-115-image-harmonized-20261126",
                 "start": 0,
-                "end": 2,
-                "language": "zxx",
-                "script": "Zyyy",
-                "uncertain": false
-              },
-              {
-                "text_version": "gpt62-ii-115-image-harmonized-20261126",
-                "start": 2,
                 "end": 52,
                 "language": "uk",
                 "script": "Cyrl",
@@ -1117,6 +1109,11 @@
         "line_id": "plato-line-03",
         "reading": "снити",
         "reason": "Abbreviation and diacritics provisional."
+      },
+      {
+        "line_id": "witness-heading-line-01",
+        "reading": "З.",
+        "reason": "Witness siglum З follows Ж in prior material; glyph resembles digit 3 but witness context supports Cyrillic letter."
       }
     ],
     "source_note_links": []
