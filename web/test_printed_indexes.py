@@ -134,7 +134,7 @@ class PrintedIndexesTest(unittest.TestCase):
                 content_type="application/json", body=json.dumps(data)) if route.request.url.endswith("/search/printed-indexes.json")
                 else route.fulfill(content_type="text/html", body=html) if route.request.url=="https://index.test/"
                 else route.abort())
-            page.goto("https://index.test/")
+            page.goto("https://index.test/#v=1&p=20")
             page.locator("#contentsOpen").click()
             page.locator("#indexMode").click()
             page.locator("#indexEntries li").first.wait_for()

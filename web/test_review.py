@@ -62,6 +62,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             control = page.locator('header .mainbar #languageOpen')
             for width, height in ((320,640),(390,844),(896,414),(1280,800)):
@@ -120,6 +121,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width': 390, 'height': 844})
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             page.evaluate("$('ref').value='feature/example'")
             page.evaluate("$('mode').value='both';updateMode()")
@@ -149,6 +151,7 @@ class ReviewSmoke(unittest.TestCase):
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
             page.route('https://**/*', lambda route: route.abort())
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             page.locator('#contentsOpen').click()
             self.assertEqual(page.locator('#contentsTitle').inner_text(), 'Contents — Volume 1')
@@ -198,6 +201,7 @@ class ReviewSmoke(unittest.TestCase):
             for width in (320, 760, 1200):
                 page = browser.new_page(viewport={'width':width,'height':700})
                 page.route('https://**/*', lambda route: route.abort())
+                page.evaluate("location.hash='v=1&p=20'")
                 page.set_content(html)
                 page.locator('#contentsOpen').click()
                 for provenance in (False, True):
@@ -344,6 +348,7 @@ class ReviewSmoke(unittest.TestCase):
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
             page.route('https://**/*', lambda route: route.abort())
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             page.evaluate("setUILocale('en')")
             page.locator('#contentsOpen').click()
@@ -429,6 +434,7 @@ class ReviewSmoke(unittest.TestCase):
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
             page.route('https://**/*', lambda route: route.abort())
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             page.locator('#contentsOpen').click()
             page.locator('#contentsFilter').fill('2 Enoch')
@@ -469,6 +475,7 @@ class ReviewSmoke(unittest.TestCase):
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
             page.route('https://**/*', lambda route: route.abort())
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             page.locator('#contentsOpen').click()
             self.assertIn('Old Testament apocrypha', page.locator('#contentsVolume option:checked').inner_text())
@@ -502,6 +509,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             for width in (320,390,768,1280):
                 page.set_viewport_size({'width':width,'height':800})
@@ -536,6 +544,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':320,'height':640})
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             for width,height in ((320,640),(390,844),(1280,800),(844,390)):
                 page.set_viewport_size({'width':width,'height':height})
@@ -604,6 +613,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':1280,'height':800})
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             page.locator('#contentsOpen').click()
             panel = page.locator('#contentsPanel')
@@ -635,7 +645,7 @@ class ReviewSmoke(unittest.TestCase):
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width': 390, 'height': 844})
             page.route('http://franko.test/**', lambda route: route.fulfill(status=200, content_type='text/html; charset=utf-8', body=html) if route.request.resource_type == 'document' else route.abort())
-            page.goto('http://franko.test/')
+            page.goto('http://franko.test/#v=1&p=20')
             page.evaluate("""() => {
                 $('page').value='71'; $('volume').value='4'; $('ref').value='test/ref';
                 message('ocr','Search corpus'); message('noteText','Unverified');
@@ -671,6 +681,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width':390,'height':844})
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             result = page.evaluate("""() => Object.entries(volumeContents).map(([v,d])=>{
                 const ds=d.entries.map(e=>contentsDestination(v,e));
@@ -791,6 +802,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
             page = browser.new_page()
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html.replace('updateMode();load();', 'updateMode();'))
             result = page.evaluate("""() => {
                 const a={suffix:'single_reading',reader_id:'reader-a',line_id:'head-1',text:'Heading'};
@@ -1294,6 +1306,7 @@ class ReviewSmoke(unittest.TestCase):
         with sync_playwright() as p:
             browser=p.chromium.launch(executable_path=os.environ.get("CHROMIUM") or None,args=["--no-sandbox"])
             page=browser.new_page(viewport={"width":390,"height":844})
+            page.evaluate("location.hash='v=1&p=20'")
             page.set_content(html)
             page.evaluate("""([line,region,review])=>{
                 renderLine(line,region,[]);
