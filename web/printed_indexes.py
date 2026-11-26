@@ -465,11 +465,23 @@ def parse_entry(kind, lines, targets):
             refs = []
             for token in tokens:
                 ref = make_ref(token, targets) if re.fullmatch(TOKEN, token) else None
-                refs.append(ref or dict(literal=token, volume="1", role="unresolved",
-                                        targets=[], missing=[]))
-            if any(ref["role"] != "unresolved" for ref in refs):
-                return label, "", refs
-            return joined, "", []
+                if ref:
+                    refs.append(ref)
+                    continue
+                # A space-separated series of legal page numbers whose joined
+                # digits exceed the volume cannot be a single page. Keep the
+                # source token, and mark the recovered separator explicitly.
+                parts = token.split()
+                if (len(parts) > 1 and all(re.fullmatch(NUMBER, p) and int(p) <= 340 for p in parts)
+                        and int("".join(parts)) > 340):
+                    for p in parts:
+                        item = make_ref(p, targets, "separator_recovered")
+                        item["printed_literal"] = token
+                        refs.append(item)
+                else:
+                    refs.append(dict(literal=token, volume="1", role="unresolved",
+                                     targets=[], missing=[]))
+            return label, "", refs
     m = TAIL.search(joined)
     if not m:
         return joined, "", []
@@ -521,7 +533,7 @@ def link_audit(data):
             for ref in entry["refs"]:
                 pages += len(ref["targets"])
                 estimated += sum(bool(t.get("estimated")) for t in ref["targets"])
-                anchored += sum(bool(t.get("line_id")) for t in ref["targets"])
+                anchored += sum(bool(t.get("anchor")) for t in ref["targets"])
                 if ref["missing"]:
                     missing.append(dict(**ident, literal=ref["literal"], pages=ref["missing"]))
                 if ref["role"] == "unresolved":
@@ -577,7 +589,31 @@ def reconcile_achatis_reference(pilot, files, targets, entry):
     ref["printed_literal"] = "215"
     ref["evidence"] = dict(path=evidence["target_path"], blob=blob,
                            line_id=evidence["target_line_id"], text=lines[0])
+    ref["targets"][0]["anchor"] = dict(suffix="single_reading", reader_id=target["reading"]["reader_id"], line_id=evidence["target_line_id"], text=lines[0], region_kind="apparatus")
     entry["refs"] = [ref]
+
+
+def reconcile_ishmael_reference(files, targets, entry):
+    # The draft reads "2 9"; page 269 contains the exact variant Измаилтяне
+    # in the apparatus. Do not silently overwrite the uncertain source token.
+    if entry["id"] != "v1-421-right-l027" or 344 not in files or targets.get(269) != 344:
+        return
+    path, draft, blob = files[344]
+    if blob != "2d27b4ceb62a722d43191f18d54c54cbf58ba7c6" or draft["printed_page_observed"] != "269":
+        return
+    hits = [(region, line) for region in draft["reading"]["regions"] for line in region["lines"]
+            if line["id"] == "gideon-apparatus-l020" and "Измаилтяне" in line["text"]]
+    if len(hits) != 1:
+        return
+    region, line = hits[0]
+    for i, ref in enumerate(entry["refs"]):
+        if ref["role"] == "unresolved" and ref["literal"] == "2 9":
+            corrected = make_ref("269", targets, "editorial_citation")
+            corrected["printed_literal"] = "2 9"
+            corrected["evidence"] = dict(path="pilot/" + path.name, blob=blob, line_id=line["id"], text=line["text"])
+            corrected["targets"][0]["anchor"] = dict(suffix="single_reading", reader_id=draft["reading"]["reader_id"],
+                                                       line_id=line["id"], text=line["text"], region_kind=region["kind"])
+            entry["refs"][i] = corrected
 
 
 def build_printed_indexes(pilot, ref, supplements=None):
@@ -692,6 +728,7 @@ def build_printed_indexes(pilot, ref, supplements=None):
     for section in sections:
         by_id = {e["id"]: e for e in section["entries"]}
         for entry in section["entries"]:
+            reconcile_ishmael_reference(files, targets, entry)
             entry["crossrefs"] = [dict(id=ident, label=by_id[ident]["label"])
                                   for ident in CROSSREFS.get(entry["id"], []) if ident in by_id]
             for citation in entry["refs"]:
