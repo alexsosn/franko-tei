@@ -178,6 +178,33 @@ class PrintedIndexesTest(unittest.TestCase):
             self.assertEqual(ostezh()["literal"], "184")
             self.assertNotIn("anchor", ostezh()["targets"][0])
 
+    def test_third_glossary_right_column_mentions(self):
+        from collections import Counter
+        data = build_printed_indexes(ROOT / "pilot", "a" * 40)
+        entries = [e for e in data["sections"][3]["entries"]
+                   if e["source"]["scan"] == 461 and e["region_id"] == "right"]
+        self.assertEqual(len(entries), 23)
+        reviews = [target["mention_review"] for e in entries for r in e["refs"] for target in r["targets"]]
+        self.assertEqual(len(reviews), 24)
+        self.assertEqual(Counter(x["status"] for x in reviews),
+                         {"attested": 15, "reading_conflict": 6, "not_found": 3})
+        by_label = {e["label"]: e for e in entries}
+        forms = by_label["Попава 199, попавица 241"]["refs"]
+        self.assertEqual([r["form"] for r in forms], ["Попава", "попавица"])
+        self.assertTrue(all(r["targets"][0]["mention_review"]["status"] == "reading_conflict" for r in forms))
+        self.assertEqual(len(by_label["Поносъ"]["refs"][0]["targets"][0]["mention_review"]["lines"]), 2)
+        self.assertEqual(by_label["Прокѹдникъ"]["refs"][0]["targets"][0]["anchor"]["line_id"], "levi-priesthood-l013")
+        self.assertNotIn("anchor", by_label["Прокѹдити"]["refs"][0]["targets"][0])
+        for entry in entries:
+            for ref in entry["refs"]:
+                for dest in ref["targets"]:
+                    review = dest["mention_review"]
+                    draft = json.loads((ROOT / review["path"]).read_text(encoding="utf-8"))
+                    lines = {l["id"]: l["text"] for region in draft["reading"]["regions"] for l in region["lines"]}
+                    for line in review["lines"]:
+                        self.assertEqual(lines[line["line_id"]], line["text"])
+                    self.assertEqual("anchor" in dest, review["status"] == "attested")
+
     def test_glossary_review_stale_target_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             pilot = Path(tmp)
