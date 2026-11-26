@@ -1,0 +1,70 @@
+{
+  "schema_version": "printed-note-entry-annotation-v1",
+  "id": "vol5-editorial-note-entries-124",
+  "kind": "printed_note_entries",
+  "volume": "5",
+  "status": "agent_unverified",
+  "description": "Two exact separately printed note markers in one body line on V/124. Both distinct note regions and literal links preserved without splitting the physical line. Annotation only; no projection claim.",
+  "pages": [
+    {
+      "scan_page": 124,
+      "printed_page": "112",
+      "source_pilot_path": "pilot/vol5_scan00124_single_reading.json",
+      "source_record_commit": "d3b2663618eefe99be8c44288a531ee15439dc41",
+      "source_record_blob": "62092e84926845befeef21549cb17dfca61e7c75",
+      "source_reader_id": "gpt62-v5s00124-20261126",
+      "source_image_sha256": "ee6c78d47f789953f8ad601c430fa522cb29e5d3eccd38fa52efde805c59d3be",
+      "entries": [
+        {
+          "id": "v5-s00124-note-01",
+          "note_region_id": "note-1",
+          "label": "¹)",
+          "fragments": [
+            {
+              "line_id": "note-1-line-01",
+              "start": 0,
+              "end": 27,
+              "literal": "¹) В оріґіналї: похоуливши."
+            }
+          ]
+        },
+        {
+          "id": "v5-s00124-note-02",
+          "note_region_id": "note-2",
+          "label": "²)",
+          "fragments": [
+            {
+              "line_id": "note-2-line-01",
+              "start": 0,
+              "end": 18,
+              "literal": "²) В оріґіналї: ю."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "body-5-line-01",
+            "start": 30,
+            "end": 32,
+            "literal": "¹)"
+          },
+          "status": "resolved",
+          "target_entry_id": "v5-s00124-note-01"
+        },
+        {
+          "marker": {
+            "line_id": "body-5-line-01",
+            "start": 55,
+            "end": 57,
+            "literal": "²)"
+          },
+          "status": "resolved",
+          "target_entry_id": "v5-s00124-note-02"
+        }
+      ],
+      "unlinked_entry_ids": []
+    }
+  ]
+}
