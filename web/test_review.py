@@ -14,6 +14,49 @@ class ReviewSmoke(unittest.TestCase):
         page.locator(f'#languagePanel [data-locale="{locale}"]').click()
         self.assertTrue(page.locator('#languagePanel').is_hidden())
 
+    def test_contents_first_landing(self):
+        # Synthetic transport: actual reader HTML, no remote source requests needed
+        # to render the embedded table of contents. Explicit links remain direct.
+        html = APP.read_text(encoding='utf-8')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            for width, height in ((390, 844), (1280, 800)):
+                with self.subTest(width=width):
+                    page = browser.new_page(viewport={'width': width, 'height': height})
+                    page.route('https://**/*', lambda route: route.fulfill(
+                        content_type='text/html; charset=utf-8', body=html)
+                        if route.request.url == 'https://landing.test/' else route.abort())
+                    page.goto('https://landing.test/')
+                    self.assertTrue(page.locator('#contentsPanel').is_visible())
+                    self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'true')
+                    self.assertEqual(page.locator('#contentsVolume').input_value(), '1')
+                    self.assertEqual(page.evaluate('generation'), 0)
+                    self.assertEqual(page.evaluate('location.hash'), '')
+                    self.assertEqual(page.locator('#contentsEntries').evaluate('el => el.scrollTop'), 0)
+                    page.locator('#contentsVolume').select_option('5')
+                    page.locator('#contentsFirstScan').click()
+                    self.assertTrue(page.locator('#contentsPanel').is_hidden())
+                    self.assertEqual(page.locator('#volume').input_value(), '5')
+                    self.assertEqual(page.locator('#page').input_value(), '1')
+                    self.assertEqual(page.evaluate('generation'), 1)
+                    page.goto('https://landing.test/#v=3&ref=feature/example')
+                    page.reload()
+                    self.assertTrue(page.locator('#contentsPanel').is_visible())
+                    self.assertEqual(page.locator('#contentsVolume').input_value(), '3')
+                    page.keyboard.press('Escape')
+                    self.assertTrue(page.locator('#contentsPanel').is_hidden())
+                    self.assertEqual(page.locator('#page').input_value(), '1')
+                    self.assertEqual(page.locator('#ref').input_value(), 'feature/example')
+                    self.assertEqual(page.evaluate('generation'), 1)
+                    page.goto('https://landing.test/#v=2&p=100&ref=main')
+                    page.reload()
+                    self.assertTrue(page.locator('#contentsPanel').is_hidden())
+                    self.assertEqual(page.locator('#volume').input_value(), '2')
+                    self.assertEqual(page.locator('#page').input_value(), '100')
+                    self.assertEqual(page.evaluate('generation'), 1)
+                    page.close()
+            browser.close()
+
     def test_toolbar_language_switcher(self):
         html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
         with sync_playwright() as p:
