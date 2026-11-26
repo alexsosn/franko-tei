@@ -1517,7 +1517,7 @@ class ReviewSmoke(unittest.TestCase):
             page.evaluate('''fixture => {
                 location.hash = 'v=1&p=1';
                 window.fetch = async url => {
-                    if(url.endsWith('/search/vol1.json') || url.endsWith('./search/vol1.json')) return new Response(JSON.stringify({ref:'a'.repeat(40),volume:'1',entries:[{scan:1,suffix:'single_reading',text:'ѣ <script>ἀ</script>\\nѣѣ ѣ end'},{scan:1,suffix:'alternate_reading_01',text:'alternate ἀ\\nѣѣ ѣ end'},{scan:1,suffix:'alternate_reading_02',text:'legacy ἀ\\nѣѣ ѣ end'}]}));
+                    if(url.endsWith('/search/vol1.json') || url.endsWith('./search/vol1.json')) return new Response(JSON.stringify({ref:'a'.repeat(40),volume:'1',entries:[{scan:1,suffix:'single_reading',text:'ѣ <script>ἀ</script>\\nѣѣ ѣ end',model_id:'GPT-6',model_version:null,editorial:'none'},{scan:1,suffix:'alternate_reading_01',text:'alternate ἀ\\nѣѣ ѣ end',model_id:'GPT-6.2',model_version:'test-snapshot',editorial:'none'},{scan:1,suffix:'alternate_reading_02',text:'legacy ἀ\\nѣѣ ѣ end',model_id:'GPT-6',model_version:null,editorial:'none'}]}));
                     if(url.includes('/repos/alexsosn/franko-tei/commits/')) return new Response(JSON.stringify({sha:'a'.repeat(40),commit:{tree:{sha:'b'.repeat(40)}}}));
                     if(url.includes('/repos/alexsosn/franko-tei/git/trees/')) return new Response(JSON.stringify({truncated:false,tree:[{type:'blob',path:'pilot/vol1_scan00001_single_reading.json'},{type:'blob',path:'pilot/vol1_scan00001_alternate_reading_01.json'},{type:'blob',path:'pilot/vol1_scan00001_alternate_reading_02.json'}]}));
                     if(url.endsWith('/full.txt')) {const v=Number(url.match(/vol([1-5])/)[1]);return new Response((v===1?'ѣ  ἀ':'')+'\\f'.repeat([0,469,526,446,580,316][v]));}
@@ -1803,6 +1803,16 @@ class ReviewSmoke(unittest.TestCase):
                 try {selectCurrentSearchRows([{scan:1,suffix:'single_reading',text:'legacy'}],null);}
                 catch(e){return true;} return false;
             }"""))
+            page.locator('#searchOpen').click()
+            page.locator('#searchVolume').select_option('1')
+            page.locator('#query').fill('ἀ')
+            page.locator('#searchGo').click()
+            page.locator('#searchResults button').first.wait_for()
+            self.assertEqual(page.locator('#searchResults button').count(),1)
+            self.assertIn('single reading',page.locator('#searchResults').text_content())
+            page.locator('#searchResults button').first.click()
+            page.locator('.line-text .search-match').wait_for()
+            self.assertEqual(page.locator('.line-text .search-match').text_content(),'ἀ')
             # A slow OCR volume must not block results from the agent index.
             page.evaluate("""() => {indexCache.clear(); const original=window.fetch;
                 window.fetch=async (url,...args)=>{if(String(url).includes('original_ocr/vol1/full.txt'))
