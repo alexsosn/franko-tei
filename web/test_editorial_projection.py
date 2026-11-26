@@ -186,5 +186,147 @@ class EditorialProjectionTests(unittest.TestCase):
                 self.assertFalse(errors,errors)
                 browser.close()
 
+    def test_actual_annotation_only_revision_preserves_accepted_line(self):
+        import copy
+        from xml.etree import ElementTree as ET
+        from franko_tei.review_tei import render_editorial_tei
+        from franko_tei.pilot_tei import TEI, extract_transcribed_lines
+        def encode(value): return json.dumps(value,ensure_ascii=False).encode('utf-8')
+        from franko_tei.review_adjudication import check_repository, StaleEditorialSource, project_lines
+        from franko_tei.review_bundle import git_source_loader, blob_sha
+        import subprocess
+        root=Path(__file__).resolve().parents[1]
+        ref=subprocess.check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip()
+        ledger=check_repository(root,ref)
+        path="pilot/vol1_scan00104_single_reading.json"
+        entry=ledger[(path,"witness-e-death-adam-l003")]
+        old=git_source_loader(root,ref)(entry["source_commit"],path)
+        original=json.loads(old)
+        revised=copy.deepcopy(original)
+        line=next(l for r in revised["reading"]["regions"] for l in r["lines"] if l["id"]=="witness-e-death-adam-l003")
+        span=line["language_spans"][0]
+        marker=line["text"].index("⁵)")
+        line["language_spans"]=[dict(span,end=marker),dict(span,start=marker,end=marker+2,language="zxx",script="Zyyy",uncertain=False),dict(span,start=marker+2)]
+        revised["reading"]["footnote_marker_annotation"]={
+            "source_record_commit":entry["source_commit"],"source_record_blob":blob_sha(old),
+            "method":"Separate printed superscript apparatus label ranges from existing cu/chu spans; no text changes or note targets inferred.",
+            "status":"agent_unverified","marker_count":1}
+        raw=encode(revised)
+        rev="a"*40
+        def loader(commit,p):
+            if p!=path: raise ValueError("wrong path")
+            if commit==rev:return raw
+            if commit==entry["source_commit"]:return old
+            raise ValueError("untrusted revision")
+        with self.assertRaises(ValueError):
+            project_lines(raw,path,ledger)
+        rows=project_lines(raw,path,ledger,source_loader=loader,projection_commit=rev)
+        row=next(r for r in rows if r["line_id"]==line["id"])
+        self.assertIn("Сиѳъ",row["text"])
+        self.assertEqual(row["language_spans"],[])
+        self.assertEqual(row["source_revision"]["accepted_blob"],blob_sha(old))
+        self.assertEqual(row["source_revision"]["projected_blob"],blob_sha(raw))
+        self.assertEqual(row["source_revision"]["projected_commit"],rev)
+        self.assertEqual(row["source_revision"]["kind"],"footnote_language_only")
+        # Lower-level serializer preserves original literal and distinct source
+        # revisions; native image validation is a separate live smoke gate.
+        boxes=[r["bbox_xywh"] for r in revised["reading"]["regions"]]
+        width=max(b[0]+b[2] for b in boxes)+1
+        height=max(b[1]+b[3] for b in boxes)+1
+        xml=render_editorial_tei(raw,path,ledger,width,height,rev,source_loader=loader)
+        self.assertEqual(extract_transcribed_lines(xml),[r["text"] for r in rows])
+        notes=ET.fromstring(xml).findall(".//t:note[@type='editorial-review']",{"t":TEI})
+        note=next(n for n in notes if n.find("t:quote",{"t":TEI}).text==line["text"])
+        ns={"t":TEI}
+        self.assertEqual(note.find("t:ref[@type='annotation-source-revision']",ns).get("target"),
+                         "https://github.com/alexsosn/franko-tei/blob/"+rev+"/"+path)
+        self.assertEqual(note.find("t:seg[@type='accepted-source-blob']",ns).text,blob_sha(old))
+        self.assertEqual(note.find("t:seg[@type='projected-source-blob']",ns).text,blob_sha(raw))
+        # Revisions must bind the current bytes as well as historical ones.
+        with self.assertRaises(StaleEditorialSource):
+            project_lines(raw+b" ",path,ledger,source_loader=loader,projection_commit=rev)
+        def rejected(change):
+            bad=copy.deepcopy(revised)
+            change(bad)
+            encoded=encode(bad)
+            def bad_loader(commit,p):
+                if commit==rev:return encoded
+                return loader(commit,p)
+            with self.assertRaises(StaleEditorialSource):
+                project_lines(encoded,path,ledger,source_loader=bad_loader,projection_commit=rev)
+        rejected(lambda d:d["reading"].pop("footnote_marker_annotation"))
+        rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(marker_count=2))
+        rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(source_record_blob="0"*40))
+        rejected(lambda d:d["reading"]["footnote_marker_annotation"].update(source_record_commit="b"*40))
+        rejected(lambda d:d["reading"].update(instructions="changed"))
+        rejected(lambda d:d["reading"]["regions"][0]["lines"][0]["bbox_xywh"].__setitem__(0,1))
+        rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(text="changed"))
+        rejected(lambda d:d["reading"]["regions"][0]["lines"][0].update(id="changed"))
+        rejected(lambda d:next(l for r in d["reading"]["regions"] for l in r["lines"] if l["id"]==line["id"]).update(language_spans=[]))
+        rejected(lambda d:next(l for r in d["reading"]["regions"] for l in r["lines"] if l["id"]==line["id"])["language_spans"][0].update(language="uk"))
+        rejected(lambda d:d["reading"]["uncertainty_notes"].clear())
+        rejected(lambda d:d.update(source_image_sha256="0"*64))
+        # Actual Git-backed roundtrip, including all 122 standard markers on
+        # this page. Use a detached temporary clone; never alter the corpus
+        # checkout or the genuine accepted records.
+        from franko_tei.footnote_audit import audit_reading
+        full=copy.deepcopy(original)
+        findings=list(audit_reading(full))
+        self.assertEqual(len(findings),122)
+        for region in full["reading"]["regions"]:
+            for item in region["lines"]:
+                markers=[(m["start"],m["end"]) for m in findings if m["line"]==item["id"]]
+                if not markers: continue
+                updated=[]
+                for span in item["language_spans"]:
+                    points=sorted({span["start"],span["end"]} |
+                                  {n for pair in markers for n in pair if span["start"]<n<span["end"]})
+                    for a,b in zip(points,points[1:]):
+                        part=dict(span,start=a,end=b)
+                        if (a,b) in markers:
+                            part.update(language="zxx",script="Zyyy",uncertain=False)
+                        updated.append(part)
+                item["language_spans"]=updated
+        full["reading"]["footnote_marker_annotation"]=dict(revised["reading"]["footnote_marker_annotation"],marker_count=122)
+        self.assertEqual(list(audit_reading(full)),[])
+        with tempfile.TemporaryDirectory() as tmp:
+            clone=Path(tmp)/"repo"
+            subprocess.run(["git","clone","--quiet","--shared","--no-checkout",str(root),str(clone)],check=True)
+            def git(*args):
+                return subprocess.check_output(["git","-C",str(clone),*args],text=True).strip()
+            git("checkout","--quiet","--detach",ref)
+            full_raw=encode(full)
+            (clone/path).write_bytes(full_raw)
+            git("add","--",path)
+            git("-c","user.name=Fixture","-c","user.email=fixture@example.invalid","commit","--quiet","-m","annotation-only fixture")
+            committed=git("rev-parse","HEAD")
+            actual_loader=git_source_loader(clone,committed)
+            self.assertEqual(actual_loader(committed,path),full_raw)
+            projected=project_lines(full_raw,path,ledger,source_loader=actual_loader,projection_commit=committed)
+            self.assertEqual([r["text"] for r in projected],[r["text"] for r in rows])
+            output=Path(tmp)/"search"
+            build(clone/"pilot",output,committed)
+            overlay=json.loads((output/"editorial.json").read_text())
+            published=next(p for p in overlay["pages"] if p["path"]==path)
+            self.assertEqual(published["blob"],blob_sha(full_raw))
+            self.assertEqual(len(published["lines"]),sum(r["status"]!="agent_unverified" for r in rows))
+            self.assertTrue(all(r["source_revision"]["projected_commit"]==committed for r in published["lines"]))
+            self.assertFalse(any(p["path"]==path for p in overlay["unavailable"]))
+            # The Git-backed new projection is unavailable if bytes change
+            # outside the allowed language-only derivation.
+            full["reading"]["regions"][0]["lines"][0]["bbox_xywh"][2]-=1
+            (clone/path).write_bytes(encode(full))
+            git("add","--",path)
+            git("-c","user.name=Fixture","-c","user.email=fixture@example.invalid","commit","--quiet","-m","stale geometry fixture")
+            stale_ref=git("rev-parse","HEAD")
+            build(clone/"pilot",output,stale_ref)
+            overlay=json.loads((output/"editorial.json").read_text())
+            self.assertIn({"path":path,"reason":"source_blob_changed"},overlay["unavailable"])
+            self.assertFalse(any(p["path"]==path for p in overlay["pages"]))
+        # A reformat-only revision remains stale, even with trusted bytes.
+        with self.assertRaises(StaleEditorialSource):
+            project_lines(old+b" ",path,ledger,source_loader=lambda c,p: old+b" " if c==rev else old,projection_commit=rev)
+
+
 if __name__=="__main__":
     unittest.main()

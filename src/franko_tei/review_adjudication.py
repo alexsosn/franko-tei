@@ -14,6 +14,7 @@ from pathlib import Path
 import subprocess
 
 from .pilot_batch import check_draft_offline
+from .footnote_audit import find_label_overlaps
 from .review_bundle import unique_pairs, reject_constant
 from .review_bundle import (
     REPO, LOGIN, SHA, SHA256, PATH, fields, match, require, literal, identifier,
@@ -205,18 +206,118 @@ def validate_ledger(intakes, decisions, source_loader):
     return accepted
 
 
-def project_lines(raw, path, ledger):
+class StaleEditorialSource(ValueError):
+    """The accepted base cannot safely be projected onto these source bytes."""
+
+
+_FOOTNOTE_METHOD = ("Separate printed superscript apparatus label ranges from existing "
+                    "cu/chu spans; no text changes or note targets inferred.")
+
+
+def _canonical(value):
+    # JSON equality distinguishes bool/int and int/float, unlike Python ==.
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
+
+
+def _source_json(raw):
+    return json.loads(raw.decode("utf-8"), object_pairs_hook=unique_pairs, parse_constant=reject_constant)
+
+
+def _verified_annotation_revision(raw, path, relevant, source_loader, projection_commit):
+    """Prove a direct, explicitly attested annotation-only derivation.
+
+    Only exact printed label ranges, split out of a single old cu/chu span,
+    are supported. No arbitrary reannotation or new source content is allowed.
+    Both candidate versions must come from the caller's trusted Git history.
+    """
+    try:
+        require(source_loader is not None and projection_commit is not None,
+                "explicit trusted revision required")
+        match(SHA, projection_commit, "projection commit")
+        require(source_loader(projection_commit, path) == raw, "projection bytes not pinned")
+        base_blobs = {e["event"]["target"]["candidate_blob"] for e in relevant.values()}
+        require(len(base_blobs) == 1, "competing accepted base blobs")
+        base_blob = next(iter(base_blobs))
+        current = _source_json(raw)
+        metadata = current["reading"].get("footnote_marker_annotation")
+        fields(metadata, {"source_record_commit", "source_record_blob", "method",
+                          "status", "marker_count"}, "footnote annotation")
+        require(metadata["source_record_blob"] == base_blob
+                and metadata["method"] == _FOOTNOTE_METHOD
+                and metadata["status"] == "agent_unverified"
+                and type(metadata["marker_count"]) is int and metadata["marker_count"] > 0,
+                "invalid annotation provenance")
+        match(SHA, metadata["source_record_commit"], "annotation source commit")
+        old_raw = source_loader(metadata["source_record_commit"], path)
+        require(blob_sha(old_raw) == base_blob, "annotation base blob mismatch")
+        # Verify the actual accepted historical source as well, not merely a
+        # self-described ancestor. The validated ledger must agree with it.
+        for commit in {e["source_commit"] for e in relevant.values()}:
+            require(source_loader(commit, path) == old_raw, "accepted historical source mismatch")
+        old = _source_json(old_raw)
+        check_draft_offline(path, old)
+        check_draft_offline(path, current)
+        expected = copy.deepcopy(old)
+        expected["reading"]["footnote_marker_annotation"] = copy.deepcopy(metadata)
+        old_lines = {l["id"]: l for r in expected["reading"]["regions"] for l in r["lines"]}
+        changed = 0
+        for region in current["reading"]["regions"]:
+            for line in region["lines"]:
+                before = old_lines[line["id"]]
+                if _canonical(before["language_spans"]) == _canonical(line["language_spans"]):
+                    continue
+                spans = before["language_spans"]
+                candidates = {(a, b) for a, b, _ in find_label_overlaps(before["text"], spans)}
+                selected = {(p["start"], p["end"]) for p in line["language_spans"]
+                            if p["language"] == "zxx" and p["script"] == "Zyyy"
+                            and p["uncertain"] is False and (p["start"], p["end"]) in candidates}
+                require(selected, "no supported annotation changes")
+                rebuilt, used = [], set()
+                for span in spans:
+                    a, b = span["start"], span["end"]
+                    cursor = a
+                    for start, end in sorted(selected):
+                        if span["language"] not in {"cu", "chu"} or not a <= start < end <= b:
+                            continue
+                        if cursor < start:
+                            rebuilt.append(dict(span, start=cursor, end=start))
+                        rebuilt.append(dict(span, start=start, end=end, language="zxx",
+                                            script="Zyyy", uncertain=False))
+                        cursor = end
+                        used.add((start, end))
+                    if cursor < b:
+                        rebuilt.append(dict(span, start=cursor, end=b))
+                require(used == selected and _canonical(rebuilt) == _canonical(line["language_spans"]),
+                        "unsupported language span change")
+                before["language_spans"] = rebuilt
+                changed += len(used)
+        require(changed == metadata["marker_count"], "annotation count mismatch")
+        require(_canonical(expected) == _canonical(current),
+                "non-annotation source content changed")
+        return {"kind": "footnote_language_only", "accepted_blob": base_blob,
+                "projected_blob": blob_sha(raw), "projected_commit": projection_commit,
+                "annotation_source_commit": metadata["source_record_commit"]}
+    except (ValueError, KeyError, TypeError, AttributeError) as exc:
+        raise StaleEditorialSource("stale accepted source: " + str(exc)) from exc
+
+
+def project_lines(raw, path, ledger, *, source_loader=None, projection_commit=None):
     """Derived physical-line records; no changes to frozen raw_response.
 
     The caller must pass a ledger from validate_ledger. A correction invalidates
     original language offsets (and potentially uncertainty readings); no
-    automatic reannotation or page verification is performed.
+    automatic reannotation or page verification is performed. A changed blob
+    is refused unless the caller supplies a trusted loader and exact revision
+    and the direct annotation-only derivation is independently reconstructed.
     """
     match(PATH, path, "candidate path")
-    source = json.loads(raw.decode("utf-8"))
-    check_draft_offline(path, source)
     digest = blob_sha(raw)
     relevant = {key[1]: value for key, value in ledger.items() if key[0] == path}
+    revision = None
+    if any(e["event"]["target"]["candidate_blob"] != digest for e in relevant.values()):
+        revision = _verified_annotation_revision(raw, path, relevant, source_loader, projection_commit)
+    source = _source_json(raw)
+    check_draft_offline(path, source)
     rows = []
     for region in source["reading"]["regions"]:
         for line in region["lines"]:
@@ -228,8 +329,12 @@ def project_lines(raw, path, ledger):
             if entry is not None:
                 event, decision = entry["event"], entry["adjudication"]
                 target = event["target"]
-                require(target["candidate_blob"] == digest and target["original"] == line["text"]
+                require((target["candidate_blob"] == digest or
+                         (revision is not None and target["candidate_blob"] == revision["accepted_blob"]))
+                        and target["original"] == line["text"]
                         and target["region_id"] == region["id"], "stale accepted source")
+                if revision is not None:
+                    row["source_revision"] = copy.deepcopy(revision)
                 corrected = event["decision"] == "correct"
                 row.update(status="accepted_correction" if corrected else "accepted_confirmation",
                            contributor_id=decision["contributor_id"],

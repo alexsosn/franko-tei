@@ -256,3 +256,4 @@ class AdjudicationTests(unittest.TestCase):
                 apparatus_mapping(old,new)
         self.assertEqual(apparatus_mapping("и слово⁵)", "иное слово⁵)"),
                          [{"literal":"⁵)","source_start":7,"source_end":9,"start":10,"end":12}])
+

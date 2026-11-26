@@ -95,3 +95,26 @@ proof of visual inspection or independent agency. No automated acceptance
 of arbitrary submissions. Agent decisions remain provisional, with source
 uncertainties retained, and must never be counted as human verification.
 The contributor is still the original submitting account, not the agent.
+
+## Annotation-only source revisions
+
+A changed blob is stale by default. A trusted caller may explicitly supply
+`source_loader=git_source_loader(repo, ref)` and `projection_commit=ref`
+to project a direct footnote-language-only revision. Both byte streams
+must resolve in trusted Git history. The revision must include
+`reading.footnote_marker_annotation` with the exact accepted source blob,
+its historical commit, the existing marker-separation method, unverified
+status and exact count of changed labels. The verifier reconstructs the
+new language spans by splitting selected standard superscript marker
+ranges out of an old cu/chu span, preserving every other span attribute.
+Every other field, including raw response, geometry, uncertainty, line
+identity, text and source links, must be identical. No inferred links,
+arbitrary language relabeling, or reformat-only exception. A successful
+projection records both blobs and the new commit in source_revision.
+Corrected rows still have empty language spans pending reannotation.
+This is direct compatibility only; accepting new decisions against a
+different blob and chaining annotation revisions remain separate work.
+The reader/search builder and source-gated editorial TEI exporter use the
+same verifier; TEI review notes retain links to both revisions and their
+blob IDs. The TF integration remains separate. No source candidate is
+rewritten by this verifier.

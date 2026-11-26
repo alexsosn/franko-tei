@@ -15,14 +15,14 @@ ID = "{"+XML+"}id"
 WEB = "https://github.com/" + REPO
 
 
-def render_editorial_tei(raw, path, ledger, width, height, revision):
+def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_loader=None):
     """Project a validated ledger; the lower-level serializer does not check images.
 
     Source notes on corrected lines retain their original literal and identity,
     but are explicitly about the source reading, not offsets into the new text.
     """
     match(SHA, revision, "editorial projection revision")
-    rows = project_lines(raw, path, ledger)
+    rows = project_lines(raw, path, ledger, source_loader=source_loader, projection_commit=revision)
     source = json.loads(raw.decode("utf-8"))
     original = render_pilot_tei(source, width, height)
     if extract_transcribed_lines(original) != [r["original"] for r in rows]:
@@ -80,6 +80,13 @@ def render_editorial_tei(raw, path, ledger, width, height, revision):
         _sub(note, "ref", row["event_id"], {
             "type":"adjudication-record", "target":WEB+"/blob/"+revision+
             "/reviews/adjudications/"+row["event_id"]+".json"})
+        if "source_revision" in row:
+            provenance = row["source_revision"]
+            _sub(note, "ref", "Annotation-only source revision", {
+                "type": "annotation-source-revision",
+                "target": WEB+"/blob/"+provenance["projected_commit"]+"/"+path})
+            _sub(note, "seg", provenance["accepted_blob"], {"type":"accepted-source-blob"})
+            _sub(note, "seg", provenance["projected_blob"], {"type":"projected-source-blob"})
         _sub(note, "seg", entry["adjudication"]["reason"], {"type":"review-reason"})
     header = root.find(tag("teiHeader"))
     encoding = header.find(tag("encodingDesc"))
@@ -122,12 +129,13 @@ def verified_editorial_tei(repo, path, images_root, revision):
     repo = Path(repo).resolve()
     match(PATH, path, "candidate path")
     ledger = ledger_at_checkout(repo, revision)
-    raw = git_source_loader(repo, revision)(revision, path)
+    loader = git_source_loader(repo, revision)
+    raw = loader(revision, path)
     source = json.loads(raw.decode("utf-8"))
     _verify_pinned_manifest(source["volume"], images_root)
     dimensions = validate_single_draft(source, images_root)
     return render_editorial_tei(raw, path, ledger, dimensions["width"],
-                                dimensions["height"], revision)
+                                dimensions["height"], revision, source_loader=loader)
 
 
 def main(argv=None):
