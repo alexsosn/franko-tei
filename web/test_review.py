@@ -14,6 +14,48 @@ class ReviewSmoke(unittest.TestCase):
         page.locator(f'#languagePanel [data-locale="{locale}"]').click()
         self.assertTrue(page.locator('#languagePanel').is_hidden())
 
+    def test_startup_contents_without_scan(self):
+        # Use the actual, unmodified startup path. Failed network requests are
+        # intentional: landing on contents needs no source fetch at all.
+        html = APP.read_text(encoding='utf-8')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            for fragment, volume in (('', '1'), ('#v=3&ref=feature/test', '3'), ('#v=2&p=invalid', '2')):
+                page = browser.new_page(viewport={'width': 390, 'height': 844})
+                page.route('**/*', lambda route: route.fulfill(content_type='text/html', body=html)
+                           if route.request.resource_type == 'document' else route.abort())
+                page.goto('https://startup.test/' + fragment)
+                panel = page.locator('#contentsPanel')
+                panel.wait_for()
+                self.assertEqual(page.locator('#contentsVolume').input_value(), volume)
+                self.assertEqual(page.locator('#page').input_value(), '1')
+                self.assertEqual(page.evaluate('generation'), 0)
+                self.assertEqual(page.evaluate('location.hash'), fragment)
+                self.assertTrue(page.locator('#contentsTitle').evaluate('el => el === document.activeElement'))
+                self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'true')
+                page.locator('#contentsVolume').select_option('4')
+                if fragment:
+                    page.keyboard.press('Escape')
+                else:
+                    page.locator('#contentsFirstScan').click()
+                panel.wait_for(state='hidden')
+                page.wait_for_function('generation === 1')
+                self.assertEqual(page.locator('#volume').input_value(), '4')
+                self.assertEqual(page.locator('#page').input_value(), '1')
+                self.assertEqual(page.locator('#ref').input_value(), 'feature/test' if 'ref=' in fragment else 'main')
+                self.assertEqual(page.locator('#contentsOpen').get_attribute('aria-expanded'), 'false')
+                page.close()
+            page = browser.new_page()
+            page.route('**/*', lambda route: route.fulfill(content_type='text/html', body=html)
+                       if route.request.resource_type == 'document' else route.abort())
+            page.goto('https://startup.test/#v=3&p=72&ref=feature/test')
+            page.wait_for_function('generation === 1')
+            self.assertTrue(page.locator('#contentsPanel').is_hidden())
+            self.assertEqual(page.locator('#volume').input_value(), '3')
+            self.assertEqual(page.locator('#page').input_value(), '72')
+            self.assertEqual(page.locator('#ref').input_value(), 'feature/test')
+            browser.close()
+
     def test_toolbar_language_switcher(self):
         html = APP.read_text(encoding='utf-8').replace('updateMode();load();', "updateMode();load=()=>{};load();")
         with sync_playwright() as p:
