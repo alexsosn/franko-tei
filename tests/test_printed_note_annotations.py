@@ -111,3 +111,141 @@ class PrintedNoteAnnotationsTests(unittest.TestCase):
                 self.assertEqual(link["start_boundary_status"],status)
                 seen.add(key)
         self.assertEqual(seen,set(expected))
+
+
+class LogicalNoteEntriesTests(unittest.TestCase):
+    """Source-bound logical notes, independent of physical region partitioning."""
+
+    def load_fixture(self):
+        path = ROOT / "pilot/structure/vol1_editorial_note_entries.json"
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def load_source(self, page):
+        return json.loads((ROOT / page["source_pilot_path"]).read_text(encoding="utf-8"))
+
+    def check_page(self, page, source):
+        self.assertEqual(source["volume"], "1")
+        self.assertEqual(source["scan_page"], page["scan_page"])
+        self.assertEqual(source["printed_page_observed"], page["printed_page"])
+        self.assertEqual(source["source_image_sha256"], page["source_image_sha256"])
+        self.assertEqual(source["reading"]["reader_id"], page["source_reader_id"])
+        self.assertRegex(page["source_record_blob"], r"^[0-9a-f]{40}$")
+        self.assertRegex(page["source_record_commit"], r"^[0-9a-f]{40}$")
+        self.assertEqual(page["source_pilot_path"],
+                         f"pilot/vol1_scan{page['scan_page']:05d}_single_reading.json")
+        # Commit/blob are historical provenance. Check exact current text anchors
+        # and source identity, not equality of the whole mutable annotation blob.
+        regions = {r["id"]: r for r in source["reading"]["regions"]}
+        body_lines = {l["id"]: l["text"] for r in regions.values()
+                      if r["kind"] in {"body", "heading"} for l in r["lines"]}
+        entries = {}
+        covered = {}
+        for entry in page["entries"]:
+            self.assertNotIn(entry["id"], entries)
+            entries[entry["id"]] = entry
+            region = regions[entry["note_region_id"]]
+            self.assertEqual(region["kind"], "note")
+            lines = {l["id"]: l["text"] for l in region["lines"]}
+            expected_order = list(lines)
+            fragments = entry["fragments"]
+            self.assertTrue(fragments)
+            self.assertRegex(entry["label"], r"^\*+\)$")
+            first = fragments[0]
+            self.assertTrue(first["literal"].startswith(entry["label"]))
+            self.assertEqual(re.match(r"\*+\)", first["literal"]).group(), entry["label"])
+            for i, f in enumerate(fragments):
+                text = lines[f["line_id"]]
+                self.assertIs(type(f["start"]), int)
+                self.assertIs(type(f["end"]), int)
+                self.assertTrue(0 <= f["start"] < f["end"] <= len(text))
+                self.assertEqual(text[f["start"]:f["end"]], f["literal"])
+                if i:
+                    prev = fragments[i - 1]
+                    self.assertEqual(expected_order.index(f["line_id"]),
+                                     expected_order.index(prev["line_id"]) + 1)
+                    self.assertEqual(prev["end"], len(lines[prev["line_id"]]))
+                    self.assertEqual(f["start"], 0)
+                for pos in range(f["start"], f["end"]):
+                    key = (entry["note_region_id"], f["line_id"], pos)
+                    self.assertNotIn(key, covered, "logical note entries overlap")
+                    covered[key] = entry["id"]
+        # The reviewed physical regions must be partitioned exactly; no
+        # unnoticed unassigned note continuation or duplicated note text.
+        reviewed = {e["note_region_id"] for e in entries.values()}
+        self.assertEqual(set(covered), {
+            (rid, line["id"], i) for rid in reviewed
+            for line in regions[rid]["lines"] for i in range(len(line["text"]))
+        })
+        expected = {(lid, m.start(), m.end(), m.group())
+                    for lid, text in body_lines.items()
+                    for m in re.finditer(r"\*+\)", text)}
+        actual, resolved = set(), set()
+        for link in page["links"]:
+            marker = link["marker"]
+            key = (marker["line_id"], marker["start"], marker["end"], marker["literal"])
+            self.assertIn(key, expected)
+            self.assertNotIn(key, actual)
+            actual.add(key)
+            if link["status"] == "resolved":
+                entry = entries[link["target_entry_id"]]
+                self.assertEqual(entry["label"], marker["literal"])
+                resolved.add(entry["id"])
+                self.assertNotIn("reason", link)
+            else:
+                self.assertEqual(link["status"], "unresolved_marker_mismatch")
+                self.assertIsNone(link["target_entry_id"])
+                self.assertTrue(link["reason"].strip())
+        self.assertEqual(actual, expected)
+        self.assertEqual(set(page["unlinked_entry_ids"]), set(entries) - resolved)
+        self.assertEqual(len(page["unlinked_entry_ids"]), len(set(page["unlinked_entry_ids"])))
+
+    def test_logical_note_entries_on_real_scans(self):
+        fixture = self.load_fixture()
+        self.assertEqual(fixture["schema_version"], "printed-note-entry-annotation-v1")
+        self.assertEqual(fixture["status"], "agent_unverified")
+        self.assertEqual(fixture["volume"], "1")
+        self.assertEqual([p["scan_page"] for p in fixture["pages"]],
+                         [157, 188, 199, 200, 204, 211, 216])
+        for page, count in zip(fixture["pages"], [2, 2, 4, 3, 2, 2, 2]):
+            with self.subTest(scan=page["scan_page"]):
+                source = self.load_source(page)
+                self.check_page(page, source)
+                self.assertEqual(len(page["entries"]), count)
+                self.assertEqual(len(page["links"]), count)
+                self.assertEqual(len(page["unlinked_entry_ids"]),
+                                 int(page["scan_page"] == 157))
+        pages = {p["scan_page"]: p for p in fixture["pages"]}
+        self.assertEqual([len(e["fragments"]) for e in pages[211]["entries"]], [1, 4])
+        self.assertEqual([len(e["fragments"]) for e in pages[216]["entries"]], [4, 1])
+        unresolved = [link for p in pages.values() for link in p["links"]
+                      if link["status"] != "resolved"]
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["marker"]["line_id"], "abraham-barisat-continuation-l038")
+
+    def test_note_entry_adversarial_mutations(self):
+        import copy
+        page = next(p for p in self.load_fixture()["pages"] if p["scan_page"] == 211)
+        source = self.load_source(page)
+        self.check_page(page, source)
+        # Annotation-only metadata updates do not invalidate exact text anchors.
+        meta = copy.deepcopy(source)
+        meta["reading"]["language_annotation"] = {"test": True}
+        self.check_page(page, meta)
+        mutations = [
+            lambda p: p["entries"][1]["fragments"].pop(),
+            lambda p: p["entries"][1]["fragments"].append(p["entries"][0]["fragments"][0]),
+            lambda p: p["links"][1].update(target_entry_id=p["entries"][0]["id"]),
+            lambda p: p["links"][1]["marker"].update(start=p["links"][1]["marker"]["start"] + 1),
+            lambda p: p["links"].pop(),
+        ]
+        for change in mutations:
+            bad = copy.deepcopy(page)
+            change(bad)
+            with self.assertRaises(AssertionError):
+                self.check_page(bad, source)
+        bad_source = copy.deepcopy(source)
+        note = next(r for r in bad_source["reading"]["regions"]
+                    if r["id"] == page["entries"][1]["note_region_id"])
+        note["lines"][-1]["text"] += "!"
+        with self.assertRaises(AssertionError):
+            self.check_page(page, bad_source)
