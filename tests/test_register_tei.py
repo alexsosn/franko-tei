@@ -66,6 +66,33 @@ class RegisterTeiTests(unittest.TestCase):
                 self.assertEqual(len(data), expected["data_rows"])
                 for row in rows:
                     self.assertEqual(sum(int(c.get("cols", "1")) for c in row), expected["columns"])
+                # Independently enumerate the existing overlay: an accidental
+                # row/cell permutation outside the fixed examples must fail.
+                page = a if scan == 34 else next(p for p in a["pages"] if p["scan_page"] == scan)
+                prefix = f"lb-v3-s{scan:05d}-"
+                def source_ids(cell):
+                    return [e.get(ID).removeprefix(prefix) for e in cell.findall(tag("lb"))]
+                for actual, annotated in zip(data, page["rows"]):
+                    if scan != 34:
+                        n = annotated["printed_number"]
+                        self.assertEqual(actual.get("n"), None if n is None else str(n))
+                    for j, (cell, spec) in enumerate(zip(actual, annotated["cells"])):
+                        ids = spec["line_ids"] if scan == 34 else [spec["line_id"]]
+                        self.assertEqual(source_ids(cell), ids)
+                        self.assertIn("#reg-kind-"+spec["kind"], cell.get("ana").split())
+                        group = (a["columns"][j]["id"] if scan == 34 else
+                                 a["column_groups"][j//2]["id"])
+                        self.assertIn("#reg-group-"+group, cell.get("ana").split())
+                header = [row for row in rows if row.get("role") == "label"]
+                if scan == 34:
+                    self.assertEqual([source_ids(c) for c in header[0]],
+                                     [col["heading_line_ids"] for col in a["columns"]])
+                else:
+                    self.assertEqual([source_ids(c) for c in header[0]],
+                                     [[i] for i in page["group_heading_line_ids"]])
+                    self.assertEqual([c.get("cols") for c in header[0]], ["2"]*3)
+                    self.assertEqual([source_ids(c) for c in header[1]],
+                                     [[i] for i in page["column_heading_line_ids"]])
                 for case in expected["examples"]:
                     row = next(r for r in data if r.get(ID).endswith("-r"+str(case["row"])))
                     cell = row[case["col"]-1]
