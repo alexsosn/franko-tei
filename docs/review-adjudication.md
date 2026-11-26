@@ -112,6 +112,17 @@ identity, text and source links, must be identical. No inferred links,
 arbitrary language relabeling, or reformat-only exception. A successful
 projection records both blobs and the new commit in source_revision.
 Corrected rows still have empty language spans pending reannotation.
+Initial contextual annotation is also supported when the current candidate
+contains a top-level `contextual-language-annotation-v1` record pointing
+to the exact accepted historical blob. The verifier authenticates the
+metadata's source commit and every accepted issue source, validates both
+drafts, and permits only adding valid language spans to previously empty
+span lists plus the one provenance record. All existing spans and every
+other field must remain identical. No reclassification of existing spans,
+source text change, new note linkage, geometry change or unrecorded
+annotation is permitted. The new provenance kind is
+`initial_contextual_language_only`; I/127 (#277) is the real regression.
+As for footnote-only revisions, corrected lines still require reannotation.
 This is direct compatibility only; accepting new decisions against a
 different blob and chaining annotation revisions remain separate work.
 The reader/search builder and source-gated editorial TEI exporter use the

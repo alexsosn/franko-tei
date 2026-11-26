@@ -82,6 +82,50 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
             self.assertTrue(any(p["volume"]=="4" and p["scan"]==68 for p in overlay["pages"]))
 
+    def test_new_user_review_corrections_are_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            expected=[
+                ("1",127,"enoch-flood-l002","б л а д о т в о́ р ц ы",
+                 "б л ѧ д о т в о́ р ц ы",277),
+                ("2",80,"preface-line-01","покаране Жидів","покаранє Жидів",369),
+            ]
+            for volume,scan,line_id,before,after,issue in expected:
+                with self.subTest(volume=volume,scan=scan):
+                    page=next(p for p in overlay["pages"] if
+                              p["volume"]==volume and p["scan"]==scan)
+                    self.assertNotIn(page["path"],{p["path"] for p in overlay["unavailable"]})
+                    raw=(ROOT/page["path"]).read_bytes()
+                    self.assertEqual(page["blob"],blob_sha(raw))
+                    row=next(r for r in page["lines"] if r["line_id"]==line_id)
+                    self.assertIn(before,row["original"])
+                    self.assertIn(after,row["text"])
+                    self.assertEqual(row["status"],"accepted_correction")
+                    self.assertEqual(row["review_kind"],"agent")
+                    self.assertEqual(row["contributor_login"],"alexsosn")
+                    self.assertTrue(row["issue_url"].endswith("/"+str(issue)))
+                    self.assertEqual(row["language_spans"],[])
+                    self.assertEqual(row["language_status"],"needs_reannotation")
+                    if scan==127:
+                        revision=row["source_revision"]
+                        self.assertEqual(revision["kind"],"initial_contextual_language_only")
+                        self.assertEqual(revision["accepted_blob"],"f3e9e656b1fe6845ac80d46547b2df31f499d360")
+                        self.assertEqual(revision["projected_blob"],page["blob"])
+                    else:
+                        self.assertEqual(sum(r["status"]=="accepted_confirmation" for r in page["lines"]),4)
+                        self.assertNotIn("source_revision",row)
+                    entries=json.loads((output/f"vol{volume}.json").read_text())["entries"]
+                    matches=[r for r in entries if r["scan"]==scan and r["suffix"]==page["suffix"]]
+                    self.assertEqual(len(matches),2)
+                    original=next(r for r in matches if not r.get("reviewed"))
+                    corrected=next(r for r in matches if r.get("reviewed"))
+                    self.assertIn(row["original"],original["text"])
+                    self.assertIn(row["text"],corrected["text"])
+                    self.assertNotIn(row["text"],original["text"])
+                    self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
+
     def test_unstamped_facsimile_is_published_and_searchable(self):
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)
