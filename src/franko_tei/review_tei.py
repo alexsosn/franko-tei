@@ -22,6 +22,11 @@ def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_l
     unchanged. A line-level uncertainty does not assert a specific glyph.
     """
     match(SHA, revision, "editorial projection revision")
+    match(PATH, path, "candidate path")
+    page_key = path.split("_", 2)[:2]
+    if any(other != path and other.split("_", 2)[:2] == page_key
+           for other, _ in ledger):
+        raise ValueError("accepted decisions belong to another candidate on this page")
     rows = project_lines(raw, path, ledger, source_loader=source_loader, projection_commit=revision)
     source = json.loads(raw.decode("utf-8"))
     original = render_pilot_tei(source, width, height)
@@ -36,7 +41,7 @@ def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_l
         if parent.tag != tag("ab") and not (
                 parent.tag == tag("note") and parent.get("type") == "source-footnote"):
             continue
-        for index, child in enumerate(parent):
+        for child in parent:
             if child.tag == tag("lb"):
                 ident = child.get(ID)
                 if ident in anchors:
@@ -126,6 +131,11 @@ def verified_editorial_tei(repo, path, images_root, revision):
     match(PATH, path, "candidate path")
     ledger = ledger_at_checkout(repo, revision)
     loader = git_source_loader(repo, revision)
+    return _verified_editorial_page(path, images_root, revision, ledger, loader)
+
+
+def _verified_editorial_page(path, images_root, revision, ledger, loader):
+    match(PATH, path, "candidate path")
     raw = loader(revision, path)
     source = json.loads(raw.decode("utf-8"))
     _verify_pinned_manifest(source["volume"], images_root)
