@@ -1,0 +1,538 @@
+{
+  "schema_version": "printed-note-entry-annotation-v1",
+  "id": "vol1-editorial-note-entries-157-216",
+  "kind": "printed_note_entries",
+  "volume": "1",
+  "status": "agent_unverified",
+  "description": "Seven source-observed pages where multiple distinct editorial footnotes share one physical note region. Ordered exact frozen line fragments identify each logical note. Marker links are page-local and exact; one mismatching stored marker is unresolved. Original candidate files and physical geometry remain unchanged. Source commit/blob are historical provenance, not a second mutable selection registry. Annotation only; no TEI/TF/viewer projection claimed.",
+  "pages": [
+    {
+      "scan_page": 157,
+      "printed_page": "82",
+      "source_pilot_path": "pilot/vol1_scan00157_single_reading.json",
+      "source_record_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+      "source_record_blob": "da112312980313957ccd4e23b025a4ab2491fdaa",
+      "source_reader_id": "gpt62-i157-first-image-20261125",
+      "source_image_sha256": "09f0ac28bffd882dae243606480d2c8bb6a9bef7e3cde092097b1c21007af684",
+      "entries": [
+        {
+          "id": "editorial-notes-l001-entry",
+          "note_region_id": "editorial-notes",
+          "label": "*)",
+          "fragments": [
+            {
+              "line_id": "editorial-notes-l001",
+              "start": 0,
+              "end": 50,
+              "literal": "*) Перечеркнено і иньшою рукою поправлено „Арона“."
+            }
+          ]
+        },
+        {
+          "id": "editorial-notes-l002-entry",
+          "note_region_id": "editorial-notes",
+          "label": "**)",
+          "fragments": [
+            {
+              "line_id": "editorial-notes-l002",
+              "start": 0,
+              "end": 39,
+              "literal": "**) Дописано на марґінесї иньшою рукою."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "abraham-barisat-continuation-l022",
+            "start": 22,
+            "end": 24,
+            "literal": "*)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-notes-l001-entry"
+        },
+        {
+          "marker": {
+            "line_id": "abraham-barisat-continuation-l038",
+            "start": 8,
+            "end": 10,
+            "literal": "*)"
+          },
+          "status": "unresolved_marker_mismatch",
+          "target_entry_id": null,
+          "reason": "Frozen second body marker is *) while the separate second printed note begins **). The facsimile has a small crowded marker adjacent to the numbered variant; no exact label agreement established. Preserve both literals and leave the link unresolved pending source-reading adjudication."
+        }
+      ],
+      "unlinked_entry_ids": [
+        "editorial-notes-l002-entry"
+      ]
+    },
+    {
+      "scan_page": 188,
+      "printed_page": "113",
+      "source_pilot_path": "pilot/vol1_scan00188_single_reading.json",
+      "source_record_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+      "source_record_blob": "fcb1897c1ddad51e6fd3986a04deac897271e081",
+      "source_reader_id": "gpt62-i188-first-image-20261125",
+      "source_image_sha256": "8fecbbbc5d255d4d4908f3bcf2577281b3c41cf7094a778e3159f95459a432e3",
+      "entries": [
+        {
+          "id": "editorial-footnotes-l001-entry",
+          "note_region_id": "editorial-footnotes",
+          "label": "*)",
+          "fragments": [
+            {
+              "line_id": "editorial-footnotes-l001",
+              "start": 0,
+              "end": 58,
+              "literal": "*) Тут пропускаємо 8 рядків палейної полєміки з жидовином."
+            }
+          ]
+        },
+        {
+          "id": "editorial-footnotes-l002-entry",
+          "note_region_id": "editorial-footnotes",
+          "label": "**)",
+          "fragments": [
+            {
+              "line_id": "editorial-footnotes-l002",
+              "start": 0,
+              "end": 37,
+              "literal": "**) В рукоп. хибно: неистовьствовати."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "palaea-exegesis-continuation-l028",
+            "start": 27,
+            "end": 29,
+            "literal": "*)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-footnotes-l001-entry"
+        },
+        {
+          "marker": {
+            "line_id": "palaea-exegesis-continuation-l032",
+            "start": 16,
+            "end": 19,
+            "literal": "**)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-footnotes-l002-entry"
+        }
+      ],
+      "unlinked_entry_ids": []
+    },
+    {
+      "scan_page": 199,
+      "printed_page": null,
+      "source_pilot_path": "pilot/vol1_scan00199_single_reading.json",
+      "source_record_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+      "source_record_blob": "a4b7ee5c42528f5619fdc6e06969fa9005277257",
+      "source_reader_id": "gpt62-i199-first-image-20261125",
+      "source_image_sha256": "7d2a6818a2439cc5b8f4fe3bf6e36a929c0f9924f36e047b120303bafeb6c35c",
+      "entries": [
+        {
+          "id": "editorial-omissions-l001-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "*)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l001",
+              "start": 0,
+              "end": 49,
+              "literal": "*) Тут пропускаємо 6 рядків полєміки з Жидовином."
+            }
+          ]
+        },
+        {
+          "id": "editorial-omissions-l002-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "**)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l002",
+              "start": 0,
+              "end": 51,
+              "literal": "**) Пропускаємо 2 рядки порівнаня Йосифа з Христом."
+            }
+          ]
+        },
+        {
+          "id": "editorial-omissions-l003-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "***)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l003",
+              "start": 0,
+              "end": 38,
+              "literal": "***) Проп. 3 рядки такого ж порівнаня."
+            }
+          ]
+        },
+        {
+          "id": "editorial-omissions-l004-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "****)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l004",
+              "start": 0,
+              "end": 40,
+              "literal": "****) Проп. 7 рядків такого ж порівнаня."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "joseph-pit-l014",
+            "start": 16,
+            "end": 18,
+            "literal": "*)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l001-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-pit-l015",
+            "start": 22,
+            "end": 25,
+            "literal": "**)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l002-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-pit-l017",
+            "start": 11,
+            "end": 15,
+            "literal": "***)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l003-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-pit-l021",
+            "start": 7,
+            "end": 12,
+            "literal": "****)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l004-entry"
+        }
+      ],
+      "unlinked_entry_ids": []
+    },
+    {
+      "scan_page": 200,
+      "printed_page": "125",
+      "source_pilot_path": "pilot/vol1_scan00200_single_reading.json",
+      "source_record_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+      "source_record_blob": "a5d43b65161b5bcb15fe4a55041f1d3b75ee7cd1",
+      "source_reader_id": "gpt62-i200-first-image-20261125",
+      "source_image_sha256": "5c2c4eb8a00bb3a7a89d2844c2f8a8fda9e101f49be0351bbaa29d6de6bb897b",
+      "entries": [
+        {
+          "id": "editorial-omissions-l001-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "*)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l001",
+              "start": 0,
+              "end": 37,
+              "literal": "*) Проп. 5 рядків такого ж характеру."
+            }
+          ]
+        },
+        {
+          "id": "editorial-omissions-l002-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "**)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l002",
+              "start": 0,
+              "end": 41,
+              "literal": "**) Проп. 12 рядків полєміки з Жидовином."
+            }
+          ]
+        },
+        {
+          "id": "editorial-omissions-l003-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "***)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l003",
+              "start": 0,
+              "end": 48,
+              "literal": "***) Тут пропуск. 26 рядків порівнаня з Христом."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "joseph-pit-continuation-l003",
+            "start": 44,
+            "end": 46,
+            "literal": "*)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l001-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-pit-continuation-l006",
+            "start": 61,
+            "end": 64,
+            "literal": "**)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l002-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-cast-down-l004",
+            "start": 5,
+            "end": 9,
+            "literal": "***)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l003-entry"
+        }
+      ],
+      "unlinked_entry_ids": []
+    },
+    {
+      "scan_page": 204,
+      "printed_page": "129",
+      "source_pilot_path": "pilot/vol1_scan00204_single_reading.json",
+      "source_record_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+      "source_record_blob": "54198e075cd347e756ad9f5cc4406dba7be3f9b7",
+      "source_reader_id": "gpt62-i204-first-image-20261125",
+      "source_image_sha256": "1b60d26602d6d081dfdb6c08795dc2f1c8992f7f121e1390cc0c83c057ba2f2f",
+      "entries": [
+        {
+          "id": "editorial-omissions-l001-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "*)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l001",
+              "start": 0,
+              "end": 45,
+              "literal": "*) Тут пропуск. 7 рядків порівнаня з Христом."
+            }
+          ]
+        },
+        {
+          "id": "editorial-omissions-l002-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "**)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l002",
+              "start": 0,
+              "end": 37,
+              "literal": "**) Тут пропуск. три рядки порівнаня."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "joseph-garment-l004",
+            "start": 28,
+            "end": 30,
+            "literal": "*)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l001-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-garment-l018",
+            "start": 51,
+            "end": 54,
+            "literal": "**)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l002-entry"
+        }
+      ],
+      "unlinked_entry_ids": []
+    },
+    {
+      "scan_page": 211,
+      "printed_page": "136",
+      "source_pilot_path": "pilot/vol1_scan00211_single_reading.json",
+      "source_record_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+      "source_record_blob": "ac09141c7ee5ed930f1d01c9405e1ebe5d733531",
+      "source_reader_id": "gpt62-i211-first-image-20261125",
+      "source_image_sha256": "ff0d3a32a46f8d5e641177d363746051f491d10ef8e768a5371a2552d3711f44",
+      "entries": [
+        {
+          "id": "editorial-footnotes-l001-entry",
+          "note_region_id": "editorial-footnotes",
+          "label": "*)",
+          "fragments": [
+            {
+              "line_id": "editorial-footnotes-l001",
+              "start": 0,
+              "end": 41,
+              "literal": "*) Початку оповіданя в сьому списку нема."
+            }
+          ]
+        },
+        {
+          "id": "editorial-footnotes-l002-entry",
+          "note_region_id": "editorial-footnotes",
+          "label": "**)",
+          "fragments": [
+            {
+              "line_id": "editorial-footnotes-l002",
+              "start": 0,
+              "end": 71,
+              "literal": "**) В Біблїї оповідаєть ся про Рувима як раз противне: він один з поміж"
+            },
+            {
+              "line_id": "editorial-footnotes-l003",
+              "start": 0,
+              "end": 79,
+              "literal": "усїх братів бажав виратувати Йосифа (гл. Бития, XXXVII, 22—24 і 29 і XLII, 22)."
+            },
+            {
+              "line_id": "editorial-footnotes-l004",
+              "start": 0,
+              "end": 78,
+              "literal": "Крім того в біблїйному оповіданю в темницї як заложник держить ся Симеон, а не"
+            },
+            {
+              "line_id": "editorial-footnotes-l005",
+              "start": 0,
+              "end": 27,
+              "literal": "Рувим (гл. Бития XLII, 24)."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "joseph-reunion-l001",
+            "start": 34,
+            "end": 36,
+            "literal": "*)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-footnotes-l001-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-reunion-l026",
+            "start": 38,
+            "end": 41,
+            "literal": "**)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-footnotes-l002-entry"
+        }
+      ],
+      "unlinked_entry_ids": []
+    },
+    {
+      "scan_page": 216,
+      "printed_page": "141",
+      "source_pilot_path": "pilot/vol1_scan00216_single_reading.json",
+      "source_record_commit": "dee356cf87947751bd6cef92d9ade2f14643160c",
+      "source_record_blob": "cc02e71c1b4dc2fa0609fd25608bbc954823cf89",
+      "source_reader_id": "gpt62-i216-first-image-20261125",
+      "source_image_sha256": "9796347b8d108f1c5a93c5064fc8de3cec98a7ab2108e43349e263401a3bead3",
+      "entries": [
+        {
+          "id": "editorial-omissions-l001-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "*)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l001",
+              "start": 0,
+              "end": 72,
+              "literal": "*) Пропускаємо промову Юди до Йосифа із за тої буцїм то крадїжи Веньями-"
+            },
+            {
+              "line_id": "editorial-omissions-l002",
+              "start": 0,
+              "end": 82,
+              "literal": "нової, про яку сказано в попереднїм уступі; ся промова в Слові св. Єфрема, а відси"
+            },
+            {
+              "line_id": "editorial-omissions-l003",
+              "start": 0,
+              "end": 75,
+              "literal": "і в Палеї, взята із Біблїї (Бития XLIV, 30—34), тільки вставлена тут в уста"
+            },
+            {
+              "line_id": "editorial-omissions-l004",
+              "start": 0,
+              "end": 9,
+              "literal": "Рувимові."
+            }
+          ]
+        },
+        {
+          "id": "editorial-omissions-l005-entry",
+          "note_region_id": "editorial-omissions",
+          "label": "**)",
+          "fragments": [
+            {
+              "line_id": "editorial-omissions-l005",
+              "start": 0,
+              "end": 44,
+              "literal": "**) Пропускаємо 3 рядки порівнаня с Христом."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "joseph-recognition-l001",
+            "start": 31,
+            "end": 33,
+            "literal": "*)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l001-entry"
+        },
+        {
+          "marker": {
+            "line_id": "joseph-recognition-l008",
+            "start": 41,
+            "end": 44,
+            "literal": "**)"
+          },
+          "status": "resolved",
+          "target_entry_id": "editorial-omissions-l005-entry"
+        }
+      ],
+      "unlinked_entry_ids": []
+    }
+  ]
+}
