@@ -398,6 +398,7 @@ def complete_folio_targets(observations):
     targets = folio_targets(observations)
     estimated = set()
     by_scan = dict(observations)
+    observed_pages = {int(p) for _, p in observations if isinstance(p, str) and re.fullmatch(NUMBER, p)}
     anchors = sorted((scan, page) for page, scan in targets.items())
     for (left, first), (right, last) in zip(anchors, anchors[1:]):
         if right - left != last - first or right - left < 2:
@@ -406,7 +407,7 @@ def complete_folio_targets(observations):
             continue
         for scan in range(left + 1, right):
             page = first + scan - left
-            if page not in targets:
+            if page not in targets and page not in observed_pages:
                 targets[page] = scan
                 estimated.add(page)
     return targets, estimated
