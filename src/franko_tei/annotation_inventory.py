@@ -45,7 +45,7 @@ def measure_reading(payload):
     """Count annotation presence in one candidate with code-point offsets.
 
     Input from the corpus is first checked by check_draft_offline. This
-    helper also checks interval bounds/order for standalone callers.
+    helper also checks non-folio interval bounds/order for standalone callers.
     """
     reading = payload["reading"]
     counts = dict.fromkeys(_COUNT_KEYS, 0)
@@ -90,7 +90,7 @@ def measure_reading(payload):
                 n = sum(lexical[start:end])
                 covered += n
                 counts["nonlexical_covered"] += end - start - n
-                language, script = span["language"], span["script"]
+                language, script = span.get("language"), span.get("script")
                 if n:
                     maps["lexical_by_language"][language if language is not None else "<null>"] += n
                     maps["lexical_by_script"][script if script is not None else "<null>"] += n
