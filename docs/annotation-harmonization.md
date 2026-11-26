@@ -217,6 +217,18 @@ a complete corpus-wide audit.
   reason. Do not invent an article, attach to the previous number, or
   infer an omitted passage from proximity. Use unresolved_marker_mismatch
   for a disputed stored marker whose number has an article in the block.
+  Preserve the literal numeric style of apparatus labels. In
+  [XIII.Б](../pilot/structure/vol1_section_xiii_b_apparatus.json), ordinary
+  digits label articles but superscripts label body occurrences. Two
+  parenthesized citation numbers within article 68 resemble entry starts;
+  record their exact coordinates and source justification in
+  non_entry_numeric_occurrences. They remain part of the article text.
+  Do not use global number matching or strip numeric citations.
+  If a paired article has one secure closed body occurrence but the print
+  uses closed markers at both ends, its direction may be indeterminate.
+  Retain the link as range_endpoint_unknown and list the entry in
+  incomplete_range_entry_ids (XIII.Б 41 and 56). Never infer a missing
+  endpoint or choose a direction merely from the closing parenthesis.
   Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
