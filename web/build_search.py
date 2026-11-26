@@ -17,6 +17,96 @@ from franko_tei.pilot_tei import PINNED_ASSET_COMMIT
 SCAN_COUNTS = (469, 526, 446, 580, 316)
 
 
+# This reviewed evidence record is deliberately allowlisted. It is not a
+# contributor decision, a new frozen candidate, or proof of image verification.
+SUPPLEMENTARY_AUDIT = "reviews/vol1_scan00024_unstamped_facs_20261126.json"
+
+
+def supplementary_page(pilot, ref):
+    """Project the reviewed I/24 photo collation onto its exact alternate blob."""
+    audit_path = pilot / SUPPLEMENTARY_AUDIT
+    if not audit_path.is_file():
+        return None
+    audit = json.loads(audit_path.read_text(encoding="utf-8"))
+    if (audit["schema_version"], audit["status"], audit["volume"],
+            audit["scan_page"], audit["printed_page"]) != (
+            "supplementary-photo-collation-audit-v1", "agent_unverified", "1", 24, "XV"):
+        raise ValueError("invalid supplementary page identity")
+    photos = [p["sha256"] for p in audit["photographs"]]
+    if len(photos) != 2 or len(set(photos)) != 2 or any(
+            not re.fullmatch(r"[a-f0-9]{64}", digest) for digest in photos):
+        raise ValueError("missing distinct supplementary photograph digests")
+    candidates = audit["compared_candidates"]
+    expected = ["pilot/vol1_scan00024_single_reading.json",
+                "pilot/vol1_scan00024_alternate_reading_01.json"]
+    if [c["path"] for c in candidates] != expected:
+        raise ValueError("wrong supplementary source paths")
+    sources = []
+    for c in candidates:
+        raw = (pilot / Path(c["path"]).name).read_bytes()
+        if blob_sha(raw) != c["blob"]:
+            raise ValueError("supplementary source blob changed")
+        draft = json.loads(raw)
+        check_draft_offline(Path(c["path"]), draft)
+        if (draft["volume"], draft["scan_page"], draft["printed_page_observed"]) != ("1", 24, "XV"):
+            raise ValueError("supplementary candidate page mismatch")
+        if audit["pinned_image"] != dict(asset_commit=draft["asset_commit"],
+                                        path=draft["source_image_path"],
+                                        sha256=draft["source_image_sha256"]):
+            raise ValueError("supplementary pinned image mismatch")
+        sources.append(draft)
+    def physical(draft):
+        return [(reg, line) for reg in draft["reading"]["regions"] for line in reg["lines"]]
+    old, chosen = map(physical, sources)
+    rows = audit["rows"]
+    if len(rows) != len(old) or len(rows) != len(chosen):
+        raise ValueError("supplementary row coverage mismatch")
+    covered = {identifier for area in sources[1]["reading"]["coverage"]["occlusions"]
+               if area["kind"] == "library_stamp" and area["obscures_source_letters"] is True
+               for identifier in area["affected_line_ids"]}
+    changes, recovered = [], set()
+    for evidence, (_, first), (region, line) in zip(rows, old, chosen):
+        if (evidence["line_id"] != first["id"] or evidence["line_id"] != line["id"]
+                or evidence["first_reading"] != first["text"]
+                or evidence["alternate_reading"] != line["text"]
+                or type(evidence["obscured_on_pinned_scan"]) is not bool
+                or evidence["obscured_on_pinned_scan"] != (line.get("unreadable_suffix") is True)):
+            raise ValueError("supplementary row source mismatch")
+        literal = evidence["photo_reading"]
+        if not isinstance(literal, str) or not literal.strip() or any(
+                ch in literal for ch in ("\n", "\r", "\x00", "…")):
+            raise ValueError("invalid supplementary text")
+        if evidence["obscured_on_pinned_scan"]:
+            if (line["id"] not in covered or not line["text"].endswith("…")
+                    or not literal.startswith(line["text"][:-1])
+                    or len(literal) <= len(line["text"][:-1])
+                    or evidence["confidence"] != "suffix_legible_in_both_photos"):
+                raise ValueError("invalid stamp recovery")
+            recovered.add(line["id"])
+        if literal == line["text"]:
+            continue
+        if region["kind"] != "body" or evidence["confidence"] not in (
+                "suffix_legible_in_both_photos", "provisional_visual_collation"):
+            raise ValueError("invalid supplementary correction region")
+        # These four rows are monolingual. Do not copy stale offsets; reconstruct
+        # only when the old lexical span is uniform (the gap marker is neutral).
+        linguistic = [s for s in line["language_spans"] if s["language"] != "zxx"]
+        if len(linguistic) != 1 or linguistic[0]["start"] != 0 or linguistic[0]["end"] != len(line["text"].rstrip("…")):
+            raise ValueError("supplementary row requires explicit language reannotation")
+        span = dict(linguistic[0], end=len(literal), uncertain=True)
+        changes.append(dict(line_id=line["id"], region_id=region["id"],
+                            original=line["text"], text=literal,
+                            status="supplementary_correction",
+                            language_spans=[span],
+                            obscured_on_pinned_scan=evidence["obscured_on_pinned_scan"],
+                            photograph_sha256=photos,
+                            evidence_url="https://github.com/alexsosn/franko-tei/blob/" + ref + "/pilot/" + SUPPLEMENTARY_AUDIT))
+    if recovered != covered or not recovered:
+        raise ValueError("supplementary stamp coverage mismatch")
+    return dict(volume="1", scan=24, suffix="alternate_reading_01",
+                path=expected[1], blob=candidates[1]["blob"], lines=changes)
+
+
 def build(pilot, output, ref):
     if not re.fullmatch(r"[a-f0-9]{40}", ref):
         raise ValueError("expected exact source commit SHA")
@@ -25,7 +115,10 @@ def build(pilot, output, ref):
     ledger = check_repository(repo, ref)
     source_loader = git_source_loader(repo, ref)
     pages, unavailable = [], []
+    supplement = supplementary_page(pilot, ref)
     affected = {key[0] for key in ledger}
+    if supplement and supplement['path'] in affected:
+        raise ValueError('supplementary and contributor projections require explicit reconciliation')
     seen = set()
     for path in discover_readings(pilot):
         raw = path.read_bytes()
@@ -36,6 +129,12 @@ def build(pilot, output, ref):
         text = "\n".join(line["text"] for region in draft["reading"]["regions"] for line in region["lines"])
         entries[volume].append(dict(scan=scan, suffix=suffix, text=text))
         candidate_path = "pilot/" + path.name
+        if supplement and candidate_path == supplement['path']:
+            pages.append(supplement)
+            replacements = {r['line_id']: r['text'] for r in supplement['lines']}
+            corrected = '\n'.join(replacements.get(line['id'], line['text'])
+                                  for region in draft['reading']['regions'] for line in region['lines'])
+            entries[volume].append(dict(scan=scan, suffix=suffix, text=corrected, reviewed=True))
         if candidate_path in affected:
             seen.add(candidate_path)
             try:
