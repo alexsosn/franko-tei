@@ -51,7 +51,10 @@ def measure_reading(payload):
     counts = dict.fromkeys(_COUNT_KEYS, 0)
     maps = {key: Counter() for key in _MAP_KEYS}
     counts["uncertainty_notes"] = len(reading["uncertainty_notes"])
-    counts["source_note_links"] = len(reading.get("source_note_links", []))
+    links = reading.get("source_note_links", [])
+    if not isinstance(links, list):
+        raise ValueError("source_note_links must be a list")
+    counts["source_note_links"] = len(links)
     for region in reading["regions"]:
         kind = region["kind"]
         maps["region_kinds"][kind] += 1
@@ -162,6 +165,8 @@ def build_inventory(pilot_dir):
         payload = json.loads(raw.decode("utf-8"))
         check_draft_offline(path, payload)
         volume, scan = payload["volume"], payload["scan_page"]
+        if type(scan) is not int or scan < 1:
+            raise ValueError("expected a positive physical scan index")
         key = (volume, scan)
         image = payload["source_image_sha256"]
         if images.setdefault(key, image) != image:
