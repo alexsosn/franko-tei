@@ -1,0 +1,970 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "5",
+  "scan_page": 92,
+  "printed_page_observed": "80",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "132380f5d62b0b1410b2b98c985f5cdffe4c8a959c190d9b73f7c6a6d3d2f790",
+  "source_image_path": "vol5/page-00092.jpg",
+  "source_image_sha256": "01d0a8e1b98c6112d2adda5a2bdc34ffd59351e7a01f225d541fac0fc5a415e0",
+  "reading": {
+    "reader_id": "gpt62-v5s00092-20261126",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-v5-091-100-20261126",
+    "run_id": null,
+    "context_independence": "single-working-draft",
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct reading of pinned image, with observed line order, approximate visually estimated boxes, contextual language spans and specific uncertainty; draft, not independently verified. Ukrainian body is Franko's translation; editorial source statement separated physically.",
+    "raw_response": "80\nпророцькі книги. А отсї боги, що не сотворили неба і землї, нехай\nпогинуть, бо се-ж ідоли зроблені руками: говори до них — не чу-\nють; кивай до них — не бачать; упадуть і не встають; із сего\nзрозумій, отче, що й не можуть помогти. Але послухай мене, отче,\nі ухилїмо ся від діявольської омани, щоб спас нас Ісус Христос Бог\nнаш. І се знай, отче, що Павло був колись гонитель церквам,\nа коли прийшла на него благодать, зробив ся апостолом і пропо-\nвідником доброго слова і учителем, що полюбив Христа“.\nІ мовив отець його: „Горе менї, дитя моє солодке, хто нав-\nчив тебе сих брехень? Чи не знаєш, що се пустословє неуків хри-\nстіян, які вмирають у тяжких муках. Отжеж приступи, дитино,\nі принесемо їм жертву і кадило, бо ті давши тобі житя заховають\nтебе і не віддадуть тебе смерти з пересердя, бо инакше зведеш\nоскорбою в могилу мою старість і твою матір“.\nБог чоловіколюбець бажаючи правдиво показати своє чолові-\nколюбє і навернути його до зрозуміня божої правди, кинув його\nтої ночи в лихорадку, що пекла його мов лютий огонь. Другого дня\nвін покликав свойого сина Георгія і мовив: „Дитино моя солодка,\nдобре ти говорив менї про віру христіянську, щоб Бог показав\nменї її, та я не послухав тебе. Але нинї я горю отсим огнем. От-\nтим то поспіши ся і скажи христіянам, нехай благають свойого\nБога, щоб я позбув ся сеї хороби і великої горячки, бо великий їх\nБог і обявив менї се в снї“.\nСвятий Георгій відповів: „Коли віриш у Господа нашого Ісуса\nХриста всїм серцем своїм і всею душею своєю, то він вибавить\nтебе не тілько від сеї горячки, але також від усїх твоїх гріхів,\nякі ти сповнив від твоєї молодости і сподобить тебе вічного\nжитя“.\nОтець його скликнув великим голосом: „Вірую в Бога, якого\nчтять христіяни!“ І наповнив ся Георгій радости великої задля на-\nверненя свойого вітця, поглянув на небо і мовив: „Хвалю тебе,\nГосподи Ісусе Христе, нинї і завсїди, що не віддалив ти своєї ми-\nлости від тих, що боять ся тебе, але знаходиш ся близько від тих,\nщо стоять далеко від тебе і твойого розуму“. І побігши швидко\nпокликав преподобних мужів, і прийшовши сотворили молитву над\nним і тут же відступила від него горячка. Навчили його і охре-\nстили в імя Отця і Сина і святого Духа і він принявши святе при-\nчастіє прожив 15 день і так скінчив житє своє, увіривши в Хри-\nста. А Георгій наповнивши ся святого духа і віри поломав усї\nідоли свойого батька, які були в нього золоті і срібні і все богатство",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          112,
+          99,
+          43,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "80",
+            "bbox_xywh": [
+              112,
+              99,
+              43,
+              30
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-1",
+        "kind": "body",
+        "bbox_xywh": [
+          114,
+          174,
+          987,
+          297
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-1-line-01",
+            "text": "пророцькі книги. А отсї боги, що не сотворили неба і землї, нехай",
+            "bbox_xywh": [
+              114,
+              174,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-02",
+            "text": "погинуть, бо се-ж ідоли зроблені руками: говори до них — не чу-",
+            "bbox_xywh": [
+              114,
+              211,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-03",
+            "text": "ють; кивай до них — не бачать; упадуть і не встають; із сего",
+            "bbox_xywh": [
+              114,
+              249,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-04",
+            "text": "зрозумій, отче, що й не можуть помогти. Але послухай мене, отче,",
+            "bbox_xywh": [
+              114,
+              288,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-05",
+            "text": "і ухилїмо ся від діявольської омани, щоб спас нас Ісус Христос Бог",
+            "bbox_xywh": [
+              114,
+              325,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 66,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-06",
+            "text": "наш. І се знай, отче, що Павло був колись гонитель церквам,",
+            "bbox_xywh": [
+              114,
+              362,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-07",
+            "text": "а коли прийшла на него благодать, зробив ся апостолом і пропо-",
+            "bbox_xywh": [
+              114,
+              400,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-1-line-08",
+            "text": "відником доброго слова і учителем, що полюбив Христа“.",
+            "bbox_xywh": [
+              114,
+              438,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 54,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-2",
+        "kind": "body",
+        "bbox_xywh": [
+          115,
+          482,
+          987,
+          224
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-2-line-01",
+            "text": "І мовив отець його: „Горе менї, дитя моє солодке, хто нав-",
+            "bbox_xywh": [
+              115,
+              482,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-02",
+            "text": "чив тебе сих брехень? Чи не знаєш, що се пустословє неуків хри-",
+            "bbox_xywh": [
+              115,
+              521,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-03",
+            "text": "стіян, які вмирають у тяжких муках. Отжеж приступи, дитино,",
+            "bbox_xywh": [
+              115,
+              559,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-04",
+            "text": "і принесемо їм жертву і кадило, бо ті давши тобі житя заховають",
+            "bbox_xywh": [
+              115,
+              596,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-05",
+            "text": "тебе і не віддадуть тебе смерти з пересердя, бо инакше зведеш",
+            "bbox_xywh": [
+              115,
+              635,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-2-line-06",
+            "text": "оскорбою в могилу мою старість і твою матір“.",
+            "bbox_xywh": [
+              115,
+              673,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 45,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-3",
+        "kind": "body",
+        "bbox_xywh": [
+          117,
+          716,
+          988,
+          342
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-3-line-01",
+            "text": "Бог чоловіколюбець бажаючи правдиво показати своє чолові-",
+            "bbox_xywh": [
+              117,
+              716,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-02",
+            "text": "колюбє і навернути його до зрозуміня божої правди, кинув його",
+            "bbox_xywh": [
+              117,
+              756,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-03",
+            "text": "тої ночи в лихорадку, що пекла його мов лютий огонь. Другого дня",
+            "bbox_xywh": [
+              117,
+              795,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-04",
+            "text": "він покликав свойого сина Георгія і мовив: „Дитино моя солодка,",
+            "bbox_xywh": [
+              117,
+              833,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-05",
+            "text": "добре ти говорив менї про віру христіянську, щоб Бог показав",
+            "bbox_xywh": [
+              117,
+              871,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-06",
+            "text": "менї її, та я не послухав тебе. Але нинї я горю отсим огнем. От-",
+            "bbox_xywh": [
+              117,
+              910,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-07",
+            "text": "тим то поспіши ся і скажи христіянам, нехай благають свойого",
+            "bbox_xywh": [
+              117,
+              948,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-08",
+            "text": "Бога, щоб я позбув ся сеї хороби і великої горячки, бо великий їх",
+            "bbox_xywh": [
+              117,
+              987,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-3-line-09",
+            "text": "Бог і обявив менї се в снї“.",
+            "bbox_xywh": [
+              117,
+              1025,
+              988,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-4",
+        "kind": "body",
+        "bbox_xywh": [
+          121,
+          1070,
+          987,
+          186
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-4-line-01",
+            "text": "Святий Георгій відповів: „Коли віриш у Господа нашого Ісуса",
+            "bbox_xywh": [
+              121,
+              1070,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-02",
+            "text": "Христа всїм серцем своїм і всею душею своєю, то він вибавить",
+            "bbox_xywh": [
+              121,
+              1108,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-03",
+            "text": "тебе не тілько від сеї горячки, але також від усїх твоїх гріхів,",
+            "bbox_xywh": [
+              121,
+              1147,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-04",
+            "text": "які ти сповнив від твоєї молодости і сподобить тебе вічного",
+            "bbox_xywh": [
+              121,
+              1185,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 59,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-4-line-05",
+            "text": "житя“.",
+            "bbox_xywh": [
+              121,
+              1223,
+              987,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 6,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-5",
+        "kind": "body",
+        "bbox_xywh": [
+          121,
+          1267,
+          990,
+          456
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-5-line-01",
+            "text": "Отець його скликнув великим голосом: „Вірую в Бога, якого",
+            "bbox_xywh": [
+              121,
+              1267,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-02",
+            "text": "чтять христіяни!“ І наповнив ся Георгій радости великої задля на-",
+            "bbox_xywh": [
+              121,
+              1305,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-03",
+            "text": "верненя свойого вітця, поглянув на небо і мовив: „Хвалю тебе,",
+            "bbox_xywh": [
+              121,
+              1344,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-04",
+            "text": "Господи Ісусе Христе, нинї і завсїди, що не віддалив ти своєї ми-",
+            "bbox_xywh": [
+              121,
+              1382,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-05",
+            "text": "лости від тих, що боять ся тебе, але знаходиш ся близько від тих,",
+            "bbox_xywh": [
+              121,
+              1421,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 65,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-06",
+            "text": "що стоять далеко від тебе і твойого розуму“. І побігши швидко",
+            "bbox_xywh": [
+              121,
+              1459,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-07",
+            "text": "покликав преподобних мужів, і прийшовши сотворили молитву над",
+            "bbox_xywh": [
+              121,
+              1497,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 61,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-08",
+            "text": "ним і тут же відступила від него горячка. Навчили його і охре-",
+            "bbox_xywh": [
+              121,
+              1536,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-09",
+            "text": "стили в імя Отця і Сина і святого Духа і він принявши святе при-",
+            "bbox_xywh": [
+              121,
+              1574,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 64,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-10",
+            "text": "частіє прожив 15 день і так скінчив житє своє, увіривши в Хри-",
+            "bbox_xywh": [
+              121,
+              1613,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 62,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-11",
+            "text": "ста. А Георгій наповнивши ся святого духа і віри поломав усї",
+            "bbox_xywh": [
+              121,
+              1651,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 60,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          },
+          {
+            "id": "body-5-line-12",
+            "text": "ідоли свойого батька, які були в нього золоті і срібні і все богатство",
+            "bbox_xywh": [
+              121,
+              1690,
+              990,
+              33
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "start": 0,
+                "end": 70,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "text_version": "gpt62-v5s00092-20261126"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [],
+    "source_note_links": []
+  }
+}
