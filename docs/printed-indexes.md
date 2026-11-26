@@ -1,12 +1,12 @@
 # Printed indexes: provisional navigation pilot
 
-Refs #233, #234, #235, #238. At cb65d640ae0271d20d92c6c1d3ce6cd0a47c66bc, all 47 Volume I index scans have image-first agent drafts in main. This pilot uses 26 frozen page records and does not change their text or images.
+Refs #233, #234, #235, #238. At cb65d640ae0271d20d92c6c1d3ce6cd0a47c66bc, all 47 Volume I index scans have image-first agent drafts in main. This pilot uses 31 frozen page records and does not change their text or images.
 
 | Section | Printed pages | Physical scans | Structured pilot |
 | --- | --- | --- | --- |
 | Names and places | 341–355 | 416–430 | 416–430 |
 | Authors and works | 356–361 | 431–436 | 431–436 |
-| Motifs | 362–383 | 437–458 | 437 |
+| Motifs | 362–383 | 437–458 | 437–442 |
 | Glossary | 384–387 | 459–462 | 459–462 |
 
 Section boundaries follow previous contents research and draft evidence, not new image collation. Partitions in web/printed_indexes.py explicitly specify inclusive region end-line ordinals against exact blob SHA and reader ID. Source paths, blob, asset commit, region and literal line IDs/text are retained in the generated projection. A missing or changed blob suppresses the affected page, or both pages of a continued entry, rather than silently reusing obsolete boundaries. The source scans remain accessible.
@@ -24,3 +24,5 @@ Names batch 422–430 adds 609 entries from 748 body lines. Joseph (422), Michae
 Reference-completeness pass: structured article counts do not measure verified references. The generated `link_audit` records linked page occurrences, estimated folios, actual evidence-backed line anchors, unresolved literal tokens, missing folios, and entries without references, separately by section. Only missing folios bounded by consistent observed neighbours with present draft scans are recovered; these are explicitly estimated. Scan 76 has a literal `folio` region with `1`. Space-delimited legal page numbers whose concatenation exceeds 340 retain the original token and carry `separator_recovered` status. The uncertain `2 9` at I421 is linked editorially to p.269, scan 344, note `gideon-apparatus-l020`, with exact source evidence and original token. Prior Achatis evidence remains intact. Explicit index cross-references link to specific source-entry IDs; source buttons navigate to exact source lines where the selected draft matches. Exact body mention anchors are only supplied where actually attested, not manufactured by string similarity. Works scans 432–436 add 239 articles, three continued articles and 69 ditto contexts across the six pages; repeated running heading is excluded from parse only in its continuation segment. No source JSON changes or fresh image collation. Motif scans 438–458 remain to be structured.
 
 The first full audit found 21 missing citation occurrences, all folios 147/247. Scan 222 is recorded as 247 but continues the Jacob testament from 146 (scan 221) to 148 (223); the actual 247 (322) continues Moses between 246 (321) and 248 (323). A six-blob-pinned exception permits estimated page 147 and the directly recorded page 247 without altering the literal readings. If any evidence changes, the exception fails closed. Regression now requires zero missing, unresolved or unlinked articles for all currently structured pages, using the same supplementary overlay as production. This still does not certify every cited mention or resolve the unstructured motif pages.
+
+Motif scans 438–442 add 106 articles, 230 literal body lines, 68 explicit ditto contexts, 114 citation tokens covering 128 page occurrences. Ambрам continues across 439/440; both pages must match their pinned source. I442 has adjacent full ranges `258—259 261—262`, preserved as literal with a recovered separator. The zero-missing/no-ref/unresolved audit applies to this new slice as well. Total 1622 articles, 31/47 pages, motif coverage 6/22 pages. Not image-verified or mention-complete.

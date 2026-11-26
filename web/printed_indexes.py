@@ -137,6 +137,21 @@ EXTRA_PAGES = {
             "right-sh": [2],
             "right-ya": [2,3,5,8]}),
     ),
+    "motifs": (
+        (438, "gpt62-i438-first-image-20261125", {
+            "motifs": [2,3,4,5,6,8,10,12,14,16,18,21,23,25,26,28,29,30,32,35,36,37,39,40,42,43,44,46,47,49]}),
+        (439, "gpt62-i439-first-image-20261125", {
+            "motifs": [1,3,5,9,10,13,15,17,19,21,24,26,29,35,37,40,42,46,48]}),
+        (440, "gpt62-i440-first-image-20261125", {
+            "motifs": [2,4,6,7,9,12,14,16,19,21,23,24,29,33,34,36,38,40,43,49]}),
+        (441, "gpt62-i441-first-image-20261125", {
+            "motifs-a": [3,5,11,14],
+            "motifs-b": [2,3,5,6,8,10,11],
+            "motifs-v": [1,3,7,9,11,13,14,16]}),
+        (442, "gpt62-i442-first-image-20261125", {
+            "motifs-v": [5,10,11,12,16,20,21,22,23],
+            "motifs-g": [3,5,7,10,12,13,15,17,18,20]}),
+    ),
     "glossary": (
         (460, "gpt62-i460-first-image-20261125", {
             "left": [2,3,4,6,8,10,11,13,15,18,20,22,24,25,26,28,30,32,35,37,38,40,41,43,44,45,49],
@@ -151,6 +166,74 @@ EXTRA_PAGES = {
 }
 # Editorial context is separate from the printed ditto glyphs.
 ENTRY_CONTEXTS = {
+    (438, "motifs", 4): "Адам",
+    (438, "motifs", 5): "Адам",
+    (438, "motifs", 6): "Адам",
+    (438, "motifs", 7): "Адам",
+    (438, "motifs", 9): "Адам",
+    (438, "motifs", 11): "Адам",
+    (438, "motifs", 13): "Адам",
+    (438, "motifs", 15): "Адам",
+    (438, "motifs", 17): "Адам",
+    (438, "motifs", 19): "Адам",
+    (438, "motifs", 22): "Адам",
+    (438, "motifs", 24): "Адам",
+    (438, "motifs", 26): "Адам",
+    (438, "motifs", 27): "Адам",
+    (438, "motifs", 29): "Адам",
+    (438, "motifs", 30): "Адам",
+    (438, "motifs", 31): "Адам",
+    (438, "motifs", 33): "Адам",
+    (438, "motifs", 36): "Адам",
+    (438, "motifs", 37): "Адам",
+    (438, "motifs", 38): "Адам",
+    (438, "motifs", 40): "Адам",
+    (438, "motifs", 41): "Адам",
+    (438, "motifs", 43): "Адам",
+    (438, "motifs", 44): "Адам",
+    (438, "motifs", 45): "Адам",
+    (438, "motifs", 47): "Адам",
+    (438, "motifs", 48): "Адам",
+    (439, "motifs", 4): "Адама",
+    (440, "motifs", 5): "Ангел",
+    (440, "motifs", 7): "Ангел",
+    (440, "motifs", 8): "Ангел",
+    (440, "motifs", 10): "Ангел",
+    (440, "motifs", 13): "Ангел",
+    (440, "motifs", 15): "Ангел",
+    (440, "motifs", 17): "Ангел",
+    (440, "motifs", 20): "Ангел",
+    (441, "motifs-a", 4): "Асирийцї",
+    (441, "motifs-b", 4): "Бог",
+    (441, "motifs-b", 6): "Бог",
+    (441, "motifs-b", 7): "Бог",
+    (441, "motifs-v", 4): "Валаам",
+    (441, "motifs-v", 8): "Валаам",
+    (441, "motifs-v", 10): "Валаам",
+    (441, "motifs-v", 12): "Валаам",
+    (441, "motifs-v", 14): "Валаам",
+    (441, "motifs-v", 15): "Валаам",
+    (442, "motifs-v", 12): "Вино",
+    (442, "motifs-g", 8): "Гедеон",
+    (442, "motifs-g", 11): "Гедеон",
+    (442, "motifs-g", 13): "Гедеон",
+    (439, "motifs", 14): "Амемфрия",
+    (439, "motifs", 16): "Амемфрия",
+    (439, "motifs", 18): "Амемфрия",
+    (439, "motifs", 20): "Амемфрия",
+    (439, "motifs", 22): "Амемфрия",
+    (439, "motifs", 25): "Амемфрия",
+    (439, "motifs", 27): "Амемфрия",
+    (439, "motifs", 30): "Амемфрия",
+    (439, "motifs", 36): "Амемфрия",
+    (439, "motifs", 38): "Амемфрия",
+    (439, "motifs", 41): "Амемфрия",
+    (439, "motifs", 43): "Амемфрия",
+    (440, "motifs", 24): "Ангели",
+    (440, "motifs", 25): "Ангели",
+    (440, "motifs", 34): "Антихрист",
+    (440, "motifs", 39): "Арон",
+    (440, "motifs", 41): "Арон",
     (431, "left-a", 5): "апокріф",
     (431, "left-a", 6): "Адамів; апокріф",
     (431, "right-v", 3): "Варнавино; апокр.",
@@ -341,6 +424,11 @@ ENTRY_CONTEXTS = {
     (421, "right", 21): "цар",
 }
 SOURCE_BLOBS.update({
+    438: "bbdf5472ce6638754bd4729e46d43ba94da0a468",
+    439: "6a24cebe457567c7953a30481566d70c471f30a1",
+    440: "7194df7663ca8b387ac0ac2fdc6cf2afe90c6a31",
+    441: "d0bab02fb1cd0ec6ed31d9b5ac2702bfe291cc69",
+    442: "7413ed6ba3f96c366ecb5acf808130832c219be3",
     432: "28bc37a0cacf67dab695ebbece95c5ffe9abfcb3",
     433: "0568936619eeec3611cc51a452eaec081aa1b60f",
     434: "8796bddbeb7e691f8c10fc95c7dc34628a4ec950",
@@ -369,8 +457,8 @@ SOURCE_BLOBS.update({
 # scan's pinned reading is absent or changed.
 CONTINUATIONS = {(422, "right", 1), (425, "left-m", 1),
                  (430, "left", 1), (430, "right-ya", 1),
-                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1)}
-ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435))
+                 (433, "left-zh", 1), (434, "right-p", 1), (435, "left-p", 1), (440, "motifs", 1)}
+ATOMIC_PAIRS = ((424, 425), (429, 430), (432, 433), (434, 435), (439, 440))
 # Running continuation heading is literal evidence, not part of the numeric tail.
 CONTINUATION_PREFIXES = {(434, "right-p", 1): "Палея Крех. "}
 # Explicit source line break with no printed separator; do not guess missing commas.
@@ -483,6 +571,13 @@ def parse_entry(kind, lines, targets):
                     refs.append(dict(literal=token, volume="1", role="unresolved",
                                      targets=[], missing=[]))
             return label, "", refs
+    # The source on I442 has two complete adjacent page ranges, with no comma.
+    if kind == "motifs" and joined.endswith("258—259 261—262"):
+        label = re.sub(r"(?:\s+\.)+\s*$", "", joined[:-len("258—259 261—262")].rstrip())
+        refs = [make_ref(token, targets, "separator_recovered") for token in ("258—259", "261—262")]
+        for ref in refs:
+            ref["printed_literal"] = "258—259 261—262"
+        return label, "", refs
     m = TAIL.search(joined)
     if not m:
         return joined, "", []
@@ -663,7 +758,7 @@ def build_printed_indexes(pilot, ref, supplements=None):
         eligible = {scan for scan, reader, _ in page_specs
                     if scan in files and files[scan][1]["reading"]["reader_id"] == reader
                     and files[scan][2] == SOURCE_BLOBS[scan]}
-        if kind in ("names", "works"):
+        if kind in ("names", "works", "motifs"):
             for pair in ATOMIC_PAIRS:
                 if not set(pair) <= eligible:
                     eligible.difference_update(pair)
@@ -727,8 +822,8 @@ def build_printed_indexes(pilot, ref, supplements=None):
                     effective = [corrections[l["id"]]["text"] if l["id"] in corrections else l["text"] for l in part]
                     label, detail, refs = parse_entry(kind, effective, targets)
                     # Only the explicit Abraham block on the pilot motif page.
-                    context = ("Авраам" if kind == "motifs" and label.startswith("„")
-                               else ENTRY_CONTEXTS.get((scan, region_id, previous + 1), "") if kind in ("names", "works") else "")
+                    context = ("Авраам" if kind == "motifs" and scan == 437 and label.startswith("„")
+                               else ENTRY_CONTEXTS.get((scan, region_id, previous + 1), "") if kind in ("names", "works", "motifs") else "")
                     entries.append(dict(id=f"v1-{scan}-{part[0]['id']}", source=source,
                                         region_id=region_id, lines=part, label=label,
                                         detail=detail, context=context, refs=refs))
