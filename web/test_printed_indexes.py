@@ -240,6 +240,16 @@ class PrintedIndexesTest(unittest.TestCase):
             (pilot / "vol1_scan00440_single_reading.json").unlink()
             self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][2]["structured_scans"], [438, 441])
 
+    def test_overlapping_continuation_chain_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pilot = Path(tmp)
+            for scan in [450, 451, 452, 453, 454]:
+                source = ROOT / ("pilot/vol1_scan%05d_single_reading.json" % scan)
+                shutil.copyfile(source, pilot / source.name)
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][2]["structured_scans"], list(range(450, 455)))
+            (pilot / "vol1_scan00453_single_reading.json").unlink()
+            self.assertEqual(build_printed_indexes(pilot, "a" * 40)["sections"][2]["structured_scans"], [450, 454])
+
     def test_browser_navigation(self):
         from playwright.sync_api import sync_playwright, expect
         import os
