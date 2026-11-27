@@ -15,7 +15,7 @@ and brotli, and run:
 python docs/render_monomakh_hybrid.py --assets /path/to/page-assets/images --output /tmp/franko-icl.png
 ```
 
-The hybrid generator reads only four source JPEGs (II/100, III/130, IV/170, V/130)
+The hybrid generator reads only five source JPEGs (I/127, II/100, III/130, IV/170, V/130)
 from asset commit e871f32537e81f81896f6ce9a6658aba667db9c5. It checks SHA-256,
 native image dimensions, Monomakh Git blob, codepoint coverage and source
 crop bounds. It does not publish the crops, fetch OCR, or change the reader.
@@ -184,3 +184,36 @@ U+0311, U+0301, U+0486+U+0301, and U+0486+U+0311 visually; the
 last sequence is great apostrof, not iso. Do not infer simultaneous
 kamora and acute without source evidence. Exact sign remains unresolved;
 no corpus reading changed.
+
+
+## Source-specific accent contrasts (2026-11-27)
+
+User requested to expand the table from Franko's actual print. The new
+15 rows are taken from three development pages: I/127 (printed 52),
+III/130 (printed 44), and II/100 (printed 18). The 25-row hybrid sheet
+now covers all five volumes. Source images are pinned; no OCR or
+transcript was supplied to select these additional crop shapes. We
+inspected 19 native-luma crop previews and retained 15 with relevant
+accent evidence, including cropped word fragments explicitly labeled
+as such. Some margins were subsequently adjusted; the final composite
+and revised margins still require visual review.
+
+The useful source-specific contrast is between the small arch-like mark
+on round o, initial a/e, and even omega (II/100, lower heading), and a
+wave-like mark on omega in repeated words ѡна/ѡни (III/130), initial e
+in єсть (I/127), and a/iotated-a-like letters (II/100). The distinction
+is visible in the print across multiple base letters. A separate slash
+above internal vowels in I/127 supplies an acute control. Simple arch
+and acute readings are candidates for U+0486 and U+0301 respectively;
+the wave shape is intentionally unresolved between iso, kamora and
+breathing+kamora. Do not select by modern stress expectations alone.
+The candidate initial A on II/100 is also explicitly base-ambiguous.
+The mark alternatives are now separate metadata and displayed as Unicode
+sequences; base-only renderings do not pretend to encode the observed mark.
+
+These are 15 new *development* examples, not independent gold; I/127
+was used in the earlier challenge and is not an eligible holdout. The
+results of the previous six-line experiment are untouched. No corpus
+changes or accuracy claim. The existing CI source smoke now retrieves
+one additional pinned JPEG only when the reference is changed. The
+reference remains local, with source derivatives not published.
