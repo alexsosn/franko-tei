@@ -1,0 +1,59 @@
+{
+  "schema": "monomakh-icl-exploratory-review-v1",
+  "status": "nonblind_development",
+  "instructions": "Read the selected physical lines directly from pinned source image. Earlier synthetic OTF chart visible in same conversation and reopened; preserve rare forms and raised signs, flag uncertainty. Do not see original/replacement strings from accepted review events before freezing. This is a challenge rereading, not a paired trial; sample selected from accepted historical-Cyrillic correction events, biased toward known errors. No original OCR used; full-page images displayed, not fixed line crops.",
+  "font_reference": "local Monomakh Unicode OTF 1.2 difficult glyphs PNG, not exact WOFF2; earlier hybrid source examples seen in same context",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "model": "GPT-6.2",
+  "context_independence": "same conversation, no independent reader; previous project exposure not excluded",
+  "lines": [
+    {
+      "event": "0bd08779-77be-46aa-beff-002affd576e3",
+      "volume": 4,
+      "scan": 68,
+      "line": "disputations-cont-line-02",
+      "text": "Ѿвѣт: Ѻсифъ бл҃гоѡбразный.",
+      "uncertainty": "Initial answer glyph and accent on name, possible separate superscript; initial O shape ambiguous."
+    },
+    {
+      "event": "7b47d515-021b-466b-8863-8adb9a12f0df",
+      "volume": 4,
+      "scan": 68,
+      "line": "disputations-cont-line-03",
+      "text": "11. Въпроⷭ: Котораѧ тваръ не была з Ноем в ковчезѣ?",
+      "uncertainty": "Final letter in question label appears supralinear s; exact я-like form in Котораѧ and final hard/soft sign in тваръ uncertain."
+    },
+    {
+      "event": "8933e591-53d0-4ec1-8041-6d92b9116cb5",
+      "volume": 1,
+      "scan": 127,
+      "line": "enoch-flood-l002",
+      "text": "домскїи бладотворцы, и того́ ра́ды наводит по-",
+      "uncertainty": "Heading spaced in original; accents and exact и variants uncertain."
+    },
+    {
+      "event": "efa302aa-2c4b-475e-873d-c69de513d44d",
+      "volume": 1,
+      "scan": 104,
+      "line": "witness-e-death-adam-l001",
+      "text": "[Смерть Адама]. Адам бѧше во Єдемѣ пред дверми райскими¹).",
+      "uncertainty": "Heading inclusion and first vowel/mark in бѧше uncertain."
+    },
+    {
+      "event": "f9baf334-6cf9-4ae0-83f8-9d4b676b3975",
+      "volume": 1,
+      "scan": 104,
+      "line": "witness-e-death-adam-l002",
+      "text": "Єгдаже²) прибли́жи сѧ емꙋ см҃рть,³) разболѣ сѧ велми⁴, Адам⁴).",
+      "uncertainty": "Exact raised marks on abbreviation and placement of first 4 uncertain; разболѣ or разволѣ."
+    },
+    {
+      "event": "e388782d-383d-4085-90b3-d7a272b0a23f",
+      "volume": 1,
+      "scan": 104,
+      "line": "witness-e-death-adam-l003",
+      "text": "Сиѳъ вопроситъ⁵) мт҃ере своѧ Єви⁶) и рече:⁶) Повѣж ми, мт҃и",
+      "uncertainty": "Name and я-like letter uncertain; marks and note markers provisional."
+    }
+  ]
+}
