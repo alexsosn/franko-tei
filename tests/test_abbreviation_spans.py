@@ -131,13 +131,49 @@ class AbbreviationSpansTests(unittest.TestCase):
         self.assertEqual(extract_transcribed_lines(xml),[r["text"] for r in rows])
         self.assertEqual(len(ET.fromstring(xml).findall(".//"+tag("choice"))),2)
 
-    def test_persisted_pilot_has_five_actual_proposals(self):
-        p=json.loads((ROOT / PATH).read_text(encoding="utf-8"))
-        original=p["reading"]["raw_response"].split("\n")
-        xml=render_pilot_tei(p,1190,1856)
-        self.assertEqual(len(ET.fromstring(xml).findall(".//"+tag("choice"))),5)
-        self.assertEqual(extract_transcribed_lines(xml),original)
-        self.assertEqual(verify_graph_roundtrip(build_tf_graph(xml)),original)
+    def test_persisted_vol1_parallel_annotations_roundtrip(self):
+        # Minimum reviewed coverage, not an upper bound on later annotations.
+        from franko_tei.pilot_tei import XML
+        cases={89:18,98:2,352:4,353:15,366:11,367:8,368:3}
+        for scan, minimum in cases.items():
+            with self.subTest(scan=scan):
+                path=f"pilot/vol1_scan{scan:05d}_single_reading.json"
+                p=json.loads((ROOT / path).read_text(encoding="utf-8"))
+                original=p["reading"]["raw_response"].split("\n")
+                expected={}
+                for region in p["reading"]["regions"]:
+                    for l in region["lines"]:
+                        for a in l.get("abbreviation_spans",[]):
+                            key=f"abbr-v1-s{scan:05d}-{l['id']}-{a['start']:05d}"
+                            self.assertNotIn(key,expected)
+                            expected[key]=(a["literal"],a["expansion"],a["source"])
+                self.assertGreaterEqual(len(expected),minimum)
+                self.assertEqual(check_draft_offline(path,p),original)
+                width=max(r["bbox_xywh"][0]+r["bbox_xywh"][2]
+                          for r in p["reading"]["regions"])
+                height=max(r["bbox_xywh"][1]+r["bbox_xywh"][3]
+                           for r in p["reading"]["regions"])
+                # Offline geometry envelope; source-batch CI checks true JPEG bounds.
+                xml=render_pilot_tei(p,width,height)
+                root=ET.fromstring(xml)
+                choices=root.findall(".//"+tag("choice"))
+                actual={c.get("{"+XML+"}id"):(c.find(tag("abbr")).text,
+                    c.find(tag("expan")).text,c.find(tag("expan")).get("source"))
+                    for c in choices}
+                self.assertEqual(actual,expected)
+                self.assertEqual(len(choices),len(expected))
+                self.assertEqual(extract_transcribed_lines(xml),original)
+                graph=build_tf_graph(xml,allow_source_notes=True)
+                self.assertEqual(verify_graph_roundtrip(graph),original)
+                f=graph.node_features
+                actual={}
+                for n,k in f["otype"].items():
+                    if k=="abbreviation":
+                        literal="".join(f["glyph"][i] for i in
+                                        sorted(graph.edge_features["oslots"][n]))
+                        actual[f["teiId"][n]]=(literal,f["expansion"][n],
+                                               f["expansionSource"][n])
+                self.assertEqual(actual,expected)
 
     def test_cross_language_interval_and_multi_letter_numeral_refused(self):
         p=source()
