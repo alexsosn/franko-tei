@@ -199,3 +199,5 @@ The search, source-gated current TEI and TF use the same selected text.
 Language and uncertainty ranges on changed lines remain provisional and
 are withheld as for other editorial corrections. Other possible ligatures
 are outside this scoped collation; no global substitution is performed.
+
+I/316 (#423) adds two scoped native-image substitutions outside existing numbered apparatus tokens: `понявицею` → `понавицею`, `понявица` → `понавица`. The new committed evidence record pins both exact source lines and their native image. The same collation path refuses missing/duplicate rows, stale source, changes beyond the specified unique word and any competing contributor event on these lines. Both apparatus marker literals and absolute positions remain unchanged. Other source collation candidates are not enabled automatically. The provisional glossary mention refresh follows #420 separately.

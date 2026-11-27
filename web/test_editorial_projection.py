@@ -158,6 +158,31 @@ class EditorialProjectionTests(unittest.TestCase):
                     self.assertNotIn(row["text"],original["text"])
                     self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
 
+    def test_ponavica_native_collation_is_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            page=next(p for p in overlay["pages"] if p["volume"]=="1" and p["scan"]==316)
+            self.assertEqual(page["blob"],blob_sha((ROOT/page["path"]).read_bytes()))
+            rows={r["line_id"]:r for r in page["lines"]}
+            expected={"seventh-stone-l018":("понявицею","понавицею","³¹⁵)"),
+                      "seventh-stone-l019":("понявица","понавица","³¹⁶)")}
+            self.assertEqual(set(rows),set(expected))
+            for line_id,(old,new,marker) in expected.items():
+                row=rows[line_id]
+                self.assertEqual(row["status"],"native_collation")
+                self.assertIn(old,row["original"])
+                self.assertEqual(row["text"],row["original"].replace(old,new))
+                self.assertEqual([m["literal"] for m in row["apparatus_markers"]],[marker])
+                self.assertNotIn("contributor_id",row)
+                self.assertEqual(row["language_spans"],[])
+            entries=json.loads((output/"vol1.json").read_text())["entries"]
+            selected=next(r for r in entries if r["scan"]==316 and r.get("reviewed"))
+            for old,new,_ in expected.values():
+                self.assertIn(new,selected["text"])
+                self.assertNotIn(old,selected["text"])
+
     def test_unstamped_facsimile_is_published_and_searchable(self):
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)

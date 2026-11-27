@@ -9195,6 +9195,23 @@ function checkedEditorial(page,data,blob,path){
   for(const r of page.lines){
     const source=lines.get(r.line_id);
     if(r.status==='native_collation'){
+      if(path==='pilot/vol1_scan00316_single_reading.json'){
+        const forms={'seventh-stone-l018':['понявицею','понавицею'],
+                     'seventh-stone-l019':['понявица','понавица']};
+        const pair=forms[r.line_id];
+        const evidenceSuffix='/pilot/reviews/vol1_scan00316_native_collation_20261127.json';
+        if(!pair||data.volume!=='1'||data.scan_page!==316||!source||
+           source.region.kind!=='body'||source.region.id!=='seventh-stone'||r.region_id!==source.region.id||
+           source.line.text!==r.original||reviewed.has(r.line_id)||source.line.unreadable_suffix||
+           r.collation_before!==r.original||r.original.split(pair[0]).length!==2||
+           r.text!==r.original.replace(pair[0],pair[1])||
+           !Array.isArray(r.language_spans)||r.language_spans.length!==0||
+           r.collation_image_sha256!==data.source_image_sha256||
+           typeof r.evidence_url!=='string'||!/^https:\/\/github\.com\/alexsosn\/franko-tei\/blob\/[a-f0-9]{40}\//.test(r.evidence_url)||
+           r.evidence_url.slice('https://github.com/alexsosn/franko-tei/blob/'.length+40)!==evidenceSuffix||
+           r.event_id!=null||r.contributor_id!=null)return null;
+        reviewed.set(r.line_id,r);continue;
+      }
       const ids=['02','04','07','09','13','17','20'].map(n=>'disputations-cont-line-'+n);
       const prior=r.line_id==='disputations-cont-line-02';
       const evidenceSuffix='/pilot/reviews/vol4_scan00068_native_collation_20261127.json';
@@ -9261,7 +9278,7 @@ function checkedEditorial(page,data,blob,path){
        [...lines.values()].some(({line})=>line.unreadable_suffix===true&&!reviewed.has(line.id)))return null;
   }
   const native=[...reviewed.values()].filter(r=>r.status==='native_collation');
-  if(native.length&&native.length!==7)return null;
+  if(native.length&&native.length!==(path==='pilot/vol1_scan00316_single_reading.json'?2:7))return null;
   return reviewed;
 }
 function isEditorialCorrection(review){return ['accepted_correction','supplementary_correction','native_collation'].includes(review?.status);}
