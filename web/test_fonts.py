@@ -199,3 +199,28 @@ with tempfile.TemporaryDirectory() as tmp:
     else:
         raise AssertionError("Hybrid chart rendered from invalid source")
 print("Monomakh hybrid: source bounds, candidate status, cmap and wrong-source rejection checked")
+
+# Approved atlas is separate from the exploratory hybrid candidates.
+import importlib.util
+atlas_spec = importlib.util.spec_from_file_location("approved_atlas", ROOT / "docs/render_approved_icl.py")
+atlas_module = importlib.util.module_from_spec(atlas_spec)
+atlas_spec.loader.exec_module(atlas_module)
+atlas = atlas_module.load_atlas(ROOT / "docs/monomakh-icl-approved-atlas.json")
+assert len(atlas["examples"]) == 89
+assert not {"L44", "L61"} & {row["id"] for row in atlas["examples"]}
+assert sum(row["approval"] == "issue_accepted_provisional" for row in atlas["examples"]) == 7
+assert all(row.get("source") not in atlas["excluded"]["holdout"] for row in atlas["examples"])
+assert {row["reading"] for row in atlas["examples"] if row["id"] in {"L10","L11","L12"}} == {"ъ","ꙗ"}
+assert all(row["scope"] == "line_context_focus_only" for row in atlas["examples"] if row["id"].startswith("J"))
+# Negative controls: candidate promotion, invalid bounds and holdout leakage fail closed.
+import copy
+for field, value in [("approval", "candidate"), ("bbox_xywh", [-1,0,1,1]), ("source", "III/134")]:
+    bad = copy.deepcopy(atlas)
+    bad["examples"][-1][field] = value
+    try:
+        atlas_module.validate_atlas(bad)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Approved atlas accepted invalid {field}")
+print("Approved ICL atlas: approval boundary, holdout and provenance checks passed")
