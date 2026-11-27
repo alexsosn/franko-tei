@@ -15,7 +15,7 @@ and brotli, and run:
 python docs/render_monomakh_hybrid.py --assets /path/to/page-assets/images --output /tmp/franko-icl.png
 ```
 
-The hybrid generator reads only three source JPEGs (II/100, III/130, V/130)
+The hybrid generator reads only four source JPEGs (II/100, III/130, IV/170, V/130)
 from asset commit e871f32537e81f81896f6ce9a6658aba667db9c5. It checks SHA-256,
 native image dimensions, Monomakh Git blob, codepoint coverage and source
 crop bounds. It does not publish the crops, fetch OCR, or change the reader.
@@ -23,8 +23,7 @@ The exact asset is used through fontTools decompression and RAQM shaping
 rather than a different downloaded font. The existing browser test checks
 the HTML sheet with the actual WOFF2 through Chromium. Source-derived
 coordinates were visually estimated from full-page displays, not measured
-glyph boxes; inspect the actual rendered crop contents before using them
-as instructional exemplars. Candidate or ambiguous examples must not be
+glyph boxes; the eight initial crops were subsequently inspected directly from the pinned JPEGs (grayscale luma previews, enlarged by nearest-neighbor). All contained the intended word or sign; six boundaries were tightened to remove neighboring fragments. The full composite PNG has been generated successfully in CI, but has not been viewed here as a composite. Check the revised borders before freezing the reference. Candidate or ambiguous examples must not be
 presented as verified ground truth. The local output PNG is a derivative
 of the museum scans; do not redistribute without review of source rights.
 
@@ -59,11 +58,31 @@ These are development pages, not fresh holdouts:
 The source pages and prior development exemplars were all seen by the
 same context. The first 159-cell chart had passed the exact-font CI
 before this pass. Six synthetic examples for superscript em, shcha and
-er with/without covering marks extend it to 165 cells. The hybrid PNG
-has not yet been visually inspected by this context: only the full
-source pages, estimated boxes and prior synthetic charts were visible.
+er with/without covering marks extend it to 165 cells. The hybrid PNG has not been visually inspected as a composite; direct source-pixel crops were inspected. The first eight-example hybrid generator completed in CI with the real assets and exact WOFF2 (1520 x 1298). Two additional IV/170 development examples are now included, with observed line locators rather than invented IDs.
 No full-page reading was produced or committed, no CER or speed measured,
 and no claim of improvement over a control is justified by these data.
+
+## Direct crop follow-up (2026-11-27)
+
+From IV/170 (native pixels, x/y/w/h), crop [565, 211, 240, 40]
+clearly shows a raised Cyrillic em after the final ы in `грѣшныⷨ`.
+Crop [365, 598, 160, 40] shows raised shcha in `ноⷳ`.
+Neither shows a visible separate covering mark over the raised letter.
+Do not automatically add U+0487 just because the modern font supports it.
+The adjacent raised signs and footnote numbers still require individual
+source checks; a crop of the next line, [136, 315, 144, 42], is **not**
+the intended `грѣхо` footnote example and must not be used for it.
+Crop [130, 783, 255, 42] visibly contains `Бг҃ꙋ` (the mark is still
+an encoding candidate) and `сп҃снїе` nearby. This shows distinct base
+letters, abbreviation marks and dot forms in the same print.
+II/190 crop [285, 216, 360, 40] confirms the figure-eight uk in
+`простꙋпили`; no exact codepoint decision follows solely from shape.
+
+These are nonblind development observations, not before/after accuracy
+measurements. The two IV/170 examples are promoted only to *candidate
+reference examples*, not verified readings. IV/170 must henceforth be
+excluded from the benchmark holdout pool. Other sampled rectangles
+were not treated as useful evidence when they missed the intended word.
 
 ## Controlled comparison plan
 
