@@ -26,25 +26,25 @@ SOURCES = {
     "II/100": {"path": "vol2/page-00100.jpg", "printed": "18", "width": 1190, "height": 2003,
                "sha256": "2095de26447b9ce0d7ae5371a73424c4416326b35668931b02e63eb051586df2"},
 }
-# Native-pixel rectangles estimated from displayed full-page images; not
-# measured glyph boxes. These are candidate exemplars, not adjudicated gold.
+# Native-pixel rectangles initially estimated from full-page displays and
+# refined after direct crop inspection; not measured glyph boxes. These are candidate exemplars, not adjudicated gold.
 # Some crops deliberately preserve ambiguity rather than teach an encoding.
 EXAMPLES = [
-    {"source": "V/130", "line": "body-1-line-01", "bbox_xywh": [186, 174, 100, 50],
+    {"source": "V/130", "line": "body-1-line-01", "bbox_xywh": [193, 174, 93, 50],
      "render": "рꙋцѣ", "focus": "ꙋ / ѣ", "status": "candidate", "note": "Figure-eight uk and yat"},
-    {"source": "V/130", "line": "body-1-line-01", "bbox_xywh": [497, 174, 103, 50],
+    {"source": "V/130", "line": "body-1-line-01", "bbox_xywh": [497, 174, 89, 50],
      "render": "копїе", "focus": "ї / ї", "status": "ambiguous", "note": "Dots visible; composed vs combining unresolved"},
     {"source": "V/130", "line": "body-1-line-01", "bbox_xywh": [731, 171, 87, 54],
      "render": "ст҃ый", "focus": "҃", "status": "ambiguous", "note": "Abbreviation mark; exact encoding not adjudicated"},
     {"source": "V/130", "line": "body-1-line-15", "bbox_xywh": [89, 719, 46, 55],
      "render": "ѿ", "focus": "ѿ / ѡт", "status": "candidate", "note": "Ot-like printed form; do not expand silently"},
-    {"source": "V/130", "line": "body-5-line-04", "bbox_xywh": [971, 1458, 67, 47],
+    {"source": "V/130", "line": "body-5-line-04", "bbox_xywh": [971, 1458, 55, 47],
      "render": "ѱа", "focus": "ѱ", "status": "candidate", "note": "Psi-like letter, not modern ps"},
-    {"source": "III/130", "line": "thecla-passion-line-01", "bbox_xywh": [379, 147, 75, 53],
+    {"source": "III/130", "line": "thecla-passion-line-01", "bbox_xywh": [379, 147, 75, 44],
      "render": "ѡни", "focus": "ѡ / о", "status": "ambiguous", "note": "Omega-like base; supralinear mark unresolved"},
-    {"source": "III/130", "line": "thecla-passion-line-01", "bbox_xywh": [512, 151, 84, 48],
+    {"source": "III/130", "line": "thecla-passion-line-01", "bbox_xywh": [502, 151, 94, 42],
      "render": "рѣша", "focus": "ѣ", "status": "candidate", "note": "Yat in a different volume"},
-    {"source": "II/100", "line": "witness-e-excerpt-line-02", "bbox_xywh": [431, 823, 171, 50],
+    {"source": "II/100", "line": "witness-e-excerpt-line-02", "bbox_xywh": [431, 829, 171, 44],
      "render": "прїйдоша", "focus": "ї / ї", "status": "ambiguous", "note": "Dots and diacritics; do not infer exact sequence"},
 ]
 
@@ -92,7 +92,7 @@ def render_sheet(assets, output):
     sheet = Image.new("RGB", (width, header + row_height * len(EXAMPLES) + 32), "white")
     d = ImageDraw.Draw(sheet)
     d.text((24, 15), "Franko printed type + Monomakh | candidate visual ICL", font=heading, fill="black")
-    d.text((24, 54), "Estimated source crops; not independent gold. Preserve ambiguous signs, do not infer expansions.", font=label, fill="black")
+    d.text((24, 54), "Source crops visually inspected; candidate labels are not independent gold. Preserve ambiguous signs.", font=label, fill="black")
     d.text((24, 80), "Pinned images: " + ASSET_COMMIT + " | exact font: " + FONT_BLOB, font=small, fill="black")
     for x, title in [(24, "Source / native crop"), (335, "Original print (enlarged)"), (715, "Modern render"), (1090, "Literal Unicode / caution")]:
         d.text((x, 108), title, font=label, fill="black")
