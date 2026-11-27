@@ -1,0 +1,148 @@
+{
+  "schema_version": "franko-review-intake-v1",
+  "status": "pending_adjudication",
+  "submitter": {
+    "github_user_id": 3265391,
+    "login_at_intake": "alexsosn",
+    "issue_id": 6637228940,
+    "issue_number": 416,
+    "issue_url": "https://github.com/alexsosn/franko-tei/issues/416"
+  },
+  "bundle_sha256": "0411c276f267dbfc3d94895a644ecda3cc1e5e01f2cfc700c45cbf26dae62fd3",
+  "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"87ce605f-7c47-478b-b969-a7bb5c89c712\",\"source_commit\":\"aad2c1e6182529b2d439970965c5113c0475d5ae\",\"events\":[{\"event_id\":\"0b8713ba-a246-4016-a751-9b29be38bc65\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00250_single_reading.json\",\"candidate_blob\":\"768be23f0db0afccca9ca7eb06a012268d7f18d8\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"33c02fe6d0b5898ce16384f88ef23e9d39d042f4cd82989f020c50a33a2a7aa1\",\"reader_id\":\"gpt62-i250-first-image-20261125\",\"region_id\":\"spirits-continuation\",\"line_id\":\"spirits-continuation-l017\",\"original\":\"въ утробѣ. г҃-єє [sic!] дх҃ъ вражды въ ср҃дци [и] в горчинѣ. д҃-є дх҃ъ\"},\"decision\":\"correct\",\"replacement\":\"въ утробѣ. г҃-єє [sic!] дх҃ъ вражды въ ср҃дци [и] в кручинѣ. д҃-є дх҃ъ\",\"note\":\"Native p175 reads въ кручинѣ (historical u glyph needs exact review), not горчинѣ; glossary I460 right-l037.\"},{\"event_id\":\"8f0544e5-5c0c-4636-bc03-4a56eeb5e989\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00250_single_reading.json\",\"candidate_blob\":\"768be23f0db0afccca9ca7eb06a012268d7f18d8\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"33c02fe6d0b5898ce16384f88ef23e9d39d042f4cd82989f020c50a33a2a7aa1\",\"reader_id\":\"gpt62-i250-first-image-20261125\",\"region_id\":\"spirits-continuation\",\"line_id\":\"spirits-continuation-l023\",\"original\":\"правьд[у] бо дѣлаєть съ прочими доухы дародатѣлемъ. надъ\"},\"decision\":\"correct\",\"replacement\":\"правьд[у] бо дѣлаєть съ прочими доухы дародатьемъ. надъ\",\"note\":\"Native p175 reads дародатьемъ with no л; glossary Дародатье cites 173, but actual occurrence on p175. Preserve original citation separately.\"},{\"event_id\":\"363d42bc-68e9-4ade-8108-fc08defb3f69\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00254_single_reading.json\",\"candidate_blob\":\"708f0bebf3f75a62bdfa2979d91f4d0dfd9adf00\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"b3ab0de8659627c75414e39247a224896b6e123caad73c80802ddfefef31ec2a\",\"reader_id\":\"gpt62-i254-first-image-20261125\",\"region_id\":\"simeon-exhortation-continuation\",\"line_id\":\"simeon-exhortation-continuation-l006\",\"original\":\"и рать даетъ мысленымъ,²⁴) ино убо²⁵) повреждаетъ и на ужасти\"},\"decision\":\"correct\",\"replacement\":\"и рать даетъ мысленымъ,²⁴) ино убо²⁵) поваждаеть и на ужасти\",\"note\":\"Native p179 clearly reads поваждаеть, glossary Поваждати. Check final ь/ъ against print.\"},{\"event_id\":\"a51c9729-8069-4fb9-8ed6-7dc89c4c6c07\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00254_single_reading.json\",\"candidate_blob\":\"708f0bebf3f75a62bdfa2979d91f4d0dfd9adf00\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"b3ab0de8659627c75414e39247a224896b6e123caad73c80802ddfefef31ec2a\",\"reader_id\":\"gpt62-i254-first-image-20261125\",\"region_id\":\"simeon-exhortation-continuation\",\"line_id\":\"simeon-exhortation-continuation-l018\",\"original\":\"дѣхъ бо въ сказѣ³³) книгъ Еноховъ, ꙗко сн҃ве ваши велми\"},\"decision\":\"correct\",\"replacement\":\"дѣхъ бо въ скважѣ³³) книгъ Еноховъ, ꙗко сн҃ве ваши велми\",\"note\":\"Native p179 reads въ скважѣ before note 33; Franko's index Скважъ conjectures сказъ. Do not normalize the printed word; marker-attached token.\"},{\"event_id\":\"38d62b23-e8e5-4e75-8983-04983c93fab5\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00302_single_reading.json\",\"candidate_blob\":\"9f2c022715c14c508988ff53d0196b21ed623907\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"ca11cc0f6b2ddd0aceefea430b97c466c4f398355ca9987272de39c997af9174\",\"reader_id\":\"gpt62-i302-first-image-20261125\",\"region_id\":\"moses-crown-test\",\"line_id\":\"moses-crown-test-l034\",\"original\":\"быс[ть] сикливъ, и нє убиша єго.\"},\"decision\":\"correct\",\"replacement\":\"быс[ть] свикливъ, и нє убиша єго.\",\"note\":\"Native p227 reads свикливъ, matching glossary Свикливъ.\"},{\"event_id\":\"e1200bc0-8bda-4c57-a546-3b3838b852a1\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00461_single_reading.json\",\"candidate_blob\":\"d4d6497923b6d002dd66a69f79066cd4bed93e13\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"a7e822f89029ab43a2cf6519b8b017abfdbbb74eeb11c617c986a9142086f972\",\"reader_id\":\"gpt62-i461-first-image-20261125\",\"region_id\":\"right\",\"line_id\":\"right-l023\",\"original\":\"Попава 199, попавица 241 Mik.\"},\"decision\":\"correct\",\"replacement\":\"Понава 199, понавица 241 Mik.\",\"note\":\"Native glossary p386 visibly reads Понава 199, понавица 241; both forms misread in draft. Recheck target pages before changing their anchors.\"},{\"event_id\":\"29e5bdef-b7df-4056-84d0-c27eb6e31d61\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00462_single_reading.json\",\"candidate_blob\":\"f54a224cb68cd485fe90b5ff1ddca922d2deaf88\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"6de50afb4e2858b618d5f2d9704302de6c33252e2b8d8310792885eb48190164\",\"reader_id\":\"gpt62-i462-first-image-20261125\",\"region_id\":\"right\",\"line_id\":\"right-l008\",\"original\":\"Стрельство 319 Mik. хижість\"},\"decision\":\"correct\",\"replacement\":\"Стремльство 319 Mik. хижість\",\"note\":\"Native glossary p387 reads Стремльство 319, cf. body p319; index reading itself erroneous in draft.\"},{\"event_id\":\"9a31d6d1-0493-478c-a63e-b1d5f743460c\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00394_single_reading.json\",\"candidate_blob\":\"38566f1ddfed36b129269f81e88409b21d9031fe\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"e2c3e53e0398ceb9d9282a3da2792908fb2735edff83ab4a50b4c63173597f00\",\"reader_id\":\"gpt62-i394-final-gap-20261125\",\"region_id\":\"daniel-body\",\"line_id\":\"daniel-body-l012\",\"original\":\"игомъ неприязненым будет, левъ ж[е] за стремлство й за мч҃тел-\"},\"decision\":\"correct\",\"replacement\":\"игомъ неприязненым будет, левъ ж[е] за стремльство й за мч҃тел-\",\"note\":\"Native p319 lion description reads стремльство; corresponding printed glossary p387 also reads Стремльство. Preserve all remaining text.\"}]}",
+  "bundle": {
+    "schema_version": "franko-review-bundle-v1",
+    "bundle_id": "87ce605f-7c47-478b-b969-a7bb5c89c712",
+    "source_commit": "aad2c1e6182529b2d439970965c5113c0475d5ae",
+    "events": [
+      {
+        "event_id": "0b8713ba-a246-4016-a751-9b29be38bc65",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00250_single_reading.json",
+          "candidate_blob": "768be23f0db0afccca9ca7eb06a012268d7f18d8",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "33c02fe6d0b5898ce16384f88ef23e9d39d042f4cd82989f020c50a33a2a7aa1",
+          "reader_id": "gpt62-i250-first-image-20261125",
+          "region_id": "spirits-continuation",
+          "line_id": "spirits-continuation-l017",
+          "original": "въ утробѣ. г҃-єє [sic!] дх҃ъ вражды въ ср҃дци [и] в горчинѣ. д҃-є дх҃ъ"
+        },
+        "decision": "correct",
+        "replacement": "въ утробѣ. г҃-єє [sic!] дх҃ъ вражды въ ср҃дци [и] в кручинѣ. д҃-є дх҃ъ",
+        "note": "Native p175 reads въ кручинѣ (historical u glyph needs exact review), not горчинѣ; glossary I460 right-l037."
+      },
+      {
+        "event_id": "8f0544e5-5c0c-4636-bc03-4a56eeb5e989",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00250_single_reading.json",
+          "candidate_blob": "768be23f0db0afccca9ca7eb06a012268d7f18d8",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "33c02fe6d0b5898ce16384f88ef23e9d39d042f4cd82989f020c50a33a2a7aa1",
+          "reader_id": "gpt62-i250-first-image-20261125",
+          "region_id": "spirits-continuation",
+          "line_id": "spirits-continuation-l023",
+          "original": "правьд[у] бо дѣлаєть съ прочими доухы дародатѣлемъ. надъ"
+        },
+        "decision": "correct",
+        "replacement": "правьд[у] бо дѣлаєть съ прочими доухы дародатьемъ. надъ",
+        "note": "Native p175 reads дародатьемъ with no л; glossary Дародатье cites 173, but actual occurrence on p175. Preserve original citation separately."
+      },
+      {
+        "event_id": "363d42bc-68e9-4ade-8108-fc08defb3f69",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00254_single_reading.json",
+          "candidate_blob": "708f0bebf3f75a62bdfa2979d91f4d0dfd9adf00",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "b3ab0de8659627c75414e39247a224896b6e123caad73c80802ddfefef31ec2a",
+          "reader_id": "gpt62-i254-first-image-20261125",
+          "region_id": "simeon-exhortation-continuation",
+          "line_id": "simeon-exhortation-continuation-l006",
+          "original": "и рать даетъ мысленымъ,²⁴) ино убо²⁵) повреждаетъ и на ужасти"
+        },
+        "decision": "correct",
+        "replacement": "и рать даетъ мысленымъ,²⁴) ино убо²⁵) поваждаеть и на ужасти",
+        "note": "Native p179 clearly reads поваждаеть, glossary Поваждати. Check final ь/ъ against print."
+      },
+      {
+        "event_id": "a51c9729-8069-4fb9-8ed6-7dc89c4c6c07",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00254_single_reading.json",
+          "candidate_blob": "708f0bebf3f75a62bdfa2979d91f4d0dfd9adf00",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "b3ab0de8659627c75414e39247a224896b6e123caad73c80802ddfefef31ec2a",
+          "reader_id": "gpt62-i254-first-image-20261125",
+          "region_id": "simeon-exhortation-continuation",
+          "line_id": "simeon-exhortation-continuation-l018",
+          "original": "дѣхъ бо въ сказѣ³³) книгъ Еноховъ, ꙗко сн҃ве ваши велми"
+        },
+        "decision": "correct",
+        "replacement": "дѣхъ бо въ скважѣ³³) книгъ Еноховъ, ꙗко сн҃ве ваши велми",
+        "note": "Native p179 reads въ скважѣ before note 33; Franko's index Скважъ conjectures сказъ. Do not normalize the printed word; marker-attached token."
+      },
+      {
+        "event_id": "38d62b23-e8e5-4e75-8983-04983c93fab5",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00302_single_reading.json",
+          "candidate_blob": "9f2c022715c14c508988ff53d0196b21ed623907",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "ca11cc0f6b2ddd0aceefea430b97c466c4f398355ca9987272de39c997af9174",
+          "reader_id": "gpt62-i302-first-image-20261125",
+          "region_id": "moses-crown-test",
+          "line_id": "moses-crown-test-l034",
+          "original": "быс[ть] сикливъ, и нє убиша єго."
+        },
+        "decision": "correct",
+        "replacement": "быс[ть] свикливъ, и нє убиша єго.",
+        "note": "Native p227 reads свикливъ, matching glossary Свикливъ."
+      },
+      {
+        "event_id": "e1200bc0-8bda-4c57-a546-3b3838b852a1",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00461_single_reading.json",
+          "candidate_blob": "d4d6497923b6d002dd66a69f79066cd4bed93e13",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "a7e822f89029ab43a2cf6519b8b017abfdbbb74eeb11c617c986a9142086f972",
+          "reader_id": "gpt62-i461-first-image-20261125",
+          "region_id": "right",
+          "line_id": "right-l023",
+          "original": "Попава 199, попавица 241 Mik."
+        },
+        "decision": "correct",
+        "replacement": "Понава 199, понавица 241 Mik.",
+        "note": "Native glossary p386 visibly reads Понава 199, понавица 241; both forms misread in draft. Recheck target pages before changing their anchors."
+      },
+      {
+        "event_id": "29e5bdef-b7df-4056-84d0-c27eb6e31d61",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00462_single_reading.json",
+          "candidate_blob": "f54a224cb68cd485fe90b5ff1ddca922d2deaf88",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "6de50afb4e2858b618d5f2d9704302de6c33252e2b8d8310792885eb48190164",
+          "reader_id": "gpt62-i462-first-image-20261125",
+          "region_id": "right",
+          "line_id": "right-l008",
+          "original": "Стрельство 319 Mik. хижість"
+        },
+        "decision": "correct",
+        "replacement": "Стремльство 319 Mik. хижість",
+        "note": "Native glossary p387 reads Стремльство 319, cf. body p319; index reading itself erroneous in draft."
+      },
+      {
+        "event_id": "9a31d6d1-0493-478c-a63e-b1d5f743460c",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00394_single_reading.json",
+          "candidate_blob": "38566f1ddfed36b129269f81e88409b21d9031fe",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "e2c3e53e0398ceb9d9282a3da2792908fb2735edff83ab4a50b4c63173597f00",
+          "reader_id": "gpt62-i394-final-gap-20261125",
+          "region_id": "daniel-body",
+          "line_id": "daniel-body-l012",
+          "original": "игомъ неприязненым будет, левъ ж[е] за стремлство й за мч҃тел-"
+        },
+        "decision": "correct",
+        "replacement": "игомъ неприязненым будет, левъ ж[е] за стремльство й за мч҃тел-",
+        "note": "Native p319 lion description reads стремльство; corresponding printed glossary p387 also reads Стремльство. Preserve all remaining text."
+      }
+    ]
+  }
+}
