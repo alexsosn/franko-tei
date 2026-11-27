@@ -13,6 +13,7 @@ ACCEPTED = {
     "7dc8f430-59e1-4d27-9f31-048a7570a8f4": "заполци",
     "8f0544e5-5c0c-4636-bc03-4a56eeb5e989": "дародатьемъ",
     "38d62b23-e8e5-4e75-8983-04983c93fab5": "свикливъ",
+    "e1200bc0-8bda-4c57-a546-3b3838b852a1": "Понава 199, понавица 241",
 }
 
 
@@ -24,7 +25,9 @@ class FurtherGlossaryReviews(unittest.TestCase):
         self.assertEqual(len(events), 12)
         decisions = [json.loads((ROOT / "reviews" / "adjudications" /
                                  (eid + ".json")).read_bytes())
-                     for eid in ACCEPTED]
+                     for eid in events]
+        self.assertEqual({d["event_id"] for d in decisions if d["outcome"] == "accept"}, set(ACCEPTED))
+        self.assertEqual(sum(d["outcome"] == "reject" for d in decisions), 7)
         allowed = {(i["bundle"]["source_commit"], e["target"]["candidate_path"])
                    for i in intakes for e in i["bundle"]["events"]}
 
@@ -52,6 +55,7 @@ class FurtherGlossaryReviews(unittest.TestCase):
                     self.assertEqual(row["text"][marker["start"]:marker["end"]], marker["literal"])
             else:
                 self.assertEqual(row["text"], t["original"])
+                self.assertEqual(row["status"], "agent_unverified")
             self.assertEqual((ROOT / t["candidate_path"]).read_bytes(), raw)
 
 

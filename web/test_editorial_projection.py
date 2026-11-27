@@ -156,6 +156,25 @@ class EditorialProjectionTests(unittest.TestCase):
                     self.assertNotIn(row["text"],original["text"])
                     self.assertEqual((ROOT/page["path"]).read_bytes(),raw)
 
+    def test_accepted_glossary_entry_published_in_index(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            overlay=json.loads((output/"editorial.json").read_text())
+            page=next(p for p in overlay["pages"] if p["volume"]=="1" and p["scan"]==461)
+            row=next(r for r in page["lines"] if r["line_id"]=="right-l023")
+            self.assertEqual(row["original"],"Попава 199, попавица 241 Mik.")
+            self.assertEqual(row["text"],"Понава 199, понавица 241 Mik.")
+            data=json.loads((output/"printed-indexes.json").read_text())
+            entry=next(e for e in data["sections"][3]["entries"] if e["id"]=="v1-461-right-l023")
+            self.assertEqual(entry["label"],"Понава 199, понавица 241")
+            self.assertEqual(entry["lines"][0]["text"],row["original"])
+            self.assertEqual(entry["source"]["blob"],page["blob"])
+            self.assertEqual([r["literal"] for r in entry["refs"]],["199","241"])
+            self.assertEqual([r["form"] for r in entry["refs"]],["Понава","понавица"])
+            self.assertEqual(entry["refs"][0]["targets"][0]["anchor"]["line_id"],"zebulun-mercy-l014")
+            self.assertEqual(entry["refs"][1]["targets"][0]["mention_review"]["status"],"reading_conflict")
+
     def test_unstamped_facsimile_is_published_and_searchable(self):
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)
