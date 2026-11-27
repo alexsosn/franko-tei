@@ -11,7 +11,7 @@ from tempfile import TemporaryDirectory
 
 from .pilot_tf import Graph, verify_source_gated_pilot
 
-TYPES = ("languageSpan", "uncertainty", "line", "region", "page")
+TYPES = ("languageSpan", "abbreviation", "uncertainty", "line", "region", "page")
 
 # Git *blob* SHA-1 for the exact unmodified UTF-8 manifest.json at the pinned
 # e871f32537e81f81896f6ce9a6658aba667db9c5 asset commit. Without this
