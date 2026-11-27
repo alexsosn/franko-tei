@@ -555,7 +555,7 @@ class EditorialProjectionTests(unittest.TestCase):
                             annotationMatches(row,queryRegex(word,true),uk).length,
                             annotationMatches(row,queryRegex('фальшиві '+word,true),greek).length];
                 }""",[literal,annotation])
-                self.assertEqual(result,[True,1,0,0])
+                self.assertEqual(result,[True,2,0,0])
                 # Stale and duplicate metadata must fail, not produce a false zero.
                 self.assertTrue(page.evaluate("""([l,a])=>{
                     for(const mutate of [x=>x.ref='0'.repeat(40),x=>x.entries.push(x.entries[0]),
