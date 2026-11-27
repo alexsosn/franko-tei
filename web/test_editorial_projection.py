@@ -511,6 +511,62 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertFalse(errors,errors)
             browser.close()
 
+    def test_browser_annotation_facets(self):
+        from playwright.sync_api import sync_playwright, expect
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            build(ROOT/"pilot",output,REF)
+            literal=json.loads((output/"vol1.json").read_text())
+            annotation=json.loads((output/"annotation-vol1.json").read_text())
+            with sync_playwright() as p:
+                browser=p.chromium.launch(args=["--no-sandbox"])
+                page=browser.new_page(viewport={"width":390,"height":844})
+                def route(r):
+                    u=r.request.url
+                    if u=="https://reader.test/":
+                        return r.fulfill(content_type="text/html",body=(ROOT/"web/index.html").read_text())
+                    if u.endswith("/review-editor.js"):
+                        return r.fulfill(content_type="text/javascript",body=(ROOT/"web/review-editor.js").read_text())
+                    if u.startswith("https://reader.test/search/"):
+                        path=output/u.rsplit("/",1)[1]
+                        if path.is_file():return r.fulfill(content_type="application/json",body=path.read_bytes())
+                    return r.fulfill(status=404,body="")
+                page.route("https://**/*",route)
+                page.goto("https://reader.test/")
+                page.locator("#contentsClose").click()
+                page.locator("#searchOpen").click()
+                page.locator("#searchVolume").select_option("1")
+                page.locator("#searchFacets summary").click()
+                page.locator("#searchLanguage").select_option("grc")
+                page.locator("#query").fill("")
+                page.locator("#searchGo").click()
+                expect(page.locator("#searchStatus")).to_contain_text("annotation occurrences")
+                expect(page.locator("#searchResults button").first).to_be_visible()
+                # Actual source line I/20: Greek range, not the adjacent Ukrainian prose.
+                result=page.evaluate("""([literal,annotation])=>{
+                    const rows=joinSearchAnnotations(literal,annotation);
+                    const row=rows.find(r=>r.scan===20&&r.suffix==='single_reading'&&!r.reviewed);
+                    const greek={language:'grc',region:'',certainty:''};
+                    const uk={language:'uk',region:'',certainty:''};
+                    const hits=annotationMatches(row,null,greek);
+                    const word='βιβλία';
+                    return [hits.some(h=>h[0].includes(word)),
+                            annotationMatches(row,queryRegex(word,true),greek).length,
+                            annotationMatches(row,queryRegex(word,true),uk).length,
+                            annotationMatches(row,queryRegex('фальшиві '+word,true),greek).length];
+                }""",[literal,annotation])
+                self.assertEqual(result,[True,1,0,0])
+                # Stale and duplicate metadata must fail, not produce a false zero.
+                self.assertTrue(page.evaluate("""([l,a])=>{
+                    for(const mutate of [x=>x.ref='0'.repeat(40),x=>x.entries.push(x.entries[0]),
+                        x=>x.entries[0].annotation.lines[0].start++]) {
+                        const copy=structuredClone(a);mutate(copy);
+                        try {joinSearchAnnotations(l,copy);return false;}catch(e){}
+                    }
+                    return true;
+                }""",[literal,annotation]))
+                browser.close()
+
     def test_browser_reading_and_exact_search(self):
         from playwright.sync_api import sync_playwright, expect
         from test_review_editor import png, W, H
