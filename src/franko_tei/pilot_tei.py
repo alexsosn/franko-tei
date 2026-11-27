@@ -12,6 +12,8 @@ from xml.etree import ElementTree as ET
 
 from .ocr_candidates import _get_page_image, _read_manifest
 from .agent_evidence import _box, _inside, _required_text, validate_language_spans
+from .abbreviation_spans import (validate_abbreviation_spans, insert_choices,
+                                 diplomatic_text)
 
 TEI = "http://www.tei-c.org/ns/1.0"
 XML = "http://www.w3.org/XML/1998/namespace"
@@ -194,6 +196,7 @@ def validate_single_draft(payload, images_root):
             line_text_by_id[identifier] = text
             raw_lines.append(text)
             validate_language_spans(text, line.get('language_spans'), reading['reader_id'])
+            validate_abbreviation_spans(line, reading['reader_id'])
             if region['kind'] == 'page_number':
                 page_number_texts.append(text)
     if (len(illegible_suffix_ids) != len(occluded_ids) or
@@ -347,6 +350,7 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None, 
     xml_id(lb, f"lb-v{volume}-s{page:05d}-{line['id']}")
     raw = line['text']
     _valid_xml_text(raw)
+    abbreviations = validate_abbreviation_spans(line, reading_id)
     illegible_suffix = line.get('unreadable_suffix', False)
     if type(illegible_suffix) is not bool:
         raise ValueError('unreadable_suffix must be boolean')
@@ -418,6 +422,12 @@ def _append_line(parent, line, volume, page, reading_id, source_note_link=None, 
                    {'type': 'source-footnote-reference', 'target': target})
         xml_id(ref, f"source-ref-v{volume}-s{page:05d}-{line['id']}")
         ref.tail = printed[local_start+len(marker):]
+
+    for i, seg in enumerate(rendered_spans):
+        start, end = spans[i]['start'], spans[i]['end']
+        contained = [a for a in abbreviations if start <= a['start'] < a['end'] <= end]
+        insert_choices(seg, contained, start,
+                       f"abbr-v{volume}-s{page:05d}-{line['id']}")
 
     if illegible_suffix:
         gap = _sub(parent, 'gap', attrs={
@@ -535,7 +545,7 @@ def extract_transcribed_lines(xml):
             elif child.tag == tag('seg'):
                 if current is None:
                     raise ValueError('segment without line-break anchor')
-                current += ''.join(child.itertext()) + (child.tail or '')
+                current += diplomatic_text(child) + (child.tail or '')
             elif child.tag == tag('gap'):
                 if (current is None or child.get('reason') != 'illegible' or
                         child.get('extent') != 'unknown' or child.get('unit') != 'character'):
