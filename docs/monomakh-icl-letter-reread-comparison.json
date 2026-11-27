@@ -1,0 +1,231 @@
+{
+  "schema": "franko-letter-icl-reread-comparison-v1",
+  "first_response_commit": "36e07074ec362d64f0afdf9e42cc2253f6097d83",
+  "baseline_commit": "099404eb00e80f24d84badd87c2c6939c8171c45",
+  "comparison": "Literal codepoint edit distance between historical draft and frozen assisted reading; disagreement not CER. Nonaccent metric uses NFC then removes U+0300/0301/0302/0311/0342/0485/0486. Base-letter metric uses NFC then retains only Unicode Cyrillic script letters; drops punctuation, spaces, accents and combining letters. Case preserved. Numerals encoded with Cyrillic letters remain. Neither metric treats old draft as gold.",
+  "pages": [
+    {
+      "volume": 3,
+      "scan": 134,
+      "baseline_blob": "3b98e0f5e06e8208c4c79c916aca5ff9d494f8b7",
+      "baseline_status": "agent_unverified",
+      "rows": [
+        {
+          "line": "text-line-01",
+          "old": "ве оумолиша цр҃я, да бы послалъ оубити Павла. пославъ цр҃ь на",
+          "new": "ве оу҆молиша цр҃ѧ, да бы послалъ оу҆бити Павла. посла цр҃ь на",
+          "literal_edits": 5,
+          "nonaccent_edits": 3,
+          "base_letter_edits": 3,
+          "old_codepoints": 61,
+          "old_letters": 47
+        },
+        {
+          "line": "text-line-02",
+          "old": "вся поути стрѣщи таковаго моужа, бѣ бо знаем: чрънѫ брадѫ",
+          "new": "всѧ поути стрѣщи таковаго моужа, бѣ бо знаем: чръныѧ брадѫ",
+          "literal_edits": 3,
+          "nonaccent_edits": 3,
+          "base_letter_edits": 3,
+          "old_codepoints": 57,
+          "old_letters": 46
+        },
+        {
+          "line": "text-line-03",
+          "old": "имѣя и . . . главѫ сивѫ и низок тѣлом. и пришедши близ къ",
+          "new": "имѣа и҆ ... главѫ сивѫ и҆ низок тѣлом. и҆ пришедши близ къ",
+          "literal_edits": 6,
+          "nonaccent_edits": 3,
+          "base_letter_edits": 1,
+          "old_codepoints": 57,
+          "old_letters": 40
+        },
+        {
+          "line": "text-line-04",
+          "old": "Римѫ влѣзе въ корабль. бы҃ Диоскор нѣкто имѣя образ Пав-",
+          "new": "Римѹ вълѣзе въ корабль. бы҃ Диоскор нѣкто и҆мѣа ѡ҆браз Пав-",
+          "literal_edits": 6,
+          "nonaccent_edits": 4,
+          "base_letter_edits": 4,
+          "old_codepoints": 56,
+          "old_letters": 44
+        },
+        {
+          "line": "text-line-05",
+          "old": "ловъ и главою и брадою, и влѣзе въ град Потиѡль. и мнѣвши",
+          "new": "ловъ и҆ главою и҆ брадою, и҆ вълѣзе въ град Потииѡль. и҆ мнѣвши",
+          "literal_edits": 6,
+          "nonaccent_edits": 2,
+          "base_letter_edits": 2,
+          "old_codepoints": 57,
+          "old_letters": 44
+        },
+        {
+          "line": "text-line-06",
+          "old": "людїе, яко Павелъ е, и оусѣкоша главоу его и послаша въ Рим",
+          "new": "людіе, ꙗ҆ко Павелъ е҆, и҆ оу҆сѣкоша главоу е҆го и послаша въ Рим",
+          "literal_edits": 7,
+          "nonaccent_edits": 2,
+          "base_letter_edits": 2,
+          "old_codepoints": 59,
+          "old_letters": 46
+        },
+        {
+          "line": "text-line-07",
+          "old": "къ цр҃ю. Павелъ же моля ся о градѣ, въ немже оубиша Диоско-",
+          "new": "къ црю. Павелъ же молѧ сѧ ѡ҆ градѣ, въ немже оу҆биша Діоско-",
+          "literal_edits": 7,
+          "nonaccent_edits": 5,
+          "base_letter_edits": 4,
+          "old_codepoints": 59,
+          "old_letters": 44
+        },
+        {
+          "line": "text-line-08",
+          "old": "ра, и погроуженъ бы҃ съ людми въ море. и пришед къ Рим Па-",
+          "new": "ра, и҆ погроужен бы҃ съ люд̓ми въ море. и҆ пришед къ Рим Па-",
+          "literal_edits": 4,
+          "nonaccent_edits": 2,
+          "base_letter_edits": 1,
+          "old_codepoints": 58,
+          "old_letters": 42
+        },
+        {
+          "line": "text-line-09",
+          "old": "велъ оучаше вѣрѣ Хв҃ѣ, крⷭ҇ти женѫ Агриповѫ кесаря. Агрипа же",
+          "new": "велъ оу҆чаше вѣрѣ Хв҃ѣ, кр҃ти женѫ Агриповѫ кесаря. Агрипа же",
+          "literal_edits": 3,
+          "nonaccent_edits": 2,
+          "base_letter_edits": 0,
+          "old_codepoints": 61,
+          "old_letters": 47
+        },
+        {
+          "line": "text-line-10",
+          "old": "гнѣвъ имѣя на Павла жены ради и шед съ Жиды къ Нероноу",
+          "new": "гнѣвъ и҆мѣа на Павла жены ради и҆ шед съ Жиды къ Нероноу",
+          "literal_edits": 3,
+          "nonaccent_edits": 1,
+          "base_letter_edits": 1,
+          "old_codepoints": 54,
+          "old_letters": 43
+        },
+        {
+          "line": "text-line-11",
+          "old": "навади на Павла. и оусѣчен бывъ Павелъ мечем въ в҃-е лѣто по",
+          "new": "навадѧ на Павла. и҆ оу҆сѣчен бывъ Павелъ мечем въ в҃-е лѣто по",
+          "literal_edits": 3,
+          "nonaccent_edits": 1,
+          "base_letter_edits": 1,
+          "old_codepoints": 60,
+          "old_letters": 46
+        },
+        {
+          "line": "text-line-12",
+          "old": "ст҃ѣмъ Петрѣ.",
+          "new": "ст҃ѣмъ Петрѣ.",
+          "literal_edits": 0,
+          "nonaccent_edits": 0,
+          "base_letter_edits": 0,
+          "old_codepoints": 13,
+          "old_letters": 10
+        }
+      ]
+    },
+    {
+      "volume": 2,
+      "scan": 134,
+      "baseline_blob": "80e9ee8988695670ba14538e2ce6f625f2d6b3a9",
+      "baseline_status": "agent_unverified",
+      "rows": [
+        {
+          "line": "chapter-4-cont-line-01",
+          "old": "сытыхъ ієреом и старцем и всѣмъ людемъ, и боудут ві҃. быков",
+          "new": "сїтыхъ їереѡм и старцем и҆ всѣмъ люде́мъ, и боудѹт ві҃. быков",
+          "literal_edits": 7,
+          "nonaccent_edits": 5,
+          "base_letter_edits": 5,
+          "old_codepoints": 59,
+          "old_letters": 46
+        },
+        {
+          "line": "chapter-4-cont-line-02",
+          "old": "ієреом и старцемъ, а сто козловъ всѣм людем“. А гды ишолъ",
+          "new": "їереѡм и старцем̓, а сто козловъ всѣм люде́м“. А гды и҆шолъ",
+          "literal_edits": 6,
+          "nonaccent_edits": 4,
+          "base_letter_edits": 4,
+          "old_codepoints": 57,
+          "old_letters": 44
+        },
+        {
+          "line": "chapter-4-cont-line-03",
+          "old": "Іоаким къ домови своєму со стады своими, тогда Анна сто-",
+          "new": "Їѡаким къ домови своемѹ со ста́ды свои́ми, тогды Анна сто-",
+          "literal_edits": 7,
+          "nonaccent_edits": 5,
+          "base_letter_edits": 5,
+          "old_codepoints": 56,
+          "old_letters": 45
+        },
+        {
+          "line": "chapter-4-cont-line-04",
+          "old": "яла у ворот, и якъ увидѣла Іоакима мужа своего, и притекши",
+          "new": "ѧла оу ворот, и ꙗ҆къ оу҆видѣла Їѡакима моужа своего, и҆ притѣкши",
+          "literal_edits": 11,
+          "nonaccent_edits": 8,
+          "base_letter_edits": 8,
+          "old_codepoints": 58,
+          "old_letters": 46
+        },
+        {
+          "line": "chapter-4-cont-line-05",
+          "old": "и обиемши повѣсила ся на шиї єго и рекла: „се нынѣ, Гне҃ мой,",
+          "new": "и҆ ѡбиемши повѣсила сѧ на ши́и его и҆ рекла: „се нн҃ѣ, г҃не мой,",
+          "literal_edits": 12,
+          "nonaccent_edits": 9,
+          "base_letter_edits": 6,
+          "old_codepoints": 61,
+          "old_letters": 44
+        },
+        {
+          "line": "chapter-4-cont-line-06",
+          "old": "увѣдала єсмъ, яко Гь҃ бл҃вилъ мя, уже бо єсмъ не вдова,",
+          "new": "оу҆вѣдала есми, ꙗко Г҃ь бл҃вилъ мѧ, оуже бо есми не вдова,",
+          "literal_edits": 11,
+          "nonaccent_edits": 10,
+          "base_letter_edits": 8,
+          "old_codepoints": 55,
+          "old_letters": 40
+        },
+        {
+          "line": "chapter-4-cont-line-07",
+          "old": "кдыж тебѣ огладаю, и не безчадна, почала бо єсмъ в животѣ",
+          "new": "кдыж тебѣ ѡ҆глада́ю, и не безчадна, почала бо есми въ животѣ",
+          "literal_edits": 6,
+          "nonaccent_edits": 4,
+          "base_letter_edits": 4,
+          "old_codepoints": 57,
+          "old_letters": 45
+        },
+        {
+          "line": "chapter-4-cont-line-08",
+          "old": "ѿ слова агглова“. Іоаким же реч[е] Аннѣ: „И мнѣ теж агглъ",
+          "new": "ѿ слова а҆гглова“. Їѡаким же реч[е] Аннѣ: „И мнѣ теж а҆гглъ",
+          "literal_edits": 4,
+          "nonaccent_edits": 2,
+          "base_letter_edits": 2,
+          "old_codepoints": 57,
+          "old_letters": 41
+        }
+      ]
+    }
+  ],
+  "total": {
+    "literal_edits": 117,
+    "nonaccent_edits": 75,
+    "base_letter_edits": 64,
+    "old_codepoints": 1112,
+    "old_letters": 850
+  }
+}
