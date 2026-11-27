@@ -175,6 +175,29 @@ class AbbreviationSpansTests(unittest.TestCase):
         self.assertEqual(list(graph.node_features["expansion"].values()),["глаголю"])
         self.assertEqual(len(graph.node_features["sourceNoteTarget"]),4)
 
+    def test_batch_composition_preserves_annotations_and_diplomatic_slots(self):
+        from franko_tei.pilot_tf_batch import merge_pilot_graphs
+        a=self.annotated()
+        b=json.loads((ROOT/"pilot/vol1_scan00090_single_reading.json").read_text(
+            encoding="utf-8"))
+        # This second page is unannotated in this test, regardless of later backfill.
+        for region in b["reading"]["regions"]:
+            for l in region["lines"]:
+                l.pop("abbreviation_spans",None)
+        x=build_tf_graph(render_pilot_tei(a,1190,1800))
+        y=build_tf_graph(render_pilot_tei(b,1190,1800))
+        graph=merge_pilot_graphs([("1",89,x),("1",90,y)])
+        self.assertEqual(verify_graph_roundtrip(graph),
+                         a["reading"]["raw_response"].split("\n")+
+                         b["reading"]["raw_response"].split("\n"))
+        f=graph.node_features
+        self.assertEqual(list(f["expansion"].values()),["небо","Богъ"]+["святъ"]*3)
+        nodes=[n for n,k in f["otype"].items() if k=="abbreviation"]
+        self.assertEqual(len(nodes),5)
+        self.assertEqual(["".join(f["glyph"][i] for i in
+                         sorted(graph.edge_features["oslots"][n])) for n in nodes],
+                         ["нб҃о","Бг҃ъ"]+["ст҃ъ"]*3)
+
 
 if __name__ == "__main__":
     unittest.main()
