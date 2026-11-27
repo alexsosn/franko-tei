@@ -175,7 +175,14 @@ class EditorialProjectionTests(unittest.TestCase):
             self.assertEqual([r["literal"] for r in entry["refs"]],["199","241"])
             self.assertEqual([r["form"] for r in entry["refs"]],["Понава","понавица"])
             self.assertEqual(entry["refs"][0]["targets"][0]["anchor"]["line_id"],"zebulun-mercy-l014")
-            self.assertEqual(entry["refs"][1]["targets"][0]["mention_review"]["status"],"reading_conflict")
+            target=entry["refs"][1]["targets"][0]
+            self.assertEqual(target["mention_review"]["status"],"attested")
+            self.assertEqual(target["anchor"]["line_id"],"seventh-stone-l018")
+            target_page=next(p for p in overlay["pages"] if p["volume"]=="1" and p["scan"]==316)
+            target_rows={r["line_id"]:r for r in target_page["lines"]}
+            self.assertEqual(target["anchor"]["text"],target_rows["seventh-stone-l018"]["original"])
+            self.assertEqual([r["selected_text"] for r in target["mention_review"]["lines"]],
+                             [target_rows[n]["text"] for n in ("seventh-stone-l018","seventh-stone-l019")])
 
     def test_ponavica_native_collation_is_published(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -39,6 +39,36 @@ class PrintedIndexesTest(unittest.TestCase):
         self.assertEqual([r["targets"][0]["scan"] for r in new["refs"]], [274, 316])
         self.assertEqual(new["refs"][0]["targets"][0]["anchor"]["line_id"], "zebulun-mercy-l014")
         self.assertEqual(new["refs"][1]["targets"][0]["mention_review"]["status"], "reading_conflict")
+        target_path = "pilot/vol1_scan00316_single_reading.json"
+        raw = json.loads((ROOT / target_path).read_text())
+        record = json.loads((ROOT / "pilot/reviews/vol1_scan00316_native_collation_20261127.json").read_text())
+        rows = [dict(region_id=r["region_id"], line_id=r["line_id"],
+                     original=r["before"], text=r["after"], status="native_collation",
+                     collation_image_sha256=raw["source_image_sha256"],
+                     evidence_url="https://github.com/alexsosn/franko-tei/blob/"+"a"*40+
+                     "/pilot/reviews/vol1_scan00316_native_collation_20261127.json")
+                for r in record["rows"]]
+        target_page = dict(path=target_path, blob=record["candidate_blob"], volume="1",
+                           scan=316, suffix="single_reading", lines=rows)
+        updated = entry({path: page, target_path: target_page})["refs"][1]["targets"][0]
+        self.assertEqual(updated["mention_review"]["status"], "attested")
+        self.assertEqual(updated["anchor"]["line_id"], "seventh-stone-l018")
+        self.assertEqual(updated["anchor"]["text"], rows[0]["original"])
+        self.assertEqual([r["selected_text"] for r in updated["mention_review"]["lines"]],
+                         [r["text"] for r in rows])
+        self.assertEqual([r["text"] for r in updated["mention_review"]["lines"]],
+                         [r["original"] for r in rows])
+        for invalid in (dict(target_page, blob="0"*40),
+                        dict(target_page, lines=rows[:1]),
+                        dict(target_page, lines=rows+[rows[0]]),
+                        dict(target_page, lines=[dict(rows[0], original="stale"), rows[1]]),
+                        dict(target_page, lines=[dict(rows[0], text=rows[0]["text"]+"!"), rows[1]]),
+                        dict(target_page, lines=[dict(rows[0], collation_image_sha256="0"*64), rows[1]])):
+            with self.subTest(invalid=invalid):
+                self.assertEqual(entry({path: page, target_path: invalid})["refs"][1]["targets"][0]["mention_review"]["status"],
+                                 "reading_conflict")
+        self.assertEqual(entry({target_path: target_page})["refs"][1]["targets"][0]["mention_review"]["status"],
+                         "reading_conflict")
         self.assertEqual(entry({path: dict(page, blob="0"*40)}), old)
         self.assertEqual(entry({path: dict(page, lines=[dict(row, original="wrong")])}), old)
         self.assertEqual(entry({path: dict(page, lines=[dict(row, text=corrected.replace("199","198"))])}), old)
