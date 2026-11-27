@@ -212,6 +212,10 @@ class EditorSmoke(unittest.TestCase):
             page.reload()
             expect(page.locator(".line-text").first).to_be_visible()
             page.locator("#reviewOpen").click()
+            # The hidden save button starts enabled before the async source fetch.
+            # Wait for the loaded source and image, not its initial DOM default.
+            expect(page.locator("#reviewBody")).to_be_visible()
+            expect(page.locator("#reviewLine option").nth(25)).to_be_attached()
             expect(page.locator("#reviewSave")).to_be_enabled()
             ids=page.locator("#reviewLine option").evaluate_all("xs => xs.map(x => x.value)")
             self.assertGreaterEqual(len(ids),26)
