@@ -27,7 +27,8 @@
   "notes": [
     "Review batch L43–L66. Direct native-coordinate crops decoded from pinned JPEG luminance, quantized to four grayscale levels for chat transport. PDF label font Noto Serif, not Monomakh. Original source coordinates allow exact RGB regeneration.",
     "20 uppercase candidate examples, 2 ot-ligature examples, 2 digraph examples. All provisional; explicitly distinguish letters from ligatures and digraphs.",
-    "Visual check discarded clipped ot and missed uppercase targets. The candidate Щ crop was actually оу and is labelled accordingly. С/Є, Ꙗ/А and Ѡ/Ꙍ/Ѽ remain visually ambiguous. Context labels are locator hints, not new diplomatic transcriptions."
+    "Visual check discarded clipped ot and missed uppercase targets. The candidate Щ crop was actually оу and is labelled accordingly. С/Є, Ꙗ/А and Ѡ/Ꙍ/Ѽ remain visually ambiguous. Context labels are locator hints, not new diplomatic transcriptions.",
+    "Second user review: L44 prefers В but may be К (poor scan); L45 Гь҃; L61 uncertain; L62 Ѡ҆. Remaining rows generally accepted provisionally. The base-letter labels and original PDF identity are unchanged; full forms are separate metadata. Do not use L44 or L61 as resolved ICL examples."
   ],
   "examples": [
     {
@@ -45,7 +46,8 @@
       ],
       "context": "Бж…",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L44",
@@ -61,8 +63,13 @@
         "U+0412"
       ],
       "context": "Вы",
-      "status": "candidate",
-      "category": "uppercase"
+      "status": "ambiguous",
+      "category": "uppercase",
+      "alternatives": [
+        "В",
+        "К"
+      ],
+      "review": "2026-11-27: user reports poor scan; possibly К, but prefers В. Seek a clearer specimen; not a verified ICL label."
     },
     {
       "id": "L45",
@@ -77,9 +84,10 @@
       "codepoints": [
         "U+0413"
       ],
-      "context": "Гь…",
-      "status": "candidate",
-      "category": "uppercase"
+      "context": "Гь҃",
+      "status": "user_reviewed",
+      "category": "uppercase",
+      "review": "2026-11-27: user reads Гь҃. Retain the supplied full context separately from base-letter label Г; no diacritic adjudication."
     },
     {
       "id": "L46",
@@ -96,7 +104,8 @@
       ],
       "context": "Жалостное",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L47",
@@ -113,7 +122,8 @@
       ],
       "context": "Зревши",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L48",
@@ -130,7 +140,8 @@
       ],
       "context": "И то",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L49",
@@ -147,7 +158,8 @@
       ],
       "context": "Імаше",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L50",
@@ -164,7 +176,8 @@
       ],
       "context": "Мене",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L51",
@@ -181,7 +194,8 @@
       ],
       "context": "Нѣкако",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L52",
@@ -198,7 +212,8 @@
       ],
       "context": "Пождете",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L53",
@@ -215,7 +230,8 @@
       ],
       "context": "Рек",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L54",
@@ -232,7 +248,8 @@
       ],
       "context": "Слово (contrast Є)",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L55",
@@ -249,7 +266,8 @@
       ],
       "context": "Тебѣ",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L56",
@@ -266,7 +284,8 @@
       ],
       "context": "Феѡкла",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L57",
@@ -283,7 +302,8 @@
       ],
       "context": "Хоч",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L58",
@@ -300,7 +320,8 @@
       ],
       "context": "Что",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L59",
@@ -317,7 +338,8 @@
       ],
       "context": "Юрей",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L60",
@@ -334,7 +356,8 @@
       ],
       "context": "Єноше",
       "status": "candidate",
-      "category": "uppercase"
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L61",
@@ -350,8 +373,13 @@
         "U+A656"
       ],
       "context": "Азъ; possible ornamented А",
-      "status": "candidate",
-      "category": "uppercase"
+      "status": "ambiguous",
+      "category": "uppercase",
+      "alternatives": [
+        "Ꙗ",
+        "А"
+      ],
+      "review": "2026-11-27: user unsure. Alternatives retained from initial candidate; seek a clearer specimen. Do not treat either as confirmed."
     },
     {
       "id": "L62",
@@ -367,8 +395,14 @@
         "U+0460"
       ],
       "context": "… славу …ца; compare Ꙍ and Ѽ",
-      "status": "candidate",
-      "category": "uppercase"
+      "status": "user_reviewed",
+      "category": "uppercase",
+      "observed_reading": "Ѡ҆",
+      "observed_codepoints": [
+        "U+0460",
+        "U+0486"
+      ],
+      "review": "2026-11-27: user reads Ѡ҆. Base-letter inventory uses Ѡ; mark retained separately as the user's reading, not an independent accent adjudication."
     },
     {
       "id": "L63",
@@ -385,7 +419,8 @@
       ],
       "context": "ѿ тебе",
       "status": "candidate",
-      "category": "ligature"
+      "category": "ligature",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L64",
@@ -402,7 +437,8 @@
       ],
       "context": "ѿ въстока",
       "status": "candidate",
-      "category": "ligature"
+      "category": "ligature",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L65",
@@ -420,7 +456,8 @@
       ],
       "context": "two visible components",
       "status": "candidate",
-      "category": "digraph"
+      "category": "digraph",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     },
     {
       "id": "L66",
@@ -438,7 +475,8 @@
       ],
       "context": "оустъ",
       "status": "candidate",
-      "category": "digraph"
+      "category": "digraph",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
     }
   ]
 }
