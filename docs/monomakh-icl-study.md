@@ -498,3 +498,39 @@ claim. Final combined image and CI still need checking. Avoid further
 reference growth solely by duplicating the same sign; prioritize a
 true negative control (great apostrof or a noninitial wave on a vowel)
 and actual use on reading batches.
+
+
+## Interjection omega control: Adam's lament, I/97 (printed p. 22)
+
+Located candidate interjections using the existing draft as a search index,
+then inspected the original JPEG and eight 4x native-luma crop previews.
+This is not a blind reading or an accuracy trial. Four retained controls:
+
+| Line | Native bbox xywh | Following word | Mark shape |
+| --- | --- | --- | --- |
+| witness-a-continuation-l002 | [987,199,133,36] | Євво | wave |
+| witness-a-continuation-l009 | [645,459,122,36] | сн҃оу | arch |
+| witness-a-continuation-l020 | [155,858,130,38] | Євво | wave |
+| witness-a-continuation-l023 | [862,970,133,39] | горе | arch |
+
+The same interjection, with the same ordinary omega-like base, shows
+both wave and arch forms; the repeated address to Eve has the wave.
+This is consistent with the historical use of great apostrof, but does
+not uniquely establish its Unicode identity. TN41 §3.3 gives U+0486
+U+0311 for great apostrof, while U+047D specifically represents broad
+omega with that sign; do not silently substitute broad omega for the
+visible ordinary omega. Kusmaul 2018 p.40 n.65 illustrates a wave-like
+great apostrof. See also Unicode 17 chapter 7:
+https://unicode.org/versions/Unicode17.0.0/core-spec/chapter-7/ .
+The hypothesis that every wave is iso is unsafe: interjection contexts
+must be compared separately. Arch in the interjection may be breathing
+or kamora, not mechanically either. Two additional inspected crops
+show the ligature ot before тебе and вѣстока, not an unmarked simple
+omega preposition; reject them as a negative control. The attempted
+звѣру rectangle clips the preceding omega; omit it.
+
+Added four source examples, all explicitly ambiguous, with native
+coordinates and distinct shape metadata (38 rows from 8 pages total).
+No transcription change. Previous head c808c55 passed CI and OCR review
+viewer. New head CI and visual inspection of the complete composite
+remain outstanding. A noninitial wave on a vowel is still needed.
