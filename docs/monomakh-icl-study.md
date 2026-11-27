@@ -319,3 +319,58 @@ The user's confirmation strengthens the но̑ candidate; the other
 circled marks still require native crop verification and explicit
 line-level adjudication before changing corpus. The screenshot is not
 redistributed. Add contrasts to the exact-font synthetic reference.
+
+
+## Reuse published visual reference tables before expanding our own
+
+User requests ready-made historical typography charts for ICL. Prioritize:
+
+1. Andreev, Shardt, Simmons, Unicode Technical Note 41 (2015),
+   https://www.unicode.org/notes/tn41/tn41-1.pdf : printed pp. 10–18
+   letters; 22–23 diacritics (direct screenshot inspected); 24–25 combining
+   letters; 30–31 combinations (Table 8 on p. 31 directly inspected);
+   38–42 variants and ligatures. The five representation columns compare
+   ustav, incunabula, poluustav, Synodal, and Skorina styles; these are
+   typographic representations, not automatically original scan crops.
+   Use page references as a first ICL arm rather than manually reconstruct
+   all tables. Confirm any proposed redistribution rights first.
+2. National Library of Russia, https://expositions.nlr.ru/rusautograph/pismo/poluustav/ ,
+   Table 2v: eight labelled supralinear-sign images, including iso, kamora,
+   great apostrof. Indexed text confirms table; direct page fetch timed out.
+   Mainly manuscript evidence; compare but do not assume same printed face.
+3. Sebastian Kempgen, Slavic Alphabet Tables, 3 vols. (2015–2016),
+   https://kodeks.de/AKSL/Schrift/Alphabets.htm ; direct catalogue links
+   https://doi.org/10.20378/irbo-45466 , https://doi.org/10.20378/irbo-45130 ,
+   https://doi.org/10.20378/irbo-47720 . The web version of vol. 3 is
+   https://kodeks.uni-bamberg.de/slavling/downloads/SK_SlavicAlphabetTables-Volume3-Web.pdf .
+   Contents identify historical printed primers with named prosodic marks,
+   e.g. Prokopovych, Râmnic 1726 (printed pp. 54–59), Moscow 1758
+   (pp. 62–69), Kurzboeck, Vienna 1770 (pp. 82ff.). Screenshot service could
+   not render that PDF; these are leads from contents, not inspected plates.
+   Albums licensed CC BY-NC-ND 3.0; link originals, avoid redistribution
+   of cropped/modified plates without permissions.
+4. Ihor Dudnyk, Graphic characteristics of Ukrainian Cyrillic printing
+   type (late XVI–first half XVII c.), 2019,
+   https://old.ksada.org/doc/diss-dudnik.pdf ; related Lviv Fraternity
+   types article https://zenodo.org/records/1313230 . Valuable for actual
+   Ukrainian historical type specimens, but not proof of Franko's metal
+   type identity; illustrations not yet systematically inspected.
+5. Exact-printer research: NIBU catalogue confirms all five Franko volumes
+   printed at the Naukove Tovarystvo im. Shevchenka press (Lviv 1896–1910),
+   https://nibu.kyiv.ua/exhibitions/470/ and volume I imprint under
+   K. Bednarsky https://omeka.nibu.kyiv.ua/s/nibu/item/7560 . Do not confuse
+   with the separate Stauropegion Institute press, whose type specimen
+   catalogues of 1849 and 1891 are described in
+   https://pvs.uad.lviv.ua/media/2-48/16.pdf . The latter are promising
+   contemporary local comparanda, not confirmed matching type. No exact
+   NTSH specimen catalogue or digitized original Stauropegion specimen
+   verified in this search. Ponomar fonts Pochaevsk and Vilnius offer
+   alternative historical reconstructions (https://sci.ponomar.net/fonts.html),
+   not exact historical impressions.
+
+Decision: stop expanding a comprehensive synthetic inventory unless
+needed for a missing case. Evaluate published table pages as a new
+reference arm against source-specific examples and exact Monomakh.
+Retain our Franko crops for type-specific ambiguity; do not normalize
+source signs to later liturgical conventions. No corpus changes or
+new recognition improvement claimed in this research step.
