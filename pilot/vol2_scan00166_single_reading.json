@@ -17,8 +17,8 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines.",
-    "raw_response": "84\nархіерей даде мѣсто тамо\nкромѣ всѣхъ едной Дѣви само.\nправедни же родители стари\nпо-край Дѣви принесоша дари,\nБгу҃ жертву и всесожженія.\nвоспріавше благословъ за тия\nѿ пророка свѣтла Захарія\nи ѿ прочіи служащіи іерей,\nпакъ ся своему дому возвратиша,\nСоздателю всѣхъ благодариша.\nсотвориша сродникомъ веліе\nвеселіе и оучрежденіе.\nЖитіе Прест҃ыя Бци҃ во велицей цр҃кви Іеруса-\nлимстѣ до совершеннаго возраста.\nПотребное еще едно знати,\nчто ту нынѣ хощу сказовати,\nакая [то] была цр҃ква сія\nѿ премудра цря҃ Соломона\nоу бжіемъ гради оустроена,\nсо храминами дивно оукрашена.\nГора бж҃ія Мора ся звала,\nбашъ на боку Сіѡна лежила,\nгди Авраамъ возношивалъ жертву\nсамому Бгу҃ исполнивъ заклятву.\nсія гора верхомъ тѣсна баше,\nровна поля мало имѣаше,\nцеркву мѣста дати не можаше.\nревностію Соломонъ копаше,\nкаменіе ташко разметаше\nи пространство на гори творяше.\nна тимъ мѣсту цр҃ква ѡснована,\nѿ премудра царя созданая,\nчудесно е была направена\nѿ различна мармора каменя;\nвся е была златомъ покривена\nи со гвозди злати покована,\nда не може на покровъ ст҃ыи\nникакая скверна птица стати.\n360\n370\n380",
+    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "84\nархіерей даде мѣсто тамо\nкромѣ всѣхъ едной Дѣви само.\nправедни же родители стари\nпо-край Дѣви принесоша дари,\nБгу҃ жертву и всесожженія.\nвоспріавше благословъ за тия\nѿ пророка свѣтла Захарія\nи ѿ прочіи служащіи іерей,\nпакъ ся своему дому возвратиша,\nСоздателю всѣхъ благодариша.\nсотвориша сродникомъ веліе\nвеселіе и оучрежденіе.\nЖитіе Прест҃ыя Бци҃ во велицей цр҃кви Іеруса-\nлимстѣ до совершеннаго возраста.\nПотребное еще едно знати,\nчто ту нынѣ хощу сказовати,\nакая [то] была цр҃ква сія\nѿ премудра цря҃ Соломона\nоу бжіемъ гради оустроена,\nсо храминами дивно оукрашена.\nГора бж҃ія Мора ся звала,\nбашъ на боку Сіѡна лежила,\nгди Авраамъ возношивалъ жертву\nсамому Бгу҃ исполнивъ заклятву.\nсія гора верхомъ тѣсна баше,\nровна пола мало имѣаше,\nцеркву мѣста дати не можаше.\nревностію Соломонъ копаше,\nкаменіе ташко разметаше\nи пространство на гори творяше.\nна тимъ мисту цр҃ква ѡснована,\nѿ премудра царя созданая,\nчудесно е была направена\nѿ различна мармора каменя;\nвся е была златомъ покривена\nи со гвозди злати покована,\nда не може на покровъ ст҃ыи\nникакая скверна птица стати.\n360\n370\n380",
     "coverage": {
       "entire_image_inspected": true,
       "nontext_areas": []
@@ -635,7 +635,7 @@
           },
           {
             "id": "verse-temple-line-06",
-            "text": "ровна поля мало имѣаше,",
+            "text": "ровна пола мало имѣаше,",
             "language_spans": [
               {
                 "text_version": "gpt62-ii-166-image-harmonized-20261127",
@@ -740,7 +740,7 @@
           },
           {
             "id": "verse-temple-line-11",
-            "text": "на тимъ мѣсту цр҃ква ѡснована,",
+            "text": "на тимъ мисту цр҃ква ѡснована,",
             "language_spans": [
               {
                 "text_version": "gpt62-ii-166-image-harmonized-20261127",
@@ -1026,6 +1026,16 @@
         "line_id": "verse-temple-line-09",
         "reading": "ташко",
         "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-temple-line-06",
+        "reading": "пола мало",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
+      },
+      {
+        "line_id": "verse-temple-line-11",
+        "reading": "мисту",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
       }
     ],
     "source_note_links": []
