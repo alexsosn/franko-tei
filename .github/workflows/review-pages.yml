@@ -35,7 +35,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: '3.14'
       - run: pip install -e . playwright fonttools brotli
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
@@ -58,7 +58,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: '3.14'
       - run: pip install -e .
       - run: |
           mkdir -p _site

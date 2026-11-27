@@ -95,6 +95,8 @@ issues and PRs. A green engineering test never means the text was verified.
 
 ## Run locally
 
+Use CPython 3.15 for the core pipeline (CI targets: 3.13–3.15). Use 3.14 for the browser test environment and a separate 3.13 environment for pinned Kraken 7.1.x experiments. See `docs/batch-transcription.md`.
+
 `python -m pip install -e .` followed by `python -m unittest discover -s tests -v`.
 Optional local PDF extraction requires `python -m pip install -e '.[pdf]'`.
 Release readiness is checked with `franko-tei audit-release`; *passing its initial metadata check alone is not release authorization* (see `docs/release.md`).
