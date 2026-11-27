@@ -25,6 +25,8 @@ SOURCES = {
                 "sha256": "51e830aa1fa46edd0746e6a9bbf25f2938fc2950a5b4011decea030b7fc64eae"},
     "II/100": {"path": "vol2/page-00100.jpg", "printed": "18", "width": 1190, "height": 2003,
                "sha256": "2095de26447b9ce0d7ae5371a73424c4416326b35668931b02e63eb051586df2"},
+    "IV/170": {"path": "vol4/page-00170.jpg", "printed": "118", "width": 1190, "height": 1818,
+               "sha256": "c9e022a287c42d775e7cb35cd8450f5d507551feb753df6b36ab4c77548a86e3"},
 }
 # Native-pixel rectangles initially estimated from full-page displays and
 # refined after direct crop inspection; not measured glyph boxes. These are candidate exemplars, not adjudicated gold.
@@ -46,6 +48,12 @@ EXAMPLES = [
      "render": "рѣша", "focus": "ѣ", "status": "candidate", "note": "Yat in a different volume"},
     {"source": "II/100", "line": "witness-e-excerpt-line-02", "bbox_xywh": [431, 829, 171, 44],
      "render": "прїйдоша", "focus": "ї / ї", "status": "ambiguous", "note": "Dots and diacritics; do not infer exact sequence"},
+    # IV/170 is a development sample, excluded from future holdouts.
+    # These are observed physical line locators, not IDs of a committed reading.
+    {"source": "IV/170", "line": "top para / line 02 (observed)", "bbox_xywh": [617, 211, 135, 40],
+     "render": "грѣшныⷨ", "focus": "ⷨ / ⷨ҇", "status": "candidate", "note": "Raised em; no covering mark visible"},
+    {"source": "IV/170", "line": "2nd para / line 05 (observed)", "bbox_xywh": [408, 605, 61, 33],
+     "render": "ноⷳ", "focus": "ⷳ / ⷳ҇", "status": "candidate", "note": "Raised shcha; no covering mark visible"},
 ]
 
 
