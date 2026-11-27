@@ -1786,7 +1786,8 @@ class ReviewSmoke(unittest.TestCase):
             page.locator('#settingsOpen').click()
             # Printed note links are explicit source anchors, not inferred
             # from identical numbers or inherited from a corrected line.
-            source=json.loads((ROOT/'pilot/vol5_scan00090_single_reading.json').read_text())
+            import json
+            source=json.loads((Path(__file__).resolve().parents[1]/'pilot/vol5_scan00090_single_reading.json').read_text())
             self.assertEqual(page.evaluate("""d=>{
                 const rows=d.reading.regions.flatMap(region=>region.lines.map(line=>({line,region})));
                 const links=resolvePrintedNotes(d.reading,rows);
