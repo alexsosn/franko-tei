@@ -494,6 +494,31 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(line.locator(".language-span")).to_have_count(0)
                 expect(page.locator(".editorial-toggle,.editorial-details")).to_have_count(0)
                 expect(line).to_have_attribute("data-font-mode","slavonic")
+                page.locator("#layersOpen").click()
+                expect(page.locator("#layersDialog")).to_be_visible()
+                page.locator("#showRegions").uncheck()
+                expect(page.locator("#candidate>h3").first).not_to_be_visible()
+                page.locator("#inspectChoose").click()
+                line.click()
+                expect(page.locator("#annotationDetails")).to_contain_text("Language ranges need reannotation after text correction.")
+                expect(page.locator("#annotationDetails .annotation-literal")).to_have_count(0)
+                page.locator("#showRegions").check()
+                page.keyboard.press("Escape")
+                expect(line).to_be_focused()
+                expect(line).to_contain_text("Сиѳъ")
+                # Inspect real mixed-language data using the same renderer; the
+                # browser's source image in this fixture is a synthetic PNG.
+                mixed=json.loads((ROOT/"pilot/vol1_scan00020_single_reading.json").read_text())
+                region=next(r for r in mixed["reading"]["regions"]
+                            if any(l["id"]=="early-apocrypha-context-line-01" for l in r["lines"]))
+                original=next(l for l in region["lines"] if l["id"]=="early-apocrypha-context-line-01")
+                result=page.evaluate("""([line,region])=>{
+                    const body=document.getElementById('annotationDetailsBody');
+                    body.replaceChildren();
+                    renderAnnotationDetails({line,region});
+                    return [...body.querySelectorAll('.annotation-literal')].map(e=>e.textContent);
+                }""",[original,region])
+                self.assertEqual(result,[original["text"][s["start"]:s["end"]] for s in original["language_spans"]])
                 row=line.locator("xpath=..")
                 row.locator(".alternate-toggle").click()
                 panel=page.locator(".alternate-reasons:visible")

@@ -1729,6 +1729,61 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#candidate mark').first.text_content(), 'ἀ')
             page.locator('#showLanguages').uncheck()
             self.assertEqual(page.locator('.languages-on .language-span:visible').count(), 0)
+            page.locator('#settingsDone').click()
+            page.locator('#layersOpen').click()
+            self.assertTrue(page.locator('#layersDialog').is_visible())
+            self.assertEqual(page.locator('#showLanguages').count(),1)
+            page.locator('#showLanguages').check()
+            page.locator('#inspectChoose').click()
+            self.assertFalse(page.locator('#layersDialog').is_visible())
+            page.locator('#candidate .line-text').first.focus()
+            page.keyboard.press('Enter')
+            self.assertTrue(page.locator('#layersDialog').is_visible())
+            self.assertIn('Ancient Greek',page.locator('#annotationDetails').inner_text())
+            self.assertIn('ἀ',page.locator('#annotationDetails').inner_text())
+            self.assertIn('Uncertain attribution',page.locator('#annotationDetails').inner_text())
+            self.assertEqual(page.locator('#candidate .line-text').first.text_content(),'alternate ἀ')
+            page.keyboard.press('Escape')
+            self.assertFalse(page.locator('#layersDialog').is_visible())
+            self.assertTrue(page.locator('#candidate .line-text').first.evaluate('el=>el===document.activeElement'))
+            for width in (320,390,1280):
+                page.set_viewport_size({'width':width,'height':844})
+                self.assertTrue(page.locator('#textPane .pane-bar').evaluate('el=>el.scrollWidth<=el.clientWidth'))
+            page.set_viewport_size({'width':1280,'height':720})
+            # Explicitly selected text opens its context without an extra line click.
+            page.locator('#candidate .line-text').first.evaluate("""el=>{
+                const r=document.createRange();r.selectNodeContents(el);
+                const selection=window.getSelection();selection.removeAllRanges();selection.addRange(r);
+            }""")
+            page.locator('#layersOpen').click()
+            self.assertTrue(page.locator('#annotationDetails').is_visible())
+            self.assertIn('Ancient Greek',page.locator('#annotationDetails').inner_text())
+            page.locator('#layersClose').click()
+            page.evaluate("window.getSelection().removeAllRanges()")
+            page.locator('#layersOpen').click()
+            page.locator('#inspectChoose').click()
+            page.keyboard.press('Escape')
+            self.assertTrue(page.locator('#inspectionHint').is_hidden())
+            self.assertTrue(page.locator('#layersOpen').evaluate('el=>el===document.activeElement'))
+            # Missing annotation, explicit null, zxx, and astral offsets remain distinct.
+            details=page.evaluate("""()=>{
+                const body=document.getElementById('annotationDetailsBody');body.replaceChildren();
+                renderAnnotationDetails({region:{kind:'body'},line:{text:'𐌰а ¹)',language_spans:[
+                    {start:0,end:1,language:null,script:'Goth',uncertain:true},
+                    {start:3,end:5,language:'zxx',script:'Zyyy',uncertain:false}]}});
+                return [...body.querySelectorAll('li')].map(e=>[e.querySelector('.annotation-literal').textContent,e.querySelector('strong').textContent]);
+            }""")
+            self.assertEqual(details,[['𐌰','Undetermined language'],['а ','Not annotated'],['¹)','Nonlinguistic']])
+            self.assertEqual(page.evaluate("""()=>{
+                const body=document.getElementById('annotationDetailsBody');body.replaceChildren();
+                renderAnnotationDetails({region:{kind:'body'},line:{text:'Ѿвѣт:',language_spans:[]},
+                    review:{status:'native_collation'}});
+                return [body.textContent.includes('need reannotation'),body.querySelectorAll('li').length];
+            }"""),[True,0])
+            page.locator('#layersOpen').click()
+            page.locator('#showLanguages').uncheck()
+            page.locator('#layersClose').click()
+            page.locator('#settingsOpen').click()
             # Typography is independent of the optional annotation colors.
             self.assertEqual(page.locator('#slavonicFont').input_value(), 'monomakh')
             self.assertEqual(page.locator('#greekFont').input_value(), 'gentium')
