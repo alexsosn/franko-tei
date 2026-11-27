@@ -13,6 +13,7 @@ from tempfile import TemporaryDirectory
 from urllib.request import urlopen
 
 from .agent_evidence import _box, _inside, _required_text, validate_language_spans
+from .abbreviation_spans import validate_abbreviation_spans
 from .agent_pagexml import export_readings
 from .ocr_candidates import _read_manifest
 from .pilot_tei import (
@@ -28,6 +29,7 @@ _SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 _CORE_PATHS = frozenset({
     "src/franko_tei/pilot_batch.py",
     "src/franko_tei/pilot_tei.py",
+    "src/franko_tei/abbreviation_spans.py",
     "src/franko_tei/agent_pagexml.py",
     "src/franko_tei/agent_evidence.py",
     "src/franko_tei/ocr_candidates.py",
@@ -198,6 +200,7 @@ def check_draft_offline(path, payload):
             if type(line.get("geometry_estimated")) is not bool:
                 raise ValueError("line geometry provenance missing")
             validate_language_spans(text, line.get("language_spans"), reader_id)
+            validate_abbreviation_spans(line, reader_id)
             by_id[line_id] = text
             raw.append(text)
             if region["kind"] == "page_number":

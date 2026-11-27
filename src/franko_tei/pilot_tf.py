@@ -12,6 +12,8 @@ import argparse
 import re
 from xml.etree import ElementTree as ET
 
+from .abbreviation_spans import read_choice, validate_pair
+
 TEI='http://www.tei-c.org/ns/1.0'
 XML='http://www.w3.org/XML/1998/namespace'
 ID=f'{{{XML}}}id'
@@ -94,25 +96,35 @@ def _get_text_lines(ab, seen, allow_source_notes=False):
         elif child.tag==tag('seg'):
             if current is None:
                 raise ValueError('segment without physical line anchor')
-            if list(child):
-                if (not allow_source_notes or len(child) != 1
-                        or child[0].tag != tag('ref')
-                        or child[0].get('type') != 'source-footnote-reference'
-                        or len(child[0]) or not child[0].text
-                        or not child[0].get('target','').startswith('#')):
+            literal=child.text or ''
+            abbreviations=[]
+            for nested in child:
+                if nested.tag==tag('choice'):
+                    printed, expansion, uncertain, source=read_choice(nested)
+                    aid=_required_id(nested,'abbreviation',seen)
+                    start=len(literal)
+                    literal+=printed
+                    abbreviations.append({'id':aid,'start':start,'end':len(literal),
+                                          'literal':printed,'expansion':expansion,
+                                          'uncertain':int(uncertain),'source':source})
+                elif (allow_source_notes and nested.tag==tag('ref')
+                      and nested.get('type')=='source-footnote-reference'
+                      and not len(nested) and nested.text
+                      and nested.get('target','').startswith('#')):
+                    _required_id(nested,'source note reference',seen)
+                    if 'note_target' in current:
+                        raise ValueError('multiple source note references per line')
+                    current['note_target']=nested.get('target')[1:]
+                    literal+=nested.text
+                else:
                     raise ValueError('nested markup in pilot language span is not supported')
-                ref=child[0]
-                _required_id(ref,'source note reference',seen)
-                if 'note_target' in current:
-                    raise ValueError('multiple source note references per line')
-                current['note_target']=ref.get('target')[1:]
+                literal+=nested.tail or ''
             sid=_required_id(child,'language span',seen)
             if child.get('type')!='language-attribution':
                 raise ValueError('unexpected language span type')
-            literal=''.join(child.itertext())
             if not literal:
                 raise ValueError('empty language span')
-            current['parts'].append({'text':literal,'seg':{
+            current['parts'].append({'text':literal,'abbreviations':abbreviations,'seg':{
                 'id':sid,'lang':child.get(LANG), 'script':child.get('subtype'),
                 'uncertain':int(child.get('cert')=='low')}})
             if child.tail:
@@ -126,6 +138,13 @@ def _get_text_lines(ab, seen, allow_source_notes=False):
     for line in lines:
         if not any(part['text'] for part in line['parts']):
             raise ValueError('empty text line cannot become TF slot container')
+        full=''.join(part['text'] for part in line['parts'])
+        offset=0
+        for part in line['parts']:
+            for abbr in part.get('abbreviations', []):
+                validate_pair(abbr['literal'],abbr['expansion'],full,
+                              offset+abbr['start'],offset+abbr['end'])
+            offset+=len(part['text'])
     return lines
 
 
@@ -185,6 +204,7 @@ def build_tf_graph(xml, *, allow_source_notes=False):
         raise ValueError('unsupported page structure')
     # First collect glyph slots, then allocate non-slot nodes in type groups.
     glyph={}; codepoint={}; span_entries=[]; line_entries=[]; region_entries=[]
+    abbreviation_entries=[]
     line_by_id={}; page_slots=[]
     for ab in children:
         region_id=_required_id(ab,'region',seen)
@@ -211,6 +231,9 @@ def build_tf_graph(xml, *, allow_source_notes=False):
                     if end < start:
                         raise ValueError('empty segment lost all character slots')
                     span_entries.append({'slots':set(range(start,end+1)),**part['seg']})
+                for abbr in part.get('abbreviations', []):
+                    abbreviation_entries.append({'slots':set(range(start+abbr['start'],
+                                                                      start+abbr['end'])),**abbr})
             end=len(glyph)
             line_slots=set(range(begin,end+1))
             if not line_slots:
@@ -259,6 +282,11 @@ def build_tf_graph(xml, *, allow_source_notes=False):
         feature('lang',n,entry['lang'])
         feature('script',n,entry['script'])
         feature('languageUncertain',n,entry['uncertain'])
+    for entry in abbreviation_entries:
+        n=non_slot('abbreviation',entry)
+        feature('expansion',n,entry['expansion'])
+        feature('expansionUncertain',n,entry['uncertain'])
+        feature('expansionSource',n,entry['source'])
     for entry in notes:
         n=non_slot('uncertainty',entry)
         feature('noteText',n,entry['text'])
@@ -292,7 +320,8 @@ def build_tf_graph(xml, *, allow_source_notes=False):
         'otype':{'valueType':'str'},
         'oslots':{'valueType':'int'},
     }
-    integer_features={'codepoint','languageUncertain','scanPage','geometryEstimated'}
+    integer_features={'codepoint','languageUncertain','scanPage','geometryEstimated',
+                      'expansionUncertain'}
     for name in node_features:
         if name not in metadata:
             metadata[name]={'valueType':'int' if name in integer_features else 'str'}

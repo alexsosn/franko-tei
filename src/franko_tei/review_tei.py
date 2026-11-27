@@ -56,7 +56,10 @@ def render_editorial_tei(raw, path, ledger, width, height, revision, *, source_l
         for child in siblings[siblings.index(lb)+1:]:
             if child.tag == tag("lb"):
                 break
-            if child.tag != tag("seg") or child.get("type") != "language-attribution" or len(child):
+            # Lexical expansions target the old text and must not survive a
+            # correction. Other nested markup remains structurally protected.
+            if (child.tag != tag("seg") or child.get("type") != "language-attribution"
+                    or any(grand.tag != tag("choice") for grand in child)):
                 raise ValueError("correction would remove structural markup")
             parent.remove(child)
         lb.tail = row["text"]
