@@ -48,7 +48,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.14'
-      - run: pip install -e . playwright fonttools brotli
+      - run: pip install -e . playwright fonttools brotli Pillow
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_editorial_projection.py
