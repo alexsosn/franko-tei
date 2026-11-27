@@ -600,3 +600,45 @@ Track confirmed absence separately from not yet located. Distinguish
 single encoded ligatures (ѿ, ꙗ) from digraphs (оу), and seek actual
 uppercase Ѿ and contrasting uk variants. Keep source evidence separate
 from Unicode repertoire. No corpus changes or accent decisions.
+
+
+## Letter-only atlas trial, III/134 and II/134 (2026-11-27)
+
+User approved L76–L84 and requested a comparison with previous recognition.
+All 84 actual letter crop images were re-rendered from the four local PDF
+review files into two contact sheets with corrected labels, then viewed by
+the reader. L44 and L61 remained explicitly doubtful; L79 visually resembles
+hard sign despite the approved soft-sign proposal, so it was not treated as
+a decisive example. The reader used whole-page JPEGs of two pages absent
+from the atlas. First 12 physical CSL lines of III/134 and first 8 of II/134
+were frozen before their historical draft text was retrieved (36e0707).
+Historical drafts at main 099404e were agent_unverified. Prior conversation
+or project exposure cannot be excluded. No fresh no-atlas model run, gold
+reference or timing data. Both pages are now development material.
+
+Comparison f0aa033: 117 literal codepoint edits relative to 1112 historical
+codepoints; after NFC and removal of seven specified accent codepoints, 75
+edits; 64 base-Cyrillic-letter edits relative to 850 historical base letters.
+The last metric drops all combining marks (including combining letters),
+spaces and punctuation, retains case and letter numerals. These are
+**disagreement rates, not error rates**; do not report CER improvement.
+
+A separate adversarial post-hoc visual review (9c8f0cf) selected 12
+specific disagreements and examined 3x original luma crops. Six individual
+base-letter features favor the new reading, three favor the old, one
+abbreviation mark favors the old, and two clipped crops were excluded.
+Examples supporting new: вълѣзе (insert ъ), ѡбраз (omega), погроужен
+(no final ъ), final и in есми, оуже (digraph), omega in Їѡаким. Examples
+supporting old: пославъ (new dropped въ), Потиѡль (new doubled и), навади
+(new changed и to ѧ), and visible supralinear mark in цр҃ю. The verdicts
+are limited to the specified focal features, not whole-word gold. These
+selected cases are not a representative sample of the 64 base edits and
+must not be extrapolated to all pages or interpreted as a causal ICL effect.
+
+Working decision: use atlas as a selective second-pass aid for base-letter
+contrasts (especially omega, uk and hard sign); retain old readings where
+source supports them. Do not automatically replace existing drafts or
+apply uncertain accent hypotheses. Next meaningful experiment: a fresh
+same-model independent-context A/B run with fixed line crops, selected
+pages held out from atlas, and human adjudication blinded to arm. No
+corpus edits, no release claim.
