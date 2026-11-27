@@ -105,3 +105,49 @@ only on independently adjudicated material; otherwise report disagreement
 counts with no accuracy claim. Count missing lines, omission of marks,
 note-marker confusion, and hallucinated expansions separately. Keep
 time measurements comparable and distinguish them from token costs.
+
+
+## Accepted-review challenge reread (exploratory, 2026-11-27)
+
+Ten-example hybrid generator and 165-example exact WOFF2 chart passed the
+existing browser and core CI on cb3e997 (runs 45960867118, 45960867104).
+This is a technical result only.
+
+Selected the six accepted correction events whose replacement contains
+historical Cyrillic in the current review ledger (I/104 three, I/127 one,
+IV/68 two). Only metadata/line locators were inspected before reading;
+the old and accepted replacement strings for these six events were
+retrieved after the first response was committed as 6133c5d.
+Earlier conversation and project exposure cannot be excluded. The same
+reader reopened the local OTF v1.2 difficult-glyph PNG and inspected the
+full source pages. The exact WOFF2 chart and complete hybrid composite
+were not delivered in this run. No original OCR was used.
+
+See monomakh-icl-review-challenge-first.json and
+monomakh-icl-review-challenge-comparison.json for the frozen text, source
+IDs, accepted reference strings and per-line distances. All distances are
+literal Unicode-codepoint Levenshtein, including spacing and marks.
+These accepted agent-adjudicated corrections are not complete independent
+human gold; the old draft was produced under uncontrolled conditions.
+
+| Sample | Reference codepoints | Old edits | Assisted reread edits |
+| --- | ---: | ---: | ---: |
+| All six lines | 342 | 16 (4.68%) | 49 (14.33%) |
+| Sensitivity: omit spaced heading I/127 | 261 | 15 (5.75%) | 12 (4.60%) |
+
+One line improved (6 to 1 edits), two tied, three worsened. I/104 line 2
+recovers acute, uk and titlo placement but substitutes ѧ for ꙗ in one
+word. I/104 line 3 recovers ѳ but loses other letters. In I/127 the
+reread drops inter-letter spacing and accents and misses the target ѧ.
+In IV/68 the chart did not resolve the omega/ot or ya-like forms.
+The five-line sensitivity is secondary and post hoc, not a basis for
+claiming overall improvement. No speed was measured.
+
+Decision: do not require chart-assisted reading on every page and do not
+replace existing drafts automatically. Use the chart selectively for
+rare-sign reinspection, with real-source crops and explicit uncertainty;
+treat preservation of printed spacing and marks as separate checks.
+Do not grow the reference indefinitely before a proper separate-context
+A/B/C/D trial. That trial remains blocked here by lack of independently
+invocable visual readers. This challenge is development-only; all three
+pages must be excluded from a future blind test for this context.
