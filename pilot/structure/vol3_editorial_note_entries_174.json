@@ -1,0 +1,70 @@
+{
+  "schema_version": "printed-note-entry-annotation-v1",
+  "id": "vol3-editorial-note-entries-174",
+  "kind": "printed_note_entries",
+  "volume": "3",
+  "status": "agent_unverified",
+  "description": "Two page-local editorial correction notes on one physical line. Exact nonoverlapping fragments and source-observed body markers; no duplicated source_note_links. Annotation only; no projection claim.",
+  "pages": [
+    {
+      "scan_page": 174,
+      "printed_page": "88",
+      "source_pilot_path": "pilot/vol3_scan00174_single_reading.json",
+      "source_record_commit": "415ff8ff99f144736c7b9800387c2c557dab97a3",
+      "source_record_blob": "e3d414d0e752c5cc8db2a7cb495f894899a6cc7e",
+      "source_reader_id": "gpt62-v3-s00174-20261127",
+      "source_image_sha256": "8e0b19cef48279703943ac107fbaf191a4a69d1cb1a5fba2da0c95f102f9b4e4",
+      "entries": [
+        {
+          "id": "v3-s00174-note-01",
+          "note_region_id": "notes",
+          "label": "¹)",
+          "fragments": [
+            {
+              "line_id": "notes-line-01",
+              "start": 0,
+              "end": 33,
+              "literal": "¹) В рукоп. через помилку: ѡного "
+            }
+          ]
+        },
+        {
+          "id": "v3-s00174-note-02",
+          "note_region_id": "notes",
+          "label": "²)",
+          "fragments": [
+            {
+              "line_id": "notes-line-01",
+              "start": 33,
+              "end": 67,
+              "literal": "²) В рукоп. через помилку: языком."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "marker": {
+            "line_id": "body-cont-line-22",
+            "start": 42,
+            "end": 44,
+            "literal": "¹)"
+          },
+          "status": "resolved",
+          "target_entry_id": "v3-s00174-note-01"
+        },
+        {
+          "marker": {
+            "line_id": "body-2-line-10",
+            "start": 10,
+            "end": 12,
+            "literal": "²)"
+          },
+          "status": "resolved",
+          "target_entry_id": "v3-s00174-note-02"
+        }
+      ],
+      "unlinked_entry_ids": []
+    }
+  ]
+}
