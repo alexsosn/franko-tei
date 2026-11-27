@@ -323,7 +323,7 @@ class NumberedApparatusTests(unittest.TestCase):
         actual, entries = [], {}
         # Paired notation is a single printed apparatus label, not two entries.
         label_pattern = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+(?:—[⁰¹²³⁴⁵⁶⁷⁸⁹]+)?\)") if paired else self.LABEL
-        marker_pattern = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+[)—]?") if paired else self.LABEL
+        marker_pattern = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+[)—⁻]?") if paired else self.LABEL
         if baseline_labels:
             label_pattern = re.compile(r"(?<!\S)[0-9]+(?:—[0-9]+)?\)")
         note_labels = [(scan, lid, m.start(), m.end(), m.group())
@@ -392,7 +392,7 @@ class NumberedApparatusTests(unittest.TestCase):
                    marker["end"], marker["literal"])
             markers.append(key)
             if paired and link["status"] != "resolved":
-                number = int(marker["literal"].rstrip(")—").translate(self.DIGITS))
+                number = int(marker["literal"].rstrip(")—⁻").translate(self.DIGITS))
                 if link["status"] == "unresolved_missing_entry":
                     self.assertTrue(occurrence_labels)
                     self.assertNotIn(number, label_counts,
@@ -410,7 +410,7 @@ class NumberedApparatusTests(unittest.TestCase):
             entry = entries[link["target_entry_id"]]
             if paired:
                 self.assertNotIn("reason", link)
-                number = int(marker["literal"].rstrip(")—").translate(self.DIGITS))
+                number = int(marker["literal"].rstrip(")—⁻").translate(self.DIGITS))
                 self.assertEqual(number, entry["number"])
                 if occurrence_labels and label_counts[number] > 1:
                     self.assertTrue(link.get("disambiguation", "").strip(),
@@ -423,9 +423,9 @@ class NumberedApparatusTests(unittest.TestCase):
                     # Explicit printed dash at the start; bare closing
                     # marker or closing parenthesis at the end.
                     if role == "range_start":
-                        self.assertTrue(marker["literal"].endswith("—"))
+                        self.assertTrue(marker["literal"].endswith(("—", "⁻")))
                     else:
-                        self.assertFalse(marker["literal"].endswith("—"))
+                        self.assertFalse(marker["literal"].endswith(("—", "⁻")))
                 elif "—" in entry["label"]:
                     self.assertIn(role, ("range_start", "range_end", "range_endpoint_unknown")
                                   if baseline_labels else ("range_start", "range_end"))
@@ -434,10 +434,10 @@ class NumberedApparatusTests(unittest.TestCase):
                     # Some printed starts have a bare number or a closing
                     # parenthesis; the role is separate from the literal.
                     if role == "range_end" or not repeated:
-                        self.assertTrue(marker["literal"].endswith("—" if role == "range_start" else ")"))
+                        self.assertTrue(marker["literal"].endswith(("—", "⁻") if role == "range_start" else ")"))
                 else:
                     self.assertIn(role, ("single", "repeated_reference") if repeated else ("single",))
-                    self.assertFalse(marker["literal"].endswith("—"))
+                    self.assertFalse(marker["literal"].endswith(("—", "⁻")))
                 roles.setdefault(entry["id"], []).append(role)
             else:
                 self.assertEqual(entry["label"], marker["literal"])

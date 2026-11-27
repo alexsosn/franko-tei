@@ -229,6 +229,11 @@ a complete corpus-wide audit.
   Retain the link as range_endpoint_unknown and list the entry in
   incomplete_range_entry_ids (XIII.Б 41 and 56). Never infer a missing
   endpoint or choose a direction merely from the closing parenthesis.
+  A raised opening dash may be stored as U+207B (superscript minus), as in
+  [XIV.М](../pilot/structure/vol1_section_xiv_m_apparatus.json). Include that
+  character in the exact marker span (²⁻), just as for an em dash; do not
+  normalize it to ²— or truncate it to ². Paired article labels and body
+  marker literals may use different dash encodings.
   Do not normalize witness sigla or infer historical readings by number alone.
 - Separate Franko's explanatory note, bibliographic citation, variant
   note and modern transcription uncertainty. Preserve literal manuscript
