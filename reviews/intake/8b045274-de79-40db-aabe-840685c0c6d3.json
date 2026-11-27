@@ -1,0 +1,68 @@
+{
+  "schema_version": "franko-review-intake-v1",
+  "status": "pending_adjudication",
+  "submitter": {
+    "github_user_id": 3265391,
+    "login_at_intake": "alexsosn",
+    "issue_id": 6637079503,
+    "issue_number": 412,
+    "issue_url": "https://github.com/alexsosn/franko-tei/issues/412"
+  },
+  "bundle_sha256": "4f3e8f01176601176b0d484e40a5f2a0e03ea165d07d652ff2c7cacb3ba4d997",
+  "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"8b045274-de79-40db-aabe-840685c0c6d3\",\"source_commit\":\"04226c881da3709c818e96edc01f6bb9d611d01e\",\"events\":[{\"event_id\":\"33e4f881-52fb-483a-8229-9d260ff7afc9\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00182_single_reading.json\",\"candidate_blob\":\"2f6175ac753d060741c7e2f74b600c66fcd919ae\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"f5334b06b65941e52d3ccfa204fcde4f45ca32df05b362f2c6974cc84370d8d8\",\"reader_id\":\"gpt62-i182-first-image-20261125\",\"region_id\":\"witness-d-end\",\"line_id\":\"witness-d-end-l001\",\"original\":\"прузы, и нагы хождаху и ядяху мяса верблюжа к'¹²— вку ва-\"},\"decision\":\"correct\",\"replacement\":\"прузы, и нагы хождаху и ядяху мяса верблюжа к'¹²— буку ва-\",\"note\":\"Native p107 reads к' ... буку ва- / рена, matching glossary Букъ (gloss meaning uncertain). Preserve printed note range.\"},{\"event_id\":\"5d17688f-3e3a-41c4-b5d0-06e63209ba73\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00270_single_reading.json\",\"candidate_blob\":\"171099c509adba8af78987aa50101c031d1c28f4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"bf71dad9a6db7d1b04c7655069c0c7905c63ea347886fcdc5bbb789859e47d94\",\"reader_id\":\"gpt62-i270-first-image-20261125\",\"region_id\":\"issachar-opening\",\"line_id\":\"issachar-opening-l015\",\"original\":\"створю, ꙗко умножи ся прелесть варна⁵) на земли, то ти не бы\"},\"decision\":\"correct\",\"replacement\":\"створю, ꙗко умножи ся прелесть варил⁵) на земли, то ти не бы\",\"note\":\"Native p195 reads прелесть варил before marker 5, matching literal quotation on glossary I459; p197 apparatus варила is separate. Marker attachment requires structural review.\"},{\"event_id\":\"1f4881dc-b064-4ca6-9e45-c33cf3486f09\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00215_single_reading.json\",\"candidate_blob\":\"4e2296f1aed5881256ee723d0cc6fe649a4019cf\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"59edacb5580b45f958cfca2ead6a13ec4dc86f111c1c9a2ca3ea4929b1078497\",\"reader_id\":\"gpt62-i215-first-image-20261125\",\"region_id\":\"benjamin-accusation\",\"line_id\":\"benjamin-accusation-l004\",\"original\":\"ѿпоустит их. єгдаже оудалишася ради ѿ града, постиже я ко-\"},\"decision\":\"correct\",\"replacement\":\"ѿпоустит их. єгдаже оудалишася ради ѿ града, постиже я во-\",\"note\":\"Native p140 reads постиже я во- / логом, matching glossary Вологомъ. Preserve physical line break.\"}]}",
+  "bundle": {
+    "schema_version": "franko-review-bundle-v1",
+    "bundle_id": "8b045274-de79-40db-aabe-840685c0c6d3",
+    "source_commit": "04226c881da3709c818e96edc01f6bb9d611d01e",
+    "events": [
+      {
+        "event_id": "33e4f881-52fb-483a-8229-9d260ff7afc9",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00182_single_reading.json",
+          "candidate_blob": "2f6175ac753d060741c7e2f74b600c66fcd919ae",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "f5334b06b65941e52d3ccfa204fcde4f45ca32df05b362f2c6974cc84370d8d8",
+          "reader_id": "gpt62-i182-first-image-20261125",
+          "region_id": "witness-d-end",
+          "line_id": "witness-d-end-l001",
+          "original": "прузы, и нагы хождаху и ядяху мяса верблюжа к'¹²— вку ва-"
+        },
+        "decision": "correct",
+        "replacement": "прузы, и нагы хождаху и ядяху мяса верблюжа к'¹²— буку ва-",
+        "note": "Native p107 reads к' ... буку ва- / рена, matching glossary Букъ (gloss meaning uncertain). Preserve printed note range."
+      },
+      {
+        "event_id": "5d17688f-3e3a-41c4-b5d0-06e63209ba73",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00270_single_reading.json",
+          "candidate_blob": "171099c509adba8af78987aa50101c031d1c28f4",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "bf71dad9a6db7d1b04c7655069c0c7905c63ea347886fcdc5bbb789859e47d94",
+          "reader_id": "gpt62-i270-first-image-20261125",
+          "region_id": "issachar-opening",
+          "line_id": "issachar-opening-l015",
+          "original": "створю, ꙗко умножи ся прелесть варна⁵) на земли, то ти не бы"
+        },
+        "decision": "correct",
+        "replacement": "створю, ꙗко умножи ся прелесть варил⁵) на земли, то ти не бы",
+        "note": "Native p195 reads прелесть варил before marker 5, matching literal quotation on glossary I459; p197 apparatus варила is separate. Marker attachment requires structural review."
+      },
+      {
+        "event_id": "1f4881dc-b064-4ca6-9e45-c33cf3486f09",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00215_single_reading.json",
+          "candidate_blob": "4e2296f1aed5881256ee723d0cc6fe649a4019cf",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "59edacb5580b45f958cfca2ead6a13ec4dc86f111c1c9a2ca3ea4929b1078497",
+          "reader_id": "gpt62-i215-first-image-20261125",
+          "region_id": "benjamin-accusation",
+          "line_id": "benjamin-accusation-l004",
+          "original": "ѿпоустит их. єгдаже оудалишася ради ѿ града, постиже я ко-"
+        },
+        "decision": "correct",
+        "replacement": "ѿпоустит их. єгдаже оудалишася ради ѿ града, постиже я во-",
+        "note": "Native p140 reads постиже я во- / логом, matching glossary Вологомъ. Preserve physical line break."
+      }
+    ]
+  }
+}
