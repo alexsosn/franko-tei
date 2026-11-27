@@ -19,6 +19,8 @@ FONT_BLOB = "4d7c0809ebc700036286d992c30d2b4ec4a0d59c"
 FONT_PATH = ROOT / "web/fonts/Monomakh-Regular.woff2"
 
 SOURCES = {
+    "I/127": {"path": "vol1/page-00127.jpg", "printed": "52", "width": 1190, "height": 1841,
+              "sha256": "1de02e6e18cc61daa28f360deae04fd47563ffbcb6d15d70fa5a77394cfd4195"},
     "V/130": {"path": "vol5/page-00130.jpg", "printed": "118", "width": 1190, "height": 1987,
               "sha256": "b0848890040273b81b01ea07e2fe2467bef8a1f1113c17b9fe33efdc5218cda9"},
     "III/130": {"path": "vol3/page-00130.jpg", "printed": "44", "width": 1190, "height": 1791,
@@ -54,6 +56,22 @@ EXAMPLES = [
      "render": "грѣшныⷨ", "focus": "ⷨ / ⷨ҇", "status": "candidate", "note": "Raised em; no covering mark visible"},
     {"source": "IV/170", "line": "2nd para / line 05 (observed)", "bbox_xywh": [408, 605, 61, 33],
      "render": "ноⷳ", "focus": "ⷳ / ⷳ҇", "status": "candidate", "note": "Raised shcha; no covering mark visible"},
+    # Source-specific accent contrasts; observed physical line locators only.
+    {"source": "I/127", "line":"text line 02 (observed)", "bbox_xywh":[559,210,112,38], "render":"Є҆но́ше", "focus":"Є҆ / о́", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Arch above E; separate acute over o (U+0301)."},
+    {"source": "I/127", "line":"text line 02 (observed)", "bbox_xywh":[925,210,65,38], "render":"а҆р", "focus":"а҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Simple arch above initial a; word fragment."},
+    {"source": "I/127", "line":"text line 01 (observed)", "bbox_xywh":[692,178,64,33], "render":"а́да", "focus":"а́", "status":"candidate", "category":"accent", "mark_options":["U+0301"], "note":"Acute over a; fragment of чада."},
+    {"source": "I/127", "line":"text line 07 (observed)", "bbox_xywh":[305,407,112,32], "render":"ны́хъ", "focus":"ы́", "status":"candidate", "category":"accent", "mark_options":["U+0301"], "note":"Internal acute; word fragment."},
+    {"source": "I/127", "line":"text line 13 (observed)", "bbox_xywh":[150,624,90,35], "render":"єсть", "focus":"є҆́ / є̑ / є҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave-like mark; base only."},
+    {"source": "III/130", "line":"text line 01 end (observed)", "bbox_xywh":[1050,153,67,38], "render":"ѡна", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave-like mark over omega; base only."},
+    {"source": "III/130", "line":"text line 02 (observed)", "bbox_xywh":[810,190,75,37], "render":"ѡни", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Same wave shape on another occurrence."},
+    {"source": "III/130", "line":"text line 03 (observed)", "bbox_xywh":[575,224,61,36], "render":"о҆на", "focus":"о҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Round o with simple arch; contrast omega."},
+    {"source": "III/130", "line":"text line 04 (observed)", "bbox_xywh":[153,257,68,35], "render":"ѡни", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Third occurrence of wave-like omega mark."},
+    {"source": "III/130", "line":"text line 12 (observed)", "bbox_xywh":[743,530,55,37], "render":"а҆зъ", "focus":"а҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Arch above a; neighboring ink at top."},
+    {"source": "II/100", "line":"heading E excerpt (observed)", "bbox_xywh":[209,776,35,43], "render":"О҆", "focus":"О҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Simple arch above capital round O."},
+    {"source": "II/100", "line":"E text line 03 (observed)", "bbox_xywh":[133,859,44,39], "render":"А", "focus":"А҆́ / А̑ / А҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Ornate initial; base and mark need review."},
+    {"source": "II/100", "line":"E text line 03 (observed)", "bbox_xywh":[530,856,69,43], "render":"ꙗко", "focus":"ꙗ҆́ / ꙗ̑ / ꙗ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave above iotated-a-like base; provisional."},
+    {"source": "II/100", "line":"E text line 06 (observed)", "bbox_xywh":[782,984,78,40], "render":"аще", "focus":"а҆́ / а̑ / а҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave above initial a; base only."},
+    {"source": "II/100", "line":"heading Zh excerpt (observed)", "bbox_xywh":[416,1557,36,38], "render":"ѡ҆", "focus":"ѡ҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Simple arch above omega; direct contrast."},
 ]
 
 
@@ -96,7 +114,7 @@ def render_sheet(assets, output):
     heading = ImageFont.load_default(size=30)
     label = ImageFont.load_default(size=19)
     small = ImageFont.load_default(size=15)
-    width, header, row_height = 1520, 130, 142
+    width, header, row_height = 1520, 130, 190
     sheet = Image.new("RGB", (width, header + row_height * len(EXAMPLES) + 32), "white")
     d = ImageDraw.Draw(sheet)
     d.text((24, 15), "Franko printed type + Monomakh | candidate visual ICL", font=heading, fill="black")
@@ -127,8 +145,13 @@ def render_sheet(assets, output):
         d.text((715, y + 89), row["focus"], font=glyph.font_variant(size=24), fill="black")
         for j, line in enumerate(textwrap.wrap(codes(row["render"]), 40)):
             d.text((1090, y + 12 + j * 20), line, font=small, fill="black")
+        note_y = y + 65
+        if row.get("mark_options"):
+            for j, line in enumerate(textwrap.wrap("Mark: " + " / ".join(row["mark_options"]), 43)):
+                d.text((1090, note_y + j * 20), line, font=small, fill="black")
+            note_y += 20 * len(textwrap.wrap("Mark: " + " / ".join(row["mark_options"]), 43))
         for j, line in enumerate(textwrap.wrap(row["note"], 42)):
-            d.text((1090, y + 65 + j * 20), line, font=small, fill="black")
+            d.text((1090, note_y + j * 20), line, font=small, fill="black")
     sheet.save(output, format="PNG")
     return sheet.size
 
