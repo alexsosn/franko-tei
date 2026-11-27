@@ -271,3 +271,27 @@ with its printed mark, unambiguous titlo, word-internal circumflex, and
 same words with the simple arch. No new corpus replacements or changes
 in frozen challenge statistics. No direct source found that explicitly
 names this particular Franko typeface's wave glyph.
+
+
+## Kamora control on Franko III/130, printed p. 44
+
+Direct pixel inspection of the pinned JPEG (native bbox [152,500,49,39],
+line thecla-passion-line-11) shows a short arch over the o of the
+conjunction но. The phrase is но съвѣрши дѣвство мое. A breathing is
+not expected over a noninitial vowel in this context. Kusmaul's 2017
+article on the evolution of kamora explicitly identifies historical
+kamora on the conjunction но (as well as то, та, те, се), so this is a
+strong source-grounded candidate for но + U+0311 on its o, not merely
+an inference from Synodal genitive-plural rules. Reference:
+https://www.academia.edu/57985094/Evolution_of_the_Functions_of_the_Kamora_Sign_in_Liturgical_Books_from_the_Late_16th_to_the_First_Half_of_the_17th_Century
+
+Same-page contrast: [575,224,61,36] о҆на has a visually similar arch on
+initial round o, whereas [379,147,75,44] ѡни has a clearly different
+wave-shaped mark. This supports separating the wave class from the
+simple arch class; the same printed arch may serve different functions
+depending on position. Two inspected crops of бы with raised signs
+([748,502,55,40] and [264,846,53,40]) show a more complex sign including
+an apparent raised letter/abbreviation mark, and are not accepted as
+kamora controls. This does not resolve all wave marks or prove that
+the typographer used one invariant glyph for every kamora. Added only
+the candidate но̑ to the local hybrid reference (26 rows), no corpus edits.
