@@ -465,3 +465,36 @@ were frozen before draft lookup, but this pixel follow-up used the same
 context and knows the draft. No independent CER or causal improvement
 claim. Reusing the published visual reference and source-local contrast
 is preferred to expanding the synthetic inventory.
+
+
+## Cross-volume check: Enoch, I/128 (printed p. 53)
+
+Inspected the pinned page and nine native-luma crop previews at 4x.
+Four retained controls extend the reference to 34 rows. Initial omega
+in ѡстꙋди́тсѧ ([590,192,145,35]) carries an arch and the internal и
+has a separate acute. The word edges are close to the crop; the full
+word spelling is a candidate. The same line has a wave above а in
+аще, but that crop clips the ending and is not added. The repeated
+wave on omega in ѡчи (enoch-address-l010 and l011) and ѡдра
+(enoch-methuselah-l002, spaced heading) is clear. The similar wave
+on ѡдр- in the next paragraph also occurs, but the crop clips the
+ending. Do not equate every wave with iso solely by its shape.
+
+A useful countercheck is the later liturgical form ѻ҆дра̀ in the
+Horologion morning prayers (https://wikisource.org/wiki/Часосло́въ/Воста́въ_ѿ_сна̀),
+contrasting with the dictionary nominative Ѻ҆́дръ
+(https://azbyka.org/otechnik/Spravochniki/polnyj-pravoslavnyj-tserkovnoslavjanskij-slovar/16).
+The wave in Franko's у ѡдра cannot be assigned an initial stress on
+modern liturgical precedent alone. Historical accentuation may differ;
+retain all three mark options until source-specific evidence resolves
+them. This limits the previous wave=iso working hypothesis, rather than
+invalidating the observed graphic distinction. The repeated ѡчи forms
+support the consistency of the wave class within this page.
+
+All four new crop boxes checked against native dimensions and existing
+line locators; the latter identify the expected words in the current
+agent_unverified draft. No transcription change or independent accuracy
+claim. Final combined image and CI still need checking. Avoid further
+reference growth solely by duplicating the same sign; prioritize a
+true negative control (great apostrof or a noninitial wave on a vowel)
+and actual use on reading batches.
