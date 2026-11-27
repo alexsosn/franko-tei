@@ -90,6 +90,8 @@ class AbbreviationSpansTests(unittest.TestCase):
             ("overlap", lambda p,s: line(p,1)["abbreviation_spans"].append(deepcopy(s))),
             ("changed visible letter", lambda p,s: s.update(expansion="непо")),
             ("no added letters", lambda p,s: s.update(expansion="нбо")),
+            ("mixed alphabet", lambda p,s: s.update(expansion="нeбо")),
+            ("leading mark", lambda p,s: s.update(expansion="҃небо")),
             ("source", lambda p,s: s.update(source="not a URL")),
             ("boolean offset", lambda p,s: s.update(start=True)),
         ):
@@ -143,11 +145,11 @@ class AbbreviationSpansTests(unittest.TestCase):
         l=line(p,1)
         orig=l["language_spans"][0]
         l["language_spans"]=[dict(orig,end=a["start"]+1),
-                              dict(orig,start=a["start"]+1)]
-        with self.assertRaises(ValueError):
+                              dict(orig,start=a["start"]+1,language="cu")]
+        with self.assertRaisesRegex(ValueError,"one language span"):
             check_draft_offline(PATH,p)
         from franko_tei.abbreviation_spans import validate_pair
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError,"Cyrillic numeral"):
             validate_pair("ві҃","відати","ві҃. птицъ",0,3)
 
     def test_abbreviation_and_disjoint_footnote_share_language_span(self):
@@ -197,6 +199,13 @@ class AbbreviationSpansTests(unittest.TestCase):
         self.assertEqual(["".join(f["glyph"][i] for i in
                          sorted(graph.edge_features["oslots"][n])) for n in nodes],
                          ["нб҃о","Бг҃ъ"]+["ст҃ъ"]*3)
+        # A caller constructing a Graph directly must not smuggle a dangling
+        # or non-expanding annotation into a combined corpus.
+        damaged=deepcopy(x)
+        node=next(n for n,k in damaged.node_features["otype"].items() if k=="abbreviation")
+        del damaged.node_features["expansion"][node]
+        with self.assertRaises(ValueError):
+            merge_pilot_graphs([("1",89,damaged),("1",90,y)])
 
 
 if __name__ == "__main__":
