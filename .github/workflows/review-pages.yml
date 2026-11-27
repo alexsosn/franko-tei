@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'web/**'
+      - 'docs/monomakh-icl.html'
+      - 'docs/render_monomakh_hybrid.py'
       - 'pilot/**'
       - 'reviews/**'
       - 'src/franko_tei/review_adjudication.py'
@@ -14,6 +16,8 @@ on:
     branches: [main]
     paths:
       - 'web/**'
+      - 'docs/monomakh-icl.html'
+      - 'docs/render_monomakh_hybrid.py'
       - 'pilot/**'
       - 'reviews/**'
       - 'src/franko_tei/review_adjudication.py'
@@ -46,8 +50,15 @@ jobs:
       - name: Smoke-render hybrid ICL reference from pinned original scans
         env:
           GH_TOKEN: ${{ github.token }}
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
           set -euo pipefail
+          # Avoid downloading reference pages for unrelated transcription PRs.
+          if [[ "$BASE" =~ ^[0-9a-f]{40}$ ]] && git cat-file -e "$BASE^{commit}" 2>/dev/null \
+            && git diff --quiet "$BASE" HEAD -- docs/render_monomakh_hybrid.py docs/monomakh-icl.html web/test_fonts.py web/fonts/Monomakh-Regular.woff2 .github/workflows/review-pages.yml; then
+            echo "Hybrid reference unchanged."
+            exit 0
+          fi
           assets="$(mktemp -d)"
           trap 'rm -rf "$assets"' EXIT
           mkdir -p "$assets/vol2" "$assets/vol3" "$assets/vol5"
