@@ -1282,7 +1282,46 @@ GLOSSARY_MENTION_REVIEWS = {
 }
 
 
-def review_glossary_mentions(files, targets, entry):
+def selected_ponavica_evidence(path, draft, blob, evidence, page):
+    """Both exact I/316 readings must be present in the validated projection.
+
+    Keep the frozen text in each evidence row for the existing source anchor.
+    The separate selected_text and provenance explain the attested reading.
+    This is not a general fuzzy match or an automatic change of citation.
+    """
+    if not page or any(page.get(k) != v for k, v in (
+            ("path", "pilot/" + path.name), ("blob", blob),
+            ("volume", "1"), ("scan", 316), ("suffix", "single_reading"))):
+        return None
+    forms = {"seventh-stone-l018": ("понявицею", "понавицею"),
+             "seventh-stone-l019": ("понявица", "понавица")}
+    if [r["line_id"] for r in evidence] != list(forms):
+        return None
+    rows = [r for r in page["lines"] if r.get("line_id") in forms]
+    if len(rows) != len(forms) or len({r["line_id"] for r in rows}) != len(forms):
+        return None
+    by_id = {r["line_id"]: r for r in rows}
+    selected = []
+    for original in evidence:
+        line_id = original["line_id"]
+        old, new = forms[line_id]
+        row = by_id[line_id]
+        url = row.get("evidence_url", "")
+        if (row.get("status") != "native_collation"
+                or row.get("region_id") != "seventh-stone"
+                or original["region_kind"] != "body"
+                or row.get("original") != original["text"]
+                or original["text"].count(old) != 1
+                or row.get("text") != original["text"].replace(old, new, 1)
+                or row.get("collation_image_sha256") != draft["source_image_sha256"]
+                or not isinstance(url, str)
+                or not re.fullmatch(r"https://github\.com/alexsosn/franko-tei/blob/[a-f0-9]{40}/pilot/reviews/vol1_scan00316_native_collation_20261127\.json", url)):
+            return None
+        selected.append(dict(original, selected_text=row["text"], evidence_url=url))
+    return selected
+
+
+def review_glossary_mentions(files, targets, entry, editorial=None):
     if entry["source"]["blob"] != SOURCE_BLOBS.get(entry["source"]["scan"]):
         return
     for i, citation in enumerate(entry["refs"]):
@@ -1333,7 +1372,14 @@ def review_glossary_mentions(files, targets, entry):
             if citation["literal"] == "199" and citation.get("form") == "Понава":
                 status, note = "attested", "Printed p199 has понаву; corrected glossary Понава, inflected form."
             elif citation["literal"] == "241" and citation.get("form") == "понавица":
-                note = "Corrected glossary понавица; current target draft has понявица. Native p241 requires a separate target correction."
+                selected = selected_ponavica_evidence(
+                    path, draft, blob, evidence, (editorial or {}).get("pilot/" + path.name))
+                if selected:
+                    evidence = selected
+                    status, note = ("attested", "Selected native collation on p241: "
+                                    "понавицею; понавица. Frozen source anchors retained.")
+                else:
+                    note = "Corrected glossary понавица; selected p241 collation unavailable or stale."
         target["mention_review"] = dict(status=status, path="pilot/" + path.name,
                                         blob=blob, lines=evidence, note=note)
         if status == "attested" and evidence:
@@ -1521,7 +1567,7 @@ def build_printed_indexes(pilot, ref, supplements=None, *, editorial=None):
             reconcile_darius_reference(files, targets, entry)
             reconcile_motif_reference(files, targets, entry)
             if section["kind"] == "glossary":
-                review_glossary_mentions(files, targets, entry)
+                review_glossary_mentions(files, targets, entry, editorial)
             entry["crossrefs"] = [dict(id=ident, label=by_id[ident]["label"])
                                   for ident in CROSSREFS.get(entry["id"], []) if ident in by_id]
             for citation in entry["refs"]:
