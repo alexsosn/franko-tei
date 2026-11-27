@@ -39,11 +39,11 @@ def project_search_entry(draft, suffix, candidate_blob, changes=()):
                 if status == "accepted_confirmation":
                     if row["text"] != text or row["language_spans"] != spans:
                         raise ValueError("confirmation changed source text or annotations")
-                elif status in ("accepted_correction", "supplementary_correction"):
+                elif status in ("accepted_correction", "supplementary_correction", "native_collation"):
                     if row["text"] == text:
                         raise ValueError("correction did not change text")
                     text, spans = row["text"], row["language_spans"]
-                    if status == "accepted_correction" and spans:
+                    if status in ("accepted_correction", "native_collation") and spans:
                         raise ValueError("accepted correction reused language spans")
                     language_status = ("needs_reannotation" if not spans
                                        else "supplementary_annotation")
