@@ -693,3 +693,35 @@ for future disjoint-page experiments (only approved focal features and
 explicit readings; uncertain R06 marks are not labels). Do not use the
 remaining unreviewed lines, unaccepted issues, or model guesses as gold.
 No corpus text changes and no new accuracy claim.
+
+
+## Repair of approved-atlas delivery (2026-11-27)
+
+The previous full-page reading III/195 could not obtain the large combined
+visual payload (connector RemoteProtocolError). A separate repository defect
+was found: the viewer workflow on this branch contained an interrupted
+`while IFS=` shell line and duplicate package/deploy job definitions. Only
+the generic CI had run on that revision; its green result was not an atlas
+render test. The repaired workflow is reconstructed from current main with
+a single smoke-render step and otherwise unchanged deployment jobs.
+Use callback-based replacements when patching text containing shell
+`$'...'` syntax; JavaScript replacement strings interpret dollar-apostrophe
+as the original suffix.
+
+Local reproducible visual input (do not publish source derivatives):
+```sh
+python docs/render_approved_icl.py --assets /path/to/pinned/images \
+  --output /tmp/approved.html --sheet-dir /tmp/approved-sheets
+python docs/check_approved_icl_sheets.py /tmp/approved-sheets
+```
+The PNG index records the ordered IDs and explicitly omitted preview IDs.
+Base glyphs are grouped into at most eight per 1100px-wide sheet; accepted
+issue context lines use full-width cells, at most four per sheet. All
+source bytes and exact Monomakh font remain hash checked. Pass
+`--previews /path/to/original/review/pngs` only if the original hashed
+preview files are available; without them the 42 preview-only examples
+are excluded, leaving 47 native-source examples. No invented coordinate
+transform and no automatic promotion of ambiguous readings. The existing
+CI smoke now exercises this PNG mode on actual pinned source files and
+validates complete ordered coverage, bounds and PNG integrity. CI assets
+are temporary and are not uploaded or published.
