@@ -137,6 +137,11 @@ assert len(examples) >= 22 and len({row["source"] for row in examples}) >= 5
 accent_rows = [row for row in examples if row.get("category") == "accent"]
 assert any(row["render"] == "но̑" and row["source"] == "III/130" and row["mark_options"] == ["U+0311"] and row["status"] == "candidate" for row in accent_rows)
 assert len(accent_rows) >= 12 and len({row["source"] for row in accent_rows}) >= 3
+pair = [row for row in accent_rows if row["source"] == "III/131" and row.get("contrast") == "fire-initial-vowel"]
+assert len(pair) == 2
+assert {row["line"] for row in pair} == {"text-line-09", "text-line-12"}
+assert any(row["render"] == "ѡгнь" and row["status"] == "ambiguous" and row["mark_options"][0] == "U+0486 U+0301" for row in pair)
+assert any(row["render"] == "ѡ҆гн" and row["mark_options"] == ["U+0486"] and row["status"] == "candidate" for row in pair)
 assert {"U+0301", "U+0486", "U+0311", "U+0486 U+0301"} <= {code for row in accent_rows for code in row["mark_options"]}
 assert all(row["status"] == "ambiguous" for row in accent_rows if len(row["mark_options"]) > 1)
 assert len({(row["source"], tuple(row["bbox_xywh"])) for row in examples}) == len(examples)
