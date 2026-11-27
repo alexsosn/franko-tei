@@ -1,0 +1,971 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 156,
+  "printed_page_observed": "74",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00156.jpg",
+  "source_image_sha256": "bc82d0b27b27298fd4770a7218ddaa9ce083ae88628f5049a115a195b54ea9a8",
+  "reading": {
+    "reader_id": "gpt62-ii-156-image-harmonized-20261127",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00151-00160-20261127",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading. Historical accents, titla, breathings and glyph shapes are incomplete/provisional; estimated line rectangles not measured baselines. orv provisional historical Ruthenian on sustained vernacular context (Kerestur witness not precise recension). Verse blocks follow visible blank lines; printed marginal verse numbers kept in separate other regions after main reading column, before notes. Cross-page semantic verse structure not yet projected.",
+    "raw_response": "74\nст҃ои мл҃сти, бо то єст нша великая по Бозѣ заступница. Коли\nбы мт҃ка Хва҃ не просила за нас Ха҃ сн҃а своего, то бысмо давно\nпогинули. Але то еще за єй ст҃ыми мл҃твами свѣтъ сей видимый\nстоит. Умѣймо ж єй ст҃ую мл҃ть уважати и ст҃а єй ст҃ый\nст҃ити и празновати! Помолѣмъ ся Прест҃. Бци҃ мт҃ры Хвои҃\nсего ст҃а єй великости уведенія ст҃ого, тай она уведет нас до\nцр҃ства нбс҃наго, где она теперь сама жыветъ и цр҃ствуетъ со\nХом҃ъ сн҃омъ своимъ и со агглы ст҃ыми. Дай то Хе҃ црю҃ и нам\nгрѣшным такого пожаданного дару, абысмо усѣ доступили\nнбс҃ного раю жыти! Бж҃е всемогущій, Тройце ст҃ая, просиме тя\nгрѣшный, прийми нас до цр҃ства нбс҃ного во вѣки. Аминъ.\nОтся проповідь зложена на основі VII і початку VIII розд.\nЯковового Первоевангелия з деякими додатками мабуть із фантазії\nсамого автора.\nЖ. Керестурський рукопис XVIII в.\n(Сказаніє ѡ зачатіи и рождестви прест҃ыя Бцы҃\nи присно Дѣвы Марїи).\nБогоотцы Іоакимъ и Ана\nѿ корене Давидова града\nвъ Назаретѣ градѣ пребиваху,\nбезпорочно животъ провождаху.\nизобилно блага су имали,\nст҃остію себе украшали.\nна всякъ празникъ ѿ своего имѣнія,\nсамому Бгу҃ изъ почитанія\nпо два части навикли взымати,\nпо закону цр҃кву даровати:\nчастъ єдину на жертву принести,\nдругую же нищимъ раздѣлити.\nМноги лѣта тако преживиша\nи безчадни въ супружестви быша.\nѡ бе[з]чадїи своемъ ситующимъ\nи на долго время скорбляющимъ,\nпотщав ся Іоакимъ стар[и]й\nво Ієрусалимъ дати Бгу҃ дарый\n10",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          122,
+          118,
+          44,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "74",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              122,
+              118,
+              44,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "exhortation-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          121,
+          187,
+          1039,
+          442
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "exhortation-cont-line-01",
+            "text": "ст҃ои мл҃сти, бо то єст нша великая по Бозѣ заступница. Коли",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              187,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-02",
+            "text": "бы мт҃ка Хва҃ не просила за нас Ха҃ сн҃а своего, то бысмо давно",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 63,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              227,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-03",
+            "text": "погинули. Але то еще за єй ст҃ыми мл҃твами свѣтъ сей видимый",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              267,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-04",
+            "text": "стоит. Умѣймо ж єй ст҃ую мл҃ть уважати и ст҃а єй ст҃ый",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 54,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              307,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-05",
+            "text": "ст҃ити и празновати! Помолѣмъ ся Прест҃. Бци҃ мт҃ры Хвои҃",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              347,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-06",
+            "text": "сего ст҃а єй великости уведенія ст҃ого, тай она уведет нас до",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              387,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-07",
+            "text": "цр҃ства нбс҃наго, где она теперь сама жыветъ и цр҃ствуетъ со",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              428,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-08",
+            "text": "Хом҃ъ сн҃омъ своимъ и со агглы ст҃ыми. Дай то Хе҃ црю҃ и нам",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              468,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-09",
+            "text": "грѣшным такого пожаданного дару, абысмо усѣ доступили",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 53,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              508,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-10",
+            "text": "нбс҃ного раю жыти! Бж҃е всемогущій, Тройце ст҃ая, просиме тя",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              548,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "exhortation-cont-line-11",
+            "text": "грѣшный, прийми нас до цр҃ства нбс҃ного во вѣки. Аминъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              121,
+              588,
+              1039,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          128,
+          665,
+          1037,
+          115
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "Отся проповідь зложена на основі VII і початку VIII розд.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 33,
+                "end": 36,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 36,
+                "end": 47,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 47,
+                "end": 51,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 51,
+                "end": 57,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              128,
+              665,
+              1037,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "Яковового Первоевангелия з деякими додатками мабуть із фантазії",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              128,
+              703,
+              1037,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "самого автора.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              128,
+              741,
+              1037,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          346,
+          887,
+          605,
+          41
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-line-01",
+            "text": "Ж. Керестурський рукопис XVIII в.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 25,
+                "end": 30,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 30,
+                "end": 33,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              346,
+              887,
+              605,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "work-title",
+        "kind": "heading",
+        "bbox_xywh": [
+          135,
+          968,
+          1034,
+          78
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "work-title-line-01",
+            "text": "(Сказаніє ѡ зачатіи и рождестви прест҃ыя Бцы҃",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 45,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              968,
+              1034,
+              35
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "work-title-line-02",
+            "text": "и присно Дѣвы Марїи).",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 21,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1007,
+              1034,
+              35
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-stanza-1",
+        "kind": "body",
+        "bbox_xywh": [
+          365,
+          1082,
+          614,
+          483
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-stanza-1-line-01",
+            "text": "Богоотцы Іоакимъ и Ана",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 22,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1082,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-02",
+            "text": "ѿ корене Давидова града",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1122,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-03",
+            "text": "въ Назаретѣ градѣ пребиваху,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1162,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-04",
+            "text": "безпорочно животъ провождаху.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1202,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-05",
+            "text": "изобилно блага су имали,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 24,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1243,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-06",
+            "text": "ст҃остію себе украшали.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1283,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-07",
+            "text": "на всякъ празникъ ѿ своего имѣнія,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 34,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1323,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-08",
+            "text": "самому Бгу҃ изъ почитанія",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1363,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-09",
+            "text": "по два части навикли взымати,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1404,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-10",
+            "text": "по закону цр҃кву даровати:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1444,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-11",
+            "text": "частъ єдину на жертву принести,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1484,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-1-line-12",
+            "text": "другую же нищимъ раздѣлити.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              365,
+              1524,
+              614,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-stanza-2",
+        "kind": "body",
+        "bbox_xywh": [
+          372,
+          1610,
+          560,
+          244
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-stanza-2-line-01",
+            "text": "Многи лѣта тако преживиша",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              372,
+              1610,
+              560,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-2-line-02",
+            "text": "и безчадни въ супружестви быша.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              372,
+              1650,
+              560,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-2-line-03",
+            "text": "ѡ бе[з]чадїи своемъ ситующимъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              372,
+              1691,
+              560,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-2-line-04",
+            "text": "и на долго время скорбляющимъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              372,
+              1732,
+              560,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-2-line-05",
+            "text": "потщав ся Іоакимъ стар[и]й",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              372,
+              1772,
+              560,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-2-line-06",
+            "text": "во Ієрусалимъ дати Бгу҃ дарый",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              372,
+              1813,
+              560,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-10",
+        "kind": "other",
+        "bbox_xywh": [
+          306,
+          1449,
+          58,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-10-line-01",
+            "text": "10",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-156-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              306,
+              1449,
+              58,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "exhortation-cont-line-04",
+        "reading": "ст҃а єй ст҃ый",
+        "reason": "Abbreviated forms provisional."
+      },
+      {
+        "line_id": "verse-stanza-2-line-06",
+        "reading": "дарый",
+        "reason": "Historical word form provisional."
+      }
+    ],
+    "source_note_links": []
+  }
+}
