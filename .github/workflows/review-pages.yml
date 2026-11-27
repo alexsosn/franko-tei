@@ -69,6 +69,7 @@ jobs:
           gh api "repos/$GITHUB_REPOSITORY/git/blobs/9964722946b4cdf79d1d78572a8bb0f27a47e978" --jq .content | base64 --decode > "$assets/vol1/page-00127.jpg"
           gh api "repos/$GITHUB_REPOSITORY/git/blobs/5d625c272dfea581d7025ac93089229545822fff" --jq .content | base64 --decode > "$assets/vol3/page-00131.jpg"
           gh api "repos/$GITHUB_REPOSITORY/git/blobs/dc12f2bf8279d732e1d3c225b3d9e8bb797b4e04" --jq .content | base64 --decode > "$assets/vol1/page-00128.jpg"
+          gh api "repos/$GITHUB_REPOSITORY/git/blobs/9c6ad072d4559e8c7a78be369632c505eb22d157" --jq .content | base64 --decode > "$assets/vol1/page-00097.jpg"
           python docs/render_monomakh_hybrid.py --assets "$assets" --output "$assets/reference.png"
           test -s "$assets/reference.png"
           # The chart is a local research derivative; do not upload scan crops.
