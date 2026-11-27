@@ -56,7 +56,7 @@ class AbbreviationSpansTests(unittest.TestCase):
         p = self.annotated()
         original = p["reading"]["raw_response"].split("\n")
         self.assertEqual(check_draft_offline(PATH, p), original)
-        xml = render_pilot_tei(p, 1190, 1800)
+        xml = render_pilot_tei(p, 1190, 1856)
         self.assertEqual(extract_transcribed_lines(xml), original)
         root = ET.fromstring(xml)
         choices = root.findall(".//" + tag("choice"))
@@ -100,14 +100,14 @@ class AbbreviationSpansTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     check_draft_offline(PATH,p)
                 with self.assertRaises(ValueError):
-                    render_pilot_tei(p,1190,1800)
+                    render_pilot_tei(p,1190,1856)
         p=source()
         annotate(p,15,"м҃","много")
         with self.assertRaises(ValueError):
             check_draft_offline(PATH,p)
 
     def test_invalid_tei_choice_fails_closed(self):
-        root=ET.fromstring(render_pilot_tei(self.annotated(),1190,1800))
+        root=ET.fromstring(render_pilot_tei(self.annotated(),1190,1856))
         c=root.find(".//"+tag("choice"))
         c.find(tag("expan")).tag=tag("reg")
         xml=ET.tostring(root, encoding="unicode")
@@ -125,14 +125,14 @@ class AbbreviationSpansTests(unittest.TestCase):
         edited.update(status="accepted_correction", text=edited["text"]+"!")
         # This is a deliberately synthetic accepted line, never corpus data.
         with patch("franko_tei.review_tei.project_lines", return_value=rows):
-            xml=render_editorial_tei(json.dumps(p).encode(),PATH,{},1190,1800,"a"*40)
+            xml=render_editorial_tei(json.dumps(p).encode(),PATH,{},1190,1856,"a"*40)
         self.assertEqual(extract_transcribed_lines(xml),[r["text"] for r in rows])
         self.assertEqual(len(ET.fromstring(xml).findall(".//"+tag("choice"))),2)
 
     def test_persisted_pilot_has_five_actual_proposals(self):
         p=json.loads((ROOT / PATH).read_text(encoding="utf-8"))
         original=p["reading"]["raw_response"].split("\n")
-        xml=render_pilot_tei(p,1190,1800)
+        xml=render_pilot_tei(p,1190,1856)
         self.assertEqual(len(ET.fromstring(xml).findall(".//"+tag("choice"))),5)
         self.assertEqual(extract_transcribed_lines(xml),original)
         self.assertEqual(verify_graph_roundtrip(build_tf_graph(xml)),original)
@@ -184,8 +184,8 @@ class AbbreviationSpansTests(unittest.TestCase):
         for region in b["reading"]["regions"]:
             for l in region["lines"]:
                 l.pop("abbreviation_spans",None)
-        x=build_tf_graph(render_pilot_tei(a,1190,1800))
-        y=build_tf_graph(render_pilot_tei(b,1190,1800))
+        x=build_tf_graph(render_pilot_tei(a,1190,1856))
+        y=build_tf_graph(render_pilot_tei(b,1190,1721))
         graph=merge_pilot_graphs([("1",89,x),("1",90,y)])
         self.assertEqual(verify_graph_roundtrip(graph),
                          a["reading"]["raw_response"].split("\n")+
