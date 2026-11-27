@@ -17,8 +17,8 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines.",
-    "raw_response": "81\nбожіимъ благоволеніемъ.\nи сотвори велико веселе\nвъ своимъ двори на честь и поштенѣ.\nСказаніе и воведеніе во храмъ прест҃ыя Бого-\nродицы и присно дѣви Маріи.\nКоли е прошло три лѣтния дни,\nпомянувше Іѡакимъ и Анна,\nшто су ѡни Богу ѡбищали,\nоу молитвѣ своей завищали:\nхощу ѡни Бгу҃ поклонити,\nкогда буду чадо породити.\nчто рекоша*), дѣломъ исполниша,\nвси сродници въ Назаретъ созваша,\nоу томъ граду, гди сами живиша.\nѿ племена призваша царскаго\nи ѿ рода архіерейскаго, —\nи сами су того племя були,\nза то су ихъ ѡни призивали.\nктому еще и другая лица\nсобрали множество и дѣвици.\nмноги свищи на то приправили,\nдѣвицами ѡни раздѣлиша\nпречт҃ую Дѣву ѡблекоша,\nродители свѣтло оукрасиша\nбарзо красно богатимъ ѡдѣломъ,\nсувимъ златомъ и дробнимъ бисеромъ.\nподобаше тако ѡдѣяти,\nвекшу славу и красоту дати:\nне земному црю҃ приводит ся,\nно самому Бгу҃ отдает ся.\nвеликъ ѡбѣтъ и оучрежданіе\nсотвориша на оугощеніе:\nпріятелѣ свои почастиша,\nчто имъ треба на путь приправиша.\nизводит ся изъ ѡтеческаго\nблаголѣпно до дому ст҃аго.\nвси дѣвици с'вокуплени\n250\n260\n270\n*) Вар. вписаний в той сам текст: ѡбищана.\nАпокріфи новозавітні. А.\n11",
+    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "81\nбожіимъ благоволеніемъ.\nи сотвори велико веселе\nвъ своимъ двори на честь и поштенѣ.\nСказаніе и воведеніе во храмъ прест҃ыя Бого-\nродицы и присно дѣви Маріи.\nКоли е прошло три лѣтния дни,\nпомянувше Іѡакимъ и Анна,\nшто су ѡни Богу ѡбищали,\nоу молитвѣ своей завищали:\nхощу ѡни Бгу҃ поклонити,\nкогда буду чадо породити.\nчто рекоша*), дѣломъ исполниша,\nвси сродници въ Назаретъ созваша,\nоу томъ граду, гди сами живиша.\nѿ племена призваша царскаго\nи ѿ рода архіерейскаго, —\nи сами су того племя були,\nза то су ихъ ѡни призивали.\nктому еще и другая лица\nсобрали множество и дѣвици.\nмноги свищи на то приправили,\nдѣвицами ѡни раздѣлиша\nпречт҃ую Дѣву ѡблекоша,\nродители свѣтло оукрасиша\nбарзо красно богатимъ ѡдѣломъ,\nсувимъ златомъ и дробнимъ бисеромъ.\nподобаше тако ѡдѣяти,\nвекшу славу и красоту дати:\nне земному црю҃ приводит ся,\nно самому Бгу҃ отдает ся.\nвеликъ ѡвѣтъ и оучрежданіе\nсотвориша на оугощеніе:\nпріятелѣ свои почастиша,\nчто имъ треба на путь приправиша.\nизводит ся изъ ѡтеческаго\nблаголѣпно до дому ст҃аго.\nвси дѣвици с'вокуплени\n250\n260\n270\n*) Вар. вписаний в той сам текст: ѡбищана.\nАпокріфи новозавітні. А.\n11",
     "coverage": {
       "entire_image_inspected": true,
       "nontext_areas": []
@@ -743,7 +743,7 @@
           },
           {
             "id": "verse-presentation-line-26",
-            "text": "великъ ѡбѣтъ и оучрежданіе",
+            "text": "великъ ѡвѣтъ и оучрежданіе",
             "language_spans": [
               {
                 "text_version": "gpt62-ii-163-image-harmonized-20261127",
@@ -1126,6 +1126,11 @@
         "line_id": "note-star-line-01",
         "reading": "ѡбищана",
         "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-presentation-line-26",
+        "reading": "ѡвѣтъ",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
       }
     ],
     "source_note_links": [
