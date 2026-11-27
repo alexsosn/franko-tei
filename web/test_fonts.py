@@ -133,7 +133,12 @@ hybrid = runpy.run_path(str(ROOT / "docs/render_monomakh_hybrid.py"))
 assert features.check("raqm"), "RAQM required for meaningful combining-mark rendering"
 examples = hybrid["EXAMPLES"]
 sources = hybrid["SOURCES"]
-assert len(examples) >= 6 and len({row["source"] for row in examples}) >= 2
+assert len(examples) >= 22 and len({row["source"] for row in examples}) >= 5
+accent_rows = [row for row in examples if row.get("category") == "accent"]
+assert len(accent_rows) >= 12 and len({row["source"] for row in accent_rows}) >= 3
+assert {"U+0301", "U+0486", "U+0311", "U+0486 U+0301"} <= {code for row in accent_rows for code in row["mark_options"]}
+assert all(row["status"] == "ambiguous" for row in accent_rows if len(row["mark_options"]) > 1)
+assert len({(row["source"], tuple(row["bbox_xywh"])) for row in examples}) == len(examples)
 assert all(row["status"] in {"candidate", "ambiguous"} for row in examples)
 assert any(row["status"] == "ambiguous" for row in examples)
 assert any(row["render"] == "вопїе" and row["status"] == "ambiguous" for row in examples)
