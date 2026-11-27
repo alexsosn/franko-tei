@@ -14,6 +14,8 @@
   const entry=()=>entries().find(e=>e.line.id===session.selected);
   const event=()=>session.events.find(e=>e.target.line_id===session.selected);
   const dirty=()=>session.working!==(event()?.decision==='correct'?event().replacement:entry().line.text)||session.note!==(event()?.note??'');
+  const pending=()=>dirty()&&!event();
+  const preparedStatus=()=>pending()?'Prepared locally; not submitted. Current edit is saved for the next batch.':'Prepared locally; not submitted.';
   const literal=(s,max)=>typeof s==='string'&&s.trim()&&[...s].length<=max&&![...s].some(c=>{let n=c.codePointAt(0);return /[\r\n\u0085\u2028\u2029⟦⟧]/u.test(c)||!(n===9||n>=32&&n<=0xd7ff||n>=0xe000&&n<=0xfffd||n>=0x10000&&n<=0x10ffff);});
   function persist(){
     if(localStorage.getItem(key)!==stored)fail('Local draft changed in another tab. Reopen without overwriting.');
@@ -40,10 +42,11 @@
     el('reviewUndo').disabled=locked||!event();
     el('reviewSave').title=tr(changed?'Save correction':'Confirm unchanged');
     el('reviewDefer').title=tr('Defer');
-    el('reviewPrepare').disabled=locked||!s.events.length||dirty()||bytes(json()).length>LIMIT;
+    el('reviewPrepare').disabled=locked||!s.events.length||dirty()&&!pending()||bytes(json()).length>LIMIT;
     el('reviewEdit').readOnly=locked;el('reviewNote').readOnly=locked;
     const index=entries().findIndex(e=>e.line.id===s.selected);
-    el('reviewLine').disabled=storageFailed;el('reviewPrevious').disabled=storageFailed||index<=0;el('reviewNext').disabled=storageFailed||index>=entries().length-1;
+    const pinnedPending=s.locked&&pending();
+    el('reviewLine').disabled=storageFailed||pinnedPending;el('reviewPrevious').disabled=storageFailed||pinnedPending||index<=0;el('reviewNext').disabled=storageFailed||pinnedPending||index>=entries().length-1;
     for(const b of el('reviewCharacters').querySelectorAll('button'))b.disabled=locked;
     el('reviewProgress').textContent=s.events.length+' / '+MAX+' · '+bytes(json()).length+' / '+LIMIT+' B · '+tr(event()?.decision==='confirm'?'Confirmed locally':event()?.decision==='correct'?'Corrected locally':event()?.decision==='defer'?'Deferred locally':'No decision yet');
     el('reviewExport').hidden=!s.locked||storageFailed;el('reviewBundle').value=s.locked&&!storageFailed?json():'';el('reviewDiscard').disabled=storageFailed||s.locked;
@@ -83,6 +86,7 @@
     controls();
   }
   function select(id,force=false){
+    if(session.locked&&pending())return;
     if(!force&&dirty()&&!confirm(tr('Discard the unrecorded edit for this line?'))){el('reviewLine').value=session.selected;return;}
     const x=entries().find(x=>x.line.id===id);if(!x)return;
     const e=session.events.find(e=>e.target.line_id===id);
@@ -141,7 +145,7 @@
       if(!list.length||list.some(x=>typeof x.region.id!=='string'||typeof x.line.id!=='string')||new Set(list.map(x=>x.line.id)).size!==list.length)fail('Invalid source line identities.');
       if(!s){const x=list.find(x=>x.line.id===selected)??list[0];s={id:uuid(),commit,path,blob,selected:x.line.id,working:x.line.text,note:'',events:[],locked:false};}
       session=s;
-      if(!entry()||s.locked&&dirty()||!s.events.every(valid)||new Set(s.events.map(e=>e.target.line_id)).size!==s.events.length||new Set(s.events.map(e=>e.event_id)).size!==s.events.length||bytes(json()).length>LIMIT)fail('Invalid local events; draft preserved.');
+      if(!entry()||s.locked&&dirty()&&!pending()||!s.events.every(valid)||new Set(s.events.map(e=>e.target.line_id)).size!==s.events.length||new Set(s.events.map(e=>e.event_id)).size!==s.events.length||bytes(json()).length>LIMIT)fail('Invalid local events; draft preserved.');
       persist();
       el('reviewSource').textContent='Volume '+v+' · scan '+n+' · '+d.reading.reader_id+' · '+commit.slice(0,12);
       el('reviewLine').replaceChildren(...list.map(({line,region},i)=>new Option((i+1)+' · '+region.kind+' · '+line.text.slice(0,32),line.id)));
@@ -149,7 +153,7 @@
       const ready=()=>{if(id!==serial||!el('reviewDialog').open)return;imageReady=img.complete&&img.currentSrc===el('reviewFullImage').href&&img.naturalWidth===p.width&&img.naturalHeight===p.height&&img.naturalWidth>0;uiText(el('reviewImageStatus'),imageReady?'Scan available; line geometry is approximate.':'Image unavailable; confirmation and correction disabled.');paint();};
       img.onload=ready;img.onerror=ready;img.src=asset(image.path);
       el('reviewBody').hidden=false;paint();if(img.complete)ready();
-      status(s.locked?'Prepared locally; not submitted.':'Draft saved locally.');
+      status(s.locked?preparedStatus():'Draft saved locally.');
     }catch(e){if(id===serial){status(e.message);el('reviewRecovery').hidden=!stored;}}
   }
   el('reviewOpen').onclick=open;
@@ -210,11 +214,22 @@
   el('reviewSave').onclick=()=>run(()=>record(session.working===entry().line.text?'confirm':'correct'));
   el('reviewDefer').onclick=()=>run(()=>record('defer'));
   el('reviewUndo').onclick=()=>run(()=>{if(dirty()&&!confirm(tr('Discard the unrecorded edit for this line?')))return;session.events=session.events.filter(e=>e.target.line_id!==session.selected);session.working=entry().line.text;session.note='';persist();paint();});
-  el('reviewPrepare').onclick=()=>run(()=>{if(el('reviewPrepare').disabled)return;session.locked=true;persist();controls();status('Prepared locally; not submitted.');el('reviewBundle').focus();el('reviewBundle').select();});
+  el('reviewPrepare').onclick=()=>run(()=>{if(el('reviewPrepare').disabled)return;session.locked=true;persist();controls();status(preparedStatus());el('reviewBundle').focus();el('reviewBundle').select();});
   el('reviewCopy').onclick=async()=>{try{await navigator.clipboard.writeText(el('reviewBundle').value);status('Copied.');}catch(e){el('reviewBundle').focus();el('reviewBundle').select();status('Select and copy the JSON manually.');}};
   function clearDraft(question){run(()=>{if(!confirm(tr(question)))return;if(localStorage.getItem(key)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(key);el('reviewDialog').close();});}
   el('reviewRecover').onclick=()=>{if(!stored)return;const url=URL.createObjectURL(new Blob([stored],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='franko-local-review-recovery.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
   el('reviewRecoverDiscard').onclick=()=>{try{if(!confirm(tr('Discard this local draft and all its decisions?')))return;if(localStorage.getItem(key)!==stored)fail('Local draft changed in another tab.');localStorage.removeItem(key);el('reviewDialog').close();}catch(e){status(e.message);}};
-  el('reviewReset').onclick=()=>clearDraft('Have you saved or submitted this bundle? Remove the local batch?');
+  el('reviewReset').onclick=()=>run(()=>{
+    if(!session.locked||!confirm(tr('Have you saved or submitted this bundle? Start the next batch?')))return;
+    if(localStorage.getItem(key)!==stored)fail('Local draft changed in another tab.');
+    const carry=pending(), list=entries(), used=new Set(session.events.map(e=>e.target.line_id));
+    const current=entry(), next=carry||!used.has(current.line.id)?current:list.find(e=>!used.has(e.line.id))??current;
+    const fresh={id:uuid(),commit:session.commit,path:session.path,blob:session.blob,
+      selected:next.line.id,working:carry?session.working:next.line.text,note:carry?session.note:'',events:[],locked:false};
+    const previous=session;
+    session=fresh;
+    try{persist();}catch(e){session=previous;throw e;}
+    paint();status('Draft saved locally.');
+  });
   el('reviewDiscard').onclick=()=>clearDraft('Discard this local draft and all its decisions?');
 })();
