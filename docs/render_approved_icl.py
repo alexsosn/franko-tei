@@ -93,11 +93,77 @@ def load_approved_font(doc):
     return ImageFont.truetype(buf, 52, layout_engine=ImageFont.Layout.RAQM)
 
 
-def render_atlas(doc, assets, previews, output):
+def write_sheets(doc, cards, skipped, directory):
+    """Emit bounded, independently viewable PNGs in atlas order.
+
+    Base glyphs use two columns. Issue context rows use the full width so
+    source-line pixels remain legible; they never become glyph-box labels.
+    """
+    directory.mkdir(parents=True, exist_ok=True)
+    if any(directory.iterdir()):
+        raise ValueError("Sheet directory must be empty")
+    index = {"schema": "franko-approved-icl-sheets-v1",
+             "previews_included": not skipped, "omitted_ids": skipped,
+             "sheets": []}
+    def fit(im, max_w, max_h):
+        factor = min(max_w / im.width, max_h / im.height)
+        if factor >= 1:
+            factor = min(5, int(factor))
+        return im.resize((max(1, int(im.width * factor)),
+                          max(1, int(im.height * factor))), Image.Resampling.NEAREST)
+    def emit(batch, context):
+        columns = 1 if context else 2
+        cell_w, cell_h = 1100 // columns, 240 if context else 220
+        height = 50 + ((len(batch) + columns - 1) // columns) * cell_h
+        sheet = Image.new("RGB", (1100, height), "white")
+        draw = ImageDraw.Draw(sheet)
+        n = len(index["sheets"]) + 1
+        draw.text((12, 12), f"APPROVED ICL | {n:02d} | " +
+                  ("ISSUE CONTEXT (FOCUS ONLY)" if context else "BASE GLYPHS"),
+                  fill="black", font=ImageFont.load_default(size=20))
+        for i, (row, key, crop, glyph) in enumerate(batch):
+            x = (i % columns) * cell_w
+            y = 50 + (i // columns) * cell_h
+            draw.rectangle((x+4, y+4, x+cell_w-5, y+cell_h-5), outline="#cccccc")
+            label = f'{row["id"]} | {key} | ' + (
+                "issue accepted provisional" if context else "human reviewed")
+            draw.text((x+12, y+12), label, fill="black", font=ImageFont.load_default(size=16))
+            codes = " ".join(f"U+{ord(c):04X}" for c in row["reading"] if not c.isspace())
+            if context:
+                original = fit(crop, cell_w-24, 105)
+                rendered = fit(glyph, cell_w-24, 65)
+                sheet.paste(original, (x+12, y+40))
+                sheet.paste(rendered, (x+12, y+154))
+            else:
+                original = fit(crop, 260, 145)
+                rendered = fit(glyph, 240, 145)
+                sheet.paste(original, (x+12, y+40))
+                sheet.paste(rendered, (x+285, y+40))
+                draw.text((x+12, y+195), codes, fill="black", font=ImageFont.load_default(size=14))
+        name = f"sheet-{n:02d}.png"
+        sheet.save(directory / name, format="PNG", optimize=True)
+        index["sheets"].append({"file": name, "ids": [c[0]["id"] for c in batch],
+                                "width": sheet.width, "height": sheet.height})
+    batch = []
+    for card in cards:
+        context = card[0]["scope"] == "line_context_focus_only"
+        if batch and (context != (batch[0][0]["scope"] == "line_context_focus_only")
+                      or len(batch) == (4 if context else 8)):
+            emit(batch, batch[0][0]["scope"] == "line_context_focus_only")
+            batch = []
+        batch.append(card)
+    if batch:
+        emit(batch, batch[0][0]["scope"] == "line_context_focus_only")
+    (directory / "index.json").write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
+    return index
+
+
+def render_atlas(doc, assets, previews, output, sheet_dir=None):
     validate_atlas(doc)
     glyph_font = load_approved_font(doc)
     images, sections = {}, []
     skipped = []
+    cards = []
     for row in doc["examples"]:
         native = "source" in row
         key = row.get("source", row.get("preview"))
@@ -110,6 +176,7 @@ def render_atlas(doc, assets, previews, output):
             images[key] = checked_image(path, src)
         x,y,w,h = row["bbox_xywh"]
         crop = images[key].crop((x,y,x+w,y+h))
+        native_crop = crop
         scale = max(1, min(5, 200 // h))
         crop = crop.resize((w*scale,h*scale), Image.Resampling.NEAREST)
         reading = row["reading"]
@@ -118,6 +185,8 @@ def render_atlas(doc, assets, previews, output):
         bounds = probe.textbbox((0,0), reading, font=glyph_font)
         glyph = Image.new("RGB",(max(1,bounds[2]-bounds[0]+24), max(1,bounds[3]-bounds[1]+24)), "white")
         ImageDraw.Draw(glyph).text((12-bounds[0],12-bounds[1]),reading,font=glyph_font,fill="black")
+        if sheet_dir is not None:
+            cards.append((row, key, native_crop, glyph))
         e = html.escape
         note = row.get("note", "Base letter only; surrounding marks are not labels.")
         sections.append(f'<section><h2>{e(row["id"])} · {e(key)}</h2><p>{e(row["approval"])} · {e(row["scope"])}</p>'
@@ -131,6 +200,8 @@ def render_atlas(doc, assets, previews, output):
                '<h1>Franko approved ICL atlas</h1><p>Only reviewed base glyphs and accepted issue focal readings. Issue examples are provisional, not whole-line transcriptions.</p>'
                f'<p>Rendered {len(sections)} of {len(doc["examples"])}; {len(skipped)} preview-only rows omitted. No candidate accent labels.</p>'
                + "".join(sections) + '</html>')
+    if sheet_dir is not None:
+        write_sheets(doc, cards, skipped, sheet_dir)
     output.write_text(content, encoding="utf-8")
     return len(sections), skipped
 
@@ -140,8 +211,9 @@ def main():
     parser.add_argument("--assets", required=True, type=Path)
     parser.add_argument("--previews", type=Path, help="Optional original hashed review PNGs")
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--sheet-dir", type=Path, help="Optional empty directory for bounded PNG sheets and index")
     args = parser.parse_args()
-    count, skipped = render_atlas(load_atlas(), args.assets, args.previews, args.output)
+    count, skipped = render_atlas(load_atlas(), args.assets, args.previews, args.output, args.sheet_dir)
     print(f"Rendered {count} approved examples; omitted {len(skipped)} preview-only examples")
 
 
