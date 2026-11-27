@@ -419,3 +419,49 @@ Franko's historical face. Obtain these details from library catalogue or
 staff before asserting an exact match; no inquiry sent in this session.
 RNL table page timed out again and Kempgen vol.3 PDF was not rendered by
 web access; no claims of inspecting their image plates in this pass.
+
+
+## Same-page accent contrast, III/131, printed p. 45
+
+Reopened TN41 pp. 22–24 and 31 (direct PDF page images) and Kusmaul
+2018 pp. 41–42 (direct PDF images). Her examples distinguish breathing
+on an uncovered unstressed vowel and iso on an uncovered stressed
+vowel, including word-internal syllable onsets. Thus a simplistic
+word-initial-only rule for breathing is not warranted. Kamora can
+also be placed centrally over the entire monosyllable. Her examples
+are a historical comparison, not direct reproductions of Franko's type.
+
+Direct 4x nearest-neighbor luma crops from pinned III/131 JPEG:
+
+| Physical line | Native bbox xywh | Observed shape | Reading candidate |
+| --- | --- | --- | --- |
+| text-line-02 | [203,1133,155,40] | Small arch on initial omega | ѡ҆бираючи |
+| text-line-02 | [925,1133,92,42] | Angular abbreviation mark | см҃рти (titlo/vzmet unresolved) |
+| text-line-04 | [728,1206,27,40] | Arch over standalone i | и҆ or и̑ |
+| text-line-09 | [685,1390,71,38] | Wave above omega | ѡ҆́гнь preferred, not settled |
+| text-line-12 | [171,1501,77,40] | Simple arch above omega | ѡ҆гн- (ending partially cropped) |
+| text-line-14 | [825,1576,61,38] | Wave above iotated-a-like base, partly clipped at top | ꙗко + unresolved mark |
+
+The particularly informative control is the same lexical stem for fire
+in nominative огнь vs oblique огня (context до ... вели). The initial
+wave in the nominative and arch in the oblique form are visibly distinct
+in the same printing and fit the stress/breathing contrast (огнь vs
+огня́). This favors iso for the wave and breathing for the arch in these
+specific occurrences. Accent placement in the manuscript behind the
+edition is not independently established. The exact oblique ending is
+not encoded in the reference because its crop is incomplete. Do not
+infer that all waves or arches share one Unicode sequence. The angular
+mark in смрти is another comparison control: no clear raised letter,
+so titlo/vzmet are preferred to an invented combining letter. A narrow
+crop of крстом clipped part of the upper sign, and is not retained as
+proof of a combining letter with pokrytie. One attempted rectangle at
+the right edge missed the intended sign entirely; discard it.
+
+Added four usable source examples (30 total) with existing line IDs and
+pinned source hash; pair metadata records iso as the first hypothesis
+rather than resolved encoding. Existing draft has обираючи, огнь and
+огня without these marks; not automatically edited. Earlier observations
+were frozen before draft lookup, but this pixel follow-up used the same
+context and knows the draft. No independent CER or causal improvement
+claim. Reusing the published visual reference and source-local contrast
+is preferred to expanding the synthetic inventory.
