@@ -268,7 +268,8 @@ class NumberedApparatusTests(unittest.TestCase):
             for p in block["pages"]}
 
     def check_block(self, block, sources, *, paired=False, repeated=False,
-                    occurrence_labels=False):
+                    occurrence_labels=False, baseline_labels=False):
+        self.assertTrue(not baseline_labels or occurrence_labels)
         self.assertTrue(not repeated or paired)
         self.assertTrue(not occurrence_labels or repeated)
         self.assertEqual(block["schema_version"], "printed-apparatus-annotation-v1")
@@ -323,9 +324,26 @@ class NumberedApparatusTests(unittest.TestCase):
         # Paired notation is a single printed apparatus label, not two entries.
         label_pattern = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+(?:—[⁰¹²³⁴⁵⁶⁷⁸⁹]+)?\)") if paired else self.LABEL
         marker_pattern = re.compile(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+[)—]?") if paired else self.LABEL
+        if baseline_labels:
+            label_pattern = re.compile(r"(?<!\S)[0-9]+(?:—[0-9]+)?\)")
         note_labels = [(scan, lid, m.start(), m.end(), m.group())
                        for (scan, lid), raw in apparatus.items()
                        for m in label_pattern.finditer(raw)]
+        if baseline_labels:
+            # Numeric references inside scholarly prose are not entry starts.
+            # Exclusions must identify exact source occurrences, with evidence.
+            excluded = []
+            for item in block["non_entry_numeric_occurrences"]:
+                key = (item["scan_page"], item["line_id"], item["start"],
+                       item["end"], item["literal"])
+                self.assertIn(key, note_labels)
+                self.assertNotIn(key, excluded)
+                self.assertTrue(item["reason"].strip())
+                excluded.append(key)
+            self.assertEqual(excluded, [key for key in note_labels if key in excluded])
+            note_labels = [key for key in note_labels if key not in excluded]
+        else:
+            self.assertNotIn("non_entry_numeric_occurrences", block)
         seen_labels = []
         label_counts = {}
         for entry in block["entries"]:
@@ -409,7 +427,10 @@ class NumberedApparatusTests(unittest.TestCase):
                     else:
                         self.assertFalse(marker["literal"].endswith("—"))
                 elif "—" in entry["label"]:
-                    self.assertIn(role, ("range_start", "range_end"))
+                    self.assertIn(role, ("range_start", "range_end", "range_endpoint_unknown")
+                                  if baseline_labels else ("range_start", "range_end"))
+                    if role == "range_endpoint_unknown":
+                        self.assertTrue(marker["literal"].endswith(")"))
                     # Some printed starts have a bare number or a closing
                     # parenthesis; the role is separate from the literal.
                     if role == "range_end" or not repeated:
@@ -431,7 +452,8 @@ class NumberedApparatusTests(unittest.TestCase):
                     self.assertEqual(observed_roles, ["range_start", "range_end"])
                 elif "—" in entries[eid]["label"]:
                     if repeated and (observed_roles == ["range_start"] or
-                                     occurrence_labels and observed_roles == ["range_end"]):
+                                     occurrence_labels and observed_roles == ["range_end"] or
+                                     baseline_labels and observed_roles == ["range_endpoint_unknown"]):
                         incomplete.append(eid)
                     else:
                         self.assertEqual(observed_roles, ["range_start", "range_end"])

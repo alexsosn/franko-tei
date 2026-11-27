@@ -10,16 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.10', '3.12']
+        python-version: ['3.13', '3.14', '3.15']
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
-      - run: python -m pip install -e '.[pdf,page-assets]'
+      - run: python -m pip install -e '.[pdf,page-assets,tf]' 'lxml>=5,<7'
+      - run: python -m pip check
+      - run: python -c "import pymupdf, PIL, lxml.etree; from tf.fabric import Fabric"
       - run: python -m unittest discover -s tests -v
       - name: Validate editorial ledger when present or changed
-        if: matrix.python-version == '3.12'
+        if: matrix.python-version == '3.15'
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
           TRUSTED: ${{ github.event.pull_request.base.sha || github.sha }}
@@ -35,13 +37,12 @@ jobs:
             python -m franko_tei.review_adjudication --check --trusted-commit "$TRUSTED" --previous-commit "$BASE"
           fi
       - name: Source-gated editorial TEI smoke
-        if: matrix.python-version == '3.12'
+        if: matrix.python-version == '3.15'
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
           set -euo pipefail
-          if ! git diff --quiet "$BASE" HEAD -- src/franko_tei/review_tei.py src/franko_tei/review_tf.py src/franko_tei/pilot_tf.py src/franko_tei/pilot_tf_batch.py tests/test_review_tei.py tests/live_review_tei.py src/franko_tei/native_collation.py pilot/reviews/vol4_scan00068_native_collation_20261127.json reviews; then
-            python -m pip install 'lxml>=5,<7' -e '.[tf]'
+          if ! git diff --quiet "$BASE" HEAD -- src/franko_tei/review_tei.py src/franko_tei/review_tf.py src/franko_tei/pilot_tf.py src/franko_tei/pilot_tf_batch.py tests/test_review_tei.py tests/live_review_tei.py src/franko_tei/native_collation.py pilot/reviews/vol4_scan00068_native_collation_20261127.json reviews pyproject.toml .github/workflows/ci.yml; then
             python tests/live_review_tei.py
           fi
       - run: franko-tei catalog > /dev/null
