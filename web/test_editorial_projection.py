@@ -453,6 +453,64 @@ class EditorialProjectionTests(unittest.TestCase):
             # Published accepted corrections do not create a second frozen reading.
             self.assertEqual(coverage["volumes"]["1"]["scans"].count(104),1)
 
+    def test_browser_printed_note_navigation(self):
+        from playwright.sync_api import sync_playwright, expect
+        from test_review_editor import png, W, H
+        raw=(ROOT/"pilot/vol5_scan00090_single_reading.json").read_bytes()
+        source=json.loads(raw)
+        manifest={"volume":"5","page_count":316,"pages":[{"scan_page":90,"width":W,"height":H,"artifacts":[
+            {"role":"page_image","path":source["source_image_path"],"sha256":source["source_image_sha256"]},
+            {"role":"embedded_ocr","path":"original_ocr/vol5/page-00090.txt"}]}]}
+        with sync_playwright() as p:
+            browser=p.chromium.launch(args=["--no-sandbox"])
+            page=browser.new_page(viewport={"width":390,"height":844})
+            errors=[]
+            page.on("pageerror",lambda e:errors.append(str(e)))
+            def route(r):
+                u=r.request.url
+                if u=="https://reader.test/":
+                    return r.fulfill(content_type="text/html",body=(ROOT/"web/index.html").read_text())
+                if u=="https://reader.test/review-editor.js":
+                    return r.fulfill(content_type="text/javascript",body=(ROOT/"web/review-editor.js").read_text())
+                if u.endswith("/manifest.json"):return r.fulfill(json=manifest)
+                if u.endswith("/pilot/vol5_scan00090_single_reading.json"):return r.fulfill(content_type="application/json",body=raw)
+                if u.endswith("/"+source["source_image_path"]):return r.fulfill(content_type="image/png",body=png())
+                if u.endswith("/page-00090.txt"):return r.fulfill(body="OCR")
+                return r.fulfill(status=404,body="")
+            page.route("https://**/*",route)
+            page.goto("https://reader.test/#v=5&p=90&ref=main")
+            marker=page.locator(".line-text[data-line-id='body-2-line-07']")
+            note=page.locator(".line-text[data-line-id='note-1-line-01']")
+            marker_text=next(l["text"] for r in source["reading"]["regions"] for l in r["lines"] if l["id"]=="body-2-line-07")
+            note_text=next(l["text"] for r in source["reading"]["regions"] for l in r["lines"] if l["id"]=="note-1-line-01")
+            expect(marker).to_have_text(marker_text)
+            expect(note).to_have_text(note_text)
+            expect(page.locator("#noteReturn")).not_to_be_visible()
+            page.locator("#layersOpen").click()
+            page.locator("#inspectChoose").click()
+            marker.click()
+            expect(page.locator(".printed-note-navigation")).to_contain_text("¹)")
+            page.get_by_role("button",name="Go to printed note").click()
+            expect(note).to_be_focused()
+            expect(page.locator("#layersDialog")).not_to_be_visible()
+            expect(page.locator("#noteReturn")).to_be_visible()
+            expect(page.locator("#textPane")).to_be_visible()
+            page.locator("#noteReturn").click()
+            expect(marker).to_be_focused()
+            expect(page.locator("#noteReturn")).not_to_be_visible()
+            # Backlinks are offered on any line of the explicit target region.
+            page.set_viewport_size({"width":1280,"height":800})
+            page.locator("#layersOpen").click()
+            page.locator("#inspectChoose").click()
+            note.focus()
+            page.keyboard.press("Enter")
+            page.get_by_role("button",name="Back to printed marker").click()
+            expect(marker).to_be_focused()
+            expect(marker).to_have_text(marker_text)
+            expect(note).to_have_text(note_text)
+            self.assertFalse(errors,errors)
+            browser.close()
+
     def test_browser_reading_and_exact_search(self):
         from playwright.sync_api import sync_playwright, expect
         from test_review_editor import png, W, H
