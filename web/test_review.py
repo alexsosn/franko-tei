@@ -566,6 +566,54 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(links(58)['ECCA 509']['relation'], 'edition-match')
         self.assertNotIn('ECCA 509', links(59))
 
+    def test_franko_first_publications(self):
+        import json
+        html = reader_html()
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        expected = {('1', 10): 'earlier-publication', ('1', 19): 'earlier-full-witness',
+                    ('1', 114): 'earlier-publication', ('1', 122): 'earlier-publication',
+                    ('2', 69): 'earlier-publication', ('2', 71): 'earlier-publication',
+                    ('4', 49): 'earlier-publication'}
+        found = {}
+        for v, volume in data.items():
+            for i, entry in enumerate(volume['entries']):
+                key = json.dumps(entry[:3], ensure_ascii=False, separators=(',', ':'))
+                links = refs.get(v, {}).get(key, [])
+                authorial = [x for x in links if x['provider'] == 'Franko']
+                if authorial:
+                    self.assertEqual(len(authorial), 1)
+                    found[v, i] = authorial[0]
+                    self.assertEqual(authorial[0]['kind'], 'publication')
+                    self.assertTrue(authorial[0]['url'].startswith('https://www.i-franko.name/'))
+        self.assertEqual({k: x['relation'] for k, x in found.items()}, expected)
+        self.assertIn('apparatus', found['1', 19]['evidence'])
+        self.assertIn('12', found['2', 71]['evidence'])
+        self.assertIn('22', found['2', 71]['evidence'])
+        self.assertEqual(found['2', 69]['url'], found['2', 71]['url'])
+        for i in (69, 71):
+            key = json.dumps(data['2']['entries'][i][:3], ensure_ascii=False, separators=(',', ':'))
+            self.assertTrue(any(x['id'] == 'ECCA 421' and x['relation'] == 'edition-match' for x in refs['2'][key]))
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.evaluate("setUILocale('en')")
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsFilter').fill('Franko 1891')
+            row = page.locator('#contentsEntries li:visible').first
+            row.locator('.contents-ref-toggle').click()
+            detail = row.locator('.contents-ref-detail')
+            self.assertIn('Earlier full witness; apparatus in this edition', detail.inner_text())
+            self.assertIn('Franko publication', detail.inner_text())
+            self.assertFalse(row.locator('.contents-canonical').count())
+            page.evaluate("setUILocale('uk')")
+            self.assertTrue(detail.is_visible())
+            self.assertIn('Публікація Франка', detail.inner_text())
+            self.assertIn('Повний список', detail.inner_text())
+            browser.close()
+
     def test_contents_work_references(self):
         import json
         html = reader_html()
@@ -577,10 +625,10 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertIn(tuple(json.loads(key)), identities)
                 self.assertTrue(links)
                 for link in links:
-                    self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate'))
-                    self.assertIn(link['provider'], ('e-Clavis', 'OCP'))
+                    self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate', 'earlier-publication', 'earlier-full-witness'))
+                    self.assertIn(link['provider'], ('e-Clavis', 'OCP', 'Franko'))
                     self.assertTrue(link['title'] and link['id'] and link['evidence'])
-                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/')))
+                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/', 'https://www.i-franko.name/')))
         html = html.replace('updateMode();load();', 'updateMode();load=()=>{window.lastJump=[$(\'volume\').value,$(\'page\').value];};load();')
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
