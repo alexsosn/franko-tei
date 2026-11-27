@@ -534,3 +534,38 @@ coordinates and distinct shape metadata (38 rows from 8 pages total).
 No transcription change. Previous head c808c55 passed CI and OCR review
 viewer. New head CI and visual inspection of the complete composite
 remain outstanding. A noninitial wave on a vowel is still needed.
+
+
+## Numbered user review of the mobile 38-crop reference (2026-11-27)
+
+The user reviewed the numbered sheet with two enlarged crops per PDF page.
+It used four-level grayscale source previews and Noto Serif labels, not
+exact Monomakh rendering. The following observations supersede earlier
+confidence judgments where they conflict. They apply to the existing
+numbering, source rectangles and line locators; no corpus reading was
+adjudicated by this review.
+
+| Row(s) | User's observed form | Updated interpretation |
+| --- | --- | --- |
+| 06, 15, 16, 17, 19, 23, 24 | Wave like arch plus acute; same sign | Prefer iso U+0486 U+0301; retain alternatives |
+| 11 | Єноше; arch above Є, acute above о | Є҆но́ше, two separate positions |
+| 12 | архї; arch above а; part of next letter | а҆рхї; omit partial next glyph |
+| 13 | Partial ч before accented а | а́да, left edge clipped |
+| 14 | ныхъ. with acute above ы | ны́хъ. including period |
+| 21 | Opening parenthesis before О | (О҆; visible punctuation retained |
+| 22 | Ав; above А looks like breathing plus acute, but different from lowercase wave | А҆́в preferred; case-specific shape, alternatives retained |
+| 11, 12, 18, 20, 21, 25 | Left-leaning arch, possibly breathing | U+0486 candidate, not confirmed by shape alone |
+| 26, 27 | Possibly the same left-leaning arch | Keep both kamora and breathing; #26 prior user confirmation is now qualified |
+| 35 | Єvво; first v-shaped glyph differs from following в | Candidate Єѵво (U+0475, not Latin v); verify against izhitsa examples |
+| 36, 38 | Looks like kamora | Prefer U+0311, retain U+0486 |
+
+#37 is a comparable repeated vocative but was not separately corrected by
+the user; do not promote it to a confirmed reading. #35 and #37 still do
+not resolve the omega wave as a great apostrof. Do not equate every arch
+with kamora or breathing, or infer exact Unicode from Noto Serif display.
+The row labels show preferred renderings where possible while preserving
+ambiguous status and competing mark sequences. Source crops, coordinates,
+and order remain unchanged; explicit numbers have been added to the
+renderer. Further comparison should use native 8-bit crops, not the
+quantized previews, particularly for the shape of the capital initial
+and the first v-shaped letter. No new CER result or corpus replacements.
