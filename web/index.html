@@ -8847,7 +8847,7 @@ function renderAnnotationDetails({line,region,review}){
   const name=document.createElement('strong');uiText(name,'Physical region');
   const value=document.createElement('span');uiText(value,region.kind);
   label.append(name,document.createTextNode(': '),value);body.append(label);
-  if(review?.status==='accepted_correction'){
+  if(isEditorialCorrection(review)&&!line.language_spans?.length){
     const p=document.createElement('p');uiText(p,'Language ranges need reannotation after text correction.');body.append(p);
     return;
   }
