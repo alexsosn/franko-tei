@@ -79,7 +79,7 @@ from playwright.sync_api import sync_playwright
 sheet = ROOT / "docs/monomakh-icl.html"
 groups = json.loads(re.search(r"^const groups=(\[.*\]);$", sheet.read_text(encoding="utf-8"), re.M).group(1))
 samples = [sample for _, items in groups for sample in items]
-required = ["а҆","а҅","а́","а̀","а҃","аⷭ","аⷭ҇","аⷢ","аⷣ","аⷯ","аⷩ","аⷮ","а꙯","ѿ","ѡ","ꙋ","ѹ","оу","ї","ї"]
+required = ["аⷨ", "аⷳ", "аⷬ", "а҆","а҅","а́","а̀","а҃","аⷭ","аⷭ҇","аⷢ","аⷣ","аⷯ","аⷩ","аⷮ","а꙯","ѿ","ѡ","ꙋ","ѹ","оу","ї","ї"]
 assert not set(required) - set(samples), ("missing ICL examples", sorted(set(required) - set(samples)))
 verify("Monomakh ICL chart", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), "".join(samples))
 expected_labels = [" ".join(f"U+{ord(c):04X}" for c in sample) for sample in samples]
@@ -141,7 +141,7 @@ for row in examples:
     x, y, w, h = row["bbox_xywh"]
     assert x >= 0 and y >= 0 and w > 0 and h > 0
     assert x + w <= source["width"] and y + h <= source["height"]
-    verify("Hybrid Monomakh cmap", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), row["render"])
+    verify("Hybrid Monomakh cmap", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), row["render"] + row["focus"])
 with tempfile.TemporaryDirectory() as tmp:
     assets = Path(tmp)
     source = next(iter(sources.values()))
