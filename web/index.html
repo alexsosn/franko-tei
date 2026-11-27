@@ -350,6 +350,9 @@ const uiDictionary={
   "Work family; witness not checked": "Текстова традиція; список не звірено",
   "Possible match; not identified": "Можливий збіг; не ідентифіковано",
   "e-Clavis bibliography": "Бібліографія e-Clavis",
+  "Franko publication": "Публікація Франка",
+  "Earlier publication; textual differences possible": "Раніша публікація; можливі текстові відмінності",
+  "Earlier full witness; apparatus in this edition": "Повний список у раннішій публікації; апарат у цьому виданні",
   "OCP critical text (comparison)": "Критичний текст OCP (для зіставлення)",
   "OCP catalogue (search by CAVT)": "Каталог OCP (пошук за CAVT)",
   "Original title": "Оригінальна назва",
@@ -1307,6 +1310,17 @@ const contentsWorkRefs = {
         "kind": "edition",
         "evidenceUk": "Видання OCP містить грецькі й латинські текстові свідчення. Самої назви слов’янського тексту з Дрогобицького рукопису недостатньо для ототожнення.",
         "titleUk": "Житіє Адама і Єви (Апокаліпсис Мойсея)"
+      },
+      {
+        "provider": "Franko",
+        "id": "Franko 1891",
+        "title": "On the History of Apocryphal Narratives",
+        "relation": "earlier-full-witness",
+        "url": "https://www.i-franko.name/ru/HistLit/1891/KIstoriiApocryphSkazanij.html",
+        "evidence": "Kievskaia starina, 1891, vol. 35, no. 11, pp. 267–275 (signed Myron). Full text of the Drohobych witness of 1742–43; I pp. 23–26 print only its differences against witness A, with separate Tikhonravov readings. Compare individual apparatus entries, not the entire base text. Online text from Collected Works, 1980, vol. 28, pp. 356–364.",
+        "kind": "publication",
+        "titleUk": "К истории апокрифических сказаний",
+        "evidenceUk": "Киевская старина, 1891, т. 35, кн. 11, с. 267–275 (підпис Мирон). Повний текст Дрогобицького списку 1742–1743 рр.; у т. I, с. 23–26 надруковано лише його відмінності від списку А та окремі читання за Тихонравовим. Зіставляти окремі записи апарату, а не весь основний текст. Електронний текст за Зібранням творів, 1980, т. 28, с. 356–364."
       }
     ],
     "[466,\"А. Книги о Аврааме праотци и патриарсе (Крех. Палея)\",\"80–86\"]": [
@@ -1514,6 +1528,45 @@ const contentsWorkRefs = {
         "evidence": "Anisimova (2023), pp. 196–199, compares the Slavonic Genesis of Esau across chronographs and Palaeas and traces its source tradition to Jubilees. Franko I 122–123 shares the distinctive oath, Judah's refusal, Esau's death, tribute and three sorrows of Jacob (Jubilees 34:15–17, 37–38); the Slavonic text changes the arrow to a spear and combines episodes. A source-tradition comparison, not a witness or translation of the complete Book of Jubilees. DOI: 10.25986/IRI.2023.94.4.014.",
         "evidenceUk": "Анісімова (2023), с. 196–199, зіставляє слов’янське Буття Ісава в хронографах і палеях та простежує його джерельну традицію до Книги Ювілеїв. Франко, т. I, с. 122–123, має спільні мотиви присяги, відмови Юди, смерті Ісава, данини й трьох печалей Якова (Ювілеї 34:15–17, 37–38); слов’янський текст замінює стрілу списом і поєднує епізоди. Споріднена джерельна традиція, не список чи переклад усієї Книги Ювілеїв. DOI: 10.25986/IRI.2023.94.4.014."
       }
+    ],
+    "[465,\"Б. Слово о сотвореню ангелъ (Рукп. о. Яремецького-Білахевича)\",\"14\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1895, §4",
+        "title": "Creation of the Angels and Archangels",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/4SlovoOSotvorenjuAngel.html",
+        "evidence": "Zhytie i slovo, 1895, vol. 3, no. 1, pp. 137–142 (sections 4–5). Editorial notes to the collected works explicitly identify I p. 14; Yaremetsky-Bilakhevych MS. The text is a parallel publication; spelling and abbreviations differ. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Слово о сотвореню ангел и архангел",
+        "evidenceUk": "Житє і слово, 1895, т. 3, кн. 1, с. 137–142 (розділи 4–5). Примітки до зібрання творів прямо вказують на т. I, с. 14; рукопис Яремецького-Білахевича. Паралельна публікація з відмінностями в правописі й скороченнях. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
+      }
+    ],
+    "[468,\"Е. Слово о Сивидлѣ пророчици и о Давидѣ цару (Ркпс. о. Яремецького-Білахевича)\",\"277–279\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1895, §5",
+        "title": "The Prophetess Sibyl and King David",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/5SlovoOSyvydli.html",
+        "evidence": "Zhytie i slovo, 1895, vol. 3, no. 1, pp. 137–142 (sections 4–5). The parallel body occupies I pp. 277–278 (not all of the TOC range); Yaremetsky-Bilakhevych MS pp. 80–82. Franko cites the journal at I p. 278 (scan 353). Printed lacunae and wording differ. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Слово о Сивидлѣ пророчици и о Давидѣ цару",
+        "evidenceUk": "Житє і слово, 1895, т. 3, кн. 1, с. 137–142 (розділи 4–5). Паралельний текст у т. I, с. 277–278 (не весь діапазон змісту); рукопис Яремецького-Білахевича, с. 80–82. Самопосилання Франка на журнал: т. I, с. 278 (скан 353). Лакуни та формулювання у друці відрізняються. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
+      }
+    ],
+    "[468,\"Ж. Сказаніє о царю Соломонѣ, како закопа бѣси во єдиной дельвѣ (Іспаський ркпс)\",\"291–293\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §1",
+        "title": "Solomon and the Devils in the Barrel",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/1SolomonIChortyVBochci.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 1, no. 1, pp. 136–140. I pp. 291–293, Ispas MS pp. 67–72, includes the Herod continuation. Franko cites the text and discussion at I p. 293 (scan 368). The online article also contains commentary outside this occurrence. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Соломон і чорти в бочці",
+        "evidenceUk": "Житє і слово, 1894, т. 1, кн. 1, с. 136–140. Т. I, с. 291–293, Іспаський рукопис, с. 67–72, включно з продовженням про Ірода. Самопосилання на текст і коментар: т. I, с. 293 (скан 368). Електронна стаття містить також коментар поза межами цього тексту. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
+      }
     ]
   },
   "2": {
@@ -1554,6 +1607,17 @@ const contentsWorkRefs = {
         "kind": "bibliography",
         "evidenceUk": "Каталог прямо посилається на Франка, т. II, с. 159–163, список I.",
         "titleUk": "Євангеліє дитинства від Томи"
+      },
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §2",
+        "title": "Apocryphon of the Childhood of Jesus",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/2ApokryfProDitstvoIsusove.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 1, no. 2, pp. 222–233. First of two narratives in this article, corresponding to II pp. 159–163 (TOC ends at 164), Ispas MS of 1732 pp. 39–47. Paragraph numbering differs. Do not equate this with the subsequent Yaremetsky-Bilakhevych narrative. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Апокриф про дітство Ісусове",
+        "evidenceUk": "Житє і слово, 1894, т. 1, кн. 2, с. 222–233. Перший із двох текстів статті відповідає т. II, с. 159–163 (у змісті до 164), Іспаський рукопис 1732 р., с. 39–47. Нумерація параграфів відрізняється. Не ототожнювати з наступним текстом Яремецького-Білахевича. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
       }
     ],
     "[522,\"З. Чудо о Господѣ нашемъ Іисусѣ Христѣ (Ркпс Румянцівського Музея)\",\"164–169\"]": [
@@ -1580,6 +1644,17 @@ const contentsWorkRefs = {
         "kind": "bibliography",
         "evidenceUk": "Каталог прямо посилається на Франка, т. II, с. 169–172, список F.",
         "titleUk": "Євангеліє дитинства від Томи"
+      },
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §2",
+        "title": "Apocryphon of the Childhood of Jesus",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/2ApokryfProDitstvoIsusove.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 1, no. 2, pp. 222–233. Second narrative, II pp. 169–172, Yaremetsky-Bilakhevych MS pp. 134–137. Franko cites pp. 227–230 at II p. 172 (scan 254). The later print reads 12 birds, the online narrative 22; paragraph counts also differ. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Апокриф про дітство Ісусове",
+        "evidenceUk": "Житє і слово, 1894, т. 1, кн. 2, с. 222–233. Другий текст: т. II, с. 169–172, рукопис Яремецького-Білахевича, с. 134–137. Самопосилання на с. 227–230: т. II, с. 172 (скан 254). Пізніший друк має 12 птахів, електронний текст — 22; кількість параграфів також відрізняється. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
       }
     ],
     "[522,\"Відривки білоруського євангелия Томи\",\"408–409\"]": [
@@ -2779,6 +2854,19 @@ const contentsWorkRefs = {
         "kind": "bibliography",
         "evidenceUk": "Каталог прямо посилається на Франка, т. IV, с. 258–264.",
         "titleUk": "Перший апокрифічний Апокаліпсис Івана"
+      }
+    ],
+    "[571,\"Е. Откровеніє мукъ тяжкихъ. (Рукоп. Ярем. Білахевича)\",\"135\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §3",
+        "title": "The Virgin Mary's Journey through Hell",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/3VandrivkaBogorodyciPoPekli.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 2, no. 4, pp. 81–88 and no. 5, pp. 224–237. IV pp. 135–153, Yaremetsky-Bilakhevych MS pp. 1–22. Franko cites both parts at IV p. 153 (scan 205). Preserve printed lacuna; exclude the following Biliavsky witness. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Вандрівка богородиці по пеклі",
+        "evidenceUk": "Житє і слово, 1894, т. 2, кн. 4, с. 81–88 та кн. 5, с. 224–237. Т. IV, с. 135–153, рукопис Яремецького-Білахевича, с. 1–22. Самопосилання на обидві частини: т. IV, с. 153 (скан 205). Зберігати друковану лакуну; наступний список Білявського не належить до цієї паралелі. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
       }
     ]
   },
@@ -9077,9 +9165,9 @@ function appendContentsReferences(li,actions,v,entry,links){
  const original=document.createElement('p');original.className='contents-ref-original';const label=document.createElement('span');uiText(label,'Original title');const title=document.createElement('span');title.lang=contentsOriginalLang(entry[1]);title.textContent=': '+entry[1];original.append(label,title);detail.append(original);
  for(const link of links){const record=document.createElement('div');record.className='contents-ref-record';
  const name=document.createElement('strong');name.className='contents-ref-title';setContentsBilingual(name,link.title,link.titleUk);
- const status=document.createElement('p');status.className='contents-ref-state';uiText(status,link.relation==='edition-match'?'Edition match':link.relation==='work-family'?'Work family; witness not checked':'Possible match; not identified');
+ const status=document.createElement('p');status.className='contents-ref-state';uiText(status,link.relation==='edition-match'?'Edition match':link.relation==='work-family'?'Work family; witness not checked':link.relation==='earlier-publication'?'Earlier publication; textual differences possible':link.relation==='earlier-full-witness'?'Earlier full witness; apparatus in this edition':'Possible match; not identified');
  const evidence=document.createElement('p');evidence.className='contents-ref-evidence';setContentsBilingual(evidence,link.evidence,link.evidenceUk);
- const a=document.createElement('a');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';const provider=document.createElement('span');uiText(provider,link.provider==='e-Clavis'?'e-Clavis bibliography':link.kind==='edition'?'OCP critical text (comparison)':'OCP catalogue (search by CAVT)');const identifier=document.createElement('span');identifier.textContent=' · '+link.id;a.append(provider,identifier);
+ const a=document.createElement('a');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';const provider=document.createElement('span');uiText(provider,link.provider==='Franko'?'Franko publication':link.provider==='e-Clavis'?'e-Clavis bibliography':link.kind==='edition'?'OCP critical text (comparison)':'OCP catalogue (search by CAVT)');const identifier=document.createElement('span');identifier.textContent=' · '+link.id;a.append(provider,identifier);
  record.append(name,status,evidence,a);detail.append(record);}
  b.onclick=()=>{detail.hidden=!detail.hidden;b.setAttribute('aria-expanded',String(!detail.hidden));};
  actions.append(b);li.append(detail);
