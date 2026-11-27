@@ -110,6 +110,7 @@ def build(pilot, output, ref):
             a = row["annotation"]
             path = f'pilot/vol{volume}_scan{row["scan"]:05d}_{row["suffix"]}.json'
             entry.update(model_id=a["model_id"], model_version=a["model_version"],
+                         candidate_blob=a["candidate_blob"], reader_id=a["reader_id"],
                          editorial=("available" if (row["scan"], row["suffix"]) in available
                                     else "unavailable" if path in stale else "none"))
             literal.append(entry)
