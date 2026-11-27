@@ -84,6 +84,35 @@ def _single_letter_titlo(anchor):
             and "CYRILLIC" in unicodedata.name(anchor[i - 1], ""))
 
 
+def _unique_fixed_position_spelling(original, replacement, a, b):
+    """One or two Cyrillic letter substitutions in one unique marked token.
+
+    The physical attachment is unchanged: both marker boundaries and every
+    character outside that token are identical. This is intentionally not a
+    general alignment, lemma change, normalization, or note-link rewrite.
+    """
+    old, new = a[1], b[1]
+    if a[2:] != b[2:] or len(old) != len(new):
+        return False
+    if not all(unicodedata.category(c).startswith("L")
+               and "CYRILLIC" in unicodedata.name(c, "") for c in old + new):
+        return False
+    if not 1 <= sum(x != y for x, y in zip(old, new)) <= 2:
+        return False
+    start, end = a[2] - len(old), a[2]
+    if (original[:start] != replacement[:start]
+            or original[end:] != replacement[end:]):
+        return False
+
+    def occurrences(token, text):
+        pattern = re.compile(r"(?<!\S)" + re.escape(token)
+                             + r"(?=$|\s|[⁰¹²³⁴⁵⁶⁷⁸⁹])")
+        return len(pattern.findall(text))
+
+    return (occurrences(old, original) == occurrences(new, replacement) == 1
+            and occurrences(old, replacement) == occurrences(new, original) == 0)
+
+
 def apparatus_mapping(original, replacement):
     before, after = _markers(original), _markers(replacement)
     require([m[0] for m in before] == [m[0] for m in after],
@@ -96,6 +125,8 @@ def apparatus_mapping(original, replacement):
         anchor, new_anchor = a[1], b[1]
         old_text, new_text = original, replacement
         if anchor != new_anchor:
+            if _unique_fixed_position_spelling(original, replacement, a, b):
+                continue
             # I/104: relocating exactly one combining titlo within the
             # same Cyrillic token does not change the attachment identity.
             # No base letter, whitespace, punctuation, or other mark may
