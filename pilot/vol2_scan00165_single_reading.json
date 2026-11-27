@@ -1,0 +1,1111 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 165,
+  "printed_page_observed": "83",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00165.jpg",
+  "source_image_sha256": "4cfe5eb1efc8b214013c8b893ad36519832e10b23e68188eb7c4dfd33232b99f",
+  "reading": {
+    "reader_id": "gpt62-ii-165-image-harmonized-20261127",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00161-00170-20261127",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "83\nвси служащіи церковніи чредници.\nс[в]яти пророкъ Захаріа с нима,\nархіерей начални надъ всима, —\nизыдоша вси на сритение\nко прест҃ои на воведеніе.\nБаху тамо пятънадесятъ степени\nпри цр҃ковномъ входѣ сотвореніи,\nна всякомъ ся еденъ ѱаломъ поє\nѿ сц҃енства, коли на нимъ стои,\nи Левитонъ, коли гори виходи\nи на службу до цр҃кви оуходи.\nпоставиша оубо родители\nПречистую на первомъ степени;\nсама собомъ на прочия взиде,\nскоро тече, по степенамъ приде.\nвостекши же на степенъ грънѣйши,\nдивиша ся зрители множайши,\nнайпаче ст҃итель велики\nЗахарія съ*) цр҃квними лики,\nако вѣдѣ ѡтроковицу,\nѿ тріехъ лѣтъ сущую дѣвицу,\nни ѿ кого ѡна возводима,\nни руками ѿ кого придержима,\nпо степенамъ саму востекшую\nи на горни степенъ изъшетшую.\nПриявъ ст҃ый руками своими\nблагослови дѣвицу претъ всѣма,\nеще едну сотвори вещъ страну\nЗахарія всѣмъ оудивителну:\nпречистую воведе дѣвицу\nво ст҃ая ст҃ыхъ голубицу.\nво внутреность храма Гд҃няго\nпо второй же зависи бывшаго,\nгдѣ не само ни полу женскому,\nно ни чину священническому\nдозволено не було входити,\nниже кому молитви творити.\n320\n330\n340\n350\n*) В рукоп. через помилку: сатыи.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          975,
+          83,
+          38,
+          29
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "83",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              975,
+              83,
+              38,
+              26
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          244,
+          150,
+          516,
+          173
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-cont-line-01",
+            "text": "вси служащіи церковніи чредници.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              150,
+              516,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-02",
+            "text": "с[в]яти пророкъ Захаріа с нима,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              184,
+              516,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-03",
+            "text": "архіерей начални надъ всима, —",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              219,
+              516,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-04",
+            "text": "изыдоша вси на сритение",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              253,
+              516,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-05",
+            "text": "ко прест҃ои на воведеніе.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              288,
+              516,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-steps",
+        "kind": "body",
+        "bbox_xywh": [
+          244,
+          364,
+          545,
+          714
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-steps-line-01",
+            "text": "Баху тамо пятънадесятъ степени",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              364,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-02",
+            "text": "при цр҃ковномъ входѣ сотвореніи,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              399,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-03",
+            "text": "на всякомъ ся еденъ ѱаломъ поє",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              435,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-04",
+            "text": "ѿ сц҃енства, коли на нимъ стои,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              471,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-05",
+            "text": "и Левитонъ, коли гори виходи",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              506,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-06",
+            "text": "и на службу до цр҃кви оуходи.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              542,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-07",
+            "text": "поставиша оубо родители",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              578,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-08",
+            "text": "Пречистую на первомъ степени;",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              613,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-09",
+            "text": "сама собомъ на прочия взиде,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              649,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-10",
+            "text": "скоро тече, по степенамъ приде.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              685,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-11",
+            "text": "востекши же на степенъ грънѣйши,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              721,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-12",
+            "text": "дивиша ся зрители множайши,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              756,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-13",
+            "text": "найпаче ст҃итель велики",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              792,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-14",
+            "text": "Захарія съ*) цр҃квними лики,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 10,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 10,
+                "end": 12,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 12,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              828,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-15",
+            "text": "ако вѣдѣ ѡтроковицу,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 20,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              863,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-16",
+            "text": "ѿ тріехъ лѣтъ сущую дѣвицу,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              899,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-17",
+            "text": "ни ѿ кого ѡна возводима,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 24,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              935,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-18",
+            "text": "ни руками ѿ кого придержима,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              970,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-19",
+            "text": "по степенамъ саму востекшую",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              1006,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-steps-line-20",
+            "text": "и на горни степенъ изъшетшую.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              244,
+              1042,
+              545,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-holy",
+        "kind": "body",
+        "bbox_xywh": [
+          241,
+          1117,
+          540,
+          425
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-holy-line-01",
+            "text": "Приявъ ст҃ый руками своими",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1117,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-02",
+            "text": "благослови дѣвицу претъ всѣма,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1152,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-03",
+            "text": "еще едну сотвори вещъ страну",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1187,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-04",
+            "text": "Захарія всѣмъ оудивителну:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1223,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-05",
+            "text": "пречистую воведе дѣвицу",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1258,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-06",
+            "text": "во ст҃ая ст҃ыхъ голубицу.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1294,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-07",
+            "text": "во внутреность храма Гд҃няго",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1329,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-08",
+            "text": "по второй же зависи бывшаго,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1364,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-09",
+            "text": "гдѣ не само ни полу женскому,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1400,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-10",
+            "text": "но ни чину священническому",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1435,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-11",
+            "text": "дозволено не було входити,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1471,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-holy-line-12",
+            "text": "ниже кому молитви творити.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              241,
+              1506,
+              540,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-320",
+        "kind": "other",
+        "bbox_xywh": [
+          167,
+          256,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-320-line-01",
+            "text": "320",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              167,
+              256,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-330",
+        "kind": "other",
+        "bbox_xywh": [
+          167,
+          649,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-330-line-01",
+            "text": "330",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              167,
+              649,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-340",
+        "kind": "other",
+        "bbox_xywh": [
+          166,
+          1007,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-340-line-01",
+            "text": "340",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              166,
+              1007,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-350",
+        "kind": "other",
+        "bbox_xywh": [
+          164,
+          1402,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-350-line-01",
+            "text": "350",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              164,
+              1402,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "note-star",
+        "kind": "note",
+        "bbox_xywh": [
+          130,
+          1586,
+          397,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "note-star-line-01",
+            "text": "*) В рукоп. через помилку: сатыи.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 2,
+                "end": 27,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-165-image-harmonized-20261127",
+                "start": 27,
+                "end": 33,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              130,
+              1586,
+              397,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "verse-steps-line-01",
+        "reading": "Баху",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-steps-line-04",
+        "reading": "сц҃енства",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "note-star-line-01",
+        "reading": "сатыи",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-cont-line-04",
+        "reading": "сритение",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
+      }
+    ],
+    "source_note_links": [
+      {
+        "marker_line_id": "verse-steps-line-14",
+        "marker_text": "*)",
+        "marker_start": 10,
+        "note_region_id": "note-star"
+      }
+    ]
+  }
+}
