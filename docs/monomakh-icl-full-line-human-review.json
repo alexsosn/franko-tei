@@ -1,6 +1,6 @@
 {
   "schema": "franko-icl-full-line-human-review-v1",
-  "status": "awaiting_user_review",
+  "status": "partial_user_review",
   "comparison_commit": "f0aa033f49dec864dcde90c0f9bd5df6aa82c372",
   "baseline_commit": "099404eb00e80f24d84badd87c2c6939c8171c45",
   "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
@@ -22,7 +22,11 @@
       "A": "ве оумолиша цр҃я, да бы послалъ оубити Павла. пославъ цр҃ь на",
       "B": "ве оу҆молиша цр҃ѧ, да бы послалъ оу҆бити Павла. посла цр҃ь на",
       "old_option": "A",
-      "new_option": "B"
+      "new_option": "B",
+      "user_reading": "ве оу҆молиша цр҃ѧ, да бы послаль оу҆бити Павла. пославь цр҃ь на",
+      "user_raw": "B ве оу҆молиша цр҃ѧ, да бы послаль оу҆бити Павла. пославь цр҃ь на",
+      "review_status": "user_reviewed",
+      "selected_option": "B"
     },
     {
       "id": "R02",
@@ -39,7 +43,10 @@
       "A": "всѧ поути стрѣщи таковаго моужа, бѣ бо знаем: чръныѧ брадѫ",
       "B": "вся поути стрѣщи таковаго моужа, бѣ бо знаем: чрънѫ брадѫ",
       "old_option": "B",
-      "new_option": "A"
+      "new_option": "A",
+      "user_reading": "всѧ поути стрѣщи таковаго моужа, бѣ бо знаєм: чрънѫ брадѫ",
+      "user_raw": "всѧ поути стрѣщи таковаго моужа, бѣ бо знаєм: чрънѫ брадѫ",
+      "review_status": "user_reviewed"
     },
     {
       "id": "R03",
@@ -56,7 +63,10 @@
       "A": "имѣя и . . . главѫ сивѫ и низок тѣлом. и пришедши близ къ",
       "B": "имѣа и҆ ... главѫ сивѫ и҆ низок тѣлом. и҆ пришедши близ къ",
       "old_option": "A",
-      "new_option": "B"
+      "new_option": "B",
+      "user_reading": "имѣѧ и҆ ... главѫ сивѫ и҆ низок тѣлом. и҆ пришедши близ къ",
+      "user_raw": "имѣѧ и҆ ... главѫ сивѫ и҆ низок тѣлом. и҆ пришедши близ къ",
+      "review_status": "user_reviewed"
     },
     {
       "id": "R04",
@@ -73,7 +83,10 @@
       "A": "Римѹ вълѣзе въ корабль. бы҃ Диоскор нѣкто и҆мѣа ѡ҆браз Пав-",
       "B": "Римѫ влѣзе въ корабль. бы҃ Диоскор нѣкто имѣя образ Пав-",
       "old_option": "B",
-      "new_option": "A"
+      "new_option": "A",
+      "user_reading": "Римѫ вълѣзе въ корабль. бы҆҄ Диоскор нѣкто и҆мѣѧ ѡ҆браз Пав-",
+      "user_raw": "Римѫ вълѣзе въ корабль. бы҆҄ Диоскор нѣкто и҆мѣѧ ѡ҆браз Пав-",
+      "review_status": "user_reviewed"
     },
     {
       "id": "R05",
@@ -90,7 +103,10 @@
       "A": "ловъ и главою и брадою, и влѣзе въ град Потиѡль. и мнѣвши",
       "B": "ловъ и҆ главою и҆ брадою, и҆ вълѣзе въ град Потииѡль. и҆ мнѣвши",
       "old_option": "A",
-      "new_option": "B"
+      "new_option": "B",
+      "user_reading": "ловъ и҆ главою ѝ брадою, и҆ вълѣзе въ град Потиѡ҆ль. и҆ мнѣвши",
+      "user_raw": "ловъ и҆ главою ѝ брадою, и҆ вълѣзе въ град Потиѡ҆ль. и҆ мнѣвши",
+      "review_status": "user_reviewed"
     },
     {
       "id": "R06",
@@ -107,7 +123,24 @@
       "A": "людіе, ꙗ҆ко Павелъ е҆, и҆ оу҆сѣкоша главоу е҆го и послаша въ Рим",
       "B": "людїе, яко Павелъ е, и оусѣкоша главоу его и послаша въ Рим",
       "old_option": "B",
-      "new_option": "A"
+      "new_option": "A",
+      "user_reading": "людїе, ꙗ҆ко Павел̾ є, и оусѣкоша главоу є҆го и послаша въ Рим",
+      "user_raw": "людїе, ꙗ҆ко Павел̾(не уверен насчет диакритики тут) є(не уверен насчет диакритики тут), и оусѣкоша главоу є(придыхание)го и послаша въ Рим",
+      "review_status": "base_reviewed_marks_uncertain",
+      "uncertainties": [
+        {
+          "target": "Павел̾",
+          "dimension": "diacritic",
+          "note": "User uncertain about mark; U+033E retained as supplied, not adjudicated."
+        },
+        {
+          "target": "є",
+          "occurrence": 1,
+          "dimension": "diacritic",
+          "note": "User uncertain about mark above standalone є."
+        }
+      ],
+      "transcription_note": "Parenthetical comments recorded separately; explicit breathing on єго encoded U+0486. Base spelling preserved exactly."
     },
     {
       "id": "R07",
@@ -347,5 +380,72 @@
       "old_option": "B",
       "new_option": "A"
     }
-  ]
+  ],
+  "partial_scores": {
+    "method": "NFC Cyrillic-letter edit distance (all six reviewed lines); exact NFC codepoint edit distance including whitespace and punctuation (five fully supplied lines only; R06 excluded for uncertain diacritics). User transcription as supplied, no independent source verification.",
+    "rows": [
+      {
+        "id": "R01",
+        "base_ref": 47,
+        "base_old": 3,
+        "base_new": 3,
+        "exact_ref": 63,
+        "exact_old": 5,
+        "exact_new": 3
+      },
+      {
+        "id": "R02",
+        "base_ref": 46,
+        "base_old": 2,
+        "base_new": 3,
+        "exact_ref": 57,
+        "exact_old": 2,
+        "exact_new": 3
+      },
+      {
+        "id": "R03",
+        "base_ref": 40,
+        "base_old": 1,
+        "base_new": 1,
+        "exact_ref": 58,
+        "exact_old": 6,
+        "exact_new": 1
+      },
+      {
+        "id": "R04",
+        "base_ref": 45,
+        "base_old": 3,
+        "base_new": 2,
+        "exact_ref": 60,
+        "exact_old": 7,
+        "exact_new": 4
+      },
+      {
+        "id": "R05",
+        "base_ref": 45,
+        "base_old": 2,
+        "base_new": 2,
+        "exact_ref": 62,
+        "exact_old": 6,
+        "exact_new": 4
+      },
+      {
+        "id": "R06",
+        "base_ref": 45,
+        "base_old": 4,
+        "base_new": 4,
+        "exact_ref": null,
+        "exact_old": null,
+        "exact_new": null
+      }
+    ],
+    "totals": {
+      "base_ref": 268,
+      "base_old": 15,
+      "base_new": 15,
+      "exact_ref": 300,
+      "exact_old": 26,
+      "exact_new": 15
+    }
+  }
 }
