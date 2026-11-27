@@ -9,6 +9,7 @@ from .pilot_tf import build_tf_graph, verify_graph_roundtrip
 from .pilot_tf_batch import merge_pilot_graphs, _save_graph
 from .review_tei import ledger_at_checkout, _verified_editorial_page
 from .review_bundle import PATH, match, git_source_loader
+from .native_collation import load_native_collation
 
 
 def save_current_tf(repo, paths, images_root, revision, output):
@@ -35,7 +36,8 @@ def save_current_tf(repo, paths, images_root, revision, output):
     loader = git_source_loader(repo, revision)
     entries, expected = [], []
     for path in sorted(paths):
-        xml = _verified_editorial_page(path, images_root, revision, ledger, loader)
+        xml = _verified_editorial_page(path, images_root, revision, ledger, loader,
+                                       collation=load_native_collation(repo, revision, path))
         payload = json.loads(loader(revision, path).decode("utf-8"))
         graph = build_tf_graph(xml)
         expected.extend(extract_transcribed_lines(xml))

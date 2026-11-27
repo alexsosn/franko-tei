@@ -42,7 +42,7 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
           set -euo pipefail
-          if ! git diff --quiet "$BASE" HEAD -- src/franko_tei/review_tei.py src/franko_tei/review_tf.py src/franko_tei/pilot_tf.py src/franko_tei/pilot_tf_batch.py tests/test_review_tei.py tests/live_review_tei.py reviews pyproject.toml .github/workflows/ci.yml; then
+          if ! git diff --quiet "$BASE" HEAD -- src/franko_tei/review_tei.py src/franko_tei/review_tf.py src/franko_tei/pilot_tf.py src/franko_tei/pilot_tf_batch.py tests/test_review_tei.py tests/live_review_tei.py src/franko_tei/native_collation.py pilot/reviews/vol4_scan00068_native_collation_20261127.json reviews pyproject.toml .github/workflows/ci.yml; then
             python tests/live_review_tei.py
           fi
       - run: franko-tei catalog > /dev/null
