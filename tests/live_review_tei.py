@@ -23,7 +23,8 @@ ROOT=Path(__file__).resolve().parents[1]
 REF=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
 NS={"t":TEI}
 ID="{"+XML+"}id"
-PAGES=("pilot/vol1_scan00104_single_reading.json","pilot/vol4_scan00068_single_reading.json")
+PAGES=("pilot/vol1_scan00104_single_reading.json","pilot/vol1_scan00316_single_reading.json",
+       "pilot/vol4_scan00068_single_reading.json")
 
 
 def main():
@@ -62,6 +63,10 @@ def main():
             if "00104" in path:
                 assert any("Сиѳъ" in r["text"] and "Сидъ" in r["original"]
                            for r in accepted), "actual Seth correction missing"
+            if "00316" in path:
+                assert len(accepted)==2
+                assert any("понавицею" in r["text"] for r in accepted)
+                assert any("понавица" in r["text"] for r in accepted)
             if "00068" in path:
                 assert sum(r["text"].startswith("Ѿвѣт:") for r in rows)==7
                 assert any(r["text"]=="Ѿвѣт: О́̓сифъ бл҃гоѡбразный." for r in rows)
@@ -77,11 +82,12 @@ def main():
         assert api, "TF could not load the current text"
         lines=api.F.otype.s("line")
         assert ["".join(api.F.glyph.v(s) for s in api.L.d(n,otype="char")) for n in lines]==expected
-        assert [api.F.pageKey.v(n) for n in api.F.otype.s("page")]==["v1-s00104","v4-s00068"]
+        assert [api.F.pageKey.v(n) for n in api.F.otype.s("page")]==["v1-s00104","v1-s00316","v4-s00068"]
         assert all(api.F.status.v(n)=="agent_unverified" for n in api.F.otype.s("page"))
         hits=[n for n in lines if "Сиѳъ" in "".join(api.F.glyph.v(s) for s in api.L.d(n,otype="char"))]
         assert hits and any(api.F.teiId.v(n).endswith("witness-e-death-adam-l003") for n in hits)
         assert sum(t.startswith("Ѿвѣт:") for t in expected)==7
+        assert sum("понавицею" in t or "понавица" in t for t in expected)==2
         assert any(api.F.regionKind.v(n)=="note" for n in api.F.otype.s("region"))
         assert any(api.F.lang.v(n)=="cu" for n in api.F.otype.s("languageSpan"))
         assert not any("review" in name.lower() or "contributor" in name.lower()
@@ -93,7 +99,7 @@ def main():
                 pass
             else:
                 raise AssertionError("invalid page selection accepted")
-        print("PASS real Text-Fabric load and selected-text query on I/104 + IV/68")
+        print("PASS real Text-Fabric load and selected-text query on I/104 + I/316 + IV/68")
         # Native bytes cannot be replaced even when a matching review is present.
         source=json.loads(loader(REF,PAGES[0]))
         image=images/source["source_image_path"]
