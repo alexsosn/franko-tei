@@ -5,7 +5,8 @@
   "notes": [
     "User requests base-letter review before accent classification.",
     "These are crops of the previously supplied local review-sheet previews (four grayscale levels), not new native-pixel source rectangles. Parent rows retain original source provenance. The preview sheets and review PDF are delivered in chat, not vendored in the repository. This index preserves the review IDs; it is not a native-source training dataset.",
-    "Noto Serif labels, not exact Monomakh. All labels provisional, including base-letter distinctions in L06, L10–L13, L15, L18–L19, L40. L05 is a two-character sequence. No diacritic classification."
+    "Noto Serif labels, not exact Monomakh. All labels provisional, including base-letter distinctions in L06, L10–L13, L15, L18–L19, L40. L05 is a two-character sequence. No diacritic classification.",
+    "User explicitly confirmed L10 and L12 and corrected L11 to ъ; remaining examples received general 'ok' feedback, not individual native-source verification. Do not equate this with a complete alphabet. Uppercase and ligatures require separate source inventory."
   ],
   "pdf_sha256": "d87b44539262407acba8d93e643152325c70e28c9fc916242ee24f6959fa23d1",
   "previews": [
@@ -184,14 +185,15 @@
         550,
         827
       ],
-      "status": "candidate"
+      "status": "user_reviewed",
+      "review": "Explicit user correction or confirmation on numbered PDF, 2026-11-27."
     },
     {
       "id": "L11",
       "parent_row": 15,
-      "reading": "ь",
+      "reading": "ъ",
       "codepoints": [
-        "U+044C"
+        "U+044A"
       ],
       "preview_bbox_xyxy": [
         422,
@@ -199,7 +201,8 @@
         517,
         1006
       ],
-      "status": "candidate"
+      "status": "user_reviewed",
+      "review": "Explicit user correction or confirmation on numbered PDF, 2026-11-27."
     },
     {
       "id": "L12",
@@ -214,7 +217,8 @@
         362,
         681
       ],
-      "status": "candidate"
+      "status": "user_reviewed",
+      "review": "Explicit user correction or confirmation on numbered PDF, 2026-11-27."
     },
     {
       "id": "L13",
