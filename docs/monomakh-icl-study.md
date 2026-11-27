@@ -642,3 +642,54 @@ apply uncertain accent hypotheses. Next meaningful experiment: a fresh
 same-model independent-context A/B run with fixed line crops, selected
 pages held out from atlas, and human adjudication blinded to arm. No
 corpus edits, no release claim.
+
+
+## Active approved-only atlas (owner direction, 2026-11-27)
+
+The owner requests use of approved material and issue review evidence only.
+The candidate hybrid chart and synthetic inventory remain historical research
+artifacts; they are not the active ICL input. Use
+`docs/monomakh-icl-approved-atlas.json` and
+`docs/render_approved_icl.py` instead. Snapshot includes 82 base-glyph
+examples from the four user-reviewed batches (L44 and L61 withheld), and
+seven focal/context examples drawn from actual accepted decisions for
+#201, #213 and #277. General batch approval is explicitly different from
+individual verification. Issue acceptance is provisional agent adjudication,
+not human gold. Only adjudicated features are labeled, not every nearby
+letter or unresolved accent. In particular #201's answer superscript and
+accent combination are not atlas labels, and #213's бꙗше is base-only.
+#369 and the I/104 witness heading are different print/language contexts,
+so remain outside this Church Slavonic atlas. #411/#412/#415/#416 contain
+agent proposals still in unmerged PRs #413/#420 at ledger snapshot 099404e;
+exclude them until accepted on main. Rejected #201 event is excluded.
+
+The first 42 labels are tied to the exact hashed review PNGs already
+provided to the owner, not independently established native-letter boxes.
+Their optional inclusion avoids fabricating coordinates from rescaled
+previews. All other examples (40 base-glyph crops, 7 issue-context lines)
+are reproducible directly from pinned JPEGs with dimensions, SHA-256 and
+Git blob IDs. No derivative images or font files are published. To render
+locally with a checkout containing the vendored font, and the original
+pinned image assets under the specified images directory:
+
+```sh
+python docs/render_approved_icl.py --assets /path/to/images --output /tmp/approved-icl.html
+# Include the four original review PNGs if locally available:
+python docs/render_approved_icl.py --assets /path/to/images --previews /path/to/review-pngs --output /tmp/approved-icl-full.html
+```
+
+The first invocation renders 47 native-source examples; the second renders
+all 89. The output declares coverage and provenance, and renders the exact
+application Monomakh font into pixels without exporting font bytes. No
+candidate fallback or automatic correction. CI checks the inclusion boundary
+and exercises the native renderer with real pinned JPEGs. Review PNGs are
+private/local derivatives; their hashes can be checked against the manifest.
+
+R01–R06 and D01–D12 owner reviews are preserved in their existing reviewed
+records, not silently added as exemplars for the ongoing III/134 and II/134
+comparison. This protects the incomplete 20-line CER evaluation from
+train/test leakage. After the experiment is frozen, these can be admitted
+for future disjoint-page experiments (only approved focal features and
+explicit readings; uncertain R06 marks are not labels). Do not use the
+remaining unreviewed lines, unaccepted issues, or model guesses as gold.
+No corpus text changes and no new accuracy claim.
