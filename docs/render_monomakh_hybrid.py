@@ -19,6 +19,8 @@ FONT_BLOB = "4d7c0809ebc700036286d992c30d2b4ec4a0d59c"
 FONT_PATH = ROOT / "web/fonts/Monomakh-Regular.woff2"
 
 SOURCES = {
+    "I/97": {"path": "vol1/page-00097.jpg", "printed": "22", "width": 1190, "height": 1824,
+             "sha256": "e1b73a353921da5826a35de394402d24a1705d2295b441265254901d6663a93f"},
     "I/128": {"path": "vol1/page-00128.jpg", "printed": "53", "width": 1190, "height": 1727,
               "sha256": "abcf203d3894a38280b12a85a854475905c11f5d0ada49a8c225a18fa6d3da2a"},
     "III/131": {"path": "vol3/page-00131.jpg", "printed": "45", "width": 1190, "height": 1853,
@@ -87,6 +89,11 @@ EXAMPLES = [
     {"source": "I/128", "line":"enoch-methuselah-l002", "bbox_xywh":[239,296,105,38], "render":"ѡдра", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave on omega; spaced heading. Later stress may differ."},
     {"source": "I/128", "line":"enoch-address-l010", "bbox_xywh":[695,849,65,38], "render":"ѡчи", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave; omega left edge clipped. Compare next line."},
     {"source": "I/128", "line":"enoch-address-l011", "bbox_xywh":[522,887,65,38], "render":"ѡчи", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Repeated wave in same word; left margin close."},
+    # Interjection controls: same page, two observed mark shapes.
+    {"source": "I/97", "line":"witness-a-continuation-l002", "bbox_xywh":[987,199,133,36], "render":"ѡ", "focus":"ѡ҆́ / ѡ҆̑ / ѡ̑", "status":"ambiguous", "category":"accent", "contrast":"interjection-omega", "shape":"wave", "mark_options":["U+0486 U+0311", "U+0486 U+0301", "U+0311"], "note":"Before Eve vocative; great apostrof plausible; base only."},
+    {"source": "I/97", "line":"witness-a-continuation-l009", "bbox_xywh":[645,459,122,36], "render":"ѡ", "focus":"ѡ҆ / ѡ̑", "status":"ambiguous", "category":"accent", "contrast":"interjection-omega", "shape":"arch", "mark_options":["U+0486", "U+0311"], "note":"Before son vocative; simple arch, unlike wave."},
+    {"source": "I/97", "line":"witness-a-continuation-l020", "bbox_xywh":[155,858,130,38], "render":"ѡ", "focus":"ѡ҆́ / ѡ҆̑ / ѡ̑", "status":"ambiguous", "category":"accent", "contrast":"interjection-omega", "shape":"wave", "mark_options":["U+0486 U+0311", "U+0486 U+0301", "U+0311"], "note":"Repeated Eve vocative; wave. Do not equate to iso."},
+    {"source": "I/97", "line":"witness-a-continuation-l023", "bbox_xywh":[862,970,133,39], "render":"ѡ", "focus":"ѡ҆ / ѡ̑", "status":"ambiguous", "category":"accent", "contrast":"interjection-omega", "shape":"arch", "mark_options":["U+0486", "U+0311"], "note":"Before lament gore; simple arch. Base only."},
 ]
 
 
