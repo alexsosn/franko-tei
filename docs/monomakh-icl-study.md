@@ -569,3 +569,34 @@ and order remain unchanged; explicit numbers have been added to the
 renderer. Further comparison should use native 8-bit crops, not the
 quantized previews, particularly for the shape of the capital initial
 and the first v-shaped letter. No new CER result or corpus replacements.
+
+
+## Base-letter review, second batch (2026-11-27)
+
+User explicitly confirms L10 = ъ, L11 = ъ (corrected from ь), L12 = ꙗ,
+and asks for a full inventory including uppercase and ligatures. The
+first review JSON preserves these three decisions and the original
+preview coordinates. Do not treat general approval as proof of every
+historical codepoint or as a complete alphabet.
+
+Second batch L43–L66, docs/monomakh-icl-letter-review-02.json, contains
+20 uppercase candidates, two ѿ candidates, and two оу sequences from
+native JPEG rectangles. Quantized four-level luma previews were used
+for the mobile PDF, not modern simulated source glyphs. Actual source
+coordinates and source hashes permit regeneration without quantization.
+The inspected contact sheet exposed a missed Щ target (actually оу),
+which was relabeled, and a clipped ot candidate, which was omitted.
+С/Є, Ꙗ/А and ornate omega remain explicitly provisional. No independent
+verification of the candidate uppercase readings has been claimed.
+
+The 66 review IDs now represent 59 distinct provisional strings,
+including 22 uppercase candidates (А, О from the first batch). This is
+coverage of the candidate review inventory, not the complete typeface.
+Next: collect common missing uppercase Д Е Ї Й К Л У Ц Ш Щ Ъ Ы Ь,
+plus historical variants Ѕ Ѣ Ѧ Ѫ Ѩ Ѭ Ѻ Ѿ Ѹ Ꙋ Ѯ Ѱ Ѳ Ѵ Ꙍ Ѽ, and missing
+lowercase forms including ж ѕ і л ф ь ѫ ѩ ѭ ѻ ѹ ѯ ѳ ꙍ ѽ. Use these as
+search targets, not a claim that every target actually appears in Franko.
+Track confirmed absence separately from not yet located. Distinguish
+single encoded ligatures (ѿ, ꙗ) from digraphs (оу), and seek actual
+uppercase Ѿ and contrasting uk variants. Keep source evidence separate
+from Unicode repertoire. No corpus changes or accent decisions.
