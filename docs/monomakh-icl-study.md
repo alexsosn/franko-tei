@@ -178,3 +178,9 @@ and Unicode Technical Note 41
 (https://www.unicode.org/notes/tn41/tn41-1.pdf).
 The frozen experimental results are unchanged. The corpus reading remains
 untouched; use a source-grounded editorial review for any actual change.
+
+Further user feedback prioritizes kamora and acute/iso for row 6. Compare
+U+0311, U+0301, U+0486+U+0301, and U+0486+U+0311 visually; the
+last sequence is great apostrof, not iso. Do not infer simultaneous
+kamora and acute without source evidence. Exact sign remains unresolved;
+no corpus reading changed.
