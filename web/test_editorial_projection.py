@@ -89,6 +89,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 for literal, ann in zip(literals["entries"],annotations["entries"]):
                     self.assertNotIn("annotation",literal)
                     self.assertNotIn("text",ann)
+                    self.assertEqual(literal["candidate_blob"],ann["annotation"]["candidate_blob"])
+                    self.assertEqual(literal["reader_id"],ann["annotation"]["reader_id"])
                     text=literal["text"]
                     cursor=0
                     lines=ann["annotation"]["lines"]
@@ -559,12 +561,35 @@ class EditorialProjectionTests(unittest.TestCase):
                 # Stale and duplicate metadata must fail, not produce a false zero.
                 self.assertTrue(page.evaluate("""([l,a])=>{
                     for(const mutate of [x=>x.ref='0'.repeat(40),x=>x.entries.push(x.entries[0]),
-                        x=>x.entries[0].annotation.lines[0].start++]) {
+                        x=>x.entries[0].annotation.lines[0].start++,x=>x.entries[0].annotation.candidate_blob="0".repeat(40)]) {
                         const copy=structuredClone(a);mutate(copy);
                         try {joinSearchAnnotations(l,copy);return false;}catch(e){}
                     }
                     return true;
                 }""",[literal,annotation]))
+                # Unicode code points are converted once to browser offsets.
+                # A cross-line literal may only cross compatible ranges.
+                result=page.evaluate("""()=>{
+                    const row={text:'𐌰ἀ β\\nγ δ',annotationLines:[
+                        {start:0,end:6,region_kind:'body',spans:[
+                            {start:0,end:2,language:'und',uncertain:true},
+                            {start:2,end:6,language:'grc',uncertain:false}]},
+                        {start:7,end:10,region_kind:'note',spans:[
+                            {start:7,end:8,language:'grc',uncertain:false},
+                            {start:9,end:10,language:'uk',uncertain:true}]}]};
+                    const f={language:'grc',region:'',certainty:''};
+                    const hits=annotationMatches(row,null,f).map(m=>[m.index,m[0]]);
+                    return [hits,annotationMatches(row,queryRegex('β γ',true),f).length,
+                        annotationMatches(row,queryRegex('β γ',true),{...f,region:'body'}).length,
+                        annotationMatches(row,queryRegex('ἀ',true),{...f,certainty:'uncertain'}).length,
+                        annotationMatches(row,queryRegex('𐌰',true),{...f,language:'und'}).length];
+                }""")
+                self.assertEqual(result,[[[2,'ἀ β'],[7,'γ']],1,0,0,1])
+                # OCR is not allowed to masquerade as an annotated reading.
+                page.locator("#searchSource").select_option("ocr")
+                page.locator("#searchGo").click()
+                expect(page.locator("#searchStatus")).to_contain_text("Annotation filters cannot be applied to OCR")
+                expect(page.locator("#searchResults button")).to_have_count(0)
                 browser.close()
 
     def test_browser_reading_and_exact_search(self):
@@ -667,6 +692,19 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(line.locator(".search-match")).to_contain_text("Сиѳъ")
                 expect(page.locator("#editorialView")).to_be_checked()
                 page.locator("#searchOpen").click()
+                page.locator("#searchFacets summary").click()
+                page.locator("#searchLanguage").select_option("cu")
+                page.locator("#searchGo").click()
+                expect(page.locator("#searchStatus")).to_contain_text("indexed lines")
+                expect(page.locator("#searchResults button").filter(has_text="scan 104")).to_have_count(0)
+                page.locator("#searchLanguage").select_option("missing")
+                page.locator("#searchGo").click()
+                hit=page.locator("#searchResults button").filter(has_text="scan 104").filter(has_text="Editorial")
+                expect(hit).to_have_count(1)
+                hit.click()
+                expect(line.locator(".search-match")).to_contain_text("Сиѳъ")
+                page.locator("#searchOpen").click()
+                page.locator("#searchLanguage").select_option("")
                 page.locator("#query").fill("Сидъ вопроситъ⁵)")
                 page.locator("#searchGo").click()
                 expect(page.locator("#searchStatus")).to_contain_text("Searched ")
