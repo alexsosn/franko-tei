@@ -11,10 +11,13 @@ import json
 from io import BytesIO
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont, features
+from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT = ROOT / "monomakh-icl-approved-atlas.json"
+FONT_PATH = ROOT.parent / "web/fonts/Monomakh-Regular.woff2"
+FONT_BLOB = "4d7c0809ebc700036286d992c30d2b4ec4a0d59c"
 APPROVALS = {"human_explicit_or_batch", "human_general_batch", "issue_accepted_provisional"}
 
 
@@ -73,10 +76,26 @@ def uri(image):
     return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
 
 
+def load_approved_font(doc):
+    if not features.check("raqm"):
+        raise RuntimeError("Pillow RAQM required")
+    data = FONT_PATH.read_bytes()
+    if hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest() != FONT_BLOB:
+        raise ValueError("Monomakh font blob mismatch")
+    with TTFont(BytesIO(data)) as font:
+        missing = {ord(c) for row in doc["examples"] for c in row["reading"] if not c.isspace()} - set(font.getBestCmap())
+        if missing:
+            raise ValueError("Missing atlas font characters: " + str(sorted(missing)))
+        font.flavor = None
+        buf = BytesIO()
+        font.save(buf)
+    buf.seek(0)
+    return ImageFont.truetype(buf, 52, layout_engine=ImageFont.Layout.RAQM)
+
+
 def render_atlas(doc, assets, previews, output):
     validate_atlas(doc)
-    from render_monomakh_hybrid import load_font
-    glyph_font = load_font()
+    glyph_font = load_approved_font(doc)
     images, sections = {}, []
     skipped = []
     for row in doc["examples"]:
