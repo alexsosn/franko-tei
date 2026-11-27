@@ -38,11 +38,25 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.14'
-      - run: pip install -e . playwright fonttools brotli
+      - run: pip install -e . playwright fonttools brotli Pillow
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_editorial_projection.py
       - run: python web/test_fonts.py
+      - name: Smoke-render hybrid ICL reference from pinned original scans
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          assets="$(mktemp -d)"
+          trap 'rm -rf "$assets"' EXIT
+          mkdir -p "$assets/vol2" "$assets/vol3" "$assets/vol5"
+          gh api "repos/$GITHUB_REPOSITORY/git/blobs/9153892831a157bd6ada7f4f014ba40b21e0d4d4" --jq .content | base64 --decode > "$assets/vol2/page-00100.jpg"
+          gh api "repos/$GITHUB_REPOSITORY/git/blobs/c53440756c4e58711d5be2d625de357894f2ab72" --jq .content | base64 --decode > "$assets/vol3/page-00130.jpg"
+          gh api "repos/$GITHUB_REPOSITORY/git/blobs/9883e2359ef030fcf5062b6948dcf624756102a7" --jq .content | base64 --decode > "$assets/vol5/page-00130.jpg"
+          python docs/render_monomakh_hybrid.py --assets "$assets" --output "$assets/reference.png"
+          test -s "$assets/reference.png"
+          # The chart is a local research derivative; do not upload scan crops.
       - run: python web/test_printed_indexes.py
       - run: python web/test_review.py
       - run: python web/test_review_editor.py
