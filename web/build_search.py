@@ -92,7 +92,8 @@ def build(pilot, output, ref):
                                multiple=sorted(n for n,c in counts.items() if c > 1))
     output.mkdir(parents=True, exist_ok=True)
     (output / "printed-indexes.json").write_text(
-        json.dumps(build_printed_indexes(pilot, ref, supplements), ensure_ascii=False, separators=(",", ":")), encoding="utf-8",
+        json.dumps(build_printed_indexes(pilot, ref, supplements,
+                                         editorial={p["path"]: p for p in pages}), ensure_ascii=False, separators=(",", ":")), encoding="utf-8",
     )
     (output / "coverage.json").write_text(
         json.dumps(dict(ref=ref, asset_commit=PINNED_ASSET_COMMIT, volumes=volumes),
