@@ -330,7 +330,7 @@ User requests ready-made historical typography charts for ICL. Prioritize:
    letters; 22–23 diacritics (direct screenshot inspected); 24–25 combining
    letters; 30–31 combinations (Table 8 on p. 31 directly inspected);
    38–42 variants and ligatures. The five representation columns compare
-   ustav, incunabula, poluustav, Synodal, and Skorina styles; these are
+   ustav, incunabula, poluustav, Synodal, and skoropis styles; these are
    typographic representations, not automatically original scan crops.
    Use page references as a first ICL arm rather than manually reconstruct
    all tables. Confirm any proposed redistribution rights first.
@@ -374,3 +374,48 @@ reference arm against source-specific examples and exact Monomakh.
 Retain our Franko crops for type-specific ambiguity; do not normalize
 source signs to later liturgical conventions. No corpus changes or
 new recognition improvement claimed in this research step.
+
+
+## First use of published TN41 visual tables (2026-11-27)
+
+Reopened the original PDF and inspected actual images of printed pp. 22,
+23, 24, 30 and 31 (PDF viewer pages 24, 25, 26, 32, 33 respectively).
+Correction to earlier catalogue note: the fifth TN41 column Skor. is
+skoropis (semi-cursive), NOT a Skorina typeface. Section 2.4 p. 22
+contrasts U+0311, U+0486 and U+0306 across traditions; p. 23 shows
+that poluustav pokrytie can be wave-like. Section 2.5 p. 24 distinguishes
+combining letters and separately encoded covering marks; p. 30–31
+shows compound accent order and ligation. Keep source-specific glyph
+observations separate from the encoding decision. Use the original PDF
+pages directly as visual input, not copied/recreated inventories.
+
+Applied these page images in the same context to III/131, printed p.45,
+without first fetching its transcript. Six tentative sign observations
+and source hashes frozen in monomakh-icl-tn41-observations.json at
+6024f6d. Subsequent comparison to main's agent_unverified draft shows
+text-line-02 has обираючи, text-line-04 plain и, text-line-09 plain
+огнь, text-line-14 plain яко. These are candidates for omitted marks or
+base-letter differences, not confirmed corrections. The draft already
+encodes крⷭ҇том in text-line-12 and срⷣ҇дцемъ in text-line-13: the
+published chart supplies useful distinction but the full-page reread
+cannot independently resolve the tiny raised letters. No source draft
+changes; no controlled accuracy or timing comparison. The observations
+are not whole-line transcriptions or gold and III/131 is now development
+material, excluded from holdout for this context.
+
+## Exact NTSH printer specimen archival lead
+
+Lviv National Scientific Library of Ukraine named after V. Stefanyk,
+21 November 2023 exhibition report, explicitly describes surviving type
+specimens among the documents from the NTSH printing house:
+https://www.lsl.lviv.ua/index.php/uk/2023/11/21/urochyste-vidkryttya-knyzhkovo-dokumentalnoyi-vystavky-biblioteka-naukovogo-tovarystva-imeni-shevchenka-persha-natsionalna-naukova-biblioteka-ukrayiny-prysvyachenoyi-150-richchyu-ntsh-ta-130-richchyu/
+The library's digital NTSH book collection covers 1874–1913 and includes
+Franko's five volumes and other publications in the same series:
+https://www.lsl.lviv.ua/index.php/uk/2023/10/25/knyzhkova-vystavka-do-150-richchya-vid-zasnuvannya-naukovogo-tovarystva-imeni-shevchenka/
+This is much more targeted than the separate Stauropegion specimens.
+The report confirms existence of specimens but not their individual dates,
+Cyrillic repertoire, shelfmarks, digital availability, or identity with
+Franko's historical face. Obtain these details from library catalogue or
+staff before asserting an exact match; no inquiry sent in this session.
+RNL table page timed out again and Kempgen vol.3 PDF was not rendered by
+web access; no claims of inspecting their image plates in this pass.
