@@ -6,6 +6,7 @@ on:
       - 'docs/monomakh-icl.html'
       - 'docs/render_monomakh_hybrid.py'
       - 'docs/render_approved_icl.py'
+      - 'docs/check_approved_icl_sheets.py'
       - 'docs/monomakh-icl-approved-atlas.json'
       - 'pilot/**'
       - 'reviews/**'
@@ -21,6 +22,7 @@ on:
       - 'docs/monomakh-icl.html'
       - 'docs/render_monomakh_hybrid.py'
       - 'docs/render_approved_icl.py'
+      - 'docs/check_approved_icl_sheets.py'
       - 'docs/monomakh-icl-approved-atlas.json'
       - 'pilot/**'
       - 'reviews/**'
@@ -46,7 +48,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.14'
-      - run: pip install -e . playwright fonttools brotli Pillow
+      - run: pip install -e . playwright fonttools brotli
       - run: python web/build_search.py --output web/search
       - run: python -m playwright install --with-deps chromium
       - run: python web/test_editorial_projection.py
@@ -59,7 +61,7 @@ jobs:
           set -euo pipefail
           # Avoid downloading reference pages for unrelated transcription PRs.
           if [[ "$BASE" =~ ^[0-9a-f]{40}$ ]] && git cat-file -e "$BASE^{commit}" 2>/dev/null \
-            && git diff --quiet "$BASE" HEAD -- docs/render_monomakh_hybrid.py docs/render_approved_icl.py docs/monomakh-icl-approved-atlas.json docs/monomakh-icl.html web/test_fonts.py web/fonts/Monomakh-Regular.woff2 .github/workflows/review-pages.yml; then
+            && git diff --quiet "$BASE" HEAD -- docs/render_monomakh_hybrid.py docs/render_approved_icl.py docs/check_approved_icl_sheets.py docs/monomakh-icl-approved-atlas.json docs/monomakh-icl.html web/test_fonts.py web/fonts/Monomakh-Regular.woff2 .github/workflows/review-pages.yml; then
             echo "Hybrid reference unchanged."
             exit 0
           fi
@@ -78,119 +80,15 @@ jobs:
           test -s "$assets/reference.png"
           # Active atlas: only approved rows and accepted issue focal evidence.
           # The 42 original review-preview rows are optional local inputs.
-          while IFS=
-          # The chart is a local research derivative; do not upload scan crops.
-      - run: python web/test_printed_indexes.py
-      - run: python web/test_review.py
-      - run: python web/test_review_editor.py
-      - run: python web/test_live_review.py
-  package:
-    needs: browser
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    outputs:
-      artifact_id: ${{ steps.upload.outputs.artifact_id }}
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.14'
-      - run: pip install -e .
-      - run: |
-          mkdir -p _site
-          cp web/index.html web/review-editor.js _site/
-          cp -R web/fonts _site/fonts
-          python web/build_search.py --output _site/search
-      - uses: actions/upload-pages-artifact@v5
-        id: upload
-        with:
-          name: github-pages
-          path: _site
-  deploy:
-    needs: package
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    permissions:
-      contents: read
-      actions: read
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/configure-pages@v6
-      - name: Wait for the uploaded artifact to become visible
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ARTIFACT_ID: ${{ needs.package.outputs.artifact_id }}
-        run: |
-          set -euo pipefail
-          [[ "$ARTIFACT_ID" =~ ^[0-9]+$ ]]
-          for attempt in {1..12}; do
-            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages" \
-              | jq -e --arg id "$ARTIFACT_ID" '.artifacts | length == 1 and (.[0].id | tostring) == $id and (.[0].expired | not)' >/dev/null; then
-              echo "Artifact $ARTIFACT_ID visible in Actions API."
-              exit 0
-            fi
-            sleep 5
-          done
-          echo "::error::Expected Pages artifact $ARTIFACT_ID is not visible."
-          exit 1
-      - name: Deploy viewer
-        id: deployment
-        uses: actions/deploy-pages@v5
-        with:
-          artifact_name: github-pages
-      - name: Verify the published revision
-        env:
-          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
-        run: |
-          set -euo pipefail
-          verify_fonts() {
-            local font
-            for font in web/fonts/*; do
-              curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/fonts/${font##*/}?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-font" || return 1
-              cmp -s "$font" "$RUNNER_TEMP/published-font" || return 1
-            done
-          }
-          for attempt in {1..18}; do
-            if curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/index.html?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-index.html" \
-              && cmp -s web/index.html "$RUNNER_TEMP/published-index.html" \
-              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/review-editor.js?rev=$GITHUB_SHA" -o "$RUNNER_TEMP/published-review.js" \
-              && cmp -s web/review-editor.js "$RUNNER_TEMP/published-review.js" \
-              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/vol1.json?rev=$GITHUB_SHA" \
-              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha' >/dev/null \
-              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/annotation-vol1.json?rev=$GITHUB_SHA" \
-              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and .schema_version == "search-annotation-v1" and .offset_unit == "unicode_code_point"' >/dev/null \
-              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/editorial.json?rev=$GITHUB_SHA" \
-              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and (.pages | type == "array")' >/dev/null \
-              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/coverage.json?rev=$GITHUB_SHA" \
-              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and (.volumes | length == 5)' >/dev/null \
-              && curl -fsSL --max-time 10 -H 'Cache-Control: no-cache' "${PAGE_URL%/}/search/printed-indexes.json?rev=$GITHUB_SHA" \
-              | jq -e --arg sha "$GITHUB_SHA" '.ref == $sha and (.sections | length == 4)' >/dev/null \
-              && verify_fonts; then
-              echo "Public viewer, fonts and search index match $GITHUB_SHA."
-              exit 0
-            fi
-            sleep 5
-          done
-          echo "::error::Public viewer, fonts or search index does not match $GITHUB_SHA."
-          exit 1
-\t' read -r path blob; do
+          while IFS=$'\t' read -r path blob; do
             if [[ ! -s "$assets/$path" ]]; then
               gh api "repos/$GITHUB_REPOSITORY/git/blobs/$blob" --jq .content | base64 --decode > "$assets/$path"
             fi
           done < <(jq -r '.sources[] | [.path,.blob] | @tsv' docs/monomakh-icl-approved-atlas.json)
-          python docs/render_approved_icl.py --assets "$assets" --output "$assets/approved.html"
+          python docs/render_approved_icl.py --assets "$assets" --output "$assets/approved.html" --sheet-dir "$assets/sheets"
           test -s "$assets/approved.html"
-          grep -F 'Rendered 47 of 89; 42 preview-only rows omitted.' "$assets/approved.html" >/dev/null
-          # The chart is a local research derivative; do not upload scan crops.
+          python docs/check_approved_icl_sheets.py "$assets/sheets"
+          # Local derivatives only; never upload scan crops.
       - run: python web/test_printed_indexes.py
       - run: python web/test_review.py
       - run: python web/test_review_editor.py
