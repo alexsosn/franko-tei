@@ -1774,6 +1774,12 @@ class ReviewSmoke(unittest.TestCase):
                 return [...body.querySelectorAll('li')].map(e=>[e.querySelector('.annotation-literal').textContent,e.querySelector('strong').textContent]);
             }""")
             self.assertEqual(details,[['𐌰','Undetermined language'],['а ','Not annotated'],['¹)','Nonlinguistic']])
+            self.assertEqual(page.evaluate("""()=>{
+                const body=document.getElementById('annotationDetailsBody');body.replaceChildren();
+                renderAnnotationDetails({region:{kind:'body'},line:{text:'Ѿвѣт:',language_spans:[]},
+                    review:{status:'native_collation'}});
+                return [body.textContent.includes('need reannotation'),body.querySelectorAll('li').length];
+            }"""),[True,0])
             page.locator('#layersOpen').click()
             page.locator('#showLanguages').uncheck()
             page.locator('#layersClose').click()
