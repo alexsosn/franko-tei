@@ -137,6 +137,11 @@ assert len(examples) >= 22 and len({row["source"] for row in examples}) >= 5
 accent_rows = [row for row in examples if row.get("category") == "accent"]
 assert any(row["render"] == "но̑" and row["source"] == "III/130" and row["mark_options"] == ["U+0311"] and row["status"] == "candidate" for row in accent_rows)
 assert len(accent_rows) >= 12 and len({row["source"] for row in accent_rows}) >= 3
+vol1_controls = [row for row in accent_rows if row["source"] == "I/128"]
+assert len(vol1_controls) >= 3
+assert any(row["render"] == "ѡдра" and row["status"] == "ambiguous" for row in vol1_controls)
+assert any(row["render"] == "ѡчи" and row["status"] == "ambiguous" for row in vol1_controls)
+assert any(row["render"] == "ѡ҆стꙋди́тсѧ" and row["status"] == "candidate" for row in vol1_controls)
 pair = [row for row in accent_rows if row["source"] == "III/131" and row.get("contrast") == "fire-initial-vowel"]
 assert len(pair) == 2
 assert {row["line"] for row in pair} == {"text-line-09", "text-line-12"}
