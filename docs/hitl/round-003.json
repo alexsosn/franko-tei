@@ -1,0 +1,451 @@
+{
+  "schema": "franko-hitl-round-v1",
+  "round": 3,
+  "status": "partial_human_reference_frozen",
+  "volume": "3",
+  "scan_page": 197,
+  "printed_page": "111",
+  "work": "Acts of Thomas, second recension",
+  "baseline": {
+    "commit": "5760d996329e99756bca64fda52e91cb6b581227",
+    "path": "pilot/vol3_scan00197_single_reading.json",
+    "blob": "828770fe98afd3bf3b90cbfea8487d2e10967767",
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "image_sha256": "4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949",
+    "atlas_blob": "8a4f5e3d50e33e1693279155f5746de32e35be38",
+    "atlas_extension_blob": "c5efa1398e302d252f728341ece4ef901e2eeecf",
+    "reader_id": "gpt62-hitl-round003-v3-s00197-20261127",
+    "model": "GPT-6.2"
+  },
+  "reference": {
+    "kind": "human_review_submitted",
+    "issue": 455,
+    "issue_id": 6655424790,
+    "submitter_id": 3265391,
+    "issue_updated_at": "2026-11-27T22:25:35Z",
+    "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"d3452139-8ee0-4e99-89e6-7f823b728d05\",\"source_commit\":\"5760d996329e99756bca64fda52e91cb6b581227\",\"events\":[{\"event_id\":\"3276e622-245b-45a1-b631-fb7683488658\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"folio\",\"line_id\":\"folio-line-01\",\"original\":\"111\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"646595c3-abf7-4a8d-b7d3-88520cea9a04\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-01\",\"original\":\"на въздусѣ стремглав пред народом и҆ кнѧзем града, оу҆мл҃рди сѧ\"},\"decision\":\"correct\",\"replacement\":\"на въздусѣ стремглав пред народом и҆ кнѧѕем града, оу҆млⷭ҇рди сѧ\",\"note\":null},{\"event_id\":\"93ee1bf3-3a10-48b2-9a5c-8598a1280445\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-02\",\"original\":\"Ги҃, споусти ѿ [въздуха] і҆е҆реа. и҆ тогда тече къ ногама а҆пⷭ҇ла Хва҃\"},\"decision\":\"correct\",\"replacement\":\"Гь҃, споусти ѿ [въздꙋха] і҆е҆реа. и҆ тогда тече къ ногама а҆пⷭ҇ла Хва҃\",\"note\":null},{\"event_id\":\"b03bc105-4d8e-4ab6-86f5-3587278bbab5\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-03\",\"original\":\"Ѳомы гл҃а: „Мл҃ѧ ти сѧ, рабе бж҃їй Ѳома, крⷭ҇ти мѧ и҆ дайже ми҆\"},\"decision\":\"correct\",\"replacement\":\"Ѳомы гл҃ѧ: „Мл҃ѧ ти сѧ, рабе бж҃їй Ѳома, крⷭ҇ти мѧ и҆ дайже ми҆\",\"note\":null},{\"event_id\":\"4696b596-3db8-4663-b46c-5068715c93c4\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-04\",\"original\":\"Хво҃ знаменїе“. и҆ а҆бїє рад бывь а҆пⷭ҇лъ Хв҃ь Ѳѡма и҆ крⷭ҇ти и҆ и҆ всѧ\"},\"decision\":\"correct\",\"replacement\":\"Хво҃ знаменїє“. и҆ а҆бїє рад бывь а҆пⷭ҇лъ Хв҃ь Ѳѡма и҆ крⷭ҇ти иⷨ и҆ всѧ\",\"note\":null},{\"event_id\":\"95bd8a2b-9007-4b9f-95ad-5379c00df127\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-05\",\"original\":\"же люди въ и҆мѧ Ѿца и҆ Сн҃а и҆ ст҃аго Дха҃, и҆ крⷭ҇ти и҆ въ бл҃атѣ.\"},\"decision\":\"correct\",\"replacement\":\"же люди въ и҆мѧ Ѿца и Сн҃а и҆ ст҃аго Дх҃а, и҆ крⷭ҇ти иⷨ въ блатѣ.\",\"note\":null},{\"event_id\":\"aa6e778b-fe49-4256-9e65-44082c6fa1e4\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-06\",\"original\":\"и҆ шед въшед въ цр҃ковь их и҆ съкроуши всѧ и҆долы их и҆ сътвори\"},\"decision\":\"correct\",\"replacement\":\"и҆ шед въшед въ цр҃ков и҆х и҆ съкроуши всѧ и҆долы их и҆ сътвори\",\"note\":null},{\"event_id\":\"922bb5aa-4203-4bf7-b877-72fd5ed0a032\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-07\",\"original\":\"жрътѡвⸯнице тъи цр҃кви, і҆ принесе в на ст҃ѫ анафорꙋ и҆ прича-\"},\"decision\":\"correct\",\"replacement\":\"жрътовⸯнище тъи цр҃кви, і҆ принесе в нѧ ст҃ѫа а҆нафорꙋ и҆ прича-\",\"note\":null},{\"event_id\":\"57a000f2-a0f9-4acc-93c0-b1b5f87d89cd\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-08\",\"original\":\"стишѫ сѧ въси ст҃ѣм тѣлѣ и҆ кръви Хви҃. постави им і҆є҆реа\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"7708e219-85aa-4391-8c5a-05764760673c\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-09\",\"original\":\"и҆длъскаго попом и҆ сътвори им презвитери и҆ дїаконы, и҆ наоу-\"},\"decision\":\"correct\",\"replacement\":\"и҆длъскаго попом и҆ сътвори им презвитери и҆ дїѧконы, и҆ наоу҆-\",\"note\":null},{\"event_id\":\"6c2e22fd-60bd-49cf-bf7e-987adc882cfc\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-10\",\"original\":\"чи ѧ҆ ст҃ѣй а҆нафорѣ. и҆ сътвори сн҃ы старца крилосникы, и҆кономы,\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"7b7740a7-5b5e-4656-8ca0-e25e1c2d1e67\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-cont\",\"line_id\":\"body-line-11\",\"original\":\"и҆ прида҃ им съсѫды цр҃ковныа, и҆ оу҆твърди ѧ҆ въ вѣрѣ Хвѣ҃.\"},\"decision\":\"correct\",\"replacement\":\"и҆ придаⷭⷮ им съсѫды цр҃ковныѧ, и҆ оу҆твръди ѧ҆ въ вѣрѣ Хв҃ѣ.\",\"note\":null},{\"event_id\":\"8340d4e6-9745-407a-b995-903f2bb77c25\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-12\",\"original\":\"И҆ и҆зыиде ѿ них по трех лѣтех, радуѧ сѧ и҆ веселѧ сѧ. и҆\"},\"decision\":\"correct\",\"replacement\":\"И҆ и҆зыйде ѿ них по трех лѣтех, радуѧ сѧ и҆ веселѧ сѧ. и҆\",\"note\":null},{\"event_id\":\"a2b76224-8a57-47de-af87-baccecc2780a\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-13\",\"original\":\"по сем ꙗ҆висѧ е҆моу Ги҃ и҆ гл҃а е҆моу: „Моужай сѧ и҆ крѣпи сѧ, Ѳѡ-\"},\"decision\":\"correct\",\"replacement\":\"по сем ꙗ҆виⷭ҇ е҆моу Гь҃ и҆ гл҃а е҆моу: „Моужай сѧ и҆ крѣпи сѧ, Ѳѡ-\",\"note\":null},{\"event_id\":\"f6e46305-e0c5-47d1-953b-d66b59639583\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-14\",\"original\":\"ма, и҆збранниче мой, ѿ всѣх троудов твоих“. и҆ възем кожꙋ е҆го\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"d93b7aa4-f3a0-4fdb-a1f5-6762197bfa1e\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-15\",\"original\":\"и обложи ю҆ ѿ тѣлѣ Ѳоминѣ, ꙗ҆коже бо҆ бѣ преже. и҆ цѣлова и҆\"},\"decision\":\"correct\",\"replacement\":\"и обложи ю҆ ѡ҆ тѣлѣ Ѳоминѣ, ꙗ҆коже бо҆ бѣ преже. и҆ цѣлова и҆\",\"note\":null},{\"event_id\":\"01d4ad9a-dc67-4a7a-8bb8-efa212735d98\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-16\",\"original\":\"гл҃а е҆моу: „Възыйди съ мноѫ на ѡ҆блак мои, да възмоу тѧ҆\"},\"decision\":\"correct\",\"replacement\":\"гл҃а е҆моу: „Възыйды съ мноѫ на ѡ҆́блак мои, да възмоу тѧ҆\",\"note\":null},{\"event_id\":\"36a51752-5330-4bb2-80dd-91096bd49aa3\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-17\",\"original\":\"къ братїи твоей, да цѣлоуеши ѧ҆ въ мирѣ“. тогда възѧт сѧ\"},\"decision\":\"correct\",\"replacement\":\"къ братїи твоей, да цѣлоуе҆ши ꙗ҆ въ мирѣ“. тогда възѧт сѧ\",\"note\":null},{\"event_id\":\"fda892ae-2a68-4d81-bd62-335b9945494f\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-18\",\"original\":\"ѡ҆блак и҆ несе ѫ къ а҆пⷭ҇лѡм. и҆ ѡ҆брѣте ѫ събраны, и҆ Павла съ ни-\"},\"decision\":\"correct\",\"replacement\":\"ѡ҆́блак и҆ несе ѫ къ а҆пⷭ҇лѡм. и҆ ѡ҆брѣте ѫ събраны, и҆ Павла съ ни-\",\"note\":null},{\"event_id\":\"6d46800c-e13e-4227-832e-6593ea2ab392\",\"target\":{\"candidate_path\":\"pilot/vol3_scan00197_single_reading.json\",\"candidate_blob\":\"828770fe98afd3bf3b90cbfea8487d2e10967767\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"4af35eef61d35758c18bd7b99fdffc18ef3cae8c315153a1db109b2c4e65c949\",\"reader_id\":\"gpt62-hitl-round003-v3-s00197-20261127\",\"region_id\":\"body-final\",\"line_id\":\"body-line-19\",\"original\":\"ми: баше тоу Мр҃їа, мт҃и Га҃ нашего Їс҃ Ха҃. и҆ цѣлова въсѣ Ѳѡма,\"},\"decision\":\"correct\",\"replacement\":\"ми: бѧше тоу҆ Мр҃їѧ, мт҃и Га҃ нашего Їс҃ Ха҃. и҆ цѣлова въсѣ Ѳѡма,\",\"note\":null}]}",
+    "scope": "19 of 22 CSL rows, 16 corrected, 3 confirmed; folio confirmed but excluded; editorial commentary excluded",
+    "editorial_status": "not adjudicated for corpus projection"
+  },
+  "first_pass": {
+    "reference_characters": 1204,
+    "edits": 43,
+    "cer": 0.03571428571428571,
+    "reviewed_lines": 19,
+    "rows": [
+      {
+        "line_id": "body-line-01",
+        "reference_characters": 64,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-02",
+        "reference_characters": 70,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-03",
+        "reference_characters": 63,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-04",
+        "reference_characters": 71,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-05",
+        "reference_characters": 65,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-06",
+        "reference_characters": 63,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-07",
+        "reference_characters": 64,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-08",
+        "reference_characters": 58,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-09",
+        "reference_characters": 63,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-10",
+        "reference_characters": 66,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-11",
+        "reference_characters": 61,
+        "edits": 7
+      },
+      {
+        "line_id": "body-line-12",
+        "reference_characters": 57,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-13",
+        "reference_characters": 66,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-14",
+        "reference_characters": 62,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-15",
+        "reference_characters": 61,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-16",
+        "reference_characters": 58,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-17",
+        "reference_characters": 57,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-18",
+        "reference_characters": 68,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-19",
+        "reference_characters": 67,
+        "edits": 3
+      }
+    ],
+    "eligible_body_lines": 22,
+    "eligible_page_lines": 38,
+    "complete": false,
+    "method": "literal Unicode code-point Levenshtein, fixed CSL rows",
+    "without_marks": {
+      "reference_characters": 1083,
+      "edits": 23,
+      "cer": 0.02123730378578024,
+      "reviewed_lines": 19,
+      "rows": [
+        {
+          "line_id": "body-line-01",
+          "reference_characters": 60,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-02",
+          "reference_characters": 62,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-03",
+          "reference_characters": 56,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-04",
+          "reference_characters": 59,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-05",
+          "reference_characters": 56,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-06",
+          "reference_characters": 57,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-07",
+          "reference_characters": 59,
+          "edits": 4
+        },
+        {
+          "line_id": "body-line-08",
+          "reference_characters": 53,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-09",
+          "reference_characters": 58,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-10",
+          "reference_characters": 60,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-11",
+          "reference_characters": 53,
+          "edits": 3
+        },
+        {
+          "line_id": "body-line-12",
+          "reference_characters": 53,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-13",
+          "reference_characters": 57,
+          "edits": 3
+        },
+        {
+          "line_id": "body-line-14",
+          "reference_characters": 59,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-15",
+          "reference_characters": 55,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-16",
+          "reference_characters": 53,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-17",
+          "reference_characters": 55,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-18",
+          "reference_characters": 59,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-19",
+          "reference_characters": 59,
+          "edits": 2
+        }
+      ]
+    }
+  },
+  "retry": {
+    "commit": "998f9cc35404b9571dc0585f1528341de3de2f66",
+    "blob": "686879ad2d3ef0ed66654a8d1f47afd25af67b09",
+    "atlas_extension_blob": "a97d4bff4d0865723ad97ab431805782aa0be903",
+    "nonblind": true,
+    "scope": "same 19 CSL lines; direct reference-exposed collation, not independent recognition",
+    "reference_characters": 1204,
+    "edits": 3,
+    "cer": 0.0024916943521594683,
+    "reviewed_lines": 19,
+    "rows": [
+      {
+        "line_id": "body-line-01",
+        "reference_characters": 64,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-02",
+        "reference_characters": 70,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-03",
+        "reference_characters": 63,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-04",
+        "reference_characters": 71,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-05",
+        "reference_characters": 65,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-06",
+        "reference_characters": 63,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-07",
+        "reference_characters": 64,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-08",
+        "reference_characters": 58,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-09",
+        "reference_characters": 63,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-10",
+        "reference_characters": 66,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-11",
+        "reference_characters": 61,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-12",
+        "reference_characters": 57,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-13",
+        "reference_characters": 66,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-14",
+        "reference_characters": 62,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-15",
+        "reference_characters": 61,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-16",
+        "reference_characters": 58,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-17",
+        "reference_characters": 57,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-18",
+        "reference_characters": 68,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-19",
+        "reference_characters": 67,
+        "edits": 1
+      }
+    ],
+    "without_marks": {
+      "reference_characters": 1083,
+      "edits": 3,
+      "cer": 0.002770083102493075,
+      "reviewed_lines": 19,
+      "rows": [
+        {
+          "line_id": "body-line-01",
+          "reference_characters": 60,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-02",
+          "reference_characters": 62,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-03",
+          "reference_characters": 56,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-04",
+          "reference_characters": 59,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-05",
+          "reference_characters": 56,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-06",
+          "reference_characters": 57,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-07",
+          "reference_characters": 59,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-08",
+          "reference_characters": 53,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-09",
+          "reference_characters": 58,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-10",
+          "reference_characters": 60,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-11",
+          "reference_characters": 53,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-12",
+          "reference_characters": 53,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-13",
+          "reference_characters": 57,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-14",
+          "reference_characters": 59,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-15",
+          "reference_characters": 55,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-16",
+          "reference_characters": 53,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-17",
+          "reference_characters": 55,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-18",
+          "reference_characters": 59,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-19",
+          "reference_characters": 59,
+          "edits": 1
+        }
+      ]
+    }
+  }
+}
