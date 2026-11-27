@@ -1,0 +1,674 @@
+{
+  "schema": "franko-letter-review-preview-v1",
+  "status": "candidate",
+  "parent_reference": "docs/render_monomakh_hybrid.py, numbered rows at 3a7e31164916e8fca9d28cf09c2891ab6011f80f",
+  "notes": [
+    "User requests base-letter review before accent classification.",
+    "These are crops of the previously supplied local review-sheet previews (four grayscale levels), not new native-pixel source rectangles. Parent rows retain original source provenance. The preview sheets and review PDF are delivered in chat, not vendored in the repository. This index preserves the review IDs; it is not a native-source training dataset.",
+    "Noto Serif labels, not exact Monomakh. All labels provisional, including base-letter distinctions in L06, L10–L13, L15, L18–L19, L40. L05 is a two-character sequence. No diacritic classification.",
+    "User explicitly confirmed L10 and L12 and corrected L11 to ъ; remaining examples received general 'ok' feedback, not individual native-source verification. Do not equate this with a complete alphabet. Uppercase and ligatures require separate source inventory."
+  ],
+  "pdf_sha256": "d87b44539262407acba8d93e643152325c70e28c9fc916242ee24f6959fa23d1",
+  "previews": [
+    {
+      "filename": "franko_review_01_10.png",
+      "sha256": "252af8ce4ce9d3abc05030ec4507c907cd2be906c2c7059645268ddfc72aca56",
+      "width": 1240,
+      "height": 2002
+    },
+    {
+      "filename": "franko_review_11_20.png",
+      "sha256": "b8a3550cfede73021df35e9370cb59070db83b76460b774f38b00cc9b41f8031",
+      "width": 1240,
+      "height": 2002
+    },
+    {
+      "filename": "franko_review_21_30.png",
+      "sha256": "62d6ccdb1e9d7c3e1b0bd1cfb7a5a0793005ac6d35ce06de9562fcf9cdacd2a6",
+      "width": 1240,
+      "height": 2002
+    },
+    {
+      "filename": "franko_review_31_38.png",
+      "sha256": "b77e97f90b67ce293f43c1c2f1144e4351313b32129d25cd58b2037cdbebf172",
+      "width": 1240,
+      "height": 1638
+    }
+  ],
+  "examples": [
+    {
+      "id": "L01",
+      "parent_row": 6,
+      "reading": "ѡ",
+      "codepoints": [
+        "U+0461"
+      ],
+      "preview_bbox_xyxy": [
+        297,
+        1141,
+        378,
+        1201
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L02",
+      "parent_row": 18,
+      "reading": "о",
+      "codepoints": [
+        "U+043E"
+      ],
+      "preview_bbox_xyxy": [
+        284,
+        1493,
+        341,
+        1560
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L03",
+      "parent_row": 4,
+      "reading": "ѿ",
+      "codepoints": [
+        "U+047F"
+      ],
+      "preview_bbox_xyxy": [
+        349,
+        730,
+        428,
+        803
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L04",
+      "parent_row": 31,
+      "reading": "ꙋ",
+      "codepoints": [
+        "U+A64B"
+      ],
+      "preview_bbox_xyxy": [
+        337,
+        222,
+        378,
+        280
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L05",
+      "parent_row": 36,
+      "reading": "оу",
+      "codepoints": [
+        "U+043E",
+        "U+0443"
+      ],
+      "preview_bbox_xyxy": [
+        464,
+        1128,
+        564,
+        1210
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L06",
+      "parent_row": 35,
+      "reading": "ѵ",
+      "codepoints": [
+        "U+0475"
+      ],
+      "preview_bbox_xyxy": [
+        419,
+        954,
+        471,
+        1009
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L07",
+      "parent_row": 35,
+      "reading": "в",
+      "codepoints": [
+        "U+0432"
+      ],
+      "preview_bbox_xyxy": [
+        472,
+        954,
+        519,
+        1010
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L08",
+      "parent_row": 2,
+      "reading": "в",
+      "codepoints": [
+        "U+0432"
+      ],
+      "preview_bbox_xyxy": [
+        302,
+        395,
+        354,
+        456
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L09",
+      "parent_row": 7,
+      "reading": "ѣ",
+      "codepoints": [
+        "U+0463"
+      ],
+      "preview_bbox_xyxy": [
+        310,
+        1284,
+        385,
+        1370
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L10",
+      "parent_row": 14,
+      "reading": "ъ",
+      "codepoints": [
+        "U+044A"
+      ],
+      "preview_bbox_xyxy": [
+        478,
+        747,
+        550,
+        827
+      ],
+      "status": "user_reviewed",
+      "review": "Explicit user correction or confirmation on numbered PDF, 2026-11-27."
+    },
+    {
+      "id": "L11",
+      "parent_row": 15,
+      "reading": "ъ",
+      "codepoints": [
+        "U+044A"
+      ],
+      "preview_bbox_xyxy": [
+        422,
+        926,
+        517,
+        1006
+      ],
+      "status": "user_reviewed",
+      "review": "Explicit user correction or confirmation on numbered PDF, 2026-11-27."
+    },
+    {
+      "id": "L12",
+      "parent_row": 23,
+      "reading": "ꙗ",
+      "codepoints": [
+        "U+A657"
+      ],
+      "preview_bbox_xyxy": [
+        291,
+        614,
+        362,
+        681
+      ],
+      "status": "user_reviewed",
+      "review": "Explicit user correction or confirmation on numbered PDF, 2026-11-27."
+    },
+    {
+      "id": "L13",
+      "parent_row": 31,
+      "reading": "ѧ",
+      "codepoints": [
+        "U+0467"
+      ],
+      "preview_bbox_xyxy": [
+        571,
+        231,
+        610,
+        284
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L14",
+      "parent_row": 5,
+      "reading": "ѱ",
+      "codepoints": [
+        "U+0471"
+      ],
+      "preview_bbox_xyxy": [
+        340,
+        917,
+        431,
+        1042
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L15",
+      "parent_row": 2,
+      "reading": "ї",
+      "codepoints": [
+        "U+0457"
+      ],
+      "preview_bbox_xyxy": [
+        444,
+        382,
+        487,
+        456
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L16",
+      "parent_row": 8,
+      "reading": "й",
+      "codepoints": [
+        "U+0439"
+      ],
+      "preview_bbox_xyxy": [
+        311,
+        1466,
+        354,
+        1546
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L17",
+      "parent_row": 6,
+      "reading": "и",
+      "codepoints": [
+        "U+0438"
+      ],
+      "preview_bbox_xyxy": [
+        444,
+        1143,
+        495,
+        1200
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L18",
+      "parent_row": 11,
+      "reading": "Є",
+      "codepoints": [
+        "U+0404"
+      ],
+      "preview_bbox_xyxy": [
+        199,
+        192,
+        294,
+        294
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L19",
+      "parent_row": 15,
+      "reading": "є",
+      "codepoints": [
+        "U+0454"
+      ],
+      "preview_bbox_xyxy": [
+        209,
+        930,
+        279,
+        1006
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L20",
+      "parent_row": 11,
+      "reading": "е",
+      "codepoints": [
+        "U+0435"
+      ],
+      "preview_bbox_xyxy": [
+        509,
+        225,
+        545,
+        289
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L21",
+      "parent_row": 16,
+      "reading": "а",
+      "codepoints": [
+        "U+0430"
+      ],
+      "preview_bbox_xyxy": [
+        448,
+        1139,
+        504,
+        1206
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L22",
+      "parent_row": 27,
+      "reading": "б",
+      "codepoints": [
+        "U+0431"
+      ],
+      "preview_bbox_xyxy": [
+        271,
+        1312,
+        320,
+        1373
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L23",
+      "parent_row": 29,
+      "reading": "г",
+      "codepoints": [
+        "U+0433"
+      ],
+      "preview_bbox_xyxy": [
+        376,
+        1670,
+        440,
+        1737
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L24",
+      "parent_row": 32,
+      "reading": "д",
+      "codepoints": [
+        "U+0434"
+      ],
+      "preview_bbox_xyxy": [
+        331,
+        395,
+        413,
+        479
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L25",
+      "parent_row": 20,
+      "reading": "з",
+      "codepoints": [
+        "U+0437"
+      ],
+      "preview_bbox_xyxy": [
+        351,
+        1877,
+        413,
+        1952
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L26",
+      "parent_row": 23,
+      "reading": "к",
+      "codepoints": [
+        "U+043A"
+      ],
+      "preview_bbox_xyxy": [
+        363,
+        616,
+        426,
+        681
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L27",
+      "parent_row": 28,
+      "reading": "м",
+      "codepoints": [
+        "U+043C"
+      ],
+      "preview_bbox_xyxy": [
+        300,
+        1485,
+        380,
+        1554
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L28",
+      "parent_row": 6,
+      "reading": "н",
+      "codepoints": [
+        "U+043D"
+      ],
+      "preview_bbox_xyxy": [
+        385,
+        1143,
+        438,
+        1201
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L29",
+      "parent_row": 8,
+      "reading": "п",
+      "codepoints": [
+        "U+043F"
+      ],
+      "preview_bbox_xyxy": [
+        204,
+        1488,
+        245,
+        1541
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L30",
+      "parent_row": 7,
+      "reading": "р",
+      "codepoints": [
+        "U+0440"
+      ],
+      "preview_bbox_xyxy": [
+        261,
+        1310,
+        311,
+        1387
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L31",
+      "parent_row": 15,
+      "reading": "с",
+      "codepoints": [
+        "U+0441"
+      ],
+      "preview_bbox_xyxy": [
+        285,
+        930,
+        342,
+        1005
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L32",
+      "parent_row": 15,
+      "reading": "т",
+      "codepoints": [
+        "U+0442"
+      ],
+      "preview_bbox_xyxy": [
+        342,
+        929,
+        424,
+        1006
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L33",
+      "parent_row": 14,
+      "reading": "х",
+      "codepoints": [
+        "U+0445"
+      ],
+      "preview_bbox_xyxy": [
+        375,
+        747,
+        444,
+        850
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L34",
+      "parent_row": 1,
+      "reading": "ц",
+      "codepoints": [
+        "U+0446"
+      ],
+      "preview_bbox_xyxy": [
+        382,
+        223,
+        438,
+        289
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L35",
+      "parent_row": 33,
+      "reading": "ч",
+      "codepoints": [
+        "U+0447"
+      ],
+      "preview_bbox_xyxy": [
+        353,
+        568,
+        407,
+        631
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L36",
+      "parent_row": 7,
+      "reading": "ш",
+      "codepoints": [
+        "U+0448"
+      ],
+      "preview_bbox_xyxy": [
+        388,
+        1311,
+        469,
+        1368
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L37",
+      "parent_row": 24,
+      "reading": "щ",
+      "codepoints": [
+        "U+0449"
+      ],
+      "preview_bbox_xyxy": [
+        382,
+        781,
+        482,
+        860
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L38",
+      "parent_row": 14,
+      "reading": "ы",
+      "codepoints": [
+        "U+044B"
+      ],
+      "preview_bbox_xyxy": [
+        274,
+        744,
+        351,
+        819
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L39",
+      "parent_row": 27,
+      "reading": "ю",
+      "codepoints": [
+        "U+044E"
+      ],
+      "preview_bbox_xyxy": [
+        444,
+        1311,
+        505,
+        1373
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L40",
+      "parent_row": 22,
+      "reading": "А",
+      "codepoints": [
+        "U+0410"
+      ],
+      "preview_bbox_xyxy": [
+        314,
+        380,
+        404,
+        495
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L41",
+      "parent_row": 21,
+      "reading": "О",
+      "codepoints": [
+        "U+041E"
+      ],
+      "preview_bbox_xyxy": [
+        384,
+        212,
+        456,
+        310
+      ],
+      "status": "candidate"
+    },
+    {
+      "id": "L42",
+      "parent_row": 36,
+      "reading": "у",
+      "codepoints": [
+        "U+0443"
+      ],
+      "preview_bbox_xyxy": [
+        507,
+        1128,
+        564,
+        1210
+      ],
+      "status": "candidate"
+    }
+  ]
+}

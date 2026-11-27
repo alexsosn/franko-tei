@@ -1,0 +1,99 @@
+{
+  "schema": "franko-icl-explicit-word-score-v1",
+  "reference_commit": "b00432b2910da9fe2f870596cd390b69e7ed8d12",
+  "scope": "Seven explicitly transcribed selected disagreement snippets only. Excludes five option-only answers. NFC exact score includes punctuation and combining marks, base-letter score keeps only Cyrillic Unicode letters. Some punctuation was outside the displayed alternatives, therefore not a fair full-line CER; do not generalize.",
+  "rows": [
+    {
+      "id": "D01",
+      "reference": "пославь",
+      "old": "пославъ",
+      "new": "посла",
+      "exact_old": 1,
+      "exact_new": 2,
+      "ref_chars": 7,
+      "base_old": 1,
+      "base_new": 2,
+      "ref_letters": 7
+    },
+    {
+      "id": "D02",
+      "reference": "вълѣзе",
+      "old": "влѣзе",
+      "new": "вълѣзе",
+      "exact_old": 1,
+      "exact_new": 0,
+      "ref_chars": 6,
+      "base_old": 1,
+      "base_new": 0,
+      "ref_letters": 6
+    },
+    {
+      "id": "D04",
+      "reference": "Потиѡ҆ль.",
+      "old": "Потиѡль",
+      "new": "Потииѡль",
+      "exact_old": 2,
+      "exact_new": 3,
+      "ref_chars": 9,
+      "base_old": 0,
+      "base_new": 1,
+      "ref_letters": 7
+    },
+    {
+      "id": "D05",
+      "reference": "цр҃ю.",
+      "old": "цр҃ю",
+      "new": "црю",
+      "exact_old": 1,
+      "exact_new": 2,
+      "ref_chars": 5,
+      "base_old": 0,
+      "base_new": 0,
+      "ref_letters": 3
+    },
+    {
+      "id": "D08",
+      "reference": "єсми,",
+      "old": "єсмъ",
+      "new": "есми",
+      "exact_old": 2,
+      "exact_new": 2,
+      "ref_chars": 5,
+      "base_old": 1,
+      "base_new": 1,
+      "ref_letters": 4
+    },
+    {
+      "id": "D10",
+      "reference": "єсми",
+      "old": "єсмъ",
+      "new": "есми",
+      "exact_old": 1,
+      "exact_new": 1,
+      "ref_chars": 4,
+      "base_old": 1,
+      "base_new": 1,
+      "ref_letters": 4
+    },
+    {
+      "id": "D11",
+      "reference": "ѡглѧда́ю,",
+      "old": "огладаю",
+      "new": "ѡ҆глада́ю",
+      "exact_old": 4,
+      "exact_new": 3,
+      "ref_chars": 9,
+      "base_old": 2,
+      "base_new": 1,
+      "ref_letters": 7
+    }
+  ],
+  "total": {
+    "exact_old": 12,
+    "exact_new": 13,
+    "ref_chars": 45,
+    "base_old": 6,
+    "base_new": 6,
+    "ref_letters": 38
+  }
+}

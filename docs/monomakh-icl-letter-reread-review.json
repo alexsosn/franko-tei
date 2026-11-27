@@ -1,0 +1,206 @@
+{
+  "schema": "franko-letter-icl-disagreement-review-v1",
+  "first_response_commit": "36e07074ec362d64f0afdf9e42cc2253f6097d83",
+  "comparison_commit": "f0aa033f49dec864dcde90c0f9bd5df6aa82c372",
+  "method": "Post-hoc selected disagreements checked against 3x nearest-neighbor crops decoded from original pinned JPEG luma (not quantized review sheets). Same reader, knows both readings; not independent gold, not random sample, no causal estimate. One focus per retained crop; where other characters differ, verdict restricted to specified feature. Two clipped crops excluded.",
+  "rows": [
+    {
+      "volume": 3,
+      "scan": 134,
+      "line": "text-line-01",
+      "bbox_xywh": [
+        865,
+        205,
+        133,
+        33
+      ],
+      "old": "пославъ",
+      "new": "посла",
+      "preferred": "old",
+      "dimension": "base",
+      "note": "Clearly пославъ; new omitted въ."
+    },
+    {
+      "volume": 3,
+      "scan": 134,
+      "line": "text-line-04",
+      "bbox_xywh": [
+        250,
+        306,
+        106,
+        34
+      ],
+      "old": "влѣзе",
+      "new": "вълѣзе",
+      "preferred": "new",
+      "dimension": "base",
+      "note": "Printed ъ after в; compare L10/L11."
+    },
+    {
+      "volume": 3,
+      "scan": 134,
+      "line": "text-line-04",
+      "bbox_xywh": [
+        937,
+        306,
+        100,
+        34
+      ],
+      "old": "образ",
+      "new": "ѡ҆браз",
+      "preferred": "new",
+      "dimension": "base",
+      "note": "Three-stem omega rather than round о. Arch present; mark identity not adjudicated."
+    },
+    {
+      "volume": 3,
+      "scan": 134,
+      "line": "text-line-05",
+      "bbox_xywh": [
+        800,
+        339,
+        144,
+        35
+      ],
+      "old": "Потиѡль",
+      "new": "Потииѡль",
+      "preferred": "old",
+      "dimension": "base",
+      "note": "One и between т and omega; new duplicates it. Arch above omega omitted by both."
+    },
+    {
+      "volume": 3,
+      "scan": 134,
+      "line": "text-line-07",
+      "bbox_xywh": [
+        207,
+        406,
+        71,
+        36
+      ],
+      "old": "цр҃ю",
+      "new": "црю",
+      "preferred": "old",
+      "dimension": "abbreviation",
+      "note": "Visible wave over р; old preserves mark, new loses it. Exact sign encoding not independently established."
+    },
+    {
+      "volume": 3,
+      "scan": 134,
+      "line": "text-line-08",
+      "bbox_xywh": [
+        230,
+        439,
+        182,
+        36
+      ],
+      "old": "погроуженъ",
+      "new": "погроужен",
+      "preferred": "new",
+      "dimension": "base",
+      "note": "Visible final н followed by space; no ъ."
+    },
+    {
+      "volume": 3,
+      "scan": 134,
+      "line": "text-line-11",
+      "bbox_xywh": [
+        159,
+        543,
+        118,
+        36
+      ],
+      "old": "навади",
+      "new": "навадѧ",
+      "preferred": "old",
+      "dimension": "base",
+      "note": "Final и matches L17, not L13 small yus."
+    },
+    {
+      "volume": 2,
+      "scan": 134,
+      "line": "chapter-4-cont-line-06",
+      "bbox_xywh": [
+        258,
+        374,
+        87,
+        40
+      ],
+      "old": "єсмъ",
+      "new": "есми",
+      "preferred": "new",
+      "dimension": "base",
+      "note": "Focus final character only: printed и, not ъ. Initial e/є not adjudicated."
+    },
+    {
+      "volume": 2,
+      "scan": 134,
+      "line": "chapter-4-cont-line-06",
+      "bbox_xywh": [
+        714,
+        374,
+        83,
+        40
+      ],
+      "old": "уже",
+      "new": "оуже",
+      "preferred": "new",
+      "dimension": "base",
+      "note": "Clearly separate о and у. Compare L05/L65/L66."
+    },
+    {
+      "volume": 2,
+      "scan": 134,
+      "line": "chapter-4-cont-line-06",
+      "bbox_xywh": [
+        861,
+        374,
+        89,
+        40
+      ],
+      "old": "єсмъ",
+      "new": "есми",
+      "preferred": "excluded",
+      "dimension": "base",
+      "note": "Right edge clips final character; no decision."
+    },
+    {
+      "volume": 2,
+      "scan": 134,
+      "line": "chapter-4-cont-line-07",
+      "bbox_xywh": [
+        311,
+        412,
+        132,
+        40
+      ],
+      "old": "огладаю",
+      "new": "ѡ҆глада́ю",
+      "preferred": "excluded",
+      "dimension": "base",
+      "note": "Initial glyph clipped; cannot adjudicate omega."
+    },
+    {
+      "volume": 2,
+      "scan": 134,
+      "line": "chapter-4-cont-line-03",
+      "bbox_xywh": [
+        101,
+        249,
+        126,
+        42
+      ],
+      "old": "Іоаким",
+      "new": "Їѡаким",
+      "preferred": "new",
+      "dimension": "base",
+      "note": "Focus second letter: omega shape rather than round о. Two dots visible over initial I; no decision on exact coding."
+    }
+  ],
+  "summary": {
+    "base_new": 6,
+    "base_old": 3,
+    "abbreviation_old": 1,
+    "excluded": 2
+  }
+}

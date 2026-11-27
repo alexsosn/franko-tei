@@ -1,0 +1,120 @@
+{
+  "schema": "monomakh-icl-exploratory-review-comparison-v1",
+  "first_response_commit": "6133c5dc8336f02b3748d4f60f78096500eb4f2e",
+  "reference_status": "accepted agent-adjudicated corrections; not whole-line human gold",
+  "method": "Levenshtein over literal Unicode codepoints including spacing, no normalization, no text edits after frozen first response",
+  "limitations": [
+    "same conversation with prior chart exposure; not independent A/B",
+    "selected correction events not representative",
+    "old production draft is historical comparator with uncontrolled reading conditions",
+    "local OTF chart was visible, exact WOFF2 or full hybrid was not delivered to this reading context",
+    "accepted correction may not verify unchanged parts of line",
+    "sensitivity excludes only the preidentified spaced heading; full result remains primary"
+  ],
+  "summary": {
+    "all": {
+      "lines": 6,
+      "old_edits": 16,
+      "new_edits": 49,
+      "reference_codepoints": 342
+    },
+    "sensitivity_excluding_spaced_line": {
+      "lines": 5,
+      "old_edits": 15,
+      "new_edits": 12,
+      "reference_codepoints": 261
+    }
+  },
+  "lines": [
+    {
+      "event": "0bd08779-77be-46aa-beff-002affd576e3",
+      "volume": 4,
+      "scan": 68,
+      "line": "disputations-cont-line-02",
+      "intake_blob": "8228f67e6ee5d9cb9ba35c61c72cfbd5e494164c",
+      "bundle": "608ff1e7-a759-4e51-825b-ce2236846b6d",
+      "source_image_sha256": "8c684f75ae18a2650aa642e98e62606d418c72d44b1111c8841aac1ae8efa5ca",
+      "old": "Ѡвѣт: Ѡсифъ бл҃гоѡбразный.",
+      "reference": "Ѡвѣт: О́̓сифъ бл҃гоѡбразный.",
+      "new": "Ѿвѣт: Ѻсифъ бл҃гоѡбразный.",
+      "old_distance": 3,
+      "new_distance": 4,
+      "reference_length": 28
+    },
+    {
+      "event": "7b47d515-021b-466b-8863-8adb9a12f0df",
+      "volume": 4,
+      "scan": 68,
+      "line": "disputations-cont-line-03",
+      "intake_blob": "8228f67e6ee5d9cb9ba35c61c72cfbd5e494164c",
+      "bundle": "608ff1e7-a759-4e51-825b-ce2236846b6d",
+      "source_image_sha256": "8c684f75ae18a2650aa642e98e62606d418c72d44b1111c8841aac1ae8efa5ca",
+      "old": "11. Въпроⷭ: Котораа тваръ не была з Ноєм в ковчезѣ?",
+      "reference": "11. Въпроⷭ: Котораꙗ тваръ не была з Ноєм в ковчезѣ?",
+      "new": "11. Въпроⷭ: Котораѧ тваръ не была з Ноем в ковчезѣ?",
+      "old_distance": 1,
+      "new_distance": 2,
+      "reference_length": 51
+    },
+    {
+      "event": "8933e591-53d0-4ec1-8041-6d92b9116cb5",
+      "volume": 1,
+      "scan": 127,
+      "line": "enoch-flood-l002",
+      "intake_blob": "f0f85750729697955f686f9ec98065e947dfa259",
+      "bundle": "eacc6005-133e-4140-9753-844b3b02447d",
+      "source_image_sha256": "1de02e6e18cc61daa28f360deae04fd47563ffbcb6d15d70fa5a77394cfd4195",
+      "old": "д о м с к ї и  б л а д о т в о́ р ц ы, и  т о г о  р а́ д ы  н а в о́ д и т  п о-",
+      "reference": "д о м с к ї и  б л ѧ д о т в о́ р ц ы, и  т о г о  р а́ д ы  н а в о́ д и т  п о-",
+      "new": "домскїи бладотворцы, и того́ ра́ды наводит по-",
+      "old_distance": 1,
+      "new_distance": 37,
+      "reference_length": 81
+    },
+    {
+      "event": "efa302aa-2c4b-475e-873d-c69de513d44d",
+      "volume": 1,
+      "scan": 104,
+      "line": "witness-e-death-adam-l001",
+      "intake_blob": "e6394de955fe51647032139c7098511b2cd90286",
+      "bundle": "fe896df3-3330-4020-b684-4b334a2f24cc",
+      "source_image_sha256": "ffc8734adc604685b1e88895e035ec2d4fe4a46f9cb8b0e6c3895e1463863b28",
+      "old": "[Смерть Адама]. Адам бяше во Єдемѣ пред дверми райскими¹).",
+      "reference": "[Смерть Адама]. Адам бꙗ҆́ше во Єдемѣ пред дверми райскими¹).",
+      "new": "[Смерть Адама]. Адам бѧше во Єдемѣ пред дверми райскими¹).",
+      "old_distance": 3,
+      "new_distance": 3,
+      "reference_length": 60
+    },
+    {
+      "event": "f9baf334-6cf9-4ae0-83f8-9d4b676b3975",
+      "volume": 1,
+      "scan": 104,
+      "line": "witness-e-death-adam-l002",
+      "intake_blob": "e6394de955fe51647032139c7098511b2cd90286",
+      "bundle": "fe896df3-3330-4020-b684-4b334a2f24cc",
+      "source_image_sha256": "ffc8734adc604685b1e88895e035ec2d4fe4a46f9cb8b0e6c3895e1463863b28",
+      "old": "Єгдаже²) приближи ся ему смр҃ть,³) разболѣ ся велми⁴, Адам⁴).",
+      "reference": "Єгдаже²) прибли́жи сꙗ емꙋ см҃рть,³) разболѣ сѧ велми⁴, Адам⁴).",
+      "new": "Єгдаже²) прибли́жи сѧ емꙋ см҃рть,³) разболѣ сѧ велми⁴, Адам⁴).",
+      "old_distance": 6,
+      "new_distance": 1,
+      "reference_length": 62
+    },
+    {
+      "event": "e388782d-383d-4085-90b3-d7a272b0a23f",
+      "volume": 1,
+      "scan": 104,
+      "line": "witness-e-death-adam-l003",
+      "intake_blob": "e6394de955fe51647032139c7098511b2cd90286",
+      "bundle": "fe896df3-3330-4020-b684-4b334a2f24cc",
+      "source_image_sha256": "ffc8734adc604685b1e88895e035ec2d4fe4a46f9cb8b0e6c3895e1463863b28",
+      "old": "Сидъ вопроситъ⁵) мт҃ере своея Єви⁶) и рече:⁶) Повѣж ми, мт҃и",
+      "reference": "Сиѳъ вопроситъ⁵) мт҃ере своеꙗ Єви⁶) и рече:⁶) Повѣж ми, мт҃и",
+      "new": "Сиѳъ вопроситъ⁵) мт҃ере своѧ Єви⁶) и рече:⁶) Повѣж ми, мт҃и",
+      "old_distance": 2,
+      "new_distance": 2,
+      "reference_length": 60
+    }
+  ]
+}

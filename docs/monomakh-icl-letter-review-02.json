@@ -1,0 +1,482 @@
+{
+  "schema": "franko-native-letter-review-v1",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "sources": {
+    "III/130": {
+      "width": 1190,
+      "height": 1791,
+      "sha256": "51e830aa1fa46edd0746e6a9bbf25f2938fc2950a5b4011decea030b7fc64eae"
+    },
+    "I/128": {
+      "width": 1190,
+      "height": 1727,
+      "sha256": "abcf203d3894a38280b12a85a854475905c11f5d0ada49a8c225a18fa6d3da2a"
+    },
+    "V/130": {
+      "width": 1190,
+      "height": 1987,
+      "sha256": "b0848890040273b81b01ea07e2fe2467bef8a1f1113c17b9fe33efdc5218cda9"
+    },
+    "I/97": {
+      "width": 1190,
+      "height": 1824,
+      "sha256": "e1b73a353921da5826a35de394402d24a1705d2295b441265254901d6663a93f"
+    }
+  },
+  "pdf_sha256": "842ce61dc4451860269122a614a9d5c56761fb0347a2f72564913bc763bddea8",
+  "notes": [
+    "Review batch L43–L66. Direct native-coordinate crops decoded from pinned JPEG luminance, quantized to four grayscale levels for chat transport. PDF label font Noto Serif, not Monomakh. Original source coordinates allow exact RGB regeneration.",
+    "20 uppercase candidate examples, 2 ot-ligature examples, 2 digraph examples. All provisional; explicitly distinguish letters from ligatures and digraphs.",
+    "Visual check discarded clipped ot and missed uppercase targets. The candidate Щ crop was actually оу and is labelled accordingly. С/Є, Ꙗ/А and Ѡ/Ꙍ/Ѽ remain visually ambiguous. Context labels are locator hints, not new diplomatic transcriptions.",
+    "Second user review: L44 prefers В but may be К (poor scan); L45 Гь҃; L61 uncertain; L62 Ѡ҆. Remaining rows generally accepted provisionally. The base-letter labels and original PDF identity are unchanged; full forms are separate metadata. Do not use L44 or L61 as resolved ICL examples."
+  ],
+  "examples": [
+    {
+      "id": "L43",
+      "source": "III/130",
+      "bbox_xywh": [
+        223,
+        361,
+        30,
+        35
+      ],
+      "reading": "Б",
+      "codepoints": [
+        "U+0411"
+      ],
+      "context": "Бж…",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L44",
+      "source": "I/128",
+      "bbox_xywh": [
+        757,
+        1061,
+        29,
+        34
+      ],
+      "reading": "В",
+      "codepoints": [
+        "U+0412"
+      ],
+      "context": "Вы",
+      "status": "ambiguous",
+      "category": "uppercase",
+      "alternatives": [
+        "В",
+        "К"
+      ],
+      "review": "2026-11-27: user reports poor scan; possibly К, but prefers В. Seek a clearer specimen; not a verified ICL label."
+    },
+    {
+      "id": "L45",
+      "source": "I/128",
+      "bbox_xywh": [
+        177,
+        194,
+        34,
+        31
+      ],
+      "reading": "Г",
+      "codepoints": [
+        "U+0413"
+      ],
+      "context": "Гь҃",
+      "status": "user_reviewed",
+      "category": "uppercase",
+      "review": "2026-11-27: user reads Гь҃. Retain the supplied full context separately from base-letter label Г; no diacritic adjudication."
+    },
+    {
+      "id": "L46",
+      "source": "I/128",
+      "bbox_xywh": [
+        155,
+        541,
+        35,
+        34
+      ],
+      "reading": "Ж",
+      "codepoints": [
+        "U+0416"
+      ],
+      "context": "Жалостное",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L47",
+      "source": "III/130",
+      "bbox_xywh": [
+        498,
+        608,
+        31,
+        35
+      ],
+      "reading": "З",
+      "codepoints": [
+        "U+0417"
+      ],
+      "context": "Зревши",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L48",
+      "source": "V/130",
+      "bbox_xywh": [
+        732,
+        456,
+        35,
+        36
+      ],
+      "reading": "И",
+      "codepoints": [
+        "U+0418"
+      ],
+      "context": "И то",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L49",
+      "source": "I/128",
+      "bbox_xywh": [
+        152,
+        258,
+        20,
+        33
+      ],
+      "reading": "І",
+      "codepoints": [
+        "U+0406"
+      ],
+      "context": "Імаше",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L50",
+      "source": "III/130",
+      "bbox_xywh": [
+        837,
+        228,
+        34,
+        34
+      ],
+      "reading": "М",
+      "codepoints": [
+        "U+041C"
+      ],
+      "context": "Мене",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L51",
+      "source": "III/130",
+      "bbox_xywh": [
+        395,
+        262,
+        30,
+        35
+      ],
+      "reading": "Н",
+      "codepoints": [
+        "U+041D"
+      ],
+      "context": "Нѣкако",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L52",
+      "source": "III/130",
+      "bbox_xywh": [
+        723,
+        298,
+        32,
+        34
+      ],
+      "reading": "П",
+      "codepoints": [
+        "U+041F"
+      ],
+      "context": "Пождете",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L53",
+      "source": "V/130",
+      "bbox_xywh": [
+        168,
+        770,
+        34,
+        37
+      ],
+      "reading": "Р",
+      "codepoints": [
+        "U+0420"
+      ],
+      "context": "Рек",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L54",
+      "source": "I/128",
+      "bbox_xywh": [
+        81,
+        611,
+        29,
+        33
+      ],
+      "reading": "С",
+      "codepoints": [
+        "U+0421"
+      ],
+      "context": "Слово (contrast Є)",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L55",
+      "source": "III/130",
+      "bbox_xywh": [
+        169,
+        227,
+        30,
+        34
+      ],
+      "reading": "Т",
+      "codepoints": [
+        "U+0422"
+      ],
+      "context": "Тебѣ",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L56",
+      "source": "III/130",
+      "bbox_xywh": [
+        889,
+        160,
+        34,
+        34
+      ],
+      "reading": "Ф",
+      "codepoints": [
+        "U+0424"
+      ],
+      "context": "Феѡкла",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L57",
+      "source": "V/130",
+      "bbox_xywh": [
+        584,
+        609,
+        34,
+        36
+      ],
+      "reading": "Х",
+      "codepoints": [
+        "U+0425"
+      ],
+      "context": "Хоч",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L58",
+      "source": "III/130",
+      "bbox_xywh": [
+        681,
+        158,
+        32,
+        36
+      ],
+      "reading": "Ч",
+      "codepoints": [
+        "U+0427"
+      ],
+      "context": "Что",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L59",
+      "source": "V/130",
+      "bbox_xywh": [
+        350,
+        770,
+        40,
+        39
+      ],
+      "reading": "Ю",
+      "codepoints": [
+        "U+042E"
+      ],
+      "context": "Юрей",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L60",
+      "source": "I/128",
+      "bbox_xywh": [
+        365,
+        194,
+        28,
+        33
+      ],
+      "reading": "Є",
+      "codepoints": [
+        "U+0404"
+      ],
+      "context": "Єноше",
+      "status": "candidate",
+      "category": "uppercase",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L61",
+      "source": "III/130",
+      "bbox_xywh": [
+        383,
+        190,
+        29,
+        35
+      ],
+      "reading": "Ꙗ",
+      "codepoints": [
+        "U+A656"
+      ],
+      "context": "Азъ; possible ornamented А",
+      "status": "ambiguous",
+      "category": "uppercase",
+      "alternatives": [
+        "Ꙗ",
+        "А"
+      ],
+      "review": "2026-11-27: user unsure. Alternatives retained from initial candidate; seek a clearer specimen. Do not treat either as confirmed."
+    },
+    {
+      "id": "L62",
+      "source": "III/130",
+      "bbox_xywh": [
+        303,
+        882,
+        38,
+        37
+      ],
+      "reading": "Ѡ",
+      "codepoints": [
+        "U+0460"
+      ],
+      "context": "… славу …ца; compare Ꙍ and Ѽ",
+      "status": "user_reviewed",
+      "category": "uppercase",
+      "observed_reading": "Ѡ҆",
+      "observed_codepoints": [
+        "U+0460",
+        "U+0486"
+      ],
+      "review": "2026-11-27: user reads Ѡ҆. Base-letter inventory uses Ѡ; mark retained separately as the user's reading, not an independent accent adjudication."
+    },
+    {
+      "id": "L63",
+      "source": "I/97",
+      "bbox_xywh": [
+        288,
+        858,
+        41,
+        38
+      ],
+      "reading": "ѿ",
+      "codepoints": [
+        "U+047F"
+      ],
+      "context": "ѿ тебе",
+      "status": "candidate",
+      "category": "ligature",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L64",
+      "source": "I/97",
+      "bbox_xywh": [
+        307,
+        970,
+        41,
+        39
+      ],
+      "reading": "ѿ",
+      "codepoints": [
+        "U+047F"
+      ],
+      "context": "ѿ въстока",
+      "status": "candidate",
+      "category": "ligature",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L65",
+      "source": "V/130",
+      "bbox_xywh": [
+        763,
+        1273,
+        40,
+        42
+      ],
+      "reading": "оу",
+      "codepoints": [
+        "U+043E",
+        "U+0443"
+      ],
+      "context": "two visible components",
+      "status": "candidate",
+      "category": "digraph",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    },
+    {
+      "id": "L66",
+      "source": "I/128",
+      "bbox_xywh": [
+        550,
+        715,
+        48,
+        34
+      ],
+      "reading": "оу",
+      "codepoints": [
+        "U+043E",
+        "U+0443"
+      ],
+      "context": "оустъ",
+      "status": "candidate",
+      "category": "digraph",
+      "review": "2026-11-27: included in user's general 'остальное вроде правильно'; no individual correction. Candidate pending exact-source reinspection."
+    }
+  ]
+}

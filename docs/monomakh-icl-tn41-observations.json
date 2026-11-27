@@ -1,0 +1,96 @@
+{
+  "schema": "franko-published-icl-observation-v1",
+  "status": "nonblind_development",
+  "reference": {
+    "url": "https://www.unicode.org/notes/tn41/tn41-1.pdf",
+    "printed_pages": [
+      22,
+      23,
+      24,
+      30,
+      31
+    ],
+    "pdf_pages_1_based": [
+      24,
+      25,
+      26,
+      32,
+      33
+    ],
+    "visual_inspection": true
+  },
+  "source": {
+    "volume": 3,
+    "scan": 131,
+    "printed_page": 45,
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "image_blob": "5d625c272dfea581d7025ac93089229545822fff",
+    "image_sha256": "1d5256e17f09d60b05822c2e8accbd78c3d78f62164ea65e2d898bf696e33330"
+  },
+  "method": "Same context exposed to earlier Franko examples and TN41 page images. Original full-page JPEG inspected before querying any transcript of this page. Not independent or controlled. Selected sign observations rather than full diplomatic reading; no OCR supplied.",
+  "observations": [
+    {
+      "locator": "witness B, first body line below heading",
+      "candidate": "ѡ҆бираючи",
+      "shape": "raised small arch over initial omega",
+      "alternatives": [
+        "ѡ҆",
+        "ѡ̑"
+      ],
+      "note": "Initial unstressed vowel supports breathing; not decided by glyph alone."
+    },
+    {
+      "locator": "witness B, first body line below heading, near right margin",
+      "candidate": "см҃рти",
+      "shape": "raised abbreviation mark above consonant cluster",
+      "alternatives": [
+        "U+0483",
+        "U+A66F",
+        "combining letter with U+0487"
+      ],
+      "note": "TN41 separates titlo, vzmet, pokrytie. Full-page resolution insufficient to distinguish raised-letter component."
+    },
+    {
+      "locator": "witness B, first paragraph, line ending на",
+      "candidate": "и҆",
+      "shape": "small arch over standalone и",
+      "alternatives": [
+        "и҆",
+        "и̑"
+      ],
+      "note": "Same-page function-based ambiguity; no forced uniform mapping."
+    },
+    {
+      "locator": "witness B, second paragraph, line containing напалити",
+      "candidate": "ѡгнь",
+      "shape": "raised wave-like sign over initial omega",
+      "alternatives": [
+        "ѡ҆́гнь",
+        "ѡ҆̑гнь",
+        "ѡ̑гнь"
+      ],
+      "note": "Compare with TN41 p.30 and source-specific wave class; do not infer mark solely from stress."
+    },
+    {
+      "locator": "witness B, second paragraph, line beginning до",
+      "candidate": "кртом",
+      "shape": "raised mark near р/т in abbreviation",
+      "alternatives": [
+        "titlo",
+        "combining s with or without pokrytie"
+      ],
+      "note": "Preserve abbreviated printed letters, do not insert expansion in diplomatic text."
+    },
+    {
+      "locator": "witness B, penultimate line",
+      "candidate": "ꙗко",
+      "shape": "wave-like mark above initial iotated-a-like glyph",
+      "alternatives": [
+        "ꙗ҆́ко",
+        "ꙗ҆̑ко",
+        "ꙗ̑ко"
+      ],
+      "note": "Base glyph and mark require crop review; ISO is contextual candidate."
+    }
+  ]
+}

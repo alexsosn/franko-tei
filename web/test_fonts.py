@@ -66,3 +66,161 @@ for name in ("Monomakh-Regular.woff2", "Shafarik-Regular.woff2", "GentiumPlus-Re
 for group, keys in groups.items():
     verify("keyboard " + group, stack, "◌" + "".join(k[0] for k in keys))
     print("Keyboard", group, "covers", len(keys), "keys in vendored font stack")
+
+
+# The visual ICL reference is research-only, but must use the exact bundled
+# Monomakh cmap and report literal (not NFC-normalized) sequences.
+import re
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from threading import Thread
+from playwright.sync_api import sync_playwright
+
+sheet = ROOT / "docs/monomakh-icl.html"
+groups = json.loads(re.search(r"^const groups=(\[.*\]);$", sheet.read_text(encoding="utf-8"), re.M).group(1))
+samples = [sample for _, items in groups for sample in items]
+required = ["ѡ҆ни","ѡ҆́ни","ѡ҆̀ни","ѡ̑ни","ѡ҃ни","ѡ҆̑ни","ꙍ҆̑ни","ѽни","вопїе","копїе"] + ["аⷨ", "аⷳ", "аⷬ", "а҆","а҅","а́","а̀","а҃","аⷭ","аⷭ҇","аⷢ","аⷣ","аⷯ","аⷩ","аⷮ","а꙯","ѿ","ѡ","ꙋ","ѹ","оу","ї","ї"]
+assert not set(required) - set(samples), ("missing ICL examples", sorted(set(required) - set(samples)))
+verify("Monomakh ICL chart", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), "".join(samples))
+expected_labels = [" ".join(f"U+{ord(c):04X}" for c in sample) for sample in samples]
+
+# Serve real checkout bytes; test both success and the missing-font failure.
+server = ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, directory=str(ROOT)))
+thread = Thread(target=server.serve_forever, daemon=True)
+thread.start()
+url = f"http://127.0.0.1:{server.server_port}/docs/monomakh-icl.html"
+try:
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": 1500, "height": 1000})
+        page.goto(url)
+        page.locator("#chart:not([hidden])").wait_for()
+        assert page.locator(".glyph").all_text_contents() == samples
+        assert page.locator(".codes").all_text_contents() == expected_labels
+        assert page.evaluate("document.fonts.check('54px ReferenceMonomakh')")
+        # Chromium exposes actual used fonts, including fallback. The cmap
+        # check above covers every code point; this guards font selection.
+        cdp = page.context.new_cdp_session(page)
+        cdp.send("DOM.enable")
+        cdp.send("CSS.enable")
+        root = cdp.send("DOM.getDocument")["root"]["nodeId"]
+        nodes = cdp.send("DOM.querySelectorAll", {"nodeId": root, "selector": ".glyph"})["nodeIds"]
+        assert len(nodes) == len(samples)
+        for node in nodes:
+            used = cdp.send("CSS.getPlatformFontsForNode", {"nodeId": node})["fonts"]
+            assert used and all(font["isCustomFont"] for font in used), used
+        # Fresh context ensures the earlier successful load cannot be cached.
+        failed = browser.new_page()
+        failed.route("**/Monomakh-Regular.woff2", lambda route: route.abort())
+        failed.goto(url)
+        failed.locator("#status.error").wait_for()
+        assert failed.locator("#chart").is_hidden()
+        browser.close()
+finally:
+    server.shutdown()
+    server.server_close()
+    thread.join()
+print("Monomakh ICL: exact cmap, literal labels, browser font selection and failure path checked")
+
+
+# The hybrid sheet must never silently use the wrong scan/font or teach a
+# disputed code-point choice as a verified example. No scan bytes are vendored.
+import runpy
+import tempfile
+from PIL import Image, features
+
+hybrid = runpy.run_path(str(ROOT / "docs/render_monomakh_hybrid.py"))
+assert features.check("raqm"), "RAQM required for meaningful combining-mark rendering"
+examples = hybrid["EXAMPLES"]
+sources = hybrid["SOURCES"]
+assert len(examples) >= 22 and len({row["source"] for row in examples}) >= 5
+# Preserve the stable numbering used in the user's 38-crop review.
+assert len(examples) >= 38
+for n, expected in {6: "ѡ҆́ни", 11: "Є҆но́ше", 12: "а҆рхї", 14: "ны́хъ.", 21: "(О҆", 22: "А҆́в", 35: "ѡ Єѵво,"}.items():
+    assert examples[n - 1]["render"] == expected, n
+for n in (6, 15, 16, 17, 19, 23, 24):
+    row = examples[n - 1]
+    assert row["status"] == "ambiguous" and row["mark_options"][0] == "U+0486 U+0301"
+for n in (11, 12, 18, 20, 21, 25):
+    assert examples[n - 1]["shape"] == "left-leaning arch"
+for n in (26, 27, 36, 38):
+    assert examples[n - 1]["status"] == "ambiguous"
+    assert set(examples[n - 1]["mark_options"]) == {"U+0311", "U+0486"}
+for n in (36, 38):
+    assert examples[n - 1]["mark_options"][0] == "U+0311"
+
+accent_rows = [row for row in examples if row.get("category") == "accent"]
+assert any(row["render"] == "но" and row["source"] == "III/130" and row["mark_options"] == ["U+0311", "U+0486"] and row["status"] == "ambiguous" for row in accent_rows)
+assert len(accent_rows) >= 12 and len({row["source"] for row in accent_rows}) >= 3
+interjection_controls = [row for row in accent_rows if row["source"] == "I/97" and row.get("contrast") == "interjection-omega"]
+assert len(interjection_controls) == 4
+assert {row["shape"] for row in interjection_controls} == {"wave", "arch"}
+assert all(row["status"] == "ambiguous" for row in interjection_controls)
+assert {row["line"] for row in interjection_controls} == {"witness-a-continuation-l002", "witness-a-continuation-l009", "witness-a-continuation-l020", "witness-a-continuation-l023"}
+vol1_controls = [row for row in accent_rows if row["source"] == "I/128"]
+assert len(vol1_controls) >= 3
+assert any(row["render"] == "ѡдра" and row["status"] == "ambiguous" for row in vol1_controls)
+assert any(row["render"] == "ѡчи" and row["status"] == "ambiguous" for row in vol1_controls)
+assert any(row["render"] == "ѡ҆стꙋди́тсѧ" and row["status"] == "candidate" for row in vol1_controls)
+pair = [row for row in accent_rows if row["source"] == "III/131" and row.get("contrast") == "fire-initial-vowel"]
+assert len(pair) == 2
+assert {row["line"] for row in pair} == {"text-line-09", "text-line-12"}
+assert any(row["render"] == "ѡгнь" and row["status"] == "ambiguous" and row["mark_options"][0] == "U+0486 U+0301" for row in pair)
+assert any(row["render"] == "ѡ҆гн" and row["mark_options"] == ["U+0486"] and row["status"] == "candidate" for row in pair)
+assert {"U+0301", "U+0486", "U+0311", "U+0486 U+0301"} <= {code for row in accent_rows for code in row["mark_options"]}
+assert all(row["status"] == "ambiguous" for row in accent_rows if len(row["mark_options"]) > 1)
+assert len({(row["source"], tuple(row["bbox_xywh"])) for row in examples}) == len(examples)
+assert all(row["status"] in {"candidate", "ambiguous"} for row in examples)
+assert any(row["status"] == "ambiguous" for row in examples)
+assert any(row["render"] == "вопїе" and row["status"] == "ambiguous" for row in examples)
+assert any(row["source"] == "III/130" and row["render"] == "ѡ҆́ни" and row["status"] == "ambiguous" and "ѡ҆̑" in row["focus"] for row in examples)
+for row in examples:
+    source = sources[row["source"]]
+    x, y, w, h = row["bbox_xywh"]
+    assert x >= 0 and y >= 0 and w > 0 and h > 0
+    assert x + w <= source["width"] and y + h <= source["height"]
+    verify("Hybrid Monomakh cmap", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), row["render"] + row["focus"])
+with tempfile.TemporaryDirectory() as tmp:
+    assets = Path(tmp)
+    source = next(iter(sources.values()))
+    wrong = assets / source["path"]
+    wrong.parent.mkdir(parents=True)
+    Image.new("RGB", (source["width"], source["height"]), "white").save(wrong)
+    try:
+        hybrid["load_source"](assets, source)
+    except ValueError as exc:
+        assert "SHA-256" in str(exc)
+    else:
+        raise AssertionError("Wrong scan accepted")
+    try:
+        hybrid["render_sheet"](assets, assets / "output.png")
+    except (ValueError, FileNotFoundError):
+        assert not (assets / "output.png").exists()
+    else:
+        raise AssertionError("Hybrid chart rendered from invalid source")
+print("Monomakh hybrid: source bounds, candidate status, cmap and wrong-source rejection checked")
+
+# Approved atlas is separate from the exploratory hybrid candidates.
+import importlib.util
+atlas_spec = importlib.util.spec_from_file_location("approved_atlas", ROOT / "docs/render_approved_icl.py")
+atlas_module = importlib.util.module_from_spec(atlas_spec)
+atlas_spec.loader.exec_module(atlas_module)
+atlas = atlas_module.load_atlas(ROOT / "docs/monomakh-icl-approved-atlas.json")
+assert len(atlas["examples"]) == 89
+assert not {"L44", "L61"} & {row["id"] for row in atlas["examples"]}
+assert sum(row["approval"] == "issue_accepted_provisional" for row in atlas["examples"]) == 7
+assert all(row.get("source") not in atlas["excluded"]["holdout"] for row in atlas["examples"])
+assert {row["reading"] for row in atlas["examples"] if row["id"] in {"L10","L11","L12"}} == {"ъ","ꙗ"}
+assert all(row["scope"] == "line_context_focus_only" for row in atlas["examples"] if row["id"].startswith("J"))
+# Negative controls: candidate promotion, invalid bounds and holdout leakage fail closed.
+import copy
+for field, value in [("approval", "candidate"), ("bbox_xywh", [-1,0,1,1]), ("source", "III/134")]:
+    bad = copy.deepcopy(atlas)
+    bad["examples"][-1][field] = value
+    try:
+        atlas_module.validate_atlas(bad)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Approved atlas accepted invalid {field}")
+print("Approved ICL atlas: approval boundary, holdout and provenance checks passed")

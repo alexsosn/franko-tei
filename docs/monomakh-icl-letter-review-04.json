@@ -1,0 +1,220 @@
+{
+  "schema": "franko-native-letter-review-v1",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "sources": {
+    "II/102": {
+      "width": 1190,
+      "height": 1988,
+      "sha256": "50f07cd85ca39d14987460dc2d849f597691ccceff45c901b978aead932fe57b"
+    },
+    "III/129": {
+      "width": 1190,
+      "height": 1847,
+      "sha256": "39eddaa1bd498f5f6f3f1aa6b2754e983eb6f85ddca9394f6ca78c3ed825fd2a"
+    },
+    "I/126": {
+      "width": 1190,
+      "height": 1691,
+      "sha256": "378356bf931f50dffb79104799826fd4886d42919cba5b7c26011108ca9bdd45"
+    }
+  },
+  "pdf_sha256": "ad7af7471ccc648e13c7f07fc2747ad12d2ada274d9d11cb4efdd0e816214184",
+  "notes": [
+    "Review batch L76–L84, 9 candidate specimens. Direct native JPEG luma crops, quantized to four grayscale levels for transport; Noto Serif review labels, not Monomakh. Source coordinates permit original regeneration.",
+    "Existing readings used only to locate rare glyph candidates. L78 contrasts visual ф-like letter with draft ѳ; no corpus correction. L77 is a numeral candidate, not independently confirmed ordinary-letter fita. Do not equate numeral and letter shapes automatically.",
+    "Multiple attempted crops rejected for clipping, incorrect focal letters or packed pixel transport errors. Щ remains uncollected; no claim of complete alphabet coverage. All new readings remain provisional; no diacritics adjudicated.",
+    "User approved displayed batch L76–L84 before requesting ICL test; preserve historical alternatives."
+  ],
+  "examples": [
+    {
+      "id": "L76",
+      "source": "II/102",
+      "bbox_xywh": [
+        550,
+        1211,
+        37,
+        37
+      ],
+      "reading": "Ѳ",
+      "codepoints": [
+        "U+0472"
+      ],
+      "context": "Ѳрагия",
+      "status": "user_reviewed",
+      "category": "uppercase",
+      "note": "Partial neighboring р.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L77",
+      "source": "I/126",
+      "bbox_xywh": [
+        668,
+        776,
+        26,
+        40
+      ],
+      "reading": "ѳ",
+      "codepoints": [
+        "U+0473"
+      ],
+      "context": "Слово кѳ",
+      "status": "user_reviewed",
+      "category": "numeral",
+      "note": "Numeral context; preceding к with titlo; target near right edge.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L78",
+      "source": "III/129",
+      "bbox_xywh": [
+        553,
+        1326,
+        36,
+        41
+      ],
+      "reading": "ф",
+      "codepoints": [
+        "U+0444"
+      ],
+      "context": "Арфемидою",
+      "status": "user_reviewed",
+      "category": "lowercase",
+      "alternatives": [
+        "ѳ"
+      ],
+      "note": "Existing draft has ѳ; printed form appears ф-like.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L79",
+      "source": "III/129",
+      "bbox_xywh": [
+        219,
+        1330,
+        26,
+        35
+      ],
+      "reading": "ь",
+      "codepoints": [
+        "U+044C"
+      ],
+      "context": "творить",
+      "status": "user_reviewed",
+      "category": "lowercase",
+      "alternatives": [
+        "ъ"
+      ],
+      "note": "Compare with L10 and L11.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L80",
+      "source": "II/102",
+      "bbox_xywh": [
+        350,
+        289,
+        38,
+        32
+      ],
+      "reading": "л",
+      "codepoints": [
+        "U+043B"
+      ],
+      "context": "Сивилла",
+      "status": "user_reviewed",
+      "category": "lowercase",
+      "note": "Central л; adjacent fragments.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L81",
+      "source": "II/102",
+      "bbox_xywh": [
+        155,
+        208,
+        29,
+        35
+      ],
+      "reading": "ꙋ",
+      "codepoints": [
+        "U+A64B"
+      ],
+      "context": "слꙋшати",
+      "status": "user_reviewed",
+      "category": "uk",
+      "alternatives": [
+        "ѹ"
+      ],
+      "note": "Figure-eight-like uk; adjacent fragments.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L82",
+      "source": "III/129",
+      "bbox_xywh": [
+        196,
+        1220,
+        57,
+        36
+      ],
+      "reading": "Оу",
+      "codepoints": [
+        "U+041E",
+        "U+0443"
+      ],
+      "context": "Оувѣдѣвше",
+      "status": "user_reviewed",
+      "category": "digraph",
+      "alternatives": [
+        "Ѹ"
+      ],
+      "note": "Two visible components; following letter partly visible.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L83",
+      "source": "I/126",
+      "bbox_xywh": [
+        718,
+        779,
+        35,
+        37
+      ],
+      "reading": "Ѡ",
+      "codepoints": [
+        "U+0460"
+      ],
+      "context": "Ѡсмый",
+      "status": "user_reviewed",
+      "category": "uppercase",
+      "alternatives": [
+        "Ꙍ"
+      ],
+      "note": "Ornate omega; compare L62 and L75.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    },
+    {
+      "id": "L84",
+      "source": "I/126",
+      "bbox_xywh": [
+        142,
+        1188,
+        40,
+        32
+      ],
+      "reading": "Ѿ",
+      "codepoints": [
+        "U+047E"
+      ],
+      "context": "Ѿвращꙋ",
+      "status": "user_reviewed",
+      "category": "ligature",
+      "alternatives": [
+        "ѿ"
+      ],
+      "note": "Upper crossbar; compare L63.",
+      "review": "2026-11-27: user approved L76–L84 ('все так' as understood from 'ве так'); approval of displayed base-letter proposal, not independent gold; alternatives retained for provenance."
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "schema": "franko-icl-full-line-human-review-v1",
+  "status": "partial_user_review",
+  "comparison_commit": "f0aa033f49dec864dcde90c0f9bd5df6aa82c372",
+  "baseline_commit": "099404eb00e80f24d84badd87c2c6939c8171c45",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "scope": "All 20 frozen trial lines, including identical readings. Review original image first, optional A/B hidden by default. Human transcribes entire line to detect shared errors. Native bbox plus small margins; optional candidates not strictly blinded because earlier results visible and alternating order; no gold until answers received. Local HTML references original JPEGs; no source derivatives committed. User can mark ⟦?⟧ for unresolved spans; exclude or report separately rather than guess.",
+  "metrics": "Compute NFC codepoint CER with whitespace and punctuation as specified; base-letter CER on NFC Cyrillic letters; report coverage and unresolved spans separately. Do not mix with selected-locus focus counts.",
+  "rows": [
+    {
+      "id": "R01",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-01",
+      "bbox_xywh": [
+        152,
+        198,
+        962,
+        40
+      ],
+      "A": "ве оумолиша цр҃я, да бы послалъ оубити Павла. пославъ цр҃ь на",
+      "B": "ве оу҆молиша цр҃ѧ, да бы послалъ оу҆бити Павла. посла цр҃ь на",
+      "old_option": "A",
+      "new_option": "B",
+      "user_reading": "ве оу҆молиша цр҃ѧ, да бы послаль оу҆бити Павла. пославь цр҃ь на",
+      "user_raw": "B ве оу҆молиша цр҃ѧ, да бы послаль оу҆бити Павла. пославь цр҃ь на",
+      "review_status": "user_reviewed",
+      "selected_option": "B"
+    },
+    {
+      "id": "R02",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-02",
+      "bbox_xywh": [
+        152,
+        231,
+        962,
+        41
+      ],
+      "A": "всѧ поути стрѣщи таковаго моужа, бѣ бо знаем: чръныѧ брадѫ",
+      "B": "вся поути стрѣщи таковаго моужа, бѣ бо знаем: чрънѫ брадѫ",
+      "old_option": "B",
+      "new_option": "A",
+      "user_reading": "всѧ поути стрѣщи таковаго моужа, бѣ бо знаєм: чрънѫ брадѫ",
+      "user_raw": "всѧ поути стрѣщи таковаго моужа, бѣ бо знаєм: чрънѫ брадѫ",
+      "review_status": "user_reviewed"
+    },
+    {
+      "id": "R03",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-03",
+      "bbox_xywh": [
+        152,
+        265,
+        962,
+        41
+      ],
+      "A": "имѣя и . . . главѫ сивѫ и низок тѣлом. и пришедши близ къ",
+      "B": "имѣа и҆ ... главѫ сивѫ и҆ низок тѣлом. и҆ пришедши близ къ",
+      "old_option": "A",
+      "new_option": "B",
+      "user_reading": "имѣѧ и҆ ... главѫ сивѫ и҆ низок тѣлом. и҆ пришедши близ къ",
+      "user_raw": "имѣѧ и҆ ... главѫ сивѫ и҆ низок тѣлом. и҆ пришедши близ къ",
+      "review_status": "user_reviewed"
+    },
+    {
+      "id": "R04",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-04",
+      "bbox_xywh": [
+        152,
+        299,
+        962,
+        41
+      ],
+      "A": "Римѹ вълѣзе въ корабль. бы҃ Диоскор нѣкто и҆мѣа ѡ҆браз Пав-",
+      "B": "Римѫ влѣзе въ корабль. бы҃ Диоскор нѣкто имѣя образ Пав-",
+      "old_option": "B",
+      "new_option": "A",
+      "user_reading": "Римѫ вълѣзе въ корабль. бы҆҄ Диоскор нѣкто и҆мѣѧ ѡ҆браз Пав-",
+      "user_raw": "Римѫ вълѣзе въ корабль. бы҆҄ Диоскор нѣкто и҆мѣѧ ѡ҆браз Пав-",
+      "review_status": "user_reviewed"
+    },
+    {
+      "id": "R05",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-05",
+      "bbox_xywh": [
+        152,
+        333,
+        962,
+        40
+      ],
+      "A": "ловъ и главою и брадою, и влѣзе въ град Потиѡль. и мнѣвши",
+      "B": "ловъ и҆ главою и҆ брадою, и҆ вълѣзе въ град Потииѡль. и҆ мнѣвши",
+      "old_option": "A",
+      "new_option": "B",
+      "user_reading": "ловъ и҆ главою ѝ брадою, и҆ вълѣзе въ град Потиѡ҆ль. и҆ мнѣвши",
+      "user_raw": "ловъ и҆ главою ѝ брадою, и҆ вълѣзе въ град Потиѡ҆ль. и҆ мнѣвши",
+      "review_status": "user_reviewed"
+    },
+    {
+      "id": "R06",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-06",
+      "bbox_xywh": [
+        152,
+        366,
+        962,
+        41
+      ],
+      "A": "людіе, ꙗ҆ко Павелъ е҆, и҆ оу҆сѣкоша главоу е҆го и послаша въ Рим",
+      "B": "людїе, яко Павелъ е, и оусѣкоша главоу его и послаша въ Рим",
+      "old_option": "B",
+      "new_option": "A",
+      "user_reading": "людїе, ꙗ҆ко Павел̾ є, и оусѣкоша главоу є҆го и послаша въ Рим",
+      "user_raw": "людїе, ꙗ҆ко Павел̾(не уверен насчет диакритики тут) є(не уверен насчет диакритики тут), и оусѣкоша главоу є(придыхание)го и послаша въ Рим",
+      "review_status": "base_reviewed_marks_uncertain",
+      "uncertainties": [
+        {
+          "target": "Павел̾",
+          "dimension": "diacritic",
+          "note": "User uncertain about mark; U+033E retained as supplied, not adjudicated."
+        },
+        {
+          "target": "є",
+          "occurrence": 1,
+          "dimension": "diacritic",
+          "note": "User uncertain about mark above standalone є."
+        }
+      ],
+      "transcription_note": "Parenthetical comments recorded separately; explicit breathing on єго encoded U+0486. Base spelling preserved exactly."
+    },
+    {
+      "id": "R07",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-07",
+      "bbox_xywh": [
+        152,
+        400,
+        962,
+        41
+      ],
+      "A": "къ цр҃ю. Павелъ же моля ся о градѣ, въ немже оубиша Диоско-",
+      "B": "къ црю. Павелъ же молѧ сѧ ѡ҆ градѣ, въ немже оу҆биша Діоско-",
+      "old_option": "A",
+      "new_option": "B"
+    },
+    {
+      "id": "R08",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-08",
+      "bbox_xywh": [
+        152,
+        434,
+        962,
+        41
+      ],
+      "A": "ра, и҆ погроужен бы҃ съ люд̓ми въ море. и҆ пришед къ Рим Па-",
+      "B": "ра, и погроуженъ бы҃ съ людми въ море. и пришед къ Рим Па-",
+      "old_option": "B",
+      "new_option": "A"
+    },
+    {
+      "id": "R09",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-09",
+      "bbox_xywh": [
+        152,
+        468,
+        962,
+        40
+      ],
+      "A": "велъ оучаше вѣрѣ Хв҃ѣ, крⷭ҇ти женѫ Агриповѫ кесаря. Агрипа же",
+      "B": "велъ оу҆чаше вѣрѣ Хв҃ѣ, кр҃ти женѫ Агриповѫ кесаря. Агрипа же",
+      "old_option": "A",
+      "new_option": "B"
+    },
+    {
+      "id": "R10",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-10",
+      "bbox_xywh": [
+        152,
+        501,
+        962,
+        41
+      ],
+      "A": "гнѣвъ и҆мѣа на Павла жены ради и҆ шед съ Жиды къ Нероноу",
+      "B": "гнѣвъ имѣя на Павла жены ради и шед съ Жиды къ Нероноу",
+      "old_option": "B",
+      "new_option": "A"
+    },
+    {
+      "id": "R11",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-11",
+      "bbox_xywh": [
+        152,
+        535,
+        962,
+        41
+      ],
+      "A": "навади на Павла. и оусѣчен бывъ Павелъ мечем въ в҃-е лѣто по",
+      "B": "навадѧ на Павла. и҆ оу҆сѣчен бывъ Павелъ мечем въ в҃-е лѣто по",
+      "old_option": "A",
+      "new_option": "B"
+    },
+    {
+      "id": "R12",
+      "volume": 3,
+      "scan": 134,
+      "printed": 48,
+      "line": "text-line-12",
+      "bbox_xywh": [
+        152,
+        569,
+        962,
+        41
+      ],
+      "A": "ст҃ѣмъ Петрѣ.",
+      "B": "ст҃ѣмъ Петрѣ.",
+      "old_option": "B",
+      "new_option": "A"
+    },
+    {
+      "id": "R13",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-01",
+      "bbox_xywh": [
+        94,
+        174,
+        1049,
+        43
+      ],
+      "A": "сытыхъ ієреом и старцем и всѣмъ людемъ, и боудут ві҃. быков",
+      "B": "сїтыхъ їереѡм и старцем и҆ всѣмъ люде́мъ, и боудѹт ві҃. быков",
+      "old_option": "A",
+      "new_option": "B"
+    },
+    {
+      "id": "R14",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-02",
+      "bbox_xywh": [
+        94,
+        212,
+        1049,
+        43
+      ],
+      "A": "їереѡм и старцем̓, а сто козловъ всѣм люде́м“. А гды и҆шолъ",
+      "B": "ієреом и старцемъ, а сто козловъ всѣм людем“. А гды ишолъ",
+      "old_option": "B",
+      "new_option": "A"
+    },
+    {
+      "id": "R15",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-03",
+      "bbox_xywh": [
+        94,
+        250,
+        1049,
+        43
+      ],
+      "A": "Іоаким къ домови своєму со стады своими, тогда Анна сто-",
+      "B": "Їѡаким къ домови своемѹ со ста́ды свои́ми, тогды Анна сто-",
+      "old_option": "A",
+      "new_option": "B"
+    },
+    {
+      "id": "R16",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-04",
+      "bbox_xywh": [
+        94,
+        289,
+        1049,
+        43
+      ],
+      "A": "ѧла оу ворот, и ꙗ҆къ оу҆видѣла Їѡакима моужа своего, и҆ притѣкши",
+      "B": "яла у ворот, и якъ увидѣла Іоакима мужа своего, и притекши",
+      "old_option": "B",
+      "new_option": "A"
+    },
+    {
+      "id": "R17",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-05",
+      "bbox_xywh": [
+        94,
+        327,
+        1049,
+        43
+      ],
+      "A": "и обиемши повѣсила ся на шиї єго и рекла: „се нынѣ, Гне҃ мой,",
+      "B": "и҆ ѡбиемши повѣсила сѧ на ши́и его и҆ рекла: „се нн҃ѣ, г҃не мой,",
+      "old_option": "A",
+      "new_option": "B"
+    },
+    {
+      "id": "R18",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-06",
+      "bbox_xywh": [
+        94,
+        366,
+        1049,
+        43
+      ],
+      "A": "оу҆вѣдала есми, ꙗко Г҃ь бл҃вилъ мѧ, оуже бо есми не вдова,",
+      "B": "увѣдала єсмъ, яко Гь҃ бл҃вилъ мя, уже бо єсмъ не вдова,",
+      "old_option": "B",
+      "new_option": "A"
+    },
+    {
+      "id": "R19",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-07",
+      "bbox_xywh": [
+        94,
+        404,
+        1049,
+        43
+      ],
+      "A": "кдыж тебѣ огладаю, и не безчадна, почала бо єсмъ в животѣ",
+      "B": "кдыж тебѣ ѡ҆глада́ю, и не безчадна, почала бо есми въ животѣ",
+      "old_option": "A",
+      "new_option": "B"
+    },
+    {
+      "id": "R20",
+      "volume": 2,
+      "scan": 134,
+      "printed": 52,
+      "line": "chapter-4-cont-line-08",
+      "bbox_xywh": [
+        94,
+        442,
+        1049,
+        43
+      ],
+      "A": "ѿ слова а҆гглова“. Їѡаким же реч[е] Аннѣ: „И мнѣ теж а҆гглъ",
+      "B": "ѿ слова агглова“. Іоаким же реч[е] Аннѣ: „И мнѣ теж агглъ",
+      "old_option": "B",
+      "new_option": "A"
+    }
+  ],
+  "partial_scores": {
+    "method": "NFC Cyrillic-letter edit distance (all six reviewed lines); exact NFC codepoint edit distance including whitespace and punctuation (five fully supplied lines only; R06 excluded for uncertain diacritics). User transcription as supplied, no independent source verification.",
+    "rows": [
+      {
+        "id": "R01",
+        "base_ref": 47,
+        "base_old": 3,
+        "base_new": 3,
+        "exact_ref": 63,
+        "exact_old": 5,
+        "exact_new": 3
+      },
+      {
+        "id": "R02",
+        "base_ref": 46,
+        "base_old": 2,
+        "base_new": 3,
+        "exact_ref": 57,
+        "exact_old": 2,
+        "exact_new": 3
+      },
+      {
+        "id": "R03",
+        "base_ref": 40,
+        "base_old": 1,
+        "base_new": 1,
+        "exact_ref": 58,
+        "exact_old": 6,
+        "exact_new": 1
+      },
+      {
+        "id": "R04",
+        "base_ref": 45,
+        "base_old": 3,
+        "base_new": 2,
+        "exact_ref": 60,
+        "exact_old": 7,
+        "exact_new": 4
+      },
+      {
+        "id": "R05",
+        "base_ref": 45,
+        "base_old": 2,
+        "base_new": 2,
+        "exact_ref": 62,
+        "exact_old": 6,
+        "exact_new": 4
+      },
+      {
+        "id": "R06",
+        "base_ref": 45,
+        "base_old": 4,
+        "base_new": 4,
+        "exact_ref": null,
+        "exact_old": null,
+        "exact_new": null
+      }
+    ],
+    "totals": {
+      "base_ref": 268,
+      "base_old": 15,
+      "base_new": 15,
+      "exact_ref": 300,
+      "exact_old": 26,
+      "exact_new": 15
+    }
+  }
+}
