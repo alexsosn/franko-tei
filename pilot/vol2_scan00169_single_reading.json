@@ -17,8 +17,8 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines.",
-    "raw_response": "87\nприсно Дѣва трилѣтствующая [sic !],\nголубица богоизбранная.\n[и] придана была дѣвицами\nоу возрасту болшими лѣтами,\nоу читаню и писаню оученимъ,\nвъ рукодѣлїи благовоспитанимъ,\nиж би она оу самои младости\nпров[о]дила животъ оу ст҃ости.\nи сама е скоро научила,\nсовершено книгу изучила,\nеврейское ст҃о пѣсаніе,\nпо-край того и рукодѣліе:\nшити, ткати, иглицею вести,\nпамутъ, чадванъ, само злато прести.\nст҃ои цр҃кви что требоваше [sic !],\nсама собомъ руками дѣлаше\nко служенію всащенническому [sic !],\nнарочито архіерейскому;\nсну҃ своему, Гду҃ Іисусу\nхитонъ нешивенъ по наилѣпшемъ вкусу,\nблистающе все ѡдѣяніе,\nбисеръ, злато, драго каменіе\nпрест҃ая Два҃ воздѣлаше,\nсвоимъ дѣломъ всякаго оудивляше.\nЧасто тамо приходили\nблагодатны ей родители.\nнаипаче Анна прихождаше,\nприсно Дѣву видѣти желаше,\nродителски ю совитоваше,\nПречистую мудро поучаше.\nКако прочимъ пища даваше ся\nи цр҃ковніи народъ питаше ся,\nтакова ся Прест҃ои даваше, —\nясти ѡна тую не хотяше,\nсиротинамъ, нищимъ раздаваше.\nГду҃ ся прилѣжно моляше,\nна всякій день до цр҃кви хождаше,\nоу давиру молитви творяше,\n470\n480\n490\n500",
+    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "87\nприсно Дѣва трилѣтствующая [sic !],\nголубица богоизбранная.\n[и] придана была дѣвицами\nоу возрасту болшими лѣтами,\nоу читаню и писаню оученимъ,\nвъ рукодѣлій благовоспитанимъ,\nиж би она оу самои младости\nпров[о]дила животъ оу ст҃ости.\nи сама е скоро научила,\nсовершено книгу изучила,\nеврейское ст҃о пѣсаніе,\nпо-край того и рукодѣліе:\nшити, ткати, иглицею вести,\nпамутъ, чадванъ, само злато прести.\nст҃ои цр҃кви что требоваше [sic !],\nсама собомъ руками дѣлаше\nко служенію всащенническому [sic !],\nнарочито архіерейскому;\nсну҃ своему, Гду҃ Іисусу\nхитонъ нешивенъ по наилѣпшемъ вкусу,\nблистающе все ѡдѣяніе,\nбисеръ, злато, драго каменіе\nпрест҃ая Два҃ воздѣлаше,\nсвоимъ дѣломъ всякаго оудивляше.\nЧасто тамо приходили\nблагодатны ей родители.\nнаипаче Анна прихождаше,\nприсно Дѣву видѣти желаше,\nродителски ю совитоваше,\nПречистую мудро поучаше.\nКако прочимъ пища даваше ся\nи цр҃ковніи народъ питаше ся,\nтакова ся Прест҃ои даваше, —\nясти ѡна тую не хотяше,\nсиротинамъ, нищимъ раздаваше.\nГду҃ ся прилѣжно моляше,\nна всякій день до цр҃кви хождаше,\nоу давиру молитви творяше,\n470\n480\n490\n500",
     "coverage": {
       "entire_image_inspected": true,
       "nontext_areas": []
@@ -192,7 +192,7 @@
           },
           {
             "id": "verse-cont-line-06",
-            "text": "въ рукодѣлїи благовоспитанимъ,",
+            "text": "въ рукодѣлій благовоспитанимъ,",
             "language_spans": [
               {
                 "text_version": "gpt62-ii-169-image-harmonized-20261127",
@@ -1100,6 +1100,11 @@
         "line_id": "verse-food-line-08",
         "reading": "давиру",
         "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-cont-line-06",
+        "reading": "въ рукодѣлій",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
       }
     ],
     "source_note_links": []
