@@ -151,3 +151,30 @@ Do not grow the reference indefinitely before a proper separate-context
 A/B/C/D trial. That trial remains blocked here by lack of independently
 invocable visual readers. This challenge is development-only; all three
 pages must be excluded from a future blind test for this context.
+
+
+## User review of the ten source crops (2026-11-27)
+
+The user inspected the displayed crop table and proposed `вопїе` for row 2
+(V/130, body-1-line-01), and explicitly noted the wave-like diacritic over
+the initial omega in row 6 (III/130, thecla-passion-line-01). The other
+eight rows looked acceptable to the user. This is feedback on the
+reference sheet, not a whole-page verified reading or a corpus edit.
+Row 2 now displays the user-proposed reading, retains earlier `копїе`
+as an alternative, and remains ambiguous pending comparison of printed
+в/к and the dot encoding. Do not silently normalize to the expected word.
+Row 6 still displays the base letters only, explicitly marked as such;
+its visible mark is not absent from the source. Compare smooth breathing
+U+0486, iso U+0486+0301, apostrof U+0486+0300, kamora U+0311, titlo
+U+0483, and breathing+kamora U+0486+0311. Unicode identifies U+047D
+OMEGA WITH TITLO as historically misnamed: it contains the great apostrof,
+and is typographically equivalent to broad omega U+A64D + U+0486 + U+0311.
+This does not establish that the specific printed sign is a great apostrof.
+The 175-cell synthetic chart includes ten explicit review alternatives,
+including broad omega and U+047D, without resolving the source encoding.
+See Unicode Core Specification chapter 7
+(https://unicode.org/versions/Unicode16.0.0/core-spec/chapter-7/)
+and Unicode Technical Note 41
+(https://www.unicode.org/notes/tn41/tn41-1.pdf).
+The frozen experimental results are unchanged. The corpus reading remains
+untouched; use a source-grounded editorial review for any actual change.
