@@ -47,6 +47,11 @@ def validate_pair(literal, expansion, text=None, start=None, end=None):
             or TITLO in expansion or not all(word_char(c) for c in expansion)):
         raise ValueError("abbreviation must be a lexical titlo token with an expanded word")
     old, new = _letters(literal), _letters(expansion)
+    if (not unicodedata.category(literal[0]).startswith("L")
+            or not unicodedata.category(expansion[0]).startswith("L")
+            or any(not unicodedata.name(c, "").startswith("CYRILLIC")
+                   for c in old + new)):
+        raise ValueError("abbreviation pilot requires Cyrillic words without leading combining marks")
     if len(old) < 2 or len(new) <= len(old):
         raise ValueError("single-letter/numeric or non-expanding abbreviation")
     # Supplied letters may be inserted, never substituted for visible letters.
@@ -54,7 +59,8 @@ def validate_pair(literal, expansion, text=None, start=None, end=None):
     if not all(any(c == visible for c in it) for visible in old):
         raise ValueError("expansion changes visible letters")
     if text is not None:
-        if text[start:end] != literal:
+        if (type(start) is not int or type(end) is not int
+                or not 0 <= start < end <= len(text) or text[start:end] != literal):
             raise ValueError("abbreviation literal is stale")
         if ((start and word_char(text[start-1]))
                 or (end < len(text) and word_char(text[end]))):
