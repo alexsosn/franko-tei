@@ -10,6 +10,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from .pilot_tf import Graph, verify_source_gated_pilot
+from .abbreviation_spans import validate_pair, _source
 
 TYPES = ("languageSpan", "abbreviation", "uncertainty", "line", "region", "page")
 
@@ -89,6 +90,32 @@ def _inspect(volume, scan, graph):
             raise ValueError("non-slot node points outside character slots")
         if not f.get("teiId", {}).get(n):
             raise ValueError("missing non-slot TEI identity")
+    # Also validate manually supplied graphs: annotations may not vanish,
+    # overlap or drift onto another line/language interval during composition.
+    links = graph.edge_features["oslots"]
+    line_slots = [links[n] for n, k in types.items() if k == "line"]
+    language_slots = [links[n] for n, k in types.items() if k == "languageSpan"]
+    occupied = set()
+    for n, kind in types.items():
+        if kind != "abbreviation":
+            continue
+        covered = links[n]
+        if occupied & covered or sorted(covered) != list(range(min(covered), max(covered)+1)):
+            raise ValueError("overlapping or noncontiguous abbreviation slots")
+        occupied.update(covered)
+        owners = [s for s in line_slots if covered <= s]
+        if len(owners) != 1 or len([s for s in language_slots if covered <= s]) != 1:
+            raise ValueError("abbreviation slots must have one line and language owner")
+        ordered = sorted(owners[0])
+        start = ordered.index(min(covered))
+        end = start + len(covered)
+        full = "".join(f["glyph"][i] for i in ordered)
+        literal = "".join(f["glyph"][i] for i in sorted(covered))
+        uncertainty = f.get("expansionUncertain", {}).get(n)
+        if type(uncertainty) is not int or uncertainty not in (0, 1):
+            raise ValueError("missing abbreviation uncertainty feature")
+        _source(f.get("expansionSource", {}).get(n))
+        validate_pair(literal, f.get("expansion", {}).get(n), full, start, end)
     return source, slots
 
 
