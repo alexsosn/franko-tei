@@ -66,3 +66,58 @@ for name in ("Monomakh-Regular.woff2", "Shafarik-Regular.woff2", "GentiumPlus-Re
 for group, keys in groups.items():
     verify("keyboard " + group, stack, "◌" + "".join(k[0] for k in keys))
     print("Keyboard", group, "covers", len(keys), "keys in vendored font stack")
+
+
+# The visual ICL reference is research-only, but must use the exact bundled
+# Monomakh cmap and report literal (not NFC-normalized) sequences.
+import re
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from threading import Thread
+from playwright.sync_api import sync_playwright
+
+sheet = ROOT / "docs/monomakh-icl.html"
+groups = json.loads(re.search(r"^const groups=(\[.*\]);$", sheet.read_text(encoding="utf-8"), re.M).group(1))
+samples = [sample for _, items in groups for sample in items]
+required = ["а҆","а҅","а́","а̀","а҃","аⷭ","аⷭ҇","аⷢ","аⷣ","аⷯ","аⷩ","аⷮ","а꙯","ѿ","ѡ","ꙋ","ѹ","оу","ї","ї"]
+assert not set(required) - set(samples), ("missing ICL examples", sorted(set(required) - set(samples)))
+verify("Monomakh ICL chart", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), "".join(samples))
+expected_labels = [" ".join(f"U+{ord(c):04X}" for c in sample) for sample in samples]
+
+# Serve real checkout bytes; test both success and the missing-font failure.
+server = ThreadingHTTPServer(("127.0.0.1", 0), partial(SimpleHTTPRequestHandler, directory=str(ROOT)))
+thread = Thread(target=server.serve_forever, daemon=True)
+thread.start()
+url = f"http://127.0.0.1:{server.server_port}/docs/monomakh-icl.html"
+try:
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": 1500, "height": 1000})
+        page.goto(url)
+        page.locator("#chart:not([hidden])").wait_for()
+        assert page.locator(".glyph").all_text_contents() == samples
+        assert page.locator(".codes").all_text_contents() == expected_labels
+        assert page.evaluate("document.fonts.check('54px ReferenceMonomakh')")
+        # Chromium exposes actual used fonts, including fallback. The cmap
+        # check above covers every code point; this guards font selection.
+        cdp = page.context.new_cdp_session(page)
+        cdp.send("DOM.enable")
+        cdp.send("CSS.enable")
+        root = cdp.send("DOM.getDocument")["root"]["nodeId"]
+        nodes = cdp.send("DOM.querySelectorAll", {"nodeId": root, "selector": ".glyph"})["nodeIds"]
+        assert len(nodes) == len(samples)
+        for node in nodes:
+            used = cdp.send("CSS.getPlatformFontsForNode", {"nodeId": node})["fonts"]
+            assert used and all(font["isCustomFont"] for font in used), used
+        # Fresh context ensures the earlier successful load cannot be cached.
+        failed = browser.new_page()
+        failed.route("**/Monomakh-Regular.woff2", lambda route: route.abort())
+        failed.goto(url)
+        failed.locator("#status.error").wait_for()
+        assert failed.locator("#chart").is_hidden()
+        browser.close()
+finally:
+    server.shutdown()
+    server.server_close()
+    thread.join()
+print("Monomakh ICL: exact cmap, literal labels, browser font selection and failure path checked")
