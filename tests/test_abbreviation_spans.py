@@ -148,7 +148,7 @@ class AbbreviationSpansTests(unittest.TestCase):
             check_draft_offline(PATH,p)
         from franko_tei.abbreviation_spans import validate_pair
         with self.assertRaises(ValueError):
-            validate_pair("ві҃","види","ві҃. птицъ",0,3)
+            validate_pair("ві҃","відати","ві҃. птицъ",0,3)
 
     def test_abbreviation_and_disjoint_footnote_share_language_span(self):
         path="pilot/vol2_scan00242_exposed_reading.json"
@@ -161,7 +161,7 @@ class AbbreviationSpansTests(unittest.TestCase):
         start=l["text"].index("гл҃ю")
         l["abbreviation_spans"]=[dict(text_version=p["reading"]["reader_id"],
             start=start,end=start+len("гл҃ю"),literal="гл҃ю",expansion="глаголю",
-            uncertain=True,source=SOURCE_URL)]
+            uncertain=True,source="https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/2ApokryfProDitstvoIsusove.html")]
         xml=render_pilot_tei(p,1190,1821)
         root=ET.fromstring(xml)
         seg=next(s for s in root.findall(".//"+tag("seg"))
