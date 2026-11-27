@@ -289,7 +289,7 @@ const uiDictionary={
   "Not annotated":"Без анотації",
   "Undetermined language":"Невизначена мова",
   "Language ranges need reannotation after text correction.":"Після виправлення тексту потрібна повторна мовна розмітка.",
-  "No valid language ranges for this line.":"Для цього рядка немає чинних мовних діапазонів.",
+  "Some language ranges are invalid or overlap; inspect the original reading.":"Деякі мовні діапазони некоректні або перекриваються; перевірте початкове читання.",
   "Indexes":"Покажчики",
   "Navigation mode":"Режим навігації",
   "Index type":"Вид покажчика",
@@ -8852,8 +8852,10 @@ function renderAnnotationDetails({line,region,review}){
     return;
   }
   const spans=languageRanges(line,true).sort((a,b)=>a.start-b.start);
-  if(!spans.length&&line.language_spans?.length){
-    const p=document.createElement('p');uiText(p,'No valid language ranges for this line.');body.append(p);return;
+  const supplied=Array.isArray(line.language_spans)?line.language_spans:[];
+  if(spans.length!==supplied.length){
+    const p=document.createElement('p');uiText(p,'Some language ranges are invalid or overlap; inspect the original reading.');body.append(p);
+    if(!spans.length)return;
   }
   const list=document.createElement('ul');
   function add(a,b,span){
@@ -8872,7 +8874,7 @@ function renderAnnotationDetails({line,region,review}){
   let end=0;
   for(const span of spans){add(end,span.start,null);add(span.start,span.end,span);end=span.end;}
   add(end,line.text.length,null);
-  body.append(list);
+  if(list.childElementCount)body.append(list);else{const p=document.createElement('p');uiText(p,'Not annotated');body.append(p);}
 }
 function initLayers(){
   $('layersOpen').onclick=()=>{setInspectMode(false);openLayers();};
