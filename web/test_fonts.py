@@ -121,3 +121,43 @@ finally:
     server.server_close()
     thread.join()
 print("Monomakh ICL: exact cmap, literal labels, browser font selection and failure path checked")
+
+
+# The hybrid sheet must never silently use the wrong scan/font or teach a
+# disputed code-point choice as a verified example. No scan bytes are vendored.
+import runpy
+import tempfile
+from PIL import Image, features
+
+hybrid = runpy.run_path(str(ROOT / "docs/render_monomakh_hybrid.py"))
+assert features.check("raqm"), "RAQM required for meaningful combining-mark rendering"
+examples = hybrid["EXAMPLES"]
+sources = hybrid["SOURCES"]
+assert len(examples) >= 6 and len({row["source"] for row in examples}) >= 2
+assert all(row["status"] in {"candidate", "ambiguous"} for row in examples)
+assert any(row["status"] == "ambiguous" for row in examples)
+for row in examples:
+    source = sources[row["source"]]
+    x, y, w, h = row["bbox_xywh"]
+    assert x >= 0 and y >= 0 and w > 0 and h > 0
+    assert x + w <= source["width"] and y + h <= source["height"]
+    verify("Hybrid Monomakh cmap", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), row["render"])
+with tempfile.TemporaryDirectory() as tmp:
+    assets = Path(tmp)
+    source = next(iter(sources.values()))
+    wrong = assets / source["path"]
+    wrong.parent.mkdir(parents=True)
+    Image.new("RGB", (source["width"], source["height"]), "white").save(wrong)
+    try:
+        hybrid["load_source"](assets, source)
+    except ValueError as exc:
+        assert "SHA-256" in str(exc)
+    else:
+        raise AssertionError("Wrong scan accepted")
+    try:
+        hybrid["render_sheet"](assets, assets / "output.png")
+    except (ValueError, FileNotFoundError):
+        assert not (assets / "output.png").exists()
+    else:
+        raise AssertionError("Hybrid chart rendered from invalid source")
+print("Monomakh hybrid: source bounds, candidate status, cmap and wrong-source rejection checked")
