@@ -1805,6 +1805,24 @@ class ReviewSmoke(unittest.TestCase):
                 note.line={...note.line,text:note.line.text.replace('¹)','²)')};
                 return resolvePrintedNotes(d.reading,rows).length===0;
             }""",source))
+            self.assertTrue(page.evaluate("""d=>{
+                const rows=d.reading.regions.flatMap(region=>region.lines.map(line=>({line,region})));
+                const link=d.reading.source_note_links[0];
+                const duplicate=structuredClone(d.reading);
+                duplicate.source_note_links.push({...link});
+                const misplaced=structuredClone(d.reading);
+                misplaced.source_note_links[0].marker_start++;
+                return resolvePrintedNotes(duplicate,rows).length===0&&
+                       resolvePrintedNotes(misplaced,rows).length===0;
+            }""",source))
+            iv=json.loads((Path(__file__).resolve().parents[1]/'pilot/vol4_scan00018_single_reading.json').read_text())
+            self.assertEqual(page.evaluate("""d=>{
+                const rows=d.reading.regions.flatMap(region=>region.lines.map(line=>({line,region})));
+                const original=resolvePrintedNotes(d.reading,rows).length;
+                const note=rows.find(r=>r.line.id==='note-1-line-01');
+                note.line={...note.line,text:note.line.text.replace('¹)','⁴)')};
+                return [original,resolvePrintedNotes(d.reading,rows).length];
+            }""",iv),[1,0])
             # Typography is independent of the optional annotation colors.
             self.assertEqual(page.locator('#slavonicFont').input_value(), 'monomakh')
             self.assertEqual(page.locator('#greekFont').input_value(), 'gentium')
