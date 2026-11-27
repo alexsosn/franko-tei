@@ -8877,10 +8877,24 @@ function renderAnnotationDetails({line,region,review}){
   if(list.childElementCount)body.append(list);else{const p=document.createElement('p');uiText(p,'Not annotated');body.append(p);}
 }
 function initLayers(){
-  $('layersOpen').onclick=()=>{setInspectMode(false);openLayers();};
+  $('layersOpen').onclick=()=>{
+    setInspectMode(false);
+    const selection=window.getSelection();
+    const element=node=>node?.nodeType===Node.ELEMENT_NODE?node:node?.parentElement;
+    const a=element(selection?.anchorNode)?.closest('.line-text');
+    const b=element(selection?.focusNode)?.closest('.line-text');
+    const selected=selection&&!selection.isCollapsed&&a===b?renderedLines.find(r=>r.btn===a):null;
+    openLayers(selected??null);
+  };
   $('layersClose').onclick=()=>closeLayers();
   $('layersDialog').addEventListener('cancel',e=>{e.preventDefault();closeLayers();});
-  $('inspectChoose').onclick=()=>{closeLayers(false);setInspectMode(true);(renderedLines[0]?.btn??$('layersOpen')).focus({preventScroll:true});};
+  $('inspectChoose').onclick=()=>{
+    const bounds=$('textscroll').getBoundingClientRect();
+    const visible=renderedLines.find(({btn})=>{const r=btn.getBoundingClientRect();return r.top>=bounds.top&&r.bottom<=bounds.bottom;});
+    const target=inspectionReturn?.classList.contains('line-text')?inspectionReturn:visible?.btn??renderedLines[0]?.btn;
+    closeLayers(false);setInspectMode(true);
+    (target??$('layersOpen')).focus();
+  };
   $('showRegions').onchange=()=> $('candidate').classList.toggle('hide-region-labels',!$('showRegions').checked);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&inspectingLine){setInspectMode(false);$('layersOpen').focus({preventScroll:true});}});
 }
