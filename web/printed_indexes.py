@@ -1079,6 +1079,10 @@ def reconcile_motif_reference(files, targets, entry):
     entry["refs"] = [ref]
 
 
+# #440: I/353 and I/366 pins re-bound only after exact comparison of all
+# parsed fields except abbreviation_spans; source lines and absence evidence
+# unchanged. Previous blobs: 8a425baab12fbfa38c1effb9c2f4a28977ed6eaa,
+# d0002ff3ecb516f269c2e07590535f3e39d274d9. Keep full-blob gating.
 # Manual mention-level review of glossary articles. The source entry
 # itself is already pinned by SOURCE_BLOBS; each destination is separately
 # pinned. Keep negative/conflicting observations separate from attestations.
@@ -1133,7 +1137,7 @@ GLOSSARY_MENTION_REVIEWS = {
     ("v1-462-left-l029", "80"): (80, "037264054c20b2862c007e18f10b48010a9d2482", "attested", ["abraham-idols-l022"], "сечива"),
     ("v1-462-left-l031", "225"): (225, "2c17b484068c5fe7253afca57af0190ed74d3fed", "attested", ["pharaoh-dream-l003","pharaoh-dream-l004","pharaoh-dream-l005"], "скалвы, скалву (three occurrences)"),
     ("v1-462-left-l032", "179"): (179, "708f0bebf3f75a62bdfa2979d91f4d0dfd9adf00", "reading_conflict", ["simeon-exhortation-continuation-l018"], "Draft въ сказѣ; index Скважь conjectures сказъ. No exact attestation of the printed lemma."),
-    ("v1-462-left-l034", "278"): (278, "8a425baab12fbfa38c1effb9c2f4a28977ed6eaa", "not_found", [], "No Скѹпь form in cited-page draft; adjacent pp277/279 screened."),
+    ("v1-462-left-l034", "278"): (278, "8b2589aaca4b2849c401d2d9f5e6ae7fc7bb8e1c", "not_found", [], "No Скѹпь form in cited-page draft; adjacent pp277/279 screened."),
     ("v1-462-left-l036", "239"): (239, "a082132a80faebe611eadb3f81349869f965b888", "attested", ["tabernacle-l005","tabernacle-l012"], "синет; синету"),
     ("v1-462-left-l039", "318"): (318, "4b1f345648abaecccef53e4cbe55e830a38a3fb8", "reading_conflict", ["three-youths-l032"], "Draft слудьбу versus index Слѹдъва; differing consonants."),
     ("v1-462-left-l042", "68"): (68, "5ddcf7b9684c6384e9d559d2cc493bed2c8720d2", "not_found", [], "No Слѹти form in cited-page draft; adjacent pp67/69 screened. Apparatus нарѣцается is another word."),
@@ -1241,7 +1245,7 @@ GLOSSARY_MENTION_REVIEWS = {
     ("v1-460-left-l021", "204"): (204, "5c75b798a27b4431aa2d019dca1db628030c1bd2", "attested", ["naphtali-continuation-l012"], "гонѣть"),
     ("v1-460-left-l023", "42"): (42, "1a04bc97189129b53ceaeb5dada25733e9d9d90c", "attested", ["enoch-punishment-continuation-l006"], "гру́жны (index itself suggests грозенъ)"),
     ("v1-460-left-l025", "173"): (173, "e9d5f4a278c23bacc7a18dd94dd729a540d76f62", "not_found", [], "No matching word in current draft; nearby pp172/174 also checked."),
-    ("v1-460-left-l026", "291"): (291, "d0002ff3ecb516f269c2e07590535f3e39d274d9", "attested", ["solomon-demons-opening-l002","solomon-demons-challenge-l005","solomon-demons-challenge-l007","solomon-demons-sealing-l003","solomon-demons-sealing-l004"], "делвѣ; делву (five evidenced lines)"),
+    ("v1-460-left-l026", "291"): (291, "dc58b86e5f3aa2133dd80c1d19fda18cc5b037b3", "attested", ["solomon-demons-opening-l002","solomon-demons-challenge-l005","solomon-demons-challenge-l007","solomon-demons-sealing-l003","solomon-demons-sealing-l004"], "делвѣ; делву (five evidenced lines)"),
     ("v1-460-left-l027", "12"): (12, "c27fc69f5897903f8e45de15dc026fda2b19f925", "reading_conflict", ["satanail-witness-a-continuation-l018"], "Current draft другоициж[е], compare index Друговици; check spelling and word boundary in image."),
     ("v1-460-left-l029", "308"): (308, "0ad07cb37db342c9e054dd540237ef609cad09cc", "attested", ["three-youths-captivity-l005"], "дражданаа"),
     ("v1-460-left-l031", "321"): (321, "dc158de3ca4c7583e4ca2892414244a64b648ecd", "attested", ["belshazzar-body-l001"], "драхлу"),
