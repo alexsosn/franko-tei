@@ -72,6 +72,7 @@ EXAMPLES = [
     {"source": "II/100", "line":"E text line 03 (observed)", "bbox_xywh":[530,856,69,43], "render":"ꙗко", "focus":"ꙗ҆́ / ꙗ̑ / ꙗ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave above iotated-a-like base; provisional."},
     {"source": "II/100", "line":"E text line 06 (observed)", "bbox_xywh":[782,984,78,40], "render":"аще", "focus":"а҆́ / а̑ / а҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave above initial a; base only."},
     {"source": "II/100", "line":"heading Zh excerpt (observed)", "bbox_xywh":[416,1557,36,38], "render":"ѡ҆", "focus":"ѡ҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Simple arch above omega; direct contrast."},
+    {"source": "III/130", "line":"thecla-passion-line-11", "bbox_xywh":[152,500,49,39], "render":"но̑", "focus":"о̑ / о҆", "status":"candidate", "category":"accent", "mark_options":["U+0311"], "note":"Arch on noninitial o in conjunction no; historical kamora context."},
 ]
 
 
