@@ -558,6 +558,20 @@ class EditorialProjectionTests(unittest.TestCase):
                             annotationMatches(row,queryRegex('фальшиві '+word,true),greek).length];
                 }""",[literal,annotation])
                 self.assertEqual(result,[True,2,0,0])
+                # Validate actual generated metadata in every volume, including
+                # distinct note/body markers on the same scan in Volume V.
+                for volume in ("2","3","4","5"):
+                    l=json.loads((output/f"vol{volume}.json").read_text())
+                    a=json.loads((output/f"annotation-vol{volume}.json").read_text())
+                    joined=page.evaluate("""([l,a])=>{
+                        const rows=joinSearchAnnotations(l,a);
+                        const row=rows.find(r=>l.volume==='5'&&r.scan===90&&r.suffix==='single_reading'&&!r.reviewed);
+                        const counts=row?['body','note'].map(region=>annotationMatches(row,queryRegex('¹)',true),
+                            {language:'zxx',region,certainty:''}).length):null;
+                        return [rows.length,counts];
+                    }""",[l,a])
+                    self.assertEqual(joined[0],len(l["entries"]))
+                    if volume=="5":self.assertEqual(joined[1],[1,1])
                 # Stale and duplicate metadata must fail, not produce a false zero.
                 self.assertTrue(page.evaluate("""([l,a])=>{
                     for(const mutate of [x=>x.ref='0'.repeat(40),x=>x.entries.push(x.entries[0]),
