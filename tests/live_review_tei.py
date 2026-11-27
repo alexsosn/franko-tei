@@ -14,6 +14,7 @@ from franko_tei.pilot_tei import TEI, XML, extract_transcribed_lines
 from franko_tei.review_adjudication import project_lines
 from franko_tei.review_tei import ledger_at_checkout, verified_editorial_tei
 from franko_tei.review_bundle import git_source_loader
+from franko_tei.native_collation import load_native_collation
 from franko_tei.pilot_tf import build_tf_graph, verify_graph_roundtrip
 from franko_tei.review_tf import save_current_tf
 from tf.fabric import Fabric
@@ -38,7 +39,8 @@ def main():
         expected=[]
         for path in PAGES:
             raw=loader(REF,path)
-            rows=project_lines(raw,path,ledger,source_loader=loader,projection_commit=REF)
+            rows=project_lines(raw,path,ledger,source_loader=loader,projection_commit=REF,
+                               collation=load_native_collation(ROOT,REF,path))
             accepted=[r for r in rows if r["status"]!="agent_unverified"]
             assert accepted, path
             xml=verified_editorial_tei(ROOT,path,images,REF)
@@ -50,8 +52,9 @@ def main():
             assert not root.findall(".//t:note[@type='agent-reading-uncertainty']",NS)
             assert root.find(".//t:editionStmt/t:edition",NS).get("n")==REF
             for row in accepted:
-                for forbidden in (row["event_id"],row["bundle_id"],row["issue_url"]):
-                    assert forbidden not in xml
+                for key in ("event_id","bundle_id","issue_url","evidence_url","collation_reason"):
+                    if row.get(key):
+                        assert row[key] not in xml
             graph=build_tf_graph(xml)
             assert verify_graph_roundtrip(graph)==[r["text"] for r in rows]
             assert set(graph.node_features.get("noteText",{}).values()) <= {
@@ -59,6 +62,9 @@ def main():
             if "00104" in path:
                 assert any("Сиѳъ" in r["text"] and "Сидъ" in r["original"]
                            for r in accepted), "actual Seth correction missing"
+            if "00068" in path:
+                assert sum(r["text"].startswith("Ѿвѣт:") for r in rows)==7
+                assert any(r["text"]=="Ѿвѣт: О́̓сифъ бл҃гоѡбразный." for r in rows)
             assert (ROOT/path).read_bytes()==raw
             print(f"PASS native image + TEI P5 + {len(accepted)} accepted line decisions: {path}")
         # Production path writes one corpus containing two genuine selected pages.
@@ -75,6 +81,7 @@ def main():
         assert all(api.F.status.v(n)=="agent_unverified" for n in api.F.otype.s("page"))
         hits=[n for n in lines if "Сиѳъ" in "".join(api.F.glyph.v(s) for s in api.L.d(n,otype="char"))]
         assert hits and any(api.F.teiId.v(n).endswith("witness-e-death-adam-l003") for n in hits)
+        assert sum(t.startswith("Ѿвѣт:") for t in expected)==7
         assert any(api.F.regionKind.v(n)=="note" for n in api.F.otype.s("region"))
         assert any(api.F.lang.v(n)=="cu" for n in api.F.otype.s("languageSpan"))
         assert not any("review" in name.lower() or "contributor" in name.lower()

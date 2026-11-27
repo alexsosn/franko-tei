@@ -171,3 +171,21 @@ TF otext metadata identifies the source snapshot. This is a page/region/line,
 character and existing language-span pilot. Linked source-footnote refs,
 gaps and richer nested markup remain unsupported by the existing TF parser
 and fail closed until modeled; do not claim full corpus coverage.
+
+## Native-image collation of selected text
+
+IV/68 (#402) has seven independently inspected initial OT ligatures omitted
+in the frozen answer labels. A committed, explicitly agent-attributed source
+record at `pilot/reviews/vol4_scan00068_native_collation_20261127.json` pins
+the original candidate blob, image hash, reader, each exact effective input
+and any earlier contributor event. The narrow projection substitutes only
+initial U+047E for U+0460 in those seven physical body lines, after contributor
+adjudication. It refuses stale effective text, missing or duplicate lines,
+changes to anything other than that one code point, or linked note/gap edits.
+The original contributor's name correction on line 02 is retained, and
+no contributor credit is invented for new agent readings. Existing source
+comparison displays the evidence and prior contribution link on demand.
+The search, source-gated current TEI and TF use the same selected text.
+Language and uncertainty ranges on changed lines remain provisional and
+are withheld as for other editorial corrections. Other possible ligatures
+are outside this scoped collation; no global substitution is performed.

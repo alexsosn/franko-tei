@@ -52,7 +52,19 @@ class EditorialProjectionTests(unittest.TestCase):
                 self.assertEqual(second["original"][m["source_start"]:m["source_end"]],m["literal"])
                 self.assertEqual(second["text"][m["start"]:m["end"]],m["literal"])
             iv=next(p for p in overlay["pages"] if p["volume"]=="4" and p["scan"]==68)
-            self.assertNotIn("disputations-cont-line-04",{r["line_id"] for r in iv["lines"]})
+            ivrows={r["line_id"]:r for r in iv["lines"]}
+            expected={"disputations-cont-line-"+n for n in ("02","04","07","09","13","17","20")}
+            self.assertEqual({k for k,r in ivrows.items() if r["status"]=="native_collation"},expected)
+            self.assertEqual(ivrows["disputations-cont-line-04"]["text"],"Ѿвѣт: Рыба.")
+            first=ivrows["disputations-cont-line-02"]
+            self.assertEqual(first["text"],"Ѿвѣт: О́̓сифъ бл҃гоѡбразный.")
+            self.assertEqual(first["contributor_login"],"alexsosn")
+            self.assertNotIn("contributor_id",ivrows["disputations-cont-line-04"])
+            self.assertIn("Котораꙗ",ivrows["disputations-cont-line-03"]["text"])
+            iventries=json.loads((output/"vol4.json").read_text())["entries"]
+            selected=next(r for r in iventries if r["scan"]==68 and r.get("reviewed"))
+            self.assertEqual(selected["text"].count("Ѿвѣт:"),7)
+            self.assertNotIn("Ѡвѣт:",selected["text"])
             entries=json.loads((output/"vol1.json").read_text())["entries"]
             matches=[r for r in entries if r["scan"]==104 and r["suffix"]=="single_reading"]
             self.assertEqual(len(matches),2)
