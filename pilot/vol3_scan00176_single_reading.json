@@ -1,0 +1,583 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "3",
+  "scan_page": 176,
+  "printed_page_observed": "90",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "83269400f6c85110da1a27fd18ad4f703c6de65850a3373a948b61b30e31761b",
+  "source_image_path": "vol3/page-00176.jpg",
+  "source_image_sha256": "314b3a5c96f91222f8b515482f941b18b7db175d0fe0e0360c3a9e8ab4f9ee4c",
+  "reading": {
+    "reader_id": "gpt62-v3-s00176-20261127",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol3-172-181-20261127",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading. Preserve physical rows, editorial apparatus and language intervals. Historical typography, accents and estimated line geometry provisional. Ruthenian orv provisional for sustained vernacular evidence (e.g. гды, абы, що); printed apparatus labels separate.",
+    "raw_response": "90\nдарили Гд҃а ѡ преславном чѹдѣ его и таможъ збѹдовали цр҃ковь\nнад гробом его въ имя Іѡанна Бг҃ослова. и многїи чѹда чинилъ\nтогды Гд҃ь прославляючи гробъ оучн҃ика своего. людїе тогда\nбрали прахъ ѡ гроба и многїи хоробы исцѣлевали ся въ людехъ.\nдаже и до сего дн҃е бывает' прозрѣнїе слѣпым и прогнанїе де-\nмоном, такъ бо Бг҃ъ прославляет ся въ ст҃ых своихъ, которых\nхощетъ живо заховати: яко Еноха и Илїю, тако и того мѹжа\nст҃ого живо заховалъ до втораго пришествїа своего. Трех бо свѣд-\nковъ живо заховалъ Гд҃ь Бг҃ъ, да оупредят его въ вторыи при-\nход' з неба на сѹдъ, яко да ѡбличатъ зрады и матѹлкы лож-\nныи Антихристовы, и многых чл҃вѣков' ѡ лести его ѡвернѹтъ къ\nБг҃ѹ и ко животѹ вѣчномѹ, ѡ тмы къ свѣтлости цр҃тва небесного,\nего же рачъ насъ домѣстити Гд҃и Бж҃е Ѡче нашъ нб҃ныи. Аминь.\nОтся перерібка подає нам лєґенду про сьв. Івана знов у від-\nмінній формі від попереднїх, хоча й тут видно те саме тло —\nПсевдо - Прохора, з додатками взятими з иньших жерел (мученє\nв олїї). Особливо інтересні в нашім текстї відміни супроти всїх по-\nпереднїх текстів у оповіданю про смерть сьв. Івана. З польонїзмів\nу язицї нашого „Поученія“ можна би догадувати ся, що воно або\nживцем перекладене з польського, або зложене на основі якоїсь\nпольської перерібки, якої автор досить свобідно поводив ся зі сво-\nїми давнїйшими жерелами.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            446,
+            1137,
+            314,
+            22
+          ],
+          "description": "Printed ornamental section ending."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          112,
+          125,
+          49,
+          35
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "90",
+            "bbox_xywh": [
+              112,
+              125,
+              49,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false,
+                "start": 0,
+                "end": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          112,
+          196,
+          996,
+          461
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "body-cont-line-01",
+            "text": "дарили Гд҃а ѡ преславном чѹдѣ его и таможъ збѹдовали цр҃ковь",
+            "bbox_xywh": [
+              112,
+              196,
+              996,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-02",
+            "text": "над гробом его въ имя Іѡанна Бг҃ослова. и многїи чѹда чинилъ",
+            "bbox_xywh": [
+              112,
+              231,
+              996,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-03",
+            "text": "тогды Гд҃ь прославляючи гробъ оучн҃ика своего. людїе тогда",
+            "bbox_xywh": [
+              112,
+              266,
+              996,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 58
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-04",
+            "text": "брали прахъ ѡ гроба и многїи хоробы исцѣлевали ся въ людехъ.",
+            "bbox_xywh": [
+              112,
+              302,
+              996,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-05",
+            "text": "даже и до сего дн҃е бывает' прозрѣнїе слѣпым и прогнанїе де-",
+            "bbox_xywh": [
+              112,
+              337,
+              996,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-06",
+            "text": "моном, такъ бо Бг҃ъ прославляет ся въ ст҃ых своихъ, которых",
+            "bbox_xywh": [
+              112,
+              373,
+              996,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 59
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-07",
+            "text": "хощетъ живо заховати: яко Еноха и Илїю, тако и того мѹжа",
+            "bbox_xywh": [
+              112,
+              408,
+              996,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 56
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-08",
+            "text": "ст҃ого живо заховалъ до втораго пришествїа своего. Трех бо свѣд-",
+            "bbox_xywh": [
+              112,
+              444,
+              996,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 64
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-09",
+            "text": "ковъ живо заховалъ Гд҃ь Бг҃ъ, да оупредят его въ вторыи при-",
+            "bbox_xywh": [
+              112,
+              479,
+              996,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-10",
+            "text": "ход' з неба на сѹдъ, яко да ѡбличатъ зрады и матѹлкы лож-",
+            "bbox_xywh": [
+              112,
+              515,
+              996,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 57
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-11",
+            "text": "ныи Антихристовы, и многых чл҃вѣков' ѡ лести его ѡвернѹтъ къ",
+            "bbox_xywh": [
+              112,
+              550,
+              996,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-12",
+            "text": "Бг҃ѹ и ко животѹ вѣчномѹ, ѡ тмы къ свѣтлости цр҃тва небесного,",
+            "bbox_xywh": [
+              112,
+              586,
+              996,
+              35
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 62
+              }
+            ]
+          },
+          {
+            "id": "body-cont-line-13",
+            "text": "его же рачъ насъ домѣстити Гд҃и Бж҃е Ѡче нашъ нб҃ныи. Аминь.",
+            "bbox_xywh": [
+              112,
+              621,
+              996,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commentary",
+        "kind": "body",
+        "bbox_xywh": [
+          113,
+          693,
+          992,
+          327
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "commentary-line-01",
+            "text": "Отся перерібка подає нам лєґенду про сьв. Івана знов у від-",
+            "bbox_xywh": [
+              113,
+              693,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 59
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-02",
+            "text": "мінній формі від попереднїх, хоча й тут видно те саме тло —",
+            "bbox_xywh": [
+              113,
+              729,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 59
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-03",
+            "text": "Псевдо - Прохора, з додатками взятими з иньших жерел (мученє",
+            "bbox_xywh": [
+              113,
+              765,
+              992,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 60
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-04",
+            "text": "в олїї). Особливо інтересні в нашім текстї відміни супроти всїх по-",
+            "bbox_xywh": [
+              113,
+              802,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 67
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-05",
+            "text": "переднїх текстів у оповіданю про смерть сьв. Івана. З польонїзмів",
+            "bbox_xywh": [
+              113,
+              838,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 65
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-06",
+            "text": "у язицї нашого „Поученія“ можна би догадувати ся, що воно або",
+            "bbox_xywh": [
+              113,
+              874,
+              992,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 61
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-07",
+            "text": "живцем перекладене з польського, або зложене на основі якоїсь",
+            "bbox_xywh": [
+              113,
+              911,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 61
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-08",
+            "text": "польської перерібки, якої автор досить свобідно поводив ся зі сво-",
+            "bbox_xywh": [
+              113,
+              947,
+              992,
+              36
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 66
+              }
+            ]
+          },
+          {
+            "id": "commentary-line-09",
+            "text": "їми давнїйшими жерелами.",
+            "bbox_xywh": [
+              113,
+              983,
+              992,
+              37
+            ],
+            "geometry_estimated": true,
+            "language_spans": [
+              {
+                "text_version": "gpt62-v3-s00176-20261127",
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false,
+                "start": 0,
+                "end": 24
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "body-cont-line-09",
+        "reading": "оупредят",
+        "reason": "Provisional historical glyph sequence; exact letterforms and diacritics require enlarged collation."
+      },
+      {
+        "line_id": "body-cont-line-10",
+        "reading": "матѹлкы",
+        "reason": "Provisional historical glyph sequence; exact letterforms and diacritics require enlarged collation."
+      },
+      {
+        "line_id": "body-cont-line-13",
+        "reading": "домѣстити",
+        "reason": "Provisional historical glyph sequence; exact letterforms and diacritics require enlarged collation."
+      },
+      {
+        "line_id": "commentary-line-05",
+        "reading": "польонїзмів",
+        "reason": "Provisional historical glyph sequence; exact letterforms and diacritics require enlarged collation."
+      }
+    ]
+  }
+}

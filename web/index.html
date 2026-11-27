@@ -215,16 +215,35 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #coverageStatus,#coverageRevision,#coveragePinHint{margin:4px 0;overflow-wrap:anywhere}
 #coverageRevision,#coveragePinHint{color:var(--muted);font-size:12px}
 #coverageNext{min-height:36px;white-space:normal}
+#candidate.hide-region-labels>h3{display:none}
+#layersDialog .settings-row{margin:8px 0}
+#annotationDetails{margin-top:12px;border-top:1px solid #d7d9d5;padding-top:8px}
+#annotationDetails h3{margin:0 0 6px;font-size:14px}
+#annotationDetailsBody ul{list-style:none;padding:0;margin:6px 0}
+#annotationDetailsBody li{padding:7px 0;border-bottom:1px solid #eceeea}
+#annotationDetailsBody .annotation-literal{display:block;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--historic-font),var(--greek-fallback),"Franko Gentium","Franko Shafarik",serif;font-size:18px}
+#annotationDetailsBody small{display:block}
+#inspectionHint{font-size:13px;border-bottom:1px solid #d7d9d5;padding:4px 0}
+#layersOpen{font-size:12px;white-space:nowrap}
+#noteReturn{flex:none;align-self:flex-start;margin:0;font-size:13px}
+#annotationDetailsBody .printed-note-navigation{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
 </style>
 <header><nav class="mainbar" aria-label="Reader navigation"><h1>Franko</h1><button id="contentsOpen" type="button" aria-label="Contents" title="Contents" aria-haspopup="dialog" aria-expanded="false" aria-controls="contentsPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 6h14M5 12h14M5 18h14"/><path d="M2 6h.01M2 12h.01M2 18h.01"/></svg><span class="contents-label">Contents</span><span id="contentsCurrentVolume" aria-hidden="true">I</span></button><select id="volume" hidden aria-label="Volume"><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select><div class="page-controls"><select id="pageNumbering" aria-label="Navigation numbering" title="Navigation numbering"><option value="scan">Scans</option><option value="printed">Pages</option></select><button id="prev" aria-label="Previous scan" title="Previous scan">←</button><label id="scanPageField"><span class="sr-only">Scan number</span><input id="page" type="number" min="1" value="1" inputmode="numeric" aria-describedby="pageJumpError"></label><label id="printedPageField" hidden><span class="sr-only">Printed page number</span><input id="printedPage" type="text" autocomplete="off" spellcheck="false" maxlength="12" placeholder="—" title="Printed pagination inferred from the edition; check the scan." aria-describedby="pageJumpError"></label><span id="total"></span><button id="next" aria-label="Next scan" title="Next scan">→</button><button id="go" type="button" aria-label="Go to number" title="Go to number">Go</button></div><button id="searchOpen" aria-label="Search corpus" title="Search corpus" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchPanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search corpus</span></button><button id="languageOpen" type="button" aria-label="Language / Мова" title="Language / Мова" aria-haspopup="dialog" aria-expanded="false" aria-controls="languagePanel"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg></button><button id="settingsOpen" aria-label="Reader settings" title="Reader settings" aria-haspopup="dialog" aria-controls="readerSettings" aria-expanded="false"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="10" cy="18" r="2" fill="white"/></svg><span>Settings</span></button></nav><nav id="mobilePanes" aria-label="Reader pane"><button id="showScan" aria-pressed="false">Scan</button><button id="showText" aria-pressed="true">Text</button></nav><p id="pageJumpError" role="status" hidden></p><p id="notice" role="status" hidden></p></header>
 <dialog id="languagePanel" aria-labelledby="languageTitle"><div class="dialog-heading"><h2 id="languageTitle">Language / Мова</h2><button id="languageClose" type="button" aria-label="Close / Закрити">✕</button></div><div class="language-options"><button type="button" data-locale="en" lang="en" aria-pressed="true">English</button><button type="button" data-locale="uk" lang="uk" aria-pressed="false">Українська</button></div></dialog>
+<dialog id="layersDialog" aria-labelledby="layersTitle">
+<div class="dialog-heading"><h2 id="layersTitle" tabindex="-1">Annotation layers</h2><button id="layersClose" type="button" aria-label="Close annotation layers">✕</button></div>
+<div id="layersLanguageSlot"></div>
+<label class="settings-row settings-checkbox" for="showRegions"><span><span class="settings-label">Show region labels</span><span class="settings-hint">Physical regions of the printed page.</span></span><input id="showRegions" type="checkbox" checked></label>
+<button id="inspectChoose" type="button">Inspect a line</button>
+<section id="annotationDetails" hidden aria-labelledby="annotationDetailsTitle"><h3 id="annotationDetailsTitle">Line annotations</h3><div id="annotationDetailsBody"></div></section>
+</dialog>
 <dialog id="readerSettings" aria-labelledby="settingsTitle">
 <div class="dialog-heading"><h2 id="settingsTitle" tabindex="-1">Reader settings</h2><button id="settingsClose" type="button" aria-label="Close settings">✕</button></div>
 <div id="settingsBody">
 <section class="settings-group" aria-labelledby="settingsReadingTitle"><h3 id="settingsReadingTitle">Reading</h3>
 <div class="settings-row"><div><label for="mode">Text source</label><p class="settings-hint" id="modeHint">Prefer agent readings with accepted corrections; use original OCR when no reading is available.</p></div><select id="mode" aria-describedby="modeHint"><option value="draft" selected>Agent readings + accepted corrections</option><option value="ocr">Original PDF OCR</option><option value="both">Both</option></select></div>
 <div class="settings-row" id="readingPreferenceRow"><div><span class="settings-label">Preferred reading</span><p class="settings-hint" id="readingPreferenceStatus" role="status">Latest available reading</p></div><button id="autoReading" type="button" title="Reset explicit reading preference" aria-describedby="readingPreferenceStatus">Use latest</button></div>
-<label class="settings-row settings-checkbox" for="showLanguages"><span><span class="settings-label">Highlight languages</span><span class="settings-hint" id="languagesHint">Color annotated languages; dotted underlines indicate uncertainty.</span></span><input id="showLanguages" type="checkbox" aria-describedby="languagesHint"></label>
+<div id="settingsLanguageSlot"><label id="languageLayerControl" class="settings-row settings-checkbox" for="showLanguages"><span><span class="settings-label">Highlight languages</span><span class="settings-hint" id="languagesHint">Color annotated languages; dotted underlines indicate uncertainty.</span></span><input id="showLanguages" type="checkbox" aria-describedby="languagesHint"></label></div>
 </section>
 <section class="settings-group" aria-labelledby="settingsAppearanceTitle"><h3 id="settingsAppearanceTitle">Appearance</h3>
 <div id="fontSettings" class="settings-fonts"><div class="settings-subheading"><h4>Reading fonts</h4><button id="resetFonts" type="button">Reset fonts</button></div>
@@ -251,12 +270,31 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 <p id="reviewProgress"></p><div class="review-row"><button id="reviewPrepare" type="button">Prepare GitHub submission</button><button id="reviewDiscard" type="button">Discard draft</button></div>
 <div id="reviewExport" hidden><p>Copy this JSON into the GitHub issue form. Submission is public; your GitHub account will be credited after acceptance. Preparing a bundle does not submit it.</p><textarea id="reviewBundle" rows="4" readonly spellcheck="false" aria-label="Review bundle JSON"></textarea><div class="review-row"><button id="reviewCopy" type="button">Copy JSON</button><a id="reviewGitHub" target="_blank" rel="noopener" href="https://github.com/alexsosn/franko-tei/issues/new?template=review-bundle.yml">Open GitHub form</a><button id="reviewReset" type="button">Start another batch</button></div></div>
 </div></dialog>
-<main><section id="imagePane" class="panel reader-pane" aria-label="Original scan"><nav class="pane-bar"><h2>Scan</h2><button id="minus" aria-label="Zoom out" title="Zoom out">−</button><button id="fit">Fit width</button><button id="plus" aria-label="Zoom in" title="Zoom in">+</button><a id="source" target="_blank" rel="noopener" title="Open full image" aria-label="Open full image">↗ <span>Full image</span></a></nav><div class="scroller" id="imageScroll"><div id="canvas"><img id="scan" alt="Original printed page" draggable="false" hidden><div id="highlight" hidden></div></div><p id="imageError" class="error"></p></div><p id="lineinfo" role="status" class="muted" hidden></p></section><section id="textPane" class="panel reader-pane" aria-label="Text candidates"><nav class="pane-bar"><h2>Text</h2><select id="choice" aria-label="Reading candidate"></select><small id="readingKind">Unverified</small><button id="reviewOpen" type="button" aria-label="Proofread" title="Proofread" aria-haspopup="dialog" aria-controls="reviewDialog">✎</button></nav><div id="textscroll"><p id="noEditionText" class="muted" role="status" hidden>No original printed text on this scan.</p><div id="languageLegend" hidden aria-label="Language legend"></div><section id="draftSection"><details id="readingInfo"><summary id="readingSummary">Reading details</summary><p id="draftStatus" role="status"></p><div id="editorialControls" hidden><label><input type="checkbox" id="editorialView" checked> Show accepted corrections</label></div></details><p id="editorialNotice" role="status" hidden></p><div id="candidate"></div><details id="notes" hidden><summary>Source provenance</summary><pre id="noteText"></pre><a id="readingSource" target="_blank" rel="noopener">Original reading JSON</a></details></section><section id="ocrSection" hidden><h2>Original PDF OCR · unchecked</h2><p id="ocrStatus" role="status"></p><p id="draftFallbackError" class="error" role="status" hidden></p><pre id="ocr"></pre></section></div></section></main>
+<main><section id="imagePane" class="panel reader-pane" aria-label="Original scan"><nav class="pane-bar"><h2>Scan</h2><button id="minus" aria-label="Zoom out" title="Zoom out">−</button><button id="fit">Fit width</button><button id="plus" aria-label="Zoom in" title="Zoom in">+</button><a id="source" target="_blank" rel="noopener" title="Open full image" aria-label="Open full image">↗ <span>Full image</span></a></nav><div class="scroller" id="imageScroll"><div id="canvas"><img id="scan" alt="Original printed page" draggable="false" hidden><div id="highlight" hidden></div></div><p id="imageError" class="error"></p></div><p id="lineinfo" role="status" class="muted" hidden></p></section><section id="textPane" class="panel reader-pane" aria-label="Text candidates"><nav class="pane-bar"><h2>Text</h2><select id="choice" aria-label="Reading candidate"></select><small id="readingKind">Unverified</small><button id="layersOpen" type="button" aria-haspopup="dialog" aria-controls="layersDialog" aria-expanded="false" hidden>Layers</button><button id="reviewOpen" type="button" aria-label="Proofread" title="Proofread" aria-haspopup="dialog" aria-controls="reviewDialog">✎</button></nav><button id="noteReturn" type="button" hidden>Back to printed marker</button><div id="textscroll"><p id="inspectionHint" role="status" hidden>Select a line to inspect its annotations. Escape cancels.</p><p id="noEditionText" class="muted" role="status" hidden>No original printed text on this scan.</p><div id="languageLegend" hidden aria-label="Language legend"></div><section id="draftSection"><details id="readingInfo"><summary id="readingSummary">Reading details</summary><p id="draftStatus" role="status"></p><div id="editorialControls" hidden><label><input type="checkbox" id="editorialView" checked> Show accepted corrections</label></div></details><p id="editorialNotice" role="status" hidden></p><div id="candidate"></div><details id="notes" hidden><summary>Source provenance</summary><pre id="noteText"></pre><a id="readingSource" target="_blank" rel="noopener">Original reading JSON</a></details></section><section id="ocrSection" hidden><h2>Original PDF OCR · unchecked</h2><p id="ocrStatus" role="status"></p><p id="draftFallbackError" class="error" role="status" hidden></p><pre id="ocr"></pre></section></div></section></main>
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
 /* Interface-only localization. Never apply this to OCR, transcription or source notes. */
 const uiDictionary={
+  "Layers":"Шари",
+  "Annotation layers":"Шари анотацій",
+  "Printed note link":"Зв’язок друкованої примітки",
+  "Go to printed note":"Перейти до друкованої примітки",
+  "Back to printed marker":"Назад до друкованого знака",
+  "Close annotation layers":"Закрити шари анотацій",
+  "Show region labels":"Показувати назви областей",
+  "Physical regions of the printed page.":"Фізичні області друкованої сторінки.",
+  "Inspect a line":"Переглянути анотації рядка",
+  "Select a line to inspect its annotations. Escape cancels.":"Оберіть рядок для перегляду анотацій. Escape скасовує дію.",
+  "Line annotations":"Анотації рядка",
+  "Physical region":"Фізична область",
+  "Uncertain attribution":"Непевна атрибуція",
+  "Uncertainty not indicated":"Непевність не зазначено",
+  "Attribution not marked uncertain":"Атрибуцію не позначено як непевну",
+  "Not annotated":"Без анотації",
+  "Undetermined language":"Невизначена мова",
+  "Language ranges need reannotation after text correction.":"Після виправлення тексту потрібна повторна мовна розмітка.",
+  "Some language ranges are invalid or overlap; inspect the original reading.":"Деякі мовні діапазони некоректні або перекриваються; перевірте початкове читання.",
   "Indexes":"Покажчики",
   "Navigation mode":"Режим навігації",
   "Index type":"Вид покажчика",
@@ -350,6 +388,9 @@ const uiDictionary={
   "Work family; witness not checked": "Текстова традиція; список не звірено",
   "Possible match; not identified": "Можливий збіг; не ідентифіковано",
   "e-Clavis bibliography": "Бібліографія e-Clavis",
+  "Franko publication": "Публікація Франка",
+  "Earlier publication; textual differences possible": "Раніша публікація; можливі текстові відмінності",
+  "Earlier full witness; apparatus in this edition": "Повний список у раннішій публікації; апарат у цьому виданні",
   "OCP critical text (comparison)": "Критичний текст OCP (для зіставлення)",
   "OCP catalogue (search by CAVT)": "Каталог OCP (пошук за CAVT)",
   "Original title": "Оригінальна назва",
@@ -1307,6 +1348,17 @@ const contentsWorkRefs = {
         "kind": "edition",
         "evidenceUk": "Видання OCP містить грецькі й латинські текстові свідчення. Самої назви слов’янського тексту з Дрогобицького рукопису недостатньо для ототожнення.",
         "titleUk": "Житіє Адама і Єви (Апокаліпсис Мойсея)"
+      },
+      {
+        "provider": "Franko",
+        "id": "Franko 1891",
+        "title": "On the History of Apocryphal Narratives",
+        "relation": "earlier-full-witness",
+        "url": "https://www.i-franko.name/ru/HistLit/1891/KIstoriiApocryphSkazanij.html",
+        "evidence": "Kievskaia starina, 1891, vol. 35, no. 11, pp. 267–275 (signed Myron). Full text of the Drohobych witness of 1742–43; I pp. 23–26 print only its differences against witness A, with separate Tikhonravov readings. Compare individual apparatus entries, not the entire base text. Online text from Collected Works, 1980, vol. 28, pp. 356–364.",
+        "kind": "publication",
+        "titleUk": "К истории апокрифических сказаний",
+        "evidenceUk": "Киевская старина, 1891, т. 35, кн. 11, с. 267–275 (підпис Мирон). Повний текст Дрогобицького списку 1742–1743 рр.; у т. I, с. 23–26 надруковано лише його відмінності від списку А та окремі читання за Тихонравовим. Зіставляти окремі записи апарату, а не весь основний текст. Електронний текст за Зібранням творів, 1980, т. 28, с. 356–364."
       }
     ],
     "[466,\"А. Книги о Аврааме праотци и патриарсе (Крех. Палея)\",\"80–86\"]": [
@@ -1514,6 +1566,45 @@ const contentsWorkRefs = {
         "evidence": "Anisimova (2023), pp. 196–199, compares the Slavonic Genesis of Esau across chronographs and Palaeas and traces its source tradition to Jubilees. Franko I 122–123 shares the distinctive oath, Judah's refusal, Esau's death, tribute and three sorrows of Jacob (Jubilees 34:15–17, 37–38); the Slavonic text changes the arrow to a spear and combines episodes. A source-tradition comparison, not a witness or translation of the complete Book of Jubilees. DOI: 10.25986/IRI.2023.94.4.014.",
         "evidenceUk": "Анісімова (2023), с. 196–199, зіставляє слов’янське Буття Ісава в хронографах і палеях та простежує його джерельну традицію до Книги Ювілеїв. Франко, т. I, с. 122–123, має спільні мотиви присяги, відмови Юди, смерті Ісава, данини й трьох печалей Якова (Ювілеї 34:15–17, 37–38); слов’янський текст замінює стрілу списом і поєднує епізоди. Споріднена джерельна традиція, не список чи переклад усієї Книги Ювілеїв. DOI: 10.25986/IRI.2023.94.4.014."
       }
+    ],
+    "[465,\"Б. Слово о сотвореню ангелъ (Рукп. о. Яремецького-Білахевича)\",\"14\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1895, §4",
+        "title": "Creation of the Angels and Archangels",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/4SlovoOSotvorenjuAngel.html",
+        "evidence": "Zhytie i slovo, 1895, vol. 3, no. 1, pp. 137–142 (sections 4–5). Editorial notes to the collected works explicitly identify I p. 14; Yaremetsky-Bilakhevych MS. The text is a parallel publication; spelling and abbreviations differ. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Слово о сотвореню ангел и архангел",
+        "evidenceUk": "Житє і слово, 1895, т. 3, кн. 1, с. 137–142 (розділи 4–5). Примітки до зібрання творів прямо вказують на т. I, с. 14; рукопис Яремецького-Білахевича. Паралельна публікація з відмінностями в правописі й скороченнях. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
+      }
+    ],
+    "[468,\"Е. Слово о Сивидлѣ пророчици и о Давидѣ цару (Ркпс. о. Яремецького-Білахевича)\",\"277–279\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1895, §5",
+        "title": "The Prophetess Sibyl and King David",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/5SlovoOSyvydli.html",
+        "evidence": "Zhytie i slovo, 1895, vol. 3, no. 1, pp. 137–142 (sections 4–5). The parallel body occupies I pp. 277–278 (not all of the TOC range); Yaremetsky-Bilakhevych MS pp. 80–82. Franko cites the journal at I p. 278 (scan 353). Printed lacunae and wording differ. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Слово о Сивидлѣ пророчици и о Давидѣ цару",
+        "evidenceUk": "Житє і слово, 1895, т. 3, кн. 1, с. 137–142 (розділи 4–5). Паралельний текст у т. I, с. 277–278 (не весь діапазон змісту); рукопис Яремецького-Білахевича, с. 80–82. Самопосилання Франка на журнал: т. I, с. 278 (скан 353). Лакуни та формулювання у друці відрізняються. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
+      }
+    ],
+    "[468,\"Ж. Сказаніє о царю Соломонѣ, како закопа бѣси во єдиной дельвѣ (Іспаський ркпс)\",\"291–293\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §1",
+        "title": "Solomon and the Devils in the Barrel",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/1SolomonIChortyVBochci.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 1, no. 1, pp. 136–140. I pp. 291–293, Ispas MS pp. 67–72, includes the Herod continuation. Franko cites the text and discussion at I p. 293 (scan 368). The online article also contains commentary outside this occurrence. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Соломон і чорти в бочці",
+        "evidenceUk": "Житє і слово, 1894, т. 1, кн. 1, с. 136–140. Т. I, с. 291–293, Іспаський рукопис, с. 67–72, включно з продовженням про Ірода. Самопосилання на текст і коментар: т. I, с. 293 (скан 368). Електронна стаття містить також коментар поза межами цього тексту. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
+      }
     ]
   },
   "2": {
@@ -1554,6 +1645,17 @@ const contentsWorkRefs = {
         "kind": "bibliography",
         "evidenceUk": "Каталог прямо посилається на Франка, т. II, с. 159–163, список I.",
         "titleUk": "Євангеліє дитинства від Томи"
+      },
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §2",
+        "title": "Apocryphon of the Childhood of Jesus",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/2ApokryfProDitstvoIsusove.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 1, no. 2, pp. 222–233. First of two narratives in this article, corresponding to II pp. 159–163 (TOC ends at 164), Ispas MS of 1732 pp. 39–47. Paragraph numbering differs. Do not equate this with the subsequent Yaremetsky-Bilakhevych narrative. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Апокриф про дітство Ісусове",
+        "evidenceUk": "Житє і слово, 1894, т. 1, кн. 2, с. 222–233. Перший із двох текстів статті відповідає т. II, с. 159–163 (у змісті до 164), Іспаський рукопис 1732 р., с. 39–47. Нумерація параграфів відрізняється. Не ототожнювати з наступним текстом Яремецького-Білахевича. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
       }
     ],
     "[522,\"З. Чудо о Господѣ нашемъ Іисусѣ Христѣ (Ркпс Румянцівського Музея)\",\"164–169\"]": [
@@ -1580,6 +1682,17 @@ const contentsWorkRefs = {
         "kind": "bibliography",
         "evidenceUk": "Каталог прямо посилається на Франка, т. II, с. 169–172, список F.",
         "titleUk": "Євангеліє дитинства від Томи"
+      },
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §2",
+        "title": "Apocryphon of the Childhood of Jesus",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/2ApokryfProDitstvoIsusove.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 1, no. 2, pp. 222–233. Second narrative, II pp. 169–172, Yaremetsky-Bilakhevych MS pp. 134–137. Franko cites pp. 227–230 at II p. 172 (scan 254). The later print reads 12 birds, the online narrative 22; paragraph counts also differ. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Апокриф про дітство Ісусове",
+        "evidenceUk": "Житє і слово, 1894, т. 1, кн. 2, с. 222–233. Другий текст: т. II, с. 169–172, рукопис Яремецького-Білахевича, с. 134–137. Самопосилання на с. 227–230: т. II, с. 172 (скан 254). Пізніший друк має 12 птахів, електронний текст — 22; кількість параграфів також відрізняється. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
       }
     ],
     "[522,\"Відривки білоруського євангелия Томи\",\"408–409\"]": [
@@ -2779,6 +2892,19 @@ const contentsWorkRefs = {
         "kind": "bibliography",
         "evidenceUk": "Каталог прямо посилається на Франка, т. IV, с. 258–264.",
         "titleUk": "Перший апокрифічний Апокаліпсис Івана"
+      }
+    ],
+    "[571,\"Е. Откровеніє мукъ тяжкихъ. (Рукоп. Ярем. Білахевича)\",\"135\"]": [
+      {
+        "provider": "Franko",
+        "id": "Franko 1894, §3",
+        "title": "The Virgin Mary's Journey through Hell",
+        "relation": "earlier-publication",
+        "url": "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/3VandrivkaBogorodyciPoPekli.html",
+        "evidence": "Zhytie i slovo, 1894, vol. 2, no. 4, pp. 81–88 and no. 5, pp. 224–237. IV pp. 135–153, Yaremetsky-Bilakhevych MS pp. 1–22. Franko cites both parts at IV p. 153 (scan 205). Preserve printed lacuna; exclude the following Biliavsky witness. Online text from Collected Works, 1981, vol. 29, pp. 348–402. Not a complete collation.",
+        "kind": "publication",
+        "titleUk": "Вандрівка богородиці по пеклі",
+        "evidenceUk": "Житє і слово, 1894, т. 2, кн. 4, с. 81–88 та кн. 5, с. 224–237. Т. IV, с. 135–153, рукопис Яремецького-Білахевича, с. 1–22. Самопосилання на обидві частини: т. IV, с. 153 (скан 205). Зберігати друковану лакуну; наступний список Білявського не належить до цієї паралелі. Електронний текст за Зібранням творів, 1981, т. 29, с. 348–402. Повну звірку не завершено."
       }
     ]
   },
@@ -8781,7 +8907,168 @@ function closeSettings(){closeDialog('readerSettings');$('settingsOpen').setAttr
 function clearRefError(){uiText($('refError'),'');$('refError').hidden=true;$('refDraft').removeAttribute('aria-invalid');}
 function openSettings(){$('refDraft').value=$('ref').value;clearRefError();$('advancedSettings').open=false;updateReadingPreference();openDialog('readerSettings','settingsOpen');$('settingsBody').scrollTop=0;$('settingsTitle').focus({preventScroll:true});}
 function applySettingsRef(){const ref=$('refDraft').value.trim();if(!validRef(ref)){uiText($('refError'),'Invalid reading ref. Enter a branch name or commit SHA.');$('refError').hidden=false;$('refDraft').setAttribute('aria-invalid','true');$('refDraft').focus();return;}$('ref').value=ref;closeSettings();load();}
-function initReaderLayout(){setPane('text');$('showScan').onclick=()=>setPane('scan');$('showText').onclick=()=>setPane('text');$('searchPanel').addEventListener('close',()=>$('searchOpen').setAttribute('aria-expanded','false'));$('searchClose').onclick=()=>closeDialog('searchPanel');$('readerSettings').addEventListener('close',()=>$('settingsOpen').setAttribute('aria-expanded','false'));$('readerSettings').addEventListener('cancel',event=>{event.preventDefault();closeSettings();});$('settingsOpen').onclick=openSettings;$('settingsClose').onclick=closeSettings;$('settingsDone').onclick=closeSettings;$('applyRef').onclick=applySettingsRef;$('refDraft').oninput=clearRefError;$('refDraft').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();applySettingsRef();}};}
+let inspectingLine=false,inspectionReturn=null,printedNoteLinks=[],noteReturnTarget=null;
+// Resolve only explicit, same-reading, same-page note links. The frozen
+// source and displayed marker/target label must agree; never guess by number.
+function resolvePrintedNotes(reading,rows){
+  const links=reading?.source_note_links;
+  if(!Array.isArray(links))return [];
+  const source=new Map(),regions=new Map(),shown=new Map();
+  for(const region of reading.regions??[]){
+    if(regions.has(region.id))return [];
+    regions.set(region.id,region);
+    for(const line of region.lines??[]){
+      if(source.has(line.id))return [];
+      source.set(line.id,{line,region});
+    }
+  }
+  for(const row of rows){
+    if(shown.has(row.line.id))return [];
+    shown.set(row.line.id,row);
+  }
+  const markerCounts=new Map(),noteCounts=new Map();
+  for(const l of links){
+    if(!l||typeof l!=='object')continue;
+    markerCounts.set(l.marker_line_id,(markerCounts.get(l.marker_line_id)??0)+1);
+    noteCounts.set(l.note_region_id,(noteCounts.get(l.note_region_id)??0)+1);
+  }
+  const resolved=[];
+  for(const l of links){
+    if(!l||typeof l.marker_line_id!=='string'||typeof l.note_region_id!=='string'||
+       typeof l.marker_text!=='string'||!l.marker_text.trim()||
+       !Number.isInteger(l.marker_start)||l.marker_start<0||
+       markerCounts.get(l.marker_line_id)!==1||noteCounts.get(l.note_region_id)!==1)continue;
+    const origin=source.get(l.marker_line_id),region=regions.get(l.note_region_id);
+    if(!origin||!['body','heading'].includes(origin.region.kind)||region?.kind!=='note')continue;
+    const first=region.lines?.[0],marker=shown.get(l.marker_line_id),note=shown.get(first?.id);
+    if(!first||!marker||!note||marker.region.id!==origin.region.id||note.region.id!==region.id||
+       marker.line.text!==origin.line.text||note.line.text!==first.text)continue;
+    const literal=l.marker_text,end=l.marker_start+[...literal].length;
+    const text=origin.line.text;
+    if([...text].slice(l.marker_start,end).join('')!==literal||
+       text.indexOf(literal)!==text.lastIndexOf(literal)||!first.text.startsWith(literal))continue;
+    const covering=languageRanges(origin.line,true).filter(s=>{
+      const start=[...text.slice(0,s.start)].length,stop=[...text.slice(0,s.end)].length;
+      return start<=l.marker_start&&stop>=end;
+    });
+    if(covering.length!==1)continue;
+    resolved.push({marker,note,literal,noteRegion:region.id});
+  }
+  return resolved;
+}
+function resetPrintedNoteNavigation(){
+  printedNoteLinks=[];noteReturnTarget=null;$('noteReturn').hidden=true;
+}
+function followPrintedNote(target,back=null){
+  if(!renderedLines.includes(target)||!target.btn.isConnected)return;
+  closeLayers(false);setInspectMode(false);
+  noteReturnTarget=back;
+  $('noteReturn').hidden=!back;
+  if(narrowReader())setPane('text');
+  mark(target.line,target.btn,target.region,false);
+  target.btn.focus({preventScroll:true});
+  target.btn.scrollIntoView({block:'center',inline:'nearest'});
+}
+function renderPrintedNoteNavigation(rendered){
+  for(const link of printedNoteLinks){
+    const fromMarker=link.marker===rendered;
+    if(!fromMarker&&rendered.region.id!==link.noteRegion)continue;
+    const panel=document.createElement('div');panel.className='printed-note-navigation';
+    const label=document.createElement('strong');uiText(label,'Printed note link');
+    const literal=document.createElement('span');literal.textContent=link.literal;
+    const button=document.createElement('button');button.type='button';
+    uiText(button,fromMarker?'Go to printed note':'Back to printed marker');
+    button.onclick=()=>followPrintedNote(fromMarker?link.note:link.marker,fromMarker?link.marker:null);
+    panel.append(label,literal,button);$('annotationDetailsBody').append(panel);
+  }
+}
+
+function setInspectMode(active){
+  inspectingLine=active;
+  $('inspectionHint').hidden=!active;
+}
+function closeLayers(restore=true){
+  if(!$('layersDialog').open)return;
+  $('settingsLanguageSlot').append($('languageLayerControl'));
+  closeDialog('layersDialog');
+  $('layersOpen').setAttribute('aria-expanded','false');
+  if(restore){
+    const target=inspectionReturn?.isConnected?inspectionReturn:$('layersOpen');
+    target.focus({preventScroll:true});
+  }
+  inspectionReturn=null;
+}
+function openLayers(rendered=null){
+  if(!$('layersDialog').open){
+    $('layersLanguageSlot').append($('languageLayerControl'));
+    openDialog('layersDialog','layersOpen');
+  }
+  inspectionReturn=rendered?.btn??$('layersOpen');
+  $('annotationDetails').hidden=!rendered;
+  $('annotationDetailsBody').replaceChildren();
+  if(rendered){renderAnnotationDetails(rendered);renderPrintedNoteNavigation(rendered);}
+  $('layersTitle').focus({preventScroll:true});
+}
+function renderAnnotationDetails({line,region,review}){
+  const body=$('annotationDetailsBody');
+  const label=document.createElement('p');
+  const name=document.createElement('strong');uiText(name,'Physical region');
+  const value=document.createElement('span');uiText(value,region.kind);
+  label.append(name,document.createTextNode(': '),value);body.append(label);
+  if(isEditorialCorrection(review)&&!line.language_spans?.length){
+    const p=document.createElement('p');uiText(p,'Language ranges need reannotation after text correction.');body.append(p);
+    return;
+  }
+  const spans=languageRanges(line,true).sort((a,b)=>a.start-b.start);
+  const supplied=Array.isArray(line.language_spans)?line.language_spans:[];
+  if(spans.length!==supplied.length){
+    const p=document.createElement('p');uiText(p,'Some language ranges are invalid or overlap; inspect the original reading.');body.append(p);
+    if(!spans.length)return;
+  }
+  const list=document.createElement('ul');
+  function add(a,b,span){
+    const literal=line.text.slice(a,b);
+    if(!literal||(!span&&!literal.trim()))return;
+    const li=document.createElement('li'),text=document.createElement('span'),meta=document.createElement('small');
+    text.className='annotation-literal';text.textContent=literal;
+    if(span?.language)text.lang=span.language;
+    const name=span?(span.language===null?'Undetermined language':languageStyle(span.language)[0]):'Not annotated';
+    const title=document.createElement('strong');uiText(title,name);
+    meta.append(title);
+    if(span?.language)meta.append(document.createTextNode(' ('+span.language+')'));
+    if(span?.script)meta.append(document.createTextNode(' · '+span.script));
+    if(span){const certainty=document.createElement('span');uiText(certainty,span.uncertain===true?'Uncertain attribution':span.uncertain===false?'Attribution not marked uncertain':'Uncertainty not indicated');meta.append(document.createTextNode(' · '),certainty);}
+    li.append(text,meta);list.append(li);
+  }
+  let end=0;
+  for(const span of spans){add(end,span.start,null);add(span.start,span.end,span);end=span.end;}
+  add(end,line.text.length,null);
+  if(list.childElementCount)body.append(list);else{const p=document.createElement('p');uiText(p,'Not annotated');body.append(p);}
+}
+function initLayers(){
+  $('noteReturn').onclick=()=>{if(noteReturnTarget)followPrintedNote(noteReturnTarget);};
+  $('layersOpen').onclick=()=>{
+    setInspectMode(false);
+    const selection=window.getSelection();
+    const element=node=>node?.nodeType===Node.ELEMENT_NODE?node:node?.parentElement;
+    const a=element(selection?.anchorNode)?.closest('.line-text');
+    const b=element(selection?.focusNode)?.closest('.line-text');
+    const selected=selection&&!selection.isCollapsed&&a===b?renderedLines.find(r=>r.btn===a):null;
+    openLayers(selected??null);
+  };
+  $('layersClose').onclick=()=>closeLayers();
+  $('layersDialog').addEventListener('cancel',e=>{e.preventDefault();closeLayers();});
+  $('inspectChoose').onclick=()=>{
+    const bounds=$('textscroll').getBoundingClientRect();
+    const visible=renderedLines.find(({btn})=>{const r=btn.getBoundingClientRect();return r.top>=bounds.top&&r.bottom<=bounds.bottom;});
+    const target=inspectionReturn?.classList.contains('line-text')?inspectionReturn:visible?.btn??renderedLines[0]?.btn;
+    closeLayers(false);setInspectMode(true);
+    (target??$('layersOpen')).focus();
+  };
+  $('showRegions').onchange=()=> $('candidate').classList.toggle('hide-region-labels',!$('showRegions').checked);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&inspectingLine){setInspectMode(false);$('layersOpen').focus({preventScroll:true});}});
+}
+function initReaderLayout(){initLayers();setPane('text');$('showScan').onclick=()=>setPane('scan');$('showText').onclick=()=>setPane('text');$('searchPanel').addEventListener('close',()=>$('searchOpen').setAttribute('aria-expanded','false'));$('searchClose').onclick=()=>closeDialog('searchPanel');$('readerSettings').addEventListener('close',()=>$('settingsOpen').setAttribute('aria-expanded','false'));$('readerSettings').addEventListener('cancel',event=>{event.preventDefault();closeSettings();});$('settingsOpen').onclick=openSettings;$('settingsClose').onclick=closeSettings;$('settingsDone').onclick=closeSettings;$('applyRef').onclick=applySettingsRef;$('refDraft').oninput=clearRefError;$('refDraft').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();applySettingsRef();}};}
 const pad=n=>String(n).padStart(5,'0');
 const asset=path=>ROOT+PIN+'/images/'+path;
 const readURL=(ref,path)=>ROOT+(/^[a-f0-9]{40}$/.test(ref)?ref:'refs/heads/'+ref.split('/').map(encodeURIComponent).join('/'))+'/'+path;
@@ -8818,7 +9105,7 @@ const noEditionTextImages={
 function auditedNoEditionText(){return PIN==='e871f32537e81f81896f6ce9a6658aba667db9c5'&&draftSettled&&!candidates.length&&!rawMessage('draftFallbackError')&&!!current&&noEditionTextImages[$('volume').value+':'+current.page.scan_page]===current.image.sha256&&Object.hasOwn(noEditionTextImages,$('volume').value+':'+current.page.scan_page);}
 function requestedMode(){const preferred=$('mode').value;return preferred==='both'?'both':pageSourceOverride||preferred;}
 function effectiveMode(){const requested=requestedMode();return requested==='draft'&&draftSettled&&!candidates.length?(auditedNoEditionText()?'empty':'ocr'):requested;}
-function updateMode(){const mode=effectiveMode(),textless=auditedNoEditionText(),showDraft=mode!=='ocr'&&mode!=='empty'&&!textless; $('noEditionText').hidden=!textless||mode==='ocr';$('readingKind').hidden=textless&&mode!=='ocr';$('draftFallbackError').hidden=mode!=='ocr'||requestedMode()!=='draft'||!rawMessage('draftFallbackError');$('reviewOpen').hidden=!showDraft;$('draftSection').hidden=!showDraft;$('ocrSection').hidden=mode==='draft'||mode==='empty';$('choice').hidden=!showDraft;$('readingPreferenceRow').hidden=!showDraft;$('showLanguages').disabled=!showDraft;uiText($('readingKind'),mode==='ocr'?'OCR · unchecked':candidates[Number($('choice').value)]?.editorial&&$('editorialView').checked?'Editorial':'Unverified');updateLanguageLegend();if(!showDraft)clearHighlight();}
+function updateMode(){const mode=effectiveMode(),textless=auditedNoEditionText(),showDraft=mode!=='ocr'&&mode!=='empty'&&!textless; $('noEditionText').hidden=!textless||mode==='ocr';$('readingKind').hidden=textless&&mode!=='ocr';$('draftFallbackError').hidden=mode!=='ocr'||requestedMode()!=='draft'||!rawMessage('draftFallbackError');$('reviewOpen').hidden=!showDraft;$('layersOpen').hidden=!showDraft||!candidates.length;if($('layersOpen').hidden){setInspectMode(false);closeLayers(false);$('noteReturn').hidden=true;noteReturnTarget=null;}$('draftSection').hidden=!showDraft;$('ocrSection').hidden=mode==='draft'||mode==='empty';$('choice').hidden=!showDraft;$('readingPreferenceRow').hidden=!showDraft;$('showLanguages').disabled=!showDraft;uiText($('readingKind'),mode==='ocr'?'OCR · unchecked':candidates[Number($('choice').value)]?.editorial&&$('editorialView').checked?'Editorial':'Unverified');updateLanguageLegend();if(!showDraft)clearHighlight();}
 function clearHighlight(){ $('highlight').hidden=true;message('lineinfo','Select a draft line to locate its approximate position.');document.querySelectorAll('#candidate .line-text').forEach(b=>b.setAttribute('aria-pressed','false')); }
 function setZoom(value){zoom=Math.max(60,Math.min(400,value));$('canvas').style.width=zoom+'%';}
 function validBox(b,w,h){return Array.isArray(b)&&b.length===4&&b.every(Number.isFinite)&&b[0]>=0&&b[1]>=0&&b[2]>0&&b[3]>0&&b[0]+b[2]<=w&&b[1]+b[3]<=h;}
@@ -8841,7 +9128,7 @@ const slavonicFonts={shafarik:'Franko Shafarik',monomakh:'Franko Monomakh',firas
 const greekFonts={gentium:'Franko Gentium',garamond:'Franko Garamond'};
 function applyFonts(save=false){const sl=$('slavonicFont'),gr=$('greekFont');if(!Object.hasOwn(slavonicFonts,sl.value))sl.value='monomakh';if(!Object.hasOwn(greekFonts,gr.value))gr.value='gentium';const style=document.documentElement.style;style.setProperty('--slavonic-font','"'+slavonicFonts[sl.value]+'"');style.setProperty('--historic-font','"'+slavonicFonts[sl.value]+' historic"');style.setProperty('--greek-font','"'+greekFonts[gr.value]+'"');style.setProperty('--greek-fallback','"'+greekFonts[gr.value]+' greek"');if(save)try{localStorage.setItem('franko-reader-fonts',JSON.stringify({slavonic:sl.value,greek:gr.value}));}catch(e){}}
 function initFonts(){try{const p=JSON.parse(localStorage.getItem('franko-reader-fonts')||'null');if(p){if(Object.hasOwn(slavonicFonts,p.slavonic))$('slavonicFont').value=p.slavonic;if(Object.hasOwn(greekFonts,p.greek))$('greekFont').value=p.greek;}}catch(e){}applyFonts();$('slavonicFont').onchange=()=>applyFonts(true);$('greekFont').onchange=()=>applyFonts(true);$('resetFonts').onclick=()=>{$('slavonicFont').value='monomakh';$('greekFont').value='gentium';applyFonts(true);};}
-function languageRanges(line){const offsets=[0];for(const ch of line.text)offsets.push(offsets.at(-1)+ch.length);const valid=(Array.isArray(line.language_spans)?line.language_spans:[]).filter(s=>s&&Number.isInteger(s.start)&&Number.isInteger(s.end)&&s.start>=0&&s.end>s.start&&s.end<offsets.length&&typeof s.language==='string'&&/^[A-Za-z0-9-]+$/.test(s.language));return valid.filter(s=>!valid.some(t=>t!==s&&s.start<t.end&&s.end>t.start)).map(s=>({...s,start:offsets[s.start],end:offsets[s.end]}));}
+function languageRanges(line,includeUnknown=false){const offsets=[0];for(const ch of line.text)offsets.push(offsets.at(-1)+ch.length);const valid=(Array.isArray(line.language_spans)?line.language_spans:[]).filter(s=>s&&Number.isInteger(s.start)&&Number.isInteger(s.end)&&s.start>=0&&s.end>s.start&&s.end<offsets.length&&((typeof s.language==='string'&&/^[A-Za-z0-9-]+$/.test(s.language))||(includeUnknown&&s.language===null)));return valid.filter(s=>!valid.some(t=>t!==s&&s.start<t.end&&s.end>t.start)).map(s=>({...s,start:offsets[s.start],end:offsets[s.end]}));}
 function sourceFontMode(line,ranges=languageRanges(line)){
   const group=s=>s.script==='Cyrl'&&['cu','chu','orv'].includes(s.language)?'slavonic':s.script==='Grek'?'greek':'plain';
   const ordered=[...ranges].sort((a,b)=>a.start-b.start);
@@ -8958,7 +9245,7 @@ function checkedEditorial(page,data,blob,path){
   return reviewed;
 }
 function isEditorialCorrection(review){return ['accepted_correction','supplementary_correction','native_collation'].includes(review?.status);}
-function renderLine(line,region,notes,alternates=[],review=null,sourceLine=line){const row=document.createElement('div');row.className='line-row';const gutter=document.createElement('div');gutter.className='line-gutter';row.append(gutter);const btn=document.createElement('div');btn.tabIndex=0;btn.className='line-text';btn.dataset.lineId=line.id;if(isEditorialCorrection(review))btn.dataset.fontMode=sourceFontMode(sourceLine);btn.setAttribute('role','button');btn.setAttribute('aria-pressed','false');btn.onclick=()=>{const selection=window.getSelection();if(selection&&!selection.isCollapsed&&selection.containsNode($('candidate'),true))return;mark(line,btn,region);};btn.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();mark(line,btn,region);}};row.append(btn);const rendered={line,btn,region,search:[],diff:[]};renderedLines.push(rendered);const anchored=notes.map(note=>({note,ranges:isEditorialCorrection(review)?[]:rangesFor(line.text,note.reading)}));const spans=anchored.flatMap(n=>n.ranges);const languages=languageRanges(line);function paint(){btn.replaceChildren();const points=[...new Set([0,line.text.length,...spans.flat(),...languages.flatMap(s=>[s.start,s.end]),...rendered.diff.flat(),...rendered.search.flat()])].sort((a,b)=>a-b);const segments=points.slice(1).map((end,i)=>({value:line.text.slice(points[i],end),covered:spans.some(([a,b])=>a<=points[i]&&b>=end),language:languages.find(s=>s.start<=points[i]&&s.end>=end),diff:rendered.diff.some(([a,b])=>a<=points[i]&&b>=end),search:rendered.search.some(([a,b])=>a<=points[i]&&b>=end)}));const whole=segments.every(s=>s.covered||!s.value.trim());for(const {value,covered,language,diff,search} of segments){let node=document.createTextNode(value);if(language){const span=document.createElement('span');span.className='language-span';span.dataset.language=language.language;span.dataset.script=String(language.script??'');span.lang=language.language;span.dataset.uncertain=String(language.uncertain===true);uiAttr(span,'title',languageStyle(language.language)[0]+' · '+language.language+(language.script?' / '+language.script:'')+(language.uncertain?' · uncertain':''));span.style.setProperty('--lang-color',languageStyle(language.language)[1]);span.append(node);node=span;}if(!whole&&covered){const m=document.createElement('mark');m.append(node);node=m;}if(diff||search){const span=document.createElement('span');span.className=[diff?'variant-diff':'',search?'search-match':''].filter(Boolean).join(' ');span.append(node);node=span;}btn.append(node);}}rendered.paint=paint;paint();
+function renderLine(line,region,notes,alternates=[],review=null,sourceLine=line){const row=document.createElement('div');row.className='line-row';const gutter=document.createElement('div');gutter.className='line-gutter';row.append(gutter);const btn=document.createElement('div');btn.tabIndex=0;btn.className='line-text';btn.dataset.lineId=line.id;if(isEditorialCorrection(review))btn.dataset.fontMode=sourceFontMode(sourceLine);btn.setAttribute('role','button');btn.setAttribute('aria-pressed','false');btn.onclick=()=>{const selection=window.getSelection();if(selection&&!selection.isCollapsed&&selection.containsNode($('candidate'),true))return;if(inspectingLine){setInspectMode(false);openLayers(rendered);return;}mark(line,btn,region);};btn.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();if(inspectingLine){setInspectMode(false);openLayers(rendered);return;}mark(line,btn,region);}};row.append(btn);const rendered={line,btn,region,review,search:[],diff:[]};renderedLines.push(rendered);const anchored=notes.map(note=>({note,ranges:isEditorialCorrection(review)?[]:rangesFor(line.text,note.reading)}));const spans=anchored.flatMap(n=>n.ranges);const languages=languageRanges(line);function paint(){btn.replaceChildren();const points=[...new Set([0,line.text.length,...spans.flat(),...languages.flatMap(s=>[s.start,s.end]),...rendered.diff.flat(),...rendered.search.flat()])].sort((a,b)=>a-b);const segments=points.slice(1).map((end,i)=>({value:line.text.slice(points[i],end),covered:spans.some(([a,b])=>a<=points[i]&&b>=end),language:languages.find(s=>s.start<=points[i]&&s.end>=end),diff:rendered.diff.some(([a,b])=>a<=points[i]&&b>=end),search:rendered.search.some(([a,b])=>a<=points[i]&&b>=end)}));const whole=segments.every(s=>s.covered||!s.value.trim());for(const {value,covered,language,diff,search} of segments){let node=document.createTextNode(value);if(language){const span=document.createElement('span');span.className='language-span';span.dataset.language=language.language;span.dataset.script=String(language.script??'');span.lang=language.language;span.dataset.uncertain=String(language.uncertain===true);uiAttr(span,'title',languageStyle(language.language)[0]+' · '+language.language+(language.script?' / '+language.script:'')+(language.uncertain?' · uncertain':''));span.style.setProperty('--lang-color',languageStyle(language.language)[1]);span.append(node);node=span;}if(!whole&&covered){const m=document.createElement('mark');m.append(node);node=m;}if(diff||search){const span=document.createElement('span');span.className=[diff?'variant-diff':'',search?'search-match':''].filter(Boolean).join(' ');span.append(node);node=span;}btn.append(node);}}rendered.paint=paint;paint();
 $('candidate').append(row);
 // The original of an accepted correction is an exact comparison, not another
 // estimated line match. Use the existing comparison affordance and no badge
@@ -8979,9 +9266,9 @@ if(alt.review){
   p.append(name,document.createTextNode(' · '),meta,document.createTextNode('\n'));
 }else{uiText(name,alt.label+' · '+alt.reader);p.append(name,document.createTextNode('\n'));}
 const text=document.createElement('span');text.className='alt-text';if(alt.fontMode)text.dataset.fontMode=alt.fontMode;appendDiff(text,alt.text,ranges[1]);p.append(text);details.append(p);}}rendered.diff=comparisons.flatMap(c=>c.ranges[0]);}else rendered.diff=[];paint();};gutter.append(toggle);$('candidate').append(details);}if(!notes.length)return;const toggle=document.createElement('button');toggle.type='button';toggle.className='uncertainty-toggle';toggle.textContent='⚑ '+notes.length;uiAttr(toggle,'title','Show uncertainty reasons');uiAttr(toggle,'aria-label','Uncertainty notes for '+line.id);toggle.setAttribute('aria-expanded','false');const reasons=document.createElement('div');reasons.className='uncertainty-reasons';reasons.hidden=true;if(isEditorialCorrection(review)){const hint=document.createElement('small');uiText(hint,'Source uncertainty notes (not re-anchored).');reasons.append(hint);}for(const {note,ranges} of anchored){const p=document.createElement('p');const label=document.createElement('strong');if(note.reading==null)uiText(label,'Unanchored reading');else label.textContent=String(note.reading);p.append(label,document.createTextNode(' — '));const reason=document.createElement('span');if(note.reason==null)uiText(reason,'No reason supplied');else reason.textContent=String(note.reason);p.append(reason);if(ranges.length!==1){const warning=document.createElement('small');uiText(warning,ranges.length?' (Multiple exact occurrences; location ambiguous.)':' (Literal not found in line; no highlight.)');p.append(warning);}reasons.append(p);}toggle.onclick=()=>{reasons.hidden=!reasons.hidden;toggle.setAttribute('aria-expanded',String(!reasons.hidden));};gutter.prepend(toggle);$('candidate').append(reasons);}
-function renderCandidate(){renderedLines=[];clearHighlight();$('candidate').replaceChildren();$('notes').hidden=true;const c=candidates[Number($('choice').value)];$('editorialControls').hidden=!c?.editorial;$('editorialView').hidden=!c?.editorial;$('editorialNotice').hidden=!c?.editorialError;if(c?.editorialError)uiText($('editorialNotice'),'Editorial source changed; accepted corrections not applied.');if(!c){updateLanguageLegend();return;}const reviewed=c.editorial&&$('editorialView').checked;uiText($('readingKind'),effectiveMode()==='ocr'?'OCR · unchecked':reviewed?'Editorial':'Unverified');const d=c.data,r=d.reading;message('draftStatus','Unverified · '+candidateLabel(c.suffix,r)+' · '+r.reader_id+' · printed folio '+(d.printed_page_observed??'unknown')+' · '+r.context_independence+' · '+candidates.length+' candidate(s); purple bars indicate approximate differing lines');const byLine=new Map();for(const note of r.uncertainty_notes??[]){if(!note||typeof note.line_id!=='string')continue;const list=byLine.get(note.line_id)??[];list.push(note);byLine.set(note.line_id,list);}for(const region of r.regions){const h=document.createElement('h3');uiText(h,region.kind);$('candidate').append(h);for(const line of region.lines){const review=reviewed?c.editorial.get(line.id):null;const display=isEditorialCorrection(review)?{...line,text:review.text,language_spans:review.language_spans,unreadable_suffix:review.status==='supplementary_correction'?false:line.unreadable_suffix}:line;renderLine(display,region,byLine.get(line.id)??[],alternateMatches(line,c),review,line);byLine.delete(line.id);}}if(byLine.size)message('draftStatus',rawMessage('draftStatus')+' · Unmatched uncertainty line IDs: '+[...byLine.keys()].join(', ')+' (see original JSON).');$('notes').hidden=false;message('noteText',JSON.stringify({original_ocr_visible:r.source_original_ocr_visible,peer_readings_visible:r.peer_readings_visible,source_image_sha256:d.source_image_sha256},null,2));$('readingSource').href=c.url;if(reviewed){const supplementary=[...c.editorial.values()].some(r=>r.status==='supplementary_correction');message('draftStatus',rawMessage('draftStatus')+' · '+(supplementary?'Supplementary facsimile · provisional':[...c.editorial.values()].some(r=>r.status==='native_collation')?'Source collation · provisional':c.editorial.size+' accepted line decisions; remaining text unverified.'));}updateLanguageLegend();}
+function renderCandidate(){setInspectMode(false);closeLayers(false);resetPrintedNoteNavigation();renderedLines=[];clearHighlight();$('candidate').replaceChildren();$('notes').hidden=true;const c=candidates[Number($('choice').value)];$('editorialControls').hidden=!c?.editorial;$('editorialView').hidden=!c?.editorial;$('editorialNotice').hidden=!c?.editorialError;if(c?.editorialError)uiText($('editorialNotice'),'Editorial source changed; accepted corrections not applied.');if(!c){updateLanguageLegend();return;}const reviewed=c.editorial&&$('editorialView').checked;uiText($('readingKind'),effectiveMode()==='ocr'?'OCR · unchecked':reviewed?'Editorial':'Unverified');const d=c.data,r=d.reading;message('draftStatus','Unverified · '+candidateLabel(c.suffix,r)+' · '+r.reader_id+' · printed folio '+(d.printed_page_observed??'unknown')+' · '+r.context_independence+' · '+candidates.length+' candidate(s); purple bars indicate approximate differing lines');const byLine=new Map();for(const note of r.uncertainty_notes??[]){if(!note||typeof note.line_id!=='string')continue;const list=byLine.get(note.line_id)??[];list.push(note);byLine.set(note.line_id,list);}for(const region of r.regions){const h=document.createElement('h3');uiText(h,region.kind);$('candidate').append(h);for(const line of region.lines){const review=reviewed?c.editorial.get(line.id):null;const display=isEditorialCorrection(review)?{...line,text:review.text,language_spans:review.language_spans,unreadable_suffix:review.status==='supplementary_correction'?false:line.unreadable_suffix}:line;renderLine(display,region,byLine.get(line.id)??[],alternateMatches(line,c),review,line);byLine.delete(line.id);}}printedNoteLinks=resolvePrintedNotes(r,renderedLines);if(byLine.size)message('draftStatus',rawMessage('draftStatus')+' · Unmatched uncertainty line IDs: '+[...byLine.keys()].join(', ')+' (see original JSON).');$('notes').hidden=false;message('noteText',JSON.stringify({original_ocr_visible:r.source_original_ocr_visible,peer_readings_visible:r.peer_readings_visible,source_image_sha256:d.source_image_sha256},null,2));$('readingSource').href=c.url;if(reviewed){const supplementary=[...c.editorial.values()].some(r=>r.status==='supplementary_correction');message('draftStatus',rawMessage('draftStatus')+' · '+(supplementary?'Supplementary facsimile · provisional':[...c.editorial.values()].some(r=>r.status==='native_collation')?'Source collation · provisional':c.editorial.size+' accepted line decisions; remaining text unverified.'));}updateLanguageLegend();}
 function checkDraft(d,v,n,image){if(d.volume!==v||d.scan_page!==n||d.asset_commit!==PIN||d.source_image_path!==image.path||d.source_image_sha256!==image.sha256)throw Error('Source identity mismatch');if(d.status!=='agent_unverified'||!['single-image-draft-v0','single-exposed-draft-v1'].includes(d.schema_version)||!d.reading||!Array.isArray(d.reading.regions)||!d.reading.regions.every(r=>Array.isArray(r.lines)&&r.lines.every(l=>typeof l.text==='string')))throw Error('Unsupported draft schema');}
-async function load(options){initialContents=false;updateReaderVolume();pageSourceOverride=options?.source??null;draftSettled=false;const anchor=pendingContentsAnchor,estimated=pendingContentsEstimate;pendingContentsAnchor=null;pendingContentsEstimate=false;let anchorIndex=-1,anchorApplied=false;const applyAnchor=()=>{if(!anchor||anchorApplied||anchorIndex<0||$('scan').hidden||Number($('choice').value)!==anchorIndex||effectiveMode()==='ocr')return;const hit=renderedLines.find(x=>x.line.id===anchor.line_id);if(hit){anchorApplied=true;mark(hit.line,hit.btn,hit.region);if(narrowReader())setPane('text');hit.btn.scrollIntoView({block:'center',inline:'nearest'});}};if($('contentsPanel').open)renderContents();const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;syncPageJump();current=null;candidates=[];renderedLines=[];$('editorialView').checked=true;$('editorialView').hidden=true;$('editorialControls').hidden=true;$('editorialNotice').hidden=true;$('choice').replaceChildren();$('candidate').replaceChildren();message('draftFallbackError','');updateMode();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
+async function load(options){setInspectMode(false);closeLayers(false);resetPrintedNoteNavigation();initialContents=false;updateReaderVolume();pageSourceOverride=options?.source??null;draftSettled=false;const anchor=pendingContentsAnchor,estimated=pendingContentsEstimate;pendingContentsAnchor=null;pendingContentsEstimate=false;let anchorIndex=-1,anchorApplied=false;const applyAnchor=()=>{if(!anchor||anchorApplied||anchorIndex<0||$('scan').hidden||Number($('choice').value)!==anchorIndex||effectiveMode()==='ocr')return;const hit=renderedLines.find(x=>x.line.id===anchor.line_id);if(hit){anchorApplied=true;mark(hit.line,hit.btn,hit.region);if(narrowReader())setPane('text');hit.btn.scrollIntoView({block:'center',inline:'nearest'});}};if($('contentsPanel').open)renderContents();const id=++generation;controller?.abort();controller=new AbortController();const signal=controller.signal;const v=$('volume').value;const ref=$('ref').value.trim();let n=Number($('page').value);if(!Number.isInteger(n)||n<1)n=1;n=Math.min(n,counts[Number(v)]);$('page').value=n;activeScan=n;syncPageJump();current=null;candidates=[];renderedLines=[];$('editorialView').checked=true;$('editorialView').hidden=true;$('editorialControls').hidden=true;$('editorialNotice').hidden=true;$('choice').replaceChildren();$('candidate').replaceChildren();message('draftFallbackError','');updateMode();$('notes').hidden=true;$('scan').hidden=true;$('scan').removeAttribute('src');$('source').removeAttribute('href');clearHighlight();for(const field of ['ocr','imageError','noteText'])message(field,'');message('status','Loading volume '+v+' / scan '+n+'…');message('draftStatus','Loading draft candidates…');message('ocrStatus','Loading original OCR…');$('prev').disabled=n<=1;$('next').disabled=true;
 if(!/^[A-Za-z0-9][A-Za-z0-9._/-]*$/.test(ref)||ref.split('/').some(x=>!x||x==='.'||x==='..')){message('status','Invalid reading ref. Enter a branch name or commit SHA.');return;}
 try{let manifest=manifests.get(v);if(!manifest){manifest=await(await get(asset('vol'+v+'/manifest.json'),signal)).json();if(id!==generation)return;if(manifest.volume!==v||!Array.isArray(manifest.pages)||!Number.isInteger(manifest.page_count)||manifest.page_count<1)throw Error('Invalid volume manifest');manifests.set(v,manifest);}n=Math.min(n,manifest.page_count);$('page').value=n;activeScan=n;syncPageJump();$('page').max=manifest.page_count;message('total','/ '+manifest.page_count);$('prev').disabled=n<=1;$('next').disabled=n>=manifest.page_count;const page=manifest.pages.find(p=>p.scan_page===n);if(!page)throw Error('Scan missing from manifest');const image=page.artifacts.find(a=>a.role==='page_image');const ocr=page.artifacts.find(a=>a.role==='embedded_ocr');if(!image||!ocr||!['jpg','png'].some(ext=>image.path==='vol'+v+'/page-'+pad(n)+'.'+ext)||ocr.path!=='original_ocr/vol'+v+'/page-'+pad(n)+'.txt'||!(page.width>0&&page.height>0))throw Error('Invalid source manifest entry');current={page,image};history.replaceState(null,'','#'+new URLSearchParams({v,p:String(n),ref}));message('status','Volume '+v+' · scan '+n+' / '+manifest.page_count+' · reading ref: '+ref+(estimated?' · Unverified contents destination; check the heading.':''));$('source').href=asset(image.path);$('scan').onload=()=>{if(id!==generation)return;if($('scan').naturalWidth!==page.width||$('scan').naturalHeight!==page.height){message('imageError','Image dimensions differ from manifest.');return;}$('scan').hidden=false;applyAnchor();};$('scan').onerror=()=>{if(id===generation)message('imageError','Image could not be loaded. Try Open full image or reload.');};$('scan').src=asset(image.path);
 const ocrTask=(async()=>{try{const value=await(await get(asset(ocr.path),signal)).text();if(id!==generation)return;message('ocr',value);message('ocrStatus',value.trim()?'Original extraction; no spatial line alignment.':'Empty original OCR (no non-whitespace text).');}catch(e){if(id===generation)message('ocrStatus','OCR unavailable: '+e.message);}})();
@@ -9077,9 +9364,9 @@ function appendContentsReferences(li,actions,v,entry,links){
  const original=document.createElement('p');original.className='contents-ref-original';const label=document.createElement('span');uiText(label,'Original title');const title=document.createElement('span');title.lang=contentsOriginalLang(entry[1]);title.textContent=': '+entry[1];original.append(label,title);detail.append(original);
  for(const link of links){const record=document.createElement('div');record.className='contents-ref-record';
  const name=document.createElement('strong');name.className='contents-ref-title';setContentsBilingual(name,link.title,link.titleUk);
- const status=document.createElement('p');status.className='contents-ref-state';uiText(status,link.relation==='edition-match'?'Edition match':link.relation==='work-family'?'Work family; witness not checked':'Possible match; not identified');
+ const status=document.createElement('p');status.className='contents-ref-state';uiText(status,link.relation==='edition-match'?'Edition match':link.relation==='work-family'?'Work family; witness not checked':link.relation==='earlier-publication'?'Earlier publication; textual differences possible':link.relation==='earlier-full-witness'?'Earlier full witness; apparatus in this edition':'Possible match; not identified');
  const evidence=document.createElement('p');evidence.className='contents-ref-evidence';setContentsBilingual(evidence,link.evidence,link.evidenceUk);
- const a=document.createElement('a');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';const provider=document.createElement('span');uiText(provider,link.provider==='e-Clavis'?'e-Clavis bibliography':link.kind==='edition'?'OCP critical text (comparison)':'OCP catalogue (search by CAVT)');const identifier=document.createElement('span');identifier.textContent=' · '+link.id;a.append(provider,identifier);
+ const a=document.createElement('a');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';const provider=document.createElement('span');uiText(provider,link.provider==='Franko'?'Franko publication':link.provider==='e-Clavis'?'e-Clavis bibliography':link.kind==='edition'?'OCP critical text (comparison)':'OCP catalogue (search by CAVT)');const identifier=document.createElement('span');identifier.textContent=' · '+link.id;a.append(provider,identifier);
  record.append(name,status,evidence,a);detail.append(record);}
  b.onclick=()=>{detail.hidden=!detail.hidden;b.setAttribute('aria-expanded',String(!detail.hidden));};
  actions.append(b);li.append(detail);

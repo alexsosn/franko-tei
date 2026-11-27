@@ -1,0 +1,1065 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 157,
+  "printed_page_observed": "75",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00157.jpg",
+  "source_image_sha256": "b61917d5d1215dc0378d934a44364157cd30350a3e2f2fe0767883bf6a2d70be",
+  "reading": {
+    "reader_id": "gpt62-ii-157-image-harmonized-20261127",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00151-00160-20261127",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading. Historical accents, titla, breathings and glyph shapes are incomplete/provisional; estimated line rectangles not measured baselines. orv provisional historical Ruthenian on sustained vernacular context (Kerestur witness not precise recension). Verse blocks follow visible blank lines; printed marginal verse numbers kept in separate other regions after main reading column, before notes. Cross-page semantic verse structure not yet projected.",
+    "raw_response": "75\nвъ цр҃кви ст҃ои на празникъ велики,\nколи празднує [sic !] Євреанинъ всякі.\nархіерей именемъ Ісахаръ\nне воспріявъ принесена на даръ,\nк тому еще укори ст҃аго\nѡ неплодствіи онъ приносящаго.\n„недостоино бо — рече — пріимати\nѿ рукъ твоихъ дари пріимати,\nбо ты не машъ ѿ ср҃дца порода,\nа претъ Бг҃омъ тоє не погода.\nты єси лишенъ бж҃ія благословен[і]я\nради нѣкихъ потаинныхъ грѣховъ“.\nІ еще ся нѣкій Євреанинъ найде,\nѿ племене Рувимова прииде,\nиже дары своя при[н]ошаше,\nБгу҃ жертву людми отдаваше,\nст҃ителя и той укоряше,\nпредъ народомъ явно глаголаше:\n„што ти глядашъ шора улапити,\nсъ твою жертву мене претпредити?\nкетъ ся твои не пріймаю дары,\nужъ у виторъ иду твои ствари.\nи не оставилъ єси ты сѣмена,\nІсраилю ніякого спомена“.\nІоакимъ коли слиша сии речи,\nѿ жалости серце му заплаче.\nуничиженъ, посрамленъ претъ всими,\nне можаше празновати с нима.\nоскорби ся и наполни єда,\nріданію и плачу ся преда.\nпраздникъ му ся на жалостъ претвори,\nи жалостъ велику отвори.\nпакъ изыде изъ ст҃аго храма,\nне иде двору, где є ст҃а Анна,\nале онъ иде ко своимъ овчаромъ\nу пустиню, своего стада пастиромъ.\nтри днѣ хода ѿ Ієрусалиму\nпешо иде, докъ не приде къ нима.\n20\n30\n40\n50",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          978,
+          88,
+          41,
+          32
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "75",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              978,
+              88,
+              41,
+              29
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-stanza-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          300,
+          155,
+          546,
+          414
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-stanza-cont-line-01",
+            "text": "въ цр҃кви ст҃ои на празникъ велики,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 35,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              155,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-02",
+            "text": "коли празднує [sic !] Євреанинъ всякі.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 14,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 14,
+                "end": 21,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 21,
+                "end": 38,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              189,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-03",
+            "text": "архіерей именемъ Ісахаръ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 24,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              224,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-04",
+            "text": "не воспріявъ принесена на даръ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              258,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-05",
+            "text": "к тому еще укори ст҃аго",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              293,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-06",
+            "text": "ѡ неплодствіи онъ приносящаго.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              327,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-07",
+            "text": "„недостоино бо — рече — пріимати",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              362,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-08",
+            "text": "ѿ рукъ твоихъ дари пріимати,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              396,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-09",
+            "text": "бо ты не машъ ѿ ср҃дца порода,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              431,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-10",
+            "text": "а претъ Бг҃омъ тоє не погода.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              465,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-11",
+            "text": "ты єси лишенъ бж҃ія благословен[і]я",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 35,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              500,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-cont-line-12",
+            "text": "ради нѣкихъ потаинныхъ грѣховъ“.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              534,
+              546,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-stanza-3",
+        "kind": "body",
+        "bbox_xywh": [
+          300,
+          608,
+          548,
+          416
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-stanza-3-line-01",
+            "text": "І еще ся нѣкій Євреанинъ найде,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              608,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-02",
+            "text": "ѿ племене Рувимова прииде,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              642,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-03",
+            "text": "иже дары своя при[н]ошаше,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              677,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-04",
+            "text": "Бгу҃ жертву людми отдаваше,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              712,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-05",
+            "text": "ст҃ителя и той укоряше,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              746,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-06",
+            "text": "предъ народомъ явно глаголаше:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              781,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-07",
+            "text": "„што ти глядашъ шора улапити,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              816,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-08",
+            "text": "съ твою жертву мене претпредити?",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              850,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-09",
+            "text": "кетъ ся твои не пріймаю дары,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              885,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-10",
+            "text": "ужъ у виторъ иду твои ствари.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              920,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-11",
+            "text": "и не оставилъ єси ты сѣмена,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              954,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-3-line-12",
+            "text": "Ісраилю ніякого спомена“.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              989,
+              548,
+              31
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-stanza-4",
+        "kind": "body",
+        "bbox_xywh": [
+          300,
+          1060,
+          586,
+          500
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-stanza-4-line-01",
+            "text": "Іоакимъ коли слиша сии речи,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1060,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-02",
+            "text": "ѿ жалости серце му заплаче.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1095,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-03",
+            "text": "уничиженъ, посрамленъ претъ всими,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 34,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1131,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-04",
+            "text": "не можаше празновати с нима.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1167,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-05",
+            "text": "оскорби ся и наполни єда,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1202,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-06",
+            "text": "ріданію и плачу ся преда.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1238,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-07",
+            "text": "праздникъ му ся на жалостъ претвори,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 36,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1274,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-08",
+            "text": "и жалостъ велику отвори.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 24,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1310,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-09",
+            "text": "пакъ изыде изъ ст҃аго храма,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1345,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-10",
+            "text": "не иде двору, где є ст҃а Анна,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1381,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-11",
+            "text": "але онъ иде ко своимъ овчаромъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1417,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-12",
+            "text": "у пустиню, своего стада пастиромъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 34,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1452,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-13",
+            "text": "три днѣ хода ѿ Ієрусалиму",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1488,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-stanza-4-line-14",
+            "text": "пешо иде, докъ не приде къ нима.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              300,
+              1524,
+              586,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-20",
+        "kind": "other",
+        "bbox_xywh": [
+          239,
+          187,
+          53,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-20-line-01",
+            "text": "20",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              239,
+              187,
+              53,
+              30
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-30",
+        "kind": "other",
+        "bbox_xywh": [
+          239,
+          538,
+          53,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-30-line-01",
+            "text": "30",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              239,
+              538,
+              53,
+              30
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-40",
+        "kind": "other",
+        "bbox_xywh": [
+          239,
+          924,
+          53,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-40-line-01",
+            "text": "40",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              239,
+              924,
+              53,
+              30
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-50",
+        "kind": "other",
+        "bbox_xywh": [
+          239,
+          1313,
+          53,
+          33
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-50-line-01",
+            "text": "50",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-157-image-harmonized-20261127",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              239,
+              1313,
+              53,
+              30
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "verse-stanza-3-line-10",
+        "reading": "виторъ",
+        "reason": "Difficult vernacular word."
+      },
+      {
+        "line_id": "verse-stanza-4-line-05",
+        "reading": "наполни єда",
+        "reason": "Historical printed form provisional."
+      }
+    ],
+    "source_note_links": []
+  }
+}
