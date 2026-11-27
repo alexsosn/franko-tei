@@ -135,6 +135,7 @@ examples = hybrid["EXAMPLES"]
 sources = hybrid["SOURCES"]
 assert len(examples) >= 22 and len({row["source"] for row in examples}) >= 5
 accent_rows = [row for row in examples if row.get("category") == "accent"]
+assert any(row["render"] == "но̑" and row["source"] == "III/130" and row["mark_options"] == ["U+0311"] and row["status"] == "candidate" for row in accent_rows)
 assert len(accent_rows) >= 12 and len({row["source"] for row in accent_rows}) >= 3
 assert {"U+0301", "U+0486", "U+0311", "U+0486 U+0301"} <= {code for row in accent_rows for code in row["mark_options"]}
 assert all(row["status"] == "ambiguous" for row in accent_rows if len(row["mark_options"]) > 1)
