@@ -19,6 +19,8 @@ FONT_BLOB = "4d7c0809ebc700036286d992c30d2b4ec4a0d59c"
 FONT_PATH = ROOT / "web/fonts/Monomakh-Regular.woff2"
 
 SOURCES = {
+    "I/128": {"path": "vol1/page-00128.jpg", "printed": "53", "width": 1190, "height": 1727,
+              "sha256": "abcf203d3894a38280b12a85a854475905c11f5d0ada49a8c225a18fa6d3da2a"},
     "III/131": {"path": "vol3/page-00131.jpg", "printed": "45", "width": 1190, "height": 1853,
                 "sha256": "1d5256e17f09d60b05822c2e8accbd78c3d78f62164ea65e2d898bf696e33330"},
     "I/127": {"path": "vol1/page-00127.jpg", "printed": "52", "width": 1190, "height": 1841,
@@ -80,6 +82,11 @@ EXAMPLES = [
     {"source": "III/131", "line":"text-line-02", "bbox_xywh":[925,1133,92,42], "render":"см҃рти", "focus":"м҃ / м꙯", "status":"ambiguous", "note":"Angular abbreviation mark; distinguish titlo and vzmet."},
     {"source": "III/131", "line":"text-line-09", "bbox_xywh":[685,1390,71,38], "render":"ѡгнь", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "contrast":"fire-initial-vowel", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave on initially stressed nominative; iso preferred."},
     {"source": "III/131", "line":"text-line-12", "bbox_xywh":[171,1501,77,40], "render":"ѡ҆гн", "focus":"ѡ҆", "status":"candidate", "category":"accent", "contrast":"fire-initial-vowel", "mark_options":["U+0486"], "note":"Small arch in oblique form; ending cropped, not encoded."},
+    # Volume I control: separate visible initial arch and internal acute.
+    {"source": "I/128", "line":"enoch-angel-continuation-l001", "bbox_xywh":[590,192,145,35], "render":"ѡ҆стꙋди́тсѧ", "focus":"ѡ҆ / и́", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Initial arch and internal acute; word edges close to crop."},
+    {"source": "I/128", "line":"enoch-methuselah-l002", "bbox_xywh":[239,296,105,38], "render":"ѡдра", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave on omega; spaced heading. Later stress may differ."},
+    {"source": "I/128", "line":"enoch-address-l010", "bbox_xywh":[695,849,65,38], "render":"ѡчи", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave; omega left edge clipped. Compare next line."},
+    {"source": "I/128", "line":"enoch-address-l011", "bbox_xywh":[522,887,65,38], "render":"ѡчи", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Repeated wave in same word; left margin close."},
 ]
 
 
