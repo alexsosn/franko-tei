@@ -1,5 +1,5 @@
 import unittest
-from franko_tei.hitl_metrics import score_lines
+from franko_tei.hitl_metrics import score_lines, score_dual
 
 
 class HitlMetricsTests(unittest.TestCase):
@@ -33,3 +33,25 @@ class HitlMetricsTests(unittest.TestCase):
     def test_insertions_and_deletions(self):
         self.assertEqual(score_lines({'a': 'а'}, {'a': 'аб'})['edits'], 1)
         self.assertEqual(score_lines({'a': 'аб'}, {'a': ''})['edits'], 2)
+
+    def test_dual_mark_policy(self):
+        report = score_dual({'a': 'а҃ⷭѡ йⸯ'}, {'a': 'ао йⸯ'}, {'a': 'аѡ йⸯ'})
+        self.assertEqual(report['literal']['edits'], 3)
+        self.assertEqual(report['without_marks']['reference_characters'], 5)
+        self.assertEqual(report['without_marks']['edits'], 1)
+        self.assertEqual(report['without_marks']['retry']['edits'], 0)
+        # No canonical decomposition; spacing yerok stays a literal.
+        self.assertEqual(score_dual({'a': 'йⸯ'}, {'a': 'и'})['without_marks']['edits'], 2)
+
+    def test_dual_empty_mark_only_reference(self):
+        result = score_dual({'a': '҃'}, {'a': 'а'})
+        self.assertIsNone(result['without_marks']['cer'])
+        self.assertEqual(result['without_marks']['edits'], 1)
+        self.assertEqual(result['literal']['reference_characters'], 1)
+
+    def test_dual_preserves_coverage_and_rejects_misalignment(self):
+        result = score_dual({'a': 'а҃'}, {'a': 'а', 'b': 'б'})
+        self.assertEqual(result['without_marks']['reviewed_lines'], 1)
+        self.assertFalse(result['without_marks']['complete'])
+        with self.assertRaises(ValueError):
+            score_dual({'a': 'а'}, {'a': 'а', 'b': 'б'}, {'a': 'а'})
