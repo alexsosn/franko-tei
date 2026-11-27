@@ -17,8 +17,8 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Direct original-image reading. Historical accents, titla, breathings and glyph shapes are incomplete/provisional; estimated line rectangles not measured baselines. orv provisional historical Ruthenian on sustained vernacular context (Kerestur witness not precise recension). Verse blocks follow visible blank lines; printed marginal verse numbers kept in separate other regions after main reading column, before notes. Cross-page semantic verse structure not yet projected.",
-    "raw_response": "77\nу закону Мосєо[во]мъ точенъ!\nѠ тераз не хочу укусити хлѣба,\nпощу тя яко треба,\nсо слезами буду ся пѣтати,\nу каменю ту обитати.\nне хочу я отътади отити,\nизъ пустинѣ оттале отити,\nдокъ не буду ѿ Бга҃ услишанъ,\nѿ Гда҃ вышнаго помилованъ,\nда ся оц҃емъ я назвати могу\nи подъ старость жертву дати Бгу҃.\nБж҃е благи, помилуй мя сама,\nякъ што єси праоц҃а Авраама:\nу старости далъ си єму сн҃а,\nи чрезъ него славенъ бы предъ всима“.\nТако ст҃ы Бгу҃ ся моляше,\nшесть недѣлѣ пищи не вкушаше.\nТакожде и ст҃ая Анна\nу двору остала є сама.\nколи учула за своего гдина,\nда ѿ него не пріяша дари,\nархіерей же єго укори,\nу велику жалость ся обори.\nида своєму двору не приходи,\nу пустиню оттамалъ приходи,\nда избигне ѿ стида и срамоти\nбезъ нѣкотораго чиненого грѣха.\nсвѣтлу ризу изъ себе свлачи,\nу черну ся ст҃ая облачи,\nзатвори ся сама у дворови,\nситованю ся приготови.\nнеутѣшно зачала плакати\nи пиніє тако нарицати:\n„У бракѣ єсмъ пять десятолѣтна,\nне имамъ ни щери ны сн҃а!\nнынѣ єсмъ стратила и моего старца.\nжалосной мнѣ! да ташко ударца!\nили єсь мене даліє ѿ Бга҃?\n100\n110\n120\n130",
+    "instructions": "Direct original-image reading. Historical accents, titla, breathings and glyph shapes are incomplete/provisional; estimated line rectangles not measured baselines. orv provisional historical Ruthenian on sustained vernacular context (Kerestur witness not precise recension). Verse blocks follow visible blank lines; printed marginal verse numbers kept in separate other regions after main reading column, before notes. Cross-page semantic verse structure not yet projected. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "77\nу закону Мосєо[во]мъ точенъ!\nѠ тераз не хочу укусити хлѣба,\nпощу тя яко треба,\nсо слезами буду ся пѣтати,\nу каменю ту обитати.\nне хочу я оттади отити,\nизъ пустинѣ оттале отити,\nдокъ не буду ѿ Бга҃ услишанъ,\nѿ Гда҃ вышнаго помилованъ,\nда ся оц҃емъ я назвати могу\nи подъ старость жертву дати Бгу҃.\nБж҃е благи, помилуй мя сама,\nякъ што єси праоц҃а Авраама:\nу старости далъ си єму сн҃а,\nи чрезъ него славенъ бы предъ всима“.\nТако ст҃ы Бгу҃ ся моляше,\nшесть недѣлѣ пищи не вкушаше.\nТакожде и ст҃ая Анна\nу двору остала є сама.\nколи учула за своего гдина,\nда ѿ него не пріяша дари,\nархіерей же єго укори,\nу велику жалость ся обори.\nида своєму двору не приходи,\nу пустиню оттамалъ приходи,\nда избигне ѿ стида и срамоти\nбезъ нѣкотораго чиненого грѣха.\nсвѣтлу ризу изъ себе свлачи,\nу черну ся ст҃ая облачи,\nзатвори ся сама у дворови,\nситованю ся приготови.\nнеутѣшно зачала плакати\nи пиніє тако нарицати:\n„У бракѣ єсмъ пять десятолѣтна,\nне имамъ ни щери ны сн҃а!\nнынѣ єсмъ стратила и моего старца.\nжалосной мнѣ! да ташко ударца!\nили єсь мене даліє ѿ Бга҃?\n100\n110\n120\n130",
     "coverage": {
       "entire_image_inspected": true,
       "nontext_areas": []
@@ -176,12 +176,12 @@
           },
           {
             "id": "verse-stanza-cont-line-06",
-            "text": "не хочу я отътади отити,",
+            "text": "не хочу я оттади отити,",
             "language_spans": [
               {
                 "text_version": "gpt62-ii-159-image-harmonized-20261127",
                 "start": 0,
-                "end": 24,
+                "end": 23,
                 "language": "orv",
                 "script": "Cyrl",
                 "uncertain": true
@@ -1060,6 +1060,11 @@
         "line_id": "verse-stanza-10-line-04",
         "reading": "ташко",
         "reason": "Printed reading provisional."
+      },
+      {
+        "line_id": "verse-stanza-cont-line-06",
+        "reading": "оттади",
+        "reason": "Reinspection supports revised printed form; historical glyphs remain provisional."
       }
     ],
     "source_note_links": []
