@@ -15,11 +15,14 @@ EXPECTED = {
     "0712267d-2ae9-471c-9e03-be1d98423e8b": "за́блость",
     "33e4f881-52fb-483a-8229-9d260ff7afc9": "буку ва-",
     "1f4881dc-b064-4ca6-9e45-c33cf3486f09": "во-",
+    "f0b2d8ca-c15c-47ca-8050-4c978e57b0ac": "зекръ³³⁶)",
+    "d7b9b164-0e22-4ffb-b5a3-4fe87f4780f1": "клехтнонъ³²)",
+    "5d17688f-3e3a-41c4-b5d0-06e63209ba73": "варил⁵)",
 }
 REJECTED = "671761c2-9caf-48f4-a74b-3ba14168f900"
-PENDING = {"f0b2d8ca-c15c-47ca-8050-4c978e57b0ac",
-           "d7b9b164-0e22-4ffb-b5a3-4fe87f4780f1",
-           "5d17688f-3e3a-41c4-b5d0-06e63209ba73"}
+FIXED_MARKERS = {"f0b2d8ca-c15c-47ca-8050-4c978e57b0ac",
+                 "d7b9b164-0e22-4ffb-b5a3-4fe87f4780f1",
+                 "5d17688f-3e3a-41c4-b5d0-06e63209ba73"}
 
 
 class GlossaryReviewTests(unittest.TestCase):
@@ -27,7 +30,7 @@ class GlossaryReviewTests(unittest.TestCase):
         intakes = [json.loads((ROOT / "reviews" / "intake" / (b + ".json")).read_bytes())
                    for b in BUNDLES]
         events = {e["event_id"]: e for i in intakes for e in i["bundle"]["events"]}
-        self.assertEqual(set(events), set(EXPECTED) | PENDING | {REJECTED})
+        self.assertEqual(set(events), set(EXPECTED) | {REJECTED})
         decisions = {}
         for event_id in events:
             path = ROOT / "reviews" / "adjudications" / (event_id + ".json")
@@ -61,10 +64,34 @@ class GlossaryReviewTests(unittest.TestCase):
                 for marker in row.get("apparatus_markers", []):
                     self.assertEqual(row["original"][marker["source_start"]:marker["source_end"]], marker["literal"])
                     self.assertEqual(row["text"][marker["start"]:marker["end"]], marker["literal"])
+                    if event_id in FIXED_MARKERS:
+                        self.assertEqual(marker["source_start"], marker["start"])
+                        self.assertEqual(marker["source_end"], marker["end"])
+                if event_id in FIXED_MARKERS:
+                    self.assertEqual(len(row["apparatus_markers"]), 1)
             else:
                 self.assertEqual(row["text"], t["original"])
                 self.assertEqual(row["status"], "agent_unverified")
             self.assertEqual((ROOT / t["candidate_path"]).read_bytes(), raw)
+
+    def test_existing_noah_apparatus_link_preserved(self):
+        data = json.loads((ROOT / "pilot/structure/vol1_noah_b_apparatus.json").read_bytes())
+        links = [l for l in data["links"] if l["marker"]["scan_page"] == 144
+                 and l["marker"]["line_id"] == "witness-b-flood-continuation-l032"]
+        self.assertEqual(len(links), 1)
+        link = links[0]
+        self.assertEqual(link["status"], "resolved")
+        self.assertEqual(link["target_entry_id"], "v1-noah-viii-b-entry-032")
+        bundle = json.loads((ROOT / "reviews/intake" / (BUNDLES[0] + ".json")).read_bytes())
+        e = next(e for e in bundle["bundle"]["events"] if
+                 e["event_id"] == "d7b9b164-0e22-4ffb-b5a3-4fe87f4780f1")
+        m = link["marker"]
+        for literal in (e["target"]["original"], e["replacement"]):
+            self.assertEqual(literal[m["start"]:m["end"]], m["literal"])
+        self.assertEqual(m["literal"], "³²)")
+        entry = next(n for n in data["entries"] if n["id"] == link["target_entry_id"])
+        self.assertEqual(entry["number"], 32)
+        self.assertIn("клетрин", "".join(f["literal"] for f in entry["fragments"]))
 
 
 if __name__ == "__main__":

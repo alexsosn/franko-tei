@@ -69,7 +69,17 @@ comes from I/104 l002 (#213): `смр҃ть,³)` → `см҃рть,³)` on the n
 The verifier requires a unique token boundary in both lines even after
 removing titlo for comparison; changed base letters, punctuation, whitespace,
 other marks, titlo insertion/deletion, and duplicate normalized anchors are
-refused. Explicitly linked markers still require structural review. No
+refused. Explicitly linked markers still require structural review. A second narrow case is a source-reviewed spelling correction of one
+or two Cyrillic letters within a unique marked token, with the same length
+and exactly the same absolute marker boundaries. Every character outside
+that token must remain identical; both old and new spellings must occur
+only at their respective unique attachment. Combining marks, punctuation,
+whitespace, multi-token edits and marker moves are refused. This preserves
+the physical attachment rather than resolving or rewriting its semantics.
+For the three real examples in #411/#412, the reviewer inspected the
+printed text and actual notes (I/317→320 no. 336, I/144→146 no. 32,
+I/270→272 no. 5); the existing VIII.B apparatus link is explicitly checked
+by regression. Explicit `source_note_links` remain blocked. No
 normalization is applied to the selected text. A different candidate or a new
 blob never silently inherits these decisions.
 
