@@ -217,3 +217,57 @@ results of the previous six-line experiment are untouched. No corpus
 changes or accuracy claim. The existing CI source smoke now retrieves
 one additional pinned JPEG only when the reference is changed. The
 reference remains local, with source derivatives not published.
+
+
+## Literature check: the wave-like initial-vowel mark
+
+Research question from user: is the tilde-like mark analogous to Greek
+perispomeni? Yes historically, but glyph shape alone is not a decision
+between Church Slavonic iso, kamora and great apostrof.
+
+* S. M. Kusmaul, *Stanovlenie orfograficheskikh norm tserkovnoslavianskogo
+  iazyka vo vtoroi polovine XVI — pervoi polovine XVII v.* (2018), pp.
+  40–42, especially note 65 and I.7.1, https://ruslang.ru/doc/diss/kusmaul.pdf
+  (printed pages visually checked). The old-print system distinguishes
+  iso (breathing+acute) on stressed initial vowels, simple breathing on
+  unstressed initial vowels, and great apostrof in interjections. The
+  actual example аще from the 1564 Apostol is explicitly classified as
+  iso on p. 41. Kamora had changing historical uses and cannot simply
+  be equated to modern morphology. See also her article on the evolution
+  of kamora (2017) and Greek influence on the genitive plural rule.
+* A. Andreev, Y. Shardt, N. Simmons, *Church Slavonic Typography in the
+  Unicode Standard*, Unicode Technical Note 41, §§2.4, 3.3, pp. 22–23,
+  30–31, https://www.unicode.org/notes/tn41/tn41-1.pdf (p. 30 visually
+  inspected). Ligated breathing/accent glyphs may look like one mark.
+  Encode iso as U+0486 U+0301, kamora as U+0311, great apostrof as
+  U+0486 U+0311 (related to Greek ὦ). In earlier recensions the latter
+  may occur on other letters; in Synodal practice it is restricted to
+  the interjection. U+047D is misleadingly named omega with titlo; do
+  not use it as an arbitrary accented omega. U+0302 is listed separately
+  for a rare historical perispomeni, with use insufficiently documented;
+  it is not the recommended kamora encoding. U+0342 is Greek perispomeni,
+  not the ordinary Cyrillic kamora; U+0303 is not a default transcription
+  of a Cyrillic accent merely because it looks like a tilde.
+* A. (Alipy) Gamanovich, *Grammatika tserkovnoslavianskogo iazyka*, §3,
+  https://www.ponomar.net/files/gama2/p003.htm and §47,
+  https://www.ponomar.net/files/gama2/p047.htm, give iso examples
+  ꙗ҆́кѡ and initial-stressed forms of the demonstrative (ѻ҆́на etc.).
+  O. A. Sedakova, dictionary of liturgical paronyms, s.v. є҆́сть,
+  https://azbyka.ru/otechnik/Spravochniki/slovar-trudnyh-slov-iz-bogosluzhenija-tserkovnoslavjano-russkie-paronimy/7,
+  supplies both а҆́ще and є҆́сть. These are comparison controls, not
+  authority to modernize Franko's actual spelling.
+
+Working inference: prioritize ISO for the repeated wave in II/100 аще
+and ꙗко, I/127 єсть, and tentatively III/130 ѡна/ѡни. The occurrence
+on ordinary words across multiple vowels argues against treating every
+instance as the interjection's great apostrof or a titlo. The alternative
+of historical kamora/great apostrof remains open; do not conclude that
+all printed waves have one encoding. The small arch-like marks also
+need discrimination between breathing and kamora; their shape alone is
+not sufficient. Preserve source-specific glyph shape and uncertainty in
+reference labels until same-print contrasts and exact Monomakh render
+are directly compared. Useful next controls: actual interjection О/Ѡ
+with its printed mark, unambiguous titlo, word-internal circumflex, and
+same words with the simple arch. No new corpus replacements or changes
+in frozen challenge statistics. No direct source found that explicitly
+names this particular Franko typeface's wave glyph.
