@@ -8867,6 +8867,7 @@ function renderAnnotationDetails({line,region,review}){
     const name=span?(span.language===null?'Undetermined language':languageStyle(span.language)[0]):'Not annotated';
     const title=document.createElement('strong');uiText(title,name);
     meta.append(title);
+    if(span?.language)meta.append(document.createTextNode(' ('+span.language+')'));
     if(span?.script)meta.append(document.createTextNode(' · '+span.script));
     if(span){const certainty=document.createElement('span');uiText(certainty,span.uncertain===true?'Uncertain attribution':span.uncertain===false?'Attribution not marked uncertain':'Uncertainty not indicated');meta.append(document.createTextNode(' · '),certainty);}
     li.append(text,meta);list.append(li);
