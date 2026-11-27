@@ -1,0 +1,187 @@
+{
+  "schema": "franko-native-letter-review-v1",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "sources": {
+    "V/132": {
+      "width": 1190,
+      "height": 1974,
+      "sha256": "e7ce60b5beb27d2a55ca85251ffc95cfcc10226907ef66b8e38c7ddd13cbb14d"
+    },
+    "V/131": {
+      "width": 1190,
+      "height": 1776,
+      "sha256": "3978dd6d81224f1995bdd5abbb661ec121b7280234d72d402ca5e74c17b41c3a"
+    },
+    "II/190": {
+      "width": 1190,
+      "height": 1983,
+      "sha256": "f4352a731dd734049a1e9aeb3e56845915b3c2c2137e4ec116e4b3b807b4034e"
+    },
+    "I/97": {
+      "width": 1190,
+      "height": 1824,
+      "sha256": "e1b73a353921da5826a35de394402d24a1705d2295b441265254901d6663a93f"
+    }
+  },
+  "pdf_sha256": "6ed8c97e4224e35005d4a80ab315a3f6f8f4b91c49a60739e4ad809ce383b373",
+  "notes": [
+    "Review batch L67–L75. Pinned native JPEG rectangles, quantized four-level luma for preview transport; labels Noto Serif. Context is a locator hint only, not a diplomatic transcription.",
+    "Two clearer В specimens and К on the same page as one В; comparison responds to user's uncertainty on L44. Ornate omega is provisional. No diacritic classification.",
+    "Of 17 attempted crops, three were discarded due to transport encoding length/padding errors and five due to clipping or poor focal isolation. Nine retained. Do not count Щ, Ѿ, ь, л or ф as newly collected; further source sampling required."
+  ],
+  "examples": [
+    {
+      "id": "L67",
+      "source": "V/132",
+      "bbox_xywh": [
+        637,
+        246,
+        30,
+        37
+      ],
+      "reading": "В",
+      "codepoints": [
+        "U+0412"
+      ],
+      "context": "Влдко",
+      "status": "candidate",
+      "category": "uppercase"
+    },
+    {
+      "id": "L68",
+      "source": "V/131",
+      "bbox_xywh": [
+        434,
+        145,
+        31,
+        34
+      ],
+      "reading": "В",
+      "codepoints": [
+        "U+0412"
+      ],
+      "context": "Вѣруємо",
+      "status": "candidate",
+      "category": "uppercase"
+    },
+    {
+      "id": "L69",
+      "source": "V/132",
+      "bbox_xywh": [
+        494,
+        169,
+        30,
+        36
+      ],
+      "reading": "К",
+      "codepoints": [
+        "U+041A"
+      ],
+      "context": "Кто",
+      "status": "candidate",
+      "category": "uppercase"
+    },
+    {
+      "id": "L70",
+      "source": "II/190",
+      "bbox_xywh": [
+        685,
+        656,
+        32,
+        37
+      ],
+      "reading": "Д",
+      "codepoints": [
+        "U+0414"
+      ],
+      "context": "Двда",
+      "status": "candidate",
+      "category": "uppercase"
+    },
+    {
+      "id": "L71",
+      "source": "V/131",
+      "bbox_xywh": [
+        522,
+        653,
+        32,
+        34
+      ],
+      "reading": "Л",
+      "codepoints": [
+        "U+041B"
+      ],
+      "context": "Люде",
+      "status": "candidate",
+      "category": "uppercase"
+    },
+    {
+      "id": "L72",
+      "source": "V/132",
+      "bbox_xywh": [
+        297,
+        768,
+        32,
+        42
+      ],
+      "reading": "Ц",
+      "codepoints": [
+        "U+0426"
+      ],
+      "context": "Црю",
+      "status": "candidate",
+      "category": "uppercase"
+    },
+    {
+      "id": "L73",
+      "source": "V/132",
+      "bbox_xywh": [
+        433,
+        418,
+        30,
+        30
+      ],
+      "reading": "ж",
+      "codepoints": [
+        "U+0436"
+      ],
+      "context": "же",
+      "status": "candidate",
+      "category": "lowercase"
+    },
+    {
+      "id": "L74",
+      "source": "I/97",
+      "bbox_xywh": [
+        160,
+        719,
+        26,
+        29
+      ],
+      "reading": "ѕ",
+      "codepoints": [
+        "U+0455"
+      ],
+      "context": "ѕвѣра",
+      "status": "candidate",
+      "category": "lowercase"
+    },
+    {
+      "id": "L75",
+      "source": "V/132",
+      "bbox_xywh": [
+        620,
+        968,
+        41,
+        42
+      ],
+      "reading": "Ѡ",
+      "codepoints": [
+        "U+0460"
+      ],
+      "context": "Ѡ ѿче",
+      "status": "candidate",
+      "category": "uppercase"
+    }
+  ]
+}
