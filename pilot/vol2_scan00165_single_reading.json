@@ -17,8 +17,8 @@
     "run_id": null,
     "source_original_ocr_visible": false,
     "peer_readings_visible": false,
-    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines.",
-    "raw_response": "83\nвси служащіи церковніи чредници.\nс[в]яти пророкъ Захаріа с нима,\nархіерей начални надъ всима, —\nизыдоша вси на сритеніе\nко прест҃ои на воведеніе.\nБаху тамо пятънадесятъ степени\nпри цр҃ковномъ входѣ сотвореніи,\nна всякомъ ся еденъ ѱаломъ поє\nѿ сц҃енства, коли на нимъ стои,\nи Левитонъ, коли гори виходи\nи на службу до цр҃кви оуходи.\nпоставиша оубо родители\nПречистую на первомъ степени;\nсама собомъ на прочия взиде,\nскоро тече, по степенамъ приде.\nвостекши же на степенъ грънѣйши,\nдивиша ся зрители множайши,\nнайпаче ст҃итель велики\nЗахарія съ*) цр҃квними лики,\nако вѣдѣ ѡтроковицу,\nѿ тріехъ лѣтъ сущую дѣвицу,\nни ѿ кого ѡна возводима,\nни руками ѿ кого придержима,\nпо степенамъ саму востекшую\nи на горни степенъ изъшетшую.\nПриявъ ст҃ый руками своими\nблагослови дѣвицу претъ всѣма,\nеще едну сотвори вещъ страну\nЗахарія всѣмъ оудивителну:\nпречистую воведе дѣвицу\nво ст҃ая ст҃ыхъ голубицу.\nво внутреность храма Гд҃няго\nпо второй же зависи бывшаго,\nгдѣ не само ни полу женскому,\nно ни чину священническому\nдозволено не було входити,\nниже кому молитви творити.\n320\n330\n340\n350\n*) В рукоп. через помилку: сатыи.",
+    "instructions": "Direct original-image reading. Kerestur witness continues; orv provisional on sustained historical Ruthenian context. Physical verse lines and visible marginal labels preserved; historical typography (uk ligature, accents, titla, breathings) incomplete/provisional; estimated geometry, not measured baselines. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "83\nвси служащіи церковніи чредници.\nс[в]яти пророкъ Захаріа с нима,\nархіерей начални надъ всима, —\nизыдоша вси на сритение\nко прест҃ои на воведеніе.\nБаху тамо пятънадесятъ степени\nпри цр҃ковномъ входѣ сотвореніи,\nна всякомъ ся еденъ ѱаломъ поє\nѿ сц҃енства, коли на нимъ стои,\nи Левитонъ, коли гори виходи\nи на службу до цр҃кви оуходи.\nпоставиша оубо родители\nПречистую на первомъ степени;\nсама собомъ на прочия взиде,\nскоро тече, по степенамъ приде.\nвостекши же на степенъ грънѣйши,\nдивиша ся зрители множайши,\nнайпаче ст҃итель велики\nЗахарія съ*) цр҃квними лики,\nако вѣдѣ ѡтроковицу,\nѿ тріехъ лѣтъ сущую дѣвицу,\nни ѿ кого ѡна возводима,\nни руками ѿ кого придержима,\nпо степенамъ саму востекшую\nи на горни степенъ изъшетшую.\nПриявъ ст҃ый руками своими\nблагослови дѣвицу претъ всѣма,\nеще едну сотвори вещъ страну\nЗахарія всѣмъ оудивителну:\nпречистую воведе дѣвицу\nво ст҃ая ст҃ыхъ голубицу.\nво внутреность храма Гд҃няго\nпо второй же зависи бывшаго,\nгдѣ не само ни полу женскому,\nно ни чину священническому\nдозволено не було входити,\nниже кому молитви творити.\n320\n330\n340\n350\n*) В рукоп. через помилку: сатыи.",
     "coverage": {
       "entire_image_inspected": true,
       "nontext_areas": []
@@ -134,7 +134,7 @@
           },
           {
             "id": "verse-cont-line-04",
-            "text": "изыдоша вси на сритеніе",
+            "text": "изыдоша вси на сритение",
             "language_spans": [
               {
                 "text_version": "gpt62-ii-165-image-harmonized-20261127",
@@ -1092,6 +1092,11 @@
         "line_id": "note-star-line-01",
         "reading": "сатыи",
         "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-cont-line-04",
+        "reading": "сритение",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
       }
     ],
     "source_note_links": [
