@@ -8,6 +8,7 @@ import argparse
 import hashlib
 from io import BytesIO
 from pathlib import Path
+import textwrap
 
 from fontTools.ttLib import TTFont
 from PIL import Image, ImageDraw, ImageFont, features
@@ -66,7 +67,7 @@ def load_font():
         raise ValueError("Monomakh font blob mismatch; review chart before using another version")
     with TTFont(BytesIO(data)) as tt:
         chars = set(tt.getBestCmap())
-        missing = {ord(c) for row in EXAMPLES for c in row["render"] if not c.isspace()} - chars
+        missing = {ord(c) for row in EXAMPLES for c in row["render"] + row["focus"] if not c.isspace()} - chars
         if missing:
             raise ValueError(f"Missing font codepoints: {sorted(missing)}")
         tt.flavor = None
@@ -116,7 +117,6 @@ def render_sheet(assets, output):
         d.text((24, y + 90), row["status"].upper(), font=label, fill="#7a3420" if row["status"] == "ambiguous" else "#333333")
         d.text((715, y + 20), row["render"], font=glyph, fill="black")
         d.text((715, y + 89), row["focus"], font=glyph.font_variant(size=24), fill="black")
-        import textwrap
         for j, line in enumerate(textwrap.wrap(codes(row["render"]), 40)):
             d.text((1090, y + 12 + j * 20), line, font=small, fill="black")
         for j, line in enumerate(textwrap.wrap(row["note"], 42)):
