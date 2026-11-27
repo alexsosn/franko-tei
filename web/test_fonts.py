@@ -79,7 +79,7 @@ from playwright.sync_api import sync_playwright
 sheet = ROOT / "docs/monomakh-icl.html"
 groups = json.loads(re.search(r"^const groups=(\[.*\]);$", sheet.read_text(encoding="utf-8"), re.M).group(1))
 samples = [sample for _, items in groups for sample in items]
-required = ["аⷨ", "аⷳ", "аⷬ", "а҆","а҅","а́","а̀","а҃","аⷭ","аⷭ҇","аⷢ","аⷣ","аⷯ","аⷩ","аⷮ","а꙯","ѿ","ѡ","ꙋ","ѹ","оу","ї","ї"]
+required = ["ѡ҆ни","ѡ҆́ни","ѡ҆̀ни","ѡ̑ни","ѡ҃ни","ѡ҆̑ни","ꙍ҆̑ни","ѽни","вопїе","копїе"] + ["аⷨ", "аⷳ", "аⷬ", "а҆","а҅","а́","а̀","а҃","аⷭ","аⷭ҇","аⷢ","аⷣ","аⷯ","аⷩ","аⷮ","а꙯","ѿ","ѡ","ꙋ","ѹ","оу","ї","ї"]
 assert not set(required) - set(samples), ("missing ICL examples", sorted(set(required) - set(samples)))
 verify("Monomakh ICL chart", cmap("Monomakh-Regular.woff2", SLAVONIC["Monomakh-Regular.woff2"]), "".join(samples))
 expected_labels = [" ".join(f"U+{ord(c):04X}" for c in sample) for sample in samples]
@@ -136,6 +136,8 @@ sources = hybrid["SOURCES"]
 assert len(examples) >= 6 and len({row["source"] for row in examples}) >= 2
 assert all(row["status"] in {"candidate", "ambiguous"} for row in examples)
 assert any(row["status"] == "ambiguous" for row in examples)
+assert any(row["render"] == "вопїе" and row["status"] == "ambiguous" for row in examples)
+assert any(row["source"] == "III/130" and row["render"] == "ѡни" and row["status"] == "ambiguous" and "ѡ҆̑" in row["focus"] for row in examples)
 for row in examples:
     source = sources[row["source"]]
     x, y, w, h = row["bbox_xywh"]
