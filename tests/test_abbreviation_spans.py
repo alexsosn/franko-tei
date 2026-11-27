@@ -18,7 +18,12 @@ SOURCE_URL = ("https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/"
 
 
 def source():
-    return json.loads((ROOT / PATH).read_text(encoding="utf-8"))
+    p = json.loads((ROOT / PATH).read_text(encoding="utf-8"))
+    # Tests construct their own proposals, even after the real pilot is annotated.
+    for region in p["reading"]["regions"]:
+        for l in region["lines"]:
+            l.pop("abbreviation_spans", None)
+    return p
 
 
 def line(payload, number):
@@ -123,6 +128,52 @@ class AbbreviationSpansTests(unittest.TestCase):
             xml=render_editorial_tei(json.dumps(p).encode(),PATH,{},1190,1800,"a"*40)
         self.assertEqual(extract_transcribed_lines(xml),[r["text"] for r in rows])
         self.assertEqual(len(ET.fromstring(xml).findall(".//"+tag("choice"))),2)
+
+    def test_persisted_pilot_has_five_actual_proposals(self):
+        p=json.loads((ROOT / PATH).read_text(encoding="utf-8"))
+        original=p["reading"]["raw_response"].split("\n")
+        xml=render_pilot_tei(p,1190,1800)
+        self.assertEqual(len(ET.fromstring(xml).findall(".//"+tag("choice"))),5)
+        self.assertEqual(extract_transcribed_lines(xml),original)
+        self.assertEqual(verify_graph_roundtrip(build_tf_graph(xml)),original)
+
+    def test_cross_language_interval_and_multi_letter_numeral_refused(self):
+        p=source()
+        a=annotate(p,1,"нб҃о","небо")
+        l=line(p,1)
+        orig=l["language_spans"][0]
+        l["language_spans"]=[dict(orig,end=a["start"]+1),
+                              dict(orig,start=a["start"]+1)]
+        with self.assertRaises(ValueError):
+            check_draft_offline(PATH,p)
+        from franko_tei.abbreviation_spans import validate_pair
+        with self.assertRaises(ValueError):
+            validate_pair("ві҃","види","ві҃. птицъ",0,3)
+
+    def test_abbreviation_and_disjoint_footnote_share_language_span(self):
+        path="pilot/vol2_scan00242_exposed_reading.json"
+        p=json.loads((ROOT/path).read_text(encoding="utf-8"))
+        l=next(l for r in p["reading"]["regions"] for l in r["lines"]
+               if l["id"]=="infancy-iii-line-04")
+        # Synthetic merging of language intervals exercises the harder
+        # legacy representation: a ref and choice inside the same seg.
+        l["language_spans"]=[dict(l["language_spans"][0],end=len(l["text"]))]
+        start=l["text"].index("гл҃ю")
+        l["abbreviation_spans"]=[dict(text_version=p["reading"]["reader_id"],
+            start=start,end=start+len("гл҃ю"),literal="гл҃ю",expansion="глаголю",
+            uncertain=True,source=SOURCE_URL)]
+        xml=render_pilot_tei(p,1190,1821)
+        root=ET.fromstring(xml)
+        seg=next(s for s in root.findall(".//"+tag("seg"))
+                 if s.find(tag("choice")) is not None)
+        self.assertIsNotNone(seg.find(tag("ref")))
+        self.assertEqual(extract_transcribed_lines(xml),
+                         p["reading"]["raw_response"].split("\n"))
+        graph=build_tf_graph(xml,allow_source_notes=True)
+        self.assertEqual(verify_graph_roundtrip(graph),
+                         p["reading"]["raw_response"].split("\n"))
+        self.assertEqual(list(graph.node_features["expansion"].values()),["глаголю"])
+        self.assertEqual(len(graph.node_features["sourceNoteTarget"]),4)
 
 
 if __name__ == "__main__":
