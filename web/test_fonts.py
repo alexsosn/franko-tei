@@ -137,6 +137,11 @@ assert len(examples) >= 22 and len({row["source"] for row in examples}) >= 5
 accent_rows = [row for row in examples if row.get("category") == "accent"]
 assert any(row["render"] == "но̑" and row["source"] == "III/130" and row["mark_options"] == ["U+0311"] and row["status"] == "candidate" for row in accent_rows)
 assert len(accent_rows) >= 12 and len({row["source"] for row in accent_rows}) >= 3
+interjection_controls = [row for row in accent_rows if row["source"] == "I/97" and row.get("contrast") == "interjection-omega"]
+assert len(interjection_controls) == 4
+assert {row["shape"] for row in interjection_controls} == {"wave", "arch"}
+assert all(row["status"] == "ambiguous" for row in interjection_controls)
+assert {row["line"] for row in interjection_controls} == {"witness-a-continuation-l002", "witness-a-continuation-l009", "witness-a-continuation-l020", "witness-a-continuation-l023"}
 vol1_controls = [row for row in accent_rows if row["source"] == "I/128"]
 assert len(vol1_controls) >= 3
 assert any(row["render"] == "ѡдра" and row["status"] == "ambiguous" for row in vol1_controls)
