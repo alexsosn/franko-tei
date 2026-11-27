@@ -61,11 +61,12 @@ jobs:
           fi
           assets="$(mktemp -d)"
           trap 'rm -rf "$assets"' EXIT
-          mkdir -p "$assets/vol2" "$assets/vol3" "$assets/vol4" "$assets/vol5"
+          mkdir -p "$assets/vol1" "$assets/vol2" "$assets/vol3" "$assets/vol4" "$assets/vol5"
           gh api "repos/$GITHUB_REPOSITORY/git/blobs/9153892831a157bd6ada7f4f014ba40b21e0d4d4" --jq .content | base64 --decode > "$assets/vol2/page-00100.jpg"
           gh api "repos/$GITHUB_REPOSITORY/git/blobs/c53440756c4e58711d5be2d625de357894f2ab72" --jq .content | base64 --decode > "$assets/vol3/page-00130.jpg"
           gh api "repos/$GITHUB_REPOSITORY/git/blobs/9883e2359ef030fcf5062b6948dcf624756102a7" --jq .content | base64 --decode > "$assets/vol5/page-00130.jpg"
           gh api "repos/$GITHUB_REPOSITORY/git/blobs/5c713459b057b91d78de159a2ccfd105fe22e1c1" --jq .content | base64 --decode > "$assets/vol4/page-00170.jpg"
+          gh api "repos/$GITHUB_REPOSITORY/git/blobs/9964722946b4cdf79d1d78572a8bb0f27a47e978" --jq .content | base64 --decode > "$assets/vol1/page-00127.jpg"
           python docs/render_monomakh_hybrid.py --assets "$assets" --output "$assets/reference.png"
           test -s "$assets/reference.png"
           # The chart is a local research derivative; do not upload scan crops.
