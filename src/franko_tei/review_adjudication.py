@@ -378,7 +378,7 @@ def _verified_annotation_revision(raw, path, relevant, source_loader, projection
         raise StaleEditorialSource("stale accepted source: " + str(exc)) from exc
 
 
-def project_lines(raw, path, ledger, *, source_loader=None, projection_commit=None):
+def project_lines(raw, path, ledger, *, source_loader=None, projection_commit=None, collation=None):
     """Derived physical-line records; no changes to frozen raw_response.
 
     The caller must pass a ledger from validate_ledger. A correction invalidates
@@ -431,6 +431,12 @@ def project_lines(raw, path, ledger, *, source_loader=None, projection_commit=No
                                uncertainty_status="source_notes_need_reassessment")
             rows.append(row)
     require(not relevant, "accepted source line missing")
+    if collation is not None:
+        from .native_collation import apply_native_collation
+        require(source_loader is not None and projection_commit is not None
+                and source_loader(projection_commit, path) == raw,
+                "native collation source must be pinned")
+        rows = apply_native_collation(raw, path, source, rows, collation, projection_commit)
     return rows
 
 

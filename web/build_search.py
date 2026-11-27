@@ -12,6 +12,7 @@ from franko_tei.search_annotations import project_search_entry
 from franko_tei.review_adjudication import check_repository, project_lines, StaleEditorialSource
 from franko_tei.review_bundle import blob_sha, git_source_loader
 from franko_tei.pilot_tei import PINNED_ASSET_COMMIT
+from franko_tei.native_collation import CANDIDATE as NATIVE_CANDIDATE, load_native_collation
 
 # Physical scan counts in the five immutable asset manifests at this commit.
 # These include front matter, blank/scan-only pages, and printed contents.
@@ -32,7 +33,8 @@ def build(pilot, output, ref):
     source_loader = git_source_loader(repo, ref)
     pages, unavailable = [], []
     supplements = supplementary_pages(pilot, ref)
-    affected = {key[0] for key in ledger}
+    collation = load_native_collation(repo, ref, NATIVE_CANDIDATE)
+    affected = {key[0] for key in ledger} | {NATIVE_CANDIDATE}
     if supplements.keys() & affected:
         raise ValueError('supplementary and contributor projections require explicit reconciliation')
     seen = set()
@@ -54,13 +56,20 @@ def build(pilot, output, ref):
             seen.add(candidate_path)
             try:
                 rows = project_lines(raw, candidate_path, ledger, source_loader=source_loader,
-                                     projection_commit=ref)
+                                     projection_commit=ref,
+                                     collation=collation if candidate_path == NATIVE_CANDIDATE else None)
             except StaleEditorialSource:
                 unavailable.append({"path": candidate_path, "reason": "source_blob_changed"})
                 continue
-            accepted = [dict(r, contributor_login=ledger[(candidate_path, r["line_id"])]["submitter"]["login_at_intake"],
-                             review_reason=ledger[(candidate_path, r["line_id"])]["adjudication"]["reason"])
-                        for r in rows if r["status"] != "agent_unverified"]
+            accepted = []
+            for row in rows:
+                if row["status"] == "agent_unverified":
+                    continue
+                entry = ledger.get((candidate_path, row["line_id"]))
+                if entry is not None:
+                    row = dict(row, contributor_login=entry["submitter"]["login_at_intake"],
+                               review_reason=entry["adjudication"]["reason"])
+                accepted.append(row)
             pages.append(dict(volume=volume, scan=scan, suffix=suffix, path=candidate_path,
                               blob=blob_sha(raw), lines=accepted))
             projected = project_search_entry(draft, suffix, blob_sha(raw), accepted)
