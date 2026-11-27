@@ -295,3 +295,27 @@ an apparent raised letter/abbreviation mark, and are not accepted as
 kamora controls. This does not resolve all wave marks or prove that
 the typographer used one invariant glyph for every kamora. Added only
 the candidate но̑ to the local hybrid reference (26 rows), no corpus edits.
+
+
+## User-confirmed arch contrast, III/130 (printed p. 44)
+
+User confirmed the kamora reading of но̑ and supplied an annotated
+screenshot marking the same arch-like form above и in multiple lines.
+The screenshot is review evidence, not an independently adjudicated
+complete transcription. Distinguish the following contexts on the
+same page: thecla-passion-line-02 and -05 initial и in имъ; -07 final
+и/й in страшный and conjunction и; -08 final и/й in давый; -09 final
+и/й in зверій and conjunction и; -10 conjunction и; -11 но̑;
+-13 initial и in идеже; -14, -17, -18 conjunction и. The apparent
+shared arch shape may encode kamora U+0311 on noninitial о, breathing
+U+0486 on initial и (including conjunction), or short-i breve U+0306
+(equivalent to precomposed й) at word end. See Gamanovich §3 and Unicode
+TN41 table 13. These are contextual hypotheses for individual signs,
+not a rule that every arch above и is a breathing, kamora or breve.
+In particular historical plural endings and alternate и/й spellings
+require separate review. Existing III/130 draft omits several initial
+marks; it already encodes some final й. Do not blanket-replace й or и.
+The user's confirmation strengthens the но̑ candidate; the other
+circled marks still require native crop verification and explicit
+line-level adjudication before changing corpus. The screenshot is not
+redistributed. Add contrasts to the exact-font synthetic reference.
