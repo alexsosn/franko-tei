@@ -11,6 +11,39 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class PrintedIndexesTest(unittest.TestCase):
+    def test_reviewed_glossary_forms_preserve_source_and_references(self):
+        # Same exact source and line as review #416; the builder receives
+        # only validated editorial pages from build_search in production.
+        path = "pilot/vol1_scan00461_single_reading.json"
+        blob = "d4d6497923b6d002dd66a69f79066cd4bed93e13"
+        original = "Попава 199, попавица 241 Mik."
+        corrected = "Понава 199, понавица 241 Mik."
+        row = dict(region_id="right", line_id="right-l023", original=original,
+                   text=corrected, status="accepted_correction")
+        page = dict(path=path, blob=blob, volume="1", scan=461,
+                    suffix="single_reading", lines=[row])
+
+        def entry(editorial):
+            result = build_printed_indexes(ROOT / "pilot", "a" * 40, editorial=editorial)
+            return next(e for e in result["sections"][3]["entries"]
+                        if e["id"] == "v1-461-right-l023")
+
+        old = entry({})
+        new = entry({path: page})
+        self.assertEqual(new["lines"], old["lines"])
+        self.assertEqual(new["source"], old["source"])
+        self.assertEqual(new["label"], "Понава 199, понавица 241")
+        self.assertEqual(new["detail"], old["detail"])
+        self.assertEqual([r["form"] for r in new["refs"]], ["Понава", "понавица"])
+        self.assertEqual([r["literal"] for r in new["refs"]], ["199", "241"])
+        self.assertEqual([r["targets"][0]["scan"] for r in new["refs"]], [274, 316])
+        self.assertEqual(new["refs"][0]["targets"][0]["anchor"]["line_id"], "zebulun-mercy-l014")
+        self.assertEqual(new["refs"][1]["targets"][0]["mention_review"]["status"], "reading_conflict")
+        self.assertEqual(entry({path: dict(page, blob="0"*40)}), old)
+        self.assertEqual(entry({path: dict(page, lines=[dict(row, original="wrong")])}), old)
+        self.assertEqual(entry({path: dict(page, lines=[dict(row, text=corrected.replace("199","198"))])}), old)
+        self.assertEqual(entry({path: dict(page, lines=[row, row])}), old)
+
     def test_folio_evidence(self):
         # Page 19 has no printed folio in the reading; its immediate
         # neighbours explicitly say 18 and 20.
