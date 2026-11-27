@@ -11,6 +11,69 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class PrintedIndexesTest(unittest.TestCase):
+    def test_reviewed_glossary_forms_preserve_source_and_references(self):
+        # Same exact source and line as review #416; the builder receives
+        # only validated editorial pages from build_search in production.
+        path = "pilot/vol1_scan00461_single_reading.json"
+        blob = "d4d6497923b6d002dd66a69f79066cd4bed93e13"
+        original = "Попава 199, попавица 241 Mik."
+        corrected = "Понава 199, понавица 241 Mik."
+        row = dict(region_id="right", line_id="right-l023", original=original,
+                   text=corrected, status="accepted_correction")
+        page = dict(path=path, blob=blob, volume="1", scan=461,
+                    suffix="single_reading", lines=[row])
+
+        def entry(editorial):
+            result = build_printed_indexes(ROOT / "pilot", "a" * 40, editorial=editorial)
+            return next(e for e in result["sections"][3]["entries"]
+                        if e["id"] == "v1-461-right-l023")
+
+        old = entry({})
+        new = entry({path: page})
+        self.assertEqual(new["lines"], old["lines"])
+        self.assertEqual(new["source"], old["source"])
+        self.assertEqual(new["label"], "Понава 199, понавица 241")
+        self.assertEqual(new["detail"], old["detail"])
+        self.assertEqual([r["form"] for r in new["refs"]], ["Понава", "понавица"])
+        self.assertEqual([r["literal"] for r in new["refs"]], ["199", "241"])
+        self.assertEqual([r["targets"][0]["scan"] for r in new["refs"]], [274, 316])
+        self.assertEqual(new["refs"][0]["targets"][0]["anchor"]["line_id"], "zebulun-mercy-l014")
+        self.assertEqual(new["refs"][1]["targets"][0]["mention_review"]["status"], "reading_conflict")
+        target_path = "pilot/vol1_scan00316_single_reading.json"
+        raw = json.loads((ROOT / target_path).read_text())
+        record = json.loads((ROOT / "pilot/reviews/vol1_scan00316_native_collation_20261127.json").read_text())
+        rows = [dict(region_id=r["region_id"], line_id=r["line_id"],
+                     original=r["before"], text=r["after"], status="native_collation",
+                     collation_image_sha256=raw["source_image_sha256"],
+                     evidence_url="https://github.com/alexsosn/franko-tei/blob/"+"a"*40+
+                     "/pilot/reviews/vol1_scan00316_native_collation_20261127.json")
+                for r in record["rows"]]
+        target_page = dict(path=target_path, blob=record["candidate_blob"], volume="1",
+                           scan=316, suffix="single_reading", lines=rows)
+        updated = entry({path: page, target_path: target_page})["refs"][1]["targets"][0]
+        self.assertEqual(updated["mention_review"]["status"], "attested")
+        self.assertEqual(updated["anchor"]["line_id"], "seventh-stone-l018")
+        self.assertEqual(updated["anchor"]["text"], rows[0]["original"])
+        self.assertEqual([r["selected_text"] for r in updated["mention_review"]["lines"]],
+                         [r["text"] for r in rows])
+        self.assertEqual([r["text"] for r in updated["mention_review"]["lines"]],
+                         [r["original"] for r in rows])
+        for invalid in (dict(target_page, blob="0"*40),
+                        dict(target_page, lines=rows[:1]),
+                        dict(target_page, lines=rows+[rows[0]]),
+                        dict(target_page, lines=[dict(rows[0], original="stale"), rows[1]]),
+                        dict(target_page, lines=[dict(rows[0], text=rows[0]["text"]+"!"), rows[1]]),
+                        dict(target_page, lines=[dict(rows[0], collation_image_sha256="0"*64), rows[1]])):
+            with self.subTest(invalid=invalid):
+                self.assertEqual(entry({path: page, target_path: invalid})["refs"][1]["targets"][0]["mention_review"]["status"],
+                                 "reading_conflict")
+        self.assertEqual(entry({target_path: target_page})["refs"][1]["targets"][0]["mention_review"]["status"],
+                         "reading_conflict")
+        self.assertEqual(entry({path: dict(page, blob="0"*40)}), old)
+        self.assertEqual(entry({path: dict(page, lines=[dict(row, original="wrong")])}), old)
+        self.assertEqual(entry({path: dict(page, lines=[dict(row, text=corrected.replace("199","198"))])}), old)
+        self.assertEqual(entry({path: dict(page, lines=[row, row])}), old)
+
     def test_folio_evidence(self):
         # Page 19 has no printed folio in the reading; its immediate
         # neighbours explicitly say 18 and 20.

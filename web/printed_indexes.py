@@ -1282,7 +1282,46 @@ GLOSSARY_MENTION_REVIEWS = {
 }
 
 
-def review_glossary_mentions(files, targets, entry):
+def selected_ponavica_evidence(path, draft, blob, evidence, page):
+    """Both exact I/316 readings must be present in the validated projection.
+
+    Keep the frozen text in each evidence row for the existing source anchor.
+    The separate selected_text and provenance explain the attested reading.
+    This is not a general fuzzy match or an automatic change of citation.
+    """
+    if not page or any(page.get(k) != v for k, v in (
+            ("path", "pilot/" + path.name), ("blob", blob),
+            ("volume", "1"), ("scan", 316), ("suffix", "single_reading"))):
+        return None
+    forms = {"seventh-stone-l018": ("понявицею", "понавицею"),
+             "seventh-stone-l019": ("понявица", "понавица")}
+    if [r["line_id"] for r in evidence] != list(forms):
+        return None
+    rows = [r for r in page["lines"] if r.get("line_id") in forms]
+    if len(rows) != len(forms) or len({r["line_id"] for r in rows}) != len(forms):
+        return None
+    by_id = {r["line_id"]: r for r in rows}
+    selected = []
+    for original in evidence:
+        line_id = original["line_id"]
+        old, new = forms[line_id]
+        row = by_id[line_id]
+        url = row.get("evidence_url", "")
+        if (row.get("status") != "native_collation"
+                or row.get("region_id") != "seventh-stone"
+                or original["region_kind"] != "body"
+                or row.get("original") != original["text"]
+                or original["text"].count(old) != 1
+                or row.get("text") != original["text"].replace(old, new, 1)
+                or row.get("collation_image_sha256") != draft["source_image_sha256"]
+                or not isinstance(url, str)
+                or not re.fullmatch(r"https://github\.com/alexsosn/franko-tei/blob/[a-f0-9]{40}/pilot/reviews/vol1_scan00316_native_collation_20261127\.json", url)):
+            return None
+        selected.append(dict(original, selected_text=row["text"], evidence_url=url))
+    return selected
+
+
+def review_glossary_mentions(files, targets, entry, editorial=None):
     if entry["source"]["blob"] != SOURCE_BLOBS.get(entry["source"]["scan"]):
         return
     for i, citation in enumerate(entry["refs"]):
@@ -1326,6 +1365,21 @@ def review_glossary_mentions(files, targets, entry):
         target = next((t for t in citation["targets"] if t["page"] == page and t["scan"] == scan), None)
         if target is None:
             continue
+        # #416: the corrected first headword matches the independently
+        # inspected inflection on p199. Do not silently fix p241's draft.
+        if (entry["id"] == "v1-461-right-l023" and entry.get("editorial_reading")
+                and entry["label"] == "Понава 199, понавица 241"):
+            if citation["literal"] == "199" and citation.get("form") == "Понава":
+                status, note = "attested", "Printed p199 has понаву; corrected glossary Понава, inflected form."
+            elif citation["literal"] == "241" and citation.get("form") == "понавица":
+                selected = selected_ponavica_evidence(
+                    path, draft, blob, evidence, (editorial or {}).get("pilot/" + path.name))
+                if selected:
+                    evidence = selected
+                    status, note = ("attested", "Selected native collation on p241: "
+                                    "понавицею; понавица. Frozen source anchors retained.")
+                else:
+                    note = "Corrected glossary понавица; selected p241 collation unavailable or stale."
         target["mention_review"] = dict(status=status, path="pilot/" + path.name,
                                         blob=blob, lines=evidence, note=note)
         if status == "attested" and evidence:
@@ -1335,8 +1389,44 @@ def review_glossary_mentions(files, targets, entry):
                                     region_kind=first["region_kind"])
 
 
-def build_printed_indexes(pilot, ref, supplements=None):
+def reviewed_glossary_part(source, region_id, part, targets, page):
+    """Use a validated selected-text page without changing index source lines.
+
+    This narrow case preserves the parsed citation roles, destinations and
+    gloss exactly; only printed headword/form spelling may differ. The
+    production caller supplies pages already checked by the editorial ledger.
+    """
+    original = [line["text"] for line in part]
+    if not page or any(page.get(k) != source[k] for k in ("path", "blob", "scan", "volume")):
+        return original
+    if page.get("suffix") != "single_reading":
+        return original
+    ids = {line["id"] for line in part}
+    rows = [r for r in page["lines"] if r.get("line_id") in ids
+            and r.get("status") == "accepted_correction"]
+    if not rows or len({r["line_id"] for r in rows}) != len(rows):
+        return original
+    by_id = {r["line_id"]: r for r in rows}
+    effective = []
+    for line in part:
+        row = by_id.get(line["id"])
+        if row is not None:
+            if row.get("region_id") != region_id or row.get("original") != line["text"]:
+                return original
+            effective.append(row["text"])
+        else:
+            effective.append(line["text"])
+    _, old_detail, old_refs = parse_entry("glossary", original, targets)
+    _, new_detail, new_refs = parse_entry("glossary", effective, targets)
+    without_form = lambda refs: [{k: v for k, v in r.items() if k != "form"} for r in refs]
+    if not old_refs or old_detail != new_detail or without_form(old_refs) != without_form(new_refs):
+        return original
+    return effective
+
+
+def build_printed_indexes(pilot, ref, supplements=None, *, editorial=None):
     supplements = supplements or {}
+    editorial = editorial or {}
     files = {}
     for path in sorted(pilot.glob("vol1_scan*_single_reading.json")):
         data, blob = read_draft(path)
@@ -1447,6 +1537,11 @@ def build_printed_indexes(pilot, ref, supplements=None):
                     corrections = ({r["line_id"]: r for r in supplement["lines"]}
                                    if supplement and supplement["blob"] == blob else {})
                     effective = [corrections[l["id"]]["text"] if l["id"] in corrections else l["text"] for l in part]
+                    reviewed = False
+                    if kind == "glossary" and not corrections:
+                        effective = reviewed_glossary_part(source, region_id, part, targets,
+                                                            editorial.get(source["path"]))
+                        reviewed = effective != [l["text"] for l in part]
                     label, detail, refs = parse_entry(kind, effective, targets)
                     # Only the explicit Abraham block on the pilot motif page.
                     context = ("Авраам" if kind == "motifs" and scan == 437 and label.startswith("„")
@@ -1454,7 +1549,9 @@ def build_printed_indexes(pilot, ref, supplements=None):
                     entries.append(dict(id=f"v1-{scan}-{part[0]['id']}", source=source,
                                         region_id=region_id, lines=part, label=label,
                                         detail=detail, context=context, refs=refs))
-                    if effective != [l["text"] for l in part]:
+                    if reviewed:
+                        entries[-1]["editorial_reading"] = [dict(line_id=l["id"], text=t) for l,t in zip(part,effective) if t != l["text"]]
+                    elif effective != [l["text"] for l in part]:
                         entries[-1]["supplementary_reading"] = [dict(line_id=l["id"], text=corrections[l["id"]]["text"], evidence_url=corrections[l["id"]]["evidence_url"]) for l in part if l["id"] in corrections]
                         if scan == 418 and part[0]["id"] == "index-a-l014":
                             reconcile_achatis_reference(pilot, files, targets, entries[-1])
@@ -1470,7 +1567,7 @@ def build_printed_indexes(pilot, ref, supplements=None):
             reconcile_darius_reference(files, targets, entry)
             reconcile_motif_reference(files, targets, entry)
             if section["kind"] == "glossary":
-                review_glossary_mentions(files, targets, entry)
+                review_glossary_mentions(files, targets, entry, editorial)
             entry["crossrefs"] = [dict(id=ident, label=by_id[ident]["label"])
                                   for ident in CROSSREFS.get(entry["id"], []) if ident in by_id]
             for citation in entry["refs"]:

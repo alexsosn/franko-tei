@@ -1,0 +1,84 @@
+{
+  "schema_version": "franko-review-intake-v1",
+  "status": "pending_adjudication",
+  "submitter": {
+    "github_user_id": 3265391,
+    "login_at_intake": "alexsosn",
+    "issue_id": 6637215052,
+    "issue_number": 415,
+    "issue_url": "https://github.com/alexsosn/franko-tei/issues/415"
+  },
+  "bundle_sha256": "02fd3455bfee2258230b75a896ac80591126e95ad9373e6fb0d128bcafd66ce5",
+  "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"fa4c1087-1be5-4db4-b6fc-97582af88cfb\",\"source_commit\":\"12af9583ce145c0a83644abfcbaac64028f9968e\",\"events\":[{\"event_id\":\"6e9a1f2c-123d-4c31-a642-e1a78f78fb19\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00292_single_reading.json\",\"candidate_blob\":\"5b0f0be67c424f675c6f0e5d47b41c88b5507131\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"d787f47a9ce9cff959f3e8960fbaf657c9855c982d618b35e2dedc4762e098a7\",\"reader_id\":\"gpt62-i292-first-image-20261125\",\"region_id\":\"joseph\",\"line_id\":\"joseph-l027\",\"original\":\"юще одежею бꙋсиннꙋ, из нея же изыде агнець непорочень, [и] ѡ\"},\"decision\":\"correct\",\"replacement\":\"юще одежею вꙋсиннꙋ, из нея же изыде агнець непорочень, [и] ѡ\",\"note\":\"Printed p217 in Joseph vision reads одежею вусинну; glossary Вѹсиненъ, I459 right-l018. Initial printed letter is в, not б.\"},{\"event_id\":\"5c3c147d-e7ca-41be-9871-0c99bdfc782a\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00258_single_reading.json\",\"candidate_blob\":\"b4565c00715c6040158d0e62c55f971232e9cc71\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"65c910c81b9ce278453e1e4bdcf104d8cee04593ee5002816219f1e14c59a529\",\"reader_id\":\"gpt62-i258-first-image-20261125\",\"region_id\":\"levi-ordination\",\"line_id\":\"levi-ordination-l016\",\"original\":\"Третій же, реч[е], учину²¹) ми наложи подобну ефуду, по тому\"},\"decision\":\"correct\",\"replacement\":\"Третій же, реч[е], вꙋчину²¹) ми наложи подобну ефуду, по тому\",\"note\":\"Printed p183 in third ordination gift reads вучину before note 21; glossary Вѹчина, I459 right-l020. Keep marker 21; attached token needs structural adjudication.\"},{\"event_id\":\"e234d7ac-af25-48d0-b7df-ea6ab35760b7\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00169_single_reading.json\",\"candidate_blob\":\"06583a9513955ca5615c9f42053ef28a49ae3d14\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"2883542f7772e2a96051ec97a4ef58f92a6c5214b20756a7ba26caf73443f13f\",\"reader_id\":\"gpt62-i169-first-image-20261125\",\"region_id\":\"melchizedek-athanasius\",\"line_id\":\"melchizedek-athanasius-l008\",\"original\":\"сн҃у своему: поєм ѡтроки своя иди въ стадо вълѡвъ и привед[и]\"},\"decision\":\"correct\",\"replacement\":\"сн҃у своему: поєм ѡтроки своя иди въ стадо вълує и привед[и]\",\"note\":\"Printed p94 first herd reference reads вълує (adjective agreeing with стадо), distinct from second reference воловъ; glossary Вълуй, I460 left-l001. Review exact vowel glyph before accepting.\"},{\"event_id\":\"7dc8f430-59e1-4d27-9f31-048a7570a8f4\",\"target\":{\"candidate_path\":\"pilot/vol1_scan00222_single_reading.json\",\"candidate_blob\":\"057d06e0ad6b78e4bcf26ececf4ff3c4281859e6\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"0af9bfced273ac14c2aa1bb6897b1a1873e289e6c5083b313367b29244c35b1d\",\"reader_id\":\"gpt62-i222-first-image-20261125\",\"region_id\":\"judah\",\"line_id\":\"judah-l004\",\"original\":\"гробу заполни будуть,⁴⁷) третьее⁴⁸) оукраше ѡбладаа. мл҃сть\"},\"decision\":\"correct\",\"replacement\":\"гробу заполци будуть,⁴⁷) третьее⁴⁸) оукраше ѡбладаа. мл҃сть\",\"note\":\"Scan I222 has misprinted folio 247, in sequence p147; visible second clause reads гробу заполци будуть; glossary Заполець 147. Review letter ц and existing folio mapping; leave note markers unchanged.\"}]}",
+  "bundle": {
+    "schema_version": "franko-review-bundle-v1",
+    "bundle_id": "fa4c1087-1be5-4db4-b6fc-97582af88cfb",
+    "source_commit": "12af9583ce145c0a83644abfcbaac64028f9968e",
+    "events": [
+      {
+        "event_id": "6e9a1f2c-123d-4c31-a642-e1a78f78fb19",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00292_single_reading.json",
+          "candidate_blob": "5b0f0be67c424f675c6f0e5d47b41c88b5507131",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "d787f47a9ce9cff959f3e8960fbaf657c9855c982d618b35e2dedc4762e098a7",
+          "reader_id": "gpt62-i292-first-image-20261125",
+          "region_id": "joseph",
+          "line_id": "joseph-l027",
+          "original": "юще одежею бꙋсиннꙋ, из нея же изыде агнець непорочень, [и] ѡ"
+        },
+        "decision": "correct",
+        "replacement": "юще одежею вꙋсиннꙋ, из нея же изыде агнець непорочень, [и] ѡ",
+        "note": "Printed p217 in Joseph vision reads одежею вусинну; glossary Вѹсиненъ, I459 right-l018. Initial printed letter is в, not б."
+      },
+      {
+        "event_id": "5c3c147d-e7ca-41be-9871-0c99bdfc782a",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00258_single_reading.json",
+          "candidate_blob": "b4565c00715c6040158d0e62c55f971232e9cc71",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "65c910c81b9ce278453e1e4bdcf104d8cee04593ee5002816219f1e14c59a529",
+          "reader_id": "gpt62-i258-first-image-20261125",
+          "region_id": "levi-ordination",
+          "line_id": "levi-ordination-l016",
+          "original": "Третій же, реч[е], учину²¹) ми наложи подобну ефуду, по тому"
+        },
+        "decision": "correct",
+        "replacement": "Третій же, реч[е], вꙋчину²¹) ми наложи подобну ефуду, по тому",
+        "note": "Printed p183 in third ordination gift reads вучину before note 21; glossary Вѹчина, I459 right-l020. Keep marker 21; attached token needs structural adjudication."
+      },
+      {
+        "event_id": "e234d7ac-af25-48d0-b7df-ea6ab35760b7",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00169_single_reading.json",
+          "candidate_blob": "06583a9513955ca5615c9f42053ef28a49ae3d14",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "2883542f7772e2a96051ec97a4ef58f92a6c5214b20756a7ba26caf73443f13f",
+          "reader_id": "gpt62-i169-first-image-20261125",
+          "region_id": "melchizedek-athanasius",
+          "line_id": "melchizedek-athanasius-l008",
+          "original": "сн҃у своему: поєм ѡтроки своя иди въ стадо вълѡвъ и привед[и]"
+        },
+        "decision": "correct",
+        "replacement": "сн҃у своему: поєм ѡтроки своя иди въ стадо вълує и привед[и]",
+        "note": "Printed p94 first herd reference reads вълує (adjective agreeing with стадо), distinct from second reference воловъ; glossary Вълуй, I460 left-l001. Review exact vowel glyph before accepting."
+      },
+      {
+        "event_id": "7dc8f430-59e1-4d27-9f31-048a7570a8f4",
+        "target": {
+          "candidate_path": "pilot/vol1_scan00222_single_reading.json",
+          "candidate_blob": "057d06e0ad6b78e4bcf26ececf4ff3c4281859e6",
+          "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+          "image_sha256": "0af9bfced273ac14c2aa1bb6897b1a1873e289e6c5083b313367b29244c35b1d",
+          "reader_id": "gpt62-i222-first-image-20261125",
+          "region_id": "judah",
+          "line_id": "judah-l004",
+          "original": "гробу заполни будуть,⁴⁷) третьее⁴⁸) оукраше ѡбладаа. мл҃сть"
+        },
+        "decision": "correct",
+        "replacement": "гробу заполци будуть,⁴⁷) третьее⁴⁸) оукраше ѡбладаа. мл҃сть",
+        "note": "Scan I222 has misprinted folio 247, in sequence p147; visible second clause reads гробу заполци будуть; glossary Заполець 147. Review letter ц and existing folio mapping; leave note markers unchanged."
+      }
+    ]
+  }
+}
