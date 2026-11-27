@@ -134,8 +134,23 @@ assert features.check("raqm"), "RAQM required for meaningful combining-mark rend
 examples = hybrid["EXAMPLES"]
 sources = hybrid["SOURCES"]
 assert len(examples) >= 22 and len({row["source"] for row in examples}) >= 5
+# Preserve the stable numbering used in the user's 38-crop review.
+assert len(examples) >= 38
+for n, expected in {6: "ѡ҆́ни", 11: "Є҆но́ше", 12: "а҆рхї", 14: "ны́хъ.", 21: "(О҆", 22: "А҆́в", 35: "ѡ Єѵво,"}.items():
+    assert examples[n - 1]["render"] == expected, n
+for n in (6, 15, 16, 17, 19, 23, 24):
+    row = examples[n - 1]
+    assert row["status"] == "ambiguous" and row["mark_options"][0] == "U+0486 U+0301"
+for n in (11, 12, 18, 20, 21, 25):
+    assert examples[n - 1]["shape"] == "left-leaning arch"
+for n in (26, 27, 36, 38):
+    assert examples[n - 1]["status"] == "ambiguous"
+    assert set(examples[n - 1]["mark_options"]) == {"U+0311", "U+0486"}
+for n in (36, 38):
+    assert examples[n - 1]["mark_options"][0] == "U+0311"
+
 accent_rows = [row for row in examples if row.get("category") == "accent"]
-assert any(row["render"] == "но̑" and row["source"] == "III/130" and row["mark_options"] == ["U+0311"] and row["status"] == "candidate" for row in accent_rows)
+assert any(row["render"] == "но" and row["source"] == "III/130" and row["mark_options"] == ["U+0311", "U+0486"] and row["status"] == "ambiguous" for row in accent_rows)
 assert len(accent_rows) >= 12 and len({row["source"] for row in accent_rows}) >= 3
 interjection_controls = [row for row in accent_rows if row["source"] == "I/97" and row.get("contrast") == "interjection-omega"]
 assert len(interjection_controls) == 4
@@ -158,7 +173,7 @@ assert len({(row["source"], tuple(row["bbox_xywh"])) for row in examples}) == le
 assert all(row["status"] in {"candidate", "ambiguous"} for row in examples)
 assert any(row["status"] == "ambiguous" for row in examples)
 assert any(row["render"] == "вопїе" and row["status"] == "ambiguous" for row in examples)
-assert any(row["source"] == "III/130" and row["render"] == "ѡни" and row["status"] == "ambiguous" and "ѡ҆̑" in row["focus"] for row in examples)
+assert any(row["source"] == "III/130" and row["render"] == "ѡ҆́ни" and row["status"] == "ambiguous" and "ѡ҆̑" in row["focus"] for row in examples)
 for row in examples:
     source = sources[row["source"]]
     x, y, w, h = row["bbox_xywh"]
