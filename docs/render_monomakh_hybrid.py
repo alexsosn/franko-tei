@@ -19,6 +19,8 @@ FONT_BLOB = "4d7c0809ebc700036286d992c30d2b4ec4a0d59c"
 FONT_PATH = ROOT / "web/fonts/Monomakh-Regular.woff2"
 
 SOURCES = {
+    "III/131": {"path": "vol3/page-00131.jpg", "printed": "45", "width": 1190, "height": 1853,
+                "sha256": "1d5256e17f09d60b05822c2e8accbd78c3d78f62164ea65e2d898bf696e33330"},
     "I/127": {"path": "vol1/page-00127.jpg", "printed": "52", "width": 1190, "height": 1841,
               "sha256": "1de02e6e18cc61daa28f360deae04fd47563ffbcb6d15d70fa5a77394cfd4195"},
     "V/130": {"path": "vol5/page-00130.jpg", "printed": "118", "width": 1190, "height": 1987,
@@ -73,6 +75,11 @@ EXAMPLES = [
     {"source": "II/100", "line":"E text line 06 (observed)", "bbox_xywh":[782,984,78,40], "render":"аще", "focus":"а҆́ / а̑ / а҆̑", "status":"ambiguous", "category":"accent", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave above initial a; base only."},
     {"source": "II/100", "line":"heading Zh excerpt (observed)", "bbox_xywh":[416,1557,36,38], "render":"ѡ҆", "focus":"ѡ҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Simple arch above omega; direct contrast."},
     {"source": "III/130", "line":"thecla-passion-line-11", "bbox_xywh":[152,500,49,39], "render":"но̑", "focus":"о̑ / о҆", "status":"candidate", "category":"accent", "mark_options":["U+0311"], "note":"Arch on noninitial o in conjunction no; historical kamora context."},
+    # Directly inspected same-page contrast, III/131.
+    {"source": "III/131", "line":"text-line-02", "bbox_xywh":[203,1133,155,40], "render":"ѡ҆бираючи", "focus":"ѡ҆", "status":"candidate", "category":"accent", "mark_options":["U+0486"], "note":"Initial omega with small arch; likely breathing."},
+    {"source": "III/131", "line":"text-line-02", "bbox_xywh":[925,1133,92,42], "render":"см҃рти", "focus":"м҃ / м꙯", "status":"ambiguous", "note":"Angular abbreviation mark; distinguish titlo and vzmet."},
+    {"source": "III/131", "line":"text-line-09", "bbox_xywh":[685,1390,71,38], "render":"ѡгнь", "focus":"ѡ҆́ / ѡ̑ / ѡ҆̑", "status":"ambiguous", "category":"accent", "contrast":"fire-initial-vowel", "mark_options":["U+0486 U+0301", "U+0311", "U+0486 U+0311"], "note":"Wave on initially stressed nominative; iso preferred."},
+    {"source": "III/131", "line":"text-line-12", "bbox_xywh":[171,1501,77,40], "render":"ѡ҆гн", "focus":"ѡ҆", "status":"candidate", "category":"accent", "contrast":"fire-initial-vowel", "mark_options":["U+0486"], "note":"Small arch in oblique form; ending cropped, not encoded."},
 ]
 
 
