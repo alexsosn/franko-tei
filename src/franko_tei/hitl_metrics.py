@@ -4,6 +4,8 @@ Inputs must already be source-validated and aligned by the trusted operator.
 This evaluator does not authenticate reviewers or promote editorial status.
 """
 
+import unicodedata
+
 
 def _distance(reference, candidate):
     previous = list(range(len(candidate) + 1))
@@ -48,3 +50,24 @@ def score_lines(reference, baseline, retry=None):
             'reviewed_lines': len(reference), 'eligible_lines': len(baseline),
             'complete': reference.keys() == baseline.keys(),
             'retry': None if retry is None else measure(retry)}
+
+
+def score_dual(reference, baseline, retry=None):
+    """Report literal CER and CER ignoring Unicode category M.
+
+    Remove combining marks (including combining superscript letters) from
+    both sides without normalization or decomposition. Historical base
+    letters, precomposed characters, spacing yerok, punctuation and spaces
+    are retained. The reviewed row set and retry alignment are unchanged.
+    """
+    literal = score_lines(reference, baseline, retry)
+
+    def strip_marks(lines):
+        return {key: ''.join(c for c in value
+                             if not unicodedata.category(c).startswith('M'))
+                for key, value in lines.items()}
+
+    stripped = score_lines(strip_marks(reference), strip_marks(baseline),
+                           None if retry is None else strip_marks(retry))
+    stripped['method'] = 'Unicode code-point CER excluding category M; no decomposition'
+    return {'literal': literal, 'without_marks': stripped}
