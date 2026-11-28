@@ -1,0 +1,480 @@
+{
+  "schema": "franko-hitl-round-v1",
+  "round": 4,
+  "status": "partial_human_reference_frozen",
+  "volume": "4",
+  "scan_page": 149,
+  "printed_page": "97",
+  "work": "Слово о святѣй литоргіи св. ап. Павла от Прелога",
+  "baseline": {
+    "commit": "7052c165d14915da01f66e899b97ab61d5406a9f",
+    "path": "pilot/vol4_scan00149_single_reading.json",
+    "blob": "2421d1af39f5a7d75d407c4576d93567fd30a1a4",
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "image_sha256": "7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab",
+    "atlas_blob": "8a4f5e3d50e33e1693279155f5746de32e35be38",
+    "atlas_extension_blob": "a97d4bff4d0865723ad97ab431805782aa0be903",
+    "reader_id": "gpt62-hitl-round004-v4-s00149-20261128",
+    "model": "GPT-6.2"
+  },
+  "reference": {
+    "kind": "human_review_submitted",
+    "issue": 457,
+    "issue_id": 6655790051,
+    "submitter_id": 3265391,
+    "issue_updated_at": "2026-11-27T23:00:38Z",
+    "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"44e63c5e-3a31-439e-802b-a395dcb8f32e\",\"source_commit\":\"7052c165d14915da01f66e899b97ab61d5406a9f\",\"events\":[{\"event_id\":\"29314521-6386-455b-a1f6-23ae23b5b68f\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"folio\",\"line_id\":\"folio-line-01\",\"original\":\"97\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"5d98b5c3-acff-41b0-a22b-d35ee2dabf56\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-01\",\"line_id\":\"body-line-01\",\"original\":\"≥ножество а҆гг҃лъ въпи́юще: „ст҃ъ, ст҃ъ, ст҃ъ Гь҃ Саваѡ҆ѳъ“. И҆ тако\"},\"decision\":\"correct\",\"replacement\":\"мноⷤство а҆г҃глъ въпїюще: „ст҃ъ, ст҃ъ, ст҃ъ Гь҃ Саваѡ҆́ѳъ“. И҆ тако\",\"note\":null},{\"event_id\":\"7a28b4f4-5a55-4481-a006-121da3da6940\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-01\",\"line_id\":\"body-line-02\",\"original\":\"возмут прс҃таа ѿ і҆ереа и҆ ставаⷮ на ст҃ой трапезѣ.\"},\"decision\":\"correct\",\"replacement\":\"возмут прс҃таꙗ ѿ і҆е҆реꙗ и҆ ставѧⷮ на ст҃ой трапезѣ.\",\"note\":null},{\"event_id\":\"0c44e4fd-ac54-474b-af7d-3a8cae944e88\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-02\",\"line_id\":\"body-line-03\",\"original\":\"И҆ егда гл҃етъ поп: „Блⷭ҇вите, ст҃їи а҆гг҃ли“, — о҆ни же гл҃ютъ:\"},\"decision\":\"correct\",\"replacement\":\"И҆ єгда гл҃етъ поп: „Бл҃ⷭвите, ст҃їи а҆г҃гли“, — о҆ни же гл҃ютъ:\",\"note\":null},{\"event_id\":\"6cabf956-43d5-43ff-9c46-a0eceb2e321f\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-02\",\"line_id\":\"body-line-04\",\"original\":\"„Многаа лѣта, чⷭ҇тный ѿче! Дх҃ъ ст҃ый найде на тѧ и҆ сила Выш-\"},\"decision\":\"correct\",\"replacement\":\"„Многаѧ лѣта, чс҃тный ѿч҃е! Дх҃ъ ст҃ый найде на тѧ и҆ сила Выш-\",\"note\":null},{\"event_id\":\"994c5db0-f1a6-4fea-80d0-e6393cf9da0d\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-02\",\"line_id\":\"body-line-05\",\"original\":\"наго ѡ҆сѣниⷮ тѧ!“ — Тогда снїйде Дх҃ъ ст҃ый і ѡ҆почиваєт на\"},\"decision\":\"correct\",\"replacement\":\"нѧго ѡ҆сѣниⷮ тѧ!“ — Тогда снїйде Дх҃ъ ст҃ый і҆ ѡ҆почиваеⷮ на\",\"note\":null},{\"event_id\":\"a746b0fc-09ab-4bf6-a9ab-53ae5e16fe9b\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-02\",\"line_id\":\"body-line-06\",\"original\":\"предлежащиⷯ дараⷯ, тогда и҆сполнит сѧ храⷨ веⷭ ст҃го Дха҃.\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"446c1a81-64ad-489d-9e3f-9166573522ab\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-03\",\"line_id\":\"body-line-07\",\"original\":\"[Егда же] гл҃етъ поп: „И҆сполниⷨ мл҃твы наⷲ ко Гоу҃“, таⷤ\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"bab77890-2f67-4466-969a-881d87aef750\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-03\",\"line_id\":\"body-line-08\",\"original\":\"глетъ поп: „Мир всѣⷨ“, дїакон: „Возлюбиⷨ дру҆гъ друга“, —\"},\"decision\":\"correct\",\"replacement\":\"глетъ поп: „Мир всѣⷨ“, дїакон: „Возлюбиⷨ дрꙋгъ дрꙋга“, —\",\"note\":null},{\"event_id\":\"9a705f89-e53c-4724-9f9d-e163ed5fbcfe\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-03\",\"line_id\":\"body-line-09\",\"original\":\"тогда прїйде саⷨ Хс҃ со ві҃. а҆пⷭ҇лы и҆ цѣлуют ст҃ую трапезꙋ и҆ слу-\"},\"decision\":\"correct\",\"replacement\":\"тогда прїйде саⷨ Хс҃ со ві҃. а҆п҃ⷭлы и҆ цѣлꙋют ст҃оую трапезꙋ и҆ слꙋ-\",\"note\":null},{\"event_id\":\"7528e82d-e7df-41f5-8849-b2087c22c794\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-03\",\"line_id\":\"body-line-10\",\"original\":\"жащаго. Видѣ же Анфилоⷢ цр҃ь великое чюдо и҆ почуди сѧ велми.\"},\"decision\":\"correct\",\"replacement\":\"жащаго. Видѣ вже А҆нфилоⷢ цр҃ъ великое чюдо и҆ почꙋди сѧ велми.\",\"note\":null},{\"event_id\":\"44f4bae8-acff-4e6b-abe3-106b248a3a12\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-04\",\"line_id\":\"body-line-11\",\"original\":\"Гл҃етъ дїакоⷩ въѡбразуѧ ст҃ую Тройцю: „Двери, двери, пре-\"},\"decision\":\"correct\",\"replacement\":\"Гл҃етъ дїакоⷩ въѡ҆бразуꙗ ст҃ꙋю Тройцю: „Двери, двери, пре-\",\"note\":null},{\"event_id\":\"72abbd4b-c3c9-412b-be50-fbaf9f6c51c6\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-04\",\"line_id\":\"body-line-12\",\"original\":\"мⷣростїю вонмѣм!“ И҆ гл҃ютъ: „Вѣрую въ е҆динаго Ба҃“. И҆ по сеⷨ\"},\"decision\":\"correct\",\"replacement\":\"м҃дростїю вонмѣм!“ И҆ гл҃ютъ: „Вѣрꙋю въ є҆диного Ба҃“. И҆ по сеⷨ\",\"note\":null},{\"event_id\":\"b9fd31ab-c7e6-491b-873b-7478091a0a82\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-04\",\"line_id\":\"body-line-13\",\"original\":\"рече: „Станѣⷨ добрѣ, станѣм со страхоⷨ“, — тогда снїйде Дх҃ъ\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"22e7d7ba-18b5-4208-a94b-8cd214ae80f6\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-04\",\"line_id\":\"body-line-14\",\"original\":\"ст҃ый на і҆ереа и҆ покрываетъ ст҃ыа дары.\"},\"decision\":\"correct\",\"replacement\":\"ст҃ый на і҆е҆реѧ и҆ покрываетъ ст҃ыѧ дары.\",\"note\":null},{\"event_id\":\"cd8cbabf-cce1-4927-b98b-9c8aff42734e\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-05\",\"line_id\":\"body-line-15\",\"original\":\"Рече поп: „Вонмѣⷨ ст҃ое возношенїе“, — тогда вознесет сѧ\"},\"decision\":\"correct\",\"replacement\":\"Рече поп: „Вонмѣⷨ ст҃ое возношенїє“, — тогда вознесет сѧ\",\"note\":null},{\"event_id\":\"5adb4544-8da7-428e-84ed-6468ad083eaf\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-05\",\"line_id\":\"body-line-16\",\"original\":\"а҆гнецъ бж҃їй и҆ ста на возду҆сѣ, и҆ снїйдета два Херувима и҆ сташа\"},\"decision\":\"correct\",\"replacement\":\"а҆гнецъ бж҃їй и҆ ста на воздꙋсѣ, и҆ снїйдета два Херꙋвима и҆ сташа\",\"note\":null},{\"event_id\":\"21cfe8c0-60ff-4498-934c-8a820fef059d\",\"target\":{\"candidate_path\":\"pilot/vol4_scan00149_single_reading.json\",\"candidate_blob\":\"2421d1af39f5a7d75d407c4576d93567fd30a1a4\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"7d433ff45a5f1612347446bc9565d0c7c6683888bd80f002d7e79e97b973f3ab\",\"reader_id\":\"gpt62-hitl-round004-v4-s00149-20261128\",\"region_id\":\"liturgy-cont-05\",\"line_id\":\"body-line-17\",\"original\":\"ѡ҆крⷭ҇тъ трапезы.\"},\"decision\":\"correct\",\"replacement\":\"ѡ҆кр҃ⷭтъ трапезы.\",\"note\":null}]}",
+    "scope": "17 of 38 CSL rows, 14 corrected, 3 confirmed; folio confirmed but excluded; imprint and signature excluded",
+    "editorial_status": "not adjudicated for corpus projection"
+  },
+  "first_pass": {
+    "reference_characters": 972,
+    "edits": 54,
+    "cer": 0.05555555555555555,
+    "reviewed_lines": 17,
+    "rows": [
+      {
+        "line_id": "body-line-01",
+        "event_id": "5d98b5c3-acff-41b0-a22b-d35ee2dabf56",
+        "decision": "correct",
+        "reference_characters": 67,
+        "edits": 8
+      },
+      {
+        "line_id": "body-line-02",
+        "event_id": "7a28b4f4-5a55-4481-a006-121da3da6940",
+        "decision": "correct",
+        "reference_characters": 52,
+        "edits": 4
+      },
+      {
+        "line_id": "body-line-03",
+        "event_id": "0c44e4fd-ac54-474b-af7d-3a8cae944e88",
+        "decision": "correct",
+        "reference_characters": 64,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-04",
+        "event_id": "6cabf956-43d5-43ff-9c46-a0eceb2e321f",
+        "decision": "correct",
+        "reference_characters": 63,
+        "edits": 4
+      },
+      {
+        "line_id": "body-line-05",
+        "event_id": "994c5db0-f1a6-4fea-80d0-e6393cf9da0d",
+        "decision": "correct",
+        "reference_characters": 60,
+        "edits": 4
+      },
+      {
+        "line_id": "body-line-06",
+        "event_id": "a746b0fc-09ab-4bf6-a9ab-53ae5e16fe9b",
+        "decision": "confirm",
+        "reference_characters": 58,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-07",
+        "event_id": "446c1a81-64ad-489d-9e3f-9166573522ab",
+        "decision": "confirm",
+        "reference_characters": 57,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-08",
+        "event_id": "bab77890-2f67-4466-969a-881d87aef750",
+        "decision": "correct",
+        "reference_characters": 56,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-09",
+        "event_id": "9a705f89-e53c-4724-9f9d-e163ed5fbcfe",
+        "decision": "correct",
+        "reference_characters": 69,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-10",
+        "event_id": "7528e82d-e7df-41f5-8849-b2087c22c794",
+        "decision": "correct",
+        "reference_characters": 63,
+        "edits": 4
+      },
+      {
+        "line_id": "body-line-11",
+        "event_id": "44f4bae8-acff-4e6b-abe3-106b248a3a12",
+        "decision": "correct",
+        "reference_characters": 58,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-12",
+        "event_id": "72abbd4b-c3c9-412b-be50-fbaf9f6c51c6",
+        "decision": "correct",
+        "reference_characters": 64,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-13",
+        "event_id": "b9fd31ab-c7e6-491b-873b-7478091a0a82",
+        "decision": "confirm",
+        "reference_characters": 60,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-14",
+        "event_id": "22e7d7ba-18b5-4208-a94b-8cd214ae80f6",
+        "decision": "correct",
+        "reference_characters": 42,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-15",
+        "event_id": "cd8cbabf-cce1-4927-b98b-9c8aff42734e",
+        "decision": "correct",
+        "reference_characters": 56,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-16",
+        "event_id": "5adb4544-8da7-428e-84ed-6468ad083eaf",
+        "decision": "correct",
+        "reference_characters": 66,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-17",
+        "event_id": "21cfe8c0-60ff-4498-934c-8a820fef059d",
+        "decision": "correct",
+        "reference_characters": 17,
+        "edits": 2
+      }
+    ],
+    "eligible_body_lines": 38,
+    "eligible_page_lines": 41,
+    "complete": false,
+    "method": "literal Unicode code-point Levenshtein, fixed CSL rows",
+    "without_marks": {
+      "reference_characters": 877,
+      "edits": 32,
+      "cer": 0.036488027366020526,
+      "reviewed_lines": 17,
+      "rows": [
+        {
+          "line_id": "body-line-01",
+          "event_id": "5d98b5c3-acff-41b0-a22b-d35ee2dabf56",
+          "decision": "correct",
+          "reference_characters": 57,
+          "edits": 4
+        },
+        {
+          "line_id": "body-line-02",
+          "event_id": "7a28b4f4-5a55-4481-a006-121da3da6940",
+          "decision": "correct",
+          "reference_characters": 46,
+          "edits": 3
+        },
+        {
+          "line_id": "body-line-03",
+          "event_id": "0c44e4fd-ac54-474b-af7d-3a8cae944e88",
+          "decision": "correct",
+          "reference_characters": 55,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-04",
+          "event_id": "6cabf956-43d5-43ff-9c46-a0eceb2e321f",
+          "decision": "correct",
+          "reference_characters": 58,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-05",
+          "event_id": "994c5db0-f1a6-4fea-80d0-e6393cf9da0d",
+          "decision": "correct",
+          "reference_characters": 53,
+          "edits": 3
+        },
+        {
+          "line_id": "body-line-06",
+          "event_id": "a746b0fc-09ab-4bf6-a9ab-53ae5e16fe9b",
+          "decision": "confirm",
+          "reference_characters": 51,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-07",
+          "event_id": "446c1a81-64ad-489d-9e3f-9166573522ab",
+          "decision": "confirm",
+          "reference_characters": 50,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-08",
+          "event_id": "bab77890-2f67-4466-969a-881d87aef750",
+          "decision": "correct",
+          "reference_characters": 54,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-09",
+          "event_id": "9a705f89-e53c-4724-9f9d-e163ed5fbcfe",
+          "decision": "correct",
+          "reference_characters": 60,
+          "edits": 3
+        },
+        {
+          "line_id": "body-line-10",
+          "event_id": "7528e82d-e7df-41f5-8849-b2087c22c794",
+          "decision": "correct",
+          "reference_characters": 59,
+          "edits": 3
+        },
+        {
+          "line_id": "body-line-11",
+          "event_id": "44f4bae8-acff-4e6b-abe3-106b248a3a12",
+          "decision": "correct",
+          "reference_characters": 54,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-12",
+          "event_id": "72abbd4b-c3c9-412b-be50-fbaf9f6c51c6",
+          "decision": "correct",
+          "reference_characters": 57,
+          "edits": 4
+        },
+        {
+          "line_id": "body-line-13",
+          "event_id": "b9fd31ab-c7e6-491b-873b-7478091a0a82",
+          "decision": "confirm",
+          "reference_characters": 57,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-14",
+          "event_id": "22e7d7ba-18b5-4208-a94b-8cd214ae80f6",
+          "decision": "correct",
+          "reference_characters": 37,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-15",
+          "event_id": "cd8cbabf-cce1-4927-b98b-9c8aff42734e",
+          "decision": "correct",
+          "reference_characters": 54,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-16",
+          "event_id": "5adb4544-8da7-428e-84ed-6468ad083eaf",
+          "decision": "correct",
+          "reference_characters": 61,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-17",
+          "event_id": "21cfe8c0-60ff-4498-934c-8a820fef059d",
+          "decision": "correct",
+          "reference_characters": 14,
+          "edits": 0
+        }
+      ]
+    }
+  },
+  "retry": {
+    "commit": "d8421e5d30a9458ffbc8644c743aa84bb68de9ea",
+    "blob": "c8c072365e5c23ade69512c3a17cb65a9277415b",
+    "atlas_extension_blob": "56ed703ae6931dc6e2eeac0f5d4a42c3c5cffe9a",
+    "nonblind": true,
+    "scope": "same 17 CSL rows; human corrections directly applied; consistency check only, no independent retry CER measured",
+    "kind": "reference_exposed_collation",
+    "reference_characters": 972,
+    "edits": 0,
+    "cer": 0,
+    "reviewed_lines": 17,
+    "rows": [
+      {
+        "line_id": "body-line-01",
+        "reference_characters": 67,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-02",
+        "reference_characters": 52,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-03",
+        "reference_characters": 64,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-04",
+        "reference_characters": 63,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-05",
+        "reference_characters": 60,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-06",
+        "reference_characters": 58,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-07",
+        "reference_characters": 57,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-08",
+        "reference_characters": 56,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-09",
+        "reference_characters": 69,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-10",
+        "reference_characters": 63,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-11",
+        "reference_characters": 58,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-12",
+        "reference_characters": 64,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-13",
+        "reference_characters": 60,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-14",
+        "reference_characters": 42,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-15",
+        "reference_characters": 56,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-16",
+        "reference_characters": 66,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-17",
+        "reference_characters": 17,
+        "edits": 0
+      }
+    ],
+    "without_marks": {
+      "reference_characters": 877,
+      "edits": 0,
+      "cer": 0,
+      "reviewed_lines": 17,
+      "rows": [
+        {
+          "line_id": "body-line-01",
+          "reference_characters": 57,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-02",
+          "reference_characters": 46,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-03",
+          "reference_characters": 55,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-04",
+          "reference_characters": 58,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-05",
+          "reference_characters": 53,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-06",
+          "reference_characters": 51,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-07",
+          "reference_characters": 50,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-08",
+          "reference_characters": 54,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-09",
+          "reference_characters": 60,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-10",
+          "reference_characters": 59,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-11",
+          "reference_characters": 54,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-12",
+          "reference_characters": 57,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-13",
+          "reference_characters": 57,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-14",
+          "reference_characters": 37,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-15",
+          "reference_characters": 54,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-16",
+          "reference_characters": 61,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-17",
+          "reference_characters": 14,
+          "edits": 0
+        }
+      ]
+    }
+  }
+}
