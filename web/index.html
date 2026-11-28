@@ -61,32 +61,32 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #readerSettings .dialog-heading{padding:12px 16px;margin:0;border-bottom:1px solid #e1e4df;flex:none}
 #settingsTitle:focus{outline:none}
 #settingsBody{padding:0 16px;min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;flex:1 1 auto}
-.settings-group{margin:0;padding:16px 0;border-bottom:1px solid #e1e4df;min-width:0}
+.settings-group{margin:0;padding:var(--section-gap) 0;border-bottom:1px solid #e1e4df;min-width:0}
 .settings-group:last-child{border-bottom:0}
 .settings-group h3{font:600 13px/1.4 system-ui,sans-serif;color:#525e55;margin:0 0 8px}
-.settings-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,44%);gap:12px;align-items:center;padding:8px 0}
+.settings-row{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--field-gap);align-items:start;padding:var(--field-gap) 0}
 .settings-row label,.settings-label,.settings-font-row label,#advancedSettings>label{font-weight:550;font-size:14px}
-.settings-row select,.settings-row button,.settings-font-row select{width:100%;min-width:0;font-size:14px;min-height:40px}
+.settings-row select,.settings-row button,.settings-font-row select{width:100%;min-width:0;font-size:16px;min-height:var(--control-height)}
 .settings-hint{font-size:12px;line-height:1.45;color:#525e55;margin:3px 0 0;overflow-wrap:anywhere}
-.settings-checkbox{grid-template-columns:minmax(0,1fr) auto;min-height:44px;cursor:pointer}.settings-checkbox .settings-hint{display:block}
+.settings-checkbox{grid-template-columns:minmax(0,1fr) auto;min-height:var(--control-height);align-items:center;cursor:pointer}.settings-checkbox .settings-hint{display:block}
 .settings-checkbox input{width:24px;height:24px;margin:6px;accent-color:#527b68;cursor:pointer}
 .settings-subheading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;border-top:1px solid #eceeea;padding-top:10px}
 .settings-subheading h4{font-size:14px;font-weight:550;margin:0}
-.settings-subheading button{min-height:36px;padding:4px 8px;font-size:12px}
-.settings-font-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,55%);align-items:center;gap:6px 12px;margin:8px 0 12px}
+.settings-subheading button{min-height:var(--control-height);padding:4px 8px;font-size:14px;flex:none}
+.settings-font-row{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:var(--field-gap);margin:8px 0 12px}
 .settings-font-row .font-sample{grid-column:1/-1;background:#f7f8f6;border:1px solid #e1e4df;border-radius:5px;padding:6px 10px;font-size:21px;line-height:1.6;overflow-wrap:anywhere;min-width:0}
 #advancedSettings summary{cursor:pointer;font-weight:550;font-size:14px;color:#235d55;min-height:36px;padding:8px 0}
 #advancedSettings>label{display:block;margin:10px 0 4px}
-.settings-ref-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px}
-.settings-ref-row input,.settings-ref-row button{min-width:0;width:100%;min-height:40px;font-size:14px}
+.settings-ref-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--field-gap);margin-top:4px}
+.settings-ref-row input,.settings-ref-row button{min-width:0;width:100%;min-height:var(--control-height);font-size:16px}
 #refDraft[aria-invalid=true]{border-color:#8e2b16}
 #refError,#status{font-size:12px;overflow-wrap:anywhere}
 #advancedSettings small{display:block;font-size:12px;line-height:1.45}
 .settings-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #e1e4df;padding:10px 16px;flex:none}
-.settings-footer small{font-size:12px}
+.settings-footer small{font-size:12px;min-width:0}.settings-footer button{min-height:var(--control-height);flex:none;padding-inline:16px}
 #settingsDone{min-height:40px;padding:6px 18px;background:#e5eee8;border-color:#718879;font-weight:600;flex:none}
 #readerSettings button:focus-visible,#readerSettings select:focus-visible,#readerSettings input:focus-visible,#readerSettings summary:focus-visible{outline:2px solid #537c8c;outline-offset:2px}
-@media(max-width:420px){#readerSettings .dialog-heading,#readerSettings .settings-footer{padding-inline:12px}#settingsBody{padding-inline:12px}.settings-row:not(.settings-checkbox),.settings-font-row{grid-template-columns:minmax(0,1fr);gap:6px}.settings-font-row .font-sample{font-size:19px}.settings-group{padding:12px 0}}
+@media(max-width:420px){#readerSettings .dialog-heading,#readerSettings .settings-footer{padding-inline:12px}#settingsBody{padding-inline:12px}.settings-font-row .font-sample{font-size:19px}}
 @media(max-height:450px){#readerSettings .dialog-heading,#readerSettings .settings-footer{padding-block:5px}}
 #searchPanel{padding:12px;width:min(680px,calc(100vw - 20px));max-height:calc(100dvh - 24px);border:1px solid #a8aea8}
 @media(max-width:1000px){.mainbar #searchOpen span,.mainbar #settingsOpen span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.mainbar #searchOpen,.mainbar #settingsOpen{min-width:36px;padding:5px}.pane-bar #source span{display:none}}
@@ -220,7 +220,7 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #coverageRevision,#coveragePinHint{color:var(--muted);font-size:12px}
 #coverageNext{min-height:36px;white-space:normal}
 #candidate.hide-region-labels>h3{display:none}
-#layersDialog .settings-row{margin:8px 0}
+#layersDialog{width:min(560px,calc(100vw - 20px));scroll-padding-top:64px}#layersDialog .dialog-heading{position:sticky;top:-12px;background:white;z-index:2;padding:4px 0 8px;border-bottom:1px solid #e1e4df}#layersDialog .settings-row{margin:0}#inspectChoose{min-height:var(--control-height);width:100%;margin-top:var(--field-gap)}
 #annotationDetails{margin-top:12px;border-top:1px solid #d7d9d5;padding-top:8px}
 #annotationDetails h3{margin:0 0 6px;font-size:14px}
 #annotationDetailsBody ul{list-style:none;padding:0;margin:6px 0}
@@ -260,7 +260,7 @@ dialog :is(button,input,select,textarea,summary,a):focus-visible{outline:2px sol
 #searchPanel #searchStatus{border-top:1px solid #e1e4df;padding-top:10px;overflow-wrap:anywhere}
 #searchResults button,#searchMore{min-height:var(--control-height)}
 #searchPanel .review-keyboard select{min-height:var(--control-height);font-size:16px;max-width:100%;min-width:0}
-@media(max-width:540px){.search-fields{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:540px){.search-fields,.settings-ref-row{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:360px){#searchGo{padding-inline:8px}.search-query-row{gap:6px}}
 @media(max-height:450px){#searchPanel .dialog-heading{padding-block:0 4px}}
 </style>
@@ -270,7 +270,7 @@ dialog :is(button,input,select,textarea,summary,a):focus-visible{outline:2px sol
 <div class="dialog-heading"><h2 id="layersTitle" tabindex="-1">Annotation layers</h2><button id="layersClose" type="button" aria-label="Close annotation layers">✕</button></div>
 <div id="layersLanguageSlot"></div>
 <label class="settings-row settings-checkbox" for="showRegions"><span><span class="settings-label">Show region labels</span><span class="settings-hint">Physical regions of the printed page.</span></span><input id="showRegions" type="checkbox" checked></label>
-<button id="inspectChoose" type="button">Inspect a line</button>
+<button id="inspectChoose" type="button" class="primary-action">Inspect a line</button>
 <section id="annotationDetails" hidden aria-labelledby="annotationDetailsTitle"><h3 id="annotationDetailsTitle">Line annotations</h3><div id="annotationDetailsBody"></div></section>
 </dialog>
 <dialog id="readerSettings" aria-labelledby="settingsTitle">
@@ -288,7 +288,7 @@ dialog :is(button,input,select,textarea,summary,a):focus-visible{outline:2px sol
 <p class="settings-hint" id="fontHint">Fonts affect display only, not the transcription. Unannotated characters use script-aware fallback.</p></div>
 </section>
 <details id="advancedSettings" class="settings-group"><summary>Advanced · source version</summary><p class="settings-hint" id="refHint">Use main for published readings, or enter a Git branch or commit to inspect drafts.</p><p class="settings-hint">The source changes only when you select Load ref.</p><label for="refDraft">Reading ref</label><div class="settings-ref-row"><input id="refDraft" list="refs" spellcheck="false" autocomplete="off" autocapitalize="none" aria-describedby="refHint refError" title="Git branch or commit containing pilot readings"><button id="applyRef" type="button">Load ref</button></div><input id="ref" type="hidden" value="main"><datalist id="refs"><option value="main"><option value="transcription/vol1-scans-62-100"><option value="transcription/vol1-scans-101-140"></datalist><p id="refError" role="alert" class="error" hidden></p><p id="status" role="status">Loading…</p><small>Physical scan index, not printed pagination. All OCR and draft readings are unverified. Images load from the pinned source repository; dimensions and draft metadata are checked, not downloaded byte hashes.</small></details>
-</div><div class="settings-footer"><small>Display changes apply immediately.</small><button id="settingsDone" type="button">Done</button></div></dialog>
+</div><div class="settings-footer"><small>Display changes apply immediately.</small><button id="settingsDone" type="button" class="primary-action">Done</button></div></dialog>
 <dialog id="contentsPanel" aria-labelledby="contentsTitle"><div class="dialog-heading"><h2 id="contentsTitle" tabindex="-1">Contents</h2><button id="contentsClose" type="button" aria-label="Close contents">✕</button></div><div class="contents-tools"><div class="contents-volume-row"><select id="contentsVolume" aria-label="Volume"></select><button id="contentsFirstScan" type="button">First scan</button></div><div id="navigationModes" role="group" aria-label="Navigation mode"><button id="contentsMode" type="button" aria-pressed="true">Contents</button><button id="indexMode" type="button" aria-pressed="false">Indexes</button></div><div id="indexTools" hidden><select id="indexKind" aria-label="Index type"></select><p id="indexStatus" role="status"></p><details id="indexSources"><summary>Original index scans</summary><div id="indexSourcePages"></div><p id="indexRevision"></p></details></div><input id="contentsFilter" type="search" placeholder="Filter titles or pages" aria-label="Filter titles or pages"><p id="contentsFilterStatus" role="status"></p><details id="contentsCoverage"><summary>Draft coverage</summary><p id="coverageStatus" role="status"></p><p id="coverageRevision"></p><p id="coveragePinHint" hidden>Opening a scan pins the reader to this snapshot.</p><button id="coverageNext" type="button" disabled>Next scan without a draft</button></details><details id="contentsProvenance"><summary>Original contents &amp; notes</summary><p id="contentsStatus"></p><p id="contentsTranslationNote">English titles are provisional translations; original titles appear below.</p><nav id="contentsSources" aria-label="Original contents scans"></nav></details><a id="editionBibliography" href="https://github.com/alexsosn/franko-tei/blob/main/docs/research-bibliography.md" target="_blank" rel="noopener noreferrer">Research bibliography</a></div><p id="contentsEmpty" hidden>No matching entries.</p><ol id="contentsEntries"></ol><ol id="indexEntries" hidden></ol></dialog><dialog id="searchPanel" aria-labelledby="searchTitle"><div class="dialog-heading"><h2 id="searchTitle">Search corpus</h2><button id="searchClose" type="button" aria-label="Close search">✕</button></div><div class="search-query-row"><input id="query" type="search" spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="search" placeholder="Search full text" aria-label="Search text"><button id="searchGo" type="button" class="primary-action"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Search</span></button></div><div class="search-fields"><label>Volume <select id="searchVolume"><option value="all">All volumes</option><option value="1">I — Апокріфи старозавітні</option><option value="2">II — Апокріфи новозавітні. А. Апокріфічні євангелія</option><option value="3">III — Апокріфи новозавітні. Б. Апокріфічні діяня апостолів</option><option value="4">IV — Апокріфи есхатольоґічні</option><option value="5">V — Лєґенди про святих. Часть перша</option></select></label><label>Source <select id="searchSource"><option value="current">Current reading</option><option value="agent">All agent readings</option><option value="ocr">Original OCR</option><option value="both">All readings + OCR</option></select></label></div><label class="search-checkbox"><input id="caseSensitive" type="checkbox"> Case sensitive</label><label class="search-checkbox"><input id="ignoreHistoricalAccents" type="checkbox"> Ignore accents (annotated historical Cyrillic only)</label><details id="searchFacets"><summary>Annotation filters<span id="searchActiveFilters" class="active-filter-summary" hidden></span></summary><div class="search-fields search-facets">
 <label>Search text <select id="searchTextMode"><option value="literal">Diplomatic text</option><option value="expansion">Expanded abbreviations</option></select></label>
 <label>Language <select id="searchLanguage"><option value="">Any language</option><option value="uk">Ukrainian</option><option value="cu">Church Slavonic</option><option value="orv">Historical East Slavic / Ruthenian</option><option value="grc">Ancient Greek</option><option value="la">Latin</option><option value="de">German</option><option value="pl">Polish</option><option value="ru">Russian</option><option value="fr">French</option><option value="hr">Croatian</option><option value="sr">Serbian</option><option value="zxx">Nonlinguistic</option><option value="und">Undetermined language</option><option value="missing">Not annotated</option></select></label>
