@@ -708,7 +708,7 @@ class EditorialProjectionTests(unittest.TestCase):
                             wrong.length,insensitive.length];
                 }""",[literal,annotation])
                 self.assertEqual(result,[[["ст҃ъ! ст҃ъ! ст҃ъ!",[10,22]]],
-                    ["ст҃ъ"]*3,["ст҃ъ"]*3,0,1])
+                    ["ст҃ъ"]*4,["ст҃ъ"]*3,0,1])  # literal also finds suffix in ѡкрст҃ъ
                 # Synthetic supplementary codepoint + punctuation, two
                 # alternative branches, no combinatorial text enumeration.
                 result=page.evaluate("""()=>{
