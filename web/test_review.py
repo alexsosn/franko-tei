@@ -566,6 +566,33 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(links(58)['ECCA 509']['relation'], 'edition-match')
         self.assertNotIn('ECCA 509', links(59))
 
+    def test_edition_research_bibliography(self):
+        # The edition-level list is separate from individual work identities.
+        html = reader_html()
+        bibliography = APP.parent.parent / 'docs' / 'research-bibliography.md'
+        self.assertTrue(bibliography.is_file())
+        self.assertIn('## Historical reviews', bibliography.read_text(encoding='utf-8'))
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.evaluate("setUILocale('en')")
+            page.locator('#contentsOpen').click()
+            link = page.locator('#editionBibliography')
+            self.assertTrue(link.is_visible())
+            self.assertEqual(link.inner_text(), 'Research bibliography')
+            self.assertEqual(link.get_attribute('href'), 'https://github.com/alexsosn/franko-tei/blob/main/docs/research-bibliography.md')
+            self.assertEqual(link.get_attribute('target'), '_blank')
+            self.assertIn('noopener', link.get_attribute('rel').split())
+            self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.clientHeight > 120 && el.scrollWidth <= el.clientWidth'))
+            page.locator('#contentsVolume').select_option('5')
+            page.evaluate("setUILocale('uk')")
+            self.assertEqual(link.inner_text(), 'Наукова бібліографія')
+            self.assertEqual(page.locator('#volume').input_value(), '1')
+            self.assertTrue(page.locator('#contentsPanel').is_visible())
+            browser.close()
+
     def test_franko_first_publications(self):
         import json
         html = reader_html()
@@ -2119,6 +2146,81 @@ class ReviewSmoke(unittest.TestCase):
             page.wait_for_timeout(200)
             self.assertEqual(page.locator('#ocr').text_content(), '')
             self.assertIn('Empty original OCR', page.locator('#ocrStatus').text_content())
+            browser.close()
+
+
+    def test_historical_accent_search(self):
+        # Synthetic edge cases plus one real frozen I/89 heading (not scan gold).
+        import json
+        source = json.loads((Path(__file__).resolve().parents[1] / 'pilot/vol1_scan00089_single_reading.json').read_text(encoding='utf-8'))
+        real = next(l for r in source['reading']['regions'] for l in r['lines']
+                    if l['id'] == 'witness-b-heading-l001')
+        html = reader_html().replace('updateMode();load();', 'updateMode();load=()=>{};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':390,'height':844})
+            page.route('**/*', lambda route: route.abort())
+            page.set_content(html)
+            result = page.evaluate(r"""(real) => {
+                const text='😀 а҆́зъ а́зъ й й ї ї и г҃ г сⷭ с ά';
+                const span={start:0,end:text.length,language:'cu',script:'Cyrl',uncertain:false};
+                const row={text,annotationLines:[{start:0,end:text.length,region_kind:'body',spans:[span]}]};
+                const hits=(q,r=row,f={})=>accentSearchMatches(r,q,false,f).map(m=>[m.index,m[0]]);
+                const realRow={text:real.text,annotationLines:[{start:0,end:real.text.length,region_kind:'heading',
+                    spans:real.language_spans.map(s=>({...s}))}]};
+                const excluded={...row,annotationLines:[{...row.annotationLines[0],spans:[{...span,language:'uk'}]}]};
+                return {az:hits('азъ'),y:hits('й'),yi:hits('ї'),g:hits('г'),s:hits('с'),
+                    greek:hits('α'),real:hits('и',realRow).filter(m=>m[1]==='и́'),
+                    excluded:hits('азъ',excluded),missing:hits('азъ',{...row,annotationLines:[{...row.annotationLines[0],spans:[]}]}),
+                    facet:hits('азъ',row,{region:'note'}),certain:hits('азъ',row,{certainty:'uncertain'})};
+            }""", real)
+            self.assertEqual(result['az'], [[3,'а҆́зъ'],[9,'а́зъ']])
+            self.assertEqual([x[1] for x in result['y']], ['й','й'])
+            self.assertEqual([x[1] for x in result['yi']], ['ї','ї'])
+            self.assertEqual([x[1] for x in result['g']], ['г'])
+            self.assertEqual([x[1] for x in result['s']], ['с'])
+            self.assertEqual(result['greek'], [])
+            self.assertEqual(len(result['real']), 2)
+            for key in ('excluded','missing','facet','certain'):
+                self.assertEqual(result[key], [])
+            # Additional adversarial checks on mapping and hard boundaries.
+            self.assertEqual(page.evaluate(r"""() => {
+                const make=(text,spans)=>({text,annotationLines:[{region_kind:'body',spans:spans??[
+                    {start:0,end:text.length,language:'cu',script:'Cyrl',uncertain:false}]}]});
+                const hits=(text,q,spans,sensitive=false)=>accentSearchMatches(make(text,spans),q,sensitive,{}).map(m=>[m.index,m[0]]);
+                return [hits('😀а\u{1E08F} а́','а'),hits('азъ АЗЪ','а́зъ',undefined,true),
+                    hits('а́зъ во́ля','азъ воля',[{start:0,end:5,language:'cu',script:'Cyrl',uncertain:false},
+                        {start:5,end:10,language:'cu',script:'Cyrl',uncertain:false}]),
+                    hits('а́зъ','азъ',[{start:0,end:4,language:'cu',script:'Latn',uncertain:false}])];
+            }"""), [[[6,'а́']],[[0,'азъ']],[],[]])
+            self.assertFalse(page.locator('#ignoreHistoricalAccents').is_checked())
+            # Exercise the actual dialog, search dispatch and literal excerpts.
+            page.evaluate("""() => {
+                const text='а҆́зъ г҃';
+                const row={text,scan:89,suffix:'single_reading',model_id:'GPT-6',model_version:null,editorial:'none',
+                    annotationLines:[{start:0,end:text.length,region_kind:'body',spans:[{start:0,end:text.length,language:'cu',script:'Cyrl',uncertain:false}]}]};
+                agentIndex=async()=>({ref:'a'.repeat(40),volume:'1',entries:[row]});
+                annotatedIndex=async d=>d.entries;
+            }""")
+            page.locator('#searchOpen').click()
+            page.locator('#searchVolume').select_option('1')
+            page.locator('#query').fill('азъ')
+            page.locator('#searchGo').click()
+            page.wait_for_function("document.querySelector('#searchStatus').textContent.includes('0 matching')")
+            page.locator('#ignoreHistoricalAccents').check()
+            page.locator('#searchGo').click()
+            page.locator('#searchResults mark').wait_for()
+            self.assertEqual(page.locator('#searchResults mark').text_content(), 'а҆́зъ')
+            self.assertIn('Historical accent search', page.locator('#searchResults').text_content())
+            page.locator('#searchFacets summary').click()
+            page.locator('#searchTextMode').select_option('expansion')
+            page.locator('#searchGo').click()
+            self.assertIn('Choose either', page.locator('#searchStatus').text_content())
+            self.assertEqual(page.locator('#searchResults button').count(), 0)
+            page.locator('#searchTextMode').select_option('literal')
+            page.locator('#searchSource').select_option('ocr')
+            page.locator('#searchGo').click()
+            self.assertIn('requires a published reading index', page.locator('#searchStatus').text_content())
             browser.close()
 
 if __name__ == '__main__':

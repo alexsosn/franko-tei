@@ -184,3 +184,48 @@ def merge_extensions(base_bytes, directory, read_blob=read_git_blob, *, target=N
         digests.append(previous)
     doc["hitl"] = {"base_blob": base_id, "extension_blobs": digests}
     return doc
+
+
+def context_bounds(bbox, width, height):
+    """Expand an estimated line crop, clamped to the original page.
+
+    The stored target rectangle is not changed. The extra pixels preserve
+    supralinear marks and adjacent context; they do not supply new labels.
+    """
+    x, y, w, h = bbox
+    pad_y = max(8, h // 2)
+    left, top = max(0, x - 12), max(0, y - pad_y)
+    right, bottom = min(width, x + w + 12), min(height, y + h + pad_y)
+    return [left, top, right - left, bottom - top]
+
+
+def context_crop(image, bbox):
+    """Render native pixels plus target-height markers in external gutters."""
+    from PIL import Image, ImageDraw
+
+    x, y, w, h = context_bounds(bbox, *image.size)
+    original = image.crop((x, y, x + w, y + h))
+    result = Image.new("RGB", (w + 24, h), "white")
+    result.paste(original, (12, 0))
+    draw = ImageDraw.Draw(result)
+    top = bbox[1] - y
+    bottom = top + bbox[3] - 1
+    for marker, cap in ((5, 10), (w + 18, w + 13)):
+        draw.line((marker, top, marker, bottom), fill="#a34a15", width=2)
+        draw.line((marker, top, cap, top), fill="#a34a15", width=2)
+        draw.line((marker, bottom, cap, bottom), fill="#a34a15", width=2)
+    return result
+
+
+def sheet_example(row, src, filename, font_rendered):
+    """Machine-readable evidence for an individual rendered sheet entry."""
+    bbox = list(row["bbox_xywh"])
+    display = (context_bounds(bbox, src["width"], src["height"])
+               if row["scope"] == "human_reviewed_full_line" else list(bbox))
+    return {"id": row["id"], "scope": row["scope"],
+            "approval": row["approval"],
+            "source": row.get("source", row.get("preview")),
+            "source_path": src.get("path", src.get("filename")),
+            "target_bbox_xywh": bbox, "display_bbox_xywh": display,
+            "reading": row["reading"], "provenance": row["provenance"],
+            "sheet": filename, "font_rendered": font_rendered}
