@@ -14,8 +14,6 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, features
 from fontTools.ttLib import TTFont
 
-from franko_tei.hitl_atlas import merge_extensions
-
 ROOT = Path(__file__).resolve().parent
 DEFAULT = ROOT / "monomakh-icl-approved-atlas.json"
 FONT_PATH = ROOT.parent / "web/fonts/Monomakh-Regular.woff2"
@@ -63,6 +61,8 @@ def load_atlas(path=DEFAULT):
 
 
 def load_active_atlas(path=DEFAULT, directory=ROOT / "hitl", *, target=None):
+    from franko_tei.hitl_atlas import merge_extensions
+
     raw = Path(path).read_bytes()
     validate_atlas(json.loads(raw))
     return merge_extensions(raw, directory, target=target)
