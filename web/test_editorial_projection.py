@@ -669,6 +669,24 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(page.locator("#searchStatus")).to_contain_text("Annotation filters cannot be applied to OCR")
                 expect(page.locator("#searchResults button")).to_have_count(0)
 
+                # Both search modes use the same generated metadata. An
+                # actual I/89 heading contains marked и and spaced words.
+                page.locator("#searchSource").select_option("current")
+                page.locator("#searchLanguage").select_option("cu")
+                page.locator("#searchTextMode").select_option("literal")
+                page.locator("#query").fill("и а р х а г г҃ л ъ и ѡ")
+                page.locator("#ignoreHistoricalAccents").check()
+                page.locator("#searchGo").click()
+                historical=page.locator("#searchResults button").filter(has_text="scan 89")
+                expect(historical).to_have_count(1)
+                expect(historical.first.locator("mark")).to_have_text("и́  а р х а г г҃ л ъ  и́  ѡ", use_inner_text=False)
+                historical.first.click()
+                heading=page.locator(".line-text[data-line-id='witness-b-heading-l001']")
+                expect(heading.locator(".search-match")).to_have_text("и́  а р х а г г҃ л ъ  и́  ѡ", use_inner_text=False)
+                page.locator("#searchOpen").click()
+                page.locator("#ignoreHistoricalAccents").uncheck()
+                page.locator("#searchLanguage").select_option("")
+
                 self.assertIs(annotation["lexical_expansions"],True)
                 # Search annotations are exact source slots, with facets applied
                 # to the source language/region, not inferred from the expansion.
