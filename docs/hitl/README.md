@@ -45,36 +45,57 @@ dimensions, and source Git blob when supplied. Never substitute OCR, a
 resized page screenshot, or a modern font for source pixels. Do not fetch
 the target OCR or another reader's target transcription for a blind reading.
 
-For a local checkout, put the atlas JPEGs in a separate directory preserving
-their relative paths (`volN/page-NNNNN.jpg`). Install Pillow with RAQM,
-fonttools and brotli in the research environment. From the repository root:
+Use a full Git checkout (not a shallow archive): the loader reads immutable
+pre-update round and candidate blobs from Git history. Install the package
+and visual dependencies (Pillow with RAQM, fonttools, brotli).
+The following commands run from the repository root in Bash; the optional
+GitHub CLI download loop retrieves only the listed native assets. Use an
+already populated pinned images directory instead if available.
 
 ```sh
-python -m pip install Pillow fonttools brotli
-python docs/render_approved_icl.py --assets /path/to/pinned/images \
-  --output /tmp/approved.html --sheet-dir /tmp/approved-sheets
-python docs/check_approved_icl_sheets.py /tmp/approved-sheets
+python -m pip install -e . Pillow fonttools brotli
+assets="$(mktemp -d)"
+python docs/render_approved_icl.py --hitl --list-sources > "$assets/sources.tsv"
+set -euo pipefail
+while IFS=$'\t' read -r path commit; do
+  mkdir -p "$assets/$(dirname "$path")"
+  gh api "repos/alexsosn/franko-tei/contents/images/$path?ref=$commit" \
+    --jq .content | base64 --decode > "$assets/$path"
+done < "$assets/sources.tsv"
+python docs/render_approved_icl.py --hitl --assets "$assets" \
+  --output "$assets/active.html" --sheet-dir "$assets/sheets"
+python docs/check_approved_icl_sheets.py "$assets/sheets" --hitl
 ```
 
-Use a new empty sheet directory. Open the bounded PNG sheets in the visual
-reader (not merely the HTML or index as text). If the four original hashed
-review PNGs are available, pass `--previews /path/to/review-pngs`; otherwise
-the renderer deliberately omits those 42 entries. Never fabricate their
-coordinates or substitute screenshots. Do not publish scan derivatives.
+The `--hitl` mode validates the base and entire committed extension chain,
+including frozen pre-update records, original line IDs, literal decisions,
+CSL scope, source identity and estimated crop bounds. It rejects missing,
+duplicate, mutated or unreviewed examples. The sheet index records base and
+extension Git blob IDs and any omitted synthetic font renders; original
+literal readings remain in the HTML even if Monomakh lacks a character.
+Use `--target ROMAN/SCAN` on all three commands for a prospective page,
+substituting its real scan key, to reject a target already in native sources
+or reserved as a holdout. This guard does not establish that the reader has
+never seen the page elsewhere. Do not use the target guard for paired
+retries. Omitting `--hitl` retains the historical base-only mode.
 
-**Current limitation:** this renderer does not load the incremental
-extensions. Until integrated, load those JSON files separately and open
-their pinned source JPEGs, inspect each relevant `bbox_xywh` (native
-x/y/width/height) and compare it with the literal `reading`. Use locally
-cropped pixels if possible. These rectangles are estimated full-line
-contexts, not glyph-level labels. If a rectangle misses the line, inspect
-the actual page to locate it; record the mismatch rather than pretending
-the crop is exact. Review the most relevant contrasts (uk/omega/ot,
-iotated a/yus, yer, titlo and raised letters) across different works and
-typefaces, not just the immediately preceding page. If the session has
-only full-page visual access, use that fallback and explicitly record it.
-If it cannot view source pixels at all, do not claim atlas-assisted visual
-recognition. A JSON reference alone is textual context, not a visual sheet.
+Open the bounded PNG sheets in the visual reader (not merely the HTML or
+index as text). Use a new empty sheet directory. Base glyphs, provisional
+issue focal contexts and human-reviewed full-line contexts are separate
+sheet types. If the four original hashed review PNGs are available, pass
+`--previews /path/to/review-pngs`; otherwise the renderer deliberately
+omits the 42 preview-only entries. Never fabricate their coordinates or
+substitute screenshots. Do not publish scan derivatives.
+
+Full-line rectangles are estimated, not verified glyph boxes. Verify the
+source crop against the full page before using it as paired visual
+evidence; if it misses the intended row, record the mismatch and consult
+the full source. Review relevant contrasts (uk/omega/ot, iotated a/yus,
+yer, titlo and raised letters) across different works and typefaces.
+If rendering is unavailable but the session can view original images,
+inspect each relevant source and its literal reading separately and record
+the fallback. If it cannot view source pixels at all, do not claim visual
+atlas-assisted recognition. The JSON alone supplies textual context.
 
 ## 3. Recognize and publish a new page
 
@@ -150,10 +171,9 @@ copying the reference. Then freeze a different work/volume target.
 
 ## 5. What is still manual
 
-The native base renderer and scorer are implemented and tested. Incremental
-extension ingestion, source-crop verification, reviewer intake to metric
-history, selection and invocation of a separate visual reader remain
-operator-managed. This guide makes the manual workflow transferable; it
+The active renderer, extension loader and dual scorer are implemented.
+Source-crop localization and verification, reviewer intake to metric history,
+selection and invocation of a separate visual reader remain operator-managed. This guide makes the manual workflow transferable; it
 does not claim that a single command performs OCR or retrains a model.
 Do not let these experimental gaps block ordinary corpus transcription.
 Track missing implementation in #447 and the controlled ICL study #436.
