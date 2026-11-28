@@ -199,6 +199,10 @@ verification; physical scan IDs):
   слн҃це→солнце, мц҃ь→мѣсяць; l002 Бг҃ъ→Богъ; l022 repeated
   ст҃ъ. Blob e005ab9bfb6fc63c6c9173a0e9c6bc09bdcc52a2 has 18
   explicitly uncertain expansions. Repeated matches must stay distinct.
+* II/100 witness-e-excerpt-line-02/04/05: Х҃съ, Б҃гу, емѹ;
+  witness-zh-excerpt-line-03/04: пророчество- / вахѹ, С҃на Б҃жїѧ.
+  These seed contraction, historical uk, abbreviation and continuation
+  tests in another work; do not infer expansions from the strings alone.
 * IV/68 disputations-cont-line-01: Въпроⷭ, мꙋж, нечⷭтивых.
   A candidate linear reading of нечⷭтивых is нечстивых, not
   нечтивых. This does not certify the underlying text or establish a
@@ -224,7 +228,10 @@ Review the diff, code, tests and actual evidence independently before merge.
 For HITL, keep approved-atlas training separate from unseen test works/
 volumes. Freeze predictions before review; post-feedback rereads are
 development results, not unseen accuracy. Preserve current dual CER
-definition and version for historical comparability; future accent-only
+definition and version for historical comparability (docs/hitl/dual-cer-history.json,
+franko-hitl-dual-cer-v1: without_marks removes every Unicode M character,
+including combining letters, without decomposition; it is not accent-only).
+Future accent-only
 CER must explicitly list removed codepoints, retain meaningful raised
 letters and report separate abbreviation/diacritic/attachment errors.
 Never compare values across different metric definitions without
