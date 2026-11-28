@@ -6,7 +6,7 @@ Each local batch is pinned to one exact commit and candidate blob. Re-fetch exac
 commit bytes before opening or resuming; never silently migrate to a newer
 reading. Use GitHub's public commit API only when main is selected, and the
 existing native review issue form for submission. No account tokens. 
-A compact dialog contains source context, the original literal, a native editor,
+A compact dialog pairs the pinned source crop with a single native transcription field,
 confirm/correct/defer decisions, local draft recovery and explicit JSON export.
 Test browser-generated JSON using the existing Python validator on actual I/20.
 No publication, adjudication or credit in this step.
@@ -14,7 +14,7 @@ No publication, adjudication or credit in this step.
 The pilot uses origin-local sessions scoped to the candidate path and selected
 reading ref (localStorage; at most 25 decisions and 32 KiB exported JSON per batch). The pencil in the text pane opens a dialog, with a
 source crop (estimated box, contextual neighboring lines) and full scan link,
-original literal, uncertainty notes, native editor, historical symbols, note,
+a single working transcription field, uncertainty notes (on demand), historical symbols, note,
 save/confirm-and-next, defer and undo. Reopening the same candidate and ref resumes its pinned batch. Changing the
 page, volume, candidate or explicit ref opens the corresponding batch instead.
 Legacy single-key drafts remain intact and resume only on their matching candidate
@@ -23,6 +23,12 @@ main continues to use its originally pinned commit even as main advances. Prepar
 public GitHub form. Only after saving/submitting externally should the user
 clear the batch. A draft can also be explicitly discarded with confirmation.
 No automatic submission, proof of inspection, acceptance or user credit.
+The crop is above the field on narrow screens and beside it on wide screens.
+Line selection shows line number and physical region, without a second excerpt.
+The frozen literal remains in the pinned bundle target and is never replaced by
+an edited value; font selection still uses the source language spans. No duplicate
+transcription panel is needed for routine proofreading. This layout is also the
+required base for future annotation editing, which is not yet a submission mode.
 Image dimensions are checked, not image byte hashes; source crop is approximate.
 Exact Git blob hash is computed from the fetched original candidate bytes.
 The production CLI still decides trusted commit ancestry. The browser test
