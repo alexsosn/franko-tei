@@ -20,6 +20,10 @@ class ICLWorkflowContract(unittest.TestCase):
         self.assertIn("done < <(jq -r", shell)
         self.assertIn('--sheet-dir "$assets/sheets"', shell)
         self.assertIn('python docs/check_approved_icl_sheets.py "$assets/sheets"', shell)
+        self.assertIn('python docs/render_approved_icl.py --hitl --list-sources', shell)
+        self.assertIn('done < "$assets/sources.tsv"', shell)
+        self.assertIn('python docs/check_approved_icl_sheets.py "$assets/active-sheets" --hitl', shell)
+        self.assertEqual(text.count("'docs/hitl/atlas-extension-*.json'"), 3)
         self.assertNotIn("upload-artifact", shell)
         if shutil.which("bash"):
             result = subprocess.run(["bash", "-n"], input=shell,
