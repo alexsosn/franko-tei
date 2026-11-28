@@ -9,6 +9,10 @@
 5. TEI export in initial implementation is intentionally **partial page-based staging**. It uses `<pb>` and `<lb>` with PDF links, not a complete critical edition. Later milestone adds `<div type=work>`, `<app>`, `<lem>`, `<rdg>`, `listWit`, `msDesc`, explicit `<note>`, nontext `<gap>` and language spans only as evidence supports. TEI P5 guide: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html ; https://guidelines.tei-c.de/en/html/TC.html
 6. Rights: printed originals are historical, but current digital scans may have terms. Do not commit scan PDFs; document rights before bulk rehosting. This repository's software MIT license does not assert a CC/public-domain status for the scans.
 
+## Historical Cyrillic and searchability
+
+Follow [historical orthography and search](historical-orthography-search.md) for positional heuristics, Unicode encoding, raised letters, uk variants, abbreviations, source uncertainty and HITL. Read the actual printed form; historical spelling and dictionary forms are only reading aids. Preserve literal spacing, hyphens and codepoints in frozen drafts. In new visually resolved readings distinguish оу, ꙋ and у; do not silently migrate legacy ѹ. Use [abbreviation spans](abbreviation-spans.md) for supported contextual expansions, not a change to the original text. Do not invent unsupported annotation fields. Search normalization is a separate, versioned projection, not a transcription operation.
+
 ## Working draft versus verified edition
 
 At the current stage (user decision 2026-11-25), agents produce the entire text and provisional markup first. Independent review may be agent-only; usable source-linked `agent_unverified` drafts can be merged and shown in the review interface without human proofreading or exhaustive per-page adjudication. Unresolved readings, gaps, alternatives and incomplete classification stay explicit. Later researchers can correct drafts via the interface. The strict verified-release JSONL contract below is separate and must not block ordinary draft ingestion or viewer publication.
