@@ -74,8 +74,21 @@ Language, region and attribution filters apply to the source interval, not
 an inferred language of its expansion. Literal mode remains the default.
 The published exact-revision side index declares lexical_expansions support;
 old or mismatched indexes must fail closed rather than report a false zero.
-No general expansion-aware phrase search, combined literal/alias search,
-OCR expansion search or automatic dictionary inference is provided yet.
+The explicit **Diplomatic + expanded** mode additionally searches literal
+text and mixed phrases using only existing contextual expansions. A query
+may contain any combination of original contractions and expanded words.
+Expansion-dependent phrases are restricted to one physical line; ordinary
+literal matching retains its existing behavior, including whitespace across
+lines. Blank mixed queries list annotated occurrences. The implementation
+uses a shared acyclic graph of literal and expansion paths on annotated
+lines, not a Cartesian product of reconstructed strings. Matches retain
+all participating expansion annotations; supplied letters map to the entire
+original contraction. Deduplication uses original intervals, extending
+partial boundaries within contractions for occurrence identity only. A
+literal hit is preferred if it already represents that anchored occurrence;
+its original highlight is retained. Distinct literal matches are preserved.
+No cross-line expansion-dependent phrase search, OCR expansion search,
+automatic dictionary inference or orthographic normalization is provided yet.
 Coverage is explicitly incomplete; the initial backfill contains 103 proposals
 on 25 pages, and the search status reports the number of indexed occurrences
 for the selected reading scope. An accepted text correction invalidates stale expansion
