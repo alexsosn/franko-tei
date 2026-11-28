@@ -58,15 +58,37 @@ Use the pencil button in the text pane. Each local batch is pinned to an exact c
 
 The Pages build validates the ledger against Git history and emits `search/editorial.json` with accepted lines, attribution, source Git blob and revision. It never edits pilot candidates. The reader applies only an exact blob/line match, selects the reviewed candidate on affected pages by default, and offers a checkbox to show the original candidate. Agent review remains provisional; unreviewed lines are still unverified. Corrected line language offsets and original uncertainty highlights are not reused. Search indexes keep both literal original and corrected candidate text (labelled Editorial); result navigation selects the appropriate view and verifies the exact occurrence. A historical branch/commit without the matching published overlay only has raw search/reading, and a changed candidate cannot silently inherit acceptance. The proofreading dialog continues to target the original frozen candidate; accepted lines cannot be superseded by a duplicate decision. Published review records trigger a Pages rebuild. TEI/TF projection and reversal are separate tasks.
 
+## Historical accent search (first slice of #177)
+
+In Search, enable **Ignore accents (annotated historical Cyrillic only)**.
+This opt-in mode uses the published annotation index for the selected
+reading revision and searches individual spans tagged Cyrl and cu/orv
+(including legacy chu mapped to cu). It folds canonical Unicode variants
+and ignores acute, grave, kamora and Cyrillic breathings (U+0300, U+0301,
+U+0311, U+0485, U+0486) on Cyrillic base letters. It preserves titlo,
+covering, raised letters, й, ї, historical letter distinctions and word
+spacing; it does not expand abbreviations. A result shows the exact
+original substring, including its original marks, and opens the same
+source line. Other languages, unknown or missing attribution, corrected
+lines awaiting reannotation and cross-span/line phrases are excluded
+from this mode; the summary identifies the scope and eligible span count.
+A branch lacking matching published metadata or an OCR source is not
+silently treated as historical. Use literal search for those sources.
+Case and annotation filters remain available. Expansion search (Search text →
+Expanded abbreviations) is a separate mode; combining the two is rejected
+explicitly until combined alias matching is implemented. See
+[abbreviation spans](../docs/abbreviation-spans.md) for expansion coverage.
+Historical accent mode
+requires Intl.Segmenter (a modern browser).
+
 ## Historical spelling search roadmap
 
 See [historical orthography and search](../docs/historical-orthography-search.md)
 and [#177](https://github.com/alexsosn/franko-tei/issues/177) for the proposed
-accent-insensitive, historical grapheme, abbreviation-aware, logical-word
+remaining historical grapheme, combined literal/expansion, logical-word
 and morphological search profiles. These are future features, not current
 reader controls. Keep the existing literal search and exact source
 navigation; future results must display the original text, explain the
 matching form and distinguish uncertain expansions and unavailable coverage.
-
 
 **Research bibliography / Наукова бібліографія.** The link in Contents opens the [edition-level research bibliography](../docs/research-bibliography.md) in a separate tab. It lists scholarship, related publications and historical-review leads with original citations and access caveats. Work-level references remain in their existing individual book-icon disclosures; printed indexes remain a separate source layer.

@@ -192,6 +192,8 @@ def adjudicate(record, event_id, outcome, editor, reason, approved_digest, sourc
                 "agent review image does not match target")
     if outcome == "accept":
         require(event["decision"] != "defer", "deferred line cannot be accepted")
+        require(event["decision"] != "annotate_language",
+                "annotation projection must be implemented before acceptance")
         # First slice restricts corrections to plain body lines; structural
         # headings/folios and any explicit source note marker need their own gate.
         target = event["target"]
@@ -443,6 +445,8 @@ def project_lines(raw, path, ledger, *, source_loader=None, projection_commit=No
                         and target["region_id"] == region["id"], "stale accepted source")
                 if revision is not None:
                     row["source_revision"] = copy.deepcopy(revision)
+                require(event["decision"] in {"correct", "confirm"},
+                        "unsupported accepted annotation projection")
                 corrected = event["decision"] == "correct"
                 row.update(status="accepted_correction" if corrected else "accepted_confirmation",
                            contributor_id=decision["contributor_id"],

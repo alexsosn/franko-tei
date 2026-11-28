@@ -571,6 +571,15 @@ class EditorialProjectionTests(unittest.TestCase):
             build(ROOT/"pilot",output,REF)
             literal=json.loads((output/"vol1.json").read_text())
             annotation=json.loads((output/"annotation-vol1.json").read_text())
+            source_path="pilot/vol1_scan00089_single_reading.json"
+            raw=(ROOT/source_path).read_bytes()
+            draft=json.loads(raw)
+            from test_review_editor import png
+            manifest={"volume":"1","page_count":469,"pages":[
+                {"scan_page":89,"width":1190,"height":1856,"artifacts":[
+                    {"role":"page_image","path":draft["source_image_path"],"sha256":draft["source_image_sha256"]},
+                    {"role":"embedded_ocr","path":"original_ocr/vol1/page-00089.txt"}]}]}
+
             with sync_playwright() as p:
                 browser=p.chromium.launch(args=["--no-sandbox"])
                 page=browser.new_page(viewport={"width":390,"height":844})
@@ -583,6 +592,10 @@ class EditorialProjectionTests(unittest.TestCase):
                     if u.startswith("https://reader.test/search/"):
                         path=output/u.rsplit("/",1)[1]
                         if path.is_file():return r.fulfill(content_type="application/json",body=path.read_bytes())
+                    if u.endswith("/manifest.json"):return r.fulfill(json=manifest)
+                    if u.endswith("/"+source_path):return r.fulfill(content_type="application/json",body=raw)
+                    if u.endswith("/"+draft["source_image_path"]):return r.fulfill(content_type="image/png",body=png())
+                    if u.endswith("/page-00089.txt"):return r.fulfill(body="OCR")
                     return r.fulfill(status=404,body="")
                 page.route("https://**/*",route)
                 page.goto("https://reader.test/")
@@ -655,6 +668,85 @@ class EditorialProjectionTests(unittest.TestCase):
                 page.locator("#searchGo").click()
                 expect(page.locator("#searchStatus")).to_contain_text("Annotation filters cannot be applied to OCR")
                 expect(page.locator("#searchResults button")).to_have_count(0)
+
+                # Both search modes use the same generated metadata. An
+                # actual I/89 heading contains marked и and spaced words.
+                page.locator("#searchSource").select_option("current")
+                page.locator("#searchLanguage").select_option("cu")
+                page.locator("#searchTextMode").select_option("literal")
+                page.locator("#query").fill("и а р х а г г҃ л ъ и ѡ")
+                page.locator("#ignoreHistoricalAccents").check()
+                page.locator("#searchGo").click()
+                historical=page.locator("#searchResults button").filter(has_text="scan 89")
+                expect(historical).to_have_count(1)
+                expect(historical.first.locator("mark")).to_have_text("и́  а р х а г г҃ л ъ  и́  ѡ", use_inner_text=False)
+                historical.first.click()
+                heading=page.locator(".line-text[data-line-id='witness-b-heading-l001']")
+                expect(heading.locator(".search-match")).to_have_text("и́  а р х а г г҃ л ъ  и́  ѡ", use_inner_text=False)
+                page.locator("#searchOpen").click()
+                page.locator("#ignoreHistoricalAccents").uncheck()
+                page.locator("#searchLanguage").select_option("")
+
+                self.assertIs(annotation["lexical_expansions"],True)
+                # Search annotations are exact source slots, with facets applied
+                # to the source language/region, not inferred from the expansion.
+                result=page.evaluate("""async ([l,a])=>{
+                    const row=joinSearchAnnotations(l,a).find(r=>r.scan===89&&!r.reviewed);
+                    const f={language:'uk',region:'body',certainty:'uncertain'};
+                    const hits=expansionMatches(row,queryRegex('святъ',true),f);
+                    const wrong=expansionMatches(row,queryRegex('святъ',true),{...f,language:'grc'});
+                    const phrase=expansionMatches(row,queryRegex('святъ святъ',true),f);
+                    const first=hits[0].abbreviation;
+                    const correct={...first,start:first.cpStart,end:first.cpEnd};
+                    const fixture={text:'ст҃ъ!',abbreviation_spans:[{...correct,start:0,end:4}],
+                        language_spans:[{start:0,end:5}]};
+                    const synthetic=readerAbbreviations(fixture,row.reader_id,{status:'accepted_correction'});
+                    const key='annotations:'+l.ref+':'+l.volume, previous=indexCache.get(key);
+                    const old=structuredClone(a);delete old.lexical_expansions;
+                    indexCache.set(key,Promise.resolve(old));
+                    let rejected=false;try{await annotatedIndex(l,true);}catch(e){rejected=true;}
+                    if(previous)indexCache.set(key,previous);else indexCache.delete(key);
+                    return [hits.map(h=>[h.abbreviation.cpStart,h[0]]),wrong.length,
+                            phrase.length,synthetic.length,rejected];
+                }""",[literal,annotation])
+                self.assertEqual(result,[[[10,"ст҃ъ"],[16,"ст҃ъ"],[22,"ст҃ъ"]],0,0,0,True])
+                # Exact source hit: three separately annotated contractions,
+                # not an expanded replacement of the physical line.
+                page.locator("#searchSource").select_option("current")
+                page.locator("#searchLanguage").select_option("")
+                page.locator("#searchTextMode").select_option("expansion")
+                page.locator("#query").fill("святъ")
+                page.locator("#searchGo").click()
+                hits=page.locator("#searchResults button").filter(has_text="scan 89")
+                expect(hits).to_have_count(3)
+                expect(page.locator("#searchStatus")).to_contain_text("indexed expansions; coverage is incomplete.")
+                expect(hits.first).to_contain_text("святъ")
+                expect(hits.first.locator("mark")).to_have_text("ст҃ъ")
+                hits.nth(1).click()
+                line=page.locator(".line-text[data-line-id='witness-b-text-l022']")
+                expect(line.locator(".search-match")).to_have_text("ст҃ъ")
+                expect(line).to_have_text(next(l["text"] for r in draft["reading"]["regions"]
+                    for l in r["lines"] if l["id"]=="witness-b-text-l022"))
+                line.locator("xpath=..").locator(".abbreviation-toggle").click()
+                expect(page.locator("#annotationDetails")).to_contain_text("Abbreviation expansions")
+                expect(page.locator("#annotationDetails .abbreviation-entry")).to_have_count(3)
+                expect(page.locator("#annotationDetails .abbreviation-entry").first).to_contain_text("ст҃ъ")
+                expect(page.locator("#annotationDetails .abbreviation-entry").first).to_contain_text("святъ")
+                expect(page.locator("#annotationDetails .abbreviation-entry").first).to_contain_text("Provisional expansion")
+                expect(page.locator("#annotationDetails .abbreviation-entry a").first).to_have_attribute("href",
+                    "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/4SlovoOSotvorenjuAngel.html")
+                # Stale literal or reader identity may not yield false hits.
+                self.assertTrue(page.evaluate("""([l,a])=>{
+                    for(const mutate of [s=>s.literal='wrong',s=>s.text_version='stale',
+                                         s=>s.start++,s=>s.source='javascript:alert(1)']){
+                        const copy=structuredClone(a);
+                        const line=copy.entries.find(e=>e.scan===89&&!e.reviewed).annotation.lines
+                            .find(l=>l.line_id==='witness-b-text-l022');
+                        mutate(line.abbreviation_spans[0]);
+                        try{joinSearchAnnotations(l,copy);return false;}catch(e){}
+                    }
+                    return true;
+                }""",[literal,annotation]))
                 browser.close()
 
     def test_browser_reading_and_exact_search(self):

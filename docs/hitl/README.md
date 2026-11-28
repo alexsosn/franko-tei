@@ -87,10 +87,19 @@ sheet types. If the four original hashed review PNGs are available, pass
 omits the 42 preview-only entries. Never fabricate their coordinates or
 substitute screenshots. Do not publish scan derivatives.
 
-Full-line rectangles are estimated, not verified glyph boxes. Verify the
-source crop against the full page before using it as paired visual
-evidence; if it misses the intended row, record the mismatch and consult
-the full source. Review relevant contrasts (uk/omega/ot, iotated a/yus,
+Full-line rectangles are estimated, not verified glyph boxes. HITL displays
+include additional native pixels above and below the target, with markers
+in the external side gutters indicating the original estimated line height.
+The markers do not overwrite source pixels; surrounding text is context,
+not a new label. The sheet `index.json` includes the exact literal reading,
+source locator, target and display rectangles, provenance, sheet filename
+and whether a synthetic font rendering is available for every included
+example. The display rectangle describes source pixels only (excludes
+the synthetic gutters). Read these literals alongside the PNGs, particularly
+for combining marks that cannot be reliably distinguished in the synthetic
+font. Verify the source crop against the full page before using it as paired
+visual evidence; if it misses the intended row, record the mismatch and
+consult the full source. Review relevant contrasts (uk/omega/ot, iotated a/yus,
 yer, titlo and raised letters) across different works and typefaces.
 If rendering is unavailable but the session can view original images,
 inspect each relevant source and its literal reading separately and record
