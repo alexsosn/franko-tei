@@ -1,0 +1,304 @@
+{
+  "schema_version": "printed-apparatus-annotation-v1",
+  "id": "v2-nativity-iii-b",
+  "kind": "printed_numbered_apparatus",
+  "volume": "2",
+  "status": "agent_unverified",
+  "description": "Source-observed nine numbered variants for III.Б, Lviv manuscript, printed pp.116–117. Franko explicitly names the Peremyshl Prologue XVI century as the variant source. Printed markers on scan 198 correspond in order to distinct articles on scan 199. Literal ordered code-point fragments cover the four physical apparatus rows exactly, including internal separators and line-final hyphen. Entry 2 vac. is an editorial omission indicator, not a scan gap. Entry 9 is a divergent ending, not an inferred lemma extent. Asterisk notes are separate. No TEI/TF projection or scholarly adjudication claimed.",
+  "scope": {
+    "heading": {
+      "scan_page": 198,
+      "region_id": "witness-heading",
+      "lines": [
+        "Б. Львівський рукопис XVII в. к. 447 v."
+      ]
+    },
+    "next_heading": {
+      "scan_page": 199,
+      "region_id": "witness-heading",
+      "lines": [
+        "В. Рукопис о. Теодора Тухлянського, стор. 26—38."
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scan_page": 198,
+      "printed_page": "116",
+      "source_pilot_path": "pilot/vol2_scan00198_single_reading.json",
+      "source_record_commit": "5436c44a88743dbd78287c06f6801fcfff91818e",
+      "source_record_blob": "f61ceed7b84c9437094029670a0f31d8f705d086",
+      "source_reader_id": "gpt62-ii-198-atlas-20261128",
+      "source_image_sha256": "75b6323180ca8df06de3b42b4ea32216a2ca9254d5bc77b7c329495627022656",
+      "body_region_ids": [
+        "nativity-b"
+      ],
+      "apparatus_region_ids": []
+    },
+    {
+      "scan_page": 199,
+      "printed_page": "117",
+      "source_pilot_path": "pilot/vol2_scan00199_single_reading.json",
+      "source_record_commit": "5436c44a88743dbd78287c06f6801fcfff91818e",
+      "source_record_blob": "81bb0575bd3d856a854a23d6e84a47d007ba268e",
+      "source_reader_id": "gpt62-ii-199-atlas-20261128",
+      "source_image_sha256": "b94c3696395ea2eb982ba5f6222ea419fa9c7042f2fd12835de6a5f11fb6ba95",
+      "body_region_ids": [
+        "nativity-b-cont"
+      ],
+      "apparatus_region_ids": [
+        "apparatus"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "v2-nativity-iii-b-entry-001",
+      "number": 1,
+      "label": "¹)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-01",
+          "start": 0,
+          "end": 8,
+          "literal": "¹) Видѣ "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-002",
+      "number": 2,
+      "label": "²)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-01",
+          "start": 8,
+          "end": 16,
+          "literal": "²) vac. "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-003",
+      "number": 3,
+      "label": "³)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-01",
+          "start": 16,
+          "end": 28,
+          "literal": "³) и словом "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-004",
+      "number": 4,
+      "label": "⁴)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-01",
+          "start": 28,
+          "end": 63,
+          "literal": "⁴) зачат быс[ть] сн҃ъ Слово бж҃іє. "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-005",
+      "number": 5,
+      "label": "⁵)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-01",
+          "start": 63,
+          "end": 76,
+          "literal": "⁵) въ чс҃тнѣи"
+        },
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-02",
+          "start": 0,
+          "end": 8,
+          "literal": "оутробѣ "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-006",
+      "number": 6,
+      "label": "⁶)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-02",
+          "start": 8,
+          "end": 16,
+          "literal": "⁶) царя "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-007",
+      "number": 7,
+      "label": "⁷)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-02",
+          "start": 16,
+          "end": 27,
+          "literal": "⁷) Кириней "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-008",
+      "number": 8,
+      "label": "⁸)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-02",
+          "start": 27,
+          "end": 90,
+          "literal": "⁸) дод. сътворити повелѣніє ѡ҆ написаній людей. и҆ прїиде ѿ На-"
+        },
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-03",
+          "start": 0,
+          "end": 52,
+          "literal": "зареда Іѡсиф хранител Бци҃ написати ся къ Виѳлеѡмѣ. "
+        }
+      ]
+    },
+    {
+      "id": "v2-nativity-iii-b-entry-009",
+      "number": 9,
+      "label": "⁹)",
+      "fragments": [
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-03",
+          "start": 52,
+          "end": 80,
+          "literal": "⁹) Відси закінченє відмінне:"
+        },
+        {
+          "scan_page": 199,
+          "line_id": "apparatus-line-04",
+          "start": 0,
+          "end": 77,
+          "literal": "и҆ зиждителя и положи єго въ я҆слех скотїях, хотяй ны избавити ѿ безсловесїя."
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-01",
+        "start": 24,
+        "end": 26,
+        "literal": "¹)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-001"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-01",
+        "start": 51,
+        "end": 53,
+        "literal": "²)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-002"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-04",
+        "start": 27,
+        "end": 29,
+        "literal": "³)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-003"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-04",
+        "start": 41,
+        "end": 43,
+        "literal": "⁴)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-004"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-05",
+        "start": 25,
+        "end": 27,
+        "literal": "⁵)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-005"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-06",
+        "start": 38,
+        "end": 40,
+        "literal": "⁶)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-006"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-07",
+        "start": 24,
+        "end": 26,
+        "literal": "⁷)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-007"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-07",
+        "start": 53,
+        "end": 55,
+        "literal": "⁸)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-008"
+    },
+    {
+      "marker": {
+        "scan_page": 198,
+        "line_id": "nativity-b-line-11",
+        "start": 66,
+        "end": 68,
+        "literal": "⁹)"
+      },
+      "status": "resolved",
+      "target_entry_id": "v2-nativity-iii-b-entry-009"
+    }
+  ]
+}
