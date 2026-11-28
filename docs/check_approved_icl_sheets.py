@@ -39,6 +39,18 @@ def check_sheets(directory, atlas_path=None, *, hitl=False, target=None):
             im.verify()
     assert seen == expected
     assert len(seen) == len(set(seen))
+    if hitl:
+        from franko_tei.hitl_atlas import sheet_example
+        rows = {r["id"]: r for r in atlas["examples"]}
+        assert set(omitted) <= set(seen)
+        expected_records = []
+        for sheet in index["sheets"]:
+            for rid in sheet["ids"]:
+                row = rows[rid]
+                src = (atlas["sources"][row["source"]] if "source" in row
+                       else atlas["previews"][row["preview"]])
+                expected_records.append(sheet_example(row, src, sheet["file"], rid not in omitted))
+        assert index["examples"] == expected_records
     assert set(directory.glob("sheet-*.png")) == {directory / s["file"] for s in index["sheets"]}
     print(f"Verified {len(seen)} approved examples on {len(index['sheets'])} bounded PNGs; omitted {len(index['omitted_ids'])}")
     return index
