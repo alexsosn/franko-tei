@@ -1,0 +1,719 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 194,
+  "printed_page_observed": null,
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00194.jpg",
+  "source_image_sha256": "e1463511eda58f97afa581ce30aab273c86d62bd7e7ec3f7a3f8acc9ae95fe57",
+  "reading": {
+    "reader_id": "gpt62-ii-194-atlas-20261128",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00192-00201-20261128",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading with selective visual ICL, base atlas 8a4f5e3d50e33e1693279155f5746de32e35be38 and extension chain through 5ddfee80d00eaf148b07d5537cf33b70123ad6cd. Actual full-page fallback II/102 L81 (ꙋ), I/128 L66 (оу), IV/149 R004-body-line-01–04 (titla and supralinear letter contrasts). No rendered sheets or preview-only examples. orv provisional historical Ruthenian attribution; ecclesiastical excerpts require further linguistic adjudication. Distinguish monograph ꙋ from digraph оу; accent/breathing/titlo placement remains provisional/incomplete, estimated geometry. No folio printed; chapter opening. Null observed page retained rather than infer 112. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "III. Ісусове різдво.\nА. Угроруське учительне евангелие XVII в.\nстор. 359—379.\n(Мс҃ца декеврія въ кє҃. дн҃ь на Рождество Гд҃а\nнш҃его Іс҃ Ха҃, єѵ҃ліє, которое рачил ѡ҆знамити Гь҃\nнаш Іс҃ Хс҃ ст҃ым єѵ҆глистомъ Маѳ. зач. а҃.). Книга\nродства Іс҃ Хв҃а сн҃а Дв҃да и҆ сн҃а Авраамля. на перед и҆менꙋет ся\nсн҃омъ Дв҃двым, нѣжли Авраамовымъ. про то пише ст҃ый єѵ҆глист\nМаѳ. до жидов, штобы вырозꙋмели, ажъ ѿ поколѣня Авраа-\nмоваго и҆ Дв҃дового народилъ ся Хс҃. чом? Авраам и҆ Дв҃дъ\nбыли люде ст҃ыи. Авраам был патріар'хом, а потом Дв҃дъ был\nпосщ҃енъ на цр҃тво по Саꙋлѣ и҆ был тогды цр҃ем и҆ прр҃ком межи\nжиды. и҆ дѣля того так пишетъ ся сн҃ом Авраамовым и҆ Дв҃д-\nвым, где мовит: Авраам роди Ісаака, Ісаакъ роди Іякова,\nи҆ дале пиш[ет]: и҆ было родовъ ді҃. цр҃ь Дв҃дъ Соломона роди,\nи҆ дал[е] пиш[ет]: до преселенія вавилон'скаго зас родовъ было ді҃.\nА потом родил Іяков мꙋжа Марїина, ѿ которой то народилъ\nся Іс҃ Хс҃, тꙋ зновꙋ вышло родов ді҃. Протожъ и҆н'ших жен не\nи҆менꙋет ся, тол'ко мꙋжїй. чом? оу҆ старом законѣ не личено род\nпо женѣ, крем пречистой Мріи҃ Бци҃, которая почала ѿ Дх҃а\nст҃го, не ѿ мꙋжа. и҆ всѣх тых родов было ѿ Авраама до\nХа҃ мв҃.\nА Хс҃ вышол ѿ вариша Виѳлеєма. Іс҃ Хв҃о рж҃дество так\nбыло: коли его мт҃и Мріа҃ порꙋчена была Іѡсифови, котрая была\nдон'ка Іѡакимова и҆ А҆н'нина, ѿ неплодных ѡ҆ца и҆ мтр҃е. Бо коли\nи҆мала родити прчт҃ая Мт҃и Бж҃ія, за панованя цисаря римского\nѠктавіана, котрый тогды мало не вшиткомоу свѣтꙋ па-",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            544,
+            662,
+            163,
+            20
+          ],
+          "description": "Printed divider ornament."
+        },
+        {
+          "bbox_xywh": [
+            105,
+            113,
+            1050,
+            438
+          ],
+          "description": "Blank recto area with reverse-side show-through; no printed folio visible."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "chapter-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          421,
+          588,
+          411,
+          46
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "chapter-heading-line-01",
+            "text": "III. Ісусове різдво.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 4,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 4,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              421,
+              588,
+              411,
+              42
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          282,
+          732,
+          711,
+          84
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-line-01",
+            "text": "А. Угроруське учительне евангелие XVII в.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 34,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 34,
+                "end": 38,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 38,
+                "end": 41,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              282,
+              732,
+              711,
+              38
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "witness-heading-line-02",
+            "text": "стор. 359—379.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              282,
+              774,
+              711,
+              38
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "source-intro",
+        "kind": "body",
+        "bbox_xywh": [
+          135,
+          854,
+          1017,
+          747
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "source-intro-line-01",
+            "text": "(Мс҃ца декеврія въ кє҃. дн҃ь на Рождество Гд҃а",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 46,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              854,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-02",
+            "text": "нш҃его Іс҃ Ха҃, єѵ҃ліє, которое рачил ѡ҆знамити Гь҃",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              893,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-03",
+            "text": "наш Іс҃ Хс҃ ст҃ым єѵ҆глистомъ Маѳ. зач. а҃.). Книга",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              932,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-04",
+            "text": "родства Іс҃ Хв҃а сн҃а Дв҃да и҆ сн҃а Авраамля. на перед и҆менꙋет ся",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 66,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              971,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-05",
+            "text": "сн҃омъ Дв҃двым, нѣжли Авраамовымъ. про то пише ст҃ый єѵ҆глист",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1011,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-06",
+            "text": "Маѳ. до жидов, штобы вырозꙋмели, ажъ ѿ поколѣня Авраа-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 54,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1050,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-07",
+            "text": "моваго и҆ Дв҃дового народилъ ся Хс҃. чом? Авраам и҆ Дв҃дъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1089,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-08",
+            "text": "были люде ст҃ыи. Авраам был патріар'хом, а потом Дв҃дъ был",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1129,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-09",
+            "text": "посщ҃енъ на цр҃тво по Саꙋлѣ и҆ был тогды цр҃ем и҆ прр҃ком межи",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 62,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1168,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-10",
+            "text": "жиды. и҆ дѣля того так пишетъ ся сн҃ом Авраамовым и҆ Дв҃д-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1207,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-11",
+            "text": "вым, где мовит: Авраам роди Ісаака, Ісаакъ роди Іякова,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1247,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-12",
+            "text": "и҆ дале пиш[ет]: и҆ было родовъ ді҃. цр҃ь Дв҃дъ Соломона роди,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 62,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1286,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-13",
+            "text": "и҆ дал[е] пиш[ет]: до преселенія вавилон'скаго зас родовъ было ді҃.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 67,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1325,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-14",
+            "text": "А потом родил Іяков мꙋжа Марїина, ѿ которой то народилъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 55,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1365,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-15",
+            "text": "ся Іс҃ Хс҃, тꙋ зновꙋ вышло родов ді҃. Протожъ и҆н'ших жен не",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1404,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-16",
+            "text": "и҆менꙋет ся, тол'ко мꙋжїй. чом? оу҆ старом законѣ не личено род",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 63,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1443,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-17",
+            "text": "по женѣ, крем пречистой Мріи҃ Бци҃, которая почала ѿ Дх҃а",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 57,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1483,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-18",
+            "text": "ст҃го, не ѿ мꙋжа. и҆ всѣх тых родов было ѿ Авраама до",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 53,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1522,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "source-intro-line-19",
+            "text": "Ха҃ мв҃.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 8,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              135,
+              1561,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "nativity",
+        "kind": "body",
+        "bbox_xywh": [
+          138,
+          1602,
+          1017,
+          198
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "nativity-line-01",
+            "text": "А Хс҃ вышол ѿ вариша Виѳлеєма. Іс҃ Хв҃о рж҃дество так",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 53,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              138,
+              1602,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "nativity-line-02",
+            "text": "было: коли его мт҃и Мріа҃ порꙋчена была Іѡсифови, котрая была",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              138,
+              1641,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "nativity-line-03",
+            "text": "дон'ка Іѡакимова и҆ А҆н'нина, ѿ неплодных ѡ҆ца и҆ мтр҃е. Бо коли",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 64,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              138,
+              1681,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "nativity-line-04",
+            "text": "и҆мала родити прчт҃ая Мт҃и Бж҃ія, за панованя цисаря римского",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              138,
+              1720,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "nativity-line-05",
+            "text": "Ѡктавіана, котрый тогды мало не вшиткомоу свѣтꙋ па-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-194-atlas-20261128",
+                "start": 0,
+                "end": 51,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              138,
+              1760,
+              1017,
+              36
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "source-intro-line-02",
+        "reading": "єѵ҃ліє",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "source-intro-line-01",
+        "reading": "декеврія",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "source-intro-line-09",
+        "reading": "посщ҃енъ",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "source-intro-line-03",
+        "reading": "Маѳ.",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "nativity-line-01",
+        "reading": "вариша",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      }
+    ],
+    "source_note_links": []
+  }
+}

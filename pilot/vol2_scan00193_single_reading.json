@@ -1,0 +1,588 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 193,
+  "printed_page_observed": "111",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00193.jpg",
+  "source_image_sha256": "ed7051596f624c99fbd929b917f900c13d239113df2a9f700bfd955d22f6a891",
+  "reading": {
+    "reader_id": "gpt62-ii-193-atlas-20261128",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00192-00201-20261128",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading with selective visual ICL, base atlas 8a4f5e3d50e33e1693279155f5746de32e35be38 and extension chain through 5ddfee80d00eaf148b07d5537cf33b70123ad6cd. Actual full-page fallback II/102 L81 (ꙋ), I/128 L66 (оу), IV/149 R004-body-line-01–04 (titla and supralinear letter contrasts). No rendered sheets or preview-only examples. orv provisional historical Ruthenian attribution; ecclesiastical excerpts require further linguistic adjudication. Distinguish monograph ꙋ from digraph оу; accent/breathing/titlo placement remains provisional/incomplete, estimated geometry. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "111\nТак само цїкава є назва середньої сестри Анниної Совианія,\nякої не знаходимо анї в иньших апокріфах, анї в церковній традициї.\nР. Рукописний Требник Якова Казиницького, XVIII в.\nстор. 108.\n(Оу҆спеніє ст҃ыя А҆нны, [мтр҃е] прт҃ыя Бца). Иже\nбыст ѿ колѣна Левїина, дщи Матѳана ієрея и Марїи жены єго,\nво царство Клеѡпатра и҆ Сапора царей перских. Имаше же сія\nА҆нна и҆ двѣ сестры: Марїю и҆ Сѡви, посягнꙋвших во Виѳлеємѣ,\nсія же в Галилеи. Повнегда же родити єй, по ѡ҆бѣщанію ѿ Гд҃а,\nвсего міра сп҃сеніє Бцꙋ҃ и҆ возложити ю҆ во ст҃ая ст҃ых Гд҃ви я҆ко\nдаръ непорочен, потом мл҃твами и҆ бл҃готвореніи ко требꙋющим\nпрочєє время живота своего провождаше, и҆ прежде радостнаго\nбл҃говѣщенія ѿ архаггла҃ Бци҃ с миром оуспе.\nОтся статейка є очевидно дуже близькою парістю поперед-\nньої. Середуща сестра Анни зоветь ся тут Сѡви — а се є бу-\nквальна транскрипция грецького Σωβή, як виглядає се імя у Нїкі-\nфора Каллїста, див. Rud. Hofmann, Das Leben Jesu nach den\nApokryphen, 7.",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": [
+        {
+          "bbox_xywh": [
+            424,
+            1097,
+            234,
+            41
+          ],
+          "description": "Printed closing ornament; no linguistic text."
+        },
+        {
+          "bbox_xywh": [
+            66,
+            960,
+            969,
+            690
+          ],
+          "description": "Faint reverse-side show-through, not separate recto text."
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          952,
+          101,
+          56,
+          36
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "111",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              952,
+              101,
+              56,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "editorial-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          169,
+          941,
+          76
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-cont-line-01",
+            "text": "Так само цїкава є назва середньої сестри Анниної Совианія,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              169,
+              941,
+              34
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "editorial-cont-line-02",
+            "text": "якої не знаходимо анї в иньших апокріфах, анї в церковній традициї.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 67,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              207,
+              941,
+              34
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "witness-heading",
+        "kind": "heading",
+        "bbox_xywh": [
+          122,
+          302,
+          827,
+          82
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "witness-heading-line-01",
+            "text": "Р. Рукописний Требник Якова Казиницького, XVIII в.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 42,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 42,
+                "end": 47,
+                "language": "uk",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 47,
+                "end": 50,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              122,
+              302,
+              827,
+              37
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "witness-heading-line-02",
+            "text": "стор. 108.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 10,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              122,
+              343,
+              827,
+              37
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "dormition",
+        "kind": "body",
+        "bbox_xywh": [
+          72,
+          414,
+          950,
+          322
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "dormition-line-01",
+            "text": "(Оу҆спеніє ст҃ыя А҆нны, [мтр҃е] прт҃ыя Бца). Иже",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 48,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              414,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-02",
+            "text": "быст ѿ колѣна Левїина, дщи Матѳана ієрея и Марїи жены єго,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              449,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-03",
+            "text": "во царство Клеѡпатра и҆ Сапора царей перских. Имаше же сія",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 58,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              485,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-04",
+            "text": "А҆нна и҆ двѣ сестры: Марїю и҆ Сѡви, посягнꙋвших во Виѳлеємѣ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              521,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-05",
+            "text": "сія же в Галилеи. Повнегда же родити єй, по ѡ҆бѣщанію ѿ Гд҃а,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 61,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              557,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-06",
+            "text": "всего міра сп҃сеніє Бцꙋ҃ и҆ возложити ю҆ во ст҃ая ст҃ых Гд҃ви я҆ко",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 66,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              592,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-07",
+            "text": "даръ непорочен, потом мл҃твами и҆ бл҃готвореніи ко требꙋющим",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 60,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              628,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-08",
+            "text": "прочєє время живота своего провождаше, и҆ прежде радостнаго",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 59,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              664,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "dormition-line-09",
+            "text": "бл҃говѣщенія ѿ архаггла҃ Бци҃ с миром оуспе.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 44,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              72,
+              700,
+              950,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "editorial",
+        "kind": "body",
+        "bbox_xywh": [
+          74,
+          773,
+          949,
+          175
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "editorial-line-01",
+            "text": "Отся статейка є очевидно дуже близькою парістю поперед-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 55,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              74,
+              773,
+              949,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "editorial-line-02",
+            "text": "ньої. Середуща сестра Анни зоветь ся тут Сѡви — а се є бу-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 58,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              74,
+              808,
+              949,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "editorial-line-03",
+            "text": "квальна транскрипция грецького Σωβή, як виглядає се імя у Нїкі-",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 31,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 31,
+                "end": 35,
+                "language": "grc",
+                "script": "Grek",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 35,
+                "end": 63,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              74,
+              843,
+              949,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "editorial-line-04",
+            "text": "фора Каллїста, див. Rud. Hofmann, Das Leben Jesu nach den",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 20,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 20,
+                "end": 57,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              74,
+              878,
+              949,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "editorial-line-05",
+            "text": "Apokryphen, 7.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 0,
+                "end": 11,
+                "language": "de",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-193-atlas-20261128",
+                "start": 11,
+                "end": 14,
+                "language": "uk",
+                "script": "Cyrl",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              74,
+              913,
+              949,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "dormition-line-04",
+        "reading": "Сѡви",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "dormition-line-05",
+        "reading": "Повнегда",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "editorial-line-03",
+        "reading": "Σωβή",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "editorial-cont-line-01",
+        "reading": "Совианія",
+        "reason": "Reinspection supports revised printed reading; historical typography remains provisional."
+      },
+      {
+        "line_id": "editorial-line-02",
+        "reading": "Сѡви",
+        "reason": "Reinspection supports revised printed reading; historical typography remains provisional."
+      }
+    ],
+    "source_note_links": []
+  }
+}
