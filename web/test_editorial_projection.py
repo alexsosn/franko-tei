@@ -706,12 +706,19 @@ class EditorialProjectionTests(unittest.TestCase):
                     const line=row.annotationLines.find(l=>l.line_id==='witness-b-text-l022');
                     const common=mixedExpansionMatches(row,'ъ!',true,f)
                         .filter(h=>h.index>=line.start&&h.index<line.end);
+                    const allPaths=Array.from({length:8},(_,mask)=>{
+                        const q=Array.from({length:3},(_,i)=>mask&(1<<i)?'святъ!':'ст҃ъ!').join(' ');
+                        const matches=mixedExpansionMatches(row,q,true,f);
+                        return matches.length===1&&matches[0][0]==='ст҃ъ! ст҃ъ! ст҃ъ!'&&
+                            JSON.stringify((matches[0].abbreviations??[]).map(a=>a.cpStart))===
+                            JSON.stringify([10,16,22].filter((_,i)=>mask&(1<<i)));
+                    });
                     return [mixed.map(h=>[h[0],h.abbreviations.map(a=>a.cpStart)]),
                             repeated.map(h=>h[0]),partial.map(h=>h[0]),
-                            wrong.length,insensitive.length,common.map(h=>h[0])];
+                            wrong.length,insensitive.length,common.map(h=>h[0]),allPaths.every(Boolean)];
                 }""",[literal,annotation])
                 self.assertEqual(result,[[["ст҃ъ! ст҃ъ! ст҃ъ!",[10,22]]],
-                    ["ст҃ъ"]*4,["ст҃ъ"]*3,0,1,["ъ!"]*3])  # literal also finds suffix in ѡкрст҃ъ
+                    ["ст҃ъ"]*4,["ст҃ъ"]*3,0,1,["ъ!"]*3,True])  # literal also finds suffix in ѡкрст҃ъ
                 # Synthetic supplementary codepoint + punctuation, two
                 # alternative branches, no combinatorial text enumeration.
                 result=page.evaluate("""()=>{
@@ -768,6 +775,13 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(hit).to_contain_text("святъ")
                 hit.click()
                 expect(line.locator(".search-match")).to_have_text("ст҃ъ! ст҃ъ! ст҃ъ!")
+                self.assertEqual(page.evaluate("""()=>{
+                    const hit=searchHits.find(h=>h.scan===89&&h.first.abbreviations?.length===2);
+                    const altered={...hit,first:Object.assign([...hit.first],{
+                        abbreviations:hit.first.abbreviations.map((a,i)=>i===1?{...a,expansion:'wrong'}:a)})};
+                    return [searchAnchorsAgree(hit,renderedLines),
+                            searchAnchorsAgree(altered,renderedLines)];
+                }"""),[True,False])
                 # Stale literal or reader identity may not yield false hits.
                 self.assertTrue(page.evaluate("""([l,a])=>{
                     for(const mutate of [s=>s.literal='wrong',s=>s.text_version='stale',
