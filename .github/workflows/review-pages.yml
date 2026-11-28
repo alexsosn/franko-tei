@@ -104,7 +104,22 @@ jobs:
           python docs/check_approved_icl_sheets.py "$assets/active-sheets" --hitl
           # Local derivatives only; never upload scan crops.
       - run: python web/test_printed_indexes.py
-      - run: python web/test_review.py
+      - name: Browser reader regression
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ "$BASE" =~ ^[0-9a-f]{40}$ ]] && git cat-file -e "$BASE^{commit}" 2>/dev/null && ! git diff --quiet "$BASE" HEAD -- web/index.html web/review-editor.js web/test_review.py; then
+            export FRANKO_UX_SCREENSHOTS="$RUNNER_TEMP/reader-ux"
+          fi
+          python web/test_review.py
+      - name: Upload synthetic UX screenshots
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v6
+        with:
+          name: reader-ux
+          path: ${{ runner.temp }}/reader-ux
+          if-no-files-found: ignore
+          retention-days: 7
       - run: python web/test_review_editor.py
       - run: python web/test_live_review.py
   package:
