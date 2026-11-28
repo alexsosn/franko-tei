@@ -84,6 +84,18 @@ stable release. See docs/agent-first-evidence.md and #3–#7 for gates.
 - Check TEI against TEI P5 Relax NG/Schematron before any release; XML well-formedness alone is insufficient.
 - Each TF feature must be traceable to verified TEI nodes and printed page/scan index.
 
+## Atlas-assisted historical Cyrillic recognition
+
+For Church Slavonic recognition and rare-sign reinspection, use the
+[atlas session handoff](docs/hitl/README.md): load the approved base atlas
+and the current chain of human-reviewed line contexts, inspect actual source
+pixels, record which visual references were used and preserve uncertainty.
+For the HITL experiment (#447), follow its disjoint-work/volume selection,
+frozen baseline, dual CER and review/atlas update protocol. Partial reviewed
+development metrics are not independent held-out accuracy. Ordinary draft
+batches do not require a human gate or atlas-assisted recognition of every
+page; do not copy labels without comparing source pixels.
+
 ## Documentation audiences
 
 Keep the root README concise and researcher-facing: purpose, current textual
