@@ -9798,6 +9798,9 @@ function mixedExpansionMatches(row,query,sensitive,facets){
   if(!query.trim())return expansionMatches(row,null,facets);
   const re=queryRegex(query,sensitive);
   const literal=annotationMatches(row,re,facets);
+  // Most corpus pages have no expansion annotations yet. Keep their search
+  // on the existing literal path, without building query/graph machinery.
+  if(!row.annotationLines.some(l=>l.abbreviations?.length))return literal;
   const key=(a,b)=>a+':'+b;
   const hits=new Map(literal.map(h=>[key(h.index,h.index+h[0].length),h]));
   const pattern=[...query.trim().replace(/\s+/gu,' ')].map(char=>{
