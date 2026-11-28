@@ -5,7 +5,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from franko_tei.hitl_atlas import git_blob_id, merge_extensions
+from franko_tei.hitl_atlas import (git_blob_id, merge_extensions, context_bounds,
+                                  context_crop, sheet_example)
+from PIL import Image
 
 
 def encoded(obj):
@@ -158,6 +160,48 @@ class ActiveAtlasTests(unittest.TestCase):
         self.blobs[self.extension["reference_round_blob"]] = b"{}"
         with self.assertRaises(ValueError):
             self.load()
+
+
+class VisualContextTests(unittest.TestCase):
+    def test_padding_and_edge_clamping(self):
+        self.assertEqual(context_bounds([20, 30, 60, 20], 100, 100),
+                         [8, 20, 84, 40])
+        self.assertEqual(context_bounds([0, 0, 10, 4], 20, 10),
+                         [0, 0, 20, 10])
+        self.assertEqual(context_bounds([90, 90, 10, 10], 100, 100),
+                         [78, 82, 22, 18])
+
+    def test_context_preserves_source_pixels_and_geometry(self):
+        im = Image.new("RGB", (100, 100), (120, 130, 140))
+        im.putpixel((32, 24), (0, 0, 0))  # mark above estimated row
+        before = im.tobytes()
+        bbox = [20, 30, 60, 20]
+        crop = context_crop(im, bbox)
+        self.assertEqual(crop.size, (108, 40))
+        self.assertEqual(crop.crop((12, 0, 96, 40)).tobytes(),
+                         im.crop((8, 20, 92, 60)).tobytes())
+        self.assertEqual(crop.getpixel((36, 4)), (0, 0, 0))
+        self.assertNotEqual(crop.getpixel((5, 15)), (255, 255, 255))
+        self.assertEqual(im.tobytes(), before)
+        self.assertEqual(bbox, [20, 30, 60, 20])
+
+    def test_sheet_metadata_keeps_literal_and_distinct_bounds(self):
+        row = {"id": "R001-body-line-01", "scope": "human_reviewed_full_line",
+               "reading": "и҆҃ ѡⸯ", "source": "II/191", "bbox_xywh": [20,30,60,20],
+               "approval": "user_review_submitted", "provenance": {"issue": 123}}
+        src = {"width": 100, "height": 100, "path": "vol2/page-00191.jpg"}
+        record = sheet_example(row, src, "sheet-01.png", False)
+        self.assertEqual(record["reading"], row["reading"])
+        self.assertEqual(record["target_bbox_xywh"], row["bbox_xywh"])
+        self.assertEqual(record["display_bbox_xywh"], [8,20,84,40])
+        self.assertEqual(record["source"], "II/191")
+        self.assertEqual(record["sheet"], "sheet-01.png")
+        self.assertEqual(record["provenance"], {"issue": 123})
+        self.assertFalse(record["font_rendered"])
+        # Base glyphs keep tight crops, even in active mode.
+        row["scope"] = "base_glyph"
+        self.assertEqual(sheet_example(row, src, "sheet-01.png", True)["display_bbox_xywh"],
+                         [20,30,60,20])
 
 
 if __name__ == "__main__":

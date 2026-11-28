@@ -120,6 +120,8 @@ def write_sheets(doc, cards, skipped, directory):
     if "hitl" in doc:
         index["hitl"] = doc["hitl"]
         index["font_render_omitted_ids"] = [c[0]["id"] for c in cards if c[3] is None]
+        index["examples"] = []
+        from franko_tei.hitl_atlas import sheet_example
     def fit(im, max_w, max_h):
         factor = min(max_w / im.width, max_h / im.height)
         if factor >= 1:
@@ -156,7 +158,7 @@ def write_sheets(doc, cards, skipped, directory):
                     rendered = fit(glyph, cell_w-24, 65)
                     sheet.paste(rendered, (x+12, y+154))
                 else:
-                    draw.text((x+12, y+154), "Font lacks characters; use exact HTML reading.",
+                    draw.text((x+12, y+154), "Font lacks characters; use exact index/HTML reading.",
                               fill="black", font=ImageFont.load_default(size=18))
             else:
                 original = fit(crop, 260, 145)
@@ -166,6 +168,10 @@ def write_sheets(doc, cards, skipped, directory):
                 draw.text((x+12, y+195), codes, fill="black", font=ImageFont.load_default(size=14))
         name = f"sheet-{n:02d}.png"
         sheet.save(directory / name, format="PNG", optimize=True)
+        if "hitl" in doc:
+            for row, key, crop, glyph in batch:
+                src = doc["sources"][key] if "source" in row else doc["previews"][key]
+                index["examples"].append(sheet_example(row, src, name, glyph is not None))
         index["sheets"].append({"file": name, "ids": [c[0]["id"] for c in batch],
                                 "width": sheet.width, "height": sheet.height})
     batch = []
@@ -203,10 +209,14 @@ def _render_validated_atlas(doc, assets, previews, output, sheet_dir=None):
             path = assets / src["path"] if native else previews / src["filename"]
             images[key] = checked_image(path, src)
         x,y,w,h = row["bbox_xywh"]
-        crop = images[key].crop((x,y,x+w,y+h))
-        native_crop = crop
-        scale = max(1, min(5, 200 // h))
-        crop = crop.resize((w*scale,h*scale), Image.Resampling.NEAREST)
+        if row["scope"] == "human_reviewed_full_line":
+            from franko_tei.hitl_atlas import context_crop
+            native_crop = context_crop(images[key], row["bbox_xywh"])
+        else:
+            native_crop = images[key].crop((x,y,x+w,y+h))
+        scale = max(1, min(5, 200 // native_crop.height))
+        crop = native_crop.resize((native_crop.width*scale,native_crop.height*scale),
+                                  Image.Resampling.NEAREST)
         reading = row["reading"]
         # The font is rendered as pixels; no font bytes are exported.
         missing = {ord(c) for c in reading if not c.isspace()} - supported
@@ -221,7 +231,8 @@ def _render_validated_atlas(doc, assets, previews, output, sheet_dir=None):
         if sheet_dir is not None:
             cards.append((row, key, native_crop, glyph))
         e = html.escape
-        default_note = ("User-reviewed literal; estimated line crop, not a glyph box. "
+        default_note = ("User-reviewed literal; gutter marks show the estimated target height. "
+                        "Extra source pixels provide context, not additional labels. "
                         "Compare the full source page if alignment is uncertain."
                         if row["scope"] == "human_reviewed_full_line"
                         else "Base letter only; surrounding marks are not labels.")
