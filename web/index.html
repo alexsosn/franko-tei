@@ -9811,7 +9811,18 @@ function mixedExpansionMatches(row,query,sensitive,facets){
     if(!intervals.length)continue;
     const graph=expansionGraph(row,line);
     if(pattern.length>=graph.length)continue;
-    const localLiteral=literal.filter(h=>h.index<line.end&&h.index+h[0].length>line.start);
+    // Use full contraction bounds as occurrence identity for deduplication
+    // only; a literal hit still displays its exact literal substring.
+    const anchorKey=(start,end)=>{
+      for(const a of line.abbreviations){
+        if(a.start<start&&start<a.end)start=a.start;
+        if(a.start<end&&end<a.end)end=a.end;
+      }
+      return key(start,end);
+    };
+    const literalAnchors=new Set(literal.filter(h=>h.index>=line.start&&h.index+h[0].length<=line.end)
+      .map(h=>anchorKey(h.index,h.index+h[0].length)));
+    const aliasAnchors=new Set();
     for(let startNode=0;startNode<graph.length;startNode++){
       const visited=new Set(),pending=[{node:startNode,q:0,start:null,end:null,used:[]}];
       while(pending.length){
@@ -9827,10 +9838,9 @@ function mixedExpansionMatches(row,query,sensitive,facets){
           if(!used.length||!intervals.some(([x,y])=>x<=start&&y>=end))continue;
           const k=key(start,end);
           if(hits.has(k))continue;
-          // A shared substring wholly inside one contraction already found
-          // literally is one occurrence, not an additional expanded hit.
-          if(used.length===1&&start===used[0].start&&end===used[0].end&&
-             localLiteral.some(h=>h.index>=start&&h.index+h[0].length<=end))continue;
+          const anchor=anchorKey(start,end);
+          if(literalAnchors.has(anchor)||aliasAnchors.has(anchor))continue;
+          aliasAnchors.add(anchor);
           hits.set(k,Object.assign([row.text.slice(start,end)],{index:start,abbreviations:used}));
           continue;
         }
