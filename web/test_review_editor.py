@@ -105,6 +105,14 @@ class EditorSmoke(unittest.TestCase):
                 expect(page.locator("#reviewBody textarea:visible")).to_have_count(1)
                 self.assertNotIn(LINE["text"][:32],page.locator("#reviewLine option:checked").inner_text())
                 self.assertTrue(page.locator("#reviewDialog").evaluate("e => e.scrollWidth <= e.clientWidth+1"))
+                crop=page.locator("#reviewCrop").bounding_box()
+                field=edit.bounding_box()
+                if width<1000:
+                    self.assertLessEqual(crop["y"]+crop["height"],field["y"])
+                else:
+                    self.assertLessEqual(crop["x"]+crop["width"],field["x"])
+                self.assertTrue(page.locator("#reviewFullImage").get_attribute("href").endswith("/vol1/page-00020.jpg"))
+                expect(edit).to_have_value(LINE["text"])
             page.set_viewport_size({"width":390,"height":844})
             expect(page.locator("#reviewSave")).to_be_enabled()
             # Historical Cyrillic keyboard: no native keyboard or name knowledge required.
