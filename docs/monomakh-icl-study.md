@@ -725,3 +725,10 @@ transform and no automatic promotion of ambiguous readings. The existing
 CI smoke now exercises this PNG mode on actual pinned source files and
 validates complete ordered coverage, bounds and PNG integrity. CI assets
 are temporary and are not uploaded or published.
+
+## Current operational handoff
+
+For fresh sessions and the incremental human-reviewed line atlas, follow
+[the atlas/HITL handoff](hitl/README.md). This historical research log is not
+the complete current reference: the base renderer still omits incremental
+line contexts, which must be inspected separately as described there.
