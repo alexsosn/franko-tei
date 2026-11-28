@@ -57,3 +57,13 @@ Use the pencil button in the text pane. Each local batch is pinned to an exact c
 ## Published editorial reading
 
 The Pages build validates the ledger against Git history and emits `search/editorial.json` with accepted lines, attribution, source Git blob and revision. It never edits pilot candidates. The reader applies only an exact blob/line match, selects the reviewed candidate on affected pages by default, and offers a checkbox to show the original candidate. Agent review remains provisional; unreviewed lines are still unverified. Corrected line language offsets and original uncertainty highlights are not reused. Search indexes keep both literal original and corrected candidate text (labelled Editorial); result navigation selects the appropriate view and verifies the exact occurrence. A historical branch/commit without the matching published overlay only has raw search/reading, and a changed candidate cannot silently inherit acceptance. The proofreading dialog continues to target the original frozen candidate; accepted lines cannot be superseded by a duplicate decision. Published review records trigger a Pages rebuild. TEI/TF projection and reversal are separate tasks.
+
+## Historical spelling search roadmap
+
+See [historical orthography and search](../docs/historical-orthography-search.md)
+and [#177](https://github.com/alexsosn/franko-tei/issues/177) for the proposed
+accent-insensitive, historical grapheme, abbreviation-aware, logical-word
+and morphological search profiles. These are future features, not current
+reader controls. Keep the existing literal search and exact source
+navigation; future results must display the original text, explain the
+matching form and distinguish uncertain expansions and unavailable coverage.
