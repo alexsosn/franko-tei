@@ -672,6 +672,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 # Both search modes use the same generated metadata. An
                 # actual I/89 heading contains marked и and spaced words.
                 page.locator("#searchSource").select_option("current")
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("cu")
                 page.locator("#searchTextMode").select_option("literal")
                 page.locator("#query").fill("и а р х а г г҃ л ъ и ѡ")
@@ -685,6 +687,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(heading.locator(".search-match")).to_have_text("и́  а р х а г г҃ л ъ  и́  ѡ", use_inner_text=False)
                 page.locator("#searchOpen").click()
                 page.locator("#ignoreHistoricalAccents").uncheck()
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("")
 
                 self.assertIs(annotation["lexical_expansions"],True)
@@ -713,6 +717,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 # Exact source hit: three separately annotated contractions,
                 # not an expanded replacement of the physical line.
                 page.locator("#searchSource").select_option("current")
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("")
                 page.locator("#searchTextMode").select_option("expansion")
                 page.locator("#query").fill("святъ")
@@ -854,6 +860,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 page.locator("#searchGo").click()
                 expect(page.locator("#searchStatus")).to_contain_text("indexed lines")
                 expect(page.locator("#searchResults button").filter(has_text="scan 104")).to_have_count(0)
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("missing")
                 page.locator("#searchGo").click()
                 hit=page.locator("#searchResults button").filter(has_text="scan 104").filter(has_text="Editorial")
@@ -861,6 +869,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 hit.click()
                 expect(line.locator(".search-match")).to_contain_text("Сиѳъ")
                 page.locator("#searchOpen").click()
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("")
                 page.locator("#query").fill("Сидъ вопроситъ⁵)")
                 page.locator("#searchGo").click()
