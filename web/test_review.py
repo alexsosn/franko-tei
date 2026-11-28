@@ -2223,5 +2223,55 @@ class ReviewSmoke(unittest.TestCase):
             self.assertIn('requires a published reading index', page.locator('#searchStatus').text_content())
             browser.close()
 
+
+    def test_historical_uk_aliases(self):
+        import json
+        root = Path(__file__).resolve().parents[1]
+        fixtures = []
+        for volume, scan, line_id, query, expected in (
+                (2,100,'witness-e-excerpt-line-05','ему','емѹ'),
+                (4,68,'disputations-cont-line-01','муж','мꙋж'),
+                (5,130,'body-1-line-01','руцѣ','рꙋцѣ')):
+            d = json.loads((root / f'pilot/vol{volume}_scan{scan:05d}_single_reading.json').read_text(encoding='utf-8'))
+            line = next(l for r in d['reading']['regions'] for l in r['lines'] if l['id']==line_id)
+            fixtures.append([line,query,expected])
+        html = reader_html().replace('updateMode();load();', 'updateMode();load=()=>{};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':390,'height':844})
+            page.route('**/*', lambda route: route.abort())
+            page.set_content(html)
+            result = page.evaluate(r"""(fixtures) => {
+                const opts={ignoreAccents:false,ukAliases:true};
+                const mk=(text,language='cu',script='Cyrl')=>({text,annotationLines:[
+                    {start:0,end:text.length,region_kind:'body',spans:[{start:0,end:text.length,language,script,uncertain:false}]}]});
+                const hits=(row,q,sensitive=false,options=opts)=>accentSearchMatches(row,q,sensitive,{},
+                    historicalAccentQuery(q,sensitive,options)).map(m=>[m.index,m[0]]);
+                const text='😀 ѹ ꙋ у Ѹ Ꙋ У оу о҆у оу҆ ꙋ҆ ѹ҃ ꙋⷭ у\u{1E08F}';
+                const real=fixtures.map(([line,q,expected])=>{
+                    const cp=[0];for(const c of line.text)cp.push(cp.at(-1)+c.length);
+                    const row={text:line.text,annotationLines:[{region_kind:'body',
+                        spans:line.language_spans.map(s=>({...s,start:cp[s.start],end:cp[s.end]}))}]};
+                    return hits(row,q).some(([i,m])=>m===expected&&line.text.slice(i,i+m.length)===m);
+                });
+                return {real,lower:hits(mk(text),'у',true),upper:hits(mk(text),'У',true),
+                    marked:hits(mk(text),'у҆',true),folded:hits(mk(text),'у',true,{...opts,ignoreAccents:true}),
+                    uk:hits(mk('емѹ','uk'),'ему'),greek:hits(mk('ꙋ','cu','Grek'),'у'),
+                    separate:hits(mk('оу'),'оу',true),titlo:hits(mk('ꙋ҃'),'у҃',true),
+                    other:hits(mk('ѣ ѧ ꙗ ъ ь ї й'),'е')};
+            }""", fixtures)
+            self.assertEqual(result['real'], [True,True,True])
+            # A substring query can match the literal у inside оу, but
+            # this first profile must not collapse оу to a single uk.
+            self.assertEqual([x[1] for x in result['lower']], ['ѹ','ꙋ','у','у','у'])
+            self.assertEqual([x[1] for x in result['upper']], ['Ѹ','Ꙋ','У'])
+            self.assertEqual([x[1] for x in result['marked']], ['у҆','ꙋ҆'])
+            self.assertEqual([x[1] for x in result['folded']], ['ѹ','ꙋ','у','у','у','у҆','ꙋ҆'])
+            self.assertEqual(result['separate'], [[0,'оу']])
+            self.assertEqual(result['titlo'], [[0,'ꙋ҃']])
+            for key in ('uk','greek','other'):
+                self.assertEqual(result[key], [])
+            browser.close()
+
 if __name__ == '__main__':
     unittest.main()
