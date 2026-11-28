@@ -81,11 +81,25 @@ explicitly until combined alias matching is implemented. See
 Historical accent mode
 requires Intl.Segmenter (a modern browser).
 
+## Historical uk variants (first slice of #481)
+
+Select Search → Annotation filters → Search text → Historical uk variants
+(ѹ, ꙋ, у). This opt-in profile equates single-character lowercase and
+uppercase uk variants separately; case-insensitive search is optional.
+It preserves the original marks by default and can combine with Ignore
+accents. It uses the same published cu/orv Cyrl span restrictions,
+grapheme boundaries and exact original range navigation as accent search.
+The digraph оу remains two separate graphemes, even with accents ignored:
+a substring query may find its literal second letter, but славу will not
+match славоу. No inferred digraph identification, omega or ot folding,
+or modernization of other historical letters is implemented. Combined
+expansion/orthography matching is still a follow-up.
+
 ## Historical spelling search roadmap
 
 See [historical orthography and search](../docs/historical-orthography-search.md)
-and [#177](https://github.com/alexsosn/franko-tei/issues/177) for the proposed
-remaining historical grapheme, combined literal/expansion, logical-word
+and [#481](https://github.com/alexsosn/franko-tei/issues/481) for the proposed
+remaining historical grapheme, combined orthography/expansion, logical-word
 and morphological search profiles. These are future features, not current
 reader controls. Keep the existing literal search and exact source
 navigation; future results must display the original text, explain the
