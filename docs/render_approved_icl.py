@@ -60,6 +60,14 @@ def load_atlas(path=DEFAULT):
     return validate_atlas(json.loads(Path(path).read_text(encoding="utf-8")))
 
 
+def load_active_atlas(path=DEFAULT, directory=ROOT / "hitl", *, target=None):
+    from franko_tei.hitl_atlas import merge_extensions
+
+    raw = Path(path).read_bytes()
+    validate_atlas(json.loads(raw))
+    return merge_extensions(raw, directory, target=target)
+
+
 def checked_image(path, src):
     data = path.read_bytes()
     if hashlib.sha256(data).hexdigest() != src["sha256"]:
@@ -76,21 +84,25 @@ def uri(image):
     return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
 
 
-def load_approved_font(doc):
+def load_approved_font(doc, *, with_coverage=False):
     if not features.check("raqm"):
         raise RuntimeError("Pillow RAQM required")
     data = FONT_PATH.read_bytes()
     if hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest() != FONT_BLOB:
         raise ValueError("Monomakh font blob mismatch")
     with TTFont(BytesIO(data)) as font:
-        missing = {ord(c) for row in doc["examples"] for c in row["reading"] if not c.isspace()} - set(font.getBestCmap())
+        supported = set(font.getBestCmap())
+        missing = {ord(c) for row in doc["examples"]
+                   if row["scope"] != "human_reviewed_full_line"
+                   for c in row["reading"] if not c.isspace()} - supported
         if missing:
             raise ValueError("Missing atlas font characters: " + str(sorted(missing)))
         font.flavor = None
         buf = BytesIO()
         font.save(buf)
     buf.seek(0)
-    return ImageFont.truetype(buf, 52, layout_engine=ImageFont.Layout.RAQM)
+    rendered_font = ImageFont.truetype(buf, 52, layout_engine=ImageFont.Layout.RAQM)
+    return (rendered_font, supported) if with_coverage else rendered_font
 
 
 def write_sheets(doc, cards, skipped, directory):
@@ -105,13 +117,17 @@ def write_sheets(doc, cards, skipped, directory):
     index = {"schema": "franko-approved-icl-sheets-v1",
              "previews_included": not skipped, "omitted_ids": skipped,
              "sheets": []}
+    if "hitl" in doc:
+        index["hitl"] = doc["hitl"]
+        index["font_render_omitted_ids"] = [c[0]["id"] for c in cards if c[3] is None]
     def fit(im, max_w, max_h):
         factor = min(max_w / im.width, max_h / im.height)
         if factor >= 1:
             factor = min(5, int(factor))
         return im.resize((max(1, int(im.width * factor)),
                           max(1, int(im.height * factor))), Image.Resampling.NEAREST)
-    def emit(batch, context):
+    def emit(batch, scope):
+        context = scope != "base_glyph"
         columns = 1 if context else 2
         cell_w, cell_h = 1100 // columns, 240 if context else 220
         height = 50 + ((len(batch) + columns - 1) // columns) * cell_h
@@ -119,21 +135,29 @@ def write_sheets(doc, cards, skipped, directory):
         draw = ImageDraw.Draw(sheet)
         n = len(index["sheets"]) + 1
         draw.text((12, 12), f"APPROVED ICL | {n:02d} | " +
-                  ("ISSUE CONTEXT (FOCUS ONLY)" if context else "BASE GLYPHS"),
+                  {"base_glyph": "BASE GLYPHS",
+                   "line_context_focus_only": "ISSUE CONTEXT (FOCUS ONLY)",
+                   "human_reviewed_full_line": "HUMAN LINE CONTEXT (ESTIMATED CROP)"}[scope],
                   fill="black", font=ImageFont.load_default(size=20))
         for i, (row, key, crop, glyph) in enumerate(batch):
             x = (i % columns) * cell_w
             y = 50 + (i // columns) * cell_h
             draw.rectangle((x+4, y+4, x+cell_w-5, y+cell_h-5), outline="#cccccc")
             label = f'{row["id"]} | {key} | ' + (
-                "issue accepted provisional" if context else "human reviewed")
+                {"base_glyph": "human reviewed",
+                 "line_context_focus_only": "issue accepted provisional",
+                 "human_reviewed_full_line": "user reviewed; approximate crop"}[scope])
             draw.text((x+12, y+12), label, fill="black", font=ImageFont.load_default(size=16))
             codes = " ".join(f"U+{ord(c):04X}" for c in row["reading"] if not c.isspace())
             if context:
                 original = fit(crop, cell_w-24, 105)
-                rendered = fit(glyph, cell_w-24, 65)
                 sheet.paste(original, (x+12, y+40))
-                sheet.paste(rendered, (x+12, y+154))
+                if glyph is not None:
+                    rendered = fit(glyph, cell_w-24, 65)
+                    sheet.paste(rendered, (x+12, y+154))
+                else:
+                    draw.text((x+12, y+154), "Font lacks characters; use exact HTML reading.",
+                              fill="black", font=ImageFont.load_default(size=18))
             else:
                 original = fit(crop, 260, 145)
                 rendered = fit(glyph, 240, 145)
@@ -146,21 +170,25 @@ def write_sheets(doc, cards, skipped, directory):
                                 "width": sheet.width, "height": sheet.height})
     batch = []
     for card in cards:
-        context = card[0]["scope"] == "line_context_focus_only"
-        if batch and (context != (batch[0][0]["scope"] == "line_context_focus_only")
-                      or len(batch) == (4 if context else 8)):
-            emit(batch, batch[0][0]["scope"] == "line_context_focus_only")
+        scope = card[0]["scope"]
+        if batch and (scope != batch[0][0]["scope"]
+                      or len(batch) == (8 if scope == "base_glyph" else 4)):
+            emit(batch, batch[0][0]["scope"])
             batch = []
         batch.append(card)
     if batch:
-        emit(batch, batch[0][0]["scope"] == "line_context_focus_only")
+        emit(batch, batch[0][0]["scope"])
     (directory / "index.json").write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
     return index
 
 
 def render_atlas(doc, assets, previews, output, sheet_dir=None):
     validate_atlas(doc)
-    glyph_font = load_approved_font(doc)
+    return _render_validated_atlas(doc, assets, previews, output, sheet_dir)
+
+
+def _render_validated_atlas(doc, assets, previews, output, sheet_dir=None):
+    glyph_font, supported = load_approved_font(doc, with_coverage=True)
     images, sections = {}, []
     skipped = []
     cards = []
@@ -181,23 +209,38 @@ def render_atlas(doc, assets, previews, output, sheet_dir=None):
         crop = crop.resize((w*scale,h*scale), Image.Resampling.NEAREST)
         reading = row["reading"]
         # The font is rendered as pixels; no font bytes are exported.
-        probe = ImageDraw.Draw(Image.new("RGB",(1,1)))
-        bounds = probe.textbbox((0,0), reading, font=glyph_font)
-        glyph = Image.new("RGB",(max(1,bounds[2]-bounds[0]+24), max(1,bounds[3]-bounds[1]+24)), "white")
-        ImageDraw.Draw(glyph).text((12-bounds[0],12-bounds[1]),reading,font=glyph_font,fill="black")
+        missing = {ord(c) for c in reading if not c.isspace()} - supported
+        glyph = None
+        if not missing:
+            probe = ImageDraw.Draw(Image.new("RGB",(1,1)))
+            bounds = probe.textbbox((0,0), reading, font=glyph_font)
+            glyph = Image.new("RGB",(max(1,bounds[2]-bounds[0]+24), max(1,bounds[3]-bounds[1]+24)), "white")
+            ImageDraw.Draw(glyph).text((12-bounds[0],12-bounds[1]),reading,font=glyph_font,fill="black")
+        elif row["scope"] != "human_reviewed_full_line":
+            raise ValueError("Missing base font characters")
         if sheet_dir is not None:
             cards.append((row, key, native_crop, glyph))
         e = html.escape
-        note = row.get("note", "Base letter only; surrounding marks are not labels.")
+        default_note = ("User-reviewed literal; estimated line crop, not a glyph box. "
+                        "Compare the full source page if alignment is uncertain."
+                        if row["scope"] == "human_reviewed_full_line"
+                        else "Base letter only; surrounding marks are not labels.")
+        note = row.get("note", default_note)
+        rendered_html = (f'<div class="crop"><img alt="{e(reading)}" src="{uri(glyph)}"></div>'
+                         if glyph is not None else
+                         '<p>Font rendering omitted: ' +
+                         e(" ".join(f"U+{c:04X}" for c in sorted(missing))) + '</p>')
         sections.append(f'<section><h2>{e(row["id"])} · {e(key)}</h2><p>{e(row["approval"])} · {e(row["scope"])}</p>'
                         f'<div class="crop"><img alt="Source crop" src="{uri(crop)}"></div>'
-                        f'<div class="crop"><img alt="{e(reading)}" src="{uri(glyph)}"></div>'
+                        + rendered_html +
                         f'<p class="reading">{e(reading)}</p><p>{e(note)}</p></section>')
     if not sections:
         raise ValueError("No approved examples rendered")
     content = ('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
                '<title>Franko approved ICL atlas</title><style>body{font:16px system-ui;margin:16px;max-width:1000px}section{border-bottom:1px solid #ccc;padding:12px 0}.crop{overflow-x:auto;background:white}img{display:block;max-width:none}.reading{font-size:24px}h2{font-size:19px}</style>'
-               '<h1>Franko approved ICL atlas</h1><p>Only reviewed base glyphs and accepted issue focal readings. Issue examples are provisional, not whole-line transcriptions.</p>'
+               '<h1>Franko approved ICL atlas</h1><p>Reviewed base glyphs and accepted provisional issue focal examples. '
+               'In HITL mode, human-reviewed whole-line contexts are separate examples with estimated geometry; '
+               'they are not glyph labels or verified corpus readings.</p>'
                f'<p>Rendered {len(sections)} of {len(doc["examples"])}; {len(skipped)} preview-only rows omitted. No candidate accent labels.</p>'
                + "".join(sections) + '</html>')
     if sheet_dir is not None:
@@ -208,12 +251,24 @@ def render_atlas(doc, assets, previews, output, sheet_dir=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--assets", required=True, type=Path)
+    parser.add_argument("--assets", type=Path)
+    parser.add_argument("--hitl", action="store_true", help="Include the validated committed HITL chain")
+    parser.add_argument("--target", help="Prospective volume/scan key, e.g. II/191; reject exposed sources")
+    parser.add_argument("--list-sources", action="store_true", help="Print native path and pinned asset commit TSV; no rendering")
     parser.add_argument("--previews", type=Path, help="Optional original hashed review PNGs")
-    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--output", type=Path)
     parser.add_argument("--sheet-dir", type=Path, help="Optional empty directory for bounded PNG sheets and index")
     args = parser.parse_args()
-    count, skipped = render_atlas(load_atlas(), args.assets, args.previews, args.output, args.sheet_dir)
+    if args.target and not args.hitl:
+        parser.error("--target requires --hitl")
+    doc = load_active_atlas(target=args.target) if args.hitl else load_atlas()
+    if args.list_sources:
+        for src in doc["sources"].values():
+            print(src["path"], src.get("asset_commit", doc["asset_commit"]), sep="\t")
+        return
+    if args.assets is None or args.output is None:
+        parser.error("--assets and --output are required for rendering")
+    count, skipped = _render_validated_atlas(doc, args.assets, args.previews, args.output, args.sheet_dir)
     print(f"Rendered {count} approved examples; omitted {len(skipped)} preview-only examples")
 
 
