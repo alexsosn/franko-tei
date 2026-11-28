@@ -2271,6 +2271,34 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(result['titlo'], [[0,'ꙋ҃']])
             for key in ('uk','greek','other'):
                 self.assertEqual(result[key], [])
+            page.evaluate("""() => {
+                const text='емѹ мꙋж рꙋцѣ славоу ꙋ҆';
+                const row={text,scan:89,suffix:'single_reading',model_id:'GPT-6',model_version:null,editorial:'none',
+                    annotationLines:[{start:0,end:text.length,region_kind:'body',spans:[{start:0,end:text.length,language:'cu',script:'Cyrl',uncertain:false}]}]};
+                agentIndex=async()=>({ref:'a'.repeat(40),volume:'1',entries:[row]});
+                annotatedIndex=async d=>d.entries;
+            }""")
+            page.locator('#searchOpen').click()
+            page.locator('#searchVolume').select_option('1')
+            page.locator('#query').fill('муж')
+            page.locator('#searchGo').click()
+            page.wait_for_function("document.querySelector('#searchStatus').textContent.includes('0 matching')")
+            page.locator('#searchFacets summary').click()
+            page.locator('#searchTextMode').select_option('uk')
+            page.locator('#searchGo').click()
+            page.locator('#searchResults mark').wait_for()
+            self.assertEqual(page.locator('#searchResults mark').text_content(), 'мꙋж')
+            self.assertIn('Historical uk search',page.locator('#searchResults').text_content())
+            page.locator('#query').fill('славу')
+            page.locator('#searchGo').click()
+            page.wait_for_function("document.querySelector('#searchStatus').textContent.includes('0 matching')")
+            page.locator('#query').fill('у')
+            page.locator('#ignoreHistoricalAccents').check()
+            page.locator('#searchGo').click()
+            page.wait_for_function("Array.from(document.querySelectorAll('#searchResults mark')).some(m=>m.textContent==='ꙋ҆')")
+            page.locator('#searchSource').select_option('ocr')
+            page.locator('#searchGo').click()
+            self.assertIn('requires a published reading index',page.locator('#searchStatus').text_content())
             browser.close()
 
 if __name__ == '__main__':
