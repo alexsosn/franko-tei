@@ -58,3 +58,18 @@ returns an annotation aligned to the original form. The pilot has no
 automatic expansion, no UI/search integration yet and no claim of
 verified philological coverage. Further annotations require review of
 individual source loci; do not bulk-import proposals or normalize the text.
+
+## Search integration and future scope (#177, #421)
+
+See [historical orthography and search](historical-orthography-search.md).
+The present validated fields and TEI/TF projection remain unchanged.
+Search should index the expansion as an alias for the original anchored
+occurrence, retain uncertainty and source, and never count both forms as
+two occurrences. An accepted text correction invalidates stale expansion
+intervals; reannotation is required. Future support for supralinear-only,
+non-titlo, payerok, multi-line and unresolved expansions requires explicit
+alignment of all visible letters, including combining Cyrillic letters
+(which the current baseline-letter subsequence check does not validate),
+separate numeric classification and TDD. Do not use proposed fields in
+production drafts before implementation. Dictionary-only suggestions must
+remain distinct from contextual annotation.
