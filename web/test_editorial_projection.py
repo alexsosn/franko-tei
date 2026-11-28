@@ -669,6 +669,29 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(page.locator("#searchStatus")).to_contain_text("Annotation filters cannot be applied to OCR")
                 expect(page.locator("#searchResults button")).to_have_count(0)
 
+                self.assertIs(annotation["lexical_expansions"],True)
+                # Search annotations are exact source slots, with facets applied
+                # to the source language/region, not inferred from the expansion.
+                result=page.evaluate("""async ([l,a])=>{
+                    const row=joinSearchAnnotations(l,a).find(r=>r.scan===89&&!r.reviewed);
+                    const f={language:'uk',region:'body',certainty:'uncertain'};
+                    const hits=expansionMatches(row,queryRegex('святъ',true),f);
+                    const wrong=expansionMatches(row,queryRegex('святъ',true),{...f,language:'grc'});
+                    const phrase=expansionMatches(row,queryRegex('святъ святъ',true),f);
+                    const first=hits[0].abbreviation;
+                    const correct={...first,start:first.cpStart,end:first.cpEnd};
+                    const fixture={text:'ст҃ъ!',abbreviation_spans:[{...correct,start:0,end:4}],
+                        language_spans:[{start:0,end:5}]};
+                    const synthetic=readerAbbreviations(fixture,row.reader_id,{status:'accepted_correction'});
+                    const key='annotations:'+l.ref+':'+l.volume, previous=indexCache.get(key);
+                    const old=structuredClone(a);delete old.lexical_expansions;
+                    indexCache.set(key,Promise.resolve(old));
+                    let rejected=false;try{await annotatedIndex(l,true);}catch(e){rejected=true;}
+                    if(previous)indexCache.set(key,previous);else indexCache.delete(key);
+                    return [hits.map(h=>[h.abbreviation.cpStart,h[0]]),wrong.length,
+                            phrase.length,synthetic.length,rejected];
+                }""",[literal,annotation])
+                self.assertEqual(result,[[[10,"ст҃ъ"],[16,"ст҃ъ"],[22,"ст҃ъ"]],0,0,0,True])
                 # Exact source hit: three separately annotated contractions,
                 # not an expanded replacement of the physical line.
                 page.locator("#searchSource").select_option("current")
@@ -678,6 +701,7 @@ class EditorialProjectionTests(unittest.TestCase):
                 page.locator("#searchGo").click()
                 hits=page.locator("#searchResults button").filter(has_text="scan 89")
                 expect(hits).to_have_count(3)
+                expect(page.locator("#searchStatus")).to_contain_text("indexed expansions; coverage is incomplete.")
                 expect(hits.first).to_contain_text("святъ")
                 expect(hits.first.locator("mark")).to_have_text("ст҃ъ")
                 hits.nth(1).click()
