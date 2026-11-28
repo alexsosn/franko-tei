@@ -607,6 +607,33 @@ class ReviewSmoke(unittest.TestCase):
         self.assertEqual(links(58)['ECCA 509']['relation'], 'edition-match')
         self.assertNotIn('ECCA 509', links(59))
 
+    def test_edition_research_bibliography(self):
+        # The edition-level list is separate from individual work identities.
+        html = reader_html()
+        bibliography = APP.parent.parent / 'docs' / 'research-bibliography.md'
+        self.assertTrue(bibliography.is_file())
+        self.assertIn('## Historical reviews', bibliography.read_text(encoding='utf-8'))
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.evaluate("setUILocale('en')")
+            page.locator('#contentsOpen').click()
+            link = page.locator('#editionBibliography')
+            self.assertTrue(link.is_visible())
+            self.assertEqual(link.inner_text(), 'Research bibliography')
+            self.assertEqual(link.get_attribute('href'), 'https://github.com/alexsosn/franko-tei/blob/main/docs/research-bibliography.md')
+            self.assertEqual(link.get_attribute('target'), '_blank')
+            self.assertIn('noopener', link.get_attribute('rel').split())
+            self.assertTrue(page.locator('#contentsEntries').evaluate('el => el.clientHeight > 120 && el.scrollWidth <= el.clientWidth'))
+            page.locator('#contentsVolume').select_option('5')
+            page.evaluate("setUILocale('uk')")
+            self.assertEqual(link.inner_text(), 'Наукова бібліографія')
+            self.assertEqual(page.locator('#volume').input_value(), '1')
+            self.assertTrue(page.locator('#contentsPanel').is_visible())
+            browser.close()
+
     def test_franko_first_publications(self):
         import json
         html = reader_html()

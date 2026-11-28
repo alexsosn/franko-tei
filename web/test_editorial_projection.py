@@ -672,6 +672,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 # Both search modes use the same generated metadata. An
                 # actual I/89 heading contains marked и and spaced words.
                 page.locator("#searchSource").select_option("current")
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("cu")
                 page.locator("#searchTextMode").select_option("literal")
                 page.locator("#query").fill("и а р х а г г҃ л ъ и ѡ")
@@ -685,6 +687,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(heading.locator(".search-match")).to_have_text("и́  а р х а г г҃ л ъ  и́  ѡ", use_inner_text=False)
                 page.locator("#searchOpen").click()
                 page.locator("#ignoreHistoricalAccents").uncheck()
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("")
 
                 self.assertIs(annotation["lexical_expansions"],True)
@@ -710,9 +714,58 @@ class EditorialProjectionTests(unittest.TestCase):
                             phrase.length,synthetic.length,rejected];
                 }""",[literal,annotation])
                 self.assertEqual(result,[[[10,"ст҃ъ"],[16,"ст҃ъ"],[22,"ст҃ъ"]],0,0,0,True])
+                # Mixed literal/expanded phrases must resolve to original
+                # intervals, not a string fabricated by replacing the page.
+                result=page.evaluate("""([l,a])=>{
+                    const row=joinSearchAnnotations(l,a).find(r=>r.scan===89&&!r.reviewed);
+                    const f={language:'uk',region:'body',certainty:'uncertain'};
+                    const hits=q=>mixedExpansionMatches(row,q,true,f).filter(h=>h[0].includes('ст҃ъ'));
+                    const mixed=hits('святъ! ст҃ъ! святъ!');
+                    const repeated=hits('ст҃ъ');
+                    const partial=hits('вятъ');
+                    const wrong=mixedExpansionMatches(row,'святъ! ст҃ъ! святъ!',true,{...f,language:'grc'});
+                    const insensitive=mixedExpansionMatches(row,'СВЯТЪ! СТ҃Ъ! СВЯТЪ!',false,f);
+                    const line=row.annotationLines.find(l=>l.line_id==='witness-b-text-l022');
+                    const common=mixedExpansionMatches(row,'ъ!',true,f)
+                        .filter(h=>h.index>=line.start&&h.index<line.end);
+                    const allPaths=Array.from({length:8},(_,mask)=>{
+                        const q=Array.from({length:3},(_,i)=>mask&(1<<i)?'святъ!':'ст҃ъ!').join(' ');
+                        const matches=mixedExpansionMatches(row,q,true,f);
+                        return matches.length===1&&matches[0][0]==='ст҃ъ! ст҃ъ! ст҃ъ!'&&
+                            JSON.stringify((matches[0].abbreviations??[]).map(a=>a.cpStart))===
+                            JSON.stringify([10,16,22].filter((_,i)=>mask&(1<<i)));
+                    });
+                    return [mixed.map(h=>[h[0],h.abbreviations.map(a=>a.cpStart)]),
+                            repeated.map(h=>h[0]),partial.map(h=>h[0]),
+                            wrong.length,insensitive.length,common.map(h=>h[0]),allPaths.every(Boolean)];
+                }""",[literal,annotation])
+                self.assertEqual(result,[[["ст҃ъ! ст҃ъ! ст҃ъ!",[10,22]]],
+                    ["ст҃ъ"]*4,["ст҃ъ"]*3,0,1,["ъ!"]*3,True])  # literal also finds suffix in ѡкрст҃ъ
+                # Synthetic supplementary codepoint + punctuation, two
+                # alternative branches, no combinatorial text enumeration.
+                result=page.evaluate("""()=>{
+                    const text='𐌰 Бг҃ъ, ст҃ъ!\\nБг҃ъ';
+                    const a={start:3,end:7,cpStart:2,cpEnd:6,literal:'Бг҃ъ',
+                        expansion:'Богъ',uncertain:true};
+                    const b={start:9,end:13,cpStart:8,cpEnd:12,literal:'ст҃ъ',
+                        expansion:'святъ',uncertain:true};
+                    const row={text,annotationLines:[
+                        {start:0,end:14,line_id:'a',region_kind:'body',spans:[],abbreviations:[a,b]},
+                        {start:15,end:19,line_id:'b',region_kind:'note',spans:[],
+                         abbreviations:[{...a,start:15,end:19,cpStart:0,cpEnd:4}]}]};
+                    const f={language:'',region:'',certainty:''};
+                    const find=q=>mixedExpansionMatches(row,q,true,f).map(h=>[h.index,h[0]]);
+                    return [find('𐌰 Богъ, святъ'),find('Бг҃ъ, святъ'),find('Богъ, ст҃ъ'),
+                        find('святъ! Богъ'),find('Бг҃ъ'),find('Богъ')];
+                }""")
+                self.assertEqual(result,[[[0,"𐌰 Бг҃ъ, ст҃ъ"]],[[3,"Бг҃ъ, ст҃ъ"]],
+                    [[3,"Бг҃ъ, ст҃ъ"]],[],[[3,"Бг҃ъ"],[15,"Бг҃ъ"]],
+                    [[3,"Бг҃ъ"],[15,"Бг҃ъ"]]])
                 # Exact source hit: three separately annotated contractions,
                 # not an expanded replacement of the physical line.
                 page.locator("#searchSource").select_option("current")
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("")
                 page.locator("#searchTextMode").select_option("expansion")
                 page.locator("#query").fill("святъ")
@@ -735,6 +788,26 @@ class EditorialProjectionTests(unittest.TestCase):
                 expect(page.locator("#annotationDetails .abbreviation-entry").first).to_contain_text("Provisional expansion")
                 expect(page.locator("#annotationDetails .abbreviation-entry a").first).to_have_attribute("href",
                     "https://www.i-franko.name/uk/HistLit/1894/IzStaryxRukopysiv/4SlovoOSotvorenjuAngel.html")
+                page.keyboard.press("Escape")
+                page.locator("#searchOpen").click()
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
+                page.locator("#searchTextMode").select_option("mixed")
+                page.locator("#query").fill("святъ! ст҃ъ! святъ!")
+                page.locator("#searchGo").click()
+                hit=page.locator("#searchResults button").filter(has_text="scan 89")
+                expect(hit).to_have_count(1)
+                expect(hit.locator("mark")).to_have_text("ст҃ъ! ст҃ъ! ст҃ъ!")
+                expect(hit).to_contain_text("святъ")
+                hit.click()
+                expect(line.locator(".search-match")).to_have_text("ст҃ъ! ст҃ъ! ст҃ъ!")
+                self.assertEqual(page.evaluate("""()=>{
+                    const hit=searchHits.find(h=>h.scan===89&&h.first.abbreviations?.length===2);
+                    const altered={...hit,first:Object.assign([...hit.first],{
+                        abbreviations:hit.first.abbreviations.map((a,i)=>i===1?{...a,expansion:'wrong'}:a)})};
+                    return [searchAnchorsAgree(hit,renderedLines),
+                            searchAnchorsAgree(altered,renderedLines)];
+                }"""),[True,False])
                 # Stale literal or reader identity may not yield false hits.
                 self.assertTrue(page.evaluate("""([l,a])=>{
                     for(const mutate of [s=>s.literal='wrong',s=>s.text_version='stale',
@@ -854,6 +927,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 page.locator("#searchGo").click()
                 expect(page.locator("#searchStatus")).to_contain_text("indexed lines")
                 expect(page.locator("#searchResults button").filter(has_text="scan 104")).to_have_count(0)
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("missing")
                 page.locator("#searchGo").click()
                 hit=page.locator("#searchResults button").filter(has_text="scan 104").filter(has_text="Editorial")
@@ -861,6 +936,8 @@ class EditorialProjectionTests(unittest.TestCase):
                 hit.click()
                 expect(line.locator(".search-match")).to_contain_text("Сиѳъ")
                 page.locator("#searchOpen").click()
+                if not page.locator("#searchFacets").evaluate("el => el.open"):
+                    page.locator("#searchFacets summary").click()
                 page.locator("#searchLanguage").select_option("")
                 page.locator("#query").fill("Сидъ вопроситъ⁵)")
                 page.locator("#searchGo").click()

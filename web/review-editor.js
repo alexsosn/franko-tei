@@ -55,22 +55,12 @@
   // A native textarea cannot style ranges; choose a full historical/Greek
   // face only when every non-whitespace character is covered by that group.
   // Never apply source offsets to the edited value.
-  function paintOriginal(line){
-    const original=el('reviewOriginal'),ranges=languageRanges(line).sort((a,b)=>a.start-b.start);
-    original.replaceChildren();
-    let end=0;
-    for(const r of ranges){
-      original.append(document.createTextNode(line.text.slice(end,r.start)));
-      const span=document.createElement('span');span.className='language-span';
-      span.dataset.language=r.language;span.dataset.script=String(r.script??'');span.lang=r.language;
-      span.textContent=line.text.slice(r.start,r.end);original.append(span);end=r.end;
-    }
-    original.append(document.createTextNode(line.text.slice(end)));
-    el('reviewEdit').dataset.fontMode=sourceFontMode(line,ranges);
+  function applySourceFont(line){
+    el('reviewEdit').dataset.fontMode=sourceFontMode(line);
   }
   function paint(){
     const x=entry(),line=x.line;
-    el('reviewLine').value=session.selected;paintOriginal(line);
+    el('reviewLine').value=session.selected;applySourceFont(line);
     el('reviewEdit').value=session.working;el('reviewNote').value=session.note;
     el('reviewReasons').replaceChildren();
     for(const note of data.reading.uncertainty_notes??[])if(note.line_id===line.id){const p=document.createElement('p');p.textContent=note.reading+' — '+note.reason;el('reviewReasons').append(p);}
@@ -148,7 +138,7 @@
       if(!entry()||s.locked&&dirty()&&!pending()||!s.events.every(valid)||new Set(s.events.map(e=>e.target.line_id)).size!==s.events.length||new Set(s.events.map(e=>e.event_id)).size!==s.events.length||bytes(json()).length>LIMIT)fail('Invalid local events; draft preserved.');
       persist();
       el('reviewSource').textContent='Volume '+v+' · scan '+n+' · '+d.reading.reader_id+' · '+commit.slice(0,12);
-      el('reviewLine').replaceChildren(...list.map(({line,region},i)=>new Option((i+1)+' · '+region.kind+' · '+line.text.slice(0,32),line.id)));
+      el('reviewLine').replaceChildren(...list.map(({line,region},i)=>new Option((i+1)+' · '+tr(region.kind),line.id)));
       const img=el('reviewImage');el('reviewFullImage').href=asset(image.path);
       const ready=()=>{if(id!==serial||!el('reviewDialog').open)return;imageReady=img.complete&&img.currentSrc===el('reviewFullImage').href&&img.naturalWidth===p.width&&img.naturalHeight===p.height&&img.naturalWidth>0;uiText(el('reviewImageStatus'),imageReady?'Scan available; line geometry is approximate.':'Image unavailable; confirmation and correction disabled.');paint();};
       img.onload=ready;img.onerror=ready;img.src=asset(image.path);

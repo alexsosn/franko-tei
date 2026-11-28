@@ -90,3 +90,5 @@ and morphological search profiles. These are future features, not current
 reader controls. Keep the existing literal search and exact source
 navigation; future results must display the original text, explain the
 matching form and distinguish uncertain expansions and unavailable coverage.
+
+**Research bibliography / Наукова бібліографія.** The link in Contents opens the [edition-level research bibliography](../docs/research-bibliography.md) in a separate tab. It lists scholarship, related publications and historical-review leads with original citations and access caveats. Work-level references remain in their existing individual book-icon disclosures; printed indexes remain a separate source layer.
