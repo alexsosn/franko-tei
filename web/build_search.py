@@ -122,7 +122,8 @@ def build(pilot, output, ref):
         )
         (output / f"annotation-vol{volume}.json").write_text(
             json.dumps(dict(schema_version="search-annotation-v1", ref=ref, volume=volume,
-                            offset_unit="unicode_code_point", entries=annotations),
+                            offset_unit="unicode_code_point", lexical_expansions=True,
+                            entries=annotations),
                        ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8",
         )

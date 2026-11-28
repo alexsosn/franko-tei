@@ -9,6 +9,7 @@ from copy import deepcopy
 import re
 
 from .agent_evidence import validate_language_spans
+from .abbreviation_spans import validate_abbreviation_spans
 
 
 def project_search_entry(draft, suffix, candidate_blob, changes=()):
@@ -30,6 +31,7 @@ def project_search_entry(draft, suffix, candidate_blob, changes=()):
         for line in region["lines"]:
             text = line["text"]
             spans = line["language_spans"]
+            abbreviations = validate_abbreviation_spans(line, reader_id)
             language_status = "source_annotation" if spans else "unannotated"
             row = overrides.pop(line["id"], None)
             if row is not None:
@@ -43,6 +45,7 @@ def project_search_entry(draft, suffix, candidate_blob, changes=()):
                     if row["text"] == text:
                         raise ValueError("correction did not change text")
                     text, spans = row["text"], row["language_spans"]
+                    abbreviations = []  # frozen offsets cannot survive a correction
                     if status in ("accepted_correction", "native_collation") and spans:
                         raise ValueError("accepted correction reused language spans")
                     language_status = ("needs_reannotation" if not spans
@@ -55,6 +58,8 @@ def project_search_entry(draft, suffix, candidate_blob, changes=()):
                                 line_id=line["id"], start=offset, end=offset + len(text),
                                 language_status=language_status,
                                 language_spans=deepcopy(spans)))
+            if abbreviations:
+                anchors[-1]["abbreviation_spans"] = deepcopy(abbreviations)
             parts.append(text)
             offset += len(text) + 1
     if overrides:
