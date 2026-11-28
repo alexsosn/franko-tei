@@ -46,6 +46,8 @@ def merge_extensions(base_bytes, directory, read_blob=read_git_blob, *, target=N
     ids = {x["id"] for x in doc["examples"]}
     events = {x["provenance"].get("event") for x in doc["examples"]}
     holdouts = set(doc["excluded"]["holdout"])
+    require(target is None or (isinstance(target, str) and re.fullmatch(r"(?:I|II|III|IV|V)/[1-9][0-9]*", target)),
+            "target must be a canonical Roman-volume/scan key")
     require(target not in holdouts and target not in doc["sources"],
             "target already exposed or reserved")
     files = sorted(Path(directory).glob("atlas-extension-*.json"))
