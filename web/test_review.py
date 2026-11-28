@@ -2125,7 +2125,7 @@ class ReviewSmoke(unittest.TestCase):
     def test_historical_accent_search(self):
         # Synthetic edge cases plus one real frozen I/89 heading (not scan gold).
         import json
-        source = json.loads((APP.parent.parent / 'pilot/vol1_scan00089_single_reading.json').read_text(encoding='utf-8'))
+        source = json.loads((Path(__file__).resolve().parents[1] / 'pilot/vol1_scan00089_single_reading.json').read_text(encoding='utf-8'))
         real = next(l for r in source['reading']['regions'] for l in r['lines']
                     if l['id'] == 'witness-b-heading-l001')
         html = reader_html().replace('updateMode();load();', 'updateMode();load=()=>{};load();')
@@ -2156,6 +2156,16 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(len(result['real']), 2)
             for key in ('excluded','missing','facet','certain'):
                 self.assertEqual(result[key], [])
+            # Additional adversarial checks on mapping and hard boundaries.
+            self.assertEqual(page.evaluate(r"""() => {
+                const make=(text,spans)=>({text,annotationLines:[{region_kind:'body',spans:spans??[
+                    {start:0,end:text.length,language:'cu',script:'Cyrl',uncertain:false}]}]});
+                const hits=(text,q,spans,sensitive=false)=>accentSearchMatches(make(text,spans),q,sensitive,{}).map(m=>[m.index,m[0]]);
+                return [hits('😀а\u{1E08F} а́','а'),hits('азъ АЗЪ','а́зъ',undefined,true),
+                    hits('а́зъ во́ля','азъ воля',[{start:0,end:5,language:'cu',script:'Cyrl',uncertain:false},
+                        {start:5,end:10,language:'cu',script:'Cyrl',uncertain:false}]),
+                    hits('а́зъ','азъ',[{start:0,end:4,language:'cu',script:'Latn',uncertain:false}])];
+            }"""), [[[6,'а́']],[[0,'азъ']],[],[]])
             self.assertFalse(page.locator('#ignoreHistoricalAccents').is_checked())
             # Exercise the actual dialog, search dispatch and literal excerpts.
             page.evaluate("""() => {
