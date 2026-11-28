@@ -37,22 +37,48 @@ These publications provide context or leads for comparison. Seven directly local
 
 ## Historical reviews / Історичні рецензії
 
-The following citations are research leads reported in Melnyk's [NTSh encyclopedia article](https://encyclopedia.com.ua/entry-109), not transcriptions or independently inspected reviews. The linked journal records or collections help locate original issues; they are not article permalinks unless specifically indicated. Check original title, pagination, volume reviewed, and actual textual corrections before citing or applying any observation.
+The following citations originate in Melnyk's [NTSh encyclopedia article](https://encyclopedia.com.ua/entry-109). Where the original journal OCR has been inspected, this is explicitly indicated; all other records remain research leads. Journal OCR is not image-verified text. The linked journal records or collections help locate original issues; they are not article permalinks unless specifically indicated. Check exact original wording before applying any proposed reading.
 
 Бібліографічні відомості за енциклопедією НТШ; тексти оригінальних рецензій ще потребують звірки. Посилання на журнали й каталоги не означають доступу до конкретної статті.
 
 | Reviewer / Рецензент | Journal, year, pages / Видання, рік, сторінки | Locator / Джерело |
 | --- | --- | --- |
 | Cyryl Studziński | *Kwartalnik Historyczny*, 1897, 815–816 | [Journal collection](https://webapp.sbc.org.pl/dlibra/publication/8429) |
-| Василий Истрин | «Новый сборник ветхозаветных апокрифов». *Журнал Министерства народного просвещения*, 1898, кн. 1, 112–133 | [Secondary citation](https://encyclopedia.com.ua/entry-109) |
-| Vatroslav Jagić | *Archiv für slavische Philologie* 20 (1898), 629 | [Volume catalogue](https://dspace.bcu-iasi.ro/handle/123456789/62851) |
+| Василий Истрин | «Новый сборник ветхозаветных апокрифов». *Журнал Министерства народного просвещения*, ч. 315, январь 1898, 112–133 | [PDF scan of journal volume](https://commons.wikimedia.org/wiki/File:ЖМНП_1898_Часть_315.pdf), [DjVu alternative](https://commons.wikimedia.org/wiki/File:Журнал_Министерства_народного_просвещения_Часть_315_1898.djvu); article not yet inspected |
+| Vatroslav Jagić | *Archiv für slavische Philologie* 20 (1898), 629, item 15 in the survey of the Shevchenko Society | [Journal OCR inspected](https://archive.org/stream/archivfrslavis20berluoft/archivfrslavis20berluoft_djvu.txt); [volume catalogue](https://dspace.bcu-iasi.ro/handle/123456789/62851) |
 | František Pastrnek | *Listy filologické* 25 (1898), 155–156 | [Volume catalogue](https://arl.pamatniknarodnihopisemnictvi.cz/arl-pnp/cs/detail-pnp_us_cat-055943-Listy-filologicke/) |
 | František Pastrnek | *Listy filologické*, 1900, 70–71 | [Secondary citation](https://encyclopedia.com.ua/entry-109) |
 | Aleksander Brückner | *Kwartalnik Historyczny*, 1899, 304–306 | [Journal collection](https://webapp.sbc.org.pl/dlibra/publication/8429) |
-| Aleksander Brückner | «Publikationen der Szewczenko-Gesellschaft». *Archiv für slavische Philologie* 22 (1900), 294–296 | [Digitized volume index](https://de.wikisource.org/wiki/Archiv_f%C3%BCr_slavische_Philologie) |
+| Aleksander Brückner | «Publikationen der Szewczenko-Gesellschaft». *Archiv für slavische Philologie* 22 (1900), discussion of Franko on 294–296 | [Journal OCR inspected](https://archive.org/stream/archivfrslavis22berluoft/archivfrslavis22berluoft_djvu.txt); [digitized volume](https://archive.org/details/archivfrslavis22berluoft) |
 | Михаил Сперанский | «Сборник новозаветных апокрифов, изд. Товарищества им. Шевченко во Львове». *Чтения в Историческом обществе Нестора-летописца*, 1904, кн. 4, вып. 2, отд. 1, 46 | [Secondary citation](https://encyclopedia.com.ua/entry-109) |
 | Михайло Возняк | *Літературно-науковий вістник* 52 (1910), кн. 12, 630–631; review of vol. V | [Secondary citation](https://encyclopedia.com.ua/entry-109) |
 | Николай Гудзий | *Журнал Министерства народного просвещения*, 1912, кн. 3, 153–161 | [Secondary citation](https://encyclopedia.com.ua/entry-109) |
+
+## Historical review follow-up / Уточнення історичних рецензій
+
+**Jagić, 1898, p. 629:** the notice is part of a broader survey, not a stand-alone textual critique. He notes the collection's linguistic diversity. No line-level corrections located in this notice.
+
+**Brückner, 1900, pp. 294–296:** the original journal OCR provides four specific references to vol. II. The first three have exact TOC matches and are linked in the reader as scholarly discussion. The fourth remains a lead: the reference to Herodias at II p. 340 lies at a shared boundary (TOC II/116 and II/117); inspect the page before assigning it. The OCR of the review is not reliable for Cyrillic or exact Latin transliteration.
+
+| Franko | Review | Observation and scope |
+| --- | --- | --- |
+| II 10–11, TOC index 16 | p. 296 | Aphroditianus is described as a fragment; historical observation, not a change to the ECCA match. |
+| II 74–98, index 35 | p. 295 | Kerestur Marian poem: Croatian, possibly Ragusan source proposed but not identified. A 14-line Latin transliteration enables comparison with II p. 75. |
+| II 315–317, index 107 | p. 295 | Kyiv Lazarus narrative: comparison of musical imagery with the Tale of Igor’s Campaign. Not proof of direct derivation. |
+| II 340 | p. 296 | Herodias, Diana and Wild Hunt traditions; more context for the motif of death by ice. Exact occurrence not yet resolved. |
+
+**First scan-grounded follow-up (II p. 75 / scan 157).** Pinned [printed source image](https://github.com/alexsosn/franko-tei/blob/e871f32537e81f81896f6ce9a6658aba667db9c5/images/vol2/page-00157.jpg), JPEG blob 358a11d7e32c8ef62083c77b97ab7db870d84eb9, candidate-declared image SHA256 b61917d5d1215dc0378d934a44364157cd30350a3e2f2fe0767883bf6a2d70be. [Frozen candidate](https://github.com/alexsosn/franko-tei/blob/2a35385d3d956bfee1f8dd47ec56d5e26bea641d/pilot/vol2_scan00157_single_reading.json), blob 016e8caae5aad5882a3759108c3fdb433455b689, reader gpt62-ii-157-image-harmonized-20261127. Brückner's cited passage corresponds to verse-stanza-3-line-07–12 and verse-stanza-4-line-01–08. Four omissions of the first component of printed оу are visible in the native image. Proposals below use half-open Unicode code-point offsets on frozen literal strings; no claim of fully checked diacritics or accepted correction.
+
+| Line ID | Range | Stored literal | Proposed literal |
+| --- | --- | --- | --- |
+| verse-stanza-3-line-07 | 21:22 | у | оу |
+| verse-stanza-3-line-10 | 0:1 | у | оу |
+| verse-stanza-3-line-10 | 4:5 | у | оу |
+| verse-stanza-4-line-03 | 0:1 | у | оу |
+
+The review's transliteration has normalized forms and differs from the print (e.g. претпредити, с нима). Do not copy its spelling back. The glyph at verse-stanza-4-line-08, final word, requires a more precise magnified distinction between an omega/ot ligature and supralinear mark; no correction proposed for it. No blind adjudication, text mutation or verified promotion. Submit only through the established source-correction pathway, preserving frozen evidence.
+
+**Istrin, 1898:** the original issue of his review is available as two digitizations, but opening the 34 MB PDF exceeded the web retrieval limit. Franko's [letter to Ahatanhel Krymsky, 27 July / 8 August 1898](https://www.i-franko.name/uk/Corresp/1898/1898-08-08Krymsky.html) directly discusses the criticism; collected-works notes state that the promised polemic did not appear in vol. II. Separately, Istrin, «Die griechische Version der Judas-Legende», *Archiv für slavische Philologie* 20 (1898), 605–619 ([journal OCR](https://archive.org/stream/archivfrslavis20berluoft/archivfrslavis20berluoft_djvu.txt)), discusses a Slavonic text found by Franko and published by Drahomanov, and compares the Solovki and Pogodin readings with Greek and Latin traditions. His pp. 613–614 conclusion places the Slavonic text in the Great Mirror tradition and distinguishes the later group with the prophecy about Dan. Locate the Drahomanov publication and compare both Franko II 343–346 and 346–348 occurrences before assigning an exact witness relation. These pages are not yet represented by single-reading files in the audited main snapshot.
 
 ## Comparative bibliography / Порівняльна бібліографія
 
