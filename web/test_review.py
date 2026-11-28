@@ -62,6 +62,47 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#ref').input_value(), 'feature/test')
             browser.close()
 
+    def test_mobile_search_form_layout(self):
+        # Synthetic layout smoke: no corpus/network assertions.
+        html = reader_html().replace('updateMode();load();', 'updateMode();load=()=>{};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width': 390, 'height': 844})
+            page.route('**/*', lambda route: route.abort())
+            page.set_content(html)
+            for locale in ('en', 'uk'):
+                self.choose_locale(page, locale)
+                for width, height in ((320, 640), (390, 844), (896, 414), (1280, 800)):
+                    page.set_viewport_size({'width': width, 'height': height})
+                    page.locator('#searchOpen').click()
+                    dialog = page.locator('#searchPanel')
+                    self.assertTrue(dialog.is_visible())
+                    self.assertTrue(dialog.evaluate('el => el.scrollWidth <= el.clientWidth + 1'))
+                    self.assertTrue(page.locator('#searchGo').evaluate('el => el.getBoundingClientRect().height >= 44'))
+                    self.assertTrue(page.locator('#query').evaluate('el => el.getBoundingClientRect().height >= 44'))
+                    page.locator('#searchFacets summary').click()
+                    for field in ('#searchVolume', '#searchSource', '#searchTextMode', '#searchLanguage', '#searchRegion', '#searchCertainty'):
+                        self.assertTrue(page.locator(field).evaluate("""el => {
+                            const field = el.closest('label');
+                            const a = el.getBoundingClientRect(), b = field.getBoundingClientRect();
+                            return Math.abs(a.left-b.left) <= 1 && Math.abs(a.width-b.width) <= 1 && a.height >= 44;
+                        }"""), field)
+                    self.assertTrue(dialog.evaluate('el => el.scrollWidth <= el.clientWidth + 1'))
+                    self.assertEqual(page.locator('#searchResults').evaluate('el => getComputedStyle(el).maxHeight'), 'none')
+                    page.locator('#searchTextMode').select_option('expansion')
+                    self.assertTrue(page.locator('#searchActiveFilters').is_visible())
+                    self.assertIn(page.locator('#searchTextMode option:checked').inner_text(), page.locator('#searchActiveFilters').inner_text())
+                    page.locator('#searchFacets summary').click()
+                    self.assertTrue(page.locator('#searchActiveFilters').is_visible())
+                    page.locator('#searchFacets summary').click()
+                    self.assertEqual(page.locator('#searchTextMode').input_value(), 'expansion')
+                    page.locator('#searchTextMode').select_option('literal')
+                    page.locator('#searchFacets summary').click()
+                    page.keyboard.press('Escape')
+                    self.assertTrue(dialog.is_hidden())
+                    self.assertTrue(page.locator('#searchOpen').evaluate('el => el === document.activeElement'))
+            browser.close()
+
     def test_toolbar_language_switcher(self):
         html = reader_html().replace('updateMode();load();', "updateMode();load=()=>{};load();")
         with sync_playwright() as p:
