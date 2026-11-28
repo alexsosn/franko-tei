@@ -55,7 +55,92 @@ def issue():
 def encode(bundle):
     return json.dumps(bundle, ensure_ascii=False).encode("utf-8")
 
+def annotation_fixture():
+    b=fixture()
+    b["schema_version"]="franko-review-bundle-v2"
+    spans=copy.deepcopy(LINE["language_spans"])
+    spans[-1]["uncertain"]=not spans[-1]["uncertain"]
+    b["events"][0].update(decision="annotate_language",replacement=None,language_spans=spans)
+    return b
+
+
 class ReviewBundleTests(unittest.TestCase):
+    def test_typed_language_proposal_preserves_source_and_v1(self):
+        b=annotation_fixture()
+        self.assertEqual(validate_bundle(read_bundle(encode(b)),load_source),b)
+        self.assertEqual(b["events"][0]["target"]["original"],LINE["text"])
+        self.assertEqual(json.loads(RAW),SOURCE)
+        old=copy.deepcopy(b);old["schema_version"]="franko-review-bundle-v1"
+        with self.assertRaises(ValueError):validate_bundle(old,load_source)
+        for modify in (
+            lambda e:e.update(replacement="changed"),
+            lambda e:e.update(language_spans=copy.deepcopy(LINE["language_spans"])),
+            lambda e:e["language_spans"][0].update(start=1),
+            lambda e:e["language_spans"][-1].update(end=len(LINE["text"])-1),
+            lambda e:e["language_spans"][0].update(end=e["language_spans"][0]["end"]+1),
+            lambda e:e["language_spans"][0].update(language="unknown invented code"),
+            lambda e:e["language_spans"][0].update(language="und",uncertain=False),
+            lambda e:e["language_spans"][0].update(text_version="different-reader"),
+            lambda e:e["language_spans"][0].update(uncertain=1),
+            lambda e:e["language_spans"][0].update(extra="not supported"),
+            lambda e:e.update(note=None),
+        ):
+            with self.subTest(modify=modify):
+                bad=copy.deepcopy(b);modify(bad["events"][0])
+                with self.assertRaises(ValueError):validate_bundle(bad,load_source)
+
+    def test_language_proposals_preserve_linked_notes_expansions_and_combining_marks(self):
+        from franko_tei.review_bundle import blob_sha
+        def proposal(path,line_id):
+            raw=(ROOT/path).read_bytes()
+            source=json.loads(raw)
+            region=next(r for r in source["reading"]["regions"] if any(l["id"]==line_id for l in r["lines"]))
+            line=next(l for l in region["lines"] if l["id"]==line_id)
+            b=annotation_fixture()
+            e=b["events"][0]
+            e["target"].update(candidate_path=path,candidate_blob=blob_sha(raw),
+                asset_commit=source["asset_commit"],image_sha256=source["source_image_sha256"],
+                reader_id=source["reading"]["reader_id"],region_id=region["id"],line_id=line_id,
+                original=line["text"])
+            spans=copy.deepcopy(line["language_spans"])
+            spans[0]["uncertain"]=not spans[0]["uncertain"]
+            e["language_spans"]=spans
+            def load(rev,p):
+                if (rev,p)!=(REV,path):raise ValueError("unexpected source")
+                return raw
+            return b,line,load
+        for line_id in ("body-2-line-07","note-1-line-01"):
+            b,line,load=proposal("pilot/vol5_scan00090_single_reading.json",line_id)
+            self.assertEqual(validate_bundle(b,load),b)
+            spans=b["events"][0]["language_spans"]
+            i=next(i for i,s in enumerate(spans) if s["language"]=="zxx")
+            marker=spans[i]
+            middle=marker["start"]+1
+            spans[i:i+1]=[dict(marker,end=middle),dict(marker,start=middle)]
+            with self.assertRaisesRegex(ValueError,"source note marker"):
+                validate_bundle(b,load)
+        b,line,load=proposal("pilot/vol1_scan00089_single_reading.json","witness-b-text-l001")
+        self.assertEqual(validate_bundle(b,load),b)
+        initial=b["events"][0]["language_spans"][0]
+        expansion=line["abbreviation_spans"][0]
+        for offset,error in ((expansion["start"]+1,"abbreviation"),(line["text"].index("҃"),"combining")):
+            with self.subTest(offset=offset):
+                b["events"][0]["language_spans"]=[dict(initial,end=offset),dict(initial,start=offset)]
+                with self.assertRaisesRegex(ValueError,error):validate_bundle(b,load)
+
+    def test_annotation_proposal_replay_uses_the_actual_partition(self):
+        b=annotation_fixture()
+        raw=encode(b);record=make_intake(raw,issue(),hashlib.sha256(raw).hexdigest(),load_source)
+        changed=copy.deepcopy(b)
+        changed["bundle_id"]="00000000-0000-4000-8000-000000000003"
+        changed["events"][0]["event_id"]="00000000-0000-4000-8000-000000000004"
+        who=issue();who.update(id=123457,number=43,html_url="https://github.com/alexsosn/franko-tei/issues/43")
+        raw=encode(changed);duplicate=make_intake(raw,who,hashlib.sha256(raw).hexdigest(),load_source)
+        with self.assertRaises(ValueError):assert_new(duplicate,[record])
+        changed["events"][0]["language_spans"][0]["uncertain"]=True
+        raw=encode(changed);distinct=make_intake(raw,who,hashlib.sha256(raw).hexdigest(),load_source)
+        assert_new(distinct,[record])
+
     def test_real_source_and_exact_unicode(self):
         b = fixture()
         self.assertEqual(validate_bundle(b, load_source), b)

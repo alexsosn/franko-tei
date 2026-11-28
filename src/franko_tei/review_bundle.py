@@ -10,8 +10,11 @@ from pathlib import Path
 import re
 import subprocess
 import uuid
+import unicodedata
 
 from .pilot_batch import check_draft_offline
+from .agent_evidence import validate_language_spans
+from .abbreviation_spans import validate_abbreviation_spans
 from .pilot_tei import PINNED_ASSET_COMMIT, _valid_xml_text
 
 REPO = "alexsosn/franko-tei"
@@ -102,16 +105,78 @@ def blob_sha(raw):
     return hashlib.sha1(f"blob {len(raw)}".encode("ascii") + bytes([0]) + raw).hexdigest()
 
 
+# The editor's initial supported vocabulary. Older frozen spans remain readable;
+# a replacement is a new annotation and must use the canonical codes.
+ANNOTATION_LANGUAGES = frozenset({
+    "cu", "uk", "orv", "ru", "grc", "la", "de", "pl", "fr", "hr", "sr", "und", "zxx",
+})
+LANGUAGE_SPAN_FIELDS = {"start", "end", "language", "script", "uncertain", "text_version"}
+
+
+def validate_language_proposal(source, region, line, spans):
+    """Validate a complete new partition of an exact frozen physical line.
+
+    The caller has already checked source identity and the immutable literal.
+    This is a proposal, not a confirmation of the source characters.
+    """
+    text = line["text"]
+    reader = source["reading"]["reader_id"]
+    require(not line.get("unreadable_suffix"), "gap annotation requires structural review")
+    validate_language_spans(text, spans, reader)
+    require(spans and spans != line["language_spans"], "unchanged language annotation")
+    cursor = 0
+    for span in spans:
+        fields(span, LANGUAGE_SPAN_FIELDS, "language proposal span")
+        require(span["start"] == cursor, "language proposal must partition the entire line")
+        require(isinstance(span["language"], str) and span["language"] in ANNOTATION_LANGUAGES,
+                "unsupported language proposal code")
+        require(isinstance(span["script"], str)
+                and re.fullmatch(r"[A-Z][a-z]{3}", span["script"]),
+                "explicit script required")
+        require(span["language"] not in {"und", "orv"} or span["uncertain"],
+                "unresolved or provisional language must be marked uncertain")
+        if cursor:
+            require(not unicodedata.category(text[cursor]).startswith("M")
+                    and text[cursor-1] != "\u200d" and text[cursor] != "\u200d",
+                    "language proposal boundary splits a combining sequence")
+        cursor = span["end"]
+    require(cursor == len(text), "language proposal must partition the entire line")
+    # Keep existing lexical expansion anchors inside one language segment.
+    validate_abbreviation_spans(dict(line, language_spans=spans), reader)
+    # The source-note schema also requires a unique covering language span
+    # for its explicitly recorded marker. Do not silently break a relation.
+    for link in source["reading"].get("source_note_links", []):
+        marker = link["marker_text"]
+        if link["marker_line_id"] == line["id"]:
+            start = link["marker_start"]
+        elif link["note_region_id"] == region["id"] and region["lines"][0]["id"] == line["id"]:
+            start = 0
+        else:
+            continue
+        end = start + len(marker)
+        require(text[start:end] == marker, "source note marker is stale")
+        require(sum(s["start"] <= start < end <= s["end"] for s in spans) == 1,
+                "source note marker must fit inside one language span")
+    return spans
+
+
 def validate_bundle(bundle, source_loader):
     fields(bundle, {"schema_version", "bundle_id", "source_commit", "events"}, "bundle")
-    require(bundle["schema_version"] == "franko-review-bundle-v1", "unknown bundle schema")
+    require(bundle["schema_version"] in ("franko-review-bundle-v1", "franko-review-bundle-v2"),
+            "unknown bundle schema")
     identifier(bundle["bundle_id"], "bundle ID")
     match(SHA, bundle["source_commit"], "source commit")
     events = bundle["events"]
     require(isinstance(events, list) and 0 < len(events) <= MAX_EVENTS, "invalid event count")
     seen_events, seen_targets, cache = set(), set(), {}
     for event in events:
-        fields(event, {"event_id", "target", "decision", "replacement", "note"}, "event")
+        annotation = (isinstance(event, dict) and event.get("decision") == "annotate_language")
+        event_fields = {"event_id", "target", "decision", "replacement", "note"}
+        if annotation:
+            require(bundle["schema_version"] == "franko-review-bundle-v2",
+                    "language proposals require bundle v2")
+            event_fields.add("language_spans")
+        fields(event, event_fields, "event")
         identifier(event["event_id"], "event ID")
         require(event["event_id"] not in seen_events, "duplicate event ID")
         seen_events.add(event["event_id"])
@@ -142,9 +207,14 @@ def validate_bundle(bundle, source_loader):
                  for line in region["lines"] if line["id"] == target["line_id"]]
         require(len(lines) == 1 and lines[0]["text"] == target["original"], "source line mismatch")
         decision = event["decision"]
-        require(decision in ("confirm", "correct", "defer"), "unknown decision")
+        require(decision in ("confirm", "correct", "defer", "annotate_language"), "unknown decision")
         replacement = event["replacement"]
-        if decision == "correct":
+        if annotation:
+            require(replacement is None, "language proposal cannot replace the text")
+            literal(event["note"], "language proposal evidence", 2048)
+            region = next(r for r in source["reading"]["regions"] if r["id"] == target["region_id"])
+            validate_language_proposal(source, region, lines[0], event["language_spans"])
+        elif decision == "correct":
             literal(replacement, "replacement")
             require(not any(c in replacement for c in ("\u0085", "\u2028", "\u2029")),
                     "replacement cannot contain a physical line break")
@@ -233,7 +303,9 @@ def assert_new(record, previous):
     ids = {e["event_id"] for e in bundle["events"]}
     def decisions(b):
         return {(e["target"]["candidate_blob"], e["target"]["line_id"],
-                 e["decision"], e["replacement"]) for e in b["events"]}
+                 e["decision"], e["replacement"],
+                 json.dumps(e.get("language_spans"), ensure_ascii=False, sort_keys=True,
+                            separators=(",", ":"))) for e in b["events"]}
     for old in previous:
         b = old["bundle"]
         require(old["submitter"]["issue_id"] != record["submitter"]["issue_id"],
