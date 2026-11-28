@@ -44,6 +44,31 @@ resolve conflicts by timestamps or vote counts. Rejected records remain
 visible in the ledger. Supersession/reversal needs an explicit future
 migration; no existing published record may be rewritten or deleted.
 
+## Typed language proposals (validation slice)
+
+Review bundle v1 remains unchanged. Bundle v2 also supports an
+`annotate_language` decision with `replacement: null`, an evidence note,
+and the complete replacement `language_spans` list (the same six fields
+as the source annotation). The immutable target still pins commit, blob,
+image, reader, region, line and original text. The initial vocabulary is
+cu, uk, orv, ru, grc, la, de, pl, fr, hr, sr, und and zxx; legacy codes
+remain readable in source records. New spans require explicit script and
+uncertainty, und/orv must be uncertain, and adjacent ranges must partition
+the entire literal without splitting combining sequences. Existing linked
+note markers and abbreviation spans must remain covered by one span.
+Gap-bearing lines are outside this first contract. This is a conservative
+historical-text boundary check, not a complete Unicode grapheme algorithm.
+
+The existing intake form and replay protection apply; pending and rejected
+annotation proposals do not change the corpus. Acceptance is explicitly
+refused until the accepted annotation status is supported by the reader,
+search indexes and TEI/TF projection. An annotation is never a text
+confirmation. No annotation submission button is enabled by this slice.
+The next step must preserve the existing one-decision-per-line conflict
+gate (including accepted text corrections), without reusing stale spans or
+silently dropping linked source structures. No new corpus sidecar or
+parallel intake store is introduced.
+
 ## Projection
 
 `validate_ledger` produces accepted records keyed by (candidate path,
