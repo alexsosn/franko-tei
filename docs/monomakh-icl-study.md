@@ -730,5 +730,6 @@ are temporary and are not uploaded or published.
 
 For fresh sessions and the incremental human-reviewed line atlas, follow
 [the atlas/HITL handoff](hitl/README.md). This historical research log is not
-the complete current reference: the base renderer still omits incremental
-line contexts, which must be inspected separately as described there.
+the complete current reference. Use the renderer's explicit `--hitl` mode
+for all committed incremental contexts, following the handoff's source
+retrieval and estimated-crop caveats. Base-only mode remains available.
