@@ -52,6 +52,9 @@ def merge_extensions(base_bytes, directory, read_blob=read_git_blob, *, target=N
             "target already exposed or reserved")
     files = sorted(Path(directory).glob("atlas-extension-*.json"))
     require(bool(files), "no HITL extensions; use base-only mode explicitly")
+    rounds = sorted(Path(directory).glob("round-*.json"))
+    require([p.name for p in rounds] == [f"round-{i:03d}.json" for i in range(1, len(files)+1)],
+            "round/extension coverage mismatch")
     digests = []
 
     def object_at(oid):
@@ -74,6 +77,10 @@ def merge_extensions(base_bytes, directory, read_blob=read_git_blob, *, target=N
                 and extension.get("parent_extension_blob") == previous,
                 "broken atlas extension chain: " + path.name)
         record = object_at(extension["reference_round_blob"])
+        current = json.loads(rounds[version-1].read_bytes())
+        require({k: v for k, v in current.items() if k != "retry"} ==
+                {k: v for k, v in record.items() if k != "retry"},
+                "current round differs from frozen pre-update reference")
         baseline, reference = record["baseline"], record["reference"]
         require(record["schema"] == "franko-hitl-round-v1"
                 and record["round"] == version
