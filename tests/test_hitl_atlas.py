@@ -68,6 +68,7 @@ class ActiveAtlasTests(unittest.TestCase):
                 {"line_id": self.line["id"]},
             ]}, "retry": None,
         }
+        (self.directory / "round-001.json").write_bytes(encoded(self.round))
         self.extension = {
             "schema": "franko-hitl-atlas-extension-v1", "version": 1,
             "parent_atlas_blob": git_blob_id(self.base),
@@ -132,6 +133,18 @@ class ActiveAtlasTests(unittest.TestCase):
             self.load(bad)
         self.load()
         (self.directory / "atlas-extension-003.json").write_bytes(encoded(self.extension))
+        with self.assertRaises(ValueError):
+            self.load()
+
+    def test_missing_tail_and_changed_round(self):
+        self.load()
+        (self.directory / "round-002.json").write_bytes(encoded(self.round))
+        with self.assertRaises(ValueError):
+            self.load()
+        (self.directory / "round-002.json").unlink()
+        changed = copy.deepcopy(self.round)
+        changed["first_pass"]["reviewed_lines"] = 99
+        (self.directory / "round-001.json").write_bytes(encoded(changed))
         with self.assertRaises(ValueError):
             self.load()
 
