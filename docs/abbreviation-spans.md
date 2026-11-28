@@ -55,17 +55,30 @@ abbreviation expansion=Богъ
 ```
 
 returns an annotation aligned to the original form. The pilot has no
-automatic expansion, no UI/search integration yet and no claim of
+automatic expansion and no claim of
 verified philological coverage. Further annotations require review of
 individual source loci; do not bulk-import proposals or normalize the text.
 
 ## Search integration and future scope (#177, #421)
 
 See [historical orthography and search](historical-orthography-search.md).
-The present validated fields and TEI/TF projection remain unchanged.
-Search should index the expansion as an alias for the original anchored
-occurrence, retain uncertainty and source, and never count both forms as
-two occurrences. An accepted text correction invalidates stale expansion
+The validated fields and TEI/TF projection remain unchanged.
+The reader's line gutter shows a ↔ count where expansions exist. Open it to
+inspect each literal and contextual expansion, uncertainty, and evidence URL.
+Copied line text remains diplomatic. Search → Annotation filters → Search text
+→ Expanded abbreviations matches only the annotated expanded words (substring,
+case sensitivity as selected). A blank query lists annotated occurrences.
+Hits display and highlight the entire original contraction, one hit per
+annotation, and retain the original reading/candidate and line identity.
+Language, region and attribution filters apply to the source interval, not
+an inferred language of its expansion. Literal mode remains the default.
+The published exact-revision side index declares lexical_expansions support;
+old or mismatched indexes must fail closed rather than report a false zero.
+No general expansion-aware phrase search, combined literal/alias search,
+OCR expansion search or automatic dictionary inference is provided yet.
+Coverage is explicitly incomplete; the initial backfill contains 103 proposals
+on 25 pages, and the search status reports the number of indexed occurrences
+for the selected reading scope. An accepted text correction invalidates stale expansion
 intervals; reannotation is required. Future support for supralinear-only,
 non-titlo, payerok, multi-line and unresolved expansions requires explicit
 alignment of all visible letters, including combining Cyrillic letters
