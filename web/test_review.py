@@ -809,6 +809,55 @@ class ReviewSmoke(unittest.TestCase):
             self.assertEqual(page.locator('#contentsFirstScan').inner_text(), 'Перший скан')
             browser.close()
 
+    def test_settings_and_layers_shared_controls(self):
+        # Synthetic layout and focus regression; source-linked inspection is
+        # exercised separately by test_editorial_projection.py.
+        html = reader_html().replace('updateMode();load();', 'updateMode();load=()=>{};load();')
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width': 390, 'height': 844})
+            page.route('**/*', lambda route: route.abort())
+            page.set_content(html)
+            for locale in ('en', 'uk'):
+                self.choose_locale(page, locale)
+                for width, height in ((320, 640), (390, 844), (896, 414), (1280, 800)):
+                    page.set_viewport_size({'width': width, 'height': height})
+                    page.locator('#settingsOpen').click()
+                    body = page.locator('#settingsBody')
+                    for field in ('#mode', '#slavonicFont', '#greekFont'):
+                        self.assertTrue(page.locator(field).evaluate("""el => {
+                            const a = el.getBoundingClientRect(), b = el.parentElement.getBoundingClientRect();
+                            return Math.abs(a.left-b.left) <= 1 && Math.abs(a.width-b.width) <= 1
+                                && a.height >= 44 && parseFloat(getComputedStyle(el).fontSize) >= 16;
+                        }"""), field)
+                    self.assertTrue(body.evaluate('el => el.scrollWidth <= el.clientWidth + 1'))
+                    self.assertTrue(page.locator('#settingsDone').evaluate('el => el.getBoundingClientRect().height >= 44'))
+                    shot_dir = os.environ.get('FRANKO_UX_SCREENSHOTS')
+                    if shot_dir:
+                        Path(shot_dir).mkdir(parents=True, exist_ok=True)
+                        page.screenshot(path=str(Path(shot_dir) / f'settings-{locale}-{width}x{height}.png'))
+                    page.locator('#advancedSettings summary').click()
+                    for field in ('#refDraft', '#applyRef'):
+                        self.assertTrue(page.locator(field).evaluate('el => el.getBoundingClientRect().height >= 44'))
+                    self.assertTrue(body.evaluate('el => el.scrollWidth <= el.clientWidth + 1'))
+                    page.keyboard.press('Escape')
+                    self.assertTrue(page.locator('#settingsOpen').evaluate('el => el === document.activeElement'))
+                    # Stub reading availability only, then use the real dialog controls.
+                    page.locator('#layersOpen').evaluate('el => el.hidden = false')
+                    page.locator('#layersOpen').click()
+                    dialog = page.locator('#layersDialog')
+                    self.assertTrue(dialog.evaluate('el => el.scrollWidth <= el.clientWidth + 1'))
+                    self.assertTrue(page.locator('#inspectChoose').evaluate('el => el.getBoundingClientRect().height >= 44'))
+                    self.assertEqual(page.locator('#layersLanguageSlot #showLanguages').count(), 1)
+                    self.assertTrue(page.locator('#showRegions').evaluate('el => el.closest("label").getBoundingClientRect().height >= 44'))
+                    if shot_dir:
+                        page.screenshot(path=str(Path(shot_dir) / f'layers-{locale}-{width}x{height}.png'))
+                    page.keyboard.press('Escape')
+                    self.assertTrue(dialog.is_hidden())
+                    self.assertEqual(page.locator('#settingsLanguageSlot #showLanguages').count(), 1)
+                    self.assertTrue(page.locator('#layersOpen').evaluate('el => el === document.activeElement'))
+            browser.close()
+
     def test_settings_layout_and_staged_source(self):
         html = reader_html().replace('updateMode();load();',
             "updateMode();load=()=>{window.lastRef=$('ref').value;};load();")
