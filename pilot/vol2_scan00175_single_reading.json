@@ -1,0 +1,1090 @@
+{
+  "schema_version": "single-image-draft-v0",
+  "status": "agent_unverified",
+  "volume": "2",
+  "scan_page": 175,
+  "printed_page_observed": "93",
+  "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+  "source_pdf_sha256_claimed_by_manifest": "ae682e5ec1bc16db3ab0bf8c01d0b78239367a7bf5f9520e78e9a5a16a324183",
+  "source_image_path": "vol2/page-00175.jpg",
+  "source_image_sha256": "65fc90f807fb947782b57efa54a93757c86ee0dda98a4f11cb52d0c261e3079b",
+  "reading": {
+    "reader_id": "gpt62-ii-175-atlas-20261128",
+    "model_id": "GPT-6.2",
+    "model_version": null,
+    "context_id": "chat-gpt62-vol2-00171-00180-20261128",
+    "context_independence": "single-working-draft",
+    "run_id": null,
+    "source_original_ocr_visible": false,
+    "peer_readings_visible": false,
+    "instructions": "Direct original-image reading with selective visual ICL, base atlas 8a4f5e3d50e33e1693279155f5746de32e35be38 and extension chain through 5ddfee80d00eaf148b07d5537cf33b70123ad6cd. Full-page fallback: II/102 L81 (ꙋ), I/128 L66 (оу), IV/149 R004-body-line-01–03 (titla and supralinear letter contrasts). No rendered sheets or preview-only examples; no blind benchmark claim, earlier trial on 171 exists. Kerestur witness continues; orv provisional. Distinguish monograph ꙋ from digraph оу; accent/breathing/titlo placement remains provisional/incomplete, estimated geometry. Draft-stage corrections after source reinspection retained in Git history; not a new independent reader.",
+    "raw_response": "93\nи вшедъ оубо к ней по должности яви;\nбыли [sic !] цвѣтъ во рꙋцѣ донесе,\nзнакъ радосніи ѿ неба принесе.\nнача Дѣвꙋ дивно цѣловати,\nархангелскимъ гласомъ поздравляти:\n„Радꙋй ся, ѡ҆брадована,\nмеждꙋ женами благословена!\nвозвишена славою многою,\nяко Вишни Гд҃ъ есть с тобою“.\nАрхангела ѡ҆на оувѣдѣла,\nстранїи речи ѿ него слишавши,\nсовистию и лицемъ смꙋти ся,\nПречистая весма ѡ҆скорби ся.\nвся глаголи на ср҃це слагаше,\nпрелесныя быти помишляше;\n„каковое то цѣлованіе,\nда мя ведетъ во искꙋшеніе!\nмислитъ мя с тимъ превести\nзавищанꙋ въ чистотѣ живити“.\nтѣмъ же ѡ҆на лицемъ возмꙋщенимъ\nпозри его и҆ ѡ҆комъ гнѣвливимъ\nи бесиди конецъ ѡ҆жидаше,\nглаголати к' немꙋ начинаше:\n„И҆ди, и҆ди ѿ пред[в]ерей моихъ!\nлꙋкаве сꙋ речи оустенъ твоихъ.\nты мя мислишъ преварити дѣвꙋ,\nяко змїя праматеръ Евꙋ.\nЯсна свѣтлость, зракъ твоего лица\nповидити не могъ моего ср҃ца.\nилъ єсь человѣкъ или котри ст҃ы?\nдѣта кротки, не чꙋє мои стари,\nи възвиститъ чеснимъ іереемъ, —\nктомꙋ кꙋпно жити не имиємъ,\nпа за тимъ плачъ и ситованіе\nслѣдовати горко риданіе“.\nТако Дѣва ангелꙋ и҆зрече:\n„иди со Бг҃омъ ѿ мене, человѣче!“\n690\n700\n710\n720",
+    "coverage": {
+      "entire_image_inspected": true,
+      "nontext_areas": []
+    },
+    "regions": [
+      {
+        "id": "folio",
+        "kind": "page_number",
+        "bbox_xywh": [
+          975,
+          106,
+          38,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "folio-line-01",
+            "text": "93",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 2,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              975,
+              106,
+              38,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-cont",
+        "kind": "body",
+        "bbox_xywh": [
+          245,
+          176,
+          606,
+          175
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-cont-line-01",
+            "text": "и вшедъ оубо к ней по должности яви;",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 36,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              245,
+              176,
+              606,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-02",
+            "text": "были [sic !] цвѣтъ во рꙋцѣ донесе,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 5,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              },
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 5,
+                "end": 12,
+                "language": "la",
+                "script": "Latn",
+                "uncertain": false
+              },
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 12,
+                "end": 34,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              245,
+              211,
+              606,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-03",
+            "text": "знакъ радосніи ѿ неба принесе.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              245,
+              246,
+              606,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-04",
+            "text": "нача Дѣвꙋ дивно цѣловати,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              245,
+              281,
+              606,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-cont-line-05",
+            "text": "архангелскимъ гласомъ поздравляти:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 34,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              245,
+              316,
+              606,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-greeting",
+        "kind": "body",
+        "bbox_xywh": [
+          246,
+          390,
+          521,
+          142
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-greeting-line-01",
+            "text": "„Радꙋй ся, ѡ҆брадована,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              246,
+              390,
+              521,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-greeting-line-02",
+            "text": "междꙋ женами благословена!",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              246,
+              425,
+              521,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-greeting-line-03",
+            "text": "возвишена славою многою,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 24,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              246,
+              461,
+              521,
+              32
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-greeting-line-04",
+            "text": "яко Вишни Гд҃ъ есть с тобою“.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              246,
+              496,
+              521,
+              32
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-fear",
+        "kind": "body",
+        "bbox_xywh": [
+          248,
+          570,
+          564,
+          503
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-fear-line-01",
+            "text": "Архангела ѡ҆на оувѣдѣла,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 24,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              570,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-02",
+            "text": "странїи речи ѿ него слишавши,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              605,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-03",
+            "text": "совистию и лицемъ смꙋти ся,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              641,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-04",
+            "text": "Пречистая весма ѡ҆скорби ся.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              677,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-05",
+            "text": "вся глаголи на ср҃це слагаше,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              713,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-06",
+            "text": "прелесныя быти помишляше;",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              749,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-07",
+            "text": "„каковое то цѣлованіе,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 22,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              785,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-08",
+            "text": "да мя ведетъ во искꙋшеніе!",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              821,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-09",
+            "text": "мислитъ мя с тимъ превести",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 26,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              857,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-10",
+            "text": "завищанꙋ въ чистотѣ живити“.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              893,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-11",
+            "text": "тѣмъ же ѡ҆на лицемъ возмꙋщенимъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              929,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-12",
+            "text": "позри его и҆ ѡ҆комъ гнѣвливимъ",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              965,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-13",
+            "text": "и бесиди конецъ ѡ҆жидаше,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              1001,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-fear-line-14",
+            "text": "глаголати к' немꙋ начинаше:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              248,
+              1037,
+              564,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-response",
+        "kind": "body",
+        "bbox_xywh": [
+          250,
+          1110,
+          573,
+          433
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-response-line-01",
+            "text": "„И҆ди, и҆ди ѿ пред[в]ерей моихъ!",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1110,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-02",
+            "text": "лꙋкаве сꙋ речи оустенъ твоихъ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1146,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-03",
+            "text": "ты мя мислишъ преварити дѣвꙋ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1182,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-04",
+            "text": "яко змїя праматеръ Евꙋ.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 23,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1218,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-05",
+            "text": "Ясна свѣтлость, зракъ твоего лица",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 33,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1254,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-06",
+            "text": "повидити не могъ моего ср҃ца.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 29,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1290,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-07",
+            "text": "илъ єсь человѣкъ или котри ст҃ы?",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 32,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1326,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-08",
+            "text": "дѣта кротки, не чꙋє мои стари,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 30,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1362,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-09",
+            "text": "и възвиститъ чеснимъ іереемъ, —",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 31,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1398,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-10",
+            "text": "ктомꙋ кꙋпно жити не имиємъ,",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 27,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1434,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-11",
+            "text": "па за тимъ плачъ и ситованіе",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 28,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1470,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-response-line-12",
+            "text": "слѣдовати горко риданіе“.",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              250,
+              1506,
+              573,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-dismissal",
+        "kind": "body",
+        "bbox_xywh": [
+          251,
+          1579,
+          525,
+          72
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-dismissal-line-01",
+            "text": "Тако Дѣва ангелꙋ и҆зрече:",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 25,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              251,
+              1579,
+              525,
+              33
+            ],
+            "geometry_estimated": true
+          },
+          {
+            "id": "verse-dismissal-line-02",
+            "text": "„иди со Бг҃омъ ѿ мене, человѣче!“",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 33,
+                "language": "orv",
+                "script": "Cyrl",
+                "uncertain": true
+              }
+            ],
+            "bbox_xywh": [
+              251,
+              1615,
+              525,
+              33
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-690",
+        "kind": "other",
+        "bbox_xywh": [
+          173,
+          283,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-690-line-01",
+            "text": "690",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              173,
+              283,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-700",
+        "kind": "other",
+        "bbox_xywh": [
+          173,
+          713,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-700-line-01",
+            "text": "700",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              173,
+              713,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-710",
+        "kind": "other",
+        "bbox_xywh": [
+          174,
+          1110,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-710-line-01",
+            "text": "710",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              174,
+              1110,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      },
+      {
+        "id": "verse-number-720",
+        "kind": "other",
+        "bbox_xywh": [
+          175,
+          1470,
+          55,
+          30
+        ],
+        "geometry_estimated": true,
+        "lines": [
+          {
+            "id": "verse-number-720-line-01",
+            "text": "720",
+            "language_spans": [
+              {
+                "text_version": "gpt62-ii-175-atlas-20261128",
+                "start": 0,
+                "end": 3,
+                "language": "zxx",
+                "script": "Zyyy",
+                "uncertain": false
+              }
+            ],
+            "bbox_xywh": [
+              175,
+              1470,
+              55,
+              27
+            ],
+            "geometry_estimated": true
+          }
+        ]
+      }
+    ],
+    "uncertainty_notes": [
+      {
+        "line_id": "verse-cont-line-02",
+        "reading": "были",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-response-line-06",
+        "reading": "повидити",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-response-line-08",
+        "reading": "дѣта кротки",
+        "reason": "Provisional glyph reading; confirm against magnified print."
+      },
+      {
+        "line_id": "verse-fear-line-09",
+        "reading": "превести",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
+      },
+      {
+        "line_id": "verse-response-line-10",
+        "reading": "не имиємъ",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
+      },
+      {
+        "line_id": "verse-response-line-09",
+        "reading": "възвиститъ",
+        "reason": "Reinspection supports revised reading; historical typography remains provisional."
+      }
+    ],
+    "source_note_links": []
+  }
+}
