@@ -74,14 +74,18 @@ lines awaiting reannotation and cross-span/line phrases are excluded
 from this mode; the summary identifies the scope and eligible span count.
 A branch lacking matching published metadata or an OCR source is not
 silently treated as historical. Use literal search for those sources.
-Case and annotation filters remain available. Historical accent mode
+Case and annotation filters remain available. Expansion search (Search text →
+Expanded abbreviations) is a separate mode; combining the two is rejected
+explicitly until combined alias matching is implemented. See
+[abbreviation spans](../docs/abbreviation-spans.md) for expansion coverage.
+Historical accent mode
 requires Intl.Segmenter (a modern browser).
 
 ## Historical spelling search roadmap
 
 See [historical orthography and search](../docs/historical-orthography-search.md)
 and [#177](https://github.com/alexsosn/franko-tei/issues/177) for the proposed
-remaining historical grapheme, abbreviation-aware, logical-word
+remaining historical grapheme, combined literal/expansion, logical-word
 and morphological search profiles. These are future features, not current
 reader controls. Keep the existing literal search and exact source
 navigation; future results must display the original text, explain the
