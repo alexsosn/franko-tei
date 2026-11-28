@@ -1,0 +1,303 @@
+{
+  "schema": "franko-hitl-round-v1",
+  "round": 5,
+  "status": "partial_human_reference_frozen",
+  "volume": "5",
+  "scan_page": 150,
+  "printed_page": "138",
+  "work": "Житіє св. Климента Анкирського",
+  "baseline": {
+    "commit": "99dc76ab6856aac96c6e6e04497b122f775b4846",
+    "path": "pilot/vol5_scan00150_single_reading.json",
+    "blob": "f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d",
+    "asset_commit": "e871f32537e81f81896f6ce9a6658aba667db9c5",
+    "image_sha256": "576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97",
+    "atlas_blob": "8a4f5e3d50e33e1693279155f5746de32e35be38",
+    "atlas_extension_blob": "56ed703ae6931dc6e2eeac0f5d4a42c3c5cffe9a",
+    "reader_id": "gpt62-hitl-round005-v5-s00150-20261128",
+    "model": "GPT-6.2"
+  },
+  "reference": {
+    "kind": "human_review_submitted",
+    "issue": 459,
+    "issue_id": 6656491829,
+    "submitter_id": 3265391,
+    "issue_updated_at": "2026-11-28T00:08:46Z",
+    "bundle_raw_utf8": "{\"schema_version\":\"franko-review-bundle-v1\",\"bundle_id\":\"5793467a-4248-4cb2-912f-e6dc0181ff98\",\"source_commit\":\"99dc76ab6856aac96c6e6e04497b122f775b4846\",\"events\":[{\"event_id\":\"750f7e82-a7f5-4806-b751-fd4dd313e3b6\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"folio\",\"line_id\":\"folio-line-01\",\"original\":\"138\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"4a932f03-9f3f-4f35-8119-ac6ca6d0e742\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"editorial-title\",\"line_id\":\"editorial-title-line-01\",\"original\":\"XI. Житіє св. Климента Анкирського.\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"11375d2f-099e-45ba-a699-a720c32d6983\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"witness-heading\",\"line_id\":\"witness-heading-line-01\",\"original\":\"Львівський рукопис (біблїотека Осолїнських ч. 38, крт.\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"b595db63-5a5f-43f9-8eb7-c147bdc43555\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"witness-heading\",\"line_id\":\"witness-heading-line-02\",\"original\":\"515—519).\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"6856ade7-25e7-4f82-9d3c-9df44afe43e0\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"csl-title\",\"line_id\":\"body-line-01\",\"original\":\"Мц҃а генварѧ к҃г. дн҃ь, житїє ст҃го Клїмента\"},\"decision\":\"correct\",\"replacement\":\"Мц҃а генварѧ кг҃. дн҃ь, житїе ст҃го Клїмента\",\"note\":null},{\"event_id\":\"b97f85a4-ee2e-40a2-b152-31aee9c1342e\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"csl-title\",\"line_id\":\"body-line-02\",\"original\":\"епⷭ҇па Анкиръскаго и ст҃го мч҃нка Агаѳаггела. тво-\"},\"decision\":\"correct\",\"replacement\":\"епс҃па Ангиръскаго и ст҃го мч҃нка Агаѳаггела. тво-\",\"note\":null},{\"event_id\":\"96eea608-d24e-4272-ac92-3a305fc91b3d\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"csl-title\",\"line_id\":\"body-line-03\",\"original\":\"ренїе Симеона Метофраста. Быша по ржⷭ҇твѣ Хв҃ѣ\"},\"decision\":\"correct\",\"replacement\":\"ренїе Симеона Метофраста. Быша по рж҃ствѣ Хв҃ѣ\",\"note\":null},{\"event_id\":\"39f765dd-0491-49cf-b03d-5dd2e3150499\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"csl-title\",\"line_id\":\"body-line-04\",\"original\":\"лѣта сн҃.\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"ca95e253-b288-4a5f-b410-38d2e73b0a8e\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-05\",\"original\":\"Анкирїѧ в’ Галатїи наслѣдїе бысть сего ст҃го. имаше мт҃рь\"},\"decision\":\"correct\",\"replacement\":\"Анкирїѧ вⸯ Галатїи наслѣдїе бысть сего ст҃го. имѧше мт҃рь\",\"note\":null},{\"event_id\":\"3aa91ef5-5e9e-4a59-887a-c295e3d7901f\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-06\",\"original\":\"Софїю хрⷭ҇тїанинноу, ѕѣло добродѣтѣлноу и славных родителей,\"},\"decision\":\"correct\",\"replacement\":\"Софїю хр҃стїꙗнинноу, ѕѣло добродѣтлъноу и славных родителей,\",\"note\":null},{\"event_id\":\"0eb82fe8-1d86-4226-99bd-9ac1544eed28\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-07\",\"original\":\"Ѿца же Еллина, его же оувѣщати жена великим тщанїем своим\"},\"decision\":\"correct\",\"replacement\":\"Ѿца же Еллина, єго же оувѣщати жена великим тщанїемь своим\",\"note\":null},{\"event_id\":\"d664577d-6652-41ad-b4cf-47b3356ea11a\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-08\",\"original\":\"къ вѣрѣ Хв҃ѣ не възможе, и тако оумрѣть съмрътїю ѡбою.\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"5f48d952-5f59-4965-b2d0-ab5cc3712cca\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-09\",\"original\":\"Климентїѧ же велми млада единаго ѡстави, ѡ нем же Гь҃\"},\"decision\":\"correct\",\"replacement\":\"Клименътїѧ же велми млада единаго ѡстави, ѡ нем же Гь҃\",\"note\":null},{\"event_id\":\"0704934c-5a45-4630-9245-090addc97d62\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-10\",\"original\":\"мт҃ри его дастъ сїє велико оупованїє, ꙗко мч҃нїє и кров свою Ха҃\"},\"decision\":\"correct\",\"replacement\":\"мт҃ри его дасть сїе велико оупованїе, ꙗко мч҃енїе и кров свою Ха҃\",\"note\":null},{\"event_id\":\"80cecd89-0069-482f-8fb8-95cb4e678ca3\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-11\",\"original\":\"ради разлиѧти имаше. скоро къ разоумоу прїйде, въспита его\"},\"decision\":\"correct\",\"replacement\":\"ради разлиꙗти имаше. скоро къ разоумоу прїйде, въспита его\",\"note\":null},{\"event_id\":\"35921e73-17df-4462-a463-139c26b8b7cd\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-12\",\"original\":\"ꙗко единаго ѿ инокъ, хвалѧ ему прⷭ҇но мч҃ническїй вѣнецъ. по-\"},\"decision\":\"correct\",\"replacement\":\"ꙗко единаго ѿ инокь, хвалѧ емоу пр҃сно мч҃ническїй вѣнець. по-\",\"note\":null},{\"event_id\":\"c4608c55-b7a5-47a6-8f18-c9b09997663d\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-13\",\"original\":\"слѣди же таковыа слова завѣтом прежде съмръти своеѧ ѡста-\"},\"decision\":\"correct\",\"replacement\":\"слѣди же таковыа слова завѣтом прежде съмрьти своеѧ ѡста-\",\"note\":null},{\"event_id\":\"ee342e07-15da-45e1-8141-f3f6d4dd6aee\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-14\",\"original\":\"ви¹): „Азъ, рече, сн҃оу мой възлюбленне, оумираю, тебе же сн҃а\"},\"decision\":\"correct\",\"replacement\":\"ви¹): „Азь, рече, сн҃оу мой възлюбленне, оумираю, тебе же сн҃а\",\"note\":null},{\"event_id\":\"5a769ac7-af4c-4629-b666-240c94e3183c\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-15\",\"original\":\"своего мл҃ѫ ѡ вѣрѣ хрⷭ҇тїанстѣй и любви Га҃ сп҃сителѧ твоего,\"},\"decision\":\"correct\",\"replacement\":\"своего мл҃ѫ ѡ вѣрѣ хр҃стїꙗнстѣй и любви Га҃ сп҃сителѧ твоего,\",\"note\":null},{\"event_id\":\"9fe690cf-65bd-4047-901d-5c6e474acbeb\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-16\",\"original\":\"не пощади здравїѧ твоего ни единаго ѿ царей временных и кра-\"},\"decision\":\"confirm\",\"replacement\":null,\"note\":null},{\"event_id\":\"77eb2961-82b3-43f8-883a-bfb8510defa7\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-17\",\"original\":\"ткоцрⷭ҇твующих и ꙗко тѣнь мимотекущих не бой сѧ, да не\"},\"decision\":\"correct\",\"replacement\":\"ткоцр҃ствоующих и ꙗко тѣнь мимотекоущих не бой сѧ, да не\",\"note\":null},{\"event_id\":\"7f7a2c1c-67e0-4769-8f02-8af99e00d625\",\"target\":{\"candidate_path\":\"pilot/vol5_scan00150_single_reading.json\",\"candidate_blob\":\"f26169008a2786b0fe7ec8ead1ee1c743c7f5c2d\",\"asset_commit\":\"e871f32537e81f81896f6ce9a6658aba667db9c5\",\"image_sha256\":\"576efc07349c932407f519fa5c1af7ed28c938d923231020ce472523cb8c0d97\",\"reader_id\":\"gpt62-hitl-round005-v5-s00150-20261128\",\"region_id\":\"body-start\",\"line_id\":\"body-line-18\",\"original\":\"ѡмылю сѧ на тебѣ болѣзни ради моеѧ, ꙗже подахъ пекущи сѧ\"},\"decision\":\"correct\",\"replacement\":\"ѡмылю сѧ на тебѣ болезни ради моеѧ, ꙗже подѧхь пекꙋщи сѧ\",\"note\":null}]}",
+    "scope": "18 of 30 CSL rows (including CSL title); 15 corrected, 3 confirmed; folio and 3 editorial heading lines confirmed but excluded",
+    "editorial_status": "not adjudicated for corpus projection"
+  },
+  "first_pass": {
+    "reference_characters": 969,
+    "edits": 42,
+    "cer": 0.043343653250773995,
+    "reviewed_lines": 18,
+    "rows": [
+      {
+        "line_id": "body-line-01",
+        "event_id": "6856ade7-25e7-4f82-9d3c-9df44afe43e0",
+        "decision": "correct",
+        "reference_characters": 44,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-02",
+        "event_id": "b97f85a4-ee2e-40a2-b152-31aee9c1342e",
+        "decision": "correct",
+        "reference_characters": 50,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-03",
+        "event_id": "96eea608-d24e-4272-ac92-3a305fc91b3d",
+        "decision": "correct",
+        "reference_characters": 46,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-04",
+        "event_id": "39f765dd-0491-49cf-b03d-5dd2e3150499",
+        "decision": "confirm",
+        "reference_characters": 9,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-05",
+        "event_id": "ca95e253-b288-4a5f-b410-38d2e73b0a8e",
+        "decision": "correct",
+        "reference_characters": 57,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-06",
+        "event_id": "3aa91ef5-5e9e-4a59-887a-c295e3d7901f",
+        "decision": "correct",
+        "reference_characters": 60,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-07",
+        "event_id": "0eb82fe8-1d86-4226-99bd-9ac1544eed28",
+        "decision": "correct",
+        "reference_characters": 58,
+        "edits": 2
+      },
+      {
+        "line_id": "body-line-08",
+        "event_id": "d664577d-6652-41ad-b4cf-47b3356ea11a",
+        "decision": "confirm",
+        "reference_characters": 54,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-09",
+        "event_id": "5f48d952-5f59-4965-b2d0-ab5cc3712cca",
+        "decision": "correct",
+        "reference_characters": 54,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-10",
+        "event_id": "0704934c-5a45-4630-9245-090addc97d62",
+        "decision": "correct",
+        "reference_characters": 65,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-11",
+        "event_id": "80cecd89-0069-482f-8fb8-95cb4e678ca3",
+        "decision": "correct",
+        "reference_characters": 58,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-12",
+        "event_id": "35921e73-17df-4462-a463-139c26b8b7cd",
+        "decision": "correct",
+        "reference_characters": 62,
+        "edits": 5
+      },
+      {
+        "line_id": "body-line-13",
+        "event_id": "c4608c55-b7a5-47a6-8f18-c9b09997663d",
+        "decision": "correct",
+        "reference_characters": 57,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-14",
+        "event_id": "ee342e07-15da-45e1-8141-f3f6d4dd6aee",
+        "decision": "correct",
+        "reference_characters": 62,
+        "edits": 1
+      },
+      {
+        "line_id": "body-line-15",
+        "event_id": "5a769ac7-af4c-4629-b666-240c94e3183c",
+        "decision": "correct",
+        "reference_characters": 61,
+        "edits": 3
+      },
+      {
+        "line_id": "body-line-16",
+        "event_id": "9fe690cf-65bd-4047-901d-5c6e474acbeb",
+        "decision": "confirm",
+        "reference_characters": 60,
+        "edits": 0
+      },
+      {
+        "line_id": "body-line-17",
+        "event_id": "77eb2961-82b3-43f8-883a-bfb8510defa7",
+        "decision": "correct",
+        "reference_characters": 56,
+        "edits": 4
+      },
+      {
+        "line_id": "body-line-18",
+        "event_id": "7f7a2c1c-67e0-4769-8f02-8af99e00d625",
+        "decision": "correct",
+        "reference_characters": 56,
+        "edits": 4
+      }
+    ],
+    "eligible_body_lines": 30,
+    "eligible_page_lines": 35,
+    "complete": false,
+    "method": "literal Unicode code-point Levenshtein, fixed CSL rows",
+    "without_marks": {
+      "reference_characters": 942,
+      "edits": 34,
+      "cer": 0.036093418259023353,
+      "reviewed_lines": 18,
+      "rows": [
+        {
+          "line_id": "body-line-01",
+          "event_id": "6856ade7-25e7-4f82-9d3c-9df44afe43e0",
+          "decision": "correct",
+          "reference_characters": 40,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-02",
+          "event_id": "b97f85a4-ee2e-40a2-b152-31aee9c1342e",
+          "decision": "correct",
+          "reference_characters": 47,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-03",
+          "event_id": "96eea608-d24e-4272-ac92-3a305fc91b3d",
+          "decision": "correct",
+          "reference_characters": 44,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-04",
+          "event_id": "39f765dd-0491-49cf-b03d-5dd2e3150499",
+          "decision": "confirm",
+          "reference_characters": 8,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-05",
+          "event_id": "ca95e253-b288-4a5f-b410-38d2e73b0a8e",
+          "decision": "correct",
+          "reference_characters": 55,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-06",
+          "event_id": "3aa91ef5-5e9e-4a59-887a-c295e3d7901f",
+          "decision": "correct",
+          "reference_characters": 59,
+          "edits": 4
+        },
+        {
+          "line_id": "body-line-07",
+          "event_id": "0eb82fe8-1d86-4226-99bd-9ac1544eed28",
+          "decision": "correct",
+          "reference_characters": 58,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-08",
+          "event_id": "d664577d-6652-41ad-b4cf-47b3356ea11a",
+          "decision": "confirm",
+          "reference_characters": 53,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-09",
+          "event_id": "5f48d952-5f59-4965-b2d0-ab5cc3712cca",
+          "decision": "correct",
+          "reference_characters": 53,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-10",
+          "event_id": "0704934c-5a45-4630-9245-090addc97d62",
+          "decision": "correct",
+          "reference_characters": 62,
+          "edits": 5
+        },
+        {
+          "line_id": "body-line-11",
+          "event_id": "80cecd89-0069-482f-8fb8-95cb4e678ca3",
+          "decision": "correct",
+          "reference_characters": 58,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-12",
+          "event_id": "35921e73-17df-4462-a463-139c26b8b7cd",
+          "decision": "correct",
+          "reference_characters": 60,
+          "edits": 4
+        },
+        {
+          "line_id": "body-line-13",
+          "event_id": "c4608c55-b7a5-47a6-8f18-c9b09997663d",
+          "decision": "correct",
+          "reference_characters": 57,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-14",
+          "event_id": "ee342e07-15da-45e1-8141-f3f6d4dd6aee",
+          "decision": "correct",
+          "reference_characters": 60,
+          "edits": 1
+        },
+        {
+          "line_id": "body-line-15",
+          "event_id": "5a769ac7-af4c-4629-b666-240c94e3183c",
+          "decision": "correct",
+          "reference_characters": 57,
+          "edits": 2
+        },
+        {
+          "line_id": "body-line-16",
+          "event_id": "9fe690cf-65bd-4047-901d-5c6e474acbeb",
+          "decision": "confirm",
+          "reference_characters": 60,
+          "edits": 0
+        },
+        {
+          "line_id": "body-line-17",
+          "event_id": "77eb2961-82b3-43f8-883a-bfb8510defa7",
+          "decision": "correct",
+          "reference_characters": 55,
+          "edits": 3
+        },
+        {
+          "line_id": "body-line-18",
+          "event_id": "7f7a2c1c-67e0-4769-8f02-8af99e00d625",
+          "decision": "correct",
+          "reference_characters": 56,
+          "edits": 4
+        }
+      ]
+    }
+  },
+  "retry": null
+}
