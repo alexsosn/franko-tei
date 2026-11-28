@@ -1,6 +1,6 @@
 # Agent instructions — franko-tei
 
-Read `README.md`, `docs/agent-loop.md`, `docs/transcription.md`, and open GitHub issues before acting.
+Read `README.md`, `docs/agent-loop.md`, `docs/transcription.md`, and open GitHub issues before acting. For historical Cyrillic recognition, annotation or search, also read [historical orthography and search](docs/historical-orthography-search.md).
 
 Mission: produce a **source-verifiable** five-volume diplomatic electronic edition of Ivan Franko's *Апокріфи і лєґенди з українських рукописів* (1896–1910), TEI P5 first, then Text-Fabric/Context-Fabric. Respect the difference between Franko's printed edition and the medieval/early modern manuscripts he transcribed.
 
@@ -31,6 +31,10 @@ Work on the highest-priority unblocked issue; prioritize complete first-hand rea
 ## Language annotation during draft ingestion
 
 Read the [corpus annotation harmonization guide](docs/annotation-harmonization.md) for shared cross-volume annotation rules, source-grounded examples, batch checklist and remediation priorities. Its new-record minimum is prospective; do not block unrelated legacy drafts or claim the planned validators already exist. Follow [contextual language annotation](docs/language-annotation.md) for existing storage details; where conventions differ, the harmonization guide states the proposed canonical choices. Include contextual language and script spans during first reading or in a separate annotation-only pass; cover every lexical range, including mixed-language citations and apparatus, and explicitly mark unresolved language. Prefer cu for Church Slavonic; use orv only provisionally for historical Ruthenian with evidence and uncertainty. Do not infer language or recension from script alone. Preserve Unicode code points, combining marks, source reading and exact line IDs. Coordinate with other transcription/contents branches: annotate their new pages in their own branch, and restrict retrospective edits to nonoverlapping existing main candidates. A usable draft with incomplete spans may still merge when the exception is explicitly documented and queued for repair; this does not establish annotation completeness. Do not retroactively block unrelated legacy drafts.
+
+## Historical Cyrillic recognition and retrieval
+
+Follow the [historical orthography guide](docs/historical-orthography-search.md): inspect the supralinear zone, distinguish accents, breathing, titla, covering marks, raised/rotated letters, numerals and uk forms; preserve literal Unicode and source uncertainty. Historical patterns rank visually plausible candidates only. Do not normalize frozen lines or add unreviewed labels to the approved HITL atlas. Record contextual expansions separately under the currently supported contract; queue unsupported cases without blocking transcription. Search profiles, linear readings, tokenization and lemmas are separate source-aligned projections; never strip all combining marks or create synthetic diplomatic glyph slots. New search behavior follows #177 and requires reversible source anchors and TDD; the guide does not imply these features exist.
 
 ## Available local page source (11 November 2026)
 
