@@ -703,12 +703,15 @@ class EditorialProjectionTests(unittest.TestCase):
                     const partial=hits('вятъ');
                     const wrong=mixedExpansionMatches(row,'святъ! ст҃ъ! святъ!',true,{...f,language:'grc'});
                     const insensitive=mixedExpansionMatches(row,'СВЯТЪ! СТ҃Ъ! СВЯТЪ!',false,f);
+                    const line=row.annotationLines.find(l=>l.line_id==='witness-b-text-l022');
+                    const common=mixedExpansionMatches(row,'ъ!',true,f)
+                        .filter(h=>h.index>=line.start&&h.index<line.end);
                     return [mixed.map(h=>[h[0],h.abbreviations.map(a=>a.cpStart)]),
                             repeated.map(h=>h[0]),partial.map(h=>h[0]),
-                            wrong.length,insensitive.length];
+                            wrong.length,insensitive.length,common.map(h=>h[0])];
                 }""",[literal,annotation])
                 self.assertEqual(result,[[["ст҃ъ! ст҃ъ! ст҃ъ!",[10,22]]],
-                    ["ст҃ъ"]*4,["ст҃ъ"]*3,0,1])  # literal also finds suffix in ѡкрст҃ъ
+                    ["ст҃ъ"]*4,["ст҃ъ"]*3,0,1,["ъ!"]*3])  # literal also finds suffix in ѡкрст҃ъ
                 # Synthetic supplementary codepoint + punctuation, two
                 # alternative branches, no combinatorial text enumeration.
                 result=page.evaluate("""()=>{
