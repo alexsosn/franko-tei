@@ -593,6 +593,46 @@ class ReviewSmoke(unittest.TestCase):
             self.assertTrue(page.locator('#contentsPanel').is_visible())
             browser.close()
 
+    def test_historical_review_work_references(self):
+        import json
+        html = reader_html()
+        data = json.loads(html.split('const volumeContents = ', 1)[1].split(';\n', 1)[0])
+        refs = json.loads(html.split('const contentsWorkRefs = ', 1)[1].split(';\n', 1)[0])
+        found = {}
+        for v, volume in data.items():
+            for i, entry in enumerate(volume['entries']):
+                key = json.dumps(entry[:3], ensure_ascii=False, separators=(',', ':'))
+                studies = [x for x in refs.get(v, {}).get(key, []) if x['provider'] == 'Scholarship']
+                if studies:
+                    self.assertEqual(len(studies), 1)
+                    self.assertEqual(studies[0]['relation'], 'study')
+                    found[v, i] = studies[0]
+        self.assertEqual(set(found), {('2', 16), ('2', 35), ('2', 107)})
+        self.assertIn('hypothesis', found['2', 35]['evidence'])
+        self.assertIn('not', found['2', 107]['evidence'])
+        self.assertIn('fragment', found['2', 16]['evidence'])
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])
+            page = browser.new_page(viewport={'width':320,'height':640})
+            page.route('https://**/*', lambda route: route.abort())
+            page.set_content(html)
+            page.evaluate("setUILocale('en')")
+            page.locator('#contentsOpen').click()
+            page.locator('#contentsVolume').select_option('2')
+            page.locator('#contentsFilter').fill('Brückner 1900')
+            rows = page.locator('#contentsEntries li:visible')
+            self.assertEqual(rows.count(), 3)
+            row = rows.last
+            row.locator('.contents-ref-toggle').click()
+            detail = row.locator('.contents-ref-detail')
+            self.assertIn('Scholarly discussion', detail.inner_text())
+            self.assertNotIn('OCP catalogue', detail.inner_text())
+            self.assertFalse(row.locator('.contents-canonical').count())
+            page.evaluate("setUILocale('uk')")
+            self.assertIn('Наукове обговорення', detail.inner_text())
+            self.assertTrue(detail.is_visible())
+            browser.close()
+
     def test_franko_first_publications(self):
         import json
         html = reader_html()
@@ -652,10 +692,10 @@ class ReviewSmoke(unittest.TestCase):
                 self.assertIn(tuple(json.loads(key)), identities)
                 self.assertTrue(links)
                 for link in links:
-                    self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate', 'earlier-publication', 'earlier-full-witness'))
-                    self.assertIn(link['provider'], ('e-Clavis', 'OCP', 'Franko'))
+                    self.assertIn(link['relation'], ('edition-match', 'work-family', 'candidate', 'earlier-publication', 'earlier-full-witness', 'study'))
+                    self.assertIn(link['provider'], ('e-Clavis', 'OCP', 'Franko', 'Scholarship'))
                     self.assertTrue(link['title'] and link['id'] and link['evidence'])
-                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/', 'https://www.i-franko.name/')))
+                    self.assertTrue(link['url'].startswith(('https://www.nasscal.com/e-clavis-christian-apocrypha/', 'https://pseudepigrapha.org/', 'https://www.i-franko.name/', 'https://archive.org/stream/archivfrslavis22berluoft/')))
         html = html.replace('updateMode();load();', 'updateMode();load=()=>{window.lastJump=[$(\'volume\').value,$(\'page\').value];};load();')
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or None, args=['--no-sandbox'])

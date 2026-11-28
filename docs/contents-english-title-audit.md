@@ -11,7 +11,7 @@ The audit is in [contents-english-title-audit.tsv](contents-english-title-audit.
 - searched-unresolved: the search was documented but did not establish a defensible title identification; keep the literal translation and do not assign a work identifier.
 - pending: no individual bibliographic verification recorded.
 
-Current snapshot: 615 records; 25 edition matches, 235 title/terminology-supported, 58 candidates, 196 pending, 100 editorial containers, 1 searched-unresolved. All 615 translations were compared with the recorded printed-TOC transcriptions; 55 records differ from the preceding audit. This is not a new image-level collation or exhaustive bibliographic review. The `translation_review` column records that limited review scope; `catalog_refs_json` records 129 rows with 140 links (22 edition matches, 77 work-family, 34 candidate relations, 6 earlier publications and 1 earlier full witness). Several records are editorial headings and not distinct works. No claim of exhaustive research. For a future claim of complete review, resolve each pending row with an evidence-bearing status or an explicit documented unsuccessful search; do not promote candidates by keyword overlap.
+Current snapshot: 615 records; 25 edition matches, 235 title/terminology-supported, 58 candidates, 196 pending, 100 editorial containers, 1 searched-unresolved. All 615 translations were compared with the recorded printed-TOC transcriptions; 55 records differ from the preceding audit. This is not a new image-level collation or exhaustive bibliographic review. The `translation_review` column records that limited review scope; `catalog_refs_json` records 130 rows with 143 links (22 edition matches, 77 work-family, 34 candidate relations, 6 earlier publications, 1 earlier full witness and 3 scholarly discussions). Several records are editorial headings and not distinct works. No claim of exhaustive research. For a future claim of complete review, resolve each pending row with an evidence-bearing status or an explicit documented unsuccessful search; do not promote candidates by keyword overlap.
 
 ## Terminology
 
@@ -124,3 +124,6 @@ Seven authorial links supplement the existing catalogue relations. The ID is a l
 
 
 For research about the edition as a whole, including modern studies, related publications and historical reviews, see the [research bibliography](research-bibliography.md). Do not assign edition-level references to arbitrary TOC rows.
+
+
+Historical scholarship (`study`, provider `Scholarship`) identifies a documented discussion of the specific printed passage, not a new work identity, witness match or diplomatic reading. The first three references are to Brückner (1900), scoped to volume II entries 16, 35, 107. Source journal OCR was inspected; quotations and historical claims require original-image verification. See [research bibliography](research-bibliography.md#historical-review-follow-up--уточнення-історичних-рецензій). The source title is retained in both locales; explanatory evidence is bilingual. No canonical-title subtitle or status promotion follows from this relation.
