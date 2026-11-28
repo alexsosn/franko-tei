@@ -183,10 +183,11 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 #reviewBody{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;min-width:0}#reviewBody>*{min-width:0;max-width:100%}#reviewDialog{box-sizing:border-box;overflow-wrap:anywhere}#reviewKeyboardGroup,#reviewLine{max-width:100%;min-width:0}.review-keyboard,.review-row{min-width:0;max-width:100%}#reviewCharacters,#searchCharacters{min-width:0;max-width:100%;box-sizing:border-box}#reviewBody[hidden],#reviewExport[hidden],#reviewCrop[hidden]{display:none}
 .review-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.review-row button{min-height:36px}.review-row select{min-width:0;flex:1}
 #reviewBody textarea,#reviewNote{width:100%;box-sizing:border-box;font-size:17px}
-#reviewEdit,.review-original{font-family:var(--historic-font),var(--greek-fallback),"Franko Gentium","Franko Shafarik",serif;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}
+#reviewEdit{font-family:var(--historic-font),var(--greek-fallback),"Franko Gentium","Franko Shafarik",serif;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}
 #reviewEdit[data-font-mode="slavonic"]{font-family:var(--slavonic-font),"Franko Monomakh","Franko Shafarik",var(--greek-font),serif}
 #reviewEdit[data-font-mode="greek"]{font-family:var(--greek-font),"Franko Gentium",var(--historic-font),"Franko Shafarik",serif}
-.review-original{padding:6px 8px;border-left:2px solid #999;background:#8881}
+#reviewSourcePair{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;align-items:start}#reviewImagePane,#reviewTextField{min-width:0}#reviewTextField label{display:block;margin-bottom:4px}#reviewTextField textarea{display:block;width:100%;min-width:0;box-sizing:border-box;resize:vertical}
+@media(min-width:1000px){#reviewDialog{width:920px;max-width:min(920px,96vw)}#reviewSourcePair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 #reviewCrop{position:relative;overflow:hidden;background:#8881;width:100%}
 #reviewImage{display:block;width:100%;height:auto;position:absolute;left:0}#reviewCrop.review-full{max-height:240px;overflow:auto}#reviewCrop.review-full #reviewImage{position:static}#reviewBox{position:absolute;pointer-events:none;border:1px dashed #9b753d;background:transparent}
 #reviewOpen{flex:0 0 auto;min-width:30px;min-height:30px}
@@ -270,10 +271,9 @@ dialog::backdrop{background:#18201c55}.dialog-heading{display:flex;align-items:c
 <div id="reviewBody" hidden>
 <p id="reviewSource"></p>
 <label for="reviewLine">Source line</label><div class="review-row"><button id="reviewPrevious" type="button" aria-label="Previous line">←</button><select id="reviewLine"></select><button id="reviewNext" type="button" aria-label="Next line">→</button></div>
-<div id="reviewCrop" hidden><img id="reviewImage" alt="Original printed page"><div id="reviewBox" aria-hidden="true" hidden></div></div><a id="reviewFullImage" target="_blank" rel="noopener">Open full image</a><p id="reviewImageStatus" role="status"></p>
-<div id="reviewOriginal" class="review-original"></div>
+<div id="reviewSourcePair"><div id="reviewImagePane"><div id="reviewCrop" hidden><img id="reviewImage" alt="Original printed page"><div id="reviewBox" aria-hidden="true" hidden></div></div><a id="reviewFullImage" target="_blank" rel="noopener">Open full image</a><p id="reviewImageStatus" role="status"></p></div><div id="reviewTextField">
+<label for="reviewEdit">Working reading</label><textarea id="reviewEdit" rows="3" spellcheck="false" autocapitalize="off" autocorrect="off"></textarea></div></div>
 <details id="reviewUncertainty" hidden><summary>Uncertainty notes</summary><div id="reviewReasons"></div></details>
-<label for="reviewEdit">Working reading</label><textarea id="reviewEdit" rows="3" spellcheck="false" autocapitalize="off" autocorrect="off"></textarea>
 <div class="review-keyboard"><div class="review-row"><label for="reviewKeyboardGroup">Historical characters</label><select id="reviewKeyboardGroup"><option value="marks">Diacritics</option><option value="letters">Letters</option><option value="superscripts">Superscript letters</option><option value="greek">Greek</option></select></div><div id="reviewCharacters" aria-label="Historical characters"></div><p id="reviewCharacterInfo" aria-live="polite"></p></div>
 <label for="reviewNote">Note (optional)</label><input id="reviewNote" type="text" maxlength="2048" spellcheck="false">
 <div class="review-row"><button id="reviewSave" type="button">Save &amp; next</button><button id="reviewDefer" type="button">Defer</button><button id="reviewUndo" type="button">Undo decision</button></div>
