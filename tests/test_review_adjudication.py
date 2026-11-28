@@ -3,7 +3,7 @@ import copy
 import hashlib
 import json
 import unittest
-from test_review_bundle import fixture, issue, encode, load_source, RAW, LINE, SOURCE, REV, PATH
+from test_review_bundle import fixture, annotation_fixture, issue, encode, load_source, RAW, LINE, SOURCE, REV, PATH
 from franko_tei.review_bundle import make_intake
 from franko_tei.review_adjudication import (
     adjudicate, validate_ledger, project_lines, intake_digest,
@@ -21,6 +21,18 @@ def decision(r, outcome="accept", editor=EDITOR):
                       REASON, intake_digest(r), load_source)
 
 class AdjudicationTests(unittest.TestCase):
+    def test_language_proposal_is_not_a_text_confirmation_or_publishable_yet(self):
+        r=record(annotation_fixture())
+        with self.assertRaisesRegex(ValueError,"annotation projection"):
+            decision(r)
+        rejected=decision(r,"reject")
+        for decisions in ([],[rejected]):
+            ledger=validate_ledger([r],decisions,load_source)
+            rows=project_lines(RAW,PATH,ledger)
+            row=next(x for x in rows if x["line_id"]==LINE["id"])
+            self.assertEqual(row["status"],"agent_unverified")
+            self.assertEqual(row["language_spans"],LINE["language_spans"])
+
     def test_accepted_projection_preserves_frozen_evidence(self):
         r=record(); a=decision(r)
         ledger=validate_ledger([r],[a],load_source)
