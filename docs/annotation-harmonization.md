@@ -49,6 +49,10 @@ pilot/structure examples include I/43, I/49, I/232–235, I/245 and IV/101.
 These are data/code observations, not a fresh facsimile verification or
 a complete corpus-wide audit.
 
+## Historical orthography and searchable annotation
+
+Apply [historical orthography and search](historical-orthography-search.md) to new readings in every volume. Inspect raised and rotated letters, accents, titla, numeral signs, ligatures, word continuation and letterspacing; retain the exact source sequence and contextual uncertainty. Add supported [abbreviation spans](abbreviation-spans.md) with evidence where appropriate. Unsupported expansion, glyph or logical-word cases remain explicit research tasks; do not fabricate fields or block unrelated draft ingestion. Keep expansion, linear reading, spelling normalization, morphology and lexical equivalence distinct and version-anchored. Search projections must map every match back to original intervals; no all-mark stripping, global historical-letter replacement or extra TF glyph slots. The linked search design is prospective; it is not an implemented validator or required new annotation schema.
+
 ## Agent checklist for each batch
 
 ### Before reading
