@@ -8,6 +8,8 @@ on:
       - 'docs/render_approved_icl.py'
       - 'docs/check_approved_icl_sheets.py'
       - 'docs/monomakh-icl-approved-atlas.json'
+      - 'docs/hitl/atlas-extension-*.json'
+      - 'src/franko_tei/hitl_atlas.py'
       - 'pilot/**'
       - 'reviews/**'
       - 'src/franko_tei/review_adjudication.py'
@@ -24,6 +26,8 @@ on:
       - 'docs/render_approved_icl.py'
       - 'docs/check_approved_icl_sheets.py'
       - 'docs/monomakh-icl-approved-atlas.json'
+      - 'docs/hitl/atlas-extension-*.json'
+      - 'src/franko_tei/hitl_atlas.py'
       - 'pilot/**'
       - 'reviews/**'
       - 'src/franko_tei/review_adjudication.py'
@@ -61,7 +65,7 @@ jobs:
           set -euo pipefail
           # Avoid downloading reference pages for unrelated transcription PRs.
           if [[ "$BASE" =~ ^[0-9a-f]{40}$ ]] && git cat-file -e "$BASE^{commit}" 2>/dev/null \
-            && git diff --quiet "$BASE" HEAD -- docs/render_monomakh_hybrid.py docs/render_approved_icl.py docs/check_approved_icl_sheets.py docs/monomakh-icl-approved-atlas.json docs/monomakh-icl.html web/test_fonts.py web/fonts/Monomakh-Regular.woff2 .github/workflows/review-pages.yml; then
+            && git diff --quiet "$BASE" HEAD -- docs/render_monomakh_hybrid.py docs/render_approved_icl.py docs/check_approved_icl_sheets.py docs/monomakh-icl-approved-atlas.json 'docs/hitl/atlas-extension-*.json' src/franko_tei/hitl_atlas.py docs/monomakh-icl.html web/test_fonts.py web/fonts/Monomakh-Regular.woff2 .github/workflows/review-pages.yml; then
             echo "Hybrid reference unchanged."
             exit 0
           fi
@@ -88,6 +92,16 @@ jobs:
           python docs/render_approved_icl.py --assets "$assets" --output "$assets/approved.html" --sheet-dir "$assets/sheets"
           test -s "$assets/approved.html"
           python docs/check_approved_icl_sheets.py "$assets/sheets"
+          # Validate the committed HITL chain before resolving any extra image paths.
+          python docs/render_approved_icl.py --hitl --list-sources > "$assets/sources.tsv"
+          while IFS=$'\t' read -r path commit; do
+            if [[ ! -s "$assets/$path" ]]; then
+              gh api "repos/$GITHUB_REPOSITORY/contents/images/$path?ref=$commit" --jq .content | base64 --decode > "$assets/$path"
+            fi
+          done < "$assets/sources.tsv"
+          python docs/render_approved_icl.py --hitl --assets "$assets" --output "$assets/active.html" --sheet-dir "$assets/active-sheets"
+          test -s "$assets/active.html"
+          python docs/check_approved_icl_sheets.py "$assets/active-sheets" --hitl
           # Local derivatives only; never upload scan crops.
       - run: python web/test_printed_indexes.py
       - run: python web/test_review.py
